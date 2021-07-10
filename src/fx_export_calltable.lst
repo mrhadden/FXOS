@@ -1,0 +1,1513 @@
+  Sat Jul 10 2021  1:15                                                Page 1
+
+
+                     ***************************************
+                     **      WDC 65C816 Macro Assembler   **
+                     **                                   **
+                     **     Version 3.49.1- Feb  6 2006    **
+                     ***************************************
+
+     1                        ;:ts=8
+     2             00000001   R0	equ	1
+     3             00000005   R1	equ	5
+     4             00000009   R2	equ	9
+     5             0000000D   R3	equ	13
+     6                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fx_export_calltable.c",0
+     7                        ;
+     8                        ;#include "fxkernel.h"
+     9                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxkernel.h",0
+    10                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",0
+    11                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stdlib.h",0
+    12                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stddef.h",0
+    13                        	.line	88
+    14                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stdlib.h",43
+    15                        	.stag	fake1_,32,1
+    16                        	.member	quot,0,5,8,16
+    17                        	.member	rem,16,5,8,16
+    18                        	.eos
+    19                        	.stag	fake2_,64,2
+    20                        	.member	quot,0,7,8,32
+    21                        	.member	rem,32,7,8,32
+    22                        	.eos
+    23                        	.stag	int_sqrt,32,3
+    24                        	.member	sqrt,0,16,8,16
+    25                        	.member	frac,16,16,8,16
+    26                        	.eos
+    27                        	.line	205
+    28                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",4
+    29                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    string.h",0
+    30                        	.line	134
+    31                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",5
+    32                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    ctype.h",0
+    33                        	.line	103
+    34                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",6
+    35                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+    36                        	.stag	_fx_bytebits,8,4
+    37                        	.member	b7,0,14,17,1
+    38                        	.member	b6,1,14,17,1
+    39                        	.member	b5,2,14,17,1
+    40                        	.member	b4,3,14,17,1
+  Sat Jul 10 2021  1:15                                                Page 2
+
+
+    41                        	.member	b3,4,14,17,1
+    42                        	.member	b2,5,14,17,1
+    43                        	.member	b1,6,14,17,1
+    44                        	.member	b0,7,14,17,1
+    45                        	.eos
+    46                        	.stag	_fx_node,384,5
+    47                        	.member	type,0,14,8,8
+    48                        	.member	Reserved0,8,14,8,8
+    49                        	.member	data,16,129,8,32
+    50                        	.member	last,48,138,8,32,5
+    51                        	.member	next,80,138,8,32,5
+    52                        	.member	name,112,110,8,0,32
+    53                        	.member	Reserved1,368,16,8,16
+    54                        	.eos
+    55                        	.stag	_fx_nodelist,96,6
+    56                        	.member	listhead,0,138,8,32,5
+    57                        	.member	listData,32,129,8,32
+    58                        	.member	deallocator,64,641,8,32
+    59                        	.eos
+    60                        	.stag	_fx_queue,80,7
+    61                        	.member	count,0,5,8,16
+    62                        	.member	front,16,138,8,32,5
+    63                        	.member	rear,48,138,8,32,5
+    64                        	.eos
+    65                        	.stag	fake8_,32,8
+    66                        	.member	subsystem,0,14,8,8
+    67                        	.member	level,8,14,8,8
+    68                        	.member	error,16,16,8,16
+    69                        	.eos
+    70                        	.stag	_fx_process_signal,16,9
+    71                        	.member	cbSize,0,16,8,16
+    72                        	.eos
+    73                        	.stag	_fx_semaphore,16,10
+    74                        	.member	reserved,0,5,8,16
+    75                        	.eos
+    76                        	.stag	_fx_fileBlock,552,11
+    77                        	.member	openCount,0,16,8,16
+    78                        	.member	lockCount,16,16,8,16
+    79                        	.member	dirty,32,14,8,8
+    80                        	.member	fileBuffer,40,110,8,0,64
+    81                        	.eos
+    82                        	.stag	_fx_irq_data,48,12
+    83                        	.member	line,0,5,8,16
+    84                        	.member	keycode,16,142,8,32
+    85                        	.eos
+    86                        	.stag	_task,48,13
+    87                        	.member	SPL,0,14,8,8
+    88                        	.member	SPH,8,14,8,8
+    89                        	.member	pstack,16,142,8,32
+    90                        	.eos
+    91                        	.stag	_task_stack,32,14
+    92                        	.member	SS,0,142,8,32
+    93                        	.eos
+    94                        	.stag	int_regs,104,15
+    95                        	.member	PB,0,14,8,8
+    96                        	.member	PH,8,14,8,8
+    97                        	.member	PL,16,14,8,8
+    98                        	.member	PP,24,14,8,8
+  Sat Jul 10 2021  1:15                                                Page 3
+
+
+    99                        	.member	DB,32,14,8,8
+   100                        	.member	DH,40,14,8,8
+   101                        	.member	DL,48,14,8,8
+   102                        	.member	AH,56,14,8,8
+   103                        	.member	AL,64,14,8,8
+   104                        	.member	XH,72,14,8,8
+   105                        	.member	XL,80,14,8,8
+   106                        	.member	YH,88,14,8,8
+   107                        	.member	YL,96,14,8,8
+   108                        	.eos
+   109                        	.stag	_fx_eventMessage,304,16
+   110                        	.member	src,0,18,8,32
+   111                        	.member	dest,32,18,8,32
+   112                        	.member	type,64,16,8,16
+   113                        	.member	hwnd,80,129,8,32
+   114                        	.member	pheap,112,129,8,32
+   115                        	.member	msgTime,144,18,8,32
+   116                        	.member	data,176,110,8,0,16
+   117                        	.eos
+   118                        	.stag	_fx_cmdMessage,304,17
+   119                        	.member	src,0,18,8,32
+   120                        	.member	dest,32,18,8,32
+   121                        	.member	type,64,16,8,16
+   122                        	.member	hwnd,80,129,8,32
+   123                        	.member	pheap,112,129,8,32
+   124                        	.member	msgTime,144,18,8,32
+   125                        	.member	cmdCId,176,16,8,16
+   126                        	.member	cmdMId,192,16,8,16
+   127                        	.member	parameter1,208,18,8,32
+   128                        	.member	parameter2,240,18,8,32
+   129                        	.member	parameter3,272,18,8,32
+   130                        	.eos
+   131                        	.stag	_fx_console_ctl,448,18
+   132                        	.member	maxCols,0,5,8,16
+   133                        	.member	maxRows,16,5,8,16
+   134                        	.member	curX,32,5,8,16
+   135                        	.member	curY,48,5,8,16
+   136                        	.member	fgColor,64,5,8,16
+   137                        	.member	bgColor,80,5,8,16
+   138                        	.member	mode,96,14,8,8
+   139                        	.member	kbBuffer,104,101,8,0,16
+   140                        	.member	screenBuffer,360,142,8,32
+   141                        	.member	desktopMode,392,14,8,8
+   142                        	.member	lastMouseButton,400,5,8,16
+   143                        	.member	lastMouseX,416,5,8,16
+   144                        	.member	lastMouseY,432,5,8,16
+   145                        	.eos
+   146                        	.stag	_fx_desktop_ctl,392,19
+   147                        	.member	desktopMode,0,14,8,8
+   148                        	.member	cursorCtl,8,5,8,16
+   149                        	.member	cursorState,24,5,8,16
+   150                        	.member	backgroundColor,40,5,8,16
+   151                        	.member	foregroundColor,56,5,8,16
+   152                        	.member	menuMode,72,5,8,16
+   153                        	.member	lastMouseButton,88,5,8,16
+   154                        	.member	lastMouseX,104,5,8,16
+   155                        	.member	lastMouseY,120,5,8,16
+   156                        	.member	currentDiskName,136,142,8,32
+  Sat Jul 10 2021  1:15                                                Page 4
+
+
+   157                        	.member	diskNodes,168,129,8,32
+   158                        	.member	titleNodes,200,129,8,32
+   159                        	.member	menuNodes,232,129,8,32
+   160                        	.member	iconNodes,264,129,8,32
+   161                        	.member	windowNodes,296,129,8,32
+   162                        	.member	fontNodes,328,129,8,32
+   163                        	.member	wndProc,360,138,8,32,6
+   164                        	.eos
+   165                        	.stag	_fx_process,800,20
+   166                        	.member	cbSize,0,5,8,16
+   167                        	.member	procId,16,18,8,32
+   168                        	.member	parentId,48,18,8,32
+   169                        	.member	ctx,80,129,8,32
+   170                        	.member	userId,112,16,8,16
+   171                        	.member	status,128,16,8,16
+   172                        	.member	foregroundActive,144,14,8,8
+   173                        	.member	tls,152,1121,8,32,8
+   174                        	.member	commandLine,408,142,8,32
+   175                        	.member	semaphores,440,138,8,32,6
+   176                        	.member	fileHandles,472,138,8,32,6
+   177                        	.member	pathList,504,138,8,32,6
+   178                        	.member	resources,536,138,8,32,6
+   179                        	.member	timerAware,568,14,8,8
+   180                        	.member	timerTicks,576,112,8,0,2
+   181                        	.member	timerTickCount,608,112,8,0,2
+   182                        	.member	kernelError,640,10,8,32,8
+   183                        	.member	consoleCtl,672,138,8,32,18
+   184                        	.member	desktopCtl,704,138,8,32,19
+   185                        	.member	execProc,736,641,8,32
+   186                        	.member	startupArgs,768,129,8,32
+   187                        	.eos
+   188                        	.stag	_fxProcessMessage,112,21
+   189                        	.member	src,0,18,8,32
+   190                        	.member	dest,32,18,8,32
+   191                        	.member	type,64,16,8,16
+   192                        	.member	processInfo,80,138,8,32,20
+   193                        	.eos
+   194                        	.stag	_k_key_state,112,22
+   195                        	.member	scanCode,0,14,8,8
+   196                        	.member	isShifted,8,14,8,8
+   197                        	.member	isAlt,16,14,8,8
+   198                        	.member	isExtended,24,14,8,8
+   199                        	.member	isCapsLock,32,14,8,8
+   200                        	.member	isNumLock,40,14,8,8
+   201                        	.member	isScrollLock,48,14,8,8
+   202                        	.member	keyChar,56,16,8,16
+   203                        	.member	scanTime,72,18,8,32
+   204                        	.member	ledStatus,104,14,8,8
+   205                        	.eos
+   206                        	.stag	_fx_property,384,23
+   207                        	.member	name,0,110,8,0,16
+   208                        	.member	value,128,110,8,0,32
+   209                        	.eos
+   210                        	.utag	_24bitPointer,32,24
+   211                        	.member	address,0,142,11,32
+   212                        	.member	bytes,0,110,11,0,4
+   213                        	.eos
+   214                        	.stag	_PointStruct,32,25
+  Sat Jul 10 2021  1:15                                                Page 5
+
+
+   215                        	.member	x,0,5,8,16
+   216                        	.member	y,16,5,8,16
+   217                        	.eos
+   218                        	.stag	_RectStruct,112,26
+   219                        	.member	x,0,5,8,16
+   220                        	.member	y,16,5,8,16
+   221                        	.member	z,32,18,8,32
+   222                        	.member	width,64,5,8,16
+   223                        	.member	height,80,5,8,16
+   224                        	.member	attr,96,5,8,16
+   225                        	.eos
+   226                        	.stag	fake27_,96,27
+   227                        	.member	name,0,142,8,32
+   228                        	.member	topLeft,32,10,8,32,25
+   229                        	.member	bottomRight,64,10,8,32,25
+   230                        	.eos
+   231                        	.stag	fake28_,112,28
+   232                        	.member	x,0,5,8,16
+   233                        	.member	y,16,5,8,16
+   234                        	.member	z,32,5,8,16
+   235                        	.member	width,48,5,8,16
+   236                        	.member	height,64,5,8,16
+   237                        	.member	data,80,18,8,32
+   238                        	.eos
+   239                        	.stag	_k_WindowClass,272,29
+   240                        	.member	cbSize,0,16,8,16
+   241                        	.member	style,16,16,8,16
+   242                        	.member	styleEx,32,16,8,16
+   243                        	.member	pWndProc,48,654,8,32
+   244                        	.member	hInstance,80,129,8,32
+   245                        	.member	hIcon,112,129,8,32
+   246                        	.member	hCursor,144,129,8,32
+   247                        	.member	hbrBackground,176,129,8,32
+   248                        	.member	lpszMenuName,208,142,8,32
+   249                        	.member	lpszClassName,240,142,8,32
+   250                        	.eos
+   251                        	.stag	_ClickableRect,152,30
+   252                        	.member	area,0,10,8,112,26
+   253                        	.member	z,112,18,8,32
+   254                        	.member	enabled,144,14,8,8
+   255                        	.eos
+   256                        	.stag	_NCClickableRect,136,31
+   257                        	.member	area,0,10,8,112,26
+   258                        	.member	msgType,112,16,8,16
+   259                        	.member	enabled,128,14,8,8
+   260                        	.eos
+   261                        	.stag	_DragData,216,32
+   262                        	.member	area,0,10,8,112,26
+   263                        	.member	xoffset,112,5,8,16
+   264                        	.member	yoffset,128,5,8,16
+   265                        	.member	msgType,144,16,8,16
+   266                        	.member	ncAction,160,16,8,16
+   267                        	.member	isDrag,176,14,8,8
+   268                        	.member	isResize,184,14,8,8
+   269                        	.member	canDrag,192,14,8,8
+   270                        	.member	canDrop,200,14,8,8
+   271                        	.member	didDrag,208,14,8,8
+   272                        	.eos
+  Sat Jul 10 2021  1:15                                                Page 6
+
+
+   273                        	.stag	_k_WindowStruct,3904,33
+   274                        	.member	cbSize,0,16,8,16
+   275                        	.member	style,16,18,8,32
+   276                        	.member	styleEx,48,18,8,32
+   277                        	.member	win_id,80,5,8,16
+   278                        	.member	win_x,96,5,8,16
+   279                        	.member	win_y,112,5,8,16
+   280                        	.member	win_width,128,5,8,16
+   281                        	.member	win_height,144,5,8,16
+   282                        	.member	win_xoffset,160,5,8,16
+   283                        	.member	win_yoffset,176,5,8,16
+   284                        	.member	win_cxoffset,192,5,8,16
+   285                        	.member	win_cyoffset,208,5,8,16
+   286                        	.member	wndRect,224,10,8,112,26
+   287                        	.member	clientRect,336,10,8,112,26
+   288                        	.member	nonclientGadgets,448,106,8,0,31,16
+   289                        	.member	clickable,2624,129,8,32
+   290                        	.member	win_title,2656,110,8,0,32
+   291                        	.member	Reserved0,2912,16,8,16
+   292                        	.member	win_class,2928,110,8,0,16
+   293                        	.member	win_class_name,3056,110,8,0,32
+   294                        	.member	nBitmapLayer,3312,16,8,16
+   295                        	.member	bgRegion,3328,129,8,32
+   296                        	.member	procid,3360,18,8,32
+   297                        	.member	pWndClass,3392,138,8,32,29
+   298                        	.member	pParentWindow,3424,129,8,32
+   299                        	.member	hMenu,3456,129,8,32
+   300                        	.member	hPointer,3488,129,8,32
+   301                        	.member	hBackground,3520,129,8,32
+   302                        	.member	pChildWindows,3552,138,8,32,6
+   303                        	.member	pChildHitList,3584,138,8,32,6
+   304                        	.member	isVisible,3616,14,8,8
+   305                        	.member	windowData,3624,129,8,32
+   306                        	.member	clientData,3656,1121,8,32,6
+   307                        	.member	isClosed,3848,14,8,8
+   308                        	.member	isClosing,3856,14,8,8
+   309                        	.member	isDesktop,3864,14,8,8
+   310                        	.member	clickableNode,3872,138,8,32,5
+   311                        	.eos
+   312                        	.stag	_k_WindowStructEx,3880,34
+   313                        	.member	cbSize,0,16,8,16
+   314                        	.member	style,16,18,8,32
+   315                        	.member	styleEx,48,18,8,32
+   316                        	.member	win_id,80,5,8,16
+   317                        	.member	win_x,96,5,8,16
+   318                        	.member	win_y,112,5,8,16
+   319                        	.member	win_width,128,5,8,16
+   320                        	.member	win_height,144,5,8,16
+   321                        	.member	win_xoffset,160,5,8,16
+   322                        	.member	win_yoffset,176,5,8,16
+   323                        	.member	win_cxoffset,192,5,8,16
+   324                        	.member	win_cyoffset,208,5,8,16
+   325                        	.member	wndRect,224,10,8,112,26
+   326                        	.member	clientRect,336,10,8,112,26
+   327                        	.member	nonclientGadgets,448,106,8,0,31,16
+   328                        	.member	clickable,2624,129,8,32
+   329                        	.member	win_title,2656,110,8,0,32
+   330                        	.member	Reserved0,2912,16,8,16
+  Sat Jul 10 2021  1:15                                                Page 7
+
+
+   331                        	.member	win_class,2928,110,8,0,16
+   332                        	.member	nBitmapLayer,3056,16,8,16
+   333                        	.member	procid,3072,18,8,32
+   334                        	.member	pWndClass,3104,138,8,32,29
+   335                        	.member	pParentWindow,3136,129,8,32
+   336                        	.member	hMenu,3168,129,8,32
+   337                        	.member	hPointer,3200,129,8,32
+   338                        	.member	hBackground,3232,129,8,32
+   339                        	.member	pChildWindows,3264,138,8,32,6
+   340                        	.member	pChildHitList,3296,138,8,32,6
+   341                        	.member	isVisible,3328,14,8,8
+   342                        	.member	windowData,3336,129,8,32
+   343                        	.member	clientData,3368,1121,8,32,4
+   344                        	.member	isClosed,3496,14,8,8
+   345                        	.member	hWnd,3504,129,8,32
+   346                        	.member	localRect,3536,10,8,112,26
+   347                        	.member	globalRect,3648,10,8,112,26
+   348                        	.member	clientOffsetRect,3760,10,8,112,26
+   349                        	.member	isDesktop,3872,14,8,8
+   350                        	.eos
+   351                        	.stag	_FontMetric,32,35
+   352                        	.member	width,0,5,8,16
+   353                        	.member	height,16,5,8,16
+   354                        	.eos
+   355                        	.stag	_MenuStruct,280,36
+   356                        	.member	cx,0,5,8,16
+   357                        	.member	cy,16,5,8,16
+   358                        	.member	width,32,5,8,16
+   359                        	.member	height,48,5,8,16
+   360                        	.member	fcolor,64,14,8,8
+   361                        	.member	bcolor,72,14,8,8
+   362                        	.member	chromeLeft,80,14,8,8
+   363                        	.member	chromeRight1,88,14,8,8
+   364                        	.member	chromeRight2,96,14,8,8
+   365                        	.member	hFont,104,129,8,32
+   366                        	.member	itemId,136,16,8,16
+   367                        	.member	pCaption,152,142,8,32
+   368                        	.member	subMenus,184,138,8,32,6
+   369                        	.member	pBackground,216,129,8,32
+   370                        	.member	hWndOwner,248,129,8,32
+   371                        	.eos
+   372                        	.stag	fake37_,160,37
+   373                        	.member	menuId,0,16,8,16
+   374                        	.member	caption,16,142,8,32
+   375                        	.member	rect,48,10,8,112,26
+   376                        	.eos
+   377                        	.stag	fake38_,5152,38
+   378                        	.member	pParent,0,138,8,32,33
+   379                        	.member	rect,32,10,8,112,26
+   380                        	.member	captions,144,1134,8,32,24
+   381                        	.member	chrome,912,110,8,0,24
+   382                        	.member	ids,1104,112,8,0,24
+   383                        	.member	clickable,1488,106,8,0,30,24
+   384                        	.member	selected,5136,16,8,16
+   385                        	.eos
+   386                        	.stag	_fx_button_t,96,39
+   387                        	.member	pCaption,0,142,8,32
+   388                        	.member	cCaption,32,16,8,16
+  Sat Jul 10 2021  1:15                                                Page 8
+
+
+   389                        	.member	data,48,129,8,32
+   390                        	.member	captionPixelWidth,80,16,8,16
+   391                        	.eos
+   392                        	.stag	_fx_scrollbar_t,240,40
+   393                        	.member	min,0,16,8,16
+   394                        	.member	max,16,16,8,16
+   395                        	.member	increment,32,16,8,16
+   396                        	.member	stopsize,48,16,8,16
+   397                        	.member	location,64,5,8,16
+   398                        	.member	state,80,5,8,16
+   399                        	.member	rectThumb,96,10,8,112,26
+   400                        	.member	data,208,129,8,32
+   401                        	.eos
+   402                        	.stag	_fx_listbox_t,240,41
+   403                        	.member	pos,0,5,8,16
+   404                        	.member	selected,16,16,8,16
+   405                        	.member	offsetX,32,5,8,16
+   406                        	.member	offsetY,48,5,8,16
+   407                        	.member	inc,64,5,8,16
+   408                        	.member	direction,80,5,8,16
+   409                        	.member	top,96,5,8,16
+   410                        	.member	bottom,112,5,8,16
+   411                        	.member	indexTop,128,5,8,16
+   412                        	.member	indexBottom,144,5,8,16
+   413                        	.member	maxItems,160,16,8,16
+   414                        	.member	fontSet,176,142,8,32
+   415                        	.member	data,208,129,8,32
+   416                        	.eos
+   417                        	.stag	_fx_textbox_t,144,42
+   418                        	.member	pos,0,5,8,16
+   419                        	.member	selected,16,16,8,16
+   420                        	.member	offsetX,32,5,8,16
+   421                        	.member	offsetY,48,5,8,16
+   422                        	.member	isShifted,64,14,8,8
+   423                        	.member	cursorState,72,14,8,8
+   424                        	.member	fontSet,80,142,8,32
+   425                        	.member	data,112,129,8,32
+   426                        	.eos
+   427                        	.stag	_fx_msgbox_t,144,43
+   428                        	.member	pos,0,5,8,16
+   429                        	.member	selected,16,16,8,16
+   430                        	.member	offsetX,32,5,8,16
+   431                        	.member	offsetY,48,5,8,16
+   432                        	.member	isShifted,64,14,8,8
+   433                        	.member	cursorState,72,14,8,8
+   434                        	.member	fontSet,80,142,8,32
+   435                        	.member	data,112,129,8,32
+   436                        	.eos
+   437                        	.stag	_fx_menuAnchor_t,272,44
+   438                        	.member	pCaption,0,142,8,32
+   439                        	.member	renderLayoutX,32,16,8,16
+   440                        	.member	renderLayoutY,48,16,8,16
+   441                        	.member	captionPixelWidth,64,16,8,16
+   442                        	.member	data,80,129,8,32
+   443                        	.member	droppedWindow,112,138,8,32,33
+   444                        	.member	bytes,144,110,8,0,16
+   445                        	.eos
+   446                        	.stag	_SubMenuStruct,64,45
+  Sat Jul 10 2021  1:15                                                Page 9
+
+
+   447                        	.member	caption,0,142,8,32
+   448                        	.member	action,32,641,8,32
+   449                        	.eos
+   450                        	.stag	_SubMenuListStruct,40,46
+   451                        	.member	cMenus,0,14,8,8
+   452                        	.member	psubmenus,8,9354,8,32,45
+   453                        	.eos
+   454                        	.stag	_fx_ComBuffer,2080,47
+   455                        	.member	cbSize,0,16,8,16
+   456                        	.member	cbBuffer,16,16,8,16
+   457                        	.member	buffer,32,110,8,0,256
+   458                        	.eos
+   459                        	.stag	_fx_resource_header,72,48
+   460                        	.member	magic,0,110,8,0,4
+   461                        	.member	major,32,14,8,8
+   462                        	.member	minor,40,14,8,8
+   463                        	.member	type,48,14,8,8
+   464                        	.member	reserved,56,14,8,8
+   465                        	.member	resheaderSize,64,14,8,8
+   466                        	.eos
+   467                        	.stag	_fx_resource_header_font,144,49
+   468                        	.member	title,0,110,8,0,16
+   469                        	.member	height,128,14,8,8
+   470                        	.member	width,136,14,8,8
+   471                        	.eos
+   472                        	.line	1010
+   473                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",8
+   474                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxstringtable.h",0
+   475                        	.line	89
+   476                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",9
+   477                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxc256u.h",0
+   478                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+   479                        	.line	1010
+   480                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxc256u.h",5
+   481                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fmx_vicky.h",0
+   482                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+   483                        	.line	1010
+   484                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fmx_vicky.h",11
+   485                        	.line	72
+   486                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxc256u.h",6
+   487                        	.line	1960
+   488                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",16
+   489                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxkernel.h",0
+   490                        	.line	400
+   491                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",22
+  Sat Jul 10 2021  1:15                                                Page 10
+
+
+   492                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxconsole.h",0
+   493                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    string.h",0
+   494                        	.line	134
+   495                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxconsole.h",5
+   496                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stdlib.h",0
+   497                        	.line	205
+   498                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxconsole.h",6
+   499                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+   500                        	.line	1010
+   501                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxconsole.h",7
+   502                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxc256u.h",0
+   503                        	.line	1960
+   504                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxconsole.h",12
+   505                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxstring.h",0
+   506                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stdlib.h",0
+   507                        	.line	205
+   508                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxstring.h",5
+   509                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    string.h",0
+   510                        	.line	134
+   511                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxstring.h",6
+   512                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+   513                        	.line	1010
+   514                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxstring.h",7
+   515                        	.stag	_fx_string,64,50
+   516                        	.member	size,0,16,8,16
+   517                        	.member	pos,16,5,8,16
+   518                        	.member	buffer,32,142,8,32
+   519                        	.eos
+   520                        	.line	139
+   521                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxconsole.h",17
+   522                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxeventmanager.h",0
+   523                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",0
+   524                        	.line	30
+   525                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxeventmanager.h",5
+   526                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxexec.h",0
+   527                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+  Sat Jul 10 2021  1:15                                                Page 11
+
+
+   528                        	.line	1010
+   529                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxexec.h",5
+   530                        	.stag	_fxos_executive_vtable,128,51
+   531                        	.member	Init,0,8833,8,32
+   532                        	.member	Configure,32,656,8,32
+   533                        	.member	Query,64,656,8,32
+   534                        	.member	Uninit,96,641,8,32
+   535                        	.eos
+   536                        	.line	86
+   537                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxeventmanager.h",6
+   538                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxnode.h",0
+   539                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+   540                        	.line	1010
+   541                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxnode.h",11
+   542                        	.line	114
+   543                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxeventmanager.h",7
+   544                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxconsole.h",0
+   545                        	.line	208
+   546                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxeventmanager.h",8
+   547                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxwindowmanager.h",0
+   548                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",0
+   549                        	.line	30
+   550                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxwindowmanager.h",5
+   551                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxmemorymanager.h",0
+   552                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",0
+   553                        	.line	30
+   554                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxmemorymanager.h",5
+   555                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\umm_malloc_cfg.h",0
+   556                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos_build_parameters.h",0
+   557                        	.line	35
+   558                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\umm_malloc_cfg.h",8
+   559                        	.stag	UMM_HEAP_INFO_t,256,52
+   560                        	.member	totalEntries,0,18,8,32
+   561                        	.member	usedEntries,32,18,8,32
+   562                        	.member	freeEntries,64,18,8,32
+   563                        	.member	totalBlocks,96,18,8,32
+   564                        	.member	usedBlocks,128,18,8,32
+   565                        	.member	freeBlocks,160,18,8,32
+   566                        	.member	maxFreeContiguousBlocks,192,18,8,32
+   567                        	.member	blockSize,224,18,8,32
+   568                        	.eos
+  Sat Jul 10 2021  1:15                                                Page 12
+
+
+   569                        	.line	199
+   570                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxmemorymanager.h",6
+   571                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\umm_malloc.h",0
+   572                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+   573                        	.line	1010
+   574                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\umm_malloc.h",11
+   575                        	.line	24
+   576                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxmemorymanager.h",7
+   577                        	.stag	_fx_memory_map,2072,53
+   578                        	.member	availableMemory,0,18,8,32
+   579                        	.member	valid_segments,32,110,8,0,255
+   580                        	.eos
+   581                        	.stag	_fx_ipc_port,144,54
+   582                        	.member	id,0,18,8,32
+   583                        	.member	type,32,14,8,8
+   584                        	.member	name,40,138,8,32,50
+   585                        	.member	time,72,18,8,32
+   586                        	.member	queue,104,138,8,32,7
+   587                        	.member	reserved_1,136,14,8,8
+   588                        	.eos
+   589                        	.line	105
+   590                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxwindowmanager.h",6
+   591                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxeventmanager.h",0
+   592                        	.line	564
+   593                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxwindowmanager.h",7
+   594                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxgui.h",0
+   595                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxfont.h",0
+   596                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+   597                        	.line	1010
+   598                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxfont.h",6
+   599                        	.line	74
+   600                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxgui.h",5
+   601                        	.stag	_click_detected,64,55
+   602                        	.member	window,0,138,8,32,33
+   603                        	.member	handler,32,641,8,32
+   604                        	.eos
+   605                        	.stag	_current_palette_map,400,56
+   606                        	.member	CUR_DESKTOP,0,5,8,16
+   607                        	.member	CUR_BACKGROUND,16,5,8,16
+   608                        	.member	CUR_FONT,32,5,8,16
+   609                        	.member	CUR_SELECTED_FONT,48,5,8,16
+   610                        	.member	CUR_HIGHLIGHT_COLOR,64,5,8,16
+   611                        	.member	CUR_WINDOWFRAME,80,5,8,16
+   612                        	.member	CUR_WINDOWBORDER,96,5,8,16
+   613                        	.member	CUR_WINDOWSHADOW,112,5,8,16
+  Sat Jul 10 2021  1:15                                                Page 13
+
+
+   614                        	.member	CUR_MENU,128,5,8,16
+   615                        	.member	CUR_GADGET,144,5,8,16
+   616                        	.member	CUR_COLOR,160,101,8,0,15
+   617                        	.eos
+   618                        	.line	359
+   619                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxwindowmanager.h",8
+   620                        	.stag	_fxos_winman_vtable,160,57
+   621                        	.member	Events,0,641,8,32
+   622                        	.member	ConfigureWindowManager,32,656,8,32
+   623                        	.member	ProcessWindowEvent,64,8833,8,32
+   624                        	.member	QueryWindowManager,96,656,8,32
+   625                        	.member	DoWndProcs,128,641,8,32
+   626                        	.eos
+   627                        	.stag	fake58_,64,58
+   628                        	.member	type,0,16,8,16
+   629                        	.member	size,16,16,8,16
+   630                        	.member	desktopAction,32,129,8,32
+   631                        	.eos
+   632                        	.stag	fake59_,96,59
+   633                        	.member	type,0,16,8,16
+   634                        	.member	caption,16,138,8,32,50
+   635                        	.member	buttonType,48,16,8,16
+   636                        	.member	x,64,5,8,16
+   637                        	.member	y,80,5,8,16
+   638                        	.eos
+   639                        	.stag	_childMessage_t,64,60
+   640                        	.member	msgType,0,16,8,16
+   641                        	.member	msgData,16,129,8,32
+   642                        	.member	dataSize,48,16,8,16
+   643                        	.eos
+   644                        	.line	581
+   645                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxeventmanager.h",9
+   646                        	.stag	_fx_main_loopvars,16,61
+   647                        	.member	dummy,0,5,8,16
+   648                        	.eos
+   649                        	.stag	_fxMouseMessageData,64,62
+   650                        	.member	button1,0,14,8,8
+   651                        	.member	button2,8,14,8,8
+   652                        	.member	button3,16,14,8,8
+   653                        	.member	button4,24,14,8,8
+   654                        	.member	x,32,16,8,16
+   655                        	.member	y,48,16,8,16
+   656                        	.eos
+   657                        	.utag	marshalled_data,32,63
+   658                        	.member	byteValue,0,14,11,8
+   659                        	.member	verbValue,0,110,11,0,2
+   660                        	.member	intValue,0,16,11,16
+   661                        	.member	longValue,0,18,11,32
+   662                        	.member	pointerValue,0,129,11,32
+   663                        	.eos
+   664                        	.stag	_fx_eventProcess,64,64
+   665                        	.member	process,0,138,8,32,20
+   666                        	.member	eventProc,32,641,8,32
+   667                        	.eos
+   668                        	.stag	_mouse_msg_state,184,65
+   669                        	.member	lastEvent,0,18,8,32
+  Sat Jul 10 2021  1:15                                                Page 14
+
+
+   670                        	.member	buttonLeftDown,32,14,8,8
+   671                        	.member	lastLeftDown,40,18,8,32
+   672                        	.member	buttonRightDown,72,14,8,8
+   673                        	.member	lastRightDown,80,18,8,32
+   674                        	.member	buttonMiddleDown,112,14,8,8
+   675                        	.member	lastMiddleDown,120,18,8,32
+   676                        	.member	lastX,152,16,8,16
+   677                        	.member	lastY,168,16,8,16
+   678                        	.eos
+   679                        	.stag	_fxos_eventmanager_vtable,192,66
+   680                        	.member	EventQueue,0,138,8,32,7
+   681                        	.member	Init,32,8833,8,32
+   682                        	.member	Run,64,656,8,32
+   683                        	.member	Configure,96,656,8,32
+   684                        	.member	Query,128,656,8,32
+   685                        	.member	Uninit,160,641,8,32
+   686                        	.eos
+   687                        	.stag	_k_clipboard_data,168,67
+   688                        	.member	type,0,14,8,8
+   689                        	.member	readable,8,110,8,0,16
+   690                        	.member	data,136,129,8,32
+   691                        	.eos
+   692                        	.line	564
+   693                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxconsole.h",18
+   694                        	.stag	_fx_spinner_ctx,48,68
+   695                        	.member	index,0,5,8,16
+   696                        	.member	spinner,16,142,8,32
+   697                        	.eos
+   698                        	.stag	_fx_console_ctx,1144,69
+   699                        	.member	lineBufferIndex,0,5,8,16
+   700                        	.member	lineBuffer,16,110,8,0,128
+   701                        	.member	isShifted,1040,14,8,8
+   702                        	.member	userData,1048,129,8,32
+   703                        	.member	screenBuffer,1080,129,8,32
+   704                        	.member	Reserved1,1112,129,8,32
+   705                        	.eos
+   706                        	.stag	_token,64,70
+   707                        	.member	type,0,5,8,16
+   708                        	.member	depth,16,16,8,16
+   709                        	.member	text,32,142,8,32
+   710                        	.eos
+   711                        	.stag	_command_args,64,71
+   712                        	.member	proc,0,656,8,32
+   713                        	.member	tokens,32,138,8,32,5
+   714                        	.eos
+   715                        	.line	208
+   716                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",23
+   717                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxstring.h",0
+   718                        	.line	139
+   719                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",24
+   720                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxnode.h",0
+   721                        	.line	114
+   722                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+  Sat Jul 10 2021  1:15                                                Page 15
+
+
+                    space\FXOSv1\src\fxos.h",25
+   723                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\ff.h",0
+   724                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\ffconf.h",0
+   725                        	.line	298
+   726                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\ff.h",29
+   727                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+   728                        	.line	1010
+   729                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\ff.h",30
+   730                        	.stag	fake72_,4504,72
+   731                        	.member	fs_type,0,14,8,8
+   732                        	.member	pdrv,8,14,8,8
+   733                        	.member	n_fats,16,14,8,8
+   734                        	.member	wflag,24,14,8,8
+   735                        	.member	fsi_flag,32,14,8,8
+   736                        	.member	id,40,5,8,16
+   737                        	.member	n_rootdir,56,5,8,16
+   738                        	.member	csize,72,5,8,16
+   739                        	.member	lfnbuf,88,144,8,32
+   740                        	.member	last_clst,120,18,8,32
+   741                        	.member	free_clst,152,18,8,32
+   742                        	.member	n_fatent,184,18,8,32
+   743                        	.member	fsize,216,18,8,32
+   744                        	.member	volbase,248,18,8,32
+   745                        	.member	fatbase,280,18,8,32
+   746                        	.member	dirbase,312,18,8,32
+   747                        	.member	database,344,18,8,32
+   748                        	.member	winsect,376,18,8,32
+   749                        	.member	win,408,110,8,0,512
+   750                        	.eos
+   751                        	.stag	fake73_,128,73
+   752                        	.member	fs,0,138,8,32,72
+   753                        	.member	id,32,5,8,16
+   754                        	.member	attr,48,14,8,8
+   755                        	.member	stat,56,14,8,8
+   756                        	.member	sclust,64,18,8,32
+   757                        	.member	objsize,96,18,8,32
+   758                        	.eos
+   759                        	.stag	fake74_,4400,74
+   760                        	.member	obj,0,10,8,128,73
+   761                        	.member	flag,128,14,8,8
+   762                        	.member	err,136,14,8,8
+   763                        	.member	fptr,144,18,8,32
+   764                        	.member	clust,176,18,8,32
+   765                        	.member	sect,208,18,8,32
+   766                        	.member	dir_sect,240,18,8,32
+   767                        	.member	dir_ptr,272,142,8,32
+   768                        	.member	buf,304,110,8,0,512
+   769                        	.eos
+   770                        	.stag	fake75_,416,75
+   771                        	.member	obj,0,10,8,128,73
+   772                        	.member	dptr,128,18,8,32
+   773                        	.member	clust,160,18,8,32
+   774                        	.member	sect,192,18,8,32
+  Sat Jul 10 2021  1:15                                                Page 16
+
+
+   775                        	.member	dir,224,142,8,32
+   776                        	.member	fn,256,110,8,0,12
+   777                        	.member	blk_ofs,352,18,8,32
+   778                        	.member	pat,384,142,8,32
+   779                        	.eos
+   780                        	.stag	fake76_,2224,76
+   781                        	.member	fsize,0,18,8,32
+   782                        	.member	fdate,32,5,8,16
+   783                        	.member	ftime,48,5,8,16
+   784                        	.member	fattrib,64,14,8,8
+   785                        	.member	altname,72,110,8,0,13
+   786                        	.member	fname,176,110,8,0,256
+   787                        	.eos
+   788                        	.stag	fake77_,80,77
+   789                        	.member	fmt,0,14,8,8
+   790                        	.member	n_fat,8,14,8,8
+   791                        	.member	align,16,16,8,16
+   792                        	.member	n_root,32,16,8,16
+   793                        	.member	au_size,48,18,8,32
+   794                        	.eos
+   795                        	.line	429
+   796                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",26
+   797                        	.line	30
+   798                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxkernel.h",5
+   799                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxnode.h",0
+   800                        	.line	114
+   801                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxkernel.h",6
+   802                        	.stag	_fx_api_call_table,8192,78
+   803                        	.member	call_table,0,1121,8,32,256
+   804                        	.eos
+   805                        	.stag	_fx_zero_page,824,79
+   806                        	.member	fxos_mouse_byte_0,0,14,8,8
+   807                        	.member	fxos_mouse_byte_1,8,14,8,8
+   808                        	.member	fxos_mouse_byte_2,16,14,8,8
+   809                        	.member	fxos_mouse_byte_t,24,14,8,8
+   810                        	.member	fxos_mouse_byte_x_l,32,14,8,8
+   811                        	.member	fxos_mouse_byte_x_h,40,14,8,8
+   812                        	.member	fxos_mouse_byte_y_l,48,14,8,8
+   813                        	.member	fxos_mouse_byte_y_h,56,14,8,8
+   814                        	.member	fxos_key_byte_0,64,14,8,8
+   815                        	.member	fxos_key_byte_1,72,14,8,8
+   816                        	.member	fxos_key_byte_2,80,14,8,8
+   817                        	.member	fxos_mouse_ctl,88,14,8,8
+   818                        	.member	fxos_mouse_index,96,14,8,8
+   819                        	.member	fxos_mouse_status,104,14,8,8
+   820                        	.member	fxos_mouse_dbg_1,112,18,8,32
+   821                        	.member	fxos_mouse_dbg_2,144,18,8,32
+   822                        	.member	fxos_mouse_dbg_3,176,18,8,32
+   823                        	.member	fxos_vicky_byte_0,208,14,8,8
+   824                        	.member	fxos_vicky_byte_1,216,14,8,8
+   825                        	.member	fxos_vicky_byte_2,224,14,8,8
+   826                        	.member	VersionMajor,232,16,8,16
+   827                        	.member	VersionMinor,248,16,8,16
+   828                        	.member	VersionRelease,264,16,8,16
+  Sat Jul 10 2021  1:15                                                Page 17
+
+
+   829                        	.member	topMemory,280,18,8,32
+   830                        	.member	bottomMemory,312,18,8,32
+   831                        	.member	availableMemory,344,18,8,32
+   832                        	.member	availableMemoryK,376,18,8,32
+   833                        	.member	availableHeapMemory,408,18,8,32
+   834                        	.member	availableHeapMemoryK,440,18,8,32
+   835                        	.member	fxos_console_row,472,16,8,16
+   836                        	.member	fxos_console_col,488,16,8,16
+   837                        	.member	executive,504,129,8,32
+   838                        	.member	eventmanager,536,129,8,32
+   839                        	.member	devicemanager,568,129,8,32
+   840                        	.member	windowmanager,600,129,8,32
+   841                        	.member	fxos_kernel_api,632,138,8,32,78
+   842                        	.member	fxos_dos_api,664,138,8,32,78
+   843                        	.member	fxos_gfx_api,696,138,8,32,78
+   844                        	.member	fxos_gui_api,728,138,8,32,78
+   845                        	.member	fxos_con_api,760,138,8,32,78
+   846                        	.member	fxos_reserved_2_api,792,138,8,32,78
+   847                        	.eos
+   848                        	.stag	_fx_environment,96,80
+   849                        	.member	variables,0,142,8,32
+   850                        	.member	reserved1,32,5,8,16
+   851                        	.member	reserved2,48,5,8,16
+   852                        	.member	reserved3,64,5,8,16
+   853                        	.member	reserved4,80,5,8,16
+   854                        	.eos
+   855                        	.stag	_debug_byte_bits,8,81
+   856                        	.member	bit7,0,14,17,1
+   857                        	.member	bit6,1,14,17,1
+   858                        	.member	bit5,2,14,17,1
+   859                        	.member	bit4,3,14,17,1
+   860                        	.member	bit3,4,14,17,1
+   861                        	.member	bit2,5,14,17,1
+   862                        	.member	bit1,6,14,17,1
+   863                        	.member	bit0,7,14,17,1
+   864                        	.eos
+   865                        	.stag	_k_segmentheader,160,82
+   866                        	.member	version_major,0,14,8,8
+   867                        	.member	version_minor,8,14,8,8
+   868                        	.member	length,16,5,8,16
+   869                        	.member	segment_start_addr,32,7,8,32
+   870                        	.member	segment_end_addr,64,7,8,32
+   871                        	.member	segment_size,96,7,8,32
+   872                        	.member	main_entry_addr,128,7,8,32
+   873                        	.eos
+   874                        	.stag	_fx_device_driver,776,83
+   875                        	.member	name,0,110,8,0,32
+   876                        	.member	version,256,110,8,0,16
+   877                        	.member	hmajor,384,110,8,0,8
+   878                        	.member	hminor,448,110,8,0,8
+   879                        	.member	type,512,14,8,8
+   880                        	.member	designation,520,110,8,0,6
+   881                        	.member	reserved_1,568,16,8,16
+   882                        	.member	f_driver_irq,584,129,8,32
+   883                        	.member	driver_context,616,129,8,32
+   884                        	.member	f_driver_load,648,129,8,32
+   885                        	.member	f_driver_read,680,129,8,32
+   886                        	.member	f_driver_write,712,129,8,32
+  Sat Jul 10 2021  1:15                                                Page 18
+
+
+   887                        	.member	f_driver_unload,744,129,8,32
+   888                        	.eos
+   889                        	.stag	_fx_block_device_driver,808,84
+   890                        	.member	name,0,110,8,0,32
+   891                        	.member	version,256,110,8,0,16
+   892                        	.member	hmajor,384,110,8,0,8
+   893                        	.member	hminor,448,110,8,0,8
+   894                        	.member	type,512,14,8,8
+   895                        	.member	designation,520,110,8,0,6
+   896                        	.member	reserved_1,568,16,8,16
+   897                        	.member	f_driver_irq,584,129,8,32
+   898                        	.member	driver_context,616,129,8,32
+   899                        	.member	f_driver_load,648,129,8,32
+   900                        	.member	f_driver_read,680,129,8,32
+   901                        	.member	f_driver_write,712,129,8,32
+   902                        	.member	f_driver_unload,744,129,8,32
+   903                        	.member	f_driver_command,776,129,8,32
+   904                        	.eos
+   905                        	.line	400
+   906                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fx_export_calltable.c",2
+   907                        ;#include "fxkernel_exports.h"
+   908                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxkernel_exports.h",0
+   909                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fx_exports.h",0
+   910                        	.line	14
+   911                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxkernel_exports.h",5
+   912                        	.line	55
+   913                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fx_export_calltable.c",3
+   914                        ;#include "FXOS_DISPATCH_SDK.h"
+   915                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\FXOS_DISPATCH_SDK.h",0
+   916                        	.line	12
+   917                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fx_export_calltable.c",4
+   918                        ;
+   919                        ;void _k_initialize_call_table(PFXZEROPAGE pzp,UIN
+                    T tableType)
+   920                        ;{
+   921                        	.line	6
+   922                        	.line	7
+   923                        	code
+   924                        	xdef	~~_k_initialize_call_table
+   925                        	func
+   926                        	.function	7
+   927                        ~~_k_initialize_call_table:
+   928                        	longa	on
+   929                        	longi	on
+   930 00:0000: 3B           	tsc
+   931 00:0001: 38           	sec
+   932 00:0002: E9 00 00     	sbc	#L2
+   933 00:0005: 1B           	tcs
+   934 00:0006: 0B           	phd
+   935 00:0007: 5B           	tcd
+   936             00000004   pzp_0	set	4
+  Sat Jul 10 2021  1:15                                                Page 19
+
+
+   937             00000008   tableType_0	set	8
+   938                        	.block	7
+   939                        ;
+   940                        ;	switch(tableType)
+   941                        	.sym	pzp,4,138,6,32,79
+   942                        	.sym	tableType,8,16,6,16
+   943                        	.line	9
+   944 00:0008: A5 08        	lda	<L2+tableType_0
+   945 00:000A: 82 37 00     	brl	L10001
+   946                        ;	{
+   947                        	.line	10
+   948                        ;	case API_CALLTABLE_KERNEL_IDX:
+   949                        	.line	11
+   950                        L10003:
+   951                        ;		_k_initialize_KERNEL_call_table(pzp);
+   952                        	.line	12
+   953 00:000D: D4 06        	pei	<L2+pzp_0+2
+   954 00:000F: D4 04        	pei	<L2+pzp_0
+   955 00:0011: 22 xx xx xx  	jsl	~~_k_initialize_KERNEL_call_table
+   956                        ;		break;
+   957                        	.line	13
+   958 00:0015: 82 40 00     	brl	L10002
+   959                        ;	case API_CALLTABLE_DOS_IDX:
+   960                        	.line	14
+   961                        L10004:
+   962                        ;		_k_initialize_DOS_call_table(pzp);
+   963                        	.line	15
+   964 00:0018: D4 06        	pei	<L2+pzp_0+2
+   965 00:001A: D4 04        	pei	<L2+pzp_0
+   966 00:001C: 22 xx xx xx  	jsl	~~_k_initialize_DOS_call_table
+   967                        ;		break;
+   968                        	.line	16
+   969 00:0020: 82 35 00     	brl	L10002
+   970                        ;	case API_CALLTABLE_GFX_IDX:
+   971                        	.line	17
+   972                        L10005:
+   973                        ;		_k_initialize_GFX_call_table(pzp);
+   974                        	.line	18
+   975 00:0023: D4 06        	pei	<L2+pzp_0+2
+   976 00:0025: D4 04        	pei	<L2+pzp_0
+   977 00:0027: 22 xx xx xx  	jsl	~~_k_initialize_GFX_call_table
+   978                        ;		break;
+   979                        	.line	19
+   980 00:002B: 82 2A 00     	brl	L10002
+   981                        ;	case API_CALLTABLE_GUI_IDX:
+   982                        	.line	20
+   983                        L10006:
+   984                        ;		_k_initialize_GUI_call_table(pzp);
+   985                        	.line	21
+   986 00:002E: D4 06        	pei	<L2+pzp_0+2
+   987 00:0030: D4 04        	pei	<L2+pzp_0
+   988 00:0032: 22 xx xx xx  	jsl	~~_k_initialize_GUI_call_table
+   989                        ;		break;
+   990                        	.line	22
+   991 00:0036: 82 1F 00     	brl	L10002
+   992                        ;	case API_CALLTABLE_CON_IDX:
+   993                        	.line	23
+   994                        L10007:
+  Sat Jul 10 2021  1:15                                                Page 20
+
+
+   995                        ;		_k_initialize_CON_call_table(pzp);
+   996                        	.line	24
+   997 00:0039: D4 06        	pei	<L2+pzp_0+2
+   998 00:003B: D4 04        	pei	<L2+pzp_0
+   999 00:003D: 22 xx xx xx  	jsl	~~_k_initialize_CON_call_table
+  1000                        ;		break;
+  1001                        	.line	25
+  1002 00:0041: 82 14 00     	brl	L10002
+  1003                        ;	}
+  1004                        	.line	26
+  1005                        L10001:
+  1006                        	xref	~~~fsw
+  1007 00:0044: 22 xx xx xx  	jsl	~~~fsw
+  1008 00:0048: 00 00        	dw	0
+  1009 00:004A: 05 00        	dw	5
+  1010 00:004C: xx xx        	dw	L10002-1
+  1011 00:004E: xx xx        	dw	L10003-1
+  1012 00:0050: xx xx        	dw	L10004-1
+  1013 00:0052: xx xx        	dw	L10005-1
+  1014 00:0054: xx xx        	dw	L10006-1
+  1015 00:0056: xx xx        	dw	L10007-1
+  1016                        L10002:
+  1017                        ;	//
+  1018                        ;	//
+  1019                        ;	//
+  1020                        ;
+  1021                        ;}
+  1022                        	.line	31
+  1023                        L5:
+  1024 00:0058: A5 02        	lda	<L2+2
+  1025 00:005A: 85 08        	sta	<L2+2+6
+  1026 00:005C: A5 01        	lda	<L2+1
+  1027 00:005E: 85 07        	sta	<L2+1+6
+  1028 00:0060: 2B           	pld
+  1029 00:0061: 3B           	tsc
+  1030 00:0062: 18           	clc
+  1031 00:0063: 69 06 00     	adc	#L2+6
+  1032 00:0066: 1B           	tcs
+  1033 00:0067: 6B           	rtl
+  1034                        	.endblock	31
+  1035             00000000   L2	equ	0
+  1036             00000001   L3	equ	1
+  1037                        	ends
+  1038                        	efunc
+  1039                        	.endfunc	31,1,0
+  1040                        	.line	31
+  1041                        ;
+  1042                        	.line	31
+  1043                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fx_export_calltable.c",6
+  1044                        	xref	~~_k_initialize_GUI_call_table
+  1045                        	xref	~~_k_initialize_DOS_call_table
+  1046                        	xref	~~_k_initialize_GFX_call_table
+  1047                        	xref	~~_k_initialize_KERNEL_call_table
+  1048                        	xref	~~_k_initialize_CON_call_table
+  1049                        	.sym	~~_k_initialize_GUI_call_table,~~_k_init
+                    ialize_GUI_call_table,65,18,0
+  1050                        	.sym	~~_k_initialize_DOS_call_table,~~_k_init
+  Sat Jul 10 2021  1:15                                                Page 21
+
+
+                    ialize_DOS_call_table,65,18,0
+  1051                        	.sym	~~_k_initialize_GFX_call_table,~~_k_init
+                    ialize_GFX_call_table,65,18,0
+  1052                        	.sym	~~_k_initialize_KERNEL_call_table,~~_k_i
+                    nitialize_KERNEL_call_table,65,18,0
+  1053                        	.sym	~~_k_initialize_CON_call_table,~~_k_init
+                    ialize_CON_call_table,65,18,0
+  1054                        	.sym	DEVICEDRIVER_COMMAND,0,656,14,32
+  1055                        	.sym	DEVICEDRIVER_UNLOAD,0,654,14,32
+  1056                        	.sym	DEVICEDRIVER_WRITE,0,656,14,32
+  1057                        	.sym	DEVICEDRIVER_READ,0,656,14,32
+  1058                        	.sym	DEVICEDRIVER_LOAD,0,654,14,32
+  1059                        	.sym	DEVICEDRIVER_IRQ,0,654,14,32
+  1060                        	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,84
+  1061                        	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,84
+  1062                        	.sym	GETDRIVERDEF,0,8842,14,32,83
+  1063                        	.sym	PFX_DEVICE_DRIVER,0,138,14,32,83
+  1064                        	.sym	FX_DEVICE_DRIVER,0,10,14,776,83
+  1065                        	.sym	PSEGMENTHEADER,0,138,14,32,82
+  1066                        	.sym	SEGMENTHEADER,0,10,14,160,82
+  1067                        	.sym	PDEBUGBYTEBITS,0,138,14,32,81
+  1068                        	.sym	DEBUGBYTEBITS,0,10,14,8,81
+  1069                        	.sym	PFXENVIRONMENT,0,138,14,32,80
+  1070                        	.sym	FXENVIRONMENT,0,10,14,96,80
+  1071                        	.sym	~~_k_initialize_call_table,~~_k_initiali
+                    ze_call_table,65,2,0
+  1072                        	.sym	PFXZEROPAGE,0,138,14,32,79
+  1073                        	.sym	FXZEROPAGE,0,10,14,824,79
+  1074                        	.sym	KERNELTRAPCALL,0,641,14,32
+  1075                        	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,78
+  1076                        	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,78
+  1077                        	.sym	FRESULT,0,5,14,16
+  1078                        	.sym	MKFS_PARM,0,10,14,80,77
+  1079                        	.sym	FILINFO,0,10,14,2224,76
+  1080                        	.sym	DIR,0,10,14,416,75
+  1081                        	.sym	FIL,0,10,14,4400,74
+  1082                        	.sym	FFOBJID,0,10,14,128,73
+  1083                        	.sym	FATFS,0,10,14,4504,72
+  1084                        	.sym	LBA_t,0,18,14,32
+  1085                        	.sym	FSIZE_t,0,18,14,32
+  1086                        	.sym	TCHAR,0,14,14,8
+  1087                        	.sym	PCOMMANDARGS,0,138,14,32,71
+  1088                        	.sym	COMMANDARGS,0,10,14,64,71
+  1089                        	.sym	PTOKENIZESTATE,0,133,14,32
+  1090                        	.sym	TOKENIZESTATE,0,5,14,16
+  1091                        	.sym	PTOKEN,0,138,14,32,70
+  1092                        	.sym	TOKEN,0,10,14,64,70
+  1093                        	.sym	PTOKENTYPE,0,133,14,32
+  1094                        	.sym	TOKENTYPE,0,5,14,16
+  1095                        	.sym	FXCommandHandler,0,656,14,32
+  1096                        	.sym	PCONSOLECTX,0,138,14,32,69
+  1097                        	.sym	CONSOLECTX,0,10,14,1144,69
+  1098                        	.sym	PSPINNERCTX,0,138,14,32,68
+  1099                        	.sym	SPINNERCTX,0,10,14,48,68
+  1100                        	.sym	HCLIP,0,138,14,32,67
+  1101                        	.sym	PCLIPBOARD_DATA,0,138,14,32,67
+  1102                        	.sym	CLIPBOARD_DATA,0,10,14,168,67
+  1103                        	.sym	PEVENTMANAGER,0,138,14,32,66
+  Sat Jul 10 2021  1:15                                                Page 22
+
+
+  1104                        	.sym	EVENTMANAGER,0,10,14,192,66
+  1105                        	.sym	EV_RUN,0,656,14,32
+  1106                        	.sym	EV_QUERY_METRIC,0,656,14,32
+  1107                        	.sym	EV_CONFIGURE,0,656,14,32
+  1108                        	.sym	EV_UNINIT,0,641,14,32
+  1109                        	.sym	EV_INIT,0,8833,14,32
+  1110                        	.sym	PMOUSE_MSG_STATE,0,138,14,32,65
+  1111                        	.sym	MOUSE_MSG_STATE,0,10,14,184,65
+  1112                        	.sym	PFXEVENTPROCESS,0,138,14,32,64
+  1113                        	.sym	FXEVENTPROCESS,0,10,14,64,64
+  1114                        	.sym	PMARSHALDATA,0,139,14,32,63
+  1115                        	.sym	MARSHALDATA,0,11,14,32,63
+  1116                        	.sym	FXIDLEPROCESS,0,641,14,32
+  1117                        	.sym	FXEventProc,0,641,14,32
+  1118                        	.sym	PMOUSEMSGDATA,0,138,14,32,62
+  1119                        	.sym	MOUSEMSGDATA,0,10,14,64,62
+  1120                        	.sym	MSGIRQ,0,5,14,16
+  1121                        	.sym	MAINLOOPARGS,0,10,14,16,61
+  1122                        	.sym	PEACHCHILD_MSG,0,138,14,32,60
+  1123                        	.sym	EACHCHILD_MSG,0,10,14,64,60
+  1124                        	.sym	PMSGBOX_DATA,0,138,14,32,59
+  1125                        	.sym	MSGBOX_DATA,0,10,14,96,59
+  1126                        	.sym	PDESKTOP_DATA,0,138,14,32,58
+  1127                        	.sym	DESKTOP_DATA,0,10,14,64,58
+  1128                        	.sym	PWINDOWMANAGER,0,138,14,32,57
+  1129                        	.sym	WINDOWMANAGER,0,10,14,160,57
+  1130                        	.sym	WM_DOPROCS,0,641,14,32
+  1131                        	.sym	WM_QUERY_METRIC,0,656,14,32
+  1132                        	.sym	WM_CONFIGURE,0,656,14,32
+  1133                        	.sym	WM_HANDLE_EVENT,0,8833,14,32
+  1134                        	.sym	WM_EVENTS,0,641,14,32
+  1135                        	.sym	PCUR_PALETTE_MAP,0,138,14,32,56
+  1136                        	.sym	CUR_PALETTE_MAP,0,10,14,400,56
+  1137                        	.sym	PCLICKDETECTED,0,138,14,32,55
+  1138                        	.sym	CLICKDETECTED,0,10,14,64,55
+  1139                        	.sym	OBJECTCLICKED,0,641,14,32
+  1140                        	.sym	PIPCPORT,0,138,14,32,54
+  1141                        	.sym	IPCPORT,0,10,14,144,54
+  1142                        	.sym	MemoryCallback,0,641,14,32
+  1143                        	.sym	PFXMEMORYMAP,0,138,14,32,53
+  1144                        	.sym	FXMEMORYMAP,0,10,14,2072,53
+  1145                        	.sym	UMM_HEAP_INFO,0,10,14,256,52
+  1146                        	.sym	FOREACHNODEUNTIL,0,654,14,32
+  1147                        	.sym	FOREACHNODE,0,641,14,32
+  1148                        	.sym	PEXECUTIVE,0,138,14,32,51
+  1149                        	.sym	EXECUTIVE,0,10,14,128,51
+  1150                        	.sym	EX_QUERY_METRIC,0,656,14,32
+  1151                        	.sym	EX_CONFIGURE,0,656,14,32
+  1152                        	.sym	EX_UNINIT,0,641,14,32
+  1153                        	.sym	EX_INIT,0,8833,14,32
+  1154                        	.sym	PFXSTRING,0,138,14,32,50
+  1155                        	.sym	FXSTRING,0,10,14,64,50
+  1156                        	.sym	PFXRFHEADER_FONT,0,138,14,32,49
+  1157                        	.sym	FXRFHEADER_FONT,0,10,14,144,49
+  1158                        	.sym	PFXRFHEADER,0,138,14,32,48
+  1159                        	.sym	FXRFHEADER,0,10,14,72,48
+  1160                        	.sym	PFXCOMBUFFER,0,138,14,32,47
+  1161                        	.sym	FXCOMBUFFER,0,10,14,2080,47
+  Sat Jul 10 2021  1:15                                                Page 23
+
+
+  1162                        	.sym	PSUBMENULIST,0,138,14,32,46
+  1163                        	.sym	SUBMENULIST,0,10,14,40,46
+  1164                        	.sym	HSUBMENU,0,7,14,32
+  1165                        	.sym	PSUBMENU,0,138,14,32,45
+  1166                        	.sym	SUBMENU,0,10,14,64,45
+  1167                        	.sym	MenuAction,0,641,14,32
+  1168                        	.sym	PMENUANCHOR,0,138,14,32,44
+  1169                        	.sym	MENUANCHOR,0,10,14,272,44
+  1170                        	.sym	PMSGBOX,0,138,14,32,43
+  1171                        	.sym	MSGBOX,0,10,14,144,43
+  1172                        	.sym	PTEXTBOX,0,138,14,32,42
+  1173                        	.sym	TEXTBOX,0,10,14,144,42
+  1174                        	.sym	PLISTBOX,0,138,14,32,41
+  1175                        	.sym	LISTBOX,0,10,14,240,41
+  1176                        	.sym	PSCROLLBAR,0,138,14,32,40
+  1177                        	.sym	SCROLLBAR,0,10,14,240,40
+  1178                        	.sym	PBUTTON,0,138,14,32,39
+  1179                        	.sym	BUTTON,0,10,14,96,39
+  1180                        	.sym	PMENUDROPDOWNDATA,0,138,14,32,38
+  1181                        	.sym	MENUDROPDOWNDATA,0,10,14,5152,38
+  1182                        	.sym	PMENUTAG,0,138,14,32,37
+  1183                        	.sym	MENUTAG,0,10,14,160,37
+  1184                        	.sym	PMENU,0,138,14,32,36
+  1185                        	.sym	MENU,0,10,14,280,36
+  1186                        	.sym	HMENURESOURCE,0,129,14,32
+  1187                        	.sym	FONTMETRIC,0,10,14,32,35
+  1188                        	.sym	TITLE,0,142,14,32
+  1189                        	.sym	PHANDLE,0,1153,14,32
+  1190                        	.sym	HANDLE,0,129,14,32
+  1191                        	.sym	PWINDOWEX,0,138,14,32,34
+  1192                        	.sym	WINDOWEX,0,10,14,3880,34
+  1193                        	.sym	PWINDOW,0,138,14,32,33
+  1194                        	.sym	WINDOW,0,10,14,3904,33
+  1195                        	.sym	PDRAGDATA,0,138,14,32,32
+  1196                        	.sym	DRAGDATA,0,10,14,216,32
+  1197                        	.sym	PNCCLICKABLE,0,138,14,32,31
+  1198                        	.sym	NCCLICKABLE,0,10,14,136,31
+  1199                        	.sym	HCLICKABLE,0,7,14,32
+  1200                        	.sym	PCLICKABLE,0,138,14,32,30
+  1201                        	.sym	CLICKABLE,0,10,14,152,30
+  1202                        	.sym	PWNDCLASS,0,138,14,32,29
+  1203                        	.sym	WNDCLASS,0,10,14,272,29
+  1204                        	.sym	HBRUSH,0,129,14,32
+  1205                        	.sym	HCURSOR,0,129,14,32
+  1206                        	.sym	HICON,0,129,14,32
+  1207                        	.sym	HINSTANCE,0,129,14,32
+  1208                        	.sym	FXWndProc,0,654,14,32
+  1209                        	.sym	PDRECT,0,138,14,32,28
+  1210                        	.sym	DRECT,0,10,14,112,28
+  1211                        	.sym	PRECTP,0,138,14,32,27
+  1212                        	.sym	RECTP,0,10,14,96,27
+  1213                        	.sym	PRECT,0,138,14,32,26
+  1214                        	.sym	RECT,0,10,14,112,26
+  1215                        	.sym	PPOINT,0,138,14,32,25
+  1216                        	.sym	POINT,0,10,14,32,25
+  1217                        	.sym	PFXPROPERTY,0,138,14,32,23
+  1218                        	.sym	FXPROPERTY,0,10,14,384,23
+  1219                        	.sym	PKEYSTATE,0,138,14,32,22
+  Sat Jul 10 2021  1:15                                                Page 24
+
+
+  1220                        	.sym	KEYSTATE,0,10,14,112,22
+  1221                        	.sym	SCANCODE,0,14,14,8
+  1222                        	.sym	KEYCODE,0,16,14,16
+  1223                        	.sym	PFXPROCESSMESSAGE,0,138,14,32,21
+  1224                        	.sym	FXPROCESSMESSAGE,0,10,14,112,21
+  1225                        	.sym	PFXPROCESS,0,138,14,32,20
+  1226                        	.sym	FXPROCESS,0,10,14,800,20
+  1227                        	.sym	PDESKTOP_CONTROL,0,138,14,32,19
+  1228                        	.sym	DESKTOP_CONTROL,0,10,14,392,19
+  1229                        	.sym	PCONSOLE_CONTROL,0,138,14,32,18
+  1230                        	.sym	CONSOLE_CONTROL,0,10,14,448,18
+  1231                        	.sym	FXProcessProc,0,641,14,32
+  1232                        	.sym	PFXCMDMESSAGE,0,138,14,32,17
+  1233                        	.sym	FXCMDMESSAGE,0,10,14,304,17
+  1234                        	.sym	PFXOSMESSAGE,0,138,14,32,16
+  1235                        	.sym	FXOSMESSAGE,0,10,14,304,16
+  1236                        	.sym	PINT_REGS,0,138,14,32,15
+  1237                        	.sym	INT_REGS,0,10,14,104,15
+  1238                        	.sym	TASK_STACK,0,10,14,32,14
+  1239                        	.sym	TASK,0,10,14,48,13
+  1240                        	.sym	PIRQDATA,0,138,14,32,12
+  1241                        	.sym	IRQDATA,0,10,14,48,12
+  1242                        	.sym	HMENU,0,129,14,32
+  1243                        	.sym	HWND,0,129,14,32
+  1244                        	.sym	MSGDATA,0,14,14,8
+  1245                        	.sym	MSGDEST,0,18,14,32
+  1246                        	.sym	MSGSRC,0,18,14,32
+  1247                        	.sym	MSGTYPE,0,16,14,16
+  1248                        	.sym	PROCESS_RESOURCE_LIST,0,138,14,32,6
+  1249                        	.sym	PROCESS_TLS_LIST,0,138,14,32,6
+  1250                        	.sym	SEMAPHORE_LIST,0,138,14,32,6
+  1251                        	.sym	FILE_BLOCK_LIST,0,138,14,32,6
+  1252                        	.sym	FILE_PATH_LIST,0,138,14,32,6
+  1253                        	.sym	PROCEDURE_LIST,0,138,14,32,6
+  1254                        	.sym	FILE_HANDLE,0,138,14,32,11
+  1255                        	.sym	FILE_BLOCK,0,10,14,552,11
+  1256                        	.sym	SEMAPHORE,0,10,14,16,10
+  1257                        	.sym	PPROCESS_SIGNAL,0,138,14,32,9
+  1258                        	.sym	PROCESS_SIGNAL,0,10,14,16,9
+  1259                        	.sym	KRESULT,0,18,14,32
+  1260                        	.sym	PKERNEL_ERROR,0,138,14,32,8
+  1261                        	.sym	KERNEL_ERROR,0,10,14,32,8
+  1262                        	.sym	PROCESS_STATUS,0,16,14,16
+  1263                        	.sym	FILE_PATH_NAME,0,142,14,32
+  1264                        	.sym	PROCESS_RESOURCE,0,129,14,32
+  1265                        	.sym	PROCESS_TLS,0,129,14,32
+  1266                        	.sym	PROCESS_CTX,0,129,14,32
+  1267                        	.sym	USERID,0,16,14,16
+  1268                        	.sym	PROCESS_ID,0,18,14,32
+  1269                        	.sym	PROCESS_BANK,0,14,14,8
+  1270                        	.sym	PFXQUEUE,0,138,14,32,7
+  1271                        	.sym	FXQUEUE,0,10,14,80,7
+  1272                        	.sym	PFXNODELIST,0,138,14,32,6
+  1273                        	.sym	FXNODELIST,0,10,14,96,6
+  1274                        	.sym	NodeListDeallocator,0,641,14,32
+  1275                        	.sym	PFXNODE,0,138,14,32,5
+  1276                        	.sym	FXNODE,0,10,14,384,5
+  1277                        	.sym	PBYTEBITS,0,138,14,32,4
+  Sat Jul 10 2021  1:15                                                Page 25
+
+
+  1278                        	.sym	BYTEBITS,0,10,14,8,4
+  1279                        	.sym	HRESULT,0,18,14,32
+  1280                        	.sym	LPWCHAR,0,144,14,32
+  1281                        	.sym	WCHAR,0,16,14,16
+  1282                        	.sym	HCOLOR,0,129,14,32
+  1283                        	.sym	HFONT,0,129,14,32
+  1284                        	.sym	HDC,0,129,14,32
+  1285                        	.sym	HPOINTER,0,129,14,32
+  1286                        	.sym	uint32_t,0,18,14,32
+  1287                        	.sym	uint8_t,0,14,14,8
+  1288                        	.sym	LPBOOL,0,142,14,32
+  1289                        	.sym	BOOL,0,14,14,8
+  1290                        	.sym	DWORD,0,18,14,32
+  1291                        	.sym	ULONG,0,18,14,32
+  1292                        	.sym	LPLONG,0,135,14,32
+  1293                        	.sym	LONG,0,7,14,32
+  1294                        	.sym	PUINT,0,144,14,32
+  1295                        	.sym	USHORT,0,16,14,16
+  1296                        	.sym	UINT,0,16,14,16
+  1297                        	.sym	INT,0,5,14,16
+  1298                        	.sym	WORD,0,5,14,16
+  1299                        	.sym	PBYTE,0,142,14,32
+  1300                        	.sym	BYTE,0,14,14,8
+  1301                        	.sym	IOPORT,0,142,14,32
+  1302                        	.sym	PUCHAR,0,142,14,32
+  1303                        	.sym	UCHAR,0,14,14,8
+  1304                        	.sym	LPWCSTR,0,142,14,32
+  1305                        	.sym	LPCSTR,0,142,14,32
+  1306                        	.sym	LPSTR,0,142,14,32
+  1307                        	.sym	LPCHAR,0,142,14,32
+  1308                        	.sym	CHAR,0,14,14,8
+  1309                        	.sym	LPVOID,0,129,14,32
+  1310                        	.sym	VOID,0,1,14,32
+  1311                        	.sym	Boolean_T,0,5,14,16
+  1312                        	.sym	ldiv_t,0,10,14,64,2
+  1313                        	.sym	div_t,0,10,14,32,1
+  1314                        	.sym	wctype_t,0,16,14,16
+  1315                        	.sym	wint_t,0,16,14,16
+  1316                        	.sym	wchar_t,0,14,14,8
+  1317                        	.sym	ptrdiff_t,0,7,14,32
+  1318                        	.sym	size_t,0,16,14,16
+  1319                        	end
+
+
+      Lines assembled: 1319
+      Errors: 0

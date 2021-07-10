@@ -1,0 +1,3028 @@
+  Sat Jul 10 2021  1:15                                                Page 1
+
+
+                     ***************************************
+                     **      WDC 65C816 Macro Assembler   **
+                     **                                   **
+                     **     Version 3.49.1- Feb  6 2006    **
+                     ***************************************
+
+     1                        ;:ts=8
+     2             00000001   R0	equ	1
+     3             00000005   R1	equ	5
+     4             00000009   R2	equ	9
+     5             0000000D   R3	equ	13
+     6                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\OMF_Dc_Memory.c",0
+     7                        ;/************************************************
+                    ************************/
+     8                        ;/*                                               
+                                           */
+     9                        ;/*  Dc_Memory.c : Module pour la bibliothèque de 
+                    gestion mémoire.       */
+    10                        ;/*                                               
+                                           */
+    11                        ;/************************************************
+                    ************************/
+    12                        ;/*  Auteur : Olivier ZARDINI  *  Brutal Deluxe So
+                    ftware  *  Avril 2013  */
+    13                        ;/************************************************
+                    ************************/
+    14                        ;
+    15                        ;#include <stdlib.h>
+    16                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stdlib.h",0
+    17                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stddef.h",0
+    18                        	.line	88
+    19                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stdlib.h",43
+    20                        	.stag	fake1_,32,1
+    21                        	.member	quot,0,5,8,16
+    22                        	.member	rem,16,5,8,16
+    23                        	.eos
+    24                        	.stag	fake2_,64,2
+    25                        	.member	quot,0,7,8,32
+    26                        	.member	rem,32,7,8,32
+    27                        	.eos
+    28                        	.stag	int_sqrt,32,3
+    29                        	.member	sqrt,0,16,8,16
+    30                        	.member	frac,16,16,8,16
+    31                        	.eos
+    32                        	.line	205
+    33                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\OMF_Dc_Memory.c",9
+    34                        ;
+    35                        ;#include "fxtypes.h"
+    36                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+    37                        	.stag	_fx_bytebits,8,4
+    38                        	.member	b7,0,14,17,1
+    39                        	.member	b6,1,14,17,1
+  Sat Jul 10 2021  1:15                                                Page 2
+
+
+    40                        	.member	b5,2,14,17,1
+    41                        	.member	b4,3,14,17,1
+    42                        	.member	b3,4,14,17,1
+    43                        	.member	b2,5,14,17,1
+    44                        	.member	b1,6,14,17,1
+    45                        	.member	b0,7,14,17,1
+    46                        	.eos
+    47                        	.stag	_fx_node,384,5
+    48                        	.member	type,0,14,8,8
+    49                        	.member	Reserved0,8,14,8,8
+    50                        	.member	data,16,129,8,32
+    51                        	.member	last,48,138,8,32,5
+    52                        	.member	next,80,138,8,32,5
+    53                        	.member	name,112,110,8,0,32
+    54                        	.member	Reserved1,368,16,8,16
+    55                        	.eos
+    56                        	.stag	_fx_nodelist,96,6
+    57                        	.member	listhead,0,138,8,32,5
+    58                        	.member	listData,32,129,8,32
+    59                        	.member	deallocator,64,641,8,32
+    60                        	.eos
+    61                        	.stag	_fx_queue,80,7
+    62                        	.member	count,0,5,8,16
+    63                        	.member	front,16,138,8,32,5
+    64                        	.member	rear,48,138,8,32,5
+    65                        	.eos
+    66                        	.stag	fake8_,32,8
+    67                        	.member	subsystem,0,14,8,8
+    68                        	.member	level,8,14,8,8
+    69                        	.member	error,16,16,8,16
+    70                        	.eos
+    71                        	.stag	_fx_process_signal,16,9
+    72                        	.member	cbSize,0,16,8,16
+    73                        	.eos
+    74                        	.stag	_fx_semaphore,16,10
+    75                        	.member	reserved,0,5,8,16
+    76                        	.eos
+    77                        	.stag	_fx_fileBlock,552,11
+    78                        	.member	openCount,0,16,8,16
+    79                        	.member	lockCount,16,16,8,16
+    80                        	.member	dirty,32,14,8,8
+    81                        	.member	fileBuffer,40,110,8,0,64
+    82                        	.eos
+    83                        	.stag	_fx_irq_data,48,12
+    84                        	.member	line,0,5,8,16
+    85                        	.member	keycode,16,142,8,32
+    86                        	.eos
+    87                        	.stag	_task,48,13
+    88                        	.member	SPL,0,14,8,8
+    89                        	.member	SPH,8,14,8,8
+    90                        	.member	pstack,16,142,8,32
+    91                        	.eos
+    92                        	.stag	_task_stack,32,14
+    93                        	.member	SS,0,142,8,32
+    94                        	.eos
+    95                        	.stag	int_regs,104,15
+    96                        	.member	PB,0,14,8,8
+    97                        	.member	PH,8,14,8,8
+  Sat Jul 10 2021  1:15                                                Page 3
+
+
+    98                        	.member	PL,16,14,8,8
+    99                        	.member	PP,24,14,8,8
+   100                        	.member	DB,32,14,8,8
+   101                        	.member	DH,40,14,8,8
+   102                        	.member	DL,48,14,8,8
+   103                        	.member	AH,56,14,8,8
+   104                        	.member	AL,64,14,8,8
+   105                        	.member	XH,72,14,8,8
+   106                        	.member	XL,80,14,8,8
+   107                        	.member	YH,88,14,8,8
+   108                        	.member	YL,96,14,8,8
+   109                        	.eos
+   110                        	.stag	_fx_eventMessage,304,16
+   111                        	.member	src,0,18,8,32
+   112                        	.member	dest,32,18,8,32
+   113                        	.member	type,64,16,8,16
+   114                        	.member	hwnd,80,129,8,32
+   115                        	.member	pheap,112,129,8,32
+   116                        	.member	msgTime,144,18,8,32
+   117                        	.member	data,176,110,8,0,16
+   118                        	.eos
+   119                        	.stag	_fx_cmdMessage,304,17
+   120                        	.member	src,0,18,8,32
+   121                        	.member	dest,32,18,8,32
+   122                        	.member	type,64,16,8,16
+   123                        	.member	hwnd,80,129,8,32
+   124                        	.member	pheap,112,129,8,32
+   125                        	.member	msgTime,144,18,8,32
+   126                        	.member	cmdCId,176,16,8,16
+   127                        	.member	cmdMId,192,16,8,16
+   128                        	.member	parameter1,208,18,8,32
+   129                        	.member	parameter2,240,18,8,32
+   130                        	.member	parameter3,272,18,8,32
+   131                        	.eos
+   132                        	.stag	_fx_console_ctl,448,18
+   133                        	.member	maxCols,0,5,8,16
+   134                        	.member	maxRows,16,5,8,16
+   135                        	.member	curX,32,5,8,16
+   136                        	.member	curY,48,5,8,16
+   137                        	.member	fgColor,64,5,8,16
+   138                        	.member	bgColor,80,5,8,16
+   139                        	.member	mode,96,14,8,8
+   140                        	.member	kbBuffer,104,101,8,0,16
+   141                        	.member	screenBuffer,360,142,8,32
+   142                        	.member	desktopMode,392,14,8,8
+   143                        	.member	lastMouseButton,400,5,8,16
+   144                        	.member	lastMouseX,416,5,8,16
+   145                        	.member	lastMouseY,432,5,8,16
+   146                        	.eos
+   147                        	.stag	_fx_desktop_ctl,392,19
+   148                        	.member	desktopMode,0,14,8,8
+   149                        	.member	cursorCtl,8,5,8,16
+   150                        	.member	cursorState,24,5,8,16
+   151                        	.member	backgroundColor,40,5,8,16
+   152                        	.member	foregroundColor,56,5,8,16
+   153                        	.member	menuMode,72,5,8,16
+   154                        	.member	lastMouseButton,88,5,8,16
+   155                        	.member	lastMouseX,104,5,8,16
+  Sat Jul 10 2021  1:15                                                Page 4
+
+
+   156                        	.member	lastMouseY,120,5,8,16
+   157                        	.member	currentDiskName,136,142,8,32
+   158                        	.member	diskNodes,168,129,8,32
+   159                        	.member	titleNodes,200,129,8,32
+   160                        	.member	menuNodes,232,129,8,32
+   161                        	.member	iconNodes,264,129,8,32
+   162                        	.member	windowNodes,296,129,8,32
+   163                        	.member	fontNodes,328,129,8,32
+   164                        	.member	wndProc,360,138,8,32,6
+   165                        	.eos
+   166                        	.stag	_fx_process,800,20
+   167                        	.member	cbSize,0,5,8,16
+   168                        	.member	procId,16,18,8,32
+   169                        	.member	parentId,48,18,8,32
+   170                        	.member	ctx,80,129,8,32
+   171                        	.member	userId,112,16,8,16
+   172                        	.member	status,128,16,8,16
+   173                        	.member	foregroundActive,144,14,8,8
+   174                        	.member	tls,152,1121,8,32,8
+   175                        	.member	commandLine,408,142,8,32
+   176                        	.member	semaphores,440,138,8,32,6
+   177                        	.member	fileHandles,472,138,8,32,6
+   178                        	.member	pathList,504,138,8,32,6
+   179                        	.member	resources,536,138,8,32,6
+   180                        	.member	timerAware,568,14,8,8
+   181                        	.member	timerTicks,576,112,8,0,2
+   182                        	.member	timerTickCount,608,112,8,0,2
+   183                        	.member	kernelError,640,10,8,32,8
+   184                        	.member	consoleCtl,672,138,8,32,18
+   185                        	.member	desktopCtl,704,138,8,32,19
+   186                        	.member	execProc,736,641,8,32
+   187                        	.member	startupArgs,768,129,8,32
+   188                        	.eos
+   189                        	.stag	_fxProcessMessage,112,21
+   190                        	.member	src,0,18,8,32
+   191                        	.member	dest,32,18,8,32
+   192                        	.member	type,64,16,8,16
+   193                        	.member	processInfo,80,138,8,32,20
+   194                        	.eos
+   195                        	.stag	_k_key_state,112,22
+   196                        	.member	scanCode,0,14,8,8
+   197                        	.member	isShifted,8,14,8,8
+   198                        	.member	isAlt,16,14,8,8
+   199                        	.member	isExtended,24,14,8,8
+   200                        	.member	isCapsLock,32,14,8,8
+   201                        	.member	isNumLock,40,14,8,8
+   202                        	.member	isScrollLock,48,14,8,8
+   203                        	.member	keyChar,56,16,8,16
+   204                        	.member	scanTime,72,18,8,32
+   205                        	.member	ledStatus,104,14,8,8
+   206                        	.eos
+   207                        	.stag	_fx_property,384,23
+   208                        	.member	name,0,110,8,0,16
+   209                        	.member	value,128,110,8,0,32
+   210                        	.eos
+   211                        	.utag	_24bitPointer,32,24
+   212                        	.member	address,0,142,11,32
+   213                        	.member	bytes,0,110,11,0,4
+  Sat Jul 10 2021  1:15                                                Page 5
+
+
+   214                        	.eos
+   215                        	.stag	_PointStruct,32,25
+   216                        	.member	x,0,5,8,16
+   217                        	.member	y,16,5,8,16
+   218                        	.eos
+   219                        	.stag	_RectStruct,112,26
+   220                        	.member	x,0,5,8,16
+   221                        	.member	y,16,5,8,16
+   222                        	.member	z,32,18,8,32
+   223                        	.member	width,64,5,8,16
+   224                        	.member	height,80,5,8,16
+   225                        	.member	attr,96,5,8,16
+   226                        	.eos
+   227                        	.stag	fake27_,96,27
+   228                        	.member	name,0,142,8,32
+   229                        	.member	topLeft,32,10,8,32,25
+   230                        	.member	bottomRight,64,10,8,32,25
+   231                        	.eos
+   232                        	.stag	fake28_,112,28
+   233                        	.member	x,0,5,8,16
+   234                        	.member	y,16,5,8,16
+   235                        	.member	z,32,5,8,16
+   236                        	.member	width,48,5,8,16
+   237                        	.member	height,64,5,8,16
+   238                        	.member	data,80,18,8,32
+   239                        	.eos
+   240                        	.stag	_k_WindowClass,272,29
+   241                        	.member	cbSize,0,16,8,16
+   242                        	.member	style,16,16,8,16
+   243                        	.member	styleEx,32,16,8,16
+   244                        	.member	pWndProc,48,654,8,32
+   245                        	.member	hInstance,80,129,8,32
+   246                        	.member	hIcon,112,129,8,32
+   247                        	.member	hCursor,144,129,8,32
+   248                        	.member	hbrBackground,176,129,8,32
+   249                        	.member	lpszMenuName,208,142,8,32
+   250                        	.member	lpszClassName,240,142,8,32
+   251                        	.eos
+   252                        	.stag	_ClickableRect,152,30
+   253                        	.member	area,0,10,8,112,26
+   254                        	.member	z,112,18,8,32
+   255                        	.member	enabled,144,14,8,8
+   256                        	.eos
+   257                        	.stag	_NCClickableRect,136,31
+   258                        	.member	area,0,10,8,112,26
+   259                        	.member	msgType,112,16,8,16
+   260                        	.member	enabled,128,14,8,8
+   261                        	.eos
+   262                        	.stag	_DragData,216,32
+   263                        	.member	area,0,10,8,112,26
+   264                        	.member	xoffset,112,5,8,16
+   265                        	.member	yoffset,128,5,8,16
+   266                        	.member	msgType,144,16,8,16
+   267                        	.member	ncAction,160,16,8,16
+   268                        	.member	isDrag,176,14,8,8
+   269                        	.member	isResize,184,14,8,8
+   270                        	.member	canDrag,192,14,8,8
+   271                        	.member	canDrop,200,14,8,8
+  Sat Jul 10 2021  1:15                                                Page 6
+
+
+   272                        	.member	didDrag,208,14,8,8
+   273                        	.eos
+   274                        	.stag	_k_WindowStruct,3904,33
+   275                        	.member	cbSize,0,16,8,16
+   276                        	.member	style,16,18,8,32
+   277                        	.member	styleEx,48,18,8,32
+   278                        	.member	win_id,80,5,8,16
+   279                        	.member	win_x,96,5,8,16
+   280                        	.member	win_y,112,5,8,16
+   281                        	.member	win_width,128,5,8,16
+   282                        	.member	win_height,144,5,8,16
+   283                        	.member	win_xoffset,160,5,8,16
+   284                        	.member	win_yoffset,176,5,8,16
+   285                        	.member	win_cxoffset,192,5,8,16
+   286                        	.member	win_cyoffset,208,5,8,16
+   287                        	.member	wndRect,224,10,8,112,26
+   288                        	.member	clientRect,336,10,8,112,26
+   289                        	.member	nonclientGadgets,448,106,8,0,31,16
+   290                        	.member	clickable,2624,129,8,32
+   291                        	.member	win_title,2656,110,8,0,32
+   292                        	.member	Reserved0,2912,16,8,16
+   293                        	.member	win_class,2928,110,8,0,16
+   294                        	.member	win_class_name,3056,110,8,0,32
+   295                        	.member	nBitmapLayer,3312,16,8,16
+   296                        	.member	bgRegion,3328,129,8,32
+   297                        	.member	procid,3360,18,8,32
+   298                        	.member	pWndClass,3392,138,8,32,29
+   299                        	.member	pParentWindow,3424,129,8,32
+   300                        	.member	hMenu,3456,129,8,32
+   301                        	.member	hPointer,3488,129,8,32
+   302                        	.member	hBackground,3520,129,8,32
+   303                        	.member	pChildWindows,3552,138,8,32,6
+   304                        	.member	pChildHitList,3584,138,8,32,6
+   305                        	.member	isVisible,3616,14,8,8
+   306                        	.member	windowData,3624,129,8,32
+   307                        	.member	clientData,3656,1121,8,32,6
+   308                        	.member	isClosed,3848,14,8,8
+   309                        	.member	isClosing,3856,14,8,8
+   310                        	.member	isDesktop,3864,14,8,8
+   311                        	.member	clickableNode,3872,138,8,32,5
+   312                        	.eos
+   313                        	.stag	_k_WindowStructEx,3880,34
+   314                        	.member	cbSize,0,16,8,16
+   315                        	.member	style,16,18,8,32
+   316                        	.member	styleEx,48,18,8,32
+   317                        	.member	win_id,80,5,8,16
+   318                        	.member	win_x,96,5,8,16
+   319                        	.member	win_y,112,5,8,16
+   320                        	.member	win_width,128,5,8,16
+   321                        	.member	win_height,144,5,8,16
+   322                        	.member	win_xoffset,160,5,8,16
+   323                        	.member	win_yoffset,176,5,8,16
+   324                        	.member	win_cxoffset,192,5,8,16
+   325                        	.member	win_cyoffset,208,5,8,16
+   326                        	.member	wndRect,224,10,8,112,26
+   327                        	.member	clientRect,336,10,8,112,26
+   328                        	.member	nonclientGadgets,448,106,8,0,31,16
+   329                        	.member	clickable,2624,129,8,32
+  Sat Jul 10 2021  1:15                                                Page 7
+
+
+   330                        	.member	win_title,2656,110,8,0,32
+   331                        	.member	Reserved0,2912,16,8,16
+   332                        	.member	win_class,2928,110,8,0,16
+   333                        	.member	nBitmapLayer,3056,16,8,16
+   334                        	.member	procid,3072,18,8,32
+   335                        	.member	pWndClass,3104,138,8,32,29
+   336                        	.member	pParentWindow,3136,129,8,32
+   337                        	.member	hMenu,3168,129,8,32
+   338                        	.member	hPointer,3200,129,8,32
+   339                        	.member	hBackground,3232,129,8,32
+   340                        	.member	pChildWindows,3264,138,8,32,6
+   341                        	.member	pChildHitList,3296,138,8,32,6
+   342                        	.member	isVisible,3328,14,8,8
+   343                        	.member	windowData,3336,129,8,32
+   344                        	.member	clientData,3368,1121,8,32,4
+   345                        	.member	isClosed,3496,14,8,8
+   346                        	.member	hWnd,3504,129,8,32
+   347                        	.member	localRect,3536,10,8,112,26
+   348                        	.member	globalRect,3648,10,8,112,26
+   349                        	.member	clientOffsetRect,3760,10,8,112,26
+   350                        	.member	isDesktop,3872,14,8,8
+   351                        	.eos
+   352                        	.stag	_FontMetric,32,35
+   353                        	.member	width,0,5,8,16
+   354                        	.member	height,16,5,8,16
+   355                        	.eos
+   356                        	.stag	_MenuStruct,280,36
+   357                        	.member	cx,0,5,8,16
+   358                        	.member	cy,16,5,8,16
+   359                        	.member	width,32,5,8,16
+   360                        	.member	height,48,5,8,16
+   361                        	.member	fcolor,64,14,8,8
+   362                        	.member	bcolor,72,14,8,8
+   363                        	.member	chromeLeft,80,14,8,8
+   364                        	.member	chromeRight1,88,14,8,8
+   365                        	.member	chromeRight2,96,14,8,8
+   366                        	.member	hFont,104,129,8,32
+   367                        	.member	itemId,136,16,8,16
+   368                        	.member	pCaption,152,142,8,32
+   369                        	.member	subMenus,184,138,8,32,6
+   370                        	.member	pBackground,216,129,8,32
+   371                        	.member	hWndOwner,248,129,8,32
+   372                        	.eos
+   373                        	.stag	fake37_,160,37
+   374                        	.member	menuId,0,16,8,16
+   375                        	.member	caption,16,142,8,32
+   376                        	.member	rect,48,10,8,112,26
+   377                        	.eos
+   378                        	.stag	fake38_,5152,38
+   379                        	.member	pParent,0,138,8,32,33
+   380                        	.member	rect,32,10,8,112,26
+   381                        	.member	captions,144,1134,8,32,24
+   382                        	.member	chrome,912,110,8,0,24
+   383                        	.member	ids,1104,112,8,0,24
+   384                        	.member	clickable,1488,106,8,0,30,24
+   385                        	.member	selected,5136,16,8,16
+   386                        	.eos
+   387                        	.stag	_fx_button_t,96,39
+  Sat Jul 10 2021  1:15                                                Page 8
+
+
+   388                        	.member	pCaption,0,142,8,32
+   389                        	.member	cCaption,32,16,8,16
+   390                        	.member	data,48,129,8,32
+   391                        	.member	captionPixelWidth,80,16,8,16
+   392                        	.eos
+   393                        	.stag	_fx_scrollbar_t,240,40
+   394                        	.member	min,0,16,8,16
+   395                        	.member	max,16,16,8,16
+   396                        	.member	increment,32,16,8,16
+   397                        	.member	stopsize,48,16,8,16
+   398                        	.member	location,64,5,8,16
+   399                        	.member	state,80,5,8,16
+   400                        	.member	rectThumb,96,10,8,112,26
+   401                        	.member	data,208,129,8,32
+   402                        	.eos
+   403                        	.stag	_fx_listbox_t,240,41
+   404                        	.member	pos,0,5,8,16
+   405                        	.member	selected,16,16,8,16
+   406                        	.member	offsetX,32,5,8,16
+   407                        	.member	offsetY,48,5,8,16
+   408                        	.member	inc,64,5,8,16
+   409                        	.member	direction,80,5,8,16
+   410                        	.member	top,96,5,8,16
+   411                        	.member	bottom,112,5,8,16
+   412                        	.member	indexTop,128,5,8,16
+   413                        	.member	indexBottom,144,5,8,16
+   414                        	.member	maxItems,160,16,8,16
+   415                        	.member	fontSet,176,142,8,32
+   416                        	.member	data,208,129,8,32
+   417                        	.eos
+   418                        	.stag	_fx_textbox_t,144,42
+   419                        	.member	pos,0,5,8,16
+   420                        	.member	selected,16,16,8,16
+   421                        	.member	offsetX,32,5,8,16
+   422                        	.member	offsetY,48,5,8,16
+   423                        	.member	isShifted,64,14,8,8
+   424                        	.member	cursorState,72,14,8,8
+   425                        	.member	fontSet,80,142,8,32
+   426                        	.member	data,112,129,8,32
+   427                        	.eos
+   428                        	.stag	_fx_msgbox_t,144,43
+   429                        	.member	pos,0,5,8,16
+   430                        	.member	selected,16,16,8,16
+   431                        	.member	offsetX,32,5,8,16
+   432                        	.member	offsetY,48,5,8,16
+   433                        	.member	isShifted,64,14,8,8
+   434                        	.member	cursorState,72,14,8,8
+   435                        	.member	fontSet,80,142,8,32
+   436                        	.member	data,112,129,8,32
+   437                        	.eos
+   438                        	.stag	_fx_menuAnchor_t,272,44
+   439                        	.member	pCaption,0,142,8,32
+   440                        	.member	renderLayoutX,32,16,8,16
+   441                        	.member	renderLayoutY,48,16,8,16
+   442                        	.member	captionPixelWidth,64,16,8,16
+   443                        	.member	data,80,129,8,32
+   444                        	.member	droppedWindow,112,138,8,32,33
+   445                        	.member	bytes,144,110,8,0,16
+  Sat Jul 10 2021  1:15                                                Page 9
+
+
+   446                        	.eos
+   447                        	.stag	_SubMenuStruct,64,45
+   448                        	.member	caption,0,142,8,32
+   449                        	.member	action,32,641,8,32
+   450                        	.eos
+   451                        	.stag	_SubMenuListStruct,40,46
+   452                        	.member	cMenus,0,14,8,8
+   453                        	.member	psubmenus,8,9354,8,32,45
+   454                        	.eos
+   455                        	.stag	_fx_ComBuffer,2080,47
+   456                        	.member	cbSize,0,16,8,16
+   457                        	.member	cbBuffer,16,16,8,16
+   458                        	.member	buffer,32,110,8,0,256
+   459                        	.eos
+   460                        	.stag	_fx_resource_header,72,48
+   461                        	.member	magic,0,110,8,0,4
+   462                        	.member	major,32,14,8,8
+   463                        	.member	minor,40,14,8,8
+   464                        	.member	type,48,14,8,8
+   465                        	.member	reserved,56,14,8,8
+   466                        	.member	resheaderSize,64,14,8,8
+   467                        	.eos
+   468                        	.stag	_fx_resource_header_font,144,49
+   469                        	.member	title,0,110,8,0,16
+   470                        	.member	height,128,14,8,8
+   471                        	.member	width,136,14,8,8
+   472                        	.eos
+   473                        	.line	1010
+   474                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\OMF_Dc_Memory.c",11
+   475                        ;#include "fxmemorymanager.h"
+   476                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxmemorymanager.h",0
+   477                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",0
+   478                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stdlib.h",0
+   479                        	.line	205
+   480                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",4
+   481                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    string.h",0
+   482                        	.line	134
+   483                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",5
+   484                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    ctype.h",0
+   485                        	.line	103
+   486                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",6
+   487                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+   488                        	.line	1010
+   489                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",8
+   490                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxstringtable.h",0
+   491                        	.line	89
+  Sat Jul 10 2021  1:15                                                Page 10
+
+
+   492                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",9
+   493                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxc256u.h",0
+   494                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+   495                        	.line	1010
+   496                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxc256u.h",5
+   497                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fmx_vicky.h",0
+   498                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+   499                        	.line	1010
+   500                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fmx_vicky.h",11
+   501                        	.line	72
+   502                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxc256u.h",6
+   503                        	.line	1960
+   504                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",16
+   505                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxkernel.h",0
+   506                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",0
+   507                        	.line	30
+   508                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxkernel.h",5
+   509                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxnode.h",0
+   510                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+   511                        	.line	1010
+   512                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxnode.h",11
+   513                        	.line	114
+   514                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxkernel.h",6
+   515                        	.stag	_fx_api_call_table,8192,50
+   516                        	.member	call_table,0,1121,8,32,256
+   517                        	.eos
+   518                        	.stag	_fx_zero_page,824,51
+   519                        	.member	fxos_mouse_byte_0,0,14,8,8
+   520                        	.member	fxos_mouse_byte_1,8,14,8,8
+   521                        	.member	fxos_mouse_byte_2,16,14,8,8
+   522                        	.member	fxos_mouse_byte_t,24,14,8,8
+   523                        	.member	fxos_mouse_byte_x_l,32,14,8,8
+   524                        	.member	fxos_mouse_byte_x_h,40,14,8,8
+   525                        	.member	fxos_mouse_byte_y_l,48,14,8,8
+   526                        	.member	fxos_mouse_byte_y_h,56,14,8,8
+   527                        	.member	fxos_key_byte_0,64,14,8,8
+   528                        	.member	fxos_key_byte_1,72,14,8,8
+   529                        	.member	fxos_key_byte_2,80,14,8,8
+   530                        	.member	fxos_mouse_ctl,88,14,8,8
+   531                        	.member	fxos_mouse_index,96,14,8,8
+   532                        	.member	fxos_mouse_status,104,14,8,8
+   533                        	.member	fxos_mouse_dbg_1,112,18,8,32
+  Sat Jul 10 2021  1:15                                                Page 11
+
+
+   534                        	.member	fxos_mouse_dbg_2,144,18,8,32
+   535                        	.member	fxos_mouse_dbg_3,176,18,8,32
+   536                        	.member	fxos_vicky_byte_0,208,14,8,8
+   537                        	.member	fxos_vicky_byte_1,216,14,8,8
+   538                        	.member	fxos_vicky_byte_2,224,14,8,8
+   539                        	.member	VersionMajor,232,16,8,16
+   540                        	.member	VersionMinor,248,16,8,16
+   541                        	.member	VersionRelease,264,16,8,16
+   542                        	.member	topMemory,280,18,8,32
+   543                        	.member	bottomMemory,312,18,8,32
+   544                        	.member	availableMemory,344,18,8,32
+   545                        	.member	availableMemoryK,376,18,8,32
+   546                        	.member	availableHeapMemory,408,18,8,32
+   547                        	.member	availableHeapMemoryK,440,18,8,32
+   548                        	.member	fxos_console_row,472,16,8,16
+   549                        	.member	fxos_console_col,488,16,8,16
+   550                        	.member	executive,504,129,8,32
+   551                        	.member	eventmanager,536,129,8,32
+   552                        	.member	devicemanager,568,129,8,32
+   553                        	.member	windowmanager,600,129,8,32
+   554                        	.member	fxos_kernel_api,632,138,8,32,50
+   555                        	.member	fxos_dos_api,664,138,8,32,50
+   556                        	.member	fxos_gfx_api,696,138,8,32,50
+   557                        	.member	fxos_gui_api,728,138,8,32,50
+   558                        	.member	fxos_con_api,760,138,8,32,50
+   559                        	.member	fxos_reserved_2_api,792,138,8,32,50
+   560                        	.eos
+   561                        	.stag	_fx_environment,96,52
+   562                        	.member	variables,0,142,8,32
+   563                        	.member	reserved1,32,5,8,16
+   564                        	.member	reserved2,48,5,8,16
+   565                        	.member	reserved3,64,5,8,16
+   566                        	.member	reserved4,80,5,8,16
+   567                        	.eos
+   568                        	.stag	_debug_byte_bits,8,53
+   569                        	.member	bit7,0,14,17,1
+   570                        	.member	bit6,1,14,17,1
+   571                        	.member	bit5,2,14,17,1
+   572                        	.member	bit4,3,14,17,1
+   573                        	.member	bit3,4,14,17,1
+   574                        	.member	bit2,5,14,17,1
+   575                        	.member	bit1,6,14,17,1
+   576                        	.member	bit0,7,14,17,1
+   577                        	.eos
+   578                        	.stag	_k_segmentheader,160,54
+   579                        	.member	version_major,0,14,8,8
+   580                        	.member	version_minor,8,14,8,8
+   581                        	.member	length,16,5,8,16
+   582                        	.member	segment_start_addr,32,7,8,32
+   583                        	.member	segment_end_addr,64,7,8,32
+   584                        	.member	segment_size,96,7,8,32
+   585                        	.member	main_entry_addr,128,7,8,32
+   586                        	.eos
+   587                        	.stag	_fx_device_driver,776,55
+   588                        	.member	name,0,110,8,0,32
+   589                        	.member	version,256,110,8,0,16
+   590                        	.member	hmajor,384,110,8,0,8
+   591                        	.member	hminor,448,110,8,0,8
+  Sat Jul 10 2021  1:15                                                Page 12
+
+
+   592                        	.member	type,512,14,8,8
+   593                        	.member	designation,520,110,8,0,6
+   594                        	.member	reserved_1,568,16,8,16
+   595                        	.member	f_driver_irq,584,129,8,32
+   596                        	.member	driver_context,616,129,8,32
+   597                        	.member	f_driver_load,648,129,8,32
+   598                        	.member	f_driver_read,680,129,8,32
+   599                        	.member	f_driver_write,712,129,8,32
+   600                        	.member	f_driver_unload,744,129,8,32
+   601                        	.eos
+   602                        	.stag	_fx_block_device_driver,808,56
+   603                        	.member	name,0,110,8,0,32
+   604                        	.member	version,256,110,8,0,16
+   605                        	.member	hmajor,384,110,8,0,8
+   606                        	.member	hminor,448,110,8,0,8
+   607                        	.member	type,512,14,8,8
+   608                        	.member	designation,520,110,8,0,6
+   609                        	.member	reserved_1,568,16,8,16
+   610                        	.member	f_driver_irq,584,129,8,32
+   611                        	.member	driver_context,616,129,8,32
+   612                        	.member	f_driver_load,648,129,8,32
+   613                        	.member	f_driver_read,680,129,8,32
+   614                        	.member	f_driver_write,712,129,8,32
+   615                        	.member	f_driver_unload,744,129,8,32
+   616                        	.member	f_driver_command,776,129,8,32
+   617                        	.eos
+   618                        	.line	400
+   619                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",22
+   620                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxconsole.h",0
+   621                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    string.h",0
+   622                        	.line	134
+   623                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxconsole.h",5
+   624                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stdlib.h",0
+   625                        	.line	205
+   626                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxconsole.h",6
+   627                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+   628                        	.line	1010
+   629                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxconsole.h",7
+   630                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxc256u.h",0
+   631                        	.line	1960
+   632                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxconsole.h",12
+   633                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxstring.h",0
+   634                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stdlib.h",0
+   635                        	.line	205
+   636                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxstring.h",5
+  Sat Jul 10 2021  1:15                                                Page 13
+
+
+   637                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    string.h",0
+   638                        	.line	134
+   639                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxstring.h",6
+   640                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+   641                        	.line	1010
+   642                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxstring.h",7
+   643                        	.stag	_fx_string,64,57
+   644                        	.member	size,0,16,8,16
+   645                        	.member	pos,16,5,8,16
+   646                        	.member	buffer,32,142,8,32
+   647                        	.eos
+   648                        	.line	139
+   649                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxconsole.h",17
+   650                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxeventmanager.h",0
+   651                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",0
+   652                        	.line	30
+   653                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxeventmanager.h",5
+   654                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxexec.h",0
+   655                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+   656                        	.line	1010
+   657                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxexec.h",5
+   658                        	.stag	_fxos_executive_vtable,128,58
+   659                        	.member	Init,0,8833,8,32
+   660                        	.member	Configure,32,656,8,32
+   661                        	.member	Query,64,656,8,32
+   662                        	.member	Uninit,96,641,8,32
+   663                        	.eos
+   664                        	.line	86
+   665                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxeventmanager.h",6
+   666                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxnode.h",0
+   667                        	.line	114
+   668                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxeventmanager.h",7
+   669                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxconsole.h",0
+   670                        	.line	208
+   671                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxeventmanager.h",8
+   672                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxwindowmanager.h",0
+   673                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",0
+   674                        	.line	30
+   675                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxwindowmanager.h",5
+  Sat Jul 10 2021  1:15                                                Page 14
+
+
+   676                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxmemorymanager.h",0
+   677                        	.line	105
+   678                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxwindowmanager.h",6
+   679                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxeventmanager.h",0
+   680                        	.line	564
+   681                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxwindowmanager.h",7
+   682                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxgui.h",0
+   683                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxfont.h",0
+   684                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+   685                        	.line	1010
+   686                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxfont.h",6
+   687                        	.line	74
+   688                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxgui.h",5
+   689                        	.stag	_click_detected,64,59
+   690                        	.member	window,0,138,8,32,33
+   691                        	.member	handler,32,641,8,32
+   692                        	.eos
+   693                        	.stag	_current_palette_map,400,60
+   694                        	.member	CUR_DESKTOP,0,5,8,16
+   695                        	.member	CUR_BACKGROUND,16,5,8,16
+   696                        	.member	CUR_FONT,32,5,8,16
+   697                        	.member	CUR_SELECTED_FONT,48,5,8,16
+   698                        	.member	CUR_HIGHLIGHT_COLOR,64,5,8,16
+   699                        	.member	CUR_WINDOWFRAME,80,5,8,16
+   700                        	.member	CUR_WINDOWBORDER,96,5,8,16
+   701                        	.member	CUR_WINDOWSHADOW,112,5,8,16
+   702                        	.member	CUR_MENU,128,5,8,16
+   703                        	.member	CUR_GADGET,144,5,8,16
+   704                        	.member	CUR_COLOR,160,101,8,0,15
+   705                        	.eos
+   706                        	.line	359
+   707                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxwindowmanager.h",8
+   708                        	.stag	_fxos_winman_vtable,160,61
+   709                        	.member	Events,0,641,8,32
+   710                        	.member	ConfigureWindowManager,32,656,8,32
+   711                        	.member	ProcessWindowEvent,64,8833,8,32
+   712                        	.member	QueryWindowManager,96,656,8,32
+   713                        	.member	DoWndProcs,128,641,8,32
+   714                        	.eos
+   715                        	.stag	fake62_,64,62
+   716                        	.member	type,0,16,8,16
+   717                        	.member	size,16,16,8,16
+   718                        	.member	desktopAction,32,129,8,32
+   719                        	.eos
+   720                        	.stag	fake63_,96,63
+   721                        	.member	type,0,16,8,16
+   722                        	.member	caption,16,138,8,32,57
+   723                        	.member	buttonType,48,16,8,16
+  Sat Jul 10 2021  1:15                                                Page 15
+
+
+   724                        	.member	x,64,5,8,16
+   725                        	.member	y,80,5,8,16
+   726                        	.eos
+   727                        	.stag	_childMessage_t,64,64
+   728                        	.member	msgType,0,16,8,16
+   729                        	.member	msgData,16,129,8,32
+   730                        	.member	dataSize,48,16,8,16
+   731                        	.eos
+   732                        	.line	581
+   733                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxeventmanager.h",9
+   734                        	.stag	_fx_main_loopvars,16,65
+   735                        	.member	dummy,0,5,8,16
+   736                        	.eos
+   737                        	.stag	_fxMouseMessageData,64,66
+   738                        	.member	button1,0,14,8,8
+   739                        	.member	button2,8,14,8,8
+   740                        	.member	button3,16,14,8,8
+   741                        	.member	button4,24,14,8,8
+   742                        	.member	x,32,16,8,16
+   743                        	.member	y,48,16,8,16
+   744                        	.eos
+   745                        	.utag	marshalled_data,32,67
+   746                        	.member	byteValue,0,14,11,8
+   747                        	.member	verbValue,0,110,11,0,2
+   748                        	.member	intValue,0,16,11,16
+   749                        	.member	longValue,0,18,11,32
+   750                        	.member	pointerValue,0,129,11,32
+   751                        	.eos
+   752                        	.stag	_fx_eventProcess,64,68
+   753                        	.member	process,0,138,8,32,20
+   754                        	.member	eventProc,32,641,8,32
+   755                        	.eos
+   756                        	.stag	_mouse_msg_state,184,69
+   757                        	.member	lastEvent,0,18,8,32
+   758                        	.member	buttonLeftDown,32,14,8,8
+   759                        	.member	lastLeftDown,40,18,8,32
+   760                        	.member	buttonRightDown,72,14,8,8
+   761                        	.member	lastRightDown,80,18,8,32
+   762                        	.member	buttonMiddleDown,112,14,8,8
+   763                        	.member	lastMiddleDown,120,18,8,32
+   764                        	.member	lastX,152,16,8,16
+   765                        	.member	lastY,168,16,8,16
+   766                        	.eos
+   767                        	.stag	_fxos_eventmanager_vtable,192,70
+   768                        	.member	EventQueue,0,138,8,32,7
+   769                        	.member	Init,32,8833,8,32
+   770                        	.member	Run,64,656,8,32
+   771                        	.member	Configure,96,656,8,32
+   772                        	.member	Query,128,656,8,32
+   773                        	.member	Uninit,160,641,8,32
+   774                        	.eos
+   775                        	.stag	_k_clipboard_data,168,71
+   776                        	.member	type,0,14,8,8
+   777                        	.member	readable,8,110,8,0,16
+   778                        	.member	data,136,129,8,32
+   779                        	.eos
+   780                        	.line	564
+  Sat Jul 10 2021  1:15                                                Page 16
+
+
+   781                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxconsole.h",18
+   782                        	.stag	_fx_spinner_ctx,48,72
+   783                        	.member	index,0,5,8,16
+   784                        	.member	spinner,16,142,8,32
+   785                        	.eos
+   786                        	.stag	_fx_console_ctx,1144,73
+   787                        	.member	lineBufferIndex,0,5,8,16
+   788                        	.member	lineBuffer,16,110,8,0,128
+   789                        	.member	isShifted,1040,14,8,8
+   790                        	.member	userData,1048,129,8,32
+   791                        	.member	screenBuffer,1080,129,8,32
+   792                        	.member	Reserved1,1112,129,8,32
+   793                        	.eos
+   794                        	.stag	_token,64,74
+   795                        	.member	type,0,5,8,16
+   796                        	.member	depth,16,16,8,16
+   797                        	.member	text,32,142,8,32
+   798                        	.eos
+   799                        	.stag	_command_args,64,75
+   800                        	.member	proc,0,656,8,32
+   801                        	.member	tokens,32,138,8,32,5
+   802                        	.eos
+   803                        	.line	208
+   804                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",23
+   805                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxstring.h",0
+   806                        	.line	139
+   807                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",24
+   808                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxnode.h",0
+   809                        	.line	114
+   810                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",25
+   811                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\ff.h",0
+   812                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\ffconf.h",0
+   813                        	.line	298
+   814                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\ff.h",29
+   815                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+   816                        	.line	1010
+   817                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\ff.h",30
+   818                        	.stag	fake76_,4504,76
+   819                        	.member	fs_type,0,14,8,8
+   820                        	.member	pdrv,8,14,8,8
+   821                        	.member	n_fats,16,14,8,8
+   822                        	.member	wflag,24,14,8,8
+   823                        	.member	fsi_flag,32,14,8,8
+   824                        	.member	id,40,5,8,16
+   825                        	.member	n_rootdir,56,5,8,16
+   826                        	.member	csize,72,5,8,16
+   827                        	.member	lfnbuf,88,144,8,32
+  Sat Jul 10 2021  1:15                                                Page 17
+
+
+   828                        	.member	last_clst,120,18,8,32
+   829                        	.member	free_clst,152,18,8,32
+   830                        	.member	n_fatent,184,18,8,32
+   831                        	.member	fsize,216,18,8,32
+   832                        	.member	volbase,248,18,8,32
+   833                        	.member	fatbase,280,18,8,32
+   834                        	.member	dirbase,312,18,8,32
+   835                        	.member	database,344,18,8,32
+   836                        	.member	winsect,376,18,8,32
+   837                        	.member	win,408,110,8,0,512
+   838                        	.eos
+   839                        	.stag	fake77_,128,77
+   840                        	.member	fs,0,138,8,32,76
+   841                        	.member	id,32,5,8,16
+   842                        	.member	attr,48,14,8,8
+   843                        	.member	stat,56,14,8,8
+   844                        	.member	sclust,64,18,8,32
+   845                        	.member	objsize,96,18,8,32
+   846                        	.eos
+   847                        	.stag	fake78_,4400,78
+   848                        	.member	obj,0,10,8,128,77
+   849                        	.member	flag,128,14,8,8
+   850                        	.member	err,136,14,8,8
+   851                        	.member	fptr,144,18,8,32
+   852                        	.member	clust,176,18,8,32
+   853                        	.member	sect,208,18,8,32
+   854                        	.member	dir_sect,240,18,8,32
+   855                        	.member	dir_ptr,272,142,8,32
+   856                        	.member	buf,304,110,8,0,512
+   857                        	.eos
+   858                        	.stag	fake79_,416,79
+   859                        	.member	obj,0,10,8,128,77
+   860                        	.member	dptr,128,18,8,32
+   861                        	.member	clust,160,18,8,32
+   862                        	.member	sect,192,18,8,32
+   863                        	.member	dir,224,142,8,32
+   864                        	.member	fn,256,110,8,0,12
+   865                        	.member	blk_ofs,352,18,8,32
+   866                        	.member	pat,384,142,8,32
+   867                        	.eos
+   868                        	.stag	fake80_,2224,80
+   869                        	.member	fsize,0,18,8,32
+   870                        	.member	fdate,32,5,8,16
+   871                        	.member	ftime,48,5,8,16
+   872                        	.member	fattrib,64,14,8,8
+   873                        	.member	altname,72,110,8,0,13
+   874                        	.member	fname,176,110,8,0,256
+   875                        	.eos
+   876                        	.stag	fake81_,80,81
+   877                        	.member	fmt,0,14,8,8
+   878                        	.member	n_fat,8,14,8,8
+   879                        	.member	align,16,16,8,16
+   880                        	.member	n_root,32,16,8,16
+   881                        	.member	au_size,48,18,8,32
+   882                        	.eos
+   883                        	.line	429
+   884                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos.h",26
+  Sat Jul 10 2021  1:15                                                Page 18
+
+
+   885                        	.line	30
+   886                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxmemorymanager.h",5
+   887                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\umm_malloc_cfg.h",0
+   888                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxos_build_parameters.h",0
+   889                        	.line	35
+   890                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\umm_malloc_cfg.h",8
+   891                        	.stag	UMM_HEAP_INFO_t,256,82
+   892                        	.member	totalEntries,0,18,8,32
+   893                        	.member	usedEntries,32,18,8,32
+   894                        	.member	freeEntries,64,18,8,32
+   895                        	.member	totalBlocks,96,18,8,32
+   896                        	.member	usedBlocks,128,18,8,32
+   897                        	.member	freeBlocks,160,18,8,32
+   898                        	.member	maxFreeContiguousBlocks,192,18,8,32
+   899                        	.member	blockSize,224,18,8,32
+   900                        	.eos
+   901                        	.line	199
+   902                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxmemorymanager.h",6
+   903                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\umm_malloc.h",0
+   904                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxtypes.h",0
+   905                        	.line	1010
+   906                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\umm_malloc.h",11
+   907                        	.line	24
+   908                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\fxmemorymanager.h",7
+   909                        	.stag	_fx_memory_map,2072,83
+   910                        	.member	availableMemory,0,18,8,32
+   911                        	.member	valid_segments,32,110,8,0,255
+   912                        	.eos
+   913                        	.stag	_fx_ipc_port,144,84
+   914                        	.member	id,0,18,8,32
+   915                        	.member	type,32,14,8,8
+   916                        	.member	name,40,138,8,32,57
+   917                        	.member	time,72,18,8,32
+   918                        	.member	queue,104,138,8,32,7
+   919                        	.member	reserved_1,136,14,8,8
+   920                        	.eos
+   921                        	.line	105
+   922                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\OMF_Dc_Memory.c",12
+   923                        ;#include "OMF_Dc_Shared.h"
+   924                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\OMF_Dc_Shared.h",0
+   925                        	.line	18
+   926                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\OMF_Dc_Memory.c",13
+   927                        ;#include "OMF_Record.h"
+   928                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\OMF_Record.h",0
+   929                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+  Sat Jul 10 2021  1:15                                                Page 19
+
+
+                    space\FXOSv1\src\fxtypes.h",0
+   930                        	.line	1010
+   931                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\OMF_Record.h",8
+   932                        	.stag	omf_body_record,168,85
+   933                        	.member	FileOffset,0,18,8,32
+   934                        	.member	SegmentOffset,32,18,8,32
+   935                        	.member	operation_code,64,14,8,8
+   936                        	.member	length,72,5,8,16
+   937                        	.member	record_data,88,129,8,32
+   938                        	.member	processed,120,5,8,16
+   939                        	.member	next,136,138,8,32,85
+   940                        	.eos
+   941                        	.stag	subrecord_SuperReloc2,16520,86
+   942                        	.member	FileOffset,0,18,8,32
+   943                        	.member	SegmentOffset,32,18,8,32
+   944                        	.member	Count,64,14,8,8
+   945                        	.member	ByteCnt,72,14,8,8
+   946                        	.member	BitShiftCnt,80,14,8,8
+   947                        	.member	nb_address,88,5,8,16
+   948                        	.member	OffsetPatch,104,114,8,0,256
+   949                        	.member	OffsetReference,8296,114,8,0,256
+   950                        	.member	next,16488,138,8,32,86
+   951                        	.eos
+   952                        	.stag	subrecord_SuperReloc3,16520,87
+   953                        	.member	FileOffset,0,18,8,32
+   954                        	.member	SegmentOffset,32,18,8,32
+   955                        	.member	Count,64,14,8,8
+   956                        	.member	ByteCnt,72,14,8,8
+   957                        	.member	BitShiftCnt,80,14,8,8
+   958                        	.member	nb_address,88,5,8,16
+   959                        	.member	OffsetPatch,104,114,8,0,256
+   960                        	.member	OffsetReference,8296,114,8,0,256
+   961                        	.member	next,16488,138,8,32,87
+   962                        	.eos
+   963                        	.stag	subrecord_SuperInterseg1,20632,88
+   964                        	.member	FileOffset,0,18,8,32
+   965                        	.member	SegmentOffset,32,18,8,32
+   966                        	.member	Count,64,14,8,8
+   967                        	.member	ByteCnt,72,14,8,8
+   968                        	.member	BitShiftCnt,80,14,8,8
+   969                        	.member	FileNum,88,5,8,16
+   970                        	.member	nb_address,104,5,8,16
+   971                        	.member	OffsetPatch,120,114,8,0,256
+   972                        	.member	OffsetReference,8312,114,8,0,256
+   973                        	.member	SegNum,16504,101,8,0,256
+   974                        	.member	next,20600,138,8,32,88
+   975                        	.eos
+   976                        	.stag	subrecord_SuperInterseg212,20632,89
+   977                        	.member	FileOffset,0,18,8,32
+   978                        	.member	SegmentOffset,32,18,8,32
+   979                        	.member	Count,64,14,8,8
+   980                        	.member	ByteCnt,72,14,8,8
+   981                        	.member	BitShiftCnt,80,14,8,8
+   982                        	.member	FileNum,88,5,8,16
+   983                        	.member	nb_address,104,5,8,16
+   984                        	.member	OffsetPatch,120,114,8,0,256
+   985                        	.member	OffsetReference,8312,114,8,0,256
+  Sat Jul 10 2021  1:15                                                Page 20
+
+
+   986                        	.member	SegNum,16504,101,8,0,256
+   987                        	.member	next,20600,138,8,32,89
+   988                        	.eos
+   989                        	.stag	subrecord_SuperInterseg1324,16544,90
+   990                        	.member	FileOffset,0,18,8,32
+   991                        	.member	SegmentOffset,32,18,8,32
+   992                        	.member	Count,64,14,8,8
+   993                        	.member	ByteCnt,72,14,8,8
+   994                        	.member	BitShiftCnt,80,14,8,8
+   995                        	.member	SegNum,88,14,8,8
+   996                        	.member	FileNum,96,5,8,16
+   997                        	.member	nb_address,112,5,8,16
+   998                        	.member	OffsetPatch,128,114,8,0,256
+   999                        	.member	OffsetReference,8320,114,8,0,256
+  1000                        	.member	next,16512,138,8,32,90
+  1001                        	.eos
+  1002                        	.stag	subrecord_SuperInterseg2536,16544,91
+  1003                        	.member	FileOffset,0,18,8,32
+  1004                        	.member	SegmentOffset,32,18,8,32
+  1005                        	.member	Count,64,14,8,8
+  1006                        	.member	ByteCnt,72,14,8,8
+  1007                        	.member	BitShiftCnt,80,14,8,8
+  1008                        	.member	SegNum,88,14,8,8
+  1009                        	.member	FileNum,96,5,8,16
+  1010                        	.member	nb_address,112,5,8,16
+  1011                        	.member	OffsetPatch,128,114,8,0,256
+  1012                        	.member	OffsetReference,8320,114,8,0,256
+  1013                        	.member	next,16512,138,8,32,91
+  1014                        	.eos
+  1015                        	.stag	record_END,72,92
+  1016                        	.member	FileOffset,0,18,8,32
+  1017                        	.member	SegmentOffset,32,18,8,32
+  1018                        	.member	operation_code,64,14,8,8
+  1019                        	.eos
+  1020                        	.stag	record_CONST,112,93
+  1021                        	.member	FileOffset,0,18,8,32
+  1022                        	.member	SegmentOffset,32,18,8,32
+  1023                        	.member	operation_code,64,14,8,8
+  1024                        	.member	ByteCnt,72,14,8,8
+  1025                        	.member	data,80,142,8,32
+  1026                        	.eos
+  1027                        	.stag	record_ALIGN,72,94
+  1028                        	.member	FileOffset,0,18,8,32
+  1029                        	.member	SegmentOffset,32,18,8,32
+  1030                        	.member	operation_code,64,14,8,8
+  1031                        	.eos
+  1032                        	.stag	record_ORG,72,95
+  1033                        	.member	FileOffset,0,18,8,32
+  1034                        	.member	SegmentOffset,32,18,8,32
+  1035                        	.member	operation_code,64,14,8,8
+  1036                        	.eos
+  1037                        	.stag	record_RELOC,152,96
+  1038                        	.member	FileOffset,0,18,8,32
+  1039                        	.member	SegmentOffset,32,18,8,32
+  1040                        	.member	operation_code,64,14,8,8
+  1041                        	.member	ByteCnt,72,14,8,8
+  1042                        	.member	BitShiftCnt,80,14,8,8
+  1043                        	.member	OffsetPatch,88,18,8,32
+  Sat Jul 10 2021  1:15                                                Page 21
+
+
+  1044                        	.member	OffsetReference,120,18,8,32
+  1045                        	.eos
+  1046                        	.stag	record_INTERSEG,184,97
+  1047                        	.member	FileOffset,0,18,8,32
+  1048                        	.member	SegmentOffset,32,18,8,32
+  1049                        	.member	operation_code,64,14,8,8
+  1050                        	.member	ByteCnt,72,14,8,8
+  1051                        	.member	BitShiftCnt,80,14,8,8
+  1052                        	.member	OffsetPatch,88,18,8,32
+  1053                        	.member	FileNum,120,5,8,16
+  1054                        	.member	SegNum,136,5,8,16
+  1055                        	.member	OffsetReference,152,18,8,32
+  1056                        	.eos
+  1057                        	.stag	record_USING,72,98
+  1058                        	.member	FileOffset,0,18,8,32
+  1059                        	.member	SegmentOffset,32,18,8,32
+  1060                        	.member	operation_code,64,14,8,8
+  1061                        	.eos
+  1062                        	.stag	record_STRONG,72,99
+  1063                        	.member	FileOffset,0,18,8,32
+  1064                        	.member	SegmentOffset,32,18,8,32
+  1065                        	.member	operation_code,64,14,8,8
+  1066                        	.eos
+  1067                        	.stag	record_GLOBAL,72,100
+  1068                        	.member	FileOffset,0,18,8,32
+  1069                        	.member	SegmentOffset,32,18,8,32
+  1070                        	.member	operation_code,64,14,8,8
+  1071                        	.eos
+  1072                        	.stag	record_GEQU,72,101
+  1073                        	.member	FileOffset,0,18,8,32
+  1074                        	.member	SegmentOffset,32,18,8,32
+  1075                        	.member	operation_code,64,14,8,8
+  1076                        	.eos
+  1077                        	.stag	record_MEM,72,102
+  1078                        	.member	FileOffset,0,18,8,32
+  1079                        	.member	SegmentOffset,32,18,8,32
+  1080                        	.member	operation_code,64,14,8,8
+  1081                        	.eos
+  1082                        	.stag	record_EXPR,72,103
+  1083                        	.member	FileOffset,0,18,8,32
+  1084                        	.member	SegmentOffset,32,18,8,32
+  1085                        	.member	operation_code,64,14,8,8
+  1086                        	.eos
+  1087                        	.stag	record_ZEXPR,72,104
+  1088                        	.member	FileOffset,0,18,8,32
+  1089                        	.member	SegmentOffset,32,18,8,32
+  1090                        	.member	operation_code,64,14,8,8
+  1091                        	.eos
+  1092                        	.stag	record_BEXPR,72,105
+  1093                        	.member	FileOffset,0,18,8,32
+  1094                        	.member	SegmentOffset,32,18,8,32
+  1095                        	.member	operation_code,64,14,8,8
+  1096                        	.eos
+  1097                        	.stag	record_RELEXPR,72,106
+  1098                        	.member	FileOffset,0,18,8,32
+  1099                        	.member	SegmentOffset,32,18,8,32
+  1100                        	.member	operation_code,64,14,8,8
+  1101                        	.eos
+  Sat Jul 10 2021  1:15                                                Page 22
+
+
+  1102                        	.stag	record_LOCAL,72,107
+  1103                        	.member	FileOffset,0,18,8,32
+  1104                        	.member	SegmentOffset,32,18,8,32
+  1105                        	.member	operation_code,64,14,8,8
+  1106                        	.eos
+  1107                        	.stag	record_EQU,72,108
+  1108                        	.member	FileOffset,0,18,8,32
+  1109                        	.member	SegmentOffset,32,18,8,32
+  1110                        	.member	operation_code,64,14,8,8
+  1111                        	.eos
+  1112                        	.stag	record_DS,104,109
+  1113                        	.member	FileOffset,0,18,8,32
+  1114                        	.member	SegmentOffset,32,18,8,32
+  1115                        	.member	operation_code,64,14,8,8
+  1116                        	.member	nb_zero_byte,72,18,8,32
+  1117                        	.eos
+  1118                        	.stag	record_LCONST,136,110
+  1119                        	.member	FileOffset,0,18,8,32
+  1120                        	.member	SegmentOffset,32,18,8,32
+  1121                        	.member	operation_code,64,14,8,8
+  1122                        	.member	ByteCnt,72,18,8,32
+  1123                        	.member	data,104,142,8,32
+  1124                        	.eos
+  1125                        	.stag	record_LEXPR,72,111
+  1126                        	.member	FileOffset,0,18,8,32
+  1127                        	.member	SegmentOffset,32,18,8,32
+  1128                        	.member	operation_code,64,14,8,8
+  1129                        	.eos
+  1130                        	.stag	record_ENTRY,72,112
+  1131                        	.member	FileOffset,0,18,8,32
+  1132                        	.member	SegmentOffset,32,18,8,32
+  1133                        	.member	operation_code,64,14,8,8
+  1134                        	.eos
+  1135                        	.stag	record_cRELOC,152,113
+  1136                        	.member	FileOffset,0,18,8,32
+  1137                        	.member	SegmentOffset,32,18,8,32
+  1138                        	.member	operation_code,64,14,8,8
+  1139                        	.member	ByteCnt,72,14,8,8
+  1140                        	.member	BitShiftCnt,80,14,8,8
+  1141                        	.member	OffsetPatch,88,18,8,32
+  1142                        	.member	OffsetReference,120,18,8,32
+  1143                        	.eos
+  1144                        	.stag	record_cINTERSEG,176,114
+  1145                        	.member	FileOffset,0,18,8,32
+  1146                        	.member	SegmentOffset,32,18,8,32
+  1147                        	.member	operation_code,64,14,8,8
+  1148                        	.member	ByteCnt,72,14,8,8
+  1149                        	.member	BitShiftCnt,80,14,8,8
+  1150                        	.member	OffsetPatch,88,18,8,32
+  1151                        	.member	FileNum,120,5,8,16
+  1152                        	.member	SegNum,136,14,8,8
+  1153                        	.member	OffsetReference,144,18,8,32
+  1154                        	.eos
+  1155                        	.stag	record_SUPER,592,115
+  1156                        	.member	FileOffset,0,18,8,32
+  1157                        	.member	SegmentOffset,32,18,8,32
+  1158                        	.member	operation_code,64,14,8,8
+  1159                        	.member	ByteCnt,72,18,8,32
+  Sat Jul 10 2021  1:15                                                Page 23
+
+
+  1160                        	.member	RecordType,104,14,8,8
+  1161                        	.member	nb_SuperReloc2,112,5,8,16
+  1162                        	.member	first_SuperReloc2,128,138,8,32,86
+  1163                        	.member	last_SuperReloc2,160,138,8,32,86
+  1164                        	.member	nb_SuperReloc3,192,5,8,16
+  1165                        	.member	first_SuperReloc3,208,138,8,32,87
+  1166                        	.member	last_SuperReloc3,240,138,8,32,87
+  1167                        	.member	nb_SuperInterseg1,272,5,8,16
+  1168                        	.member	first_SuperInterseg1,288,138,8,32,88
+  1169                        	.member	last_SuperInterseg1,320,138,8,32,88
+  1170                        	.member	nb_SuperInterseg212,352,5,8,16
+  1171                        	.member	first_SuperInterseg212,368,138,8,32,89
+  1172                        	.member	last_SuperInterseg212,400,138,8,32,89
+  1173                        	.member	nb_SuperInterseg1324,432,5,8,16
+  1174                        	.member	first_SuperInterseg1324,448,138,8,32,90
+  1175                        	.member	last_SuperInterseg1324,480,138,8,32,90
+  1176                        	.member	nb_SuperInterseg2536,512,5,8,16
+  1177                        	.member	first_SuperInterseg2536,528,138,8,32,91
+  1178                        	.member	last_SuperInterseg2536,560,138,8,32,91
+  1179                        	.eos
+  1180                        	.stag	record_General,72,116
+  1181                        	.member	FileOffset,0,18,8,32
+  1182                        	.member	SegmentOffset,32,18,8,32
+  1183                        	.member	operation_code,64,14,8,8
+  1184                        	.eos
+  1185                        	.stag	record_Experimental,72,117
+  1186                        	.member	FileOffset,0,18,8,32
+  1187                        	.member	SegmentOffset,32,18,8,32
+  1188                        	.member	operation_code,64,14,8,8
+  1189                        	.eos
+  1190                        	.stag	omf_reloc,128,118
+  1191                        	.member	ByteCnt,0,14,8,8
+  1192                        	.member	BitShiftCnt,8,14,8,8
+  1193                        	.member	OffsetPatch,16,18,8,32
+  1194                        	.member	OffsetReference,48,18,8,32
+  1195                        	.member	origin,80,5,8,16
+  1196                        	.member	next,96,138,8,32,118
+  1197                        	.eos
+  1198                        	.stag	omf_interseg,160,119
+  1199                        	.member	ByteCnt,0,14,8,8
+  1200                        	.member	BitShiftCnt,8,14,8,8
+  1201                        	.member	OffsetPatch,16,18,8,32
+  1202                        	.member	OffsetReference,48,18,8,32
+  1203                        	.member	FileNum,80,5,8,16
+  1204                        	.member	SegNum,96,5,8,16
+  1205                        	.member	origin,112,5,8,16
+  1206                        	.member	next,128,138,8,32,119
+  1207                        	.eos
+  1208                        	.line	458
+  1209                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\OMF_Dc_Memory.c",14
+  1210                        ;#include "OMF_Dc_Memory.h"
+  1211                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\OMF_Dc_Memory.h",0
+  1212                        	.line	24
+  1213                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\OMF_Dc_Memory.c",15
+  1214                        ;
+  Sat Jul 10 2021  1:15                                                Page 24
+
+
+  1215                        ;int compare_reloc(const void *,const void *);
+  1216                        ;int compare_interseg(const void *,const void *);
+  1217                        ;
+  1218                        ;#pragma section CODE=LOADER,offset $9:0000
+  1219                        LOADER	section	offset $9:0000
+  1220 09:0000:              	ends
+  1221                        ;
+  1222                        ;/************************************************
+                    ********************/
+  1223                        ;/*  my_Memory() :  Bibliothèque de gestion des re
+                    ssources mémoires. */
+  1224                        ;/************************************************
+                    ********************/
+  1225                        ;void my_Memory(int code, void *data, void *value)
+  1226                        ;{
+  1227                        	.line	25
+  1228                        	.line	26
+  1229                        	LOADER
+  1230                        	xdef	~~my_Memory
+  1231                        	func
+  1232                        	.function	26
+  1233                        ~~my_Memory:
+  1234                        	longa	on
+  1235                        	longi	on
+  1236 09:0000: 3B           	tsc
+  1237 09:0001: 38           	sec
+  1238 09:0002: E9 26 00     	sbc	#L2
+  1239 09:0005: 1B           	tcs
+  1240 09:0006: 0B           	phd
+  1241 09:0007: 5B           	tcd
+  1242             00000004   code_0	set	4
+  1243             00000006   data_0	set	6
+  1244             0000000A   value_0	set	10
+  1245                        	.block	26
+  1246                        ;  int i;
+  1247                        ;  static int nb_reloc;
+  1248                        	udata
+  1249                        L10001:
+  1250 00:0000:              	ds	2
+  1251 00:0002:              	ends
+  1252                        ;  static struct omf_reloc *first_reloc;
+  1253                        	udata
+  1254                        L10002:
+  1255 00:0002:              	ds	4
+  1256 00:0006:              	ends
+  1257                        ;  static struct omf_reloc *last_reloc;
+  1258                        	udata
+  1259                        L10003:
+  1260 00:0006:              	ds	4
+  1261 00:000A:              	ends
+  1262                        ;  struct omf_reloc *current_reloc;
+  1263                        ;  struct omf_reloc *next_reloc;
+  1264                        ;  struct omf_reloc **tab_reloc;
+  1265                        ;  static int nb_interseg;
+  1266                        	udata
+  1267                        L10004:
+  1268 00:000A:              	ds	2
+  1269 00:000C:              	ends
+  Sat Jul 10 2021  1:15                                                Page 25
+
+
+  1270                        ;  static struct omf_interseg *first_interseg;
+  1271                        	udata
+  1272                        L10005:
+  1273 00:000C:              	ds	4
+  1274 00:0010:              	ends
+  1275                        ;  static struct omf_interseg *last_interseg;
+  1276                        	udata
+  1277                        L10006:
+  1278 00:0010:              	ds	4
+  1279 00:0014:              	ends
+  1280                        ;  struct omf_interseg *current_interseg;
+  1281                        ;  struct omf_interseg *next_interseg;
+  1282                        ;  struct omf_interseg **tab_interseg;
+  1283                        ;
+  1284                        ;  switch(code)
+  1285             00000000   i_1	set	0
+  1286             00000002   current_reloc_1	set	2
+  1287             00000006   next_reloc_1	set	6
+  1288             0000000A   tab_reloc_1	set	10
+  1289             0000000E   current_interseg_1	set	14
+  1290             00000012   next_interseg_1	set	18
+  1291             00000016   tab_interseg_1	set	22
+  1292                        	.sym	i,0,5,1,16
+  1293                        	.sym	nb_reloc,10001,5,19,16
+  1294                        	.sym	first_reloc,10002,138,19,32,118
+  1295                        	.sym	last_reloc,10003,138,19,32,118
+  1296                        	.sym	current_reloc,2,138,1,32,118
+  1297                        	.sym	next_reloc,6,138,1,32,118
+  1298                        	.sym	tab_reloc,10,1162,1,32,118
+  1299                        	.sym	nb_interseg,10004,5,19,16
+  1300                        	.sym	first_interseg,10005,138,19,32,119
+  1301                        	.sym	last_interseg,10006,138,19,32,119
+  1302                        	.sym	current_interseg,14,138,1,32,119
+  1303                        	.sym	next_interseg,18,138,1,32,119
+  1304                        	.sym	tab_interseg,22,1162,1,32,119
+  1305                        	.sym	code,4,5,6,16
+  1306                        	.sym	data,6,129,6,32
+  1307                        	.sym	value,10,129,6,32
+  1308                        	.line	41
+  1309 09:0008: A5 2A        	lda	<L2+code_0
+  1310 09:000A: 82 8B 03     	brl	L10007
+  1311                        ;    {
+  1312                        	.line	42
+  1313                        ;      /********************/
+  1314                        ;      /*  Initialisation  */
+  1315                        ;      /********************/
+  1316                        ;      case MEMORY_INIT :
+  1317                        	.line	46
+  1318                        L10009:
+  1319                        ;
+  1320                        ;    	k_debug_string("my_Memory::MEMORY_INIT..
+                    .\r\n");
+  1321                        	.line	48
+  1322 09:000D: F4 xx xx     	pea	#^L1
+  1323 09:0010: F4 xx xx     	pea	#<L1
+  1324 09:0013: 22 xx xx xx  	jsl	~~k_debug_string
+  1325                        ;        nb_reloc = 0;
+  1326                        	.line	49
+  Sat Jul 10 2021  1:15                                                Page 26
+
+
+  1327 09:0017: 9C xx xx     	stz	|L10001
+  1328                        ;        first_reloc = NULL;
+  1329                        	.line	50
+  1330 09:001A: 9C xx xx     	stz	|L10002
+  1331 09:001D: 9C xx xx     	stz	|L10002+2
+  1332                        ;        last_reloc = NULL;
+  1333                        	.line	51
+  1334 09:0020: 9C xx xx     	stz	|L10003
+  1335 09:0023: 9C xx xx     	stz	|L10003+2
+  1336                        ;        nb_interseg = 0;
+  1337                        	.line	52
+  1338 09:0026: 9C xx xx     	stz	|L10004
+  1339                        ;        first_interseg = NULL;
+  1340                        	.line	53
+  1341 09:0029: 9C xx xx     	stz	|L10005
+  1342 09:002C: 9C xx xx     	stz	|L10005+2
+  1343                        ;        last_interseg = NULL;
+  1344                        	.line	54
+  1345 09:002F: 9C xx xx     	stz	|L10006
+  1346 09:0032: 9C xx xx     	stz	|L10006+2
+  1347                        ;        break;
+  1348                        	.line	55
+  1349 09:0035: 82 98 03     	brl	L10008
+  1350                        ;
+  1351                        ;      case MEMORY_FREE :
+  1352                        	.line	57
+  1353                        L10010:
+  1354                        ;    	k_debug_string("my_Memory::MEMORY_FREE..
+                    .\r\n");
+  1355                        	.line	58
+  1356 09:0038: F4 xx xx     	pea	#^L1+28
+  1357 09:003B: F4 xx xx     	pea	#<L1+28
+  1358 09:003E: 22 xx xx xx  	jsl	~~k_debug_string
+  1359                        ;        my_Memory(MEMORY_FREE_RELOC,NULL,NULL);
+  1360                        	.line	59
+  1361 09:0042: F4 00 00     	pea	#^$0
+  1362 09:0045: F4 00 00     	pea	#<$0
+  1363 09:0048: F4 00 00     	pea	#^$0
+  1364 09:004B: F4 00 00     	pea	#<$0
+  1365 09:004E: F4 0D 00     	pea	#<$d
+  1366 09:0051: 22 00 00 09  	jsl	~~my_Memory
+  1367                        ;        my_Memory(MEMORY_FREE_INTERSEG,NULL,NULL)
+                    ;
+  1368                        	.line	60
+  1369 09:0055: F4 00 00     	pea	#^$0
+  1370 09:0058: F4 00 00     	pea	#<$0
+  1371 09:005B: F4 00 00     	pea	#^$0
+  1372 09:005E: F4 00 00     	pea	#<$0
+  1373 09:0061: F4 17 00     	pea	#<$17
+  1374 09:0064: 22 00 00 09  	jsl	~~my_Memory
+  1375                        ;        break;
+  1376                        	.line	61
+  1377 09:0068: 82 65 03     	brl	L10008
+  1378                        ;
+  1379                        ;      /***************************/
+  1380                        ;      /*  Liste chaine de RELOC  */
+  1381                        ;      /***************************/
+  1382                        ;      case MEMORY_ADD_RELOC :
+  Sat Jul 10 2021  1:15                                                Page 27
+
+
+  1383                        	.line	66
+  1384                        L10011:
+  1385                        ;    	  k_debug_string("my_Memory::MEMORY_ADD_
+                    RELOC...\r\n");
+  1386                        	.line	67
+  1387 09:006B: F4 xx xx     	pea	#^L1+56
+  1388 09:006E: F4 xx xx     	pea	#<L1+56
+  1389 09:0071: 22 xx xx xx  	jsl	~~k_debug_string
+  1390                        ;        current_reloc = (struct omf_reloc *) data
+                    ;
+  1391                        	.line	68
+  1392 09:0075: A5 2C        	lda	<L2+data_0
+  1393 09:0077: 85 0F        	sta	<L3+current_reloc_1
+  1394 09:0079: A5 2E        	lda	<L2+data_0+2
+  1395 09:007B: 85 11        	sta	<L3+current_reloc_1+2
+  1396                        ;        if(current_reloc == NULL)
+  1397                        	.line	69
+  1398                        ;          return;
+  1399 09:007D: A5 0F        	lda	<L3+current_reloc_1
+  1400 09:007F: 05 11        	ora	<L3+current_reloc_1+2
+  1401 09:0081: F0 03        	beq	L5
+  1402 09:0083: 82 10 00     	brl	L10012
+  1403                        L5:
+  1404                        	.line	70
+  1405                        L6:
+  1406 09:0086: A5 28        	lda	<L2+2
+  1407 09:0088: 85 32        	sta	<L2+2+10
+  1408 09:008A: A5 27        	lda	<L2+1
+  1409 09:008C: 85 31        	sta	<L2+1+10
+  1410 09:008E: 2B           	pld
+  1411 09:008F: 3B           	tsc
+  1412 09:0090: 18           	clc
+  1413 09:0091: 69 30 00     	adc	#L2+10
+  1414 09:0094: 1B           	tcs
+  1415 09:0095: 6B           	rtl
+  1416                        ;
+  1417                        ;        /* Ajoute la structure */
+  1418                        ;        if(first_reloc == NULL)
+  1419                        L10012:
+  1420                        	.line	73
+  1421                        ;          first_reloc = current_reloc;
+  1422 09:0096: AD xx xx     	lda	|L10002
+  1423 09:0099: 0D xx xx     	ora	|L10002+2
+  1424 09:009C: F0 03        	beq	L7
+  1425 09:009E: 82 0D 00     	brl	L10013
+  1426                        L7:
+  1427                        	.line	74
+  1428 09:00A1: A5 0F        	lda	<L3+current_reloc_1
+  1429 09:00A3: 8D xx xx     	sta	|L10002
+  1430 09:00A6: A5 11        	lda	<L3+current_reloc_1+2
+  1431 09:00A8: 8D xx xx     	sta	|L10002+2
+  1432                        ;        else
+  1433 09:00AB: 82 18 00     	brl	L10014
+  1434                        L10013:
+  1435                        ;          last_reloc->next = current_reloc;
+  1436                        	.line	76
+  1437 09:00AE: AD xx xx     	lda	|L10003
+  1438 09:00B1: 85 01        	sta	<R0
+  Sat Jul 10 2021  1:15                                                Page 28
+
+
+  1439 09:00B3: AD xx xx     	lda	|L10003+2
+  1440 09:00B6: 85 03        	sta	<R0+2
+  1441 09:00B8: A5 0F        	lda	<L3+current_reloc_1
+  1442 09:00BA: A0 0C 00     	ldy	#$c
+  1443 09:00BD: 97 01        	sta	[<R0],Y
+  1444 09:00BF: A5 11        	lda	<L3+current_reloc_1+2
+  1445 09:00C1: A0 0E 00     	ldy	#$e
+  1446 09:00C4: 97 01        	sta	[<R0],Y
+  1447                        L10014:
+  1448                        ;        last_reloc = current_reloc;
+  1449                        	.line	77
+  1450 09:00C6: A5 0F        	lda	<L3+current_reloc_1
+  1451 09:00C8: 8D xx xx     	sta	|L10003
+  1452 09:00CB: A5 11        	lda	<L3+current_reloc_1+2
+  1453 09:00CD: 8D xx xx     	sta	|L10003+2
+  1454                        ;        nb_reloc++;
+  1455                        	.line	78
+  1456 09:00D0: EE xx xx     	inc	|L10001
+  1457                        ;        break;
+  1458                        	.line	79
+  1459 09:00D3: 82 FA 02     	brl	L10008
+  1460                        ;
+  1461                        ;      case MEMORY_GET_RELOC_NB :
+  1462                        	.line	81
+  1463                        L10015:
+  1464                        ;    	  k_debug_string("my_Memory::MEMORY_GET_
+                    RELOC_NB...\r\n");
+  1465                        	.line	82
+  1466 09:00D6: F4 xx xx     	pea	#^L1+89
+  1467 09:00D9: F4 xx xx     	pea	#<L1+89
+  1468 09:00DC: 22 xx xx xx  	jsl	~~k_debug_string
+  1469                        ;        *((int *) data) = nb_reloc;
+  1470                        	.line	83
+  1471 09:00E0: AD xx xx     	lda	|L10001
+  1472 09:00E3: 87 2C        	sta	[<L2+data_0]
+  1473                        ;        break;
+  1474                        	.line	84
+  1475 09:00E5: 82 E8 02     	brl	L10008
+  1476                        ;
+  1477                        ;      case MEMORY_SORT_RELOC :
+  1478                        	.line	86
+  1479                        L10016:
+  1480                        ;    	  k_debug_string("my_Memory::MEMORY_SORT
+                    _RELOC...\r\n");
+  1481                        	.line	87
+  1482 09:00E8: F4 xx xx     	pea	#^L1+125
+  1483 09:00EB: F4 xx xx     	pea	#<L1+125
+  1484 09:00EE: 22 xx xx xx  	jsl	~~k_debug_string
+  1485                        ;        /* Allocatioon d'un Tableau trié */
+  1486                        ;        if(nb_reloc == 0)
+  1487                        	.line	89
+  1488                        ;          {
+  1489 09:00F2: AD xx xx     	lda	|L10001
+  1490 09:00F5: F0 03        	beq	L8
+  1491 09:00F7: 82 15 00     	brl	L10017
+  1492                        L8:
+  1493                        	.line	90
+  1494                        ;            *((int *) data) = 0;
+  Sat Jul 10 2021  1:15                                                Page 29
+
+
+  1495                        	.line	91
+  1496 09:00FA: A9 00 00     	lda	#$0
+  1497 09:00FD: 87 2C        	sta	[<L2+data_0]
+  1498                        ;            *((struct omf_reloc ***) value) = NUL
+                    L;
+  1499                        	.line	92
+  1500 09:00FF: A9 00 00     	lda	#$0
+  1501 09:0102: 87 30        	sta	[<L2+value_0]
+  1502 09:0104: A9 00 00     	lda	#$0
+  1503 09:0107: A0 02 00     	ldy	#$2
+  1504 09:010A: 97 30        	sta	[<L2+value_0],Y
+  1505                        ;            return;
+  1506                        	.line	93
+  1507 09:010C: 82 77 FF     	brl	L6
+  1508                        ;          }
+  1509                        	.line	94
+  1510                        ;
+  1511                        ;        /* Allocation */
+  1512                        ;        tab_reloc = (struct omf_reloc **) k_callo
+                    c(nb_reloc,sizeof(LPVOID));
+  1513                        L10017:
+  1514                        	.line	97
+  1515 09:010F: F4 04 00     	pea	#<$4
+  1516 09:0112: AD xx xx     	lda	|L10001
+  1517 09:0115: 48           	pha
+  1518 09:0116: 22 xx xx xx  	jsl	~~k_calloc
+  1519 09:011A: 85 17        	sta	<L3+tab_reloc_1
+  1520 09:011C: 86 19        	stx	<L3+tab_reloc_1+2
+  1521                        ;        if(tab_reloc == NULL)
+  1522                        	.line	98
+  1523                        ;          ;
+  1524 09:011E: A5 17        	lda	<L3+tab_reloc_1
+  1525 09:0120: 05 19        	ora	<L3+tab_reloc_1+2
+  1526 09:0122: F0 03        	beq	L9
+  1527 09:0124: 82 00 00     	brl	L10018
+  1528                        L9:
+  1529                        	.line	99
+  1530                        ;
+  1531                        ;        /* Remplissage */
+  1532                        ;        for(current_reloc=first_reloc, i=0; curre
+                    nt_reloc; current_reloc=current_reloc->next, i++)
+  1533                        L10018:
+  1534                        	.line	102
+  1535 09:0127: AD xx xx     	lda	|L10002
+  1536 09:012A: 85 0F        	sta	<L3+current_reloc_1
+  1537 09:012C: AD xx xx     	lda	|L10002+2
+  1538 09:012F: 85 11        	sta	<L3+current_reloc_1+2
+  1539 09:0131: 64 0D        	stz	<L3+i_1
+  1540 09:0133: 82 4B 00     	brl	L10022
+  1541                        L10021:
+  1542                        ;          tab_reloc[i] = current_reloc;
+  1543                        	.line	103
+  1544 09:0136: A0 00 00     	ldy	#$0
+  1545 09:0139: A5 0D        	lda	<L3+i_1
+  1546 09:013B: 10 01        	bpl	L10
+  1547 09:013D: 88           	dey
+  1548                        L10:
+  1549 09:013E: 85 05        	sta	<R1
+  Sat Jul 10 2021  1:15                                                Page 30
+
+
+  1550 09:0140: 84 07        	sty	<R1+2
+  1551 09:0142: D4 07        	pei	<R1+2
+  1552 09:0144: D4 05        	pei	<R1
+  1553 09:0146: A9 02 00     	lda	#$2
+  1554                        	xref	~~~lasl
+  1555 09:0149: 22 xx xx xx  	jsl	~~~lasl
+  1556 09:014D: 85 01        	sta	<R0
+  1557 09:014F: 86 03        	stx	<R0+2
+  1558 09:0151: 18           	clc
+  1559 09:0152: A5 17        	lda	<L3+tab_reloc_1
+  1560 09:0154: 65 01        	adc	<R0
+  1561 09:0156: 85 09        	sta	<R2
+  1562 09:0158: A5 19        	lda	<L3+tab_reloc_1+2
+  1563 09:015A: 65 03        	adc	<R0+2
+  1564 09:015C: 85 0B        	sta	<R2+2
+  1565 09:015E: A5 0F        	lda	<L3+current_reloc_1
+  1566 09:0160: 87 09        	sta	[<R2]
+  1567 09:0162: A5 11        	lda	<L3+current_reloc_1+2
+  1568 09:0164: A0 02 00     	ldy	#$2
+  1569 09:0167: 97 09        	sta	[<R2],Y
+  1570                        L10019:
+  1571 09:0169: A0 0C 00     	ldy	#$c
+  1572 09:016C: B7 0F        	lda	[<L3+current_reloc_1],Y
+  1573 09:016E: 85 01        	sta	<R0
+  1574 09:0170: A0 0E 00     	ldy	#$e
+  1575 09:0173: B7 0F        	lda	[<L3+current_reloc_1],Y
+  1576 09:0175: 85 03        	sta	<R0+2
+  1577 09:0177: A5 01        	lda	<R0
+  1578 09:0179: 85 0F        	sta	<L3+current_reloc_1
+  1579 09:017B: A5 03        	lda	<R0+2
+  1580 09:017D: 85 11        	sta	<L3+current_reloc_1+2
+  1581 09:017F: E6 0D        	inc	<L3+i_1
+  1582                        L10022:
+  1583 09:0181: A5 0F        	lda	<L3+current_reloc_1
+  1584 09:0183: 05 11        	ora	<L3+current_reloc_1+2
+  1585 09:0185: F0 03        	beq	L11
+  1586 09:0187: 82 AC FF     	brl	L10021
+  1587                        L11:
+  1588                        L10020:
+  1589                        ;
+  1590                        ;        /* Tri */
+  1591                        ;        qsort(tab_reloc,nb_reloc,sizeof(LPVOID),c
+                    ompare_reloc);
+  1592                        	.line	106
+  1593 09:018A: F4 09 00     	pea	#^~~compare_reloc
+  1594 09:018D: F4 D3 03     	pea	#<~~compare_reloc
+  1595 09:0190: F4 04 00     	pea	#<$4
+  1596 09:0193: AD xx xx     	lda	|L10001
+  1597 09:0196: 48           	pha
+  1598 09:0197: D4 19        	pei	<L3+tab_reloc_1+2
+  1599 09:0199: D4 17        	pei	<L3+tab_reloc_1
+  1600 09:019B: 22 xx xx xx  	jsl	~~qsort
+  1601                        ;
+  1602                        ;        /* Renvoi les éléments */
+  1603                        ;        *((int *) data) = nb_reloc;
+  1604                        	.line	109
+  1605 09:019F: AD xx xx     	lda	|L10001
+  1606 09:01A2: 87 2C        	sta	[<L2+data_0]
+  Sat Jul 10 2021  1:15                                                Page 31
+
+
+  1607                        ;        *((struct omf_reloc ***) value) = tab_rel
+                    oc;
+  1608                        	.line	110
+  1609 09:01A4: A5 17        	lda	<L3+tab_reloc_1
+  1610 09:01A6: 87 30        	sta	[<L2+value_0]
+  1611 09:01A8: A5 19        	lda	<L3+tab_reloc_1+2
+  1612 09:01AA: A0 02 00     	ldy	#$2
+  1613 09:01AD: 97 30        	sta	[<L2+value_0],Y
+  1614                        ;
+  1615                        ;        /* Nettoyage */
+  1616                        ;        nb_reloc = 0;
+  1617                        	.line	113
+  1618 09:01AF: 9C xx xx     	stz	|L10001
+  1619                        ;        first_reloc = NULL;
+  1620                        	.line	114
+  1621 09:01B2: 9C xx xx     	stz	|L10002
+  1622 09:01B5: 9C xx xx     	stz	|L10002+2
+  1623                        ;        last_reloc = NULL;
+  1624                        	.line	115
+  1625 09:01B8: 9C xx xx     	stz	|L10003
+  1626 09:01BB: 9C xx xx     	stz	|L10003+2
+  1627                        ;        break;
+  1628                        	.line	116
+  1629 09:01BE: 82 0F 02     	brl	L10008
+  1630                        ;
+  1631                        ;      case MEMORY_FREE_RELOC :
+  1632                        	.line	118
+  1633                        L10023:
+  1634                        ;    	  k_debug_string("my_Memory::MEMORY_FREE
+                    _RELOC...\r\n");
+  1635                        	.line	119
+  1636 09:01C1: F4 xx xx     	pea	#^L1+159
+  1637 09:01C4: F4 xx xx     	pea	#<L1+159
+  1638 09:01C7: 22 xx xx xx  	jsl	~~k_debug_string
+  1639                        ;        for(current_reloc = first_reloc; current_
+                    reloc; )
+  1640                        	.line	120
+  1641 09:01CB: AD xx xx     	lda	|L10002
+  1642 09:01CE: 85 0F        	sta	<L3+current_reloc_1
+  1643 09:01D0: AD xx xx     	lda	|L10002+2
+  1644 09:01D3: 85 11        	sta	<L3+current_reloc_1+2
+  1645 09:01D5: 82 27 00     	brl	L10027
+  1646                        L10026:
+  1647                        ;          {
+  1648                        	.line	121
+  1649                        ;        	if(current_reloc)
+  1650                        	.line	122
+  1651                        ;        	{
+  1652 09:01D8: A5 0F        	lda	<L3+current_reloc_1
+  1653 09:01DA: 05 11        	ora	<L3+current_reloc_1+2
+  1654 09:01DC: D0 03        	bne	L12
+  1655 09:01DE: 82 1E 00     	brl	L10028
+  1656                        L12:
+  1657                        	.line	123
+  1658                        ;        		next_reloc = current_reloc->next
+                    ;
+  1659                        	.line	124
+  1660 09:01E1: A0 0C 00     	ldy	#$c
+  Sat Jul 10 2021  1:15                                                Page 32
+
+
+  1661 09:01E4: B7 0F        	lda	[<L3+current_reloc_1],Y
+  1662 09:01E6: 85 13        	sta	<L3+next_reloc_1
+  1663 09:01E8: A0 0E 00     	ldy	#$e
+  1664 09:01EB: B7 0F        	lda	[<L3+current_reloc_1],Y
+  1665 09:01ED: 85 15        	sta	<L3+next_reloc_1+2
+  1666                        ;        		k_free(current_reloc);
+  1667                        	.line	125
+  1668 09:01EF: D4 11        	pei	<L3+current_reloc_1+2
+  1669 09:01F1: D4 0F        	pei	<L3+current_reloc_1
+  1670 09:01F3: 22 xx xx xx  	jsl	~~k_free
+  1671                        ;        		current_reloc = next_reloc;
+  1672                        	.line	126
+  1673 09:01F7: A5 13        	lda	<L3+next_reloc_1
+  1674 09:01F9: 85 0F        	sta	<L3+current_reloc_1
+  1675 09:01FB: A5 15        	lda	<L3+next_reloc_1+2
+  1676 09:01FD: 85 11        	sta	<L3+current_reloc_1+2
+  1677                        ;        	}
+  1678                        	.line	127
+  1679                        ;          }
+  1680                        L10028:
+  1681                        	.line	128
+  1682                        L10024:
+  1683                        L10027:
+  1684 09:01FF: A5 0F        	lda	<L3+current_reloc_1
+  1685 09:0201: 05 11        	ora	<L3+current_reloc_1+2
+  1686 09:0203: F0 03        	beq	L13
+  1687 09:0205: 82 D0 FF     	brl	L10026
+  1688                        L13:
+  1689                        L10025:
+  1690                        ;        nb_reloc = 0;
+  1691                        	.line	129
+  1692 09:0208: 9C xx xx     	stz	|L10001
+  1693                        ;        first_reloc = NULL;
+  1694                        	.line	130
+  1695 09:020B: 9C xx xx     	stz	|L10002
+  1696 09:020E: 9C xx xx     	stz	|L10002+2
+  1697                        ;        last_reloc = NULL;
+  1698                        	.line	131
+  1699 09:0211: 9C xx xx     	stz	|L10003
+  1700 09:0214: 9C xx xx     	stz	|L10003+2
+  1701                        ;        k_debug_string("my_Memory::MEMORY_FREE_RE
+                    LOC DONE...\r\n");
+  1702                        	.line	132
+  1703 09:0217: F4 xx xx     	pea	#^L1+193
+  1704 09:021A: F4 xx xx     	pea	#<L1+193
+  1705 09:021D: 22 xx xx xx  	jsl	~~k_debug_string
+  1706                        ;        break;
+  1707                        	.line	133
+  1708 09:0221: 82 AC 01     	brl	L10008
+  1709                        ;
+  1710                        ;      /******************************/
+  1711                        ;      /*  Liste chaine de INTERSEG  */
+  1712                        ;      /******************************/
+  1713                        ;      case MEMORY_ADD_INTERSEG :
+  1714                        	.line	138
+  1715                        L10029:
+  1716                        ;        current_interseg = (struct omf_interseg *
+                    ) data;
+  Sat Jul 10 2021  1:15                                                Page 33
+
+
+  1717                        	.line	139
+  1718 09:0224: A5 2C        	lda	<L2+data_0
+  1719 09:0226: 85 1B        	sta	<L3+current_interseg_1
+  1720 09:0228: A5 2E        	lda	<L2+data_0+2
+  1721 09:022A: 85 1D        	sta	<L3+current_interseg_1+2
+  1722                        ;        if(current_interseg == NULL)
+  1723                        	.line	140
+  1724                        ;          return;
+  1725 09:022C: A5 1B        	lda	<L3+current_interseg_1
+  1726 09:022E: 05 1D        	ora	<L3+current_interseg_1+2
+  1727 09:0230: F0 03        	beq	L14
+  1728 09:0232: 82 03 00     	brl	L10030
+  1729                        L14:
+  1730                        	.line	141
+  1731 09:0235: 82 4E FE     	brl	L6
+  1732                        ;
+  1733                        ;        /* Ajoute la structure */
+  1734                        ;        if(first_interseg == NULL)
+  1735                        L10030:
+  1736                        	.line	144
+  1737                        ;          first_interseg = current_interseg;
+  1738 09:0238: AD xx xx     	lda	|L10005
+  1739 09:023B: 0D xx xx     	ora	|L10005+2
+  1740 09:023E: F0 03        	beq	L15
+  1741 09:0240: 82 0D 00     	brl	L10031
+  1742                        L15:
+  1743                        	.line	145
+  1744 09:0243: A5 1B        	lda	<L3+current_interseg_1
+  1745 09:0245: 8D xx xx     	sta	|L10005
+  1746 09:0248: A5 1D        	lda	<L3+current_interseg_1+2
+  1747 09:024A: 8D xx xx     	sta	|L10005+2
+  1748                        ;        else
+  1749 09:024D: 82 18 00     	brl	L10032
+  1750                        L10031:
+  1751                        ;          last_interseg->next = current_interseg;
+  1752                        	.line	147
+  1753 09:0250: AD xx xx     	lda	|L10006
+  1754 09:0253: 85 01        	sta	<R0
+  1755 09:0255: AD xx xx     	lda	|L10006+2
+  1756 09:0258: 85 03        	sta	<R0+2
+  1757 09:025A: A5 1B        	lda	<L3+current_interseg_1
+  1758 09:025C: A0 10 00     	ldy	#$10
+  1759 09:025F: 97 01        	sta	[<R0],Y
+  1760 09:0261: A5 1D        	lda	<L3+current_interseg_1+2
+  1761 09:0263: A0 12 00     	ldy	#$12
+  1762 09:0266: 97 01        	sta	[<R0],Y
+  1763                        L10032:
+  1764                        ;        last_interseg = current_interseg;
+  1765                        	.line	148
+  1766 09:0268: A5 1B        	lda	<L3+current_interseg_1
+  1767 09:026A: 8D xx xx     	sta	|L10006
+  1768 09:026D: A5 1D        	lda	<L3+current_interseg_1+2
+  1769 09:026F: 8D xx xx     	sta	|L10006+2
+  1770                        ;        nb_interseg++;
+  1771                        	.line	149
+  1772 09:0272: EE xx xx     	inc	|L10004
+  1773                        ;        break;
+  1774                        	.line	150
+  Sat Jul 10 2021  1:15                                                Page 34
+
+
+  1775 09:0275: 82 58 01     	brl	L10008
+  1776                        ;
+  1777                        ;      case MEMORY_GET_INTERSEG_NB :
+  1778                        	.line	152
+  1779                        L10033:
+  1780                        ;        *((int *) data) = nb_interseg;
+  1781                        	.line	153
+  1782 09:0278: AD xx xx     	lda	|L10004
+  1783 09:027B: 87 2C        	sta	[<L2+data_0]
+  1784                        ;        break;
+  1785                        	.line	154
+  1786 09:027D: 82 50 01     	brl	L10008
+  1787                        ;
+  1788                        ;      case MEMORY_SORT_INTERSEG :
+  1789                        	.line	156
+  1790                        L10034:
+  1791                        ;        /* Allocatioon d'un Tableau trié */
+  1792                        ;        if(nb_interseg == 0)
+  1793                        	.line	158
+  1794                        ;          {
+  1795 09:0280: AD xx xx     	lda	|L10004
+  1796 09:0283: F0 03        	beq	L16
+  1797 09:0285: 82 15 00     	brl	L10035
+  1798                        L16:
+  1799                        	.line	159
+  1800                        ;            *((int *) data) = 0;
+  1801                        	.line	160
+  1802 09:0288: A9 00 00     	lda	#$0
+  1803 09:028B: 87 2C        	sta	[<L2+data_0]
+  1804                        ;            *((struct omf_interseg ***) value) = 
+                    NULL;
+  1805                        	.line	161
+  1806 09:028D: A9 00 00     	lda	#$0
+  1807 09:0290: 87 30        	sta	[<L2+value_0]
+  1808 09:0292: A9 00 00     	lda	#$0
+  1809 09:0295: A0 02 00     	ldy	#$2
+  1810 09:0298: 97 30        	sta	[<L2+value_0],Y
+  1811                        ;            return;
+  1812                        	.line	162
+  1813 09:029A: 82 E9 FD     	brl	L6
+  1814                        ;          }
+  1815                        	.line	163
+  1816                        ;
+  1817                        ;        /* Allocation */
+  1818                        ;        tab_interseg = (struct omf_interseg **) k
+                    _calloc(nb_interseg,sizeof(LPVOID));
+  1819                        L10035:
+  1820                        	.line	166
+  1821 09:029D: F4 04 00     	pea	#<$4
+  1822 09:02A0: AD xx xx     	lda	|L10004
+  1823 09:02A3: 48           	pha
+  1824 09:02A4: 22 xx xx xx  	jsl	~~k_calloc
+  1825 09:02A8: 85 23        	sta	<L3+tab_interseg_1
+  1826 09:02AA: 86 25        	stx	<L3+tab_interseg_1+2
+  1827                        ;        if(tab_interseg == NULL)
+  1828                        	.line	167
+  1829                        ;          ;
+  1830 09:02AC: A5 23        	lda	<L3+tab_interseg_1
+  Sat Jul 10 2021  1:15                                                Page 35
+
+
+  1831 09:02AE: 05 25        	ora	<L3+tab_interseg_1+2
+  1832 09:02B0: F0 03        	beq	L17
+  1833 09:02B2: 82 00 00     	brl	L10036
+  1834                        L17:
+  1835                        	.line	168
+  1836                        ;
+  1837                        ;        /* Remplissage */
+  1838                        ;        for(current_interseg=first_interseg, i=0;
+                     current_interseg; current_interseg=current_interseg->next, 
+                    i++)
+  1839                        L10036:
+  1840                        	.line	171
+  1841 09:02B5: AD xx xx     	lda	|L10005
+  1842 09:02B8: 85 1B        	sta	<L3+current_interseg_1
+  1843 09:02BA: AD xx xx     	lda	|L10005+2
+  1844 09:02BD: 85 1D        	sta	<L3+current_interseg_1+2
+  1845 09:02BF: 64 0D        	stz	<L3+i_1
+  1846 09:02C1: 82 4B 00     	brl	L10040
+  1847                        L10039:
+  1848                        ;          tab_interseg[i] = current_interseg;
+  1849                        	.line	172
+  1850 09:02C4: A0 00 00     	ldy	#$0
+  1851 09:02C7: A5 0D        	lda	<L3+i_1
+  1852 09:02C9: 10 01        	bpl	L18
+  1853 09:02CB: 88           	dey
+  1854                        L18:
+  1855 09:02CC: 85 05        	sta	<R1
+  1856 09:02CE: 84 07        	sty	<R1+2
+  1857 09:02D0: D4 07        	pei	<R1+2
+  1858 09:02D2: D4 05        	pei	<R1
+  1859 09:02D4: A9 02 00     	lda	#$2
+  1860                        	xref	~~~lasl
+  1861 09:02D7: 22 xx xx xx  	jsl	~~~lasl
+  1862 09:02DB: 85 01        	sta	<R0
+  1863 09:02DD: 86 03        	stx	<R0+2
+  1864 09:02DF: 18           	clc
+  1865 09:02E0: A5 23        	lda	<L3+tab_interseg_1
+  1866 09:02E2: 65 01        	adc	<R0
+  1867 09:02E4: 85 09        	sta	<R2
+  1868 09:02E6: A5 25        	lda	<L3+tab_interseg_1+2
+  1869 09:02E8: 65 03        	adc	<R0+2
+  1870 09:02EA: 85 0B        	sta	<R2+2
+  1871 09:02EC: A5 1B        	lda	<L3+current_interseg_1
+  1872 09:02EE: 87 09        	sta	[<R2]
+  1873 09:02F0: A5 1D        	lda	<L3+current_interseg_1+2
+  1874 09:02F2: A0 02 00     	ldy	#$2
+  1875 09:02F5: 97 09        	sta	[<R2],Y
+  1876                        L10037:
+  1877 09:02F7: A0 10 00     	ldy	#$10
+  1878 09:02FA: B7 1B        	lda	[<L3+current_interseg_1],Y
+  1879 09:02FC: 85 01        	sta	<R0
+  1880 09:02FE: A0 12 00     	ldy	#$12
+  1881 09:0301: B7 1B        	lda	[<L3+current_interseg_1],Y
+  1882 09:0303: 85 03        	sta	<R0+2
+  1883 09:0305: A5 01        	lda	<R0
+  1884 09:0307: 85 1B        	sta	<L3+current_interseg_1
+  1885 09:0309: A5 03        	lda	<R0+2
+  1886 09:030B: 85 1D        	sta	<L3+current_interseg_1+2
+  Sat Jul 10 2021  1:15                                                Page 36
+
+
+  1887 09:030D: E6 0D        	inc	<L3+i_1
+  1888                        L10040:
+  1889 09:030F: A5 1B        	lda	<L3+current_interseg_1
+  1890 09:0311: 05 1D        	ora	<L3+current_interseg_1+2
+  1891 09:0313: F0 03        	beq	L19
+  1892 09:0315: 82 AC FF     	brl	L10039
+  1893                        L19:
+  1894                        L10038:
+  1895                        ;
+  1896                        ;        /* Tri */
+  1897                        ;        qsort(tab_interseg,nb_interseg,sizeof(LPV
+                    OID),compare_interseg);
+  1898                        	.line	175
+  1899 09:0318: F4 09 00     	pea	#^~~compare_interseg
+  1900 09:031B: F4 6A 04     	pea	#<~~compare_interseg
+  1901 09:031E: F4 04 00     	pea	#<$4
+  1902 09:0321: AD xx xx     	lda	|L10004
+  1903 09:0324: 48           	pha
+  1904 09:0325: D4 25        	pei	<L3+tab_interseg_1+2
+  1905 09:0327: D4 23        	pei	<L3+tab_interseg_1
+  1906 09:0329: 22 xx xx xx  	jsl	~~qsort
+  1907                        ;
+  1908                        ;        /* Renvoi les éléments */
+  1909                        ;        *((int *) data) = nb_interseg;
+  1910                        	.line	178
+  1911 09:032D: AD xx xx     	lda	|L10004
+  1912 09:0330: 87 2C        	sta	[<L2+data_0]
+  1913                        ;        *((struct omf_interseg ***) value) = tab_
+                    interseg;
+  1914                        	.line	179
+  1915 09:0332: A5 23        	lda	<L3+tab_interseg_1
+  1916 09:0334: 87 30        	sta	[<L2+value_0]
+  1917 09:0336: A5 25        	lda	<L3+tab_interseg_1+2
+  1918 09:0338: A0 02 00     	ldy	#$2
+  1919 09:033B: 97 30        	sta	[<L2+value_0],Y
+  1920                        ;
+  1921                        ;        /* Nettoyage */
+  1922                        ;        nb_interseg = 0;
+  1923                        	.line	182
+  1924 09:033D: 9C xx xx     	stz	|L10004
+  1925                        ;        first_interseg = NULL;
+  1926                        	.line	183
+  1927 09:0340: 9C xx xx     	stz	|L10005
+  1928 09:0343: 9C xx xx     	stz	|L10005+2
+  1929                        ;        last_interseg = NULL;
+  1930                        	.line	184
+  1931 09:0346: 9C xx xx     	stz	|L10006
+  1932 09:0349: 9C xx xx     	stz	|L10006+2
+  1933                        ;        break;
+  1934                        	.line	185
+  1935 09:034C: 82 81 00     	brl	L10008
+  1936                        ;
+  1937                        ;      case MEMORY_FREE_INTERSEG :
+  1938                        	.line	187
+  1939                        L10041:
+  1940                        ;        for(current_interseg = first_interseg; cu
+                    rrent_interseg; )
+  1941                        	.line	188
+  Sat Jul 10 2021  1:15                                                Page 37
+
+
+  1942 09:034F: AD xx xx     	lda	|L10005
+  1943 09:0352: 85 1B        	sta	<L3+current_interseg_1
+  1944 09:0354: AD xx xx     	lda	|L10005+2
+  1945 09:0357: 85 1D        	sta	<L3+current_interseg_1+2
+  1946 09:0359: 82 1E 00     	brl	L10045
+  1947                        L10044:
+  1948                        ;          {
+  1949                        	.line	189
+  1950                        ;            next_interseg = current_interseg->nex
+                    t;
+  1951                        	.line	190
+  1952 09:035C: A0 10 00     	ldy	#$10
+  1953 09:035F: B7 1B        	lda	[<L3+current_interseg_1],Y
+  1954 09:0361: 85 1F        	sta	<L3+next_interseg_1
+  1955 09:0363: A0 12 00     	ldy	#$12
+  1956 09:0366: B7 1B        	lda	[<L3+current_interseg_1],Y
+  1957 09:0368: 85 21        	sta	<L3+next_interseg_1+2
+  1958                        ;            k_free(current_interseg);
+  1959                        	.line	191
+  1960 09:036A: D4 1D        	pei	<L3+current_interseg_1+2
+  1961 09:036C: D4 1B        	pei	<L3+current_interseg_1
+  1962 09:036E: 22 xx xx xx  	jsl	~~k_free
+  1963                        ;            current_interseg = next_interseg;
+  1964                        	.line	192
+  1965 09:0372: A5 1F        	lda	<L3+next_interseg_1
+  1966 09:0374: 85 1B        	sta	<L3+current_interseg_1
+  1967 09:0376: A5 21        	lda	<L3+next_interseg_1+2
+  1968 09:0378: 85 1D        	sta	<L3+current_interseg_1+2
+  1969                        ;          }
+  1970                        	.line	193
+  1971                        L10042:
+  1972                        L10045:
+  1973 09:037A: A5 1B        	lda	<L3+current_interseg_1
+  1974 09:037C: 05 1D        	ora	<L3+current_interseg_1+2
+  1975 09:037E: F0 03        	beq	L20
+  1976 09:0380: 82 D9 FF     	brl	L10044
+  1977                        L20:
+  1978                        L10043:
+  1979                        ;        nb_interseg = 0;
+  1980                        	.line	194
+  1981 09:0383: 9C xx xx     	stz	|L10004
+  1982                        ;        first_interseg = NULL;
+  1983                        	.line	195
+  1984 09:0386: 9C xx xx     	stz	|L10005
+  1985 09:0389: 9C xx xx     	stz	|L10005+2
+  1986                        ;        last_interseg = NULL;
+  1987                        	.line	196
+  1988 09:038C: 9C xx xx     	stz	|L10006
+  1989 09:038F: 9C xx xx     	stz	|L10006+2
+  1990                        ;        break;
+  1991                        	.line	197
+  1992 09:0392: 82 3B 00     	brl	L10008
+  1993                        ;
+  1994                        ;      default :
+  1995                        	.line	199
+  1996                        L10046:
+  1997                        ;        break;
+  1998                        	.line	200
+  Sat Jul 10 2021  1:15                                                Page 38
+
+
+  1999 09:0395: 82 38 00     	brl	L10008
+  2000                        ;    }
+  2001                        	.line	201
+  2002                        L10007:
+  2003                        	xref	~~~fsw
+  2004 09:0398: 22 xx xx xx  	jsl	~~~fsw
+  2005 09:039C: 01 00        	dw	1
+  2006 09:039E: 17 00        	dw	23
+  2007 09:03A0: 94 03        	dw	L10046-1
+  2008 09:03A2: 0C 00        	dw	L10009-1
+  2009 09:03A4: 37 00        	dw	L10010-1
+  2010 09:03A6: 94 03        	dw	L10046-1
+  2011 09:03A8: 94 03        	dw	L10046-1
+  2012 09:03AA: 94 03        	dw	L10046-1
+  2013 09:03AC: 94 03        	dw	L10046-1
+  2014 09:03AE: 94 03        	dw	L10046-1
+  2015 09:03B0: 94 03        	dw	L10046-1
+  2016 09:03B2: 94 03        	dw	L10046-1
+  2017 09:03B4: 6A 00        	dw	L10011-1
+  2018 09:03B6: D5 00        	dw	L10015-1
+  2019 09:03B8: E7 00        	dw	L10016-1
+  2020 09:03BA: C0 01        	dw	L10023-1
+  2021 09:03BC: 94 03        	dw	L10046-1
+  2022 09:03BE: 94 03        	dw	L10046-1
+  2023 09:03C0: 94 03        	dw	L10046-1
+  2024 09:03C2: 94 03        	dw	L10046-1
+  2025 09:03C4: 94 03        	dw	L10046-1
+  2026 09:03C6: 94 03        	dw	L10046-1
+  2027 09:03C8: 23 02        	dw	L10029-1
+  2028 09:03CA: 77 02        	dw	L10033-1
+  2029 09:03CC: 7F 02        	dw	L10034-1
+  2030 09:03CE: 4E 03        	dw	L10041-1
+  2031                        L10008:
+  2032                        ;}
+  2033                        	.line	202
+  2034 09:03D0: 82 B3 FC     	brl	L6
+  2035                        	.endblock	202
+  2036             00000026   L2	equ	38
+  2037             0000000D   L3	equ	13
+  2038 09:03D3:              	ends
+  2039                        	efunc
+  2040                        	.endfunc	202,13,38
+  2041                        	.line	202
+  2042                        	data
+  2043                        L1:
+  2044 00:0000: 6D 79 5F 4D  	db	$6D,$79,$5F,$4D,$65,$6D,$6F,$72,$79,$3A,
+                    $3A,$4D,$45,$4D,$4F
+       00:0004: 65 6D 6F 72 
+       00:0008: 79 3A 3A 4D 
+       00:000C: 45 4D 4F 
+  2045 00:000F: 52 59 5F 49  	db	$52,$59,$5F,$49,$4E,$49,$54,$2E,$2E,$2E,
+                    $0D,$0A,$00,$6D,$79
+       00:0013: 4E 49 54 2E 
+       00:0017: 2E 2E 0D 0A 
+       00:001B: 00 6D 79 
+  2046 00:001E: 5F 4D 65 6D  	db	$5F,$4D,$65,$6D,$6F,$72,$79,$3A,$3A,$4D,
+                    $45,$4D,$4F,$52,$59
+       00:0022: 6F 72 79 3A 
+  Sat Jul 10 2021  1:15                                                Page 39
+
+
+       00:0026: 3A 4D 45 4D 
+       00:002A: 4F 52 59 
+  2047 00:002D: 5F 46 52 45  	db	$5F,$46,$52,$45,$45,$2E,$2E,$2E,$0D,$0A,
+                    $00,$6D,$79,$5F,$4D
+       00:0031: 45 2E 2E 2E 
+       00:0035: 0D 0A 00 6D 
+       00:0039: 79 5F 4D 
+  2048 00:003C: 65 6D 6F 72  	db	$65,$6D,$6F,$72,$79,$3A,$3A,$4D,$45,$4D,
+                    $4F,$52,$59,$5F,$41
+       00:0040: 79 3A 3A 4D 
+       00:0044: 45 4D 4F 52 
+       00:0048: 59 5F 41 
+  2049 00:004B: 44 44 5F 52  	db	$44,$44,$5F,$52,$45,$4C,$4F,$43,$2E,$2E,
+                    $2E,$0D,$0A,$00,$6D
+       00:004F: 45 4C 4F 43 
+       00:0053: 2E 2E 2E 0D 
+       00:0057: 0A 00 6D 
+  2050 00:005A: 79 5F 4D 65  	db	$79,$5F,$4D,$65,$6D,$6F,$72,$79,$3A,$3A,
+                    $4D,$45,$4D,$4F,$52
+       00:005E: 6D 6F 72 79 
+       00:0062: 3A 3A 4D 45 
+       00:0066: 4D 4F 52 
+  2051 00:0069: 59 5F 47 45  	db	$59,$5F,$47,$45,$54,$5F,$52,$45,$4C,$4F,
+                    $43,$5F,$4E,$42,$2E
+       00:006D: 54 5F 52 45 
+       00:0071: 4C 4F 43 5F 
+       00:0075: 4E 42 2E 
+  2052 00:0078: 2E 2E 0D 0A  	db	$2E,$2E,$0D,$0A,$00,$6D,$79,$5F,$4D,$65,
+                    $6D,$6F,$72,$79,$3A
+       00:007C: 00 6D 79 5F 
+       00:0080: 4D 65 6D 6F 
+       00:0084: 72 79 3A 
+  2053 00:0087: 3A 4D 45 4D  	db	$3A,$4D,$45,$4D,$4F,$52,$59,$5F,$53,$4F,
+                    $52,$54,$5F,$52,$45
+       00:008B: 4F 52 59 5F 
+       00:008F: 53 4F 52 54 
+       00:0093: 5F 52 45 
+  2054 00:0096: 4C 4F 43 2E  	db	$4C,$4F,$43,$2E,$2E,$2E,$0D,$0A,$00,$6D,
+                    $79,$5F,$4D,$65,$6D
+       00:009A: 2E 2E 0D 0A 
+       00:009E: 00 6D 79 5F 
+       00:00A2: 4D 65 6D 
+  2055 00:00A5: 6F 72 79 3A  	db	$6F,$72,$79,$3A,$3A,$4D,$45,$4D,$4F,$52,
+                    $59,$5F,$46,$52,$45
+       00:00A9: 3A 4D 45 4D 
+       00:00AD: 4F 52 59 5F 
+       00:00B1: 46 52 45 
+  2056 00:00B4: 45 5F 52 45  	db	$45,$5F,$52,$45,$4C,$4F,$43,$2E,$2E,$2E,
+                    $0D,$0A,$00,$6D,$79
+       00:00B8: 4C 4F 43 2E 
+       00:00BC: 2E 2E 0D 0A 
+       00:00C0: 00 6D 79 
+  2057 00:00C3: 5F 4D 65 6D  	db	$5F,$4D,$65,$6D,$6F,$72,$79,$3A,$3A,$4D,
+                    $45,$4D,$4F,$52,$59
+       00:00C7: 6F 72 79 3A 
+       00:00CB: 3A 4D 45 4D 
+       00:00CF: 4F 52 59 
+  2058 00:00D2: 5F 46 52 45  	db	$5F,$46,$52,$45,$45,$5F,$52,$45,$4C,$4F,
+  Sat Jul 10 2021  1:15                                                Page 40
+
+
+                    $43,$20,$44,$4F,$4E
+       00:00D6: 45 5F 52 45 
+       00:00DA: 4C 4F 43 20 
+       00:00DE: 44 4F 4E 
+  2059 00:00E1: 45 2E 2E 2E  	db	$45,$2E,$2E,$2E,$0D,$0A,$00
+       00:00E5: 0D 0A 00 
+  2060 00:00E8:              	ends
+  2061                        ;
+  2062                        ;
+  2063                        ;/************************************************
+                    ******************/
+  2064                        ;/*  compare_reloc() : Fonction de comparaison pou
+                    r le Quick Sort. */
+  2065                        ;/************************************************
+                    ******************/
+  2066                        ;int compare_reloc(const void *data_1, const void 
+                    *data_2)
+  2067                        ;{
+  2068                        	.line	208
+  2069                        	.line	209
+  2070                        	LOADER
+  2071                        	xdef	~~compare_reloc
+  2072                        	func
+  2073                        	.function	209
+  2074                        ~~compare_reloc:
+  2075                        	longa	on
+  2076                        	longi	on
+  2077 09:03D3: 3B           	tsc
+  2078 09:03D4: 38           	sec
+  2079 09:03D5: E9 08 00     	sbc	#L22
+  2080 09:03D8: 1B           	tcs
+  2081 09:03D9: 0B           	phd
+  2082 09:03DA: 5B           	tcd
+  2083             00000004   data_1_0	set	4
+  2084             00000008   data_2_0	set	8
+  2085                        	.block	209
+  2086                        ;  struct omf_reloc *reloc_1;
+  2087                        ;  struct omf_reloc *reloc_2;
+  2088                        ;
+  2089                        ;  /* Récupération des paramètres */
+  2090                        ;  reloc_1 = *((struct omf_reloc **) data_1);
+  2091             00000000   reloc_1_1	set	0
+  2092             00000004   reloc_2_1	set	4
+  2093                        	.sym	reloc_1,0,138,1,32,118
+  2094                        	.sym	reloc_2,4,138,1,32,118
+  2095                        	.sym	data_1,4,129,6,32
+  2096                        	.sym	data_2,8,129,6,32
+  2097                        	.line	214
+  2098 09:03DB: A7 0C        	lda	[<L22+data_1_0]
+  2099 09:03DD: 85 01        	sta	<L23+reloc_1_1
+  2100 09:03DF: A0 02 00     	ldy	#$2
+  2101 09:03E2: B7 0C        	lda	[<L22+data_1_0],Y
+  2102 09:03E4: 85 03        	sta	<L23+reloc_1_1+2
+  2103                        ;  reloc_2 = *((struct omf_reloc **) data_2);
+  2104                        	.line	215
+  2105 09:03E6: A7 10        	lda	[<L22+data_2_0]
+  2106 09:03E8: 85 05        	sta	<L23+reloc_2_1
+  2107 09:03EA: A0 02 00     	ldy	#$2
+  Sat Jul 10 2021  1:15                                                Page 41
+
+
+  2108 09:03ED: B7 10        	lda	[<L22+data_2_0],Y
+  2109 09:03EF: 85 07        	sta	<L23+reloc_2_1+2
+  2110                        ;
+  2111                        ;  /* Comparaison des adresses */
+  2112                        ;  if(reloc_1->OffsetPatch < reloc_2->OffsetPatch)
+  2113                        	.line	218
+  2114                        ;    return(-1);
+  2115 09:03F1: A0 02 00     	ldy	#$2
+  2116 09:03F4: B7 01        	lda	[<L23+reloc_1_1],Y
+  2117 09:03F6: A0 02 00     	ldy	#$2
+  2118 09:03F9: D7 05        	cmp	[<L23+reloc_2_1],Y
+  2119 09:03FB: A0 04 00     	ldy	#$4
+  2120 09:03FE: B7 01        	lda	[<L23+reloc_1_1],Y
+  2121 09:0400: A0 04 00     	ldy	#$4
+  2122 09:0403: F7 05        	sbc	[<L23+reloc_2_1],Y
+  2123 09:0405: 90 03        	bcc	L25
+  2124 09:0407: 82 15 00     	brl	L10047
+  2125                        L25:
+  2126                        	.line	219
+  2127 09:040A: A9 FF FF     	lda	#$ffff
+  2128                        L26:
+  2129 09:040D: A8           	tay
+  2130 09:040E: A5 0A        	lda	<L22+2
+  2131 09:0410: 85 12        	sta	<L22+2+8
+  2132 09:0412: A5 09        	lda	<L22+1
+  2133 09:0414: 85 11        	sta	<L22+1+8
+  2134 09:0416: 2B           	pld
+  2135 09:0417: 3B           	tsc
+  2136 09:0418: 18           	clc
+  2137 09:0419: 69 10 00     	adc	#L22+8
+  2138 09:041C: 1B           	tcs
+  2139 09:041D: 98           	tya
+  2140 09:041E: 6B           	rtl
+  2141                        ;  else if(reloc_1->OffsetPatch > reloc_2->OffsetP
+                    atch)
+  2142                        L10047:
+  2143                        	.line	220
+  2144                        ;    return(1);
+  2145 09:041F: A0 02 00     	ldy	#$2
+  2146 09:0422: B7 05        	lda	[<L23+reloc_2_1],Y
+  2147 09:0424: A0 02 00     	ldy	#$2
+  2148 09:0427: D7 01        	cmp	[<L23+reloc_1_1],Y
+  2149 09:0429: A0 04 00     	ldy	#$4
+  2150 09:042C: B7 05        	lda	[<L23+reloc_2_1],Y
+  2151 09:042E: A0 04 00     	ldy	#$4
+  2152 09:0431: F7 01        	sbc	[<L23+reloc_1_1],Y
+  2153 09:0433: 90 03        	bcc	L27
+  2154 09:0435: 82 06 00     	brl	L10048
+  2155                        L27:
+  2156                        	.line	221
+  2157 09:0438: A9 01 00     	lda	#$1
+  2158 09:043B: 82 CF FF     	brl	L26
+  2159                        ;  else
+  2160                        L10048:
+  2161                        ;    {
+  2162                        	.line	223
+  2163                        ;      /* Si l'adresse est la même, on prévilégie 
+                    le nb de byte */
+  Sat Jul 10 2021  1:15                                                Page 42
+
+
+  2164                        ;      if(reloc_1->ByteCnt < reloc_2->ByteCnt)
+  2165                        	.line	225
+  2166                        ;        return(1);
+  2167 09:043E: E2 20        	sep	#$20
+  2168                        	longa	off
+  2169 09:0440: A7 01        	lda	[<L23+reloc_1_1]
+  2170 09:0442: C7 05        	cmp	[<L23+reloc_2_1]
+  2171 09:0444: C2 20        	rep	#$20
+  2172                        	longa	on
+  2173 09:0446: 90 03        	bcc	L28
+  2174 09:0448: 82 06 00     	brl	L10049
+  2175                        L28:
+  2176                        	.line	226
+  2177 09:044B: A9 01 00     	lda	#$1
+  2178 09:044E: 82 BC FF     	brl	L26
+  2179                        ;      else if(reloc_1->ByteCnt > reloc_2->ByteCnt
+                    )
+  2180                        L10049:
+  2181                        	.line	227
+  2182                        ;        return(-1);
+  2183 09:0451: E2 20        	sep	#$20
+  2184                        	longa	off
+  2185 09:0453: A7 05        	lda	[<L23+reloc_2_1]
+  2186 09:0455: C7 01        	cmp	[<L23+reloc_1_1]
+  2187 09:0457: C2 20        	rep	#$20
+  2188                        	longa	on
+  2189 09:0459: 90 03        	bcc	L29
+  2190 09:045B: 82 06 00     	brl	L10050
+  2191                        L29:
+  2192                        	.line	228
+  2193 09:045E: A9 FF FF     	lda	#$ffff
+  2194 09:0461: 82 A9 FF     	brl	L26
+  2195                        ;      else
+  2196                        L10050:
+  2197                        ;        return(0);
+  2198                        	.line	230
+  2199 09:0464: A9 00 00     	lda	#$0
+  2200 09:0467: 82 A3 FF     	brl	L26
+  2201                        ;    }
+  2202                        	.line	231
+  2203                        ;}
+  2204                        	.line	232
+  2205                        	.endblock	232
+  2206             00000008   L22	equ	8
+  2207             00000001   L23	equ	1
+  2208 09:046A:              	ends
+  2209                        	efunc
+  2210                        	.endfunc	232,1,8
+  2211                        	.line	232
+  2212                        ;
+  2213                        ;
+  2214                        ;/************************************************
+                    *********************/
+  2215                        ;/*  compare_interseg() : Fonction de comparaison 
+                    pour le Quick Sort. */
+  2216                        ;/************************************************
+                    *********************/
+  2217                        ;int compare_interseg(const void *data_1, const vo
+  Sat Jul 10 2021  1:15                                                Page 43
+
+
+                    id *data_2)
+  2218                        ;{
+  2219                        	.line	238
+  2220                        	.line	239
+  2221                        	LOADER
+  2222                        	xdef	~~compare_interseg
+  2223                        	func
+  2224                        	.function	239
+  2225                        ~~compare_interseg:
+  2226                        	longa	on
+  2227                        	longi	on
+  2228 09:046A: 3B           	tsc
+  2229 09:046B: 38           	sec
+  2230 09:046C: E9 08 00     	sbc	#L30
+  2231 09:046F: 1B           	tcs
+  2232 09:0470: 0B           	phd
+  2233 09:0471: 5B           	tcd
+  2234             00000004   data_1_0	set	4
+  2235             00000008   data_2_0	set	8
+  2236                        	.block	239
+  2237                        ;  struct omf_interseg *interseg_1;
+  2238                        ;  struct omf_interseg *interseg_2;
+  2239                        ;
+  2240                        ;  /* Récupération des paramètres */
+  2241                        ;  interseg_1 = *((struct omf_interseg **) data_1)
+                    ;
+  2242             00000000   interseg_1_1	set	0
+  2243             00000004   interseg_2_1	set	4
+  2244                        	.sym	interseg_1,0,138,1,32,119
+  2245                        	.sym	interseg_2,4,138,1,32,119
+  2246                        	.sym	data_1,4,129,6,32
+  2247                        	.sym	data_2,8,129,6,32
+  2248                        	.line	244
+  2249 09:0472: A7 0C        	lda	[<L30+data_1_0]
+  2250 09:0474: 85 01        	sta	<L31+interseg_1_1
+  2251 09:0476: A0 02 00     	ldy	#$2
+  2252 09:0479: B7 0C        	lda	[<L30+data_1_0],Y
+  2253 09:047B: 85 03        	sta	<L31+interseg_1_1+2
+  2254                        ;  interseg_2 = *((struct omf_interseg **) data_2)
+                    ;
+  2255                        	.line	245
+  2256 09:047D: A7 10        	lda	[<L30+data_2_0]
+  2257 09:047F: 85 05        	sta	<L31+interseg_2_1
+  2258 09:0481: A0 02 00     	ldy	#$2
+  2259 09:0484: B7 10        	lda	[<L30+data_2_0],Y
+  2260 09:0486: 85 07        	sta	<L31+interseg_2_1+2
+  2261                        ;
+  2262                        ;  /* Comparaison des adresses */
+  2263                        ;  if(interseg_1->OffsetPatch < interseg_2->Offset
+                    Patch)
+  2264                        	.line	248
+  2265                        ;    return(-1);
+  2266 09:0488: A0 02 00     	ldy	#$2
+  2267 09:048B: B7 01        	lda	[<L31+interseg_1_1],Y
+  2268 09:048D: A0 02 00     	ldy	#$2
+  2269 09:0490: D7 05        	cmp	[<L31+interseg_2_1],Y
+  2270 09:0492: A0 04 00     	ldy	#$4
+  2271 09:0495: B7 01        	lda	[<L31+interseg_1_1],Y
+  Sat Jul 10 2021  1:15                                                Page 44
+
+
+  2272 09:0497: A0 04 00     	ldy	#$4
+  2273 09:049A: F7 05        	sbc	[<L31+interseg_2_1],Y
+  2274 09:049C: 90 03        	bcc	L33
+  2275 09:049E: 82 15 00     	brl	L10051
+  2276                        L33:
+  2277                        	.line	249
+  2278 09:04A1: A9 FF FF     	lda	#$ffff
+  2279                        L34:
+  2280 09:04A4: A8           	tay
+  2281 09:04A5: A5 0A        	lda	<L30+2
+  2282 09:04A7: 85 12        	sta	<L30+2+8
+  2283 09:04A9: A5 09        	lda	<L30+1
+  2284 09:04AB: 85 11        	sta	<L30+1+8
+  2285 09:04AD: 2B           	pld
+  2286 09:04AE: 3B           	tsc
+  2287 09:04AF: 18           	clc
+  2288 09:04B0: 69 10 00     	adc	#L30+8
+  2289 09:04B3: 1B           	tcs
+  2290 09:04B4: 98           	tya
+  2291 09:04B5: 6B           	rtl
+  2292                        ;  else if(interseg_1->OffsetPatch > interseg_2->O
+                    ffsetPatch)
+  2293                        L10051:
+  2294                        	.line	250
+  2295                        ;    return(1);
+  2296 09:04B6: A0 02 00     	ldy	#$2
+  2297 09:04B9: B7 05        	lda	[<L31+interseg_2_1],Y
+  2298 09:04BB: A0 02 00     	ldy	#$2
+  2299 09:04BE: D7 01        	cmp	[<L31+interseg_1_1],Y
+  2300 09:04C0: A0 04 00     	ldy	#$4
+  2301 09:04C3: B7 05        	lda	[<L31+interseg_2_1],Y
+  2302 09:04C5: A0 04 00     	ldy	#$4
+  2303 09:04C8: F7 01        	sbc	[<L31+interseg_1_1],Y
+  2304 09:04CA: 90 03        	bcc	L35
+  2305 09:04CC: 82 06 00     	brl	L10052
+  2306                        L35:
+  2307                        	.line	251
+  2308 09:04CF: A9 01 00     	lda	#$1
+  2309 09:04D2: 82 CF FF     	brl	L34
+  2310                        ;  else
+  2311                        L10052:
+  2312                        ;    {
+  2313                        	.line	253
+  2314                        ;      /* Si l'adresse est la même, on prévilégie 
+                    le nb de byte */
+  2315                        ;      if(interseg_1->ByteCnt < interseg_2->ByteCn
+                    t)
+  2316                        	.line	255
+  2317                        ;        return(1);
+  2318 09:04D5: E2 20        	sep	#$20
+  2319                        	longa	off
+  2320 09:04D7: A7 01        	lda	[<L31+interseg_1_1]
+  2321 09:04D9: C7 05        	cmp	[<L31+interseg_2_1]
+  2322 09:04DB: C2 20        	rep	#$20
+  2323                        	longa	on
+  2324 09:04DD: 90 03        	bcc	L36
+  2325 09:04DF: 82 06 00     	brl	L10053
+  2326                        L36:
+  Sat Jul 10 2021  1:15                                                Page 45
+
+
+  2327                        	.line	256
+  2328 09:04E2: A9 01 00     	lda	#$1
+  2329 09:04E5: 82 BC FF     	brl	L34
+  2330                        ;      else if(interseg_1->ByteCnt > interseg_2->B
+                    yteCnt)
+  2331                        L10053:
+  2332                        	.line	257
+  2333                        ;        return(-1);
+  2334 09:04E8: E2 20        	sep	#$20
+  2335                        	longa	off
+  2336 09:04EA: A7 05        	lda	[<L31+interseg_2_1]
+  2337 09:04EC: C7 01        	cmp	[<L31+interseg_1_1]
+  2338 09:04EE: C2 20        	rep	#$20
+  2339                        	longa	on
+  2340 09:04F0: 90 03        	bcc	L37
+  2341 09:04F2: 82 06 00     	brl	L10054
+  2342                        L37:
+  2343                        	.line	258
+  2344 09:04F5: A9 FF FF     	lda	#$ffff
+  2345 09:04F8: 82 A9 FF     	brl	L34
+  2346                        ;      else
+  2347                        L10054:
+  2348                        ;        return(0);
+  2349                        	.line	260
+  2350 09:04FB: A9 00 00     	lda	#$0
+  2351 09:04FE: 82 A3 FF     	brl	L34
+  2352                        ;    }
+  2353                        	.line	261
+  2354                        ;}
+  2355                        	.line	262
+  2356                        	.endblock	262
+  2357             00000008   L30	equ	8
+  2358             00000001   L31	equ	1
+  2359 09:0501:              	ends
+  2360                        	efunc
+  2361                        	.endfunc	262,1,8
+  2362                        	.line	262
+  2363                        ;
+  2364                        ;/************************************************
+                    ************************/
+  2365                        ;
+  2366                        	.line	264
+  2367                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\OMF_Dc_Memory.c",238
+  2368                        	xref	~~k_free
+  2369                        	xref	~~k_calloc
+  2370                        	xref	~~k_debug_string
+  2371                        	xref	~~qsort
+  2372                        	.sym	~~compare_interseg,~~compare_interseg,69
+                    ,2,0
+  2373                        	.sym	~~compare_reloc,~~compare_reloc,69,2,0
+  2374                        	.sym	~~my_Memory,~~my_Memory,65,2,0
+  2375                        	.sym	PIPCPORT,0,138,14,32,84
+  2376                        	.sym	IPCPORT,0,10,14,144,84
+  2377                        	.sym	~~k_free,~~k_free,65,18,0
+  2378                        	.sym	~~k_calloc,~~k_calloc,1089,18,32
+  2379                        	.sym	MemoryCallback,0,641,14,32
+  2380                        	.sym	PFXMEMORYMAP,0,138,14,32,83
+  Sat Jul 10 2021  1:15                                                Page 46
+
+
+  2381                        	.sym	FXMEMORYMAP,0,10,14,2072,83
+  2382                        	.sym	UMM_HEAP_INFO,0,10,14,256,82
+  2383                        	.sym	FRESULT,0,5,14,16
+  2384                        	.sym	MKFS_PARM,0,10,14,80,81
+  2385                        	.sym	FILINFO,0,10,14,2224,80
+  2386                        	.sym	DIR,0,10,14,416,79
+  2387                        	.sym	FIL,0,10,14,4400,78
+  2388                        	.sym	FFOBJID,0,10,14,128,77
+  2389                        	.sym	FATFS,0,10,14,4504,76
+  2390                        	.sym	LBA_t,0,18,14,32
+  2391                        	.sym	FSIZE_t,0,18,14,32
+  2392                        	.sym	TCHAR,0,14,14,8
+  2393                        	.sym	PCOMMANDARGS,0,138,14,32,75
+  2394                        	.sym	COMMANDARGS,0,10,14,64,75
+  2395                        	.sym	PTOKENIZESTATE,0,133,14,32
+  2396                        	.sym	TOKENIZESTATE,0,5,14,16
+  2397                        	.sym	PTOKEN,0,138,14,32,74
+  2398                        	.sym	TOKEN,0,10,14,64,74
+  2399                        	.sym	PTOKENTYPE,0,133,14,32
+  2400                        	.sym	TOKENTYPE,0,5,14,16
+  2401                        	.sym	FXCommandHandler,0,656,14,32
+  2402                        	.sym	PCONSOLECTX,0,138,14,32,73
+  2403                        	.sym	CONSOLECTX,0,10,14,1144,73
+  2404                        	.sym	PSPINNERCTX,0,138,14,32,72
+  2405                        	.sym	SPINNERCTX,0,10,14,48,72
+  2406                        	.sym	HCLIP,0,138,14,32,71
+  2407                        	.sym	PCLIPBOARD_DATA,0,138,14,32,71
+  2408                        	.sym	CLIPBOARD_DATA,0,10,14,168,71
+  2409                        	.sym	PEVENTMANAGER,0,138,14,32,70
+  2410                        	.sym	EVENTMANAGER,0,10,14,192,70
+  2411                        	.sym	EV_RUN,0,656,14,32
+  2412                        	.sym	EV_QUERY_METRIC,0,656,14,32
+  2413                        	.sym	EV_CONFIGURE,0,656,14,32
+  2414                        	.sym	EV_UNINIT,0,641,14,32
+  2415                        	.sym	EV_INIT,0,8833,14,32
+  2416                        	.sym	PMOUSE_MSG_STATE,0,138,14,32,69
+  2417                        	.sym	MOUSE_MSG_STATE,0,10,14,184,69
+  2418                        	.sym	PFXEVENTPROCESS,0,138,14,32,68
+  2419                        	.sym	FXEVENTPROCESS,0,10,14,64,68
+  2420                        	.sym	PMARSHALDATA,0,139,14,32,67
+  2421                        	.sym	MARSHALDATA,0,11,14,32,67
+  2422                        	.sym	FXIDLEPROCESS,0,641,14,32
+  2423                        	.sym	FXEventProc,0,641,14,32
+  2424                        	.sym	PMOUSEMSGDATA,0,138,14,32,66
+  2425                        	.sym	MOUSEMSGDATA,0,10,14,64,66
+  2426                        	.sym	MSGIRQ,0,5,14,16
+  2427                        	.sym	MAINLOOPARGS,0,10,14,16,65
+  2428                        	.sym	PEACHCHILD_MSG,0,138,14,32,64
+  2429                        	.sym	EACHCHILD_MSG,0,10,14,64,64
+  2430                        	.sym	PMSGBOX_DATA,0,138,14,32,63
+  2431                        	.sym	MSGBOX_DATA,0,10,14,96,63
+  2432                        	.sym	PDESKTOP_DATA,0,138,14,32,62
+  2433                        	.sym	DESKTOP_DATA,0,10,14,64,62
+  2434                        	.sym	PWINDOWMANAGER,0,138,14,32,61
+  2435                        	.sym	WINDOWMANAGER,0,10,14,160,61
+  2436                        	.sym	WM_DOPROCS,0,641,14,32
+  2437                        	.sym	WM_QUERY_METRIC,0,656,14,32
+  2438                        	.sym	WM_CONFIGURE,0,656,14,32
+  Sat Jul 10 2021  1:15                                                Page 47
+
+
+  2439                        	.sym	WM_HANDLE_EVENT,0,8833,14,32
+  2440                        	.sym	WM_EVENTS,0,641,14,32
+  2441                        	.sym	PCUR_PALETTE_MAP,0,138,14,32,60
+  2442                        	.sym	CUR_PALETTE_MAP,0,10,14,400,60
+  2443                        	.sym	PCLICKDETECTED,0,138,14,32,59
+  2444                        	.sym	CLICKDETECTED,0,10,14,64,59
+  2445                        	.sym	OBJECTCLICKED,0,641,14,32
+  2446                        	.sym	PEXECUTIVE,0,138,14,32,58
+  2447                        	.sym	EXECUTIVE,0,10,14,128,58
+  2448                        	.sym	EX_QUERY_METRIC,0,656,14,32
+  2449                        	.sym	EX_CONFIGURE,0,656,14,32
+  2450                        	.sym	EX_UNINIT,0,641,14,32
+  2451                        	.sym	EX_INIT,0,8833,14,32
+  2452                        	.sym	PFXSTRING,0,138,14,32,57
+  2453                        	.sym	FXSTRING,0,10,14,64,57
+  2454                        	.sym	DEVICEDRIVER_COMMAND,0,656,14,32
+  2455                        	.sym	DEVICEDRIVER_UNLOAD,0,654,14,32
+  2456                        	.sym	DEVICEDRIVER_WRITE,0,656,14,32
+  2457                        	.sym	DEVICEDRIVER_READ,0,656,14,32
+  2458                        	.sym	DEVICEDRIVER_LOAD,0,654,14,32
+  2459                        	.sym	DEVICEDRIVER_IRQ,0,654,14,32
+  2460                        	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,56
+  2461                        	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,56
+  2462                        	.sym	GETDRIVERDEF,0,8842,14,32,55
+  2463                        	.sym	PFX_DEVICE_DRIVER,0,138,14,32,55
+  2464                        	.sym	FX_DEVICE_DRIVER,0,10,14,776,55
+  2465                        	.sym	~~k_debug_string,~~k_debug_string,65,18,
+                    0
+  2466                        	.sym	PSEGMENTHEADER,0,138,14,32,54
+  2467                        	.sym	SEGMENTHEADER,0,10,14,160,54
+  2468                        	.sym	PDEBUGBYTEBITS,0,138,14,32,53
+  2469                        	.sym	DEBUGBYTEBITS,0,10,14,8,53
+  2470                        	.sym	PFXENVIRONMENT,0,138,14,32,52
+  2471                        	.sym	FXENVIRONMENT,0,10,14,96,52
+  2472                        	.sym	PFXZEROPAGE,0,138,14,32,51
+  2473                        	.sym	FXZEROPAGE,0,10,14,824,51
+  2474                        	.sym	KERNELTRAPCALL,0,641,14,32
+  2475                        	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,50
+  2476                        	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,50
+  2477                        	.sym	FOREACHNODEUNTIL,0,654,14,32
+  2478                        	.sym	FOREACHNODE,0,641,14,32
+  2479                        	.sym	Boolean_T,0,5,14,16
+  2480                        	.sym	PFXRFHEADER_FONT,0,138,14,32,49
+  2481                        	.sym	FXRFHEADER_FONT,0,10,14,144,49
+  2482                        	.sym	PFXRFHEADER,0,138,14,32,48
+  2483                        	.sym	FXRFHEADER,0,10,14,72,48
+  2484                        	.sym	PFXCOMBUFFER,0,138,14,32,47
+  2485                        	.sym	FXCOMBUFFER,0,10,14,2080,47
+  2486                        	.sym	PSUBMENULIST,0,138,14,32,46
+  2487                        	.sym	SUBMENULIST,0,10,14,40,46
+  2488                        	.sym	HSUBMENU,0,7,14,32
+  2489                        	.sym	PSUBMENU,0,138,14,32,45
+  2490                        	.sym	SUBMENU,0,10,14,64,45
+  2491                        	.sym	MenuAction,0,641,14,32
+  2492                        	.sym	PMENUANCHOR,0,138,14,32,44
+  2493                        	.sym	MENUANCHOR,0,10,14,272,44
+  2494                        	.sym	PMSGBOX,0,138,14,32,43
+  2495                        	.sym	MSGBOX,0,10,14,144,43
+  Sat Jul 10 2021  1:15                                                Page 48
+
+
+  2496                        	.sym	PTEXTBOX,0,138,14,32,42
+  2497                        	.sym	TEXTBOX,0,10,14,144,42
+  2498                        	.sym	PLISTBOX,0,138,14,32,41
+  2499                        	.sym	LISTBOX,0,10,14,240,41
+  2500                        	.sym	PSCROLLBAR,0,138,14,32,40
+  2501                        	.sym	SCROLLBAR,0,10,14,240,40
+  2502                        	.sym	PBUTTON,0,138,14,32,39
+  2503                        	.sym	BUTTON,0,10,14,96,39
+  2504                        	.sym	PMENUDROPDOWNDATA,0,138,14,32,38
+  2505                        	.sym	MENUDROPDOWNDATA,0,10,14,5152,38
+  2506                        	.sym	PMENUTAG,0,138,14,32,37
+  2507                        	.sym	MENUTAG,0,10,14,160,37
+  2508                        	.sym	PMENU,0,138,14,32,36
+  2509                        	.sym	MENU,0,10,14,280,36
+  2510                        	.sym	HMENURESOURCE,0,129,14,32
+  2511                        	.sym	FONTMETRIC,0,10,14,32,35
+  2512                        	.sym	TITLE,0,142,14,32
+  2513                        	.sym	PHANDLE,0,1153,14,32
+  2514                        	.sym	HANDLE,0,129,14,32
+  2515                        	.sym	PWINDOWEX,0,138,14,32,34
+  2516                        	.sym	WINDOWEX,0,10,14,3880,34
+  2517                        	.sym	PWINDOW,0,138,14,32,33
+  2518                        	.sym	WINDOW,0,10,14,3904,33
+  2519                        	.sym	PDRAGDATA,0,138,14,32,32
+  2520                        	.sym	DRAGDATA,0,10,14,216,32
+  2521                        	.sym	PNCCLICKABLE,0,138,14,32,31
+  2522                        	.sym	NCCLICKABLE,0,10,14,136,31
+  2523                        	.sym	HCLICKABLE,0,7,14,32
+  2524                        	.sym	PCLICKABLE,0,138,14,32,30
+  2525                        	.sym	CLICKABLE,0,10,14,152,30
+  2526                        	.sym	PWNDCLASS,0,138,14,32,29
+  2527                        	.sym	WNDCLASS,0,10,14,272,29
+  2528                        	.sym	HBRUSH,0,129,14,32
+  2529                        	.sym	HCURSOR,0,129,14,32
+  2530                        	.sym	HICON,0,129,14,32
+  2531                        	.sym	HINSTANCE,0,129,14,32
+  2532                        	.sym	FXWndProc,0,654,14,32
+  2533                        	.sym	PDRECT,0,138,14,32,28
+  2534                        	.sym	DRECT,0,10,14,112,28
+  2535                        	.sym	PRECTP,0,138,14,32,27
+  2536                        	.sym	RECTP,0,10,14,96,27
+  2537                        	.sym	PRECT,0,138,14,32,26
+  2538                        	.sym	RECT,0,10,14,112,26
+  2539                        	.sym	PPOINT,0,138,14,32,25
+  2540                        	.sym	POINT,0,10,14,32,25
+  2541                        	.sym	PFXPROPERTY,0,138,14,32,23
+  2542                        	.sym	FXPROPERTY,0,10,14,384,23
+  2543                        	.sym	PKEYSTATE,0,138,14,32,22
+  2544                        	.sym	KEYSTATE,0,10,14,112,22
+  2545                        	.sym	SCANCODE,0,14,14,8
+  2546                        	.sym	KEYCODE,0,16,14,16
+  2547                        	.sym	PFXPROCESSMESSAGE,0,138,14,32,21
+  2548                        	.sym	FXPROCESSMESSAGE,0,10,14,112,21
+  2549                        	.sym	PFXPROCESS,0,138,14,32,20
+  2550                        	.sym	FXPROCESS,0,10,14,800,20
+  2551                        	.sym	PDESKTOP_CONTROL,0,138,14,32,19
+  2552                        	.sym	DESKTOP_CONTROL,0,10,14,392,19
+  2553                        	.sym	PCONSOLE_CONTROL,0,138,14,32,18
+  Sat Jul 10 2021  1:15                                                Page 49
+
+
+  2554                        	.sym	CONSOLE_CONTROL,0,10,14,448,18
+  2555                        	.sym	FXProcessProc,0,641,14,32
+  2556                        	.sym	PFXCMDMESSAGE,0,138,14,32,17
+  2557                        	.sym	FXCMDMESSAGE,0,10,14,304,17
+  2558                        	.sym	PFXOSMESSAGE,0,138,14,32,16
+  2559                        	.sym	FXOSMESSAGE,0,10,14,304,16
+  2560                        	.sym	PINT_REGS,0,138,14,32,15
+  2561                        	.sym	INT_REGS,0,10,14,104,15
+  2562                        	.sym	TASK_STACK,0,10,14,32,14
+  2563                        	.sym	TASK,0,10,14,48,13
+  2564                        	.sym	PIRQDATA,0,138,14,32,12
+  2565                        	.sym	IRQDATA,0,10,14,48,12
+  2566                        	.sym	HMENU,0,129,14,32
+  2567                        	.sym	HWND,0,129,14,32
+  2568                        	.sym	MSGDATA,0,14,14,8
+  2569                        	.sym	MSGDEST,0,18,14,32
+  2570                        	.sym	MSGSRC,0,18,14,32
+  2571                        	.sym	MSGTYPE,0,16,14,16
+  2572                        	.sym	PROCESS_RESOURCE_LIST,0,138,14,32,6
+  2573                        	.sym	PROCESS_TLS_LIST,0,138,14,32,6
+  2574                        	.sym	SEMAPHORE_LIST,0,138,14,32,6
+  2575                        	.sym	FILE_BLOCK_LIST,0,138,14,32,6
+  2576                        	.sym	FILE_PATH_LIST,0,138,14,32,6
+  2577                        	.sym	PROCEDURE_LIST,0,138,14,32,6
+  2578                        	.sym	FILE_HANDLE,0,138,14,32,11
+  2579                        	.sym	FILE_BLOCK,0,10,14,552,11
+  2580                        	.sym	SEMAPHORE,0,10,14,16,10
+  2581                        	.sym	PPROCESS_SIGNAL,0,138,14,32,9
+  2582                        	.sym	PROCESS_SIGNAL,0,10,14,16,9
+  2583                        	.sym	KRESULT,0,18,14,32
+  2584                        	.sym	PKERNEL_ERROR,0,138,14,32,8
+  2585                        	.sym	KERNEL_ERROR,0,10,14,32,8
+  2586                        	.sym	PROCESS_STATUS,0,16,14,16
+  2587                        	.sym	FILE_PATH_NAME,0,142,14,32
+  2588                        	.sym	PROCESS_RESOURCE,0,129,14,32
+  2589                        	.sym	PROCESS_TLS,0,129,14,32
+  2590                        	.sym	PROCESS_CTX,0,129,14,32
+  2591                        	.sym	USERID,0,16,14,16
+  2592                        	.sym	PROCESS_ID,0,18,14,32
+  2593                        	.sym	PROCESS_BANK,0,14,14,8
+  2594                        	.sym	PFXQUEUE,0,138,14,32,7
+  2595                        	.sym	FXQUEUE,0,10,14,80,7
+  2596                        	.sym	PFXNODELIST,0,138,14,32,6
+  2597                        	.sym	FXNODELIST,0,10,14,96,6
+  2598                        	.sym	NodeListDeallocator,0,641,14,32
+  2599                        	.sym	PFXNODE,0,138,14,32,5
+  2600                        	.sym	FXNODE,0,10,14,384,5
+  2601                        	.sym	PBYTEBITS,0,138,14,32,4
+  2602                        	.sym	BYTEBITS,0,10,14,8,4
+  2603                        	.sym	HRESULT,0,18,14,32
+  2604                        	.sym	LPWCHAR,0,144,14,32
+  2605                        	.sym	WCHAR,0,16,14,16
+  2606                        	.sym	HCOLOR,0,129,14,32
+  2607                        	.sym	HFONT,0,129,14,32
+  2608                        	.sym	HDC,0,129,14,32
+  2609                        	.sym	HPOINTER,0,129,14,32
+  2610                        	.sym	uint32_t,0,18,14,32
+  2611                        	.sym	uint8_t,0,14,14,8
+  Sat Jul 10 2021  1:15                                                Page 50
+
+
+  2612                        	.sym	LPBOOL,0,142,14,32
+  2613                        	.sym	BOOL,0,14,14,8
+  2614                        	.sym	DWORD,0,18,14,32
+  2615                        	.sym	ULONG,0,18,14,32
+  2616                        	.sym	LPLONG,0,135,14,32
+  2617                        	.sym	LONG,0,7,14,32
+  2618                        	.sym	PUINT,0,144,14,32
+  2619                        	.sym	USHORT,0,16,14,16
+  2620                        	.sym	UINT,0,16,14,16
+  2621                        	.sym	INT,0,5,14,16
+  2622                        	.sym	WORD,0,5,14,16
+  2623                        	.sym	PBYTE,0,142,14,32
+  2624                        	.sym	BYTE,0,14,14,8
+  2625                        	.sym	IOPORT,0,142,14,32
+  2626                        	.sym	PUCHAR,0,142,14,32
+  2627                        	.sym	UCHAR,0,14,14,8
+  2628                        	.sym	LPWCSTR,0,142,14,32
+  2629                        	.sym	LPCSTR,0,142,14,32
+  2630                        	.sym	LPSTR,0,142,14,32
+  2631                        	.sym	LPCHAR,0,142,14,32
+  2632                        	.sym	CHAR,0,14,14,8
+  2633                        	.sym	LPVOID,0,129,14,32
+  2634                        	.sym	VOID,0,1,14,32
+  2635                        	.sym	~~qsort,~~qsort,65,18,0
+  2636                        	.sym	ldiv_t,0,10,14,64,2
+  2637                        	.sym	div_t,0,10,14,32,1
+  2638                        	.sym	wctype_t,0,16,14,16
+  2639                        	.sym	wint_t,0,16,14,16
+  2640                        	.sym	wchar_t,0,14,14,8
+  2641                        	.sym	ptrdiff_t,0,7,14,32
+  2642                        	.sym	size_t,0,16,14,16
+  2643                        	end
+
+
+      Lines assembled: 2643
+      Errors: 0

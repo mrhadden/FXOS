@@ -1,0 +1,25 @@
+Section CODE:
+	00090000 _BEG_CODE
+	00090000 ~~DllMain
+	0009002b ~~DoSomething
+	00090052 ~~DebugOut
+	00090086 ~~DebugInteger
+	000900bf ~~HeapAlloc
+	000900fe ~~HeapDealloc
+	00090135 ~~GetDateHour
+	00090162 ~~GetDateMinute
+	0009018f ~~GetDateSecond
+	000901bc ~~GetDateMonth
+	000901e9 ~~GetDateDay
+	00090216 ~~GetDateYear
+	00090243 ~~GetDateCentury
+	00090270 ~~~lcal
+	00090278 _END_CODE
+
+Section DATA:
+	00090278 _BEG_DATA
+	00090280 ~~lpstrDllMainMessage
+	0009027c ~~pfnDebugOut
+	00090278 ~~pfnDllMain
+	000902cb _END_DATA
+
