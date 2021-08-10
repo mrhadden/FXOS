@@ -3,6 +3,12 @@ FX/OS (Beta)
 
 This inital code push has the working, uncommented (for the most part), code.  It is in flux at the moment, as I migrate the driver model, DOS functions and event model.  There are bugs galore, but the general idea is intact.  More to come, so stayed tuned.  I just wanted to get something out, regardless if it is perfect, prestine code, like I wanted.
 
+Update the ```cmake.bat``` to point to your WDC tool install location on this line
+
+```
+SET WDC_BASE_DIR=G:\devtools\WDCTools\wdc\Tools
+```
+
 To build it:
 
 cmake -fmu -f
