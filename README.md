@@ -15,12 +15,15 @@ This inital code push has the working, uncommented (for the most part), code.  I
 9) The FMX build of the OS is "disabled" as i worked on the driver model.  So this code is geared to the U+.
 10) 'C' entry point is in *fxmain.c*
 11) You will see declarations like this:
+
 ```
 EXPORT_FUNC_KERNEL(GetHardwareRelease)
 void k_get_c256_release(char *buffer);
 ```
 There is a utility, whci h will be documented shortly that creates the SDK/DDK from the "EXPORTED" functions.  In this case, the kernel name is *k_get_c256_release*, while the SDK exported name is *GetHardwareRelease*
 This helps keep an abstraction and barrier to the raw OS.
+
+
 12) Some things may be missing, but mostly not.
 13) There is a lot of experimental code commented out from hardware interations and trying to figure things out.
 14) Desktop is missing the icons due to driver and IRQ handling changes.  They will be re-enabled.
