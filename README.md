@@ -3,6 +3,15 @@ FX/OS (Beta)
 
 This inital code push has the working, uncommented (for the most part), code.  It is in flux at the moment, as I migrate the driver model, DOS functions and event model.  There are bugs galore, but the general idea is intact.  More to come, so stayed tuned.  I just wanted to get something out, regardless if it is perfect, prestine code, like I wanted.
 
+To build it:
+
+cmake -fmu -f
+
+To build and transfer/boot it:
+
+cmake -fmu -f -t
+
+
 ## Release Notes
 1) Mouse driver is disabled temporarily.
 2) For full functionality, you need a HD with the "system" directory. It is included in the source.
