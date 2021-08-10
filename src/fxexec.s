@@ -3,11 +3,11 @@ R0	equ	1
 R1	equ	5
 R2	equ	9
 R3	equ	13
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.c",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.c",0
 ;
 ;#include "fxkernel.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stddef.h",0
 	.line	88
@@ -25,14 +25,14 @@ R3	equ	13
 	.member	frac,16,16,8,16
 	.eos
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",4
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",4
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\ctype.h",0
 	.line	103
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
 	.stag	_fx_bytebits,8,4
 	.member	b7,0,14,17,1
 	.member	b6,1,14,17,1
@@ -106,7 +106,7 @@ R3	equ	13
 	.member	YH,88,14,8,8
 	.member	YL,96,14,8,8
 	.eos
-	.stag	_fx_eventMessage,304,16
+	.stag	_fx_eventMessage,312,16
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -114,8 +114,9 @@ R3	equ	13
 	.member	pheap,112,129,8,32
 	.member	msgTime,144,18,8,32
 	.member	data,176,110,8,0,16
+	.member	attr,304,14,8,8
 	.eos
-	.stag	_fx_cmdMessage,304,17
+	.stag	_fx_cmdMessage,312,17
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -127,6 +128,7 @@ R3	equ	13
 	.member	parameter1,208,18,8,32
 	.member	parameter2,240,18,8,32
 	.member	parameter3,272,18,8,32
+	.member	attr,304,14,8,8
 	.eos
 	.stag	_fx_console_ctl,448,18
 	.member	maxCols,0,5,8,16
@@ -469,94 +471,103 @@ R3	equ	13
 	.member	height,128,14,8,8
 	.member	width,136,14,8,8
 	.eos
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",8
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstringtable.h",0
-	.line	89
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",9
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fmx_vicky.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fmx_vicky.h",11
+	.stag	_fx_resource_string,32,50
+	.member	locale,0,110,8,0,2
+	.member	entries,16,16,8,16
+	.eos
+	.stag	_fx_resource_string_entry,40,51
+	.member	index,0,16,8,16
+	.member	length,16,16,8,16
+	.member	data,32,14,8,8
+	.eos
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",8
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstringtable.h",0
+	.line	90
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",9
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",11
 	.line	72
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",6
 	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",16
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",0
-	.line	400
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",22
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",16
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
+	.line	490
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",22
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
 	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",12
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",12
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",7
-	.stag	_fx_string,64,50
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",7
+	.stag	_fx_string,64,52
 	.member	size,0,16,8,16
 	.member	pos,16,5,8,16
 	.member	buffer,32,142,8,32
 	.eos
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",17
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",17
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",5
-	.stag	_fxos_executive_vtable,128,51
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",5
+	.stag	_fxos_executive_vtable,128,53
 	.member	Init,0,8833,8,32
 	.member	Configure,32,656,8,32
 	.member	Query,64,656,8,32
 	.member	Uninit,96,641,8,32
 	.eos
 	.line	86
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",11
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",11
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.line	208
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",8
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",8
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos_build_parameters.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_build_parameters.h",0
 	.line	35
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",8
-	.stag	UMM_HEAP_INFO_t,256,52
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",8
+	.stag	UMM_HEAP_INFO_t,256,54
 	.member	totalEntries,0,18,8,32
 	.member	usedEntries,32,18,8,32
 	.member	freeEntries,64,18,8,32
@@ -567,42 +578,48 @@ R3	equ	13
 	.member	blockSize,224,18,8,32
 	.eos
 	.line	199
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",11
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",11
 	.line	24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",7
-	.stag	_fx_memory_map,2072,53
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",7
+	.stag	_fx_memory_map,2072,55
 	.member	availableMemory,0,18,8,32
 	.member	valid_segments,32,110,8,0,255
 	.eos
-	.stag	_fx_ipc_port,144,54
+	.stag	_fx_ipc_port,144,56
 	.member	id,0,18,8,32
 	.member	type,32,14,8,8
-	.member	name,40,138,8,32,50
+	.member	name,40,138,8,32,52
 	.member	time,72,18,8,32
 	.member	queue,104,138,8,32,7
 	.member	reserved_1,136,14,8,8
 	.eos
-	.line	105
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",6
+	.stag	_k_mem_alloc_header,80,57
+	.member	user,0,14,8,8
+	.member	attr,8,14,8,8
+	.member	size,16,18,8,32
+	.member	virtual,48,129,8,32
+	.eos
+	.line	129
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",6
 	.line	74
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",5
-	.stag	_click_detected,64,55
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",5
+	.stag	_click_detected,64,58
 	.member	window,0,138,8,32,33
 	.member	handler,32,641,8,32
 	.eos
-	.stag	_current_palette_map,400,56
+	.stag	_current_palette_map,400,59
 	.member	CUR_DESKTOP,0,5,8,16
 	.member	CUR_BACKGROUND,16,5,8,16
 	.member	CUR_FONT,32,5,8,16
@@ -616,37 +633,37 @@ R3	equ	13
 	.member	CUR_COLOR,160,101,8,0,15
 	.eos
 	.line	359
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",8
-	.stag	_fxos_winman_vtable,160,57
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",8
+	.stag	_fxos_winman_vtable,160,60
 	.member	Events,0,641,8,32
 	.member	ConfigureWindowManager,32,656,8,32
 	.member	ProcessWindowEvent,64,8833,8,32
 	.member	QueryWindowManager,96,656,8,32
 	.member	DoWndProcs,128,641,8,32
 	.eos
-	.stag	fake58_,64,58
+	.stag	fake61_,64,61
 	.member	type,0,16,8,16
 	.member	size,16,16,8,16
 	.member	desktopAction,32,129,8,32
 	.eos
-	.stag	fake59_,96,59
+	.stag	fake62_,96,62
 	.member	type,0,16,8,16
-	.member	caption,16,138,8,32,50
+	.member	caption,16,138,8,32,52
 	.member	buttonType,48,16,8,16
 	.member	x,64,5,8,16
 	.member	y,80,5,8,16
 	.eos
-	.stag	_childMessage_t,64,60
+	.stag	_childMessage_t,64,63
 	.member	msgType,0,16,8,16
 	.member	msgData,16,129,8,32
 	.member	dataSize,48,16,8,16
 	.eos
-	.line	581
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",9
-	.stag	_fx_main_loopvars,16,61
+	.line	594
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",9
+	.stag	_fx_main_loopvars,16,64
 	.member	dummy,0,5,8,16
 	.eos
-	.stag	_fxMouseMessageData,64,62
+	.stag	_fxMouseMessageData,64,65
 	.member	button1,0,14,8,8
 	.member	button2,8,14,8,8
 	.member	button3,16,14,8,8
@@ -654,18 +671,18 @@ R3	equ	13
 	.member	x,32,16,8,16
 	.member	y,48,16,8,16
 	.eos
-	.utag	marshalled_data,32,63
+	.utag	marshalled_data,32,66
 	.member	byteValue,0,14,11,8
 	.member	verbValue,0,110,11,0,2
 	.member	intValue,0,16,11,16
 	.member	longValue,0,18,11,32
 	.member	pointerValue,0,129,11,32
 	.eos
-	.stag	_fx_eventProcess,64,64
+	.stag	_fx_eventProcess,64,67
 	.member	process,0,138,8,32,20
 	.member	eventProc,32,641,8,32
 	.eos
-	.stag	_mouse_msg_state,184,65
+	.stag	_mouse_msg_state,184,68
 	.member	lastEvent,0,18,8,32
 	.member	buttonLeftDown,32,14,8,8
 	.member	lastLeftDown,40,18,8,32
@@ -676,7 +693,7 @@ R3	equ	13
 	.member	lastX,152,16,8,16
 	.member	lastY,168,16,8,16
 	.eos
-	.stag	_fxos_eventmanager_vtable,192,66
+	.stag	_fxos_eventmanager_vtable,192,69
 	.member	EventQueue,0,138,8,32,7
 	.member	Init,32,8833,8,32
 	.member	Run,64,656,8,32
@@ -684,18 +701,18 @@ R3	equ	13
 	.member	Query,128,656,8,32
 	.member	Uninit,160,641,8,32
 	.eos
-	.stag	_k_clipboard_data,168,67
+	.stag	_k_clipboard_data,168,70
 	.member	type,0,14,8,8
 	.member	readable,8,110,8,0,16
 	.member	data,136,129,8,32
 	.eos
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",18
-	.stag	_fx_spinner_ctx,48,68
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",18
+	.stag	_fx_spinner_ctx,48,71
 	.member	index,0,5,8,16
 	.member	spinner,16,142,8,32
 	.eos
-	.stag	_fx_console_ctx,1144,69
+	.stag	_fx_console_ctx,1144,72
 	.member	lineBufferIndex,0,5,8,16
 	.member	lineBuffer,16,110,8,0,128
 	.member	isShifted,1040,14,8,8
@@ -703,31 +720,31 @@ R3	equ	13
 	.member	screenBuffer,1080,129,8,32
 	.member	Reserved1,1112,129,8,32
 	.eos
-	.stag	_token,64,70
+	.stag	_token,64,73
 	.member	type,0,5,8,16
 	.member	depth,16,16,8,16
 	.member	text,32,142,8,32
 	.eos
-	.stag	_command_args,64,71
+	.stag	_command_args,64,74
 	.member	proc,0,656,8,32
 	.member	tokens,32,138,8,32,5
 	.eos
 	.line	208
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",23
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",25
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ffconf.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",23
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",24
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",25
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ffconf.h",0
 	.line	298
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",29
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",30
-	.stag	fake72_,4504,72
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",29
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",30
+	.stag	fake75_,4504,75
 	.member	fs_type,0,14,8,8
 	.member	pdrv,8,14,8,8
 	.member	n_fats,16,14,8,8
@@ -748,16 +765,16 @@ R3	equ	13
 	.member	winsect,376,18,8,32
 	.member	win,408,110,8,0,512
 	.eos
-	.stag	fake73_,128,73
-	.member	fs,0,138,8,32,72
+	.stag	fake76_,128,76
+	.member	fs,0,138,8,32,75
 	.member	id,32,5,8,16
 	.member	attr,48,14,8,8
 	.member	stat,56,14,8,8
 	.member	sclust,64,18,8,32
 	.member	objsize,96,18,8,32
 	.eos
-	.stag	fake74_,4400,74
-	.member	obj,0,10,8,128,73
+	.stag	fake77_,4400,77
+	.member	obj,0,10,8,128,76
 	.member	flag,128,14,8,8
 	.member	err,136,14,8,8
 	.member	fptr,144,18,8,32
@@ -767,8 +784,8 @@ R3	equ	13
 	.member	dir_ptr,272,142,8,32
 	.member	buf,304,110,8,0,512
 	.eos
-	.stag	fake75_,416,75
-	.member	obj,0,10,8,128,73
+	.stag	fake78_,416,78
+	.member	obj,0,10,8,128,76
 	.member	dptr,128,18,8,32
 	.member	clust,160,18,8,32
 	.member	sect,192,18,8,32
@@ -777,7 +794,7 @@ R3	equ	13
 	.member	blk_ofs,352,18,8,32
 	.member	pat,384,142,8,32
 	.eos
-	.stag	fake76_,2224,76
+	.stag	fake79_,2224,79
 	.member	fsize,0,18,8,32
 	.member	fdate,32,5,8,16
 	.member	ftime,48,5,8,16
@@ -785,7 +802,7 @@ R3	equ	13
 	.member	altname,72,110,8,0,13
 	.member	fname,176,110,8,0,256
 	.eos
-	.stag	fake77_,80,77
+	.stag	fake80_,80,80
 	.member	fmt,0,14,8,8
 	.member	n_fat,8,14,8,8
 	.member	align,16,16,8,16
@@ -793,16 +810,19 @@ R3	equ	13
 	.member	au_size,48,18,8,32
 	.eos
 	.line	429
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",26
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",26
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",6
-	.stag	_fx_api_call_table,8192,78
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",6
+	.stag	_fx_api_call_table,8192,81
 	.member	call_table,0,1121,8,32,256
 	.eos
-	.stag	_fx_zero_page,824,79
+	.stag	_fx_zero_page_irq_data,32,82
+	.member	data,0,110,8,0,4
+	.eos
+	.stag	_fx_zero_page,720,83
 	.member	fxos_mouse_byte_0,0,14,8,8
 	.member	fxos_mouse_byte_1,8,14,8,8
 	.member	fxos_mouse_byte_2,16,14,8,8
@@ -817,42 +837,37 @@ R3	equ	13
 	.member	fxos_mouse_ctl,88,14,8,8
 	.member	fxos_mouse_index,96,14,8,8
 	.member	fxos_mouse_status,104,14,8,8
-	.member	fxos_mouse_dbg_1,112,18,8,32
-	.member	fxos_mouse_dbg_2,144,18,8,32
-	.member	fxos_mouse_dbg_3,176,18,8,32
-	.member	fxos_vicky_byte_0,208,14,8,8
-	.member	fxos_vicky_byte_1,216,14,8,8
-	.member	fxos_vicky_byte_2,224,14,8,8
-	.member	VersionMajor,232,16,8,16
-	.member	VersionMinor,248,16,8,16
-	.member	VersionRelease,264,16,8,16
-	.member	topMemory,280,18,8,32
-	.member	bottomMemory,312,18,8,32
-	.member	availableMemory,344,18,8,32
-	.member	availableMemoryK,376,18,8,32
-	.member	availableHeapMemory,408,18,8,32
-	.member	availableHeapMemoryK,440,18,8,32
-	.member	fxos_console_row,472,16,8,16
-	.member	fxos_console_col,488,16,8,16
-	.member	executive,504,129,8,32
-	.member	eventmanager,536,129,8,32
-	.member	devicemanager,568,129,8,32
-	.member	windowmanager,600,129,8,32
-	.member	fxos_kernel_api,632,138,8,32,78
-	.member	fxos_dos_api,664,138,8,32,78
-	.member	fxos_gfx_api,696,138,8,32,78
-	.member	fxos_gui_api,728,138,8,32,78
-	.member	fxos_con_api,760,138,8,32,78
-	.member	fxos_reserved_2_api,792,138,8,32,78
+	.member	Endianness,112,16,8,16
+	.member	VersionMajor,128,16,8,16
+	.member	VersionMinor,144,16,8,16
+	.member	VersionRelease,160,16,8,16
+	.member	topMemory,176,18,8,32
+	.member	bottomMemory,208,18,8,32
+	.member	availableMemory,240,18,8,32
+	.member	availableMemoryK,272,18,8,32
+	.member	availableHeapMemory,304,18,8,32
+	.member	availableHeapMemoryK,336,18,8,32
+	.member	fxos_console_row,368,16,8,16
+	.member	fxos_console_col,384,16,8,16
+	.member	executive,400,129,8,32
+	.member	eventmanager,432,129,8,32
+	.member	devicemanager,464,129,8,32
+	.member	windowmanager,496,129,8,32
+	.member	fxos_kernel_api,528,138,8,32,81
+	.member	fxos_dos_api,560,138,8,32,81
+	.member	fxos_gfx_api,592,138,8,32,81
+	.member	fxos_gui_api,624,138,8,32,81
+	.member	fxos_con_api,656,138,8,32,81
+	.member	fxos_reserved_2_api,688,138,8,32,81
 	.eos
-	.stag	_fx_environment,96,80
+	.stag	_fx_environment,96,84
 	.member	variables,0,142,8,32
 	.member	reserved1,32,5,8,16
 	.member	reserved2,48,5,8,16
 	.member	reserved3,64,5,8,16
 	.member	reserved4,80,5,8,16
 	.eos
-	.stag	_debug_byte_bits,8,81
+	.stag	_debug_byte_bits,8,85
 	.member	bit7,0,14,17,1
 	.member	bit6,1,14,17,1
 	.member	bit5,2,14,17,1
@@ -862,7 +877,7 @@ R3	equ	13
 	.member	bit1,6,14,17,1
 	.member	bit0,7,14,17,1
 	.eos
-	.stag	_k_segmentheader,160,82
+	.stag	_k_segmentheader,160,86
 	.member	version_major,0,14,8,8
 	.member	version_minor,8,14,8,8
 	.member	length,16,5,8,16
@@ -871,14 +886,14 @@ R3	equ	13
 	.member	segment_size,96,7,8,32
 	.member	main_entry_addr,128,7,8,32
 	.eos
-	.stag	_fx_device_driver,776,83
+	.stag	_fx_device_driver,776,87
 	.member	name,0,110,8,0,32
 	.member	version,256,110,8,0,16
 	.member	hmajor,384,110,8,0,8
 	.member	hminor,448,110,8,0,8
 	.member	type,512,14,8,8
 	.member	designation,520,110,8,0,6
-	.member	reserved_1,568,16,8,16
+	.member	irq_ctl,568,16,8,16
 	.member	f_driver_irq,584,129,8,32
 	.member	driver_context,616,129,8,32
 	.member	f_driver_load,648,129,8,32
@@ -886,14 +901,14 @@ R3	equ	13
 	.member	f_driver_write,712,129,8,32
 	.member	f_driver_unload,744,129,8,32
 	.eos
-	.stag	_fx_block_device_driver,808,84
+	.stag	_fx_block_device_driver,808,88
 	.member	name,0,110,8,0,32
 	.member	version,256,110,8,0,16
 	.member	hmajor,384,110,8,0,8
 	.member	hminor,448,110,8,0,8
 	.member	type,512,14,8,8
 	.member	designation,520,110,8,0,6
-	.member	reserved_1,568,16,8,16
+	.member	irq_ctl,568,16,8,16
 	.member	f_driver_irq,584,129,8,32
 	.member	driver_context,616,129,8,32
 	.member	f_driver_load,648,129,8,32
@@ -902,43 +917,46 @@ R3	equ	13
 	.member	f_driver_unload,744,129,8,32
 	.member	f_driver_command,776,129,8,32
 	.eos
-	.line	400
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.c",2
+	.stag	_k_irq_chain,128,89
+	.member	handlers,0,5217,8,32,4
+	.eos
+	.line	490
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.c",2
 ;#include "fxexec.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",0
 	.line	86
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.c",3
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.c",3
 ;#include "fxdos.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",0
 	.line	429
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\diskio.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\diskio.h",0
 	.line	85
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.h",7
-	.stag	_fx_sd_direntry,256,85
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",7
+	.stag	_fx_sd_direntry,256,90
 	.member	filename,0,110,8,0,11
 	.member	type,88,14,8,8
 	.member	attrs,96,110,8,0,20
 	.eos
-	.stag	_fx_info,416,86
+	.stag	_fx_info,416,91
 	.member	stgName,0,110,8,0,32
 	.member	Reserved1,256,14,8,8
 	.member	stgType,264,16,8,16
 	.member	Reserved2,280,14,8,8
 	.member	stgReserved,288,110,8,0,16
 	.eos
-	.stag	_fx_fileinfo,136,87
+	.stag	_fx_fileinfo,136,92
 	.member	type,0,14,8,8
 	.member	pFilename,8,142,8,32
 	.member	lSize,40,18,8,32
 	.member	lcreateDate,72,18,8,32
 	.member	lchangeDate,104,18,8,32
 	.eos
-	.stag	_FX_FAT_DIR_INFO,256,88
+	.stag	_FX_FAT_DIR_INFO,256,93
 	.member	DIR_Name,0,110,8,0,11
 	.member	DIR_Attr,88,14,8,8
 	.member	DIR_NTRes,96,14,8,8
@@ -952,7 +970,7 @@ R3	equ	13
 	.member	DIR_FstClusLO,208,16,8,16
 	.member	DIR_FileSize,224,18,8,32
 	.eos
-	.stag	fat_extBS_32,416,89
+	.stag	fat_extBS_32,416,94
 	.member	table_size_32,0,18,8,32
 	.member	extended_flags,32,16,8,16
 	.member	fat_version,48,16,8,16
@@ -967,7 +985,7 @@ R3	equ	13
 	.member	volume_label,264,110,8,0,11
 	.member	fat_type_label,352,110,8,0,8
 	.eos
-	.stag	fat_extBS_16,192,90
+	.stag	fat_extBS_16,192,95
 	.member	bios_drive_num,0,14,8,8
 	.member	reserved1,8,14,8,8
 	.member	boot_signature,16,14,8,8
@@ -975,7 +993,7 @@ R3	equ	13
 	.member	volume_label,40,110,8,0,11
 	.member	fat_type_label,128,110,8,0,8
 	.eos
-	.stag	fat_BS,688,91
+	.stag	fat_BS,688,96
 	.member	bootjmp,0,110,8,0,3
 	.member	oem_name,24,110,8,0,8
 	.member	bytes_per_sector,88,16,8,16
@@ -992,7 +1010,7 @@ R3	equ	13
 	.member	total_sectors_32,240,16,8,16
 	.member	extended_section,256,110,8,0,54
 	.eos
-	.stag	__FATBootSector,928,92
+	.stag	__FATBootSector,928,97
 	.member	bootjmp,0,110,8,0,3
 	.member	oem_name,24,110,8,0,8
 	.member	bytes_per_sector,88,16,8,16
@@ -1015,7 +1033,7 @@ R3	equ	13
 	.member	file_system_type,432,110,8,0,8
 	.member	extended_section,496,110,8,0,54
 	.eos
-	.stag	__PARTITIONTABLE,128,93
+	.stag	__PARTITIONTABLE,128,98
 	.member	first_byte,0,14,8,8
 	.member	start_chs,8,110,8,0,3
 	.member	partition_type,32,14,8,8
@@ -1023,7 +1041,7 @@ R3	equ	13
 	.member	start_sector,64,18,8,32
 	.member	length_sectors,96,18,8,32
 	.eos
-	.stag	fake94_,4096,94
+	.stag	fake99_,4096,99
 	.member	jmp,0,110,8,0,3
 	.member	oem,24,110,8,0,8
 	.member	sector_size,88,15,8,16
@@ -1047,7 +1065,7 @@ R3	equ	13
 	.member	boot_code,496,110,8,0,448
 	.member	boot_sector_signature,4080,15,8,16
 	.eos
-	.stag	__FAT16ENTRY,256,95
+	.stag	__FAT16ENTRY,256,100
 	.member	filename,0,110,8,0,8
 	.member	ext,64,110,8,0,3
 	.member	attributes,88,14,8,8
@@ -1057,7 +1075,7 @@ R3	equ	13
 	.member	starting_cluster,208,16,8,16
 	.member	file_size,224,18,8,32
 	.eos
-	.stag	__FAT16ENTRYLONG,288,96
+	.stag	__FAT16ENTRYLONG,288,101
 	.member	filename,0,110,8,0,8
 	.member	ext,64,110,8,0,3
 	.member	attributes,88,14,8,8
@@ -1068,7 +1086,7 @@ R3	equ	13
 	.member	file_size,224,18,8,32
 	.member	plongfileName,256,142,8,32
 	.eos
-	.stag	_LongFileName,256,97
+	.stag	_LongFileName,256,102
 	.member	sequenceNo,0,14,8,8
 	.member	fileName_Part1,8,110,8,0,10
 	.member	fileattribute,88,14,8,8
@@ -1078,7 +1096,7 @@ R3	equ	13
 	.member	fstclusLO,208,5,8,16
 	.member	fileName_Part3,224,110,8,0,4
 	.eos
-	.stag	_IDSECTOR,2048,98
+	.stag	_IDSECTOR,2048,103
 	.member	wGenConfig,0,16,8,16
 	.member	wNumCyls,16,16,8,16
 	.member	wReserved,32,16,8,16
@@ -1110,7 +1128,7 @@ R3	equ	13
 	.member	wMultiWordDMA,1008,16,8,16
 	.member	bReserved,1024,110,8,0,128
 	.eos
-	.stag	fake99_,16,99
+	.stag	fake104_,16,104
 	.member	Reserved1,0,16,17,1
 	.member	Retired3,1,16,17,1
 	.member	ResponseIncomplete,2,16,17,1
@@ -1120,11 +1138,11 @@ R3	equ	13
 	.member	Retired1,8,16,17,7
 	.member	DeviceType,15,16,17,1
 	.eos
-	.stag	fake100_,16,100
+	.stag	fake105_,16,105
 	.member	FeatureSupported,0,16,17,1
 	.member	Reserved,1,16,17,15
 	.eos
-	.stag	fake101_,32,101
+	.stag	fake106_,32,106
 	.member	CurrentLongPhysicalSectorAlignment,0,14,17,2
 	.member	ReservedByte49,2,14,17,6
 	.member	DmaSupported,8,14,17,1
@@ -1136,7 +1154,7 @@ R3	equ	13
 	.member	Reserved2,14,14,17,2
 	.member	ReservedWord50,16,16,8,16
 	.eos
-	.stag	fake102_,16,102
+	.stag	fake107_,16,107
 	.member	ZonedCapabilities,0,16,17,2
 	.member	NonVolatileWriteCache,2,16,17,1
 	.member	ExtendedUserAddressableSectorsSupported,3,16,17,1
@@ -1153,7 +1171,7 @@ R3	equ	13
 	.member	DeterministicReadAfterTrimSupported,14,16,17,1
 	.member	CFastSpecSupported,15,16,17,1
 	.eos
-	.stag	fake103_,32,103
+	.stag	fake108_,32,108
 	.member	Reserved0,0,16,17,1
 	.member	SataGen1,1,16,17,1
 	.member	SataGen2,2,16,17,1
@@ -1175,7 +1193,7 @@ R3	equ	13
 	.member	DEVSLPtoReducedPwrState,23,16,17,1
 	.member	Reserved3,24,16,17,8
 	.eos
-	.stag	fake104_,16,104
+	.stag	fake109_,16,109
 	.member	Reserved0,0,16,17,1
 	.member	NonZeroOffsets,1,16,17,1
 	.member	DmaSetupAutoActivate,2,16,17,1
@@ -1188,7 +1206,7 @@ R3	equ	13
 	.member	HybridInformation,9,16,17,1
 	.member	Reserved1,10,16,17,6
 	.eos
-	.stag	fake105_,16,105
+	.stag	fake110_,16,110
 	.member	Reserved0,0,16,17,1
 	.member	NonZeroOffsets,1,16,17,1
 	.member	DmaSetupAutoActivate,2,16,17,1
@@ -1201,7 +1219,7 @@ R3	equ	13
 	.member	HybridInformation,9,16,17,1
 	.member	Reserved1,10,16,17,6
 	.eos
-	.stag	fake106_,48,106
+	.stag	fake111_,48,111
 	.member	SmartCommands,0,16,17,1
 	.member	SecurityMode,1,16,17,1
 	.member	RemovableMediaFeature,2,16,17,1
@@ -1248,7 +1266,7 @@ R3	equ	13
 	.member	IdleWithUnloadFeature,45,16,17,1
 	.member	WordValid,46,16,17,2
 	.eos
-	.stag	fake107_,48,107
+	.stag	fake112_,48,112
 	.member	SmartCommands,0,16,17,1
 	.member	SecurityMode,1,16,17,1
 	.member	RemovableMediaFeature,2,16,17,1
@@ -1296,22 +1314,22 @@ R3	equ	13
 	.member	IdleWithUnloadFeature,45,16,17,1
 	.member	Reserved4,46,16,17,2
 	.eos
-	.stag	fake108_,16,108
+	.stag	fake113_,16,113
 	.member	TimeRequired,0,16,17,15
 	.member	ExtendedTimeReported,15,16,17,1
 	.eos
-	.stag	fake109_,16,109
+	.stag	fake114_,16,114
 	.member	TimeRequired,0,16,17,15
 	.member	ExtendedTimeReported,15,16,17,1
 	.eos
-	.stag	fake110_,16,110
+	.stag	fake115_,16,115
 	.member	LogicalSectorsPerPhysicalSector,0,16,17,4
 	.member	Reserved0,4,16,17,8
 	.member	LogicalSectorLongerThan256Words,12,16,17,1
 	.member	MultipleLogicalSectorsPerPhysicalSector,13,16,17,1
 	.member	Reserved1,14,16,17,2
 	.eos
-	.stag	fake111_,16,111
+	.stag	fake116_,16,116
 	.member	ReservedForDrqTechnicalReport,0,16,17,1
 	.member	WriteReadVerify,1,16,17,1
 	.member	WriteUncorrectableExt,2,16,17,1
@@ -1323,7 +1341,7 @@ R3	equ	13
 	.member	Reserved0,8,16,17,6
 	.member	WordValid,14,16,17,2
 	.eos
-	.stag	fake112_,16,112
+	.stag	fake117_,16,117
 	.member	ReservedForDrqTechnicalReport,0,16,17,1
 	.member	WriteReadVerify,1,16,17,1
 	.member	WriteUncorrectableExt,2,16,17,1
@@ -1335,7 +1353,7 @@ R3	equ	13
 	.member	Reserved0,8,16,17,6
 	.member	Reserved1,14,16,17,2
 	.eos
-	.stag	fake113_,16,113
+	.stag	fake118_,16,118
 	.member	SecuritySupported,0,16,17,1
 	.member	SecurityEnabled,1,16,17,1
 	.member	SecurityLocked,2,16,17,1
@@ -1346,18 +1364,18 @@ R3	equ	13
 	.member	SecurityLevel,8,16,17,1
 	.member	Reserved1,9,16,17,7
 	.eos
-	.stag	fake114_,16,114
+	.stag	fake119_,16,119
 	.member	MaximumCurrentInMA,0,16,17,12
 	.member	CfaPowerMode1Disabled,12,16,17,1
 	.member	CfaPowerMode1Required,13,16,17,1
 	.member	Reserved0,14,16,17,1
 	.member	Word160Supported,15,16,17,1
 	.eos
-	.stag	fake115_,16,115
+	.stag	fake120_,16,120
 	.member	SupportsTrim,0,16,17,1
 	.member	Reserved0,1,16,17,15
 	.eos
-	.stag	fake116_,16,116
+	.stag	fake121_,16,121
 	.member	Supported,0,16,17,1
 	.member	Reserved0,1,16,17,1
 	.member	WriteSameSuported,2,16,17,1
@@ -1367,12 +1385,12 @@ R3	equ	13
 	.member	Reserved1,6,16,17,6
 	.member	VendorSpecific,12,16,17,4
 	.eos
-	.stag	fake117_,16,117
+	.stag	fake122_,16,122
 	.member	AlignmentOfLogicalWithinPhysical,0,16,17,14
 	.member	Word209Supported,14,16,17,1
 	.member	Reserved0,15,16,17,1
 	.eos
-	.stag	fake118_,16,118
+	.stag	fake123_,16,123
 	.member	NVCachePowerModeEnabled,0,16,17,1
 	.member	Reserved0,1,16,17,3
 	.member	NVCacheFeatureSetEnabled,4,16,17,1
@@ -1380,16 +1398,16 @@ R3	equ	13
 	.member	NVCachePowerModeVersion,8,16,17,4
 	.member	NVCacheFeatureSetVersion,12,16,17,4
 	.eos
-	.stag	fake119_,16,119
+	.stag	fake124_,16,124
 	.member	NVCacheEstimatedTimeToSpinUpInSeconds,0,14,8,8
 	.member	Reserved,8,14,8,8
 	.eos
-	.stag	fake120_,16,120
+	.stag	fake125_,16,125
 	.member	MajorVersion,0,16,17,12
 	.member	TransportType,12,16,17,4
 	.eos
-	.stag	_IDENTIFY_DEVICE_DATA,4096,121
-	.member	GeneralConfiguration,0,10,8,16,99
+	.stag	_IDENTIFY_DEVICE_DATA,4096,126
+	.member	GeneralConfiguration,0,10,8,16,104
 	.member	NumCylinders,16,16,8,16
 	.member	SpecificConfiguration,32,16,8,16
 	.member	NumHeads,48,16,8,16
@@ -1403,8 +1421,8 @@ R3	equ	13
 	.member	ModelNumber,432,110,8,0,40
 	.member	MaximumBlockTransfer,752,14,8,8
 	.member	VendorUnique2,760,14,8,8
-	.member	TrustedComputing,768,10,8,16,100
-	.member	Capabilities,784,10,8,32,101
+	.member	TrustedComputing,768,10,8,16,105
+	.member	Capabilities,784,10,8,32,106
 	.member	ObsoleteWords51,816,112,8,0,2
 	.member	TranslationFieldsValid,848,16,17,3
 	.member	Reserved3,851,16,17,5
@@ -1430,21 +1448,21 @@ R3	equ	13
 	.member	RecommendedMWXferCycleTime,1056,16,8,16
 	.member	MinimumPIOCycleTime,1072,16,8,16
 	.member	MinimumPIOCycleTimeIORDY,1088,16,8,16
-	.member	AdditionalSupported,1104,10,8,16,102
+	.member	AdditionalSupported,1104,10,8,16,107
 	.member	ReservedWords70,1120,112,8,0,5
 	.member	QueueDepth,1200,16,17,5
 	.member	ReservedWord75,1205,16,17,11
-	.member	SerialAtaCapabilities,1216,10,8,32,103
-	.member	SerialAtaFeaturesSupported,1248,10,8,16,104
-	.member	SerialAtaFeaturesEnabled,1264,10,8,16,105
+	.member	SerialAtaCapabilities,1216,10,8,32,108
+	.member	SerialAtaFeaturesSupported,1248,10,8,16,109
+	.member	SerialAtaFeaturesEnabled,1264,10,8,16,110
 	.member	MajorRevision,1280,16,8,16
 	.member	MinorRevision,1296,16,8,16
-	.member	CommandSetSupport,1312,10,8,48,106
-	.member	CommandSetActive,1360,10,8,48,107
+	.member	CommandSetSupport,1312,10,8,48,111
+	.member	CommandSetActive,1360,10,8,48,112
 	.member	UltraDMASupport,1408,16,17,8
 	.member	UltraDMAActive,1416,16,17,8
-	.member	NormalSecurityEraseUnit,1424,10,8,16,108
-	.member	EnhancedSecurityEraseUnit,1440,10,8,16,109
+	.member	NormalSecurityEraseUnit,1424,10,8,16,113
+	.member	EnhancedSecurityEraseUnit,1440,10,8,16,114
 	.member	CurrentAPMLevel,1456,16,17,8
 	.member	ReservedWord91,1464,16,17,8
 	.member	MasterPasswordID,1472,16,8,16
@@ -1458,42 +1476,42 @@ R3	equ	13
 	.member	Max48BitLBA,1600,114,8,0,2
 	.member	StreamingTransferTime,1664,16,8,16
 	.member	DsmCap,1680,16,8,16
-	.member	PhysicalLogicalSectorSize,1696,10,8,16,110
+	.member	PhysicalLogicalSectorSize,1696,10,8,16,115
 	.member	InterSeekDelay,1712,16,8,16
 	.member	WorldWideName,1728,112,8,0,4
 	.member	ReservedForWorldWideName128,1792,112,8,0,4
 	.member	ReservedForTlcTechnicalReport,1856,16,8,16
 	.member	WordsPerLogicalSector,1872,112,8,0,2
-	.member	CommandSetSupportExt,1904,10,8,16,111
-	.member	CommandSetActiveExt,1920,10,8,16,112
+	.member	CommandSetSupportExt,1904,10,8,16,116
+	.member	CommandSetActiveExt,1920,10,8,16,117
 	.member	ReservedForExpandedSupportandActive,1936,112,8,0,6
 	.member	MsnSupport,2032,16,17,2
 	.member	ReservedWord127,2034,16,17,14
-	.member	SecurityStatus,2048,10,8,16,113
+	.member	SecurityStatus,2048,10,8,16,118
 	.member	ReservedWord129,2064,112,8,0,31
-	.member	CfaPowerMode1,2560,10,8,16,114
+	.member	CfaPowerMode1,2560,10,8,16,119
 	.member	ReservedForCfaWord161,2576,112,8,0,7
 	.member	NominalFormFactor,2688,16,17,4
 	.member	ReservedWord168,2692,16,17,12
-	.member	DataSetManagementFeature,2704,10,8,16,115
+	.member	DataSetManagementFeature,2704,10,8,16,120
 	.member	AdditionalProductID,2720,112,8,0,4
 	.member	ReservedForCfaWord174,2784,112,8,0,2
 	.member	CurrentMediaSerialNumber,2816,112,8,0,30
-	.member	SCTCommandTransport,3296,10,8,16,116
+	.member	SCTCommandTransport,3296,10,8,16,121
 	.member	ReservedWord207,3312,112,8,0,2
-	.member	BlockAlignment,3344,10,8,16,117
+	.member	BlockAlignment,3344,10,8,16,122
 	.member	WriteReadVerifySectorCountMode3Only,3360,112,8,0,2
 	.member	WriteReadVerifySectorCountMode2Only,3392,112,8,0,2
-	.member	NVCacheCapabilities,3424,10,8,16,118
+	.member	NVCacheCapabilities,3424,10,8,16,123
 	.member	NVCacheSizeLSW,3440,16,8,16
 	.member	NVCacheSizeMSW,3456,16,8,16
 	.member	NominalMediaRotationRate,3472,16,8,16
 	.member	ReservedWord218,3488,16,8,16
-	.member	NVCacheOptions,3504,10,8,16,119
+	.member	NVCacheOptions,3504,10,8,16,124
 	.member	WriteReadVerifySectorCountMode,3520,16,17,8
 	.member	ReservedWord220,3528,16,17,8
 	.member	ReservedWord221,3536,16,8,16
-	.member	TransportMajorVersion,3552,10,8,16,120
+	.member	TransportMajorVersion,3552,10,8,16,125
 	.member	TransportMinorVersion,3568,16,8,16
 	.member	ReservedWord224,3584,112,8,0,6
 	.member	ExtendedNumberOfUserAddressableSectors,3680,114,8,0,2
@@ -1503,13 +1521,13 @@ R3	equ	13
 	.member	Signature,4080,16,17,8
 	.member	CheckSum,4088,16,17,8
 	.eos
-	.stag	_FXDosDevice,5744,122
+	.stag	_FXDosDevice,5744,127
 	.member	type,0,14,8,8
 	.member	initialized,8,14,8,8
 	.member	devdata,16,129,8,32
 	.member	devstatus,48,14,8,8
-	.member	bootSector,56,10,8,928,92
-	.member	partitionTable,984,10,8,128,93
+	.member	bootSector,56,10,8,928,97
+	.member	partitionTable,984,10,8,128,98
 	.member	fileAllocationTable,1112,110,8,0,512
 	.member	bsOffset,5208,18,8,32
 	.member	rootDirSectors,5240,18,8,32
@@ -1527,54 +1545,60 @@ R3	equ	13
 	.member	pfReader,5680,654,8,32
 	.member	pfWriter,5712,654,8,32
 	.eos
-	.utag	item,32,123
-	.member	dir,0,138,11,32,75
-	.member	file,0,138,11,32,74
-	.member	fileInfo,0,138,11,32,76
+	.utag	item,32,128
+	.member	dir,0,138,11,32,78
+	.member	file,0,138,11,32,77
+	.member	fileInfo,0,138,11,32,79
 	.eos
-	.stag	_dos_handle,80,124
-	.member	fs,0,138,8,32,72
+	.stag	_dos_handle,80,129
+	.member	fs,0,138,8,32,75
 	.member	fr,32,5,8,16
 	.member	path,48,142,8,32
 	.eos
-	.line	800
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.c",4
+	.stag	fx_file,112,130
+	.member	fs,0,138,8,32,75
+	.member	fileInfo,32,138,8,32,79
+	.member	f,64,138,8,32,77
+	.member	fr,96,5,8,16
+	.eos
+	.line	812
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.c",4
 ;#include "fxmemorymanager.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",0
-	.line	105
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.c",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",0
+	.line	129
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.c",5
 ;#include "fxos_desktop_proc.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos_desktop_proc.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos_desktop_proc.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_desktop_proc.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_desktop_proc.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
 	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos_desktop_proc.h",10
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos_desktop_proc.h",15
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos_desktop_proc.h",16
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_desktop_proc.h",10
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_desktop_proc.h",15
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_desktop_proc.h",16
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
 	.line	359
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos_desktop_proc.h",17
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",0
-	.line	581
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos_desktop_proc.h",18
-	.stag	fake125_,32,125
-	.member	contents,0,138,8,32,50
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_desktop_proc.h",17
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",0
+	.line	594
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_desktop_proc.h",18
+	.stag	fake131_,32,131
+	.member	contents,0,138,8,32,52
 	.eos
 	.line	92
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.c",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.c",6
 ;#include "fxos_accessories.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos_accessories.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_accessories.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos_accessories.h",11
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_accessories.h",11
 	.line	18
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.c",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.c",7
 ;
 ;EXECUTIVE _k_executive;
 ;
@@ -1583,19 +1607,9 @@ R3	equ	13
 ;//
 ;// SEH Variables
 ;//
-;ULONG _k_exec_context 	= 0L;
-	data
-	xdef	~~_k_exec_context
-~~_k_exec_context:
-	dl	$0
-	ends
-;ULONG _k_exec_error		= 0L;
-	data
-	xdef	~~_k_exec_error
-~~_k_exec_error:
-	dl	$0
-	ends
-;UCHAR _k_exec_message[64];
+;extern ULONG _k_exec_context;
+;extern ULONG _k_exec_error;
+;extern UCHAR _k_exec_message[64];
 ;//
 ;//
 ;//
@@ -1879,6 +1893,7 @@ L10002:
 ;
 ;	_exec_Process = k_mem_allocate_heap(sizeof(FXPROCESS));
 	.line	68
+	pea	#^$64
 	pea	#<$64
 	jsl	~~k_mem_allocate_heap
 	sta	|~~_exec_Process
@@ -2944,36 +2959,34 @@ L76	equ	1
 	tcd
 path_0	set	4
 	.block	213
-;	FIL *f;
-;	FRESULT fr;
+;	FILE file = NULL;
+;	FRESULT fr = 0;
 ;	UINT read;
 ;	ULONG codeSize = 0L;
 ;
 ;	FXProcessProc pEntryAddress = NULL;
 ;
-;	f = k_mem_allocate_heap(sizeof(FIL));
-f_1	set	0
+;	//f = k_mem_allocate_heap(sizeof(FIL));
+;
+;	k_debug_strings("k_exe_device_load_process::load module:",path);
+file_1	set	0
 fr_1	set	4
 read_1	set	6
 codeSize_1	set	8
 pEntryAddress_1	set	12
-	.sym	f,0,138,1,32,74
+	.sym	file,0,138,1,32,130
 	.sym	fr,4,5,1,16
 	.sym	read,6,16,1,16
 	.sym	codeSize,8,18,1,32
 	.sym	pEntryAddress,12,641,1,32
 	.sym	path,4,142,6,32
+	stz	<L81+file_1
+	stz	<L81+file_1+2
+	stz	<L81+fr_1
 	stz	<L81+codeSize_1
 	stz	<L81+codeSize_1+2
 	stz	<L81+pEntryAddress_1
 	stz	<L81+pEntryAddress_1+2
-	.line	221
-	pea	#<$226
-	jsl	~~k_mem_allocate_heap
-	sta	<L81+f_1
-	stx	<L81+f_1+2
-;
-;	k_debug_strings("k_exe_device_load_process::load module:",path);
 	.line	223
 	pei	<L80+path_0+2
 	pei	<L80+path_0
@@ -2981,23 +2994,33 @@ pEntryAddress_1	set	12
 	pea	#<L36
 	jsl	~~k_debug_strings
 ;
-;	if(f_open(f,path,FA_READ) == FR_OK)
-	.line	225
-;	{
+;	//if(f_open(f,path,FA_READ) == FR_OK)
+;
+;	file = k_dos_open(path,FA_READ);
+	.line	227
 	pea	#<$1
 	pei	<L80+path_0+2
 	pei	<L80+path_0
-	pei	<L81+f_1+2
-	pei	<L81+f_1
-	jsl	~~f_open
-	tax
-	beq	L83
+	jsl	~~k_dos_open
+	sta	<L81+file_1
+	stx	<L81+file_1+2
+;	if(file && file->fr == FR_OK)
+	.line	228
+;	{
+	lda	<L81+file_1
+	ora	<L81+file_1+2
+	bne	L83
 	brl	L10022
 L83:
-	.line	226
+	ldy	#$c
+	lda	[<L81+file_1],Y
+	beq	L84
+	brl	L10022
+L84:
+	.line	229
 ;
-;		fr = f_read(f,&loadModuleHeader,sizeof(SEGMENTHEADER),&read);
-	.line	228
+;		fr = f_read(file->f,&loadModuleHeader,sizeof(SEGMENTHEADER),&read);
+	.line	231
 	pea	#0
 	clc
 	tdc
@@ -3011,38 +3034,42 @@ L83:
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pei	<L81+f_1+2
-	pei	<L81+f_1
+	ldy	#$a
+	lda	[<L81+file_1],Y
+	pha
+	ldy	#$8
+	lda	[<L81+file_1],Y
+	pha
 	jsl	~~f_read
 	sta	<L81+fr_1
 ;		k_debug_integer("k_exe_device_load_process:SEGMENTHEADER:fr:",fr);
-	.line	229
+	.line	232
 	pei	<L81+fr_1
 	pea	#^L36+40
 	pea	#<L36+40
 	jsl	~~k_debug_integer
 ;		k_debug_integer("k_exe_device_load_process::sizeof SEGMENTHEADER Size:\r\n",sizeof(SEGMENTHEADER));
-	.line	230
+	.line	233
 	pea	#<$14
 	pea	#^L36+84
 	pea	#<L36+84
 	jsl	~~k_debug_integer
 ;		k_debug_integer("k_exe_device_load_process::READ SEGMENTHEADER Size:\r\n",read);
-	.line	231
+	.line	234
 	pei	<L81+read_1
 	pea	#^L36+140
 	pea	#<L36+140
 	jsl	~~k_debug_integer
 ;		if(read)
-	.line	232
+	.line	235
 ;		{
 	lda	<L81+read_1
-	bne	L84
+	bne	L85
 	brl	L10023
-L84:
-	.line	233
+L85:
+	.line	236
 ;			k_debug_integer("k_exe_device_load_process::SEGMENT VERSION MAJOR:",loadModuleHeader.version_major);
-	.line	234
+	.line	237
 	lda	|~~loadModuleHeader
 	and	#$ff
 	pha
@@ -3050,7 +3077,7 @@ L84:
 	pea	#<L36+194
 	jsl	~~k_debug_integer
 ;			k_debug_integer("k_exe_device_load_process::SEGMENT VERSION MAJOR:",loadModuleHeader.version_minor);
-	.line	235
+	.line	238
 	lda	|~~loadModuleHeader+1
 	and	#$ff
 	pha
@@ -3058,14 +3085,14 @@ L84:
 	pea	#<L36+244
 	jsl	~~k_debug_integer
 ;			k_debug_integer("k_exe_device_load_process::SEGMENT HEADER LENGTH:",loadModuleHeader.length);
-	.line	236
+	.line	239
 	lda	|~~loadModuleHeader+2
 	pha
 	pea	#^L36+294
 	pea	#<L36+294
 	jsl	~~k_debug_integer
 ;			k_debug_pointer("k_exe_device_load_process::SEGMENT START ADDRESS:",(LPVOID)loadModuleHeader.segment_start_addr);
-	.line	237
+	.line	240
 	lda	|~~loadModuleHeader+4+2
 	pha
 	lda	|~~loadModuleHeader+4
@@ -3074,7 +3101,7 @@ L84:
 	pea	#<L36+344
 	jsl	~~k_debug_pointer
 ;			k_debug_pointer("k_exe_device_load_process::SEGMENT END   ADDRESS:",(LPVOID)loadModuleHeader.segment_end_addr);
-	.line	238
+	.line	241
 	lda	|~~loadModuleHeader+8+2
 	pha
 	lda	|~~loadModuleHeader+8
@@ -3083,14 +3110,14 @@ L84:
 	pea	#<L36+394
 	jsl	~~k_debug_pointer
 ;			k_debug_integer("k_exe_device_load_process::SEGMENT SIZE         :",loadModuleHeader.segment_size);
-	.line	239
+	.line	242
 	lda	|~~loadModuleHeader+12
 	pha
 	pea	#^L36+444
 	pea	#<L36+444
 	jsl	~~k_debug_integer
 ;			k_debug_pointer("k_exe_device_load_process::SEGMENT ENTRY ADDRESS:",(LPVOID)loadModuleHeader.main_entry_addr);
-	.line	240
+	.line	243
 	lda	|~~loadModuleHeader+16+2
 	pha
 	lda	|~~loadModuleHeader+16
@@ -3100,40 +3127,44 @@ L84:
 	jsl	~~k_debug_pointer
 ;
 ;			codeSize = loadModuleHeader.segment_size;//loadModuleHeader.segment_end_addr - loadModuleHeader.segment_start_addr;
-	.line	242
+	.line	245
 	lda	|~~loadModuleHeader+12
 	sta	<L81+codeSize_1
 	lda	|~~loadModuleHeader+12+2
 	sta	<L81+codeSize_1+2
 ;
 ;			k_debug_integer("k_exe_device_load_process::SEGMENT CODE LENGTH  :",codeSize);
-	.line	244
+	.line	247
 	pei	<L81+codeSize_1
 	pea	#^L36+544
 	pea	#<L36+544
 	jsl	~~k_debug_integer
 ;		}
-	.line	245
+	.line	248
 ;
-;		fr = f_lseek(f,loadModuleHeader.length);
+;		fr = f_lseek(file->f,loadModuleHeader.length);
 L10023:
-	.line	247
+	.line	250
 	ldy	#$0
 	lda	|~~loadModuleHeader+2
-	bpl	L85
+	bpl	L86
 	dey
-L85:
+L86:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pei	<L81+f_1+2
-	pei	<L81+f_1
+	ldy	#$a
+	lda	[<L81+file_1],Y
+	pha
+	ldy	#$8
+	lda	[<L81+file_1],Y
+	pha
 	jsl	~~f_lseek
 	sta	<L81+fr_1
 ;
 ;		memset((LPVOID)loadModuleHeader.segment_start_addr,0,codeSize);
-	.line	249
+	.line	252
 	pei	<L81+codeSize_1
 	pea	#<$0
 	lda	|~~loadModuleHeader+4+2
@@ -3142,8 +3173,8 @@ L85:
 	pha
 	jsl	~~memset
 ;
-;		fr = f_read(f,(LPVOID)loadModuleHeader.segment_start_addr,codeSize + 4,&read);
-	.line	251
+;		fr = f_read(file->f,(LPVOID)loadModuleHeader.segment_start_addr,codeSize + 4,&read);
+	.line	254
 	pea	#0
 	clc
 	tdc
@@ -3161,32 +3192,36 @@ L85:
 	pha
 	lda	|~~loadModuleHeader+4
 	pha
-	pei	<L81+f_1+2
-	pei	<L81+f_1
+	ldy	#$a
+	lda	[<L81+file_1],Y
+	pha
+	ldy	#$8
+	lda	[<L81+file_1],Y
+	pha
 	jsl	~~f_read
 	sta	<L81+fr_1
 ;		k_debug_integer("k_exe_device_load_process:f_read:fr:",fr);
-	.line	252
+	.line	255
 	pei	<L81+fr_1
 	pea	#^L36+594
 	pea	#<L36+594
 	jsl	~~k_debug_integer
 ;		k_debug_integer("k_exe_device_load_process::LOAD SEGMENT Size:\r\n",read);
-	.line	253
+	.line	256
 	pei	<L81+read_1
 	pea	#^L36+631
 	pea	#<L36+631
 	jsl	~~k_debug_integer
 ;		if(read)
-	.line	254
+	.line	257
 ;		{
 	lda	<L81+read_1
-	bne	L86
+	bne	L87
 	brl	L10024
-L86:
-	.line	255
+L87:
+	.line	258
 ;			k_debug_hex("k_exe_device_load_process::MEMORY CHECK BYTE:",((LPCSTR)loadModuleHeader.segment_start_addr)[0]);
-	.line	256
+	.line	259
 	lda	|~~loadModuleHeader+4
 	sta	<R0
 	lda	|~~loadModuleHeader+4+2
@@ -3197,7 +3232,7 @@ L86:
 	pea	#<L36+679
 	jsl	~~k_debug_hex
 ;			k_debug_pointer("k_exe_device_load_process::LOAD SEGMENT Entry:",(LPVOID)loadModuleHeader.main_entry_addr);
-	.line	257
+	.line	260
 	lda	|~~loadModuleHeader+16+2
 	pha
 	lda	|~~loadModuleHeader+16
@@ -3207,44 +3242,34 @@ L86:
 	jsl	~~k_debug_pointer
 ;
 ;
-;			k_debug_byte_array("SEGMENT DATA:",(LPVOID)loadModuleHeader.segment_start_addr,codeSize);
-	.line	260
-	pei	<L81+codeSize_1+2
-	pei	<L81+codeSize_1
-	lda	|~~loadModuleHeader+4+2
-	pha
-	lda	|~~loadModuleHeader+4
-	pha
-	pea	#^L36+772
-	pea	#<L36+772
-	jsl	~~k_debug_byte_array
+;			//k_debug_byte_array("SEGMENT DATA:",(LPVOID)loadModuleHeader.segment_start_addr,codeSize);
 ;
 ;
 ;			pEntryAddress = (FXProcessProc)loadModuleHeader.main_entry_addr;
-	.line	263
+	.line	266
 	lda	|~~loadModuleHeader+16
 	sta	<L81+pEntryAddress_1
 	lda	|~~loadModuleHeader+16+2
 	sta	<L81+pEntryAddress_1+2
 ;		}
-	.line	264
+	.line	267
 ;
 ;	}
 L10024:
-	.line	266
+	.line	269
 ;
-;	k_mem_deallocate_heap(f);
+;	k_dos_close(file);
 L10022:
-	.line	268
-	pei	<L81+f_1+2
-	pei	<L81+f_1
-	jsl	~~k_mem_deallocate_heap
+	.line	271
+	pei	<L81+file_1+2
+	pei	<L81+file_1
+	jsl	~~k_dos_close
 ;
 ;	return pEntryAddress;
-	.line	270
+	.line	273
 	ldx	<L81+pEntryAddress_1+2
 	lda	<L81+pEntryAddress_1
-L87:
+L88:
 	tay
 	lda	<L80+2
 	sta	<L80+2+4
@@ -3258,14 +3283,14 @@ L87:
 	tya
 	rtl
 ;}
-	.line	271
-	.endblock	271
+	.line	274
+	.endblock	274
 L80	equ	20
 L81	equ	5
 	ends
 	efunc
-	.endfunc	271,5,20
-	.line	271
+	.endfunc	274,5,20
+	.line	274
 	data
 L36:
 	db	$6B,$5F,$65,$78,$65,$5F,$64,$65,$76,$69,$63,$65,$5F,$6C,$6F
@@ -3319,29 +3344,28 @@ L36:
 	db	$59,$54,$45,$3A,$00,$6B,$5F,$65,$78,$65,$5F,$64,$65,$76,$69
 	db	$63,$65,$5F,$6C,$6F,$61,$64,$5F,$70,$72,$6F,$63,$65,$73,$73
 	db	$3A,$3A,$4C,$4F,$41,$44,$20,$53,$45,$47,$4D,$45,$4E,$54,$20
-	db	$45,$6E,$74,$72,$79,$3A,$00,$53,$45,$47,$4D,$45,$4E,$54,$20
-	db	$44,$41,$54,$41,$3A,$00
+	db	$45,$6E,$74,$72,$79,$3A,$00
 	ends
 ;
 ;PFXPROCESS k_exec_launchProcess(LPCHAR commandLine)
 ;{
-	.line	273
-	.line	274
+	.line	276
+	.line	277
 	code
 	xdef	~~k_exec_launchProcess
 	func
-	.function	274
+	.function	277
 ~~k_exec_launchProcess:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L89
+	sbc	#L90
 	tcs
 	phd
 	tcd
 commandLine_0	set	4
-	.block	274
+	.block	277
 ;	PFXPROCESS process = NULL;
 ;	FXProcessProc processProc = NULL;
 ;
@@ -3351,237 +3375,237 @@ processProc_1	set	4
 	.sym	process,0,138,1,32,20
 	.sym	processProc,4,641,1,32
 	.sym	commandLine,4,142,6,32
-	stz	<L90+process_1
-	stz	<L90+process_1+2
-	stz	<L90+processProc_1
-	stz	<L90+processProc_1+2
-	.line	278
+	stz	<L91+process_1
+	stz	<L91+process_1+2
+	stz	<L91+processProc_1
+	stz	<L91+processProc_1+2
+	.line	281
 ;	{
-	lda	<L89+commandLine_0
-	ora	<L89+commandLine_0+2
-	bne	L92
+	lda	<L90+commandLine_0
+	ora	<L90+commandLine_0+2
+	bne	L93
 	brl	L10025
-L92:
-	.line	279
+L93:
+	.line	282
 ;		k_debug_strings("k_exec_launchProcess:",commandLine);
-	.line	280
-	pei	<L89+commandLine_0+2
-	pei	<L89+commandLine_0
-	pea	#^L88
-	pea	#<L88
+	.line	283
+	pei	<L90+commandLine_0+2
+	pei	<L90+commandLine_0
+	pea	#^L89
+	pea	#<L89
 	jsl	~~k_debug_strings
 ;
 ;		if(commandLine[0] == '@')
-	.line	282
+	.line	285
 ;		{
 	sep	#$20
 	longa	off
-	lda	[<L89+commandLine_0]
+	lda	[<L90+commandLine_0]
 	cmp	#<$40
 	rep	#$20
 	longa	on
-	beq	L93
-	brl	L10026
-L93:
-	.line	283
-;			if(strcmp(commandLine,"@/console") == 0)
-	.line	284
-;			{
-	pea	#^L88+22
-	pea	#<L88+22
-	pei	<L89+commandLine_0+2
-	pei	<L89+commandLine_0
-	jsl	~~strcmp
-	tax
 	beq	L94
-	brl	L10027
+	brl	L10026
 L94:
-	.line	285
-;				processProc = DefConsoleProc;
 	.line	286
-	lda	#<~~DefConsoleProc
-	sta	<L90+processProc_1
-	lda	#^~~DefConsoleProc
-	sta	<L90+processProc_1+2
-;			}
+;			if(strcmp(commandLine,"@/console") == 0)
 	.line	287
-;			else if(strcmp(commandLine,"@/desktop") == 0)
-	brl	L10028
-L10027:
-	.line	288
 ;			{
-	pea	#^L88+32
-	pea	#<L88+32
-	pei	<L89+commandLine_0+2
-	pei	<L89+commandLine_0
+	pea	#^L89+22
+	pea	#<L89+22
+	pei	<L90+commandLine_0+2
+	pei	<L90+commandLine_0
 	jsl	~~strcmp
 	tax
 	beq	L95
-	brl	L10029
+	brl	L10027
 L95:
+	.line	288
+;				processProc = DefConsoleProc;
 	.line	289
-;				processProc = DesktopEnvironmentProc;
-	.line	290
-	lda	#<~~DesktopEnvironmentProc
-	sta	<L90+processProc_1
-	lda	#^~~DesktopEnvironmentProc
-	sta	<L90+processProc_1+2
+	lda	#<~~DefConsoleProc
+	sta	<L91+processProc_1
+	lda	#^~~DefConsoleProc
+	sta	<L91+processProc_1+2
 ;			}
+	.line	290
+;			else if(strcmp(commandLine,"@/desktop") == 0)
+	brl	L10028
+L10027:
 	.line	291
-;			else if(strcmp(commandLine,"@/idle") == 0)
-	brl	L10030
-L10029:
-	.line	292
 ;			{
-	pea	#^L88+42
-	pea	#<L88+42
-	pei	<L89+commandLine_0+2
-	pei	<L89+commandLine_0
+	pea	#^L89+32
+	pea	#<L89+32
+	pei	<L90+commandLine_0+2
+	pei	<L90+commandLine_0
 	jsl	~~strcmp
 	tax
 	beq	L96
-	brl	L10031
+	brl	L10029
 L96:
+	.line	292
+;				processProc = DesktopEnvironmentProc;
 	.line	293
-;				processProc = IdleProc;
-	.line	294
-	lda	#<~~IdleProc
-	sta	<L90+processProc_1
-	lda	#^~~IdleProc
-	sta	<L90+processProc_1+2
+	lda	#<~~DesktopEnvironmentProc
+	sta	<L91+processProc_1
+	lda	#^~~DesktopEnvironmentProc
+	sta	<L91+processProc_1+2
 ;			}
+	.line	294
+;			else if(strcmp(commandLine,"@/idle") == 0)
+	brl	L10030
+L10029:
 	.line	295
-;			else if(strcmp(commandLine,"@/calculator") == 0)
-	brl	L10032
-L10031:
-	.line	296
 ;			{
-	pea	#^L88+49
-	pea	#<L88+49
-	pei	<L89+commandLine_0+2
-	pei	<L89+commandLine_0
+	pea	#^L89+42
+	pea	#<L89+42
+	pei	<L90+commandLine_0+2
+	pei	<L90+commandLine_0
 	jsl	~~strcmp
 	tax
 	beq	L97
-	brl	L10033
+	brl	L10031
 L97:
+	.line	296
+;				processProc = IdleProc;
 	.line	297
-;				processProc = FXCalculator;
-	.line	298
-	lda	#<~~FXCalculator
-	sta	<L90+processProc_1
-	lda	#^~~FXCalculator
-	sta	<L90+processProc_1+2
+	lda	#<~~IdleProc
+	sta	<L91+processProc_1
+	lda	#^~~IdleProc
+	sta	<L91+processProc_1+2
 ;			}
+	.line	298
+;			else if(strcmp(commandLine,"@/calculator") == 0)
+	brl	L10032
+L10031:
 	.line	299
-;			else if(strcmp(commandLine,"@/palette") == 0)
-	brl	L10034
-L10033:
-	.line	300
 ;			{
-	pea	#^L88+62
-	pea	#<L88+62
-	pei	<L89+commandLine_0+2
-	pei	<L89+commandLine_0
+	pea	#^L89+49
+	pea	#<L89+49
+	pei	<L90+commandLine_0+2
+	pei	<L90+commandLine_0
 	jsl	~~strcmp
 	tax
 	beq	L98
-	brl	L10035
+	brl	L10033
 L98:
+	.line	300
+;				processProc = FXCalculator;
 	.line	301
-;				processProc = FXPaletteAccessory;
-	.line	302
-	lda	#<~~FXPaletteAccessory
-	sta	<L90+processProc_1
-	lda	#^~~FXPaletteAccessory
-	sta	<L90+processProc_1+2
+	lda	#<~~FXCalculator
+	sta	<L91+processProc_1
+	lda	#^~~FXCalculator
+	sta	<L91+processProc_1+2
 ;			}
+	.line	302
+;			else if(strcmp(commandLine,"@/palette") == 0)
+	brl	L10034
+L10033:
 	.line	303
+;			{
+	pea	#^L89+62
+	pea	#<L89+62
+	pei	<L90+commandLine_0+2
+	pei	<L90+commandLine_0
+	jsl	~~strcmp
+	tax
+	beq	L99
+	brl	L10035
+L99:
+	.line	304
+;				processProc = FXPaletteAccessory;
+	.line	305
+	lda	#<~~FXPaletteAccessory
+	sta	<L91+processProc_1
+	lda	#^~~FXPaletteAccessory
+	sta	<L91+processProc_1+2
+;			}
+	.line	306
 ;		}
 L10035:
 L10034:
 L10032:
 L10030:
 L10028:
-	.line	304
+	.line	307
 ;		else
 	brl	L10036
 L10026:
 ;		{
-	.line	306
+	.line	309
 ;			processProc = k_exe_device_load_process(commandLine);
-	.line	307
-	pei	<L89+commandLine_0+2
-	pei	<L89+commandLine_0
+	.line	310
+	pei	<L90+commandLine_0+2
+	pei	<L90+commandLine_0
 	jsl	~~k_exe_device_load_process
-	sta	<L90+processProc_1
-	stx	<L90+processProc_1+2
+	sta	<L91+processProc_1
+	stx	<L91+processProc_1+2
 ;
 ;			//processProc=((FXProcessProc)0x090000);
 ;		}
-	.line	310
+	.line	313
 L10036:
 ;
 ;		if(processProc)
-	.line	312
+	.line	315
 ;			process = k_exec_createProcess(commandLine,processProc,NULL);
-	lda	<L90+processProc_1
-	ora	<L90+processProc_1+2
-	bne	L99
+	lda	<L91+processProc_1
+	ora	<L91+processProc_1+2
+	bne	L100
 	brl	L10037
-L99:
-	.line	313
+L100:
+	.line	316
 	pea	#^$0
 	pea	#<$0
-	pei	<L90+processProc_1+2
-	pei	<L90+processProc_1
-	pei	<L89+commandLine_0+2
-	pei	<L89+commandLine_0
+	pei	<L91+processProc_1+2
+	pei	<L91+processProc_1
+	pei	<L90+commandLine_0+2
+	pei	<L90+commandLine_0
 	jsl	~~k_exec_createProcess
-	sta	<L90+process_1
-	stx	<L90+process_1+2
+	sta	<L91+process_1
+	stx	<L91+process_1+2
 ;	}
 L10037:
-	.line	314
+	.line	317
 ;	else
 	brl	L10038
 L10025:
 ;	{
-	.line	316
+	.line	319
 ;
 ;	}
-	.line	318
+	.line	321
 L10038:
 ;
 ;
 ;	return process;
-	.line	321
-	ldx	<L90+process_1+2
-	lda	<L90+process_1
-L100:
+	.line	324
+	ldx	<L91+process_1+2
+	lda	<L91+process_1
+L101:
 	tay
-	lda	<L89+2
-	sta	<L89+2+4
-	lda	<L89+1
-	sta	<L89+1+4
+	lda	<L90+2
+	sta	<L90+2+4
+	lda	<L90+1
+	sta	<L90+1+4
 	pld
 	tsc
 	clc
-	adc	#L89+4
+	adc	#L90+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	322
-	.endblock	322
-L89	equ	8
-L90	equ	1
+	.line	325
+	.endblock	325
+L90	equ	8
+L91	equ	1
 	ends
 	efunc
-	.endfunc	322,1,8
-	.line	322
+	.endfunc	325,1,8
+	.line	325
 	data
-L88:
+L89:
 	db	$6B,$5F,$65,$78,$65,$63,$5F,$6C,$61,$75,$6E,$63,$68,$50,$72
 	db	$6F,$63,$65,$73,$73,$3A,$00,$40,$2F,$63,$6F,$6E,$73,$6F,$6C
 	db	$65,$00,$40,$2F,$64,$65,$73,$6B,$74,$6F,$70,$00,$40,$2F,$69
@@ -3591,25 +3615,25 @@ L88:
 ;
 ;PFXPROCESS k_exec_createProcess(LPCHAR commandLine,FXProcessProc processProc,LPVOID startupArgs)
 ;{
-	.line	324
-	.line	325
+	.line	327
+	.line	328
 	code
 	xdef	~~k_exec_createProcess
 	func
-	.function	325
+	.function	328
 ~~k_exec_createProcess:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L102
+	sbc	#L103
 	tcs
 	phd
 	tcd
 commandLine_0	set	4
 processProc_0	set	8
 startupArgs_0	set	12
-	.block	325
+	.block	328
 ;	PFXPROCESS process = NULL;
 ;	PROCESS_ID processId = INVALID_HANDLE;
 ;
@@ -3621,218 +3645,217 @@ processId_1	set	4
 	.sym	commandLine,4,142,6,32
 	.sym	processProc,8,641,6,32
 	.sym	startupArgs,12,129,6,32
-	stz	<L103+process_1
-	stz	<L103+process_1+2
+	stz	<L104+process_1
+	stz	<L104+process_1+2
 	lda	#$ffff
-	sta	<L103+processId_1
+	sta	<L104+processId_1
 	lda	#$ffff
-	sta	<L103+processId_1+2
-	.line	329
+	sta	<L104+processId_1+2
+	.line	332
 ;		return NULL;
-	lda	<L102+processProc_0
-	ora	<L102+processProc_0+2
-	beq	L105
+	lda	<L103+processProc_0
+	ora	<L103+processProc_0+2
+	beq	L106
 	brl	L10039
-L105:
-	.line	330
+L106:
+	.line	333
 	lda	#$0
 	tax
 	lda	#$0
-L106:
+L107:
 	tay
-	lda	<L102+2
-	sta	<L102+2+12
-	lda	<L102+1
-	sta	<L102+1+12
+	lda	<L103+2
+	sta	<L103+2+12
+	lda	<L103+1
+	sta	<L103+1+12
 	pld
 	tsc
 	clc
-	adc	#L102+12
+	adc	#L103+12
 	tcs
 	tya
 	rtl
 ;
 ;	k_debug_pointer("k_exec_createProcess::processProc:",processProc);
 L10039:
-	.line	332
-	pei	<L102+processProc_0+2
-	pei	<L102+processProc_0
-	pea	#^L101
-	pea	#<L101
+	.line	335
+	pei	<L103+processProc_0+2
+	pei	<L103+processProc_0
+	pea	#^L102
+	pea	#<L102
 	jsl	~~k_debug_pointer
 ;
 ;	process = (PFXPROCESS)k_mem_allocate_heap(sizeof(FXPROCESS));
-	.line	334
+	.line	337
+	pea	#^$64
 	pea	#<$64
 	jsl	~~k_mem_allocate_heap
-	sta	<L103+process_1
-	stx	<L103+process_1+2
+	sta	<L104+process_1
+	stx	<L104+process_1+2
 ;	if(process)
-	.line	335
+	.line	338
 ;	{
-	lda	<L103+process_1
-	ora	<L103+process_1+2
-	bne	L107
+	lda	<L104+process_1
+	ora	<L104+process_1+2
+	bne	L108
 	brl	L10040
-L107:
-	.line	336
+L108:
+	.line	339
 ;		memset(process,0,sizeof(FXPROCESS));
-	.line	337
+	.line	340
 	pea	#<$64
 	pea	#<$0
-	pei	<L103+process_1+2
-	pei	<L103+process_1
+	pei	<L104+process_1+2
+	pei	<L104+process_1
 	jsl	~~memset
 ;		process->cbSize = sizeof(FXPROCESS);
-	.line	338
-	lda	#$64
-	sta	[<L103+process_1]
-;		if(commandLine!=NULL)
-	.line	339
-;		{
-	lda	<L102+commandLine_0
-	ora	<L102+commandLine_0+2
-	bne	L108
-	brl	L10041
-L108:
-	.line	340
-;			process->commandLine = k_string_copy_string(commandLine);
 	.line	341
-	pei	<L102+commandLine_0+2
-	pei	<L102+commandLine_0
+	lda	#$64
+	sta	[<L104+process_1]
+;		if(commandLine!=NULL)
+	.line	342
+;		{
+	lda	<L103+commandLine_0
+	ora	<L103+commandLine_0+2
+	bne	L109
+	brl	L10041
+L109:
+	.line	343
+;			process->commandLine = k_string_copy_string(commandLine);
+	.line	344
+	pei	<L103+commandLine_0+2
+	pei	<L103+commandLine_0
 	jsl	~~k_string_copy_string
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
 	ldy	#$33
-	sta	[<L103+process_1],Y
+	sta	[<L104+process_1],Y
 	lda	<R0+2
 	ldy	#$35
-	sta	[<L103+process_1],Y
+	sta	[<L104+process_1],Y
 ;		}
-	.line	342
+	.line	345
 ;		//processId = k_exec_nextprocess(process);
 ;		process->procId = k_exec_nextprocess(process);
 L10041:
-	.line	344
-	pei	<L103+process_1+2
-	pei	<L103+process_1
+	.line	347
+	pei	<L104+process_1+2
+	pei	<L104+process_1
 	jsl	~~k_exec_nextprocess
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
 	ldy	#$2
-	sta	[<L103+process_1],Y
+	sta	[<L104+process_1],Y
 	lda	<R0+2
 	ldy	#$4
-	sta	[<L103+process_1],Y
+	sta	[<L104+process_1],Y
 ;		if(process->procId == INVALID_HANDLE)
-	.line	345
+	.line	348
 ;		{
 	ldy	#$2
-	lda	[<L103+process_1],Y
+	lda	[<L104+process_1],Y
 	cmp	#<$ffffffff
-	bne	L109
+	bne	L110
 	ldy	#$4
-	lda	[<L103+process_1],Y
+	lda	[<L104+process_1],Y
 	cmp	#^$ffffffff
-L109:
-	beq	L110
-	brl	L10042
 L110:
-	.line	346
-;			k_exec_throw_exception(THIS_MODULE,0x000A0000,"Kernel returned invalid process id.",-1);
-	.line	347
+	beq	L111
+	brl	L10042
+L111:
+	.line	349
+;			k_exec_throw_exception(k_exec_createProcess,0x000A0000,"Kernel returned invalid process id.",-1);
+	.line	350
 	pea	#<$ffffffff
-	pea	#^L101+35
-	pea	#<L101+35
+	pea	#^L102+35
+	pea	#<L102+35
 	pea	#^$a0000
 	pea	#<$a0000
-	lda	|~~THIS_MODULE+2
-	pha
-	lda	|~~THIS_MODULE
-	pha
+	pea	#^~~k_exec_createProcess
+	pea	#<~~k_exec_createProcess
 	jsl	~~k_exec_throw_exception
 ;		}
-	.line	348
+	.line	351
 ;		process->parentId = 0L;
 L10042:
-	.line	349
+	.line	352
 	lda	#$0
 	ldy	#$6
-	sta	[<L103+process_1],Y
+	sta	[<L104+process_1],Y
 	lda	#$0
 	ldy	#$8
-	sta	[<L103+process_1],Y
+	sta	[<L104+process_1],Y
 ;		if(k_exec_get_current_process())
-	.line	350
+	.line	353
 ;		{
 	jsl	~~k_exec_get_current_process
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
 	ora	<R0+2
-	bne	L111
+	bne	L112
 	brl	L10043
-L111:
-	.line	351
+L112:
+	.line	354
 ;			k_debug_pointer("k_exec_createProcess::k_exec_get_current_process:",k_exec_get_current_process());
-	.line	352
+	.line	355
 	jsl	~~k_exec_get_current_process
 	sta	<R0
 	stx	<R0+2
 	phx
 	pha
-	pea	#^L101+71
-	pea	#<L101+71
+	pea	#^L102+71
+	pea	#<L102+71
 	jsl	~~k_debug_pointer
 ;			process->parentId = k_exec_get_current_process()->procId;
-	.line	353
+	.line	356
 	jsl	~~k_exec_get_current_process
 	sta	<R0
 	stx	<R0+2
 	ldy	#$2
 	lda	[<R0],Y
 	ldy	#$6
-	sta	[<L103+process_1],Y
+	sta	[<L104+process_1],Y
 	ldy	#$4
 	lda	[<R0],Y
 	ldy	#$8
-	sta	[<L103+process_1],Y
+	sta	[<L104+process_1],Y
 ;		}
-	.line	354
+	.line	357
 ;		//process->execProc = k_nodelist_create(PFXNODE_PROCEDURE_TYPE,NULL,processProc,NULL,NULL);
 ;		process->execProc = processProc;
 L10043:
-	.line	356
-	lda	<L102+processProc_0
+	.line	359
+	lda	<L103+processProc_0
 	ldy	#$5c
-	sta	[<L103+process_1],Y
-	lda	<L102+processProc_0+2
+	sta	[<L104+process_1],Y
+	lda	<L103+processProc_0+2
 	ldy	#$5e
-	sta	[<L103+process_1],Y
+	sta	[<L104+process_1],Y
 ;		process->status = PROCESS_STATUS_READY;
-	.line	357
+	.line	360
 	lda	#$f0
 	ldy	#$10
-	sta	[<L103+process_1],Y
+	sta	[<L104+process_1],Y
 ;		process->foregroundActive = FALSE;
-	.line	358
+	.line	361
 	sep	#$20
 	longa	off
 	lda	#$0
 	ldy	#$12
-	sta	[<L103+process_1],Y
+	sta	[<L104+process_1],Y
 	rep	#$20
 	longa	on
 ;		process->startupArgs = startupArgs;
-	.line	359
-	lda	<L102+startupArgs_0
+	.line	362
+	lda	<L103+startupArgs_0
 	ldy	#$60
-	sta	[<L103+process_1],Y
-	lda	<L102+startupArgs_0+2
+	sta	[<L104+process_1],Y
+	lda	<L103+startupArgs_0+2
 	ldy	#$62
-	sta	[<L103+process_1],Y
+	sta	[<L104+process_1],Y
 ;		//k_nodelist_naddtolist(_k_execManager_ProcesssList,NL_TYPE_PROCESS,process->procId,process);
 ;
 ;		//k_debug_nodelist_list(_k_execManager_ProcesssList,debug_process_node);
@@ -3840,24 +3863,24 @@ L10043:
 ;		//k_heap_integrity_check();
 ;
 ;	}
-	.line	366
+	.line	369
 ;	return process;
 L10040:
-	.line	367
-	ldx	<L103+process_1+2
-	lda	<L103+process_1
-	brl	L106
+	.line	370
+	ldx	<L104+process_1+2
+	lda	<L104+process_1
+	brl	L107
 ;}
-	.line	368
-	.endblock	368
-L102	equ	12
-L103	equ	5
+	.line	371
+	.endblock	371
+L103	equ	12
+L104	equ	5
 	ends
 	efunc
-	.endfunc	368,5,12
-	.line	368
+	.endfunc	371,5,12
+	.line	371
 	data
-L101:
+L102:
 	db	$6B,$5F,$65,$78,$65,$63,$5F,$63,$72,$65,$61,$74,$65,$50,$72
 	db	$6F,$63,$65,$73,$73,$3A,$3A,$70,$72,$6F,$63,$65,$73,$73,$50
 	db	$72,$6F,$63,$3A,$00,$4B,$65,$72,$6E,$65,$6C,$20,$72,$65,$74
@@ -3871,23 +3894,23 @@ L101:
 ;
 ;PFXPROCESS k_exec_set_current_process(PFXPROCESS currentProcess)
 ;{
-	.line	370
-	.line	371
+	.line	373
+	.line	374
 	code
 	xdef	~~k_exec_set_current_process
 	func
-	.function	371
+	.function	374
 ~~k_exec_set_current_process:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L113
+	sbc	#L114
 	tcs
 	phd
 	tcd
 currentProcess_0	set	4
-	.block	371
+	.block	374
 ;	PFXPROCESS previousProcess = _k_current_Process;
 ;
 ;	_k_current_Process = currentProcess;
@@ -3895,209 +3918,209 @@ previousProcess_1	set	0
 	.sym	previousProcess,0,138,1,32,20
 	.sym	currentProcess,4,138,6,32,20
 	lda	|~~_k_current_Process
-	sta	<L114+previousProcess_1
+	sta	<L115+previousProcess_1
 	lda	|~~_k_current_Process+2
-	sta	<L114+previousProcess_1+2
-	.line	374
-	lda	<L113+currentProcess_0
+	sta	<L115+previousProcess_1+2
+	.line	377
+	lda	<L114+currentProcess_0
 	sta	|~~_k_current_Process
-	lda	<L113+currentProcess_0+2
+	lda	<L114+currentProcess_0+2
 	sta	|~~_k_current_Process+2
 ;
 ;	return previousProcess;
-	.line	376
-	ldx	<L114+previousProcess_1+2
-	lda	<L114+previousProcess_1
-L116:
+	.line	379
+	ldx	<L115+previousProcess_1+2
+	lda	<L115+previousProcess_1
+L117:
 	tay
-	lda	<L113+2
-	sta	<L113+2+4
-	lda	<L113+1
-	sta	<L113+1+4
+	lda	<L114+2
+	sta	<L114+2+4
+	lda	<L114+1
+	sta	<L114+1+4
 	pld
 	tsc
 	clc
-	adc	#L113+4
+	adc	#L114+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	377
-	.endblock	377
-L113	equ	4
-L114	equ	1
+	.line	380
+	.endblock	380
+L114	equ	4
+L115	equ	1
 	ends
 	efunc
-	.endfunc	377,1,4
-	.line	377
+	.endfunc	380,1,4
+	.line	380
 ;
 ;PFXPROCESS k_exec_get_current_process(void)
 ;{
-	.line	379
-	.line	380
+	.line	382
+	.line	383
 	code
 	xdef	~~k_exec_get_current_process
 	func
-	.function	380
+	.function	383
 ~~k_exec_get_current_process:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L117
+	sbc	#L118
 	tcs
 	phd
 	tcd
-	.block	380
+	.block	383
 ;	return _k_current_Process;
-	.line	381
+	.line	384
 	ldx	|~~_k_current_Process+2
 	lda	|~~_k_current_Process
-L120:
+L121:
 	tay
 	pld
 	tsc
 	clc
-	adc	#L117
+	adc	#L118
 	tcs
 	tya
 	rtl
 ;}
-	.line	382
-	.endblock	382
-L117	equ	0
-L118	equ	1
+	.line	385
+	.endblock	385
+L118	equ	0
+L119	equ	1
 	ends
 	efunc
-	.endfunc	382,1,0
-	.line	382
+	.endfunc	385,1,0
+	.line	385
 ;
 ;PROCESS_CTX k_exec_setContext(PROCESS_ID processId,PROCESS_CTX data)
 ;{
-	.line	384
-	.line	385
+	.line	387
+	.line	388
 	code
 	xdef	~~k_exec_setContext
 	func
-	.function	385
+	.function	388
 ~~k_exec_setContext:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L121
+	sbc	#L122
 	tcs
 	phd
 	tcd
 processId_0	set	4
 data_0	set	8
-	.block	385
+	.block	388
 ;	return NULL;
 	.sym	processId,4,18,6,32
 	.sym	data,8,129,6,32
-	.line	386
+	.line	389
 	lda	#$0
 	tax
 	lda	#$0
-L124:
+L125:
 	tay
-	lda	<L121+2
-	sta	<L121+2+8
-	lda	<L121+1
-	sta	<L121+1+8
+	lda	<L122+2
+	sta	<L122+2+8
+	lda	<L122+1
+	sta	<L122+1+8
 	pld
 	tsc
 	clc
-	adc	#L121+8
+	adc	#L122+8
 	tcs
 	tya
 	rtl
 ;}
-	.line	387
-	.endblock	387
-L121	equ	0
-L122	equ	1
+	.line	390
+	.endblock	390
+L122	equ	0
+L123	equ	1
 	ends
 	efunc
-	.endfunc	387,1,0
-	.line	387
+	.endfunc	390,1,0
+	.line	390
 ;
 ;PROCESS_CTX k_exec_getContext(PROCESS_ID processId)
 ;{
-	.line	389
-	.line	390
+	.line	392
+	.line	393
 	code
 	xdef	~~k_exec_getContext
 	func
-	.function	390
+	.function	393
 ~~k_exec_getContext:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L125
+	sbc	#L126
 	tcs
 	phd
 	tcd
 processId_0	set	4
-	.block	390
+	.block	393
 ;	return NULL;
 	.sym	processId,4,18,6,32
-	.line	391
+	.line	394
 	lda	#$0
 	tax
 	lda	#$0
-L128:
+L129:
 	tay
-	lda	<L125+2
-	sta	<L125+2+4
-	lda	<L125+1
-	sta	<L125+1+4
+	lda	<L126+2
+	sta	<L126+2+4
+	lda	<L126+1
+	sta	<L126+1+4
 	pld
 	tsc
 	clc
-	adc	#L125+4
+	adc	#L126+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	392
-	.endblock	392
-L125	equ	0
-L126	equ	1
+	.line	395
+	.endblock	395
+L126	equ	0
+L127	equ	1
 	ends
 	efunc
-	.endfunc	392,1,0
-	.line	392
+	.endfunc	395,1,0
+	.line	395
 ;//
 ;//
 ;//
 ;//
 ;BOOL k_exec_signal_sleep(PROCESS_ID processId)
 ;{
-	.line	397
-	.line	398
+	.line	400
+	.line	401
 	code
 	xdef	~~k_exec_signal_sleep
 	func
-	.function	398
+	.function	401
 ~~k_exec_signal_sleep:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L129
+	sbc	#L130
 	tcs
 	phd
 	tcd
 processId_0	set	4
-	.block	398
+	.block	401
 ;	return k_exec_set_signal(processId,PROCESS_STATUS_SLEEPING);
 	.sym	processId,4,18,6,32
-	.line	399
+	.line	402
 	pea	#<$2
-	pei	<L129+processId_0+2
-	pei	<L129+processId_0
+	pei	<L130+processId_0+2
+	pei	<L130+processId_0
 	jsl	~~k_exec_set_signal
 	sep	#$20
 	longa	off
@@ -4106,54 +4129,54 @@ processId_0	set	4
 	longa	on
 	lda	<R0
 	and	#$ff
-L132:
+L133:
 	tay
-	lda	<L129+2
-	sta	<L129+2+4
-	lda	<L129+1
-	sta	<L129+1+4
+	lda	<L130+2
+	sta	<L130+2+4
+	lda	<L130+1
+	sta	<L130+1+4
 	pld
 	tsc
 	clc
-	adc	#L129+4
+	adc	#L130+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	400
-	.endblock	400
-L129	equ	4
-L130	equ	5
+	.line	403
+	.endblock	403
+L130	equ	4
+L131	equ	5
 	ends
 	efunc
-	.endfunc	400,5,4
-	.line	400
+	.endfunc	403,5,4
+	.line	403
 ;
 ;BOOL k_exec_signal_terminate(PROCESS_ID processId)
 ;{
-	.line	402
-	.line	403
+	.line	405
+	.line	406
 	code
 	xdef	~~k_exec_signal_terminate
 	func
-	.function	403
+	.function	406
 ~~k_exec_signal_terminate:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L133
+	sbc	#L134
 	tcs
 	phd
 	tcd
 processId_0	set	4
-	.block	403
+	.block	406
 ;	return k_exec_set_signal(processId,PROCESS_STATUS_TERMINATED);
 	.sym	processId,4,18,6,32
-	.line	404
+	.line	407
 	pea	#<$3
-	pei	<L133+processId_0+2
-	pei	<L133+processId_0
+	pei	<L134+processId_0+2
+	pei	<L134+processId_0
 	jsl	~~k_exec_set_signal
 	sep	#$20
 	longa	off
@@ -4162,54 +4185,54 @@ processId_0	set	4
 	longa	on
 	lda	<R0
 	and	#$ff
-L136:
+L137:
 	tay
-	lda	<L133+2
-	sta	<L133+2+4
-	lda	<L133+1
-	sta	<L133+1+4
+	lda	<L134+2
+	sta	<L134+2+4
+	lda	<L134+1
+	sta	<L134+1+4
 	pld
 	tsc
 	clc
-	adc	#L133+4
+	adc	#L134+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	405
-	.endblock	405
-L133	equ	4
-L134	equ	5
+	.line	408
+	.endblock	408
+L134	equ	4
+L135	equ	5
 	ends
 	efunc
-	.endfunc	405,5,4
-	.line	405
+	.endfunc	408,5,4
+	.line	408
 ;
 ;BOOL k_exec_signal_start(PROCESS_ID processId)
 ;{
-	.line	407
-	.line	408
+	.line	410
+	.line	411
 	code
 	xdef	~~k_exec_signal_start
 	func
-	.function	408
+	.function	411
 ~~k_exec_signal_start:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L137
+	sbc	#L138
 	tcs
 	phd
 	tcd
 processId_0	set	4
-	.block	408
+	.block	411
 ;	return k_exec_set_signal(processId,PROCESS_STATUS_RUNNING);
 	.sym	processId,4,18,6,32
-	.line	409
+	.line	412
 	pea	#<$1
-	pei	<L137+processId_0+2
-	pei	<L137+processId_0
+	pei	<L138+processId_0+2
+	pei	<L138+processId_0
 	jsl	~~k_exec_set_signal
 	sep	#$20
 	longa	off
@@ -4218,56 +4241,56 @@ processId_0	set	4
 	longa	on
 	lda	<R0
 	and	#$ff
-L140:
+L141:
 	tay
-	lda	<L137+2
-	sta	<L137+2+4
-	lda	<L137+1
-	sta	<L137+1+4
+	lda	<L138+2
+	sta	<L138+2+4
+	lda	<L138+1
+	sta	<L138+1+4
 	pld
 	tsc
 	clc
-	adc	#L137+4
+	adc	#L138+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	410
-	.endblock	410
-L137	equ	4
-L138	equ	5
+	.line	413
+	.endblock	413
+L138	equ	4
+L139	equ	5
 	ends
 	efunc
-	.endfunc	410,5,4
-	.line	410
+	.endfunc	413,5,4
+	.line	413
 ;
 ;BOOL k_exec_signal_wait(PROCESS_ID processId,PPROCESS_SIGNAL signal)
 ;{
-	.line	412
-	.line	413
+	.line	415
+	.line	416
 	code
 	xdef	~~k_exec_signal_wait
 	func
-	.function	413
+	.function	416
 ~~k_exec_signal_wait:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L141
+	sbc	#L142
 	tcs
 	phd
 	tcd
 processId_0	set	4
 signal_0	set	8
-	.block	413
+	.block	416
 ;	return k_exec_set_signal(processId,PROCESS_STATUS_WAITING);
 	.sym	processId,4,18,6,32
 	.sym	signal,8,138,6,32,9
-	.line	414
+	.line	417
 	pea	#<$f1
-	pei	<L141+processId_0+2
-	pei	<L141+processId_0
+	pei	<L142+processId_0+2
+	pei	<L142+processId_0
 	jsl	~~k_exec_set_signal
 	sep	#$20
 	longa	off
@@ -4276,49 +4299,49 @@ signal_0	set	8
 	longa	on
 	lda	<R0
 	and	#$ff
-L144:
+L145:
 	tay
-	lda	<L141+2
-	sta	<L141+2+8
-	lda	<L141+1
-	sta	<L141+1+8
+	lda	<L142+2
+	sta	<L142+2+8
+	lda	<L142+1
+	sta	<L142+1+8
 	pld
 	tsc
 	clc
-	adc	#L141+8
+	adc	#L142+8
 	tcs
 	tya
 	rtl
 ;}
-	.line	415
-	.endblock	415
-L141	equ	4
-L142	equ	5
+	.line	418
+	.endblock	418
+L142	equ	4
+L143	equ	5
 	ends
 	efunc
-	.endfunc	415,5,4
-	.line	415
+	.endfunc	418,5,4
+	.line	418
 ;
 ;BOOL k_exec_set_signal(PROCESS_ID processId,PROCESS_STATUS signal)
 ;{
-	.line	417
-	.line	418
+	.line	420
+	.line	421
 	code
 	xdef	~~k_exec_set_signal
 	func
-	.function	418
+	.function	421
 ~~k_exec_set_signal:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L145
+	sbc	#L146
 	tcs
 	phd
 	tcd
 processId_0	set	4
 signal_0	set	8
-	.block	418
+	.block	421
 ;	PFXPROCESS p = NULL;
 ;
 ;	int index = 0;
@@ -4330,18 +4353,18 @@ index_1	set	4
 	.sym	index,4,5,1,16
 	.sym	processId,4,18,6,32
 	.sym	signal,8,16,6,16
-	stz	<L146+p_1
-	stz	<L146+p_1+2
-	stz	<L146+index_1
-	.line	423
-	stz	<L146+index_1
+	stz	<L147+p_1
+	stz	<L147+p_1+2
+	stz	<L147+index_1
+	.line	426
+	stz	<L147+index_1
 L10046:
 ;	{
-	.line	424
+	.line	427
 ;		if(_k_processList[index] && (_k_processList[index]->procId == processId))
-	.line	425
+	.line	428
 ;		{
-	lda	<L146+index_1
+	lda	<L147+index_1
 	asl	A
 	asl	A
 	sta	<R0
@@ -4352,10 +4375,10 @@ L10046:
 	lda	(<R1)
 	ldy	#$2
 	ora	(<R1),Y
-	bne	L148
+	bne	L149
 	brl	L10047
-L148:
-	lda	<L146+index_1
+L149:
+	lda	<L147+index_1
 	asl	A
 	asl	A
 	sta	<R0
@@ -4370,19 +4393,19 @@ L148:
 	sta	<R0+2
 	ldy	#$2
 	lda	[<R0],Y
-	cmp	<L145+processId_0
-	bne	L149
+	cmp	<L146+processId_0
+	bne	L150
 	ldy	#$4
 	lda	[<R0],Y
-	cmp	<L145+processId_0+2
-L149:
-	beq	L150
-	brl	L10047
+	cmp	<L146+processId_0+2
 L150:
-	.line	426
+	beq	L151
+	brl	L10047
+L151:
+	.line	429
 ;			_k_processList[index]->status = signal;
-	.line	427
-	lda	<L146+index_1
+	.line	430
+	lda	<L147+index_1
 	asl	A
 	asl	A
 	sta	<R0
@@ -4395,223 +4418,105 @@ L150:
 	ldy	#$2
 	lda	(<R1),Y
 	sta	<R0+2
-	lda	<L145+signal_0
+	lda	<L146+signal_0
 	ldy	#$10
 	sta	[<R0],Y
 ;			return TRUE;
-	.line	428
+	.line	431
 	lda	#$1
-L151:
+L152:
 	tay
-	lda	<L145+2
-	sta	<L145+2+6
-	lda	<L145+1
-	sta	<L145+1+6
+	lda	<L146+2
+	sta	<L146+2+6
+	lda	<L146+1
+	sta	<L146+1+6
 	pld
 	tsc
 	clc
-	adc	#L145+6
+	adc	#L146+6
 	tcs
 	tya
 	rtl
 ;		}
-	.line	429
+	.line	432
 ;	}
 L10047:
-	.line	430
+	.line	433
 L10044:
-	inc	<L146+index_1
+	inc	<L147+index_1
 	sec
-	lda	<L146+index_1
+	lda	<L147+index_1
 	sbc	#<$20
-	bvs	L152
+	bvs	L153
 	eor	#$8000
-L152:
-	bmi	L153
-	brl	L10046
 L153:
+	bmi	L154
+	brl	L10046
+L154:
 L10045:
 ;
 ;	return FALSE;
-	.line	432
+	.line	435
 	lda	#$0
-	brl	L151
+	brl	L152
 ;}
-	.line	433
-	.endblock	433
-L145	equ	14
-L146	equ	9
+	.line	436
+	.endblock	436
+L146	equ	14
+L147	equ	9
 	ends
 	efunc
-	.endfunc	433,9,14
-	.line	433
+	.endfunc	436,9,14
+	.line	436
 ;
-;
+;/*
 ;VOID k_exec_throw_exception(ULONG ctxId,ULONG errorId,LPVOID exceptionMessage,UINT exMsgSize)
 ;{
-	.line	436
-	.line	437
-	code
-	xdef	~~k_exec_throw_exception
-	func
-	.function	437
-~~k_exec_throw_exception:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L154
-	tcs
-	phd
-	tcd
-ctxId_0	set	4
-errorId_0	set	8
-exceptionMessage_0	set	12
-exMsgSize_0	set	16
-	.block	437
 ;	UINT len = 0;
 ;
 ;	//k_enable_text_mode();
 ;
 ;	if(exceptionMessage)
-len_1	set	0
-	.sym	len,0,16,1,16
-	.sym	ctxId,4,18,6,32
-	.sym	errorId,8,18,6,32
-	.sym	exceptionMessage,12,129,6,32
-	.sym	exMsgSize,16,16,6,16
-	stz	<L155+len_1
-	.line	442
 ;		k_debug_strings("k_exec_throw_exception:",(LPSTR)exceptionMessage);
-	lda	<L154+exceptionMessage_0
-	ora	<L154+exceptionMessage_0+2
-	bne	L157
-	brl	L10048
-L157:
-	.line	443
-	pei	<L154+exceptionMessage_0+2
-	pei	<L154+exceptionMessage_0
-	pea	#^L112
-	pea	#<L112
-	jsl	~~k_debug_strings
 ;
 ;	_k_exec_context 	= ctxId;
-L10048:
-	.line	445
-	lda	<L154+ctxId_0
-	sta	|~~_k_exec_context
-	lda	<L154+ctxId_0+2
-	sta	|~~_k_exec_context+2
 ;	_k_exec_error		= errorId;
-	.line	446
-	lda	<L154+errorId_0
-	sta	|~~_k_exec_error
-	lda	<L154+errorId_0+2
-	sta	|~~_k_exec_error+2
 ;
 ;	if(exMsgSize == -1)
-	.line	448
 ;	{
-	lda	<L154+exMsgSize_0
-	cmp	#<$ffffffff
-	beq	L158
-	brl	L10049
-L158:
-	.line	449
 ;		len = strlen(exceptionMessage);
-	.line	450
-	pei	<L154+exceptionMessage_0+2
-	pei	<L154+exceptionMessage_0
-	jsl	~~strlen
-	sta	<L155+len_1
 ;		if(len < 64)
-	.line	451
 ;			exMsgSize = len;
-	lda	<L155+len_1
-	cmp	#<$40
-	bcc	L159
-	brl	L10050
-L159:
-	.line	452
-	lda	<L155+len_1
-	sta	<L154+exMsgSize_0
 ;		else
-	brl	L10051
-L10050:
 ;			exMsgSize = 63;
-	.line	454
-	lda	#$3f
-	sta	<L154+exMsgSize_0
-L10051:
 ;	}
-	.line	455
 ;
 ;	memcpy(_k_exec_message,exceptionMessage,exMsgSize);
-L10049:
-	.line	457
-	pei	<L154+exMsgSize_0
-	pei	<L154+exceptionMessage_0+2
-	pei	<L154+exceptionMessage_0
-	lda	#<~~_k_exec_message
-	sta	<R0
-	xref	_BEG_DATA
-	lda	#_BEG_DATA>>16
-	sta	<R0+2
-	pei	<R0+2
-	pei	<R0
-	jsl	~~memcpy
 ;
 ;	asm BRK;
-	.line	459
-	asmstart
-	BRK
-	asmend
 ;}
-	.line	460
-L160:
-	lda	<L154+2
-	sta	<L154+2+14
-	lda	<L154+1
-	sta	<L154+1+14
-	pld
-	tsc
-	clc
-	adc	#L154+14
-	tcs
-	rtl
-	.endblock	460
-L154	equ	6
-L155	equ	5
-	ends
-	efunc
-	.endfunc	460,5,6
-	.line	460
-	data
-L112:
-	db	$6B,$5F,$65,$78,$65,$63,$5F,$74,$68,$72,$6F,$77,$5F,$65,$78
-	db	$63,$65,$70,$74,$69,$6F,$6E,$3A,$00
-	ends
+;*/
 ;
 ;KRESULT k_exec_enable_process_timer(UINT timerId,UINT increment)
 ;{
-	.line	462
-	.line	463
+	.line	466
+	.line	467
 	code
 	xdef	~~k_exec_enable_process_timer
 	func
-	.function	463
+	.function	467
 ~~k_exec_enable_process_timer:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L162
+	sbc	#L155
 	tcs
 	phd
 	tcd
 timerId_0	set	4
 increment_0	set	6
-	.block	463
+	.block	467
 ;	KRESULT kerr = KERR_FAIL;
 ;	PFXPROCESS p = NULL;
 ;
@@ -4624,64 +4529,64 @@ p_1	set	4
 	.sym	timerId,4,16,6,16
 	.sym	increment,6,16,6,16
 	lda	#$0
-	sta	<L163+kerr_1
+	sta	<L156+kerr_1
 	lda	#$8000
-	sta	<L163+kerr_1+2
-	stz	<L163+p_1
-	stz	<L163+p_1+2
-	.line	468
-	pei	<L162+increment_0
-	pea	#^L161
-	pea	#<L161
+	sta	<L156+kerr_1+2
+	stz	<L156+p_1
+	stz	<L156+p_1+2
+	.line	472
+	pei	<L155+increment_0
+	pea	#^L113
+	pea	#<L113
 	jsl	~~k_debug_integer
 ;
 ;	if(timerId <= PROCESS_TIMER_1)
-	.line	470
+	.line	474
 ;	{
 	lda	#$1
-	cmp	<L162+timerId_0
-	bcs	L165
-	brl	L10052
-L165:
-	.line	471
-;		p = k_exec_get_current_process();
-	.line	472
-	jsl	~~k_exec_get_current_process
-	sta	<L163+p_1
-	stx	<L163+p_1+2
-;		if(p)
-	.line	473
-;		{
-	lda	<L163+p_1
-	ora	<L163+p_1+2
-	bne	L166
-	brl	L10053
-L166:
-	.line	474
-;			k_debug_long("k_exec_enable_process_timer::process:",p->procId);
+	cmp	<L155+timerId_0
+	bcs	L158
+	brl	L10048
+L158:
 	.line	475
+;		p = k_exec_get_current_process();
+	.line	476
+	jsl	~~k_exec_get_current_process
+	sta	<L156+p_1
+	stx	<L156+p_1+2
+;		if(p)
+	.line	477
+;		{
+	lda	<L156+p_1
+	ora	<L156+p_1+2
+	bne	L159
+	brl	L10049
+L159:
+	.line	478
+;			k_debug_long("k_exec_enable_process_timer::process:",p->procId);
+	.line	479
 	ldy	#$4
-	lda	[<L163+p_1],Y
+	lda	[<L156+p_1],Y
 	pha
 	ldy	#$2
-	lda	[<L163+p_1],Y
+	lda	[<L156+p_1],Y
 	pha
-	pea	#^L161+40
-	pea	#<L161+40
+	pea	#^L113+40
+	pea	#<L113+40
 	jsl	~~k_debug_long
 ;
 ;			p->timerAware = TRUE;
-	.line	477
+	.line	481
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$47
-	sta	[<L163+p_1],Y
+	sta	[<L156+p_1],Y
 	rep	#$20
 	longa	on
 ;			p->timerTicks[timerId] = increment;
-	.line	478
-	lda	<L162+timerId_0
+	.line	482
+	lda	<L155+timerId_0
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -4693,10 +4598,10 @@ L166:
 	stx	<R0+2
 	clc
 	lda	#$48
-	adc	<L163+p_1
+	adc	<L156+p_1
 	sta	<R2
 	lda	#$0
-	adc	<L163+p_1+2
+	adc	<L156+p_1+2
 	sta	<R2+2
 	clc
 	lda	<R2
@@ -4705,11 +4610,11 @@ L166:
 	lda	<R2+2
 	adc	<R0+2
 	sta	<R3+2
-	lda	<L162+increment_0
+	lda	<L155+increment_0
 	sta	[<R3]
 ;			p->timerTickCount[timerId] = increment;
-	.line	479
-	lda	<L162+timerId_0
+	.line	483
+	lda	<L155+timerId_0
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -4721,10 +4626,10 @@ L166:
 	stx	<R0+2
 	clc
 	lda	#$4c
-	adc	<L163+p_1
+	adc	<L156+p_1
 	sta	<R2
 	lda	#$0
-	adc	<L163+p_1+2
+	adc	<L156+p_1+2
 	sta	<R2+2
 	clc
 	lda	<R2
@@ -4733,12 +4638,12 @@ L166:
 	lda	<R2+2
 	adc	<R0+2
 	sta	<R3+2
-	lda	<L162+increment_0
+	lda	<L155+increment_0
 	sta	[<R3]
 ;
 ;			k_debug_long("k_exec_enable_process_timer::p->timerTicks[timerId]:",p->timerTicks[timerId]);
-	.line	481
-	lda	<L162+timerId_0
+	.line	485
+	lda	<L155+timerId_0
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -4750,10 +4655,10 @@ L166:
 	stx	<R0+2
 	clc
 	lda	#$48
-	adc	<L163+p_1
+	adc	<L156+p_1
 	sta	<R2
 	lda	#$0
-	adc	<L163+p_1+2
+	adc	<L156+p_1+2
 	sta	<R2+2
 	clc
 	lda	<R2
@@ -4767,49 +4672,49 @@ L166:
 	stz	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pea	#^L161+78
-	pea	#<L161+78
+	pea	#^L113+78
+	pea	#<L113+78
 	jsl	~~k_debug_long
 ;
 ;			kerr= KERR_SUCCESS;
-	.line	483
-	stz	<L163+kerr_1
-	stz	<L163+kerr_1+2
+	.line	487
+	stz	<L156+kerr_1
+	stz	<L156+kerr_1+2
 ;		}
-	.line	484
+	.line	488
 ;	}
-L10053:
-	.line	485
+L10049:
+	.line	489
 ;	return 0;
-L10052:
-	.line	486
+L10048:
+	.line	490
 	lda	#$0
 	tax
 	lda	#$0
-L167:
+L160:
 	tay
-	lda	<L162+2
-	sta	<L162+2+4
-	lda	<L162+1
-	sta	<L162+1+4
+	lda	<L155+2
+	sta	<L155+2+4
+	lda	<L155+1
+	sta	<L155+1+4
 	pld
 	tsc
 	clc
-	adc	#L162+4
+	adc	#L155+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	487
-	.endblock	487
-L162	equ	24
-L163	equ	17
+	.line	491
+	.endblock	491
+L155	equ	24
+L156	equ	17
 	ends
 	efunc
-	.endfunc	487,17,24
-	.line	487
+	.endfunc	491,17,24
+	.line	491
 	data
-L161:
+L113:
 	db	$6B,$5F,$65,$78,$65,$63,$5F,$65,$6E,$61,$62,$6C,$65,$5F,$70
 	db	$72,$6F,$63,$65,$73,$73,$5F,$74,$69,$6D,$65,$72,$3A,$3A,$69
 	db	$6E,$63,$72,$65,$6D,$65,$6E,$74,$3A,$00,$6B,$5F,$65,$78,$65
@@ -4823,13 +4728,15 @@ L161:
 ;
 ;
 ;
-	.line	489
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.c",462
+	.line	493
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.c",466
 	xref	~~FXPaletteAccessory
 	xref	~~FXCalculator
 	xref	~~DesktopEnvironmentProc
+	xref	~~k_dos_close
+	xref	~~k_dos_open
+	xref	~~k_exec_throw_exception
 	xref	~~k_debug_strings
-	xref	~~k_debug_byte_array
 	xref	~~k_debug_hex
 	xref	~~k_debug_long
 	xref	~~k_debug_integer
@@ -4837,28 +4744,19 @@ L161:
 	xref	~~k_debug_string
 	xref	~~f_lseek
 	xref	~~f_read
-	xref	~~f_open
 	xref	~~DefConsoleProc
 	xref	~~k_attach_process_events
 	xref	~~IdleProc
-	xref	~~k_mem_deallocate_heap
 	xref	~~k_mem_allocate_heap
 	xref	~~k_nodelist_naddtolist
 	xref	~~k_nodelist_allocate_list
 	xref	~~k_nodelist_getname
 	xref	~~k_string_copy_string
-	xref	~~strlen
 	xref	~~strcmp
 	xref	~~memset
-	xref	~~memcpy
 	udata
 ~~_k_processList
 	ds	128
-	ends
-	udata
-	xdef	~~_k_exec_message
-~~_k_exec_message
-	ds	64
 	ends
 	udata
 	xdef	~~loadModuleHeader
@@ -4880,158 +4778,163 @@ L161:
 	.sym	~~_exec_Process,~~_exec_Process,138,3,32,20
 	.sym	~~_k_current_Process,~~_k_current_Process,138,3,32,20
 	.sym	~~_k_processList,~~_k_processList,1130,3,32,20,32
-	.sym	~~_k_exec_message,~~_k_exec_message,110,2,0,64
-	.sym	~~_k_exec_error,~~_k_exec_error,18,2,32
-	.sym	~~_k_exec_context,~~_k_exec_context,18,2,32
-	.sym	~~loadModuleHeader,~~loadModuleHeader,10,2,160,82
-	.sym	~~_k_executive,~~_k_executive,10,2,128,51
+	.sym	~~loadModuleHeader,~~loadModuleHeader,10,2,160,86
+	.sym	~~_k_executive,~~_k_executive,10,2,128,53
 	.sym	~~FXPaletteAccessory,~~FXPaletteAccessory,65,18,0
 	.sym	~~FXCalculator,~~FXCalculator,65,18,0
 	.sym	~~DesktopEnvironmentProc,~~DesktopEnvironmentProc,65,18,0
-	.sym	PTEXTVIEWDATA,0,138,14,32,125
-	.sym	TEXTVIEWDATA,0,10,14,32,125
-	.sym	PDOSHANDLE,0,138,14,32,124
-	.sym	DOSHANDLE,0,10,14,80,124
-	.sym	PFXDOSDEVICE,0,138,14,32,122
-	.sym	FXDOSDEVICE,0,10,14,5744,122
+	.sym	PTEXTVIEWDATA,0,138,14,32,131
+	.sym	TEXTVIEWDATA,0,10,14,32,131
+	.sym	~~k_dos_close,~~k_dos_close,82,18,0
+	.sym	~~k_dos_open,~~k_dos_open,1098,18,32,130
+	.sym	FILE,0,138,14,32,130
+	.sym	FILE_POINTER,0,10,14,112,130
+	.sym	PDOSHANDLE,0,138,14,32,129
+	.sym	DOSHANDLE,0,10,14,80,129
+	.sym	PFXDOSDEVICE,0,138,14,32,127
+	.sym	FXDOSDEVICE,0,10,14,5744,127
 	.sym	DOSINITDEVICE,0,641,14,32
 	.sym	DOSSECTORWRITER,0,654,14,32
 	.sym	DOSSECTORREADER,0,654,14,32
-	.sym	PIDENTIFY_DEVICE_DATA,0,138,14,32,121
-	.sym	IDENTIFY_DEVICE_DATA,0,10,14,4096,121
-	.sym	PIDSECTOR,0,138,14,32,98
-	.sym	IDSECTOR,0,10,14,2048,98
-	.sym	PLFN,0,138,14,32,97
-	.sym	LFN,0,10,14,256,97
-	.sym	PFAT16ENTRYLONG,0,138,14,32,96
-	.sym	FAT16ENTRYLONG,0,10,14,288,96
-	.sym	PFAT16ENTRY,0,138,14,32,95
-	.sym	FAT16ENTRY,0,10,14,256,95
-	.sym	Fat16BootSector,0,10,14,4096,94
-	.sym	PPARTITIONTABLE,0,138,14,32,93
-	.sym	PARTITIONTABLE,0,10,14,128,93
-	.sym	PFATBOOTSECTOR,0,138,14,32,92
-	.sym	FATBOOTSECTOR,0,10,14,928,92
-	.sym	fat_BS_t,0,10,14,688,91
-	.sym	fat_extBS_16_t,0,10,14,192,90
-	.sym	PFAT32EXT,0,138,14,32,89
-	.sym	fat_extBS_32_t,0,10,14,416,89
-	.sym	P_FX_FAT_DIR_INFO,0,138,14,32,88
-	.sym	FX_FAT_DIR_INFO,0,10,14,256,88
-	.sym	PFILEINFO,0,138,14,32,87
-	.sym	FILEINFO,0,10,14,136,87
-	.sym	PDISKINFO,0,138,14,32,86
-	.sym	DISKINFO,0,10,14,416,86
-	.sym	PDIRENTRY,0,138,14,32,85
-	.sym	DIRENTRY,0,10,14,256,85
+	.sym	PIDENTIFY_DEVICE_DATA,0,138,14,32,126
+	.sym	IDENTIFY_DEVICE_DATA,0,10,14,4096,126
+	.sym	PIDSECTOR,0,138,14,32,103
+	.sym	IDSECTOR,0,10,14,2048,103
+	.sym	PLFN,0,138,14,32,102
+	.sym	LFN,0,10,14,256,102
+	.sym	PFAT16ENTRYLONG,0,138,14,32,101
+	.sym	FAT16ENTRYLONG,0,10,14,288,101
+	.sym	PFAT16ENTRY,0,138,14,32,100
+	.sym	FAT16ENTRY,0,10,14,256,100
+	.sym	Fat16BootSector,0,10,14,4096,99
+	.sym	PPARTITIONTABLE,0,138,14,32,98
+	.sym	PARTITIONTABLE,0,10,14,128,98
+	.sym	PFATBOOTSECTOR,0,138,14,32,97
+	.sym	FATBOOTSECTOR,0,10,14,928,97
+	.sym	fat_BS_t,0,10,14,688,96
+	.sym	fat_extBS_16_t,0,10,14,192,95
+	.sym	PFAT32EXT,0,138,14,32,94
+	.sym	fat_extBS_32_t,0,10,14,416,94
+	.sym	P_FX_FAT_DIR_INFO,0,138,14,32,93
+	.sym	FX_FAT_DIR_INFO,0,10,14,256,93
+	.sym	PFILEINFO,0,138,14,32,92
+	.sym	FILEINFO,0,10,14,136,92
+	.sym	PDISKINFO,0,138,14,32,91
+	.sym	DISKINFO,0,10,14,416,91
+	.sym	PDIRENTRY,0,138,14,32,90
+	.sym	DIRENTRY,0,10,14,256,90
 	.sym	DRESULT,0,5,14,16
 	.sym	DSTATUS,0,14,14,8
-	.sym	DEVICEDRIVER_COMMAND,0,656,14,32
+	.sym	~~k_exec_throw_exception,~~k_exec_throw_exception,65,18,0
+	.sym	PIRQCHAIN,0,138,14,32,89
+	.sym	IRQCHAIN,0,10,14,128,89
+	.sym	DEVICEDRIVER_COMMAND,0,654,14,32
 	.sym	DEVICEDRIVER_UNLOAD,0,654,14,32
-	.sym	DEVICEDRIVER_WRITE,0,656,14,32
-	.sym	DEVICEDRIVER_READ,0,656,14,32
+	.sym	DEVICEDRIVER_WRITE,0,654,14,32
+	.sym	DEVICEDRIVER_READ,0,654,14,32
 	.sym	DEVICEDRIVER_LOAD,0,654,14,32
-	.sym	DEVICEDRIVER_IRQ,0,654,14,32
-	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,84
-	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,84
-	.sym	GETDRIVERDEF,0,8842,14,32,83
-	.sym	PFX_DEVICE_DRIVER,0,138,14,32,83
-	.sym	FX_DEVICE_DRIVER,0,10,14,776,83
+	.sym	DEVICEDRIVER_IRQ,0,641,14,32
+	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,88
+	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,88
+	.sym	GETDRIVERDEF,0,8842,14,32,87
+	.sym	PFX_DEVICE_DRIVER,0,138,14,32,87
+	.sym	FX_DEVICE_DRIVER,0,10,14,776,87
 	.sym	~~k_debug_strings,~~k_debug_strings,65,18,0
-	.sym	~~k_debug_byte_array,~~k_debug_byte_array,65,18,0
 	.sym	~~k_debug_hex,~~k_debug_hex,65,18,0
 	.sym	~~k_debug_long,~~k_debug_long,65,18,0
 	.sym	~~k_debug_integer,~~k_debug_integer,65,18,0
 	.sym	~~k_debug_pointer,~~k_debug_pointer,65,18,0
 	.sym	~~k_debug_string,~~k_debug_string,65,18,0
-	.sym	PSEGMENTHEADER,0,138,14,32,82
-	.sym	SEGMENTHEADER,0,10,14,160,82
-	.sym	PDEBUGBYTEBITS,0,138,14,32,81
-	.sym	DEBUGBYTEBITS,0,10,14,8,81
-	.sym	PFXENVIRONMENT,0,138,14,32,80
-	.sym	FXENVIRONMENT,0,10,14,96,80
-	.sym	PFXZEROPAGE,0,138,14,32,79
-	.sym	FXZEROPAGE,0,10,14,824,79
+	.sym	PSEGMENTHEADER,0,138,14,32,86
+	.sym	SEGMENTHEADER,0,10,14,160,86
+	.sym	PDEBUGBYTEBITS,0,138,14,32,85
+	.sym	DEBUGBYTEBITS,0,10,14,8,85
+	.sym	PFXENVIRONMENT,0,138,14,32,84
+	.sym	FXENVIRONMENT,0,10,14,96,84
+	.sym	PFXZEROPAGE,0,138,14,32,83
+	.sym	FXZEROPAGE,0,10,14,720,83
+	.sym	IRQBUFFER,0,10,14,32,82
 	.sym	KERNELTRAPCALL,0,641,14,32
-	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,78
-	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,78
+	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,81
+	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,81
 	.sym	~~f_lseek,~~f_lseek,69,18,0
 	.sym	~~f_read,~~f_read,69,18,0
-	.sym	~~f_open,~~f_open,69,18,0
 	.sym	FRESULT,0,5,14,16
-	.sym	MKFS_PARM,0,10,14,80,77
-	.sym	FILINFO,0,10,14,2224,76
-	.sym	DIR,0,10,14,416,75
-	.sym	FIL,0,10,14,4400,74
-	.sym	FFOBJID,0,10,14,128,73
-	.sym	FATFS,0,10,14,4504,72
+	.sym	MKFS_PARM,0,10,14,80,80
+	.sym	FILINFO,0,10,14,2224,79
+	.sym	DIR,0,10,14,416,78
+	.sym	FIL,0,10,14,4400,77
+	.sym	FFOBJID,0,10,14,128,76
+	.sym	FATFS,0,10,14,4504,75
 	.sym	LBA_t,0,18,14,32
 	.sym	FSIZE_t,0,18,14,32
 	.sym	TCHAR,0,14,14,8
 	.sym	~~DefConsoleProc,~~DefConsoleProc,65,18,0
-	.sym	PCOMMANDARGS,0,138,14,32,71
-	.sym	COMMANDARGS,0,10,14,64,71
+	.sym	PCOMMANDARGS,0,138,14,32,74
+	.sym	COMMANDARGS,0,10,14,64,74
 	.sym	PTOKENIZESTATE,0,133,14,32
 	.sym	TOKENIZESTATE,0,5,14,16
-	.sym	PTOKEN,0,138,14,32,70
-	.sym	TOKEN,0,10,14,64,70
+	.sym	PTOKEN,0,138,14,32,73
+	.sym	TOKEN,0,10,14,64,73
 	.sym	PTOKENTYPE,0,133,14,32
 	.sym	TOKENTYPE,0,5,14,16
 	.sym	FXCommandHandler,0,656,14,32
-	.sym	PCONSOLECTX,0,138,14,32,69
-	.sym	CONSOLECTX,0,10,14,1144,69
-	.sym	PSPINNERCTX,0,138,14,32,68
-	.sym	SPINNERCTX,0,10,14,48,68
-	.sym	HCLIP,0,138,14,32,67
-	.sym	PCLIPBOARD_DATA,0,138,14,32,67
-	.sym	CLIPBOARD_DATA,0,10,14,168,67
+	.sym	PCONSOLECTX,0,138,14,32,72
+	.sym	CONSOLECTX,0,10,14,1144,72
+	.sym	PSPINNERCTX,0,138,14,32,71
+	.sym	SPINNERCTX,0,10,14,48,71
+	.sym	HCLIP,0,138,14,32,70
+	.sym	PCLIPBOARD_DATA,0,138,14,32,70
+	.sym	CLIPBOARD_DATA,0,10,14,168,70
 	.sym	~~k_attach_process_events,~~k_attach_process_events,69,18,0
 	.sym	~~IdleProc,~~IdleProc,65,18,0
-	.sym	PEVENTMANAGER,0,138,14,32,66
-	.sym	EVENTMANAGER,0,10,14,192,66
+	.sym	PEVENTMANAGER,0,138,14,32,69
+	.sym	EVENTMANAGER,0,10,14,192,69
 	.sym	EV_RUN,0,656,14,32
 	.sym	EV_QUERY_METRIC,0,656,14,32
 	.sym	EV_CONFIGURE,0,656,14,32
 	.sym	EV_UNINIT,0,641,14,32
 	.sym	EV_INIT,0,8833,14,32
-	.sym	PMOUSE_MSG_STATE,0,138,14,32,65
-	.sym	MOUSE_MSG_STATE,0,10,14,184,65
-	.sym	PFXEVENTPROCESS,0,138,14,32,64
-	.sym	FXEVENTPROCESS,0,10,14,64,64
-	.sym	PMARSHALDATA,0,139,14,32,63
-	.sym	MARSHALDATA,0,11,14,32,63
+	.sym	PMOUSE_MSG_STATE,0,138,14,32,68
+	.sym	MOUSE_MSG_STATE,0,10,14,184,68
+	.sym	PFXEVENTPROCESS,0,138,14,32,67
+	.sym	FXEVENTPROCESS,0,10,14,64,67
+	.sym	FXASYNCPROCESS,0,641,14,32
+	.sym	PMARSHALDATA,0,139,14,32,66
+	.sym	MARSHALDATA,0,11,14,32,66
 	.sym	FXIDLEPROCESS,0,641,14,32
 	.sym	FXEventProc,0,641,14,32
-	.sym	PMOUSEMSGDATA,0,138,14,32,62
-	.sym	MOUSEMSGDATA,0,10,14,64,62
+	.sym	PMOUSEMSGDATA,0,138,14,32,65
+	.sym	MOUSEMSGDATA,0,10,14,64,65
 	.sym	MSGIRQ,0,5,14,16
-	.sym	MAINLOOPARGS,0,10,14,16,61
-	.sym	PEACHCHILD_MSG,0,138,14,32,60
-	.sym	EACHCHILD_MSG,0,10,14,64,60
-	.sym	PMSGBOX_DATA,0,138,14,32,59
-	.sym	MSGBOX_DATA,0,10,14,96,59
-	.sym	PDESKTOP_DATA,0,138,14,32,58
-	.sym	DESKTOP_DATA,0,10,14,64,58
-	.sym	PWINDOWMANAGER,0,138,14,32,57
-	.sym	WINDOWMANAGER,0,10,14,160,57
+	.sym	MAINLOOPARGS,0,10,14,16,64
+	.sym	PEACHCHILD_MSG,0,138,14,32,63
+	.sym	EACHCHILD_MSG,0,10,14,64,63
+	.sym	PMSGBOX_DATA,0,138,14,32,62
+	.sym	MSGBOX_DATA,0,10,14,96,62
+	.sym	PDESKTOP_DATA,0,138,14,32,61
+	.sym	DESKTOP_DATA,0,10,14,64,61
+	.sym	PWINDOWMANAGER,0,138,14,32,60
+	.sym	WINDOWMANAGER,0,10,14,160,60
 	.sym	WM_DOPROCS,0,641,14,32
 	.sym	WM_QUERY_METRIC,0,656,14,32
 	.sym	WM_CONFIGURE,0,656,14,32
 	.sym	WM_HANDLE_EVENT,0,8833,14,32
 	.sym	WM_EVENTS,0,641,14,32
-	.sym	PCUR_PALETTE_MAP,0,138,14,32,56
-	.sym	CUR_PALETTE_MAP,0,10,14,400,56
-	.sym	PCLICKDETECTED,0,138,14,32,55
-	.sym	CLICKDETECTED,0,10,14,64,55
+	.sym	PCUR_PALETTE_MAP,0,138,14,32,59
+	.sym	CUR_PALETTE_MAP,0,10,14,400,59
+	.sym	PCLICKDETECTED,0,138,14,32,58
+	.sym	CLICKDETECTED,0,10,14,64,58
 	.sym	OBJECTCLICKED,0,641,14,32
-	.sym	PIPCPORT,0,138,14,32,54
-	.sym	IPCPORT,0,10,14,144,54
-	.sym	~~k_mem_deallocate_heap,~~k_mem_deallocate_heap,65,18,0
+	.sym	PALLOCATIONHEADER,0,138,14,32,57
+	.sym	ALLOCATIONHEADER,0,10,14,80,57
+	.sym	PIPCPORT,0,138,14,32,56
+	.sym	IPCPORT,0,10,14,144,56
 	.sym	~~k_mem_allocate_heap,~~k_mem_allocate_heap,1089,18,32
 	.sym	MemoryCallback,0,641,14,32
-	.sym	PFXMEMORYMAP,0,138,14,32,53
-	.sym	FXMEMORYMAP,0,10,14,2072,53
-	.sym	UMM_HEAP_INFO,0,10,14,256,52
+	.sym	PFXMEMORYMAP,0,138,14,32,55
+	.sym	FXMEMORYMAP,0,10,14,2072,55
+	.sym	UMM_HEAP_INFO,0,10,14,256,54
 	.sym	FOREACHNODEUNTIL,0,654,14,32
 	.sym	FOREACHNODE,0,641,14,32
 	.sym	~~k_nodelist_naddtolist,~~k_nodelist_naddtolist,1098,18,32,5
@@ -5058,17 +4961,20 @@ L161:
 	.sym	~~k_exec_process_list,~~k_exec_process_list,9290,2,32,20
 	.sym	~~k_exec_get_process_byname,~~k_exec_get_process_byname,1098,2,32,20
 	.sym	~~k_exec_get_process,~~k_exec_get_process,1098,2,32,20
-	.sym	~~k_exec_throw_exception,~~k_exec_throw_exception,65,2,0
-	.sym	~~k_initalize_executive,~~k_initalize_executive,1098,2,32,51
-	.sym	PEXECUTIVE,0,138,14,32,51
-	.sym	EXECUTIVE,0,10,14,128,51
+	.sym	~~k_initalize_executive,~~k_initalize_executive,1098,2,32,53
+	.sym	PEXECUTIVE,0,138,14,32,53
+	.sym	EXECUTIVE,0,10,14,128,53
 	.sym	EX_QUERY_METRIC,0,656,14,32
 	.sym	EX_CONFIGURE,0,656,14,32
 	.sym	EX_UNINIT,0,641,14,32
 	.sym	EX_INIT,0,8833,14,32
 	.sym	~~k_string_copy_string,~~k_string_copy_string,1102,18,32
-	.sym	PFXSTRING,0,138,14,32,50
-	.sym	FXSTRING,0,10,14,64,50
+	.sym	PFXSTRING,0,138,14,32,52
+	.sym	FXSTRING,0,10,14,64,52
+	.sym	PFXRFHEADER_STRING_ENTRY,0,138,14,32,51
+	.sym	FXRFHEADER_STRING_ENTRY,0,10,14,40,51
+	.sym	PFXRFHEADER_STRING,0,138,14,32,50
+	.sym	FXRFHEADER_STRING,0,10,14,32,50
 	.sym	PFXRFHEADER_FONT,0,138,14,32,49
 	.sym	FXRFHEADER_FONT,0,10,14,144,49
 	.sym	PFXRFHEADER,0,138,14,32,48
@@ -5146,9 +5052,9 @@ L161:
 	.sym	CONSOLE_CONTROL,0,10,14,448,18
 	.sym	FXProcessProc,0,641,14,32
 	.sym	PFXCMDMESSAGE,0,138,14,32,17
-	.sym	FXCMDMESSAGE,0,10,14,304,17
+	.sym	FXCMDMESSAGE,0,10,14,312,17
 	.sym	PFXOSMESSAGE,0,138,14,32,16
-	.sym	FXOSMESSAGE,0,10,14,304,16
+	.sym	FXOSMESSAGE,0,10,14,312,16
 	.sym	PINT_REGS,0,138,14,32,15
 	.sym	INT_REGS,0,10,14,104,15
 	.sym	TASK_STACK,0,10,14,32,14
@@ -5195,6 +5101,7 @@ L161:
 	.sym	HRESULT,0,18,14,32
 	.sym	LPWCHAR,0,144,14,32
 	.sym	WCHAR,0,16,14,16
+	.sym	HSTRINGTABLE,0,129,14,32
 	.sym	HCOLOR,0,129,14,32
 	.sym	HFONT,0,129,14,32
 	.sym	HDC,0,129,14,32
@@ -5222,12 +5129,16 @@ L161:
 	.sym	LPSTR,0,142,14,32
 	.sym	LPCHAR,0,142,14,32
 	.sym	CHAR,0,14,14,8
+	.sym	PUINT_32,0,146,14,32
+	.sym	UINT_32,0,18,14,32
+	.sym	PUINT_16,0,144,14,32
+	.sym	UINT_16,0,16,14,16
+	.sym	PUINT_8,0,142,14,32
+	.sym	UINT_8,0,14,14,8
 	.sym	LPVOID,0,129,14,32
 	.sym	VOID,0,1,14,32
-	.sym	~~strlen,~~strlen,80,18,0
 	.sym	~~strcmp,~~strcmp,69,18,0
 	.sym	~~memset,~~memset,1089,18,32
-	.sym	~~memcpy,~~memcpy,1089,18,32
 	.sym	Boolean_T,0,5,14,16
 	.sym	ldiv_t,0,10,14,64,2
 	.sym	div_t,0,10,14,32,1

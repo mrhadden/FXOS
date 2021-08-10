@@ -3,7 +3,7 @@ R0	equ	1
 R1	equ	5
 R2	equ	9
 R3	equ	13
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Load.c",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Load.c",0
 ;/************************************************************************/
 ;/*                                                                      */
 ;/*  OMF_Load.c : Module pour le chargement/décodage des fichiers OMF.   */
@@ -12,8 +12,9 @@ R3	equ	13
 ;/*  Auteur : Olivier ZARDINI  *  Brutal Deluxe Software  *  Avril 2013  */
 ;/************************************************************************/
 ;
-;#include "fxtypes.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
+;#include "omf/OMF_Load.h"
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Load.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
 	.stag	_fx_bytebits,8,1
 	.member	b7,0,14,17,1
 	.member	b6,1,14,17,1
@@ -87,7 +88,7 @@ R3	equ	13
 	.member	YH,88,14,8,8
 	.member	YL,96,14,8,8
 	.eos
-	.stag	_fx_eventMessage,304,13
+	.stag	_fx_eventMessage,312,13
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -95,8 +96,9 @@ R3	equ	13
 	.member	pheap,112,129,8,32
 	.member	msgTime,144,18,8,32
 	.member	data,176,110,8,0,16
+	.member	attr,304,14,8,8
 	.eos
-	.stag	_fx_cmdMessage,304,14
+	.stag	_fx_cmdMessage,312,14
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -108,6 +110,7 @@ R3	equ	13
 	.member	parameter1,208,18,8,32
 	.member	parameter2,240,18,8,32
 	.member	parameter3,272,18,8,32
+	.member	attr,304,14,8,8
 	.eos
 	.stag	_fx_console_ctl,448,15
 	.member	maxCols,0,5,8,16
@@ -450,774 +453,18 @@ R3	equ	13
 	.member	height,128,14,8,8
 	.member	width,136,14,8,8
 	.eos
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Load.c",9
-;#include "fxmemorymanager.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
-	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
-	.file	"G:\devtools\WDCTools\wdc\Tools\include\stddef.h",0
-	.line	88
-	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",43
-	.stag	fake47_,32,47
-	.member	quot,0,5,8,16
-	.member	rem,16,5,8,16
-	.eos
-	.stag	fake48_,64,48
-	.member	quot,0,7,8,32
-	.member	rem,32,7,8,32
-	.eos
-	.stag	int_sqrt,32,49
-	.member	sqrt,0,16,8,16
-	.member	frac,16,16,8,16
-	.eos
-	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",4
-	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
-	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",5
-	.file	"G:\devtools\WDCTools\wdc\Tools\include\ctype.h",0
-	.line	103
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",8
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstringtable.h",0
-	.line	89
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",9
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fmx_vicky.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fmx_vicky.h",11
-	.line	72
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",6
-	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",16
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
-	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",11
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",6
-	.stag	_fx_api_call_table,8192,50
-	.member	call_table,0,1121,8,32,256
-	.eos
-	.stag	_fx_zero_page,824,51
-	.member	fxos_mouse_byte_0,0,14,8,8
-	.member	fxos_mouse_byte_1,8,14,8,8
-	.member	fxos_mouse_byte_2,16,14,8,8
-	.member	fxos_mouse_byte_t,24,14,8,8
-	.member	fxos_mouse_byte_x_l,32,14,8,8
-	.member	fxos_mouse_byte_x_h,40,14,8,8
-	.member	fxos_mouse_byte_y_l,48,14,8,8
-	.member	fxos_mouse_byte_y_h,56,14,8,8
-	.member	fxos_key_byte_0,64,14,8,8
-	.member	fxos_key_byte_1,72,14,8,8
-	.member	fxos_key_byte_2,80,14,8,8
-	.member	fxos_mouse_ctl,88,14,8,8
-	.member	fxos_mouse_index,96,14,8,8
-	.member	fxos_mouse_status,104,14,8,8
-	.member	fxos_mouse_dbg_1,112,18,8,32
-	.member	fxos_mouse_dbg_2,144,18,8,32
-	.member	fxos_mouse_dbg_3,176,18,8,32
-	.member	fxos_vicky_byte_0,208,14,8,8
-	.member	fxos_vicky_byte_1,216,14,8,8
-	.member	fxos_vicky_byte_2,224,14,8,8
-	.member	VersionMajor,232,16,8,16
-	.member	VersionMinor,248,16,8,16
-	.member	VersionRelease,264,16,8,16
-	.member	topMemory,280,18,8,32
-	.member	bottomMemory,312,18,8,32
-	.member	availableMemory,344,18,8,32
-	.member	availableMemoryK,376,18,8,32
-	.member	availableHeapMemory,408,18,8,32
-	.member	availableHeapMemoryK,440,18,8,32
-	.member	fxos_console_row,472,16,8,16
-	.member	fxos_console_col,488,16,8,16
-	.member	executive,504,129,8,32
-	.member	eventmanager,536,129,8,32
-	.member	devicemanager,568,129,8,32
-	.member	windowmanager,600,129,8,32
-	.member	fxos_kernel_api,632,138,8,32,50
-	.member	fxos_dos_api,664,138,8,32,50
-	.member	fxos_gfx_api,696,138,8,32,50
-	.member	fxos_gui_api,728,138,8,32,50
-	.member	fxos_con_api,760,138,8,32,50
-	.member	fxos_reserved_2_api,792,138,8,32,50
-	.eos
-	.stag	_fx_environment,96,52
-	.member	variables,0,142,8,32
-	.member	reserved1,32,5,8,16
-	.member	reserved2,48,5,8,16
-	.member	reserved3,64,5,8,16
-	.member	reserved4,80,5,8,16
-	.eos
-	.stag	_debug_byte_bits,8,53
-	.member	bit7,0,14,17,1
-	.member	bit6,1,14,17,1
-	.member	bit5,2,14,17,1
-	.member	bit4,3,14,17,1
-	.member	bit3,4,14,17,1
-	.member	bit2,5,14,17,1
-	.member	bit1,6,14,17,1
-	.member	bit0,7,14,17,1
-	.eos
-	.stag	_k_segmentheader,160,54
-	.member	version_major,0,14,8,8
-	.member	version_minor,8,14,8,8
-	.member	length,16,5,8,16
-	.member	segment_start_addr,32,7,8,32
-	.member	segment_end_addr,64,7,8,32
-	.member	segment_size,96,7,8,32
-	.member	main_entry_addr,128,7,8,32
-	.eos
-	.stag	_fx_device_driver,776,55
-	.member	name,0,110,8,0,32
-	.member	version,256,110,8,0,16
-	.member	hmajor,384,110,8,0,8
-	.member	hminor,448,110,8,0,8
-	.member	type,512,14,8,8
-	.member	designation,520,110,8,0,6
-	.member	reserved_1,568,16,8,16
-	.member	f_driver_irq,584,129,8,32
-	.member	driver_context,616,129,8,32
-	.member	f_driver_load,648,129,8,32
-	.member	f_driver_read,680,129,8,32
-	.member	f_driver_write,712,129,8,32
-	.member	f_driver_unload,744,129,8,32
-	.eos
-	.stag	_fx_block_device_driver,808,56
-	.member	name,0,110,8,0,32
-	.member	version,256,110,8,0,16
-	.member	hmajor,384,110,8,0,8
-	.member	hminor,448,110,8,0,8
-	.member	type,512,14,8,8
-	.member	designation,520,110,8,0,6
-	.member	reserved_1,568,16,8,16
-	.member	f_driver_irq,584,129,8,32
-	.member	driver_context,616,129,8,32
-	.member	f_driver_load,648,129,8,32
-	.member	f_driver_read,680,129,8,32
-	.member	f_driver_write,712,129,8,32
-	.member	f_driver_unload,744,129,8,32
-	.member	f_driver_command,776,129,8,32
-	.eos
-	.line	400
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",22
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",0
-	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
-	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",5
-	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
-	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
-	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",12
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
-	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
-	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",5
-	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
-	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",7
-	.stag	_fx_string,64,57
-	.member	size,0,16,8,16
-	.member	pos,16,5,8,16
-	.member	buffer,32,142,8,32
-	.eos
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",17
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
-	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",5
-	.stag	_fxos_executive_vtable,128,58
-	.member	Init,0,8833,8,32
-	.member	Configure,32,656,8,32
-	.member	Query,64,656,8,32
-	.member	Uninit,96,641,8,32
-	.eos
-	.line	86
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",0
-	.line	208
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",8
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
-	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",0
-	.line	105
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",6
-	.line	74
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",5
-	.stag	_click_detected,64,59
-	.member	window,0,138,8,32,30
-	.member	handler,32,641,8,32
-	.eos
-	.stag	_current_palette_map,400,60
-	.member	CUR_DESKTOP,0,5,8,16
-	.member	CUR_BACKGROUND,16,5,8,16
-	.member	CUR_FONT,32,5,8,16
-	.member	CUR_SELECTED_FONT,48,5,8,16
-	.member	CUR_HIGHLIGHT_COLOR,64,5,8,16
-	.member	CUR_WINDOWFRAME,80,5,8,16
-	.member	CUR_WINDOWBORDER,96,5,8,16
-	.member	CUR_WINDOWSHADOW,112,5,8,16
-	.member	CUR_MENU,128,5,8,16
-	.member	CUR_GADGET,144,5,8,16
-	.member	CUR_COLOR,160,101,8,0,15
-	.eos
-	.line	359
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",8
-	.stag	_fxos_winman_vtable,160,61
-	.member	Events,0,641,8,32
-	.member	ConfigureWindowManager,32,656,8,32
-	.member	ProcessWindowEvent,64,8833,8,32
-	.member	QueryWindowManager,96,656,8,32
-	.member	DoWndProcs,128,641,8,32
-	.eos
-	.stag	fake62_,64,62
-	.member	type,0,16,8,16
-	.member	size,16,16,8,16
-	.member	desktopAction,32,129,8,32
-	.eos
-	.stag	fake63_,96,63
-	.member	type,0,16,8,16
-	.member	caption,16,138,8,32,57
-	.member	buttonType,48,16,8,16
-	.member	x,64,5,8,16
-	.member	y,80,5,8,16
-	.eos
-	.stag	_childMessage_t,64,64
-	.member	msgType,0,16,8,16
-	.member	msgData,16,129,8,32
-	.member	dataSize,48,16,8,16
-	.eos
-	.line	581
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",9
-	.stag	_fx_main_loopvars,16,65
-	.member	dummy,0,5,8,16
-	.eos
-	.stag	_fxMouseMessageData,64,66
-	.member	button1,0,14,8,8
-	.member	button2,8,14,8,8
-	.member	button3,16,14,8,8
-	.member	button4,24,14,8,8
-	.member	x,32,16,8,16
-	.member	y,48,16,8,16
-	.eos
-	.utag	marshalled_data,32,67
-	.member	byteValue,0,14,11,8
-	.member	verbValue,0,110,11,0,2
-	.member	intValue,0,16,11,16
-	.member	longValue,0,18,11,32
-	.member	pointerValue,0,129,11,32
-	.eos
-	.stag	_fx_eventProcess,64,68
-	.member	process,0,138,8,32,17
-	.member	eventProc,32,641,8,32
-	.eos
-	.stag	_mouse_msg_state,184,69
-	.member	lastEvent,0,18,8,32
-	.member	buttonLeftDown,32,14,8,8
-	.member	lastLeftDown,40,18,8,32
-	.member	buttonRightDown,72,14,8,8
-	.member	lastRightDown,80,18,8,32
-	.member	buttonMiddleDown,112,14,8,8
-	.member	lastMiddleDown,120,18,8,32
-	.member	lastX,152,16,8,16
-	.member	lastY,168,16,8,16
-	.eos
-	.stag	_fxos_eventmanager_vtable,192,70
-	.member	EventQueue,0,138,8,32,4
-	.member	Init,32,8833,8,32
-	.member	Run,64,656,8,32
-	.member	Configure,96,656,8,32
-	.member	Query,128,656,8,32
-	.member	Uninit,160,641,8,32
-	.eos
-	.stag	_k_clipboard_data,168,71
-	.member	type,0,14,8,8
-	.member	readable,8,110,8,0,16
-	.member	data,136,129,8,32
-	.eos
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",18
-	.stag	_fx_spinner_ctx,48,72
-	.member	index,0,5,8,16
-	.member	spinner,16,142,8,32
-	.eos
-	.stag	_fx_console_ctx,1144,73
-	.member	lineBufferIndex,0,5,8,16
-	.member	lineBuffer,16,110,8,0,128
-	.member	isShifted,1040,14,8,8
-	.member	userData,1048,129,8,32
-	.member	screenBuffer,1080,129,8,32
-	.member	Reserved1,1112,129,8,32
-	.eos
-	.stag	_token,64,74
-	.member	type,0,5,8,16
-	.member	depth,16,16,8,16
-	.member	text,32,142,8,32
-	.eos
-	.stag	_command_args,64,75
-	.member	proc,0,656,8,32
-	.member	tokens,32,138,8,32,2
-	.eos
-	.line	208
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",23
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",25
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ffconf.h",0
-	.line	298
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",29
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",30
-	.stag	fake76_,4504,76
-	.member	fs_type,0,14,8,8
-	.member	pdrv,8,14,8,8
-	.member	n_fats,16,14,8,8
-	.member	wflag,24,14,8,8
-	.member	fsi_flag,32,14,8,8
-	.member	id,40,5,8,16
-	.member	n_rootdir,56,5,8,16
-	.member	csize,72,5,8,16
-	.member	lfnbuf,88,144,8,32
-	.member	last_clst,120,18,8,32
-	.member	free_clst,152,18,8,32
-	.member	n_fatent,184,18,8,32
-	.member	fsize,216,18,8,32
-	.member	volbase,248,18,8,32
-	.member	fatbase,280,18,8,32
-	.member	dirbase,312,18,8,32
-	.member	database,344,18,8,32
-	.member	winsect,376,18,8,32
-	.member	win,408,110,8,0,512
-	.eos
-	.stag	fake77_,128,77
-	.member	fs,0,138,8,32,76
-	.member	id,32,5,8,16
-	.member	attr,48,14,8,8
-	.member	stat,56,14,8,8
-	.member	sclust,64,18,8,32
-	.member	objsize,96,18,8,32
-	.eos
-	.stag	fake78_,4400,78
-	.member	obj,0,10,8,128,77
-	.member	flag,128,14,8,8
-	.member	err,136,14,8,8
-	.member	fptr,144,18,8,32
-	.member	clust,176,18,8,32
-	.member	sect,208,18,8,32
-	.member	dir_sect,240,18,8,32
-	.member	dir_ptr,272,142,8,32
-	.member	buf,304,110,8,0,512
-	.eos
-	.stag	fake79_,416,79
-	.member	obj,0,10,8,128,77
-	.member	dptr,128,18,8,32
-	.member	clust,160,18,8,32
-	.member	sect,192,18,8,32
-	.member	dir,224,142,8,32
-	.member	fn,256,110,8,0,12
-	.member	blk_ofs,352,18,8,32
-	.member	pat,384,142,8,32
-	.eos
-	.stag	fake80_,2224,80
-	.member	fsize,0,18,8,32
-	.member	fdate,32,5,8,16
-	.member	ftime,48,5,8,16
-	.member	fattrib,64,14,8,8
-	.member	altname,72,110,8,0,13
-	.member	fname,176,110,8,0,256
-	.eos
-	.stag	fake81_,80,81
-	.member	fmt,0,14,8,8
-	.member	n_fat,8,14,8,8
-	.member	align,16,16,8,16
-	.member	n_root,32,16,8,16
-	.member	au_size,48,18,8,32
-	.eos
-	.line	429
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",26
-	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos_build_parameters.h",0
-	.line	35
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",8
-	.stag	UMM_HEAP_INFO_t,256,82
-	.member	totalEntries,0,18,8,32
-	.member	usedEntries,32,18,8,32
-	.member	freeEntries,64,18,8,32
-	.member	totalBlocks,96,18,8,32
-	.member	usedBlocks,128,18,8,32
-	.member	freeBlocks,160,18,8,32
-	.member	maxFreeContiguousBlocks,192,18,8,32
-	.member	blockSize,224,18,8,32
-	.eos
-	.line	199
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",11
-	.line	24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",7
-	.stag	_fx_memory_map,2072,83
-	.member	availableMemory,0,18,8,32
-	.member	valid_segments,32,110,8,0,255
-	.eos
-	.stag	_fx_ipc_port,144,84
-	.member	id,0,18,8,32
-	.member	type,32,14,8,8
-	.member	name,40,138,8,32,57
-	.member	time,72,18,8,32
-	.member	queue,104,138,8,32,4
-	.member	reserved_1,136,14,8,8
-	.eos
-	.line	105
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Load.c",10
-;/*
-;#include <stdlib.h>
-;#include <string.h>
-;*/
-;
-;
-;#include "OMF_Dc_Memory.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Dc_Memory.h",0
-	.line	24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Load.c",17
-;#include "OMF_Dc_Shared.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Dc_Shared.h",0
-	.line	18
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Load.c",18
-;#include "OMF_Record.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Record.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Record.h",8
-	.stag	omf_body_record,168,85
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.member	length,72,5,8,16
-	.member	record_data,88,129,8,32
-	.member	processed,120,5,8,16
-	.member	next,136,138,8,32,85
-	.eos
-	.stag	subrecord_SuperReloc2,16520,86
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	Count,64,14,8,8
-	.member	ByteCnt,72,14,8,8
-	.member	BitShiftCnt,80,14,8,8
-	.member	nb_address,88,5,8,16
-	.member	OffsetPatch,104,114,8,0,256
-	.member	OffsetReference,8296,114,8,0,256
-	.member	next,16488,138,8,32,86
-	.eos
-	.stag	subrecord_SuperReloc3,16520,87
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	Count,64,14,8,8
-	.member	ByteCnt,72,14,8,8
-	.member	BitShiftCnt,80,14,8,8
-	.member	nb_address,88,5,8,16
-	.member	OffsetPatch,104,114,8,0,256
-	.member	OffsetReference,8296,114,8,0,256
-	.member	next,16488,138,8,32,87
-	.eos
-	.stag	subrecord_SuperInterseg1,20632,88
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	Count,64,14,8,8
-	.member	ByteCnt,72,14,8,8
-	.member	BitShiftCnt,80,14,8,8
-	.member	FileNum,88,5,8,16
-	.member	nb_address,104,5,8,16
-	.member	OffsetPatch,120,114,8,0,256
-	.member	OffsetReference,8312,114,8,0,256
-	.member	SegNum,16504,101,8,0,256
-	.member	next,20600,138,8,32,88
-	.eos
-	.stag	subrecord_SuperInterseg212,20632,89
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	Count,64,14,8,8
-	.member	ByteCnt,72,14,8,8
-	.member	BitShiftCnt,80,14,8,8
-	.member	FileNum,88,5,8,16
-	.member	nb_address,104,5,8,16
-	.member	OffsetPatch,120,114,8,0,256
-	.member	OffsetReference,8312,114,8,0,256
-	.member	SegNum,16504,101,8,0,256
-	.member	next,20600,138,8,32,89
-	.eos
-	.stag	subrecord_SuperInterseg1324,16544,90
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	Count,64,14,8,8
-	.member	ByteCnt,72,14,8,8
-	.member	BitShiftCnt,80,14,8,8
-	.member	SegNum,88,14,8,8
-	.member	FileNum,96,5,8,16
-	.member	nb_address,112,5,8,16
-	.member	OffsetPatch,128,114,8,0,256
-	.member	OffsetReference,8320,114,8,0,256
-	.member	next,16512,138,8,32,90
-	.eos
-	.stag	subrecord_SuperInterseg2536,16544,91
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	Count,64,14,8,8
-	.member	ByteCnt,72,14,8,8
-	.member	BitShiftCnt,80,14,8,8
-	.member	SegNum,88,14,8,8
-	.member	FileNum,96,5,8,16
-	.member	nb_address,112,5,8,16
-	.member	OffsetPatch,128,114,8,0,256
-	.member	OffsetReference,8320,114,8,0,256
-	.member	next,16512,138,8,32,91
-	.eos
-	.stag	record_END,72,92
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.eos
-	.stag	record_CONST,112,93
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.member	ByteCnt,72,14,8,8
-	.member	data,80,142,8,32
-	.eos
-	.stag	record_ALIGN,72,94
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.eos
-	.stag	record_ORG,72,95
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.eos
-	.stag	record_RELOC,152,96
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.member	ByteCnt,72,14,8,8
-	.member	BitShiftCnt,80,14,8,8
-	.member	OffsetPatch,88,18,8,32
-	.member	OffsetReference,120,18,8,32
-	.eos
-	.stag	record_INTERSEG,184,97
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.member	ByteCnt,72,14,8,8
-	.member	BitShiftCnt,80,14,8,8
-	.member	OffsetPatch,88,18,8,32
-	.member	FileNum,120,5,8,16
-	.member	SegNum,136,5,8,16
-	.member	OffsetReference,152,18,8,32
-	.eos
-	.stag	record_USING,72,98
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.eos
-	.stag	record_STRONG,72,99
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.eos
-	.stag	record_GLOBAL,72,100
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.eos
-	.stag	record_GEQU,72,101
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.eos
-	.stag	record_MEM,72,102
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.eos
-	.stag	record_EXPR,72,103
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.eos
-	.stag	record_ZEXPR,72,104
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.eos
-	.stag	record_BEXPR,72,105
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.eos
-	.stag	record_RELEXPR,72,106
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.eos
-	.stag	record_LOCAL,72,107
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.eos
-	.stag	record_EQU,72,108
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.eos
-	.stag	record_DS,104,109
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.member	nb_zero_byte,72,18,8,32
-	.eos
-	.stag	record_LCONST,136,110
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.member	ByteCnt,72,18,8,32
-	.member	data,104,142,8,32
-	.eos
-	.stag	record_LEXPR,72,111
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.eos
-	.stag	record_ENTRY,72,112
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.eos
-	.stag	record_cRELOC,152,113
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.member	ByteCnt,72,14,8,8
-	.member	BitShiftCnt,80,14,8,8
-	.member	OffsetPatch,88,18,8,32
-	.member	OffsetReference,120,18,8,32
-	.eos
-	.stag	record_cINTERSEG,176,114
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.member	ByteCnt,72,14,8,8
-	.member	BitShiftCnt,80,14,8,8
-	.member	OffsetPatch,88,18,8,32
-	.member	FileNum,120,5,8,16
-	.member	SegNum,136,14,8,8
-	.member	OffsetReference,144,18,8,32
-	.eos
-	.stag	record_SUPER,592,115
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.member	ByteCnt,72,18,8,32
-	.member	RecordType,104,14,8,8
-	.member	nb_SuperReloc2,112,5,8,16
-	.member	first_SuperReloc2,128,138,8,32,86
-	.member	last_SuperReloc2,160,138,8,32,86
-	.member	nb_SuperReloc3,192,5,8,16
-	.member	first_SuperReloc3,208,138,8,32,87
-	.member	last_SuperReloc3,240,138,8,32,87
-	.member	nb_SuperInterseg1,272,5,8,16
-	.member	first_SuperInterseg1,288,138,8,32,88
-	.member	last_SuperInterseg1,320,138,8,32,88
-	.member	nb_SuperInterseg212,352,5,8,16
-	.member	first_SuperInterseg212,368,138,8,32,89
-	.member	last_SuperInterseg212,400,138,8,32,89
-	.member	nb_SuperInterseg1324,432,5,8,16
-	.member	first_SuperInterseg1324,448,138,8,32,90
-	.member	last_SuperInterseg1324,480,138,8,32,90
-	.member	nb_SuperInterseg2536,512,5,8,16
-	.member	first_SuperInterseg2536,528,138,8,32,91
-	.member	last_SuperInterseg2536,560,138,8,32,91
-	.eos
-	.stag	record_General,72,116
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.eos
-	.stag	record_Experimental,72,117
-	.member	FileOffset,0,18,8,32
-	.member	SegmentOffset,32,18,8,32
-	.member	operation_code,64,14,8,8
-	.eos
-	.stag	omf_reloc,128,118
-	.member	ByteCnt,0,14,8,8
-	.member	BitShiftCnt,8,14,8,8
-	.member	OffsetPatch,16,18,8,32
-	.member	OffsetReference,48,18,8,32
-	.member	origin,80,5,8,16
-	.member	next,96,138,8,32,118
-	.eos
-	.stag	omf_interseg,160,119
-	.member	ByteCnt,0,14,8,8
-	.member	BitShiftCnt,8,14,8,8
-	.member	OffsetPatch,16,18,8,32
-	.member	OffsetReference,48,18,8,32
-	.member	FileNum,80,5,8,16
-	.member	SegNum,96,5,8,16
-	.member	origin,112,5,8,16
-	.member	next,128,138,8,32,119
-	.eos
-	.line	458
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Load.c",19
-;#include "OMF_Load.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Load.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Load.h",9
-	.stag	omf_segment_header,20984,120
+	.stag	_fx_resource_string,32,47
+	.member	locale,0,110,8,0,2
+	.member	entries,16,16,8,16
+	.eos
+	.stag	_fx_resource_string_entry,40,48
+	.member	index,0,16,8,16
+	.member	length,16,16,8,16
+	.member	data,32,14,8,8
+	.eos
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Load.h",9
+	.stag	omf_segment_header,20984,49
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	BlockCnt,64,18,8,32
@@ -1250,33 +497,805 @@ R3	equ	13
 	.member	undefine_6,20968,14,8,8
 	.member	undefine_7,20976,14,8,8
 	.eos
-	.stag	omf_segment,21288,121
-	.member	header,0,10,8,20984,120
+	.stag	omf_segment,21288,50
+	.member	header,0,10,8,20984,49
 	.member	nb_record,20984,5,8,16
-	.member	first_record,21000,138,8,32,85
-	.member	last_record,21032,138,8,32,85
+	.member	first_record,21000,138,8,32,0
+	.member	last_record,21032,138,8,32,0
 	.member	data_offset,21064,5,8,16
 	.member	data_length,21080,5,8,16
 	.member	data,21096,142,8,32
 	.member	reloc_offset,21128,5,8,16
 	.member	reloc_length,21144,5,8,16
 	.member	nb_reloc,21160,5,8,16
-	.member	tab_reloc,21176,1162,8,32,118
+	.member	tab_reloc,21176,1162,8,32,0
 	.member	nb_interseg,21208,5,8,16
-	.member	tab_interseg,21224,1162,8,32,119
-	.member	next,21256,138,8,32,121
+	.member	tab_interseg,21224,1162,8,32,0
+	.member	next,21256,138,8,32,50
 	.eos
-	.stag	omf_file,192,122
+	.stag	omf_file,192,51
 	.member	file_path,0,142,8,32
 	.member	file_name,32,142,8,32
 	.member	data_length,64,5,8,16
 	.member	data,80,142,8,32
 	.member	nb_segment,112,5,8,16
-	.member	first_segment,128,138,8,32,121
-	.member	last_segment,160,138,8,32,121
+	.member	first_segment,128,138,8,32,50
+	.member	last_segment,160,138,8,32,50
 	.eos
 	.line	113
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Load.c",20
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Load.c",9
+;
+;#include "fxtypes.h"
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Load.c",11
+;#include "fxmemorymanager.h"
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
+	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
+	.file	"G:\devtools\WDCTools\wdc\Tools\include\stddef.h",0
+	.line	88
+	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",43
+	.stag	fake52_,32,52
+	.member	quot,0,5,8,16
+	.member	rem,16,5,8,16
+	.eos
+	.stag	fake53_,64,53
+	.member	quot,0,7,8,32
+	.member	rem,32,7,8,32
+	.eos
+	.stag	int_sqrt,32,54
+	.member	sqrt,0,16,8,16
+	.member	frac,16,16,8,16
+	.eos
+	.line	205
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",4
+	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
+	.line	134
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",5
+	.file	"G:\devtools\WDCTools\wdc\Tools\include\ctype.h",0
+	.line	103
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",8
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstringtable.h",0
+	.line	90
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",9
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",11
+	.line	72
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",6
+	.line	1960
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",16
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
+	.line	30
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",11
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",6
+	.stag	_fx_api_call_table,8192,55
+	.member	call_table,0,1121,8,32,256
+	.eos
+	.stag	_fx_zero_page_irq_data,32,56
+	.member	data,0,110,8,0,4
+	.eos
+	.stag	_fx_zero_page,720,57
+	.member	fxos_mouse_byte_0,0,14,8,8
+	.member	fxos_mouse_byte_1,8,14,8,8
+	.member	fxos_mouse_byte_2,16,14,8,8
+	.member	fxos_mouse_byte_t,24,14,8,8
+	.member	fxos_mouse_byte_x_l,32,14,8,8
+	.member	fxos_mouse_byte_x_h,40,14,8,8
+	.member	fxos_mouse_byte_y_l,48,14,8,8
+	.member	fxos_mouse_byte_y_h,56,14,8,8
+	.member	fxos_key_byte_0,64,14,8,8
+	.member	fxos_key_byte_1,72,14,8,8
+	.member	fxos_key_byte_2,80,14,8,8
+	.member	fxos_mouse_ctl,88,14,8,8
+	.member	fxos_mouse_index,96,14,8,8
+	.member	fxos_mouse_status,104,14,8,8
+	.member	Endianness,112,16,8,16
+	.member	VersionMajor,128,16,8,16
+	.member	VersionMinor,144,16,8,16
+	.member	VersionRelease,160,16,8,16
+	.member	topMemory,176,18,8,32
+	.member	bottomMemory,208,18,8,32
+	.member	availableMemory,240,18,8,32
+	.member	availableMemoryK,272,18,8,32
+	.member	availableHeapMemory,304,18,8,32
+	.member	availableHeapMemoryK,336,18,8,32
+	.member	fxos_console_row,368,16,8,16
+	.member	fxos_console_col,384,16,8,16
+	.member	executive,400,129,8,32
+	.member	eventmanager,432,129,8,32
+	.member	devicemanager,464,129,8,32
+	.member	windowmanager,496,129,8,32
+	.member	fxos_kernel_api,528,138,8,32,55
+	.member	fxos_dos_api,560,138,8,32,55
+	.member	fxos_gfx_api,592,138,8,32,55
+	.member	fxos_gui_api,624,138,8,32,55
+	.member	fxos_con_api,656,138,8,32,55
+	.member	fxos_reserved_2_api,688,138,8,32,55
+	.eos
+	.stag	_fx_environment,96,58
+	.member	variables,0,142,8,32
+	.member	reserved1,32,5,8,16
+	.member	reserved2,48,5,8,16
+	.member	reserved3,64,5,8,16
+	.member	reserved4,80,5,8,16
+	.eos
+	.stag	_debug_byte_bits,8,59
+	.member	bit7,0,14,17,1
+	.member	bit6,1,14,17,1
+	.member	bit5,2,14,17,1
+	.member	bit4,3,14,17,1
+	.member	bit3,4,14,17,1
+	.member	bit2,5,14,17,1
+	.member	bit1,6,14,17,1
+	.member	bit0,7,14,17,1
+	.eos
+	.stag	_k_segmentheader,160,60
+	.member	version_major,0,14,8,8
+	.member	version_minor,8,14,8,8
+	.member	length,16,5,8,16
+	.member	segment_start_addr,32,7,8,32
+	.member	segment_end_addr,64,7,8,32
+	.member	segment_size,96,7,8,32
+	.member	main_entry_addr,128,7,8,32
+	.eos
+	.stag	_fx_device_driver,776,61
+	.member	name,0,110,8,0,32
+	.member	version,256,110,8,0,16
+	.member	hmajor,384,110,8,0,8
+	.member	hminor,448,110,8,0,8
+	.member	type,512,14,8,8
+	.member	designation,520,110,8,0,6
+	.member	irq_ctl,568,16,8,16
+	.member	f_driver_irq,584,129,8,32
+	.member	driver_context,616,129,8,32
+	.member	f_driver_load,648,129,8,32
+	.member	f_driver_read,680,129,8,32
+	.member	f_driver_write,712,129,8,32
+	.member	f_driver_unload,744,129,8,32
+	.eos
+	.stag	_fx_block_device_driver,808,62
+	.member	name,0,110,8,0,32
+	.member	version,256,110,8,0,16
+	.member	hmajor,384,110,8,0,8
+	.member	hminor,448,110,8,0,8
+	.member	type,512,14,8,8
+	.member	designation,520,110,8,0,6
+	.member	irq_ctl,568,16,8,16
+	.member	f_driver_irq,584,129,8,32
+	.member	driver_context,616,129,8,32
+	.member	f_driver_load,648,129,8,32
+	.member	f_driver_read,680,129,8,32
+	.member	f_driver_write,712,129,8,32
+	.member	f_driver_unload,744,129,8,32
+	.member	f_driver_command,776,129,8,32
+	.eos
+	.stag	_k_irq_chain,128,63
+	.member	handlers,0,5217,8,32,4
+	.eos
+	.line	490
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",22
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
+	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
+	.line	134
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",5
+	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
+	.line	205
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
+	.line	1960
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",12
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
+	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
+	.line	205
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",5
+	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
+	.line	134
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",7
+	.stag	_fx_string,64,64
+	.member	size,0,16,8,16
+	.member	pos,16,5,8,16
+	.member	buffer,32,142,8,32
+	.eos
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",17
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
+	.line	30
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",5
+	.stag	_fxos_executive_vtable,128,65
+	.member	Init,0,8833,8,32
+	.member	Configure,32,656,8,32
+	.member	Query,64,656,8,32
+	.member	Uninit,96,641,8,32
+	.eos
+	.line	86
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
+	.line	208
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",8
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
+	.line	30
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",0
+	.line	129
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",6
+	.line	74
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",5
+	.stag	_click_detected,64,66
+	.member	window,0,138,8,32,30
+	.member	handler,32,641,8,32
+	.eos
+	.stag	_current_palette_map,400,67
+	.member	CUR_DESKTOP,0,5,8,16
+	.member	CUR_BACKGROUND,16,5,8,16
+	.member	CUR_FONT,32,5,8,16
+	.member	CUR_SELECTED_FONT,48,5,8,16
+	.member	CUR_HIGHLIGHT_COLOR,64,5,8,16
+	.member	CUR_WINDOWFRAME,80,5,8,16
+	.member	CUR_WINDOWBORDER,96,5,8,16
+	.member	CUR_WINDOWSHADOW,112,5,8,16
+	.member	CUR_MENU,128,5,8,16
+	.member	CUR_GADGET,144,5,8,16
+	.member	CUR_COLOR,160,101,8,0,15
+	.eos
+	.line	359
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",8
+	.stag	_fxos_winman_vtable,160,68
+	.member	Events,0,641,8,32
+	.member	ConfigureWindowManager,32,656,8,32
+	.member	ProcessWindowEvent,64,8833,8,32
+	.member	QueryWindowManager,96,656,8,32
+	.member	DoWndProcs,128,641,8,32
+	.eos
+	.stag	fake69_,64,69
+	.member	type,0,16,8,16
+	.member	size,16,16,8,16
+	.member	desktopAction,32,129,8,32
+	.eos
+	.stag	fake70_,96,70
+	.member	type,0,16,8,16
+	.member	caption,16,138,8,32,64
+	.member	buttonType,48,16,8,16
+	.member	x,64,5,8,16
+	.member	y,80,5,8,16
+	.eos
+	.stag	_childMessage_t,64,71
+	.member	msgType,0,16,8,16
+	.member	msgData,16,129,8,32
+	.member	dataSize,48,16,8,16
+	.eos
+	.line	594
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",9
+	.stag	_fx_main_loopvars,16,72
+	.member	dummy,0,5,8,16
+	.eos
+	.stag	_fxMouseMessageData,64,73
+	.member	button1,0,14,8,8
+	.member	button2,8,14,8,8
+	.member	button3,16,14,8,8
+	.member	button4,24,14,8,8
+	.member	x,32,16,8,16
+	.member	y,48,16,8,16
+	.eos
+	.utag	marshalled_data,32,74
+	.member	byteValue,0,14,11,8
+	.member	verbValue,0,110,11,0,2
+	.member	intValue,0,16,11,16
+	.member	longValue,0,18,11,32
+	.member	pointerValue,0,129,11,32
+	.eos
+	.stag	_fx_eventProcess,64,75
+	.member	process,0,138,8,32,17
+	.member	eventProc,32,641,8,32
+	.eos
+	.stag	_mouse_msg_state,184,76
+	.member	lastEvent,0,18,8,32
+	.member	buttonLeftDown,32,14,8,8
+	.member	lastLeftDown,40,18,8,32
+	.member	buttonRightDown,72,14,8,8
+	.member	lastRightDown,80,18,8,32
+	.member	buttonMiddleDown,112,14,8,8
+	.member	lastMiddleDown,120,18,8,32
+	.member	lastX,152,16,8,16
+	.member	lastY,168,16,8,16
+	.eos
+	.stag	_fxos_eventmanager_vtable,192,77
+	.member	EventQueue,0,138,8,32,4
+	.member	Init,32,8833,8,32
+	.member	Run,64,656,8,32
+	.member	Configure,96,656,8,32
+	.member	Query,128,656,8,32
+	.member	Uninit,160,641,8,32
+	.eos
+	.stag	_k_clipboard_data,168,78
+	.member	type,0,14,8,8
+	.member	readable,8,110,8,0,16
+	.member	data,136,129,8,32
+	.eos
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",18
+	.stag	_fx_spinner_ctx,48,79
+	.member	index,0,5,8,16
+	.member	spinner,16,142,8,32
+	.eos
+	.stag	_fx_console_ctx,1144,80
+	.member	lineBufferIndex,0,5,8,16
+	.member	lineBuffer,16,110,8,0,128
+	.member	isShifted,1040,14,8,8
+	.member	userData,1048,129,8,32
+	.member	screenBuffer,1080,129,8,32
+	.member	Reserved1,1112,129,8,32
+	.eos
+	.stag	_token,64,81
+	.member	type,0,5,8,16
+	.member	depth,16,16,8,16
+	.member	text,32,142,8,32
+	.eos
+	.stag	_command_args,64,82
+	.member	proc,0,656,8,32
+	.member	tokens,32,138,8,32,2
+	.eos
+	.line	208
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",23
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",24
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",25
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ffconf.h",0
+	.line	298
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",29
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",30
+	.stag	fake83_,4504,83
+	.member	fs_type,0,14,8,8
+	.member	pdrv,8,14,8,8
+	.member	n_fats,16,14,8,8
+	.member	wflag,24,14,8,8
+	.member	fsi_flag,32,14,8,8
+	.member	id,40,5,8,16
+	.member	n_rootdir,56,5,8,16
+	.member	csize,72,5,8,16
+	.member	lfnbuf,88,144,8,32
+	.member	last_clst,120,18,8,32
+	.member	free_clst,152,18,8,32
+	.member	n_fatent,184,18,8,32
+	.member	fsize,216,18,8,32
+	.member	volbase,248,18,8,32
+	.member	fatbase,280,18,8,32
+	.member	dirbase,312,18,8,32
+	.member	database,344,18,8,32
+	.member	winsect,376,18,8,32
+	.member	win,408,110,8,0,512
+	.eos
+	.stag	fake84_,128,84
+	.member	fs,0,138,8,32,83
+	.member	id,32,5,8,16
+	.member	attr,48,14,8,8
+	.member	stat,56,14,8,8
+	.member	sclust,64,18,8,32
+	.member	objsize,96,18,8,32
+	.eos
+	.stag	fake85_,4400,85
+	.member	obj,0,10,8,128,84
+	.member	flag,128,14,8,8
+	.member	err,136,14,8,8
+	.member	fptr,144,18,8,32
+	.member	clust,176,18,8,32
+	.member	sect,208,18,8,32
+	.member	dir_sect,240,18,8,32
+	.member	dir_ptr,272,142,8,32
+	.member	buf,304,110,8,0,512
+	.eos
+	.stag	fake86_,416,86
+	.member	obj,0,10,8,128,84
+	.member	dptr,128,18,8,32
+	.member	clust,160,18,8,32
+	.member	sect,192,18,8,32
+	.member	dir,224,142,8,32
+	.member	fn,256,110,8,0,12
+	.member	blk_ofs,352,18,8,32
+	.member	pat,384,142,8,32
+	.eos
+	.stag	fake87_,2224,87
+	.member	fsize,0,18,8,32
+	.member	fdate,32,5,8,16
+	.member	ftime,48,5,8,16
+	.member	fattrib,64,14,8,8
+	.member	altname,72,110,8,0,13
+	.member	fname,176,110,8,0,256
+	.eos
+	.stag	fake88_,80,88
+	.member	fmt,0,14,8,8
+	.member	n_fat,8,14,8,8
+	.member	align,16,16,8,16
+	.member	n_root,32,16,8,16
+	.member	au_size,48,18,8,32
+	.eos
+	.line	429
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",26
+	.line	30
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_build_parameters.h",0
+	.line	35
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",8
+	.stag	UMM_HEAP_INFO_t,256,89
+	.member	totalEntries,0,18,8,32
+	.member	usedEntries,32,18,8,32
+	.member	freeEntries,64,18,8,32
+	.member	totalBlocks,96,18,8,32
+	.member	usedBlocks,128,18,8,32
+	.member	freeBlocks,160,18,8,32
+	.member	maxFreeContiguousBlocks,192,18,8,32
+	.member	blockSize,224,18,8,32
+	.eos
+	.line	199
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",11
+	.line	24
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",7
+	.stag	_fx_memory_map,2072,90
+	.member	availableMemory,0,18,8,32
+	.member	valid_segments,32,110,8,0,255
+	.eos
+	.stag	_fx_ipc_port,144,91
+	.member	id,0,18,8,32
+	.member	type,32,14,8,8
+	.member	name,40,138,8,32,64
+	.member	time,72,18,8,32
+	.member	queue,104,138,8,32,4
+	.member	reserved_1,136,14,8,8
+	.eos
+	.stag	_k_mem_alloc_header,80,92
+	.member	user,0,14,8,8
+	.member	attr,8,14,8,8
+	.member	size,16,18,8,32
+	.member	virtual,48,129,8,32
+	.eos
+	.line	129
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Load.c",12
+;/*
+;#include <stdlib.h>
+;#include <string.h>
+;*/
+;
+;
+;#include "omf/OMF_Dc_Memory.h"
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Dc_Memory.h",0
+	.line	24
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Load.c",19
+;#include "omf/OMF_Dc_Shared.h"
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Dc_Shared.h",0
+	.line	18
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Load.c",20
+;#include "omf/OMF_Record.h"
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Record.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Record.h",8
+	.stag	omf_body_record,168,93
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.member	length,72,5,8,16
+	.member	record_data,88,129,8,32
+	.member	processed,120,5,8,16
+	.member	next,136,138,8,32,93
+	.eos
+	.stag	subrecord_SuperReloc2,16520,94
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	Count,64,14,8,8
+	.member	ByteCnt,72,14,8,8
+	.member	BitShiftCnt,80,14,8,8
+	.member	nb_address,88,5,8,16
+	.member	OffsetPatch,104,114,8,0,256
+	.member	OffsetReference,8296,114,8,0,256
+	.member	next,16488,138,8,32,94
+	.eos
+	.stag	subrecord_SuperReloc3,16520,95
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	Count,64,14,8,8
+	.member	ByteCnt,72,14,8,8
+	.member	BitShiftCnt,80,14,8,8
+	.member	nb_address,88,5,8,16
+	.member	OffsetPatch,104,114,8,0,256
+	.member	OffsetReference,8296,114,8,0,256
+	.member	next,16488,138,8,32,95
+	.eos
+	.stag	subrecord_SuperInterseg1,20632,96
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	Count,64,14,8,8
+	.member	ByteCnt,72,14,8,8
+	.member	BitShiftCnt,80,14,8,8
+	.member	FileNum,88,5,8,16
+	.member	nb_address,104,5,8,16
+	.member	OffsetPatch,120,114,8,0,256
+	.member	OffsetReference,8312,114,8,0,256
+	.member	SegNum,16504,101,8,0,256
+	.member	next,20600,138,8,32,96
+	.eos
+	.stag	subrecord_SuperInterseg212,20632,97
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	Count,64,14,8,8
+	.member	ByteCnt,72,14,8,8
+	.member	BitShiftCnt,80,14,8,8
+	.member	FileNum,88,5,8,16
+	.member	nb_address,104,5,8,16
+	.member	OffsetPatch,120,114,8,0,256
+	.member	OffsetReference,8312,114,8,0,256
+	.member	SegNum,16504,101,8,0,256
+	.member	next,20600,138,8,32,97
+	.eos
+	.stag	subrecord_SuperInterseg1324,16544,98
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	Count,64,14,8,8
+	.member	ByteCnt,72,14,8,8
+	.member	BitShiftCnt,80,14,8,8
+	.member	SegNum,88,14,8,8
+	.member	FileNum,96,5,8,16
+	.member	nb_address,112,5,8,16
+	.member	OffsetPatch,128,114,8,0,256
+	.member	OffsetReference,8320,114,8,0,256
+	.member	next,16512,138,8,32,98
+	.eos
+	.stag	subrecord_SuperInterseg2536,16544,99
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	Count,64,14,8,8
+	.member	ByteCnt,72,14,8,8
+	.member	BitShiftCnt,80,14,8,8
+	.member	SegNum,88,14,8,8
+	.member	FileNum,96,5,8,16
+	.member	nb_address,112,5,8,16
+	.member	OffsetPatch,128,114,8,0,256
+	.member	OffsetReference,8320,114,8,0,256
+	.member	next,16512,138,8,32,99
+	.eos
+	.stag	record_END,72,100
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.eos
+	.stag	record_CONST,112,101
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.member	ByteCnt,72,14,8,8
+	.member	data,80,142,8,32
+	.eos
+	.stag	record_ALIGN,72,102
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.eos
+	.stag	record_ORG,72,103
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.eos
+	.stag	record_RELOC,152,104
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.member	ByteCnt,72,14,8,8
+	.member	BitShiftCnt,80,14,8,8
+	.member	OffsetPatch,88,18,8,32
+	.member	OffsetReference,120,18,8,32
+	.eos
+	.stag	record_INTERSEG,184,105
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.member	ByteCnt,72,14,8,8
+	.member	BitShiftCnt,80,14,8,8
+	.member	OffsetPatch,88,18,8,32
+	.member	FileNum,120,5,8,16
+	.member	SegNum,136,5,8,16
+	.member	OffsetReference,152,18,8,32
+	.eos
+	.stag	record_USING,72,106
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.eos
+	.stag	record_STRONG,72,107
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.eos
+	.stag	record_GLOBAL,72,108
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.eos
+	.stag	record_GEQU,72,109
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.eos
+	.stag	record_MEM,72,110
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.eos
+	.stag	record_EXPR,72,111
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.eos
+	.stag	record_ZEXPR,72,112
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.eos
+	.stag	record_BEXPR,72,113
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.eos
+	.stag	record_RELEXPR,72,114
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.eos
+	.stag	record_LOCAL,72,115
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.eos
+	.stag	record_EQU,72,116
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.eos
+	.stag	record_DS,104,117
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.member	nb_zero_byte,72,18,8,32
+	.eos
+	.stag	record_LCONST,136,118
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.member	ByteCnt,72,18,8,32
+	.member	data,104,142,8,32
+	.eos
+	.stag	record_LEXPR,72,119
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.eos
+	.stag	record_ENTRY,72,120
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.eos
+	.stag	record_cRELOC,152,121
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.member	ByteCnt,72,14,8,8
+	.member	BitShiftCnt,80,14,8,8
+	.member	OffsetPatch,88,18,8,32
+	.member	OffsetReference,120,18,8,32
+	.eos
+	.stag	record_cINTERSEG,176,122
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.member	ByteCnt,72,14,8,8
+	.member	BitShiftCnt,80,14,8,8
+	.member	OffsetPatch,88,18,8,32
+	.member	FileNum,120,5,8,16
+	.member	SegNum,136,14,8,8
+	.member	OffsetReference,144,18,8,32
+	.eos
+	.stag	record_SUPER,592,123
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.member	ByteCnt,72,18,8,32
+	.member	RecordType,104,14,8,8
+	.member	nb_SuperReloc2,112,5,8,16
+	.member	first_SuperReloc2,128,138,8,32,94
+	.member	last_SuperReloc2,160,138,8,32,94
+	.member	nb_SuperReloc3,192,5,8,16
+	.member	first_SuperReloc3,208,138,8,32,95
+	.member	last_SuperReloc3,240,138,8,32,95
+	.member	nb_SuperInterseg1,272,5,8,16
+	.member	first_SuperInterseg1,288,138,8,32,96
+	.member	last_SuperInterseg1,320,138,8,32,96
+	.member	nb_SuperInterseg212,352,5,8,16
+	.member	first_SuperInterseg212,368,138,8,32,97
+	.member	last_SuperInterseg212,400,138,8,32,97
+	.member	nb_SuperInterseg1324,432,5,8,16
+	.member	first_SuperInterseg1324,448,138,8,32,98
+	.member	last_SuperInterseg1324,480,138,8,32,98
+	.member	nb_SuperInterseg2536,512,5,8,16
+	.member	first_SuperInterseg2536,528,138,8,32,99
+	.member	last_SuperInterseg2536,560,138,8,32,99
+	.eos
+	.stag	record_General,72,124
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.eos
+	.stag	record_Experimental,72,125
+	.member	FileOffset,0,18,8,32
+	.member	SegmentOffset,32,18,8,32
+	.member	operation_code,64,14,8,8
+	.eos
+	.stag	omf_reloc,128,126
+	.member	ByteCnt,0,14,8,8
+	.member	BitShiftCnt,8,14,8,8
+	.member	OffsetPatch,16,18,8,32
+	.member	OffsetReference,48,18,8,32
+	.member	origin,80,5,8,16
+	.member	next,96,138,8,32,126
+	.eos
+	.stag	omf_interseg,160,127
+	.member	ByteCnt,0,14,8,8
+	.member	BitShiftCnt,8,14,8,8
+	.member	OffsetPatch,16,18,8,32
+	.member	OffsetReference,48,18,8,32
+	.member	FileNum,80,5,8,16
+	.member	SegNum,96,5,8,16
+	.member	origin,112,5,8,16
+	.member	next,128,138,8,32,127
+	.eos
+	.line	458
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Load.c",21
 ;
 ;static int DecodeOMFFile(struct omf_file *f);
 ;static struct omf_segment *DecodeOneSegment(struct omf_file *f,int i,int *ii);
@@ -1296,12 +1315,12 @@ LOADER	section	offset $9:B1CE
 ;/***********************************************************/
 ;struct omf_file *LoadOMFFile(char *file_path)
 ;{
-	.line	36
 	.line	37
+	.line	38
 	LOADER
 	xdef	~~LoadOMFFile
 	func
-	.function	37
+	.function	38
 ~~LoadOMFFile:
 	longa	on
 	longi	on
@@ -1312,7 +1331,7 @@ LOADER	section	offset $9:B1CE
 	phd
 	tcd
 file_path_0	set	4
-	.block	37
+	.block	38
 ;  int i, result;
 ;  struct omf_file *current_file;
 ;
@@ -1322,33 +1341,33 @@ result_1	set	2
 current_file_1	set	4
 	.sym	i,0,5,1,16
 	.sym	result,2,5,1,16
-	.sym	current_file,4,138,1,32,122
+	.sym	current_file,4,138,1,32,51
 	.sym	file_path,4,142,6,32
-	.line	41
+	.line	42
 	pea	#^L1
 	pea	#<L1
 	jsl	~~k_debug_string
 ;
 ;  /* Allocation mémoire */
 ;  current_file = (struct omf_file *) k_calloc(1,sizeof(struct omf_file));
-	.line	44
+	.line	45
 	pea	#<$18
 	pea	#<$1
 	jsl	~~k_calloc
 	sta	<L3+current_file_1
 	stx	<L3+current_file_1+2
 ;  if(current_file == NULL)
-	.line	45
+	.line	46
 ;    {
 	lda	<L3+current_file_1
 	ora	<L3+current_file_1+2
 	beq	L5
 	brl	L10001
 L5:
-	.line	46
+	.line	47
 ;      //printf("  Error : Impossible to allocate memory to process OMF file.\n");
 ;      return(NULL);
-	.line	48
+	.line	49
 	lda	#$0
 	tax
 	lda	#$0
@@ -1366,12 +1385,12 @@ L6:
 	tya
 	rtl
 ;    }
-	.line	49
+	.line	50
 ;
 ;  /* Conservation du nom */
 ;  current_file->file_path = k_string_copy_string(file_path);
 L10001:
-	.line	52
+	.line	53
 	pei	<L2+file_path_0+2
 	pei	<L2+file_path_0
 	jsl	~~k_string_copy_string
@@ -1383,7 +1402,7 @@ L10001:
 	ldy	#$2
 	sta	[<L3+current_file_1],Y
 ;  if(current_file->file_path == NULL)
-	.line	53
+	.line	54
 ;    {
 	lda	[<L3+current_file_1]
 	ldy	#$2
@@ -1391,25 +1410,25 @@ L10001:
 	beq	L7
 	brl	L10002
 L7:
-	.line	54
-;      mem_free_omf(current_file);
 	.line	55
+;      mem_free_omf(current_file);
+	.line	56
 	pei	<L3+current_file_1+2
 	pei	<L3+current_file_1
 	jsl	~~mem_free_omf
 ;      //printf("  Error : Impossible to allocate memory to process OMF file.\n");
 ;      return(NULL);
-	.line	57
+	.line	58
 	lda	#$0
 	tax
 	lda	#$0
 	brl	L6
 ;    }
-	.line	58
+	.line	59
 ;
 ;  k_debug_strings("LoadOMFFile current_file->file_path:",current_file->file_path);
 L10002:
-	.line	60
+	.line	61
 	ldy	#$2
 	lda	[<L3+current_file_1],Y
 	pha
@@ -1420,7 +1439,7 @@ L10002:
 	jsl	~~k_debug_strings
 ;
 ;  for(i=(int)strlen(current_file->file_path); i>=0; i--)
-	.line	62
+	.line	63
 	ldy	#$2
 	lda	[<L3+current_file_1],Y
 	pha
@@ -1431,7 +1450,7 @@ L10002:
 	brl	L10006
 L10005:
 ;    if(current_file->file_path[i] == '\\' || current_file->file_path[i] == '/')
-	.line	63
+	.line	64
 ;      {
 	lda	[<L3+current_file_1]
 	sta	<R0
@@ -1464,9 +1483,9 @@ L9:
 	brl	L10007
 L10:
 L8:
-	.line	64
-;        current_file->file_name = &current_file->file_path[i+1];
 	.line	65
+;        current_file->file_name = &current_file->file_path[i+1];
+	.line	66
 	lda	<L3+i_1
 	ina
 	sta	<R0
@@ -1492,10 +1511,10 @@ L11:
 	ldy	#$6
 	sta	[<L3+current_file_1],Y
 ;        break;
-	.line	66
+	.line	67
 	brl	L10004
 ;      }
-	.line	67
+	.line	68
 ;  if(current_file->file_name == NULL)
 L10007:
 L10003:
@@ -1506,7 +1525,7 @@ L10006:
 	brl	L10005
 L12:
 L10004:
-	.line	68
+	.line	69
 ;    current_file->file_name = current_file->file_path;
 	ldy	#$4
 	lda	[<L3+current_file_1],Y
@@ -1515,7 +1534,7 @@ L10004:
 	beq	L13
 	brl	L10008
 L13:
-	.line	69
+	.line	70
 	lda	[<L3+current_file_1]
 	ldy	#$4
 	sta	[<L3+current_file_1],Y
@@ -1527,7 +1546,7 @@ L13:
 ;  /* Chargement des Data du fichier OMF */
 ;  current_file->data = LoadFileData(file_path,&current_file->data_length);
 L10008:
-	.line	72
+	.line	73
 	clc
 	lda	#$8
 	adc	<L3+current_file_1
@@ -1549,7 +1568,7 @@ L10008:
 	ldy	#$c
 	sta	[<L3+current_file_1],Y
 ;  if(current_file->data == NULL)
-	.line	73
+	.line	74
 ;    {
 	ldy	#$a
 	lda	[<L3+current_file_1],Y
@@ -1558,52 +1577,52 @@ L10008:
 	beq	L14
 	brl	L10009
 L14:
-	.line	74
-;      mem_free_omf(current_file);
 	.line	75
+;      mem_free_omf(current_file);
+	.line	76
 	pei	<L3+current_file_1+2
 	pei	<L3+current_file_1
 	jsl	~~mem_free_omf
 ;      //printf("  Error : Impossible to load OMF file '%s'.\n",file_path);
 ;      return(NULL);
-	.line	77
+	.line	78
 	lda	#$0
 	tax
 	lda	#$0
 	brl	L6
 ;    }
-	.line	78
+	.line	79
 ;
 ;  /** Décodage du contenu du fichier OMF **/
 ;  result = DecodeOMFFile(current_file);
 L10009:
-	.line	81
+	.line	82
 	pei	<L3+current_file_1+2
 	pei	<L3+current_file_1
 	jsl	~~DecodeOMFFile
 	sta	<L3+result_1
 ;
 ;  k_debug_string("LoadOMFFile exit... \r\n");
-	.line	83
+	.line	84
 	pea	#^L1+61
 	pea	#<L1+61
 	jsl	~~k_debug_string
 ;
 ;  /* Renvoie la structure */
 ;  return(current_file);
-	.line	86
+	.line	87
 	ldx	<L3+current_file_1+2
 	lda	<L3+current_file_1
 	brl	L6
 ;}
-	.line	87
-	.endblock	87
+	.line	88
+	.endblock	88
 L2	equ	16
 L3	equ	9
 	ends
 	efunc
-	.endfunc	87,9,16
-	.line	87
+	.endfunc	88,9,16
+	.line	88
 	data
 L1:
 	db	$4C,$6F,$61,$64,$4F,$4D,$46,$46,$69,$6C,$65,$20,$65,$6E,$74
@@ -1620,11 +1639,11 @@ L1:
 ;/***************************************************************/
 ;static int DecodeOMFFile(struct omf_file *current_file)
 ;{
-	.line	93
 	.line	94
+	.line	95
 	LOADER
 	func
-	.function	94
+	.function	95
 ~~DecodeOMFFile:
 	longa	on
 	longi	on
@@ -1635,7 +1654,7 @@ L1:
 	phd
 	tcd
 current_file_0	set	4
-	.block	94
+	.block	95
 ;  int file_offset, segment_length;
 ;  struct omf_segment *current_segment;
 ;
@@ -1646,20 +1665,20 @@ segment_length_1	set	2
 current_segment_1	set	4
 	.sym	file_offset,0,5,1,16
 	.sym	segment_length,2,5,1,16
-	.sym	current_segment,4,138,1,32,121
-	.sym	current_file,4,138,6,32,122
-	.line	99
+	.sym	current_segment,4,138,1,32,50
+	.sym	current_file,4,138,6,32,51
+	.line	100
 	stz	<L17+file_offset_1
 ;
 ;  /** On va itérer sur tous les segments **/
 ;  while(1)
-	.line	102
+	.line	103
 L10010:
 ;    {
-	.line	103
+	.line	104
 ;      /** Décode 1 segment **/
 ;      current_segment = DecodeOneSegment(current_file,file_offset,&segment_length);
-	.line	105
+	.line	106
 	pea	#0
 	clc
 	tdc
@@ -1672,17 +1691,17 @@ L10010:
 	sta	<L17+current_segment_1
 	stx	<L17+current_segment_1+2
 ;      if(current_segment == NULL)
-	.line	106
+	.line	107
 ;        {
 	lda	<L17+current_segment_1
 	ora	<L17+current_segment_1+2
 	beq	L19
 	brl	L10012
 L19:
-	.line	107
+	.line	108
 ;          /* Erreur */
 ;          return(1);
-	.line	109
+	.line	110
 	lda	#$1
 L20:
 	tay
@@ -1698,12 +1717,12 @@ L20:
 	tya
 	rtl
 ;        }
-	.line	110
+	.line	111
 ;
 ;      /* Rattache ce segment au fichier OMF */
 ;      if(current_file->first_segment == NULL)
 L10012:
-	.line	113
+	.line	114
 ;        current_file->first_segment = current_segment;
 	ldy	#$10
 	lda	[<L16+current_file_0],Y
@@ -1712,7 +1731,7 @@ L10012:
 	beq	L21
 	brl	L10013
 L21:
-	.line	114
+	.line	115
 	lda	<L17+current_segment_1
 	ldy	#$10
 	sta	[<L16+current_file_0],Y
@@ -1723,7 +1742,7 @@ L21:
 	brl	L10014
 L10013:
 ;        current_file->last_segment->next = current_segment;
-	.line	116
+	.line	117
 	ldy	#$14
 	lda	[<L16+current_file_0],Y
 	sta	<R0
@@ -1738,7 +1757,7 @@ L10013:
 	sta	[<R0],Y
 L10014:
 ;      current_file->last_segment = current_segment;
-	.line	117
+	.line	118
 	lda	<L17+current_segment_1
 	ldy	#$14
 	sta	[<L16+current_file_0],Y
@@ -1746,7 +1765,7 @@ L10014:
 	ldy	#$16
 	sta	[<L16+current_file_0],Y
 ;      current_file->nb_segment++;
-	.line	118
+	.line	119
 	ldy	#$e
 	lda	[<L16+current_file_0],Y
 	ina
@@ -1755,7 +1774,7 @@ L10014:
 ;
 ;      /* Segment suivant */
 ;      file_offset += segment_length;
-	.line	121
+	.line	122
 	clc
 	lda	<L17+file_offset_1
 	adc	<L17+segment_length_1
@@ -1763,7 +1782,7 @@ L10014:
 ;
 ;      /* Fin de fichier */
 ;      if(file_offset == current_file->data_length)
-	.line	124
+	.line	125
 ;        break;
 	lda	<L17+file_offset_1
 	ldy	#$8
@@ -1772,24 +1791,24 @@ L10014:
 	brl	L10011
 L22:
 ;    }
-	.line	126
+	.line	127
 	brl	L10010
 L10011:
 ;
 ;  /* OK */
 ;  return(0);
-	.line	129
+	.line	130
 	lda	#$0
 	brl	L20
 ;}
-	.line	130
-	.endblock	130
+	.line	131
+	.endblock	131
 L16	equ	12
 L17	equ	5
 	ends
 	efunc
-	.endfunc	130,5,12
-	.line	130
+	.endfunc	131,5,12
+	.line	131
 ;
 ;
 ;/****************************************************************/
@@ -1797,11 +1816,11 @@ L17	equ	5
 ;/****************************************************************/
 ;static struct omf_segment *DecodeOneSegment(struct omf_file *current_file, int data_offset, int *segment_length_rtn)
 ;{
-	.line	136
 	.line	137
+	.line	138
 	LOADER
 	func
-	.function	137
+	.function	138
 ~~DecodeOneSegment:
 	longa	on
 	longi	on
@@ -1814,7 +1833,7 @@ L17	equ	5
 current_file_0	set	4
 data_offset_0	set	8
 segment_length_rtn_0	set	10
-	.block	137
+	.block	138
 ;  int result;
 ;  struct omf_segment *current_segment;
 ;
@@ -1823,28 +1842,28 @@ segment_length_rtn_0	set	10
 result_1	set	0
 current_segment_1	set	2
 	.sym	result,0,5,1,16
-	.sym	current_segment,2,138,1,32,121
-	.sym	current_file,4,138,6,32,122
+	.sym	current_segment,2,138,1,32,50
+	.sym	current_file,4,138,6,32,51
 	.sym	data_offset,8,5,6,16
 	.sym	segment_length_rtn,10,133,6,32
-	.line	142
+	.line	143
 	pea	#<$a65
 	pea	#<$1
 	jsl	~~k_calloc
 	sta	<L24+current_segment_1
 	stx	<L24+current_segment_1+2
 ;  if(current_segment == NULL)
-	.line	143
+	.line	144
 ;    {
 	lda	<L24+current_segment_1
 	ora	<L24+current_segment_1+2
 	beq	L26
 	brl	L10015
 L26:
-	.line	144
+	.line	145
 ;      //printf("  Error : Impossible to allocate memory to process Segment #%d.\n",current_file->nb_segment+1);
 ;      return(NULL);
-	.line	146
+	.line	147
 	lda	#$0
 	tax
 	lda	#$0
@@ -1862,12 +1881,12 @@ L27:
 	tya
 	rtl
 ;    }
-	.line	147
+	.line	148
 ;
 ;  /** Décodage du Segment Header **/
 ;  result = DecodeSegmentHeader(current_file,data_offset,&current_segment->header);
 L10015:
-	.line	150
+	.line	151
 	pei	<L24+current_segment_1+2
 	pei	<L24+current_segment_1
 	pei	<L23+data_offset_0
@@ -1876,29 +1895,29 @@ L10015:
 	jsl	~~DecodeSegmentHeader
 	sta	<L24+result_1
 ;  if(result)
-	.line	151
+	.line	152
 ;    {
 	lda	<L24+result_1
 	bne	L28
 	brl	L10016
 L28:
-	.line	152
-;      mem_free_segment(current_segment);
 	.line	153
+;      mem_free_segment(current_segment);
+	.line	154
 	pei	<L24+current_segment_1+2
 	pei	<L24+current_segment_1
 	jsl	~~mem_free_segment
 ;      return(NULL);
-	.line	154
+	.line	155
 	lda	#$0
 	tax
 	lda	#$0
 	brl	L27
 ;    }
-	.line	155
+	.line	156
 ;  current_segment->header.FileOffset = data_offset;
 L10016:
-	.line	156
+	.line	157
 	ldy	#$0
 	lda	<L23+data_offset_0
 	bpl	L29
@@ -1912,7 +1931,7 @@ L29:
 	ldy	#$2
 	sta	[<L24+current_segment_1],Y
 ;  current_segment->header.SegmentOffset = 0;
-	.line	157
+	.line	158
 	lda	#$0
 	ldy	#$4
 	sta	[<L24+current_segment_1],Y
@@ -1922,7 +1941,7 @@ L29:
 ;
 ;  /** Décodage du Segment Body **/
 ;  result = DecodeSegmentBody(current_file,data_offset+current_segment->header.DispDataOffset,current_segment);
-	.line	160
+	.line	161
 	pei	<L24+current_segment_1+2
 	pei	<L24+current_segment_1
 	clc
@@ -1935,48 +1954,48 @@ L29:
 	jsl	~~DecodeSegmentBody
 	sta	<L24+result_1
 ;  if(result)
-	.line	161
+	.line	162
 ;    {
 	lda	<L24+result_1
 	bne	L30
 	brl	L10017
 L30:
-	.line	162
-;      mem_free_segment(current_segment);
 	.line	163
+;      mem_free_segment(current_segment);
+	.line	164
 	pei	<L24+current_segment_1+2
 	pei	<L24+current_segment_1
 	jsl	~~mem_free_segment
 ;      return(NULL);
-	.line	164
+	.line	165
 	lda	#$0
 	tax
 	lda	#$0
 	brl	L27
 ;    }
-	.line	165
+	.line	166
 ;
 ;  /* Renvoie le segment */
 ;  *segment_length_rtn = (int) current_segment->header.ByteCnt;
 L10017:
-	.line	168
+	.line	169
 	ldy	#$c
 	lda	[<L24+current_segment_1],Y
 	sta	[<L23+segment_length_rtn_0]
 ;  return(current_segment);
-	.line	169
+	.line	170
 	ldx	<L24+current_segment_1+2
 	lda	<L24+current_segment_1
 	brl	L27
 ;}
-	.line	170
-	.endblock	170
+	.line	171
+	.endblock	171
 L23	equ	10
 L24	equ	5
 	ends
 	efunc
-	.endfunc	170,5,10
-	.line	170
+	.endfunc	171,5,10
+	.line	171
 ;
 ;
 ;/**********************************************************/
@@ -1984,11 +2003,11 @@ L24	equ	5
 ;/**********************************************************/
 ;static int DecodeSegmentHeader(struct omf_file *current_file, int data_offset, struct omf_segment_header *current_header)
 ;{
-	.line	176
 	.line	177
+	.line	178
 	LOADER
 	func
-	.function	177
+	.function	178
 ~~DecodeSegmentHeader:
 	longa	on
 	longi	on
@@ -2001,17 +2020,17 @@ L24	equ	5
 current_file_0	set	4
 data_offset_0	set	8
 current_header_0	set	10
-	.block	177
+	.block	178
 ;  int error;
 ;
 ;  /* Vérifie la taille */
 ;  if(data_offset + SEGMENT_HEADER_VERSION_OFFSET > current_file->data_length)
 error_1	set	0
 	.sym	error,0,5,1,16
-	.sym	current_file,4,138,6,32,122
+	.sym	current_file,4,138,6,32,51
 	.sym	data_offset,8,5,6,16
-	.sym	current_header,10,138,6,32,120
-	.line	181
+	.sym	current_header,10,138,6,32,49
+	.line	182
 ;    {
 	clc
 	lda	#$f
@@ -2027,10 +2046,10 @@ L34:
 	bpl	L35
 	brl	L10018
 L35:
-	.line	182
+	.line	183
 ;      //printf("  Error : Not enough data to encode a Segment Header (offset=%d, Segment #%d).\n",data_offset,current_file->nb_segment+1);
 ;      return(1);
-	.line	184
+	.line	185
 	lda	#$1
 L36:
 	tay
@@ -2046,12 +2065,12 @@ L36:
 	tya
 	rtl
 ;    }
-	.line	185
+	.line	186
 ;
 ;  /**  On va déterminer la version de l'OMF utilisé  **/
 ;  memcpy(&current_header->Version,&current_file->data[data_offset+SEGMENT_HEADER_VERSION_OFFSET],sizeof(BYTE));
 L10018:
-	.line	188
+	.line	189
 	pea	#<$1
 	clc
 	lda	#$f
@@ -2088,7 +2107,7 @@ L37:
 ;
 ;  /** On décode selon le type **/
 ;  if(current_header->Version == 0x00)
-	.line	191
+	.line	192
 ;    error = DecodeSegmentHeaderV0(current_file,data_offset,current_header);
 	ldy	#$1c
 	lda	[<L31+current_header_0],Y
@@ -2096,7 +2115,7 @@ L37:
 	beq	L38
 	brl	L10019
 L38:
-	.line	192
+	.line	193
 	pei	<L31+current_header_0+2
 	pei	<L31+current_header_0
 	pei	<L31+data_offset_0
@@ -2107,7 +2126,7 @@ L38:
 ;  else if(current_header->Version == 0x01)
 	brl	L10020
 L10019:
-	.line	193
+	.line	194
 ;    error = DecodeSegmentHeaderV1(current_file,data_offset,current_header);
 	sep	#$20
 	longa	off
@@ -2119,7 +2138,7 @@ L10019:
 	beq	L39
 	brl	L10021
 L39:
-	.line	194
+	.line	195
 	pei	<L31+current_header_0+2
 	pei	<L31+current_header_0
 	pei	<L31+data_offset_0
@@ -2130,7 +2149,7 @@ L39:
 ;  else if(current_header->Version == 0x02)
 	brl	L10022
 L10021:
-	.line	195
+	.line	196
 ;    error = DecodeSegmentHeaderV2(current_file,data_offset,current_header);
 	sep	#$20
 	longa	off
@@ -2142,7 +2161,7 @@ L10021:
 	beq	L40
 	brl	L10023
 L40:
-	.line	196
+	.line	197
 	pei	<L31+current_header_0+2
 	pei	<L31+current_header_0
 	pei	<L31+data_offset_0
@@ -2154,32 +2173,32 @@ L40:
 	brl	L10024
 L10023:
 ;    {
-	.line	198
+	.line	199
 ;      //printf("  Segment #%d Header Error : Invalid 'Version' value (the value should be 0, 1 or 2 for the Apple IIgs).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	200
+	.line	201
 	lda	#$1
 	brl	L36
 ;    }
-	.line	201
+	.line	202
 L10024:
 L10022:
 L10020:
 ;
 ;  /* Code d'erreur */
 ;  return(error);
-	.line	204
+	.line	205
 	lda	<L32+error_1
 	brl	L36
 ;}
-	.line	205
-	.endblock	205
+	.line	206
+	.endblock	206
 L31	equ	10
 L32	equ	9
 	ends
 	efunc
-	.endfunc	205,9,10
-	.line	205
+	.endfunc	206,9,10
+	.line	206
 ;
 ;
 ;/************************************************************/
@@ -2187,11 +2206,11 @@ L32	equ	9
 ;/************************************************************/
 ;static int DecodeSegmentHeaderV0(struct omf_file *current_file, int data_offset, struct omf_segment_header *current_header)
 ;{
-	.line	211
 	.line	212
+	.line	213
 	LOADER
 	func
-	.function	212
+	.function	213
 ~~DecodeSegmentHeaderV0:
 	longa	on
 	longi	on
@@ -2204,13 +2223,13 @@ L32	equ	9
 current_file_0	set	4
 data_offset_0	set	8
 current_header_0	set	10
-	.block	212
+	.block	213
 ;  /* Vérifie la taille */
 ;  if(data_offset + SEGMENT_HEADER_SIZE_V0 > current_file->data_length)
-	.sym	current_file,4,138,6,32,122
+	.sym	current_file,4,138,6,32,51
 	.sym	data_offset,8,5,6,16
-	.sym	current_header,10,138,6,32,120
-	.line	214
+	.sym	current_header,10,138,6,32,49
+	.line	215
 ;    {
 	clc
 	lda	#$2e
@@ -2226,10 +2245,10 @@ L44:
 	bpl	L45
 	brl	L10025
 L45:
-	.line	215
+	.line	216
 ;      //printf("  Error : Not enough data to encode a Segment Header (offset=%d, Segment #%d).\n",data_offset,current_file->nb_segment+1);
 ;      return(1);
-	.line	217
+	.line	218
 	lda	#$1
 L46:
 	tay
@@ -2245,14 +2264,14 @@ L46:
 	tya
 	rtl
 ;    }
-	.line	218
+	.line	219
 ;
 ;  /*******************************************************/
 ;  /**  On va décoder tous les éléments fixes du Header  **/
 ;  /*******************************************************/
 ;  memcpy(&current_header->BlockCnt,&current_file->data[data_offset+0x00],sizeof(DWORD));     /* Block Count * 512 = ByteCount */
 L10025:
-	.line	223
+	.line	224
 	pea	#<$4
 	ldy	#$0
 	lda	<L41+data_offset_0
@@ -2283,7 +2302,7 @@ L47:
 	pei	<R0
 	jsl	~~memcpy
 ;  current_header->ByteCnt = 512*current_header->BlockCnt;
-	.line	224
+	.line	225
 	ldy	#$a
 	lda	[<L41+current_header_0],Y
 	pha
@@ -2302,7 +2321,7 @@ L47:
 	ldy	#$e
 	sta	[<L41+current_header_0],Y
 ;  memcpy(&current_header->ResSpc,&current_file->data[data_offset+0x04],sizeof(DWORD));
-	.line	225
+	.line	226
 	pea	#<$4
 	clc
 	lda	#$4
@@ -2337,7 +2356,7 @@ L48:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->Length,&current_file->data[data_offset+0x08],sizeof(DWORD));
-	.line	226
+	.line	227
 	pea	#<$4
 	clc
 	lda	#$8
@@ -2372,7 +2391,7 @@ L49:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->Type,&current_file->data[data_offset+0x0C],sizeof(BYTE));
-	.line	227
+	.line	228
 	pea	#<$1
 	clc
 	lda	#$c
@@ -2407,7 +2426,7 @@ L50:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->LabLen,&current_file->data[data_offset+0x0D],sizeof(BYTE));
-	.line	228
+	.line	229
 	pea	#<$1
 	clc
 	lda	#$d
@@ -2442,7 +2461,7 @@ L51:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->NumLen,&current_file->data[data_offset+0x0E],sizeof(BYTE));
-	.line	229
+	.line	230
 	pea	#<$1
 	clc
 	lda	#$e
@@ -2478,7 +2497,7 @@ L52:
 	jsl	~~memcpy
 ;  /* Version Byte */
 ;  memcpy(&current_header->BankSize,&current_file->data[data_offset+0x10],sizeof(DWORD));
-	.line	231
+	.line	232
 	pea	#<$4
 	clc
 	lda	#$10
@@ -2513,7 +2532,7 @@ L53:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->Org,&current_file->data[data_offset+0x14],sizeof(DWORD));
-	.line	232
+	.line	233
 	pea	#<$4
 	clc
 	lda	#$14
@@ -2548,7 +2567,7 @@ L54:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->Align,&current_file->data[data_offset+0x18],sizeof(DWORD));
-	.line	233
+	.line	234
 	pea	#<$4
 	clc
 	lda	#$18
@@ -2583,7 +2602,7 @@ L55:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->NumSEx,&current_file->data[data_offset+0x1C],sizeof(BYTE));
-	.line	234
+	.line	235
 	pea	#<$1
 	clc
 	lda	#$1c
@@ -2618,7 +2637,7 @@ L56:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->undefine_1,&current_file->data[data_offset+0x1D],sizeof(BYTE));
-	.line	235
+	.line	236
 	pea	#<$1
 	clc
 	lda	#$1d
@@ -2653,7 +2672,7 @@ L57:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->undefine_2,&current_file->data[data_offset+0x1E],sizeof(BYTE));
-	.line	236
+	.line	237
 	pea	#<$1
 	clc
 	lda	#$1e
@@ -2688,7 +2707,7 @@ L58:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->undefine_3,&current_file->data[data_offset+0x1F],sizeof(BYTE));
-	.line	237
+	.line	238
 	pea	#<$1
 	clc
 	lda	#$1f
@@ -2723,7 +2742,7 @@ L59:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->undefine_4,&current_file->data[data_offset+0x20],sizeof(BYTE));
-	.line	238
+	.line	239
 	pea	#<$1
 	clc
 	lda	#$20
@@ -2758,7 +2777,7 @@ L60:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->undefine_5,&current_file->data[data_offset+0x21],sizeof(BYTE));
-	.line	239
+	.line	240
 	pea	#<$1
 	clc
 	lda	#$21
@@ -2793,7 +2812,7 @@ L61:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->undefine_6,&current_file->data[data_offset+0x22],sizeof(BYTE));
-	.line	240
+	.line	241
 	pea	#<$1
 	clc
 	lda	#$22
@@ -2828,7 +2847,7 @@ L62:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->undefine_7,&current_file->data[data_offset+0x23],sizeof(BYTE));
-	.line	241
+	.line	242
 	pea	#<$1
 	clc
 	lda	#$23
@@ -2868,7 +2887,7 @@ L63:
 ;  /********************************************/
 ;  /* Taille du Segment */
 ;  if((int)(data_offset + current_header->ByteCnt) > (int) current_file->data_length)
-	.line	247
+	.line	248
 ;    {
 	ldy	#$0
 	lda	<L41+data_offset_0
@@ -2896,17 +2915,17 @@ L65:
 	bpl	L66
 	brl	L10026
 L66:
-	.line	248
+	.line	249
 ;      //printf("  Segment #%d Header Error : Invalid 'BlockCnt' value (the segment size can't be larger than the OMF file).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	250
+	.line	251
 	lda	#$1
 	brl	L46
 ;    }
-	.line	251
+	.line	252
 ;  if(current_header->ByteCnt < SEGMENT_HEADER_SIZE_V1)
 L10026:
-	.line	252
+	.line	253
 ;    {
 	ldy	#$c
 	lda	[<L41+current_header_0],Y
@@ -2917,19 +2936,19 @@ L10026:
 	bcc	L67
 	brl	L10027
 L67:
-	.line	253
+	.line	254
 ;      //printf("  Segment #%d Header Error : Invalid 'BlockCnt' value (the segment size can't be smaller than the Sgement Header size).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	255
+	.line	256
 	lda	#$1
 	brl	L46
 ;    }
-	.line	256
+	.line	257
 ;
 ;  /* Nombre de 0x00 à ajouter à la fin */
 ;  if(current_header->ResSpc >= 0x010000)
 L10027:
-	.line	259
+	.line	260
 ;    {
 	ldy	#$10
 	lda	[<L41+current_header_0],Y
@@ -2940,19 +2959,19 @@ L10027:
 	bcs	L68
 	brl	L10028
 L68:
-	.line	260
+	.line	261
 ;      //printf("  Segment #%d Header Error : Invalid 'ResSpc' value (the size can't be larger than 64 KB).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	262
+	.line	263
 	lda	#$1
 	brl	L46
 ;    }
-	.line	263
+	.line	264
 ;
 ;  /* La taille d'un Segment en mémoire ne peut pas dépasser 64 KB */
 ;  if(current_header->Length >= 0x010000)
 L10028:
-	.line	266
+	.line	267
 ;    //printf("  Segment #%d Header Warning : Weird 'Length' value (the segment size is usually < 64 KB).\n",current_file->nb_segment+1);
 ;
 ;  /* Type */
@@ -2966,7 +2985,7 @@ L10028:
 	bcs	L69
 	brl	L10029
 L69:
-	.line	270
+	.line	271
 ;     (current_header->Type & 0x1F) != 0x04 && (current_header->Type & 0x1F) != 0x08 && (current_header->Type & 0x1F) != 0x10 &&
 ;     (current_header->Type & 0x1F) != 0x11 && (current_header->Type & 0x1F) != 0x12)
 ;    {
@@ -3043,20 +3062,20 @@ L76:
 	bne	L77
 	brl	L10030
 L77:
-	.line	273
+	.line	274
 ;      //printf("  Segment #%d Header Error : Invalid 'Type' value (possible values are $0,$1,$2,$4,$8,$10,$11 or $12).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	275
+	.line	276
 	lda	#$1
 	brl	L46
 ;    }
-	.line	276
+	.line	277
 ;
 ;  /* LabLen : 0 ou 10 */
 ;  if(current_header->LabLen != 0x00 && current_header->LabLen != 0x0A)
 L10030:
 L10029:
-	.line	279
+	.line	280
 ;    {
 	ldy	#$1a
 	lda	[<L41+current_header_0],Y
@@ -3074,19 +3093,19 @@ L78:
 	bne	L79
 	brl	L10031
 L79:
-	.line	280
+	.line	281
 ;      //printf("  Segment #%d Header Error : Invalid 'LabLen' value (the value should be 0 or 10 for the Apple IIgs).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	282
+	.line	283
 	lda	#$1
 	brl	L46
 ;    }
-	.line	283
+	.line	284
 ;
 ;  /* Num Len : Tjs à 4 pour le IIgs */
 ;  if(current_header->NumLen != 0x04)
 L10031:
-	.line	286
+	.line	287
 ;    {
 	sep	#$20
 	longa	off
@@ -3098,19 +3117,19 @@ L10031:
 	bne	L80
 	brl	L10032
 L80:
-	.line	287
+	.line	288
 ;      //printf("  Segment #%d Header Error : Invalid 'NumLen' value (the value should be 4 for the Apple IIgs).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	289
+	.line	290
 	lda	#$1
 	brl	L46
 ;    }
-	.line	290
+	.line	291
 ;
 ;  /* BankSize : <= 64 KB */
 ;  if(current_header->BankSize > 0x010000)
 L10032:
-	.line	293
+	.line	294
 ;    {
 	lda	#$0
 	ldy	#$1d
@@ -3121,19 +3140,19 @@ L10032:
 	bcc	L81
 	brl	L10033
 L81:
-	.line	294
+	.line	295
 ;      //printf("  Segment #%d Header Error : Invalid 'BankSize' value (the value can't be larger than 64 KB).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	296
+	.line	297
 	lda	#$1
 	brl	L46
 ;    }
-	.line	297
+	.line	298
 ;
 ;  /* Org : < 64 KB */
 ;  if(current_header->Org >= 0x010000)
 L10033:
-	.line	300
+	.line	301
 ;    //printf("  Segment #%d Header Warning : Unusual 'Org' value (the value in usually < 64 KB).\n",current_file->nb_segment+1);
 ;
 ;  /* Align : 0, 0x0100 ou 0x010000 */
@@ -3147,7 +3166,7 @@ L10033:
 	bcs	L82
 	brl	L10034
 L82:
-	.line	304
+	.line	305
 ;    {
 	ldy	#$29
 	lda	[<L41+current_header_0],Y
@@ -3178,20 +3197,20 @@ L86:
 	bne	L87
 	brl	L10035
 L87:
-	.line	305
+	.line	306
 ;      //printf("  Segment #%d Header Error : Invalid 'Align' value (the value should be 0, 256 or 64KB or for the Apple IIgs).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	307
+	.line	308
 	lda	#$1
 	brl	L46
 ;    }
-	.line	308
+	.line	309
 ;
 ;  /* NumSEx : Tjs à 0 */
 ;  if(current_header->NumSEx != 0x00)
 L10035:
 L10034:
-	.line	311
+	.line	312
 ;    {
 	ldy	#$2d
 	lda	[<L41+current_header_0],Y
@@ -3199,19 +3218,19 @@ L10034:
 	bne	L88
 	brl	L10036
 L88:
-	.line	312
+	.line	313
 ;      //printf("  Segment #%d Header Error : Invalid 'NumSEx' value (the value should be 0 for the Apple IIgs).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	314
+	.line	315
 	lda	#$1
 	brl	L46
 ;    }
-	.line	315
+	.line	316
 ;
 ;  /* Noms */
 ;  memcpy(current_header->SegName,&current_file->data[data_offset+0x24],current_header->LabLen);
 L10036:
-	.line	318
+	.line	319
 	ldy	#$1a
 	lda	[<L41+current_header_0],Y
 	and	#$ff
@@ -3251,18 +3270,18 @@ L89:
 ;
 ;  /* OK */
 ;  return(0);
-	.line	321
+	.line	322
 	lda	#$0
 	brl	L46
 ;}
-	.line	322
-	.endblock	322
+	.line	323
+	.endblock	323
 L41	equ	8
 L42	equ	9
 	ends
 	efunc
-	.endfunc	322,9,8
-	.line	322
+	.endfunc	323,9,8
+	.line	323
 ;
 ;
 ;/************************************************************/
@@ -3270,11 +3289,11 @@ L42	equ	9
 ;/************************************************************/
 ;static int DecodeSegmentHeaderV1(struct omf_file *current_file, int data_offset, struct omf_segment_header *current_header)
 ;{
-	.line	328
 	.line	329
+	.line	330
 	LOADER
 	func
-	.function	329
+	.function	330
 ~~DecodeSegmentHeaderV1:
 	longa	on
 	longi	on
@@ -3287,17 +3306,17 @@ L42	equ	9
 current_file_0	set	4
 data_offset_0	set	8
 current_header_0	set	10
-	.block	329
+	.block	330
 ;  int length;
 ;
 ;  /* Vérifie la taille */
 ;  if(data_offset + SEGMENT_HEADER_SIZE_V1 > current_file->data_length)
 length_1	set	0
 	.sym	length,0,5,1,16
-	.sym	current_file,4,138,6,32,122
+	.sym	current_file,4,138,6,32,51
 	.sym	data_offset,8,5,6,16
-	.sym	current_header,10,138,6,32,120
-	.line	333
+	.sym	current_header,10,138,6,32,49
+	.line	334
 ;    {
 	clc
 	lda	#$40
@@ -3313,10 +3332,10 @@ L93:
 	bpl	L94
 	brl	L10037
 L94:
-	.line	334
+	.line	335
 ;      //printf("  Error : Not enough data to encode a Segment Header (offset=%d, Segment #%d).\n",data_offset,current_file->nb_segment+1);
 ;      return(1);
-	.line	336
+	.line	337
 	lda	#$1
 L95:
 	tay
@@ -3332,14 +3351,14 @@ L95:
 	tya
 	rtl
 ;    }
-	.line	337
+	.line	338
 ;
 ;  /*******************************************************/
 ;  /**  On va décoder tous les éléments fixes du Header  **/
 ;  /*******************************************************/
 ;  memcpy(&current_header->BlockCnt,&current_file->data[data_offset+0x00],sizeof(DWORD));     /* Block Count * 512 = ByteCount */
 L10037:
-	.line	342
+	.line	343
 	pea	#<$4
 	ldy	#$0
 	lda	<L90+data_offset_0
@@ -3370,7 +3389,7 @@ L96:
 	pei	<R0
 	jsl	~~memcpy
 ;  current_header->ByteCnt = 512*current_header->BlockCnt;
-	.line	343
+	.line	344
 	ldy	#$a
 	lda	[<L90+current_header_0],Y
 	pha
@@ -3389,7 +3408,7 @@ L96:
 	ldy	#$e
 	sta	[<L90+current_header_0],Y
 ;  memcpy(&current_header->ResSpc,&current_file->data[data_offset+0x04],sizeof(DWORD));
-	.line	344
+	.line	345
 	pea	#<$4
 	clc
 	lda	#$4
@@ -3424,7 +3443,7 @@ L97:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->Length,&current_file->data[data_offset+0x08],sizeof(DWORD));
-	.line	345
+	.line	346
 	pea	#<$4
 	clc
 	lda	#$8
@@ -3459,7 +3478,7 @@ L98:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->Type,&current_file->data[data_offset+0x0C],sizeof(BYTE));
-	.line	346
+	.line	347
 	pea	#<$1
 	clc
 	lda	#$c
@@ -3494,7 +3513,7 @@ L99:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->LabLen,&current_file->data[data_offset+0x0D],sizeof(BYTE));
-	.line	347
+	.line	348
 	pea	#<$1
 	clc
 	lda	#$d
@@ -3529,7 +3548,7 @@ L100:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->NumLen,&current_file->data[data_offset+0x0E],sizeof(BYTE));
-	.line	348
+	.line	349
 	pea	#<$1
 	clc
 	lda	#$e
@@ -3565,7 +3584,7 @@ L101:
 	jsl	~~memcpy
 ;  /* Version Byte */
 ;  memcpy(&current_header->BankSize,&current_file->data[data_offset+0x10],sizeof(DWORD));
-	.line	350
+	.line	351
 	pea	#<$4
 	clc
 	lda	#$10
@@ -3600,7 +3619,7 @@ L102:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->undefine_1,&current_file->data[data_offset+0x14],sizeof(BYTE));
-	.line	351
+	.line	352
 	pea	#<$1
 	clc
 	lda	#$14
@@ -3635,7 +3654,7 @@ L103:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->undefine_2,&current_file->data[data_offset+0x15],sizeof(BYTE));
-	.line	352
+	.line	353
 	pea	#<$1
 	clc
 	lda	#$15
@@ -3670,7 +3689,7 @@ L104:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->undefine_3,&current_file->data[data_offset+0x16],sizeof(BYTE));
-	.line	353
+	.line	354
 	pea	#<$1
 	clc
 	lda	#$16
@@ -3705,7 +3724,7 @@ L105:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->undefine_4,&current_file->data[data_offset+0x17],sizeof(BYTE));
-	.line	354
+	.line	355
 	pea	#<$1
 	clc
 	lda	#$17
@@ -3740,7 +3759,7 @@ L106:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->Org,&current_file->data[data_offset+0x18],sizeof(DWORD));
-	.line	355
+	.line	356
 	pea	#<$4
 	clc
 	lda	#$18
@@ -3775,7 +3794,7 @@ L107:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->Align,&current_file->data[data_offset+0x1C],sizeof(DWORD));
-	.line	356
+	.line	357
 	pea	#<$4
 	clc
 	lda	#$1c
@@ -3810,7 +3829,7 @@ L108:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->NumSEx,&current_file->data[data_offset+0x20],sizeof(BYTE));
-	.line	357
+	.line	358
 	pea	#<$1
 	clc
 	lda	#$20
@@ -3845,7 +3864,7 @@ L109:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->LCBank,&current_file->data[data_offset+0x21],sizeof(BYTE));               /* Language Card */
-	.line	358
+	.line	359
 	pea	#<$1
 	clc
 	lda	#$21
@@ -3880,7 +3899,7 @@ L110:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->SegNum,&current_file->data[data_offset+0x22],sizeof(WORD));
-	.line	359
+	.line	360
 	pea	#<$2
 	clc
 	lda	#$22
@@ -3915,7 +3934,7 @@ L111:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->EntryPointOffset,&current_file->data[data_offset+0x24],sizeof(DWORD));
-	.line	360
+	.line	361
 	pea	#<$4
 	clc
 	lda	#$24
@@ -3950,7 +3969,7 @@ L112:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->DispNameOffset,&current_file->data[data_offset+0x28],sizeof(WORD));       /* Load Name Offset */
-	.line	361
+	.line	362
 	pea	#<$2
 	clc
 	lda	#$28
@@ -3985,7 +4004,7 @@ L113:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->DispDataOffset,&current_file->data[data_offset+0x2A],sizeof(WORD));       /* Segment Name Offset */
-	.line	362
+	.line	363
 	pea	#<$2
 	clc
 	lda	#$2a
@@ -4025,7 +4044,7 @@ L114:
 ;  /********************************************/
 ;  /* Taille du Segment */
 ;  if((int)(data_offset + current_header->ByteCnt) > (int) current_file->data_length)
-	.line	368
+	.line	369
 ;    {
 	ldy	#$0
 	lda	<L90+data_offset_0
@@ -4053,17 +4072,17 @@ L116:
 	bpl	L117
 	brl	L10038
 L117:
-	.line	369
+	.line	370
 ;      //printf("  Segment #%d Header Error : Invalid 'BlockCnt' value (the segment size can't be larger than the OMF file).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	371
+	.line	372
 	lda	#$1
 	brl	L95
 ;    }
-	.line	372
+	.line	373
 ;  if(current_header->ByteCnt < SEGMENT_HEADER_SIZE_V1)
 L10038:
-	.line	373
+	.line	374
 ;    {
 	ldy	#$c
 	lda	[<L90+current_header_0],Y
@@ -4074,19 +4093,19 @@ L10038:
 	bcc	L118
 	brl	L10039
 L118:
-	.line	374
+	.line	375
 ;      //printf("  Segment #%d Header Error : Invalid 'BlockCnt' value (the segment size can't be smaller than the Sgement Header size).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	376
+	.line	377
 	lda	#$1
 	brl	L95
 ;    }
-	.line	377
+	.line	378
 ;
 ;  /* Nombre de 0x00 à ajouter à la fin */
 ;  if(current_header->ResSpc >= 0x010000)
 L10039:
-	.line	380
+	.line	381
 ;    {
 	ldy	#$10
 	lda	[<L90+current_header_0],Y
@@ -4097,19 +4116,19 @@ L10039:
 	bcs	L119
 	brl	L10040
 L119:
-	.line	381
+	.line	382
 ;      //printf("  Segment #%d Header Error : Invalid 'ResSpc' value (the size can't be larger than 64 KB).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	383
+	.line	384
 	lda	#$1
 	brl	L95
 ;    }
-	.line	384
+	.line	385
 ;
 ;  /* La taille d'un Segment en mémoire ne peut pas dépasser 64 KB */
 ;  if(current_header->Length >= 0x010000)
 L10040:
-	.line	387
+	.line	388
 ;    //printf("  Segment #%d Header Warning : Weird 'Length' value (the segment size is usually < 64 KB).\n",current_file->nb_segment+1);
 ;
 ;  /* Type */
@@ -4123,7 +4142,7 @@ L10040:
 	bcs	L120
 	brl	L10041
 L120:
-	.line	391
+	.line	392
 ;     (current_header->Type & 0x1F) != 0x04 && (current_header->Type & 0x1F) != 0x08 && (current_header->Type & 0x1F) != 0x10 &&
 ;     (current_header->Type & 0x1F) != 0x11 && (current_header->Type & 0x1F) != 0x12)
 ;    {
@@ -4200,20 +4219,20 @@ L127:
 	bne	L128
 	brl	L10042
 L128:
-	.line	394
+	.line	395
 ;      //printf("  Segment #%d Header Error : Invalid 'Type' value (possible values are $0,$1,$2,$4,$8,$10,$11 or $12).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	396
+	.line	397
 	lda	#$1
 	brl	L95
 ;    }
-	.line	397
+	.line	398
 ;
 ;  /* LabLen : 0 ou 10 */
 ;  if(current_header->LabLen != 0x00 && current_header->LabLen != 0x0A)
 L10042:
 L10041:
-	.line	400
+	.line	401
 ;    {
 	ldy	#$1a
 	lda	[<L90+current_header_0],Y
@@ -4231,19 +4250,19 @@ L129:
 	bne	L130
 	brl	L10043
 L130:
-	.line	401
+	.line	402
 ;      //printf("  Segment #%d Header Error : Invalid 'LabLen' value (the value should be 0 or 10 for the Apple IIgs).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	403
+	.line	404
 	lda	#$1
 	brl	L95
 ;    }
-	.line	404
+	.line	405
 ;
 ;  /* Num Len : Tjs à 4 pour le IIgs */
 ;  if(current_header->NumLen != 0x04)
 L10043:
-	.line	407
+	.line	408
 ;    {
 	sep	#$20
 	longa	off
@@ -4255,19 +4274,19 @@ L10043:
 	bne	L131
 	brl	L10044
 L131:
-	.line	408
+	.line	409
 ;      //printf("  Segment #%d Header Error : Invalid 'NumLen' value (the value should be 4 for the Apple IIgs).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	410
+	.line	411
 	lda	#$1
 	brl	L95
 ;    }
-	.line	411
+	.line	412
 ;
 ;  /* BankSize : <= 64 KB */
 ;  if(current_header->BankSize > 0x010000)
 L10044:
-	.line	414
+	.line	415
 ;    {
 	lda	#$0
 	ldy	#$1d
@@ -4278,19 +4297,19 @@ L10044:
 	bcc	L132
 	brl	L10045
 L132:
-	.line	415
+	.line	416
 ;      //printf("  Segment #%d Header Error : Invalid 'BankSize' value (the value can't be larger than 64 KB).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	417
+	.line	418
 	lda	#$1
 	brl	L95
 ;    }
-	.line	418
+	.line	419
 ;
 ;  /* Org : < 64 KB */
 ;  if(current_header->Org >= 0x010000)
 L10045:
-	.line	421
+	.line	422
 ;    //printf("  Segment #%d Header Warning : Unusual 'Org' value (the value is usually < 64 KB) and it is set to 0x%X.\n",current_file->nb_segment+1,current_header->Org);
 ;
 ;  /* Align : 0, 0x0100 ou 0x010000 (0x200 avec GsBasic) */
@@ -4304,7 +4323,7 @@ L10045:
 	bcs	L133
 	brl	L10046
 L133:
-	.line	425
+	.line	426
 ;    //printf("  Segment #%d Header Warning : Unusual 'Align' value (the value should be 0, 256 or 64KB or for the Apple IIgs) and it is set to 0x%X.\n",current_file->nb_segment+1,current_header->Align);
 ;
 ;  /* NumSEx : Tjs à 0 */
@@ -4338,7 +4357,7 @@ L137:
 	bne	L138
 	brl	L10047
 L138:
-	.line	429
+	.line	430
 ;    {
 	ldy	#$2d
 	lda	[<L90+current_header_0],Y
@@ -4346,21 +4365,21 @@ L138:
 	bne	L139
 	brl	L10048
 L139:
-	.line	430
+	.line	431
 ;      //printf("  Segment #%d Header Error : Invalid 'NumSEx' value (the value should be 0 for the Apple IIgs).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	432
+	.line	433
 	lda	#$1
 	brl	L95
 ;    }
-	.line	433
+	.line	434
 ;
 ;  /* SegNum : 1 -> N */
 ;  if(current_header->SegNum != (WORD) current_file->nb_segment+1)
 L10048:
 L10047:
 L10046:
-	.line	436
+	.line	437
 ;    {
 	ldy	#$e
 	lda	[<L90+current_file_0],Y
@@ -4372,19 +4391,19 @@ L10046:
 	bne	L140
 	brl	L10049
 L140:
-	.line	437
+	.line	438
 ;      //printf("  Segment #%d Header Error : Invalid 'SegNum' value (the value should be %d and we have %d for the Apple IIgs).\n",current_file->nb_segment+1,current_file->nb_segment+1,current_header->SegNum);
 ;      return(1);
-	.line	439
+	.line	440
 	lda	#$1
 	brl	L95
 ;    }
-	.line	440
+	.line	441
 ;
 ;  /* Entry Point */
 ;  if(current_header->EntryPointOffset > current_header->Length)
 L10049:
-	.line	443
+	.line	444
 ;    {
 	ldy	#$14
 	lda	[<L90+current_header_0],Y
@@ -4397,19 +4416,19 @@ L10049:
 	bcc	L141
 	brl	L10050
 L141:
-	.line	444
+	.line	445
 ;      //printf("  Segment #%d Header Error : Invalid 'EntryPointOffset' value (the value can't be larger than the Segment size).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	446
+	.line	447
 	lda	#$1
 	brl	L95
 ;    }
-	.line	447
+	.line	448
 ;
 ;  /* DispName offset devrait être 44 ($2C) */
 ;  if(current_header->DispNameOffset < SEGMENT_HEADER_MIN_SIZE_V1)
 L10050:
-	.line	450
+	.line	451
 ;    {
 	sec
 	ldy	#$36
@@ -4421,17 +4440,17 @@ L142:
 	bpl	L143
 	brl	L10051
 L143:
-	.line	451
+	.line	452
 ;      //printf("  Segment #%d Header Error : Invalid 'DispNameOffset' value (the value can't be smaller than the Segment Header size).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	453
+	.line	454
 	lda	#$1
 	brl	L95
 ;    }
-	.line	454
+	.line	455
 ;  if(current_header->DispNameOffset > current_header->ByteCnt)
 L10051:
-	.line	455
+	.line	456
 ;    {
 	ldy	#$0
 	phy
@@ -4454,19 +4473,19 @@ L144:
 	bcc	L145
 	brl	L10052
 L145:
-	.line	456
+	.line	457
 ;      //printf("  Segment #%d Header Error : Invalid 'DispNameOffset' value (the value can't be larger than the Segment size).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	458
+	.line	459
 	lda	#$1
 	brl	L95
 ;    }
-	.line	459
+	.line	460
 ;
 ;  /* DispData offset devrait être 64 ($40) */
 ;  if(current_header->DispDataOffset < SEGMENT_HEADER_MIN_SIZE_V1)
 L10052:
-	.line	462
+	.line	463
 ;    {
 	sec
 	ldy	#$38
@@ -4478,17 +4497,17 @@ L146:
 	bpl	L147
 	brl	L10053
 L147:
-	.line	463
+	.line	464
 ;      //printf("  Segment #%d Header Error : Invalid 'DispDataOffset' value (the value can't be smaller than the Segment Header size).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	465
+	.line	466
 	lda	#$1
 	brl	L95
 ;    }
-	.line	466
+	.line	467
 ;  if(current_header->DispNameOffset > current_header->ByteCnt)
 L10053:
-	.line	467
+	.line	468
 ;    {
 	ldy	#$0
 	phy
@@ -4511,14 +4530,14 @@ L148:
 	bcc	L149
 	brl	L10054
 L149:
-	.line	468
+	.line	469
 ;      //printf("  Segment #%d Header Error : Invalid 'DispDataOffset' value (the value can't be larger than the Segment size).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	470
+	.line	471
 	lda	#$1
 	brl	L95
 ;    }
-	.line	471
+	.line	472
 ;
 ;  /*********************************************/
 ;  /**  On va récupérer les données variables  **/
@@ -4526,7 +4545,7 @@ L149:
 ;  /* Noms */
 ;  memcpy(current_header->LoadName,&current_file->data[data_offset+current_header->DispNameOffset],10);
 L10054:
-	.line	477
+	.line	478
 	pea	#<$a
 	clc
 	lda	<L90+data_offset_0
@@ -4562,7 +4581,7 @@ L150:
 	pei	<R0
 	jsl	~~memcpy
 ;  if(current_header->LabLen > 0)
-	.line	478
+	.line	479
 ;    memcpy(current_header->SegName,&current_file->data[data_offset+current_header->DispNameOffset+10],current_header->LabLen);
 	sep	#$20
 	longa	off
@@ -4574,7 +4593,7 @@ L150:
 	bcc	L151
 	brl	L10055
 L151:
-	.line	479
+	.line	480
 	ldy	#$1a
 	lda	[<L90+current_header_0],Y
 	and	#$ff
@@ -4620,10 +4639,10 @@ L152:
 	brl	L10056
 L10055:
 ;    {
-	.line	481
+	.line	482
 ;      /* La longueur est codée au début */
 ;      length = (int) current_file->data[data_offset+current_header->DispNameOffset+10];
-	.line	483
+	.line	484
 	clc
 	lda	<L90+data_offset_0
 	ldy	#$36
@@ -4644,7 +4663,7 @@ L10055:
 	and	#$ff
 	sta	<L91+length_1
 ;      memcpy(&current_header->SegName,&current_file->data[data_offset+current_header->DispNameOffset+10+1],length);
-	.line	484
+	.line	485
 	pei	<L91+length_1
 	clc
 	lda	<L90+data_offset_0
@@ -4684,23 +4703,23 @@ L153:
 	pei	<R0
 	jsl	~~memcpy
 ;    }
-	.line	485
+	.line	486
 L10056:
 ;
 ;  /* OK */
 ;  return(0);
-	.line	488
+	.line	489
 	lda	#$0
 	brl	L95
 ;}
-	.line	489
-	.endblock	489
+	.line	490
+	.endblock	490
 L90	equ	10
 L91	equ	9
 	ends
 	efunc
-	.endfunc	489,9,10
-	.line	489
+	.endfunc	490,9,10
+	.line	490
 ;
 ;
 ;/************************************************************/
@@ -4708,11 +4727,11 @@ L91	equ	9
 ;/************************************************************/
 ;static int DecodeSegmentHeaderV2(struct omf_file *current_file, int data_offset, struct omf_segment_header *current_header)
 ;{
-	.line	495
 	.line	496
+	.line	497
 	LOADER
 	func
-	.function	496
+	.function	497
 ~~DecodeSegmentHeaderV2:
 	longa	on
 	longi	on
@@ -4725,17 +4744,17 @@ L91	equ	9
 current_file_0	set	4
 data_offset_0	set	8
 current_header_0	set	10
-	.block	496
+	.block	497
 ;  int length;
 ;
 ;  /* Vérifie la taille */
 ;  if(data_offset + SEGMENT_HEADER_SIZE_V2 > current_file->data_length)
 length_1	set	0
 	.sym	length,0,5,1,16
-	.sym	current_file,4,138,6,32,122
+	.sym	current_file,4,138,6,32,51
 	.sym	data_offset,8,5,6,16
-	.sym	current_header,10,138,6,32,120
-	.line	500
+	.sym	current_header,10,138,6,32,49
+	.line	501
 ;    {
 	clc
 	lda	#$40
@@ -4751,10 +4770,10 @@ L157:
 	bpl	L158
 	brl	L10057
 L158:
-	.line	501
+	.line	502
 ;      //printf("  Error : Not enough data to encode a Segment Header (offset=%d, Segment #%d).\n",data_offset,current_file->nb_segment+1);
 ;      return(1);
-	.line	503
+	.line	504
 	lda	#$1
 L159:
 	tay
@@ -4770,14 +4789,14 @@ L159:
 	tya
 	rtl
 ;    }
-	.line	504
+	.line	505
 ;
 ;  /*******************************************************/
 ;  /**  On va décoder tous les éléments fixes du Header  **/
 ;  /*******************************************************/
 ;  memcpy(&current_header->ByteCnt,&current_file->data[data_offset+0x00],sizeof(DWORD));
 L10057:
-	.line	509
+	.line	510
 	pea	#<$4
 	ldy	#$0
 	lda	<L154+data_offset_0
@@ -4808,7 +4827,7 @@ L160:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->ResSpc,&current_file->data[data_offset+0x04],sizeof(DWORD));
-	.line	510
+	.line	511
 	pea	#<$4
 	clc
 	lda	#$4
@@ -4843,7 +4862,7 @@ L161:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->Length,&current_file->data[data_offset+0x08],sizeof(DWORD));
-	.line	511
+	.line	512
 	pea	#<$4
 	clc
 	lda	#$8
@@ -4878,7 +4897,7 @@ L162:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->undefine_1,&current_file->data[data_offset+0x0C],sizeof(BYTE));
-	.line	512
+	.line	513
 	pea	#<$1
 	clc
 	lda	#$c
@@ -4913,7 +4932,7 @@ L163:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->LabLen,&current_file->data[data_offset+0x0D],sizeof(BYTE));
-	.line	513
+	.line	514
 	pea	#<$1
 	clc
 	lda	#$d
@@ -4948,7 +4967,7 @@ L164:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->NumLen,&current_file->data[data_offset+0x0E],sizeof(BYTE));
-	.line	514
+	.line	515
 	pea	#<$1
 	clc
 	lda	#$e
@@ -4983,7 +5002,7 @@ L165:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->BankSize,&current_file->data[data_offset+0x10],sizeof(DWORD));
-	.line	515
+	.line	516
 	pea	#<$4
 	clc
 	lda	#$10
@@ -5018,7 +5037,7 @@ L166:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->Kind,&current_file->data[data_offset+0x14],sizeof(WORD));
-	.line	516
+	.line	517
 	pea	#<$2
 	clc
 	lda	#$14
@@ -5053,7 +5072,7 @@ L167:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->undefine_2,&current_file->data[data_offset+0x16],sizeof(BYTE));
-	.line	517
+	.line	518
 	pea	#<$1
 	clc
 	lda	#$16
@@ -5088,7 +5107,7 @@ L168:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->undefine_3,&current_file->data[data_offset+0x17],sizeof(BYTE));
-	.line	518
+	.line	519
 	pea	#<$1
 	clc
 	lda	#$17
@@ -5123,7 +5142,7 @@ L169:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->Org,&current_file->data[data_offset+0x18],sizeof(DWORD));
-	.line	519
+	.line	520
 	pea	#<$4
 	clc
 	lda	#$18
@@ -5158,7 +5177,7 @@ L170:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->Align,&current_file->data[data_offset+0x1C],sizeof(DWORD));
-	.line	520
+	.line	521
 	pea	#<$4
 	clc
 	lda	#$1c
@@ -5193,7 +5212,7 @@ L171:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->NumSEx,&current_file->data[data_offset+0x20],sizeof(BYTE));
-	.line	521
+	.line	522
 	pea	#<$1
 	clc
 	lda	#$20
@@ -5228,7 +5247,7 @@ L172:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->undefine_4,&current_file->data[data_offset+0x21],sizeof(BYTE));
-	.line	522
+	.line	523
 	pea	#<$1
 	clc
 	lda	#$21
@@ -5263,7 +5282,7 @@ L173:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->SegNum,&current_file->data[data_offset+0x22],sizeof(WORD));
-	.line	523
+	.line	524
 	pea	#<$2
 	clc
 	lda	#$22
@@ -5298,7 +5317,7 @@ L174:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->EntryPointOffset,&current_file->data[data_offset+0x24],sizeof(DWORD));
-	.line	524
+	.line	525
 	pea	#<$4
 	clc
 	lda	#$24
@@ -5333,7 +5352,7 @@ L175:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->DispNameOffset,&current_file->data[data_offset+0x28],sizeof(WORD));       /* Load Name Offset */
-	.line	525
+	.line	526
 	pea	#<$2
 	clc
 	lda	#$28
@@ -5368,7 +5387,7 @@ L176:
 	pei	<R0
 	jsl	~~memcpy
 ;  memcpy(&current_header->DispDataOffset,&current_file->data[data_offset+0x2A],sizeof(WORD));       /* Segment Name Offset */
-	.line	526
+	.line	527
 	pea	#<$2
 	clc
 	lda	#$2a
@@ -5408,7 +5427,7 @@ L177:
 ;  /********************************************/
 ;  /* Taille du Segment */
 ;  if((int)(data_offset + current_header->ByteCnt) > (int) current_file->data_length)
-	.line	532
+	.line	533
 ;    {
 	ldy	#$0
 	lda	<L154+data_offset_0
@@ -5436,17 +5455,17 @@ L179:
 	bpl	L180
 	brl	L10058
 L180:
-	.line	533
+	.line	534
 ;      //printf("  Segment #%d Header Error : Invalid 'ByteCnt' value (the segment size can't be larger than the OMF file).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	535
+	.line	536
 	lda	#$1
 	brl	L159
 ;    }
-	.line	536
+	.line	537
 ;  if(current_header->ByteCnt < SEGMENT_HEADER_SIZE_V2)
 L10058:
-	.line	537
+	.line	538
 ;    {
 	ldy	#$c
 	lda	[<L154+current_header_0],Y
@@ -5457,19 +5476,19 @@ L10058:
 	bcc	L181
 	brl	L10059
 L181:
-	.line	538
+	.line	539
 ;      //printf("  Segment #%d Header Error : Invalid 'ByteCnt' value (the segment size can't be smaller than the Sgement Header size).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	540
+	.line	541
 	lda	#$1
 	brl	L159
 ;    }
-	.line	541
+	.line	542
 ;
 ;  /* Nombre de 0x00 à ajouter à la fin */
 ;  if(current_header->ResSpc >= 0x010000)
 L10059:
-	.line	544
+	.line	545
 ;    {
 	ldy	#$10
 	lda	[<L154+current_header_0],Y
@@ -5480,19 +5499,19 @@ L10059:
 	bcs	L182
 	brl	L10060
 L182:
-	.line	545
+	.line	546
 ;      //printf("  Segment #%d Header Error : Invalid 'ResSpc' value (the size can't be larger than 64 KB).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	547
+	.line	548
 	lda	#$1
 	brl	L159
 ;    }
-	.line	548
+	.line	549
 ;
 ;  /* La taille d'un Segment en mémoire ne peut pas dépasser 64 KB */
 ;  if(current_header->Length >= 0x010000)
 L10060:
-	.line	551
+	.line	552
 ;    {
 	ldy	#$14
 	lda	[<L154+current_header_0],Y
@@ -5503,19 +5522,19 @@ L10060:
 	bcs	L183
 	brl	L10061
 L183:
-	.line	552
+	.line	553
 ;      //printf("  Segment #%d Header Error : Invalid 'Length' value (the segment size can't be larger than 64 KB).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	554
+	.line	555
 	lda	#$1
 	brl	L159
 ;    }
-	.line	555
+	.line	556
 ;
 ;  /* LabLen : 0 ou 10 */
 ;  if(current_header->LabLen != 0x00 && current_header->LabLen != 0x0A)
 L10061:
-	.line	558
+	.line	559
 ;    {
 	ldy	#$1a
 	lda	[<L154+current_header_0],Y
@@ -5533,19 +5552,19 @@ L184:
 	bne	L185
 	brl	L10062
 L185:
-	.line	559
+	.line	560
 ;      //printf("  Segment #%d Header Error : Invalid 'LabLen' value (the value should be 0 or 10 for the Apple IIgs).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	561
+	.line	562
 	lda	#$1
 	brl	L159
 ;    }
-	.line	562
+	.line	563
 ;
 ;  /* Num Len : Tjs à 4 pour le IIgs */
 ;  if(current_header->NumLen != 0x04)
 L10062:
-	.line	565
+	.line	566
 ;    {
 	sep	#$20
 	longa	off
@@ -5557,19 +5576,19 @@ L10062:
 	bne	L186
 	brl	L10063
 L186:
-	.line	566
+	.line	567
 ;      //printf("  Segment #%d Header Error : Invalid 'NumLen' value (the value should be 4 for the Apple IIgs).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	568
+	.line	569
 	lda	#$1
 	brl	L159
 ;    }
-	.line	569
+	.line	570
 ;
 ;  /* BankSize : <= 64 KB */
 ;  if(current_header->BankSize > 0x010000)
 L10063:
-	.line	572
+	.line	573
 ;    {
 	lda	#$0
 	ldy	#$1d
@@ -5580,19 +5599,19 @@ L10063:
 	bcc	L187
 	brl	L10064
 L187:
-	.line	573
+	.line	574
 ;      //printf("  Segment #%d Header Error : Invalid 'BankSize' value (the value can't be larger than 64 KB).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	575
+	.line	576
 	lda	#$1
 	brl	L159
 ;    }
-	.line	576
+	.line	577
 ;
 ;  /* Kind */
 ;  if((current_header->Kind & 0x001F) != 0x0000 && (current_header->Kind & 0x001F) != 0x0001 && (current_header->Kind & 0x001F) != 0x0002 &&
 L10064:
-	.line	579
+	.line	580
 ;     (current_header->Kind & 0x001F) != 0x0004 && (current_header->Kind & 0x001F) != 0x0008 && (current_header->Kind & 0x001F) != 0x0010 &&
 ;     (current_header->Kind & 0x001F) != 0x0012)
 ;    {
@@ -5656,19 +5675,19 @@ L193:
 	bne	L194
 	brl	L10065
 L194:
-	.line	582
+	.line	583
 ;      //printf("  Segment #%d Header Error : Invalid 'Kind' value (possible values are 0,1,2,4,8,16 or 18).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	584
+	.line	585
 	lda	#$1
 	brl	L159
 ;    }
-	.line	585
+	.line	586
 ;
 ;  /* Org : < 64 KB */
 ;  if(current_header->Org >= 0x010000)
 L10065:
-	.line	588
+	.line	589
 ;    //printf("  Segment #%d Header Warning : Unusual 'Org' value (the value is usually < 64 KB).\n",current_file->nb_segment+1);
 ;
 ;  /* Align : 0, 0x0100 ou 0x010000 */
@@ -5682,7 +5701,7 @@ L10065:
 	bcs	L195
 	brl	L10066
 L195:
-	.line	592
+	.line	593
 ;    {
 	ldy	#$29
 	lda	[<L154+current_header_0],Y
@@ -5713,20 +5732,20 @@ L199:
 	bne	L200
 	brl	L10067
 L200:
-	.line	593
+	.line	594
 ;      //printf("  Segment #%d Header Error : Invalid 'Align' value (the value should be 0, 256 or 64KB or for the Apple IIgs).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	595
+	.line	596
 	lda	#$1
 	brl	L159
 ;    }
-	.line	596
+	.line	597
 ;
 ;  /* NumSEx : Tjs à 0 */
 ;  if(current_header->NumSEx != 0x00)
 L10067:
 L10066:
-	.line	599
+	.line	600
 ;    {
 	ldy	#$2d
 	lda	[<L154+current_header_0],Y
@@ -5734,19 +5753,19 @@ L10066:
 	bne	L201
 	brl	L10068
 L201:
-	.line	600
+	.line	601
 ;      //printf("  Segment #%d Header Error : Invalid 'NumSEx' value (the value should be 0 for the Apple IIgs).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	602
+	.line	603
 	lda	#$1
 	brl	L159
 ;    }
-	.line	603
+	.line	604
 ;
 ;  /* SegNum : 1 -> N */
 ;  if(current_header->SegNum != (WORD) current_file->nb_segment+1)
 L10068:
-	.line	606
+	.line	607
 ;    {
 	ldy	#$e
 	lda	[<L154+current_file_0],Y
@@ -5758,19 +5777,19 @@ L10068:
 	bne	L202
 	brl	L10069
 L202:
-	.line	607
+	.line	608
 ;      //printf("  Segment #%d Header Error : Invalid 'SegNum' value (the value should be %d and we have %d for the Apple IIgs).\n",current_file->nb_segment+1,current_file->nb_segment+1,current_header->SegNum);
 ;      return(1);
-	.line	609
+	.line	610
 	lda	#$1
 	brl	L159
 ;    }
-	.line	610
+	.line	611
 ;
 ;  /* Entry Point */
 ;  if(current_header->EntryPointOffset > current_header->Length)
 L10069:
-	.line	613
+	.line	614
 ;    {
 	ldy	#$14
 	lda	[<L154+current_header_0],Y
@@ -5783,19 +5802,19 @@ L10069:
 	bcc	L203
 	brl	L10070
 L203:
-	.line	614
+	.line	615
 ;      //printf("  Segment #%d Header Error : Invalid 'EntryPointOffset' value (the value can't be larger than the Segment size).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	616
+	.line	617
 	lda	#$1
 	brl	L159
 ;    }
-	.line	617
+	.line	618
 ;
 ;  /* DispName offset (devrait être 44 si TmpOrg est vide) */
 ;  if(current_header->DispNameOffset < SEGMENT_HEADER_MIN_SIZE_V2)
 L10070:
-	.line	620
+	.line	621
 ;    {
 	sec
 	ldy	#$36
@@ -5807,17 +5826,17 @@ L204:
 	bpl	L205
 	brl	L10071
 L205:
-	.line	621
+	.line	622
 ;      //printf("  Segment #%d Header Error : Invalid 'DispNameOffset' value (the value can't be smaller than the Segment Header size).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	623
+	.line	624
 	lda	#$1
 	brl	L159
 ;    }
-	.line	624
+	.line	625
 ;  if(current_header->DispNameOffset > current_header->ByteCnt)
 L10071:
-	.line	625
+	.line	626
 ;    {
 	ldy	#$0
 	phy
@@ -5840,19 +5859,19 @@ L206:
 	bcc	L207
 	brl	L10072
 L207:
-	.line	626
+	.line	627
 ;      //printf("  Segment #%d Header Error : Invalid 'DispNameOffset' value (the value can't be larger than the Segment size).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	628
+	.line	629
 	lda	#$1
 	brl	L159
 ;    }
-	.line	629
+	.line	630
 ;
 ;  /* DispData offset (devrait être 64 si TmpOrg est vide) */
 ;  if(current_header->DispDataOffset < SEGMENT_HEADER_MIN_SIZE_V2)
 L10072:
-	.line	632
+	.line	633
 ;    {
 	sec
 	ldy	#$38
@@ -5864,17 +5883,17 @@ L208:
 	bpl	L209
 	brl	L10073
 L209:
-	.line	633
+	.line	634
 ;      //printf("  Segment #%d Header Error : Invalid 'DispDataOffset' value (the value can't be smaller than the Segment Header size).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	635
+	.line	636
 	lda	#$1
 	brl	L159
 ;    }
-	.line	636
+	.line	637
 ;  if(current_header->DispNameOffset > current_header->ByteCnt)
 L10073:
-	.line	637
+	.line	638
 ;    {
 	ldy	#$0
 	phy
@@ -5897,14 +5916,14 @@ L210:
 	bcc	L211
 	brl	L10074
 L211:
-	.line	638
+	.line	639
 ;      //printf("  Segment #%d Header Error : Invalid 'DispDataOffset' value (the value can't be larger than the Segment size).\n",current_file->nb_segment+1);
 ;      return(1);
-	.line	640
+	.line	641
 	lda	#$1
 	brl	L159
 ;    }
-	.line	641
+	.line	642
 ;
 ;  /*********************************************/
 ;  /**  On va récupérer les données variables  **/
@@ -5912,7 +5931,7 @@ L211:
 ;  /* Temp Org */
 ;  if(current_header->DispNameOffset > SEGMENT_HEADER_MIN_SIZE_V2) /* 44 */
 L10074:
-	.line	647
+	.line	648
 ;    {
 	sec
 	lda	#$2c
@@ -5924,9 +5943,9 @@ L212:
 	bpl	L213
 	brl	L10075
 L213:
-	.line	648
-;      current_header->TempOrgLength = current_header->DispNameOffset - SEGMENT_HEADER_MIN_SIZE_V2;
 	.line	649
+;      current_header->TempOrgLength = current_header->DispNameOffset - SEGMENT_HEADER_MIN_SIZE_V2;
+	.line	650
 	clc
 	lda	#$ffd4
 	ldy	#$36
@@ -5934,7 +5953,7 @@ L213:
 	ldy	#$3a
 	sta	[<L154+current_header_0],Y
 ;      memcpy(current_header->TempOrg,&current_file->data[data_offset+SEGMENT_HEADER_MIN_SIZE_V2],current_header->TempOrgLength);
-	.line	650
+	.line	651
 	ldy	#$3a
 	lda	[<L154+current_header_0],Y
 	pha
@@ -5971,12 +5990,12 @@ L214:
 	pei	<R0
 	jsl	~~memcpy
 ;    }
-	.line	651
+	.line	652
 ;  else
 	brl	L10076
 L10075:
 ;    current_header->TempOrgLength = 0;
-	.line	653
+	.line	654
 	lda	#$0
 	ldy	#$3a
 	sta	[<L154+current_header_0],Y
@@ -5984,7 +6003,7 @@ L10076:
 ;
 ;  /* Noms */
 ;  memcpy(current_header->LoadName,&current_file->data[data_offset+current_header->DispNameOffset],10);
-	.line	656
+	.line	657
 	pea	#<$a
 	clc
 	lda	<L154+data_offset_0
@@ -6020,7 +6039,7 @@ L215:
 	pei	<R0
 	jsl	~~memcpy
 ;  if(current_header->LabLen > 0)
-	.line	657
+	.line	658
 ;    memcpy(current_header->SegName,&current_file->data[data_offset+current_header->DispNameOffset+10],current_header->LabLen);
 	sep	#$20
 	longa	off
@@ -6032,7 +6051,7 @@ L215:
 	bcc	L216
 	brl	L10077
 L216:
-	.line	658
+	.line	659
 	ldy	#$1a
 	lda	[<L154+current_header_0],Y
 	and	#$ff
@@ -6078,10 +6097,10 @@ L217:
 	brl	L10078
 L10077:
 ;    {
-	.line	660
+	.line	661
 ;      /* La longueur est codée au début du texte, sur 1 Byte */
 ;      length = (int) current_file->data[data_offset+current_header->DispNameOffset+10];
-	.line	662
+	.line	663
 	clc
 	lda	<L154+data_offset_0
 	ldy	#$36
@@ -6102,7 +6121,7 @@ L10077:
 	and	#$ff
 	sta	<L155+length_1
 ;      memcpy(&current_header->SegName,&current_file->data[data_offset+current_header->DispNameOffset+10+1],length);
-	.line	663
+	.line	664
 	pei	<L155+length_1
 	clc
 	lda	<L154+data_offset_0
@@ -6142,23 +6161,23 @@ L218:
 	pei	<R0
 	jsl	~~memcpy
 ;    }
-	.line	664
+	.line	665
 L10078:
 ;
 ;  /* OK */
 ;  return(0);
-	.line	667
+	.line	668
 	lda	#$0
 	brl	L159
 ;}
-	.line	668
-	.endblock	668
+	.line	669
+	.endblock	669
 L154	equ	10
 L155	equ	9
 	ends
 	efunc
-	.endfunc	668,9,10
-	.line	668
+	.endfunc	669,9,10
+	.line	669
 ;
 ;
 ;/*******************************************************************************/
@@ -6166,11 +6185,11 @@ L155	equ	9
 ;/*******************************************************************************/
 ;static int DecodeSegmentBody(struct omf_file *current_file, int data_offset, struct omf_segment *current_segment)
 ;{
-	.line	674
 	.line	675
+	.line	676
 	LOADER
 	func
-	.function	675
+	.function	676
 ~~DecodeSegmentBody:
 	longa	on
 	longi	on
@@ -6183,7 +6202,7 @@ L155	equ	9
 current_file_0	set	4
 data_offset_0	set	8
 current_segment_0	set	10
-	.block	675
+	.block	676
 ;  int body_offset, body_length, record_length, record_data_length;
 ;  unsigned char *record_data;
 ;  unsigned char *data;
@@ -6204,14 +6223,14 @@ current_record_1	set	16
 	.sym	record_data_length,6,5,1,16
 	.sym	record_data,8,142,1,32
 	.sym	data,12,142,1,32
-	.sym	current_record,16,138,1,32,85
-	.sym	current_file,4,138,6,32,122
+	.sym	current_record,16,138,1,32,93
+	.sym	current_file,4,138,6,32,51
 	.sym	data_offset,8,5,6,16
-	.sym	current_segment,10,138,6,32,121
-	.line	682
+	.sym	current_segment,10,138,6,32,50
+	.line	683
 	stz	<L220+body_offset_1
 ;  body_length = current_segment->header.ByteCnt - current_segment->header.DispDataOffset;
-	.line	683
+	.line	684
 	ldy	#$0
 	phy
 	ldy	#$38
@@ -6238,7 +6257,7 @@ L222:
 ;
 ;  /* On libère les structures précédentes */
 ;  my_Memory(MEMORY_FREE_RELOC,NULL,NULL);
-	.line	686
+	.line	687
 	pea	#^$0
 	pea	#<$0
 	pea	#^$0
@@ -6246,7 +6265,7 @@ L222:
 	pea	#<$d
 	jsl	~~my_Memory
 ;  my_Memory(MEMORY_FREE_INTERSEG,NULL,NULL);
-	.line	687
+	.line	688
 	pea	#^$0
 	pea	#<$0
 	pea	#^$0
@@ -6256,13 +6275,13 @@ L222:
 ;
 ;  /** Boucle sur tous les Records du Body **/
 ;  while(1)
-	.line	690
+	.line	691
 L10079:
 ;    {
-	.line	691
+	.line	692
 ;      /** Extrait un Record du Body **/
 ;      current_record = DecodeOneRecord(&current_file->data[data_offset+body_offset],current_segment->header.SegNum,data_offset+body_offset,current_segment->header.ByteCnt+body_offset,current_segment->data,current_segment->data_length,&record_length,current_segment);
-	.line	693
+	.line	694
 	pei	<L219+current_segment_0+2
 	pei	<L219+current_segment_0
 	pea	#0
@@ -6329,14 +6348,14 @@ L224:
 	sta	<L220+current_record_1
 	stx	<L220+current_record_1+2
 ;      if(current_record == NULL)
-	.line	694
+	.line	695
 ;        return(1);
 	lda	<L220+current_record_1
 	ora	<L220+current_record_1+2
 	beq	L225
 	brl	L10081
 L225:
-	.line	695
+	.line	696
 	lda	#$1
 L226:
 	tay
@@ -6353,7 +6372,7 @@ L226:
 	rtl
 ;      current_record->FileOffset = data_offset+body_offset;
 L10081:
-	.line	696
+	.line	697
 	clc
 	lda	<L219+data_offset_0
 	adc	<L220+body_offset_1
@@ -6371,7 +6390,7 @@ L227:
 	ldy	#$2
 	sta	[<L220+current_record_1],Y
 ;      current_record->SegmentOffset = current_segment->header.ByteCnt + body_offset;
-	.line	697
+	.line	698
 	ldy	#$0
 	lda	<L220+body_offset_1
 	bpl	L228
@@ -6397,7 +6416,7 @@ L228:
 ;
 ;      /* Attache de Record aux précédents */
 ;      if(current_segment->first_record == NULL)
-	.line	700
+	.line	701
 ;        current_segment->first_record = current_record;
 	ldy	#$a41
 	lda	[<L219+current_segment_0],Y
@@ -6406,7 +6425,7 @@ L228:
 	beq	L229
 	brl	L10082
 L229:
-	.line	701
+	.line	702
 	lda	<L220+current_record_1
 	ldy	#$a41
 	sta	[<L219+current_segment_0],Y
@@ -6417,7 +6436,7 @@ L229:
 	brl	L10083
 L10082:
 ;        current_segment->last_record->next = current_record;
-	.line	703
+	.line	704
 	ldy	#$a45
 	lda	[<L219+current_segment_0],Y
 	sta	<R0
@@ -6432,7 +6451,7 @@ L10082:
 	sta	[<R0],Y
 L10083:
 ;      current_segment->last_record = current_record;
-	.line	704
+	.line	705
 	lda	<L220+current_record_1
 	ldy	#$a45
 	sta	[<L219+current_segment_0],Y
@@ -6440,7 +6459,7 @@ L10083:
 	ldy	#$a47
 	sta	[<L219+current_segment_0],Y
 ;      current_segment->nb_record++;
-	.line	705
+	.line	706
 	ldy	#$a3f
 	lda	[<L219+current_segment_0],Y
 	ina
@@ -6451,7 +6470,7 @@ L10083:
 ;      /** On conserve un pointeur vers les Data du Segment **/
 ;      /******************************************************/
 ;      if(current_record->operation_code >= 0x01 && current_record->operation_code <= 0xDF && current_record->record_data != NULL)
-	.line	710
+	.line	711
 ;        {
 	sep	#$20
 	longa	off
@@ -6480,10 +6499,10 @@ L231:
 	bne	L232
 	brl	L10084
 L232:
-	.line	711
+	.line	712
 ;          /* Ajoute les data du CONST au Segment */
 ;          record_data = ((struct record_CONST *)(current_record->record_data))->data;
-	.line	713
+	.line	714
 	ldy	#$b
 	lda	[<L220+current_record_1],Y
 	sta	<R0
@@ -6497,7 +6516,7 @@ L232:
 	lda	[<R0],Y
 	sta	<L220+record_data_1+2
 ;          record_data_length = ((struct record_CONST *)(current_record->record_data))->ByteCnt;
-	.line	714
+	.line	715
 	ldy	#$b
 	lda	[<L220+current_record_1],Y
 	sta	<R0
@@ -6511,7 +6530,7 @@ L232:
 ;
 ;          /* Allocation mémoire */
 ;          data = (unsigned char *) k_calloc(1,current_segment->data_length+record_data_length);
-	.line	717
+	.line	718
 	clc
 	ldy	#$a4b
 	lda	[<L219+current_segment_0],Y
@@ -6522,31 +6541,31 @@ L232:
 	sta	<L220+data_1
 	stx	<L220+data_1+2
 ;          if(data == NULL)
-	.line	718
+	.line	719
 ;            {
 	lda	<L220+data_1
 	ora	<L220+data_1+2
 	beq	L233
 	brl	L10085
 L233:
-	.line	719
+	.line	720
 ;              //printf("  Error : Impossible to allocate memory to process Segment Body Record.\n");
 ;              mem_free_record(current_record);
-	.line	721
+	.line	722
 	pei	<L220+current_record_1+2
 	pei	<L220+current_record_1
 	jsl	~~mem_free_record
 ;              return(1);
-	.line	722
+	.line	723
 	lda	#$1
 	brl	L226
 ;            }
-	.line	723
+	.line	724
 ;
 ;          /* Data */
 ;          memcpy(data,current_segment->data,current_segment->data_length);
 L10085:
-	.line	726
+	.line	727
 	ldy	#$a4b
 	lda	[<L219+current_segment_0],Y
 	pha
@@ -6560,7 +6579,7 @@ L10085:
 	pei	<L220+data_1
 	jsl	~~memcpy
 ;          memcpy(data+current_segment->data_length,record_data,record_data_length);
-	.line	727
+	.line	728
 	pei	<L220+record_data_length_1
 	pei	<L220+record_data_1+2
 	pei	<L220+record_data_1
@@ -6587,7 +6606,7 @@ L234:
 	pei	<R1
 	jsl	~~memcpy
 ;          k_free(current_segment->data);
-	.line	728
+	.line	729
 	ldy	#$a4f
 	lda	[<L219+current_segment_0],Y
 	pha
@@ -6596,7 +6615,7 @@ L234:
 	pha
 	jsl	~~k_free
 ;          current_segment->data = data;
-	.line	729
+	.line	730
 	lda	<L220+data_1
 	ldy	#$a4d
 	sta	[<L219+current_segment_0],Y
@@ -6606,7 +6625,7 @@ L234:
 ;
 ;          /* Longueur Data (CONST/DS/LCONST) */
 ;          current_segment->data_length += record_data_length;
-	.line	732
+	.line	733
 	clc
 	lda	#$a4b
 	adc	<L219+current_segment_0
@@ -6621,14 +6640,14 @@ L234:
 ;
 ;          /* Offset des Data (CONST/DS/LCONST) du segment */
 ;          if(current_segment->data_offset == 0)
-	.line	735
+	.line	736
 ;            current_segment->data_offset = current_record->FileOffset + 1;    /* Code */
 	ldy	#$a49
 	lda	[<L219+current_segment_0],Y
 	beq	L235
 	brl	L10086
 L235:
-	.line	736
+	.line	737
 	clc
 	lda	#$1
 	adc	[<L220+current_record_1]
@@ -6642,11 +6661,11 @@ L235:
 	sta	[<L219+current_segment_0],Y
 ;        }
 L10086:
-	.line	737
+	.line	738
 ;      else if(current_record->operation_code == 0xF1 && current_record->record_data != NULL)
 	brl	L10087
 L10084:
-	.line	738
+	.line	739
 ;        {
 	sep	#$20
 	longa	off
@@ -6665,10 +6684,10 @@ L236:
 	bne	L237
 	brl	L10088
 L237:
-	.line	739
+	.line	740
 ;          /* Ajoute les 00 du DS au Segment */
 ;          record_data_length = (int) ((struct record_DS *)(current_record->record_data))->nb_zero_byte;
-	.line	741
+	.line	742
 	ldy	#$b
 	lda	[<L220+current_record_1],Y
 	sta	<R0
@@ -6681,7 +6700,7 @@ L237:
 ;
 ;          /* Allocation mémoire */
 ;          data = (unsigned char *) k_calloc(1,current_segment->data_length+record_data_length);
-	.line	744
+	.line	745
 	clc
 	ldy	#$a4b
 	lda	[<L219+current_segment_0],Y
@@ -6692,31 +6711,31 @@ L237:
 	sta	<L220+data_1
 	stx	<L220+data_1+2
 ;          if(data == NULL)
-	.line	745
+	.line	746
 ;            {
 	lda	<L220+data_1
 	ora	<L220+data_1+2
 	beq	L238
 	brl	L10089
 L238:
-	.line	746
+	.line	747
 ;              //printf("  Error : Impossible to allocate memory to process Segment Body Record.\n");
 ;              mem_free_record(current_record);
-	.line	748
+	.line	749
 	pei	<L220+current_record_1+2
 	pei	<L220+current_record_1
 	jsl	~~mem_free_record
 ;              return(1);
-	.line	749
+	.line	750
 	lda	#$1
 	brl	L226
 ;            }
-	.line	750
+	.line	751
 ;
 ;          /* Data */
 ;          memcpy(data,current_segment->data,current_segment->data_length);
 L10089:
-	.line	753
+	.line	754
 	ldy	#$a4b
 	lda	[<L219+current_segment_0],Y
 	pha
@@ -6730,7 +6749,7 @@ L10089:
 	pei	<L220+data_1
 	jsl	~~memcpy
 ;          k_free(current_segment->data);
-	.line	754
+	.line	755
 	ldy	#$a4f
 	lda	[<L219+current_segment_0],Y
 	pha
@@ -6739,7 +6758,7 @@ L10089:
 	pha
 	jsl	~~k_free
 ;          current_segment->data = data;
-	.line	755
+	.line	756
 	lda	<L220+data_1
 	ldy	#$a4d
 	sta	[<L219+current_segment_0],Y
@@ -6749,7 +6768,7 @@ L10089:
 ;
 ;          /* Longueur Data (CONST/DS/LCONST) */
 ;          current_segment->data_length += record_data_length;
-	.line	758
+	.line	759
 	clc
 	lda	#$a4b
 	adc	<L219+current_segment_0
@@ -6764,14 +6783,14 @@ L10089:
 ;
 ;          /* Offset des Data (CONST/DS/LCONST) du segment */
 ;          if(current_segment->data_offset == 0)
-	.line	761
+	.line	762
 ;            current_segment->data_offset = current_record->FileOffset + 1 + sizeof(DWORD);    /* Code + Nb 0 */
 	ldy	#$a49
 	lda	[<L219+current_segment_0],Y
 	beq	L239
 	brl	L10090
 L239:
-	.line	762
+	.line	763
 	clc
 	lda	#$5
 	adc	[<L220+current_record_1]
@@ -6785,11 +6804,11 @@ L239:
 	sta	[<L219+current_segment_0],Y
 ;        }
 L10090:
-	.line	763
+	.line	764
 ;      else if(current_record->operation_code == 0xF2 && current_record->record_data != NULL)
 	brl	L10091
 L10088:
-	.line	764
+	.line	765
 ;        {
 	sep	#$20
 	longa	off
@@ -6808,10 +6827,10 @@ L240:
 	bne	L241
 	brl	L10092
 L241:
-	.line	765
+	.line	766
 ;          /* Ajoute les data du LCONST au Segment */
 ;          record_data = ((struct record_LCONST *)(current_record->record_data))->data;
-	.line	767
+	.line	768
 	ldy	#$b
 	lda	[<L220+current_record_1],Y
 	sta	<R0
@@ -6825,7 +6844,7 @@ L241:
 	lda	[<R0],Y
 	sta	<L220+record_data_1+2
 ;          record_data_length = ((struct record_LCONST *)(current_record->record_data))->ByteCnt;
-	.line	768
+	.line	769
 	ldy	#$b
 	lda	[<L220+current_record_1],Y
 	sta	<R0
@@ -6838,7 +6857,7 @@ L241:
 ;
 ;          /* Allocation mémoire */
 ;          data = (unsigned char *) k_calloc(1,current_segment->data_length+record_data_length);
-	.line	771
+	.line	772
 	clc
 	ldy	#$a4b
 	lda	[<L219+current_segment_0],Y
@@ -6849,31 +6868,31 @@ L241:
 	sta	<L220+data_1
 	stx	<L220+data_1+2
 ;          if(data == NULL)
-	.line	772
+	.line	773
 ;            {
 	lda	<L220+data_1
 	ora	<L220+data_1+2
 	beq	L242
 	brl	L10093
 L242:
-	.line	773
+	.line	774
 ;              //printf("  Error : Impossible to allocate memory to process Segment Body Record.\n");
 ;              mem_free_record(current_record);
-	.line	775
+	.line	776
 	pei	<L220+current_record_1+2
 	pei	<L220+current_record_1
 	jsl	~~mem_free_record
 ;              return(1);
-	.line	776
+	.line	777
 	lda	#$1
 	brl	L226
 ;            }
-	.line	777
+	.line	778
 ;
 ;          /* Data */
 ;          memcpy(data,current_segment->data,current_segment->data_length);
 L10093:
-	.line	780
+	.line	781
 	ldy	#$a4b
 	lda	[<L219+current_segment_0],Y
 	pha
@@ -6887,7 +6906,7 @@ L10093:
 	pei	<L220+data_1
 	jsl	~~memcpy
 ;          memcpy(data+current_segment->data_length,record_data,record_data_length);
-	.line	781
+	.line	782
 	pei	<L220+record_data_length_1
 	pei	<L220+record_data_1+2
 	pei	<L220+record_data_1
@@ -6914,7 +6933,7 @@ L243:
 	pei	<R1
 	jsl	~~memcpy
 ;          k_free(current_segment->data);
-	.line	782
+	.line	783
 	ldy	#$a4f
 	lda	[<L219+current_segment_0],Y
 	pha
@@ -6923,7 +6942,7 @@ L243:
 	pha
 	jsl	~~k_free
 ;          current_segment->data = data;
-	.line	783
+	.line	784
 	lda	<L220+data_1
 	ldy	#$a4d
 	sta	[<L219+current_segment_0],Y
@@ -6933,7 +6952,7 @@ L243:
 ;
 ;          /* Longueur Data (CONST/DS/LCONST) */
 ;          current_segment->data_length += record_data_length;
-	.line	786
+	.line	787
 	clc
 	lda	#$a4b
 	adc	<L219+current_segment_0
@@ -6948,14 +6967,14 @@ L243:
 ;
 ;          /* Offset des Data (CONST/DS/LCONST) du segment */
 ;          if(current_segment->data_offset == 0)
-	.line	789
+	.line	790
 ;            current_segment->data_offset = current_record->FileOffset + 1 + sizeof(DWORD);    /* Code + Length */
 	ldy	#$a49
 	lda	[<L219+current_segment_0],Y
 	beq	L244
 	brl	L10094
 L244:
-	.line	790
+	.line	791
 	clc
 	lda	#$5
 	adc	[<L220+current_record_1]
@@ -6969,7 +6988,7 @@ L244:
 	sta	[<L219+current_segment_0],Y
 ;        }
 L10094:
-	.line	791
+	.line	792
 ;
 ;      /**************************************************************/
 ;      /** On conserve l'offset et la longueur des Reloc du Segment **/
@@ -6978,7 +6997,7 @@ L10094:
 L10092:
 L10091:
 L10087:
-	.line	796
+	.line	797
 ;        {
 	sep	#$20
 	longa	off
@@ -6990,10 +7009,10 @@ L10087:
 	beq	L245
 	brl	L10095
 L245:
-	.line	797
+	.line	798
 ;          /* Longueur Reloc */
 ;          current_segment->reloc_length += current_record->length;
-	.line	799
+	.line	800
 	clc
 	lda	#$a53
 	adc	<L219+current_segment_0
@@ -7009,24 +7028,24 @@ L245:
 ;
 ;          /* Offset des Reloc du segment */
 ;          if(current_segment->reloc_offset == 0)
-	.line	802
+	.line	803
 ;            current_segment->reloc_offset = current_record->FileOffset;
 	ldy	#$a51
 	lda	[<L219+current_segment_0],Y
 	beq	L246
 	brl	L10096
 L246:
-	.line	803
+	.line	804
 	lda	[<L220+current_record_1]
 	ldy	#$a51
 	sta	[<L219+current_segment_0],Y
 ;        }
 L10096:
-	.line	804
+	.line	805
 ;      else if(current_record->operation_code == 0xE3)      /* INTERSEG */
 	brl	L10097
 L10095:
-	.line	805
+	.line	806
 ;        {
 	sep	#$20
 	longa	off
@@ -7038,10 +7057,10 @@ L10095:
 	beq	L247
 	brl	L10098
 L247:
-	.line	806
+	.line	807
 ;          /* Longueur Reloc */
 ;          current_segment->reloc_length += current_record->length;
-	.line	808
+	.line	809
 	clc
 	lda	#$a53
 	adc	<L219+current_segment_0
@@ -7057,24 +7076,24 @@ L247:
 ;
 ;          /* Offset des Reloc du segment */
 ;          if(current_segment->reloc_offset == 0)
-	.line	811
+	.line	812
 ;            current_segment->reloc_offset = current_record->FileOffset;
 	ldy	#$a51
 	lda	[<L219+current_segment_0],Y
 	beq	L248
 	brl	L10099
 L248:
-	.line	812
+	.line	813
 	lda	[<L220+current_record_1]
 	ldy	#$a51
 	sta	[<L219+current_segment_0],Y
 ;        }
 L10099:
-	.line	813
+	.line	814
 ;      else if(current_record->operation_code == 0xF5)      /* cRELOC */
 	brl	L10100
 L10098:
-	.line	814
+	.line	815
 ;        {
 	sep	#$20
 	longa	off
@@ -7086,10 +7105,10 @@ L10098:
 	beq	L249
 	brl	L10101
 L249:
-	.line	815
+	.line	816
 ;          /* Longueur Reloc */
 ;          current_segment->reloc_length += current_record->length;
-	.line	817
+	.line	818
 	clc
 	lda	#$a53
 	adc	<L219+current_segment_0
@@ -7105,24 +7124,24 @@ L249:
 ;
 ;          /* Offset des Reloc du segment */
 ;          if(current_segment->reloc_offset == 0)
-	.line	820
+	.line	821
 ;            current_segment->reloc_offset = current_record->FileOffset;
 	ldy	#$a51
 	lda	[<L219+current_segment_0],Y
 	beq	L250
 	brl	L10102
 L250:
-	.line	821
+	.line	822
 	lda	[<L220+current_record_1]
 	ldy	#$a51
 	sta	[<L219+current_segment_0],Y
 ;        }
 L10102:
-	.line	822
+	.line	823
 ;      else if(current_record->operation_code == 0xF6)      /* cINTERSEG */
 	brl	L10103
 L10101:
-	.line	823
+	.line	824
 ;        {
 	sep	#$20
 	longa	off
@@ -7134,10 +7153,10 @@ L10101:
 	beq	L251
 	brl	L10104
 L251:
-	.line	824
+	.line	825
 ;          /* Longueur Reloc */
 ;          current_segment->reloc_length += current_record->length;
-	.line	826
+	.line	827
 	clc
 	lda	#$a53
 	adc	<L219+current_segment_0
@@ -7153,24 +7172,24 @@ L251:
 ;
 ;          /* Offset des Reloc du segment */
 ;          if(current_segment->reloc_offset == 0)
-	.line	829
+	.line	830
 ;            current_segment->reloc_offset = current_record->FileOffset;
 	ldy	#$a51
 	lda	[<L219+current_segment_0],Y
 	beq	L252
 	brl	L10105
 L252:
-	.line	830
+	.line	831
 	lda	[<L220+current_record_1]
 	ldy	#$a51
 	sta	[<L219+current_segment_0],Y
 ;        }
 L10105:
-	.line	831
+	.line	832
 ;      else if(current_record->operation_code == 0xF7)      /* SUPER */
 	brl	L10106
 L10104:
-	.line	832
+	.line	833
 ;        {
 	sep	#$20
 	longa	off
@@ -7182,10 +7201,10 @@ L10104:
 	beq	L253
 	brl	L10107
 L253:
-	.line	833
+	.line	834
 ;          /* Longueur Reloc */
 ;          current_segment->reloc_length += current_record->length;
-	.line	835
+	.line	836
 	clc
 	lda	#$a53
 	adc	<L219+current_segment_0
@@ -7201,20 +7220,20 @@ L253:
 ;
 ;          /* Offset des Reloc du segment */
 ;          if(current_segment->reloc_offset == 0)
-	.line	838
+	.line	839
 ;            current_segment->reloc_offset = current_record->FileOffset;
 	ldy	#$a51
 	lda	[<L219+current_segment_0],Y
 	beq	L254
 	brl	L10108
 L254:
-	.line	839
+	.line	840
 	lda	[<L220+current_record_1]
 	ldy	#$a51
 	sta	[<L219+current_segment_0],Y
 ;        }
 L10108:
-	.line	840
+	.line	841
 ;
 ;
 ;      /** On passe au Record suivant si on est arrivé à la fin du Body (V 2.1) **/
@@ -7224,13 +7243,13 @@ L10106:
 L10103:
 L10100:
 L10097:
-	.line	844
+	.line	845
 	clc
 	lda	<L220+body_offset_1
 	adc	<L220+record_length_1
 	sta	<L220+body_offset_1
 ;      if(body_offset == body_length)
-	.line	845
+	.line	846
 ;        break;
 	lda	<L220+body_offset_1
 	cmp	<L220+body_length_1
@@ -7240,7 +7259,7 @@ L255:
 ;
 ;      /* On va aussi s'arrêter si on tombe sur un DEND (qui en V0 et V1 vient avant la fin du Body) */
 ;      if(current_record->operation_code == 0x00)
-	.line	849
+	.line	850
 ;        break;
 	ldy	#$8
 	lda	[<L220+current_record_1],Y
@@ -7249,13 +7268,13 @@ L255:
 	brl	L10080
 L256:
 ;    }
-	.line	851
+	.line	852
 	brl	L10079
 L10080:
 ;
 ;  /** On va extraire tous les RELOC / INTERSEG **/
 ;  my_Memory(MEMORY_SORT_RELOC,&current_segment->nb_reloc,&current_segment->tab_reloc);
-	.line	854
+	.line	855
 	clc
 	lda	#$a57
 	adc	<L219+current_segment_0
@@ -7277,7 +7296,7 @@ L10080:
 	pea	#<$c
 	jsl	~~my_Memory
 ;  my_Memory(MEMORY_SORT_INTERSEG,&current_segment->nb_interseg,&current_segment->tab_interseg);
-	.line	855
+	.line	856
 	clc
 	lda	#$a5d
 	adc	<L219+current_segment_0
@@ -7301,18 +7320,18 @@ L10080:
 ;
 ;  /* OK */
 ;  return(0);
-	.line	858
+	.line	859
 	lda	#$0
 	brl	L226
 ;}
-	.line	859
-	.endblock	859
+	.line	860
+	.endblock	860
 L219	equ	32
 L220	equ	13
 	ends
 	efunc
-	.endfunc	859,13,32
-	.line	859
+	.endfunc	860,13,32
+	.line	860
 ;
 ;
 ;/*******************************************************************/
@@ -7320,12 +7339,12 @@ L220	equ	13
 ;/*******************************************************************/
 ;void mem_free_omf(struct omf_file *current_file)
 ;{
-	.line	865
 	.line	866
+	.line	867
 	LOADER
 	xdef	~~mem_free_omf
 	func
-	.function	866
+	.function	867
 ~~mem_free_omf:
 	longa	on
 	longi	on
@@ -7336,26 +7355,26 @@ L220	equ	13
 	phd
 	tcd
 current_file_0	set	4
-	.block	866
+	.block	867
 ;  struct omf_segment *current_segment;
 ;  struct omf_segment *next_segment;
 ;
 ;  if(current_file)
 current_segment_1	set	0
 next_segment_1	set	4
-	.sym	current_segment,0,138,1,32,121
-	.sym	next_segment,4,138,1,32,121
-	.sym	current_file,4,138,6,32,122
-	.line	870
+	.sym	current_segment,0,138,1,32,50
+	.sym	next_segment,4,138,1,32,50
+	.sym	current_file,4,138,6,32,51
+	.line	871
 ;    {
 	lda	<L257+current_file_0
 	ora	<L257+current_file_0+2
 	bne	L260
 	brl	L10109
 L260:
-	.line	871
-;      if(current_file->file_path)
 	.line	872
+;      if(current_file->file_path)
+	.line	873
 ;        k_free(current_file->file_path);
 	lda	[<L257+current_file_0]
 	ldy	#$2
@@ -7363,7 +7382,7 @@ L260:
 	bne	L261
 	brl	L10110
 L261:
-	.line	873
+	.line	874
 	ldy	#$2
 	lda	[<L257+current_file_0],Y
 	pha
@@ -7373,7 +7392,7 @@ L261:
 ;
 ;      if(current_file->data)
 L10110:
-	.line	875
+	.line	876
 ;        k_free(current_file->data);
 	ldy	#$a
 	lda	[<L257+current_file_0],Y
@@ -7382,7 +7401,7 @@ L10110:
 	bne	L262
 	brl	L10111
 L262:
-	.line	876
+	.line	877
 	ldy	#$c
 	lda	[<L257+current_file_0],Y
 	pha
@@ -7394,7 +7413,7 @@ L262:
 ;      /* Libération des segments */
 ;      for(current_segment = current_file->first_segment; current_segment; )
 L10111:
-	.line	879
+	.line	880
 	ldy	#$10
 	lda	[<L257+current_file_0],Y
 	sta	<L258+current_segment_1
@@ -7404,9 +7423,9 @@ L10111:
 	brl	L10115
 L10114:
 ;        {
-	.line	880
-;          next_segment = current_segment->next;
 	.line	881
+;          next_segment = current_segment->next;
+	.line	882
 	ldy	#$a61
 	lda	[<L258+current_segment_1],Y
 	sta	<L258+next_segment_1
@@ -7414,18 +7433,18 @@ L10114:
 	lda	[<L258+current_segment_1],Y
 	sta	<L258+next_segment_1+2
 ;          mem_free_segment(current_segment);
-	.line	882
+	.line	883
 	pei	<L258+current_segment_1+2
 	pei	<L258+current_segment_1
 	jsl	~~mem_free_segment
 ;          current_segment = next_segment;
-	.line	883
+	.line	884
 	lda	<L258+next_segment_1
 	sta	<L258+current_segment_1
 	lda	<L258+next_segment_1+2
 	sta	<L258+current_segment_1+2
 ;        }
-	.line	884
+	.line	885
 L10112:
 L10115:
 	lda	<L258+current_segment_1
@@ -7436,15 +7455,15 @@ L263:
 L10113:
 ;
 ;      k_free(current_file);
-	.line	886
+	.line	887
 	pei	<L257+current_file_0+2
 	pei	<L257+current_file_0
 	jsl	~~k_free
 ;    }
-	.line	887
+	.line	888
 ;}
 L10109:
-	.line	888
+	.line	889
 L264:
 	lda	<L257+2
 	sta	<L257+2+4
@@ -7456,13 +7475,13 @@ L264:
 	adc	#L257+4
 	tcs
 	rtl
-	.endblock	888
+	.endblock	889
 L257	equ	8
 L258	equ	1
 	ends
 	efunc
-	.endfunc	888,1,8
-	.line	888
+	.endfunc	889,1,8
+	.line	889
 ;
 ;
 ;/**************************************************************************/
@@ -7470,11 +7489,11 @@ L258	equ	1
 ;/**************************************************************************/
 ;static void mem_free_segment(struct omf_segment *current_segment)
 ;{
-	.line	894
 	.line	895
+	.line	896
 	LOADER
 	func
-	.function	895
+	.function	896
 ~~mem_free_segment:
 	longa	on
 	longi	on
@@ -7485,7 +7504,7 @@ L258	equ	1
 	phd
 	tcd
 current_segment_0	set	4
-	.block	895
+	.block	896
 ;  int i;
 ;  struct omf_body_record *current_record;
 ;  struct omf_body_record *next_record;
@@ -7495,20 +7514,20 @@ i_1	set	0
 current_record_1	set	2
 next_record_1	set	6
 	.sym	i,0,5,1,16
-	.sym	current_record,2,138,1,32,85
-	.sym	next_record,6,138,1,32,85
-	.sym	current_segment,4,138,6,32,121
-	.line	900
+	.sym	current_record,2,138,1,32,93
+	.sym	next_record,6,138,1,32,93
+	.sym	current_segment,4,138,6,32,50
+	.line	901
 ;    {
 	lda	<L265+current_segment_0
 	ora	<L265+current_segment_0+2
 	bne	L268
 	brl	L10116
 L268:
-	.line	901
+	.line	902
 ;      /* Libération des Records */
 ;      for(current_record=current_segment->first_record; current_record; )
-	.line	903
+	.line	904
 	ldy	#$a41
 	lda	[<L265+current_segment_0],Y
 	sta	<L266+current_record_1
@@ -7518,9 +7537,9 @@ L268:
 	brl	L10120
 L10119:
 ;        {
-	.line	904
-;          next_record = current_record->next;
 	.line	905
+;          next_record = current_record->next;
+	.line	906
 	ldy	#$11
 	lda	[<L266+current_record_1],Y
 	sta	<L266+next_record_1
@@ -7528,18 +7547,18 @@ L10119:
 	lda	[<L266+current_record_1],Y
 	sta	<L266+next_record_1+2
 ;          mem_free_record(current_record);
-	.line	906
+	.line	907
 	pei	<L266+current_record_1+2
 	pei	<L266+current_record_1
 	jsl	~~mem_free_record
 ;          current_record = next_record;
-	.line	907
+	.line	908
 	lda	<L266+next_record_1
 	sta	<L266+current_record_1
 	lda	<L266+next_record_1+2
 	sta	<L266+current_record_1+2
 ;        }
-	.line	908
+	.line	909
 L10117:
 L10120:
 	lda	<L266+current_record_1
@@ -7551,7 +7570,7 @@ L10118:
 ;
 ;      /* Libération des Data */
 ;      if(current_segment->data)
-	.line	911
+	.line	912
 ;        k_free(current_segment->data);
 	ldy	#$a4d
 	lda	[<L265+current_segment_0],Y
@@ -7560,7 +7579,7 @@ L10118:
 	bne	L270
 	brl	L10121
 L270:
-	.line	912
+	.line	913
 	ldy	#$a4f
 	lda	[<L265+current_segment_0],Y
 	pha
@@ -7572,7 +7591,7 @@ L270:
 ;      /* Libération des tableaux */
 ;      if(current_segment->tab_reloc)
 L10121:
-	.line	915
+	.line	916
 ;        {
 	ldy	#$a57
 	lda	[<L265+current_segment_0],Y
@@ -7581,14 +7600,14 @@ L10121:
 	bne	L271
 	brl	L10122
 L271:
-	.line	916
-;          for(i=0; i<current_segment->nb_reloc; i++)
 	.line	917
+;          for(i=0; i<current_segment->nb_reloc; i++)
+	.line	918
 	stz	<L266+i_1
 	brl	L10126
 L10125:
 ;            k_free(current_segment->tab_reloc[i]);
-	.line	918
+	.line	919
 	ldy	#$0
 	lda	<L266+i_1
 	bpl	L272
@@ -7633,7 +7652,7 @@ L273:
 L274:
 L10124:
 ;          k_free(current_segment->tab_reloc);
-	.line	919
+	.line	920
 	ldy	#$a59
 	lda	[<L265+current_segment_0],Y
 	pha
@@ -7642,10 +7661,10 @@ L10124:
 	pha
 	jsl	~~k_free
 ;        }
-	.line	920
+	.line	921
 ;      if(current_segment->tab_interseg)
 L10122:
-	.line	921
+	.line	922
 ;        {
 	ldy	#$a5d
 	lda	[<L265+current_segment_0],Y
@@ -7654,14 +7673,14 @@ L10122:
 	bne	L275
 	brl	L10127
 L275:
-	.line	922
-;          for(i=0; i<current_segment->nb_interseg; i++)
 	.line	923
+;          for(i=0; i<current_segment->nb_interseg; i++)
+	.line	924
 	stz	<L266+i_1
 	brl	L10131
 L10130:
 ;            k_free(current_segment->tab_interseg[i]);
-	.line	924
+	.line	925
 	ldy	#$0
 	lda	<L266+i_1
 	bpl	L276
@@ -7706,7 +7725,7 @@ L277:
 L278:
 L10129:
 ;          k_free(current_segment->tab_interseg);
-	.line	925
+	.line	926
 	ldy	#$a5f
 	lda	[<L265+current_segment_0],Y
 	pha
@@ -7715,19 +7734,19 @@ L10129:
 	pha
 	jsl	~~k_free
 ;        }
-	.line	926
+	.line	927
 ;
 ;      k_free(current_segment);
 L10127:
-	.line	928
+	.line	929
 	pei	<L265+current_segment_0+2
 	pei	<L265+current_segment_0
 	jsl	~~k_free
 ;    }
-	.line	929
+	.line	930
 ;}
 L10116:
-	.line	930
+	.line	931
 L279:
 	lda	<L265+2
 	sta	<L265+2+4
@@ -7739,18 +7758,18 @@ L279:
 	adc	#L265+4
 	tcs
 	rtl
-	.endblock	930
+	.endblock	931
 L265	equ	22
 L266	equ	13
 	ends
 	efunc
-	.endfunc	930,13,22
-	.line	930
+	.endfunc	931,13,22
+	.line	931
 ;
 ;/************************************************************************/
 ;
-	.line	932
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Load.c",894
+	.line	933
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Load.c",895
 	xref	~~mem_free_record
 	xref	~~DecodeOneRecord
 	xref	~~LoadFileData
@@ -7768,130 +7787,140 @@ L266	equ	13
 	.sym	~~DecodeSegmentHeaderV1,~~DecodeSegmentHeaderV1,69,3,0
 	.sym	~~DecodeSegmentHeaderV0,~~DecodeSegmentHeaderV0,69,3,0
 	.sym	~~DecodeSegmentHeader,~~DecodeSegmentHeader,69,3,0
-	.sym	~~DecodeOneSegment,~~DecodeOneSegment,1098,3,32,121
+	.sym	~~DecodeOneSegment,~~DecodeOneSegment,1098,3,32,50
 	.sym	~~DecodeOMFFile,~~DecodeOMFFile,69,3,0
-	.sym	~~mem_free_omf,~~mem_free_omf,65,2,0
-	.sym	~~LoadOMFFile,~~LoadOMFFile,1098,2,32,122
 	.sym	~~mem_free_record,~~mem_free_record,65,18,0
-	.sym	~~DecodeOneRecord,~~DecodeOneRecord,1098,18,32,85
+	.sym	~~DecodeOneRecord,~~DecodeOneRecord,1098,18,32,93
 	.sym	~~LoadFileData,~~LoadFileData,1102,18,32
 	.sym	~~my_Memory,~~my_Memory,65,18,0
-	.sym	PIPCPORT,0,138,14,32,84
-	.sym	IPCPORT,0,10,14,144,84
+	.sym	PALLOCATIONHEADER,0,138,14,32,92
+	.sym	ALLOCATIONHEADER,0,10,14,80,92
+	.sym	PIPCPORT,0,138,14,32,91
+	.sym	IPCPORT,0,10,14,144,91
 	.sym	~~k_free,~~k_free,65,18,0
 	.sym	~~k_calloc,~~k_calloc,1089,18,32
 	.sym	MemoryCallback,0,641,14,32
-	.sym	PFXMEMORYMAP,0,138,14,32,83
-	.sym	FXMEMORYMAP,0,10,14,2072,83
-	.sym	UMM_HEAP_INFO,0,10,14,256,82
+	.sym	PFXMEMORYMAP,0,138,14,32,90
+	.sym	FXMEMORYMAP,0,10,14,2072,90
+	.sym	UMM_HEAP_INFO,0,10,14,256,89
 	.sym	FRESULT,0,5,14,16
-	.sym	MKFS_PARM,0,10,14,80,81
-	.sym	FILINFO,0,10,14,2224,80
-	.sym	DIR,0,10,14,416,79
-	.sym	FIL,0,10,14,4400,78
-	.sym	FFOBJID,0,10,14,128,77
-	.sym	FATFS,0,10,14,4504,76
+	.sym	MKFS_PARM,0,10,14,80,88
+	.sym	FILINFO,0,10,14,2224,87
+	.sym	DIR,0,10,14,416,86
+	.sym	FIL,0,10,14,4400,85
+	.sym	FFOBJID,0,10,14,128,84
+	.sym	FATFS,0,10,14,4504,83
 	.sym	LBA_t,0,18,14,32
 	.sym	FSIZE_t,0,18,14,32
 	.sym	TCHAR,0,14,14,8
-	.sym	PCOMMANDARGS,0,138,14,32,75
-	.sym	COMMANDARGS,0,10,14,64,75
+	.sym	PCOMMANDARGS,0,138,14,32,82
+	.sym	COMMANDARGS,0,10,14,64,82
 	.sym	PTOKENIZESTATE,0,133,14,32
 	.sym	TOKENIZESTATE,0,5,14,16
-	.sym	PTOKEN,0,138,14,32,74
-	.sym	TOKEN,0,10,14,64,74
+	.sym	PTOKEN,0,138,14,32,81
+	.sym	TOKEN,0,10,14,64,81
 	.sym	PTOKENTYPE,0,133,14,32
 	.sym	TOKENTYPE,0,5,14,16
 	.sym	FXCommandHandler,0,656,14,32
-	.sym	PCONSOLECTX,0,138,14,32,73
-	.sym	CONSOLECTX,0,10,14,1144,73
-	.sym	PSPINNERCTX,0,138,14,32,72
-	.sym	SPINNERCTX,0,10,14,48,72
-	.sym	HCLIP,0,138,14,32,71
-	.sym	PCLIPBOARD_DATA,0,138,14,32,71
-	.sym	CLIPBOARD_DATA,0,10,14,168,71
-	.sym	PEVENTMANAGER,0,138,14,32,70
-	.sym	EVENTMANAGER,0,10,14,192,70
+	.sym	PCONSOLECTX,0,138,14,32,80
+	.sym	CONSOLECTX,0,10,14,1144,80
+	.sym	PSPINNERCTX,0,138,14,32,79
+	.sym	SPINNERCTX,0,10,14,48,79
+	.sym	HCLIP,0,138,14,32,78
+	.sym	PCLIPBOARD_DATA,0,138,14,32,78
+	.sym	CLIPBOARD_DATA,0,10,14,168,78
+	.sym	PEVENTMANAGER,0,138,14,32,77
+	.sym	EVENTMANAGER,0,10,14,192,77
 	.sym	EV_RUN,0,656,14,32
 	.sym	EV_QUERY_METRIC,0,656,14,32
 	.sym	EV_CONFIGURE,0,656,14,32
 	.sym	EV_UNINIT,0,641,14,32
 	.sym	EV_INIT,0,8833,14,32
-	.sym	PMOUSE_MSG_STATE,0,138,14,32,69
-	.sym	MOUSE_MSG_STATE,0,10,14,184,69
-	.sym	PFXEVENTPROCESS,0,138,14,32,68
-	.sym	FXEVENTPROCESS,0,10,14,64,68
-	.sym	PMARSHALDATA,0,139,14,32,67
-	.sym	MARSHALDATA,0,11,14,32,67
+	.sym	PMOUSE_MSG_STATE,0,138,14,32,76
+	.sym	MOUSE_MSG_STATE,0,10,14,184,76
+	.sym	PFXEVENTPROCESS,0,138,14,32,75
+	.sym	FXEVENTPROCESS,0,10,14,64,75
+	.sym	FXASYNCPROCESS,0,641,14,32
+	.sym	PMARSHALDATA,0,139,14,32,74
+	.sym	MARSHALDATA,0,11,14,32,74
 	.sym	FXIDLEPROCESS,0,641,14,32
 	.sym	FXEventProc,0,641,14,32
-	.sym	PMOUSEMSGDATA,0,138,14,32,66
-	.sym	MOUSEMSGDATA,0,10,14,64,66
+	.sym	PMOUSEMSGDATA,0,138,14,32,73
+	.sym	MOUSEMSGDATA,0,10,14,64,73
 	.sym	MSGIRQ,0,5,14,16
-	.sym	MAINLOOPARGS,0,10,14,16,65
-	.sym	PEACHCHILD_MSG,0,138,14,32,64
-	.sym	EACHCHILD_MSG,0,10,14,64,64
-	.sym	PMSGBOX_DATA,0,138,14,32,63
-	.sym	MSGBOX_DATA,0,10,14,96,63
-	.sym	PDESKTOP_DATA,0,138,14,32,62
-	.sym	DESKTOP_DATA,0,10,14,64,62
-	.sym	PWINDOWMANAGER,0,138,14,32,61
-	.sym	WINDOWMANAGER,0,10,14,160,61
+	.sym	MAINLOOPARGS,0,10,14,16,72
+	.sym	PEACHCHILD_MSG,0,138,14,32,71
+	.sym	EACHCHILD_MSG,0,10,14,64,71
+	.sym	PMSGBOX_DATA,0,138,14,32,70
+	.sym	MSGBOX_DATA,0,10,14,96,70
+	.sym	PDESKTOP_DATA,0,138,14,32,69
+	.sym	DESKTOP_DATA,0,10,14,64,69
+	.sym	PWINDOWMANAGER,0,138,14,32,68
+	.sym	WINDOWMANAGER,0,10,14,160,68
 	.sym	WM_DOPROCS,0,641,14,32
 	.sym	WM_QUERY_METRIC,0,656,14,32
 	.sym	WM_CONFIGURE,0,656,14,32
 	.sym	WM_HANDLE_EVENT,0,8833,14,32
 	.sym	WM_EVENTS,0,641,14,32
-	.sym	PCUR_PALETTE_MAP,0,138,14,32,60
-	.sym	CUR_PALETTE_MAP,0,10,14,400,60
-	.sym	PCLICKDETECTED,0,138,14,32,59
-	.sym	CLICKDETECTED,0,10,14,64,59
+	.sym	PCUR_PALETTE_MAP,0,138,14,32,67
+	.sym	CUR_PALETTE_MAP,0,10,14,400,67
+	.sym	PCLICKDETECTED,0,138,14,32,66
+	.sym	CLICKDETECTED,0,10,14,64,66
 	.sym	OBJECTCLICKED,0,641,14,32
-	.sym	PEXECUTIVE,0,138,14,32,58
-	.sym	EXECUTIVE,0,10,14,128,58
+	.sym	PEXECUTIVE,0,138,14,32,65
+	.sym	EXECUTIVE,0,10,14,128,65
 	.sym	EX_QUERY_METRIC,0,656,14,32
 	.sym	EX_CONFIGURE,0,656,14,32
 	.sym	EX_UNINIT,0,641,14,32
 	.sym	EX_INIT,0,8833,14,32
 	.sym	~~k_string_copy_string,~~k_string_copy_string,1102,18,32
-	.sym	PFXSTRING,0,138,14,32,57
-	.sym	FXSTRING,0,10,14,64,57
-	.sym	DEVICEDRIVER_COMMAND,0,656,14,32
+	.sym	PFXSTRING,0,138,14,32,64
+	.sym	FXSTRING,0,10,14,64,64
+	.sym	PIRQCHAIN,0,138,14,32,63
+	.sym	IRQCHAIN,0,10,14,128,63
+	.sym	DEVICEDRIVER_COMMAND,0,654,14,32
 	.sym	DEVICEDRIVER_UNLOAD,0,654,14,32
-	.sym	DEVICEDRIVER_WRITE,0,656,14,32
-	.sym	DEVICEDRIVER_READ,0,656,14,32
+	.sym	DEVICEDRIVER_WRITE,0,654,14,32
+	.sym	DEVICEDRIVER_READ,0,654,14,32
 	.sym	DEVICEDRIVER_LOAD,0,654,14,32
-	.sym	DEVICEDRIVER_IRQ,0,654,14,32
-	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,56
-	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,56
-	.sym	GETDRIVERDEF,0,8842,14,32,55
-	.sym	PFX_DEVICE_DRIVER,0,138,14,32,55
-	.sym	FX_DEVICE_DRIVER,0,10,14,776,55
+	.sym	DEVICEDRIVER_IRQ,0,641,14,32
+	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,62
+	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,62
+	.sym	GETDRIVERDEF,0,8842,14,32,61
+	.sym	PFX_DEVICE_DRIVER,0,138,14,32,61
+	.sym	FX_DEVICE_DRIVER,0,10,14,776,61
 	.sym	~~k_debug_strings,~~k_debug_strings,65,18,0
 	.sym	~~k_debug_string,~~k_debug_string,65,18,0
-	.sym	PSEGMENTHEADER,0,138,14,32,54
-	.sym	SEGMENTHEADER,0,10,14,160,54
-	.sym	PDEBUGBYTEBITS,0,138,14,32,53
-	.sym	DEBUGBYTEBITS,0,10,14,8,53
-	.sym	PFXENVIRONMENT,0,138,14,32,52
-	.sym	FXENVIRONMENT,0,10,14,96,52
-	.sym	PFXZEROPAGE,0,138,14,32,51
-	.sym	FXZEROPAGE,0,10,14,824,51
+	.sym	PSEGMENTHEADER,0,138,14,32,60
+	.sym	SEGMENTHEADER,0,10,14,160,60
+	.sym	PDEBUGBYTEBITS,0,138,14,32,59
+	.sym	DEBUGBYTEBITS,0,10,14,8,59
+	.sym	PFXENVIRONMENT,0,138,14,32,58
+	.sym	FXENVIRONMENT,0,10,14,96,58
+	.sym	PFXZEROPAGE,0,138,14,32,57
+	.sym	FXZEROPAGE,0,10,14,720,57
+	.sym	IRQBUFFER,0,10,14,32,56
 	.sym	KERNELTRAPCALL,0,641,14,32
-	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,50
-	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,50
+	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,55
+	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,55
 	.sym	FOREACHNODEUNTIL,0,654,14,32
 	.sym	FOREACHNODE,0,641,14,32
 	.sym	~~strlen,~~strlen,80,18,0
 	.sym	~~memcpy,~~memcpy,1089,18,32
 	.sym	Boolean_T,0,5,14,16
-	.sym	ldiv_t,0,10,14,64,48
-	.sym	div_t,0,10,14,32,47
+	.sym	ldiv_t,0,10,14,64,53
+	.sym	div_t,0,10,14,32,52
 	.sym	wctype_t,0,16,14,16
 	.sym	wint_t,0,16,14,16
 	.sym	wchar_t,0,14,14,8
 	.sym	ptrdiff_t,0,7,14,32
 	.sym	size_t,0,16,14,16
+	.sym	~~mem_free_omf,~~mem_free_omf,65,2,0
+	.sym	~~LoadOMFFile,~~LoadOMFFile,1098,2,32,51
+	.sym	PFXRFHEADER_STRING_ENTRY,0,138,14,32,48
+	.sym	FXRFHEADER_STRING_ENTRY,0,10,14,40,48
+	.sym	PFXRFHEADER_STRING,0,138,14,32,47
+	.sym	FXRFHEADER_STRING,0,10,14,32,47
 	.sym	PFXRFHEADER_FONT,0,138,14,32,46
 	.sym	FXRFHEADER_FONT,0,10,14,144,46
 	.sym	PFXRFHEADER,0,138,14,32,45
@@ -7969,9 +7998,9 @@ L266	equ	13
 	.sym	CONSOLE_CONTROL,0,10,14,448,15
 	.sym	FXProcessProc,0,641,14,32
 	.sym	PFXCMDMESSAGE,0,138,14,32,14
-	.sym	FXCMDMESSAGE,0,10,14,304,14
+	.sym	FXCMDMESSAGE,0,10,14,312,14
 	.sym	PFXOSMESSAGE,0,138,14,32,13
-	.sym	FXOSMESSAGE,0,10,14,304,13
+	.sym	FXOSMESSAGE,0,10,14,312,13
 	.sym	PINT_REGS,0,138,14,32,12
 	.sym	INT_REGS,0,10,14,104,12
 	.sym	TASK_STACK,0,10,14,32,11
@@ -8018,6 +8047,7 @@ L266	equ	13
 	.sym	HRESULT,0,18,14,32
 	.sym	LPWCHAR,0,144,14,32
 	.sym	WCHAR,0,16,14,16
+	.sym	HSTRINGTABLE,0,129,14,32
 	.sym	HCOLOR,0,129,14,32
 	.sym	HFONT,0,129,14,32
 	.sym	HDC,0,129,14,32
@@ -8045,6 +8075,12 @@ L266	equ	13
 	.sym	LPSTR,0,142,14,32
 	.sym	LPCHAR,0,142,14,32
 	.sym	CHAR,0,14,14,8
+	.sym	PUINT_32,0,146,14,32
+	.sym	UINT_32,0,18,14,32
+	.sym	PUINT_16,0,144,14,32
+	.sym	UINT_16,0,16,14,16
+	.sym	PUINT_8,0,142,14,32
+	.sym	UINT_8,0,14,14,8
 	.sym	LPVOID,0,129,14,32
 	.sym	VOID,0,1,14,32
 	end

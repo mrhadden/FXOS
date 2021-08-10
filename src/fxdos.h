@@ -3,7 +3,7 @@
 #define __FX_DOS_
 
 #include "fxtypes.h"
-#include "ff.h"
+#include "ff/ff.h"
 #include "diskio.h"
 //#include "fxfloppy.h"
 
@@ -728,19 +728,31 @@ PFXNODELIST  k_read_dos_directory(PFXDOSDEVICE pfxdosDevice);
 LPSTR 		 k_dos_alloc_short_name(PFAT16ENTRYLONG entry);
 ULONG 		 k_dos_get_name(PFAT16ENTRYLONG entry,LPCHAR mbsBuffer);
 
+LPVOID 		 k_dos_ext_load_driver(LPCSTR driverPath);
+LPVOID 		 k_dos_load_driver(ULONG driver_idx);
 LPCSTR		 k_dos_load_drivers(VOID);
 UINT 		 k_dos_read_file(PFXDOSDEVICE pfxdosDevice,LPCSTR fileName);
 
 
+typedef struct fx_file
+{
+	FATFS 	*fs;
+	FILINFO *fileInfo;
+	FIL		*f;
+	FRESULT  fr;
+}FILE_POINTER;
+typedef FILE_POINTER FAR *FILE;
+
 PFX_DEVICE_DRIVER k_get_device_driver(UINT type);
+PFXDOSDEVICE      k_get_dos_device(UINT type);
 
 PFXNODELIST k_dos_findfiles_to_nodes(LPCSTR path);
 
 EXPORT_FUNC_DOS(FileOpen)
-HRESULT k_dos_open(FIL* fp, const TCHAR* path, BYTE mode);
+FILE k_dos_open(const TCHAR* path, BYTE mode);
 
 EXPORT_FUNC_DOS(FileClose)
-HRESULT k_dos_close(FIL* fp);
+HRESULT k_dos_close(FILE file);
 
 EXPORT_FUNC_DOS(FileRead)
 HRESULT k_dos_read(FIL* fp, void* buff, UINT btr, UINT* br);

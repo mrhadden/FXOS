@@ -1,0 +1,330 @@
+
+; 64tass Turbo Assembler Macro V1.53.1515 listing file
+; 64tass --long-address --flat -b --m65816 -o build\fxload.pgx --list=build\fxload.lst --labels=build\fxload.lbl src\fxload.s
+; Tue Jul 13 13:09:21 2021
+
+;Offset	;Hex		;Monitor	;Source
+
+;******  Processing input file: src\fxload.s
+
+
+;******  Processing file: src\bank0.s
+
+=$000320				SDOS_VARIABLES   = $000320
+=$000320				BIOS_STATUS      = $000320      ; 1 byte - Status of any BIOS operation
+=$000321				BIOS_DEV         = $000321      ; 1 byte - Block device number for block operations
+=$000322				BIOS_LBA         = $000322      ; 4 bytes - Address of block to read/write (this is the physical block, w/o reference to partition)
+=$000326				BIOS_BUFF_PTR    = $000326      ; 4 bytes - 24-bit pointer to memory for read/write operations
+=$00032a				BIOS_FIFO_COUNT  = $00032A      ; 2 bytes - The number of bytes read on the last block read
+=$00032c				BIOS_FLAGS       = $00032C      ; 1 byte - Flags for various BIOSy things:
+=$00032d				BIOS_TIMER       = $00032D      ; 1 byte - the number of 1/60 ticks for a time out
+=$00032e				DOS_STATUS       = $00032E      ; 1 byte - The error code describing any error with file access
+=$000330				DOS_CLUS_ID      = $000330      ; 4 bytes - The cluster desired for a DOS operation
+=$000338				DOS_DIR_PTR      = $000338      ; 4 bytes - Pointer to a directory entry (assumed to be within DOS_SECTOR)
+=$00033c				DOS_BUFF_PTR     = $00033C      ; 4 bytes - A pointer for DOS cluster read/write operations
+=$000340				DOS_FD_PTR       = $000340      ; 4 bytes - A pointer to a file descriptor
+=$000344				DOS_FAT_LBA      = $000344      ; 4 bytes - The LBA for a sector of the FAT we need to read/write
+=$000348				DOS_TEMP         = $000348      ; 4 bytes - Temporary storage for DOS operations
+=$00034c				DOS_FILE_SIZE    = $00034C      ; 4 bytes - The size of a file
+=$000350				DOS_SRC_PTR      = $000350      ; 4 bytes - Pointer for transferring data
+=$000354				DOS_DST_PTR      = $000354      ; 4 bytes - Pointer for transferring data
+=$000358				DOS_END_PTR      = $000358      ; 4 bytes - Pointer to the last byte to save
+=$00035c				DOS_RUN_PTR      = $00035C      ; 4 bytes - Pointer for starting a loaded program
+=$000360				DOS_RUN_PARAM    = $000360      ; 4 bytes - Pointer to the ASCIIZ string for arguments in loading a program
+=$000364				DOS_STR1_PTR     = $000364      ; 4 bytes - pointer to a string
+=$000368				DOS_STR2_PTR     = $000368      ; 4 bytes - pointer to a string
+=$00036b				DOS_SCRATCH      = $00036B      ; 4 bytes - general purpose short term storage
+=$000400				DOS_PATH_BUFF    = $000400      ; 256 bytes - A buffer for path names
+=$000500				FDC_PARAMETERS   = $000500      ; 16 bytes - a buffer of parameter data for the FDC
+=$000510				FDC_RESULTS      = $000510      ; 16 bytes - Buffer for results of FDC commands
+=$000530				FDC_PARAM_NUM    = $000530      ; 1 byte - The number of parameters to send to the FDC (including command)
+=$000532				FDC_RESULT_NUM   = $000532      ; 1 byte - The number of results expected
+=$000533				FDC_EXPECT_DAT   = $000533      ; 1 byte - 0 = the command expects no data, otherwise expects data
+=$000534				FDC_CMD_RETRY    = $000534      ; 1 byte - a retry counter for commands
+
+;******  Return to file: src\fxload.s
+
+
+;******  Processing file: src\macros.s
+
+
+;******  Return to file: src\fxload.s
+
+
+;******  Processing file: src\kernel.s
+
+=$001000				BOOT             = $001000 ; Cold boot routine
+=$001004				RESTORE          = $001004 ; Warm boot routine
+=$001008				BREAK            = $001008 ; End program and return to command prompt
+=$00100c				READY            = $00100C ; Print prompt and wait for keyboard input
+=$001010				SCINIT           = $001010 ;
+=$001014				IOINIT           = $001014 ;
+=$001018				PUTC             = $001018 ; Print a character to the currently selected channel
+=$00101c				PUTS             = $00101C ; Print a string to the currently selected channel
+=$001020				PUTB             = $001020 ; Output a byte to the currently selected channel
+=$001024				PUTBLOCK         = $001024 ; Ouput a binary block to the currently selected channel
+=$001028				SETLFS           = $001028 ; Obsolete (done in OPEN)
+=$00102c				SETNAM           = $00102C ; Obsolete (done in OPEN)
+=$001030				OPEN             = $001030 ; Open a channel for reading and/or writing. Use SETLFS and SETNAM to set the channels and filename first.
+=$001034				CLOSE            = $001034 ; Close a channel
+=$001038				SETIN            = $001038 ; Set the current input channel
+=$00103c				SETOUT           = $00103C ; Set the current output channel
+=$001040				GETB             = $001040 ; Get a byte from input channel. Return 0 if no input. Carry is set if no input.
+=$001044				GETBLOCK         = $001044 ; Get a X byes from input channel. If Carry is set, wait. If Carry is clear, do not wait.
+=$001048				GETCH            = $001048 ; Get a character from the input channel. A=0 and Carry=1 if no data is wating
+=$00104c				GETCHW           = $00104C ; Get a character from the input channel. Waits until data received. A=0 and Carry=1 if no data is wating
+=$001050				GETCHE           = $001050 ; Get a character from the input channel and echo to the screen. Wait if data is not ready.
+=$001054				GETS             = $001054 ; Get a string from the input channel. NULL terminates
+=$001058				GETLINE          = $001058 ; Get a line of text from input channel. CR or NULL terminates.
+=$00105c				GETFIELD         = $00105C ; Get a field from the input channel. Value in A, CR, or NULL terminates
+=$001060				TRIM             = $001060 ; Removes spaces at beginning and end of string.
+=$001064				PRINTC           = $001064 ; Print character to screen. Handles terminal commands
+=$001068				PRINTS           = $001068 ; Print string to screen. Handles terminal commands
+=$00106c				PRINTCR          = $00106C ; Print Carriage Return
+=$001070				PRINTF           = $001070 ; Print a float value
+=$001074				PRINTI           = $001074 ; Prints integer value in TEMP
+=$001078				PRINTH           = $001078 ; Print Hex value in DP variable
+=$00107c				PRINTAI          = $00107C ; Prints integer value in A
+=$001080				PRINTAH          = $001080 ; Prints hex value in A. Printed value is 2 wide if M flag is 1, 4 wide if M=0
+=$001084				LOCATE           = $001084 ;
+=$001088				PUSHKEY          = $001088 ;
+=$00108c				PUSHKEYS         = $00108C ;
+=$001090				CSRRIGHT         = $001090 ;
+=$001094				CSRLEFT          = $001094 ;
+=$001098				CSRUP            = $001098 ;
+=$00109c				CSRDOWN          = $00109C ;
+=$0010a0				CSRHOME          = $0010A0 ;
+=$0010a4				SCROLLUP         = $0010A4 ; Scroll the screen up one line. Creates an empty line at the bottom.
+=$0010a8				CLRSCREEN        = $0010A8 ; Clear the screen
+=$0010ac				INITCHLUT        = $0010AC ; Init character look-up table
+=$0010b0				INITSUPERIO      = $0010B0 ; Init Super-IO chip
+=$0010b4				INITKEYBOARD     = $0010B4 ; Init keyboard
+=$0010bc				INITCURSOR       = $0010BC ; Init the Cursors registers
+=$0010c0				INITFONTSET      = $0010C0 ; Init the Internal FONT Memory
+=$0010c4				INITGAMMATABLE   = $0010C4 ; Init the RGB GAMMA Look Up Table
+=$0010c8				INITALLLUT       = $0010C8 ; Init the Graphic Engine (Bitmap/Tile/Sprites) LUT
+=$0010cc				INITVKYTXTMODE   = $0010CC ; Init the Text Mode @ Reset Time
+=$0010d0				INITVKYGRPMODE   = $0010D0 ; Init the Basic Registers for the Graphic Mode
+=$0010f0				F_OPEN           = $0010F0 ; open a file for reading/writing/creating
+=$0010f4				F_CREATE         = $0010F4 ; create a new file
+=$0010f8				F_CLOSE          = $0010F8 ; close a file (make sure last cluster is written)
+=$0010fc				F_WRITE          = $0010FC ; write the current cluster to the file
+=$001100				F_READ           = $001100 ; read the next cluster from the file
+=$001104				F_DELETE         = $001104 ; delete a file / directory
+=$001108				F_DIROPEN        = $001108 ; open a directory and seek the first directory entry
+=$00110c				F_DIRNEXT        = $00110C ; seek to the next directory of an open directory
+=$001110				F_DIRREAD        = $001110 ; Read the directory entry for the specified file
+=$001114				F_DIRWRITE       = $001114 ; Write any changes in the current directory cluster back to the drive
+=$001118				F_LOAD           = $001118 ; load a binary file into memory, supports multiple file formats
+=$00111c				F_SAVE           = $00111C ; Save memory to a binary file
+=$001120				CMDBLOCK         = $001120 ; Send a command to a block device
+=$001124				F_RUN            = $001124 ; Load and run an executable binary file
+=$001128				F_MOUNT          = $001128 ; Mount the designated block device
+
+;******  Return to file: src\fxload.s
+
+=0					BIOS_DEV_FDC = 0            ; Floppy 0
+=1					BIOS_DEV_FD1 = 1            ; Future support: Floppy 1 (not likely to be attached)
+=2					BIOS_DEV_SD = 2             ; SD card, partition 0
+=3					BIOS_DEV_SD1 = 3            ; Future support: SD card, partition 1
+=4					BIOS_DEV_SD2 = 4            ; Future support: SD card, partition 2
+=5					BIOS_DEV_SD3 = 5            ; Future support: SD card, partition 3
+=6					BIOS_DEV_HD0 = 6            ; Future support: IDE Drive 0, partition 0
+=7					BIOS_DEV_HD1 = 7            ; Future support: IDE Drive 0, partition 1
+=8					BIOS_DEV_HD2 = 8            ; Future support: IDE Drive 0, partition 2
+=9					BIOS_DEV_HD3 = 9            ; Future support: IDE Drive 0, partition 3
+=$020000				DOS_SECTOR = $020000
+=510					BPB_SIGNATURE = 510         ; Position of the signature bytes in the boot sector
+=1					CMD_MOTOR_ON = 1            ; Command code to turn on the spindle motor
+=2					CMD_MOTOR_OFF = 2           ; Command code to turn off the spindle motor
+=64					FDC_VBR_PATH = 64           ; Offset to the path in the VBR (floppy drive)
+=11					MBR_PATH = 11               ; Offset to the path in the MBR (SD and IDE)
+=$00ffe0				IRQ_START = $00FFE0
+=$007d00				FXSTART   = $007D00
+=$3a0000				BASIC = $3A0000
+>15f8	50 47 58			PGXHEADER           .text "PGX"
+>15fb	01				                    .byte $01
+>15fc	00 16 00 00			                    .dword START
+.1600	da		phx		START               PHX
+.1601	5a		phy		                    PHY
+.1602	8b		phb		                    PHB
+.1603	0b		phd		                    PHD
+.1604	08		php		                    PHP
+.1605	48		pha		                PHA             ; begin setdbr macro
+.1606	08		php		                PHP
+.1607	e2 20		sep #$20	                SEP #$20        ; set A short
+.1609	a9 00		lda #$00	                LDA #`START
+.160b	48		pha		                PHA
+.160c	ab		plb		                PLB
+.160d	28		plp		                PLP
+.160e	68		pla		                PLA             ; end setdbr macro
+.160f	48		pha		                PHA             ; begin setdp macro
+.1610	08		php		                PHP
+.1611	c2 20		rep #$20	                REP #$20        ; set A long
+.1613	a9 20 03	lda #$0320	                LDA #SDOS_VARIABLES         ; set DP to page 0
+.1616	5b		tcd		                TCD
+.1617	28		plp		                PLP
+.1618	68		pla		                PLA             ; end setdp macro
+.1619	c2 10		rep #$10	                REP #$10        ; set X long
+.161b					main
+.161b	e2 20		sep #$20	                SEP #$20        ; set A short
+.161d	22 a8 10 00	jsl $0010a8						JSL CLRSCREEN
+.1621	c2 30		rep #$30	                REP #$30        ; set A&X long
+.1623	a2 81 16	ldx #$1681	                    LDX #<>MSG_FXLOADER           ; loading message
+.1626	22 1c 10 00	jsl $00101c	                    JSL PUTS
+.162a	78		sei							SEI
+.162b	c2 30		rep #$30	                REP #$30        ; set A&X long
+.162d	a2 93 16	ldx #$1693	                    LDX #<>MSG_FXIRQ           ; loading message
+.1630	22 1c 10 00	jsl $00101c	                    JSL PUTS
+.1634	e2 20		sep #$20	                SEP #$20        ; set A short
+.1636	a2 00 00	ldx #$0000						LDX #$0000
+.1639	bf ad 17 00	lda $0017ad,x	FILL_IRQ		    LDA @lIRQ_BLOCK,X
+.163d	9f e0 ff 00	sta $00ffe0,x	                	STA @lIRQ_START,X
+.1641	e8		inx		                	INX
+.1642	e0 20 00	cpx #$0020	                	CPX #$0020
+.1645	d0 f2		bne $1639	                	BNE FILL_IRQ
+.1647	c2 30		rep #$30	                REP #$30        ; set A&X long
+.1649	a2 a0 16	ldx #$16a0	                    LDX #<>MSG_FXJUMP           ; loading message
+.164c	22 1c 10 00	jsl $00101c	                    JSL PUTS
+.1650	5c 00 7d 00	jmp $007d00						JML FXSTART
+.1654					RETURN0
+.1654	c2 30		rep #$30	                REP #$30        ; set A&X long
+.1656	a9 00 00	lda #$0000	                    LDA #0
+.1659	28		plp		RETURN              PLP
+.165a	2b		pld		                    PLD
+.165b	ab		plb		                    PLB
+.165c	7a		ply		                    PLY
+.165d	fa		plx		                    PLX
+.165e	6b		rtl		                    RTL
+>165f	40 73 3a 6d 6b 62 6f 6f		DEFAULT_PARAMS      .null "@s:mkboot.pgx @f:sample.pgx Hello"
+>1667	74 2e 70 67 78 20 40 66 3a 73 61 6d 70 6c 65 2e
+>1677	70 67 78 20 48 65 6c 6c 6f 00
+>1681	4c 6f 61 64 69 6e 67 20		MSG_FXLOADER		.null "Loading FX/OS...",13
+>1689	46 58 2f 4f 53 2e 2e 2e 0d 00
+>1693	53 65 74 74 69 6e 67 20		MSG_FXIRQ			.null "Setting IRQ",13
+>169b	49 52 51 0d 00
+>16a0	4a 75 6d 70 69 6e 67 20		MSG_FXJUMP			.null "Jumping to start...",13
+>16a8	74 6f 20 73 74 61 72 74 2e 2e 2e 0d 00
+>16b5	55 53 41 47 45 3a 20 4d		MSG_USAGE           .null "USAGE: MKBOOT.PGX <path>", 13
+>16bd	4b 42 4f 4f 54 2e 50 47 58 20 3c 70 61 74 68 3e
+>16cd	0d 00
+>16cf	43 6f 75 6c 64 20 6e 6f		MSG_NOFDC           .null "Could not make the floppy disk bootable.", 13
+>16d7	74 20 6d 61 6b 65 20 74 68 65 20 66 6c 6f 70 70
+>16e7	79 20 64 69 73 6b 20 62 6f 6f 74 61 62 6c 65 2e
+>16f7	0d 00
+>16f9	4e 6f 20 62 6f 6f 74 20		MSG_NOPATH          .null "No boot path was found.", 13, 13
+>1701	70 61 74 68 20 77 61 73 20 66 6f 75 6e 64 2e 0d
+>1711	0d 00
+>1713	4e 6f 20 64 65 76 69 63		MSG_NODEV           .null "No device name found.", 13, 13
+>171b	65 20 6e 61 6d 65 20 66 6f 75 6e 64 2e 0d 0d 00
+>172b	42 61 64 20 64 65 76 69		MSG_BADDEV          .null "Bad device name.", 13, 13
+>1733	63 65 20 6e 61 6d 65 2e 0d 0d 00
+>173e	43 6f 75 6c 64 20 6e 6f		MSG_NOMOUNT         .null "Could not mount floppy drive.", 13, 13
+>1746	74 20 6d 6f 75 6e 74 20 66 6c 6f 70 70 79 20 64
+>1756	72 69 76 65 2e 0d 0d 00
+>175e	43 6f 75 6c 64 20 6e 6f		MSG_NOSDC           .null "Could not make the SD card bootable.", 13
+>1766	74 20 6d 61 6b 65 20 74 68 65 20 53 44 20 63 61
+>1776	72 64 20 62 6f 6f 74 61 62 6c 65 2e 0d 00
+>1784	43 6f 75 6c 64 20 6e 6f		MSG_NOIDE           .null "Could not make the hard drive bootable.", 13
+>178c	74 20 6d 61 6b 65 20 74 68 65 20 68 61 72 64 20
+>179c	64 72 69 76 65 20 62 6f 6f 74 61 62 6c 65 2e 0d
+>17ac	00
+>17ad	00 00 00 00 89 7e 72 7e		IRQ_BLOCK			.text $00,$00,$00,$00,$89,$7E,$72,$7E,$A0,$7E,$71,$7E,$A0,$7E,$5A,$7E
+>17b5	a0 7e 71 7e a0 7e 5a 7e
+>17bd	a0 7e a0 7e a0 7e a0 7e							.text $A0,$7E,$A0,$7E,$A0,$7E,$A0,$7E,$A0,$7E,$A0,$7E,$00,$7D,$A0,$7E
+>17c5	a0 7e a0 7e 00 7d a0 7e
+.17cd					FDC_WRITEVBR
+.17cd					WRITE_MBR
+.17cd					FDC_VBR_BEGIN
+>17cd	eb 00 90			start               .byte $EB, $00, $90     ; Entry point
+>17d0	43 32 35 36 44 4f 53 20		magic               .text "C256DOS "        ; OEM name / magic text for booting
+>17d8	00 02				bytes_per_sec       .word 512               ; How many bytes per sector
+>17da	01				sec_per_cluster     .byte 1                 ; How many sectors per cluster
+>17db	01 00				rsrv_sectors        .word 1                 ; Number of reserved sectors
+>17dd	02				num_fat             .byte 2                 ; Number of FATs
+>17de	e0 00				max_dir_entry       .word (32-18)*16        ; Total number of root dir entries
+>17e0	40 0b				total_sectors       .word 2880              ; Total sectors
+>17e2	f0				media_descriptor    .byte $F0               ; 3.5" 1.44 MB floppy 80 tracks, 18 tracks per sector
+>17e3	09 00				sec_per_fat         .word 9                 ; Sectors per FAT
+>17e5	12 00				sec_per_track       .word 18                ; Sectors per track
+>17e7	02 00				num_head            .word 2                 ; Number of heads
+>17e9	00 00 00 00			ignore2             .dword 0
+>17ed	00 00 00 00			fat32_sector        .dword 0                ; # of sectors in FAT32
+>17f1	00 00				ignore3             .word 0
+>17f3	29				boot_signature      .byte $29
+>17f4	78 56 34 12			volume_id           .dword $12345678        ; Replaced by code
+>17f8	55 4e 54 49 54 4c 45 44		volume_name         .text "UNTITLED   "     ; Replace by code
+>1800	20 20 20
+>1803	46 41 54 31 32 20 20 20		fs_type             .text "FAT12   "
+.180b	80 40		bra $184d	                    BRA vbr_start
+>180d					file_path           .fill 64                ; Reserve 64 bytes for a path and any options
+.184d					vbr_start
+.184d	48		pha		                PHA             ; begin setdp macro
+.184e	08		php		                PHP
+.184f	c2 20		rep #$20	                REP #$20        ; set A long
+.1851	a9 20 03	lda #$0320	                LDA #SDOS_VARIABLES         ; set DP to page 0
+.1854	5b		tcd		                TCD
+.1855	28		plp		                PLP
+.1856	68		pla		                PLA             ; end setdp macro
+.1857	e2 20		sep #$20	                SEP #$20        ; set A short
+.1859	64 43		stz $0363	                    STZ @b DOS_RUN_PARAM+3
+.185b	4b		phk		                    PHK                     ; Get the current bank to set the DOS_RUN_PARAM pointer
+.185c	68		pla		                    PLA
+.185d	85 42		sta $0362	                    STA @b DOS_RUN_PARAM+2
+.185f	c2 30		rep #$30	                REP #$30        ; set A&X long
+.1861	62 a9 ff	per $180d	                    PER file_path           ; Get the rest of the path address for the DOS_RUN_PARAM pointer
+.1864	68		pla		                    PLA
+.1865	85 40		sta $0360	                    STA @b DOS_RUN_PARAM
+.1867	22 24 11 00	jsl $001124	                    JSL F_RUN               ; And try to execute the binary file
+.186b	b0 0c		bcs $1879	                    BCS lock                ; If it returned success... lock up... I guess?
+.186d					error
+.186d	e2 20		sep #$20	                SEP #$20        ; set A short
+.186f	4b		phk		                    PHK                     ; Otherwise, print an error message
+.1870	ab		plb		                    PLB
+.1871	62 08 00	per $187c	                    PER message
+.1874	fa		plx		                    PLX
+.1875	22 1c 10 00	jsl $00101c	                    JSL PUTS
+.1879	ea		nop		lock                NOP                     ; And lock up
+.187a	80 fd		bra $1879	                    BRA lock
+>187c	43 6f 75 6c 64 20 6e 6f		message             .null "Could not find a bootable binary.",13
+>1884	74 20 66 69 6e 64 20 61 20 62 6f 6f 74 61 62 6c
+>1894	65 20 62 69 6e 61 72 79 2e 0d 00
+.189f					FDC_VBR_END
+.189f					MBR_START
+.189f	82 48 00	brl $18ea	                    BRL mbr_start           ; Initial jump
+>18a2	43 32 35 36 44 4f 53 20		                    .text "C256DOS "        ; Magic code for a C256 bootable drive
+>18aa					file_path           .fill 64                ; Reserve 64 bytes for a path and any options
+.18ea					mbr_start
+.18ea	48		pha		                PHA             ; begin setdp macro
+.18eb	08		php		                PHP
+.18ec	c2 20		rep #$20	                REP #$20        ; set A long
+.18ee	a9 20 03	lda #$0320	                LDA #SDOS_VARIABLES         ; set DP to page 0
+.18f1	5b		tcd		                TCD
+.18f2	28		plp		                PLP
+.18f3	68		pla		                PLA             ; end setdp macro
+.18f4	e2 20		sep #$20	                SEP #$20        ; set A short
+.18f6	64 43		stz $0363	                    STZ @b DOS_RUN_PARAM+3
+.18f8	4b		phk		                    PHK                     ; Get the current bank to set the DOS_RUN_PARAM pointer
+.18f9	68		pla		                    PLA
+.18fa	85 42		sta $0362	                    STA @b DOS_RUN_PARAM+2
+.18fc	c2 30		rep #$30	                REP #$30        ; set A&X long
+.18fe	62 a9 ff	per $18aa	                    PER file_path           ; Get the rest of the path address for the DOS_RUN_PARAM pointer
+.1901	68		pla		                    PLA
+.1902	85 40		sta $0360	                    STA @b DOS_RUN_PARAM
+.1904	22 24 11 00	jsl $001124	                    JSL F_RUN               ; And try to execute the binary file
+.1908	b0 0c		bcs $1916	                    BCS lock                ; If it returned success... lock up... I guess?
+.190a					error
+.190a	e2 20		sep #$20	                SEP #$20        ; set A short
+.190c	4b		phk		                    PHK                     ; Otherwise, print an error message
+.190d	ab		plb		                    PLB
+.190e	62 08 00	per $1919	                    PER message
+.1911	fa		plx		                    PLX
+.1912	22 1c 10 00	jsl $00101c	                    JSL PUTS
+.1916	ea		nop		lock                NOP                     ; And lock up
+.1917	80 fd		bra $1916	                    BRA lock
+>1919	43 6f 75 6c 64 20 6e 6f		message             .null "Could not find a bootable binary.",13
+>1921	74 20 66 69 6e 64 20 61 20 62 6f 6f 74 61 62 6c
+>1931	65 20 62 69 6e 61 72 79 2e 0d 00
+.193c					MBR_END
+
+;******  End of listing

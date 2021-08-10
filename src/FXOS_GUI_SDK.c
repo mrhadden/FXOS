@@ -1,11 +1,22 @@
 /*
  * FXOS_GUI_SDK.c
- * Jul 7, 2021 9:34:32 PM
+ * Jul 29, 2021 10:56:51 PM
  */
 
 #include "fxos.h"
 #include "FXOS_GUI_SDK.h"
 #include "GUI_IDX_SDK.h"
+
+/*
+*
+* Name:GetDesktopWindow
+* Subsystem:GUI
+*
+*/
+HWND GetDesktopWindow(VOID)
+{
+    return ((GETDESKTOPWINDOW)CALL_GUI_API(EXPORT_GUI_GETDESKTOPWINDOW))();
+}
 
 /*
 *
@@ -130,6 +141,17 @@ HPOINTER RegisterMousePointerClass(LPCSTR pFontName,LPCSTR pCursorData)
 
 /*
 *
+* Name:LoadFontClass
+* Subsystem:GUI
+*
+*/
+LPVOID LoadFontClass(LPSTR path)
+{
+    return ((LOADFONTCLASS)CALL_GUI_API(EXPORT_GUI_LOADFONTCLASS))(path);
+}
+
+/*
+*
 * Name:RegisterFontClass
 * Subsystem:GUI
 *
@@ -148,6 +170,39 @@ HFONT RegisterFontClass(LPCSTR pFontName,LPCSTR pFontData)
 HFONT GetFontClass(LPCSTR pFontName)
 {
     return ((GETFONTCLASS)CALL_GUI_API(EXPORT_GUI_GETFONTCLASS))(pFontName);
+}
+
+/*
+*
+* Name:LoadResource
+* Subsystem:GUI
+*
+*/
+HANDLE LoadResource(LPCSTR resourceFile)
+{
+    return ((LOADRESOURCE)CALL_GUI_API(EXPORT_GUI_LOADRESOURCE))(resourceFile);
+}
+
+/*
+*
+* Name:GetStringTableEntry
+* Subsystem:GUI
+*
+*/
+PFXSTRING GetStringTableEntry(UINT objId)
+{
+    return ((GETSTRINGTABLEENTRY)CALL_GUI_API(EXPORT_GUI_GETSTRINGTABLEENTRY))(objId);
+}
+
+/*
+*
+* Name:RegisterStringTable
+* Subsystem:GUI
+*
+*/
+BOOL RegisterStringTable(HANDLE hStringTable,BOOL bRelease)
+{
+    return ((REGISTERSTRINGTABLE)CALL_GUI_API(EXPORT_GUI_REGISTERSTRINGTABLE))(hStringTable,bRelease);
 }
 
 /*
@@ -511,6 +566,17 @@ PPOINT GetMousePoint(PFXOSMESSAGE pMsg,PPOINT point)
 PPOINT GetMouseClientPoint(PFXOSMESSAGE pMsg,PPOINT point)
 {
     return ((GETMOUSECLIENTPOINT)CALL_GUI_API(EXPORT_GUI_GETMOUSECLIENTPOINT))(pMsg,point);
+}
+
+/*
+*
+* Name:DefaultWindowProc
+* Subsystem:GUI
+*
+*/
+BOOL DefaultWindowProc(PFXOSMESSAGE pMsg)
+{
+    return ((DEFAULTWINDOWPROC)CALL_GUI_API(EXPORT_GUI_DEFAULTWINDOWPROC))(pMsg);
 }
 
 

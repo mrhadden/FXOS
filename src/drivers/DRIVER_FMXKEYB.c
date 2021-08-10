@@ -1,5 +1,7 @@
 #include "fxtypes.h"
 #include "fxkernel.h"
+#include "drivers/DRIVER.h"
+#include "drivers/ps2ctl.h"
 #include "drivers/DRIVER_KEYBOARD.h"
 
 
@@ -97,18 +99,25 @@
 
 #define KBD_SC_PIVOT 			(0x38 )
 
-
+/*
 static BOOL f_driver_load(void);
 static UINT f_driver_read(LPVOID buffer);
 static UINT f_driver_write(UINT size,LPVOID buffer);
 static BOOL f_driver_unload(void);
-
+*/
 static BOOL f_driver_load_u(void);
-static UINT f_driver_read_u(LPVOID buffer);
-static UINT f_driver_write_u(UINT size,LPVOID buffer);
+static UCHAR f_driver_read_u(unsigned long offset,LPCHAR buffer);
+static UCHAR f_driver_write_u(UINT size,LPVOID buffer);
 static BOOL f_driver_unload_u(void);
 
 static VOID f_driver_irq(VOID);
+
+static BYTE keyboard_send_cmd(BYTE cmd);
+static BYTE keyboard_send_cmd_data(BYTE cmd,BYTE data);
+
+
+static void set_led(UCHAR ledstatus);
+static void kbd_wait(BYTE a_type);
 
 
 extern int _irq_keyboardTimeout;
@@ -117,10 +126,22 @@ extern ULONG _pseudo_timer;
 
 static KEYSTATE _irq_key_state_machine = {0,0,0,0,0,0,0,0,0,0};
 
-static PIPCPORT debugport =  NULL;
+//static PIPCPORT debugport =  NULL;
 static PIPCPORT kbport =  NULL;
-static PIPCPORT mouseport =  NULL;
+//static PIPCPORT mouseport =  NULL;
 
+
+#define DRV_STATUS_PORT	 	  ((volatile LPSTR)0xAF1807)
+#define DRV_KBD_STATUS        ((volatile LPSTR)0xAF1807)
+#define DRV_KBD_CMD_BUF	 	  ((volatile LPSTR)0xAF1807)
+#define DRV_KBD_OUT_BUF 	  ((volatile LPSTR)0xAF1803)
+#define DRV_KBD_INPT_BUF	  ((volatile LPSTR)0xAF1803)
+#define DRV_KBD_DATA_BUF	  ((volatile LPSTR)0xAF1803)
+#define DRV_PORT_A		      ((volatile LPSTR)0xAF180A)
+#define DRV_PORT_B			  ((volatile LPSTR)0xAF180B)
+
+
+/*
 static FX_DEVICE_DRIVER DRIVER_FMXKEYBOARD = {
 										"DRIVER_FMXUKB_DUAL\0",
 										"v1.0.0\0",
@@ -128,15 +149,15 @@ static FX_DEVICE_DRIVER DRIVER_FMXKEYBOARD = {
 										"4\0",
 										DRIVER_TYPE_KEYBOARD,
 										"KEY:\0",
-										0,
-										NULL,
+										MAKEIRQ(1,0),
+										f_driver_irq,
 										NULL,
 										f_driver_load,
 										f_driver_read,
 										f_driver_write,
 										f_driver_unload
 								    };
-
+*/
 static FX_DEVICE_DRIVER DRIVER_FMXKEYBOARD_U = {
 										"DRIVER_FMXUKB_DUAL\0",
 										"v1.0.0\0",
@@ -144,7 +165,7 @@ static FX_DEVICE_DRIVER DRIVER_FMXKEYBOARD_U = {
 										"1\0",
 										DRIVER_TYPE_KEYBOARD,
 										"KEY:\0",
-										0,
+										MAKEIRQ(1,0),
 										f_driver_irq,
 										NULL,
 										f_driver_load_u,
@@ -153,27 +174,27 @@ static FX_DEVICE_DRIVER DRIVER_FMXKEYBOARD_U = {
 										f_driver_unload_u
 								    };
 
-static LPSTR DRV_STATUS_PORT	 = ((LPSTR)0xAF1064);
-static LPSTR DRV_KBD_STATUS      = ((LPSTR)0xAF1064);
-static LPSTR DRV_KBD_OUT_BUF 	 = ((LPSTR)0xAF1060);
-static LPSTR DRV_KBD_INPT_BUF	 = ((LPSTR)0xAF1060);
-static LPSTR DRV_KBD_CMD_BUF	 = ((LPSTR)0xAF1064);
-static LPSTR DRV_KBD_DATA_BUF	 = ((LPSTR)0xAF1060);
-static LPSTR DRV_PORT_A		     = ((LPSTR)0xAF1060);
-static LPSTR DRV_PORT_B			 = ((LPSTR)0xAF1061);
+
+
 
 static PFX_DEVICE_DRIVER f_get_driver(LPCSTR major,LPCSTR minor)
 {
+	return &DRIVER_FMXKEYBOARD_U;
+	/*
 	if(major[0] == DRIVER_FMXKEYBOARD_U.hmajor[0])
 	{
 		//UARTBASE = ((LPSTR)(0xAF18F8));
 		return &DRIVER_FMXKEYBOARD_U;
 	}
-	return &DRIVER_FMXKEYBOARD;}
+	return &DRIVER_FMXKEYBOARD;
+	*/
+}
 
+/*
 static BOOL f_driver_load(void)
 {
-	k_init_keyboard();
+	//k_init_keyboard();
+	//k_debug_string("DRIVER_FMXKEYBOARD::f_driver_load\r\n");
 	return TRUE;
 }
 
@@ -191,99 +212,144 @@ static BOOL f_driver_unload(void)
 {
 	return FALSE;
 }
-
+*/
 static BOOL f_driver_load_u(void)
 {
-	/*
-	BOOL bRet = FALSE;
+	//BOOL bRet = FALSE;
+
 	BYTE data = 0;
-	int y = 0;
-	ULONG marker = 10;
 
-	((LPSTR)0xAFA000)[marker] = 'A';
+	ps2_write_device(0, PS2_DEV_ENABLE_SCAN);
+	ps2_expect_ack();
 
-	k_init_keyboard();
+	//int y = 0;
+	//ULONG marker = 10;
 
-	((LPSTR)0xAFA000)[marker++] = 'X';
-
-	return TRUE;
+	//k_debug_char_com1('K');
 
 
-	DRV_STATUS_PORT	 	 = ((LPSTR)0xAF1807);
-	DRV_KBD_STATUS       = ((LPSTR)0xAF1807);
-	DRV_KBD_CMD_BUF	 	 = ((LPSTR)0xAF1807);
-	DRV_KBD_OUT_BUF 	 = ((LPSTR)0xAF1803);
-	DRV_KBD_INPT_BUF	 = ((LPSTR)0xAF1803);
-	DRV_KBD_DATA_BUF	 = ((LPSTR)0xAF1803);
-	DRV_PORT_A		     = ((LPSTR)0xAF180A);
-	DRV_PORT_B			 = ((LPSTR)0xAF180B);
+	//if(debugport == NULL)
+	//	debugport =  k_get_ipc_port("@debug");
+	//if(kbport == NULL)
+//		kbport =  k_get_ipc_port("@keyboard");
+
+
+	//k_init_keyboard();
 
 
 
-	INT_MASK_REG1[0] = (INT_MASK_REG1[0] |  FNX1_INT00_KBD);
+	//((LPSTR)0xAFA000)[marker] = 'A';
 
-	((LPSTR)0xAFA000)[marker++] = 'B';
+	//k_init_keyboard();
+
+	//((LPSTR)0xAFA000)[marker++] = 'X';
+
+	//return TRUE;
 
 
-	keyboard_wait_in();
+	//k_debug_char_com1('B');
+
+
+
+
+
+	//k_debug_char_com1( 'X');
+
+
+
+	//INT_MASK_REG1[0] = (INT_MASK_REG1[0] |  FNX1_INT00_KBD);
+
+
+	/*
+
+
+
+
+	kbd_wait(1);
 	DRV_KBD_CMD_BUF[0] = KBD_CTRL_CMD_DISABLE1;
 
-	((LPSTR)0xAFA000)[marker++] = '7';
+	//k_debug_char_com1(  '7');
+
 
 	// flush output
     data = DRV_KBD_DATA_BUF[0];
-    if(keyboard_send_cmd(KBD_CTRL_CMD_SELFTEST) == KBD_RESP_OK)
+
+
+    //data = keyboard_send_cmd(KBD_CTRL_CMD_SELFTEST);
+    data = keyboard_send_cmd(0xFF);
+    //if(data == KBD_RESP_OK)
+    if(data == 0xAA)
     {
-    	((LPSTR)0xAFA000)[marker++] = 'C';
+    	k_debug_char_com1('C');
+
     	if(keyboard_send_cmd(KBD_CTRL_CMD_KBDTEST) == 0)
     	{
-    		((LPSTR)0xAFA000)[marker++] = 'D';
+    		k_debug_char_com1(  'D');
         	if(keyboard_send_cmd(KBD_CTRL_CMD_WRITECMD) == 0)
         	{
-        		((LPSTR)0xAFA000)[marker++] = 'E';
+        		k_debug_char_com1(  'E');
         		keyboard_send_cmd_data(KBD_CTRL_CMD_WRITECMD,0x43);
 
-        		((LPSTR)0xAFA000)[marker++] = 'F';
+        		k_debug_char_com1( 'F');
 
-        		keyboard_wait_in();
+
+        		kbd_wait(0);
         		DRV_KBD_CMD_BUF[0] = KBD_CTRL_CMD_ENABLE1;
 
-        		keyboard_send_wait(KBD_CMD_RESET,0xFFFF);
+        		keyboard_send_cmd_data(KBD_CMD_RESET,0xFFFF);
 
-        		((LPSTR)0xAFA000)[marker++] = 'G';
+        		k_debug_char_com1('G');
 
         		for(y=0;y<128;y++)
         		{
-        			keyboard_send_wait(KBD_CMD_ENABLE,0x00);
+        			keyboard_send_cmd_data(KBD_CMD_ENABLE,0x00);
         		}
 
-        		((LPSTR)0xAFA000)[marker++] = 'H';
+
+        		k_debug_char_com1( 'H');
 
         		bRet = TRUE;
 
         	}
     	}
     	bRet = FALSE;
+
+    }
+    else
+    {
+    	k_debug_char_com1('8');
+    	k_debug_char_com1(data);
+    	k_debug_char_com1('9');
     }
 
-    ((LPSTR)0xAFA000)[marker++] = 'I';
+    k_debug_char_com1( 'I');
 
-    INT_PENDING_REG1[0] = (INT_PENDING_REG1[0] & FNX1_INT00_KBD);
-    INT_MASK_REG1[0]    = (INT_MASK_REG1[0] & ~FNX1_INT00_KBD);
+    data = (INT_PENDING_REG1[0] & FNX1_INT00_KBD);
+    INT_PENDING_REG1[0] = data;
+   // INT_MASK_REG1[0]    = (INT_MASK_REG1[0] & ~FNX1_INT00_KBD);
 
-    ((LPSTR)0xAFA000)[marker++] = 'J';
 
-    return bRet;
-    */
+
+    //return bRet;
+
+
+	//k_debug_char_com1('8');
+	*/
 	return TRUE;
 }
 
-static UINT f_driver_read_u(LPVOID buffer)
+static UCHAR f_driver_read_u(unsigned long offset,LPCHAR buffer)
 {
+	if((STATUS_PORT[0] & 1) == 1)
+	{
+		((LPSTR)buffer)[0] = KBD_INPT_BUF[0];
+		if(((LPSTR)buffer)[0]!=0)
+			return 1;
+	}
 	return 0;
 }
 
-static UINT f_driver_write_u(UINT size,LPVOID buffer)
+static UCHAR f_driver_write_u(UINT size,LPVOID buffer)
 {
 	return 0;
 }
@@ -299,7 +365,7 @@ static BOOL f_driver_unload_u(void)
 #define outportb60(b)	(KBD_OUT_BUF[0] = b)
 #define outportb64(b)	(KBD_CMD_BUF[0] = b)
 
-void kbd_wait(BYTE a_type) //unsigned char
+static void kbd_wait(BYTE a_type) //unsigned char
 {
   DWORD _time_out=100000; //unsigned int
   if(a_type==0)
@@ -333,17 +399,60 @@ static BYTE kbd_read(VOID)
   return inportb60(0x60);
 }
 
-static void set_led(UCHAR ledstatus)
+/*
+#define keyboard_send_cmd(a) keyboard_send_cmd_data(a,0xFF)
+
+static int keyboard_send_cmd_data(UCHAR cmd,BYTE data)
 {
 	PMARSHALDATA pm = NULL;
 
 	pm = k_mem_allocate_heap(sizeof(MARSHALDATA));
-	pm->verbValue[0] = 0xED;
-	pm->verbValue[1] = ledstatus;
+	pm->verbValue[0] = cmd;
+	pm->verbValue[1] = data;
 	k_write_ipc_port(kbport,pm,0);
+
+	return 0;
+}
+*/
+
+static BYTE keyboard_send_cmd(BYTE cmd)
+{
+	//k_debug_char_com1('S');
+	kbd_wait(1);
+	DRV_KBD_CMD_BUF[0] = cmd;
+	kbd_wait(0);
+	//k_debug_char_com1('V');
+	return DRV_KBD_DATA_BUF[0];
 }
 
-static void f_driver_irq()
+
+static BYTE keyboard_send_cmd_data(BYTE cmd, BYTE data)
+{
+	kbd_wait(0);
+	DRV_KBD_CMD_BUF[0] = cmd;
+	kbd_wait(0);
+	DRV_KBD_DATA_BUF[0] = data;
+	kbd_wait(1);
+	return DRV_KBD_DATA_BUF[0];
+}
+
+
+static void set_led(UCHAR ledstatus)
+{
+	PMARSHALDATA pm = NULL;
+
+	if(kbport)
+	{
+		k_debug_char_com1('P');
+
+		pm = k_mem_allocate_heap(sizeof(MARSHALDATA));
+		pm->verbValue[0] = 0xED;
+		pm->verbValue[1] = ledstatus;
+		k_write_ipc_port(kbport,pm,0);
+	}
+}
+
+static void f_driver_irq(void)
 {
 	PMARSHALDATA pm = NULL;
 
@@ -353,10 +462,12 @@ static void f_driver_irq()
 	int dp = 20;
 	BYTE raw = 0;
 
-	if(debugport == NULL)
-		debugport =  k_get_ipc_port("@debug");
+	//k_debug_char_com1( 'J');
+
+	//if(debugport == NULL)
+	//	debugport =  k__port("@debug");
 	if(kbport == NULL)
-		kbport =  k_get_ipc_port("@keyboard");
+		kbport =  k_get_ipc_port(IPC_SYS_KEYBOARD);
 
 	_irq_keyboardTimeout = 0;
 
@@ -364,28 +475,48 @@ static void f_driver_irq()
 
 	//k_write_ipc_port(debugport,k_fxstring_new("H_IN",16),0);
 
-	raw = kbd_read();//KBD_INPT_BUF[0];
+	k_debug_char_com1('D');
 
-	//if((raw!=0xE0) && (_irq_key_state_machine.scanCode == raw)  && ( _irq_key_state_machine.scanTime < (_pseudo_timer + 5) ))
-	//{
-	//	return;
-	//}
+
+	/*
+	asm NOP;
+	asm NOP;
+	asm NOP;
+	asm NOP;
+	asm NOP;
+	asm NOP;
+	asm NOP;
+	asm NOP;
+	asm NOP;
+	*/
+
+	raw = KBD_INPT_BUF[0];
+
+
+
+	if((raw!=0xE0) && (_irq_key_state_machine.scanCode == raw)  && ( _irq_key_state_machine.scanTime < (_pseudo_timer + 5) ))
+	{
+		return;
+	}
+
+
+	//k_debug_hex("CODE:",raw);
 
 	if(raw == 0xFA)
 	{
-		k_write_ipc_port(debugport,k_fxstring_new("EAT 0xFA",16),0);
+		//k_write_ipc_port(debugport,k_fxstring_new("EAT 0xFA",16),0);
 		return;
 	}
 
 	if(raw > 0xE1 && raw < 0xF0)
 	{
-		k_write_ipc_port(debugport,k_fxstring_new("EAT 0xEX",16),0);
+		//k_write_ipc_port(debugport,k_fxstring_new("EAT 0xEX",16),0);
 		return;
 	}
 
 	if((_irq_key_state_machine.isExtended == TRUE) && (raw == 0xE0))
 	{
-		k_write_ipc_port(debugport,k_fxstring_new("EXTRA 0xE0",16),0);
+		//k_write_ipc_port(debugport,k_fxstring_new("EXTRA 0xE0",16),0);
 		return;
 	}
 
@@ -414,7 +545,7 @@ static void f_driver_irq()
 		//k_write_ipc_port(debugport,k_fxstring_new("isExtended1",16),0);
 		while(STATUS_PORT[0] & 1)
 		{
-			k_write_ipc_port(debugport,k_fxstring_new("AFTER 0xE0",16),0);
+			//k_write_ipc_port(debugport,k_fxstring_new("AFTER 0xE0",16),0);
 			_irq_key_state_machine.scanCode = kbd_read();
 			if(_irq_key_state_machine.scanCode!=0xE0)
 				break;
@@ -424,6 +555,9 @@ static void f_driver_irq()
 		//return;
 		break;
 	case 0x3A:
+
+		k_debug_char_com1('^');
+
 		_irq_key_state_machine.isCapsLock = !_irq_key_state_machine.isCapsLock;
 
 		if(_irq_key_state_machine.isCapsLock)
@@ -468,12 +602,13 @@ static void f_driver_irq()
 													   _irq_key_state_machine.isAlt);
 
 
+	//k_debug_char_com1((BYTE)(_irq_key_state_machine.keyChar & 0x00FF));
 	//reset extended after char
 
 	if(_irq_key_state_machine.keyChar == -1)
 	{
 		_irq_key_state_machine.keyChar = 0;
-		k_write_ipc_port(debugport,k_fxstring_new("OVERFLOW",16),0);
+		//k_write_ipc_port(debugport,k_fxstring_new("OVERFLOW",16),0);
 	}
 
 	k_irq_device_event(IRQE_KEYBOARD_RAW,_pseudo_timer,&_irq_key_state_machine);

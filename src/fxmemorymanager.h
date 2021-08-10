@@ -34,7 +34,7 @@ EXPORT_FUNC_KERNEL(MemoryUnlock)
 VOID k_mem_unlock_handle(HANDLE handle);
 
 EXPORT_FUNC_KERNEL(HeapAlloc)
-LPVOID k_mem_allocate_heap(UINT size);
+LPVOID k_mem_allocate_heap(ULONG size);
 EXPORT_FUNC_KERNEL(HeapDealloc)
 VOID k_mem_deallocate_heap(LPVOID);
 
@@ -98,6 +98,30 @@ VOID k_ipc_marshal_int(PIPCPORT port,UINT data);
 EXPORT_FUNC_KERNEL(IPCWriteLongPort)
 VOID k_ipc_marshal_long(PIPCPORT port,ULONG data);
 
+typedef struct _k_mem_alloc_header
+{
+	BYTE 	user;
+	BYTE 	attr;
+	ULONG 	size;
+	LPVOID  virtual;
+}
+ALLOCATIONHEADER;
+typedef ALLOCATIONHEADER FAR * PALLOCATIONHEADER;
+
+#define MEM_ATTR_VIRTUAL	(0x80)
+#define MEM_ATTR_LOCKED		(0x01)
+#define MEM_ATTR_DYNAMIC	(0x02)
+#define MEM_ATTR_READONLY	(0x04)
+#define MEM_ATTR_SWAPPED	(0x08)
+
+HANDLE k_mem_change_block_attr(LPVOID memBlock, UINT attr);
+PALLOCATIONHEADER k_mem_get_block_attr(LPVOID memBlock);
+
+EXPORT_FUNC_KERNEL(SetMemoryBlockVirtual)
+HANDLE k_mem_change_block_virtual(LPVOID memBlock, UINT attr);
+
+EXPORT_FUNC_KERNEL(SetMemoryBlockUser)
+BOOL k_mem_change_block_user(LPVOID memBlock,UINT userId);
 
 
 

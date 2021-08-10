@@ -3,7 +3,7 @@ R0	equ	1
 R1	equ	5
 R2	equ	9
 R3	equ	13
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Dump.c",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Dump.c",0
 ;/************************************************************************/
 ;/*                                                                      */
 ;/*  OMF_Dump.c : Module pour le dump en format Text des fichiers OMF.   */
@@ -11,8 +11,13 @@ R3	equ	13
 ;/************************************************************************/
 ;/*  Auteur : Olivier ZARDINI  *  Brutal Deluxe Software  *  Avril 2013  */
 ;/************************************************************************/
+;#include "omf/OMF_Dump.h"
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Dump.h",0
+	.line	11
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Dump.c",8
+;
 ;#include "fxtypes.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
 	.stag	_fx_bytebits,8,1
 	.member	b7,0,14,17,1
 	.member	b6,1,14,17,1
@@ -86,7 +91,7 @@ R3	equ	13
 	.member	YH,88,14,8,8
 	.member	YL,96,14,8,8
 	.eos
-	.stag	_fx_eventMessage,304,13
+	.stag	_fx_eventMessage,312,13
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -94,8 +99,9 @@ R3	equ	13
 	.member	pheap,112,129,8,32
 	.member	msgTime,144,18,8,32
 	.member	data,176,110,8,0,16
+	.member	attr,304,14,8,8
 	.eos
-	.stag	_fx_cmdMessage,304,14
+	.stag	_fx_cmdMessage,312,14
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -107,6 +113,7 @@ R3	equ	13
 	.member	parameter1,208,18,8,32
 	.member	parameter2,240,18,8,32
 	.member	parameter3,272,18,8,32
+	.member	attr,304,14,8,8
 	.eos
 	.stag	_fx_console_ctl,448,15
 	.member	maxCols,0,5,8,16
@@ -449,67 +456,79 @@ R3	equ	13
 	.member	height,128,14,8,8
 	.member	width,136,14,8,8
 	.eos
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Dump.c",8
+	.stag	_fx_resource_string,32,47
+	.member	locale,0,110,8,0,2
+	.member	entries,16,16,8,16
+	.eos
+	.stag	_fx_resource_string_entry,40,48
+	.member	index,0,16,8,16
+	.member	length,16,16,8,16
+	.member	data,32,14,8,8
+	.eos
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Dump.c",10
 ;#include "fxmemorymanager.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stddef.h",0
 	.line	88
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",43
-	.stag	fake47_,32,47
+	.stag	fake49_,32,49
 	.member	quot,0,5,8,16
 	.member	rem,16,5,8,16
 	.eos
-	.stag	fake48_,64,48
+	.stag	fake50_,64,50
 	.member	quot,0,7,8,32
 	.member	rem,32,7,8,32
 	.eos
-	.stag	int_sqrt,32,49
+	.stag	int_sqrt,32,51
 	.member	sqrt,0,16,8,16
 	.member	frac,16,16,8,16
 	.eos
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",4
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",4
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\ctype.h",0
 	.line	103
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",8
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstringtable.h",0
-	.line	89
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",9
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fmx_vicky.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fmx_vicky.h",11
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",8
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstringtable.h",0
+	.line	90
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",9
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",11
 	.line	72
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",6
 	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",16
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",16
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",11
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",6
-	.stag	_fx_api_call_table,8192,50
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",11
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",6
+	.stag	_fx_api_call_table,8192,52
 	.member	call_table,0,1121,8,32,256
 	.eos
-	.stag	_fx_zero_page,824,51
+	.stag	_fx_zero_page_irq_data,32,53
+	.member	data,0,110,8,0,4
+	.eos
+	.stag	_fx_zero_page,720,54
 	.member	fxos_mouse_byte_0,0,14,8,8
 	.member	fxos_mouse_byte_1,8,14,8,8
 	.member	fxos_mouse_byte_2,16,14,8,8
@@ -524,42 +543,37 @@ R3	equ	13
 	.member	fxos_mouse_ctl,88,14,8,8
 	.member	fxos_mouse_index,96,14,8,8
 	.member	fxos_mouse_status,104,14,8,8
-	.member	fxos_mouse_dbg_1,112,18,8,32
-	.member	fxos_mouse_dbg_2,144,18,8,32
-	.member	fxos_mouse_dbg_3,176,18,8,32
-	.member	fxos_vicky_byte_0,208,14,8,8
-	.member	fxos_vicky_byte_1,216,14,8,8
-	.member	fxos_vicky_byte_2,224,14,8,8
-	.member	VersionMajor,232,16,8,16
-	.member	VersionMinor,248,16,8,16
-	.member	VersionRelease,264,16,8,16
-	.member	topMemory,280,18,8,32
-	.member	bottomMemory,312,18,8,32
-	.member	availableMemory,344,18,8,32
-	.member	availableMemoryK,376,18,8,32
-	.member	availableHeapMemory,408,18,8,32
-	.member	availableHeapMemoryK,440,18,8,32
-	.member	fxos_console_row,472,16,8,16
-	.member	fxos_console_col,488,16,8,16
-	.member	executive,504,129,8,32
-	.member	eventmanager,536,129,8,32
-	.member	devicemanager,568,129,8,32
-	.member	windowmanager,600,129,8,32
-	.member	fxos_kernel_api,632,138,8,32,50
-	.member	fxos_dos_api,664,138,8,32,50
-	.member	fxos_gfx_api,696,138,8,32,50
-	.member	fxos_gui_api,728,138,8,32,50
-	.member	fxos_con_api,760,138,8,32,50
-	.member	fxos_reserved_2_api,792,138,8,32,50
+	.member	Endianness,112,16,8,16
+	.member	VersionMajor,128,16,8,16
+	.member	VersionMinor,144,16,8,16
+	.member	VersionRelease,160,16,8,16
+	.member	topMemory,176,18,8,32
+	.member	bottomMemory,208,18,8,32
+	.member	availableMemory,240,18,8,32
+	.member	availableMemoryK,272,18,8,32
+	.member	availableHeapMemory,304,18,8,32
+	.member	availableHeapMemoryK,336,18,8,32
+	.member	fxos_console_row,368,16,8,16
+	.member	fxos_console_col,384,16,8,16
+	.member	executive,400,129,8,32
+	.member	eventmanager,432,129,8,32
+	.member	devicemanager,464,129,8,32
+	.member	windowmanager,496,129,8,32
+	.member	fxos_kernel_api,528,138,8,32,52
+	.member	fxos_dos_api,560,138,8,32,52
+	.member	fxos_gfx_api,592,138,8,32,52
+	.member	fxos_gui_api,624,138,8,32,52
+	.member	fxos_con_api,656,138,8,32,52
+	.member	fxos_reserved_2_api,688,138,8,32,52
 	.eos
-	.stag	_fx_environment,96,52
+	.stag	_fx_environment,96,55
 	.member	variables,0,142,8,32
 	.member	reserved1,32,5,8,16
 	.member	reserved2,48,5,8,16
 	.member	reserved3,64,5,8,16
 	.member	reserved4,80,5,8,16
 	.eos
-	.stag	_debug_byte_bits,8,53
+	.stag	_debug_byte_bits,8,56
 	.member	bit7,0,14,17,1
 	.member	bit6,1,14,17,1
 	.member	bit5,2,14,17,1
@@ -569,7 +583,7 @@ R3	equ	13
 	.member	bit1,6,14,17,1
 	.member	bit0,7,14,17,1
 	.eos
-	.stag	_k_segmentheader,160,54
+	.stag	_k_segmentheader,160,57
 	.member	version_major,0,14,8,8
 	.member	version_minor,8,14,8,8
 	.member	length,16,5,8,16
@@ -578,14 +592,14 @@ R3	equ	13
 	.member	segment_size,96,7,8,32
 	.member	main_entry_addr,128,7,8,32
 	.eos
-	.stag	_fx_device_driver,776,55
+	.stag	_fx_device_driver,776,58
 	.member	name,0,110,8,0,32
 	.member	version,256,110,8,0,16
 	.member	hmajor,384,110,8,0,8
 	.member	hminor,448,110,8,0,8
 	.member	type,512,14,8,8
 	.member	designation,520,110,8,0,6
-	.member	reserved_1,568,16,8,16
+	.member	irq_ctl,568,16,8,16
 	.member	f_driver_irq,584,129,8,32
 	.member	driver_context,616,129,8,32
 	.member	f_driver_load,648,129,8,32
@@ -593,14 +607,14 @@ R3	equ	13
 	.member	f_driver_write,712,129,8,32
 	.member	f_driver_unload,744,129,8,32
 	.eos
-	.stag	_fx_block_device_driver,808,56
+	.stag	_fx_block_device_driver,808,59
 	.member	name,0,110,8,0,32
 	.member	version,256,110,8,0,16
 	.member	hmajor,384,110,8,0,8
 	.member	hminor,448,110,8,0,8
 	.member	type,512,14,8,8
 	.member	designation,520,110,8,0,6
-	.member	reserved_1,568,16,8,16
+	.member	irq_ctl,568,16,8,16
 	.member	f_driver_irq,584,129,8,32
 	.member	driver_context,616,129,8,32
 	.member	f_driver_load,648,129,8,32
@@ -609,82 +623,85 @@ R3	equ	13
 	.member	f_driver_unload,744,129,8,32
 	.member	f_driver_command,776,129,8,32
 	.eos
-	.line	400
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",22
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",0
+	.stag	_k_irq_chain,128,60
+	.member	handlers,0,5217,8,32,4
+	.eos
+	.line	490
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",22
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
 	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",12
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",12
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",7
-	.stag	_fx_string,64,57
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",7
+	.stag	_fx_string,64,61
 	.member	size,0,16,8,16
 	.member	pos,16,5,8,16
 	.member	buffer,32,142,8,32
 	.eos
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",17
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",17
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",5
-	.stag	_fxos_executive_vtable,128,58
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",5
+	.stag	_fxos_executive_vtable,128,62
 	.member	Init,0,8833,8,32
 	.member	Configure,32,656,8,32
 	.member	Query,64,656,8,32
 	.member	Uninit,96,641,8,32
 	.eos
 	.line	86
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.line	208
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",8
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",8
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",0
-	.line	105
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",0
+	.line	129
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",6
 	.line	74
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",5
-	.stag	_click_detected,64,59
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",5
+	.stag	_click_detected,64,63
 	.member	window,0,138,8,32,30
 	.member	handler,32,641,8,32
 	.eos
-	.stag	_current_palette_map,400,60
+	.stag	_current_palette_map,400,64
 	.member	CUR_DESKTOP,0,5,8,16
 	.member	CUR_BACKGROUND,16,5,8,16
 	.member	CUR_FONT,32,5,8,16
@@ -698,37 +715,37 @@ R3	equ	13
 	.member	CUR_COLOR,160,101,8,0,15
 	.eos
 	.line	359
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",8
-	.stag	_fxos_winman_vtable,160,61
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",8
+	.stag	_fxos_winman_vtable,160,65
 	.member	Events,0,641,8,32
 	.member	ConfigureWindowManager,32,656,8,32
 	.member	ProcessWindowEvent,64,8833,8,32
 	.member	QueryWindowManager,96,656,8,32
 	.member	DoWndProcs,128,641,8,32
 	.eos
-	.stag	fake62_,64,62
+	.stag	fake66_,64,66
 	.member	type,0,16,8,16
 	.member	size,16,16,8,16
 	.member	desktopAction,32,129,8,32
 	.eos
-	.stag	fake63_,96,63
+	.stag	fake67_,96,67
 	.member	type,0,16,8,16
-	.member	caption,16,138,8,32,57
+	.member	caption,16,138,8,32,61
 	.member	buttonType,48,16,8,16
 	.member	x,64,5,8,16
 	.member	y,80,5,8,16
 	.eos
-	.stag	_childMessage_t,64,64
+	.stag	_childMessage_t,64,68
 	.member	msgType,0,16,8,16
 	.member	msgData,16,129,8,32
 	.member	dataSize,48,16,8,16
 	.eos
-	.line	581
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",9
-	.stag	_fx_main_loopvars,16,65
+	.line	594
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",9
+	.stag	_fx_main_loopvars,16,69
 	.member	dummy,0,5,8,16
 	.eos
-	.stag	_fxMouseMessageData,64,66
+	.stag	_fxMouseMessageData,64,70
 	.member	button1,0,14,8,8
 	.member	button2,8,14,8,8
 	.member	button3,16,14,8,8
@@ -736,18 +753,18 @@ R3	equ	13
 	.member	x,32,16,8,16
 	.member	y,48,16,8,16
 	.eos
-	.utag	marshalled_data,32,67
+	.utag	marshalled_data,32,71
 	.member	byteValue,0,14,11,8
 	.member	verbValue,0,110,11,0,2
 	.member	intValue,0,16,11,16
 	.member	longValue,0,18,11,32
 	.member	pointerValue,0,129,11,32
 	.eos
-	.stag	_fx_eventProcess,64,68
+	.stag	_fx_eventProcess,64,72
 	.member	process,0,138,8,32,17
 	.member	eventProc,32,641,8,32
 	.eos
-	.stag	_mouse_msg_state,184,69
+	.stag	_mouse_msg_state,184,73
 	.member	lastEvent,0,18,8,32
 	.member	buttonLeftDown,32,14,8,8
 	.member	lastLeftDown,40,18,8,32
@@ -758,7 +775,7 @@ R3	equ	13
 	.member	lastX,152,16,8,16
 	.member	lastY,168,16,8,16
 	.eos
-	.stag	_fxos_eventmanager_vtable,192,70
+	.stag	_fxos_eventmanager_vtable,192,74
 	.member	EventQueue,0,138,8,32,4
 	.member	Init,32,8833,8,32
 	.member	Run,64,656,8,32
@@ -766,18 +783,18 @@ R3	equ	13
 	.member	Query,128,656,8,32
 	.member	Uninit,160,641,8,32
 	.eos
-	.stag	_k_clipboard_data,168,71
+	.stag	_k_clipboard_data,168,75
 	.member	type,0,14,8,8
 	.member	readable,8,110,8,0,16
 	.member	data,136,129,8,32
 	.eos
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",18
-	.stag	_fx_spinner_ctx,48,72
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",18
+	.stag	_fx_spinner_ctx,48,76
 	.member	index,0,5,8,16
 	.member	spinner,16,142,8,32
 	.eos
-	.stag	_fx_console_ctx,1144,73
+	.stag	_fx_console_ctx,1144,77
 	.member	lineBufferIndex,0,5,8,16
 	.member	lineBuffer,16,110,8,0,128
 	.member	isShifted,1040,14,8,8
@@ -785,31 +802,31 @@ R3	equ	13
 	.member	screenBuffer,1080,129,8,32
 	.member	Reserved1,1112,129,8,32
 	.eos
-	.stag	_token,64,74
+	.stag	_token,64,78
 	.member	type,0,5,8,16
 	.member	depth,16,16,8,16
 	.member	text,32,142,8,32
 	.eos
-	.stag	_command_args,64,75
+	.stag	_command_args,64,79
 	.member	proc,0,656,8,32
 	.member	tokens,32,138,8,32,2
 	.eos
 	.line	208
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",23
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",25
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ffconf.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",23
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",24
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",25
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ffconf.h",0
 	.line	298
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",29
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",30
-	.stag	fake76_,4504,76
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",29
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",30
+	.stag	fake80_,4504,80
 	.member	fs_type,0,14,8,8
 	.member	pdrv,8,14,8,8
 	.member	n_fats,16,14,8,8
@@ -830,16 +847,16 @@ R3	equ	13
 	.member	winsect,376,18,8,32
 	.member	win,408,110,8,0,512
 	.eos
-	.stag	fake77_,128,77
-	.member	fs,0,138,8,32,76
+	.stag	fake81_,128,81
+	.member	fs,0,138,8,32,80
 	.member	id,32,5,8,16
 	.member	attr,48,14,8,8
 	.member	stat,56,14,8,8
 	.member	sclust,64,18,8,32
 	.member	objsize,96,18,8,32
 	.eos
-	.stag	fake78_,4400,78
-	.member	obj,0,10,8,128,77
+	.stag	fake82_,4400,82
+	.member	obj,0,10,8,128,81
 	.member	flag,128,14,8,8
 	.member	err,136,14,8,8
 	.member	fptr,144,18,8,32
@@ -849,8 +866,8 @@ R3	equ	13
 	.member	dir_ptr,272,142,8,32
 	.member	buf,304,110,8,0,512
 	.eos
-	.stag	fake79_,416,79
-	.member	obj,0,10,8,128,77
+	.stag	fake83_,416,83
+	.member	obj,0,10,8,128,81
 	.member	dptr,128,18,8,32
 	.member	clust,160,18,8,32
 	.member	sect,192,18,8,32
@@ -859,7 +876,7 @@ R3	equ	13
 	.member	blk_ofs,352,18,8,32
 	.member	pat,384,142,8,32
 	.eos
-	.stag	fake80_,2224,80
+	.stag	fake84_,2224,84
 	.member	fsize,0,18,8,32
 	.member	fdate,32,5,8,16
 	.member	ftime,48,5,8,16
@@ -867,7 +884,7 @@ R3	equ	13
 	.member	altname,72,110,8,0,13
 	.member	fname,176,110,8,0,256
 	.eos
-	.stag	fake81_,80,81
+	.stag	fake85_,80,85
 	.member	fmt,0,14,8,8
 	.member	n_fat,8,14,8,8
 	.member	align,16,16,8,16
@@ -875,14 +892,14 @@ R3	equ	13
 	.member	au_size,48,18,8,32
 	.eos
 	.line	429
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",26
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",26
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos_build_parameters.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_build_parameters.h",0
 	.line	35
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",8
-	.stag	UMM_HEAP_INFO_t,256,82
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",8
+	.stag	UMM_HEAP_INFO_t,256,86
 	.member	totalEntries,0,18,8,32
 	.member	usedEntries,32,18,8,32
 	.member	freeEntries,64,18,8,32
@@ -893,27 +910,33 @@ R3	equ	13
 	.member	blockSize,224,18,8,32
 	.eos
 	.line	199
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",11
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",11
 	.line	24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",7
-	.stag	_fx_memory_map,2072,83
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",7
+	.stag	_fx_memory_map,2072,87
 	.member	availableMemory,0,18,8,32
 	.member	valid_segments,32,110,8,0,255
 	.eos
-	.stag	_fx_ipc_port,144,84
+	.stag	_fx_ipc_port,144,88
 	.member	id,0,18,8,32
 	.member	type,32,14,8,8
-	.member	name,40,138,8,32,57
+	.member	name,40,138,8,32,61
 	.member	time,72,18,8,32
 	.member	queue,104,138,8,32,4
 	.member	reserved_1,136,14,8,8
 	.eos
-	.line	105
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Dump.c",9
+	.stag	_k_mem_alloc_header,80,89
+	.member	user,0,14,8,8
+	.member	attr,8,14,8,8
+	.member	size,16,18,8,32
+	.member	virtual,48,129,8,32
+	.eos
+	.line	129
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Dump.c",11
 ;
 ;/*
 ;#include <stdlib.h>
@@ -924,16 +947,24 @@ R3	equ	13
 ;#include <malloc.h>
 ;#endif
 ;*/
-;#include "OMF_Dc_Shared.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Dc_Shared.h",0
+;#include "ff/ff.h"
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",0
+	.line	429
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Dump.c",22
+;#include "omf/OMF_Dc_Memory.h"
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Dc_Memory.h",0
+	.line	24
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Dump.c",23
+;#include "omf/OMF_Dc_Shared.h"
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Dc_Shared.h",0
 	.line	18
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Dump.c",20
-;#include "OMF_Load.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Load.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Load.h",9
-	.stag	omf_segment_header,20984,85
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Dump.c",24
+;#include "omf/OMF_Load.h"
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Load.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Load.h",9
+	.stag	omf_segment_header,20984,90
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	BlockCnt,64,18,8,32
@@ -966,8 +997,8 @@ R3	equ	13
 	.member	undefine_6,20968,14,8,8
 	.member	undefine_7,20976,14,8,8
 	.eos
-	.stag	omf_segment,21288,86
-	.member	header,0,10,8,20984,85
+	.stag	omf_segment,21288,91
+	.member	header,0,10,8,20984,90
 	.member	nb_record,20984,5,8,16
 	.member	first_record,21000,138,8,32,0
 	.member	last_record,21032,138,8,32,0
@@ -980,38 +1011,34 @@ R3	equ	13
 	.member	tab_reloc,21176,1162,8,32,0
 	.member	nb_interseg,21208,5,8,16
 	.member	tab_interseg,21224,1162,8,32,0
-	.member	next,21256,138,8,32,86
+	.member	next,21256,138,8,32,91
 	.eos
-	.stag	omf_file,192,87
+	.stag	omf_file,192,92
 	.member	file_path,0,142,8,32
 	.member	file_name,32,142,8,32
 	.member	data_length,64,5,8,16
 	.member	data,80,142,8,32
 	.member	nb_segment,112,5,8,16
-	.member	first_segment,128,138,8,32,86
-	.member	last_segment,160,138,8,32,86
+	.member	first_segment,128,138,8,32,91
+	.member	last_segment,160,138,8,32,91
 	.eos
 	.line	113
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Dump.c",21
-;#include "OMF_Dc_Memory.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Dc_Memory.h",0
-	.line	24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Dump.c",22
-;#include "OMF_Record.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Record.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Record.h",8
-	.stag	omf_body_record,168,88
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Dump.c",25
+;#include "omf/OMF_Record.h"
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Record.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Record.h",8
+	.stag	omf_body_record,168,93
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.member	length,72,5,8,16
 	.member	record_data,88,129,8,32
 	.member	processed,120,5,8,16
-	.member	next,136,138,8,32,88
+	.member	next,136,138,8,32,93
 	.eos
-	.stag	subrecord_SuperReloc2,16520,89
+	.stag	subrecord_SuperReloc2,16520,94
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	Count,64,14,8,8
@@ -1020,9 +1047,9 @@ R3	equ	13
 	.member	nb_address,88,5,8,16
 	.member	OffsetPatch,104,114,8,0,256
 	.member	OffsetReference,8296,114,8,0,256
-	.member	next,16488,138,8,32,89
+	.member	next,16488,138,8,32,94
 	.eos
-	.stag	subrecord_SuperReloc3,16520,90
+	.stag	subrecord_SuperReloc3,16520,95
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	Count,64,14,8,8
@@ -1031,9 +1058,9 @@ R3	equ	13
 	.member	nb_address,88,5,8,16
 	.member	OffsetPatch,104,114,8,0,256
 	.member	OffsetReference,8296,114,8,0,256
-	.member	next,16488,138,8,32,90
+	.member	next,16488,138,8,32,95
 	.eos
-	.stag	subrecord_SuperInterseg1,20632,91
+	.stag	subrecord_SuperInterseg1,20632,96
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	Count,64,14,8,8
@@ -1044,9 +1071,9 @@ R3	equ	13
 	.member	OffsetPatch,120,114,8,0,256
 	.member	OffsetReference,8312,114,8,0,256
 	.member	SegNum,16504,101,8,0,256
-	.member	next,20600,138,8,32,91
+	.member	next,20600,138,8,32,96
 	.eos
-	.stag	subrecord_SuperInterseg212,20632,92
+	.stag	subrecord_SuperInterseg212,20632,97
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	Count,64,14,8,8
@@ -1057,9 +1084,9 @@ R3	equ	13
 	.member	OffsetPatch,120,114,8,0,256
 	.member	OffsetReference,8312,114,8,0,256
 	.member	SegNum,16504,101,8,0,256
-	.member	next,20600,138,8,32,92
+	.member	next,20600,138,8,32,97
 	.eos
-	.stag	subrecord_SuperInterseg1324,16544,93
+	.stag	subrecord_SuperInterseg1324,16544,98
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	Count,64,14,8,8
@@ -1070,9 +1097,9 @@ R3	equ	13
 	.member	nb_address,112,5,8,16
 	.member	OffsetPatch,128,114,8,0,256
 	.member	OffsetReference,8320,114,8,0,256
-	.member	next,16512,138,8,32,93
+	.member	next,16512,138,8,32,98
 	.eos
-	.stag	subrecord_SuperInterseg2536,16544,94
+	.stag	subrecord_SuperInterseg2536,16544,99
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	Count,64,14,8,8
@@ -1083,31 +1110,31 @@ R3	equ	13
 	.member	nb_address,112,5,8,16
 	.member	OffsetPatch,128,114,8,0,256
 	.member	OffsetReference,8320,114,8,0,256
-	.member	next,16512,138,8,32,94
+	.member	next,16512,138,8,32,99
 	.eos
-	.stag	record_END,72,95
+	.stag	record_END,72,100
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.eos
-	.stag	record_CONST,112,96
+	.stag	record_CONST,112,101
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.member	ByteCnt,72,14,8,8
 	.member	data,80,142,8,32
 	.eos
-	.stag	record_ALIGN,72,97
+	.stag	record_ALIGN,72,102
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.eos
-	.stag	record_ORG,72,98
+	.stag	record_ORG,72,103
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.eos
-	.stag	record_RELOC,152,99
+	.stag	record_RELOC,152,104
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
@@ -1116,7 +1143,7 @@ R3	equ	13
 	.member	OffsetPatch,88,18,8,32
 	.member	OffsetReference,120,18,8,32
 	.eos
-	.stag	record_INTERSEG,184,100
+	.stag	record_INTERSEG,184,105
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
@@ -1127,85 +1154,85 @@ R3	equ	13
 	.member	SegNum,136,5,8,16
 	.member	OffsetReference,152,18,8,32
 	.eos
-	.stag	record_USING,72,101
+	.stag	record_USING,72,106
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.eos
-	.stag	record_STRONG,72,102
+	.stag	record_STRONG,72,107
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.eos
-	.stag	record_GLOBAL,72,103
+	.stag	record_GLOBAL,72,108
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.eos
-	.stag	record_GEQU,72,104
+	.stag	record_GEQU,72,109
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.eos
-	.stag	record_MEM,72,105
+	.stag	record_MEM,72,110
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.eos
-	.stag	record_EXPR,72,106
+	.stag	record_EXPR,72,111
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.eos
-	.stag	record_ZEXPR,72,107
+	.stag	record_ZEXPR,72,112
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.eos
-	.stag	record_BEXPR,72,108
+	.stag	record_BEXPR,72,113
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.eos
-	.stag	record_RELEXPR,72,109
+	.stag	record_RELEXPR,72,114
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.eos
-	.stag	record_LOCAL,72,110
+	.stag	record_LOCAL,72,115
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.eos
-	.stag	record_EQU,72,111
+	.stag	record_EQU,72,116
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.eos
-	.stag	record_DS,104,112
+	.stag	record_DS,104,117
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.member	nb_zero_byte,72,18,8,32
 	.eos
-	.stag	record_LCONST,136,113
+	.stag	record_LCONST,136,118
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.member	ByteCnt,72,18,8,32
 	.member	data,104,142,8,32
 	.eos
-	.stag	record_LEXPR,72,114
+	.stag	record_LEXPR,72,119
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.eos
-	.stag	record_ENTRY,72,115
+	.stag	record_ENTRY,72,120
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.eos
-	.stag	record_cRELOC,152,116
+	.stag	record_cRELOC,152,121
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
@@ -1214,7 +1241,7 @@ R3	equ	13
 	.member	OffsetPatch,88,18,8,32
 	.member	OffsetReference,120,18,8,32
 	.eos
-	.stag	record_cINTERSEG,176,117
+	.stag	record_cINTERSEG,176,122
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
@@ -1225,50 +1252,50 @@ R3	equ	13
 	.member	SegNum,136,14,8,8
 	.member	OffsetReference,144,18,8,32
 	.eos
-	.stag	record_SUPER,592,118
+	.stag	record_SUPER,592,123
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.member	ByteCnt,72,18,8,32
 	.member	RecordType,104,14,8,8
 	.member	nb_SuperReloc2,112,5,8,16
-	.member	first_SuperReloc2,128,138,8,32,89
-	.member	last_SuperReloc2,160,138,8,32,89
+	.member	first_SuperReloc2,128,138,8,32,94
+	.member	last_SuperReloc2,160,138,8,32,94
 	.member	nb_SuperReloc3,192,5,8,16
-	.member	first_SuperReloc3,208,138,8,32,90
-	.member	last_SuperReloc3,240,138,8,32,90
+	.member	first_SuperReloc3,208,138,8,32,95
+	.member	last_SuperReloc3,240,138,8,32,95
 	.member	nb_SuperInterseg1,272,5,8,16
-	.member	first_SuperInterseg1,288,138,8,32,91
-	.member	last_SuperInterseg1,320,138,8,32,91
+	.member	first_SuperInterseg1,288,138,8,32,96
+	.member	last_SuperInterseg1,320,138,8,32,96
 	.member	nb_SuperInterseg212,352,5,8,16
-	.member	first_SuperInterseg212,368,138,8,32,92
-	.member	last_SuperInterseg212,400,138,8,32,92
+	.member	first_SuperInterseg212,368,138,8,32,97
+	.member	last_SuperInterseg212,400,138,8,32,97
 	.member	nb_SuperInterseg1324,432,5,8,16
-	.member	first_SuperInterseg1324,448,138,8,32,93
-	.member	last_SuperInterseg1324,480,138,8,32,93
+	.member	first_SuperInterseg1324,448,138,8,32,98
+	.member	last_SuperInterseg1324,480,138,8,32,98
 	.member	nb_SuperInterseg2536,512,5,8,16
-	.member	first_SuperInterseg2536,528,138,8,32,94
-	.member	last_SuperInterseg2536,560,138,8,32,94
+	.member	first_SuperInterseg2536,528,138,8,32,99
+	.member	last_SuperInterseg2536,560,138,8,32,99
 	.eos
-	.stag	record_General,72,119
+	.stag	record_General,72,124
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.eos
-	.stag	record_Experimental,72,120
+	.stag	record_Experimental,72,125
 	.member	FileOffset,0,18,8,32
 	.member	SegmentOffset,32,18,8,32
 	.member	operation_code,64,14,8,8
 	.eos
-	.stag	omf_reloc,128,121
+	.stag	omf_reloc,128,126
 	.member	ByteCnt,0,14,8,8
 	.member	BitShiftCnt,8,14,8,8
 	.member	OffsetPatch,16,18,8,32
 	.member	OffsetReference,48,18,8,32
 	.member	origin,80,5,8,16
-	.member	next,96,138,8,32,121
+	.member	next,96,138,8,32,126
 	.eos
-	.stag	omf_interseg,160,122
+	.stag	omf_interseg,160,127
 	.member	ByteCnt,0,14,8,8
 	.member	BitShiftCnt,8,14,8,8
 	.member	OffsetPatch,16,18,8,32
@@ -1276,18 +1303,10 @@ R3	equ	13
 	.member	FileNum,80,5,8,16
 	.member	SegNum,96,5,8,16
 	.member	origin,112,5,8,16
-	.member	next,128,138,8,32,122
+	.member	next,128,138,8,32,127
 	.eos
 	.line	458
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Dump.c",23
-;#include "OMF_Dump.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Dump.h",0
-	.line	11
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Dump.c",24
-;#include "ff.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",0
-	.line	429
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Dump.c",25
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Dump.c",26
 ;
 ;static void DumpExpressLoadData(struct omf_segment *s,FIL *fd);
 ;static void DumpSegmentHeader(struct omf_segment_header *s,FIL *fd);
@@ -1349,12 +1368,12 @@ L1:
 ;/****************************************************************************/
 ;int CreateDumpFile(struct omf_file *current_file, char *file_path)
 ;{
-	.line	50
 	.line	51
+	.line	52
 	LOADER
 	xdef	~~CreateDumpFile
 	func
-	.function	51
+	.function	52
 ~~CreateDumpFile:
 	longa	on
 	longi	on
@@ -1366,7 +1385,7 @@ L1:
 	tcd
 current_file_0	set	4
 file_path_0	set	8
-	.block	51
+	.block	52
 ;  int i, j, nb_item;
 ;  FIL *fd;
 ;  struct omf_segment *current_segment;
@@ -1384,19 +1403,20 @@ buffer_1	set	18
 	.sym	i,0,5,1,16
 	.sym	j,2,5,1,16
 	.sym	nb_item,4,5,1,16
-	.sym	fd,6,138,1,32,78
-	.sym	current_segment,10,138,1,32,86
+	.sym	fd,6,138,1,32,82
+	.sym	current_segment,10,138,1,32,91
 	.sym	grl,14,142,1,32
 	.sym	buffer,18,142,1,32
-	.sym	current_file,4,138,6,32,87
+	.sym	current_file,4,138,6,32,92
 	.sym	file_path,8,142,6,32
 	stz	<L4+grl_1
 	stz	<L4+grl_1+2
+	pea	#^$800
 	pea	#<$800
 	jsl	~~k_mem_allocate_heap
 	sta	<L4+buffer_1
 	stx	<L4+buffer_1+2
-	.line	58
+	.line	59
 	pea	#<$226
 	pea	#<$1
 	jsl	~~k_calloc
@@ -1405,7 +1425,7 @@ buffer_1	set	18
 ;
 ;  /* Création du fichier */
 ;  f_open(fd,file_path,FA_WRITE);
-	.line	61
+	.line	62
 	pea	#<$2
 	pei	<L3+file_path_0+2
 	pei	<L3+file_path_0
@@ -1413,17 +1433,17 @@ buffer_1	set	18
 	pei	<L4+fd_1
 	jsl	~~f_open
 ;  if(fd == NULL)
-	.line	62
+	.line	63
 ;    {
 	lda	<L4+fd_1
 	ora	<L4+fd_1+2
 	beq	L6
 	brl	L10001
 L6:
-	.line	63
+	.line	64
 ;      //printf("Error : Impossible to create output DUMP file '%s'.\n",file_path);
 ;      return(1);
-	.line	65
+	.line	66
 	lda	#$1
 L7:
 	tay
@@ -1439,12 +1459,12 @@ L7:
 	tya
 	rtl
 ;    }
-	.line	66
+	.line	67
 ;
 ;  /* Information du fichier */
 ;  f_printf(fd,"***************************\n");
 L10001:
-	.line	69
+	.line	70
 	pea	#^L2
 	pea	#<L2
 	pei	<L4+fd_1+2
@@ -1452,7 +1472,7 @@ L10001:
 	pea	#10
 	jsl	~~f_printf
 ;  f_printf(fd,"**   File Information    **\n");
-	.line	70
+	.line	71
 	pea	#^L2+29
 	pea	#<L2+29
 	pei	<L4+fd_1+2
@@ -1460,7 +1480,7 @@ L10001:
 	pea	#10
 	jsl	~~f_printf
 ;  f_printf(fd,"***************************\n\n");
-	.line	71
+	.line	72
 	pea	#^L2+58
 	pea	#<L2+58
 	pei	<L4+fd_1+2
@@ -1468,7 +1488,7 @@ L10001:
 	pea	#10
 	jsl	~~f_printf
 ;  f_printf(fd,"     - File Name      :  '%s'\n",current_file->file_name);
-	.line	72
+	.line	73
 	ldy	#$6
 	lda	[<L3+current_file_0],Y
 	pha
@@ -1482,7 +1502,7 @@ L10001:
 	pea	#14
 	jsl	~~f_printf
 ;  f_printf(fd,"     - Length         :  %06X (%d)\n",current_file->data_length,current_file->data_length);
-	.line	73
+	.line	74
 	ldy	#$8
 	lda	[<L3+current_file_0],Y
 	pha
@@ -1496,7 +1516,7 @@ L10001:
 	pea	#14
 	jsl	~~f_printf
 ;  f_printf(fd,"     - Segment Count  :  %02X (%d)\n\n",current_file->nb_segment,current_file->nb_segment);
-	.line	74
+	.line	75
 	ldy	#$e
 	lda	[<L3+current_file_0],Y
 	pha
@@ -1512,7 +1532,7 @@ L10001:
 ;
 ;  /** Segment Summary **/
 ;  f_printf(fd,"***************************\n");
-	.line	77
+	.line	78
 	pea	#^L2+192
 	pea	#<L2+192
 	pei	<L4+fd_1+2
@@ -1520,7 +1540,7 @@ L10001:
 	pea	#10
 	jsl	~~f_printf
 ;  f_printf(fd,"**    Segments Summary   **\n");
-	.line	78
+	.line	79
 	pea	#^L2+221
 	pea	#<L2+221
 	pei	<L4+fd_1+2
@@ -1528,7 +1548,7 @@ L10001:
 	pea	#10
 	jsl	~~f_printf
 ;  f_printf(fd,"***************************\n\n");
-	.line	79
+	.line	80
 	pea	#^L2+250
 	pea	#<L2+250
 	pei	<L4+fd_1+2
@@ -1537,7 +1557,7 @@ L10001:
 	jsl	~~f_printf
 ;
 ;  f_printf(fd,"     +----------+----------+-----------------+----------------+----------------+-------------+-------------+------------+------------+--------------\n");
-	.line	81
+	.line	82
 	pea	#^L2+280
 	pea	#<L2+280
 	pei	<L4+fd_1+2
@@ -1545,7 +1565,7 @@ L10001:
 	pea	#10
 	jsl	~~f_printf
 ;  f_printf(fd,"     |  Offset  |  SegNum  |     SegType     |     SegName    |    LoadName    |  SegLength  |  MemLength  | OrgAddress |  # Record  |  RecordList  \n");
-	.line	82
+	.line	83
 	pea	#^L2+430
 	pea	#<L2+430
 	pei	<L4+fd_1+2
@@ -1553,7 +1573,7 @@ L10001:
 	pea	#10
 	jsl	~~f_printf
 ;  f_printf(fd,"     +----------+----------+-----------------+----------------+----------------+-------------+-------------+------------+------------+--------------\n");
-	.line	83
+	.line	84
 	pea	#^L2+580
 	pea	#<L2+580
 	pei	<L4+fd_1+2
@@ -1561,7 +1581,7 @@ L10001:
 	pea	#10
 	jsl	~~f_printf
 ;  for(current_segment=current_file->first_segment; current_segment; current_segment=current_segment->next)
-	.line	84
+	.line	85
 	ldy	#$10
 	lda	[<L3+current_file_0],Y
 	sta	<L4+current_segment_1
@@ -1571,10 +1591,10 @@ L10001:
 	brl	L10005
 L10004:
 ;    {
-	.line	85
+	.line	86
 ;      /* Information du Segment */
 ;      f_printf(fd,"     |  %06X  |    %02X    | %-15s |  %-12s  |  %-12s  |    %06X   |    %06X   |   %06X   |    %04X    |  %s\n",
-	.line	87
+	.line	88
 ;              current_segment->header.FileOffset,current_segment->header.SegNum,
 ;              (current_segment->header.Version == 2) ? GetSegmentKind(current_segment->header.Kind,1) : GetSegmentType(current_segment->header.Type,1),
 ;              current_segment->header.SegName,current_segment->header.LoadName,
@@ -1675,7 +1695,7 @@ L10:
 	pea	#46
 	jsl	~~f_printf
 ;    }
-	.line	92
+	.line	93
 L10002:
 	ldy	#$a61
 	lda	[<L4+current_segment_1],Y
@@ -1695,7 +1715,7 @@ L10005:
 L11:
 L10003:
 ;  f_printf(fd,"     +----------+----------+-----------------+----------------+----------------+-------------+-------------+------------+------------+--------------\n\n");
-	.line	93
+	.line	94
 	pea	#^L2+840
 	pea	#<L2+840
 	pei	<L4+fd_1+2
@@ -1707,7 +1727,7 @@ L10003:
 ;
 ;
 ;  for(current_segment=current_file->first_segment; current_segment; current_segment=current_segment->next)
-	.line	98
+	.line	99
 	ldy	#$10
 	lda	[<L3+current_file_0],Y
 	sta	<L4+current_segment_1
@@ -1717,9 +1737,9 @@ L10003:
 	brl	L10009
 L10008:
 ;    {
-	.line	99
-;      f_printf(fd,"***************************\n");
 	.line	100
+;      f_printf(fd,"***************************\n");
+	.line	101
 	pea	#^L2+991
 	pea	#<L2+991
 	pei	<L4+fd_1+2
@@ -1727,7 +1747,7 @@ L10008:
 	pea	#10
 	jsl	~~f_printf
 ;      f_printf(fd,"**      Segment %02X       **\n",current_segment->header.SegNum);
-	.line	101
+	.line	102
 	ldy	#$30
 	lda	[<L4+current_segment_1],Y
 	pha
@@ -1738,7 +1758,7 @@ L10008:
 	pea	#12
 	jsl	~~f_printf
 ;      f_printf(fd,"***************************\n\n");
-	.line	102
+	.line	103
 	pea	#^L2+1051
 	pea	#<L2+1051
 	pei	<L4+fd_1+2
@@ -1748,7 +1768,7 @@ L10008:
 ;
 ;      /** Header **/
 ;      f_printf(fd,"  ***  Header  ***\n\n");
-	.line	105
+	.line	106
 	pea	#^L2+1081
 	pea	#<L2+1081
 	pei	<L4+fd_1+2
@@ -1756,7 +1776,7 @@ L10008:
 	pea	#10
 	jsl	~~f_printf
 ;      DumpSegmentHeader(&current_segment->header,fd);
-	.line	106
+	.line	107
 	pei	<L4+fd_1+2
 	pei	<L4+fd_1
 	pei	<L4+current_segment_1+2
@@ -1765,7 +1785,7 @@ L10008:
 ;
 ;      /** Data / Code **/
 ;      f_printf(fd,"  ***  Data or Code  ***\n\n");
-	.line	109
+	.line	110
 	pea	#^L2+1102
 	pea	#<L2+1102
 	pei	<L4+fd_1+2
@@ -1773,14 +1793,14 @@ L10008:
 	pea	#10
 	jsl	~~f_printf
 ;      if(current_segment->data_length == 0)
-	.line	110
+	.line	111
 ;        f_printf(fd,"       - No Data or Code record\n\n");
 	ldy	#$a4b
 	lda	[<L4+current_segment_1],Y
 	beq	L12
 	brl	L10010
 L12:
-	.line	111
+	.line	112
 	pea	#^L2+1129
 	pea	#<L2+1129
 	pei	<L4+fd_1+2
@@ -1791,9 +1811,9 @@ L12:
 	brl	L10011
 L10010:
 ;        {
-	.line	113
-;    	  grl = GetRecordList(current_segment);
 	.line	114
+;    	  grl = GetRecordList(current_segment);
+	.line	115
 	pei	<L4+current_segment_1+2
 	pei	<L4+current_segment_1
 	jsl	~~GetRecordList
@@ -1801,7 +1821,7 @@ L10010:
 	stx	<L4+grl_1+2
 ;          /* Liste des Record du Body */
 ;          f_printf(fd,"     o Body Record List                                      :  %s\n\n",grl);
-	.line	116
+	.line	117
 	pei	<L4+grl_1+2
 	pei	<L4+grl_1
 	pea	#^L2+1163
@@ -1811,12 +1831,12 @@ L10010:
 	pea	#14
 	jsl	~~f_printf
 ;          k_free(grl);
-	.line	117
+	.line	118
 	pei	<L4+grl_1+2
 	pei	<L4+grl_1
 	jsl	~~k_free
 ;          f_printf(fd,"     - Data Offset    :  %06X\n",current_segment->data_offset);
-	.line	118
+	.line	119
 	ldy	#$a49
 	lda	[<L4+current_segment_1],Y
 	pha
@@ -1827,7 +1847,7 @@ L10010:
 	pea	#12
 	jsl	~~f_printf
 ;          f_printf(fd,"     - Data Length    :  %06X (%d)\n\n",current_segment->data_length,current_segment->data_length);
-	.line	119
+	.line	120
 	ldy	#$a4b
 	lda	[<L4+current_segment_1],Y
 	pha
@@ -1843,7 +1863,7 @@ L10010:
 ;
 ;          /* On va décoder l'ExpressLoad */
 ;          if(!my_stricmp(current_segment->header.SegName,"~ExpressLoad"))
-	.line	122
+	.line	123
 ;            DumpExpressLoadData(current_segment,fd);
 	pea	#^L2+1300
 	pea	#<L2+1300
@@ -1861,7 +1881,7 @@ L10010:
 	beq	L13
 	brl	L10012
 L13:
-	.line	123
+	.line	124
 	pei	<L4+fd_1+2
 	pei	<L4+fd_1
 	pei	<L4+current_segment_1+2
@@ -1871,18 +1891,18 @@ L13:
 	brl	L10013
 L10012:
 ;            {
-	.line	125
+	.line	126
 ;              /* Valeurs en Hexa */
 ;              for(i=0; i< (int) current_segment->data_length; i+=nb_item)
-	.line	127
+	.line	128
 	stz	<L4+i_1
 	brl	L10017
 L10016:
 ;                {
-	.line	128
+	.line	129
 ;                  /* 1 Ligne de 32 bytes */
 ;                  nb_item = ((i+32) > (int) current_segment->data_length) ? (current_segment->data_length - i) : 32;
-	.line	130
+	.line	131
 	clc
 	lda	#$20
 	adc	<L4+i_1
@@ -1907,16 +1927,16 @@ L14:
 L17:
 	sta	<L4+nb_item_1
 ;                  for(j=0; j<nb_item; j++)
-	.line	131
+	.line	132
 	stz	<L4+j_1
 	brl	L10021
 L10020:
 ;                    {
-	.line	132
+	.line	133
 ;                      ////sprintf(&buffer[j*3],"%02X",current_segment->data[i+j]);
 ;                      //k_strcat(buffer,(j == 15) ? "." : " ");
 ;                    }
-	.line	135
+	.line	136
 L10018:
 	inc	<L4+j_1
 L10021:
@@ -1933,7 +1953,7 @@ L10019:
 ;
 ;                  /* Dump dans le fichier */
 ;                  f_printf(fd,"       %06X   %s\n",i,buffer);
-	.line	138
+	.line	139
 	pei	<L4+buffer_1+2
 	pei	<L4+buffer_1
 	pei	<L4+i_1
@@ -1944,7 +1964,7 @@ L10019:
 	pea	#16
 	jsl	~~f_printf
 ;                }
-	.line	139
+	.line	140
 L10014:
 	clc
 	lda	<L4+i_1
@@ -1963,13 +1983,13 @@ L20:
 L21:
 L10015:
 ;            }
-	.line	140
+	.line	141
 L10013:
 ;        }
-	.line	141
+	.line	142
 L10011:
 ;      f_printf(fd,"\n");
-	.line	142
+	.line	143
 	pea	#^L2+1331
 	pea	#<L2+1331
 	pei	<L4+fd_1+2
@@ -1979,7 +1999,7 @@ L10011:
 ;
 ;      /** Relocation dictionary **/
 ;      if(current_segment->nb_reloc > 0 || current_segment->nb_interseg > 0)
-	.line	145
+	.line	146
 ;        {
 	sec
 	lda	#$0
@@ -2002,9 +2022,9 @@ L25:
 	brl	L10022
 L26:
 L22:
-	.line	146
-;          f_printf(fd,"  ***  Relocation Dictionary ***\n\n");
 	.line	147
+;          f_printf(fd,"  ***  Relocation Dictionary ***\n\n");
+	.line	148
 	pea	#^L2+1333
 	pea	#<L2+1333
 	pei	<L4+fd_1+2
@@ -2012,7 +2032,7 @@ L22:
 	pea	#10
 	jsl	~~f_printf
 ;          f_printf(fd,"     - Reloc Offset   :  %06X\n",current_segment->reloc_offset);
-	.line	148
+	.line	149
 	ldy	#$a51
 	lda	[<L4+current_segment_1],Y
 	pha
@@ -2023,7 +2043,7 @@ L22:
 	pea	#12
 	jsl	~~f_printf
 ;          f_printf(fd,"     - Reloc Length   :  %06X (%d)\n\n",current_segment->reloc_length,current_segment->reloc_length);
-	.line	149
+	.line	150
 	ldy	#$a53
 	lda	[<L4+current_segment_1],Y
 	pha
@@ -2037,12 +2057,12 @@ L22:
 	pea	#14
 	jsl	~~f_printf
 ;        }
-	.line	150
+	.line	151
 ;
 ;      /** RELOC **/
 ;      if(current_segment->nb_reloc > 0)
 L10022:
-	.line	153
+	.line	154
 ;        {
 	sec
 	lda	#$0
@@ -2054,9 +2074,9 @@ L27:
 	bpl	L28
 	brl	L10023
 L28:
-	.line	154
-;          f_printf(fd,"     - # Address to be patched  :  %04X (%d)\n\n",current_segment->nb_reloc,current_segment->nb_reloc);
 	.line	155
+;          f_printf(fd,"     - # Address to be patched  :  %04X (%d)\n\n",current_segment->nb_reloc,current_segment->nb_reloc);
+	.line	156
 	ldy	#$a55
 	lda	[<L4+current_segment_1],Y
 	pha
@@ -2070,7 +2090,7 @@ L28:
 	pea	#14
 	jsl	~~f_printf
 ;          f_printf(fd,"       +--------+-----------+-------------+----------+-------------+\n");
-	.line	156
+	.line	157
 	pea	#^L2+1483
 	pea	#<L2+1483
 	pei	<L4+fd_1+2
@@ -2078,7 +2098,7 @@ L28:
 	pea	#10
 	jsl	~~f_printf
 ;          f_printf(fd,"       |    #   |  # Bytes  |  Bit Shift  |  Offset  |  Reference  |\n");
-	.line	157
+	.line	158
 	pea	#^L2+1553
 	pea	#<L2+1553
 	pei	<L4+fd_1+2
@@ -2086,7 +2106,7 @@ L28:
 	pea	#10
 	jsl	~~f_printf
 ;          f_printf(fd,"       +--------+-----------+-------------+----------+-------------+\n");
-	.line	158
+	.line	159
 	pea	#^L2+1623
 	pea	#<L2+1623
 	pei	<L4+fd_1+2
@@ -2094,15 +2114,15 @@ L28:
 	pea	#10
 	jsl	~~f_printf
 ;          for(i=0; i<current_segment->nb_reloc; i++)
-	.line	159
+	.line	160
 	stz	<L4+i_1
 	brl	L10027
 L10026:
 ;            {
-	.line	160
+	.line	161
 ;              /* Bit Shift en version Ascii */
 ;              if(current_segment->tab_reloc[i]->BitShiftCnt == 0x00)
-	.line	162
+	.line	163
 ;                k_strcpy(bit_shift,"     ");
 	ldy	#$0
 	lda	<L4+i_1
@@ -2138,7 +2158,7 @@ L29:
 	beq	L30
 	brl	L10028
 L30:
-	.line	163
+	.line	164
 	pea	#^L2+1693
 	pea	#<L2+1693
 	lda	#<~~bit_shift
@@ -2152,7 +2172,7 @@ L30:
 ;              else if(current_segment->tab_reloc[i]->BitShiftCnt == 0xF8)   /* F8 = -8 */
 	brl	L10029
 L10028:
-	.line	164
+	.line	165
 ;                k_strcpy(bit_shift,">> 8 ");
 	ldy	#$0
 	lda	<L4+i_1
@@ -2192,7 +2212,7 @@ L31:
 	beq	L32
 	brl	L10030
 L32:
-	.line	165
+	.line	166
 	pea	#^L2+1699
 	pea	#<L2+1699
 	lda	#<~~bit_shift
@@ -2206,7 +2226,7 @@ L32:
 ;              else if(current_segment->tab_reloc[i]->BitShiftCnt == 0xF0)   /* F0 = -16 */
 	brl	L10031
 L10030:
-	.line	166
+	.line	167
 ;                k_strcpy(bit_shift,">> 16");
 	ldy	#$0
 	lda	<L4+i_1
@@ -2246,7 +2266,7 @@ L33:
 	beq	L34
 	brl	L10032
 L34:
-	.line	167
+	.line	168
 	pea	#^L2+1705
 	pea	#<L2+1705
 	lda	#<~~bit_shift
@@ -2261,16 +2281,16 @@ L34:
 	brl	L10033
 L10032:
 ;              {
-	.line	169
+	.line	170
 ;                ////sprintf(bit_shift," %02X  ",current_segment->tab_reloc[i]->BitShiftCnt);
 ;              }
-	.line	171
+	.line	172
 L10033:
 L10031:
 L10029:
 ;              /* Ligne de Patch d'une adresse interne au segment */
 ;              if((current_segment->tab_reloc[i]->OffsetReference & 0xFF000000) == 0x00000000)
-	.line	173
+	.line	174
 ;                f_printf(fd,"       |  %04X  |    %02X     |    %s    |  %06X  |   %06X    |  %s\n",
 	ldy	#$0
 	lda	<L4+i_1
@@ -2306,7 +2326,7 @@ L35:
 	beq	L36
 	brl	L10034
 L36:
-	.line	174
+	.line	175
 ;                           i,
 ;                           current_segment->tab_reloc[i]->ByteCnt,
 ;                           bit_shift,
@@ -2472,7 +2492,7 @@ L40:
 	brl	L10035
 L10034:
 ;                f_printf(fd,"       |  %04X  |    %02X     |    %s    |  %06X  | %08X    |  %s\n",
-	.line	182
+	.line	183
 ;                           i,
 ;                           current_segment->tab_reloc[i]->ByteCnt,
 ;                           bit_shift,
@@ -2636,7 +2656,7 @@ L44:
 	jsl	~~f_printf
 L10035:
 ;            }
-	.line	189
+	.line	190
 L10024:
 	inc	<L4+i_1
 L10027:
@@ -2652,7 +2672,7 @@ L45:
 L46:
 L10025:
 ;          f_printf(fd,"       +--------+-----------+-------------+----------+-------------+\n\n");
-	.line	190
+	.line	191
 	pea	#^L2+1847
 	pea	#<L2+1847
 	pei	<L4+fd_1+2
@@ -2660,12 +2680,12 @@ L10025:
 	pea	#10
 	jsl	~~f_printf
 ;        }
-	.line	191
+	.line	192
 ;
 ;      /** INTERSEG **/
 ;      if(current_segment->nb_interseg > 0)
 L10023:
-	.line	194
+	.line	195
 ;        {
 	sec
 	lda	#$0
@@ -2677,9 +2697,9 @@ L47:
 	bpl	L48
 	brl	L10036
 L48:
-	.line	195
-;          f_printf(fd,"     - # Address to be patched  :  %04X (%d)\n\n",current_segment->nb_interseg,current_segment->nb_interseg);
 	.line	196
+;          f_printf(fd,"     - # Address to be patched  :  %04X (%d)\n\n",current_segment->nb_interseg,current_segment->nb_interseg);
+	.line	197
 	ldy	#$a5b
 	lda	[<L4+current_segment_1],Y
 	pha
@@ -2693,7 +2713,7 @@ L48:
 	pea	#14
 	jsl	~~f_printf
 ;          f_printf(fd,"       +--------+-----------+-------------+----------+-------------+------------+-----------+\n");
-	.line	197
+	.line	198
 	pea	#^L2+1965
 	pea	#<L2+1965
 	pei	<L4+fd_1+2
@@ -2701,7 +2721,7 @@ L48:
 	pea	#10
 	jsl	~~f_printf
 ;          f_printf(fd,"       |    #   |  # Bytes  |  Bit Shift  |  Offset  |  Reference  |  File Num  |  Seg Num  |\n");
-	.line	198
+	.line	199
 	pea	#^L2+2060
 	pea	#<L2+2060
 	pei	<L4+fd_1+2
@@ -2709,7 +2729,7 @@ L48:
 	pea	#10
 	jsl	~~f_printf
 ;          f_printf(fd,"       +--------+-----------+-------------+----------+-------------+------------+-----------+\n");
-	.line	199
+	.line	200
 	pea	#^L2+2155
 	pea	#<L2+2155
 	pei	<L4+fd_1+2
@@ -2717,15 +2737,15 @@ L48:
 	pea	#10
 	jsl	~~f_printf
 ;          for(i=0; i<current_segment->nb_interseg; i++)
-	.line	200
+	.line	201
 	stz	<L4+i_1
 	brl	L10040
 L10039:
 ;            {
-	.line	201
+	.line	202
 ;              /* Bit Shift en version Ascii */
 ;              if(current_segment->tab_interseg[i]->BitShiftCnt == 0x00)
-	.line	203
+	.line	204
 ;                k_strcpy(bit_shift,"     ");
 	ldy	#$0
 	lda	<L4+i_1
@@ -2761,7 +2781,7 @@ L49:
 	beq	L50
 	brl	L10041
 L50:
-	.line	204
+	.line	205
 	pea	#^L2+2250
 	pea	#<L2+2250
 	lda	#<~~bit_shift
@@ -2775,7 +2795,7 @@ L50:
 ;              else if(current_segment->tab_interseg[i]->BitShiftCnt == 0xF8)   /* -8 */
 	brl	L10042
 L10041:
-	.line	205
+	.line	206
 ;                k_strcpy(bit_shift,">> 8 ");
 	ldy	#$0
 	lda	<L4+i_1
@@ -2815,7 +2835,7 @@ L51:
 	beq	L52
 	brl	L10043
 L52:
-	.line	206
+	.line	207
 	pea	#^L2+2256
 	pea	#<L2+2256
 	lda	#<~~bit_shift
@@ -2829,7 +2849,7 @@ L52:
 ;              else if(current_segment->tab_interseg[i]->BitShiftCnt == 0xF0)   /* -16 */
 	brl	L10044
 L10043:
-	.line	207
+	.line	208
 ;                k_strcpy(bit_shift,">> 16");
 	ldy	#$0
 	lda	<L4+i_1
@@ -2869,7 +2889,7 @@ L53:
 	beq	L54
 	brl	L10045
 L54:
-	.line	208
+	.line	209
 	pea	#^L2+2262
 	pea	#<L2+2262
 	lda	#<~~bit_shift
@@ -2884,16 +2904,16 @@ L54:
 	brl	L10046
 L10045:
 ;              {
-	.line	210
+	.line	211
 ;                ////sprintf(bit_shift," %02X  ",current_segment->tab_interseg[i]->BitShiftCnt);
 ;              }
-	.line	212
+	.line	213
 L10046:
 L10044:
 L10042:
 ;              /* Ligne de Patch d'une adresse externe au segment */
 ;              f_printf(fd,"       |  %04X  |    %02X     |    %s    |  %06X  |   %06X    |    %04X    |    %04X   |  %s\n",
-	.line	214
+	.line	215
 ;                         i,
 ;                         current_segment->tab_interseg[i]->ByteCnt,
 ;                         bit_shift,
@@ -3120,7 +3140,7 @@ L60:
 	pea	#34
 	jsl	~~f_printf
 ;            }
-	.line	223
+	.line	224
 L10037:
 	inc	<L4+i_1
 L10040:
@@ -3136,7 +3156,7 @@ L61:
 L62:
 L10038:
 ;          f_printf(fd,"       +--------+-----------+-------------+----------+-------------+------------+-----------+\n\n");
-	.line	224
+	.line	225
 	pea	#^L2+2362
 	pea	#<L2+2362
 	pei	<L4+fd_1+2
@@ -3144,10 +3164,10 @@ L10038:
 	pea	#10
 	jsl	~~f_printf
 ;        }
-	.line	225
+	.line	226
 ;    }
 L10036:
-	.line	226
+	.line	227
 L10006:
 	ldy	#$a61
 	lda	[<L4+current_segment_1],Y
@@ -3169,7 +3189,7 @@ L10007:
 ;
 ;  /* Fermeture du fichier */
 ;  f_printf(fd,"\n************************************************************************************************************\n");
-	.line	229
+	.line	230
 	pea	#^L2+2458
 	pea	#<L2+2458
 	pei	<L4+fd_1+2
@@ -3177,36 +3197,36 @@ L10007:
 	pea	#10
 	jsl	~~f_printf
 ;  f_close(fd);
-	.line	230
+	.line	231
 	pei	<L4+fd_1+2
 	pei	<L4+fd_1
 	jsl	~~f_close
 ;  k_free(fd);
-	.line	231
+	.line	232
 	pei	<L4+fd_1+2
 	pei	<L4+fd_1
 	jsl	~~k_free
 ;
 ;  k_mem_deallocate_heap(buffer);
-	.line	233
+	.line	234
 	pei	<L4+buffer_1+2
 	pei	<L4+buffer_1
 	jsl	~~k_mem_deallocate_heap
 ;
 ;  /* OK */
 ;  return(0);
-	.line	236
+	.line	237
 	lda	#$0
 	brl	L7
 ;}
-	.line	237
-	.endblock	237
+	.line	238
+	.endblock	238
 L3	equ	58
 L4	equ	37
 	ends
 	efunc
-	.endfunc	237,37,58
-	.line	237
+	.endfunc	238,37,58
+	.line	238
 	data
 L2:
 	db	$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A
@@ -3390,11 +3410,11 @@ L2:
 ;
 ;static void DumpExpressLoadData(struct omf_segment *current_segment, FIL *fd)
 ;{
-	.line	244
 	.line	245
+	.line	246
 	LOADER
 	func
-	.function	245
+	.function	246
 ~~DumpExpressLoadData:
 	longa	on
 	longi	on
@@ -3406,11 +3426,11 @@ L2:
 	tcd
 current_segment_0	set	4
 fd_0	set	8
-	.block	245
+	.block	246
 ;	return;
-	.sym	current_segment,4,138,6,32,86
-	.sym	fd,8,138,6,32,78
-	.line	246
+	.sym	current_segment,4,138,6,32,91
+	.sym	fd,8,138,6,32,82
+	.line	247
 L68:
 	lda	<L65+2
 	sta	<L65+2+8
@@ -3423,23 +3443,23 @@ L68:
 	tcs
 	rtl
 ;}
-	.line	247
-	.endblock	247
+	.line	248
+	.endblock	248
 L65	equ	0
 L66	equ	1
 	ends
 	efunc
-	.endfunc	247,1,0
-	.line	247
+	.endfunc	248,1,0
+	.line	248
 ;
 ;void processHeader00(FIL* fd, struct omf_segment_header* current_header)
 ;{
-	.line	249
 	.line	250
+	.line	251
 	LOADER
 	xdef	~~processHeader00
 	func
-	.function	250
+	.function	251
 ~~processHeader00:
 	longa	on
 	longi	on
@@ -3451,12 +3471,12 @@ L66	equ	1
 	tcd
 fd_0	set	4
 current_header_0	set	8
-	.block	250
+	.block	251
 ;	/* Version 0 */
 ;	f_printf(fd,
-	.sym	fd,4,138,6,32,78
-	.sym	current_header,8,138,6,32,85
-	.line	252
+	.sym	fd,4,138,6,32,82
+	.sym	current_header,8,138,6,32,90
+	.line	253
 ;			"     - Block Count (Segment Header size + Segment Body size) :  %06X %d (512 x %04X)\n",
 ;			current_header->ByteCnt, current_header->ByteCnt,
 ;			current_header->BlockCnt);
@@ -3485,7 +3505,7 @@ current_header_0	set	8
 	pea	#22
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	256
+	.line	257
 ;			"     - Number of 0x00 to add at the end of the Segment Body  :  %06X %d\n",
 ;			current_header->ResSpc, current_header->ResSpc);
 	ldy	#$12
@@ -3507,7 +3527,7 @@ current_header_0	set	8
 	pea	#18
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	259
+	.line	260
 ;			"     - Size of the Segment once loaded in Memory             :  %06X %d\n",
 ;			current_header->Length, current_header->Length);
 	ldy	#$16
@@ -3529,7 +3549,7 @@ current_header_0	set	8
 	pea	#18
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	262
+	.line	263
 ;			"     - Segment Type + Segment Attributes                     :    %02X = %s\n",
 ;			current_header->Type, GetSegmentType(current_header->Type, 0));
 	pea	#<$0
@@ -3552,7 +3572,7 @@ current_header_0	set	8
 	pea	#16
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	265
+	.line	266
 ;			"     - Label Length (usually set to 0x00 or 0x0A)            :      %02X\n",
 ;			current_header->LabLen);
 	ldy	#$1a
@@ -3566,7 +3586,7 @@ current_header_0	set	8
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	268
+	.line	269
 ;			"     - Number Length (usually set to 4 bytes)                :      %02X\n",
 ;			current_header->NumLen);
 	ldy	#$1b
@@ -3580,7 +3600,7 @@ current_header_0	set	8
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	271
+	.line	272
 ;			"     - Segment OMF Version (should be 0x01 for 1)            :      %02X\n",
 ;			current_header->Version);
 	ldy	#$1c
@@ -3594,7 +3614,7 @@ current_header_0	set	8
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	274
+	.line	275
 ;			"     - Bank Size (64 KB for Code, 0-64 KB for Data)          :  %06X %d%s\n",
 ;			current_header->BankSize, current_header->BankSize,
 ;			(current_header->BankSize == 0) ?
@@ -3638,7 +3658,7 @@ L74:
 	pea	#22
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	279
+	.line	280
 ;			"     - Org Address to load the Segment (0x0000 = anywhere)   :  %06X%s\n",
 ;			current_header->Org,
 ;			(current_header->Org == 0) ? "" : " > Beware, unusual value <");
@@ -3675,7 +3695,7 @@ L77:
 	pea	#18
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	283
+	.line	284
 ;			"     - Boundary for Segment Alignment (0, 0x100 or 0x010000) :  %06X = %s\n",
 ;			current_header->Align, GetSegmentAlign(current_header->Align));
 	ldy	#$2b
@@ -3702,7 +3722,7 @@ L77:
 	pea	#18
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	286
+	.line	287
 ;			"     - Order of the bytes in a Number (0x00 for the IIgs)    :      %02X\n",
 ;			current_header->NumSEx);
 	ldy	#$2d
@@ -3716,7 +3736,7 @@ L77:
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	289
+	.line	290
 ;			"     - Undefined Byte #1 (usually set to 0x00)               :      %02X\n",
 ;			current_header->undefine_1);
 	ldy	#$19
@@ -3730,7 +3750,7 @@ L77:
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	292
+	.line	293
 ;			"     - Undefined Byte #2 (usually set to 0x00)               :      %02X\n",
 ;			current_header->undefine_2);
 	ldy	#$23
@@ -3744,7 +3764,7 @@ L77:
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	295
+	.line	296
 ;			"     - Undefined Byte #3 (usually set to 0x00)               :      %02X\n",
 ;			current_header->undefine_3);
 	ldy	#$24
@@ -3758,7 +3778,7 @@ L77:
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	298
+	.line	299
 ;			"     - Undefined Byte #4 (usually set to 0x00)               :      %02X\n",
 ;			current_header->undefine_4);
 	ldy	#$2f
@@ -3772,7 +3792,7 @@ L77:
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	301
+	.line	302
 ;			"     - Undefined Byte #5 (usually set to 0x00)               :      %02X\n",
 ;			current_header->undefine_5);
 	ldy	#$a3c
@@ -3786,7 +3806,7 @@ L77:
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	304
+	.line	305
 ;			"     - Undefined Byte #6 (usually set to 0x00)               :      %02X\n",
 ;			current_header->undefine_6);
 	ldy	#$a3d
@@ -3800,7 +3820,7 @@ L77:
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	307
+	.line	308
 ;			"     - Undefined Byte #7 (usually set to 0x00)               :      %02X\n",
 ;			current_header->undefine_7);
 	ldy	#$a3e
@@ -3814,7 +3834,7 @@ L77:
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	310
+	.line	311
 ;			"     - Segment Name                                          :  '%s'\n\n",
 ;			current_header->SegName);
 	clc
@@ -3833,7 +3853,7 @@ L77:
 	pea	#14
 	jsl	~~f_printf
 ;}
-	.line	313
+	.line	314
 L78:
 	lda	<L69+2
 	sta	<L69+2+8
@@ -3845,13 +3865,13 @@ L78:
 	adc	#L69+8
 	tcs
 	rtl
-	.endblock	313
+	.endblock	314
 L69	equ	4
 L70	equ	5
 	ends
 	efunc
-	.endfunc	313,5,4
-	.line	313
+	.endfunc	314,5,4
+	.line	314
 	data
 L64:
 	db	$20,$20,$20,$20,$20,$2D,$20,$42,$6C,$6F,$63,$6B,$20,$43,$6F
@@ -3957,12 +3977,12 @@ L64:
 ;
 ;void processHeader01(FIL* fd, struct omf_segment_header* current_header)
 ;{
-	.line	315
 	.line	316
+	.line	317
 	LOADER
 	xdef	~~processHeader01
 	func
-	.function	316
+	.function	317
 ~~processHeader01:
 	longa	on
 	longi	on
@@ -3974,12 +3994,12 @@ L64:
 	tcd
 fd_0	set	4
 current_header_0	set	8
-	.block	316
+	.block	317
 ;	/* Version 1 */
 ;	f_printf(fd,
-	.sym	fd,4,138,6,32,78
-	.sym	current_header,8,138,6,32,85
-	.line	318
+	.sym	fd,4,138,6,32,82
+	.sym	current_header,8,138,6,32,90
+	.line	319
 ;			"     - Block Count (Segment Header size + Segment Body size) :  %06X %d (512 x %04X)\n",
 ;			current_header->ByteCnt, current_header->ByteCnt,
 ;			current_header->BlockCnt);
@@ -4008,7 +4028,7 @@ current_header_0	set	8
 	pea	#22
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	322
+	.line	323
 ;			"     - Number of 0x00 to add at the end of the Segment Body  :  %06X %d\n",
 ;			current_header->ResSpc, current_header->ResSpc);
 	ldy	#$12
@@ -4030,7 +4050,7 @@ current_header_0	set	8
 	pea	#18
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	325
+	.line	326
 ;			"     - Size of the Segment once loaded in Memory             :  %06X %d\n",
 ;			current_header->Length, current_header->Length);
 	ldy	#$16
@@ -4052,7 +4072,7 @@ current_header_0	set	8
 	pea	#18
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	328
+	.line	329
 ;			"     - Segment Type + Segment Attributes                     :    %02X = %s\n",
 ;			current_header->Type, GetSegmentType(current_header->Type, 0));
 	pea	#<$0
@@ -4075,7 +4095,7 @@ current_header_0	set	8
 	pea	#16
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	331
+	.line	332
 ;			"     - Label Length (usually set to 0x00 or 0x0A)            :      %02X\n",
 ;			current_header->LabLen);
 	ldy	#$1a
@@ -4089,7 +4109,7 @@ current_header_0	set	8
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	334
+	.line	335
 ;			"     - Number Length (usually set to 4 bytes)                :      %02X\n",
 ;			current_header->NumLen);
 	ldy	#$1b
@@ -4103,7 +4123,7 @@ current_header_0	set	8
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	337
+	.line	338
 ;			"     - Segment OMF Version (should be 0x01 for 1)            :      %02X\n",
 ;			current_header->Version);
 	ldy	#$1c
@@ -4117,7 +4137,7 @@ current_header_0	set	8
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	340
+	.line	341
 ;			"     - Bank Size (64 KB for Code, 0-64 KB for Data)          :  %06X %d\n",
 ;			current_header->BankSize, current_header->BankSize);
 	ldy	#$1f
@@ -4139,7 +4159,7 @@ current_header_0	set	8
 	pea	#18
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	343
+	.line	344
 ;			"     - Undefined Byte #1 (usually set to 0x00)               :      %02X\n",
 ;			current_header->undefine_1);
 	ldy	#$19
@@ -4153,7 +4173,7 @@ current_header_0	set	8
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	346
+	.line	347
 ;			"     - Undefined Byte #2 (usually set to 0x00)               :      %02X\n",
 ;			current_header->undefine_2);
 	ldy	#$23
@@ -4167,7 +4187,7 @@ current_header_0	set	8
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	349
+	.line	350
 ;			"     - Undefined Byte #3 (usually set to 0x00)               :      %02X\n",
 ;			current_header->undefine_3);
 	ldy	#$24
@@ -4181,7 +4201,7 @@ current_header_0	set	8
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	352
+	.line	353
 ;			"     - Undefined Byte #4 (usually set to 0x00)               :      %02X\n",
 ;			current_header->undefine_4);
 	ldy	#$2f
@@ -4195,7 +4215,7 @@ current_header_0	set	8
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	355
+	.line	356
 ;			"     - Org Address to load the Segment (0x0000 = anywhere)   :  %06X%s\n",
 ;			current_header->Org,
 ;			(current_header->Org == 0) ? "" : " > Beware, unusual value <");
@@ -4232,7 +4252,7 @@ L85:
 	pea	#18
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	359
+	.line	360
 ;			"     - Boundary for Segment Alignment (0, 0x100 or 0x010000) :  %06X = %s\n",
 ;			current_header->Align, GetSegmentAlign(current_header->Align));
 	ldy	#$2b
@@ -4259,7 +4279,7 @@ L85:
 	pea	#18
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	362
+	.line	363
 ;			"     - Order of the bytes in a Number (0x00 for the IIgs)    :      %02X\n",
 ;			current_header->NumSEx);
 	ldy	#$2d
@@ -4273,7 +4293,7 @@ L85:
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	365
+	.line	366
 ;			"     - Language Card Bank (usually unused)                   :      %02X\n",
 ;			current_header->LCBank);
 	ldy	#$2e
@@ -4287,7 +4307,7 @@ L85:
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	368
+	.line	369
 ;			"     - Segment Number (1 to N)                               :    %04X %d\n",
 ;			current_header->SegNum, current_header->SegNum);
 	ldy	#$30
@@ -4303,7 +4323,7 @@ L85:
 	pea	#14
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	371
+	.line	372
 ;			"     - Entry Point in the Segment                            :  %06X %d\n",
 ;			current_header->EntryPointOffset, current_header->EntryPointOffset);
 	ldy	#$34
@@ -4325,7 +4345,7 @@ L85:
 	pea	#18
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	374
+	.line	375
 ;			"     - Load Name                                             :  '%s'\n",
 ;			current_header->LoadName);
 	clc
@@ -4344,7 +4364,7 @@ L85:
 	pea	#14
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	377
+	.line	378
 ;			"     - Segment Name                                          :  '%s'\n\n",
 ;			current_header->SegName);
 	clc
@@ -4363,7 +4383,7 @@ L85:
 	pea	#14
 	jsl	~~f_printf
 ;}
-	.line	380
+	.line	381
 L86:
 	lda	<L80+2
 	sta	<L80+2+8
@@ -4375,13 +4395,13 @@ L86:
 	adc	#L80+8
 	tcs
 	rtl
-	.endblock	380
+	.endblock	381
 L80	equ	4
 L81	equ	5
 	ends
 	efunc
-	.endfunc	380,5,4
-	.line	380
+	.endfunc	381,5,4
+	.line	381
 	data
 L79:
 	db	$20,$20,$20,$20,$20,$2D,$20,$42,$6C,$6F,$63,$6B,$20,$43,$6F
@@ -4489,12 +4509,12 @@ L79:
 ;
 ;void processHeader02(FIL* fd, struct omf_segment_header* current_header)
 ;{
-	.line	382
 	.line	383
+	.line	384
 	LOADER
 	xdef	~~processHeader02
 	func
-	.function	383
+	.function	384
 ~~processHeader02:
 	longa	on
 	longi	on
@@ -4506,12 +4526,12 @@ L79:
 	tcd
 fd_0	set	4
 current_header_0	set	8
-	.block	383
+	.block	384
 ;	/* Version 2.1 */
 ;	f_printf(fd,
-	.sym	fd,4,138,6,32,78
-	.sym	current_header,8,138,6,32,85
-	.line	385
+	.sym	fd,4,138,6,32,82
+	.sym	current_header,8,138,6,32,90
+	.line	386
 ;			"     - Segment Header size + Segment Body size               :  %06X %d\n",
 ;			current_header->ByteCnt, current_header->ByteCnt);
 	ldy	#$e
@@ -4533,7 +4553,7 @@ current_header_0	set	8
 	pea	#18
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	388
+	.line	389
 ;			"     - Number of 0x00 to add at the end of the Segment Body  :  %06X %d\n",
 ;			current_header->ResSpc, current_header->ResSpc);
 	ldy	#$12
@@ -4555,7 +4575,7 @@ current_header_0	set	8
 	pea	#18
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	391
+	.line	392
 ;			"     - Size of the Segment once loaded in Memory             :  %06X %d\n",
 ;			current_header->Length, current_header->Length);
 	ldy	#$16
@@ -4577,7 +4597,7 @@ current_header_0	set	8
 	pea	#18
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	394
+	.line	395
 ;			"     - Undefined Byte #1 (usually set to 0x00)               :      %02X\n",
 ;			current_header->undefine_1);
 	ldy	#$19
@@ -4591,7 +4611,7 @@ current_header_0	set	8
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	397
+	.line	398
 ;			"     - Label Length (usually set to 0x00 or 0x0A)            :      %02X\n",
 ;			current_header->LabLen);
 	ldy	#$1a
@@ -4605,7 +4625,7 @@ current_header_0	set	8
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	400
+	.line	401
 ;			"     - Number Length (usually set to 4 bytes)                :      %02X\n",
 ;			current_header->NumLen);
 	ldy	#$1b
@@ -4619,7 +4639,7 @@ current_header_0	set	8
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	403
+	.line	404
 ;			"     - Segment OMF Version (should be 0x02 for 2.1)          :      %02X\n",
 ;			current_header->Version);
 	ldy	#$1c
@@ -4633,7 +4653,7 @@ current_header_0	set	8
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	406
+	.line	407
 ;			"     - Bank Size (64 KB for Code, 0-64 KB for Data)          :  %06X %d\n",
 ;			current_header->BankSize, current_header->BankSize);
 	ldy	#$1f
@@ -4655,7 +4675,7 @@ current_header_0	set	8
 	pea	#18
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	409
+	.line	410
 ;			"     - Segment Type + Segment Attributes                     :    %04X = %s\n",
 ;			current_header->Kind, GetSegmentKind(current_header->Kind, 0));
 	pea	#<$0
@@ -4677,7 +4697,7 @@ current_header_0	set	8
 	pea	#16
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	412
+	.line	413
 ;			"     - Undefined Byte #2 (usually set to 0x00)               :      %02X\n",
 ;			current_header->undefine_2);
 	ldy	#$23
@@ -4691,7 +4711,7 @@ current_header_0	set	8
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	415
+	.line	416
 ;			"     - Undefined Byte #3 (usually set to 0x00)               :      %02X\n",
 ;			current_header->undefine_3);
 	ldy	#$24
@@ -4705,7 +4725,7 @@ current_header_0	set	8
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	418
+	.line	419
 ;			"     - Org Address to load the Segment (0x0000 = anywhere)   :  %06X%s\n",
 ;			current_header->Org,
 ;			(current_header->Org == 0) ? "" : " > Beware, unusual value <");
@@ -4742,7 +4762,7 @@ L93:
 	pea	#18
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	422
+	.line	423
 ;			"     - Boundary for Segment Alignment (0, 0x100 or 0x010000) :  %06X = %s\n",
 ;			current_header->Align, GetSegmentAlign(current_header->Align));
 	ldy	#$2b
@@ -4769,7 +4789,7 @@ L93:
 	pea	#18
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	425
+	.line	426
 ;			"     - Order of the bytes in a Number (0x00 for the IIgs)    :      %02X\n",
 ;			current_header->NumSEx);
 	ldy	#$2d
@@ -4783,7 +4803,7 @@ L93:
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	428
+	.line	429
 ;			"     - Undefined Byte #4 (usually set to 0x00)               :      %02X\n",
 ;			current_header->undefine_4);
 	ldy	#$2f
@@ -4797,7 +4817,7 @@ L93:
 	pea	#12
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	431
+	.line	432
 ;			"     - Segment Number (1 to N)                               :    %04X %d\n",
 ;			current_header->SegNum, current_header->SegNum);
 	ldy	#$30
@@ -4813,7 +4833,7 @@ L93:
 	pea	#14
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	434
+	.line	435
 ;			"     - Entry Point in the Segment                            :  %06X %d\n",
 ;			current_header->EntryPointOffset, current_header->EntryPointOffset);
 	ldy	#$34
@@ -4835,7 +4855,7 @@ L93:
 	pea	#18
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	437
+	.line	438
 ;			"     - Load Name                                             :  '%s'\n",
 ;			current_header->LoadName);
 	clc
@@ -4854,7 +4874,7 @@ L93:
 	pea	#14
 	jsl	~~f_printf
 ;	f_printf(fd,
-	.line	440
+	.line	441
 ;			"     - Segment Name                                          :  '%s'\n\n",
 ;			current_header->SegName);
 	clc
@@ -4873,7 +4893,7 @@ L93:
 	pea	#14
 	jsl	~~f_printf
 ;}
-	.line	443
+	.line	444
 L94:
 	lda	<L88+2
 	sta	<L88+2+8
@@ -4885,13 +4905,13 @@ L94:
 	adc	#L88+8
 	tcs
 	rtl
-	.endblock	443
+	.endblock	444
 L88	equ	4
 L89	equ	5
 	ends
 	efunc
-	.endfunc	443,5,4
-	.line	443
+	.endfunc	444,5,4
+	.line	444
 	data
 L87:
 	db	$20,$20,$20,$20,$20,$2D,$20,$53,$65,$67,$6D,$65,$6E,$74,$20
@@ -5189,11 +5209,11 @@ L87:
 ;/********************************************************/
 ;static void DumpSegmentHeader(struct omf_segment_header *current_header, FIL *fd)
 ;{
-	.line	641
 	.line	642
+	.line	643
 	LOADER
 	func
-	.function	642
+	.function	643
 ~~DumpSegmentHeader:
 	longa	on
 	longi	on
@@ -5205,11 +5225,11 @@ L87:
 	tcd
 current_header_0	set	4
 fd_0	set	8
-	.block	642
+	.block	643
 ;  if(current_header->Version == 0x00)
-	.sym	current_header,4,138,6,32,85
-	.sym	fd,8,138,6,32,78
-	.line	643
+	.sym	current_header,4,138,6,32,90
+	.sym	fd,8,138,6,32,82
+	.line	644
 ;    {
 	ldy	#$1c
 	lda	[<L96+current_header_0],Y
@@ -5217,21 +5237,21 @@ fd_0	set	8
 	beq	L99
 	brl	L10047
 L99:
-	.line	644
+	.line	645
 ;      /* Version 0 */
 ;		processHeader00(fd, current_header);
-	.line	646
+	.line	647
 	pei	<L96+current_header_0+2
 	pei	<L96+current_header_0
 	pei	<L96+fd_0+2
 	pei	<L96+fd_0
 	jsl	~~processHeader00
 ;    }
-	.line	647
+	.line	648
 ;  else if(current_header->Version == 0x01)
 	brl	L10048
 L10047:
-	.line	648
+	.line	649
 ;    {
 	sep	#$20
 	longa	off
@@ -5243,21 +5263,21 @@ L10047:
 	beq	L100
 	brl	L10049
 L100:
-	.line	649
+	.line	650
 ;      /* Version 1 */
 ;		processHeader01(fd, current_header);
-	.line	651
+	.line	652
 	pei	<L96+current_header_0+2
 	pei	<L96+current_header_0
 	pei	<L96+fd_0+2
 	pei	<L96+fd_0
 	jsl	~~processHeader01
 ;    }
-	.line	652
+	.line	653
 ;  else if(current_header->Version == 0x02)
 	brl	L10050
 L10049:
-	.line	653
+	.line	654
 ;    {
 	sep	#$20
 	longa	off
@@ -5269,22 +5289,22 @@ L10049:
 	beq	L101
 	brl	L10051
 L101:
-	.line	654
+	.line	655
 ;      /* Version 2.1 */
 ;		processHeader02(fd, current_header);
-	.line	656
+	.line	657
 	pei	<L96+current_header_0+2
 	pei	<L96+current_header_0
 	pei	<L96+fd_0+2
 	pei	<L96+fd_0
 	jsl	~~processHeader02
 ;    }
-	.line	657
+	.line	658
 ;}
 L10051:
 L10050:
 L10048:
-	.line	658
+	.line	659
 L102:
 	lda	<L96+2
 	sta	<L96+2+8
@@ -5296,13 +5316,13 @@ L102:
 	adc	#L96+8
 	tcs
 	rtl
-	.endblock	658
+	.endblock	659
 L96	equ	0
 L97	equ	1
 	ends
 	efunc
-	.endfunc	658,1,0
-	.line	658
+	.endfunc	659,1,0
+	.line	659
 ;
 ;
 ;/************************************************************************/
@@ -5310,11 +5330,11 @@ L97	equ	1
 ;/************************************************************************/
 ;static char *GetSegmentType(BYTE Type, int type_only)
 ;{
-	.line	664
 	.line	665
+	.line	666
 	LOADER
 	func
-	.function	665
+	.function	666
 ~~GetSegmentType:
 	longa	on
 	longi	on
@@ -5326,7 +5346,7 @@ L97	equ	1
 	tcd
 Type_0	set	4
 type_only_0	set	6
-	.block	665
+	.block	666
 ;  //static char type_txt[1024];
 ;  //char attributes_txt[512] = "";
 ;
@@ -5354,7 +5374,7 @@ attributes_txt_1	set	4
 	jsl	~~k_calloc
 	sta	<L104+attributes_txt_1
 	stx	<L104+attributes_txt_1+2
-	.line	676
+	.line	677
 ;    k_strcpy(type_txt,"Code");
 	sep	#$20
 	longa	off
@@ -5365,7 +5385,7 @@ attributes_txt_1	set	4
 	beq	L106
 	brl	L10052
 L106:
-	.line	677
+	.line	678
 	pea	#^L95
 	pea	#<L95
 	pei	<L104+type_txt_1+2
@@ -5374,7 +5394,7 @@ L106:
 ;  else if((Type & 0x1F) == 0x01)
 	brl	L10053
 L10052:
-	.line	678
+	.line	679
 ;    k_strcpy(type_txt,"Data");
 	lda	<L103+Type_0
 	and	#<$1f
@@ -5384,7 +5404,7 @@ L10052:
 	beq	L107
 	brl	L10054
 L107:
-	.line	679
+	.line	680
 	pea	#^L95+5
 	pea	#<L95+5
 	pei	<L104+type_txt_1+2
@@ -5393,7 +5413,7 @@ L107:
 ;  else if((Type & 0x1F) == 0x02)
 	brl	L10055
 L10054:
-	.line	680
+	.line	681
 ;    k_strcpy(type_txt,"Jump Table");
 	lda	<L103+Type_0
 	and	#<$1f
@@ -5403,7 +5423,7 @@ L10054:
 	beq	L108
 	brl	L10056
 L108:
-	.line	681
+	.line	682
 	pea	#^L95+10
 	pea	#<L95+10
 	pei	<L104+type_txt_1+2
@@ -5412,7 +5432,7 @@ L108:
 ;  else if((Type & 0x1F) == 0x04)
 	brl	L10057
 L10056:
-	.line	682
+	.line	683
 ;    k_strcpy(type_txt,"PathName");
 	lda	<L103+Type_0
 	and	#<$1f
@@ -5422,7 +5442,7 @@ L10056:
 	beq	L109
 	brl	L10058
 L109:
-	.line	683
+	.line	684
 	pea	#^L95+21
 	pea	#<L95+21
 	pei	<L104+type_txt_1+2
@@ -5431,7 +5451,7 @@ L109:
 ;  else if((Type & 0x1F) == 0x08)
 	brl	L10059
 L10058:
-	.line	684
+	.line	685
 ;    k_strcpy(type_txt,"Lib Dictionnary");
 	lda	<L103+Type_0
 	and	#<$1f
@@ -5441,7 +5461,7 @@ L10058:
 	beq	L110
 	brl	L10060
 L110:
-	.line	685
+	.line	686
 	pea	#^L95+30
 	pea	#<L95+30
 	pei	<L104+type_txt_1+2
@@ -5450,7 +5470,7 @@ L110:
 ;  else if((Type & 0x1F) == 0x10)
 	brl	L10061
 L10060:
-	.line	686
+	.line	687
 ;    k_strcpy(type_txt,"Init");
 	lda	<L103+Type_0
 	and	#<$1f
@@ -5460,7 +5480,7 @@ L10060:
 	beq	L111
 	brl	L10062
 L111:
-	.line	687
+	.line	688
 	pea	#^L95+46
 	pea	#<L95+46
 	pei	<L104+type_txt_1+2
@@ -5469,7 +5489,7 @@ L111:
 ;  else if((Type & 0x1F) == 0x11)
 	brl	L10063
 L10062:
-	.line	688
+	.line	689
 ;    k_strcpy(type_txt,"Absolute Bank");
 	lda	<L103+Type_0
 	and	#<$1f
@@ -5479,7 +5499,7 @@ L10062:
 	beq	L112
 	brl	L10064
 L112:
-	.line	689
+	.line	690
 	pea	#^L95+51
 	pea	#<L95+51
 	pei	<L104+type_txt_1+2
@@ -5488,7 +5508,7 @@ L112:
 ;  else if((Type & 0x1F) == 0x12)
 	brl	L10065
 L10064:
-	.line	690
+	.line	691
 ;    k_strcpy(type_txt,"DP / Stack");
 	lda	<L103+Type_0
 	and	#<$1f
@@ -5498,7 +5518,7 @@ L10064:
 	beq	L113
 	brl	L10066
 L113:
-	.line	691
+	.line	692
 	pea	#^L95+65
 	pea	#<L95+65
 	pei	<L104+type_txt_1+2
@@ -5508,7 +5528,7 @@ L113:
 	brl	L10067
 L10066:
 ;    k_strcpy(type_txt,"Unknown Type");
-	.line	693
+	.line	694
 	pea	#^L95+76
 	pea	#<L95+76
 	pei	<L104+type_txt_1+2
@@ -5523,14 +5543,14 @@ L10057:
 L10055:
 L10053:
 ;  if(type_only == 1)
-	.line	694
+	.line	695
 ;    return(&type_txt[0]);
 	lda	<L103+type_only_0
 	cmp	#<$1
 	beq	L114
 	brl	L10068
 L114:
-	.line	695
+	.line	696
 	ldx	<L104+type_txt_1+2
 	lda	<L104+type_txt_1
 L115:
@@ -5550,7 +5570,7 @@ L115:
 ;  /** Attributs **/
 ;  if((Type & 0x80) == 0x00)
 L10068:
-	.line	698
+	.line	699
 ;    k_strcpy(attributes_txt,"Static");
 	sep	#$20
 	longa	off
@@ -5561,7 +5581,7 @@ L10068:
 	beq	L116
 	brl	L10069
 L116:
-	.line	699
+	.line	700
 	pea	#^L95+89
 	pea	#<L95+89
 	pei	<L104+attributes_txt_1+2
@@ -5571,7 +5591,7 @@ L116:
 	brl	L10070
 L10069:
 ;    k_strcpy(attributes_txt,"Dynamic");
-	.line	701
+	.line	702
 	pea	#^L95+96
 	pea	#<L95+96
 	pei	<L104+attributes_txt_1+2
@@ -5579,7 +5599,7 @@ L10069:
 	jsl	~~k_strcpy
 L10070:
 ;  if((Type & 0x40))
-	.line	702
+	.line	703
 ;    k_strcat(attributes_txt," + Private");
 	sep	#$20
 	longa	off
@@ -5590,7 +5610,7 @@ L10070:
 	bne	L117
 	brl	L10071
 L117:
-	.line	703
+	.line	704
 	pea	#^L95+104
 	pea	#<L95+104
 	pei	<L104+attributes_txt_1+2
@@ -5598,7 +5618,7 @@ L117:
 	jsl	~~k_strcat
 ;  if((Type & 0x20))
 L10071:
-	.line	704
+	.line	705
 ;    k_strcat(attributes_txt," + Position independent");
 	sep	#$20
 	longa	off
@@ -5609,7 +5629,7 @@ L10071:
 	bne	L118
 	brl	L10072
 L118:
-	.line	705
+	.line	706
 	pea	#^L95+115
 	pea	#<L95+115
 	pei	<L104+attributes_txt_1+2
@@ -5619,21 +5639,21 @@ L118:
 ;  /* Ajoute les attributs */
 ;  k_strcat(type_txt,"  (");
 L10072:
-	.line	708
+	.line	709
 	pea	#^L95+139
 	pea	#<L95+139
 	pei	<L104+type_txt_1+2
 	pei	<L104+type_txt_1
 	jsl	~~k_strcat
 ;  k_strcat(type_txt,attributes_txt);
-	.line	709
+	.line	710
 	pei	<L104+attributes_txt_1+2
 	pei	<L104+attributes_txt_1
 	pei	<L104+type_txt_1+2
 	pei	<L104+type_txt_1
 	jsl	~~k_strcat
 ;  k_strcat(type_txt,")");
-	.line	710
+	.line	711
 	pea	#^L95+143
 	pea	#<L95+143
 	pei	<L104+type_txt_1+2
@@ -5641,26 +5661,26 @@ L10072:
 	jsl	~~k_strcat
 ;
 ;  k_free(attributes_txt);
-	.line	712
+	.line	713
 	pei	<L104+attributes_txt_1+2
 	pei	<L104+attributes_txt_1
 	jsl	~~k_free
 ;
 ;  /* Renvoi le Texte */
 ;  return(type_txt);
-	.line	715
+	.line	716
 	ldx	<L104+type_txt_1+2
 	lda	<L104+type_txt_1
 	brl	L115
 ;}
-	.line	716
-	.endblock	716
+	.line	717
+	.endblock	717
 L103	equ	12
 L104	equ	5
 	ends
 	efunc
-	.endfunc	716,5,12
-	.line	716
+	.endfunc	717,5,12
+	.line	717
 	data
 L95:
 	db	$43,$6F,$64,$65,$00,$44,$61,$74,$61,$00,$4A,$75,$6D,$70,$20
@@ -5681,11 +5701,11 @@ L95:
 ;/************************************************************************/
 ;static char *GetSegmentKind(WORD Type, int type_only)
 ;{
-	.line	722
 	.line	723
+	.line	724
 	LOADER
 	func
-	.function	723
+	.function	724
 ~~GetSegmentKind:
 	longa	on
 	longi	on
@@ -5697,7 +5717,7 @@ L95:
 	tcd
 Type_0	set	4
 type_only_0	set	6
-	.block	723
+	.block	724
 ;	  //static char type_txt[1024];
 ;	  //char attributes_txt[512] = "";
 ;
@@ -5723,14 +5743,14 @@ attributes_txt_1	set	4
 	jsl	~~k_calloc
 	sta	<L121+attributes_txt_1
 	stx	<L121+attributes_txt_1+2
-	.line	732
+	.line	733
 ;    k_strcpy(type_txt,"Code");
 	lda	<L120+Type_0
 	and	#<$1f
 	beq	L123
 	brl	L10073
 L123:
-	.line	733
+	.line	734
 	pea	#^L119
 	pea	#<L119
 	pei	<L121+type_txt_1+2
@@ -5739,7 +5759,7 @@ L123:
 ;  else if((Type & 0x001F) == 0x0001)
 	brl	L10074
 L10073:
-	.line	734
+	.line	735
 ;    k_strcpy(type_txt,"Data");
 	lda	<L120+Type_0
 	and	#<$1f
@@ -5749,7 +5769,7 @@ L10073:
 	beq	L124
 	brl	L10075
 L124:
-	.line	735
+	.line	736
 	pea	#^L119+5
 	pea	#<L119+5
 	pei	<L121+type_txt_1+2
@@ -5758,7 +5778,7 @@ L124:
 ;  else if((Type & 0x001F) == 0x0002)
 	brl	L10076
 L10075:
-	.line	736
+	.line	737
 ;    k_strcpy(type_txt,"Jump Table");
 	lda	<L120+Type_0
 	and	#<$1f
@@ -5768,7 +5788,7 @@ L10075:
 	beq	L125
 	brl	L10077
 L125:
-	.line	737
+	.line	738
 	pea	#^L119+10
 	pea	#<L119+10
 	pei	<L121+type_txt_1+2
@@ -5777,7 +5797,7 @@ L125:
 ;  else if((Type & 0x001F) == 0x0004)
 	brl	L10078
 L10077:
-	.line	738
+	.line	739
 ;    k_strcpy(type_txt,"PathName");
 	lda	<L120+Type_0
 	and	#<$1f
@@ -5787,7 +5807,7 @@ L10077:
 	beq	L126
 	brl	L10079
 L126:
-	.line	739
+	.line	740
 	pea	#^L119+21
 	pea	#<L119+21
 	pei	<L121+type_txt_1+2
@@ -5796,7 +5816,7 @@ L126:
 ;  else if((Type & 0x001F) == 0x0008)
 	brl	L10080
 L10079:
-	.line	740
+	.line	741
 ;    k_strcpy(type_txt,"Lib Dictionnary");
 	lda	<L120+Type_0
 	and	#<$1f
@@ -5806,7 +5826,7 @@ L10079:
 	beq	L127
 	brl	L10081
 L127:
-	.line	741
+	.line	742
 	pea	#^L119+30
 	pea	#<L119+30
 	pei	<L121+type_txt_1+2
@@ -5815,7 +5835,7 @@ L127:
 ;  else if((Type & 0x001F) == 0x0010)
 	brl	L10082
 L10081:
-	.line	742
+	.line	743
 ;    k_strcpy(type_txt,"Init");
 	lda	<L120+Type_0
 	and	#<$1f
@@ -5825,7 +5845,7 @@ L10081:
 	beq	L128
 	brl	L10083
 L128:
-	.line	743
+	.line	744
 	pea	#^L119+46
 	pea	#<L119+46
 	pei	<L121+type_txt_1+2
@@ -5834,7 +5854,7 @@ L128:
 ;  else if((Type & 0x001F) == 0x0012)
 	brl	L10084
 L10083:
-	.line	744
+	.line	745
 ;    k_strcpy(type_txt,"DP / Stack");
 	lda	<L120+Type_0
 	and	#<$1f
@@ -5844,7 +5864,7 @@ L10083:
 	beq	L129
 	brl	L10085
 L129:
-	.line	745
+	.line	746
 	pea	#^L119+51
 	pea	#<L119+51
 	pei	<L121+type_txt_1+2
@@ -5854,7 +5874,7 @@ L129:
 	brl	L10086
 L10085:
 ;    k_strcpy(type_txt,"Unknown Type");
-	.line	747
+	.line	748
 	pea	#^L119+62
 	pea	#<L119+62
 	pei	<L121+type_txt_1+2
@@ -5868,14 +5888,14 @@ L10078:
 L10076:
 L10074:
 ;  if(type_only == 1)
-	.line	748
+	.line	749
 ;    return(&type_txt[0]);
 	lda	<L120+type_only_0
 	cmp	#<$1
 	beq	L130
 	brl	L10087
 L130:
-	.line	749
+	.line	750
 	ldx	<L121+type_txt_1+2
 	lda	<L121+type_txt_1
 L131:
@@ -5895,14 +5915,14 @@ L131:
 ;  /** Attributs **/
 ;  if((Type & 0x8000) == 0x0000)
 L10087:
-	.line	752
+	.line	753
 ;    k_strcpy(attributes_txt,"Static");
 	lda	<L120+Type_0
 	and	#<$8000
 	beq	L132
 	brl	L10088
 L132:
-	.line	753
+	.line	754
 	pea	#^L119+75
 	pea	#<L119+75
 	pei	<L121+attributes_txt_1+2
@@ -5912,7 +5932,7 @@ L132:
 	brl	L10089
 L10088:
 ;    k_strcpy(attributes_txt,"Dynamic");
-	.line	755
+	.line	756
 	pea	#^L119+82
 	pea	#<L119+82
 	pei	<L121+attributes_txt_1+2
@@ -5920,14 +5940,14 @@ L10088:
 	jsl	~~k_strcpy
 L10089:
 ;  if((Type & 0x4000))
-	.line	756
+	.line	757
 ;    k_strcat(attributes_txt," + Private");
 	lda	<L120+Type_0
 	and	#<$4000
 	bne	L133
 	brl	L10090
 L133:
-	.line	757
+	.line	758
 	pea	#^L119+90
 	pea	#<L119+90
 	pei	<L121+attributes_txt_1+2
@@ -5935,14 +5955,14 @@ L133:
 	jsl	~~k_strcat
 ;  if((Type & 0x2000))
 L10090:
-	.line	758
+	.line	759
 ;    k_strcat(attributes_txt," + Position independent");
 	lda	<L120+Type_0
 	and	#<$2000
 	bne	L134
 	brl	L10091
 L134:
-	.line	759
+	.line	760
 	pea	#^L119+101
 	pea	#<L119+101
 	pei	<L121+attributes_txt_1+2
@@ -5950,14 +5970,14 @@ L134:
 	jsl	~~k_strcat
 ;  if((Type & 0x1000) == 0x0000)
 L10091:
-	.line	760
+	.line	761
 ;    k_strcat(attributes_txt," + Can be loaded in Special Memory");
 	lda	<L120+Type_0
 	and	#<$1000
 	beq	L135
 	brl	L10092
 L135:
-	.line	761
+	.line	762
 	pea	#^L119+125
 	pea	#<L119+125
 	pei	<L121+attributes_txt_1+2
@@ -5965,14 +5985,14 @@ L135:
 	jsl	~~k_strcat
 ;  if((Type & 0x0800))
 L10092:
-	.line	762
+	.line	763
 ;    k_strcat(attributes_txt," + Absolute Bank");
 	lda	<L120+Type_0
 	and	#<$800
 	bne	L136
 	brl	L10093
 L136:
-	.line	763
+	.line	764
 	pea	#^L119+160
 	pea	#<L119+160
 	pei	<L121+attributes_txt_1+2
@@ -5980,14 +6000,14 @@ L136:
 	jsl	~~k_strcat
 ;  if((Type & 0x0400))
 L10093:
-	.line	764
+	.line	765
 ;    k_strcat(attributes_txt," + Reload");
 	lda	<L120+Type_0
 	and	#<$400
 	bne	L137
 	brl	L10094
 L137:
-	.line	765
+	.line	766
 	pea	#^L119+177
 	pea	#<L119+177
 	pei	<L121+attributes_txt_1+2
@@ -5995,14 +6015,14 @@ L137:
 	jsl	~~k_strcat
 ;  if((Type & 0x0200))
 L10094:
-	.line	766
+	.line	767
 ;    k_strcat(attributes_txt," + Skip");
 	lda	<L120+Type_0
 	and	#<$200
 	bne	L138
 	brl	L10095
 L138:
-	.line	767
+	.line	768
 	pea	#^L119+187
 	pea	#<L119+187
 	pei	<L121+attributes_txt_1+2
@@ -6010,14 +6030,14 @@ L138:
 	jsl	~~k_strcat
 ;  if((Type & 0x0100))
 L10095:
-	.line	768
+	.line	769
 ;    k_strcat(attributes_txt," + Bank Relative");
 	lda	<L120+Type_0
 	and	#<$100
 	bne	L139
 	brl	L10096
 L139:
-	.line	769
+	.line	770
 	pea	#^L119+195
 	pea	#<L119+195
 	pei	<L121+attributes_txt_1+2
@@ -6027,21 +6047,21 @@ L139:
 ;  /* Ajoute les attributs */
 ;  k_strcat(type_txt,"  (");
 L10096:
-	.line	772
+	.line	773
 	pea	#^L119+212
 	pea	#<L119+212
 	pei	<L121+type_txt_1+2
 	pei	<L121+type_txt_1
 	jsl	~~k_strcat
 ;  k_strcat(type_txt,attributes_txt);
-	.line	773
+	.line	774
 	pei	<L121+attributes_txt_1+2
 	pei	<L121+attributes_txt_1
 	pei	<L121+type_txt_1+2
 	pei	<L121+type_txt_1
 	jsl	~~k_strcat
 ;  k_strcat(type_txt,")");
-	.line	774
+	.line	775
 	pea	#^L119+216
 	pea	#<L119+216
 	pei	<L121+type_txt_1+2
@@ -6049,26 +6069,26 @@ L10096:
 	jsl	~~k_strcat
 ;
 ;  k_free(attributes_txt);
-	.line	776
+	.line	777
 	pei	<L121+attributes_txt_1+2
 	pei	<L121+attributes_txt_1
 	jsl	~~k_free
 ;
 ;  /* Renvoi le Texte */
 ;  return(type_txt);
-	.line	779
+	.line	780
 	ldx	<L121+type_txt_1+2
 	lda	<L121+type_txt_1
 	brl	L131
 ;}
-	.line	780
-	.endblock	780
+	.line	781
+	.endblock	781
 L120	equ	12
 L121	equ	5
 	ends
 	efunc
-	.endfunc	780,5,12
-	.line	780
+	.endfunc	781,5,12
+	.line	781
 	data
 L119:
 	db	$43,$6F,$64,$65,$00,$44,$61,$74,$61,$00,$4A,$75,$6D,$70,$20
@@ -6094,11 +6114,11 @@ L119:
 ;/***************************************************************************/
 ;static char *GetSegmentAlign(DWORD Align)
 ;{
-	.line	786
 	.line	787
+	.line	788
 	LOADER
 	func
-	.function	787
+	.function	788
 ~~GetSegmentAlign:
 	longa	on
 	longi	on
@@ -6109,7 +6129,7 @@ L119:
 	phd
 	tcd
 Align_0	set	4
-	.block	787
+	.block	788
 ;  LPSTR align_txt = k_calloc(1,256);
 ;
 ;  /** Décode l'alignement **/
@@ -6122,14 +6142,14 @@ align_txt_1	set	0
 	jsl	~~k_calloc
 	sta	<L142+align_txt_1
 	stx	<L142+align_txt_1+2
-	.line	791
+	.line	792
 ;    k_strcpy(align_txt,"No alignment needed");
 	lda	<L141+Align_0
 	ora	<L141+Align_0+2
 	beq	L144
 	brl	L10097
 L144:
-	.line	792
+	.line	793
 	pea	#^L140
 	pea	#<L140
 	pei	<L142+align_txt_1+2
@@ -6138,7 +6158,7 @@ L144:
 ;  else if(Align == 0x100)
 	brl	L10098
 L10097:
-	.line	793
+	.line	794
 ;    k_strcpy(align_txt,"Page boundary alignment");
 	lda	<L141+Align_0
 	cmp	#<$100
@@ -6149,7 +6169,7 @@ L145:
 	beq	L146
 	brl	L10099
 L146:
-	.line	794
+	.line	795
 	pea	#^L140+20
 	pea	#<L140+20
 	pei	<L142+align_txt_1+2
@@ -6158,7 +6178,7 @@ L146:
 ;  else if(Align == 0x010000)
 	brl	L10100
 L10099:
-	.line	795
+	.line	796
 ;    k_strcpy(align_txt,"Bank boundary alignment");
 	lda	<L141+Align_0
 	cmp	#<$10000
@@ -6169,7 +6189,7 @@ L147:
 	beq	L148
 	brl	L10101
 L148:
-	.line	796
+	.line	797
 	pea	#^L140+44
 	pea	#<L140+44
 	pei	<L142+align_txt_1+2
@@ -6179,7 +6199,7 @@ L148:
 	brl	L10102
 L10101:
 ;    k_strcpy(align_txt,"Unknown alignment");
-	.line	798
+	.line	799
 	pea	#^L140+68
 	pea	#<L140+68
 	pei	<L142+align_txt_1+2
@@ -6191,7 +6211,7 @@ L10098:
 ;
 ;  /* Renvoi le Texte */
 ;  return(align_txt);
-	.line	801
+	.line	802
 	ldx	<L142+align_txt_1+2
 	lda	<L142+align_txt_1
 L149:
@@ -6208,14 +6228,14 @@ L149:
 	tya
 	rtl
 ;}
-	.line	802
-	.endblock	802
+	.line	803
+	.endblock	803
 L141	equ	4
 L142	equ	1
 	ends
 	efunc
-	.endfunc	802,1,4
-	.line	802
+	.endfunc	803,1,4
+	.line	803
 	data
 L140:
 	db	$4E,$6F,$20,$61,$6C,$69,$67,$6E,$6D,$65,$6E,$74,$20,$6E,$65
@@ -6232,11 +6252,11 @@ L140:
 ;/***************************************************************/
 ;static char *GetRecordList(struct omf_segment *current_segment)
 ;{
-	.line	808
 	.line	809
+	.line	810
 	LOADER
 	func
-	.function	809
+	.function	810
 ~~GetRecordList:
 	longa	on
 	longi	on
@@ -6247,7 +6267,7 @@ L140:
 	phd
 	tcd
 current_segment_0	set	4
-	.block	809
+	.block	810
 ;  int nb_found;
 ;  struct omf_body_record *current_record;
 ;  struct omf_body_record *next_record;
@@ -6261,23 +6281,23 @@ current_record_1	set	2
 next_record_1	set	6
 record_list_1	set	10
 	.sym	nb_found,0,5,1,16
-	.sym	current_record,2,138,1,32,88
-	.sym	next_record,6,138,1,32,88
+	.sym	current_record,2,138,1,32,93
+	.sym	next_record,6,138,1,32,93
 	.sym	record_list,10,142,1,32
-	.sym	current_segment,4,138,6,32,86
+	.sym	current_segment,4,138,6,32,91
 	pea	#<$800
 	pea	#<$1
 	jsl	~~k_calloc
 	sta	<L152+record_list_1
 	stx	<L152+record_list_1+2
-	.line	817
+	.line	818
 	pea	#^L150
 	pea	#<L150
 	pei	<L152+record_list_1+2
 	pei	<L152+record_list_1
 	jsl	~~k_strcpy
 ;  for(current_record=current_segment->first_record; current_record; current_record=current_record->next)
-	.line	818
+	.line	819
 	ldy	#$a41
 	lda	[<L151+current_segment_0],Y
 	sta	<L152+current_record_1
@@ -6287,7 +6307,7 @@ record_list_1	set	10
 	brl	L10106
 L10105:
 ;    current_record->processed = 0;
-	.line	819
+	.line	820
 	lda	#$0
 	ldy	#$f
 	sta	[<L152+current_record_1],Y
@@ -6312,7 +6332,7 @@ L10104:
 ;
 ;  /** Passe tous les Record en revue **/
 ;  for(current_record=current_segment->first_record; current_record; current_record=current_record->next)
-	.line	822
+	.line	823
 	ldy	#$a41
 	lda	[<L151+current_segment_0],Y
 	sta	<L152+current_record_1
@@ -6322,10 +6342,10 @@ L10104:
 	brl	L10110
 L10109:
 ;    {
-	.line	823
+	.line	824
 ;      /* Déjà traitée ? */
 ;      if(current_record->processed == 1)
-	.line	825
+	.line	826
 ;        continue;
 	ldy	#$f
 	lda	[<L152+current_record_1],Y
@@ -6336,7 +6356,7 @@ L155:
 ;
 ;      /** Ajoute celui là **/
 ;      if(strlen(record_list) > 0)
-	.line	829
+	.line	830
 ;        k_strcat(record_list," + ");
 	pei	<L152+record_list_1+2
 	pei	<L152+record_list_1
@@ -6347,7 +6367,7 @@ L155:
 	bcc	L156
 	brl	L10111
 L156:
-	.line	830
+	.line	831
 	pea	#^L150+1
 	pea	#<L150+1
 	pei	<L152+record_list_1+2
@@ -6355,7 +6375,7 @@ L156:
 	jsl	~~k_strcat
 ;      k_strcat(record_list,GetRecordName(current_record->operation_code,0xFF));
 L10111:
-	.line	831
+	.line	832
 	pea	#<$ff
 	ldy	#$8
 	lda	[<L152+current_record_1],Y
@@ -6369,14 +6389,14 @@ L10111:
 	pei	<L152+record_list_1
 	jsl	~~k_strcat
 ;      current_record->processed = 1;
-	.line	832
+	.line	833
 	lda	#$1
 	ldy	#$f
 	sta	[<L152+current_record_1],Y
 ;
 ;      /* Combien du même type ? */
 ;      for(nb_found=1,next_record=current_record->next; next_record; next_record=next_record->next)
-	.line	835
+	.line	836
 	lda	#$1
 	sta	<L152+nb_found_1
 	ldy	#$11
@@ -6388,14 +6408,14 @@ L10111:
 	brl	L10115
 L10114:
 ;        if(next_record->processed == 0)
-	.line	836
+	.line	837
 ;          if(next_record->operation_code == current_record->operation_code)
 	ldy	#$f
 	lda	[<L152+next_record_1],Y
 	beq	L157
 	brl	L10116
 L157:
-	.line	837
+	.line	838
 ;            {
 	sep	#$20
 	longa	off
@@ -6408,17 +6428,17 @@ L157:
 	beq	L158
 	brl	L10117
 L158:
-	.line	838
-;              nb_found++;
 	.line	839
+;              nb_found++;
+	.line	840
 	inc	<L152+nb_found_1
 ;              next_record->processed = 1;
-	.line	840
+	.line	841
 	lda	#$1
 	ldy	#$f
 	sta	[<L152+next_record_1],Y
 ;            }
-	.line	841
+	.line	842
 ;
 ;      /* On met le nombre si + de 1 */
 ;      if(nb_found > 1)
@@ -6442,7 +6462,7 @@ L10115:
 	brl	L10114
 L159:
 L10113:
-	.line	844
+	.line	845
 ;      {
 	sec
 	lda	#$1
@@ -6453,13 +6473,13 @@ L160:
 	bpl	L161
 	brl	L10118
 L161:
-	.line	845
+	.line	846
 ;        ////sprintf(&record_list[strlen(record_list)]," (%d)",nb_found);
 ;      }
-	.line	847
+	.line	848
 ;    }
 L10118:
-	.line	848
+	.line	849
 L10107:
 	ldy	#$11
 	lda	[<L152+current_record_1],Y
@@ -6481,7 +6501,7 @@ L10108:
 ;
 ;  /* Renvoie la liste */
 ;  return(record_list);
-	.line	851
+	.line	852
 	ldx	<L152+record_list_1+2
 	lda	<L152+record_list_1
 L163:
@@ -6498,14 +6518,14 @@ L163:
 	tya
 	rtl
 ;}
-	.line	852
-	.endblock	852
+	.line	853
+	.endblock	853
 L151	equ	18
 L152	equ	5
 	ends
 	efunc
-	.endfunc	852,5,18
-	.line	852
+	.endfunc	853,5,18
+	.line	853
 	data
 L150:
 	db	$00,$20,$2B,$20,$00
@@ -6517,11 +6537,11 @@ L150:
 ;/******************************************************************/
 ;static void DumpLCONSTRecord(struct omf_body_record *current_record, FIL *fd, int segment_num)
 ;{
-	.line	858
 	.line	859
+	.line	860
 	LOADER
 	func
-	.function	859
+	.function	860
 ~~DumpLCONSTRecord:
 	longa	on
 	longi	on
@@ -6534,7 +6554,7 @@ L150:
 current_record_0	set	4
 fd_0	set	8
 segment_num_0	set	12
-	.block	859
+	.block	860
 ;  struct record_LCONST *current_LCONST;
 ;  int i, j, nb_item;
 ;  
@@ -6548,19 +6568,20 @@ i_1	set	4
 j_1	set	6
 nb_item_1	set	8
 buffer_1	set	10
-	.sym	current_LCONST,0,138,1,32,113
+	.sym	current_LCONST,0,138,1,32,118
 	.sym	i,4,5,1,16
 	.sym	j,6,5,1,16
 	.sym	nb_item,8,5,1,16
 	.sym	buffer,10,142,1,32
-	.sym	current_record,4,138,6,32,88
-	.sym	fd,8,138,6,32,78
+	.sym	current_record,4,138,6,32,93
+	.sym	fd,8,138,6,32,82
 	.sym	segment_num,12,5,6,16
+	pea	#^$800
 	pea	#<$800
 	jsl	~~k_mem_allocate_heap
 	sta	<L166+buffer_1
 	stx	<L166+buffer_1+2
-	.line	867
+	.line	868
 	ldy	#$b
 	lda	[<L165+current_record_0],Y
 	sta	<L166+current_LCONST_1
@@ -6570,15 +6591,15 @@ buffer_1	set	10
 ;  
 ;  /** Dump les données en Hexa **/
 ;  for(i=0; i< (int) current_LCONST->ByteCnt; i+=nb_item)
-	.line	870
+	.line	871
 	stz	<L166+i_1
 	brl	L10122
 L10121:
 ;    {
-	.line	871
+	.line	872
 ;      /* 1 Ligne de 32 bytes */
 ;      nb_item = ((i+32) > (int) current_LCONST->ByteCnt) ? (current_LCONST->ByteCnt - i) : 32;
-	.line	873
+	.line	874
 	clc
 	lda	#$20
 	adc	<L166+i_1
@@ -6622,15 +6643,15 @@ L172:
 	lda	<R0
 	sta	<L166+nb_item_1
 ;      for(j=0; j<nb_item; j++)
-	.line	874
+	.line	875
 	stz	<L166+j_1
 	brl	L10126
 L10125:
 ;        {
-	.line	875
+	.line	876
 ;          ////sprintf(&buffer[j*3],"%02X",current_LCONST->data[i+j]);
 ;          k_strcat(buffer,(j == 15) ? "." : " ");
-	.line	877
+	.line	878
 	lda	<L166+j_1
 	cmp	#<$f
 	beq	L174
@@ -6653,7 +6674,7 @@ L175:
 	pei	<L166+buffer_1
 	jsl	~~k_strcat
 ;        }
-	.line	878
+	.line	879
 L10123:
 	inc	<L166+j_1
 L10126:
@@ -6670,7 +6691,7 @@ L10124:
 ;        
 ;      /* Dump dans le fichier */
 ;      f_printf(fd,"  %06X  %02X  %06X  %06X   %s\n",current_LCONST->FileOffset+i,segment_num,current_LCONST->SegmentOffset+i,i,buffer);
-	.line	881
+	.line	882
 	pei	<L166+buffer_1+2
 	pei	<L166+buffer_1
 	pei	<L166+i_1
@@ -6717,7 +6738,7 @@ L179:
 	pea	#26
 	jsl	~~f_printf
 ;    }
-	.line	882
+	.line	883
 L10119:
 	clc
 	lda	<L166+i_1
@@ -6737,12 +6758,12 @@ L181:
 L10120:
 ;
 ;  k_mem_deallocate_heap(buffer);
-	.line	884
+	.line	885
 	pei	<L166+buffer_1+2
 	pei	<L166+buffer_1
 	jsl	~~k_mem_deallocate_heap
 ;}
-	.line	885
+	.line	886
 L182:
 	lda	<L165+2
 	sta	<L165+2+10
@@ -6754,13 +6775,13 @@ L182:
 	adc	#L165+10
 	tcs
 	rtl
-	.endblock	885
+	.endblock	886
 L165	equ	26
 L166	equ	13
 	ends
 	efunc
-	.endfunc	885,13,26
-	.line	885
+	.endfunc	886,13,26
+	.line	886
 	data
 L164:
 	db	$2E,$00,$20,$00,$20,$20,$25,$30,$36,$58,$20,$20,$25,$30,$32
@@ -6774,11 +6795,11 @@ L164:
 ;/****************************************************************/
 ;static void DumpRELOCRecord(struct omf_body_record *current_record, FIL *fd, int segment_num)
 ;{
-	.line	891
 	.line	892
+	.line	893
 	LOADER
 	func
-	.function	892
+	.function	893
 ~~DumpRELOCRecord:
 	longa	on
 	longi	on
@@ -6791,17 +6812,17 @@ L164:
 current_record_0	set	4
 fd_0	set	8
 segment_num_0	set	12
-	.block	892
+	.block	893
 ;  struct record_RELOC *current_RELOC;
 ;  
 ;  /* Récupère la structure dédiée */
 ;  current_RELOC = (struct record_RELOC *) current_record->record_data;
 current_RELOC_1	set	0
-	.sym	current_RELOC,0,138,1,32,99
-	.sym	current_record,4,138,6,32,88
-	.sym	fd,8,138,6,32,78
+	.sym	current_RELOC,0,138,1,32,104
+	.sym	current_record,4,138,6,32,93
+	.sym	fd,8,138,6,32,82
 	.sym	segment_num,12,5,6,16
-	.line	896
+	.line	897
 	ldy	#$b
 	lda	[<L184+current_record_0],Y
 	sta	<L185+current_RELOC_1
@@ -6811,7 +6832,7 @@ current_RELOC_1	set	0
 ;  
 ;  /** Dump les données **/
 ;  f_printf(fd,"       # Byte to be relocated = %02X,   Bit Shift = %02X,   Offset Patch = %08X,   Reference = %08X\n",
-	.line	899
+	.line	900
 ;             current_RELOC->ByteCnt,current_RELOC->BitShiftCnt,current_RELOC->OffsetPatch,current_RELOC->OffsetReference);
 	ldy	#$11
 	lda	[<L185+current_RELOC_1],Y
@@ -6840,7 +6861,7 @@ current_RELOC_1	set	0
 	pea	#22
 	jsl	~~f_printf
 ;}
-	.line	901
+	.line	902
 L187:
 	lda	<L184+2
 	sta	<L184+2+10
@@ -6852,13 +6873,13 @@ L187:
 	adc	#L184+10
 	tcs
 	rtl
-	.endblock	901
+	.endblock	902
 L184	equ	4
 L185	equ	1
 	ends
 	efunc
-	.endfunc	901,1,4
-	.line	901
+	.endfunc	902,1,4
+	.line	902
 	data
 L183:
 	db	$20,$20,$20,$20,$20,$20,$20,$23,$20,$42,$79,$74,$65,$20,$74
@@ -6876,11 +6897,11 @@ L183:
 ;/******************************************************************/
 ;static void DumpcRELOCRecord(struct omf_body_record *current_record, FIL *fd, int segment_num)
 ;{
-	.line	907
 	.line	908
+	.line	909
 	LOADER
 	func
-	.function	908
+	.function	909
 ~~DumpcRELOCRecord:
 	longa	on
 	longi	on
@@ -6893,17 +6914,17 @@ L183:
 current_record_0	set	4
 fd_0	set	8
 segment_num_0	set	12
-	.block	908
+	.block	909
 ;  struct record_cRELOC *current_cRELOC;
 ;  
 ;  /* Récupère la structure dédiée */
 ;  current_cRELOC = (struct record_cRELOC *) current_record->record_data;
 current_cRELOC_1	set	0
-	.sym	current_cRELOC,0,138,1,32,116
-	.sym	current_record,4,138,6,32,88
-	.sym	fd,8,138,6,32,78
+	.sym	current_cRELOC,0,138,1,32,121
+	.sym	current_record,4,138,6,32,93
+	.sym	fd,8,138,6,32,82
 	.sym	segment_num,12,5,6,16
-	.line	912
+	.line	913
 	ldy	#$b
 	lda	[<L189+current_record_0],Y
 	sta	<L190+current_cRELOC_1
@@ -6913,7 +6934,7 @@ current_cRELOC_1	set	0
 ;  
 ;  /** Dump les données **/
 ;  f_printf(fd,"       # Byte to be relocated = %02X,   Bit Shift = %02X,   Offset Patch = %04X,   Reference = %04X\n",
-	.line	915
+	.line	916
 ;             current_cRELOC->ByteCnt,current_cRELOC->BitShiftCnt,current_cRELOC->OffsetPatch,current_cRELOC->OffsetReference);
 	ldy	#$11
 	lda	[<L190+current_cRELOC_1],Y
@@ -6942,7 +6963,7 @@ current_cRELOC_1	set	0
 	pea	#22
 	jsl	~~f_printf
 ;}
-	.line	917
+	.line	918
 L192:
 	lda	<L189+2
 	sta	<L189+2+10
@@ -6954,13 +6975,13 @@ L192:
 	adc	#L189+10
 	tcs
 	rtl
-	.endblock	917
+	.endblock	918
 L189	equ	4
 L190	equ	1
 	ends
 	efunc
-	.endfunc	917,1,4
-	.line	917
+	.endfunc	918,1,4
+	.line	918
 	data
 L188:
 	db	$20,$20,$20,$20,$20,$20,$20,$23,$20,$42,$79,$74,$65,$20,$74
@@ -6978,11 +6999,11 @@ L188:
 ;/**********************************************************************/
 ;static void DumpINTERSEGRecord(struct omf_body_record *current_record, FIL *fd, int segment_num)
 ;{
-	.line	923
 	.line	924
+	.line	925
 	LOADER
 	func
-	.function	924
+	.function	925
 ~~DumpINTERSEGRecord:
 	longa	on
 	longi	on
@@ -6995,17 +7016,17 @@ L188:
 current_record_0	set	4
 fd_0	set	8
 segment_num_0	set	12
-	.block	924
+	.block	925
 ;  struct record_INTERSEG *current_INTERSEG;
 ;  
 ;  /* Récupère la structure dédiée */
 ;  current_INTERSEG = (struct record_INTERSEG *) current_record->record_data;
 current_INTERSEG_1	set	0
-	.sym	current_INTERSEG,0,138,1,32,100
-	.sym	current_record,4,138,6,32,88
-	.sym	fd,8,138,6,32,78
+	.sym	current_INTERSEG,0,138,1,32,105
+	.sym	current_record,4,138,6,32,93
+	.sym	fd,8,138,6,32,82
 	.sym	segment_num,12,5,6,16
-	.line	928
+	.line	929
 	ldy	#$b
 	lda	[<L194+current_record_0],Y
 	sta	<L195+current_INTERSEG_1
@@ -7015,7 +7036,7 @@ current_INTERSEG_1	set	0
 ;  
 ;  /** Dump les données **/
 ;  f_printf(fd,"       # Byte to be relocated = %02X,   Bit Shift = %02X,   Offset Patch = %08X,   Reference = %08X,   File Number = %04X,   Segment Number = %04X\n",
-	.line	931
+	.line	932
 ;             current_INTERSEG->ByteCnt,current_INTERSEG->BitShiftCnt,current_INTERSEG->OffsetPatch,current_INTERSEG->OffsetReference,current_INTERSEG->FileNum,current_INTERSEG->SegNum);
 	ldy	#$11
 	lda	[<L195+current_INTERSEG_1],Y
@@ -7050,7 +7071,7 @@ current_INTERSEG_1	set	0
 	pea	#26
 	jsl	~~f_printf
 ;}
-	.line	933
+	.line	934
 L197:
 	lda	<L194+2
 	sta	<L194+2+10
@@ -7062,13 +7083,13 @@ L197:
 	adc	#L194+10
 	tcs
 	rtl
-	.endblock	933
+	.endblock	934
 L194	equ	4
 L195	equ	1
 	ends
 	efunc
-	.endfunc	933,1,4
-	.line	933
+	.endfunc	934,1,4
+	.line	934
 	data
 L193:
 	db	$20,$20,$20,$20,$20,$20,$20,$23,$20,$42,$79,$74,$65,$20,$74
@@ -7089,11 +7110,11 @@ L193:
 ;/************************************************************************/
 ;static void DumpcINTERSEGRecord(struct omf_body_record *current_record, FIL *fd, int segment_num)
 ;{
-	.line	939
 	.line	940
+	.line	941
 	LOADER
 	func
-	.function	940
+	.function	941
 ~~DumpcINTERSEGRecord:
 	longa	on
 	longi	on
@@ -7106,17 +7127,17 @@ L193:
 current_record_0	set	4
 fd_0	set	8
 segment_num_0	set	12
-	.block	940
+	.block	941
 ;  struct record_cINTERSEG *current_cINTERSEG;
 ;  
 ;  /* Récupère la structure dédiée */
 ;  current_cINTERSEG = (struct record_cINTERSEG *) current_record->record_data;
 current_cINTERSEG_1	set	0
-	.sym	current_cINTERSEG,0,138,1,32,117
-	.sym	current_record,4,138,6,32,88
-	.sym	fd,8,138,6,32,78
+	.sym	current_cINTERSEG,0,138,1,32,122
+	.sym	current_record,4,138,6,32,93
+	.sym	fd,8,138,6,32,82
 	.sym	segment_num,12,5,6,16
-	.line	944
+	.line	945
 	ldy	#$b
 	lda	[<L199+current_record_0],Y
 	sta	<L200+current_cINTERSEG_1
@@ -7126,7 +7147,7 @@ current_cINTERSEG_1	set	0
 ;  
 ;  /** Dump les données **/
 ;  f_printf(fd,"       # Byte to be relocated = %02X,   Bit Shift = %02X,   Offset Patch = %04X,   Reference = %04X,   Segment Number = %02X\n",
-	.line	947
+	.line	948
 ;             current_cINTERSEG->ByteCnt,current_cINTERSEG->BitShiftCnt,current_cINTERSEG->OffsetPatch,current_cINTERSEG->OffsetReference,current_cINTERSEG->SegNum);
 	ldy	#$11
 	lda	[<L200+current_cINTERSEG_1],Y
@@ -7159,7 +7180,7 @@ current_cINTERSEG_1	set	0
 	pea	#24
 	jsl	~~f_printf
 ;}
-	.line	949
+	.line	950
 L202:
 	lda	<L199+2
 	sta	<L199+2+10
@@ -7171,13 +7192,13 @@ L202:
 	adc	#L199+10
 	tcs
 	rtl
-	.endblock	949
+	.endblock	950
 L199	equ	4
 L200	equ	1
 	ends
 	efunc
-	.endfunc	949,1,4
-	.line	949
+	.endfunc	950,1,4
+	.line	950
 	data
 L198:
 	db	$20,$20,$20,$20,$20,$20,$20,$23,$20,$42,$79,$74,$65,$20,$74
@@ -7197,11 +7218,11 @@ L198:
 ;/****************************************************************/
 ;static void DumpSUPERRecord(struct omf_body_record *current_record, FIL *fd, int segment_num)
 ;{
-	.line	955
 	.line	956
+	.line	957
 	LOADER
 	func
-	.function	956
+	.function	957
 ~~DumpSUPERRecord:
 	longa	on
 	longi	on
@@ -7214,7 +7235,7 @@ L198:
 current_record_0	set	4
 fd_0	set	8
 segment_num_0	set	12
-	.block	956
+	.block	957
 ;  int i;
 ;  struct record_SUPER *current_SUPER;
 ;  struct subrecord_SuperReloc2 *current_SuperReloc2;
@@ -7235,17 +7256,17 @@ current_SuperInterseg212_1	set	18
 current_SuperInterseg1324_1	set	22
 current_SuperInterseg2536_1	set	26
 	.sym	i,0,5,1,16
-	.sym	current_SUPER,2,138,1,32,118
-	.sym	current_SuperReloc2,6,138,1,32,89
-	.sym	current_SuperReloc3,10,138,1,32,90
-	.sym	current_SuperInterseg1,14,138,1,32,91
-	.sym	current_SuperInterseg212,18,138,1,32,92
-	.sym	current_SuperInterseg1324,22,138,1,32,93
-	.sym	current_SuperInterseg2536,26,138,1,32,94
-	.sym	current_record,4,138,6,32,88
-	.sym	fd,8,138,6,32,78
+	.sym	current_SUPER,2,138,1,32,123
+	.sym	current_SuperReloc2,6,138,1,32,94
+	.sym	current_SuperReloc3,10,138,1,32,95
+	.sym	current_SuperInterseg1,14,138,1,32,96
+	.sym	current_SuperInterseg212,18,138,1,32,97
+	.sym	current_SuperInterseg1324,22,138,1,32,98
+	.sym	current_SuperInterseg2536,26,138,1,32,99
+	.sym	current_record,4,138,6,32,93
+	.sym	fd,8,138,6,32,82
 	.sym	segment_num,12,5,6,16
-	.line	967
+	.line	968
 	ldy	#$b
 	lda	[<L204+current_record_0],Y
 	sta	<L205+current_SUPER_1
@@ -7255,7 +7276,7 @@ current_SuperInterseg2536_1	set	26
 ;    
 ;  /** On Dump le contenu **/
 ;  if(current_SUPER->RecordType == 0x00)    /* SuperReloc2 */
-	.line	970
+	.line	971
 ;    {
 	ldy	#$d
 	lda	[<L205+current_SUPER_1],Y
@@ -7263,9 +7284,9 @@ current_SuperInterseg2536_1	set	26
 	beq	L207
 	brl	L10127
 L207:
-	.line	971
-;      for(current_SuperReloc2=current_SUPER->first_SuperReloc2; current_SuperReloc2; current_SuperReloc2=current_SuperReloc2->next)
 	.line	972
+;      for(current_SuperReloc2=current_SUPER->first_SuperReloc2; current_SuperReloc2; current_SuperReloc2=current_SuperReloc2->next)
+	.line	973
 	ldy	#$10
 	lda	[<L205+current_SUPER_1],Y
 	sta	<L205+current_SuperReloc2_1
@@ -7275,12 +7296,12 @@ L207:
 	brl	L10131
 L10130:
 ;        for(i=0; i<current_SuperReloc2->nb_address; i++)
-	.line	973
+	.line	974
 	stz	<L205+i_1
 	brl	L10135
 L10134:
 ;          f_printf(fd,"       # Byte to be relocated = %02X,   Bit Shift = %02X,   Offset Patch = %04X,   Reference = %04X\n",
-	.line	974
+	.line	975
 ;                     current_SuperReloc2->ByteCnt,
 ;                     current_SuperReloc2->BitShiftCnt,
 ;                     current_SuperReloc2->OffsetPatch[i],
@@ -7398,11 +7419,11 @@ L10131:
 L212:
 L10129:
 ;    }
-	.line	979
+	.line	980
 ;  else if(current_SUPER->RecordType == 0x01)    /* SuperReloc3 */
 	brl	L10136
 L10127:
-	.line	980
+	.line	981
 ;    {
 	sep	#$20
 	longa	off
@@ -7414,9 +7435,9 @@ L10127:
 	beq	L213
 	brl	L10137
 L213:
-	.line	981
-;      for(current_SuperReloc3=current_SUPER->first_SuperReloc3; current_SuperReloc3; current_SuperReloc3=current_SuperReloc3->next)
 	.line	982
+;      for(current_SuperReloc3=current_SUPER->first_SuperReloc3; current_SuperReloc3; current_SuperReloc3=current_SuperReloc3->next)
+	.line	983
 	ldy	#$1a
 	lda	[<L205+current_SUPER_1],Y
 	sta	<L205+current_SuperReloc3_1
@@ -7426,12 +7447,12 @@ L213:
 	brl	L10141
 L10140:
 ;        for(i=0; i<current_SuperReloc3->nb_address; i++)
-	.line	983
+	.line	984
 	stz	<L205+i_1
 	brl	L10145
 L10144:
 ;          f_printf(fd,"       # Byte to be relocated = %02X,   Bit Shift = %02X,   Offset Patch = %04X,   Reference = %04X\n",
-	.line	984
+	.line	985
 ;                     current_SuperReloc3->ByteCnt,
 ;                     current_SuperReloc3->BitShiftCnt,
 ;                     current_SuperReloc3->OffsetPatch[i],
@@ -7549,11 +7570,11 @@ L10141:
 L218:
 L10139:
 ;    }
-	.line	989
+	.line	990
 ;  else if(current_SUPER->RecordType == 0x02)    /* Super Interseg1 */
 	brl	L10146
 L10137:
-	.line	990
+	.line	991
 ;    {
 	sep	#$20
 	longa	off
@@ -7565,9 +7586,9 @@ L10137:
 	beq	L219
 	brl	L10147
 L219:
-	.line	991
-;      for(current_SuperInterseg1=current_SUPER->first_SuperInterseg1; current_SuperInterseg1; current_SuperInterseg1=current_SuperInterseg1->next)
 	.line	992
+;      for(current_SuperInterseg1=current_SUPER->first_SuperInterseg1; current_SuperInterseg1; current_SuperInterseg1=current_SuperInterseg1->next)
+	.line	993
 	ldy	#$24
 	lda	[<L205+current_SUPER_1],Y
 	sta	<L205+current_SuperInterseg1_1
@@ -7577,12 +7598,12 @@ L219:
 	brl	L10151
 L10150:
 ;        for(i=0; i<current_SuperInterseg1->nb_address; i++)
-	.line	993
+	.line	994
 	stz	<L205+i_1
 	brl	L10155
 L10154:
 ;          f_printf(fd,"       # Byte to be relocated = %02X,   Bit Shift = %02X,   Offset Patch = %04X,   Reference = %04X,   Segment Number = %04X,   File Number = %04X\n",
-	.line	994
+	.line	995
 ;                     current_SuperInterseg1->ByteCnt,
 ;                     current_SuperInterseg1->BitShiftCnt,
 ;                     current_SuperInterseg1->OffsetPatch[i],
@@ -7735,11 +7756,11 @@ L10151:
 L225:
 L10149:
 ;    }
-	.line	1001
+	.line	1002
 ;  else if(current_SUPER->RecordType >= 0x03 && current_SUPER->RecordType <= 0x0D)    /* Super Interseg 2-12 */
 	brl	L10156
 L10147:
-	.line	1002
+	.line	1003
 ;    {
 	sep	#$20
 	longa	off
@@ -7761,9 +7782,9 @@ L226:
 	bcs	L227
 	brl	L10157
 L227:
-	.line	1003
-;      for(current_SuperInterseg212=current_SUPER->first_SuperInterseg212; current_SuperInterseg212; current_SuperInterseg212=current_SuperInterseg212->next)
 	.line	1004
+;      for(current_SuperInterseg212=current_SUPER->first_SuperInterseg212; current_SuperInterseg212; current_SuperInterseg212=current_SuperInterseg212->next)
+	.line	1005
 	ldy	#$2e
 	lda	[<L205+current_SUPER_1],Y
 	sta	<L205+current_SuperInterseg212_1
@@ -7773,12 +7794,12 @@ L227:
 	brl	L10161
 L10160:
 ;        for(i=0; i<current_SuperInterseg212->nb_address; i++)
-	.line	1005
+	.line	1006
 	stz	<L205+i_1
 	brl	L10165
 L10164:
 ;          f_printf(fd,"       # Byte to be relocated = %02X,   Bit Shift = %02X,   Offset Patch = %04X,   Reference = %02X,   Segment Number = %04X,   File Number = %04X\n",
-	.line	1006
+	.line	1007
 ;                     current_SuperInterseg212->ByteCnt,
 ;                     current_SuperInterseg212->BitShiftCnt,
 ;                     current_SuperInterseg212->OffsetPatch[i],
@@ -7931,11 +7952,11 @@ L10161:
 L233:
 L10159:
 ;    }
-	.line	1013
+	.line	1014
 ;  else if(current_SUPER->RecordType >= 0x0E && current_SUPER->RecordType <= 0x19)    /* Super Interseg 13-24 */
 	brl	L10166
 L10157:
-	.line	1014
+	.line	1015
 ;    {
 	sep	#$20
 	longa	off
@@ -7957,9 +7978,9 @@ L234:
 	bcs	L235
 	brl	L10167
 L235:
-	.line	1015
-;      for(current_SuperInterseg1324=current_SUPER->first_SuperInterseg1324; current_SuperInterseg1324; current_SuperInterseg1324=current_SuperInterseg1324->next)
 	.line	1016
+;      for(current_SuperInterseg1324=current_SUPER->first_SuperInterseg1324; current_SuperInterseg1324; current_SuperInterseg1324=current_SuperInterseg1324->next)
+	.line	1017
 	ldy	#$38
 	lda	[<L205+current_SUPER_1],Y
 	sta	<L205+current_SuperInterseg1324_1
@@ -7969,12 +7990,12 @@ L235:
 	brl	L10171
 L10170:
 ;        for(i=0; i<current_SuperInterseg1324->nb_address; i++)
-	.line	1017
+	.line	1018
 	stz	<L205+i_1
 	brl	L10175
 L10174:
 ;          f_printf(fd,"       # Byte to be relocated = %02X,   Bit Shift = %02X,   Offset Patch = %04X,   Reference = %04X,   Segment Number = %02X,   File Number = %04X\n",
-	.line	1018
+	.line	1019
 ;                     current_SuperInterseg1324->ByteCnt,
 ;                     current_SuperInterseg1324->BitShiftCnt,
 ;                     current_SuperInterseg1324->OffsetPatch[i],
@@ -8101,11 +8122,11 @@ L10171:
 L240:
 L10169:
 ;  }
-	.line	1025
+	.line	1026
 ;  else if(current_SUPER->RecordType >= 0x1A && current_SUPER->RecordType <= 0x25)    /* Super Interseg 25-36 */
 	brl	L10176
 L10167:
-	.line	1026
+	.line	1027
 ;    {
 	sep	#$20
 	longa	off
@@ -8127,9 +8148,9 @@ L241:
 	bcs	L242
 	brl	L10177
 L242:
-	.line	1027
-;      for(current_SuperInterseg2536=current_SUPER->first_SuperInterseg2536; current_SuperInterseg2536; current_SuperInterseg2536=current_SuperInterseg2536->next)
 	.line	1028
+;      for(current_SuperInterseg2536=current_SUPER->first_SuperInterseg2536; current_SuperInterseg2536; current_SuperInterseg2536=current_SuperInterseg2536->next)
+	.line	1029
 	ldy	#$42
 	lda	[<L205+current_SUPER_1],Y
 	sta	<L205+current_SuperInterseg2536_1
@@ -8139,12 +8160,12 @@ L242:
 	brl	L10181
 L10180:
 ;        for(i=0; i<current_SuperInterseg2536->nb_address; i++)
-	.line	1029
+	.line	1030
 	stz	<L205+i_1
 	brl	L10185
 L10184:
 ;          f_printf(fd,"       # Byte to be relocated = %02X,   Bit Shift = %02X,   Offset Patch = %04X,   Reference = %04X,   Segment Number = %02X,   File Number = %04X\n",
-	.line	1030
+	.line	1031
 ;                     current_SuperInterseg2536->ByteCnt,
 ;                     current_SuperInterseg2536->BitShiftCnt,
 ;                     current_SuperInterseg2536->OffsetPatch[i],
@@ -8271,7 +8292,7 @@ L10181:
 L247:
 L10179:
 ;    }
-	.line	1037
+	.line	1038
 ;}
 L10177:
 L10176:
@@ -8279,7 +8300,7 @@ L10166:
 L10156:
 L10146:
 L10136:
-	.line	1038
+	.line	1039
 L248:
 	lda	<L204+2
 	sta	<L204+2+10
@@ -8291,13 +8312,13 @@ L248:
 	adc	#L204+10
 	tcs
 	rtl
-	.endblock	1038
+	.endblock	1039
 L204	equ	54
 L205	equ	25
 	ends
 	efunc
-	.endfunc	1038,25,54
-	.line	1038
+	.endfunc	1039,25,54
+	.line	1039
 	data
 L203:
 	db	$20,$20,$20,$20,$20,$20,$20,$23,$20,$42,$79,$74,$65,$20,$74
@@ -8357,8 +8378,8 @@ L203:
 ;
 ;/************************************************************************/
 ;
-	.line	1040
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\OMF_Dump.c",955
+	.line	1041
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\omf/OMF_Dump.c",956
 	xref	~~GetRecordName
 	xref	~~my_stricmp
 	xref	~~k_free
@@ -8392,128 +8413,137 @@ L203:
 	.sym	~~GetSegmentType,~~GetSegmentType,1102,3,32
 	.sym	~~DumpSegmentHeader,~~DumpSegmentHeader,65,3,0
 	.sym	~~DumpExpressLoadData,~~DumpExpressLoadData,65,3,0
-	.sym	~~CreateDumpFile,~~CreateDumpFile,69,2,0
 	.sym	~~GetRecordName,~~GetRecordName,1102,18,32
 	.sym	~~my_stricmp,~~my_stricmp,69,18,0
-	.sym	PIPCPORT,0,138,14,32,84
-	.sym	IPCPORT,0,10,14,144,84
+	.sym	PALLOCATIONHEADER,0,138,14,32,89
+	.sym	ALLOCATIONHEADER,0,10,14,80,89
+	.sym	PIPCPORT,0,138,14,32,88
+	.sym	IPCPORT,0,10,14,144,88
 	.sym	~~k_free,~~k_free,65,18,0
 	.sym	~~k_calloc,~~k_calloc,1089,18,32
 	.sym	~~k_mem_deallocate_heap,~~k_mem_deallocate_heap,65,18,0
 	.sym	~~k_mem_allocate_heap,~~k_mem_allocate_heap,1089,18,32
 	.sym	MemoryCallback,0,641,14,32
-	.sym	PFXMEMORYMAP,0,138,14,32,83
-	.sym	FXMEMORYMAP,0,10,14,2072,83
-	.sym	UMM_HEAP_INFO,0,10,14,256,82
+	.sym	PFXMEMORYMAP,0,138,14,32,87
+	.sym	FXMEMORYMAP,0,10,14,2072,87
+	.sym	UMM_HEAP_INFO,0,10,14,256,86
 	.sym	~~f_printf,~~f_printf,69,18,0
 	.sym	~~f_close,~~f_close,69,18,0
 	.sym	~~f_open,~~f_open,69,18,0
 	.sym	FRESULT,0,5,14,16
-	.sym	MKFS_PARM,0,10,14,80,81
-	.sym	FILINFO,0,10,14,2224,80
-	.sym	DIR,0,10,14,416,79
-	.sym	FIL,0,10,14,4400,78
-	.sym	FFOBJID,0,10,14,128,77
-	.sym	FATFS,0,10,14,4504,76
+	.sym	MKFS_PARM,0,10,14,80,85
+	.sym	FILINFO,0,10,14,2224,84
+	.sym	DIR,0,10,14,416,83
+	.sym	FIL,0,10,14,4400,82
+	.sym	FFOBJID,0,10,14,128,81
+	.sym	FATFS,0,10,14,4504,80
 	.sym	LBA_t,0,18,14,32
 	.sym	FSIZE_t,0,18,14,32
 	.sym	TCHAR,0,14,14,8
-	.sym	PCOMMANDARGS,0,138,14,32,75
-	.sym	COMMANDARGS,0,10,14,64,75
+	.sym	PCOMMANDARGS,0,138,14,32,79
+	.sym	COMMANDARGS,0,10,14,64,79
 	.sym	PTOKENIZESTATE,0,133,14,32
 	.sym	TOKENIZESTATE,0,5,14,16
-	.sym	PTOKEN,0,138,14,32,74
-	.sym	TOKEN,0,10,14,64,74
+	.sym	PTOKEN,0,138,14,32,78
+	.sym	TOKEN,0,10,14,64,78
 	.sym	PTOKENTYPE,0,133,14,32
 	.sym	TOKENTYPE,0,5,14,16
 	.sym	FXCommandHandler,0,656,14,32
-	.sym	PCONSOLECTX,0,138,14,32,73
-	.sym	CONSOLECTX,0,10,14,1144,73
-	.sym	PSPINNERCTX,0,138,14,32,72
-	.sym	SPINNERCTX,0,10,14,48,72
-	.sym	HCLIP,0,138,14,32,71
-	.sym	PCLIPBOARD_DATA,0,138,14,32,71
-	.sym	CLIPBOARD_DATA,0,10,14,168,71
-	.sym	PEVENTMANAGER,0,138,14,32,70
-	.sym	EVENTMANAGER,0,10,14,192,70
+	.sym	PCONSOLECTX,0,138,14,32,77
+	.sym	CONSOLECTX,0,10,14,1144,77
+	.sym	PSPINNERCTX,0,138,14,32,76
+	.sym	SPINNERCTX,0,10,14,48,76
+	.sym	HCLIP,0,138,14,32,75
+	.sym	PCLIPBOARD_DATA,0,138,14,32,75
+	.sym	CLIPBOARD_DATA,0,10,14,168,75
+	.sym	PEVENTMANAGER,0,138,14,32,74
+	.sym	EVENTMANAGER,0,10,14,192,74
 	.sym	EV_RUN,0,656,14,32
 	.sym	EV_QUERY_METRIC,0,656,14,32
 	.sym	EV_CONFIGURE,0,656,14,32
 	.sym	EV_UNINIT,0,641,14,32
 	.sym	EV_INIT,0,8833,14,32
-	.sym	PMOUSE_MSG_STATE,0,138,14,32,69
-	.sym	MOUSE_MSG_STATE,0,10,14,184,69
-	.sym	PFXEVENTPROCESS,0,138,14,32,68
-	.sym	FXEVENTPROCESS,0,10,14,64,68
-	.sym	PMARSHALDATA,0,139,14,32,67
-	.sym	MARSHALDATA,0,11,14,32,67
+	.sym	PMOUSE_MSG_STATE,0,138,14,32,73
+	.sym	MOUSE_MSG_STATE,0,10,14,184,73
+	.sym	PFXEVENTPROCESS,0,138,14,32,72
+	.sym	FXEVENTPROCESS,0,10,14,64,72
+	.sym	FXASYNCPROCESS,0,641,14,32
+	.sym	PMARSHALDATA,0,139,14,32,71
+	.sym	MARSHALDATA,0,11,14,32,71
 	.sym	FXIDLEPROCESS,0,641,14,32
 	.sym	FXEventProc,0,641,14,32
-	.sym	PMOUSEMSGDATA,0,138,14,32,66
-	.sym	MOUSEMSGDATA,0,10,14,64,66
+	.sym	PMOUSEMSGDATA,0,138,14,32,70
+	.sym	MOUSEMSGDATA,0,10,14,64,70
 	.sym	MSGIRQ,0,5,14,16
-	.sym	MAINLOOPARGS,0,10,14,16,65
-	.sym	PEACHCHILD_MSG,0,138,14,32,64
-	.sym	EACHCHILD_MSG,0,10,14,64,64
-	.sym	PMSGBOX_DATA,0,138,14,32,63
-	.sym	MSGBOX_DATA,0,10,14,96,63
-	.sym	PDESKTOP_DATA,0,138,14,32,62
-	.sym	DESKTOP_DATA,0,10,14,64,62
-	.sym	PWINDOWMANAGER,0,138,14,32,61
-	.sym	WINDOWMANAGER,0,10,14,160,61
+	.sym	MAINLOOPARGS,0,10,14,16,69
+	.sym	PEACHCHILD_MSG,0,138,14,32,68
+	.sym	EACHCHILD_MSG,0,10,14,64,68
+	.sym	PMSGBOX_DATA,0,138,14,32,67
+	.sym	MSGBOX_DATA,0,10,14,96,67
+	.sym	PDESKTOP_DATA,0,138,14,32,66
+	.sym	DESKTOP_DATA,0,10,14,64,66
+	.sym	PWINDOWMANAGER,0,138,14,32,65
+	.sym	WINDOWMANAGER,0,10,14,160,65
 	.sym	WM_DOPROCS,0,641,14,32
 	.sym	WM_QUERY_METRIC,0,656,14,32
 	.sym	WM_CONFIGURE,0,656,14,32
 	.sym	WM_HANDLE_EVENT,0,8833,14,32
 	.sym	WM_EVENTS,0,641,14,32
-	.sym	PCUR_PALETTE_MAP,0,138,14,32,60
-	.sym	CUR_PALETTE_MAP,0,10,14,400,60
-	.sym	PCLICKDETECTED,0,138,14,32,59
-	.sym	CLICKDETECTED,0,10,14,64,59
+	.sym	PCUR_PALETTE_MAP,0,138,14,32,64
+	.sym	CUR_PALETTE_MAP,0,10,14,400,64
+	.sym	PCLICKDETECTED,0,138,14,32,63
+	.sym	CLICKDETECTED,0,10,14,64,63
 	.sym	OBJECTCLICKED,0,641,14,32
-	.sym	PEXECUTIVE,0,138,14,32,58
-	.sym	EXECUTIVE,0,10,14,128,58
+	.sym	PEXECUTIVE,0,138,14,32,62
+	.sym	EXECUTIVE,0,10,14,128,62
 	.sym	EX_QUERY_METRIC,0,656,14,32
 	.sym	EX_CONFIGURE,0,656,14,32
 	.sym	EX_UNINIT,0,641,14,32
 	.sym	EX_INIT,0,8833,14,32
 	.sym	~~k_strcpy,~~k_strcpy,1102,18,32
 	.sym	~~k_strcat,~~k_strcat,1102,18,32
-	.sym	PFXSTRING,0,138,14,32,57
-	.sym	FXSTRING,0,10,14,64,57
-	.sym	DEVICEDRIVER_COMMAND,0,656,14,32
+	.sym	PFXSTRING,0,138,14,32,61
+	.sym	FXSTRING,0,10,14,64,61
+	.sym	PIRQCHAIN,0,138,14,32,60
+	.sym	IRQCHAIN,0,10,14,128,60
+	.sym	DEVICEDRIVER_COMMAND,0,654,14,32
 	.sym	DEVICEDRIVER_UNLOAD,0,654,14,32
-	.sym	DEVICEDRIVER_WRITE,0,656,14,32
-	.sym	DEVICEDRIVER_READ,0,656,14,32
+	.sym	DEVICEDRIVER_WRITE,0,654,14,32
+	.sym	DEVICEDRIVER_READ,0,654,14,32
 	.sym	DEVICEDRIVER_LOAD,0,654,14,32
-	.sym	DEVICEDRIVER_IRQ,0,654,14,32
-	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,56
-	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,56
-	.sym	GETDRIVERDEF,0,8842,14,32,55
-	.sym	PFX_DEVICE_DRIVER,0,138,14,32,55
-	.sym	FX_DEVICE_DRIVER,0,10,14,776,55
-	.sym	PSEGMENTHEADER,0,138,14,32,54
-	.sym	SEGMENTHEADER,0,10,14,160,54
-	.sym	PDEBUGBYTEBITS,0,138,14,32,53
-	.sym	DEBUGBYTEBITS,0,10,14,8,53
-	.sym	PFXENVIRONMENT,0,138,14,32,52
-	.sym	FXENVIRONMENT,0,10,14,96,52
-	.sym	PFXZEROPAGE,0,138,14,32,51
-	.sym	FXZEROPAGE,0,10,14,824,51
+	.sym	DEVICEDRIVER_IRQ,0,641,14,32
+	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,59
+	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,59
+	.sym	GETDRIVERDEF,0,8842,14,32,58
+	.sym	PFX_DEVICE_DRIVER,0,138,14,32,58
+	.sym	FX_DEVICE_DRIVER,0,10,14,776,58
+	.sym	PSEGMENTHEADER,0,138,14,32,57
+	.sym	SEGMENTHEADER,0,10,14,160,57
+	.sym	PDEBUGBYTEBITS,0,138,14,32,56
+	.sym	DEBUGBYTEBITS,0,10,14,8,56
+	.sym	PFXENVIRONMENT,0,138,14,32,55
+	.sym	FXENVIRONMENT,0,10,14,96,55
+	.sym	PFXZEROPAGE,0,138,14,32,54
+	.sym	FXZEROPAGE,0,10,14,720,54
+	.sym	IRQBUFFER,0,10,14,32,53
 	.sym	KERNELTRAPCALL,0,641,14,32
-	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,50
-	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,50
+	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,52
+	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,52
 	.sym	FOREACHNODEUNTIL,0,654,14,32
 	.sym	FOREACHNODE,0,641,14,32
 	.sym	~~strlen,~~strlen,80,18,0
 	.sym	Boolean_T,0,5,14,16
-	.sym	ldiv_t,0,10,14,64,48
-	.sym	div_t,0,10,14,32,47
+	.sym	ldiv_t,0,10,14,64,50
+	.sym	div_t,0,10,14,32,49
 	.sym	wctype_t,0,16,14,16
 	.sym	wint_t,0,16,14,16
 	.sym	wchar_t,0,14,14,8
 	.sym	ptrdiff_t,0,7,14,32
 	.sym	size_t,0,16,14,16
+	.sym	PFXRFHEADER_STRING_ENTRY,0,138,14,32,48
+	.sym	FXRFHEADER_STRING_ENTRY,0,10,14,40,48
+	.sym	PFXRFHEADER_STRING,0,138,14,32,47
+	.sym	FXRFHEADER_STRING,0,10,14,32,47
 	.sym	PFXRFHEADER_FONT,0,138,14,32,46
 	.sym	FXRFHEADER_FONT,0,10,14,144,46
 	.sym	PFXRFHEADER,0,138,14,32,45
@@ -8591,9 +8621,9 @@ L203:
 	.sym	CONSOLE_CONTROL,0,10,14,448,15
 	.sym	FXProcessProc,0,641,14,32
 	.sym	PFXCMDMESSAGE,0,138,14,32,14
-	.sym	FXCMDMESSAGE,0,10,14,304,14
+	.sym	FXCMDMESSAGE,0,10,14,312,14
 	.sym	PFXOSMESSAGE,0,138,14,32,13
-	.sym	FXOSMESSAGE,0,10,14,304,13
+	.sym	FXOSMESSAGE,0,10,14,312,13
 	.sym	PINT_REGS,0,138,14,32,12
 	.sym	INT_REGS,0,10,14,104,12
 	.sym	TASK_STACK,0,10,14,32,11
@@ -8640,6 +8670,7 @@ L203:
 	.sym	HRESULT,0,18,14,32
 	.sym	LPWCHAR,0,144,14,32
 	.sym	WCHAR,0,16,14,16
+	.sym	HSTRINGTABLE,0,129,14,32
 	.sym	HCOLOR,0,129,14,32
 	.sym	HFONT,0,129,14,32
 	.sym	HDC,0,129,14,32
@@ -8667,6 +8698,13 @@ L203:
 	.sym	LPSTR,0,142,14,32
 	.sym	LPCHAR,0,142,14,32
 	.sym	CHAR,0,14,14,8
+	.sym	PUINT_32,0,146,14,32
+	.sym	UINT_32,0,18,14,32
+	.sym	PUINT_16,0,144,14,32
+	.sym	UINT_16,0,16,14,16
+	.sym	PUINT_8,0,142,14,32
+	.sym	UINT_8,0,14,14,8
 	.sym	LPVOID,0,129,14,32
 	.sym	VOID,0,1,14,32
+	.sym	~~CreateDumpFile,~~CreateDumpFile,69,2,0
 	end

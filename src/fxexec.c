@@ -13,9 +13,9 @@ SEGMENTHEADER loadModuleHeader;
 //
 // SEH Variables
 //
-ULONG _k_exec_context 	= 0L;
-ULONG _k_exec_error		= 0L;
-UCHAR _k_exec_message[64];
+extern ULONG _k_exec_context;
+extern ULONG _k_exec_error;
+extern UCHAR _k_exec_message[64];
 //
 //
 //
@@ -211,21 +211,24 @@ PFXPROCESS k_user_CreateProcess(LPCHAR commandLine)
 
 FXProcessProc k_exe_device_load_process(LPCHAR path)
 {
-	FIL *f;
-	FRESULT fr;
+	FILE file = NULL;
+	FRESULT fr = 0;
 	UINT read;
 	ULONG codeSize = 0L;
 
 	FXProcessProc pEntryAddress = NULL;
 
-	f = k_mem_allocate_heap(sizeof(FIL));
+	//f = k_mem_allocate_heap(sizeof(FIL));
 
 	k_debug_strings("k_exe_device_load_process::load module:",path);
 
-	if(f_open(f,path,FA_READ) == FR_OK)
+	//if(f_open(f,path,FA_READ) == FR_OK)
+
+	file = k_dos_open(path,FA_READ);
+	if(file && file->fr == FR_OK)
 	{
 
-		fr = f_read(f,&loadModuleHeader,sizeof(SEGMENTHEADER),&read);
+		fr = f_read(file->f,&loadModuleHeader,sizeof(SEGMENTHEADER),&read);
 		k_debug_integer("k_exe_device_load_process:SEGMENTHEADER:fr:",fr);
 		k_debug_integer("k_exe_device_load_process::sizeof SEGMENTHEADER Size:\r\n",sizeof(SEGMENTHEADER));
 		k_debug_integer("k_exe_device_load_process::READ SEGMENTHEADER Size:\r\n",read);
@@ -244,11 +247,11 @@ FXProcessProc k_exe_device_load_process(LPCHAR path)
 			k_debug_integer("k_exe_device_load_process::SEGMENT CODE LENGTH  :",codeSize);
 		}
 
-		fr = f_lseek(f,loadModuleHeader.length);
+		fr = f_lseek(file->f,loadModuleHeader.length);
 
 		memset((LPVOID)loadModuleHeader.segment_start_addr,0,codeSize);
 
-		fr = f_read(f,(LPVOID)loadModuleHeader.segment_start_addr,codeSize + 4,&read);
+		fr = f_read(file->f,(LPVOID)loadModuleHeader.segment_start_addr,codeSize + 4,&read);
 		k_debug_integer("k_exe_device_load_process:f_read:fr:",fr);
 		k_debug_integer("k_exe_device_load_process::LOAD SEGMENT Size:\r\n",read);
 		if(read)
@@ -257,7 +260,7 @@ FXProcessProc k_exe_device_load_process(LPCHAR path)
 			k_debug_pointer("k_exe_device_load_process::LOAD SEGMENT Entry:",(LPVOID)loadModuleHeader.main_entry_addr);
 
 
-			k_debug_byte_array("SEGMENT DATA:",(LPVOID)loadModuleHeader.segment_start_addr,codeSize);
+			//k_debug_byte_array("SEGMENT DATA:",(LPVOID)loadModuleHeader.segment_start_addr,codeSize);
 
 
 			pEntryAddress = (FXProcessProc)loadModuleHeader.main_entry_addr;
@@ -265,7 +268,7 @@ FXProcessProc k_exe_device_load_process(LPCHAR path)
 
 	}
 
-	k_mem_deallocate_heap(f);
+	k_dos_close(file);
 
 	return pEntryAddress;
 }
@@ -344,7 +347,7 @@ PFXPROCESS k_exec_createProcess(LPCHAR commandLine,FXProcessProc processProc,LPV
 		process->procId = k_exec_nextprocess(process);
 		if(process->procId == INVALID_HANDLE)
 		{
-			k_exec_throw_exception(THIS_MODULE,0x000A0000,"Kernel returned invalid process id.",-1);
+			k_exec_throw_exception(k_exec_createProcess,0x000A0000,"Kernel returned invalid process id.",-1);
 		}
 		process->parentId = 0L;
 		if(k_exec_get_current_process())
@@ -432,7 +435,7 @@ BOOL k_exec_set_signal(PROCESS_ID processId,PROCESS_STATUS signal)
 	return FALSE;
 }
 
-
+/*
 VOID k_exec_throw_exception(ULONG ctxId,ULONG errorId,LPVOID exceptionMessage,UINT exMsgSize)
 {
 	UINT len = 0;
@@ -458,6 +461,7 @@ VOID k_exec_throw_exception(ULONG ctxId,ULONG errorId,LPVOID exceptionMessage,UI
 
 	asm BRK;
 }
+*/
 
 KRESULT k_exec_enable_process_timer(UINT timerId,UINT increment)
 {

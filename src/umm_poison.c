@@ -6,7 +6,7 @@
  * Yields a size of the poison for the block of size `s`.
  * If `s` is 0, returns 0.
  */
-static size_t poison_size(size_t s)
+static ULONG poison_size(ULONG s)
 {
 	return(s ? (UMM_POISON_SIZE_BEFORE +
 					sizeof(UMM_POISONED_BLOCK_LEN_TYPE) +
@@ -17,7 +17,7 @@ static size_t poison_size(size_t s)
 /*
  * Print memory contents starting from given `ptr`
  */
-static void dump_mem ( const unsigned char *ptr, size_t len )
+static void dump_mem ( const unsigned char *ptr, ULONG len )
 {
 	while (len--)
 	{
@@ -28,7 +28,7 @@ static void dump_mem ( const unsigned char *ptr, size_t len )
 /*
  * Put poison data at given `ptr` and `poison_size`
  */
-static void put_poison( unsigned char *ptr, size_t poison_size )
+static void put_poison( unsigned char *ptr, ULONG poison_size )
 {
 	memset(ptr, POISON_BYTE, poison_size);
 }
@@ -40,10 +40,10 @@ static void put_poison( unsigned char *ptr, size_t poison_size )
  * If poison is there, returns 1.
  * Otherwise, prints the appropriate message, and returns 0.
  */
-static int check_poison( const unsigned char *ptr, size_t poison_size,
+static int check_poison( const unsigned char *ptr, ULONG poison_size,
 		const char *where)
 {
-	size_t i;
+	ULONG i;
 	int ok = 1;
 
 	for (i = 0; i < poison_size; i++)
@@ -109,7 +109,7 @@ static int check_poison_block( umm_block *pblock )
  *
  * `size_w_poison` is a size of the whole block, including a poison.
  */
-static void *get_poisoned( unsigned char *ptr, size_t size_w_poison )
+static void *get_poisoned( unsigned char *ptr, ULONG size_w_poison )
 {
 	if (size_w_poison != 0 && ptr != NULL)
 	{
@@ -159,7 +159,7 @@ static void *get_unpoisoned( unsigned char *ptr )
 
 /* ------------------------------------------------------------------------ */
 
-void *umm_poison_malloc( size_t size )
+void *umm_poison_malloc( ULONG size )
 {
 	void *ret;
 
@@ -174,10 +174,10 @@ void *umm_poison_malloc( size_t size )
 
 /* ------------------------------------------------------------------------ */
 
-void *umm_poison_calloc( size_t num, size_t item_size )
+void *umm_poison_calloc( ULONG num, ULONG item_size )
 {
 	void *ret;
-	size_t size = item_size * num;
+	ULONG size = item_size * num;
 
 	size += poison_size(size);
 
@@ -193,7 +193,7 @@ void *umm_poison_calloc( size_t num, size_t item_size )
 
 /* ------------------------------------------------------------------------ */
 
-void *umm_poison_realloc( void *ptr, size_t size )
+void *umm_poison_realloc( void *ptr, ULONG size )
 {
 	void *ret;
 

@@ -1,27 +1,24 @@
 
-
-//#pragma section CODE=HEAPFAR, offset $19:0000
-
 /*
-//LPVOID __init_heap_near1(void)
-void far * k_mem_get_heap_far(void)
-{
-	return (void far *)k_mem_get_heap_far;
-}
-*/
+ *
+ *  Marker Segment to protect the FAR heap
+ *
+ */
+#pragma section DATA=farbank0,offset $10:0000,ref_only
+static char HEAPFAR_10[1] = {0};
 
-/*
 
-#pragma section DATA=HEAPNEAR,offset $1A:0000
+#pragma section DATA=farbank1,offset $11:0000,ref_only
+static char HEAPFAR_11[1] = {0};
 
-static void __init_heap_near2(void)
-{
-}
 
-#pragma section DATA=HEAPNEAR,offset $1B:0000
+#pragma section DATA=farbank2,offset $12:0000,ref_only
+static char HEAPFAR_12[1] = {0};
 
-static void __init_heap_near3(void)
-{
-}
 
-*/
+#pragma section DATA=farbank3,offset $13:0000,ref_only
+static char HEAPFAR_13[1] = {0};
+
+
+#pragma section DATA=farbank4,offset $14:0000,ref_only
+static char HEAPFAR_14[1] = {0};

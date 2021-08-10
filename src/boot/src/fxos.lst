@@ -1,0 +1,82 @@
+  Fri Jul 16 2021 14:42                                                Page 1
+
+
+                     ***************************************
+                     **      WDC 65C816 Macro Assembler   **
+                     **                                   **
+                     **     Version 3.49.1- Feb  6 2006    **
+                     ***************************************
+
+     1                        
+     2                        
+     3             0000EF00   STACK   EQU   $EF00     ;CHANGE THIS FOR YOUR SYST
+                    EM
+     4                        
+     5                        PGXHEADER SECTION OFFSET $0B15F8
+     6 0B:15F8: 50 47 58     PGXHEADER           STRING 	"PGX"
+     7 0B:15FB: 01                               DB   	$01
+     8 0B:15FC: 00 16 0B 00                      DL  	START
+     9                        
+    10                        ;
+    11                        ; Executable code
+    12                        ;
+    13                        
+    14                        STARTUP SECTION OFFSET $0B1600
+    15                        
+    16                        ~~START:
+    17                        
+    18 0B:1600: DA           START               PHX
+    19 0B:1601: 5A                               PHY
+    20 0B:1602: 8B                               PHB
+    21 0B:1603: 0B                               PHD
+    22 0B:1604: 08                               PHP
+    23                        
+    24 0B:1605: 78           					SEI
+    25                        
+    26 0B:1606: 18           			        CLC                ;clea
+                    r carry
+    27 0B:1607: FB           			        XCE                ;clea
+                    r emulation-Now in Native 16 bit Mode
+    28 0B:1608: C2 38        			        REP   #$38         ;16 b
+                    it registers and Clear Decimal mode
+    29                        			        LONGI ON
+    30                        			        LONGA ON
+    31 0B:160A: A9 00 EF     			        LDA   #STACK       ;get 
+                    the stack address
+    32 0B:160D: 1B           			        TCS
+    33                        
+    34                        
+    35 0B:160E: 48           					pha
+    36 0B:160F: 08           					php
+    37                        					LONGA OFF
+    38 0B:1610: E2 20        					sep #$20
+    39 0B:1612: A9 0B        					lda #$0B
+    40 0B:1614: 48           					pha
+    41 0B:1615: AB           					plb
+    42 0B:1616: 28           					plp
+    43 0B:1617: 68           					pla
+    44                        
+    45                        
+    46                        
+    47                        					XREF  ~~main    
+  Fri Jul 16 2021 14:42                                                Page 2
+
+
+                      ;
+    48 0B:1618: 22 xx xx xx          			JSL   ~~main      ;long 
+                    jump in case not bank 0
+    49                        
+    50                        
+    51 0B:161C: 5C 00 7D 00  					JML	$007D00
+    52                        
+    53                        					XDEF ~~_exit
+    54                        ~~_exit:
+    55 0B:1620: 00 00                			BRK
+    56                        
+    57                        
+    58                        
+    59                        
+
+
+      Lines assembled: 59
+      Errors: 0

@@ -368,6 +368,14 @@ BOOL buttonWindowProc(PFXOSMESSAGE pMsg)
 			}
 			return TRUE;
 			break;
+		case FX_KEY_DOWN:
+			k_debug_hex("msgboxWindowProc::FX_KEY_DOWN SCANCODE:",((PKEYSTATE)pMsg->data)->scanCode);
+			pWin = k_getWindowFromHandle(pMsg->hwnd);
+			if((CHAR)((PKEYSTATE)pMsg->data)->scanCode == 0x1C)
+			{
+				k_send_command_message(pWin->pParentWindow,FX_CONTROL_COMMAND,CTL_BUTTON_SELECTED,LOWORD((ULONG)pWin->hMenu),0L,0L);
+			}
+			break;
 		default:
 			break;
 		}

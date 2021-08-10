@@ -1,6 +1,7 @@
 
 #include "DRIVER_FMXConsole.h"
 
+#include "drivers/DRIVER.h"
 #include "drivers/DRIVER_CON.h"
 //#pragma section CODE=FMXCon,offset $08:A000
 
@@ -17,7 +18,7 @@ static FX_DEVICE_DRIVER DRIVER_FMXConsole = {
 										"4\0",
 										DRIVER_TYPE_CONSOLE,
 										"CON:\0",
-										0,
+										NOIRQ,
 										NULL,
 										NULL,
 										f_driver_load,

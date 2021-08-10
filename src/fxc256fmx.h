@@ -13,10 +13,10 @@
 
 #define CHK_KEYMOUSE_CTL  (0x02)
 
-#define INT_PENDING_REG0  ((char FAR*)0x000140)
-#define INT_PENDING_REG1  ((char FAR*)0x000141)
-#define INT_PENDING_REG2  ((char FAR*)0x000142)
-#define INT_PENDING_REG3  ((char FAR*)0x000143)
+#define INT_PENDING_REG0  ((volatile char FAR*)0x000140)
+#define INT_PENDING_REG1  ((volatile char FAR*)0x000141)
+#define INT_PENDING_REG2  ((volatile char FAR*)0x000142)
+#define INT_PENDING_REG3  ((volatile char FAR*)0x000143)
 #define INT_POL_REG0      ((char FAR*)0x000144)
 #define INT_POL_REG1      ((char FAR*)0x000145)
 #define INT_POL_REG2      ((char FAR*)0x000146)
@@ -711,6 +711,7 @@
 #define	RTC_CENTURY   ((VOLATILE unsigned char FAR*)0xAF080F )
 //Century Register
 
+
 //[0] - Enable Line 0, [1] -Enable Line 1
 #define	VKY_LINE_IRQ_CTRL_REG   ((VOLATILE unsigned char FAR*)0xAF001B)
 //Write Only [7:0]
@@ -732,6 +733,7 @@
 #define	KBD_DATA_BUF	         	((char FAR*)0xAF1060)
 #define	PORT_A			         	((char FAR*)0xAF1060)
 #define	PORT_B			         	((char FAR*)0xAF1061)
+
 
 #define	BITMAP_BANK_0       		 ((VOLATILE unsigned char FAR*)0xB00000)
 #define	BITMAP_BANK_1       		 ((VOLATILE unsigned char FAR*)0xB10000)

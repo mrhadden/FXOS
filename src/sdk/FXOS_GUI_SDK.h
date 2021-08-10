@@ -1,6 +1,6 @@
 /*
  * FXOS_GUI_SDK.h
- * Created Jul 7, 2021 9:34:32 PM
+ * Created Jul 29, 2021 10:56:51 PM
  *
  */
 
@@ -9,6 +9,17 @@
 
 #include "fxtypes.h"
 
+
+/*
+*
+* Name:GetDesktopWindow
+* Subsystem:GUI
+* Description: 
+* Arguments: 
+*
+*/
+typedef HWND (*GETDESKTOPWINDOW)(void);
+HWND GetDesktopWindow(VOID);
 
 /*
 *
@@ -133,6 +144,17 @@ HPOINTER RegisterMousePointerClass(LPCSTR pFontName,LPCSTR pCursorData);
 
 /*
 *
+* Name:LoadFontClass
+* Subsystem:GUI
+* Description: 
+* Arguments: 
+*
+*/
+typedef LPVOID (*LOADFONTCLASS)(LPSTR);
+LPVOID LoadFontClass(LPSTR path);
+
+/*
+*
 * Name:RegisterFontClass
 * Subsystem:GUI
 * Description: 
@@ -152,6 +174,39 @@ HFONT RegisterFontClass(LPCSTR pFontName,LPCSTR pFontData);
 */
 typedef HFONT (*GETFONTCLASS)(LPCSTR);
 HFONT GetFontClass(LPCSTR pFontName);
+
+/*
+*
+* Name:LoadResource
+* Subsystem:GUI
+* Description: 
+* Arguments: 
+*
+*/
+typedef HANDLE (*LOADRESOURCE)(LPCSTR);
+HANDLE LoadResource(LPCSTR resourceFile);
+
+/*
+*
+* Name:GetStringTableEntry
+* Subsystem:GUI
+* Description: 
+* Arguments: 
+*
+*/
+typedef PFXSTRING (*GETSTRINGTABLEENTRY)(UINT);
+PFXSTRING GetStringTableEntry(UINT objId);
+
+/*
+*
+* Name:RegisterStringTable
+* Subsystem:GUI
+* Description: 
+* Arguments: 
+*
+*/
+typedef BOOL (*REGISTERSTRINGTABLE)(HANDLE,BOOL);
+BOOL RegisterStringTable(HANDLE hStringTable,BOOL bRelease);
 
 /*
 *
@@ -515,6 +570,17 @@ PPOINT GetMousePoint(PFXOSMESSAGE pMsg,PPOINT point);
 */
 typedef PPOINT (*GETMOUSECLIENTPOINT)(PFXOSMESSAGE,PPOINT);
 PPOINT GetMouseClientPoint(PFXOSMESSAGE pMsg,PPOINT point);
+
+/*
+*
+* Name:DefaultWindowProc
+* Subsystem:GUI
+* Description: 
+* Arguments: 
+*
+*/
+typedef BOOL (*DEFAULTWINDOWPROC)(PFXOSMESSAGE);
+BOOL DefaultWindowProc(PFXOSMESSAGE pMsg);
 
 
 #endif

@@ -1,0 +1,12 @@
+
+Section: ORG:    ROM ORG:  SIZE:
+CODE     0B1700  0B1700      1BDH (   445)
+DATA     0B1920  0B1920      14EH (   334)
+UDATA    0B1A6E  ------      677H (  1655)
+pgxheade 0B15F8  0B15F8        8H (     8)
+startup  0B1600  0B1600       22H (    34)
+fxos     0B2F00  0B2F00      212H (   530)
+ffdos    0B3F80  0B3F80     51ABH ( 20907)
+diskio   0B31F0  0B31F0      6AAH (  1706)
+Total                       6413H ( 25619)
+

@@ -1,16 +1,15 @@
 #include "fxos.h"
 #include "fxdos.h"
 #include "fxmemorymanager.h"
-#include "ff.h";
-#include "mindrvr.h"
-#include "ata.h"
+#include "ff/ff.h";
+//#include "ata.h"
 
 
-static CHAR szIndentity[512];
+//static CHAR szIndentity[512];
 
 //PARTITION VolToPart[] = {{0,1}};
 
-
+#include "drivers/DRIVER.h"
 #include "drivers/DRIVER_IDE.h"
 //#pragma section CODE=FMXIDE,offset $08:B000
 
@@ -26,7 +25,7 @@ static FX_BLOCK_DEVICE_DRIVER DRIVER_FMXIDE = {"DRIVER_FMXIDE\0",
 											"1\0", // "4\0",
 											DRIVER_TYPE_IDE,
 											"HD:\0",
-											0,
+											NOIRQ,
 											NULL,
 											NULL,
 											k_hd_initialize,
@@ -155,6 +154,7 @@ void k_hd_diagnostic(void)
 UINT k_hd_get_id(VOID)
 {
 	int x;
+	BYTE b;
 	PIDSECTOR pid = NULL;
 	PFATBOOTSECTOR pmbr = NULL;
 
@@ -191,8 +191,8 @@ UINT k_hd_get_id(VOID)
 
 	for(x=0;x<(512 - 0);x+=2)
 	{
-		szIndentity[x]   = IDE_DATA_LO[0];
-		szIndentity[x+1] = IDE_DATA_HI[0];
+		b = IDE_DATA_LO[0];// szIndentity[x]   = IDE_DATA_LO[0];
+		b = IDE_DATA_HI[0]; //szIndentity[x+1] = IDE_DATA_HI[0];
 	}
 
 	/*
@@ -203,7 +203,7 @@ UINT k_hd_get_id(VOID)
 	*/
 	//k_debug_byte_array("k_hd_get_id::DebugByteArray:",szIndentity,512);
 
-	pid = ((PIDSECTOR)szIndentity);
+	//pid = ((PIDSECTOR)szIndentity);
 
 
 	//DebugMessageN("sSerialNumber:",pid->sSerialNumber,20);

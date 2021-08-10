@@ -3,8 +3,9 @@
 #define __FX_STRINGTABLE_
 
 #define TEXT(a)  a
+#ifndef TCHAR
 #define TCHAR(a) a
-
+#endif
 ////////////////////////
 // CREDITS
 ///////////////////////
@@ -55,7 +56,7 @@
 ////////////////////////
 // EXCEPTIONS
 ///////////////////////
-#define CONST_EXCEPTION_TITLE		TEXT("Foenix Ashes: ")
+#define CONST_EXCEPTION_TITLE		TEXT(" Foenix Ashes: ")
 
 
 ////////////////////////

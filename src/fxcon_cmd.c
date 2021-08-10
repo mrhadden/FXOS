@@ -3,7 +3,7 @@
 #include "fxdos.h"
 #include "fxnode.h"
 #include "fxmemorymanager.h"
-#include "fxgui.h"
+#include "fxgfx.h"
 
 #pragma section CODE=CONMAN,offset $07:0000 //$07:0000
 
@@ -208,6 +208,71 @@ UINT cmd_DIR(PFXPROCESS process,PFXNODE tokens)
 	k_debug_string("cmd_DIR\r\n");
 
 	getTokenSig(tokens,signature);
+
+	if(strcmp(signature,"#AAC") == 0)
+	{
+		drive = (LPCHAR)((PTOKEN)k_nodelist_get(tokens,3)->data)->text;
+		path  = (LPCHAR)((PTOKEN)k_nodelist_get(tokens,4)->data)->text;
+
+		k_debug_strings("cmd_DIR::drive:",drive);
+		k_debug_strings("cmd_DIR::path:",path);
+		k_debug_strings("cmd_DIR::drive:",drive);
+
+		/*
+		if(strcmp(drive,"pc") == 0)
+		{
+			k_debug_string_com1("%SUBDIRECTORY%");
+			k_debug_string_com1(path);
+		}
+		*/
+
+	}
+	else if(strcmp(signature,"#AA") == 0)
+	{
+		drive = (LPCHAR)((PTOKEN)k_nodelist_get(tokens,3)->data)->text;
+
+		k_debug_strings("cmd_DIR::drive:",drive);
+
+		/*
+		if(strcmp(drive,"pc") == 0)
+		{
+			k_debug_string_com1("%DIRECTORY%");
+		}
+		else if(strcmp(drive,"sd") == 0)
+		{
+			dirList = k_sd_read_dir();
+			if(dirList!=NULL)
+			{
+				k_clear_screen(0);
+
+				process->consoleCtl->curX = 0;
+				process->consoleCtl->curY = 0;
+
+				k_nodelist_foreach_data(dirList,process,foreach_file_entry);
+				k_dos_dealloc_filelist(dirList);
+				process->consoleCtl->curY++;
+			}
+		}
+		*/
+	}
+	else if(strcmp(signature,"#A") == 0)
+	{
+		/*
+		dirList = k_sd_read_dir();
+		if(dirList!=NULL)
+		{
+			k_clear_screen(0);
+
+			process->consoleCtl->curX = 0;
+			process->consoleCtl->curY = 0;
+
+			k_nodelist_foreach_data(dirList,process,foreach_file_entry);
+			k_dos_dealloc_filelist(dirList);
+
+			process->consoleCtl->curY++;
+		}
+		*/
+	}
 
 	/*
 	if(strcmp(signature,"#AAC") == 0)

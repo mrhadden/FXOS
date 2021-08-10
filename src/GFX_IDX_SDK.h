@@ -53,6 +53,6 @@
    #define EXPORT_GFX_GETFONTHEIGHT                         (EXPORT_GFX_BASE + 48)
    #define EXPORT_GFX_GETFONTWIDTH                          (EXPORT_GFX_BASE + 49)
    #define EXPORT_GFX_MOUSEPOINTERINIT                      (EXPORT_GFX_BASE + 50)
-   #define EXPORT_GFX_SETMOUSEPOINTER                       (EXPORT_GFX_BASE + 51)
+   #define EXPORT_GFX_SETMOUSEPOINTERDATA                   (EXPORT_GFX_BASE + 51)
 
 #endif

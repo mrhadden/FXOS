@@ -116,6 +116,8 @@ EXPORT_FUNC_KERNEL(StringReplace)
 LPCHAR k_string_replace(LPCSTR s, LPCSTR old, LPCSTR new);
 EXPORT_FUNC_KERNEL(StringIndexOf)
 INT k_string_indexOf(LPCHAR chars,CHAR c);
+EXPORT_FUNC_KERNEL(StringEndsWith)
+BOOL k_string_ends_with(LPCSTR path,LPCSTR check);
 
 LPCHAR k_string_toString(CHAR c,LPCHAR toBuffer);
 LPCHAR k_string_copy_string(LPCSTR src);

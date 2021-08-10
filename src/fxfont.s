@@ -3,10 +3,10 @@ R0	equ	1
 R1	equ	5
 R2	equ	9
 R3	equ	13
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.c",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.c",0
 ;#include "fxfont.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
 	.stag	_fx_bytebits,8,1
 	.member	b7,0,14,17,1
 	.member	b6,1,14,17,1
@@ -80,7 +80,7 @@ R3	equ	13
 	.member	YH,88,14,8,8
 	.member	YL,96,14,8,8
 	.eos
-	.stag	_fx_eventMessage,304,13
+	.stag	_fx_eventMessage,312,13
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -88,8 +88,9 @@ R3	equ	13
 	.member	pheap,112,129,8,32
 	.member	msgTime,144,18,8,32
 	.member	data,176,110,8,0,16
+	.member	attr,304,14,8,8
 	.eos
-	.stag	_fx_cmdMessage,304,14
+	.stag	_fx_cmdMessage,312,14
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -101,6 +102,7 @@ R3	equ	13
 	.member	parameter1,208,18,8,32
 	.member	parameter2,240,18,8,32
 	.member	parameter3,272,18,8,32
+	.member	attr,304,14,8,8
 	.eos
 	.stag	_fx_console_ctl,448,15
 	.member	maxCols,0,5,8,16
@@ -443,10 +445,19 @@ R3	equ	13
 	.member	height,128,14,8,8
 	.member	width,136,14,8,8
 	.eos
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",6
+	.stag	_fx_resource_string,32,47
+	.member	locale,0,110,8,0,2
+	.member	entries,16,16,8,16
+	.eos
+	.stag	_fx_resource_string_entry,40,48
+	.member	index,0,16,8,16
+	.member	length,16,16,8,16
+	.member	data,32,14,8,8
+	.eos
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",6
 	.line	74
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.c",1
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.c",1
 ;
 ;//#pragma section DATA=FONTS,OFFSET $1D:0000
 ;#pragma section DATA=FONTS,OFFSET $0A:0000
@@ -21503,7 +21514,7 @@ FONTS	section	OFFSET $0A:0000
 	ends
 ;
 ;#include "fonts/EGAFONT.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fonts/EGAFONT.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fonts/EGAFONT.h",0
 	FONTS
 	xdef	~~EGAFONT
 ~~EGAFONT:
@@ -21714,7 +21725,7 @@ FONTS	section	OFFSET $0A:0000
 	db	$0,$0,$0,$0,$0,$0,$0,$0
 	ends
 	.line	183
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.c",13601
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.c",13601
 ;
 ;/*
 ;#include "fonts/TINYTYPE.h"
@@ -21734,7 +21745,7 @@ FONTS	section	OFFSET $0A:0000
 ;
 ;
 	.line	13618
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.c",933
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.c",954
 	.sym	~~EGAFONT,~~EGAFONT,110,2,0,2048
 	.sym	~~Bm437ATI6x8,~~Bm437ATI6x8,110,2,0,2050
 	.sym	~~Bm437ATI8x16,~~Bm437ATI8x16,110,2,0,4098
@@ -21745,6 +21756,10 @@ FONTS	section	OFFSET $0A:0000
 	.sym	~~fontCursor,~~fontCursor,110,2,0,64
 	.sym	~~fontSpace,~~fontSpace,110,2,0,64
 	.sym	~~characterROMMapping,~~characterROMMapping,101,2,0,256
+	.sym	PFXRFHEADER_STRING_ENTRY,0,138,14,32,48
+	.sym	FXRFHEADER_STRING_ENTRY,0,10,14,40,48
+	.sym	PFXRFHEADER_STRING,0,138,14,32,47
+	.sym	FXRFHEADER_STRING,0,10,14,32,47
 	.sym	PFXRFHEADER_FONT,0,138,14,32,46
 	.sym	FXRFHEADER_FONT,0,10,14,144,46
 	.sym	PFXRFHEADER,0,138,14,32,45
@@ -21822,9 +21837,9 @@ FONTS	section	OFFSET $0A:0000
 	.sym	CONSOLE_CONTROL,0,10,14,448,15
 	.sym	FXProcessProc,0,641,14,32
 	.sym	PFXCMDMESSAGE,0,138,14,32,14
-	.sym	FXCMDMESSAGE,0,10,14,304,14
+	.sym	FXCMDMESSAGE,0,10,14,312,14
 	.sym	PFXOSMESSAGE,0,138,14,32,13
-	.sym	FXOSMESSAGE,0,10,14,304,13
+	.sym	FXOSMESSAGE,0,10,14,312,13
 	.sym	PINT_REGS,0,138,14,32,12
 	.sym	INT_REGS,0,10,14,104,12
 	.sym	TASK_STACK,0,10,14,32,11
@@ -21871,6 +21886,7 @@ FONTS	section	OFFSET $0A:0000
 	.sym	HRESULT,0,18,14,32
 	.sym	LPWCHAR,0,144,14,32
 	.sym	WCHAR,0,16,14,16
+	.sym	HSTRINGTABLE,0,129,14,32
 	.sym	HCOLOR,0,129,14,32
 	.sym	HFONT,0,129,14,32
 	.sym	HDC,0,129,14,32
@@ -21898,6 +21914,12 @@ FONTS	section	OFFSET $0A:0000
 	.sym	LPSTR,0,142,14,32
 	.sym	LPCHAR,0,142,14,32
 	.sym	CHAR,0,14,14,8
+	.sym	PUINT_32,0,146,14,32
+	.sym	UINT_32,0,18,14,32
+	.sym	PUINT_16,0,144,14,32
+	.sym	UINT_16,0,16,14,16
+	.sym	PUINT_8,0,142,14,32
+	.sym	UINT_8,0,14,14,8
 	.sym	LPVOID,0,129,14,32
 	.sym	VOID,0,1,14,32
 	end

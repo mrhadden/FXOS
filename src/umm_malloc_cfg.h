@@ -97,7 +97,7 @@ extern char test_umm_heap[];
   extern UMM_HEAP_INFO ummHeapInfo;
 
   void FAR *umm_info( void *ptr, int force );
-  size_t umm_free_heap_size( void );
+  ULONG umm_free_heap_size( void );
 #else
 #endif
 
@@ -143,9 +143,9 @@ extern char test_umm_heap[];
 #define UMM_INTEGRITY_CHECK 1
 
 #ifdef UMM_INTEGRITY_CHECK
-   int umm_integrity_check( void );
+   int umm_integrity_check( LPVOID* );
 #  define INTEGRITY_CHECK() umm_integrity_check()
-   extern void umm_corruption(void);
+   extern void umm_corruption(LPVOID*);
 #  define UMM_HEAP_CORRUPTION_CB() k_debug_string( "Heap Corruption!\r\n" )
 #else
 #  define INTEGRITY_CHECK() 0
@@ -186,9 +186,9 @@ extern char test_umm_heap[];
 #define UMM_POISONED_BLOCK_LEN_TYPE short
 
 #ifdef UMM_POISON_CHECK
-   void *umm_poison_malloc( size_t size );
-   void *umm_poison_calloc( size_t num, size_t size );
-   void *umm_poison_realloc( void *ptr, size_t size );
+   void *umm_poison_malloc( ULONG size );
+   void *umm_poison_calloc( ULONG num, ULONG size );
+   void *umm_poison_realloc( void *ptr, ULONG size );
    void  umm_poison_free( void *ptr );
    int   umm_poison_check( void );
 #  define POISON_CHECK() umm_poison_check()

@@ -24,11 +24,12 @@
  * This way, we ensure that the free flag is in sync with the free pointers
  * chain.
  */
-int umm_integrity_check(void)
+int umm_integrity_check(LPVOID* ppaddress)
 {
 	int ok = 1;
 	unsigned long prev;
 	unsigned long cur;
+
 
 	//k_debug_pointer("umm_integrity_check scanning:",umm_heap);
 
@@ -51,6 +52,8 @@ int umm_integrity_check(void)
 			//		(unsigned long)&UMM_NBLOCK(prev));
 			k_debug_long("heap integrity broken: too large next free num:",cur);
 
+			*ppaddress = &UMM_NBLOCK(cur);
+
 			ok = 0;
 			goto clean;
 		}
@@ -67,6 +70,8 @@ int umm_integrity_check(void)
 			//		"%d -> %d, but %d -> %d\n",
 			//		prev, cur, cur, UMM_PFREE(cur));
 			k_debug_long("heap integrity broken: free links don't match:",cur);
+			*ppaddress = &UMM_NBLOCK(cur);
+
 			ok = 0;
 			goto clean;
 		}
@@ -90,6 +95,9 @@ int umm_integrity_check(void)
 			//		(unsigned long)&UMM_NBLOCK(prev));
 			k_debug_long   ("heap integrity broken: too large next block num:",cur);
 			k_debug_pointer("                                           ADDR:",&UMM_NBLOCK(prev));
+
+			*ppaddress = &UMM_NBLOCK(prev);
+
 			ok = 0;
 			goto clean;
 		}
@@ -109,6 +117,8 @@ int umm_integrity_check(void)
 			//		(UMM_PBLOCK(cur) & UMM_FREELIST_MASK)
 			//);
 			k_debug_pointer("heap integrity broken: mask wrong at addr:",&UMM_NBLOCK(cur));
+			*ppaddress = &UMM_NBLOCK(cur);
+
 			ok = 0;
 			goto clean;
 		}
@@ -122,6 +132,9 @@ int umm_integrity_check(void)
 			k_debug_long   ("heap integrity broken:next block is before prev this one:",cur);
 			k_debug_long   ("                                                    PREV:",prev);
 			k_debug_pointer("                                                    ADDR:",&UMM_NBLOCK(prev));
+
+			*ppaddress = &UMM_NBLOCK(prev);
+
 			ok = 0;
 			goto clean;
 		}
@@ -138,6 +151,9 @@ int umm_integrity_check(void)
 			k_debug_long("heap integrity broken: block links don't match prev: ",prev);
 			k_debug_long("                                                cur: ",cur);
 			k_debug_long("                                    UMM_PBLOCK(cur): ",UMM_PBLOCK(cur));
+
+			*ppaddress = &UMM_NBLOCK(cur);
+
 			ok = 0;
 			goto clean;
 		}

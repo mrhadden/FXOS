@@ -3,7 +3,7 @@ R0	equ	1
 R1	equ	5
 R2	equ	9
 R3	equ	13
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.c",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.c",0
 ;/*
 ; * fxnode.c
 ;
@@ -13,8 +13,8 @@ R3	equ	13
 ; */
 ;//#include <stdlib.h>
 ;#include "fxnode.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
 	.stag	_fx_bytebits,8,1
 	.member	b7,0,14,17,1
 	.member	b6,1,14,17,1
@@ -88,7 +88,7 @@ R3	equ	13
 	.member	YH,88,14,8,8
 	.member	YL,96,14,8,8
 	.eos
-	.stag	_fx_eventMessage,304,13
+	.stag	_fx_eventMessage,312,13
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -96,8 +96,9 @@ R3	equ	13
 	.member	pheap,112,129,8,32
 	.member	msgTime,144,18,8,32
 	.member	data,176,110,8,0,16
+	.member	attr,304,14,8,8
 	.eos
-	.stag	_fx_cmdMessage,304,14
+	.stag	_fx_cmdMessage,312,14
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -109,6 +110,7 @@ R3	equ	13
 	.member	parameter1,208,18,8,32
 	.member	parameter2,240,18,8,32
 	.member	parameter3,272,18,8,32
+	.member	attr,304,14,8,8
 	.eos
 	.stag	_fx_console_ctl,448,15
 	.member	maxCols,0,5,8,16
@@ -451,123 +453,132 @@ R3	equ	13
 	.member	height,128,14,8,8
 	.member	width,136,14,8,8
 	.eos
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",11
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.c",9
+	.stag	_fx_resource_string,32,47
+	.member	locale,0,110,8,0,2
+	.member	entries,16,16,8,16
+	.eos
+	.stag	_fx_resource_string_entry,40,48
+	.member	index,0,16,8,16
+	.member	length,16,16,8,16
+	.member	data,32,14,8,8
+	.eos
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",11
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.c",9
 ;#include "fxkernel.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stddef.h",0
 	.line	88
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",43
-	.stag	fake47_,32,47
+	.stag	fake49_,32,49
 	.member	quot,0,5,8,16
 	.member	rem,16,5,8,16
 	.eos
-	.stag	fake48_,64,48
+	.stag	fake50_,64,50
 	.member	quot,0,7,8,32
 	.member	rem,32,7,8,32
 	.eos
-	.stag	int_sqrt,32,49
+	.stag	int_sqrt,32,51
 	.member	sqrt,0,16,8,16
 	.member	frac,16,16,8,16
 	.eos
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",4
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",4
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\ctype.h",0
 	.line	103
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",8
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstringtable.h",0
-	.line	89
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",9
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fmx_vicky.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fmx_vicky.h",11
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",8
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstringtable.h",0
+	.line	90
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",9
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",11
 	.line	72
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",6
 	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",16
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",0
-	.line	400
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",22
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",16
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
+	.line	490
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",22
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
 	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",12
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",12
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",7
-	.stag	_fx_string,64,50
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",7
+	.stag	_fx_string,64,52
 	.member	size,0,16,8,16
 	.member	pos,16,5,8,16
 	.member	buffer,32,142,8,32
 	.eos
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",17
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",17
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",5
-	.stag	_fxos_executive_vtable,128,51
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",5
+	.stag	_fxos_executive_vtable,128,53
 	.member	Init,0,8833,8,32
 	.member	Configure,32,656,8,32
 	.member	Query,64,656,8,32
 	.member	Uninit,96,641,8,32
 	.eos
 	.line	86
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.line	208
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",8
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",8
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos_build_parameters.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_build_parameters.h",0
 	.line	35
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",8
-	.stag	UMM_HEAP_INFO_t,256,52
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",8
+	.stag	UMM_HEAP_INFO_t,256,54
 	.member	totalEntries,0,18,8,32
 	.member	usedEntries,32,18,8,32
 	.member	freeEntries,64,18,8,32
@@ -578,42 +589,48 @@ R3	equ	13
 	.member	blockSize,224,18,8,32
 	.eos
 	.line	199
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",11
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",11
 	.line	24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",7
-	.stag	_fx_memory_map,2072,53
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",7
+	.stag	_fx_memory_map,2072,55
 	.member	availableMemory,0,18,8,32
 	.member	valid_segments,32,110,8,0,255
 	.eos
-	.stag	_fx_ipc_port,144,54
+	.stag	_fx_ipc_port,144,56
 	.member	id,0,18,8,32
 	.member	type,32,14,8,8
-	.member	name,40,138,8,32,50
+	.member	name,40,138,8,32,52
 	.member	time,72,18,8,32
 	.member	queue,104,138,8,32,4
 	.member	reserved_1,136,14,8,8
 	.eos
-	.line	105
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",6
+	.stag	_k_mem_alloc_header,80,57
+	.member	user,0,14,8,8
+	.member	attr,8,14,8,8
+	.member	size,16,18,8,32
+	.member	virtual,48,129,8,32
+	.eos
+	.line	129
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",6
 	.line	74
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",5
-	.stag	_click_detected,64,55
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",5
+	.stag	_click_detected,64,58
 	.member	window,0,138,8,32,30
 	.member	handler,32,641,8,32
 	.eos
-	.stag	_current_palette_map,400,56
+	.stag	_current_palette_map,400,59
 	.member	CUR_DESKTOP,0,5,8,16
 	.member	CUR_BACKGROUND,16,5,8,16
 	.member	CUR_FONT,32,5,8,16
@@ -627,37 +644,37 @@ R3	equ	13
 	.member	CUR_COLOR,160,101,8,0,15
 	.eos
 	.line	359
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",8
-	.stag	_fxos_winman_vtable,160,57
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",8
+	.stag	_fxos_winman_vtable,160,60
 	.member	Events,0,641,8,32
 	.member	ConfigureWindowManager,32,656,8,32
 	.member	ProcessWindowEvent,64,8833,8,32
 	.member	QueryWindowManager,96,656,8,32
 	.member	DoWndProcs,128,641,8,32
 	.eos
-	.stag	fake58_,64,58
+	.stag	fake61_,64,61
 	.member	type,0,16,8,16
 	.member	size,16,16,8,16
 	.member	desktopAction,32,129,8,32
 	.eos
-	.stag	fake59_,96,59
+	.stag	fake62_,96,62
 	.member	type,0,16,8,16
-	.member	caption,16,138,8,32,50
+	.member	caption,16,138,8,32,52
 	.member	buttonType,48,16,8,16
 	.member	x,64,5,8,16
 	.member	y,80,5,8,16
 	.eos
-	.stag	_childMessage_t,64,60
+	.stag	_childMessage_t,64,63
 	.member	msgType,0,16,8,16
 	.member	msgData,16,129,8,32
 	.member	dataSize,48,16,8,16
 	.eos
-	.line	581
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",9
-	.stag	_fx_main_loopvars,16,61
+	.line	594
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",9
+	.stag	_fx_main_loopvars,16,64
 	.member	dummy,0,5,8,16
 	.eos
-	.stag	_fxMouseMessageData,64,62
+	.stag	_fxMouseMessageData,64,65
 	.member	button1,0,14,8,8
 	.member	button2,8,14,8,8
 	.member	button3,16,14,8,8
@@ -665,18 +682,18 @@ R3	equ	13
 	.member	x,32,16,8,16
 	.member	y,48,16,8,16
 	.eos
-	.utag	marshalled_data,32,63
+	.utag	marshalled_data,32,66
 	.member	byteValue,0,14,11,8
 	.member	verbValue,0,110,11,0,2
 	.member	intValue,0,16,11,16
 	.member	longValue,0,18,11,32
 	.member	pointerValue,0,129,11,32
 	.eos
-	.stag	_fx_eventProcess,64,64
+	.stag	_fx_eventProcess,64,67
 	.member	process,0,138,8,32,17
 	.member	eventProc,32,641,8,32
 	.eos
-	.stag	_mouse_msg_state,184,65
+	.stag	_mouse_msg_state,184,68
 	.member	lastEvent,0,18,8,32
 	.member	buttonLeftDown,32,14,8,8
 	.member	lastLeftDown,40,18,8,32
@@ -687,7 +704,7 @@ R3	equ	13
 	.member	lastX,152,16,8,16
 	.member	lastY,168,16,8,16
 	.eos
-	.stag	_fxos_eventmanager_vtable,192,66
+	.stag	_fxos_eventmanager_vtable,192,69
 	.member	EventQueue,0,138,8,32,4
 	.member	Init,32,8833,8,32
 	.member	Run,64,656,8,32
@@ -695,18 +712,18 @@ R3	equ	13
 	.member	Query,128,656,8,32
 	.member	Uninit,160,641,8,32
 	.eos
-	.stag	_k_clipboard_data,168,67
+	.stag	_k_clipboard_data,168,70
 	.member	type,0,14,8,8
 	.member	readable,8,110,8,0,16
 	.member	data,136,129,8,32
 	.eos
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",18
-	.stag	_fx_spinner_ctx,48,68
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",18
+	.stag	_fx_spinner_ctx,48,71
 	.member	index,0,5,8,16
 	.member	spinner,16,142,8,32
 	.eos
-	.stag	_fx_console_ctx,1144,69
+	.stag	_fx_console_ctx,1144,72
 	.member	lineBufferIndex,0,5,8,16
 	.member	lineBuffer,16,110,8,0,128
 	.member	isShifted,1040,14,8,8
@@ -714,31 +731,31 @@ R3	equ	13
 	.member	screenBuffer,1080,129,8,32
 	.member	Reserved1,1112,129,8,32
 	.eos
-	.stag	_token,64,70
+	.stag	_token,64,73
 	.member	type,0,5,8,16
 	.member	depth,16,16,8,16
 	.member	text,32,142,8,32
 	.eos
-	.stag	_command_args,64,71
+	.stag	_command_args,64,74
 	.member	proc,0,656,8,32
 	.member	tokens,32,138,8,32,2
 	.eos
 	.line	208
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",23
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",25
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ffconf.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",23
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",24
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",25
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ffconf.h",0
 	.line	298
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",29
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",30
-	.stag	fake72_,4504,72
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",29
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",30
+	.stag	fake75_,4504,75
 	.member	fs_type,0,14,8,8
 	.member	pdrv,8,14,8,8
 	.member	n_fats,16,14,8,8
@@ -759,16 +776,16 @@ R3	equ	13
 	.member	winsect,376,18,8,32
 	.member	win,408,110,8,0,512
 	.eos
-	.stag	fake73_,128,73
-	.member	fs,0,138,8,32,72
+	.stag	fake76_,128,76
+	.member	fs,0,138,8,32,75
 	.member	id,32,5,8,16
 	.member	attr,48,14,8,8
 	.member	stat,56,14,8,8
 	.member	sclust,64,18,8,32
 	.member	objsize,96,18,8,32
 	.eos
-	.stag	fake74_,4400,74
-	.member	obj,0,10,8,128,73
+	.stag	fake77_,4400,77
+	.member	obj,0,10,8,128,76
 	.member	flag,128,14,8,8
 	.member	err,136,14,8,8
 	.member	fptr,144,18,8,32
@@ -778,8 +795,8 @@ R3	equ	13
 	.member	dir_ptr,272,142,8,32
 	.member	buf,304,110,8,0,512
 	.eos
-	.stag	fake75_,416,75
-	.member	obj,0,10,8,128,73
+	.stag	fake78_,416,78
+	.member	obj,0,10,8,128,76
 	.member	dptr,128,18,8,32
 	.member	clust,160,18,8,32
 	.member	sect,192,18,8,32
@@ -788,7 +805,7 @@ R3	equ	13
 	.member	blk_ofs,352,18,8,32
 	.member	pat,384,142,8,32
 	.eos
-	.stag	fake76_,2224,76
+	.stag	fake79_,2224,79
 	.member	fsize,0,18,8,32
 	.member	fdate,32,5,8,16
 	.member	ftime,48,5,8,16
@@ -796,7 +813,7 @@ R3	equ	13
 	.member	altname,72,110,8,0,13
 	.member	fname,176,110,8,0,256
 	.eos
-	.stag	fake77_,80,77
+	.stag	fake80_,80,80
 	.member	fmt,0,14,8,8
 	.member	n_fat,8,14,8,8
 	.member	align,16,16,8,16
@@ -804,16 +821,19 @@ R3	equ	13
 	.member	au_size,48,18,8,32
 	.eos
 	.line	429
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",26
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",26
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",6
-	.stag	_fx_api_call_table,8192,78
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",6
+	.stag	_fx_api_call_table,8192,81
 	.member	call_table,0,1121,8,32,256
 	.eos
-	.stag	_fx_zero_page,824,79
+	.stag	_fx_zero_page_irq_data,32,82
+	.member	data,0,110,8,0,4
+	.eos
+	.stag	_fx_zero_page,720,83
 	.member	fxos_mouse_byte_0,0,14,8,8
 	.member	fxos_mouse_byte_1,8,14,8,8
 	.member	fxos_mouse_byte_2,16,14,8,8
@@ -828,42 +848,37 @@ R3	equ	13
 	.member	fxos_mouse_ctl,88,14,8,8
 	.member	fxos_mouse_index,96,14,8,8
 	.member	fxos_mouse_status,104,14,8,8
-	.member	fxos_mouse_dbg_1,112,18,8,32
-	.member	fxos_mouse_dbg_2,144,18,8,32
-	.member	fxos_mouse_dbg_3,176,18,8,32
-	.member	fxos_vicky_byte_0,208,14,8,8
-	.member	fxos_vicky_byte_1,216,14,8,8
-	.member	fxos_vicky_byte_2,224,14,8,8
-	.member	VersionMajor,232,16,8,16
-	.member	VersionMinor,248,16,8,16
-	.member	VersionRelease,264,16,8,16
-	.member	topMemory,280,18,8,32
-	.member	bottomMemory,312,18,8,32
-	.member	availableMemory,344,18,8,32
-	.member	availableMemoryK,376,18,8,32
-	.member	availableHeapMemory,408,18,8,32
-	.member	availableHeapMemoryK,440,18,8,32
-	.member	fxos_console_row,472,16,8,16
-	.member	fxos_console_col,488,16,8,16
-	.member	executive,504,129,8,32
-	.member	eventmanager,536,129,8,32
-	.member	devicemanager,568,129,8,32
-	.member	windowmanager,600,129,8,32
-	.member	fxos_kernel_api,632,138,8,32,78
-	.member	fxos_dos_api,664,138,8,32,78
-	.member	fxos_gfx_api,696,138,8,32,78
-	.member	fxos_gui_api,728,138,8,32,78
-	.member	fxos_con_api,760,138,8,32,78
-	.member	fxos_reserved_2_api,792,138,8,32,78
+	.member	Endianness,112,16,8,16
+	.member	VersionMajor,128,16,8,16
+	.member	VersionMinor,144,16,8,16
+	.member	VersionRelease,160,16,8,16
+	.member	topMemory,176,18,8,32
+	.member	bottomMemory,208,18,8,32
+	.member	availableMemory,240,18,8,32
+	.member	availableMemoryK,272,18,8,32
+	.member	availableHeapMemory,304,18,8,32
+	.member	availableHeapMemoryK,336,18,8,32
+	.member	fxos_console_row,368,16,8,16
+	.member	fxos_console_col,384,16,8,16
+	.member	executive,400,129,8,32
+	.member	eventmanager,432,129,8,32
+	.member	devicemanager,464,129,8,32
+	.member	windowmanager,496,129,8,32
+	.member	fxos_kernel_api,528,138,8,32,81
+	.member	fxos_dos_api,560,138,8,32,81
+	.member	fxos_gfx_api,592,138,8,32,81
+	.member	fxos_gui_api,624,138,8,32,81
+	.member	fxos_con_api,656,138,8,32,81
+	.member	fxos_reserved_2_api,688,138,8,32,81
 	.eos
-	.stag	_fx_environment,96,80
+	.stag	_fx_environment,96,84
 	.member	variables,0,142,8,32
 	.member	reserved1,32,5,8,16
 	.member	reserved2,48,5,8,16
 	.member	reserved3,64,5,8,16
 	.member	reserved4,80,5,8,16
 	.eos
-	.stag	_debug_byte_bits,8,81
+	.stag	_debug_byte_bits,8,85
 	.member	bit7,0,14,17,1
 	.member	bit6,1,14,17,1
 	.member	bit5,2,14,17,1
@@ -873,7 +888,7 @@ R3	equ	13
 	.member	bit1,6,14,17,1
 	.member	bit0,7,14,17,1
 	.eos
-	.stag	_k_segmentheader,160,82
+	.stag	_k_segmentheader,160,86
 	.member	version_major,0,14,8,8
 	.member	version_minor,8,14,8,8
 	.member	length,16,5,8,16
@@ -882,14 +897,14 @@ R3	equ	13
 	.member	segment_size,96,7,8,32
 	.member	main_entry_addr,128,7,8,32
 	.eos
-	.stag	_fx_device_driver,776,83
+	.stag	_fx_device_driver,776,87
 	.member	name,0,110,8,0,32
 	.member	version,256,110,8,0,16
 	.member	hmajor,384,110,8,0,8
 	.member	hminor,448,110,8,0,8
 	.member	type,512,14,8,8
 	.member	designation,520,110,8,0,6
-	.member	reserved_1,568,16,8,16
+	.member	irq_ctl,568,16,8,16
 	.member	f_driver_irq,584,129,8,32
 	.member	driver_context,616,129,8,32
 	.member	f_driver_load,648,129,8,32
@@ -897,14 +912,14 @@ R3	equ	13
 	.member	f_driver_write,712,129,8,32
 	.member	f_driver_unload,744,129,8,32
 	.eos
-	.stag	_fx_block_device_driver,808,84
+	.stag	_fx_block_device_driver,808,88
 	.member	name,0,110,8,0,32
 	.member	version,256,110,8,0,16
 	.member	hmajor,384,110,8,0,8
 	.member	hminor,448,110,8,0,8
 	.member	type,512,14,8,8
 	.member	designation,520,110,8,0,6
-	.member	reserved_1,568,16,8,16
+	.member	irq_ctl,568,16,8,16
 	.member	f_driver_irq,584,129,8,32
 	.member	driver_context,616,129,8,32
 	.member	f_driver_load,648,129,8,32
@@ -913,16 +928,19 @@ R3	equ	13
 	.member	f_driver_unload,744,129,8,32
 	.member	f_driver_command,776,129,8,32
 	.eos
-	.line	400
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.c",10
+	.stag	_k_irq_chain,128,89
+	.member	handlers,0,5217,8,32,4
+	.eos
+	.line	490
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.c",10
 ;#include "fxeventmanager.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.c",11
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.c",11
 ;#include "fxmemorymanager.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",0
-	.line	105
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.c",12
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",0
+	.line	129
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.c",12
 ;
 ;static ULONG THIS_MODULE = 0xA000000A;
 	data
@@ -1024,7 +1042,7 @@ q_0	set	4
 ;	if(q == NULL)
 	.sym	q,4,138,6,32,4
 	.line	30
-;		k_exec_throw_exception(THIS_MODULE,0x00010001,"Kernel node list is NULL.",-1);
+;		k_exec_throw_exception(k_isempty,0x00010001,"Kernel node list is NULL.",-1);
 	lda	<L6+q_0
 	ora	<L6+q_0+2
 	beq	L9
@@ -1036,10 +1054,8 @@ L9:
 	pea	#<L1
 	pea	#^$10001
 	pea	#<$10001
-	lda	|~~THIS_MODULE+2
-	pha
-	lda	|~~THIS_MODULE
-	pha
+	pea	#^~~k_isempty
+	pea	#<~~k_isempty
 	jsl	~~k_exec_throw_exception
 ;
 ;    return (q->rear == NULL);
@@ -1236,6 +1252,7 @@ value_0	set	8
 ;	PFXNODE tmp = NULL;
 ;
 ;
+;
 ;    //k_debug_pointer("k_enqueue::enter:",q);
 ;    //k_debug_integer("k_enqueue::malloc:",sizeof(FXNODE));
 ;
@@ -1246,7 +1263,7 @@ tmp_1	set	0
 	.sym	value,8,129,6,32
 	stz	<L23+tmp_1
 	stz	<L23+tmp_1+2
-	.line	76
+	.line	77
 ;    {
 	lda	<L22+q_0
 	ora	<L22+q_0+2
@@ -1258,9 +1275,9 @@ L25:
 	bne	L26
 	brl	L10002
 L26:
-	.line	77
-;    	if(q->count>MSG_MAX)
 	.line	78
+;    	if(q->count>MSG_MAX)
+	.line	79
 ;    	{
 	sec
 	lda	#$400
@@ -1271,22 +1288,27 @@ L27:
 	bpl	L28
 	brl	L10003
 L28:
-	.line	79
-;    		if(value)
 	.line	80
+;    		if(value)
+	.line	81
 ;    		{
 	lda	<L22+value_0
 	ora	<L22+value_0+2
 	bne	L29
 	brl	L10004
 L29:
-	.line	81
-;    			//k_debug_integer("k_enqueue::k_mem_deallocate_heap:",q->count);
+	.line	82
+;    			k_debug_integer("k_enqueue::MSG_MAX:",q->count);
+	.line	83
+	lda	[<L22+q_0]
+	pha
+	pea	#^L13
+	pea	#<L13
+	jsl	~~k_debug_integer
 ;    			//((PFXOSMESSAGE)value)->hwnd;
 ;
 ;    			//k_debug_pointer("k_enqueue::((PFXOSMESSAGE)value)->hwnd:",((PFXOSMESSAGE)value)->hwnd);
 ;    			//k_debug_integer("k_enqueue::((PFXOSMESSAGE)value)->type:",((PFXOSMESSAGE)value)->type);
-;
 ;    			k_mem_deallocate_heap(value);
 	.line	88
 	pei	<L22+value_0+2
@@ -1317,6 +1339,7 @@ L30:
 ;		tmp = (PFXNODE)k_mem_allocate_heap(sizeof(FXNODE));
 L10003:
 	.line	93
+	pea	#^$30
 	pea	#<$30
 	jsl	~~k_mem_allocate_heap
 	sta	<L23+tmp_1
@@ -1349,8 +1372,12 @@ L31:
 	ldy	#$c
 	sta	[<L23+tmp_1],Y
 ;
-;			if(!k_isempty(q))
+;			k_lock_irq();
 	.line	101
+	jsl	~~k_lock_irq
+;
+;			if(!k_isempty(q))
+	.line	103
 ;			{
 	pei	<L22+q_0+2
 	pei	<L22+q_0
@@ -1359,10 +1386,10 @@ L31:
 	beq	L32
 	brl	L10006
 L32:
-	.line	102
+	.line	104
 ;				//k_debug_string("k_enqueue::not empty\r\n");
 ;				q->rear->next = tmp;
-	.line	104
+	.line	106
 	ldy	#$6
 	lda	[<L22+q_0],Y
 	sta	<R0
@@ -1376,7 +1403,7 @@ L32:
 	ldy	#$c
 	sta	[<R0],Y
 ;				q->rear = tmp;
-	.line	105
+	.line	107
 	lda	<L23+tmp_1
 	ldy	#$6
 	sta	[<L22+q_0],Y
@@ -1384,15 +1411,15 @@ L32:
 	ldy	#$8
 	sta	[<L22+q_0],Y
 ;			}
-	.line	106
+	.line	108
 ;			else
 	brl	L10007
 L10006:
 ;			{
-	.line	108
+	.line	110
 ;				//k_debug_string("k_enqueue::empty\r\n");
 ;				q->front = q->rear = tmp;
-	.line	110
+	.line	112
 	lda	<L23+tmp_1
 	ldy	#$6
 	sta	[<L22+q_0],Y
@@ -1406,64 +1433,65 @@ L10006:
 	ldy	#$4
 	sta	[<L22+q_0],Y
 ;			}
-	.line	111
+	.line	113
 L10007:
 ;			q->count++;
-	.line	112
+	.line	114
 	lda	[<L22+q_0]
 	ina
 	sta	[<L22+q_0]
+;
+;			k_unlock_irq();
+	.line	116
+	jsl	~~k_unlock_irq
+;
 ;			//k_debug_integer("k_enqueue::count:",q->count);
 ;		}
-	.line	114
+	.line	119
 ;		else
 	brl	L10008
 L10005:
 ;		{
-	.line	116
+	.line	121
 ;			k_debug_integer("k_enqueue::size:",q->count);
-	.line	117
+	.line	122
 	lda	[<L22+q_0]
 	pha
-	pea	#^L13
-	pea	#<L13
+	pea	#^L13+20
+	pea	#<L13+20
 	jsl	~~k_debug_integer
-;			k_exec_throw_exception(THIS_MODULE,0x00010000,"Cannot allocate a kernel node.",-1);
-	.line	118
+;			k_exec_throw_exception(k_enqueue,0x00010000,"Cannot allocate a kernel node.",-1);
+	.line	123
 	pea	#<$ffffffff
-	pea	#^L13+17
-	pea	#<L13+17
+	pea	#^L13+37
+	pea	#<L13+37
 	pea	#^$10000
 	pea	#<$10000
-	lda	|~~THIS_MODULE+2
-	pha
-	lda	|~~THIS_MODULE
-	pha
+	pea	#^~~k_enqueue
+	pea	#<~~k_enqueue
 	jsl	~~k_exec_throw_exception
 ;		}
-	.line	119
+	.line	124
 L10008:
 ;    }
-	.line	120
+	.line	125
 ;    else
 	brl	L10009
 L10002:
 ;    {
-	.line	122
-;    	k_exec_throw_exception(THIS_MODULE,0x00010001,"Kernel node list is NULL.",-1);
-	.line	123
+	.line	127
+;    	k_exec_throw_exception(k_enqueue,0x00010001,"Kernel node list is NULL.",-1);
+	.line	128
 	pea	#<$ffffffff
-	pea	#^L13+48
-	pea	#<L13+48
+	pea	#^L13+68
+	pea	#<L13+68
 	pea	#^$10001
 	pea	#<$10001
-	lda	|~~THIS_MODULE+2
-	pha
-	lda	|~~THIS_MODULE
-	pha
+	pea	#^~~k_enqueue
+	pea	#<~~k_enqueue
 	jsl	~~k_exec_throw_exception
 ;    }
-	.line	124
+	.line	129
 L10009:
 ;
 ;
@@ -1471,35 +1499,37 @@ L10009:
 ;    //k_debug_string("k_enqueue::exit\r\n");
 ;    //k_debug_integer("k_enqueue data:",((PFXOSMESSAGE)tmp->data)->type);
 ;    return TRUE;
-	.line	130
+	.line	135
 	lda	#$1
 	brl	L30
 ;}
-	.line	131
-	.endblock	131
+	.line	136
+	.endblock	136
 L22	equ	8
 L23	equ	5
 	ends
 	efunc
-	.endfunc	131,5,8
-	.line	131
+	.endfunc	136,5,8
+	.line	136
 	data
 L13:
-	db	$6B,$5F,$65,$6E,$71,$75,$65,$75,$65,$3A,$3A,$73,$69,$7A,$65
-	db	$3A,$00,$43,$61,$6E,$6E,$6F,$74,$20,$61,$6C,$6C,$6F,$63,$61
-	db	$74,$65,$20,$61,$20,$6B,$65,$72,$6E,$65,$6C,$20,$6E,$6F,$64
-	db	$65,$2E,$00,$4B,$65,$72,$6E,$65,$6C,$20,$6E,$6F,$64,$65,$20
-	db	$6C,$69,$73,$74,$20,$69,$73,$20,$4E,$55,$4C,$4C,$2E,$00
+	db	$6B,$5F,$65,$6E,$71,$75,$65,$75,$65,$3A,$3A,$4D,$53,$47,$5F
+	db	$4D,$41,$58,$3A,$00,$6B,$5F,$65,$6E,$71,$75,$65,$75,$65,$3A
+	db	$3A,$73,$69,$7A,$65,$3A,$00,$43,$61,$6E,$6E,$6F,$74,$20,$61
+	db	$6C,$6C,$6F,$63,$61,$74,$65,$20,$61,$20,$6B,$65,$72,$6E,$65
+	db	$6C,$20,$6E,$6F,$64,$65,$2E,$00,$4B,$65,$72,$6E,$65,$6C,$20
+	db	$6E,$6F,$64,$65,$20,$6C,$69,$73,$74,$20,$69,$73,$20,$4E,$55
+	db	$4C,$4C,$2E,$00
 	ends
 ;
 ;LPVOID k_dequeue(PFXQUEUE q)
 ;{
-	.line	133
-	.line	134
+	.line	138
+	.line	139
 	NODEMAN
 	xdef	~~k_dequeue
 	func
-	.function	134
+	.function	139
 ~~k_dequeue:
 	longa	on
 	longi	on
@@ -1510,11 +1540,10 @@ L13:
 	phd
 	tcd
 q_0	set	4
-	.block	134
+	.block	139
 ;	FXNODE *tmp = NULL;
 ;	LPVOID n = NULL;
 ;
-;	//k_debug_pointer("k_dequeue::q->front:",q->front);
 ;
 ;	if(q)
 tmp_1	set	0
@@ -1526,17 +1555,19 @@ n_1	set	4
 	stz	<L35+tmp_1+2
 	stz	<L35+n_1
 	stz	<L35+n_1+2
-	.line	140
+	.line	144
 ;	{
 	lda	<L34+q_0
 	ora	<L34+q_0+2
 	bne	L37
 	brl	L10010
 L37:
-	.line	141
+	.line	145
+;		//k_debug_string("k_dequeue:enter...\r\n");
+;
 ;		if(q->front == NULL)
-	.line	142
-;			return NULL;
+	.line	148
+;		{
 	ldy	#$2
 	lda	[<L34+q_0],Y
 	ldy	#$4
@@ -1544,7 +1575,10 @@ L37:
 	beq	L38
 	brl	L10011
 L38:
-	.line	143
+	.line	149
+;			//k_debug_string("k_dequeue:exit NULL...\r\n");
+;			return NULL;
+	.line	151
 	lda	#$0
 	tax
 	lda	#$0
@@ -1561,10 +1595,15 @@ L39:
 	tcs
 	tya
 	rtl
+;		}
+	.line	152
+;		k_lock_irq();
+L10011:
+	.line	153
+	jsl	~~k_lock_irq
 ;
 ;		tmp = q->front;
-L10011:
-	.line	145
+	.line	155
 	ldy	#$2
 	lda	[<L34+q_0],Y
 	sta	<L35+tmp_1
@@ -1572,16 +1611,16 @@ L10011:
 	lda	[<L34+q_0],Y
 	sta	<L35+tmp_1+2
 ;		if(tmp)
-	.line	146
+	.line	156
 ;		{
 	lda	<L35+tmp_1
 	ora	<L35+tmp_1+2
 	bne	L40
 	brl	L10012
 L40:
-	.line	147
+	.line	157
 ;			n = tmp->data;
-	.line	148
+	.line	158
 	ldy	#$2
 	lda	[<L35+tmp_1],Y
 	sta	<L35+n_1
@@ -1597,7 +1636,7 @@ L40:
 ;			//	return NULL;
 ;
 ;			q->front = tmp->next;
-	.line	157
+	.line	167
 	ldy	#$a
 	lda	[<L35+tmp_1],Y
 	ldy	#$2
@@ -1607,7 +1646,7 @@ L40:
 	ldy	#$4
 	sta	[<L34+q_0],Y
 ;			if(!q->front)
-	.line	158
+	.line	168
 ;			{
 	ldy	#$2
 	lda	[<L34+q_0],Y
@@ -1616,9 +1655,9 @@ L40:
 	beq	L41
 	brl	L10013
 L41:
-	.line	159
+	.line	169
 ;				q->rear = NULL;
-	.line	160
+	.line	170
 	lda	#$0
 	ldy	#$6
 	sta	[<L34+q_0],Y
@@ -1626,81 +1665,86 @@ L41:
 	ldy	#$8
 	sta	[<L34+q_0],Y
 ;			}
-	.line	161
+	.line	171
 ;
 ;			q->count--;
 L10013:
-	.line	163
+	.line	173
 	clc
 	lda	#$ffff
 	adc	[<L34+q_0]
 	sta	[<L34+q_0]
 ;
+;
+;
 ;			k_mem_deallocate_heap(tmp);
-	.line	165
+	.line	177
 	pei	<L35+tmp_1+2
 	pei	<L35+tmp_1
 	jsl	~~k_mem_deallocate_heap
 ;
 ;			//k_debug_integer("k_dequeue:",((PFXOSMESSAGE)n)->type);
 ;		}
-	.line	168
+	.line	180
 ;		else
 	brl	L10014
 L10012:
 ;		{
-	.line	170
-;			k_exec_throw_exception(THIS_MODULE,0x00010002,"Kernel node is NULL.",-1);
-	.line	171
+	.line	182
+;			k_exec_throw_exception(k_dequeue,0x00010002,"Kernel node is NULL.",-1);
+	.line	183
 	pea	#<$ffffffff
 	pea	#^L33
 	pea	#<L33
 	pea	#^$10002
 	pea	#<$10002
-	lda	|~~THIS_MODULE+2
-	pha
-	lda	|~~THIS_MODULE
-	pha
+	pea	#^~~k_dequeue
+	pea	#<~~k_dequeue
 	jsl	~~k_exec_throw_exception
 ;		}
-	.line	172
+	.line	184
 L10014:
+;
+;		k_unlock_irq();
+	.line	186
+	jsl	~~k_unlock_irq
 ;	}
-	.line	173
+	.line	187
 ;    else
 	brl	L10015
 L10010:
 ;    {
-	.line	175
-;    	k_exec_throw_exception(THIS_MODULE,0x00010001,"Kernel node list is NULL.",-1);
-	.line	176
+	.line	189
+;    	k_exec_throw_exception(k_dequeue,0x00010001,"Kernel node list is NULL.",-1);
+	.line	190
 	pea	#<$ffffffff
 	pea	#^L33+21
 	pea	#<L33+21
 	pea	#^$10001
 	pea	#<$10001
-	lda	|~~THIS_MODULE+2
-	pha
-	lda	|~~THIS_MODULE
-	pha
+	pea	#^~~k_dequeue
+	pea	#<~~k_dequeue
 	jsl	~~k_exec_throw_exception
 ;    }
-	.line	177
+	.line	191
 L10015:
+;
+;	//k_debug_string("k_dequeue:exit...\r\n");
+;
 ;	return(n);
-	.line	178
+	.line	195
 	ldx	<L35+n_1+2
 	lda	<L35+n_1
 	brl	L39
 ;}
-	.line	179
-	.endblock	179
+	.line	196
+	.endblock	196
 L34	equ	8
 L35	equ	1
 	ends
 	efunc
-	.endfunc	179,1,8
-	.line	179
+	.endfunc	196,1,8
+	.line	196
 	data
 L33:
 	db	$4B,$65,$72,$6E,$65,$6C,$20,$6E,$6F,$64,$65,$20,$69,$73,$20
@@ -1711,12 +1755,12 @@ L33:
 ;
 ;void k_debug_queue(FXNODE FAR* head)
 ;{
-	.line	181
-	.line	182
+	.line	198
+	.line	199
 	NODEMAN
 	xdef	~~k_debug_queue
 	func
-	.function	182
+	.function	199
 ~~k_debug_queue:
 	longa	on
 	longi	on
@@ -1727,32 +1771,32 @@ L33:
 	phd
 	tcd
 head_0	set	4
-	.block	182
+	.block	199
 ;    if(head == NULL)
 	.sym	head,4,138,6,32,2
-	.line	183
+	.line	200
 ;    {
 	lda	<L43+head_0
 	ora	<L43+head_0+2
 	beq	L46
 	brl	L10016
 L46:
-	.line	184
+	.line	201
 ;    	k_debug_string("HEAD == NULL\r\n");
-	.line	185
+	.line	202
 	pea	#^L42
 	pea	#<L42
 	jsl	~~k_debug_string
 ;    }
-	.line	186
+	.line	203
 ;    else
 	brl	L10017
 L10016:
 ;    {
-	.line	188
+	.line	205
 ;    	//k_debug_pointer("NODE:",head->data);
 ;        k_debug_queue(head->next);
-	.line	190
+	.line	207
 	ldy	#$c
 	lda	[<L43+head_0],Y
 	pha
@@ -1761,10 +1805,10 @@ L10016:
 	pha
 	jsl	~~k_debug_queue
 ;    }
-	.line	191
+	.line	208
 L10017:
 ;}
-	.line	192
+	.line	209
 L47:
 	lda	<L43+2
 	sta	<L43+2+4
@@ -1776,13 +1820,13 @@ L47:
 	adc	#L43+4
 	tcs
 	rtl
-	.endblock	192
+	.endblock	209
 L43	equ	0
 L44	equ	1
 	ends
 	efunc
-	.endfunc	192,1,0
-	.line	192
+	.endfunc	209,1,0
+	.line	209
 	data
 L42:
 	db	$48,$45,$41,$44,$20,$3D,$3D,$20,$4E,$55,$4C,$4C,$0D,$0A,$00
@@ -1795,12 +1839,12 @@ L42:
 ; */
 ;PFXNODE k_nodelist_create(BYTE type,LPCSTR name,LPVOID data,PFXNODE last,PFXNODE next)
 ;{
-	.line	199
-	.line	200
+	.line	216
+	.line	217
 	NODEMAN
 	xdef	~~k_nodelist_create
 	func
-	.function	200
+	.function	217
 ~~k_nodelist_create:
 	longa	on
 	longi	on
@@ -1815,7 +1859,7 @@ name_0	set	6
 data_0	set	10
 last_0	set	14
 next_0	set	18
-	.block	200
+	.block	217
 ;	PFXNODE node = (PFXNODE)k_mem_allocate_heap(sizeof(FXNODE));
 ;
 ;	memset(node,0,sizeof(FXNODE));
@@ -1826,11 +1870,12 @@ node_1	set	0
 	.sym	data,10,129,6,32
 	.sym	last,14,138,6,32,2
 	.sym	next,18,138,6,32,2
+	pea	#^$30
 	pea	#<$30
 	jsl	~~k_mem_allocate_heap
 	sta	<L50+node_1
 	stx	<L50+node_1+2
-	.line	203
+	.line	220
 	pea	#<$30
 	pea	#<$0
 	pei	<L50+node_1+2
@@ -1838,7 +1883,7 @@ node_1	set	0
 	jsl	~~memset
 ;
 ;	node->last = last;
-	.line	205
+	.line	222
 	lda	<L49+last_0
 	ldy	#$6
 	sta	[<L50+node_1],Y
@@ -1846,7 +1891,7 @@ node_1	set	0
 	ldy	#$8
 	sta	[<L50+node_1],Y
 ;	node->next = next;
-	.line	206
+	.line	223
 	lda	<L49+next_0
 	ldy	#$a
 	sta	[<L50+node_1],Y
@@ -1854,7 +1899,7 @@ node_1	set	0
 	ldy	#$c
 	sta	[<L50+node_1],Y
 ;	node->type = type;
-	.line	207
+	.line	224
 	sep	#$20
 	longa	off
 	lda	<L49+type_0
@@ -1862,7 +1907,7 @@ node_1	set	0
 	rep	#$20
 	longa	on
 ;	node->data = data;
-	.line	208
+	.line	225
 	lda	<L49+data_0
 	ldy	#$2
 	sta	[<L50+node_1],Y
@@ -1870,12 +1915,12 @@ node_1	set	0
 	ldy	#$4
 	sta	[<L50+node_1],Y
 ;	node->Reserved1 = 0;
-	.line	209
+	.line	226
 	lda	#$0
 	ldy	#$2e
 	sta	[<L50+node_1],Y
 ;	node->name[0] = 0;
-	.line	210
+	.line	227
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -1890,16 +1935,16 @@ node_1	set	0
 ;	//	strcpy(node->name,name);
 ;
 ;	if(name!=NULL)
-	.line	217
+	.line	234
 ;	{
 	lda	<L49+name_0
 	ora	<L49+name_0+2
 	bne	L52
 	brl	L10018
 L52:
-	.line	218
+	.line	235
 ;		if(strlen(name) < sizeof(node->name))
-	.line	219
+	.line	236
 ;		{
 	pei	<L49+name_0+2
 	pei	<L49+name_0
@@ -1910,9 +1955,9 @@ L52:
 	bcc	L53
 	brl	L10019
 L53:
-	.line	220
+	.line	237
 ;			strcpy(node->name,name);
-	.line	221
+	.line	238
 	pei	<L49+name_0+2
 	pei	<L49+name_0
 	clc
@@ -1926,14 +1971,14 @@ L53:
 	pei	<R0
 	jsl	~~strcpy
 ;		}
-	.line	222
+	.line	239
 ;		else
 	brl	L10020
 L10019:
 ;		{
-	.line	224
+	.line	241
 ;			strncpy(node->name,name,sizeof(node->name)-1);
-	.line	225
+	.line	242
 	pea	#<$1f
 	pei	<L49+name_0+2
 	pei	<L49+name_0
@@ -1948,10 +1993,10 @@ L10019:
 	pei	<R0
 	jsl	~~strncpy
 ;		}
-	.line	226
+	.line	243
 L10020:
 ;		node->name[31] = 0;
-	.line	227
+	.line	244
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -1963,14 +2008,14 @@ L10020:
 ;		//k_debug_strings("k_nodelist_create::node->name:", node->name);
 ;
 ;	}
-	.line	231
+	.line	248
 ;	//umm_integrity_check();
 ;
 ;	//k_debug_string("k_nodelist_create::exit\r\n");
 ;
 ;	return node;
 L10018:
-	.line	236
+	.line	253
 	ldx	<L50+node_1+2
 	lda	<L50+node_1
 L54:
@@ -1987,23 +2032,23 @@ L54:
 	tya
 	rtl
 ;}
-	.line	237
-	.endblock	237
+	.line	254
+	.endblock	254
 L49	equ	8
 L50	equ	5
 	ends
 	efunc
-	.endfunc	237,5,8
-	.line	237
+	.endfunc	254,5,8
+	.line	254
 ;
 ;PFXNODE k_nodelist_ncreate(BYTE type,ULONG objId,LPVOID data,PFXNODE last,PFXNODE next)
 ;{
-	.line	239
-	.line	240
+	.line	256
+	.line	257
 	NODEMAN
 	xdef	~~k_nodelist_ncreate
 	func
-	.function	240
+	.function	257
 ~~k_nodelist_ncreate:
 	longa	on
 	longi	on
@@ -2018,7 +2063,7 @@ objId_0	set	6
 data_0	set	10
 last_0	set	14
 next_0	set	18
-	.block	240
+	.block	257
 ;	UCHAR buffer[16];
 ;	LPCHAR name = NULL;
 ;	PFXNODE node = (PFXNODE)k_mem_allocate_heap(sizeof(FXNODE));
@@ -2037,11 +2082,12 @@ node_1	set	20
 	.sym	next,18,138,6,32,2
 	stz	<L56+name_1
 	stz	<L56+name_1+2
+	pea	#^$30
 	pea	#<$30
 	jsl	~~k_mem_allocate_heap
 	sta	<L56+node_1
 	stx	<L56+node_1+2
-	.line	245
+	.line	262
 	pea	#<$30
 	pea	#<$0
 	pei	<L56+node_1+2
@@ -2049,7 +2095,7 @@ node_1	set	20
 	jsl	~~memset
 ;
 ;	node->last = last;
-	.line	247
+	.line	264
 	lda	<L55+last_0
 	ldy	#$6
 	sta	[<L56+node_1],Y
@@ -2057,7 +2103,7 @@ node_1	set	20
 	ldy	#$8
 	sta	[<L56+node_1],Y
 ;	node->next = next;
-	.line	248
+	.line	265
 	lda	<L55+next_0
 	ldy	#$a
 	sta	[<L56+node_1],Y
@@ -2065,7 +2111,7 @@ node_1	set	20
 	ldy	#$c
 	sta	[<L56+node_1],Y
 ;	node->type = type;
-	.line	249
+	.line	266
 	sep	#$20
 	longa	off
 	lda	<L55+type_0
@@ -2073,7 +2119,7 @@ node_1	set	20
 	rep	#$20
 	longa	on
 ;	node->data = data;
-	.line	250
+	.line	267
 	lda	<L55+data_0
 	ldy	#$2
 	sta	[<L56+node_1],Y
@@ -2081,12 +2127,12 @@ node_1	set	20
 	ldy	#$4
 	sta	[<L56+node_1],Y
 ;	node->Reserved1 = 0;
-	.line	251
+	.line	268
 	lda	#$0
 	ldy	#$2e
 	sta	[<L56+node_1],Y
 ;	node->name[0] = 0;
-	.line	252
+	.line	269
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -2098,7 +2144,7 @@ node_1	set	20
 ;	//k_debug_integer("k_nodelist_create::sizeof(node->name):", sizeof(node->name));
 ;
 ;	name = k_longtodec(objId,buffer);
-	.line	256
+	.line	273
 	pea	#0
 	clc
 	tdc
@@ -2111,7 +2157,7 @@ node_1	set	20
 	stx	<L56+name_1+2
 ;
 ;	if(name!=NULL && (strlen(name) < sizeof(node->name)))
-	.line	258
+	.line	275
 ;		strcpy(node->name,name);
 	lda	<L56+name_1
 	ora	<L56+name_1+2
@@ -2127,7 +2173,7 @@ L58:
 	bcc	L59
 	brl	L10021
 L59:
-	.line	259
+	.line	276
 	pei	<L56+name_1+2
 	pei	<L56+name_1
 	clc
@@ -2143,7 +2189,7 @@ L59:
 ;
 ;	node->name[31] = 0;
 L10021:
-	.line	261
+	.line	278
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -2156,7 +2202,7 @@ L10021:
 ;	//k_debug_string("k_nodelist_create::exit\r\n");
 ;
 ;	return node;
-	.line	266
+	.line	283
 	ldx	<L56+node_1+2
 	lda	<L56+node_1
 L60:
@@ -2173,26 +2219,26 @@ L60:
 	tya
 	rtl
 ;}
-	.line	267
-	.endblock	267
+	.line	284
+	.endblock	284
 L55	equ	28
 L56	equ	5
 	ends
 	efunc
-	.endfunc	267,5,28
-	.line	267
+	.endfunc	284,5,28
+	.line	284
 ;/**
 ; *
 ; *
 ; */
 ;PFXNODE k_nodelist_init(BYTE type,LPCSTR name,LPVOID data)
 ;{
-	.line	272
-	.line	273
+	.line	289
+	.line	290
 	NODEMAN
 	xdef	~~k_nodelist_init
 	func
-	.function	273
+	.function	290
 ~~k_nodelist_init:
 	longa	on
 	longi	on
@@ -2205,7 +2251,7 @@ L56	equ	5
 type_0	set	4
 name_0	set	6
 data_0	set	10
-	.block	273
+	.block	290
 ;	PFXNODE node = (PFXNODE)k_mem_allocate_heap(sizeof(FXNODE));
 ;
 ;	memset(node,0,sizeof(FXNODE));
@@ -2214,11 +2260,12 @@ node_1	set	0
 	.sym	type,4,14,6,8
 	.sym	name,6,142,6,32
 	.sym	data,10,129,6,32
+	pea	#^$30
 	pea	#<$30
 	jsl	~~k_mem_allocate_heap
 	sta	<L62+node_1
 	stx	<L62+node_1+2
-	.line	276
+	.line	293
 	pea	#<$30
 	pea	#<$0
 	pei	<L62+node_1+2
@@ -2226,7 +2273,7 @@ node_1	set	0
 	jsl	~~memset
 ;
 ;	node->last = NULL;
-	.line	278
+	.line	295
 	lda	#$0
 	ldy	#$6
 	sta	[<L62+node_1],Y
@@ -2234,7 +2281,7 @@ node_1	set	0
 	ldy	#$8
 	sta	[<L62+node_1],Y
 ;	node->next = NULL;
-	.line	279
+	.line	296
 	lda	#$0
 	ldy	#$a
 	sta	[<L62+node_1],Y
@@ -2242,7 +2289,7 @@ node_1	set	0
 	ldy	#$c
 	sta	[<L62+node_1],Y
 ;	node->type = type;
-	.line	280
+	.line	297
 	sep	#$20
 	longa	off
 	lda	<L61+type_0
@@ -2250,7 +2297,7 @@ node_1	set	0
 	rep	#$20
 	longa	on
 ;	node->data = data;
-	.line	281
+	.line	298
 	lda	<L61+data_0
 	ldy	#$2
 	sta	[<L62+node_1],Y
@@ -2258,19 +2305,19 @@ node_1	set	0
 	ldy	#$4
 	sta	[<L62+node_1],Y
 ;	node->Reserved1 = 0;
-	.line	282
+	.line	299
 	lda	#$0
 	ldy	#$2e
 	sta	[<L62+node_1],Y
 ;	if(name!=NULL)
-	.line	283
+	.line	300
 ;		strncpy(node->name,name,sizeof(node->name));
 	lda	<L61+name_0
 	ora	<L61+name_0+2
 	bne	L64
 	brl	L10022
 L64:
-	.line	284
+	.line	301
 	pea	#<$20
 	pei	<L61+name_0+2
 	pei	<L61+name_0
@@ -2287,7 +2334,7 @@ L64:
 ;
 ;	node->name[31] = 0;
 L10022:
-	.line	286
+	.line	303
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -2297,7 +2344,7 @@ L10022:
 	longa	on
 ;
 ;	return node;
-	.line	288
+	.line	305
 	ldx	<L62+node_1+2
 	lda	<L62+node_1
 L65:
@@ -2314,26 +2361,26 @@ L65:
 	tya
 	rtl
 ;}
-	.line	289
-	.endblock	289
+	.line	306
+	.endblock	306
 L61	equ	8
 L62	equ	5
 	ends
 	efunc
-	.endfunc	289,5,8
-	.line	289
+	.endfunc	306,5,8
+	.line	306
 ;/**
 ; *
 ; *
 ; */
 ;PFXNODE k_nodelist_copy(PFXNODE node)
 ;{
-	.line	294
-	.line	295
+	.line	311
+	.line	312
 	NODEMAN
 	xdef	~~k_nodelist_copy
 	func
-	.function	295
+	.function	312
 ~~k_nodelist_copy:
 	longa	on
 	longi	on
@@ -2344,7 +2391,7 @@ L62	equ	5
 	phd
 	tcd
 node_0	set	4
-	.block	295
+	.block	312
 ;	PFXNODE newnode = k_nodelist_init(node->type,node->name,node->data);
 ;	if(newnode!=NULL)
 newnode_1	set	0
@@ -2370,16 +2417,16 @@ newnode_1	set	0
 	jsl	~~k_nodelist_init
 	sta	<L67+newnode_1
 	stx	<L67+newnode_1+2
-	.line	297
+	.line	314
 ;	{
 	lda	<L67+newnode_1
 	ora	<L67+newnode_1+2
 	bne	L69
 	brl	L10023
 L69:
-	.line	298
+	.line	315
 ;		newnode->last = node->last;
-	.line	299
+	.line	316
 	ldy	#$6
 	lda	[<L66+node_0],Y
 	ldy	#$6
@@ -2389,7 +2436,7 @@ L69:
 	ldy	#$8
 	sta	[<L67+newnode_1],Y
 ;		newnode->next = node->next;
-	.line	300
+	.line	317
 	ldy	#$a
 	lda	[<L66+node_0],Y
 	ldy	#$a
@@ -2399,10 +2446,10 @@ L69:
 	ldy	#$c
 	sta	[<L67+newnode_1],Y
 ;	}
-	.line	301
+	.line	318
 ;	return newnode;
 L10023:
-	.line	302
+	.line	319
 	ldx	<L67+newnode_1+2
 	lda	<L67+newnode_1
 L70:
@@ -2419,26 +2466,26 @@ L70:
 	tya
 	rtl
 ;}
-	.line	303
-	.endblock	303
+	.line	320
+	.endblock	320
 L66	equ	8
 L67	equ	5
 	ends
 	efunc
-	.endfunc	303,5,8
-	.line	303
+	.endfunc	320,5,8
+	.line	320
 ;/**
 ; *
 ; *
 ; */
 ;VOID k_nodelist_add(PFXNODE head,PFXNODE new)
 ;{
-	.line	308
-	.line	309
+	.line	325
+	.line	326
 	NODEMAN
 	xdef	~~k_nodelist_add
 	func
-	.function	309
+	.function	326
 ~~k_nodelist_add:
 	longa	on
 	longi	on
@@ -2450,7 +2497,7 @@ L67	equ	5
 	tcd
 head_0	set	4
 new_0	set	8
-	.block	309
+	.block	326
 ;	PFXNODE lastNode = k_nodelist_last(head);
 ;	if(lastNode!=NULL)
 lastNode_1	set	0
@@ -2462,16 +2509,16 @@ lastNode_1	set	0
 	jsl	~~k_nodelist_last
 	sta	<L72+lastNode_1
 	stx	<L72+lastNode_1+2
-	.line	311
+	.line	328
 ;	{
 	lda	<L72+lastNode_1
 	ora	<L72+lastNode_1+2
 	bne	L74
 	brl	L10024
 L74:
-	.line	312
+	.line	329
 ;		new->last = lastNode;
-	.line	313
+	.line	330
 	lda	<L72+lastNode_1
 	ldy	#$6
 	sta	[<L71+new_0],Y
@@ -2479,7 +2526,7 @@ L74:
 	ldy	#$8
 	sta	[<L71+new_0],Y
 ;		new->next = NULL;
-	.line	314
+	.line	331
 	lda	#$0
 	ldy	#$a
 	sta	[<L71+new_0],Y
@@ -2487,7 +2534,7 @@ L74:
 	ldy	#$c
 	sta	[<L71+new_0],Y
 ;		lastNode->next = new;
-	.line	315
+	.line	332
 	lda	<L71+new_0
 	ldy	#$a
 	sta	[<L72+lastNode_1],Y
@@ -2495,10 +2542,10 @@ L74:
 	ldy	#$c
 	sta	[<L72+lastNode_1],Y
 ;	}
-	.line	316
+	.line	333
 ;	return;
 L10024:
-	.line	317
+	.line	334
 L75:
 	lda	<L71+2
 	sta	<L71+2+8
@@ -2511,23 +2558,23 @@ L75:
 	tcs
 	rtl
 ;}
-	.line	318
-	.endblock	318
+	.line	335
+	.endblock	335
 L71	equ	4
 L72	equ	1
 	ends
 	efunc
-	.endfunc	318,1,4
-	.line	318
+	.endfunc	335,1,4
+	.line	335
 ;
 ;VOID k_nodelist_addtohead(PFXNODE listhead,PFXNODE new)
 ;{
-	.line	320
-	.line	321
+	.line	337
+	.line	338
 	NODEMAN
 	xdef	~~k_nodelist_addtohead
 	func
-	.function	321
+	.function	338
 ~~k_nodelist_addtohead:
 	longa	on
 	longi	on
@@ -2539,7 +2586,7 @@ L72	equ	1
 	tcd
 listhead_0	set	4
 new_0	set	8
-	.block	321
+	.block	338
 ;	PFXNODE head = listhead->next;
 ;
 ;	if(head)
@@ -2553,25 +2600,25 @@ head_1	set	0
 	ldy	#$c
 	lda	[<L76+listhead_0],Y
 	sta	<L77+head_1+2
-	.line	324
+	.line	341
 ;	{
 	lda	<L77+head_1
 	ora	<L77+head_1+2
 	bne	L79
 	brl	L10025
 L79:
-	.line	325
+	.line	342
 ;		if(head!=NULL)
-	.line	326
+	.line	343
 ;		{
 	lda	<L77+head_1
 	ora	<L77+head_1+2
 	bne	L80
 	brl	L10026
 L80:
-	.line	327
+	.line	344
 ;			new->last = head->last;
-	.line	328
+	.line	345
 	ldy	#$6
 	lda	[<L77+head_1],Y
 	ldy	#$6
@@ -2581,7 +2628,7 @@ L80:
 	ldy	#$8
 	sta	[<L76+new_0],Y
 ;			new->next = head;
-	.line	329
+	.line	346
 	lda	<L77+head_1
 	ldy	#$a
 	sta	[<L76+new_0],Y
@@ -2589,7 +2636,7 @@ L80:
 	ldy	#$c
 	sta	[<L76+new_0],Y
 ;			head->last = new;
-	.line	330
+	.line	347
 	lda	<L76+new_0
 	ldy	#$6
 	sta	[<L77+head_1],Y
@@ -2601,17 +2648,17 @@ L80:
 ;			//new->next = head->next;
 ;			//head->next = new;
 ;		}
-	.line	335
+	.line	352
 ;	}
 L10026:
-	.line	336
+	.line	353
 ;	else
 	brl	L10027
 L10025:
 ;	{
-	.line	338
+	.line	355
 ;		listhead->next = new;
-	.line	339
+	.line	356
 	lda	<L76+new_0
 	ldy	#$a
 	sta	[<L76+listhead_0],Y
@@ -2619,7 +2666,7 @@ L10025:
 	ldy	#$c
 	sta	[<L76+listhead_0],Y
 ;		new->last = listhead;
-	.line	340
+	.line	357
 	lda	<L76+listhead_0
 	ldy	#$6
 	sta	[<L76+new_0],Y
@@ -2627,7 +2674,7 @@ L10025:
 	ldy	#$8
 	sta	[<L76+new_0],Y
 ;		new->next = NULL;
-	.line	341
+	.line	358
 	lda	#$0
 	ldy	#$a
 	sta	[<L76+new_0],Y
@@ -2635,10 +2682,10 @@ L10025:
 	ldy	#$c
 	sta	[<L76+new_0],Y
 ;	}
-	.line	342
+	.line	359
 L10027:
 ;	return;
-	.line	343
+	.line	360
 L81:
 	lda	<L76+2
 	sta	<L76+2+8
@@ -2651,26 +2698,26 @@ L81:
 	tcs
 	rtl
 ;}
-	.line	344
-	.endblock	344
+	.line	361
+	.endblock	361
 L76	equ	4
 L77	equ	1
 	ends
 	efunc
-	.endfunc	344,1,4
-	.line	344
+	.endfunc	361,1,4
+	.line	361
 ;/**
 ; *
 ; *
 ; */
 ;PFXNODE k_nodelist_gettype(PFXNODE head,BYTE type)
 ;{
-	.line	349
-	.line	350
+	.line	366
+	.line	367
 	NODEMAN
 	xdef	~~k_nodelist_gettype
 	func
-	.function	350
+	.function	367
 ~~k_nodelist_gettype:
 	longa	on
 	longi	on
@@ -2682,7 +2729,7 @@ L77	equ	1
 	tcd
 head_0	set	4
 type_0	set	8
-	.block	350
+	.block	367
 ;	PFXNODE ptr = head;
 ;	while(ptr!=NULL)
 ptr_1	set	0
@@ -2693,7 +2740,7 @@ ptr_1	set	0
 	sta	<L83+ptr_1
 	lda	<L82+head_0+2
 	sta	<L83+ptr_1+2
-	.line	352
+	.line	369
 L10028:
 	lda	<L83+ptr_1
 	ora	<L83+ptr_1+2
@@ -2701,10 +2748,10 @@ L10028:
 	brl	L10029
 L85:
 ;	{
-	.line	353
+	.line	370
 ;		//k_debug_string("k_nodelist_gettype\r\n");
 ;		if(ptr->type == type)
-	.line	355
+	.line	372
 ;		{
 	sep	#$20
 	longa	off
@@ -2715,15 +2762,15 @@ L85:
 	beq	L86
 	brl	L10030
 L86:
-	.line	356
+	.line	373
 ;			break;
-	.line	357
+	.line	374
 	brl	L10029
 ;		}
-	.line	358
+	.line	375
 ;		ptr = ptr->next;
 L10030:
-	.line	359
+	.line	376
 	ldy	#$a
 	lda	[<L83+ptr_1],Y
 	sta	<R0
@@ -2735,11 +2782,11 @@ L10030:
 	lda	<R0+2
 	sta	<L83+ptr_1+2
 ;	}
-	.line	360
+	.line	377
 	brl	L10028
 L10029:
 ;	return ptr;
-	.line	361
+	.line	378
 	ldx	<L83+ptr_1+2
 	lda	<L83+ptr_1
 L87:
@@ -2756,26 +2803,26 @@ L87:
 	tya
 	rtl
 ;}
-	.line	362
-	.endblock	362
+	.line	379
+	.endblock	379
 L82	equ	8
 L83	equ	5
 	ends
 	efunc
-	.endfunc	362,5,8
-	.line	362
+	.endfunc	379,5,8
+	.line	379
 ;/**
 ; *
 ; *
 ; */
 ;PFXNODE k_nodelist_getname(PFXNODE head,LPCSTR name)
 ;{
-	.line	367
-	.line	368
+	.line	384
+	.line	385
 	NODEMAN
 	xdef	~~k_nodelist_getname
 	func
-	.function	368
+	.function	385
 ~~k_nodelist_getname:
 	longa	on
 	longi	on
@@ -2787,7 +2834,7 @@ L83	equ	5
 	tcd
 head_0	set	4
 name_0	set	8
-	.block	368
+	.block	385
 ;	PFXNODE ptr = head;
 ;	while(ptr!=NULL)
 ptr_1	set	0
@@ -2798,7 +2845,7 @@ ptr_1	set	0
 	sta	<L89+ptr_1
 	lda	<L88+head_0+2
 	sta	<L89+ptr_1+2
-	.line	370
+	.line	387
 L10031:
 	lda	<L89+ptr_1
 	ora	<L89+ptr_1+2
@@ -2806,11 +2853,11 @@ L10031:
 	brl	L10032
 L91:
 ;	{
-	.line	371
+	.line	388
 ;		//k_debug_strings("k_nodelist_getname:",(LPSTR)name);
 ;		//k_debug_strings("             found:",ptr->name);
 ;		if(name && strcmp(ptr->name,name) == 0)
-	.line	374
+	.line	391
 ;		{
 	lda	<L88+name_0
 	ora	<L88+name_0+2
@@ -2833,18 +2880,18 @@ L92:
 	beq	L93
 	brl	L10033
 L93:
-	.line	375
+	.line	392
 ;			//k_debug_strings("k_nodelist_getname:found:",(LPSTR)name);
 ;			//k_debug_strings("k_nodelist_getname:name:",(LPSTR)ptr->name);
 ;			//k_debug_pointer("k_nodelist_getname:name:",ptr);
 ;			break;
-	.line	379
+	.line	396
 	brl	L10032
 ;		}
-	.line	380
+	.line	397
 ;		ptr = ptr->next;
 L10033:
-	.line	381
+	.line	398
 	ldy	#$a
 	lda	[<L89+ptr_1],Y
 	sta	<R0
@@ -2856,11 +2903,11 @@ L10033:
 	lda	<R0+2
 	sta	<L89+ptr_1+2
 ;	}
-	.line	382
+	.line	399
 	brl	L10031
 L10032:
 ;	return ptr;
-	.line	383
+	.line	400
 	ldx	<L89+ptr_1+2
 	lda	<L89+ptr_1
 L94:
@@ -2877,24 +2924,24 @@ L94:
 	tya
 	rtl
 ;}
-	.line	384
-	.endblock	384
+	.line	401
+	.endblock	401
 L88	equ	8
 L89	equ	5
 	ends
 	efunc
-	.endfunc	384,5,8
-	.line	384
+	.endfunc	401,5,8
+	.line	401
 ;
 ;
 ;PFXNODE k_nodelist_getname_and_type(PFXNODE head,LPCSTR name,BYTE type)
 ;{
-	.line	387
-	.line	388
+	.line	404
+	.line	405
 	NODEMAN
 	xdef	~~k_nodelist_getname_and_type
 	func
-	.function	388
+	.function	405
 ~~k_nodelist_getname_and_type:
 	longa	on
 	longi	on
@@ -2907,7 +2954,7 @@ L89	equ	5
 head_0	set	4
 name_0	set	8
 type_0	set	12
-	.block	388
+	.block	405
 ;	PFXNODE node = NULL;
 ;
 ;	if(head && name)
@@ -2918,7 +2965,7 @@ node_1	set	0
 	.sym	type,12,14,6,8
 	stz	<L96+node_1
 	stz	<L96+node_1+2
-	.line	391
+	.line	408
 ;	{
 	lda	<L95+head_0
 	ora	<L95+head_0+2
@@ -2930,9 +2977,9 @@ L98:
 	bne	L99
 	brl	L10034
 L99:
-	.line	392
+	.line	409
 ;		node = k_nodelist_getname(head,(LPCHAR)name);
-	.line	393
+	.line	410
 	pei	<L95+name_0+2
 	pei	<L95+name_0
 	pei	<L95+head_0+2
@@ -2941,7 +2988,7 @@ L99:
 	sta	<L96+node_1
 	stx	<L96+node_1+2
 ;		if(node && node->type != type)
-	.line	394
+	.line	411
 ;		{
 	lda	<L96+node_1
 	ora	<L96+node_1+2
@@ -2957,21 +3004,21 @@ L100:
 	bne	L101
 	brl	L10035
 L101:
-	.line	395
+	.line	412
 ;			//k_debug_strings("k_nodelist_getname_and_type:found:name:",node->name);
 ;			//k_debug_pointer("k_nodelist_getname_and_type:found:data:",node->data);
 ;			node = NULL;
-	.line	398
+	.line	415
 	stz	<L96+node_1
 	stz	<L96+node_1+2
 ;		}
-	.line	399
+	.line	416
 ;	}
 L10035:
-	.line	400
+	.line	417
 ;	return node;
 L10034:
-	.line	401
+	.line	418
 	ldx	<L96+node_1+2
 	lda	<L96+node_1
 L102:
@@ -2988,23 +3035,23 @@ L102:
 	tya
 	rtl
 ;}
-	.line	402
-	.endblock	402
+	.line	419
+	.endblock	419
 L95	equ	4
 L96	equ	1
 	ends
 	efunc
-	.endfunc	402,1,4
-	.line	402
+	.endfunc	419,1,4
+	.line	419
 ;
 ;PFXNODE k_nodelist_get(PFXNODE head,INT index)
 ;{
-	.line	404
-	.line	405
+	.line	421
+	.line	422
 	NODEMAN
 	xdef	~~k_nodelist_get
 	func
-	.function	405
+	.function	422
 ~~k_nodelist_get:
 	longa	on
 	longi	on
@@ -3016,7 +3063,7 @@ L96	equ	1
 	tcd
 head_0	set	4
 index_0	set	8
-	.block	405
+	.block	422
 ;	PFXNODE ptr = head;
 ;	while(ptr!=NULL)
 ptr_1	set	0
@@ -3027,7 +3074,7 @@ ptr_1	set	0
 	sta	<L104+ptr_1
 	lda	<L103+head_0+2
 	sta	<L104+ptr_1+2
-	.line	407
+	.line	424
 L10036:
 	lda	<L104+ptr_1
 	ora	<L104+ptr_1+2
@@ -3035,13 +3082,13 @@ L10036:
 	brl	L10037
 L106:
 ;	{
-	.line	408
+	.line	425
 ;		index--;
-	.line	409
+	.line	426
 	dec	<L103+index_0
 ;
 ;		if(index == 0)
-	.line	411
+	.line	428
 ;			break;
 	lda	<L103+index_0
 	bne	L107
@@ -3049,7 +3096,7 @@ L106:
 L107:
 ;
 ;		ptr = ptr->next;
-	.line	414
+	.line	431
 	ldy	#$a
 	lda	[<L104+ptr_1],Y
 	sta	<R0
@@ -3061,14 +3108,14 @@ L107:
 	lda	<R0+2
 	sta	<L104+ptr_1+2
 ;	}
-	.line	415
+	.line	432
 	brl	L10036
 L10037:
 ;
 ;	//k_debug_integer("k_nodelist_get type:",ptr->type);
 ;
 ;	return ptr;
-	.line	419
+	.line	436
 	ldx	<L104+ptr_1+2
 	lda	<L104+ptr_1
 L108:
@@ -3085,14 +3132,14 @@ L108:
 	tya
 	rtl
 ;}
-	.line	420
-	.endblock	420
+	.line	437
+	.endblock	437
 L103	equ	8
 L104	equ	5
 	ends
 	efunc
-	.endfunc	420,5,8
-	.line	420
+	.endfunc	437,5,8
+	.line	437
 ;
 ;/**
 ; *
@@ -3100,12 +3147,12 @@ L104	equ	5
 ; */
 ;PFXNODE k_nodelist_remove(PFXNODE head,LPCSTR name)
 ;{
-	.line	426
-	.line	427
+	.line	443
+	.line	444
 	NODEMAN
 	xdef	~~k_nodelist_remove
 	func
-	.function	427
+	.function	444
 ~~k_nodelist_remove:
 	longa	on
 	longi	on
@@ -3117,7 +3164,7 @@ L104	equ	5
 	tcd
 head_0	set	4
 name_0	set	8
-	.block	427
+	.block	444
 ;	PFXNODE found = NULL;
 ;	PFXNODE ptr = head;
 ;	while(ptr!=NULL)
@@ -3133,7 +3180,7 @@ ptr_1	set	4
 	sta	<L110+ptr_1
 	lda	<L109+head_0+2
 	sta	<L110+ptr_1+2
-	.line	430
+	.line	447
 L10038:
 	lda	<L110+ptr_1
 	ora	<L110+ptr_1+2
@@ -3141,10 +3188,10 @@ L10038:
 	brl	L10039
 L112:
 ;	{
-	.line	431
+	.line	448
 ;		//k_debug_string("k_nodelist_remove\r\n");
 ;		if(strcmp(ptr->name,name) == 0)
-	.line	433
+	.line	450
 ;		{
 	pei	<L109+name_0+2
 	pei	<L109+name_0
@@ -3162,15 +3209,15 @@ L112:
 	beq	L113
 	brl	L10040
 L113:
-	.line	434
+	.line	451
 ;			found = ptr;
-	.line	435
+	.line	452
 	lda	<L110+ptr_1
 	sta	<L110+found_1
 	lda	<L110+ptr_1+2
 	sta	<L110+found_1+2
 ;			ptr->last->next = ptr->next;
-	.line	436
+	.line	453
 	ldy	#$6
 	lda	[<L110+ptr_1],Y
 	sta	<R0
@@ -3186,7 +3233,7 @@ L113:
 	ldy	#$c
 	sta	[<R0],Y
 ;			ptr->next->last = ptr->last;
-	.line	437
+	.line	454
 	ldy	#$a
 	lda	[<L110+ptr_1],Y
 	sta	<R0
@@ -3202,13 +3249,13 @@ L113:
 	ldy	#$8
 	sta	[<R0],Y
 ;			break;
-	.line	438
+	.line	455
 	brl	L10039
 ;		}
-	.line	439
+	.line	456
 ;		ptr = ptr->next;
 L10040:
-	.line	440
+	.line	457
 	ldy	#$a
 	lda	[<L110+ptr_1],Y
 	sta	<R0
@@ -3220,11 +3267,11 @@ L10040:
 	lda	<R0+2
 	sta	<L110+ptr_1+2
 ;	}
-	.line	441
+	.line	458
 	brl	L10038
 L10039:
 ;	return found;
-	.line	442
+	.line	459
 	ldx	<L110+found_1+2
 	lda	<L110+found_1
 L114:
@@ -3241,14 +3288,14 @@ L114:
 	tya
 	rtl
 ;}
-	.line	443
-	.endblock	443
+	.line	460
+	.endblock	460
 L109	equ	12
 L110	equ	5
 	ends
 	efunc
-	.endfunc	443,5,12
-	.line	443
+	.endfunc	460,5,12
+	.line	460
 ;
 ;/**
 ; *
@@ -3256,12 +3303,12 @@ L110	equ	5
 ; */
 ;PFXNODE k_nodelist_remove_obj(PFXNODE head,ULONG objId)
 ;{
-	.line	449
-	.line	450
+	.line	466
+	.line	467
 	NODEMAN
 	xdef	~~k_nodelist_remove_obj
 	func
-	.function	450
+	.function	467
 ~~k_nodelist_remove_obj:
 	longa	on
 	longi	on
@@ -3273,7 +3320,7 @@ L110	equ	5
 	tcd
 head_0	set	4
 objId_0	set	8
-	.block	450
+	.block	467
 ;	UCHAR buffer[16];
 ;
 ;	return k_nodelist_remove(head,k_longtodec(objId,buffer));
@@ -3281,7 +3328,7 @@ buffer_1	set	0
 	.sym	buffer,0,110,1,0,16
 	.sym	head,4,138,6,32,2
 	.sym	objId,8,18,6,32
-	.line	453
+	.line	470
 	pea	#0
 	clc
 	tdc
@@ -3315,23 +3362,23 @@ L118:
 	tya
 	rtl
 ;}
-	.line	454
-	.endblock	454
+	.line	471
+	.endblock	471
 L115	equ	24
 L116	equ	9
 	ends
 	efunc
-	.endfunc	454,9,24
-	.line	454
+	.endfunc	471,9,24
+	.line	471
 ;
 ;PFXNODE k_nodelist_remove_node(PFXNODE head,PFXNODE targetNode)
 ;{
-	.line	456
-	.line	457
+	.line	473
+	.line	474
 	NODEMAN
 	xdef	~~k_nodelist_remove_node
 	func
-	.function	457
+	.function	474
 ~~k_nodelist_remove_node:
 	longa	on
 	longi	on
@@ -3343,7 +3390,7 @@ L116	equ	9
 	tcd
 head_0	set	4
 targetNode_0	set	8
-	.block	457
+	.block	474
 ;	PFXNODE found = NULL;
 ;	PFXNODE ptr = head;
 ;	while(ptr!=NULL)
@@ -3359,7 +3406,7 @@ ptr_1	set	4
 	sta	<L120+ptr_1
 	lda	<L119+head_0+2
 	sta	<L120+ptr_1+2
-	.line	460
+	.line	477
 L10041:
 	lda	<L120+ptr_1
 	ora	<L120+ptr_1+2
@@ -3367,16 +3414,16 @@ L10041:
 	brl	L10042
 L122:
 ;	{
-	.line	461
+	.line	478
 ;		k_debug_pointer("k_nodelist_remove:",targetNode);
-	.line	462
+	.line	479
 	pei	<L119+targetNode_0+2
 	pei	<L119+targetNode_0
 	pea	#^L48
 	pea	#<L48
 	jsl	~~k_debug_pointer
 ;		if(ptr == targetNode)
-	.line	463
+	.line	480
 ;		{
 	lda	<L120+ptr_1
 	cmp	<L119+targetNode_0
@@ -3387,15 +3434,15 @@ L123:
 	beq	L124
 	brl	L10043
 L124:
-	.line	464
+	.line	481
 ;			found = ptr;
-	.line	465
+	.line	482
 	lda	<L120+ptr_1
 	sta	<L120+found_1
 	lda	<L120+ptr_1+2
 	sta	<L120+found_1+2
 ;			ptr->last->next = ptr->next;
-	.line	466
+	.line	483
 	ldy	#$6
 	lda	[<L120+ptr_1],Y
 	sta	<R0
@@ -3411,7 +3458,7 @@ L124:
 	ldy	#$c
 	sta	[<R0],Y
 ;			ptr->next->last = ptr->last;
-	.line	467
+	.line	484
 	ldy	#$a
 	lda	[<L120+ptr_1],Y
 	sta	<R0
@@ -3427,13 +3474,13 @@ L124:
 	ldy	#$8
 	sta	[<R0],Y
 ;			break;
-	.line	468
+	.line	485
 	brl	L10042
 ;		}
-	.line	469
+	.line	486
 ;		ptr = ptr->next;
 L10043:
-	.line	470
+	.line	487
 	ldy	#$a
 	lda	[<L120+ptr_1],Y
 	sta	<R0
@@ -3445,11 +3492,11 @@ L10043:
 	lda	<R0+2
 	sta	<L120+ptr_1+2
 ;	}
-	.line	471
+	.line	488
 	brl	L10041
 L10042:
 ;	return found;
-	.line	472
+	.line	489
 	ldx	<L120+found_1+2
 	lda	<L120+found_1
 L125:
@@ -3466,14 +3513,14 @@ L125:
 	tya
 	rtl
 ;}
-	.line	473
-	.endblock	473
+	.line	490
+	.endblock	490
 L119	equ	12
 L120	equ	5
 	ends
 	efunc
-	.endfunc	473,5,12
-	.line	473
+	.endfunc	490,5,12
+	.line	490
 	data
 L48:
 	db	$6B,$5F,$6E,$6F,$64,$65,$6C,$69,$73,$74,$5F,$72,$65,$6D,$6F
@@ -3486,12 +3533,12 @@ L48:
 ; */
 ;LPVOID k_nodelist_data(PFXNODE head,LPCSTR name)
 ;{
-	.line	479
-	.line	480
+	.line	496
+	.line	497
 	NODEMAN
 	xdef	~~k_nodelist_data
 	func
-	.function	480
+	.function	497
 ~~k_nodelist_data:
 	longa	on
 	longi	on
@@ -3503,7 +3550,7 @@ L48:
 	tcd
 head_0	set	4
 name_0	set	8
-	.block	480
+	.block	497
 ;	LPVOID found = NULL;
 ;	PFXNODE ptr = head;
 ;	while(ptr!=NULL)
@@ -3519,7 +3566,7 @@ ptr_1	set	4
 	sta	<L128+ptr_1
 	lda	<L127+head_0+2
 	sta	<L128+ptr_1+2
-	.line	483
+	.line	500
 L10044:
 	lda	<L128+ptr_1
 	ora	<L128+ptr_1+2
@@ -3527,10 +3574,10 @@ L10044:
 	brl	L10045
 L130:
 ;	{
-	.line	484
+	.line	501
 ;		//k_debug_string("k_nodelist_data\r\n");
 ;		if(strcmp(ptr->name,name) == 0)
-	.line	486
+	.line	503
 ;		{
 	pei	<L127+name_0+2
 	pei	<L127+name_0
@@ -3548,9 +3595,9 @@ L130:
 	beq	L131
 	brl	L10046
 L131:
-	.line	487
+	.line	504
 ;			found = ptr->data;
-	.line	488
+	.line	505
 	ldy	#$2
 	lda	[<L128+ptr_1],Y
 	sta	<L128+found_1
@@ -3558,13 +3605,13 @@ L131:
 	lda	[<L128+ptr_1],Y
 	sta	<L128+found_1+2
 ;			break;
-	.line	489
+	.line	506
 	brl	L10045
 ;		}
-	.line	490
+	.line	507
 ;		ptr = ptr->next;
 L10046:
-	.line	491
+	.line	508
 	ldy	#$a
 	lda	[<L128+ptr_1],Y
 	sta	<R0
@@ -3576,11 +3623,11 @@ L10046:
 	lda	<R0+2
 	sta	<L128+ptr_1+2
 ;	}
-	.line	492
+	.line	509
 	brl	L10044
 L10045:
 ;	return found;
-	.line	493
+	.line	510
 	ldx	<L128+found_1+2
 	lda	<L128+found_1
 L132:
@@ -3597,14 +3644,14 @@ L132:
 	tya
 	rtl
 ;}
-	.line	494
-	.endblock	494
+	.line	511
+	.endblock	511
 L127	equ	12
 L128	equ	5
 	ends
 	efunc
-	.endfunc	494,5,12
-	.line	494
+	.endfunc	511,5,12
+	.line	511
 ;
 ;/**
 ; *
@@ -3612,12 +3659,12 @@ L128	equ	5
 ; */
 ;PFXNODE	k_nodelist_last(PFXNODE head)
 ;{
-	.line	500
-	.line	501
+	.line	517
+	.line	518
 	NODEMAN
 	xdef	~~k_nodelist_last
 	func
-	.function	501
+	.function	518
 ~~k_nodelist_last:
 	longa	on
 	longi	on
@@ -3628,7 +3675,7 @@ L128	equ	5
 	phd
 	tcd
 head_0	set	4
-	.block	501
+	.block	518
 ;	UINT abort = 0;
 ;	PFXNODE ptr = head;
 ;
@@ -3646,7 +3693,7 @@ ptr_1	set	2
 	sta	<L134+ptr_1
 	lda	<L133+head_0+2
 	sta	<L134+ptr_1+2
-	.line	508
+	.line	525
 L10047:
 	lda	<L134+ptr_1
 	ora	<L134+ptr_1+2
@@ -3654,10 +3701,10 @@ L10047:
 	brl	L10048
 L136:
 ;	{
-	.line	509
+	.line	526
 ;		//k_debug_string("k_nodelist_last\r\n");
 ;		if(ptr->next == NULL)
-	.line	511
+	.line	528
 ;		{
 	ldy	#$a
 	lda	[<L134+ptr_1],Y
@@ -3666,15 +3713,15 @@ L136:
 	beq	L137
 	brl	L10049
 L137:
-	.line	512
+	.line	529
 ;			break;
-	.line	513
+	.line	530
 	brl	L10048
 ;		}
-	.line	514
+	.line	531
 ;		ptr = ptr->next;
 L10049:
-	.line	515
+	.line	532
 	ldy	#$a
 	lda	[<L134+ptr_1],Y
 	sta	<R0
@@ -3686,34 +3733,32 @@ L10049:
 	lda	<R0+2
 	sta	<L134+ptr_1+2
 ;		abort++;
-	.line	516
+	.line	533
 	inc	<L134+abort_1
 ;		if(abort == -1)
-	.line	517
-;			k_exec_throw_exception(THIS_MODULE,0x00020001,"Infinite Node List Detected",-1);
+	.line	534
+;			k_exec_throw_exception(k_nodelist_last,0x00020001,"Infinite Node List Detected",-1);
 	lda	<L134+abort_1
 	cmp	#<$ffffffff
 	beq	L138
 	brl	L10050
 L138:
-	.line	518
+	.line	535
 	pea	#<$ffffffff
 	pea	#^L126
 	pea	#<L126
 	pea	#^$20001
 	pea	#<$20001
-	lda	|~~THIS_MODULE+2
-	pha
-	lda	|~~THIS_MODULE
-	pha
+	pea	#^~~k_nodelist_last
+	pea	#<~~k_nodelist_last
 	jsl	~~k_exec_throw_exception
 ;	}
 L10050:
-	.line	519
+	.line	536
 	brl	L10047
 L10048:
 ;	return ptr;
-	.line	520
+	.line	537
 	ldx	<L134+ptr_1+2
 	lda	<L134+ptr_1
 L139:
@@ -3730,14 +3775,14 @@ L139:
 	tya
 	rtl
 ;}
-	.line	521
-	.endblock	521
+	.line	538
+	.endblock	538
 L133	equ	10
 L134	equ	5
 	ends
 	efunc
-	.endfunc	521,5,10
-	.line	521
+	.endfunc	538,5,10
+	.line	538
 	data
 L126:
 	db	$49,$6E,$66,$69,$6E,$69,$74,$65,$20,$4E,$6F,$64,$65,$20,$4C
@@ -3749,12 +3794,12 @@ L126:
 ; */
 ;VOID k_nodelist_foreach_data(PFXNODE head,LPVOID context,FOREACHNODE each)
 ;{
-	.line	526
-	.line	527
+	.line	543
+	.line	544
 	NODEMAN
 	xdef	~~k_nodelist_foreach_data
 	func
-	.function	527
+	.function	544
 ~~k_nodelist_foreach_data:
 	longa	on
 	longi	on
@@ -3767,7 +3812,7 @@ L126:
 head_0	set	4
 context_0	set	8
 each_0	set	12
-	.block	527
+	.block	544
 ;	PFXNODE ptr = head;
 ;
 ;	//k_debug_pointer("k_nodelist_foreach_data:",context);
@@ -3782,7 +3827,7 @@ ptr_1	set	0
 	sta	<L142+ptr_1
 	lda	<L141+head_0+2
 	sta	<L142+ptr_1+2
-	.line	532
+	.line	549
 L10051:
 	lda	<L142+ptr_1
 	ora	<L142+ptr_1+2
@@ -3790,9 +3835,9 @@ L10051:
 	brl	L10052
 L144:
 ;	{
-	.line	533
+	.line	550
 ;		each(context,ptr->data);
-	.line	534
+	.line	551
 	ldy	#$4
 	lda	[<L142+ptr_1],Y
 	pha
@@ -3806,7 +3851,7 @@ L144:
 	xref	~~~lcal
 	jsl	~~~lcal
 ;		ptr = ptr->next;
-	.line	535
+	.line	552
 	ldy	#$a
 	lda	[<L142+ptr_1],Y
 	sta	<R0
@@ -3818,11 +3863,11 @@ L144:
 	lda	<R0+2
 	sta	<L142+ptr_1+2
 ;	}
-	.line	536
+	.line	553
 	brl	L10051
 L10052:
 ;}
-	.line	537
+	.line	554
 L145:
 	lda	<L141+2
 	sta	<L141+2+12
@@ -3834,22 +3879,22 @@ L145:
 	adc	#L141+12
 	tcs
 	rtl
-	.endblock	537
+	.endblock	554
 L141	equ	8
 L142	equ	5
 	ends
 	efunc
-	.endfunc	537,5,8
-	.line	537
+	.endfunc	554,5,8
+	.line	554
 ;
 ;PFXNODE k_nodelist_foreach_until_data(PFXNODE head,LPVOID context,FOREACHNODEUNTIL each)
 ;{
-	.line	539
-	.line	540
+	.line	556
+	.line	557
 	NODEMAN
 	xdef	~~k_nodelist_foreach_until_data
 	func
-	.function	540
+	.function	557
 ~~k_nodelist_foreach_until_data:
 	longa	on
 	longi	on
@@ -3862,7 +3907,7 @@ L142	equ	5
 head_0	set	4
 context_0	set	8
 each_0	set	12
-	.block	540
+	.block	557
 ;	PFXNODE ptr = head;
 ;
 ;	while(ptr!=NULL)
@@ -3875,7 +3920,7 @@ ptr_1	set	0
 	sta	<L147+ptr_1
 	lda	<L146+head_0+2
 	sta	<L147+ptr_1+2
-	.line	543
+	.line	560
 L10053:
 	lda	<L147+ptr_1
 	ora	<L147+ptr_1+2
@@ -3883,13 +3928,13 @@ L10053:
 	brl	L10054
 L149:
 ;	{
-	.line	544
+	.line	561
 ;		//k_debug_pointer("k_nodelist_foreach_data:ptr:",ptr);
 ;
 ;		//bRet = each(context,ptr->data);
 ;		//k_debug_integer("k_nodelist_foreach_data:bRet",bRet);
 ;		if(each(context,ptr->data))
-	.line	549
+	.line	566
 ;		{
 	ldy	#$4
 	lda	[<L147+ptr_1],Y
@@ -3907,10 +3952,10 @@ L149:
 	bne	L150
 	brl	L10055
 L150:
-	.line	550
+	.line	567
 ;			//k_debug_pointer("k_nodelist_foreach_data:FOUND DATA MATCH:",ptr);
 ;			return ptr;
-	.line	552
+	.line	569
 	ldx	<L147+ptr_1+2
 	lda	<L147+ptr_1
 L151:
@@ -3927,10 +3972,10 @@ L151:
 	tya
 	rtl
 ;		}
-	.line	553
+	.line	570
 ;		ptr = ptr->next;
 L10055:
-	.line	554
+	.line	571
 	ldy	#$a
 	lda	[<L147+ptr_1],Y
 	sta	<R0
@@ -3942,38 +3987,38 @@ L10055:
 	lda	<R0+2
 	sta	<L147+ptr_1+2
 ;	}
-	.line	555
+	.line	572
 	brl	L10053
 L10054:
 ;
 ;	//k_debug_pointer("k_nodelist_foreach_data:RETURNING:",ptr);
 ;
 ;	return NULL;
-	.line	559
+	.line	576
 	lda	#$0
 	tax
 	lda	#$0
 	brl	L151
 ;}
-	.line	560
-	.endblock	560
+	.line	577
+	.endblock	577
 L146	equ	8
 L147	equ	5
 	ends
 	efunc
-	.endfunc	560,5,8
-	.line	560
+	.endfunc	577,5,8
+	.line	577
 ;
 ;
 ;
 ;VOID k_nodelist_foreach_listdata(PFXNODELIST list,LPVOID context,FOREACHNODE each)
 ;{
-	.line	564
-	.line	565
+	.line	581
+	.line	582
 	NODEMAN
 	xdef	~~k_nodelist_foreach_listdata
 	func
-	.function	565
+	.function	582
 ~~k_nodelist_foreach_listdata:
 	longa	on
 	longi	on
@@ -3986,7 +4031,7 @@ L147	equ	5
 list_0	set	4
 context_0	set	8
 each_0	set	12
-	.block	565
+	.block	582
 ;	PFXNODE ptr = NULL;
 ;	if(list && list->listhead)
 ptr_1	set	0
@@ -3996,7 +4041,7 @@ ptr_1	set	0
 	.sym	each,12,641,6,32
 	stz	<L153+ptr_1
 	stz	<L153+ptr_1+2
-	.line	567
+	.line	584
 ;	{
 	lda	<L152+list_0
 	ora	<L152+list_0+2
@@ -4009,9 +4054,9 @@ L155:
 	bne	L156
 	brl	L10056
 L156:
-	.line	568
+	.line	585
 ;		k_nodelist_foreach_data(list->listhead->next,context,each);
-	.line	569
+	.line	586
 	pei	<L152+each_0+2
 	pei	<L152+each_0
 	pei	<L152+context_0+2
@@ -4029,10 +4074,10 @@ L156:
 	pha
 	jsl	~~k_nodelist_foreach_data
 ;	}
-	.line	570
+	.line	587
 ;}
 L10056:
-	.line	571
+	.line	588
 L157:
 	lda	<L152+2
 	sta	<L152+2+12
@@ -4044,22 +4089,22 @@ L157:
 	adc	#L152+12
 	tcs
 	rtl
-	.endblock	571
+	.endblock	588
 L152	equ	8
 L153	equ	5
 	ends
 	efunc
-	.endfunc	571,5,8
-	.line	571
+	.endfunc	588,5,8
+	.line	588
 ;
 ;VOID k_nodelist_foreach_listdata_remove(PFXNODELIST list,LPVOID context,FOREACHNODEUNTIL checkStatus)
 ;{
-	.line	573
-	.line	574
+	.line	590
+	.line	591
 	NODEMAN
 	xdef	~~k_nodelist_foreach_listdata_remove
 	func
-	.function	574
+	.function	591
 ~~k_nodelist_foreach_listdata_remove:
 	longa	on
 	longi	on
@@ -4072,7 +4117,7 @@ L153	equ	5
 list_0	set	4
 context_0	set	8
 checkStatus_0	set	12
-	.block	574
+	.block	591
 ;	PFXNODE ptr   = NULL;
 ;	PFXNODE tmp   = NULL;
 ;
@@ -4090,7 +4135,7 @@ tmp_1	set	4
 	stz	<L159+ptr_1+2
 	stz	<L159+tmp_1
 	stz	<L159+tmp_1+2
-	.line	580
+	.line	597
 ;	{
 	lda	<L158+list_0
 	ora	<L158+list_0+2
@@ -4103,9 +4148,9 @@ L161:
 	bne	L162
 	brl	L10057
 L162:
-	.line	581
+	.line	598
 ;		ptr = list->listhead->next;
-	.line	582
+	.line	599
 	lda	[<L158+list_0]
 	sta	<R0
 	ldy	#$2
@@ -4118,7 +4163,7 @@ L162:
 	lda	[<R0],Y
 	sta	<L159+ptr_1+2
 ;		while(ptr!=NULL)
-	.line	583
+	.line	600
 L10058:
 	lda	<L159+ptr_1
 	ora	<L159+ptr_1+2
@@ -4126,9 +4171,9 @@ L10058:
 	brl	L10059
 L163:
 ;		{
-	.line	584
+	.line	601
 ;			if(checkStatus(context,ptr->data))
-	.line	585
+	.line	602
 ;			{
 	ldy	#$4
 	lda	[<L159+ptr_1],Y
@@ -4146,9 +4191,9 @@ L163:
 	bne	L164
 	brl	L10060
 L164:
-	.line	586
+	.line	603
 ;				tmp = ptr->next;
-	.line	587
+	.line	604
 	ldy	#$a
 	lda	[<L159+ptr_1],Y
 	sta	<L159+tmp_1
@@ -4157,7 +4202,7 @@ L164:
 	sta	<L159+tmp_1+2
 ;
 ;				if(ptr->last)
-	.line	589
+	.line	606
 ;					ptr->last->next = ptr->next;
 	ldy	#$6
 	lda	[<L159+ptr_1],Y
@@ -4166,7 +4211,7 @@ L164:
 	bne	L165
 	brl	L10061
 L165:
-	.line	590
+	.line	607
 	ldy	#$6
 	lda	[<L159+ptr_1],Y
 	sta	<R0
@@ -4183,7 +4228,7 @@ L165:
 	sta	[<R0],Y
 ;				if(ptr->next)
 L10061:
-	.line	591
+	.line	608
 ;					ptr->next->last = ptr->last;
 	ldy	#$a
 	lda	[<L159+ptr_1],Y
@@ -4192,7 +4237,7 @@ L10061:
 	bne	L166
 	brl	L10062
 L166:
-	.line	592
+	.line	609
 	ldy	#$a
 	lda	[<L159+ptr_1],Y
 	sta	<R0
@@ -4210,7 +4255,7 @@ L166:
 ;
 ;				if(list->deallocator)
 L10062:
-	.line	594
+	.line	611
 ;				{
 	ldy	#$8
 	lda	[<L158+list_0],Y
@@ -4219,9 +4264,9 @@ L10062:
 	bne	L167
 	brl	L10063
 L167:
-	.line	595
+	.line	612
 ;					list->deallocator(ptr->name,ptr->data);
-	.line	596
+	.line	613
 	ldy	#$4
 	lda	[<L159+ptr_1],Y
 	pha
@@ -4249,29 +4294,29 @@ L167:
 ;
 ;					//memset(ptr,0,sizeof(PFXNODE));
 ;					k_mem_deallocate_heap(ptr);
-	.line	601
+	.line	618
 	pei	<L159+ptr_1+2
 	pei	<L159+ptr_1
 	jsl	~~k_mem_deallocate_heap
 ;				}
-	.line	602
+	.line	619
 ;
 ;				ptr = tmp;
 L10063:
-	.line	604
+	.line	621
 	lda	<L159+tmp_1
 	sta	<L159+ptr_1
 	lda	<L159+tmp_1+2
 	sta	<L159+ptr_1+2
 ;			}
-	.line	605
+	.line	622
 ;			else
 	brl	L10064
 L10060:
 ;			{
-	.line	607
+	.line	624
 ;				ptr = ptr->next;
-	.line	608
+	.line	625
 	ldy	#$a
 	lda	[<L159+ptr_1],Y
 	sta	<R0
@@ -4283,18 +4328,18 @@ L10060:
 	lda	<R0+2
 	sta	<L159+ptr_1+2
 ;			}
-	.line	609
+	.line	626
 L10064:
 ;		}
-	.line	610
+	.line	627
 	brl	L10058
 L10059:
 ;
 ;	}
-	.line	612
+	.line	629
 ;}
 L10057:
-	.line	613
+	.line	630
 L168:
 	lda	<L158+2
 	sta	<L158+2+12
@@ -4306,22 +4351,22 @@ L168:
 	adc	#L158+12
 	tcs
 	rtl
-	.endblock	613
+	.endblock	630
 L158	equ	12
 L159	equ	5
 	ends
 	efunc
-	.endfunc	613,5,12
-	.line	613
+	.endfunc	630,5,12
+	.line	630
 ;
 ;PFXNODE k_nodelist_foreach_until_listdata(PFXNODELIST list,LPVOID context,FOREACHNODEUNTIL each)
 ;{
-	.line	615
-	.line	616
+	.line	632
+	.line	633
 	NODEMAN
 	xdef	~~k_nodelist_foreach_until_listdata
 	func
-	.function	616
+	.function	633
 ~~k_nodelist_foreach_until_listdata:
 	longa	on
 	longi	on
@@ -4334,7 +4379,7 @@ L159	equ	5
 list_0	set	4
 context_0	set	8
 each_0	set	12
-	.block	616
+	.block	633
 ;	PFXNODE ptr = NULL;
 ;	if(list && list->listhead)
 ptr_1	set	0
@@ -4344,7 +4389,7 @@ ptr_1	set	0
 	.sym	each,12,654,6,32
 	stz	<L170+ptr_1
 	stz	<L170+ptr_1+2
-	.line	618
+	.line	635
 ;	{
 	lda	<L169+list_0
 	ora	<L169+list_0+2
@@ -4357,10 +4402,10 @@ L172:
 	bne	L173
 	brl	L10065
 L173:
-	.line	619
+	.line	636
 ;		//k_debug_nodelist(list->listhead->next);
 ;		ptr = k_nodelist_foreach_until_data(list->listhead->next,context,each);
-	.line	621
+	.line	638
 	pei	<L169+each_0+2
 	pei	<L169+each_0
 	pei	<L169+context_0+2
@@ -4380,11 +4425,11 @@ L173:
 	sta	<L170+ptr_1
 	stx	<L170+ptr_1+2
 ;	}
-	.line	622
+	.line	639
 ;
 ;	return ptr;
 L10065:
-	.line	624
+	.line	641
 	ldx	<L170+ptr_1+2
 	lda	<L170+ptr_1
 L174:
@@ -4401,24 +4446,24 @@ L174:
 	tya
 	rtl
 ;}
-	.line	625
-	.endblock	625
+	.line	642
+	.endblock	642
 L169	equ	8
 L170	equ	5
 	ends
 	efunc
-	.endfunc	625,5,8
-	.line	625
+	.endfunc	642,5,8
+	.line	642
 ;
 ;
 ;VOID k_nodelist_foreach_type(PFXNODELIST list,BYTE type,LPVOID context,FOREACHNODE each)
 ;{
-	.line	628
-	.line	629
+	.line	645
+	.line	646
 	NODEMAN
 	xdef	~~k_nodelist_foreach_type
 	func
-	.function	629
+	.function	646
 ~~k_nodelist_foreach_type:
 	longa	on
 	longi	on
@@ -4432,7 +4477,7 @@ list_0	set	4
 type_0	set	8
 context_0	set	10
 each_0	set	14
-	.block	629
+	.block	646
 ;	PFXNODE ptr = NULL;
 ;	if(list && list->listhead)
 ptr_1	set	0
@@ -4443,7 +4488,7 @@ ptr_1	set	0
 	.sym	each,14,641,6,32
 	stz	<L176+ptr_1
 	stz	<L176+ptr_1+2
-	.line	631
+	.line	648
 ;	{
 	lda	<L175+list_0
 	ora	<L175+list_0+2
@@ -4456,22 +4501,16 @@ L178:
 	bne	L179
 	brl	L10066
 L179:
-	.line	632
-;		ptr = list->listhead->next;
-	.line	633
+	.line	649
+;		ptr = list->listhead;
+	.line	650
 	lda	[<L175+list_0]
-	sta	<R0
+	sta	<L176+ptr_1
 	ldy	#$2
 	lda	[<L175+list_0],Y
-	sta	<R0+2
-	ldy	#$a
-	lda	[<R0],Y
-	sta	<L176+ptr_1
-	ldy	#$c
-	lda	[<R0],Y
 	sta	<L176+ptr_1+2
 ;		while(ptr!=NULL)
-	.line	634
+	.line	651
 L10067:
 	lda	<L176+ptr_1
 	ora	<L176+ptr_1+2
@@ -4479,10 +4518,13 @@ L10067:
 	brl	L10068
 L180:
 ;		{
-	.line	635
+	.line	652
+;			//k_debug_hex("k_nodelist_foreach_type:type:",type);
+;			//k_debug_hex("k_nodelist_foreach_type:ptr->type:",ptr->type);
+;			//k_debug_nstrings("k_nodelist_foreach_type:name:",ptr->name,32);
 ;			if(ptr->type == type)
-	.line	636
-;				each(context,ptr->data);
+	.line	656
+;			{
 	sep	#$20
 	longa	off
 	lda	[<L176+ptr_1]
@@ -4492,7 +4534,9 @@ L180:
 	beq	L181
 	brl	L10069
 L181:
-	.line	637
+	.line	657
+;				each(context,ptr->data);
+	.line	658
 	ldy	#$4
 	lda	[<L176+ptr_1],Y
 	pha
@@ -4505,9 +4549,11 @@ L181:
 	lda	<L175+each_0
 	xref	~~~lcal
 	jsl	~~~lcal
+;			}
+	.line	659
 ;			ptr = ptr->next;
 L10069:
-	.line	638
+	.line	660
 	ldy	#$a
 	lda	[<L176+ptr_1],Y
 	sta	<R0
@@ -4519,14 +4565,14 @@ L10069:
 	lda	<R0+2
 	sta	<L176+ptr_1+2
 ;		}
-	.line	639
+	.line	661
 	brl	L10067
 L10068:
 ;	}
-	.line	640
+	.line	662
 ;}
 L10066:
-	.line	641
+	.line	663
 L182:
 	lda	<L175+2
 	sta	<L175+2+14
@@ -4538,25 +4584,25 @@ L182:
 	adc	#L175+14
 	tcs
 	rtl
-	.endblock	641
+	.endblock	663
 L175	equ	8
 L176	equ	5
 	ends
 	efunc
-	.endfunc	641,5,8
-	.line	641
+	.endfunc	663,5,8
+	.line	663
 ;
 ;//
 ;// node list helper functions and types
 ;//
 ;PFXNODELIST k_nodelist_allocate_list(LPCSTR listName,NodeListDeallocator deallocator)
 ;{
-	.line	646
-	.line	647
+	.line	668
+	.line	669
 	NODEMAN
 	xdef	~~k_nodelist_allocate_list
 	func
-	.function	647
+	.function	669
 ~~k_nodelist_allocate_list:
 	longa	on
 	longi	on
@@ -4568,7 +4614,7 @@ L176	equ	5
 	tcd
 listName_0	set	4
 deallocator_0	set	8
-	.block	647
+	.block	669
 ;	LPCSTR safeName = NULL;
 ;	PFXNODELIST nodelist = NULL;
 ;
@@ -4583,29 +4629,30 @@ nodelist_1	set	4
 	stz	<L184+safeName_1+2
 	stz	<L184+nodelist_1
 	stz	<L184+nodelist_1+2
-	.line	651
+	.line	673
+	pea	#^$c
 	pea	#<$c
 	jsl	~~k_mem_allocate_heap
 	sta	<L184+nodelist_1
 	stx	<L184+nodelist_1+2
 ;	if(nodelist)
-	.line	652
+	.line	674
 ;	{
 	lda	<L184+nodelist_1
 	ora	<L184+nodelist_1+2
 	bne	L186
 	brl	L10070
 L186:
-	.line	653
+	.line	675
 ;		if(listName)
-	.line	654
+	.line	676
 ;			safeName = k_string_copy_string(listName);
 	lda	<L183+listName_0
 	ora	<L183+listName_0+2
 	bne	L187
 	brl	L10071
 L187:
-	.line	655
+	.line	677
 	pei	<L183+listName_0+2
 	pei	<L183+listName_0
 	jsl	~~k_string_copy_string
@@ -4614,7 +4661,7 @@ L187:
 ;
 ;		nodelist->listhead = k_nodelist_init(-1,"head",(LPVOID)safeName);
 L10071:
-	.line	657
+	.line	679
 	pei	<L184+safeName_1+2
 	pei	<L184+safeName_1
 	pea	#^L140
@@ -4629,7 +4676,7 @@ L10071:
 	ldy	#$2
 	sta	[<L184+nodelist_1],Y
 ;		nodelist->deallocator = deallocator;
-	.line	658
+	.line	680
 	lda	<L183+deallocator_0
 	ldy	#$8
 	sta	[<L184+nodelist_1],Y
@@ -4640,11 +4687,11 @@ L10071:
 ;		//if(safeName)
 ;		//	k_mem_deallocate_heap((LPVOID)safeName);
 ;	}
-	.line	662
+	.line	684
 ;
 ;	return nodelist;
 L10070:
-	.line	664
+	.line	686
 	ldx	<L184+nodelist_1+2
 	lda	<L184+nodelist_1
 L188:
@@ -4661,14 +4708,14 @@ L188:
 	tya
 	rtl
 ;}
-	.line	665
-	.endblock	665
+	.line	687
+	.endblock	687
 L183	equ	12
 L184	equ	5
 	ends
 	efunc
-	.endfunc	665,5,12
-	.line	665
+	.endfunc	687,5,12
+	.line	687
 	data
 L140:
 	db	$68,$65,$61,$64,$00
@@ -4676,12 +4723,12 @@ L140:
 ;
 ;PFXNODE	k_nodelist_getfirstnode(PFXNODELIST list)
 ;{
-	.line	667
-	.line	668
+	.line	689
+	.line	690
 	NODEMAN
 	xdef	~~k_nodelist_getfirstnode
 	func
-	.function	668
+	.function	690
 ~~k_nodelist_getfirstnode:
 	longa	on
 	longi	on
@@ -4692,7 +4739,7 @@ L140:
 	phd
 	tcd
 list_0	set	4
-	.block	668
+	.block	690
 ;	PFXNODE node = NULL;
 ;
 ;	if(list && list->listhead)
@@ -4701,7 +4748,7 @@ node_1	set	0
 	.sym	list,4,138,6,32,3
 	stz	<L191+node_1
 	stz	<L191+node_1+2
-	.line	671
+	.line	693
 ;		node = list->listhead->next;
 	lda	<L190+list_0
 	ora	<L190+list_0+2
@@ -4714,7 +4761,7 @@ L193:
 	bne	L194
 	brl	L10072
 L194:
-	.line	672
+	.line	694
 	lda	[<L190+list_0]
 	sta	<R0
 	ldy	#$2
@@ -4729,7 +4776,7 @@ L194:
 ;
 ;	return node;
 L10072:
-	.line	674
+	.line	696
 	ldx	<L191+node_1+2
 	lda	<L191+node_1
 L195:
@@ -4746,23 +4793,23 @@ L195:
 	tya
 	rtl
 ;}
-	.line	675
-	.endblock	675
+	.line	697
+	.endblock	697
 L190	equ	8
 L191	equ	5
 	ends
 	efunc
-	.endfunc	675,5,8
-	.line	675
+	.endfunc	697,5,8
+	.line	697
 ;
 ;BOOL k_nodelist_empty(PFXNODELIST list)
 ;{
-	.line	677
-	.line	678
+	.line	699
+	.line	700
 	NODEMAN
 	xdef	~~k_nodelist_empty
 	func
-	.function	678
+	.function	700
 ~~k_nodelist_empty:
 	longa	on
 	longi	on
@@ -4773,7 +4820,7 @@ L191	equ	5
 	phd
 	tcd
 list_0	set	4
-	.block	678
+	.block	700
 ;	BOOL bRet = TRUE;
 ;
 ;	if(list && list->listhead && list->listhead->next)
@@ -4786,7 +4833,7 @@ bRet_1	set	0
 	sta	<L197+bRet_1
 	rep	#$20
 	longa	on
-	.line	681
+	.line	703
 ;	{
 	lda	<L196+list_0
 	ora	<L196+list_0+2
@@ -4811,20 +4858,20 @@ L200:
 	bne	L201
 	brl	L10073
 L201:
-	.line	682
+	.line	704
 ;		bRet = FALSE;
-	.line	683
+	.line	705
 	sep	#$20
 	longa	off
 	stz	<L197+bRet_1
 	rep	#$20
 	longa	on
 ;	}
-	.line	684
+	.line	706
 ;
 ;	return bRet;
 L10073:
-	.line	686
+	.line	708
 	lda	<L197+bRet_1
 	and	#$ff
 L202:
@@ -4841,23 +4888,23 @@ L202:
 	tya
 	rtl
 ;}
-	.line	687
-	.endblock	687
+	.line	709
+	.endblock	709
 L196	equ	5
 L197	equ	5
 	ends
 	efunc
-	.endfunc	687,5,5
-	.line	687
+	.endfunc	709,5,5
+	.line	709
 ;
 ;VOID k_deallocate_default(LPCSTR name,LPVOID data)
 ;{
-	.line	689
-	.line	690
+	.line	711
+	.line	712
 	NODEMAN
 	xdef	~~k_deallocate_default
 	func
-	.function	690
+	.function	712
 ~~k_deallocate_default:
 	longa	on
 	longi	on
@@ -4869,24 +4916,24 @@ L197	equ	5
 	tcd
 name_0	set	4
 data_0	set	8
-	.block	690
+	.block	712
 ;	if(data)
 	.sym	name,4,142,6,32
 	.sym	data,8,129,6,32
-	.line	691
+	.line	713
 ;		k_mem_deallocate_heap(data);
 	lda	<L203+data_0
 	ora	<L203+data_0+2
 	bne	L206
 	brl	L10074
 L206:
-	.line	692
+	.line	714
 	pei	<L203+data_0+2
 	pei	<L203+data_0
 	jsl	~~k_mem_deallocate_heap
 ;}
 L10074:
-	.line	693
+	.line	715
 L207:
 	lda	<L203+2
 	sta	<L203+2+8
@@ -4898,22 +4945,22 @@ L207:
 	adc	#L203+8
 	tcs
 	rtl
-	.endblock	693
+	.endblock	715
 L203	equ	0
 L204	equ	1
 	ends
 	efunc
-	.endfunc	693,1,0
-	.line	693
+	.endfunc	715,1,0
+	.line	715
 ;
 ;VOID k_nodelist_deallocate_list(PFXNODELIST nodelist)
 ;{
-	.line	695
-	.line	696
+	.line	717
+	.line	718
 	NODEMAN
 	xdef	~~k_nodelist_deallocate_list
 	func
-	.function	696
+	.function	718
 ~~k_nodelist_deallocate_list:
 	longa	on
 	longi	on
@@ -4924,7 +4971,7 @@ L204	equ	1
 	phd
 	tcd
 nodelist_0	set	4
-	.block	696
+	.block	718
 ;	PFXNODE ptr  = NULL;
 ;	PFXNODE ptmp = NULL;
 ;
@@ -4938,23 +4985,23 @@ ptmp_1	set	4
 	stz	<L209+ptr_1+2
 	stz	<L209+ptmp_1
 	stz	<L209+ptmp_1+2
-	.line	700
+	.line	722
 ;	{
 	lda	<L208+nodelist_0
 	ora	<L208+nodelist_0+2
 	bne	L211
 	brl	L10075
 L211:
-	.line	701
+	.line	723
 ;		ptr = nodelist->listhead;
-	.line	702
+	.line	724
 	lda	[<L208+nodelist_0]
 	sta	<L209+ptr_1
 	ldy	#$2
 	lda	[<L208+nodelist_0],Y
 	sta	<L209+ptr_1+2
 ;		while(ptr)
-	.line	703
+	.line	725
 L10076:
 	lda	<L209+ptr_1
 	ora	<L209+ptr_1+2
@@ -4962,9 +5009,9 @@ L10076:
 	brl	L10077
 L212:
 ;		{
-	.line	704
+	.line	726
 ;			ptmp = ptr->next;
-	.line	705
+	.line	727
 	ldy	#$a
 	lda	[<L209+ptr_1],Y
 	sta	<L209+ptmp_1
@@ -4973,7 +5020,7 @@ L212:
 	sta	<L209+ptmp_1+2
 ;
 ;			if((ptr != nodelist->listhead) && nodelist->deallocator)
-	.line	707
+	.line	729
 ;			{
 	lda	<L209+ptr_1
 	cmp	[<L208+nodelist_0]
@@ -4992,9 +5039,9 @@ L214:
 	bne	L215
 	brl	L10078
 L215:
-	.line	708
+	.line	730
 ;				nodelist->deallocator(ptr->name,ptr->data);
-	.line	709
+	.line	731
 	ldy	#$4
 	lda	[<L209+ptr_1],Y
 	pha
@@ -5018,21 +5065,21 @@ L215:
 	xref	~~~lcal
 	jsl	~~~lcal
 ;			}
-	.line	710
+	.line	732
 ;			else
 	brl	L10079
 L10078:
 ;			{
-	.line	712
+	.line	734
 ;				//if(nodelist->listhead->data)
 ;				//	k_debug_strings("k_nodelist_deallocate_list:",(LPSTR)nodelist->listhead->data);
 ;				//k_debug_pointer("k_nodelist_deallocate_list:skipping deallocation:",nodelist->listhead->next->data);
 ;			}
-	.line	716
+	.line	738
 L10079:
 ;
 ;			if(ptr == nodelist->listhead)
-	.line	718
+	.line	740
 ;			{
 	lda	<L209+ptr_1
 	cmp	[<L208+nodelist_0]
@@ -5044,9 +5091,9 @@ L216:
 	beq	L217
 	brl	L10080
 L217:
-	.line	719
+	.line	741
 ;				if(nodelist->listhead->data)
-	.line	720
+	.line	742
 ;				{
 	lda	[<L208+nodelist_0]
 	sta	<R0
@@ -5060,10 +5107,10 @@ L217:
 	bne	L218
 	brl	L10081
 L218:
-	.line	721
+	.line	743
 ;					//k_debug_pointer("k_nodelist_deallocate_list:nodelist->listhead->data:",nodelist->listhead->data);
 ;					k_mem_deallocate_heap(nodelist->listhead->data);
-	.line	723
+	.line	745
 	lda	[<L208+nodelist_0]
 	sta	<R0
 	ldy	#$2
@@ -5077,39 +5124,39 @@ L218:
 	pha
 	jsl	~~k_mem_deallocate_heap
 ;				}
-	.line	724
+	.line	746
 ;			}
 L10081:
-	.line	725
+	.line	747
 ;
 ;
 ;			k_mem_deallocate_heap(ptr);
 L10080:
-	.line	728
+	.line	750
 	pei	<L209+ptr_1+2
 	pei	<L209+ptr_1
 	jsl	~~k_mem_deallocate_heap
 ;
 ;			ptr = ptmp;
-	.line	730
+	.line	752
 	lda	<L209+ptmp_1
 	sta	<L209+ptr_1
 	lda	<L209+ptmp_1+2
 	sta	<L209+ptr_1+2
 ;		}
-	.line	731
+	.line	753
 	brl	L10076
 L10077:
 ;		k_mem_deallocate_heap(nodelist);
-	.line	732
+	.line	754
 	pei	<L208+nodelist_0+2
 	pei	<L208+nodelist_0
 	jsl	~~k_mem_deallocate_heap
 ;	}
-	.line	733
+	.line	755
 ;}
 L10075:
-	.line	734
+	.line	756
 L219:
 	lda	<L208+2
 	sta	<L208+2+4
@@ -5121,23 +5168,23 @@ L219:
 	adc	#L208+4
 	tcs
 	rtl
-	.endblock	734
+	.endblock	756
 L208	equ	12
 L209	equ	5
 	ends
 	efunc
-	.endfunc	734,5,12
-	.line	734
+	.endfunc	756,5,12
+	.line	756
 ;
 ;
 ;PFXNODELIST	k_nodelist_clear_list(PFXNODELIST nodelist)
 ;{
-	.line	737
-	.line	738
+	.line	759
+	.line	760
 	NODEMAN
 	xdef	~~k_nodelist_clear_list
 	func
-	.function	738
+	.function	760
 ~~k_nodelist_clear_list:
 	longa	on
 	longi	on
@@ -5148,7 +5195,7 @@ L209	equ	5
 	phd
 	tcd
 nodelist_0	set	4
-	.block	738
+	.block	760
 ;	PFXNODE ptr  = NULL;
 ;	PFXNODE ptmp = NULL;
 ;
@@ -5162,16 +5209,16 @@ ptmp_1	set	4
 	stz	<L221+ptr_1+2
 	stz	<L221+ptmp_1
 	stz	<L221+ptmp_1+2
-	.line	742
+	.line	764
 ;	{
 	lda	<L220+nodelist_0
 	ora	<L220+nodelist_0+2
 	bne	L223
 	brl	L10082
 L223:
-	.line	743
+	.line	765
 ;		ptr = nodelist->listhead->next;
-	.line	744
+	.line	766
 	lda	[<L220+nodelist_0]
 	sta	<R0
 	ldy	#$2
@@ -5184,7 +5231,7 @@ L223:
 	lda	[<R0],Y
 	sta	<L221+ptr_1+2
 ;		while(ptr)
-	.line	745
+	.line	767
 L10083:
 	lda	<L221+ptr_1
 	ora	<L221+ptr_1+2
@@ -5192,9 +5239,9 @@ L10083:
 	brl	L10084
 L224:
 ;		{
-	.line	746
+	.line	768
 ;			ptmp = ptr->next->next;
-	.line	747
+	.line	769
 	ldy	#$a
 	lda	[<L221+ptr_1],Y
 	sta	<R0
@@ -5209,7 +5256,7 @@ L224:
 	sta	<L221+ptmp_1+2
 ;
 ;			if(nodelist->deallocator)
-	.line	749
+	.line	771
 ;				nodelist->deallocator(ptr->name,ptr->data);
 	ldy	#$8
 	lda	[<L220+nodelist_0],Y
@@ -5218,7 +5265,7 @@ L224:
 	bne	L225
 	brl	L10085
 L225:
-	.line	750
+	.line	772
 	ldy	#$4
 	lda	[<L221+ptr_1],Y
 	pha
@@ -5244,23 +5291,23 @@ L225:
 ;
 ;			k_mem_deallocate_heap(ptr);
 L10085:
-	.line	752
+	.line	774
 	pei	<L221+ptr_1+2
 	pei	<L221+ptr_1
 	jsl	~~k_mem_deallocate_heap
 ;
 ;			ptr = ptmp;
-	.line	754
+	.line	776
 	lda	<L221+ptmp_1
 	sta	<L221+ptr_1
 	lda	<L221+ptmp_1+2
 	sta	<L221+ptr_1+2
 ;		}
-	.line	755
+	.line	777
 	brl	L10083
 L10084:
 ;		nodelist->listhead->next = NULL;
-	.line	756
+	.line	778
 	lda	[<L220+nodelist_0]
 	sta	<R0
 	ldy	#$2
@@ -5273,7 +5320,7 @@ L10084:
 	ldy	#$c
 	sta	[<R0],Y
 ;		nodelist->listhead->last = NULL;
-	.line	757
+	.line	779
 	lda	[<L220+nodelist_0]
 	sta	<R0
 	ldy	#$2
@@ -5286,11 +5333,11 @@ L10084:
 	ldy	#$8
 	sta	[<R0],Y
 ;	}
-	.line	758
+	.line	780
 ;
 ;	return nodelist;
 L10082:
-	.line	760
+	.line	782
 	ldx	<L220+nodelist_0+2
 	lda	<L220+nodelist_0
 L226:
@@ -5307,23 +5354,23 @@ L226:
 	tya
 	rtl
 ;}
-	.line	761
-	.endblock	761
+	.line	783
+	.endblock	783
 L220	equ	12
 L221	equ	5
 	ends
 	efunc
-	.endfunc	761,5,12
-	.line	761
+	.endfunc	783,5,12
+	.line	783
 ;
 ;PFXNODE k_nodelist_naddtolist_tohead(PFXNODELIST list,BYTE type,ULONG objId,LPVOID data)
 ;{
-	.line	763
-	.line	764
+	.line	785
+	.line	786
 	NODEMAN
 	xdef	~~k_nodelist_naddtolist_tohead
 	func
-	.function	764
+	.function	786
 ~~k_nodelist_naddtolist_tohead:
 	longa	on
 	longi	on
@@ -5337,7 +5384,7 @@ list_0	set	4
 type_0	set	8
 objId_0	set	10
 data_0	set	14
-	.block	764
+	.block	786
 ;	UCHAR buffer[16];
 ;
 ;	return k_nodelist_addtolist_tohead(list,type,k_longtodec(objId,buffer),data);
@@ -5347,7 +5394,7 @@ buffer_1	set	0
 	.sym	type,8,14,6,8
 	.sym	objId,10,18,6,32
 	.sym	data,14,129,6,32
-	.line	767
+	.line	789
 	pei	<L227+data_0+2
 	pei	<L227+data_0
 	pea	#0
@@ -5384,23 +5431,23 @@ L230:
 	tya
 	rtl
 ;}
-	.line	768
-	.endblock	768
+	.line	790
+	.endblock	790
 L227	equ	24
 L228	equ	9
 	ends
 	efunc
-	.endfunc	768,9,24
-	.line	768
+	.endfunc	790,9,24
+	.line	790
 ;
 ;PFXNODE k_nodelist_addtolist_tohead(PFXNODELIST list,BYTE type,LPCSTR name,LPVOID data)
 ;{
-	.line	770
-	.line	771
+	.line	792
+	.line	793
 	NODEMAN
 	xdef	~~k_nodelist_addtolist_tohead
 	func
-	.function	771
+	.function	793
 ~~k_nodelist_addtolist_tohead:
 	longa	on
 	longi	on
@@ -5414,7 +5461,7 @@ list_0	set	4
 type_0	set	8
 name_0	set	10
 data_0	set	14
-	.block	771
+	.block	793
 ;	PFXNODE node = NULL;
 ;
 ;	/*
@@ -5433,7 +5480,7 @@ node_1	set	0
 	.sym	data,14,129,6,32
 	stz	<L232+node_1
 	stz	<L232+node_1+2
-	.line	781
+	.line	803
 ;	{
 	lda	<L231+list_0
 	ora	<L231+list_0+2
@@ -5446,9 +5493,9 @@ L234:
 	bne	L235
 	brl	L10086
 L235:
-	.line	782
+	.line	804
 ;		if(!k_nodelist_getname_and_type(list->listhead,name,type))
-	.line	783
+	.line	805
 ;		{
 	pei	<L231+type_0
 	pei	<L231+name_0+2
@@ -5466,9 +5513,9 @@ L235:
 	beq	L236
 	brl	L10087
 L236:
-	.line	784
+	.line	806
 ;			node = k_nodelist_create(type,name,data,NULL,NULL);
-	.line	785
+	.line	807
 	pea	#^$0
 	pea	#<$0
 	pea	#^$0
@@ -5482,16 +5529,16 @@ L236:
 	sta	<L232+node_1
 	stx	<L232+node_1+2
 ;			if(node)
-	.line	786
+	.line	808
 ;			{
 	lda	<L232+node_1
 	ora	<L232+node_1+2
 	bne	L237
 	brl	L10088
 L237:
-	.line	787
+	.line	809
 ;				k_nodelist_addtohead(list->listhead,node);
-	.line	788
+	.line	810
 	pei	<L232+node_1+2
 	pei	<L232+node_1
 	ldy	#$2
@@ -5501,24 +5548,24 @@ L237:
 	pha
 	jsl	~~k_nodelist_addtohead
 ;			}
-	.line	789
+	.line	811
 ;		}
 L10088:
-	.line	790
+	.line	812
 ;		else
 	brl	L10089
 L10087:
 ;		{
-	.line	792
+	.line	814
 ;			if(name!=NULL)
-	.line	793
-;				k_exec_throw_exception(THIS_MODULE,0x00020002,k_string_replace("Attempt to add node with duplicate name: %s1","%s1",name),-1);
+	.line	815
+;				k_exec_throw_exception(k_nodelist_addtolist_tohead,0x00020002,k_string_replace("Attempt to add node with duplicate name: %s1","%s1",name),-1);
 	lda	<L231+name_0
 	ora	<L231+name_0+2
 	bne	L238
 	brl	L10090
 L238:
-	.line	794
+	.line	816
 	pea	#<$ffffffff
 	pei	<L231+name_0+2
 	pei	<L231+name_0
@@ -5533,32 +5580,28 @@ L238:
 	pha
 	pea	#^$20002
 	pea	#<$20002
-	lda	|~~THIS_MODULE+2
-	pha
-	lda	|~~THIS_MODULE
-	pha
+	pea	#^~~k_nodelist_addtolist_tohead
+	pea	#<~~k_nodelist_addtolist_tohead
 	jsl	~~k_exec_throw_exception
 ;			else
 	brl	L10091
 L10090:
-;				k_exec_throw_exception(THIS_MODULE,0x00020002,"Attempt to add node with duplicate name.",-1);
-	.line	796
+;				k_exec_throw_exception(k_nodelist_addtolist_tohead,0x00020002,"Attempt to add node with duplicate name.",-1);
+	.line	818
 	pea	#<$ffffffff
 	pea	#^L189+49
 	pea	#<L189+49
 	pea	#^$20002
 	pea	#<$20002
-	lda	|~~THIS_MODULE+2
-	pha
-	lda	|~~THIS_MODULE
-	pha
+	pea	#^~~k_nodelist_addtolist_tohead
+	pea	#<~~k_nodelist_addtolist_tohead
 	jsl	~~k_exec_throw_exception
 L10091:
 ;		}
-	.line	797
+	.line	819
 L10089:
 ;	}
-	.line	798
+	.line	820
 ;	//k_debug_string("check k_nodelist_addtolist\r\n");
 ;	//k_heap_integrity_check();
 ;
@@ -5566,7 +5609,7 @@ L10089:
 ;
 ;	return node;
 L10086:
-	.line	804
+	.line	826
 	ldx	<L232+node_1+2
 	lda	<L232+node_1
 L239:
@@ -5583,14 +5626,14 @@ L239:
 	tya
 	rtl
 ;}
-	.line	805
-	.endblock	805
+	.line	827
+	.endblock	827
 L231	equ	8
 L232	equ	5
 	ends
 	efunc
-	.endfunc	805,5,8
-	.line	805
+	.endfunc	827,5,8
+	.line	827
 	data
 L189:
 	db	$41,$74,$74,$65,$6D,$70,$74,$20,$74,$6F,$20,$61,$64,$64,$20
@@ -5603,12 +5646,12 @@ L189:
 ;
 ;PFXNODE k_nodelist_naddtolist(PFXNODELIST list,BYTE type,ULONG objId,LPVOID data)
 ;{
-	.line	807
-	.line	808
+	.line	829
+	.line	830
 	NODEMAN
 	xdef	~~k_nodelist_naddtolist
 	func
-	.function	808
+	.function	830
 ~~k_nodelist_naddtolist:
 	longa	on
 	longi	on
@@ -5622,7 +5665,7 @@ list_0	set	4
 type_0	set	8
 objId_0	set	10
 data_0	set	14
-	.block	808
+	.block	830
 ;	UCHAR buffer[16];
 ;
 ;	return k_nodelist_addtolist(list,type,k_longtodec(objId,buffer),data);
@@ -5632,7 +5675,7 @@ buffer_1	set	0
 	.sym	type,8,14,6,8
 	.sym	objId,10,18,6,32
 	.sym	data,14,129,6,32
-	.line	811
+	.line	833
 	pei	<L241+data_0+2
 	pei	<L241+data_0
 	pea	#0
@@ -5669,23 +5712,23 @@ L244:
 	tya
 	rtl
 ;}
-	.line	812
-	.endblock	812
+	.line	834
+	.endblock	834
 L241	equ	24
 L242	equ	9
 	ends
 	efunc
-	.endfunc	812,9,24
-	.line	812
+	.endfunc	834,9,24
+	.line	834
 ;
 ;PFXNODE k_nodelist_addtolist(PFXNODELIST list,BYTE type,LPCSTR name,LPVOID data)
 ;{
-	.line	814
-	.line	815
+	.line	836
+	.line	837
 	NODEMAN
 	xdef	~~k_nodelist_addtolist
 	func
-	.function	815
+	.function	837
 ~~k_nodelist_addtolist:
 	longa	on
 	longi	on
@@ -5699,7 +5742,7 @@ list_0	set	4
 type_0	set	8
 name_0	set	10
 data_0	set	14
-	.block	815
+	.block	837
 ;	PFXNODE node = NULL;
 ;
 ;	//k_debug_pointer("k_nodelist_addtolist:enter:",list);
@@ -5718,7 +5761,7 @@ node_1	set	0
 	.sym	data,14,129,6,32
 	stz	<L246+node_1
 	stz	<L246+node_1+2
-	.line	825
+	.line	847
 ;	{
 	lda	<L245+list_0
 	ora	<L245+list_0+2
@@ -5731,9 +5774,9 @@ L248:
 	bne	L249
 	brl	L10092
 L249:
-	.line	826
+	.line	848
 ;		if(!k_nodelist_getname_and_type(list->listhead,name,type))
-	.line	827
+	.line	849
 ;		{
 	pei	<L245+type_0
 	pei	<L245+name_0+2
@@ -5751,9 +5794,9 @@ L249:
 	beq	L250
 	brl	L10093
 L250:
-	.line	828
+	.line	850
 ;			node = k_nodelist_create(type,name,data,NULL,NULL);
-	.line	829
+	.line	851
 	pea	#^$0
 	pea	#<$0
 	pea	#^$0
@@ -5767,16 +5810,16 @@ L250:
 	sta	<L246+node_1
 	stx	<L246+node_1+2
 ;			if(node)
-	.line	830
+	.line	852
 ;			{
 	lda	<L246+node_1
 	ora	<L246+node_1+2
 	bne	L251
 	brl	L10094
 L251:
-	.line	831
+	.line	853
 ;				k_nodelist_add(list->listhead,node);
-	.line	832
+	.line	854
 	pei	<L246+node_1+2
 	pei	<L246+node_1
 	ldy	#$2
@@ -5786,26 +5829,26 @@ L251:
 	pha
 	jsl	~~k_nodelist_add
 ;			}
-	.line	833
+	.line	855
 ;		}
 L10094:
-	.line	834
+	.line	856
 ;		else
 	brl	L10095
 L10093:
 ;		{
-	.line	836
+	.line	858
 ;			//k_exec_throw_exception(THIS_MODULE,0x00020002,k_string_replace("Attempt to add node with duplicate name: %s1","%s1",name),-1);
 ;
 ;			if(name!=NULL)
-	.line	839
-;				k_exec_throw_exception(THIS_MODULE,0x00020002,k_string_replace("Attempt to add node with duplicate name: %s1","%s1",name),-1);
+	.line	861
+;				k_exec_throw_exception(k_nodelist_addtolist,(ULONG)list,k_string_replace("Attempt to add node with duplicate name: %s1","%s1",name),-1);
 	lda	<L245+name_0
 	ora	<L245+name_0+2
 	bne	L252
 	brl	L10096
 L252:
-	.line	840
+	.line	862
 	pea	#<$ffffffff
 	pei	<L245+name_0+2
 	pei	<L245+name_0
@@ -5818,35 +5861,31 @@ L252:
 	stx	<R0+2
 	phx
 	pha
-	pea	#^$20002
-	pea	#<$20002
-	lda	|~~THIS_MODULE+2
-	pha
-	lda	|~~THIS_MODULE
-	pha
+	pei	<L245+list_0+2
+	pei	<L245+list_0
+	pea	#^~~k_nodelist_addtolist
+	pea	#<~~k_nodelist_addtolist
 	jsl	~~k_exec_throw_exception
 ;			else
 	brl	L10097
 L10096:
-;				k_exec_throw_exception(THIS_MODULE,0x00020002,"Attempt to add node with duplicate name.",-1);
-	.line	842
+;				k_exec_throw_exception(k_nodelist_addtolist,(ULONG)list,"Attempt to add node with duplicate name.",-1);
+	.line	864
 	pea	#<$ffffffff
 	pea	#^L240+49
 	pea	#<L240+49
-	pea	#^$20002
-	pea	#<$20002
-	lda	|~~THIS_MODULE+2
-	pha
-	lda	|~~THIS_MODULE
-	pha
+	pei	<L245+list_0+2
+	pei	<L245+list_0
+	pea	#^~~k_nodelist_addtolist
+	pea	#<~~k_nodelist_addtolist
 	jsl	~~k_exec_throw_exception
 L10097:
 ;
 ;		}
-	.line	844
+	.line	866
 L10095:
 ;	}
-	.line	845
+	.line	867
 ;	//k_debug_string("check k_nodelist_addtolist\r\n");
 ;	//k_heap_integrity_check();
 ;
@@ -5854,7 +5893,7 @@ L10095:
 ;
 ;	return node;
 L10092:
-	.line	851
+	.line	873
 	ldx	<L246+node_1+2
 	lda	<L246+node_1
 L253:
@@ -5871,14 +5910,14 @@ L253:
 	tya
 	rtl
 ;}
-	.line	852
-	.endblock	852
+	.line	874
+	.endblock	874
 L245	equ	8
 L246	equ	5
 	ends
 	efunc
-	.endfunc	852,5,8
-	.line	852
+	.endfunc	874,5,8
+	.line	874
 	data
 L240:
 	db	$41,$74,$74,$65,$6D,$70,$74,$20,$74,$6F,$20,$61,$64,$64,$20
@@ -5891,12 +5930,12 @@ L240:
 ;
 ;PFXNODE k_nodelist_addnodetolist(PFXNODELIST list,PFXNODE new)
 ;{
-	.line	854
-	.line	855
+	.line	876
+	.line	877
 	NODEMAN
 	xdef	~~k_nodelist_addnodetolist
 	func
-	.function	855
+	.function	877
 ~~k_nodelist_addnodetolist:
 	longa	on
 	longi	on
@@ -5908,7 +5947,7 @@ L240:
 	tcd
 list_0	set	4
 new_0	set	8
-	.block	855
+	.block	877
 ;	PFXNODE node = NULL;
 ;
 ;	if(list && list->listhead)
@@ -5918,7 +5957,7 @@ node_1	set	0
 	.sym	new,8,138,6,32,2
 	stz	<L256+node_1
 	stz	<L256+node_1+2
-	.line	858
+	.line	880
 ;	{
 	lda	<L255+list_0
 	ora	<L255+list_0+2
@@ -5931,9 +5970,9 @@ L258:
 	bne	L259
 	brl	L10098
 L259:
-	.line	859
+	.line	881
 ;		if(!k_nodelist_getname_and_type(list->listhead,new->name,new->type))
-	.line	860
+	.line	882
 ;		{
 	lda	[<L255+new_0]
 	pha
@@ -5959,9 +5998,9 @@ L259:
 	beq	L260
 	brl	L10099
 L260:
-	.line	861
+	.line	883
 ;			k_nodelist_add(list->listhead,new);
-	.line	862
+	.line	884
 	pei	<L255+new_0+2
 	pei	<L255+new_0
 	ldy	#$2
@@ -5971,14 +6010,14 @@ L260:
 	pha
 	jsl	~~k_nodelist_add
 ;		}
-	.line	863
+	.line	885
 ;		else
 	brl	L10100
 L10099:
 ;		{
-	.line	865
-;			k_exec_throw_exception(THIS_MODULE,0x00020003,k_string_replace("Attempt to add node with duplicate name: %s1","%s1",new->name),-1);
-	.line	866
+	.line	887
+;			k_exec_throw_exception(k_nodelist_addnodetolist,0x00020003,k_string_replace("Attempt to add node with duplicate name: %s1","%s1",new->name),-1);
+	.line	888
 	pea	#<$ffffffff
 	clc
 	lda	#$e
@@ -6000,19 +6039,17 @@ L10099:
 	pha
 	pea	#^$20003
 	pea	#<$20003
-	lda	|~~THIS_MODULE+2
-	pha
-	lda	|~~THIS_MODULE
-	pha
+	pea	#^~~k_nodelist_addnodetolist
+	pea	#<~~k_nodelist_addnodetolist
 	jsl	~~k_exec_throw_exception
 ;		}
-	.line	867
+	.line	889
 L10100:
 ;	}
-	.line	868
+	.line	890
 ;	return node;
 L10098:
-	.line	869
+	.line	891
 	ldx	<L256+node_1+2
 	lda	<L256+node_1
 L261:
@@ -6029,14 +6066,14 @@ L261:
 	tya
 	rtl
 ;}
-	.line	870
-	.endblock	870
+	.line	892
+	.endblock	892
 L255	equ	12
 L256	equ	9
 	ends
 	efunc
-	.endfunc	870,9,12
-	.line	870
+	.endfunc	892,9,12
+	.line	892
 	data
 L254:
 	db	$41,$74,$74,$65,$6D,$70,$74,$20,$74,$6F,$20,$61,$64,$64,$20
@@ -6049,12 +6086,12 @@ L254:
 ;
 ;PFXNODE	k_nodelist_searchByName(PFXNODELIST list,LPCSTR name)
 ;{
-	.line	874
-	.line	875
+	.line	896
+	.line	897
 	NODEMAN
 	xdef	~~k_nodelist_searchByName
 	func
-	.function	875
+	.function	897
 ~~k_nodelist_searchByName:
 	longa	on
 	longi	on
@@ -6066,7 +6103,7 @@ L254:
 	tcd
 list_0	set	4
 name_0	set	8
-	.block	875
+	.block	897
 ;	PFXNODE node = NULL;
 ;
 ;	if(list && list->listhead)
@@ -6076,7 +6113,7 @@ node_1	set	0
 	.sym	name,8,142,6,32
 	stz	<L264+node_1
 	stz	<L264+node_1+2
-	.line	878
+	.line	900
 ;		node = k_nodelist_getname(list->listhead->next,(LPCHAR)name);
 	lda	<L263+list_0
 	ora	<L263+list_0+2
@@ -6089,7 +6126,7 @@ L266:
 	bne	L267
 	brl	L10101
 L267:
-	.line	879
+	.line	901
 	pei	<L263+name_0+2
 	pei	<L263+name_0
 	lda	[<L263+list_0]
@@ -6109,7 +6146,7 @@ L267:
 ;
 ;	return node;
 L10101:
-	.line	881
+	.line	903
 	ldx	<L264+node_1+2
 	lda	<L264+node_1
 L268:
@@ -6126,25 +6163,25 @@ L268:
 	tya
 	rtl
 ;}
-	.line	882
-	.endblock	882
+	.line	904
+	.endblock	904
 L263	equ	8
 L264	equ	5
 	ends
 	efunc
-	.endfunc	882,5,8
-	.line	882
+	.endfunc	904,5,8
+	.line	904
 ;
 ;
-;PFXNODE	k_nodelist_searchByType(PFXNODELIST list,BYTE type)
+;PFXNODE	k_nodelist_searchById(PFXNODELIST list,ULONG objId)
 ;{
-	.line	885
-	.line	886
+	.line	907
+	.line	908
 	NODEMAN
-	xdef	~~k_nodelist_searchByType
+	xdef	~~k_nodelist_searchById
 	func
-	.function	886
-~~k_nodelist_searchByType:
+	.function	908
+~~k_nodelist_searchById:
 	longa	on
 	longi	on
 	tsc
@@ -6154,19 +6191,22 @@ L264	equ	5
 	phd
 	tcd
 list_0	set	4
-type_0	set	8
-	.block	886
+objId_0	set	8
+	.block	908
 ;	PFXNODE node = NULL;
+;	UCHAR buffer[16];
 ;
 ;	if(list && list->listhead)
 node_1	set	0
+buffer_1	set	4
 	.sym	node,0,138,1,32,2
+	.sym	buffer,4,110,1,0,16
 	.sym	list,4,138,6,32,3
-	.sym	type,8,14,6,8
+	.sym	objId,8,18,6,32
 	stz	<L270+node_1
 	stz	<L270+node_1+2
-	.line	889
-;		node = k_nodelist_gettype(list->listhead->next,type);
+	.line	912
+;		node = k_nodelist_getname(list->listhead->next,(LPCSTR)k_longtodec(objId,buffer));
 	lda	<L269+list_0
 	ora	<L269+list_0+2
 	bne	L272
@@ -6178,60 +6218,73 @@ L272:
 	bne	L273
 	brl	L10102
 L273:
-	.line	890
-	pei	<L269+type_0
-	lda	[<L269+list_0]
+	.line	913
+	pea	#0
+	clc
+	tdc
+	adc	#<L270+buffer_1
+	pha
+	pei	<L269+objId_0+2
+	pei	<L269+objId_0
+	jsl	~~k_longtodec
 	sta	<R0
+	stx	<R0+2
+	phx
+	pha
+	lda	[<L269+list_0]
+	sta	<R1
 	ldy	#$2
 	lda	[<L269+list_0],Y
-	sta	<R0+2
+	sta	<R1+2
 	ldy	#$c
-	lda	[<R0],Y
+	lda	[<R1],Y
 	pha
 	ldy	#$a
-	lda	[<R0],Y
+	lda	[<R1],Y
 	pha
-	jsl	~~k_nodelist_gettype
+	jsl	~~k_nodelist_getname
 	sta	<L270+node_1
 	stx	<L270+node_1+2
 ;
 ;	return node;
 L10102:
-	.line	892
+	.line	915
 	ldx	<L270+node_1+2
 	lda	<L270+node_1
 L274:
 	tay
 	lda	<L269+2
-	sta	<L269+2+6
+	sta	<L269+2+8
 	lda	<L269+1
-	sta	<L269+1+6
+	sta	<L269+1+8
 	pld
 	tsc
 	clc
-	adc	#L269+6
+	adc	#L269+8
 	tcs
 	tya
 	rtl
 ;}
-	.line	893
-	.endblock	893
-L269	equ	8
-L270	equ	5
+	.line	916
+	.endblock	916
+L269	equ	28
+L270	equ	9
 	ends
 	efunc
-	.endfunc	893,5,8
-	.line	893
+	.endfunc	916,9,28
+	.line	916
 ;
-;LPCSTR k_nodelist_getlistname(PFXNODELIST list)
+;
+;
+;PFXNODE	k_nodelist_searchByType(PFXNODELIST list,BYTE type)
 ;{
-	.line	895
-	.line	896
+	.line	920
+	.line	921
 	NODEMAN
-	xdef	~~k_nodelist_getlistname
+	xdef	~~k_nodelist_searchByType
 	func
-	.function	896
-~~k_nodelist_getlistname:
+	.function	921
+~~k_nodelist_searchByType:
 	longa	on
 	longi	on
 	tsc
@@ -6241,17 +6294,19 @@ L270	equ	5
 	phd
 	tcd
 list_0	set	4
-	.block	896
-;	LPCSTR name = NULL;
+type_0	set	8
+	.block	921
+;	PFXNODE node = NULL;
 ;
 ;	if(list && list->listhead)
-name_1	set	0
-	.sym	name,0,142,1,32
+node_1	set	0
+	.sym	node,0,138,1,32,2
 	.sym	list,4,138,6,32,3
-	stz	<L276+name_1
-	stz	<L276+name_1+2
-	.line	899
-;		name = (LPCSTR)list->listhead->data;
+	.sym	type,8,14,6,8
+	stz	<L276+node_1
+	stz	<L276+node_1+2
+	.line	924
+;		node = k_nodelist_gettype(list->listhead->next,type);
 	lda	<L275+list_0
 	ora	<L275+list_0+2
 	bne	L278
@@ -6263,56 +6318,60 @@ L278:
 	bne	L279
 	brl	L10103
 L279:
-	.line	900
+	.line	925
+	pei	<L275+type_0
 	lda	[<L275+list_0]
 	sta	<R0
 	ldy	#$2
 	lda	[<L275+list_0],Y
 	sta	<R0+2
-	ldy	#$2
+	ldy	#$c
 	lda	[<R0],Y
-	sta	<L276+name_1
-	ldy	#$4
+	pha
+	ldy	#$a
 	lda	[<R0],Y
-	sta	<L276+name_1+2
+	pha
+	jsl	~~k_nodelist_gettype
+	sta	<L276+node_1
+	stx	<L276+node_1+2
 ;
-;	return name;
+;	return node;
 L10103:
-	.line	902
-	ldx	<L276+name_1+2
-	lda	<L276+name_1
+	.line	927
+	ldx	<L276+node_1+2
+	lda	<L276+node_1
 L280:
 	tay
 	lda	<L275+2
-	sta	<L275+2+4
+	sta	<L275+2+6
 	lda	<L275+1
-	sta	<L275+1+4
+	sta	<L275+1+6
 	pld
 	tsc
 	clc
-	adc	#L275+4
+	adc	#L275+6
 	tcs
 	tya
 	rtl
 ;}
-	.line	903
-	.endblock	903
+	.line	928
+	.endblock	928
 L275	equ	8
 L276	equ	5
 	ends
 	efunc
-	.endfunc	903,5,8
-	.line	903
+	.endfunc	928,5,8
+	.line	928
 ;
-;PFXNODE k_nodelist_removefromlist(PFXNODELIST list,PFXNODE targetNode)
+;LPCSTR k_nodelist_getlistname(PFXNODELIST list)
 ;{
-	.line	905
-	.line	906
+	.line	930
+	.line	931
 	NODEMAN
-	xdef	~~k_nodelist_removefromlist
+	xdef	~~k_nodelist_getlistname
 	func
-	.function	906
-~~k_nodelist_removefromlist:
+	.function	931
+~~k_nodelist_getlistname:
 	longa	on
 	longi	on
 	tsc
@@ -6322,57 +6381,140 @@ L276	equ	5
 	phd
 	tcd
 list_0	set	4
+	.block	931
+;	LPCSTR name = NULL;
+;
+;	if(list && list->listhead)
+name_1	set	0
+	.sym	name,0,142,1,32
+	.sym	list,4,138,6,32,3
+	stz	<L282+name_1
+	stz	<L282+name_1+2
+	.line	934
+;		name = (LPCSTR)list->listhead->data;
+	lda	<L281+list_0
+	ora	<L281+list_0+2
+	bne	L284
+	brl	L10104
+L284:
+	lda	[<L281+list_0]
+	ldy	#$2
+	ora	[<L281+list_0],Y
+	bne	L285
+	brl	L10104
+L285:
+	.line	935
+	lda	[<L281+list_0]
+	sta	<R0
+	ldy	#$2
+	lda	[<L281+list_0],Y
+	sta	<R0+2
+	ldy	#$2
+	lda	[<R0],Y
+	sta	<L282+name_1
+	ldy	#$4
+	lda	[<R0],Y
+	sta	<L282+name_1+2
+;
+;	return name;
+L10104:
+	.line	937
+	ldx	<L282+name_1+2
+	lda	<L282+name_1
+L286:
+	tay
+	lda	<L281+2
+	sta	<L281+2+4
+	lda	<L281+1
+	sta	<L281+1+4
+	pld
+	tsc
+	clc
+	adc	#L281+4
+	tcs
+	tya
+	rtl
+;}
+	.line	938
+	.endblock	938
+L281	equ	8
+L282	equ	5
+	ends
+	efunc
+	.endfunc	938,5,8
+	.line	938
+;
+;PFXNODE k_nodelist_removefromlist(PFXNODELIST list,PFXNODE targetNode)
+;{
+	.line	940
+	.line	941
+	NODEMAN
+	xdef	~~k_nodelist_removefromlist
+	func
+	.function	941
+~~k_nodelist_removefromlist:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L287
+	tcs
+	phd
+	tcd
+list_0	set	4
 targetNode_0	set	8
-	.block	906
+	.block	941
 ;	return k_nodelist_remove_node(list->listhead,targetNode);
 	.sym	list,4,138,6,32,3
 	.sym	targetNode,8,138,6,32,2
-	.line	907
-	pei	<L281+targetNode_0+2
-	pei	<L281+targetNode_0
+	.line	942
+	pei	<L287+targetNode_0+2
+	pei	<L287+targetNode_0
 	ldy	#$2
-	lda	[<L281+list_0],Y
+	lda	[<L287+list_0],Y
 	pha
-	lda	[<L281+list_0]
+	lda	[<L287+list_0]
 	pha
 	jsl	~~k_nodelist_remove_node
 	sta	<R0
 	stx	<R0+2
 	ldx	<R0+2
 	lda	<R0
-L284:
+L290:
 	tay
-	lda	<L281+2
-	sta	<L281+2+8
-	lda	<L281+1
-	sta	<L281+1+8
+	lda	<L287+2
+	sta	<L287+2+8
+	lda	<L287+1
+	sta	<L287+1+8
 	pld
 	tsc
 	clc
-	adc	#L281+8
+	adc	#L287+8
 	tcs
 	tya
 	rtl
 ;}
-	.line	908
-	.endblock	908
-L281	equ	4
-L282	equ	5
+	.line	943
+	.endblock	943
+L287	equ	4
+L288	equ	5
 	ends
 	efunc
-	.endfunc	908,5,4
-	.line	908
+	.endfunc	943,5,4
+	.line	943
 ;
 ;
 ;
-	.line	910
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.c",905
+	.line	945
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.c",940
+	xref	~~k_exec_throw_exception
 	xref	~~k_debug_integer
 	xref	~~k_debug_pointer
 	xref	~~k_debug_string
+	xref	~~k_unlock_irq
+	xref	~~k_lock_irq
 	xref	~~k_mem_deallocate_heap
 	xref	~~k_mem_allocate_heap
-	xref	~~k_exec_throw_exception
 	xref	~~k_string_copy_string
 	xref	~~k_string_replace
 	xref	~~k_longtodec
@@ -6384,105 +6526,113 @@ L282	equ	5
 	.sym	~~k_nodelist_data,~~k_nodelist_data,1089,2,32
 	.sym	~~bExceptionStatus,~~bExceptionStatus,14,3,8
 	.sym	~~THIS_MODULE,~~THIS_MODULE,18,3,32
-	.sym	DEVICEDRIVER_COMMAND,0,656,14,32
+	.sym	~~k_exec_throw_exception,~~k_exec_throw_exception,65,18,0
+	.sym	PIRQCHAIN,0,138,14,32,89
+	.sym	IRQCHAIN,0,10,14,128,89
+	.sym	DEVICEDRIVER_COMMAND,0,654,14,32
 	.sym	DEVICEDRIVER_UNLOAD,0,654,14,32
-	.sym	DEVICEDRIVER_WRITE,0,656,14,32
-	.sym	DEVICEDRIVER_READ,0,656,14,32
+	.sym	DEVICEDRIVER_WRITE,0,654,14,32
+	.sym	DEVICEDRIVER_READ,0,654,14,32
 	.sym	DEVICEDRIVER_LOAD,0,654,14,32
-	.sym	DEVICEDRIVER_IRQ,0,654,14,32
-	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,84
-	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,84
-	.sym	GETDRIVERDEF,0,8842,14,32,83
-	.sym	PFX_DEVICE_DRIVER,0,138,14,32,83
-	.sym	FX_DEVICE_DRIVER,0,10,14,776,83
+	.sym	DEVICEDRIVER_IRQ,0,641,14,32
+	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,88
+	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,88
+	.sym	GETDRIVERDEF,0,8842,14,32,87
+	.sym	PFX_DEVICE_DRIVER,0,138,14,32,87
+	.sym	FX_DEVICE_DRIVER,0,10,14,776,87
 	.sym	~~k_debug_integer,~~k_debug_integer,65,18,0
 	.sym	~~k_debug_pointer,~~k_debug_pointer,65,18,0
 	.sym	~~k_debug_string,~~k_debug_string,65,18,0
-	.sym	PSEGMENTHEADER,0,138,14,32,82
-	.sym	SEGMENTHEADER,0,10,14,160,82
-	.sym	PDEBUGBYTEBITS,0,138,14,32,81
-	.sym	DEBUGBYTEBITS,0,10,14,8,81
-	.sym	PFXENVIRONMENT,0,138,14,32,80
-	.sym	FXENVIRONMENT,0,10,14,96,80
-	.sym	PFXZEROPAGE,0,138,14,32,79
-	.sym	FXZEROPAGE,0,10,14,824,79
+	.sym	~~k_unlock_irq,~~k_unlock_irq,80,18,0
+	.sym	~~k_lock_irq,~~k_lock_irq,80,18,0
+	.sym	PSEGMENTHEADER,0,138,14,32,86
+	.sym	SEGMENTHEADER,0,10,14,160,86
+	.sym	PDEBUGBYTEBITS,0,138,14,32,85
+	.sym	DEBUGBYTEBITS,0,10,14,8,85
+	.sym	PFXENVIRONMENT,0,138,14,32,84
+	.sym	FXENVIRONMENT,0,10,14,96,84
+	.sym	PFXZEROPAGE,0,138,14,32,83
+	.sym	FXZEROPAGE,0,10,14,720,83
+	.sym	IRQBUFFER,0,10,14,32,82
 	.sym	KERNELTRAPCALL,0,641,14,32
-	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,78
-	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,78
+	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,81
+	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,81
 	.sym	FRESULT,0,5,14,16
-	.sym	MKFS_PARM,0,10,14,80,77
-	.sym	FILINFO,0,10,14,2224,76
-	.sym	DIR,0,10,14,416,75
-	.sym	FIL,0,10,14,4400,74
-	.sym	FFOBJID,0,10,14,128,73
-	.sym	FATFS,0,10,14,4504,72
+	.sym	MKFS_PARM,0,10,14,80,80
+	.sym	FILINFO,0,10,14,2224,79
+	.sym	DIR,0,10,14,416,78
+	.sym	FIL,0,10,14,4400,77
+	.sym	FFOBJID,0,10,14,128,76
+	.sym	FATFS,0,10,14,4504,75
 	.sym	LBA_t,0,18,14,32
 	.sym	FSIZE_t,0,18,14,32
 	.sym	TCHAR,0,14,14,8
-	.sym	PCOMMANDARGS,0,138,14,32,71
-	.sym	COMMANDARGS,0,10,14,64,71
+	.sym	PCOMMANDARGS,0,138,14,32,74
+	.sym	COMMANDARGS,0,10,14,64,74
 	.sym	PTOKENIZESTATE,0,133,14,32
 	.sym	TOKENIZESTATE,0,5,14,16
-	.sym	PTOKEN,0,138,14,32,70
-	.sym	TOKEN,0,10,14,64,70
+	.sym	PTOKEN,0,138,14,32,73
+	.sym	TOKEN,0,10,14,64,73
 	.sym	PTOKENTYPE,0,133,14,32
 	.sym	TOKENTYPE,0,5,14,16
 	.sym	FXCommandHandler,0,656,14,32
-	.sym	PCONSOLECTX,0,138,14,32,69
-	.sym	CONSOLECTX,0,10,14,1144,69
-	.sym	PSPINNERCTX,0,138,14,32,68
-	.sym	SPINNERCTX,0,10,14,48,68
-	.sym	HCLIP,0,138,14,32,67
-	.sym	PCLIPBOARD_DATA,0,138,14,32,67
-	.sym	CLIPBOARD_DATA,0,10,14,168,67
-	.sym	PEVENTMANAGER,0,138,14,32,66
-	.sym	EVENTMANAGER,0,10,14,192,66
+	.sym	PCONSOLECTX,0,138,14,32,72
+	.sym	CONSOLECTX,0,10,14,1144,72
+	.sym	PSPINNERCTX,0,138,14,32,71
+	.sym	SPINNERCTX,0,10,14,48,71
+	.sym	HCLIP,0,138,14,32,70
+	.sym	PCLIPBOARD_DATA,0,138,14,32,70
+	.sym	CLIPBOARD_DATA,0,10,14,168,70
+	.sym	PEVENTMANAGER,0,138,14,32,69
+	.sym	EVENTMANAGER,0,10,14,192,69
 	.sym	EV_RUN,0,656,14,32
 	.sym	EV_QUERY_METRIC,0,656,14,32
 	.sym	EV_CONFIGURE,0,656,14,32
 	.sym	EV_UNINIT,0,641,14,32
 	.sym	EV_INIT,0,8833,14,32
-	.sym	PMOUSE_MSG_STATE,0,138,14,32,65
-	.sym	MOUSE_MSG_STATE,0,10,14,184,65
-	.sym	PFXEVENTPROCESS,0,138,14,32,64
-	.sym	FXEVENTPROCESS,0,10,14,64,64
-	.sym	PMARSHALDATA,0,139,14,32,63
-	.sym	MARSHALDATA,0,11,14,32,63
+	.sym	PMOUSE_MSG_STATE,0,138,14,32,68
+	.sym	MOUSE_MSG_STATE,0,10,14,184,68
+	.sym	PFXEVENTPROCESS,0,138,14,32,67
+	.sym	FXEVENTPROCESS,0,10,14,64,67
+	.sym	FXASYNCPROCESS,0,641,14,32
+	.sym	PMARSHALDATA,0,139,14,32,66
+	.sym	MARSHALDATA,0,11,14,32,66
 	.sym	FXIDLEPROCESS,0,641,14,32
 	.sym	FXEventProc,0,641,14,32
-	.sym	PMOUSEMSGDATA,0,138,14,32,62
-	.sym	MOUSEMSGDATA,0,10,14,64,62
+	.sym	PMOUSEMSGDATA,0,138,14,32,65
+	.sym	MOUSEMSGDATA,0,10,14,64,65
 	.sym	MSGIRQ,0,5,14,16
-	.sym	MAINLOOPARGS,0,10,14,16,61
-	.sym	PEACHCHILD_MSG,0,138,14,32,60
-	.sym	EACHCHILD_MSG,0,10,14,64,60
-	.sym	PMSGBOX_DATA,0,138,14,32,59
-	.sym	MSGBOX_DATA,0,10,14,96,59
-	.sym	PDESKTOP_DATA,0,138,14,32,58
-	.sym	DESKTOP_DATA,0,10,14,64,58
-	.sym	PWINDOWMANAGER,0,138,14,32,57
-	.sym	WINDOWMANAGER,0,10,14,160,57
+	.sym	MAINLOOPARGS,0,10,14,16,64
+	.sym	PEACHCHILD_MSG,0,138,14,32,63
+	.sym	EACHCHILD_MSG,0,10,14,64,63
+	.sym	PMSGBOX_DATA,0,138,14,32,62
+	.sym	MSGBOX_DATA,0,10,14,96,62
+	.sym	PDESKTOP_DATA,0,138,14,32,61
+	.sym	DESKTOP_DATA,0,10,14,64,61
+	.sym	PWINDOWMANAGER,0,138,14,32,60
+	.sym	WINDOWMANAGER,0,10,14,160,60
 	.sym	WM_DOPROCS,0,641,14,32
 	.sym	WM_QUERY_METRIC,0,656,14,32
 	.sym	WM_CONFIGURE,0,656,14,32
 	.sym	WM_HANDLE_EVENT,0,8833,14,32
 	.sym	WM_EVENTS,0,641,14,32
-	.sym	PCUR_PALETTE_MAP,0,138,14,32,56
-	.sym	CUR_PALETTE_MAP,0,10,14,400,56
-	.sym	PCLICKDETECTED,0,138,14,32,55
-	.sym	CLICKDETECTED,0,10,14,64,55
+	.sym	PCUR_PALETTE_MAP,0,138,14,32,59
+	.sym	CUR_PALETTE_MAP,0,10,14,400,59
+	.sym	PCLICKDETECTED,0,138,14,32,58
+	.sym	CLICKDETECTED,0,10,14,64,58
 	.sym	OBJECTCLICKED,0,641,14,32
-	.sym	PIPCPORT,0,138,14,32,54
-	.sym	IPCPORT,0,10,14,144,54
+	.sym	PALLOCATIONHEADER,0,138,14,32,57
+	.sym	ALLOCATIONHEADER,0,10,14,80,57
+	.sym	PIPCPORT,0,138,14,32,56
+	.sym	IPCPORT,0,10,14,144,56
 	.sym	~~k_mem_deallocate_heap,~~k_mem_deallocate_heap,65,18,0
 	.sym	~~k_mem_allocate_heap,~~k_mem_allocate_heap,1089,18,32
 	.sym	MemoryCallback,0,641,14,32
-	.sym	PFXMEMORYMAP,0,138,14,32,53
-	.sym	FXMEMORYMAP,0,10,14,2072,53
-	.sym	UMM_HEAP_INFO,0,10,14,256,52
-	.sym	~~k_exec_throw_exception,~~k_exec_throw_exception,65,18,0
-	.sym	PEXECUTIVE,0,138,14,32,51
-	.sym	EXECUTIVE,0,10,14,128,51
+	.sym	PFXMEMORYMAP,0,138,14,32,55
+	.sym	FXMEMORYMAP,0,10,14,2072,55
+	.sym	UMM_HEAP_INFO,0,10,14,256,54
+	.sym	PEXECUTIVE,0,138,14,32,53
+	.sym	EXECUTIVE,0,10,14,128,53
 	.sym	EX_QUERY_METRIC,0,656,14,32
 	.sym	EX_CONFIGURE,0,656,14,32
 	.sym	EX_UNINIT,0,641,14,32
@@ -6490,16 +6640,16 @@ L282	equ	5
 	.sym	~~k_string_copy_string,~~k_string_copy_string,1102,18,32
 	.sym	~~k_string_replace,~~k_string_replace,1102,18,32
 	.sym	~~k_longtodec,~~k_longtodec,1102,18,32
-	.sym	PFXSTRING,0,138,14,32,50
-	.sym	FXSTRING,0,10,14,64,50
+	.sym	PFXSTRING,0,138,14,32,52
+	.sym	FXSTRING,0,10,14,64,52
 	.sym	~~strncpy,~~strncpy,1102,18,32
 	.sym	~~strlen,~~strlen,80,18,0
 	.sym	~~strcpy,~~strcpy,1102,18,32
 	.sym	~~strcmp,~~strcmp,69,18,0
 	.sym	~~memset,~~memset,1089,18,32
 	.sym	Boolean_T,0,5,14,16
-	.sym	ldiv_t,0,10,14,64,48
-	.sym	div_t,0,10,14,32,47
+	.sym	ldiv_t,0,10,14,64,50
+	.sym	div_t,0,10,14,32,49
 	.sym	wctype_t,0,16,14,16
 	.sym	wint_t,0,16,14,16
 	.sym	wchar_t,0,14,14,8
@@ -6518,6 +6668,7 @@ L282	equ	5
 	.sym	~~k_nodelist_getfirstnode,~~k_nodelist_getfirstnode,1098,2,32,2
 	.sym	~~k_nodelist_getlistname,~~k_nodelist_getlistname,1102,2,32
 	.sym	~~k_nodelist_searchByType,~~k_nodelist_searchByType,1098,2,32,2
+	.sym	~~k_nodelist_searchById,~~k_nodelist_searchById,1098,2,32,2
 	.sym	~~k_nodelist_searchByName,~~k_nodelist_searchByName,1098,2,32,2
 	.sym	~~k_nodelist_clear_list,~~k_nodelist_clear_list,1098,2,32,3
 	.sym	~~k_nodelist_addnodetolist,~~k_nodelist_addnodetolist,1098,2,32,2
@@ -6549,6 +6700,10 @@ L282	equ	5
 	.sym	~~k_enqueue,~~k_enqueue,78,2,0
 	.sym	~~k_isempty,~~k_isempty,69,2,0
 	.sym	~~k_initialize,~~k_initialize,65,2,0
+	.sym	PFXRFHEADER_STRING_ENTRY,0,138,14,32,48
+	.sym	FXRFHEADER_STRING_ENTRY,0,10,14,40,48
+	.sym	PFXRFHEADER_STRING,0,138,14,32,47
+	.sym	FXRFHEADER_STRING,0,10,14,32,47
 	.sym	PFXRFHEADER_FONT,0,138,14,32,46
 	.sym	FXRFHEADER_FONT,0,10,14,144,46
 	.sym	PFXRFHEADER,0,138,14,32,45
@@ -6626,9 +6781,9 @@ L282	equ	5
 	.sym	CONSOLE_CONTROL,0,10,14,448,15
 	.sym	FXProcessProc,0,641,14,32
 	.sym	PFXCMDMESSAGE,0,138,14,32,14
-	.sym	FXCMDMESSAGE,0,10,14,304,14
+	.sym	FXCMDMESSAGE,0,10,14,312,14
 	.sym	PFXOSMESSAGE,0,138,14,32,13
-	.sym	FXOSMESSAGE,0,10,14,304,13
+	.sym	FXOSMESSAGE,0,10,14,312,13
 	.sym	PINT_REGS,0,138,14,32,12
 	.sym	INT_REGS,0,10,14,104,12
 	.sym	TASK_STACK,0,10,14,32,11
@@ -6675,6 +6830,7 @@ L282	equ	5
 	.sym	HRESULT,0,18,14,32
 	.sym	LPWCHAR,0,144,14,32
 	.sym	WCHAR,0,16,14,16
+	.sym	HSTRINGTABLE,0,129,14,32
 	.sym	HCOLOR,0,129,14,32
 	.sym	HFONT,0,129,14,32
 	.sym	HDC,0,129,14,32
@@ -6702,6 +6858,12 @@ L282	equ	5
 	.sym	LPSTR,0,142,14,32
 	.sym	LPCHAR,0,142,14,32
 	.sym	CHAR,0,14,14,8
+	.sym	PUINT_32,0,146,14,32
+	.sym	UINT_32,0,18,14,32
+	.sym	PUINT_16,0,144,14,32
+	.sym	UINT_16,0,16,14,16
+	.sym	PUINT_8,0,142,14,32
+	.sym	UINT_8,0,14,14,8
 	.sym	LPVOID,0,129,14,32
 	.sym	VOID,0,1,14,32
 	end

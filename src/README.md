@@ -1,5 +1,5 @@
 # FXOS-SDK
-The FX/OS API [Jul 7, 2021 9:34:32 PM] 
+The FX/OS API [Jul 29, 2021 10:56:51 PM] 
 
 This is the offical SDK for FX/OS.  It is still under heavy development for stabilization and enhancement.
 
@@ -47,7 +47,7 @@ BOOL UnregisterIdleProc(HANDLE hIdleProc);
 
 **RaiseException** - Description: Coming Soon
 ```
-VOID RaiseException(ULONG ctxId,ULONG errorId,LPVOID exceptionMessage,UINT exMsgSize);
+VOID RaiseException(LPVOID ctxId,ULONG errorId,LPVOID exceptionMessage,UINT exMsgSize);
 ```
 
 **GetProcess** - Description: Coming Soon
@@ -135,9 +135,9 @@ void DebugInteger(char* debugString,UINT n);
 void DebugHexInteger(char* debugString,UINT n);
 ```
 
-**GetMouseClientPoint** - Description: Coming Soon
+**DebugIntegerArray** - Description: Coming Soon
 ```
-void GetMouseClientPoint(char* debugString,UINT* n,UINT size);
+void DebugIntegerArray(char* debugString,UINT* n,UINT size);
 ```
 
 **DebugLong** - Description: Coming Soon
@@ -230,6 +230,11 @@ VOID DebugOn(VOID);
 VOID DebugOff(VOID);
 ```
 
+**GetMilliseconds** - Description: Coming Soon
+```
+ULONG GetMilliseconds(VOID);
+```
+
 **GetRTCHour** - Description: Coming Soon
 ```
 UINT GetRTCHour(VOID);
@@ -288,6 +293,11 @@ void GetHardwareVersionMajor(char* buffer);
 **GetHardwareVersionMinor** - Description: Coming Soon
 ```
 void GetHardwareVersionMinor(char* buffer);
+```
+
+**GetHardwareRelease** - Description: Coming Soon
+```
+void GetHardwareRelease(char* buffer);
 ```
 
 **MemoryCopy** - Description: Coming Soon
@@ -398,6 +408,16 @@ VOID IPCWriteIntegerPort(PIPCPORT port,UINT data);
 **IPCWriteLongPort** - Description: Coming Soon
 ```
 VOID IPCWriteLongPort(PIPCPORT port,ULONG data);
+```
+
+**SetMemoryBlockVirtual** - Description: Coming Soon
+```
+HANDLE SetMemoryBlockVirtual(LPVOID memBlock,UINT attr);
+```
+
+**SetMemoryBlockUser** - Description: Coming Soon
+```
+BOOL SetMemoryBlockUser(LPVOID memBlock,UINT userId);
 ```
 
 **QueueInitialize** - Description: Coming Soon
@@ -543,6 +563,11 @@ PFXNODELIST NodeListClear(PFXNODELIST nodelist);
 **NodeListFindByName** - Description: Coming Soon
 ```
 PFXNODE NodeListFindByName(PFXNODELIST list,LPCSTR name);
+```
+
+**NodeListFindById** - Description: Coming Soon
+```
+PFXNODE NodeListFindById(PFXNODELIST list,ULONG objId);
 ```
 
 **NodeListFindByType** - Description: Coming Soon
@@ -1181,13 +1206,18 @@ UINT GetFontWidth(VOID);
 VOID MousePointerInit(BOOL enable);
 ```
 
-**SetMousePointer** - Description: Coming Soon
+**SetMousePointerData** - Description: Coming Soon
 ```
-VOID SetMousePointer(UINT index,LPVOID pointerData);
+VOID SetMousePointerData(UINT index,LPVOID pointerData);
 ```
 
 
 ### GUI Functions
+
+**GetDesktopWindow** - Description: Coming Soon
+```
+HWND GetDesktopWindow(VOID);
+```
 
 **CreateWindowClass** - Description: Coming Soon
 ```
@@ -1244,6 +1274,11 @@ BOOL DestroyWindow(HWND hWnd);
 HPOINTER RegisterMousePointerClass(LPCSTR pFontName,LPCSTR pCursorData);
 ```
 
+**LoadFontClass** - Description: Coming Soon
+```
+LPVOID LoadFontClass(LPSTR path);
+```
+
 **RegisterFontClass** - Description: Coming Soon
 ```
 HFONT RegisterFontClass(LPCSTR pFontName,LPCSTR pFontData);
@@ -1252,6 +1287,21 @@ HFONT RegisterFontClass(LPCSTR pFontName,LPCSTR pFontData);
 **GetFontClass** - Description: Coming Soon
 ```
 HFONT GetFontClass(LPCSTR pFontName);
+```
+
+**LoadResource** - Description: Coming Soon
+```
+HANDLE LoadResource(LPCSTR resourceFile);
+```
+
+**GetStringTableEntry** - Description: Coming Soon
+```
+PFXSTRING GetStringTableEntry(UINT objId);
+```
+
+**RegisterStringTable** - Description: Coming Soon
+```
+BOOL RegisterStringTable(HANDLE hStringTable,BOOL bRelease);
 ```
 
 **GetMousePointerClass** - Description: Coming Soon
@@ -1417,6 +1467,11 @@ PPOINT GetMousePoint(PFXOSMESSAGE pMsg,PPOINT point);
 **GetMouseClientPoint** - Description: Coming Soon
 ```
 PPOINT GetMouseClientPoint(PFXOSMESSAGE pMsg,PPOINT point);
+```
+
+**DefaultWindowProc** - Description: Coming Soon
+```
+BOOL DefaultWindowProc(PFXOSMESSAGE pMsg);
 ```
 
 

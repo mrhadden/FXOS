@@ -3,7 +3,7 @@
 #include "fxdos.h"
 #include "fxnode.h"
 #include "fxmemorymanager.h"
-#include "fxgui.h"
+#include "fxgfx.h"
 #include "fxmenumanager.h"
 
 
@@ -52,6 +52,7 @@ VOID testRelabel(VOID)
 	fs = k_mem_allocate_heap(sizeof(FATFS));
 	name = k_mem_allocate_heap(256);
 
+	fr = f_mount(NULL, "SD:",1);
 	fr = f_mount(fs, "SD:",1);
 	k_debug_integer("testRelabel::f_mount:",fr);
 
@@ -79,6 +80,7 @@ VOID testRename(VOID)
 
 	fs = k_mem_allocate_heap(sizeof(FATFS));
 
+	fr = f_mount(NULL, "SD:",1);
 	fr = f_mount(fs, "SD:",1);
 	k_debug_integer("testRename::f_mount:",fr);
 
@@ -128,6 +130,7 @@ VOID testFileSystems(VOID)
 	fs = k_mem_allocate_heap(sizeof(FATFS));
 	fileInfo = k_mem_allocate_heap(sizeof(FILINFO));
 
+	fr = f_mount(NULL, drive,1);
 	f_mount(fs, drive,1);
 
 	fr = f_opendir (dir,path);
@@ -175,7 +178,7 @@ VOID DesktopEnvironmentProc(PFXOSMESSAGE pMsg)
 	PFXPROCESS p = NULL;
 
 	//k_debug_string("DesktopEnvironmentProc enter\r\n");
-
+	//k_debug_char_com1('(');
 	if(pMsg!=NULL)
 	{
 		p = k_exec_get_current_process();
@@ -230,7 +233,7 @@ VOID DesktopEnvironmentProc(PFXOSMESSAGE pMsg)
 			break;
 		}
 	}
-
+	//k_debug_char_com1(')');
 	return;
 }
 
@@ -284,7 +287,7 @@ BOOL DesktopWindowProc(PFXOSMESSAGE pMsg)
 	LPVOID pixelLocation = NULL;
 
 	PFXNODE  clickNode = NULL;
-	PFXZEROPAGE pzero = NULL;
+	//PFXZEROPAGE pzero = NULL;
 	HMENU desktopMenu = NULL;
 	HMENU subMenu     = NULL;
 
@@ -852,6 +855,8 @@ BOOL DesktopWindowProc(PFXOSMESSAGE pMsg)
 			k_debug_char("DesktopWindowProc::FX_KEY_DOWN CHAR:",(CHAR)((PKEYSTATE)pMsg->data)->keyChar);
 			//k_debug_hex_integer("DesktopWindowProc::FX_KEY_DOWN CHAR:",*((PUINT)(&pMsg->data[0])));
 
+			temp1 = ((PKEYSTATE)pMsg->data)->scanCode & 0x00FF;
+
 			if((CHAR)((PKEYSTATE)pMsg->data)->scanCode == 0x01)
 			{
 				k_debug_hex("DesktopWindowProc::_k_desktopMenuState.visible(CLOSE):",_k_desktopMenuState.visible);
@@ -861,6 +866,10 @@ BOOL DesktopWindowProc(PFXOSMESSAGE pMsg)
 					_k_desktopMenuState.visible = FALSE;
 					_k_desktopMenuState.pMenu = NULL;
 					_k_desktopMenuState.selectedIndex = -1;
+
+
+					k_send_window_message(pWin,FX_FOCUS_WINDOW,NULL,0);
+
 				}
 			}
 			else
@@ -870,7 +879,7 @@ BOOL DesktopWindowProc(PFXOSMESSAGE pMsg)
 				{
 					k_debug_hex("DesktopWindowProc::FX_KEY_DOWN:",(CHAR)((PKEYSTATE)pMsg->data)->isAlt);
 
-					if((((PKEYSTATE)pMsg->data)->scanCode!=0x38) && ((((PKEYSTATE)pMsg->data)->isAlt) == 1)) // ALT
+					if((temp1!=0x38) && ((((PKEYSTATE)pMsg->data)->isAlt) == 1)) // ALT
 					{
 						_k_desktopMenuState.visible = TRUE;
 						 k_debug_char("DesktopWindowProc::Calling k_user_SendMenuAccelerator:",(CHAR)((PKEYSTATE)pMsg->data)->keyChar);
@@ -888,7 +897,7 @@ BOOL DesktopWindowProc(PFXOSMESSAGE pMsg)
 				{
 					if(((((PKEYSTATE)pMsg->data)->isExtended) == 1))
 					{
-						if((((PKEYSTATE)pMsg->data)->scanCode == 0x048))
+						if((temp1 == 0x50) || (temp1 == 0xD5))
 						{
 							if(_k_desktopMenuState.pMenu)
 							{
@@ -901,7 +910,7 @@ BOOL DesktopWindowProc(PFXOSMESSAGE pMsg)
 								}
 							}
 						}
-						else if((((PKEYSTATE)pMsg->data)->scanCode == 0x50))
+						else if((temp1 == 0x50) || (temp1 == 0xC9))
 						{
 							if(_k_desktopMenuState.pMenu)
 							{
@@ -913,8 +922,9 @@ BOOL DesktopWindowProc(PFXOSMESSAGE pMsg)
 								}
 							}
 						}
-						else if((((PKEYSTATE)pMsg->data)->scanCode == 0x1C))
+						else if(temp1 == 0x1C)
 						{
+							k_debug_pointer("DesktopWindowProc::_k_desktopMenuState.pMenu:",_k_desktopMenuState.pMenu);
 							if(_k_desktopMenuState.pMenu)
 							{
 								k_debug_strings("DesktopWindowProc::Calling k_user_SelectMenu:","ENTER");
@@ -929,8 +939,9 @@ BOOL DesktopWindowProc(PFXOSMESSAGE pMsg)
 					}
 					else
 					{
-						if((((PKEYSTATE)pMsg->data)->scanCode!=0x1C))
+						if(temp1!=0x1C)
 						{
+							k_debug_pointer("DesktopWindowProc::_k_desktopMenuState.pMenu:",_k_desktopMenuState.pMenu);
 							if(_k_desktopMenuState.pMenu)
 							{
 								k_debug_strings("DesktopWindowProc::Calling k_user_SelectMenu:","ENTER");
@@ -1090,6 +1101,7 @@ BOOL DesktopWindowProc(PFXOSMESSAGE pMsg)
 
 			}
 
+			/*
 			pzero = k_getZeroPage();
 
 			k_debug_long("DesktopWindowProc::FX_MOUSE_MOVE:DS:",(pzero->fxos_mouse_dbg_3));
@@ -1097,7 +1109,7 @@ BOOL DesktopWindowProc(PFXOSMESSAGE pMsg)
 			k_debug_long("DesktopWindowProc::FX_MOUSE_MOVE:DY:",(pzero->fxos_mouse_dbg_2));
 			k_debug_integer("DesktopWindowProc::FX_MOUSE_MOVE:X:",*((INT*)&pMsg->data[1]));
 			k_debug_integer("DesktopWindowProc::FX_MOUSE_MOVE:Y:",*((INT*)&pMsg->data[3]));
-
+			*/
 			break;
 
 		case FX_MOUSE_ENTER:

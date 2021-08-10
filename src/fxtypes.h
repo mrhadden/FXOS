@@ -21,6 +21,10 @@
 #define EXPORT_FUNC_CON(a)
 #define EXPORT_FUNC_DOS(a)
 
+#define EXPORT_TYPE_BEGIN(a)
+#define EXPORT_TYPE_END(a)
+#define EXPORT_STRING(a,b)
+
 #define	THROW_EXCEPTION(a,b,c)	{asm BRK;}
 
 
@@ -37,11 +41,25 @@
 #endif
 
 typedef void VOID;
-typedef void FAR *LPVOID;
+typedef VOID FAR *LPVOID;
 //#ifndef UINT8
 //typedef unsigned char UINT8;
 //#define UINT8
 //#endif
+#ifndef TCHAR
+#define TCHAR(a) a
+#endif
+
+//
+// byte sized types
+//
+typedef unsigned char UINT_8;
+typedef UINT_8 FAR *PUINT_8;
+typedef unsigned int  UINT_16;
+typedef UINT_16 FAR *PUINT_16;
+typedef unsigned long UINT_32;
+typedef UINT_32 FAR *PUINT_32;
+
 typedef char  CHAR;
 typedef CHAR FAR *LPCHAR;
 typedef CHAR FAR *LPSTR;
@@ -80,6 +98,7 @@ typedef LPVOID HPOINTER;
 typedef LPVOID HDC;
 typedef LPVOID HFONT;
 typedef LPVOID HCOLOR;
+typedef LPVOID HSTRINGTABLE;
 // UNICODE
 typedef UINT  WCHAR;
 typedef WCHAR FAR *LPWCHAR;
@@ -268,6 +287,7 @@ typedef struct _fx_eventMessage
 	LPVOID		pheap;
 	ULONG  		msgTime;
 	MSGDATA		data[MAX_FXMSG_DATA];
+	BYTE		attr;
 }FXOSMESSAGE;
 typedef FXOSMESSAGE FAR *PFXOSMESSAGE;
 
@@ -284,6 +304,7 @@ typedef struct _fx_cmdMessage
 	ULONG		parameter1;
 	ULONG		parameter2;
 	ULONG		parameter3;
+	BYTE		attr;
 }FXCMDMESSAGE;
 typedef FXCMDMESSAGE FAR *PFXCMDMESSAGE;
 
@@ -976,6 +997,34 @@ typedef struct _fx_resource_header_font
 }FXRFHEADER_FONT;
 typedef FXRFHEADER_FONT FAR* PFXRFHEADER_FONT;
 
+#define FXRF_FONTDATA(a)	((PFXRFHEADER_FONT)((ULONG)(&a->resheaderSize) + 1L))
+
+typedef struct _fx_resource_string
+{
+	CHAR 	locale[2];
+	UINT	entries;
+}FXRFHEADER_STRING;
+typedef FXRFHEADER_STRING FAR* PFXRFHEADER_STRING;
+
+typedef struct _fx_resource_string_entry
+{
+	UINT	index;
+	UINT	length;
+	BYTE	data;
+}FXRFHEADER_STRING_ENTRY;
+typedef FXRFHEADER_STRING_ENTRY FAR* PFXRFHEADER_STRING_ENTRY;
+
+#define NEXT_STRING_TABLE_ENTRY(a)		(PFXRFHEADER_STRING_ENTRY)(((ULONG)&a->data) + ((ULONG)a->length))
+
+//	RESOURSE TYPES
+EXPORT_TYPE_BEGIN(RESOURCE_TYPE)
+#define RESOURCE_TYPE_BASE			(0)
+#define RESOURCE_TYPE_STRING		(RESOURCE_TYPE_BASE + 1)
+#define RESOURCE_TYPE_MENU			(RESOURCE_TYPE_BASE + 2)
+#define RESOURCE_TYPE_ICON			(RESOURCE_TYPE_BASE + 4)
+#define RESOURCE_TYPE_FONT			(RESOURCE_TYPE_BASE + 5)
+#define RESOURCE_TYPE_DRIVER		(RESOURCE_TYPE_BASE + 64)
+EXPORT_TYPE_END(RESOURCE_TYPE)
 
 //
 // Node List Types
@@ -998,6 +1047,7 @@ typedef FXRFHEADER_FONT FAR* PFXRFHEADER_FONT;
 #define NL_TYPE_WINDOW_CLIPBOARD	0x0C
 #define NL_TYPE_WINDOW_CLIPSCRAP	0x0D
 #define NL_TYPE_WINDOW_MENU_ACCEL  	0x0E
+#define NL_TYPE_WINDOW_STRING_TBL  	0x0F
 
 #define NL_TYPE_EVENT_IDLEPROC		0xF0
 #define NL_TYPE_EVENT_HI_IDLEPROC	0xF1
@@ -1006,5 +1056,9 @@ typedef FXRFHEADER_FONT FAR* PFXRFHEADER_FONT;
 #define MAX(a,b) (((a)>(b))?(a):(b))
 
 #define NELEMS(x)  (sizeof(x) / sizeof((x)[0]))
+
+
+
+#define KEYBOARD_TIMEOUT (50)
 
 #endif

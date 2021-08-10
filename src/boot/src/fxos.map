@@ -1,0 +1,141 @@
+Section CODE:
+	000b1700 _BEG_CODE
+	000b1700 ~~~asl
+	000b1708 ~~~asr
+	000b1719 ~~~lasl
+	000b1748 ~~~llsr
+	000b1778 ~~~lmul
+	000b17c4 ~~~lsr
+	000b17cc ~~~ludv
+	000b17e6 ~~~mul
+	000b1827 ~~~swt
+	000b1848 ~~~comdiv
+	000b1889 ~~~udv
+	000b18bd _END_CODE
+
+Section DATA:
+	000b1920 _BEG_DATA
+	000b1953 ~~heap_start
+	000b1957 ~~heap_end
+	000b195d ~~message
+	000b195b ~~i
+	000b1952 ~~bRet
+	000b1950 ~~read
+	000b194c ~~total
+	000b194a ~~chunk
+	000b1942 ~~drive
+	000b1940 ~~fr
+	000b1920 ~~IRQ
+	000b19c9 ~~ExCvt
+	000b1989 ~~VolumeStr
+	000b1a6e _END_DATA
+
+Section UDATA:
+	000b1a6e _BEG_UDATA
+	000b1a6e ~~f
+	000b1c94 ~~fs
+	000b1ec3 ~~Fsid
+	000b1ec5 ~~FatFs
+	000b1ee5 ~~szIndentity
+	000b20e5 _END_UDATA
+
+Section pgxheader:
+	000b15f8 _BEG_PGXHEADER
+	000b1600 _END_PGXHEADER
+
+Section startup:
+	000b1600 _BEG_STARTUP
+	000b1622 _END_STARTUP
+
+Section fxos:
+	000b2f00 _BEG_FXOS
+	000b3112 _END_FXOS
+
+Section ffdos:
+	000b3f80 _BEG_FFDOS
+	000b912b _END_FFDOS
+
+Section diskio:
+	000b31f0 _BEG_DISKIO
+	000b389a _END_DISKIO
+
+ABSOLUTES:
+	000b1620 ~~_exit
+	000b2f00 ~~main
+	000b2f6e ~~k_clear_screen
+	000b2fd8 ~~loadFXOS
+	000b6e77 ~~f_mount
+	000b6f36 ~~f_open
+	000b73be ~~f_read
+	000b77dd ~~f_write
+	000b7ce5 ~~f_sync
+	000b7e7d ~~f_close
+	000b7ed1 ~~f_lseek
+	000b83b4 ~~f_opendir
+	000b84b3 ~~f_closedir
+	000b84f6 ~~f_readdir
+	000b858d ~~f_findnext
+	000b8606 ~~f_findfirst
+	000b8653 ~~f_stat
+	000b86da ~~f_getfree
+	000b891e ~~f_truncate
+	000b8aff ~~f_unlink
+	000b8c70 ~~f_mkdir
+	000b8ee8 ~~f_rename
+	000b6dc9 ~~validate
+	000b66f6 ~~mount_volume
+	000b64ea ~~find_volume
+	000b63ba ~~check_fs
+	000b61e8 ~~get_ldnumber
+	000b6073 ~~follow_path
+	000b5e5d ~~create_name
+	000b5d04 ~~pattern_matching
+	000b5c66 ~~get_achar
+	000b5b14 ~~get_fileinfo
+	000b5aaf ~~dir_remove
+	000b5a10 ~~dir_register
+	000b5908 ~~dir_find
+	000b57e9 ~~dir_read
+	000b5783 ~~st_clust
+	000b56f3 ~~ld_clust
+	000b5630 ~~dir_alloc
+	000b537c ~~dir_next
+	000b513d ~~dir_sdi
+	000b5067 ~~dir_clear
+	000b4d4c ~~create_chain
+	000b4bc3 ~~remove_chain
+	000b487d ~~put_fat
+	000b460d ~~get_fat
+	000b457e ~~clst2sect
+	000b4405 ~~sync_fs
+	000b437a ~~move_window
+	000b4291 ~~sync_window
+	000b4264 ~~dbc_2nd
+	000b4237 ~~dbc_1st
+	000b41f5 ~~chk_chr
+	000b4196 ~~mem_cmp
+	000b415f ~~mem_set
+	000b4113 ~~mem_cpy
+	000b4096 ~~st_dword
+	000b4057 ~~st_word
+	000b3fbb ~~ld_dword
+	000b3f80 ~~ld_word
+	000b3380 ~~k_hd_diagnostic
+	000b33b2 ~~k_hd_get_id
+	000b344d ~~k_hd_send_command
+	000b346a ~~k_hd_read_sector
+	000b35a8 ~~k_hd_write_sector
+	000b36dc ~~k_hd_initialize
+	000b374d ~~k_hd_uninitialize
+	000b3762 ~~disk_status
+	000b377f ~~disk_initialize
+	000b37a0 ~~disk_read
+	000b37fe ~~disk_write
+	000b387d ~~disk_ioctl
+	000b335a ~~k_drive_busy
+	000b32f4 ~~k_drive_ready_not_busy
+	000b3292 ~~k_drive_not_busy_or_drq
+	000b326c ~~k_drive_ready
+	000b3216 ~~k_drive_wait_dsc
+	000b31f0 ~~k_drive_wait_drq
+

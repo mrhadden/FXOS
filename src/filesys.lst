@@ -1,4 +1,4 @@
-  Sat Jul 10 2021  1:15                                                Page 1
+  Thu Jul 29 2021 11:45                                                Page 1
 
 
                      ***************************************
@@ -13,15 +13,15 @@
      4             00000009   R2	equ	9
      5             0000000D   R3	equ	13
      6                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
-                    space\FXOSv1\src\FILE_SYS.C",0
+                    space\FXOS-Beta\src\FILE_SYS.C",0
      7                        ;
      8                        ;#include	"FILE_SYS.H"
      9                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
-                    space\FXOSv1\src\FILE_SYS.H",0
+                    space\FXOS-Beta\src\FILE_SYS.H",0
     10                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
-                    space\FXOSv1\src\HAL.H",0
+                    space\FXOS-Beta\src\HAL.H",0
     11                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
-                    space\FXOSv1\src\CH376INC.H",0
+                    space\FXOS-Beta\src\CH376INC.H",0
     12                        	.stag	_FAT_DIR_INFO,256,1
     13                        	.member	DIR_Name,0,110,8,0,11
     14                        	.member	DIR_Attr,88,14,8,8
@@ -59,7 +59,7 @@
     46                        	.member	VendorIdStr,64,110,8,0,8
     47                        	.member	ProductIdStr,128,110,8,0,16
     48                        	.member	ProductRevStr,256,110,8,0,4
-  Sat Jul 10 2021  1:15                                                Page 2
+  Thu Jul 29 2021 11:45                                                Page 2
 
 
     49                        	.eos
@@ -120,7 +120,7 @@
    104                        	.eos
    105                        	.stag	fake15_,72,15
    106                        	.member	mTotalSector,0,18,8,32
-  Sat Jul 10 2021  1:15                                                Page 3
+  Thu Jul 29 2021 11:45                                                Page 3
 
 
    107                        	.member	mFreeSector,32,18,8,32
@@ -166,13 +166,13 @@
    147                        	.eos
    148                        	.line	586
    149                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
-                    space\FXOSv1\src\HAL.H",4
+                    space\FXOS-Beta\src\HAL.H",4
    150                        	.line	42
    151                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
-                    space\FXOSv1\src\FILE_SYS.H",6
+                    space\FXOS-Beta\src\FILE_SYS.H",6
    152                        	.line	124
    153                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
-                    space\FXOSv1\src\FILE_SYS.C",2
+                    space\FXOS-Beta\src\FILE_SYS.C",2
    154                        ;
    155                        ;UINT8	CH376ReadBlock( PUINT8 buf )
    156                        ;{
@@ -181,7 +181,7 @@
    159                        	code
    160                        	xdef	~~CH376ReadBlock
    161                        	func
-  Sat Jul 10 2021  1:15                                                Page 4
+  Thu Jul 29 2021 11:45                                                Page 4
 
 
    162                        	.function	5
@@ -242,7 +242,7 @@
    217                        	longa	on
    218                        ;			buf ++;
    219                        	.line	12
-  Sat Jul 10 2021  1:15                                                Page 5
+  Thu Jul 29 2021 11:45                                                Page 5
 
 
    220 00:0035: E6 06        	inc	<L2+buf_0
@@ -303,7 +303,7 @@
    275                        	code
    276                        	xdef	~~CH376WriteReqBlock
    277                        	func
-  Sat Jul 10 2021  1:15                                                Page 6
+  Thu Jul 29 2021 11:45                                                Page 6
 
 
    278                        	.function	20
@@ -364,7 +364,7 @@
    333 00:0098: E6 06        	inc	<L9+buf_0
    334 00:009A: D0 02        	bne	L13
    335 00:009C: E6 08        	inc	<L9+buf_0+2
-  Sat Jul 10 2021  1:15                                                Page 7
+  Thu Jul 29 2021 11:45                                                Page 7
 
 
    336                        L13:
@@ -425,7 +425,7 @@
    390                        	func
    391                        	.function	35
    392                        ~~CH376WriteHostBlock:
-  Sat Jul 10 2021  1:15                                                Page 8
+  Thu Jul 29 2021 11:45                                                Page 8
 
 
    393                        	longa	on
@@ -486,7 +486,7 @@
    448 00:0102: 82 E3 FF     	brl	L10012
    449                        L21:
    450                        L10011:
-  Sat Jul 10 2021  1:15                                                Page 9
+  Thu Jul 29 2021 11:45                                                Page 9
 
 
    451                        ;	}
@@ -547,7 +547,7 @@
    505 00:0124: 22 xx xx xx  	jsl	~~xWriteCH376Cmd
    506                        ;	xWriteCH376Data( ofs );
    507                        	.line	50
-  Sat Jul 10 2021  1:15                                                Page 10
+  Thu Jul 29 2021 11:45                                                Page 10
 
 
    508 00:0128: D4 08        	pei	<L23+ofs_0
@@ -608,7 +608,7 @@
    563 00:0165: 85 09        	sta	<L23+1+8
    564 00:0167: 2B           	pld
    565 00:0168: 3B           	tsc
-  Sat Jul 10 2021  1:15                                                Page 11
+  Thu Jul 29 2021 11:45                                                Page 11
 
 
    566 00:0169: 18           	clc
@@ -669,7 +669,7 @@
    621 00:018C: C9 43        	cmp	#<$43
    622 00:018E: C2 20        	rep	#$20
    623                        	longa	on
-  Sat Jul 10 2021  1:15                                                Page 12
+  Thu Jul 29 2021 11:45                                                Page 12
 
 
    624 00:0190: 90 03        	bcc	L33
@@ -730,7 +730,7 @@
    676                        ;				s = CH376ReadVar8( 0xCF 
                     );
    677                        	.line	74
-  Sat Jul 10 2021  1:15                                                Page 13
+  Thu Jul 29 2021 11:45                                                Page 13
 
 
    678 00:01D7: F4 CF 00     	pea	#<$cf
@@ -791,7 +791,7 @@
    731 00:0239: 64 03        	stz	<R0+2
    732 00:023B: F4 50 00     	pea	#<$50
    733 00:023E: 22 xx xx xx  	jsl	~~CH376ReadVar32
-  Sat Jul 10 2021  1:15                                                Page 14
+  Thu Jul 29 2021 11:45                                                Page 14
 
 
    734 00:0242: 85 05        	sta	<R1
@@ -852,7 +852,7 @@
    787 00:027C: 22 xx xx xx  	jsl	~~xWriteCH376Data
    788                        ;	while ( c ) {
    789                        	.line	93
-  Sat Jul 10 2021  1:15                                                Page 15
+  Thu Jul 29 2021 11:45                                                Page 15
 
 
    790                        L10021:
@@ -913,7 +913,7 @@
    839                        L10023:
    840                        	.line	97
    841 00:02B8: D4 0D        	pei	<L31+c_1
-  Sat Jul 10 2021  1:15                                                Page 16
+  Thu Jul 29 2021 11:45                                                Page 16
 
 
    842 00:02BA: 22 xx xx xx  	jsl	~~xWriteCH376Data
@@ -974,7 +974,7 @@
    892             00000001   c1_1	set	1
    893             00000002   c2_1	set	2
    894             00000003   c3_1	set	3
-  Sat Jul 10 2021  1:15                                                Page 17
+  Thu Jul 29 2021 11:45                                                Page 17
 
 
    895                        	.sym	c0,0,14,1,8
@@ -1035,7 +1035,7 @@
    949 00:0327: 85 01        	sta	<R0
    950 00:0329: 64 03        	stz	<R0+2
    951 00:032B: A5 17        	lda	<L44+c2_1
-  Sat Jul 10 2021  1:15                                                Page 18
+  Thu Jul 29 2021 11:45                                                Page 18
 
 
    952 00:032D: 29 FF 00     	and	#$ff
@@ -1096,7 +1096,7 @@
                     								
                       								
                     	    							
-  Sat Jul 10 2021  1:15                                                Page 19
+  Thu Jul 29 2021 11:45                                                Page 19
 
 
                     		  						
@@ -1157,7 +1157,7 @@
   1060 00:03B4: 18           	clc
   1061 00:03B5: 69 03 00     	adc	#L47+2
   1062 00:03B8: 1B           	tcs
-  Sat Jul 10 2021  1:15                                                Page 20
+  Thu Jul 29 2021 11:45                                                Page 20
 
 
   1063 00:03B9: 98           	tya
@@ -1218,7 +1218,7 @@
   1112                        ;}
   1113                        	.line	129
   1114                        L54:
-  Sat Jul 10 2021  1:15                                                Page 21
+  Thu Jul 29 2021 11:45                                                Page 21
 
 
   1115 00:03DA: A5 02        	lda	<L51+2
@@ -1279,7 +1279,7 @@
                     		  						
                     			/*´ÓCH376Ð¾Æ¬¶ÁÈ¡32Î»µÄÊý¾Ý²¢½áÊøÃüÁî */
   1162                        	.line	135
-  Sat Jul 10 2021  1:15                                                Page 22
+  Thu Jul 29 2021 11:45                                                Page 22
 
 
   1163 00:03FF: 22 xx xx xx  	jsl	~~CH376Read32bitDat
@@ -1340,7 +1340,7 @@
   1212                        	.sym	var,4,14,6,8
   1213                        	.sym	dat,6,18,6,32
   1214                        	.line	140
-  Sat Jul 10 2021  1:15                                                Page 23
+  Thu Jul 29 2021 11:45                                                Page 23
 
 
   1215 00:0425: F4 0D 00     	pea	#<$d
@@ -1401,7 +1401,7 @@
   1270                        	.endblock	147
   1271             00000004   L59	equ	4
   1272             00000005   L60	equ	5
-  Sat Jul 10 2021  1:15                                                Page 24
+  Thu Jul 29 2021 11:45                                                Page 24
 
 
   1273                        	ends
@@ -1462,7 +1462,7 @@
                     		  						
                     			/*¶ÁÈ¡µ±Ç°ÎÄ¼þ³¤¶È */
   1319                        ;{
-  Sat Jul 10 2021  1:15                                                Page 25
+  Thu Jul 29 2021 11:45                                                Page 25
 
 
   1320                        	.line	154
@@ -1523,7 +1523,7 @@
   1370                        	.function	160
   1371                        ~~CH376GetDiskStatus:
   1372                        	longa	on
-  Sat Jul 10 2021  1:15                                                Page 26
+  Thu Jul 29 2021 11:45                                                Page 26
 
 
   1373                        	longi	on
@@ -1584,7 +1584,7 @@
   1423 00:04E1: 38           	sec
   1424 00:04E2: E9 01 00     	sbc	#L75
   1425 00:04E5: 1B           	tcs
-  Sat Jul 10 2021  1:15                                                Page 27
+  Thu Jul 29 2021 11:45                                                Page 27
 
 
   1426 00:04E6: 0B           	phd
@@ -1645,7 +1645,7 @@
   1475                        	code
   1476                        	xdef	~~Wait376Interrupt
   1477                        	func
-  Sat Jul 10 2021  1:15                                                Page 28
+  Thu Jul 29 2021 11:45                                                Page 28
 
 
   1478                        	.function	175
@@ -1706,7 +1706,7 @@
                     			/*¼ÆÊý·ÀÖ¹³¬Ê±,Ä¬ÈÏµÄ³¬Ê±Ê±¼ä,Óëµ¥Æ¬»úÖ÷
                     ÆµÓÐ¹Ø */
   1503             00000000   i_1	set	0
-  Sat Jul 10 2021  1:15                                                Page 29
+  Thu Jul 29 2021 11:45                                                Page 29
 
 
   1504                        	.sym	i,0,18,1,32
@@ -1767,7 +1767,7 @@
   1553 00:0552: A9 FA 00     	lda	#$fa
   1554 00:0555: 82 DB FF     	brl	L83
   1555                        ;#endif
-  Sat Jul 10 2021  1:15                                                Page 30
+  Thu Jul 29 2021 11:45                                                Page 30
 
 
   1556                        ;}
@@ -1828,7 +1828,7 @@
   1611 00:0583: 3B           	tsc
   1612 00:0584: 18           	clc
   1613 00:0585: 69 06 00     	adc	#L86+2
-  Sat Jul 10 2021  1:15                                                Page 31
+  Thu Jul 29 2021 11:45                                                Page 31
 
 
   1614 00:0588: 1B           	tcs
@@ -1889,7 +1889,7 @@
   1663 00:05A7: E2 20        	sep	#$20
   1664                        	longa	off
   1665 00:05A9: 85 01        	sta	<R0
-  Sat Jul 10 2021  1:15                                                Page 32
+  Thu Jul 29 2021 11:45                                                Page 32
 
 
   1666 00:05AB: C2 20        	rep	#$20
@@ -1950,7 +1950,7 @@
   1716 00:05CC: F4 05 00     	pea	#<$5
   1717 00:05CF: 22 xx xx xx  	jsl	~~mDelaymS
   1718                        ;	s = CH376SendCmdWaitInt( CMD0H_DISK_R_SENSE );
-  Sat Jul 10 2021  1:15                                                Page 33
+  Thu Jul 29 2021 11:45                                                Page 33
 
 
   1719                        	.line	216
@@ -2011,7 +2011,7 @@
   1769 00:05FC: 0B           	phd
   1770 00:05FD: 5B           	tcd
   1771                        	.block	222
-  Sat Jul 10 2021  1:15                                                Page 34
+  Thu Jul 29 2021 11:45                                                Page 34
 
 
   1772                        ;	if ( Query376Interrupt( ) ) CH376GetIntStatus( )
@@ -2072,7 +2072,7 @@
   1816                        	code
   1817                        	xdef	~~CH376DiskMount
   1818                        	func
-  Sat Jul 10 2021  1:15                                                Page 35
+  Thu Jul 29 2021 11:45                                                Page 35
 
 
   1819                        	.function	228
@@ -2133,7 +2133,7 @@
   1867                        	.function	233
   1868                        ~~CH376FileOpen:
   1869                        	longa	on
-  Sat Jul 10 2021  1:15                                                Page 36
+  Thu Jul 29 2021 11:45                                                Page 36
 
 
   1870                        	longi	on
@@ -2194,7 +2194,7 @@
   1916 00:0685: F4 32 00     	pea	#<$32
   1917 00:0688: 22 xx xx xx  	jsl	~~CH376SendCmdWaitInt
   1918 00:068C: E2 20        	sep	#$20
-  Sat Jul 10 2021  1:15                                                Page 37
+  Thu Jul 29 2021 11:45                                                Page 37
 
 
   1919                        	longa	off
@@ -2255,7 +2255,7 @@
                     								
                       								
                     	    							
-  Sat Jul 10 2021  1:15                                                Page 38
+  Thu Jul 29 2021 11:45                                                Page 38
 
 
                     		  						
@@ -2316,7 +2316,7 @@
                     ¿Â¼ÒÑ¾­´æÔÚÄÇÃ´Ö±½Ó´ò¿ª */
   2015                        ;{
   2016                        	.line	247
-  Sat Jul 10 2021  1:15                                                Page 39
+  Thu Jul 29 2021 11:45                                                Page 39
 
 
   2017                        	.line	248
@@ -2377,7 +2377,7 @@
   2064 00:0716: F4 64 00     	pea	#<$64
   2065 00:0719: 22 xx xx xx  	jsl	~~CH376WriteVar32
   2066                        ;#endif
-  Sat Jul 10 2021  1:15                                                Page 40
+  Thu Jul 29 2021 11:45                                                Page 40
 
 
   2067                        ;	return( CH376SendCmdWaitInt( CMD0H_DIR_CREATE ) 
@@ -2438,7 +2438,7 @@
   2115 00:0743: E9 08 00     	sbc	#L126
   2116 00:0746: 1B           	tcs
   2117 00:0747: 0B           	phd
-  Sat Jul 10 2021  1:15                                                Page 41
+  Thu Jul 29 2021 11:45                                                Page 41
 
 
   2118 00:0748: 5B           	tcd
@@ -2499,7 +2499,7 @@
   2162 00:0777: C2 20        	rep	#$20
   2163                        	longa	on
   2164 00:0779: D0 03        	bne	L132
-  Sat Jul 10 2021  1:15                                                Page 42
+  Thu Jul 29 2021 11:45                                                Page 42
 
 
   2165 00:077B: 82 1A 00     	brl	L10037
@@ -2560,7 +2560,7 @@
   2214 00:07C0: A5 0A        	lda	<L126+2
   2215 00:07C2: 85 0E        	sta	<L126+2+4
   2216 00:07C4: A5 09        	lda	<L126+1
-  Sat Jul 10 2021  1:15                                                Page 43
+  Thu Jul 29 2021 11:45                                                Page 43
 
 
   2217 00:07C6: 85 0D        	sta	<L126+1+4
@@ -2621,7 +2621,7 @@
   2271                        	.line	270
   2272 00:07DF: E2 20        	sep	#$20
   2273                        	longa	off
-  Sat Jul 10 2021  1:15                                                Page 44
+  Thu Jul 29 2021 11:45                                                Page 44
 
 
   2274 00:07E1: A9 01        	lda	#$1
@@ -2682,7 +2682,7 @@
   2325                        	longa	on
   2326 00:082C: 82 B8 FF     	brl	L10041
   2327                        L10042:
-  Sat Jul 10 2021  1:15                                                Page 45
+  Thu Jul 29 2021 11:45                                                Page 45
 
 
   2328                        ;		if ( PathName[i] ) i ++;
@@ -2743,7 +2743,7 @@
   2383 00:087F: E2 20        	sep	#$20
   2384                        	longa	off
   2385 00:0881: A5 0D        	lda	<L141+i_1
-  Sat Jul 10 2021  1:15                                                Page 46
+  Thu Jul 29 2021 11:45                                                Page 46
 
 
   2386 00:0883: C5 16        	cmp	<L140+StopName_0
@@ -2804,7 +2804,7 @@
   2439                        	longa	on
   2440 00:08C3: F0 03        	beq	L152
   2441 00:08C5: 82 06 00     	brl	L10048
-  Sat Jul 10 2021  1:15                                                Page 47
+  Thu Jul 29 2021 11:45                                                Page 47
 
 
   2442                        L152:
@@ -2865,7 +2865,7 @@
   2497 00:08EC: 3B           	tsc
   2498 00:08ED: 38           	sec
   2499 00:08EE: E9 04 00     	sbc	#L153
-  Sat Jul 10 2021  1:15                                                Page 48
+  Thu Jul 29 2021 11:45                                                Page 48
 
 
   2500 00:08F1: 1B           	tcs
@@ -2926,7 +2926,7 @@
   2555 00:091E: E9 0A 00     	sbc	#L157
   2556 00:0921: 1B           	tcs
   2557 00:0922: 0B           	phd
-  Sat Jul 10 2021  1:15                                                Page 49
+  Thu Jul 29 2021 11:45                                                Page 49
 
 
   2558 00:0923: 5B           	tcd
@@ -2987,7 +2987,7 @@
   2612                        	longa	off
   2613 00:095B: A5 09        	lda	<L158+s_1
   2614 00:095D: C9 14        	cmp	#<$14
-  Sat Jul 10 2021  1:15                                                Page 50
+  Thu Jul 29 2021 11:45                                                Page 50
 
 
   2615 00:095F: C2 20        	rep	#$20
@@ -3048,7 +3048,7 @@
   2669 00:09A0: A5 0E        	lda	<L157+PathName_0
   2670 00:09A2: 65 01        	adc	<R0
   2671 00:09A4: 85 05        	sta	<R1
-  Sat Jul 10 2021  1:15                                                Page 51
+  Thu Jul 29 2021 11:45                                                Page 51
 
 
   2672 00:09A6: A5 10        	lda	<L157+PathName_0+2
@@ -3109,7 +3109,7 @@
   2721                        ;		if ( s != USB_INT_SUCCESS ) return( s );
   2722                        ;		s = CH376ByteWrite( ClustBuf, 2, NULL );
   2723                        ;		if ( s != USB_INT_SUCCESS ) return( s );
-  Sat Jul 10 2021  1:15                                                Page 52
+  Thu Jul 29 2021 11:45                                                Page 52
 
 
   2724                        ;		s = CH376ByteLocate( 0 );
@@ -3170,7 +3170,7 @@
   2775                        	.line	351
   2776                        L10055:
   2777 00:09DE: E2 20        	sep	#$20
-  Sat Jul 10 2021  1:15                                                Page 53
+  Thu Jul 29 2021 11:45                                                Page 53
 
 
   2778                        	longa	off
@@ -3231,7 +3231,7 @@
                     );
   2833                        	.line	353
   2834 00:0A36: D4 13        	pei	<L165+PathName_0+2
-  Sat Jul 10 2021  1:15                                                Page 54
+  Thu Jul 29 2021 11:45                                                Page 54
 
 
   2835 00:0A38: D4 11        	pei	<L165+PathName_0
@@ -3292,7 +3292,7 @@
   2889                        ;	}
   2890                        	.line	357
   2891                        ;	return( CH376SendCmdWaitInt( CMD0H_FILE_ERASE ) 
-  Sat Jul 10 2021  1:15                                                Page 55
+  Thu Jul 29 2021 11:45                                                Page 55
 
 
                     );
@@ -3353,7 +3353,7 @@
   2945 00:0AAE: 29 FF 00     	and	#$ff
   2946                        L180:
   2947 00:0AB1: A8           	tay
-  Sat Jul 10 2021  1:15                                                Page 56
+  Thu Jul 29 2021 11:45                                                Page 56
 
 
   2948 00:0AB2: A5 06        	lda	<L177+2
@@ -3414,7 +3414,7 @@
   3002 00:0AE2: 3B           	tsc
   3003 00:0AE3: 18           	clc
   3004 00:0AE4: 69 04 00     	adc	#L181
-  Sat Jul 10 2021  1:15                                                Page 57
+  Thu Jul 29 2021 11:45                                                Page 57
 
 
   3005 00:0AE7: 1B           	tcs
@@ -3475,7 +3475,7 @@
   3059             00000004   L185	equ	4
   3060             00000005   L186	equ	5
   3061                        	ends
-  Sat Jul 10 2021  1:15                                                Page 58
+  Thu Jul 29 2021 11:45                                                Page 58
 
 
   3062                        	efunc
@@ -3536,7 +3536,7 @@
   3117                        	xref	~~~llsr
   3118 00:0B4A: 22 xx xx xx  	jsl	~~~llsr
   3119 00:0B4E: 85 01        	sta	<R0
-  Sat Jul 10 2021  1:15                                                Page 59
+  Thu Jul 29 2021 11:45                                                Page 59
 
 
   3120 00:0B50: 86 03        	stx	<R0+2
@@ -3597,7 +3597,7 @@
   3174 00:0B83: 0B           	phd
   3175 00:0B84: 5B           	tcd
   3176             00000004   buf_0	set	4
-  Sat Jul 10 2021  1:15                                                Page 60
+  Thu Jul 29 2021 11:45                                                Page 60
 
 
   3177             00000008   ReqCount_0	set	8
@@ -3658,7 +3658,7 @@
   3232 00:0BBD: C9 1D        	cmp	#<$1d
   3233 00:0BBF: C2 20        	rep	#$20
   3234                        	longa	on
-  Sat Jul 10 2021  1:15                                                Page 61
+  Thu Jul 29 2021 11:45                                                Page 61
 
 
   3235 00:0BC1: F0 03        	beq	L197
@@ -3719,7 +3719,7 @@
                      return( s );*/
   3288                        ;		else return( s );
   3289 00:0C0C: 82 17 00     	brl	L10067
-  Sat Jul 10 2021  1:15                                                Page 62
+  Thu Jul 29 2021 11:45                                                Page 62
 
 
   3290                        L10065:
@@ -3780,7 +3780,7 @@
   3344             00000000   s_1	set	0
   3345                        	.sym	s,0,14,1,8
   3346                        	.sym	buf,4,142,6,32
-  Sat Jul 10 2021  1:15                                                Page 63
+  Thu Jul 29 2021 11:45                                                Page 63
 
 
   3347                        	.sym	ReqCount,8,15,6,16
@@ -3841,7 +3841,7 @@
   3402                        	.line	420
   3403 00:0C72: D4 0B        	pei	<L200+buf_0+2
   3404 00:0C74: D4 09        	pei	<L200+buf_0
-  Sat Jul 10 2021  1:15                                                Page 64
+  Thu Jul 29 2021 11:45                                                Page 64
 
 
   3405 00:0C76: 22 xx xx xx  	jsl	~~CH376WriteReqBlock
@@ -3902,7 +3902,7 @@
   3457 00:0CC0: A8           	tay
   3458 00:0CC1: A5 07        	lda	<L200+2
   3459 00:0CC3: 85 11        	sta	<L200+2+10
-  Sat Jul 10 2021  1:15                                                Page 65
+  Thu Jul 29 2021 11:45                                                Page 65
 
 
   3460 00:0CC5: A5 06        	lda	<L200+1
@@ -3963,7 +3963,7 @@
   3513                        ;		xReadCH376Data( );
   3514                        ;		xReadCH376Data( );
   3515                        ;		xReadCH376Data( );
-  Sat Jul 10 2021  1:15                                                Page 66
+  Thu Jul 29 2021 11:45                                                Page 66
 
 
   3516                        ;		c0 = xReadCH376Data( );
@@ -4024,7 +4024,7 @@
   3570                        	xref	~~~llsr
   3571 00:0CFC: 22 xx xx xx  	jsl	~~~llsr
   3572 00:0D00: 85 01        	sta	<R0
-  Sat Jul 10 2021  1:15                                                Page 67
+  Thu Jul 29 2021 11:45                                                Page 67
 
 
   3573 00:0D02: 86 03        	stx	<R0+2
@@ -4085,7 +4085,7 @@
                     art >> 8 ) );
   3627                        ;		xWriteCH376Data( (UINT8)( iLbaStart >> 1
                     6 ) );
-  Sat Jul 10 2021  1:15                                                Page 68
+  Thu Jul 29 2021 11:45                                                Page 68
 
 
   3628                        ;		xWriteCH376Data( (UINT8)( iLbaStart >> 2
@@ -4146,7 +4146,7 @@
                     SK_WR_GO );
   3669                        ;				xEndCH376Cmd( );
   3670                        ;				buf += CH376_DAT_BLOCK_L
-  Sat Jul 10 2021  1:15                                                Page 69
+  Thu Jul 29 2021 11:45                                                Page 69
 
 
                     EN;
@@ -4207,7 +4207,7 @@
   3714                        ;		else cnt = 0xFF;
   3715                        ;#endif
   3716                        ;		xWriteCH376Cmd( CMD1H_SEC_READ );
-  Sat Jul 10 2021  1:15                                                Page 70
+  Thu Jul 29 2021 11:45                                                Page 70
 
 
   3717                        ;		xWriteCH376Data( ReqCount );
@@ -4268,7 +4268,7 @@
   3768                        ;}
   3769                        ;
   3770                        ;#endif
-  Sat Jul 10 2021  1:15                                                Page 71
+  Thu Jul 29 2021 11:45                                                Page 71
 
 
   3771                        ;
@@ -4329,7 +4329,7 @@
   3816                        ;
   3817                        ;UINT8	CH376LocateInUpDir( PUINT8 PathName )
   3818                        ;
-  Sat Jul 10 2021  1:15                                                Page 72
+  Thu Jul 29 2021 11:45                                                Page 72
 
 
   3819                        ;
@@ -4390,7 +4390,7 @@
   3864                        ;				s = ERR_LONG_NAME_ERR;
   3865                        ;				break;
   3866                        ;			}
-  Sat Jul 10 2021  1:15                                                Page 73
+  Thu Jul 29 2021 11:45                                                Page 73
 
 
   3867                        ;			GlobalBuf[33] = DEF_SECTOR_SIZE 
@@ -4451,7 +4451,7 @@
   3909                        ;	DirBlockCnt = count / LONG_NAME_PER_DIR;
   3910                        ;	i = count - DirBlockCnt * LONG_NAME_PER_DIR;
   3911                        ;	if ( i ) {
-  Sat Jul 10 2021  1:15                                                Page 74
+  Thu Jul 29 2021 11:45                                                Page 74
 
 
   3912                        ;		if ( ++ DirBlockCnt * LONG_NAME_PER_DIR 
@@ -4512,7 +4512,7 @@
   3949                        ;			} while ( count && GlobalBuf[0] 
                     );
   3950                        ;			NewFileLoc = CH376ReadVar32( VAR
-  Sat Jul 10 2021  1:15                                                Page 75
+  Thu Jul 29 2021 11:45                                                Page 75
 
 
                     _CURRENT_OFFSET );
@@ -4573,13 +4573,13 @@
   3991                        ;}
   3992                        ;
   3993                        ;#endif
-  Sat Jul 10 2021  1:15                                                Page 76
+  Thu Jul 29 2021 11:45                                                Page 76
 
 
   3994                        ;
   3995                        	.line	866
   3996                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
-                    space\FXOSv1\src\FILE_SYS.C",478
+                    space\FXOS-Beta\src\FILE_SYS.C",478
   3997                        	xref	~~Query376Interrupt
   3998                        	xref	~~xReadCH376Data
   3999                        	xref	~~xWriteCH376Data
@@ -4634,7 +4634,7 @@
   4030                        	.sym	~~CH376WriteVar8,~~CH376WriteVar8,65,2,0
   4031                        	.sym	~~CH376ReadVar8,~~CH376ReadVar8,78,2,0
   4032                        	.sym	~~CH376Read32bitDat,~~CH376Read32bitDat,
-  Sat Jul 10 2021  1:15                                                Page 77
+  Thu Jul 29 2021 11:45                                                Page 77
 
 
                     82,2,0

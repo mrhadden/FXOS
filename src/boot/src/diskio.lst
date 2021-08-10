@@ -1,0 +1,3065 @@
+  Fri Jul 16 2021 14:42                                                Page 1
+
+
+                     ***************************************
+                     **      WDC 65C816 Macro Assembler   **
+                     **                                   **
+                     **     Version 3.49.1- Feb  6 2006    **
+                     ***************************************
+
+     1                        ;:ts=8
+     2             00000001   R0	equ	1
+     3             00000005   R1	equ	5
+     4             00000009   R2	equ	9
+     5             0000000D   R3	equ	13
+     6                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\boot\src\diskio.C",0
+     7                        ;/*-----------------------------------------------
+                    ------------------------*/
+     8                        ;/* Low level disk I/O module skeleton for FatFs  
+                       (C)ChaN, 2019        */
+     9                        ;/*-----------------------------------------------
+                    ------------------------*/
+    10                        ;/* If a working storage control module is availab
+                    le, it should be        */
+    11                        ;/* attached to the FatFs via a glue function rath
+                    er than modifying it.   */
+    12                        ;/* This is an example of glue functions to attach
+                     various exsisting      */
+    13                        ;/* storage control modules to the FatFs module wi
+                    th a defined API.       */
+    14                        ;/*-----------------------------------------------
+                    ------------------------*/
+    15                        ;//#include 	"fxkernel.h"
+    16                        ;
+    17                        ;#include "ff.h"			/* Obtains integ
+                    er types */
+    18                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\boot\src\ff.h",0
+    19                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\boot\src\ffconf.h",0
+    20                        	.line	298
+    21                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\boot\src\ff.h",29
+    22                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\boot\src\../../fxtypes.h",0
+    23                        	.stag	_fx_bytebits,8,1
+    24                        	.member	b7,0,14,17,1
+    25                        	.member	b6,1,14,17,1
+    26                        	.member	b5,2,14,17,1
+    27                        	.member	b4,3,14,17,1
+    28                        	.member	b3,4,14,17,1
+    29                        	.member	b2,5,14,17,1
+    30                        	.member	b1,6,14,17,1
+    31                        	.member	b0,7,14,17,1
+    32                        	.eos
+    33                        	.stag	_fx_node,384,2
+    34                        	.member	type,0,14,8,8
+    35                        	.member	Reserved0,8,14,8,8
+    36                        	.member	data,16,129,8,32
+    37                        	.member	last,48,138,8,32,2
+    38                        	.member	next,80,138,8,32,2
+  Fri Jul 16 2021 14:42                                                Page 2
+
+
+    39                        	.member	name,112,110,8,0,32
+    40                        	.member	Reserved1,368,16,8,16
+    41                        	.eos
+    42                        	.stag	_fx_nodelist,96,3
+    43                        	.member	listhead,0,138,8,32,2
+    44                        	.member	listData,32,129,8,32
+    45                        	.member	deallocator,64,641,8,32
+    46                        	.eos
+    47                        	.stag	_fx_queue,80,4
+    48                        	.member	count,0,5,8,16
+    49                        	.member	front,16,138,8,32,2
+    50                        	.member	rear,48,138,8,32,2
+    51                        	.eos
+    52                        	.stag	fake5_,32,5
+    53                        	.member	subsystem,0,14,8,8
+    54                        	.member	level,8,14,8,8
+    55                        	.member	error,16,16,8,16
+    56                        	.eos
+    57                        	.stag	_fx_process_signal,16,6
+    58                        	.member	cbSize,0,16,8,16
+    59                        	.eos
+    60                        	.stag	_fx_semaphore,16,7
+    61                        	.member	reserved,0,5,8,16
+    62                        	.eos
+    63                        	.stag	_fx_fileBlock,552,8
+    64                        	.member	openCount,0,16,8,16
+    65                        	.member	lockCount,16,16,8,16
+    66                        	.member	dirty,32,14,8,8
+    67                        	.member	fileBuffer,40,110,8,0,64
+    68                        	.eos
+    69                        	.stag	_fx_irq_data,48,9
+    70                        	.member	line,0,5,8,16
+    71                        	.member	keycode,16,142,8,32
+    72                        	.eos
+    73                        	.stag	_task,48,10
+    74                        	.member	SPL,0,14,8,8
+    75                        	.member	SPH,8,14,8,8
+    76                        	.member	pstack,16,142,8,32
+    77                        	.eos
+    78                        	.stag	_task_stack,32,11
+    79                        	.member	SS,0,142,8,32
+    80                        	.eos
+    81                        	.stag	int_regs,104,12
+    82                        	.member	PB,0,14,8,8
+    83                        	.member	PH,8,14,8,8
+    84                        	.member	PL,16,14,8,8
+    85                        	.member	PP,24,14,8,8
+    86                        	.member	DB,32,14,8,8
+    87                        	.member	DH,40,14,8,8
+    88                        	.member	DL,48,14,8,8
+    89                        	.member	AH,56,14,8,8
+    90                        	.member	AL,64,14,8,8
+    91                        	.member	XH,72,14,8,8
+    92                        	.member	XL,80,14,8,8
+    93                        	.member	YH,88,14,8,8
+    94                        	.member	YL,96,14,8,8
+    95                        	.eos
+    96                        	.stag	_fx_eventMessage,304,13
+  Fri Jul 16 2021 14:42                                                Page 3
+
+
+    97                        	.member	src,0,18,8,32
+    98                        	.member	dest,32,18,8,32
+    99                        	.member	type,64,16,8,16
+   100                        	.member	hwnd,80,129,8,32
+   101                        	.member	pheap,112,129,8,32
+   102                        	.member	msgTime,144,18,8,32
+   103                        	.member	data,176,110,8,0,16
+   104                        	.eos
+   105                        	.stag	_fx_cmdMessage,304,14
+   106                        	.member	src,0,18,8,32
+   107                        	.member	dest,32,18,8,32
+   108                        	.member	type,64,16,8,16
+   109                        	.member	hwnd,80,129,8,32
+   110                        	.member	pheap,112,129,8,32
+   111                        	.member	msgTime,144,18,8,32
+   112                        	.member	cmdCId,176,16,8,16
+   113                        	.member	cmdMId,192,16,8,16
+   114                        	.member	parameter1,208,18,8,32
+   115                        	.member	parameter2,240,18,8,32
+   116                        	.member	parameter3,272,18,8,32
+   117                        	.eos
+   118                        	.stag	_fx_console_ctl,448,15
+   119                        	.member	maxCols,0,5,8,16
+   120                        	.member	maxRows,16,5,8,16
+   121                        	.member	curX,32,5,8,16
+   122                        	.member	curY,48,5,8,16
+   123                        	.member	fgColor,64,5,8,16
+   124                        	.member	bgColor,80,5,8,16
+   125                        	.member	mode,96,14,8,8
+   126                        	.member	kbBuffer,104,101,8,0,16
+   127                        	.member	screenBuffer,360,142,8,32
+   128                        	.member	desktopMode,392,14,8,8
+   129                        	.member	lastMouseButton,400,5,8,16
+   130                        	.member	lastMouseX,416,5,8,16
+   131                        	.member	lastMouseY,432,5,8,16
+   132                        	.eos
+   133                        	.stag	_fx_desktop_ctl,392,16
+   134                        	.member	desktopMode,0,14,8,8
+   135                        	.member	cursorCtl,8,5,8,16
+   136                        	.member	cursorState,24,5,8,16
+   137                        	.member	backgroundColor,40,5,8,16
+   138                        	.member	foregroundColor,56,5,8,16
+   139                        	.member	menuMode,72,5,8,16
+   140                        	.member	lastMouseButton,88,5,8,16
+   141                        	.member	lastMouseX,104,5,8,16
+   142                        	.member	lastMouseY,120,5,8,16
+   143                        	.member	currentDiskName,136,142,8,32
+   144                        	.member	diskNodes,168,129,8,32
+   145                        	.member	titleNodes,200,129,8,32
+   146                        	.member	menuNodes,232,129,8,32
+   147                        	.member	iconNodes,264,129,8,32
+   148                        	.member	windowNodes,296,129,8,32
+   149                        	.member	fontNodes,328,129,8,32
+   150                        	.member	wndProc,360,138,8,32,3
+   151                        	.eos
+   152                        	.stag	_fx_process,800,17
+   153                        	.member	cbSize,0,5,8,16
+   154                        	.member	procId,16,18,8,32
+  Fri Jul 16 2021 14:42                                                Page 4
+
+
+   155                        	.member	parentId,48,18,8,32
+   156                        	.member	ctx,80,129,8,32
+   157                        	.member	userId,112,16,8,16
+   158                        	.member	status,128,16,8,16
+   159                        	.member	foregroundActive,144,14,8,8
+   160                        	.member	tls,152,1121,8,32,8
+   161                        	.member	commandLine,408,142,8,32
+   162                        	.member	semaphores,440,138,8,32,3
+   163                        	.member	fileHandles,472,138,8,32,3
+   164                        	.member	pathList,504,138,8,32,3
+   165                        	.member	resources,536,138,8,32,3
+   166                        	.member	timerAware,568,14,8,8
+   167                        	.member	timerTicks,576,112,8,0,2
+   168                        	.member	timerTickCount,608,112,8,0,2
+   169                        	.member	kernelError,640,10,8,32,5
+   170                        	.member	consoleCtl,672,138,8,32,15
+   171                        	.member	desktopCtl,704,138,8,32,16
+   172                        	.member	execProc,736,641,8,32
+   173                        	.member	startupArgs,768,129,8,32
+   174                        	.eos
+   175                        	.stag	_fxProcessMessage,112,18
+   176                        	.member	src,0,18,8,32
+   177                        	.member	dest,32,18,8,32
+   178                        	.member	type,64,16,8,16
+   179                        	.member	processInfo,80,138,8,32,17
+   180                        	.eos
+   181                        	.stag	_k_key_state,112,19
+   182                        	.member	scanCode,0,14,8,8
+   183                        	.member	isShifted,8,14,8,8
+   184                        	.member	isAlt,16,14,8,8
+   185                        	.member	isExtended,24,14,8,8
+   186                        	.member	isCapsLock,32,14,8,8
+   187                        	.member	isNumLock,40,14,8,8
+   188                        	.member	isScrollLock,48,14,8,8
+   189                        	.member	keyChar,56,16,8,16
+   190                        	.member	scanTime,72,18,8,32
+   191                        	.member	ledStatus,104,14,8,8
+   192                        	.eos
+   193                        	.stag	_fx_property,384,20
+   194                        	.member	name,0,110,8,0,16
+   195                        	.member	value,128,110,8,0,32
+   196                        	.eos
+   197                        	.utag	_24bitPointer,32,21
+   198                        	.member	address,0,142,11,32
+   199                        	.member	bytes,0,110,11,0,4
+   200                        	.eos
+   201                        	.stag	_PointStruct,32,22
+   202                        	.member	x,0,5,8,16
+   203                        	.member	y,16,5,8,16
+   204                        	.eos
+   205                        	.stag	_RectStruct,112,23
+   206                        	.member	x,0,5,8,16
+   207                        	.member	y,16,5,8,16
+   208                        	.member	z,32,18,8,32
+   209                        	.member	width,64,5,8,16
+   210                        	.member	height,80,5,8,16
+   211                        	.member	attr,96,5,8,16
+   212                        	.eos
+  Fri Jul 16 2021 14:42                                                Page 5
+
+
+   213                        	.stag	fake24_,96,24
+   214                        	.member	name,0,142,8,32
+   215                        	.member	topLeft,32,10,8,32,22
+   216                        	.member	bottomRight,64,10,8,32,22
+   217                        	.eos
+   218                        	.stag	fake25_,112,25
+   219                        	.member	x,0,5,8,16
+   220                        	.member	y,16,5,8,16
+   221                        	.member	z,32,5,8,16
+   222                        	.member	width,48,5,8,16
+   223                        	.member	height,64,5,8,16
+   224                        	.member	data,80,18,8,32
+   225                        	.eos
+   226                        	.stag	_k_WindowClass,272,26
+   227                        	.member	cbSize,0,16,8,16
+   228                        	.member	style,16,16,8,16
+   229                        	.member	styleEx,32,16,8,16
+   230                        	.member	pWndProc,48,654,8,32
+   231                        	.member	hInstance,80,129,8,32
+   232                        	.member	hIcon,112,129,8,32
+   233                        	.member	hCursor,144,129,8,32
+   234                        	.member	hbrBackground,176,129,8,32
+   235                        	.member	lpszMenuName,208,142,8,32
+   236                        	.member	lpszClassName,240,142,8,32
+   237                        	.eos
+   238                        	.stag	_ClickableRect,152,27
+   239                        	.member	area,0,10,8,112,23
+   240                        	.member	z,112,18,8,32
+   241                        	.member	enabled,144,14,8,8
+   242                        	.eos
+   243                        	.stag	_NCClickableRect,136,28
+   244                        	.member	area,0,10,8,112,23
+   245                        	.member	msgType,112,16,8,16
+   246                        	.member	enabled,128,14,8,8
+   247                        	.eos
+   248                        	.stag	_DragData,216,29
+   249                        	.member	area,0,10,8,112,23
+   250                        	.member	xoffset,112,5,8,16
+   251                        	.member	yoffset,128,5,8,16
+   252                        	.member	msgType,144,16,8,16
+   253                        	.member	ncAction,160,16,8,16
+   254                        	.member	isDrag,176,14,8,8
+   255                        	.member	isResize,184,14,8,8
+   256                        	.member	canDrag,192,14,8,8
+   257                        	.member	canDrop,200,14,8,8
+   258                        	.member	didDrag,208,14,8,8
+   259                        	.eos
+   260                        	.stag	_k_WindowStruct,3904,30
+   261                        	.member	cbSize,0,16,8,16
+   262                        	.member	style,16,18,8,32
+   263                        	.member	styleEx,48,18,8,32
+   264                        	.member	win_id,80,5,8,16
+   265                        	.member	win_x,96,5,8,16
+   266                        	.member	win_y,112,5,8,16
+   267                        	.member	win_width,128,5,8,16
+   268                        	.member	win_height,144,5,8,16
+   269                        	.member	win_xoffset,160,5,8,16
+   270                        	.member	win_yoffset,176,5,8,16
+  Fri Jul 16 2021 14:42                                                Page 6
+
+
+   271                        	.member	win_cxoffset,192,5,8,16
+   272                        	.member	win_cyoffset,208,5,8,16
+   273                        	.member	wndRect,224,10,8,112,23
+   274                        	.member	clientRect,336,10,8,112,23
+   275                        	.member	nonclientGadgets,448,106,8,0,28,16
+   276                        	.member	clickable,2624,129,8,32
+   277                        	.member	win_title,2656,110,8,0,32
+   278                        	.member	Reserved0,2912,16,8,16
+   279                        	.member	win_class,2928,110,8,0,16
+   280                        	.member	win_class_name,3056,110,8,0,32
+   281                        	.member	nBitmapLayer,3312,16,8,16
+   282                        	.member	bgRegion,3328,129,8,32
+   283                        	.member	procid,3360,18,8,32
+   284                        	.member	pWndClass,3392,138,8,32,26
+   285                        	.member	pParentWindow,3424,129,8,32
+   286                        	.member	hMenu,3456,129,8,32
+   287                        	.member	hPointer,3488,129,8,32
+   288                        	.member	hBackground,3520,129,8,32
+   289                        	.member	pChildWindows,3552,138,8,32,3
+   290                        	.member	pChildHitList,3584,138,8,32,3
+   291                        	.member	isVisible,3616,14,8,8
+   292                        	.member	windowData,3624,129,8,32
+   293                        	.member	clientData,3656,1121,8,32,6
+   294                        	.member	isClosed,3848,14,8,8
+   295                        	.member	isClosing,3856,14,8,8
+   296                        	.member	isDesktop,3864,14,8,8
+   297                        	.member	clickableNode,3872,138,8,32,2
+   298                        	.eos
+   299                        	.stag	_k_WindowStructEx,3880,31
+   300                        	.member	cbSize,0,16,8,16
+   301                        	.member	style,16,18,8,32
+   302                        	.member	styleEx,48,18,8,32
+   303                        	.member	win_id,80,5,8,16
+   304                        	.member	win_x,96,5,8,16
+   305                        	.member	win_y,112,5,8,16
+   306                        	.member	win_width,128,5,8,16
+   307                        	.member	win_height,144,5,8,16
+   308                        	.member	win_xoffset,160,5,8,16
+   309                        	.member	win_yoffset,176,5,8,16
+   310                        	.member	win_cxoffset,192,5,8,16
+   311                        	.member	win_cyoffset,208,5,8,16
+   312                        	.member	wndRect,224,10,8,112,23
+   313                        	.member	clientRect,336,10,8,112,23
+   314                        	.member	nonclientGadgets,448,106,8,0,28,16
+   315                        	.member	clickable,2624,129,8,32
+   316                        	.member	win_title,2656,110,8,0,32
+   317                        	.member	Reserved0,2912,16,8,16
+   318                        	.member	win_class,2928,110,8,0,16
+   319                        	.member	nBitmapLayer,3056,16,8,16
+   320                        	.member	procid,3072,18,8,32
+   321                        	.member	pWndClass,3104,138,8,32,26
+   322                        	.member	pParentWindow,3136,129,8,32
+   323                        	.member	hMenu,3168,129,8,32
+   324                        	.member	hPointer,3200,129,8,32
+   325                        	.member	hBackground,3232,129,8,32
+   326                        	.member	pChildWindows,3264,138,8,32,3
+   327                        	.member	pChildHitList,3296,138,8,32,3
+   328                        	.member	isVisible,3328,14,8,8
+  Fri Jul 16 2021 14:42                                                Page 7
+
+
+   329                        	.member	windowData,3336,129,8,32
+   330                        	.member	clientData,3368,1121,8,32,4
+   331                        	.member	isClosed,3496,14,8,8
+   332                        	.member	hWnd,3504,129,8,32
+   333                        	.member	localRect,3536,10,8,112,23
+   334                        	.member	globalRect,3648,10,8,112,23
+   335                        	.member	clientOffsetRect,3760,10,8,112,23
+   336                        	.member	isDesktop,3872,14,8,8
+   337                        	.eos
+   338                        	.stag	_FontMetric,32,32
+   339                        	.member	width,0,5,8,16
+   340                        	.member	height,16,5,8,16
+   341                        	.eos
+   342                        	.stag	_MenuStruct,280,33
+   343                        	.member	cx,0,5,8,16
+   344                        	.member	cy,16,5,8,16
+   345                        	.member	width,32,5,8,16
+   346                        	.member	height,48,5,8,16
+   347                        	.member	fcolor,64,14,8,8
+   348                        	.member	bcolor,72,14,8,8
+   349                        	.member	chromeLeft,80,14,8,8
+   350                        	.member	chromeRight1,88,14,8,8
+   351                        	.member	chromeRight2,96,14,8,8
+   352                        	.member	hFont,104,129,8,32
+   353                        	.member	itemId,136,16,8,16
+   354                        	.member	pCaption,152,142,8,32
+   355                        	.member	subMenus,184,138,8,32,3
+   356                        	.member	pBackground,216,129,8,32
+   357                        	.member	hWndOwner,248,129,8,32
+   358                        	.eos
+   359                        	.stag	fake34_,160,34
+   360                        	.member	menuId,0,16,8,16
+   361                        	.member	caption,16,142,8,32
+   362                        	.member	rect,48,10,8,112,23
+   363                        	.eos
+   364                        	.stag	fake35_,5152,35
+   365                        	.member	pParent,0,138,8,32,30
+   366                        	.member	rect,32,10,8,112,23
+   367                        	.member	captions,144,1134,8,32,24
+   368                        	.member	chrome,912,110,8,0,24
+   369                        	.member	ids,1104,112,8,0,24
+   370                        	.member	clickable,1488,106,8,0,27,24
+   371                        	.member	selected,5136,16,8,16
+   372                        	.eos
+   373                        	.stag	_fx_button_t,96,36
+   374                        	.member	pCaption,0,142,8,32
+   375                        	.member	cCaption,32,16,8,16
+   376                        	.member	data,48,129,8,32
+   377                        	.member	captionPixelWidth,80,16,8,16
+   378                        	.eos
+   379                        	.stag	_fx_scrollbar_t,240,37
+   380                        	.member	min,0,16,8,16
+   381                        	.member	max,16,16,8,16
+   382                        	.member	increment,32,16,8,16
+   383                        	.member	stopsize,48,16,8,16
+   384                        	.member	location,64,5,8,16
+   385                        	.member	state,80,5,8,16
+   386                        	.member	rectThumb,96,10,8,112,23
+  Fri Jul 16 2021 14:42                                                Page 8
+
+
+   387                        	.member	data,208,129,8,32
+   388                        	.eos
+   389                        	.stag	_fx_listbox_t,240,38
+   390                        	.member	pos,0,5,8,16
+   391                        	.member	selected,16,16,8,16
+   392                        	.member	offsetX,32,5,8,16
+   393                        	.member	offsetY,48,5,8,16
+   394                        	.member	inc,64,5,8,16
+   395                        	.member	direction,80,5,8,16
+   396                        	.member	top,96,5,8,16
+   397                        	.member	bottom,112,5,8,16
+   398                        	.member	indexTop,128,5,8,16
+   399                        	.member	indexBottom,144,5,8,16
+   400                        	.member	maxItems,160,16,8,16
+   401                        	.member	fontSet,176,142,8,32
+   402                        	.member	data,208,129,8,32
+   403                        	.eos
+   404                        	.stag	_fx_textbox_t,144,39
+   405                        	.member	pos,0,5,8,16
+   406                        	.member	selected,16,16,8,16
+   407                        	.member	offsetX,32,5,8,16
+   408                        	.member	offsetY,48,5,8,16
+   409                        	.member	isShifted,64,14,8,8
+   410                        	.member	cursorState,72,14,8,8
+   411                        	.member	fontSet,80,142,8,32
+   412                        	.member	data,112,129,8,32
+   413                        	.eos
+   414                        	.stag	_fx_msgbox_t,144,40
+   415                        	.member	pos,0,5,8,16
+   416                        	.member	selected,16,16,8,16
+   417                        	.member	offsetX,32,5,8,16
+   418                        	.member	offsetY,48,5,8,16
+   419                        	.member	isShifted,64,14,8,8
+   420                        	.member	cursorState,72,14,8,8
+   421                        	.member	fontSet,80,142,8,32
+   422                        	.member	data,112,129,8,32
+   423                        	.eos
+   424                        	.stag	_fx_menuAnchor_t,272,41
+   425                        	.member	pCaption,0,142,8,32
+   426                        	.member	renderLayoutX,32,16,8,16
+   427                        	.member	renderLayoutY,48,16,8,16
+   428                        	.member	captionPixelWidth,64,16,8,16
+   429                        	.member	data,80,129,8,32
+   430                        	.member	droppedWindow,112,138,8,32,30
+   431                        	.member	bytes,144,110,8,0,16
+   432                        	.eos
+   433                        	.stag	_SubMenuStruct,64,42
+   434                        	.member	caption,0,142,8,32
+   435                        	.member	action,32,641,8,32
+   436                        	.eos
+   437                        	.stag	_SubMenuListStruct,40,43
+   438                        	.member	cMenus,0,14,8,8
+   439                        	.member	psubmenus,8,9354,8,32,42
+   440                        	.eos
+   441                        	.stag	_fx_ComBuffer,2080,44
+   442                        	.member	cbSize,0,16,8,16
+   443                        	.member	cbBuffer,16,16,8,16
+   444                        	.member	buffer,32,110,8,0,256
+  Fri Jul 16 2021 14:42                                                Page 9
+
+
+   445                        	.eos
+   446                        	.stag	_fx_resource_header,72,45
+   447                        	.member	magic,0,110,8,0,4
+   448                        	.member	major,32,14,8,8
+   449                        	.member	minor,40,14,8,8
+   450                        	.member	type,48,14,8,8
+   451                        	.member	reserved,56,14,8,8
+   452                        	.member	resheaderSize,64,14,8,8
+   453                        	.eos
+   454                        	.stag	_fx_resource_header_font,144,46
+   455                        	.member	title,0,110,8,0,16
+   456                        	.member	height,128,14,8,8
+   457                        	.member	width,136,14,8,8
+   458                        	.eos
+   459                        	.stag	_fx_resource_string,32,47
+   460                        	.member	locale,0,110,8,0,2
+   461                        	.member	entries,16,16,8,16
+   462                        	.eos
+   463                        	.stag	_fx_resource_string_entry,40,48
+   464                        	.member	index,0,16,8,16
+   465                        	.member	length,16,16,8,16
+   466                        	.member	data,32,14,8,8
+   467                        	.eos
+   468                        	.line	1047
+   469                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\boot\src\ff.h",30
+   470                        	.stag	fake49_,4472,49
+   471                        	.member	fs_type,0,14,8,8
+   472                        	.member	pdrv,8,14,8,8
+   473                        	.member	n_fats,16,14,8,8
+   474                        	.member	wflag,24,14,8,8
+   475                        	.member	fsi_flag,32,14,8,8
+   476                        	.member	id,40,5,8,16
+   477                        	.member	n_rootdir,56,5,8,16
+   478                        	.member	csize,72,5,8,16
+   479                        	.member	last_clst,88,18,8,32
+   480                        	.member	free_clst,120,18,8,32
+   481                        	.member	n_fatent,152,18,8,32
+   482                        	.member	fsize,184,18,8,32
+   483                        	.member	volbase,216,18,8,32
+   484                        	.member	fatbase,248,18,8,32
+   485                        	.member	dirbase,280,18,8,32
+   486                        	.member	database,312,18,8,32
+   487                        	.member	winsect,344,18,8,32
+   488                        	.member	win,376,110,8,0,512
+   489                        	.eos
+   490                        	.stag	fake50_,128,50
+   491                        	.member	fs,0,138,8,32,49
+   492                        	.member	id,32,5,8,16
+   493                        	.member	attr,48,14,8,8
+   494                        	.member	stat,56,14,8,8
+   495                        	.member	sclust,64,18,8,32
+   496                        	.member	objsize,96,18,8,32
+   497                        	.eos
+   498                        	.stag	fake51_,4400,51
+   499                        	.member	obj,0,10,8,128,50
+   500                        	.member	flag,128,14,8,8
+   501                        	.member	err,136,14,8,8
+  Fri Jul 16 2021 14:42                                                Page 10
+
+
+   502                        	.member	fptr,144,18,8,32
+   503                        	.member	clust,176,18,8,32
+   504                        	.member	sect,208,18,8,32
+   505                        	.member	dir_sect,240,18,8,32
+   506                        	.member	dir_ptr,272,142,8,32
+   507                        	.member	buf,304,110,8,0,512
+   508                        	.eos
+   509                        	.stag	fake52_,384,52
+   510                        	.member	obj,0,10,8,128,50
+   511                        	.member	dptr,128,18,8,32
+   512                        	.member	clust,160,18,8,32
+   513                        	.member	sect,192,18,8,32
+   514                        	.member	dir,224,142,8,32
+   515                        	.member	fn,256,110,8,0,12
+   516                        	.member	pat,352,142,8,32
+   517                        	.eos
+   518                        	.stag	fake53_,176,53
+   519                        	.member	fsize,0,18,8,32
+   520                        	.member	fdate,32,5,8,16
+   521                        	.member	ftime,48,5,8,16
+   522                        	.member	fattrib,64,14,8,8
+   523                        	.member	fname,72,110,8,0,13
+   524                        	.eos
+   525                        	.stag	fake54_,80,54
+   526                        	.member	fmt,0,14,8,8
+   527                        	.member	n_fat,8,14,8,8
+   528                        	.member	align,16,16,8,16
+   529                        	.member	n_root,32,16,8,16
+   530                        	.member	au_size,48,18,8,32
+   531                        	.eos
+   532                        	.stag	__PARTITIONTABLE,128,55
+   533                        	.member	first_byte,0,14,8,8
+   534                        	.member	start_chs,8,110,8,0,3
+   535                        	.member	partition_type,32,14,8,8
+   536                        	.member	end_chs,40,110,8,0,3
+   537                        	.member	start_sector,64,18,8,32
+   538                        	.member	length_sectors,96,18,8,32
+   539                        	.eos
+   540                        	.line	437
+   541                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\boot\src\diskio.C",11
+   542                        ;#include "diskio.h"		/* Declarations 
+                    of disk functions */
+   543                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\boot\src\diskio.h",0
+   544                        	.line	128
+   545                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\boot\src\diskio.C",12
+   546                        ;//#include "../../fxdos.h"
+   547                        ;
+   548                        ;static CHAR szIndentity[512];
+   549                        ;
+   550                        ;#define STAT3	((volatile char *)0xAFA482)
+   551                        ;#define STAT4	((volatile char *)0xAFA483)
+   552                        ;
+   553                        ;#define SET_STATUS_3(a)	(STAT3[0] = a)
+   554                        ;#define SET_STATUS_4(a)	(STAT4[0] = a)
+   555                        ;
+  Fri Jul 16 2021 14:42                                                Page 11
+
+
+   556                        ;
+   557                        ;#pragma section CODE=DISKIO,offset $0B:31F0
+   558                        DISKIO	section	offset $0B:31F0
+   559 0B:31F0:              	ends
+   560                        ;
+   561                        ;static VOID k_drive_wait_drq(VOID)
+   562                        ;{
+   563                        	.line	26
+   564                        	.line	27
+   565                        	DISKIO
+   566                        	func
+   567                        	.function	27
+   568                        ~~k_drive_wait_drq:
+   569                        	longa	on
+   570                        	longi	on
+   571 0B:31F0: 3B           	tsc
+   572 0B:31F1: 38           	sec
+   573 0B:31F2: E9 04 00     	sbc	#L2
+   574 0B:31F5: 1B           	tcs
+   575 0B:31F6: 0B           	phd
+   576 0B:31F7: 5B           	tcd
+   577                        	.block	27
+   578                        ;	while((IDE_CMD_STAT[0] & IDE_STAT_DRQ) != IDE_ST
+                    AT_DRQ)
+   579                        	.line	28
+   580                        L10001:
+   581 0B:31F8: AF 37 E8 AF  	lda	>11528247
+   582 0B:31FC: 29 08 00     	and	#<$8
+   583 0B:31FF: 85 01        	sta	<R0
+   584 0B:3201: A5 01        	lda	<R0
+   585 0B:3203: C9 08 00     	cmp	#<$8
+   586 0B:3206: D0 03        	bne	L5
+   587 0B:3208: 82 03 00     	brl	L10002
+   588                        L5:
+   589                        ;	{
+   590                        	.line	29
+   591                        ;
+   592                        ;	}
+   593                        	.line	31
+   594 0B:320B: 82 EA FF     	brl	L10001
+   595                        L10002:
+   596                        ;
+   597                        ;	return;
+   598                        	.line	33
+   599                        L6:
+   600 0B:320E: 2B           	pld
+   601 0B:320F: 3B           	tsc
+   602 0B:3210: 18           	clc
+   603 0B:3211: 69 04 00     	adc	#L2
+   604 0B:3214: 1B           	tcs
+   605 0B:3215: 6B           	rtl
+   606                        ;}
+   607                        	.line	34
+   608                        	.endblock	34
+   609             00000004   L2	equ	4
+   610             00000005   L3	equ	5
+   611 0B:3216:              	ends
+   612                        	efunc
+  Fri Jul 16 2021 14:42                                                Page 12
+
+
+   613                        	.endfunc	34,5,4
+   614                        	.line	34
+   615                        ;
+   616                        ;static UINT k_drive_wait_dsc(VOID)
+   617                        ;{
+   618                        	.line	36
+   619                        	.line	37
+   620                        	DISKIO
+   621                        	func
+   622                        	.function	37
+   623                        ~~k_drive_wait_dsc:
+   624                        	longa	on
+   625                        	longi	on
+   626 0B:3216: 3B           	tsc
+   627 0B:3217: 38           	sec
+   628 0B:3218: E9 05 00     	sbc	#L7
+   629 0B:321B: 1B           	tcs
+   630 0B:321C: 0B           	phd
+   631 0B:321D: 5B           	tcd
+   632                        	.block	37
+   633                        ;	UCHAR code = 0;
+   634                        ;
+   635                        ;	code = IDE_CMD_STAT[0];
+   636             00000000   code_1	set	0
+   637                        	.sym	code,0,14,1,8
+   638 0B:321E: E2 20        	sep	#$20
+   639                        	longa	off
+   640 0B:3220: 64 05        	stz	<L8+code_1
+   641 0B:3222: C2 20        	rep	#$20
+   642                        	longa	on
+   643                        	.line	40
+   644 0B:3224: E2 20        	sep	#$20
+   645                        	longa	off
+   646 0B:3226: AF 37 E8 AF  	lda	>11528247
+   647 0B:322A: 85 05        	sta	<L8+code_1
+   648 0B:322C: C2 20        	rep	#$20
+   649                        	longa	on
+   650                        ;	while((code & IDE_STAT_DSC) != IDE_STAT_DSC)
+   651                        	.line	41
+   652                        L10003:
+   653 0B:322E: A5 05        	lda	<L8+code_1
+   654 0B:3230: 29 10 00     	and	#<$10
+   655 0B:3233: 85 01        	sta	<R0
+   656 0B:3235: A5 01        	lda	<R0
+   657 0B:3237: C9 10 00     	cmp	#<$10
+   658 0B:323A: D0 03        	bne	L10
+   659 0B:323C: 82 27 00     	brl	L10004
+   660                        L10:
+   661                        ;	{
+   662                        	.line	42
+   663                        ;		if(code & IDE_STAT_DF)
+   664                        	.line	43
+   665                        ;		{
+   666 0B:323F: E2 20        	sep	#$20
+   667                        	longa	off
+   668 0B:3241: A5 05        	lda	<L8+code_1
+   669 0B:3243: 29 20        	and	#<$20
+   670 0B:3245: C2 20        	rep	#$20
+  Fri Jul 16 2021 14:42                                                Page 13
+
+
+   671                        	longa	on
+   672 0B:3247: D0 03        	bne	L11
+   673 0B:3249: 82 0D 00     	brl	L10005
+   674                        L11:
+   675                        	.line	44
+   676                        ;			//DebugHex("k_drive_wait_dsc:err
+                    or:",code);
+   677                        ;			return IDE_STAT_DF;
+   678                        	.line	46
+   679 0B:324C: A9 20 00     	lda	#$20
+   680                        L12:
+   681 0B:324F: A8           	tay
+   682 0B:3250: 2B           	pld
+   683 0B:3251: 3B           	tsc
+   684 0B:3252: 18           	clc
+   685 0B:3253: 69 05 00     	adc	#L7
+   686 0B:3256: 1B           	tcs
+   687 0B:3257: 98           	tya
+   688 0B:3258: 6B           	rtl
+   689                        ;		}
+   690                        	.line	47
+   691                        ;		code = IDE_CMD_STAT[0];
+   692                        L10005:
+   693                        	.line	48
+   694 0B:3259: E2 20        	sep	#$20
+   695                        	longa	off
+   696 0B:325B: AF 37 E8 AF  	lda	>11528247
+   697 0B:325F: 85 05        	sta	<L8+code_1
+   698 0B:3261: C2 20        	rep	#$20
+   699                        	longa	on
+   700                        ;	}
+   701                        	.line	49
+   702 0B:3263: 82 C8 FF     	brl	L10003
+   703                        L10004:
+   704                        ;
+   705                        ;	return 0;
+   706                        	.line	51
+   707 0B:3266: A9 00 00     	lda	#$0
+   708 0B:3269: 82 E3 FF     	brl	L12
+   709                        ;}
+   710                        	.line	52
+   711                        	.endblock	52
+   712             00000005   L7	equ	5
+   713             00000005   L8	equ	5
+   714 0B:326C:              	ends
+   715                        	efunc
+   716                        	.endfunc	52,5,5
+   717                        	.line	52
+   718                        ;
+   719                        ;static VOID k_drive_ready(VOID)
+   720                        ;{
+   721                        	.line	54
+   722                        	.line	55
+   723                        	DISKIO
+   724                        	func
+   725                        	.function	55
+   726                        ~~k_drive_ready:
+   727                        	longa	on
+  Fri Jul 16 2021 14:42                                                Page 14
+
+
+   728                        	longi	on
+   729 0B:326C: 3B           	tsc
+   730 0B:326D: 38           	sec
+   731 0B:326E: E9 04 00     	sbc	#L13
+   732 0B:3271: 1B           	tcs
+   733 0B:3272: 0B           	phd
+   734 0B:3273: 5B           	tcd
+   735                        	.block	55
+   736                        ;	//DebugOut("***k_drive_ready\r\n");
+   737                        ;
+   738                        ;	while((IDE_CMD_STAT[0] & IDE_STAT_DRDY) == IDE_S
+                    TAT_DRDY);
+   739                        	.line	58
+   740                        L10006:
+   741 0B:3274: AF 37 E8 AF  	lda	>11528247
+   742 0B:3278: 29 40 00     	and	#<$40
+   743 0B:327B: 85 01        	sta	<R0
+   744 0B:327D: A5 01        	lda	<R0
+   745 0B:327F: C9 40 00     	cmp	#<$40
+   746 0B:3282: F0 03        	beq	L16
+   747 0B:3284: 82 03 00     	brl	L10007
+   748                        L16:
+   749                        	.line	58
+   750 0B:3287: 82 EA FF     	brl	L10006
+   751                        L10007:
+   752                        ;
+   753                        ;	return;
+   754                        	.line	60
+   755                        L17:
+   756 0B:328A: 2B           	pld
+   757 0B:328B: 3B           	tsc
+   758 0B:328C: 18           	clc
+   759 0B:328D: 69 04 00     	adc	#L13
+   760 0B:3290: 1B           	tcs
+   761 0B:3291: 6B           	rtl
+   762                        ;}
+   763                        	.line	61
+   764                        	.endblock	61
+   765             00000004   L13	equ	4
+   766             00000005   L14	equ	5
+   767 0B:3292:              	ends
+   768                        	efunc
+   769                        	.endfunc	61,5,4
+   770                        	.line	61
+   771                        ;
+   772                        ;static UINT k_drive_not_busy_or_drq(VOID)
+   773                        ;{
+   774                        	.line	63
+   775                        	.line	64
+   776                        	DISKIO
+   777                        	func
+   778                        	.function	64
+   779                        ~~k_drive_not_busy_or_drq:
+   780                        	longa	on
+   781                        	longi	on
+   782 0B:3292: 3B           	tsc
+   783 0B:3293: 38           	sec
+   784 0B:3294: E9 02 00     	sbc	#L18
+  Fri Jul 16 2021 14:42                                                Page 15
+
+
+   785 0B:3297: 1B           	tcs
+   786 0B:3298: 0B           	phd
+   787 0B:3299: 5B           	tcd
+   788                        	.block	64
+   789                        ;	BYTE 	code = 0;
+   790                        ;	UCHAR 	safety = 8096;
+   791                        ;	//DebugOut("***k_drive_not_busy_or_drq\r\n");
+   792                        ;
+   793                        ;	code = IDE_CMD_STAT[0];
+   794             00000000   code_1	set	0
+   795             00000001   safety_1	set	1
+   796                        	.sym	code,0,14,1,8
+   797                        	.sym	safety,1,14,1,8
+   798 0B:329A: E2 20        	sep	#$20
+   799                        	longa	off
+   800 0B:329C: 64 01        	stz	<L19+code_1
+   801 0B:329E: C2 20        	rep	#$20
+   802                        	longa	on
+   803 0B:32A0: E2 20        	sep	#$20
+   804                        	longa	off
+   805 0B:32A2: A9 A0        	lda	#$a0
+   806 0B:32A4: 85 02        	sta	<L19+safety_1
+   807 0B:32A6: C2 20        	rep	#$20
+   808                        	longa	on
+   809                        	.line	69
+   810 0B:32A8: E2 20        	sep	#$20
+   811                        	longa	off
+   812 0B:32AA: AF 37 E8 AF  	lda	>11528247
+   813 0B:32AE: 85 01        	sta	<L19+code_1
+   814 0B:32B0: C2 20        	rep	#$20
+   815                        	longa	on
+   816                        ;	while((code & (IDE_STAT_BSY | IDE_STAT_DRQ)) != 
+                    0)
+   817                        	.line	70
+   818                        L10008:
+   819 0B:32B2: E2 20        	sep	#$20
+   820                        	longa	off
+   821 0B:32B4: A5 01        	lda	<L19+code_1
+   822 0B:32B6: 29 88        	and	#<$88
+   823 0B:32B8: C2 20        	rep	#$20
+   824                        	longa	on
+   825 0B:32BA: D0 03        	bne	L21
+   826 0B:32BC: 82 2F 00     	brl	L10009
+   827                        L21:
+   828                        ;	{
+   829                        	.line	71
+   830                        ;		code = IDE_CMD_STAT[0];
+   831                        	.line	72
+   832 0B:32BF: E2 20        	sep	#$20
+   833                        	longa	off
+   834 0B:32C1: AF 37 E8 AF  	lda	>11528247
+   835 0B:32C5: 85 01        	sta	<L19+code_1
+   836 0B:32C7: C2 20        	rep	#$20
+   837                        	longa	on
+   838                        ;		//DebugHex("***k_drive_ready_not_busy:",
+                    code);
+   839                        ;		safety--;
+   840                        	.line	74
+  Fri Jul 16 2021 14:42                                                Page 16
+
+
+   841 0B:32C9: E2 20        	sep	#$20
+   842                        	longa	off
+   843 0B:32CB: C6 02        	dec	<L19+safety_1
+   844 0B:32CD: C2 20        	rep	#$20
+   845                        	longa	on
+   846                        ;		if(safety < 1)
+   847                        	.line	75
+   848                        ;		{
+   849 0B:32CF: E2 20        	sep	#$20
+   850                        	longa	off
+   851 0B:32D1: A5 02        	lda	<L19+safety_1
+   852 0B:32D3: C9 01        	cmp	#<$1
+   853 0B:32D5: C2 20        	rep	#$20
+   854                        	longa	on
+   855 0B:32D7: 90 03        	bcc	L22
+   856 0B:32D9: 82 0F 00     	brl	L10010
+   857                        L22:
+   858                        	.line	76
+   859                        ;			//DebugHex("***k_drive_ready_not
+                    _busy abort:",code);
+   860                        ;			return code;
+   861                        	.line	78
+   862 0B:32DC: A5 01        	lda	<L19+code_1
+   863 0B:32DE: 29 FF 00     	and	#$ff
+   864                        L23:
+   865 0B:32E1: A8           	tay
+   866 0B:32E2: 2B           	pld
+   867 0B:32E3: 3B           	tsc
+   868 0B:32E4: 18           	clc
+   869 0B:32E5: 69 02 00     	adc	#L18
+   870 0B:32E8: 1B           	tcs
+   871 0B:32E9: 98           	tya
+   872 0B:32EA: 6B           	rtl
+   873                        ;		}
+   874                        	.line	79
+   875                        ;	}
+   876                        L10010:
+   877                        	.line	80
+   878 0B:32EB: 82 C4 FF     	brl	L10008
+   879                        L10009:
+   880                        ;
+   881                        ;	return 0;
+   882                        	.line	82
+   883 0B:32EE: A9 00 00     	lda	#$0
+   884 0B:32F1: 82 ED FF     	brl	L23
+   885                        ;}
+   886                        	.line	83
+   887                        	.endblock	83
+   888             00000002   L18	equ	2
+   889             00000001   L19	equ	1
+   890 0B:32F4:              	ends
+   891                        	efunc
+   892                        	.endfunc	83,1,2
+   893                        	.line	83
+   894                        ;
+   895                        ;static UINT k_drive_ready_not_busy(VOID)
+   896                        ;{
+   897                        	.line	85
+  Fri Jul 16 2021 14:42                                                Page 17
+
+
+   898                        	.line	86
+   899                        	DISKIO
+   900                        	func
+   901                        	.function	86
+   902                        ~~k_drive_ready_not_busy:
+   903                        	longa	on
+   904                        	longi	on
+   905 0B:32F4: 3B           	tsc
+   906 0B:32F5: 38           	sec
+   907 0B:32F6: E9 06 00     	sbc	#L24
+   908 0B:32F9: 1B           	tcs
+   909 0B:32FA: 0B           	phd
+   910 0B:32FB: 5B           	tcd
+   911                        	.block	86
+   912                        ;	BYTE 	code = 0;
+   913                        ;	UCHAR 	safety = 8096;
+   914                        ;	//DebugOut("***k_drive_ready_not_busy\r\n");
+   915                        ;
+   916                        ;	code = IDE_CMD_STAT[0];
+   917             00000000   code_1	set	0
+   918             00000001   safety_1	set	1
+   919                        	.sym	code,0,14,1,8
+   920                        	.sym	safety,1,14,1,8
+   921 0B:32FC: E2 20        	sep	#$20
+   922                        	longa	off
+   923 0B:32FE: 64 05        	stz	<L25+code_1
+   924 0B:3300: C2 20        	rep	#$20
+   925                        	longa	on
+   926 0B:3302: E2 20        	sep	#$20
+   927                        	longa	off
+   928 0B:3304: A9 A0        	lda	#$a0
+   929 0B:3306: 85 06        	sta	<L25+safety_1
+   930 0B:3308: C2 20        	rep	#$20
+   931                        	longa	on
+   932                        	.line	91
+   933 0B:330A: E2 20        	sep	#$20
+   934                        	longa	off
+   935 0B:330C: AF 37 E8 AF  	lda	>11528247
+   936 0B:3310: 85 05        	sta	<L25+code_1
+   937 0B:3312: C2 20        	rep	#$20
+   938                        	longa	on
+   939                        ;	while((code & (IDE_STAT_BSY | IDE_STAT_DRDY)) !=
+                     IDE_STAT_DRDY)
+   940                        	.line	92
+   941                        L10011:
+   942 0B:3314: A5 05        	lda	<L25+code_1
+   943 0B:3316: 29 C0 00     	and	#<$c0
+   944 0B:3319: 85 01        	sta	<R0
+   945 0B:331B: A5 01        	lda	<R0
+   946 0B:331D: C9 40 00     	cmp	#<$40
+   947 0B:3320: D0 03        	bne	L27
+   948 0B:3322: 82 2F 00     	brl	L10012
+   949                        L27:
+   950                        ;	{
+   951                        	.line	93
+   952                        ;		code = IDE_CMD_STAT[0];
+   953                        	.line	94
+   954 0B:3325: E2 20        	sep	#$20
+  Fri Jul 16 2021 14:42                                                Page 18
+
+
+   955                        	longa	off
+   956 0B:3327: AF 37 E8 AF  	lda	>11528247
+   957 0B:332B: 85 05        	sta	<L25+code_1
+   958 0B:332D: C2 20        	rep	#$20
+   959                        	longa	on
+   960                        ;		//DebugHex("***k_drive_ready_not_busy:",
+                    code);
+   961                        ;		safety--;
+   962                        	.line	96
+   963 0B:332F: E2 20        	sep	#$20
+   964                        	longa	off
+   965 0B:3331: C6 06        	dec	<L25+safety_1
+   966 0B:3333: C2 20        	rep	#$20
+   967                        	longa	on
+   968                        ;		if(safety < 1)
+   969                        	.line	97
+   970                        ;		{
+   971 0B:3335: E2 20        	sep	#$20
+   972                        	longa	off
+   973 0B:3337: A5 06        	lda	<L25+safety_1
+   974 0B:3339: C9 01        	cmp	#<$1
+   975 0B:333B: C2 20        	rep	#$20
+   976                        	longa	on
+   977 0B:333D: 90 03        	bcc	L28
+   978 0B:333F: 82 0F 00     	brl	L10013
+   979                        L28:
+   980                        	.line	98
+   981                        ;			//DebugHex("***k_drive_ready_not
+                    _busy abort:",code);
+   982                        ;			return code;
+   983                        	.line	100
+   984 0B:3342: A5 05        	lda	<L25+code_1
+   985 0B:3344: 29 FF 00     	and	#$ff
+   986                        L29:
+   987 0B:3347: A8           	tay
+   988 0B:3348: 2B           	pld
+   989 0B:3349: 3B           	tsc
+   990 0B:334A: 18           	clc
+   991 0B:334B: 69 06 00     	adc	#L24
+   992 0B:334E: 1B           	tcs
+   993 0B:334F: 98           	tya
+   994 0B:3350: 6B           	rtl
+   995                        ;		}
+   996                        	.line	101
+   997                        ;	}
+   998                        L10013:
+   999                        	.line	102
+  1000 0B:3351: 82 C0 FF     	brl	L10011
+  1001                        L10012:
+  1002                        ;
+  1003                        ;	return 0;
+  1004                        	.line	104
+  1005 0B:3354: A9 00 00     	lda	#$0
+  1006 0B:3357: 82 ED FF     	brl	L29
+  1007                        ;}
+  1008                        	.line	105
+  1009                        	.endblock	105
+  1010             00000006   L24	equ	6
+  Fri Jul 16 2021 14:42                                                Page 19
+
+
+  1011             00000005   L25	equ	5
+  1012 0B:335A:              	ends
+  1013                        	efunc
+  1014                        	.endfunc	105,5,6
+  1015                        	.line	105
+  1016                        ;
+  1017                        ;static VOID k_drive_busy(VOID)
+  1018                        ;{
+  1019                        	.line	107
+  1020                        	.line	108
+  1021                        	DISKIO
+  1022                        	func
+  1023                        	.function	108
+  1024                        ~~k_drive_busy:
+  1025                        	longa	on
+  1026                        	longi	on
+  1027 0B:335A: 3B           	tsc
+  1028 0B:335B: 38           	sec
+  1029 0B:335C: E9 04 00     	sbc	#L30
+  1030 0B:335F: 1B           	tcs
+  1031 0B:3360: 0B           	phd
+  1032 0B:3361: 5B           	tcd
+  1033                        	.block	108
+  1034                        ;	//DebugOut("***k_drive_busy\r\n");
+  1035                        ;
+  1036                        ;	while((IDE_CMD_STAT[0] & IDE_STAT_BSY) == IDE_ST
+                    AT_BSY);
+  1037                        	.line	111
+  1038                        L10014:
+  1039 0B:3362: AF 37 E8 AF  	lda	>11528247
+  1040 0B:3366: 29 80 00     	and	#<$80
+  1041 0B:3369: 85 01        	sta	<R0
+  1042 0B:336B: A5 01        	lda	<R0
+  1043 0B:336D: C9 80 00     	cmp	#<$80
+  1044 0B:3370: F0 03        	beq	L33
+  1045 0B:3372: 82 03 00     	brl	L10015
+  1046                        L33:
+  1047                        	.line	111
+  1048 0B:3375: 82 EA FF     	brl	L10014
+  1049                        L10015:
+  1050                        ;
+  1051                        ;	return;
+  1052                        	.line	113
+  1053                        L34:
+  1054 0B:3378: 2B           	pld
+  1055 0B:3379: 3B           	tsc
+  1056 0B:337A: 18           	clc
+  1057 0B:337B: 69 04 00     	adc	#L30
+  1058 0B:337E: 1B           	tcs
+  1059 0B:337F: 6B           	rtl
+  1060                        ;}
+  1061                        	.line	114
+  1062                        	.endblock	114
+  1063             00000004   L30	equ	4
+  1064             00000005   L31	equ	5
+  1065 0B:3380:              	ends
+  1066                        	efunc
+  1067                        	.endfunc	114,5,4
+  Fri Jul 16 2021 14:42                                                Page 20
+
+
+  1068                        	.line	114
+  1069                        ;
+  1070                        ;
+  1071                        ;void k_hd_diagnostic(void)
+  1072                        ;{
+  1073                        	.line	117
+  1074                        	.line	118
+  1075                        	DISKIO
+  1076                        	xdef	~~k_hd_diagnostic
+  1077                        	func
+  1078                        	.function	118
+  1079                        ~~k_hd_diagnostic:
+  1080                        	longa	on
+  1081                        	longi	on
+  1082 0B:3380: 3B           	tsc
+  1083 0B:3381: 38           	sec
+  1084 0B:3382: E9 01 00     	sbc	#L35
+  1085 0B:3385: 1B           	tcs
+  1086 0B:3386: 0B           	phd
+  1087 0B:3387: 5B           	tcd
+  1088                        	.block	118
+  1089                        ;	UCHAR sts = 0x00;
+  1090                        ;
+  1091                        ;	k_drive_ready_not_busy();
+  1092             00000000   sts_1	set	0
+  1093                        	.sym	sts,0,14,1,8
+  1094 0B:3388: E2 20        	sep	#$20
+  1095                        	longa	off
+  1096 0B:338A: 64 01        	stz	<L36+sts_1
+  1097 0B:338C: C2 20        	rep	#$20
+  1098                        	longa	on
+  1099                        	.line	121
+  1100 0B:338E: 22 F4 32 0B  	jsl	~~k_drive_ready_not_busy
+  1101                        ;
+  1102                        ;	IDE_CMD_STAT[0] = 0x90;
+  1103                        	.line	123
+  1104 0B:3392: E2 20        	sep	#$20
+  1105                        	longa	off
+  1106 0B:3394: A9 90        	lda	#$90
+  1107 0B:3396: 8F 37 E8 AF  	sta	>11528247
+  1108 0B:339A: C2 20        	rep	#$20
+  1109                        	longa	on
+  1110                        ;
+  1111                        ;	k_drive_busy();
+  1112                        	.line	125
+  1113 0B:339C: 22 5A 33 0B  	jsl	~~k_drive_busy
+  1114                        ;
+  1115                        ;	sts = IDE_ERROR[0];
+  1116                        	.line	127
+  1117 0B:33A0: E2 20        	sep	#$20
+  1118                        	longa	off
+  1119 0B:33A2: AF 31 E8 AF  	lda	>11528241
+  1120 0B:33A6: 85 01        	sta	<L36+sts_1
+  1121 0B:33A8: C2 20        	rep	#$20
+  1122                        	longa	on
+  1123                        ;	//DebugHex("k_ide_diagnostic:code:",sts);
+  1124                        ;
+  1125                        ;	//k_ide_isbusy();
+  Fri Jul 16 2021 14:42                                                Page 21
+
+
+  1126                        ;
+  1127                        ;	return;
+  1128                        	.line	132
+  1129                        L38:
+  1130 0B:33AA: 2B           	pld
+  1131 0B:33AB: 3B           	tsc
+  1132 0B:33AC: 18           	clc
+  1133 0B:33AD: 69 01 00     	adc	#L35
+  1134 0B:33B0: 1B           	tcs
+  1135 0B:33B1: 6B           	rtl
+  1136                        ;}
+  1137                        	.line	133
+  1138                        	.endblock	133
+  1139             00000001   L35	equ	1
+  1140             00000001   L36	equ	1
+  1141 0B:33B2:              	ends
+  1142                        	efunc
+  1143                        	.endfunc	133,1,1
+  1144                        	.line	133
+  1145                        ;
+  1146                        ;UINT k_hd_get_id(VOID)
+  1147                        ;{
+  1148                        	.line	135
+  1149                        	.line	136
+  1150                        	DISKIO
+  1151                        	xdef	~~k_hd_get_id
+  1152                        	func
+  1153                        	.function	136
+  1154                        ~~k_hd_get_id:
+  1155                        	longa	on
+  1156                        	longi	on
+  1157 0B:33B2: 3B           	tsc
+  1158 0B:33B3: 38           	sec
+  1159 0B:33B4: E9 02 00     	sbc	#L39
+  1160 0B:33B7: 1B           	tcs
+  1161 0B:33B8: 0B           	phd
+  1162 0B:33B9: 5B           	tcd
+  1163                        	.block	136
+  1164                        ;	int x;
+  1165                        ;	//PIDSECTOR pid = NULL;
+  1166                        ;	//PFATBOOTSECTOR pmbr = NULL;
+  1167                        ;
+  1168                        ;	//k_debug_string("***k_hd_get_id\r\n");
+  1169                        ;
+  1170                        ;	k_drive_ready_not_busy();
+  1171             00000000   x_1	set	0
+  1172                        	.sym	x,0,5,1,16
+  1173                        	.line	143
+  1174 0B:33BA: 22 F4 32 0B  	jsl	~~k_drive_ready_not_busy
+  1175                        ;
+  1176                        ;	IDE_HEAD[0] = 0xE0;
+  1177                        	.line	145
+  1178 0B:33BE: E2 20        	sep	#$20
+  1179                        	longa	off
+  1180 0B:33C0: A9 E0        	lda	#$e0
+  1181 0B:33C2: 8F 36 E8 AF  	sta	>11528246
+  1182 0B:33C6: C2 20        	rep	#$20
+  1183                        	longa	on
+  Fri Jul 16 2021 14:42                                                Page 22
+
+
+  1184                        ;
+  1185                        ;	k_drive_ready_not_busy();
+  1186                        	.line	147
+  1187 0B:33C8: 22 F4 32 0B  	jsl	~~k_drive_ready_not_busy
+  1188                        ;
+  1189                        ;    IDE_SECT_CNT[0] = 0;
+  1190                        	.line	149
+  1191 0B:33CC: E2 20        	sep	#$20
+  1192                        	longa	off
+  1193 0B:33CE: A9 00        	lda	#$0
+  1194 0B:33D0: 8F 32 E8 AF  	sta	>11528242
+  1195 0B:33D4: C2 20        	rep	#$20
+  1196                        	longa	on
+  1197                        ;    IDE_SECT_SRT[0] = 0;
+  1198                        	.line	150
+  1199 0B:33D6: E2 20        	sep	#$20
+  1200                        	longa	off
+  1201 0B:33D8: A9 00        	lda	#$0
+  1202 0B:33DA: 8F 33 E8 AF  	sta	>11528243
+  1203 0B:33DE: C2 20        	rep	#$20
+  1204                        	longa	on
+  1205                        ;    IDE_CLDR_LO[0] = 0;
+  1206                        	.line	151
+  1207 0B:33E0: E2 20        	sep	#$20
+  1208                        	longa	off
+  1209 0B:33E2: A9 00        	lda	#$0
+  1210 0B:33E4: 8F 34 E8 AF  	sta	>11528244
+  1211 0B:33E8: C2 20        	rep	#$20
+  1212                        	longa	on
+  1213                        ;    IDE_CLDR_HI[0] = 0;
+  1214                        	.line	152
+  1215 0B:33EA: E2 20        	sep	#$20
+  1216                        	longa	off
+  1217 0B:33EC: A9 00        	lda	#$0
+  1218 0B:33EE: 8F 35 E8 AF  	sta	>11528245
+  1219 0B:33F2: C2 20        	rep	#$20
+  1220                        	longa	on
+  1221                        ;
+  1222                        ;    IDE_CMD_STAT[0] = IDE_CMD_IDENTIFY;
+  1223                        	.line	154
+  1224 0B:33F4: E2 20        	sep	#$20
+  1225                        	longa	off
+  1226 0B:33F6: A9 EC        	lda	#$ec
+  1227 0B:33F8: 8F 37 E8 AF  	sta	>11528247
+  1228 0B:33FC: C2 20        	rep	#$20
+  1229                        	longa	on
+  1230                        ;
+  1231                        ;	asm NOP;
+  1232                        	.line	156
+  1233                        	asmstart
+  1234 0B:33FE: EA           	NOP
+  1235                        	asmend
+  1236                        ;	asm NOP;
+  1237                        	.line	157
+  1238                        	asmstart
+  1239 0B:33FF: EA           	NOP
+  1240                        	asmend
+  1241                        ;	asm NOP;
+  Fri Jul 16 2021 14:42                                                Page 23
+
+
+  1242                        	.line	158
+  1243                        	asmstart
+  1244 0B:3400: EA           	NOP
+  1245                        	asmend
+  1246                        ;	asm NOP;
+  1247                        	.line	159
+  1248                        	asmstart
+  1249 0B:3401: EA           	NOP
+  1250                        	asmend
+  1251                        ;	asm NOP;
+  1252                        	.line	160
+  1253                        	asmstart
+  1254 0B:3402: EA           	NOP
+  1255                        	asmend
+  1256                        ;	asm NOP;
+  1257                        	.line	161
+  1258                        	asmstart
+  1259 0B:3403: EA           	NOP
+  1260                        	asmend
+  1261                        ;	asm NOP;
+  1262                        	.line	162
+  1263                        	asmstart
+  1264 0B:3404: EA           	NOP
+  1265                        	asmend
+  1266                        ;	asm NOP;
+  1267                        	.line	163
+  1268                        	asmstart
+  1269 0B:3405: EA           	NOP
+  1270                        	asmend
+  1271                        ;	asm NOP;
+  1272                        	.line	164
+  1273                        	asmstart
+  1274 0B:3406: EA           	NOP
+  1275                        	asmend
+  1276                        ;	asm NOP;
+  1277                        	.line	165
+  1278                        	asmstart
+  1279 0B:3407: EA           	NOP
+  1280                        	asmend
+  1281                        ;
+  1282                        ;    k_drive_busy();
+  1283                        	.line	167
+  1284 0B:3408: 22 5A 33 0B  	jsl	~~k_drive_busy
+  1285                        ;
+  1286                        ;    k_drive_wait_dsc();
+  1287                        	.line	169
+  1288 0B:340C: 22 16 32 0B  	jsl	~~k_drive_wait_dsc
+  1289                        ;
+  1290                        ;
+  1291                        ;	for(x=0;x<(512 - 0);x+=2)
+  1292                        	.line	172
+  1293 0B:3410: 64 01        	stz	<L40+x_1
+  1294                        L10018:
+  1295                        ;	{
+  1296                        	.line	173
+  1297                        ;		szIndentity[x]   = IDE_DATA_LO[0];
+  1298                        	.line	174
+  1299 0B:3412: E2 20        	sep	#$20
+  Fri Jul 16 2021 14:42                                                Page 24
+
+
+  1300                        	longa	off
+  1301 0B:3414: AF 38 E8 AF  	lda	>11528248
+  1302 0B:3418: A6 01        	ldx	<L40+x_1
+  1303 0B:341A: 9D xx xx     	sta	|~~szIndentity,X
+  1304 0B:341D: C2 20        	rep	#$20
+  1305                        	longa	on
+  1306                        ;		szIndentity[x+1] = IDE_DATA_HI[0];
+  1307                        	.line	175
+  1308 0B:341F: E2 20        	sep	#$20
+  1309                        	longa	off
+  1310 0B:3421: AF 39 E8 AF  	lda	>11528249
+  1311 0B:3425: A6 01        	ldx	<L40+x_1
+  1312 0B:3427: 9D xx xx     	sta	|~~szIndentity+1,X
+  1313 0B:342A: C2 20        	rep	#$20
+  1314                        	longa	on
+  1315                        ;	}
+  1316                        	.line	176
+  1317                        L10016:
+  1318 0B:342C: E6 01        	inc	<L40+x_1
+  1319 0B:342E: E6 01        	inc	<L40+x_1
+  1320 0B:3430: 38           	sec
+  1321 0B:3431: A5 01        	lda	<L40+x_1
+  1322 0B:3433: E9 00 02     	sbc	#<$200
+  1323 0B:3436: 70 03        	bvs	L42
+  1324 0B:3438: 49 00 80     	eor	#$8000
+  1325                        L42:
+  1326 0B:343B: 30 03        	bmi	L43
+  1327 0B:343D: 82 D2 FF     	brl	L10018
+  1328                        L43:
+  1329                        L10017:
+  1330                        ;
+  1331                        ;	//pid = ((PIDSECTOR)szIndentity);
+  1332                        ;
+  1333                        ;	return 0;
+  1334                        	.line	180
+  1335 0B:3440: A9 00 00     	lda	#$0
+  1336                        L44:
+  1337 0B:3443: A8           	tay
+  1338 0B:3444: 2B           	pld
+  1339 0B:3445: 3B           	tsc
+  1340 0B:3446: 18           	clc
+  1341 0B:3447: 69 02 00     	adc	#L39
+  1342 0B:344A: 1B           	tcs
+  1343 0B:344B: 98           	tya
+  1344 0B:344C: 6B           	rtl
+  1345                        ;}
+  1346                        	.line	181
+  1347                        	.endblock	181
+  1348             00000002   L39	equ	2
+  1349             00000001   L40	equ	1
+  1350 0B:344D:              	ends
+  1351                        	efunc
+  1352                        	.endfunc	181,1,2
+  1353                        	.line	181
+  1354                        ;
+  1355                        ;UCHAR k_hd_send_command(UINT command,LPVOID buffe
+                    r)
+  1356                        ;{
+  Fri Jul 16 2021 14:42                                                Page 25
+
+
+  1357                        	.line	183
+  1358                        	.line	184
+  1359                        	DISKIO
+  1360                        	xdef	~~k_hd_send_command
+  1361                        	func
+  1362                        	.function	184
+  1363                        ~~k_hd_send_command:
+  1364                        	longa	on
+  1365                        	longi	on
+  1366 0B:344D: 3B           	tsc
+  1367 0B:344E: 38           	sec
+  1368 0B:344F: E9 00 00     	sbc	#L45
+  1369 0B:3452: 1B           	tcs
+  1370 0B:3453: 0B           	phd
+  1371 0B:3454: 5B           	tcd
+  1372             00000004   command_0	set	4
+  1373             00000006   buffer_0	set	6
+  1374                        	.block	184
+  1375                        ;	return 0;
+  1376                        	.sym	command,4,16,6,16
+  1377                        	.sym	buffer,6,129,6,32
+  1378                        	.line	185
+  1379 0B:3455: A9 00 00     	lda	#$0
+  1380                        L48:
+  1381 0B:3458: A8           	tay
+  1382 0B:3459: A5 02        	lda	<L45+2
+  1383 0B:345B: 85 08        	sta	<L45+2+6
+  1384 0B:345D: A5 01        	lda	<L45+1
+  1385 0B:345F: 85 07        	sta	<L45+1+6
+  1386 0B:3461: 2B           	pld
+  1387 0B:3462: 3B           	tsc
+  1388 0B:3463: 18           	clc
+  1389 0B:3464: 69 06 00     	adc	#L45+6
+  1390 0B:3467: 1B           	tcs
+  1391 0B:3468: 98           	tya
+  1392 0B:3469: 6B           	rtl
+  1393                        ;}
+  1394                        	.line	186
+  1395                        	.endblock	186
+  1396             00000000   L45	equ	0
+  1397             00000001   L46	equ	1
+  1398 0B:346A:              	ends
+  1399                        	efunc
+  1400                        	.endfunc	186,1,0
+  1401                        	.line	186
+  1402                        ;
+  1403                        ;UCHAR k_hd_read_sector(unsigned long offset,LPCHA
+                    R receiveBuffer)
+  1404                        ;{
+  1405                        	.line	188
+  1406                        	.line	189
+  1407                        	DISKIO
+  1408                        	xdef	~~k_hd_read_sector
+  1409                        	func
+  1410                        	.function	189
+  1411                        ~~k_hd_read_sector:
+  1412                        	longa	on
+  1413                        	longi	on
+  Fri Jul 16 2021 14:42                                                Page 26
+
+
+  1414 0B:346A: 3B           	tsc
+  1415 0B:346B: 38           	sec
+  1416 0B:346C: E9 10 00     	sbc	#L49
+  1417 0B:346F: 1B           	tcs
+  1418 0B:3470: 0B           	phd
+  1419 0B:3471: 5B           	tcd
+  1420             00000004   offset_0	set	4
+  1421             00000008   receiveBuffer_0	set	8
+  1422                        	.block	189
+  1423                        ;	UCHAR	errorCode = 0;
+  1424                        ;	BYTE	workaround = 0;
+  1425                        ;	int index;
+  1426                        ;
+  1427                        ;	PUINT puint = (PUINT)receiveBuffer;
+  1428                        ;
+  1429                        ;	SET_STATUS_3('R');
+  1430             00000000   errorCode_1	set	0
+  1431             00000001   workaround_1	set	1
+  1432             00000002   index_1	set	2
+  1433             00000004   puint_1	set	4
+  1434                        	.sym	errorCode,0,14,1,8
+  1435                        	.sym	workaround,1,14,1,8
+  1436                        	.sym	index,2,5,1,16
+  1437                        	.sym	puint,4,144,1,32
+  1438                        	.sym	offset,4,18,6,32
+  1439                        	.sym	receiveBuffer,8,142,6,32
+  1440 0B:3472: E2 20        	sep	#$20
+  1441                        	longa	off
+  1442 0B:3474: 64 09        	stz	<L50+errorCode_1
+  1443 0B:3476: C2 20        	rep	#$20
+  1444                        	longa	on
+  1445 0B:3478: E2 20        	sep	#$20
+  1446                        	longa	off
+  1447 0B:347A: 64 0A        	stz	<L50+workaround_1
+  1448 0B:347C: C2 20        	rep	#$20
+  1449                        	longa	on
+  1450 0B:347E: A5 18        	lda	<L49+receiveBuffer_0
+  1451 0B:3480: 85 0D        	sta	<L50+puint_1
+  1452 0B:3482: A5 1A        	lda	<L49+receiveBuffer_0+2
+  1453 0B:3484: 85 0F        	sta	<L50+puint_1+2
+  1454                        	.line	196
+  1455 0B:3486: E2 20        	sep	#$20
+  1456                        	longa	off
+  1457 0B:3488: A9 52        	lda	#$52
+  1458 0B:348A: 8F 82 A4 AF  	sta	>11510914	; volatile
+  1459 0B:348E: C2 20        	rep	#$20
+  1460                        	longa	on
+  1461                        ;	SET_STATUS_4('0');
+  1462                        	.line	197
+  1463 0B:3490: E2 20        	sep	#$20
+  1464                        	longa	off
+  1465 0B:3492: A9 30        	lda	#$30
+  1466 0B:3494: 8F 83 A4 AF  	sta	>11510915	; volatile
+  1467 0B:3498: C2 20        	rep	#$20
+  1468                        	longa	on
+  1469                        ;
+  1470                        ;	k_drive_ready_not_busy();
+  1471                        	.line	199
+  Fri Jul 16 2021 14:42                                                Page 27
+
+
+  1472 0B:349A: 22 F4 32 0B  	jsl	~~k_drive_ready_not_busy
+  1473                        ;
+  1474                        ;	IDE_HEAD[0] = (0x1F6, 0xE0 | (0xE0 << 4) | ((off
+                    set >> 24) & 0x0F));//((H32BYTE(offset)) | 0xE0);
+  1475                        	.line	201
+  1476 0B:349E: D4 16        	pei	<L49+offset_0+2
+  1477 0B:34A0: D4 14        	pei	<L49+offset_0
+  1478 0B:34A2: A9 18 00     	lda	#$18
+  1479                        	xref	~~~llsr
+  1480 0B:34A5: 22 xx xx xx  	jsl	~~~llsr
+  1481 0B:34A9: 85 01        	sta	<R0
+  1482 0B:34AB: 86 03        	stx	<R0+2
+  1483 0B:34AD: A5 01        	lda	<R0
+  1484 0B:34AF: 29 0F 00     	and	#<$f
+  1485 0B:34B2: 85 05        	sta	<R1
+  1486 0B:34B4: 64 07        	stz	<R1+2
+  1487 0B:34B6: A5 05        	lda	<R1
+  1488 0B:34B8: 09 E0 0E     	ora	#<$ee0
+  1489 0B:34BB: 85 01        	sta	<R0
+  1490 0B:34BD: A5 07        	lda	<R1+2
+  1491 0B:34BF: 85 03        	sta	<R0+2
+  1492 0B:34C1: E2 20        	sep	#$20
+  1493                        	longa	off
+  1494 0B:34C3: A5 01        	lda	<R0
+  1495 0B:34C5: 8F 36 E8 AF  	sta	>11528246
+  1496 0B:34C9: C2 20        	rep	#$20
+  1497                        	longa	on
+  1498                        ;
+  1499                        ;	//k_debug_hex("***k_hd_read_sector:WAIT:",IDE_CM
+                    D_STAT[0]);
+  1500                        ;	k_drive_ready_not_busy();
+  1501                        	.line	204
+  1502 0B:34CB: 22 F4 32 0B  	jsl	~~k_drive_ready_not_busy
+  1503                        ;
+  1504                        ;	//IDE_FEATURE [0]  = 0;
+  1505                        ;	IDE_SECT_CNT[0]  = 1;
+  1506                        	.line	207
+  1507 0B:34CF: E2 20        	sep	#$20
+  1508                        	longa	off
+  1509 0B:34D1: A9 01        	lda	#$1
+  1510 0B:34D3: 8F 32 E8 AF  	sta	>11528242
+  1511 0B:34D7: C2 20        	rep	#$20
+  1512                        	longa	on
+  1513                        ;	IDE_SECT_SRT[0]  = L24BYTE(offset);
+  1514                        	.line	208
+  1515 0B:34D9: E2 20        	sep	#$20
+  1516                        	longa	off
+  1517 0B:34DB: A5 14        	lda	<L49+offset_0
+  1518 0B:34DD: 8F 33 E8 AF  	sta	>11528243
+  1519 0B:34E1: C2 20        	rep	#$20
+  1520                        	longa	on
+  1521                        ;	IDE_CLDR_LO [0]  = M24BYTE(offset);
+  1522                        	.line	209
+  1523 0B:34E3: D4 16        	pei	<L49+offset_0+2
+  1524 0B:34E5: D4 14        	pei	<L49+offset_0
+  1525 0B:34E7: A9 08 00     	lda	#$8
+  1526                        	xref	~~~llsr
+  1527 0B:34EA: 22 xx xx xx  	jsl	~~~llsr
+  Fri Jul 16 2021 14:42                                                Page 28
+
+
+  1528 0B:34EE: 85 01        	sta	<R0
+  1529 0B:34F0: 86 03        	stx	<R0+2
+  1530 0B:34F2: A5 01        	lda	<R0
+  1531 0B:34F4: 29 FF 00     	and	#<$ff
+  1532 0B:34F7: 85 05        	sta	<R1
+  1533 0B:34F9: 64 07        	stz	<R1+2
+  1534 0B:34FB: E2 20        	sep	#$20
+  1535                        	longa	off
+  1536 0B:34FD: A5 05        	lda	<R1
+  1537 0B:34FF: 8F 34 E8 AF  	sta	>11528244
+  1538 0B:3503: C2 20        	rep	#$20
+  1539                        	longa	on
+  1540                        ;	IDE_CLDR_HI [0]  = H24BYTE(offset);
+  1541                        	.line	210
+  1542 0B:3505: D4 16        	pei	<L49+offset_0+2
+  1543 0B:3507: D4 14        	pei	<L49+offset_0
+  1544 0B:3509: A9 10 00     	lda	#$10
+  1545                        	xref	~~~llsr
+  1546 0B:350C: 22 xx xx xx  	jsl	~~~llsr
+  1547 0B:3510: 85 01        	sta	<R0
+  1548 0B:3512: 86 03        	stx	<R0+2
+  1549 0B:3514: A5 01        	lda	<R0
+  1550 0B:3516: 29 FF 00     	and	#<$ff
+  1551 0B:3519: 85 05        	sta	<R1
+  1552 0B:351B: 64 07        	stz	<R1+2
+  1553 0B:351D: E2 20        	sep	#$20
+  1554                        	longa	off
+  1555 0B:351F: A5 05        	lda	<R1
+  1556 0B:3521: 8F 35 E8 AF  	sta	>11528245
+  1557 0B:3525: C2 20        	rep	#$20
+  1558                        	longa	on
+  1559                        ;
+  1560                        ;	IDE_CMD_STAT[0] = IDE_CMD_READRETRY_SECTOR;// ID
+                    E_CMD_READRETRY_SECTOR; //IDE_CMD_READ_SECTOR;
+  1561                        	.line	212
+  1562 0B:3527: E2 20        	sep	#$20
+  1563                        	longa	off
+  1564 0B:3529: A9 20        	lda	#$20
+  1565 0B:352B: 8F 37 E8 AF  	sta	>11528247
+  1566 0B:352F: C2 20        	rep	#$20
+  1567                        	longa	on
+  1568                        ;
+  1569                        ;	SET_STATUS_4('1');
+  1570                        	.line	214
+  1571 0B:3531: E2 20        	sep	#$20
+  1572                        	longa	off
+  1573 0B:3533: A9 31        	lda	#$31
+  1574 0B:3535: 8F 83 A4 AF  	sta	>11510915	; volatile
+  1575 0B:3539: C2 20        	rep	#$20
+  1576                        	longa	on
+  1577                        ;	asm NOP;
+  1578                        	.line	215
+  1579                        	asmstart
+  1580 0B:353B: EA           	NOP
+  1581                        	asmend
+  1582                        ;	asm NOP;
+  1583                        	.line	216
+  1584                        	asmstart
+  Fri Jul 16 2021 14:42                                                Page 29
+
+
+  1585 0B:353C: EA           	NOP
+  1586                        	asmend
+  1587                        ;	asm NOP;
+  1588                        	.line	217
+  1589                        	asmstart
+  1590 0B:353D: EA           	NOP
+  1591                        	asmend
+  1592                        ;	asm NOP;
+  1593                        	.line	218
+  1594                        	asmstart
+  1595 0B:353E: EA           	NOP
+  1596                        	asmend
+  1597                        ;	asm NOP;
+  1598                        	.line	219
+  1599                        	asmstart
+  1600 0B:353F: EA           	NOP
+  1601                        	asmend
+  1602                        ;
+  1603                        ;	if(k_drive_wait_dsc())
+  1604                        	.line	221
+  1605                        ;			return FR_DISK_ERR;
+  1606 0B:3540: 22 16 32 0B  	jsl	~~k_drive_wait_dsc
+  1607 0B:3544: AA           	tax
+  1608 0B:3545: D0 03        	bne	L52
+  1609 0B:3547: 82 15 00     	brl	L10019
+  1610                        L52:
+  1611                        	.line	222
+  1612 0B:354A: A9 01 00     	lda	#$1
+  1613                        L53:
+  1614 0B:354D: A8           	tay
+  1615 0B:354E: A5 12        	lda	<L49+2
+  1616 0B:3550: 85 1A        	sta	<L49+2+8
+  1617 0B:3552: A5 11        	lda	<L49+1
+  1618 0B:3554: 85 19        	sta	<L49+1+8
+  1619 0B:3556: 2B           	pld
+  1620 0B:3557: 3B           	tsc
+  1621 0B:3558: 18           	clc
+  1622 0B:3559: 69 18 00     	adc	#L49+8
+  1623 0B:355C: 1B           	tcs
+  1624 0B:355D: 98           	tya
+  1625 0B:355E: 6B           	rtl
+  1626                        ;
+  1627                        ;	k_drive_wait_drq();
+  1628                        L10019:
+  1629                        	.line	224
+  1630 0B:355F: 22 F0 31 0B  	jsl	~~k_drive_wait_drq
+  1631                        ;
+  1632                        ;	for(index = 0;index < 512;index+=2)
+  1633                        	.line	226
+  1634 0B:3563: 64 0B        	stz	<L50+index_1
+  1635                        L10022:
+  1636                        ;	{
+  1637                        	.line	227
+  1638                        ;		receiveBuffer[index]   = IDE_DATA_LO[0];
+  1639                        	.line	228
+  1640 0B:3565: E2 20        	sep	#$20
+  1641                        	longa	off
+  1642 0B:3567: AF 38 E8 AF  	lda	>11528248
+  Fri Jul 16 2021 14:42                                                Page 30
+
+
+  1643 0B:356B: A4 0B        	ldy	<L50+index_1
+  1644 0B:356D: 97 18        	sta	[<L49+receiveBuffer_0],Y
+  1645 0B:356F: C2 20        	rep	#$20
+  1646                        	longa	on
+  1647                        ;		receiveBuffer[index+1] = IDE_DATA_HI[0];
+  1648                        	.line	229
+  1649 0B:3571: A5 0B        	lda	<L50+index_1
+  1650 0B:3573: 1A           	ina
+  1651 0B:3574: 85 01        	sta	<R0
+  1652 0B:3576: E2 20        	sep	#$20
+  1653                        	longa	off
+  1654 0B:3578: AF 39 E8 AF  	lda	>11528249
+  1655 0B:357C: A4 01        	ldy	<R0
+  1656 0B:357E: 97 18        	sta	[<L49+receiveBuffer_0],Y
+  1657 0B:3580: C2 20        	rep	#$20
+  1658                        	longa	on
+  1659                        ;	}
+  1660                        	.line	230
+  1661                        L10020:
+  1662 0B:3582: E6 0B        	inc	<L50+index_1
+  1663 0B:3584: E6 0B        	inc	<L50+index_1
+  1664 0B:3586: 38           	sec
+  1665 0B:3587: A5 0B        	lda	<L50+index_1
+  1666 0B:3589: E9 00 02     	sbc	#<$200
+  1667 0B:358C: 70 03        	bvs	L54
+  1668 0B:358E: 49 00 80     	eor	#$8000
+  1669                        L54:
+  1670 0B:3591: 30 03        	bmi	L55
+  1671 0B:3593: 82 CF FF     	brl	L10022
+  1672                        L55:
+  1673                        L10021:
+  1674                        ;
+  1675                        ;	SET_STATUS_4('2');
+  1676                        	.line	232
+  1677 0B:3596: E2 20        	sep	#$20
+  1678                        	longa	off
+  1679 0B:3598: A9 32        	lda	#$32
+  1680 0B:359A: 8F 83 A4 AF  	sta	>11510915	; volatile
+  1681 0B:359E: C2 20        	rep	#$20
+  1682                        	longa	on
+  1683                        ;
+  1684                        ;	return errorCode;
+  1685                        	.line	234
+  1686 0B:35A0: A5 09        	lda	<L50+errorCode_1
+  1687 0B:35A2: 29 FF 00     	and	#$ff
+  1688 0B:35A5: 82 A5 FF     	brl	L53
+  1689                        ;}
+  1690                        	.line	235
+  1691                        	.endblock	235
+  1692             00000010   L49	equ	16
+  1693             00000009   L50	equ	9
+  1694 0B:35A8:              	ends
+  1695                        	efunc
+  1696                        	.endfunc	235,9,16
+  1697                        	.line	235
+  1698                        ;
+  1699                        ;UCHAR k_hd_write_sector(unsigned long offset,LPCH
+                    AR sendBuffer)
+  Fri Jul 16 2021 14:42                                                Page 31
+
+
+  1700                        ;{
+  1701                        	.line	237
+  1702                        	.line	238
+  1703                        	DISKIO
+  1704                        	xdef	~~k_hd_write_sector
+  1705                        	func
+  1706                        	.function	238
+  1707                        ~~k_hd_write_sector:
+  1708                        	longa	on
+  1709                        	longi	on
+  1710 0B:35A8: 3B           	tsc
+  1711 0B:35A9: 38           	sec
+  1712 0B:35AA: E9 0C 00     	sbc	#L56
+  1713 0B:35AD: 1B           	tcs
+  1714 0B:35AE: 0B           	phd
+  1715 0B:35AF: 5B           	tcd
+  1716             00000004   offset_0	set	4
+  1717             00000008   sendBuffer_0	set	8
+  1718                        	.block	238
+  1719                        ;	UCHAR	errorCode = 0;
+  1720                        ;	UCHAR	s;
+  1721                        ;	UINT	index;
+  1722                        ;
+  1723                        ;	SET_STATUS_3('W');
+  1724             00000000   errorCode_1	set	0
+  1725             00000001   s_1	set	1
+  1726             00000002   index_1	set	2
+  1727                        	.sym	errorCode,0,14,1,8
+  1728                        	.sym	s,1,14,1,8
+  1729                        	.sym	index,2,16,1,16
+  1730                        	.sym	offset,4,18,6,32
+  1731                        	.sym	sendBuffer,8,142,6,32
+  1732 0B:35B0: E2 20        	sep	#$20
+  1733                        	longa	off
+  1734 0B:35B2: 64 09        	stz	<L57+errorCode_1
+  1735 0B:35B4: C2 20        	rep	#$20
+  1736                        	longa	on
+  1737                        	.line	243
+  1738 0B:35B6: E2 20        	sep	#$20
+  1739                        	longa	off
+  1740 0B:35B8: A9 57        	lda	#$57
+  1741 0B:35BA: 8F 82 A4 AF  	sta	>11510914	; volatile
+  1742 0B:35BE: C2 20        	rep	#$20
+  1743                        	longa	on
+  1744                        ;	SET_STATUS_4('0');
+  1745                        	.line	244
+  1746 0B:35C0: E2 20        	sep	#$20
+  1747                        	longa	off
+  1748 0B:35C2: A9 30        	lda	#$30
+  1749 0B:35C4: 8F 83 A4 AF  	sta	>11510915	; volatile
+  1750 0B:35C8: C2 20        	rep	#$20
+  1751                        	longa	on
+  1752                        ;	//k_debug_long("k_hd_write_sector::offset:",offs
+                    et);
+  1753                        ;	//k_debug_byte_array("k_hd_write_sector::sendBuf
+                    fer:",sendBuffer,512);
+  1754                        ;
+  1755                        ;	k_drive_ready_not_busy();
+  Fri Jul 16 2021 14:42                                                Page 32
+
+
+  1756                        	.line	248
+  1757 0B:35CA: 22 F4 32 0B  	jsl	~~k_drive_ready_not_busy
+  1758                        ;
+  1759                        ;	IDE_HEAD[0] = (0x1F6, 0xE0 | (0xE0 << 4) | ((off
+                    set >> 24) & 0x0F));//((H32BYTE(offset)) | 0xE0);
+  1760                        	.line	250
+  1761 0B:35CE: D4 12        	pei	<L56+offset_0+2
+  1762 0B:35D0: D4 10        	pei	<L56+offset_0
+  1763 0B:35D2: A9 18 00     	lda	#$18
+  1764                        	xref	~~~llsr
+  1765 0B:35D5: 22 xx xx xx  	jsl	~~~llsr
+  1766 0B:35D9: 85 01        	sta	<R0
+  1767 0B:35DB: 86 03        	stx	<R0+2
+  1768 0B:35DD: A5 01        	lda	<R0
+  1769 0B:35DF: 29 0F 00     	and	#<$f
+  1770 0B:35E2: 85 05        	sta	<R1
+  1771 0B:35E4: 64 07        	stz	<R1+2
+  1772 0B:35E6: A5 05        	lda	<R1
+  1773 0B:35E8: 09 E0 0E     	ora	#<$ee0
+  1774 0B:35EB: 85 01        	sta	<R0
+  1775 0B:35ED: A5 07        	lda	<R1+2
+  1776 0B:35EF: 85 03        	sta	<R0+2
+  1777 0B:35F1: E2 20        	sep	#$20
+  1778                        	longa	off
+  1779 0B:35F3: A5 01        	lda	<R0
+  1780 0B:35F5: 8F 36 E8 AF  	sta	>11528246
+  1781 0B:35F9: C2 20        	rep	#$20
+  1782                        	longa	on
+  1783                        ;
+  1784                        ;	//k_debug_hex("***k_hd_read_sector:WAIT:",IDE_CM
+                    D_STAT[0]);
+  1785                        ;	k_drive_ready_not_busy();
+  1786                        	.line	253
+  1787 0B:35FB: 22 F4 32 0B  	jsl	~~k_drive_ready_not_busy
+  1788                        ;
+  1789                        ;	//IDE_FEATURE [0]  = 0;
+  1790                        ;	IDE_SECT_CNT[0]  = 1;
+  1791                        	.line	256
+  1792 0B:35FF: E2 20        	sep	#$20
+  1793                        	longa	off
+  1794 0B:3601: A9 01        	lda	#$1
+  1795 0B:3603: 8F 32 E8 AF  	sta	>11528242
+  1796 0B:3607: C2 20        	rep	#$20
+  1797                        	longa	on
+  1798                        ;	IDE_SECT_SRT[0]  = L24BYTE(offset);
+  1799                        	.line	257
+  1800 0B:3609: E2 20        	sep	#$20
+  1801                        	longa	off
+  1802 0B:360B: A5 10        	lda	<L56+offset_0
+  1803 0B:360D: 8F 33 E8 AF  	sta	>11528243
+  1804 0B:3611: C2 20        	rep	#$20
+  1805                        	longa	on
+  1806                        ;	IDE_CLDR_LO [0]  = M24BYTE(offset);
+  1807                        	.line	258
+  1808 0B:3613: D4 12        	pei	<L56+offset_0+2
+  1809 0B:3615: D4 10        	pei	<L56+offset_0
+  1810 0B:3617: A9 08 00     	lda	#$8
+  1811                        	xref	~~~llsr
+  Fri Jul 16 2021 14:42                                                Page 33
+
+
+  1812 0B:361A: 22 xx xx xx  	jsl	~~~llsr
+  1813 0B:361E: 85 01        	sta	<R0
+  1814 0B:3620: 86 03        	stx	<R0+2
+  1815 0B:3622: A5 01        	lda	<R0
+  1816 0B:3624: 29 FF 00     	and	#<$ff
+  1817 0B:3627: 85 05        	sta	<R1
+  1818 0B:3629: 64 07        	stz	<R1+2
+  1819 0B:362B: E2 20        	sep	#$20
+  1820                        	longa	off
+  1821 0B:362D: A5 05        	lda	<R1
+  1822 0B:362F: 8F 34 E8 AF  	sta	>11528244
+  1823 0B:3633: C2 20        	rep	#$20
+  1824                        	longa	on
+  1825                        ;	IDE_CLDR_HI [0]  = H24BYTE(offset);
+  1826                        	.line	259
+  1827 0B:3635: D4 12        	pei	<L56+offset_0+2
+  1828 0B:3637: D4 10        	pei	<L56+offset_0
+  1829 0B:3639: A9 10 00     	lda	#$10
+  1830                        	xref	~~~llsr
+  1831 0B:363C: 22 xx xx xx  	jsl	~~~llsr
+  1832 0B:3640: 85 01        	sta	<R0
+  1833 0B:3642: 86 03        	stx	<R0+2
+  1834 0B:3644: A5 01        	lda	<R0
+  1835 0B:3646: 29 FF 00     	and	#<$ff
+  1836 0B:3649: 85 05        	sta	<R1
+  1837 0B:364B: 64 07        	stz	<R1+2
+  1838 0B:364D: E2 20        	sep	#$20
+  1839                        	longa	off
+  1840 0B:364F: A5 05        	lda	<R1
+  1841 0B:3651: 8F 35 E8 AF  	sta	>11528245
+  1842 0B:3655: C2 20        	rep	#$20
+  1843                        	longa	on
+  1844                        ;
+  1845                        ;	IDE_CMD_STAT[0] = IDE_CMD_WRITE_SECTOR;
+  1846                        	.line	261
+  1847 0B:3657: E2 20        	sep	#$20
+  1848                        	longa	off
+  1849 0B:3659: A9 30        	lda	#$30
+  1850 0B:365B: 8F 37 E8 AF  	sta	>11528247
+  1851 0B:365F: C2 20        	rep	#$20
+  1852                        	longa	on
+  1853                        ;
+  1854                        ;	SET_STATUS_4('1');
+  1855                        	.line	263
+  1856 0B:3661: E2 20        	sep	#$20
+  1857                        	longa	off
+  1858 0B:3663: A9 31        	lda	#$31
+  1859 0B:3665: 8F 83 A4 AF  	sta	>11510915	; volatile
+  1860 0B:3669: C2 20        	rep	#$20
+  1861                        	longa	on
+  1862                        ;	asm NOP;
+  1863                        	.line	264
+  1864                        	asmstart
+  1865 0B:366B: EA           	NOP
+  1866                        	asmend
+  1867                        ;	asm NOP;
+  1868                        	.line	265
+  1869                        	asmstart
+  Fri Jul 16 2021 14:42                                                Page 34
+
+
+  1870 0B:366C: EA           	NOP
+  1871                        	asmend
+  1872                        ;	asm NOP;
+  1873                        	.line	266
+  1874                        	asmstart
+  1875 0B:366D: EA           	NOP
+  1876                        	asmend
+  1877                        ;	asm NOP;
+  1878                        	.line	267
+  1879                        	asmstart
+  1880 0B:366E: EA           	NOP
+  1881                        	asmend
+  1882                        ;	asm NOP;
+  1883                        	.line	268
+  1884                        	asmstart
+  1885 0B:366F: EA           	NOP
+  1886                        	asmend
+  1887                        ;
+  1888                        ;	if(k_drive_wait_dsc())
+  1889                        	.line	270
+  1890                        ;		return FR_DISK_ERR;
+  1891 0B:3670: 22 16 32 0B  	jsl	~~k_drive_wait_dsc
+  1892 0B:3674: AA           	tax
+  1893 0B:3675: D0 03        	bne	L59
+  1894 0B:3677: 82 15 00     	brl	L10023
+  1895                        L59:
+  1896                        	.line	271
+  1897 0B:367A: A9 01 00     	lda	#$1
+  1898                        L60:
+  1899 0B:367D: A8           	tay
+  1900 0B:367E: A5 0E        	lda	<L56+2
+  1901 0B:3680: 85 16        	sta	<L56+2+8
+  1902 0B:3682: A5 0D        	lda	<L56+1
+  1903 0B:3684: 85 15        	sta	<L56+1+8
+  1904 0B:3686: 2B           	pld
+  1905 0B:3687: 3B           	tsc
+  1906 0B:3688: 18           	clc
+  1907 0B:3689: 69 14 00     	adc	#L56+8
+  1908 0B:368C: 1B           	tcs
+  1909 0B:368D: 98           	tya
+  1910 0B:368E: 6B           	rtl
+  1911                        ;
+  1912                        ;	k_drive_wait_drq();
+  1913                        L10023:
+  1914                        	.line	273
+  1915 0B:368F: 22 F0 31 0B  	jsl	~~k_drive_wait_drq
+  1916                        ;
+  1917                        ;	SET_STATUS_4('2');
+  1918                        	.line	275
+  1919 0B:3693: E2 20        	sep	#$20
+  1920                        	longa	off
+  1921 0B:3695: A9 32        	lda	#$32
+  1922 0B:3697: 8F 83 A4 AF  	sta	>11510915	; volatile
+  1923 0B:369B: C2 20        	rep	#$20
+  1924                        	longa	on
+  1925                        ;
+  1926                        ;	if(errorCode == 0)
+  1927                        	.line	277
+  Fri Jul 16 2021 14:42                                                Page 35
+
+
+  1928                        ;	{
+  1929 0B:369D: A5 09        	lda	<L57+errorCode_1
+  1930 0B:369F: 29 FF 00     	and	#$ff
+  1931 0B:36A2: F0 03        	beq	L61
+  1932 0B:36A4: 82 2D 00     	brl	L10024
+  1933                        L61:
+  1934                        	.line	278
+  1935                        ;		for(index = 0;index < 512;index+=2)
+  1936                        	.line	279
+  1937 0B:36A7: 64 0B        	stz	<L57+index_1
+  1938                        L10027:
+  1939                        ;		{
+  1940                        	.line	280
+  1941                        ;			IDE_DATA_LO[0] = sendBuffer[inde
+                    x];
+  1942                        	.line	281
+  1943 0B:36A9: E2 20        	sep	#$20
+  1944                        	longa	off
+  1945 0B:36AB: A4 0B        	ldy	<L57+index_1
+  1946 0B:36AD: B7 14        	lda	[<L56+sendBuffer_0],Y
+  1947 0B:36AF: 8F 38 E8 AF  	sta	>11528248
+  1948 0B:36B3: C2 20        	rep	#$20
+  1949                        	longa	on
+  1950                        ;			IDE_DATA_HI[0] = sendBuffer[inde
+                    x+1];
+  1951                        	.line	282
+  1952 0B:36B5: A5 0B        	lda	<L57+index_1
+  1953 0B:36B7: 1A           	ina
+  1954 0B:36B8: 85 01        	sta	<R0
+  1955 0B:36BA: E2 20        	sep	#$20
+  1956                        	longa	off
+  1957 0B:36BC: A4 01        	ldy	<R0
+  1958 0B:36BE: B7 14        	lda	[<L56+sendBuffer_0],Y
+  1959 0B:36C0: 8F 39 E8 AF  	sta	>11528249
+  1960 0B:36C4: C2 20        	rep	#$20
+  1961                        	longa	on
+  1962                        ;		}
+  1963                        	.line	283
+  1964                        L10025:
+  1965 0B:36C6: E6 0B        	inc	<L57+index_1
+  1966 0B:36C8: E6 0B        	inc	<L57+index_1
+  1967 0B:36CA: A5 0B        	lda	<L57+index_1
+  1968 0B:36CC: C9 00 02     	cmp	#<$200
+  1969 0B:36CF: B0 03        	bcs	L62
+  1970 0B:36D1: 82 D5 FF     	brl	L10027
+  1971                        L62:
+  1972                        L10026:
+  1973                        ;	}
+  1974                        	.line	284
+  1975                        ;
+  1976                        ;	return errorCode;
+  1977                        L10024:
+  1978                        	.line	286
+  1979 0B:36D4: A5 09        	lda	<L57+errorCode_1
+  1980 0B:36D6: 29 FF 00     	and	#$ff
+  1981 0B:36D9: 82 A1 FF     	brl	L60
+  1982                        ;}
+  1983                        	.line	287
+  Fri Jul 16 2021 14:42                                                Page 36
+
+
+  1984                        	.endblock	287
+  1985             0000000C   L56	equ	12
+  1986             00000009   L57	equ	9
+  1987 0B:36DC:              	ends
+  1988                        	efunc
+  1989                        	.endfunc	287,9,12
+  1990                        	.line	287
+  1991                        ;
+  1992                        ;UCHAR k_hd_initialize(void)
+  1993                        ;{
+  1994                        	.line	289
+  1995                        	.line	290
+  1996                        	DISKIO
+  1997                        	xdef	~~k_hd_initialize
+  1998                        	func
+  1999                        	.function	290
+  2000                        ~~k_hd_initialize:
+  2001                        	longa	on
+  2002                        	longi	on
+  2003 0B:36DC: 3B           	tsc
+  2004 0B:36DD: 38           	sec
+  2005 0B:36DE: E9 02 00     	sbc	#L63
+  2006 0B:36E1: 1B           	tcs
+  2007 0B:36E2: 0B           	phd
+  2008 0B:36E3: 5B           	tcd
+  2009                        	.block	290
+  2010                        ;	UCHAR s;
+  2011                        ;	UCHAR errorCode;
+  2012                        ;
+  2013                        ;	SET_STATUS_3('I');
+  2014             00000000   s_1	set	0
+  2015             00000001   errorCode_1	set	1
+  2016                        	.sym	s,0,14,1,8
+  2017                        	.sym	errorCode,1,14,1,8
+  2018                        	.line	294
+  2019 0B:36E4: E2 20        	sep	#$20
+  2020                        	longa	off
+  2021 0B:36E6: A9 49        	lda	#$49
+  2022 0B:36E8: 8F 82 A4 AF  	sta	>11510914	; volatile
+  2023 0B:36EC: C2 20        	rep	#$20
+  2024                        	longa	on
+  2025                        ;	//DebugOut("***k_hd_initialize\r\n");
+  2026                        ;
+  2027                        ;	k_drive_ready_not_busy();
+  2028                        	.line	297
+  2029 0B:36EE: 22 F4 32 0B  	jsl	~~k_drive_ready_not_busy
+  2030                        ;
+  2031                        ;	IDE_CMD_STAT[0] = 0;
+  2032                        	.line	299
+  2033 0B:36F2: E2 20        	sep	#$20
+  2034                        	longa	off
+  2035 0B:36F4: A9 00        	lda	#$0
+  2036 0B:36F6: 8F 37 E8 AF  	sta	>11528247
+  2037 0B:36FA: C2 20        	rep	#$20
+  2038                        	longa	on
+  2039                        ;
+  2040                        ;	k_drive_busy();
+  2041                        	.line	301
+  Fri Jul 16 2021 14:42                                                Page 37
+
+
+  2042 0B:36FC: 22 5A 33 0B  	jsl	~~k_drive_busy
+  2043                        ;
+  2044                        ;	IDE_HEAD[0] 	= 0xE0;
+  2045                        	.line	303
+  2046 0B:3700: E2 20        	sep	#$20
+  2047                        	longa	off
+  2048 0B:3702: A9 E0        	lda	#$e0
+  2049 0B:3704: 8F 36 E8 AF  	sta	>11528246
+  2050 0B:3708: C2 20        	rep	#$20
+  2051                        	longa	on
+  2052                        ;	IDE_SECT_CNT[0] = 0x01;
+  2053                        	.line	304
+  2054 0B:370A: E2 20        	sep	#$20
+  2055                        	longa	off
+  2056 0B:370C: A9 01        	lda	#$1
+  2057 0B:370E: 8F 32 E8 AF  	sta	>11528242
+  2058 0B:3712: C2 20        	rep	#$20
+  2059                        	longa	on
+  2060                        ;	IDE_CLDR_LO[0]  = 0x00;
+  2061                        	.line	305
+  2062 0B:3714: E2 20        	sep	#$20
+  2063                        	longa	off
+  2064 0B:3716: A9 00        	lda	#$0
+  2065 0B:3718: 8F 34 E8 AF  	sta	>11528244
+  2066 0B:371C: C2 20        	rep	#$20
+  2067                        	longa	on
+  2068                        ;	IDE_CLDR_HI[0]  = 0x00;
+  2069                        	.line	306
+  2070 0B:371E: E2 20        	sep	#$20
+  2071                        	longa	off
+  2072 0B:3720: A9 00        	lda	#$0
+  2073 0B:3722: 8F 35 E8 AF  	sta	>11528245
+  2074 0B:3726: C2 20        	rep	#$20
+  2075                        	longa	on
+  2076                        ;	IDE_SECT_SRT[0] = 0x00;
+  2077                        	.line	307
+  2078 0B:3728: E2 20        	sep	#$20
+  2079                        	longa	off
+  2080 0B:372A: A9 00        	lda	#$0
+  2081 0B:372C: 8F 33 E8 AF  	sta	>11528243
+  2082 0B:3730: C2 20        	rep	#$20
+  2083                        	longa	on
+  2084                        ;
+  2085                        ;	//k_drive_ready_not_busy();
+  2086                        ;
+  2087                        ;	//k_debug_hex("k_hd_initialize:code:",IDE_CMD_ST
+                    AT[0]);
+  2088                        ;	k_hd_get_id();
+  2089                        	.line	312
+  2090 0B:3732: 22 B2 33 0B  	jsl	~~k_hd_get_id
+  2091                        ;
+  2092                        ;	SET_STATUS_4('2');
+  2093                        	.line	314
+  2094 0B:3736: E2 20        	sep	#$20
+  2095                        	longa	off
+  2096 0B:3738: A9 32        	lda	#$32
+  2097 0B:373A: 8F 83 A4 AF  	sta	>11510915	; volatile
+  2098 0B:373E: C2 20        	rep	#$20
+  Fri Jul 16 2021 14:42                                                Page 38
+
+
+  2099                        	longa	on
+  2100                        ;
+  2101                        ;    return TRUE;
+  2102                        	.line	316
+  2103 0B:3740: A9 01 00     	lda	#$1
+  2104                        L66:
+  2105 0B:3743: A8           	tay
+  2106 0B:3744: 2B           	pld
+  2107 0B:3745: 3B           	tsc
+  2108 0B:3746: 18           	clc
+  2109 0B:3747: 69 02 00     	adc	#L63
+  2110 0B:374A: 1B           	tcs
+  2111 0B:374B: 98           	tya
+  2112 0B:374C: 6B           	rtl
+  2113                        ;}
+  2114                        	.line	317
+  2115                        	.endblock	317
+  2116             00000002   L63	equ	2
+  2117             00000001   L64	equ	1
+  2118 0B:374D:              	ends
+  2119                        	efunc
+  2120                        	.endfunc	317,1,2
+  2121                        	.line	317
+  2122                        ;
+  2123                        ;UCHAR k_hd_uninitialize(VOID)
+  2124                        ;{
+  2125                        	.line	319
+  2126                        	.line	320
+  2127                        	DISKIO
+  2128                        	xdef	~~k_hd_uninitialize
+  2129                        	func
+  2130                        	.function	320
+  2131                        ~~k_hd_uninitialize:
+  2132                        	longa	on
+  2133                        	longi	on
+  2134 0B:374D: 3B           	tsc
+  2135 0B:374E: 38           	sec
+  2136 0B:374F: E9 00 00     	sbc	#L67
+  2137 0B:3752: 1B           	tcs
+  2138 0B:3753: 0B           	phd
+  2139 0B:3754: 5B           	tcd
+  2140                        	.block	320
+  2141                        ;	return 0;
+  2142                        	.line	321
+  2143 0B:3755: A9 00 00     	lda	#$0
+  2144                        L70:
+  2145 0B:3758: A8           	tay
+  2146 0B:3759: 2B           	pld
+  2147 0B:375A: 3B           	tsc
+  2148 0B:375B: 18           	clc
+  2149 0B:375C: 69 00 00     	adc	#L67
+  2150 0B:375F: 1B           	tcs
+  2151 0B:3760: 98           	tya
+  2152 0B:3761: 6B           	rtl
+  2153                        ;}
+  2154                        	.line	322
+  2155                        	.endblock	322
+  2156             00000000   L67	equ	0
+  Fri Jul 16 2021 14:42                                                Page 39
+
+
+  2157             00000001   L68	equ	1
+  2158 0B:3762:              	ends
+  2159                        	efunc
+  2160                        	.endfunc	322,1,0
+  2161                        	.line	322
+  2162                        ;
+  2163                        ;
+  2164                        ;/*-----------------------------------------------
+                    ------------------------*/
+  2165                        ;/* Get Drive Status                              
+                                            */
+  2166                        ;/*-----------------------------------------------
+                    ------------------------*/
+  2167                        ;
+  2168                        ;DSTATUS disk_status (
+  2169                        ;	BYTE pdrv		/* Physical drive nmuber
+                     to identify the drive */
+  2170                        ;)
+  2171                        ;{
+  2172                        	.line	329
+  2173                        	.line	332
+  2174                        	DISKIO
+  2175                        	xdef	~~disk_status
+  2176                        	func
+  2177                        	.function	332
+  2178                        ~~disk_status:
+  2179                        	longa	on
+  2180                        	longi	on
+  2181 0B:3762: 3B           	tsc
+  2182 0B:3763: 38           	sec
+  2183 0B:3764: E9 00 00     	sbc	#L71
+  2184 0B:3767: 1B           	tcs
+  2185 0B:3768: 0B           	phd
+  2186 0B:3769: 5B           	tcd
+  2187             00000004   pdrv_0	set	4
+  2188                        	.block	332
+  2189                        ;	return RES_OK;
+  2190                        	.sym	pdrv,4,14,6,8
+  2191                        	.line	333
+  2192 0B:376A: A9 00 00     	lda	#$0
+  2193                        L74:
+  2194 0B:376D: A8           	tay
+  2195 0B:376E: A5 02        	lda	<L71+2
+  2196 0B:3770: 85 04        	sta	<L71+2+2
+  2197 0B:3772: A5 01        	lda	<L71+1
+  2198 0B:3774: 85 03        	sta	<L71+1+2
+  2199 0B:3776: 2B           	pld
+  2200 0B:3777: 3B           	tsc
+  2201 0B:3778: 18           	clc
+  2202 0B:3779: 69 02 00     	adc	#L71+2
+  2203 0B:377C: 1B           	tcs
+  2204 0B:377D: 98           	tya
+  2205 0B:377E: 6B           	rtl
+  2206                        ;}
+  2207                        	.line	334
+  2208                        	.endblock	334
+  2209             00000000   L71	equ	0
+  2210             00000001   L72	equ	1
+  Fri Jul 16 2021 14:42                                                Page 40
+
+
+  2211 0B:377F:              	ends
+  2212                        	efunc
+  2213                        	.endfunc	334,1,0
+  2214                        	.line	334
+  2215                        ;
+  2216                        ;
+  2217                        ;
+  2218                        ;/*-----------------------------------------------
+                    ------------------------*/
+  2219                        ;/* Inidialize a Drive                            
+                                            */
+  2220                        ;/*-----------------------------------------------
+                    ------------------------*/
+  2221                        ;
+  2222                        ;DSTATUS disk_initialize (
+  2223                        ;	BYTE pdrv				/* Physi
+                    cal drive nmuber to identify the drive */
+  2224                        ;)
+  2225                        ;{
+  2226                        	.line	342
+  2227                        	.line	345
+  2228                        	DISKIO
+  2229                        	xdef	~~disk_initialize
+  2230                        	func
+  2231                        	.function	345
+  2232                        ~~disk_initialize:
+  2233                        	longa	on
+  2234                        	longi	on
+  2235 0B:377F: 3B           	tsc
+  2236 0B:3780: 38           	sec
+  2237 0B:3781: E9 00 00     	sbc	#L75
+  2238 0B:3784: 1B           	tcs
+  2239 0B:3785: 0B           	phd
+  2240 0B:3786: 5B           	tcd
+  2241             00000004   pdrv_0	set	4
+  2242                        	.block	345
+  2243                        ;	//k_debug_hex("disk_initialize:",pdrv);
+  2244                        ;	//k_debuginteger( "------- disk_initialize:dev:"
+                    ,pdrv);
+  2245                        ;	//k_debugstring("------- disk_initialize...\r\n"
+                    );
+  2246                        ;
+  2247                        ;	k_hd_initialize();
+  2248                        	.sym	pdrv,4,14,6,8
+  2249                        	.line	350
+  2250 0B:3787: 22 DC 36 0B  	jsl	~~k_hd_initialize
+  2251                        ;	//k_debugstring("------- disk_initialize exit\r\
+                    n");
+  2252                        ;
+  2253                        ;	return RES_OK;
+  2254                        	.line	353
+  2255 0B:378B: A9 00 00     	lda	#$0
+  2256                        L78:
+  2257 0B:378E: A8           	tay
+  2258 0B:378F: A5 02        	lda	<L75+2
+  2259 0B:3791: 85 04        	sta	<L75+2+2
+  2260 0B:3793: A5 01        	lda	<L75+1
+  2261 0B:3795: 85 03        	sta	<L75+1+2
+  Fri Jul 16 2021 14:42                                                Page 41
+
+
+  2262 0B:3797: 2B           	pld
+  2263 0B:3798: 3B           	tsc
+  2264 0B:3799: 18           	clc
+  2265 0B:379A: 69 02 00     	adc	#L75+2
+  2266 0B:379D: 1B           	tcs
+  2267 0B:379E: 98           	tya
+  2268 0B:379F: 6B           	rtl
+  2269                        ;}
+  2270                        	.line	354
+  2271                        	.endblock	354
+  2272             00000000   L75	equ	0
+  2273             00000001   L76	equ	1
+  2274 0B:37A0:              	ends
+  2275                        	efunc
+  2276                        	.endfunc	354,1,0
+  2277                        	.line	354
+  2278                        ;
+  2279                        ;
+  2280                        ;
+  2281                        ;/*-----------------------------------------------
+                    ------------------------*/
+  2282                        ;/* Read Sector(s)                                
+                                            */
+  2283                        ;/*-----------------------------------------------
+                    ------------------------*/
+  2284                        ;
+  2285                        ;DRESULT disk_read (
+  2286                        ;	BYTE pdrv,		/* Physical drive nmuber
+                     to identify the drive */
+  2287                        ;	BYTE *buff,		/* Data buffer to store 
+                    read data */
+  2288                        ;	LBA_t sector,	/* Start sector in LBA */
+  2289                        ;	UINT count		/* Number of sectors to 
+                    read */
+  2290                        ;)
+  2291                        ;{
+  2292                        	.line	362
+  2293                        	.line	368
+  2294                        	DISKIO
+  2295                        	xdef	~~disk_read
+  2296                        	func
+  2297                        	.function	368
+  2298                        ~~disk_read:
+  2299                        	longa	on
+  2300                        	longi	on
+  2301 0B:37A0: 3B           	tsc
+  2302 0B:37A1: 38           	sec
+  2303 0B:37A2: E9 0A 00     	sbc	#L79
+  2304 0B:37A5: 1B           	tcs
+  2305 0B:37A6: 0B           	phd
+  2306 0B:37A7: 5B           	tcd
+  2307             00000004   pdrv_0	set	4
+  2308             00000006   buff_0	set	6
+  2309             0000000A   sector_0	set	10
+  2310             0000000E   count_0	set	14
+  2311                        	.block	368
+  2312                        ;	int i;
+  2313                        ;
+  Fri Jul 16 2021 14:42                                                Page 42
+
+
+  2314                        ;	//k_debuginteger( "------- disk_read:dev:",pdrv)
+                    ;
+  2315                        ;	//k_debuglong("------- disk_read:sector:",sector
+                    );
+  2316                        ;	//k_debug_integer("------- disk_read:count:",cou
+                    nt);
+  2317                        ;
+  2318                        ;	//k_debug_hex("disk_read:",pdrv);
+  2319                        ;
+  2320                        ;	for(i=0;i<count;i++)
+  2321             00000000   i_1	set	0
+  2322                        	.sym	i,0,5,1,16
+  2323                        	.sym	pdrv,4,14,6,8
+  2324                        	.sym	buff,6,142,6,32
+  2325                        	.sym	sector,10,18,6,32
+  2326                        	.sym	count,14,16,6,16
+  2327                        	.line	377
+  2328 0B:37A8: 64 09        	stz	<L80+i_1
+  2329 0B:37AA: 82 33 00     	brl	L10031
+  2330                        L10030:
+  2331                        ;	{
+  2332                        	.line	378
+  2333                        ;		k_hd_read_sector((sector + i),buff);
+  2334                        	.line	379
+  2335 0B:37AD: D4 12        	pei	<L79+buff_0+2
+  2336 0B:37AF: D4 10        	pei	<L79+buff_0
+  2337 0B:37B1: A0 00 00     	ldy	#$0
+  2338 0B:37B4: A5 09        	lda	<L80+i_1
+  2339 0B:37B6: 10 01        	bpl	L82
+  2340 0B:37B8: 88           	dey
+  2341                        L82:
+  2342 0B:37B9: 85 01        	sta	<R0
+  2343 0B:37BB: 84 03        	sty	<R0+2
+  2344 0B:37BD: 18           	clc
+  2345 0B:37BE: A5 01        	lda	<R0
+  2346 0B:37C0: 65 14        	adc	<L79+sector_0
+  2347 0B:37C2: 85 05        	sta	<R1
+  2348 0B:37C4: A5 03        	lda	<R0+2
+  2349 0B:37C6: 65 16        	adc	<L79+sector_0+2
+  2350 0B:37C8: 85 07        	sta	<R1+2
+  2351 0B:37CA: D4 07        	pei	<R1+2
+  2352 0B:37CC: D4 05        	pei	<R1
+  2353 0B:37CE: 22 6A 34 0B  	jsl	~~k_hd_read_sector
+  2354                        ;		buff+=512;
+  2355                        	.line	380
+  2356 0B:37D2: 18           	clc
+  2357 0B:37D3: A9 00 02     	lda	#$200
+  2358 0B:37D6: 65 10        	adc	<L79+buff_0
+  2359 0B:37D8: 85 10        	sta	<L79+buff_0
+  2360 0B:37DA: 90 02        	bcc	L83
+  2361 0B:37DC: E6 12        	inc	<L79+buff_0+2
+  2362                        L83:
+  2363                        ;	}
+  2364                        	.line	381
+  2365                        L10028:
+  2366 0B:37DE: E6 09        	inc	<L80+i_1
+  2367                        L10031:
+  2368 0B:37E0: A5 09        	lda	<L80+i_1
+  Fri Jul 16 2021 14:42                                                Page 43
+
+
+  2369 0B:37E2: C5 18        	cmp	<L79+count_0
+  2370 0B:37E4: B0 03        	bcs	L84
+  2371 0B:37E6: 82 C4 FF     	brl	L10030
+  2372                        L84:
+  2373                        L10029:
+  2374                        ;
+  2375                        ;	return RES_OK;
+  2376                        	.line	383
+  2377 0B:37E9: A9 00 00     	lda	#$0
+  2378                        L85:
+  2379 0B:37EC: A8           	tay
+  2380 0B:37ED: A5 0C        	lda	<L79+2
+  2381 0B:37EF: 85 18        	sta	<L79+2+12
+  2382 0B:37F1: A5 0B        	lda	<L79+1
+  2383 0B:37F3: 85 17        	sta	<L79+1+12
+  2384 0B:37F5: 2B           	pld
+  2385 0B:37F6: 3B           	tsc
+  2386 0B:37F7: 18           	clc
+  2387 0B:37F8: 69 16 00     	adc	#L79+12
+  2388 0B:37FB: 1B           	tcs
+  2389 0B:37FC: 98           	tya
+  2390 0B:37FD: 6B           	rtl
+  2391                        ;}
+  2392                        	.line	384
+  2393                        	.endblock	384
+  2394             0000000A   L79	equ	10
+  2395             00000009   L80	equ	9
+  2396 0B:37FE:              	ends
+  2397                        	efunc
+  2398                        	.endfunc	384,9,10
+  2399                        	.line	384
+  2400                        ;
+  2401                        ;
+  2402                        ;
+  2403                        ;/*-----------------------------------------------
+                    ------------------------*/
+  2404                        ;/* Write Sector(s)                               
+                                            */
+  2405                        ;/*-----------------------------------------------
+                    ------------------------*/
+  2406                        ;
+  2407                        ;#if FF_FS_READONLY == 0
+  2408                        ;
+  2409                        ;DRESULT disk_write (
+  2410                        ;	BYTE pdrv,			/* Physical driv
+                    e nmuber to identify the drive */
+  2411                        ;	const BYTE *buff,	/* Data to be written */
+  2412                        ;	LBA_t sector,		/* Start sector in LBA *
+                    /
+  2413                        ;	UINT count			/* Number of sec
+                    tors to write */
+  2414                        ;)
+  2415                        ;{
+  2416                        	.line	394
+  2417                        	.line	400
+  2418                        	DISKIO
+  2419                        	xdef	~~disk_write
+  2420                        	func
+  Fri Jul 16 2021 14:42                                                Page 44
+
+
+  2421                        	.function	400
+  2422                        ~~disk_write:
+  2423                        	longa	on
+  2424                        	longi	on
+  2425 0B:37FE: 3B           	tsc
+  2426 0B:37FF: 38           	sec
+  2427 0B:3800: E9 0E 00     	sbc	#L86
+  2428 0B:3803: 1B           	tcs
+  2429 0B:3804: 0B           	phd
+  2430 0B:3805: 5B           	tcd
+  2431             00000004   pdrv_0	set	4
+  2432             00000006   buff_0	set	6
+  2433             0000000A   sector_0	set	10
+  2434             0000000E   count_0	set	14
+  2435                        	.block	400
+  2436                        ;	int i = 0;
+  2437                        ;	DRESULT res = RES_PARERR;
+  2438                        ;	int result;
+  2439                        ;
+  2440                        ;	//k_debug_integer("------- disk_write:dev:",pdrv
+                    );
+  2441                        ;	//k_debug_integer("------- disk_write::count:",c
+                    ount);
+  2442                        ;
+  2443                        ;	for(i=0;i<count;i++)
+  2444             00000000   i_1	set	0
+  2445             00000002   res_1	set	2
+  2446             00000004   result_1	set	4
+  2447                        	.sym	i,0,5,1,16
+  2448                        	.sym	res,2,5,1,16
+  2449                        	.sym	result,4,5,1,16
+  2450                        	.sym	pdrv,4,14,6,8
+  2451                        	.sym	buff,6,142,6,32
+  2452                        	.sym	sector,10,18,6,32
+  2453                        	.sym	count,14,16,6,16
+  2454 0B:3806: 64 09        	stz	<L87+i_1
+  2455 0B:3808: A9 04 00     	lda	#$4
+  2456 0B:380B: 85 0B        	sta	<L87+res_1
+  2457                        	.line	408
+  2458 0B:380D: 64 09        	stz	<L87+i_1
+  2459 0B:380F: 82 5C 00     	brl	L10035
+  2460                        L10034:
+  2461                        ;	{
+  2462                        	.line	409
+  2463                        ;		result = k_hd_write_sector(sector+((ULON
+                    G)i),(BYTE*)buff);
+  2464                        	.line	410
+  2465 0B:3812: D4 16        	pei	<L86+buff_0+2
+  2466 0B:3814: D4 14        	pei	<L86+buff_0
+  2467 0B:3816: A0 00 00     	ldy	#$0
+  2468 0B:3819: A5 09        	lda	<L87+i_1
+  2469 0B:381B: 10 01        	bpl	L89
+  2470 0B:381D: 88           	dey
+  2471                        L89:
+  2472 0B:381E: 85 01        	sta	<R0
+  2473 0B:3820: 84 03        	sty	<R0+2
+  2474 0B:3822: 18           	clc
+  2475 0B:3823: A5 01        	lda	<R0
+  Fri Jul 16 2021 14:42                                                Page 45
+
+
+  2476 0B:3825: 65 18        	adc	<L86+sector_0
+  2477 0B:3827: 85 05        	sta	<R1
+  2478 0B:3829: A5 03        	lda	<R0+2
+  2479 0B:382B: 65 1A        	adc	<L86+sector_0+2
+  2480 0B:382D: 85 07        	sta	<R1+2
+  2481 0B:382F: D4 07        	pei	<R1+2
+  2482 0B:3831: D4 05        	pei	<R1
+  2483 0B:3833: 22 A8 35 0B  	jsl	~~k_hd_write_sector
+  2484 0B:3837: E2 20        	sep	#$20
+  2485                        	longa	off
+  2486 0B:3839: 85 01        	sta	<R0
+  2487 0B:383B: C2 20        	rep	#$20
+  2488                        	longa	on
+  2489 0B:383D: A5 01        	lda	<R0
+  2490 0B:383F: 29 FF 00     	and	#$ff
+  2491 0B:3842: 85 0D        	sta	<L87+result_1
+  2492                        ;		if(result)
+  2493                        	.line	411
+  2494                        ;		{
+  2495 0B:3844: A5 0D        	lda	<L87+result_1
+  2496 0B:3846: D0 03        	bne	L90
+  2497 0B:3848: 82 15 00     	brl	L10036
+  2498                        L90:
+  2499                        	.line	412
+  2500                        ;			return RES_PARERR;
+  2501                        	.line	413
+  2502 0B:384B: A9 04 00     	lda	#$4
+  2503                        L91:
+  2504 0B:384E: A8           	tay
+  2505 0B:384F: A5 10        	lda	<L86+2
+  2506 0B:3851: 85 1C        	sta	<L86+2+12
+  2507 0B:3853: A5 0F        	lda	<L86+1
+  2508 0B:3855: 85 1B        	sta	<L86+1+12
+  2509 0B:3857: 2B           	pld
+  2510 0B:3858: 3B           	tsc
+  2511 0B:3859: 18           	clc
+  2512 0B:385A: 69 1A 00     	adc	#L86+12
+  2513 0B:385D: 1B           	tcs
+  2514 0B:385E: 98           	tya
+  2515 0B:385F: 6B           	rtl
+  2516                        ;		}
+  2517                        	.line	414
+  2518                        ;		buff+=512;
+  2519                        L10036:
+  2520                        	.line	415
+  2521 0B:3860: 18           	clc
+  2522 0B:3861: A9 00 02     	lda	#$200
+  2523 0B:3864: 65 14        	adc	<L86+buff_0
+  2524 0B:3866: 85 14        	sta	<L86+buff_0
+  2525 0B:3868: 90 02        	bcc	L92
+  2526 0B:386A: E6 16        	inc	<L86+buff_0+2
+  2527                        L92:
+  2528                        ;	}
+  2529                        	.line	416
+  2530                        L10032:
+  2531 0B:386C: E6 09        	inc	<L87+i_1
+  2532                        L10035:
+  2533 0B:386E: A5 09        	lda	<L87+i_1
+  Fri Jul 16 2021 14:42                                                Page 46
+
+
+  2534 0B:3870: C5 1C        	cmp	<L86+count_0
+  2535 0B:3872: B0 03        	bcs	L93
+  2536 0B:3874: 82 9B FF     	brl	L10034
+  2537                        L93:
+  2538                        L10033:
+  2539                        ;
+  2540                        ;	return RES_OK;
+  2541                        	.line	418
+  2542 0B:3877: A9 00 00     	lda	#$0
+  2543 0B:387A: 82 D1 FF     	brl	L91
+  2544                        ;}
+  2545                        	.line	419
+  2546                        	.endblock	419
+  2547             0000000E   L86	equ	14
+  2548             00000009   L87	equ	9
+  2549 0B:387D:              	ends
+  2550                        	efunc
+  2551                        	.endfunc	419,9,14
+  2552                        	.line	419
+  2553                        ;
+  2554                        ;#endif
+  2555                        ;
+  2556                        ;
+  2557                        ;/*-----------------------------------------------
+                    ------------------------*/
+  2558                        ;/* Miscellaneous Functions                       
+                                            */
+  2559                        ;/*-----------------------------------------------
+                    ------------------------*/
+  2560                        ;
+  2561                        ;DRESULT disk_ioctl (
+  2562                        ;	BYTE pdrv,		/* Physical drive nmuber
+                     (0..) */
+  2563                        ;	BYTE cmd,		/* Control code */
+  2564                        ;	void *buff		/* Buffer to send/receiv
+                    e control data */
+  2565                        ;)
+  2566                        ;{
+  2567                        	.line	428
+  2568                        	.line	433
+  2569                        	DISKIO
+  2570                        	xdef	~~disk_ioctl
+  2571                        	func
+  2572                        	.function	433
+  2573                        ~~disk_ioctl:
+  2574                        	longa	on
+  2575                        	longi	on
+  2576 0B:387D: 3B           	tsc
+  2577 0B:387E: 38           	sec
+  2578 0B:387F: E9 00 00     	sbc	#L94
+  2579 0B:3882: 1B           	tcs
+  2580 0B:3883: 0B           	phd
+  2581 0B:3884: 5B           	tcd
+  2582             00000004   pdrv_0	set	4
+  2583             00000006   cmd_0	set	6
+  2584             00000008   buff_0	set	8
+  2585                        	.block	433
+  2586                        ;	return RES_OK;
+  Fri Jul 16 2021 14:42                                                Page 47
+
+
+  2587                        	.sym	pdrv,4,14,6,8
+  2588                        	.sym	cmd,6,14,6,8
+  2589                        	.sym	buff,8,129,6,32
+  2590                        	.line	434
+  2591 0B:3885: A9 00 00     	lda	#$0
+  2592                        L97:
+  2593 0B:3888: A8           	tay
+  2594 0B:3889: A5 02        	lda	<L94+2
+  2595 0B:388B: 85 0A        	sta	<L94+2+8
+  2596 0B:388D: A5 01        	lda	<L94+1
+  2597 0B:388F: 85 09        	sta	<L94+1+8
+  2598 0B:3891: 2B           	pld
+  2599 0B:3892: 3B           	tsc
+  2600 0B:3893: 18           	clc
+  2601 0B:3894: 69 08 00     	adc	#L94+8
+  2602 0B:3897: 1B           	tcs
+  2603 0B:3898: 98           	tya
+  2604 0B:3899: 6B           	rtl
+  2605                        ;}
+  2606                        	.line	435
+  2607                        	.endblock	435
+  2608             00000000   L94	equ	0
+  2609             00000001   L95	equ	1
+  2610 0B:389A:              	ends
+  2611                        	efunc
+  2612                        	.endfunc	435,1,0
+  2613                        	.line	435
+  2614                        ;
+  2615                        	.line	435
+  2616                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOSv1\src\boot\src\diskio.C",428
+  2617                        	udata
+  2618                        ~~szIndentity
+  2619 00:0000:              	ds	512
+  2620 00:0200:              	ends
+  2621                        	.sym	~~k_hd_uninitialize,~~k_hd_uninitialize,
+                    78,2,0
+  2622                        	.sym	~~k_hd_initialize,~~k_hd_initialize,78,2
+                    ,0
+  2623                        	.sym	~~k_hd_write_sector,~~k_hd_write_sector,
+                    78,2,0
+  2624                        	.sym	~~k_hd_read_sector,~~k_hd_read_sector,78
+                    ,2,0
+  2625                        	.sym	~~k_hd_send_command,~~k_hd_send_command,
+                    78,2,0
+  2626                        	.sym	~~k_hd_get_id,~~k_hd_get_id,80,2,0
+  2627                        	.sym	~~k_hd_diagnostic,~~k_hd_diagnostic,65,2
+                    ,0
+  2628                        	.sym	~~k_drive_busy,~~k_drive_busy,65,3,0
+  2629                        	.sym	~~k_drive_ready_not_busy,~~k_drive_ready
+                    _not_busy,80,3,0
+  2630                        	.sym	~~k_drive_not_busy_or_drq,~~k_drive_not_
+                    busy_or_drq,80,3,0
+  2631                        	.sym	~~k_drive_ready,~~k_drive_ready,65,3,0
+  2632                        	.sym	~~k_drive_wait_dsc,~~k_drive_wait_dsc,80
+                    ,3,0
+  2633                        	.sym	~~k_drive_wait_drq,~~k_drive_wait_drq,65
+                    ,3,0
+  Fri Jul 16 2021 14:42                                                Page 48
+
+
+  2634                        	.sym	~~szIndentity,~~szIndentity,110,3,0,512
+  2635                        	.sym	~~disk_ioctl,~~disk_ioctl,69,2,0
+  2636                        	.sym	~~disk_write,~~disk_write,69,2,0
+  2637                        	.sym	~~disk_read,~~disk_read,69,2,0
+  2638                        	.sym	~~disk_status,~~disk_status,78,2,0
+  2639                        	.sym	~~disk_initialize,~~disk_initialize,78,2
+                    ,0
+  2640                        	.sym	DRESULT,0,5,14,16
+  2641                        	.sym	DSTATUS,0,14,14,8
+  2642                        	.sym	PPARTITIONTABLE,0,138,14,32,55
+  2643                        	.sym	PARTITIONTABLE,0,10,14,128,55
+  2644                        	.sym	FRESULT,0,5,14,16
+  2645                        	.sym	MKFS_PARM,0,10,14,80,54
+  2646                        	.sym	FILINFO,0,10,14,176,53
+  2647                        	.sym	DIR,0,10,14,384,52
+  2648                        	.sym	FIL,0,10,14,4400,51
+  2649                        	.sym	FFOBJID,0,10,14,128,50
+  2650                        	.sym	FATFS,0,10,14,4472,49
+  2651                        	.sym	LBA_t,0,18,14,32
+  2652                        	.sym	FSIZE_t,0,18,14,32
+  2653                        	.sym	TCHAR,0,14,14,8
+  2654                        	.sym	PFXRFHEADER_STRING_ENTRY,0,138,14,32,48
+  2655                        	.sym	FXRFHEADER_STRING_ENTRY,0,10,14,40,48
+  2656                        	.sym	PFXRFHEADER_STRING,0,138,14,32,47
+  2657                        	.sym	FXRFHEADER_STRING,0,10,14,32,47
+  2658                        	.sym	PFXRFHEADER_FONT,0,138,14,32,46
+  2659                        	.sym	FXRFHEADER_FONT,0,10,14,144,46
+  2660                        	.sym	PFXRFHEADER,0,138,14,32,45
+  2661                        	.sym	FXRFHEADER,0,10,14,72,45
+  2662                        	.sym	PFXCOMBUFFER,0,138,14,32,44
+  2663                        	.sym	FXCOMBUFFER,0,10,14,2080,44
+  2664                        	.sym	PSUBMENULIST,0,138,14,32,43
+  2665                        	.sym	SUBMENULIST,0,10,14,40,43
+  2666                        	.sym	HSUBMENU,0,7,14,32
+  2667                        	.sym	PSUBMENU,0,138,14,32,42
+  2668                        	.sym	SUBMENU,0,10,14,64,42
+  2669                        	.sym	MenuAction,0,641,14,32
+  2670                        	.sym	PMENUANCHOR,0,138,14,32,41
+  2671                        	.sym	MENUANCHOR,0,10,14,272,41
+  2672                        	.sym	PMSGBOX,0,138,14,32,40
+  2673                        	.sym	MSGBOX,0,10,14,144,40
+  2674                        	.sym	PTEXTBOX,0,138,14,32,39
+  2675                        	.sym	TEXTBOX,0,10,14,144,39
+  2676                        	.sym	PLISTBOX,0,138,14,32,38
+  2677                        	.sym	LISTBOX,0,10,14,240,38
+  2678                        	.sym	PSCROLLBAR,0,138,14,32,37
+  2679                        	.sym	SCROLLBAR,0,10,14,240,37
+  2680                        	.sym	PBUTTON,0,138,14,32,36
+  2681                        	.sym	BUTTON,0,10,14,96,36
+  2682                        	.sym	PMENUDROPDOWNDATA,0,138,14,32,35
+  2683                        	.sym	MENUDROPDOWNDATA,0,10,14,5152,35
+  2684                        	.sym	PMENUTAG,0,138,14,32,34
+  2685                        	.sym	MENUTAG,0,10,14,160,34
+  2686                        	.sym	PMENU,0,138,14,32,33
+  2687                        	.sym	MENU,0,10,14,280,33
+  2688                        	.sym	HMENURESOURCE,0,129,14,32
+  2689                        	.sym	FONTMETRIC,0,10,14,32,32
+  2690                        	.sym	TITLE,0,142,14,32
+  Fri Jul 16 2021 14:42                                                Page 49
+
+
+  2691                        	.sym	PHANDLE,0,1153,14,32
+  2692                        	.sym	HANDLE,0,129,14,32
+  2693                        	.sym	PWINDOWEX,0,138,14,32,31
+  2694                        	.sym	WINDOWEX,0,10,14,3880,31
+  2695                        	.sym	PWINDOW,0,138,14,32,30
+  2696                        	.sym	WINDOW,0,10,14,3904,30
+  2697                        	.sym	PDRAGDATA,0,138,14,32,29
+  2698                        	.sym	DRAGDATA,0,10,14,216,29
+  2699                        	.sym	PNCCLICKABLE,0,138,14,32,28
+  2700                        	.sym	NCCLICKABLE,0,10,14,136,28
+  2701                        	.sym	HCLICKABLE,0,7,14,32
+  2702                        	.sym	PCLICKABLE,0,138,14,32,27
+  2703                        	.sym	CLICKABLE,0,10,14,152,27
+  2704                        	.sym	PWNDCLASS,0,138,14,32,26
+  2705                        	.sym	WNDCLASS,0,10,14,272,26
+  2706                        	.sym	HBRUSH,0,129,14,32
+  2707                        	.sym	HCURSOR,0,129,14,32
+  2708                        	.sym	HICON,0,129,14,32
+  2709                        	.sym	HINSTANCE,0,129,14,32
+  2710                        	.sym	FXWndProc,0,654,14,32
+  2711                        	.sym	PDRECT,0,138,14,32,25
+  2712                        	.sym	DRECT,0,10,14,112,25
+  2713                        	.sym	PRECTP,0,138,14,32,24
+  2714                        	.sym	RECTP,0,10,14,96,24
+  2715                        	.sym	PRECT,0,138,14,32,23
+  2716                        	.sym	RECT,0,10,14,112,23
+  2717                        	.sym	PPOINT,0,138,14,32,22
+  2718                        	.sym	POINT,0,10,14,32,22
+  2719                        	.sym	PFXPROPERTY,0,138,14,32,20
+  2720                        	.sym	FXPROPERTY,0,10,14,384,20
+  2721                        	.sym	PKEYSTATE,0,138,14,32,19
+  2722                        	.sym	KEYSTATE,0,10,14,112,19
+  2723                        	.sym	SCANCODE,0,14,14,8
+  2724                        	.sym	KEYCODE,0,16,14,16
+  2725                        	.sym	PFXPROCESSMESSAGE,0,138,14,32,18
+  2726                        	.sym	FXPROCESSMESSAGE,0,10,14,112,18
+  2727                        	.sym	PFXPROCESS,0,138,14,32,17
+  2728                        	.sym	FXPROCESS,0,10,14,800,17
+  2729                        	.sym	PDESKTOP_CONTROL,0,138,14,32,16
+  2730                        	.sym	DESKTOP_CONTROL,0,10,14,392,16
+  2731                        	.sym	PCONSOLE_CONTROL,0,138,14,32,15
+  2732                        	.sym	CONSOLE_CONTROL,0,10,14,448,15
+  2733                        	.sym	FXProcessProc,0,641,14,32
+  2734                        	.sym	PFXCMDMESSAGE,0,138,14,32,14
+  2735                        	.sym	FXCMDMESSAGE,0,10,14,304,14
+  2736                        	.sym	PFXOSMESSAGE,0,138,14,32,13
+  2737                        	.sym	FXOSMESSAGE,0,10,14,304,13
+  2738                        	.sym	PINT_REGS,0,138,14,32,12
+  2739                        	.sym	INT_REGS,0,10,14,104,12
+  2740                        	.sym	TASK_STACK,0,10,14,32,11
+  2741                        	.sym	TASK,0,10,14,48,10
+  2742                        	.sym	PIRQDATA,0,138,14,32,9
+  2743                        	.sym	IRQDATA,0,10,14,48,9
+  2744                        	.sym	HMENU,0,129,14,32
+  2745                        	.sym	HWND,0,129,14,32
+  2746                        	.sym	MSGDATA,0,14,14,8
+  2747                        	.sym	MSGDEST,0,18,14,32
+  2748                        	.sym	MSGSRC,0,18,14,32
+  Fri Jul 16 2021 14:42                                                Page 50
+
+
+  2749                        	.sym	MSGTYPE,0,16,14,16
+  2750                        	.sym	PROCESS_RESOURCE_LIST,0,138,14,32,3
+  2751                        	.sym	PROCESS_TLS_LIST,0,138,14,32,3
+  2752                        	.sym	SEMAPHORE_LIST,0,138,14,32,3
+  2753                        	.sym	FILE_BLOCK_LIST,0,138,14,32,3
+  2754                        	.sym	FILE_PATH_LIST,0,138,14,32,3
+  2755                        	.sym	PROCEDURE_LIST,0,138,14,32,3
+  2756                        	.sym	FILE_HANDLE,0,138,14,32,8
+  2757                        	.sym	FILE_BLOCK,0,10,14,552,8
+  2758                        	.sym	SEMAPHORE,0,10,14,16,7
+  2759                        	.sym	PPROCESS_SIGNAL,0,138,14,32,6
+  2760                        	.sym	PROCESS_SIGNAL,0,10,14,16,6
+  2761                        	.sym	KRESULT,0,18,14,32
+  2762                        	.sym	PKERNEL_ERROR,0,138,14,32,5
+  2763                        	.sym	KERNEL_ERROR,0,10,14,32,5
+  2764                        	.sym	PROCESS_STATUS,0,16,14,16
+  2765                        	.sym	FILE_PATH_NAME,0,142,14,32
+  2766                        	.sym	PROCESS_RESOURCE,0,129,14,32
+  2767                        	.sym	PROCESS_TLS,0,129,14,32
+  2768                        	.sym	PROCESS_CTX,0,129,14,32
+  2769                        	.sym	USERID,0,16,14,16
+  2770                        	.sym	PROCESS_ID,0,18,14,32
+  2771                        	.sym	PROCESS_BANK,0,14,14,8
+  2772                        	.sym	PFXQUEUE,0,138,14,32,4
+  2773                        	.sym	FXQUEUE,0,10,14,80,4
+  2774                        	.sym	PFXNODELIST,0,138,14,32,3
+  2775                        	.sym	FXNODELIST,0,10,14,96,3
+  2776                        	.sym	NodeListDeallocator,0,641,14,32
+  2777                        	.sym	PFXNODE,0,138,14,32,2
+  2778                        	.sym	FXNODE,0,10,14,384,2
+  2779                        	.sym	PBYTEBITS,0,138,14,32,1
+  2780                        	.sym	BYTEBITS,0,10,14,8,1
+  2781                        	.sym	HRESULT,0,18,14,32
+  2782                        	.sym	LPWCHAR,0,144,14,32
+  2783                        	.sym	WCHAR,0,16,14,16
+  2784                        	.sym	HSTRINGTABLE,0,129,14,32
+  2785                        	.sym	HCOLOR,0,129,14,32
+  2786                        	.sym	HFONT,0,129,14,32
+  2787                        	.sym	HDC,0,129,14,32
+  2788                        	.sym	HPOINTER,0,129,14,32
+  2789                        	.sym	uint32_t,0,18,14,32
+  2790                        	.sym	uint8_t,0,14,14,8
+  2791                        	.sym	LPBOOL,0,142,14,32
+  2792                        	.sym	BOOL,0,14,14,8
+  2793                        	.sym	DWORD,0,18,14,32
+  2794                        	.sym	ULONG,0,18,14,32
+  2795                        	.sym	LPLONG,0,135,14,32
+  2796                        	.sym	LONG,0,7,14,32
+  2797                        	.sym	PUINT,0,144,14,32
+  2798                        	.sym	USHORT,0,16,14,16
+  2799                        	.sym	UINT,0,16,14,16
+  2800                        	.sym	INT,0,5,14,16
+  2801                        	.sym	WORD,0,5,14,16
+  2802                        	.sym	PBYTE,0,142,14,32
+  2803                        	.sym	BYTE,0,14,14,8
+  2804                        	.sym	IOPORT,0,142,14,32
+  2805                        	.sym	PUCHAR,0,142,14,32
+  2806                        	.sym	UCHAR,0,14,14,8
+  Fri Jul 16 2021 14:42                                                Page 51
+
+
+  2807                        	.sym	LPWCSTR,0,142,14,32
+  2808                        	.sym	LPCSTR,0,142,14,32
+  2809                        	.sym	LPSTR,0,142,14,32
+  2810                        	.sym	LPCHAR,0,142,14,32
+  2811                        	.sym	CHAR,0,14,14,8
+  2812                        	.sym	LPVOID,0,129,14,32
+  2813                        	.sym	VOID,0,1,14,32
+  2814                        	end
+
+
+      Lines assembled: 2814
+      Errors: 0

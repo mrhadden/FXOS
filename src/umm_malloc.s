@@ -3,7 +3,7 @@ R0	equ	1
 R1	equ	5
 R2	equ	9
 R3	equ	13
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.c",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.c",0
 ;/* ----------------------------------------------------------------------------
 ; * umm_malloc.c - a memory allocator for embedded systems (microcontrollers)
 ; *
@@ -53,15 +53,15 @@ R3	equ	13
 	.member	_tmpnum,144,15,8,16
 	.eos
 	.line	219
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.c",34
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.c",34
 ;#include <string.h>
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.c",35
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.c",35
 ;
 ;#include "umm_malloc.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
 	.stag	_fx_bytebits,8,2
 	.member	b7,0,14,17,1
 	.member	b6,1,14,17,1
@@ -135,7 +135,7 @@ R3	equ	13
 	.member	YH,88,14,8,8
 	.member	YL,96,14,8,8
 	.eos
-	.stag	_fx_eventMessage,304,14
+	.stag	_fx_eventMessage,312,14
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -143,8 +143,9 @@ R3	equ	13
 	.member	pheap,112,129,8,32
 	.member	msgTime,144,18,8,32
 	.member	data,176,110,8,0,16
+	.member	attr,304,14,8,8
 	.eos
-	.stag	_fx_cmdMessage,304,15
+	.stag	_fx_cmdMessage,312,15
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -156,6 +157,7 @@ R3	equ	13
 	.member	parameter1,208,18,8,32
 	.member	parameter2,240,18,8,32
 	.member	parameter3,272,18,8,32
+	.member	attr,304,14,8,8
 	.eos
 	.stag	_fx_console_ctl,448,16
 	.member	maxCols,0,5,8,16
@@ -498,17 +500,26 @@ R3	equ	13
 	.member	height,128,14,8,8
 	.member	width,136,14,8,8
 	.eos
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",11
+	.stag	_fx_resource_string,32,48
+	.member	locale,0,110,8,0,2
+	.member	entries,16,16,8,16
+	.eos
+	.stag	_fx_resource_string_entry,40,49
+	.member	index,0,16,8,16
+	.member	length,16,16,8,16
+	.member	data,32,14,8,8
+	.eos
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",11
 	.line	24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.c",37
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.c",37
 ;
 ;#include "umm_malloc_cfg.h"   /* user-dependent */
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos_build_parameters.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_build_parameters.h",0
 	.line	35
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",8
-	.stag	UMM_HEAP_INFO_t,256,48
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",8
+	.stag	UMM_HEAP_INFO_t,256,50
 	.member	totalEntries,0,18,8,32
 	.member	usedEntries,32,18,8,32
 	.member	freeEntries,64,18,8,32
@@ -519,16 +530,16 @@ R3	equ	13
 	.member	blockSize,224,18,8,32
 	.eos
 	.line	199
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.c",39
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.c",39
 ;
 ;/* Use the default DBGLOG_LEVEL and DBGLOG_FUNCTION */
 ;
 ;#define DBGLOG_LEVEL 0
 ;
 ;#include "dbglog.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\dbglog.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\dbglog.h",0
 	.line	99
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.c",45
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.c",45
 ;
 ;/* ------------------------------------------------------------------------- */
 ;
@@ -537,7 +548,7 @@ R3	equ	13
 ;	unsigned long next;
 ;	unsigned long prev;
 ;}UMM_H_ATTPACKSUF umm_ptr;
-	.stag	umm_ptr_t,64,49
+	.stag	umm_ptr_t,64,51
 	.member	next,0,18,8,32
 	.member	prev,32,18,8,32
 	.eos
@@ -548,22 +559,22 @@ R3	equ	13
 ;	{
 ;		umm_ptr used;
 ;	} header;
-	.utag	fake50_,64,50
-	.member	used,0,10,11,64,49
+	.utag	fake52_,64,52
+	.member	used,0,10,11,64,51
 	.eos
 ;	union
 ;	{
 ;		umm_ptr free;
 ;		unsigned char data[8];
 ;	} body;
-	.utag	fake51_,64,51
-	.member	free,0,10,11,64,49
+	.utag	fake53_,64,53
+	.member	free,0,10,11,64,51
 	.member	data,0,110,11,0,8
 	.eos
 ;}UMM_H_ATTPACKSUF umm_block;
-	.stag	umm_block_t,128,52
-	.member	header,0,11,8,64,50
-	.member	body,64,11,8,64,51
+	.stag	umm_block_t,128,54
+	.member	header,0,11,8,64,52
+	.member	body,64,11,8,64,53
 	.eos
 ;
 ;#define UMM_FREELIST_MASK (0x8000)
@@ -605,152 +616,158 @@ R3	equ	13
 ; */
 ;
 ;#include "umm_integrity.c"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_integrity.c",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_integrity.c",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stddef.h",0
 	.line	88
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",43
-	.stag	fake53_,32,53
+	.stag	fake55_,32,55
 	.member	quot,0,5,8,16
 	.member	rem,16,5,8,16
 	.eos
-	.stag	fake54_,64,54
+	.stag	fake56_,64,56
 	.member	quot,0,7,8,32
 	.member	rem,32,7,8,32
 	.eos
-	.stag	int_sqrt,32,55
+	.stag	int_sqrt,32,57
 	.member	sqrt,0,16,8,16
 	.member	frac,16,16,8,16
 	.eos
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",4
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",4
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\ctype.h",0
 	.line	103
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",8
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstringtable.h",0
-	.line	89
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",9
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fmx_vicky.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fmx_vicky.h",11
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",8
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstringtable.h",0
+	.line	90
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",9
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",11
 	.line	72
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",6
 	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",16
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",0
-	.line	400
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",22
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",16
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
+	.line	490
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",22
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
 	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",12
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",12
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",7
-	.stag	_fx_string,64,56
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",7
+	.stag	_fx_string,64,58
 	.member	size,0,16,8,16
 	.member	pos,16,5,8,16
 	.member	buffer,32,142,8,32
 	.eos
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",17
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",17
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",5
-	.stag	_fxos_executive_vtable,128,57
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",5
+	.stag	_fxos_executive_vtable,128,59
 	.member	Init,0,8833,8,32
 	.member	Configure,32,656,8,32
 	.member	Query,64,656,8,32
 	.member	Uninit,96,641,8,32
 	.eos
 	.line	86
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",11
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",11
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.line	208
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",8
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",8
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",0
 	.line	199
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",0
 	.line	24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",7
-	.stag	_fx_memory_map,2072,58
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",7
+	.stag	_fx_memory_map,2072,60
 	.member	availableMemory,0,18,8,32
 	.member	valid_segments,32,110,8,0,255
 	.eos
-	.stag	_fx_ipc_port,144,59
+	.stag	_fx_ipc_port,144,61
 	.member	id,0,18,8,32
 	.member	type,32,14,8,8
-	.member	name,40,138,8,32,56
+	.member	name,40,138,8,32,58
 	.member	time,72,18,8,32
 	.member	queue,104,138,8,32,5
 	.member	reserved_1,136,14,8,8
 	.eos
-	.line	105
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",6
+	.stag	_k_mem_alloc_header,80,62
+	.member	user,0,14,8,8
+	.member	attr,8,14,8,8
+	.member	size,16,18,8,32
+	.member	virtual,48,129,8,32
+	.eos
+	.line	129
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",6
 	.line	74
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",5
-	.stag	_click_detected,64,60
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",5
+	.stag	_click_detected,64,63
 	.member	window,0,138,8,32,31
 	.member	handler,32,641,8,32
 	.eos
-	.stag	_current_palette_map,400,61
+	.stag	_current_palette_map,400,64
 	.member	CUR_DESKTOP,0,5,8,16
 	.member	CUR_BACKGROUND,16,5,8,16
 	.member	CUR_FONT,32,5,8,16
@@ -764,37 +781,37 @@ R3	equ	13
 	.member	CUR_COLOR,160,101,8,0,15
 	.eos
 	.line	359
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",8
-	.stag	_fxos_winman_vtable,160,62
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",8
+	.stag	_fxos_winman_vtable,160,65
 	.member	Events,0,641,8,32
 	.member	ConfigureWindowManager,32,656,8,32
 	.member	ProcessWindowEvent,64,8833,8,32
 	.member	QueryWindowManager,96,656,8,32
 	.member	DoWndProcs,128,641,8,32
 	.eos
-	.stag	fake63_,64,63
+	.stag	fake66_,64,66
 	.member	type,0,16,8,16
 	.member	size,16,16,8,16
 	.member	desktopAction,32,129,8,32
 	.eos
-	.stag	fake64_,96,64
+	.stag	fake67_,96,67
 	.member	type,0,16,8,16
-	.member	caption,16,138,8,32,56
+	.member	caption,16,138,8,32,58
 	.member	buttonType,48,16,8,16
 	.member	x,64,5,8,16
 	.member	y,80,5,8,16
 	.eos
-	.stag	_childMessage_t,64,65
+	.stag	_childMessage_t,64,68
 	.member	msgType,0,16,8,16
 	.member	msgData,16,129,8,32
 	.member	dataSize,48,16,8,16
 	.eos
-	.line	581
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",9
-	.stag	_fx_main_loopvars,16,66
+	.line	594
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",9
+	.stag	_fx_main_loopvars,16,69
 	.member	dummy,0,5,8,16
 	.eos
-	.stag	_fxMouseMessageData,64,67
+	.stag	_fxMouseMessageData,64,70
 	.member	button1,0,14,8,8
 	.member	button2,8,14,8,8
 	.member	button3,16,14,8,8
@@ -802,18 +819,18 @@ R3	equ	13
 	.member	x,32,16,8,16
 	.member	y,48,16,8,16
 	.eos
-	.utag	marshalled_data,32,68
+	.utag	marshalled_data,32,71
 	.member	byteValue,0,14,11,8
 	.member	verbValue,0,110,11,0,2
 	.member	intValue,0,16,11,16
 	.member	longValue,0,18,11,32
 	.member	pointerValue,0,129,11,32
 	.eos
-	.stag	_fx_eventProcess,64,69
+	.stag	_fx_eventProcess,64,72
 	.member	process,0,138,8,32,18
 	.member	eventProc,32,641,8,32
 	.eos
-	.stag	_mouse_msg_state,184,70
+	.stag	_mouse_msg_state,184,73
 	.member	lastEvent,0,18,8,32
 	.member	buttonLeftDown,32,14,8,8
 	.member	lastLeftDown,40,18,8,32
@@ -824,7 +841,7 @@ R3	equ	13
 	.member	lastX,152,16,8,16
 	.member	lastY,168,16,8,16
 	.eos
-	.stag	_fxos_eventmanager_vtable,192,71
+	.stag	_fxos_eventmanager_vtable,192,74
 	.member	EventQueue,0,138,8,32,5
 	.member	Init,32,8833,8,32
 	.member	Run,64,656,8,32
@@ -832,18 +849,18 @@ R3	equ	13
 	.member	Query,128,656,8,32
 	.member	Uninit,160,641,8,32
 	.eos
-	.stag	_k_clipboard_data,168,72
+	.stag	_k_clipboard_data,168,75
 	.member	type,0,14,8,8
 	.member	readable,8,110,8,0,16
 	.member	data,136,129,8,32
 	.eos
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",18
-	.stag	_fx_spinner_ctx,48,73
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",18
+	.stag	_fx_spinner_ctx,48,76
 	.member	index,0,5,8,16
 	.member	spinner,16,142,8,32
 	.eos
-	.stag	_fx_console_ctx,1144,74
+	.stag	_fx_console_ctx,1144,77
 	.member	lineBufferIndex,0,5,8,16
 	.member	lineBuffer,16,110,8,0,128
 	.member	isShifted,1040,14,8,8
@@ -851,31 +868,31 @@ R3	equ	13
 	.member	screenBuffer,1080,129,8,32
 	.member	Reserved1,1112,129,8,32
 	.eos
-	.stag	_token,64,75
+	.stag	_token,64,78
 	.member	type,0,5,8,16
 	.member	depth,16,16,8,16
 	.member	text,32,142,8,32
 	.eos
-	.stag	_command_args,64,76
+	.stag	_command_args,64,79
 	.member	proc,0,656,8,32
 	.member	tokens,32,138,8,32,3
 	.eos
 	.line	208
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",23
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",25
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ffconf.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",23
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",24
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",25
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ffconf.h",0
 	.line	298
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",29
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",30
-	.stag	fake77_,4504,77
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",29
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",30
+	.stag	fake80_,4504,80
 	.member	fs_type,0,14,8,8
 	.member	pdrv,8,14,8,8
 	.member	n_fats,16,14,8,8
@@ -896,16 +913,16 @@ R3	equ	13
 	.member	winsect,376,18,8,32
 	.member	win,408,110,8,0,512
 	.eos
-	.stag	fake78_,128,78
-	.member	fs,0,138,8,32,77
+	.stag	fake81_,128,81
+	.member	fs,0,138,8,32,80
 	.member	id,32,5,8,16
 	.member	attr,48,14,8,8
 	.member	stat,56,14,8,8
 	.member	sclust,64,18,8,32
 	.member	objsize,96,18,8,32
 	.eos
-	.stag	fake79_,4400,79
-	.member	obj,0,10,8,128,78
+	.stag	fake82_,4400,82
+	.member	obj,0,10,8,128,81
 	.member	flag,128,14,8,8
 	.member	err,136,14,8,8
 	.member	fptr,144,18,8,32
@@ -915,8 +932,8 @@ R3	equ	13
 	.member	dir_ptr,272,142,8,32
 	.member	buf,304,110,8,0,512
 	.eos
-	.stag	fake80_,416,80
-	.member	obj,0,10,8,128,78
+	.stag	fake83_,416,83
+	.member	obj,0,10,8,128,81
 	.member	dptr,128,18,8,32
 	.member	clust,160,18,8,32
 	.member	sect,192,18,8,32
@@ -925,7 +942,7 @@ R3	equ	13
 	.member	blk_ofs,352,18,8,32
 	.member	pat,384,142,8,32
 	.eos
-	.stag	fake81_,2224,81
+	.stag	fake84_,2224,84
 	.member	fsize,0,18,8,32
 	.member	fdate,32,5,8,16
 	.member	ftime,48,5,8,16
@@ -933,7 +950,7 @@ R3	equ	13
 	.member	altname,72,110,8,0,13
 	.member	fname,176,110,8,0,256
 	.eos
-	.stag	fake82_,80,82
+	.stag	fake85_,80,85
 	.member	fmt,0,14,8,8
 	.member	n_fat,8,14,8,8
 	.member	align,16,16,8,16
@@ -941,16 +958,19 @@ R3	equ	13
 	.member	au_size,48,18,8,32
 	.eos
 	.line	429
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",26
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",26
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",6
-	.stag	_fx_api_call_table,8192,83
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",6
+	.stag	_fx_api_call_table,8192,86
 	.member	call_table,0,1121,8,32,256
 	.eos
-	.stag	_fx_zero_page,824,84
+	.stag	_fx_zero_page_irq_data,32,87
+	.member	data,0,110,8,0,4
+	.eos
+	.stag	_fx_zero_page,720,88
 	.member	fxos_mouse_byte_0,0,14,8,8
 	.member	fxos_mouse_byte_1,8,14,8,8
 	.member	fxos_mouse_byte_2,16,14,8,8
@@ -965,42 +985,37 @@ R3	equ	13
 	.member	fxos_mouse_ctl,88,14,8,8
 	.member	fxos_mouse_index,96,14,8,8
 	.member	fxos_mouse_status,104,14,8,8
-	.member	fxos_mouse_dbg_1,112,18,8,32
-	.member	fxos_mouse_dbg_2,144,18,8,32
-	.member	fxos_mouse_dbg_3,176,18,8,32
-	.member	fxos_vicky_byte_0,208,14,8,8
-	.member	fxos_vicky_byte_1,216,14,8,8
-	.member	fxos_vicky_byte_2,224,14,8,8
-	.member	VersionMajor,232,16,8,16
-	.member	VersionMinor,248,16,8,16
-	.member	VersionRelease,264,16,8,16
-	.member	topMemory,280,18,8,32
-	.member	bottomMemory,312,18,8,32
-	.member	availableMemory,344,18,8,32
-	.member	availableMemoryK,376,18,8,32
-	.member	availableHeapMemory,408,18,8,32
-	.member	availableHeapMemoryK,440,18,8,32
-	.member	fxos_console_row,472,16,8,16
-	.member	fxos_console_col,488,16,8,16
-	.member	executive,504,129,8,32
-	.member	eventmanager,536,129,8,32
-	.member	devicemanager,568,129,8,32
-	.member	windowmanager,600,129,8,32
-	.member	fxos_kernel_api,632,138,8,32,83
-	.member	fxos_dos_api,664,138,8,32,83
-	.member	fxos_gfx_api,696,138,8,32,83
-	.member	fxos_gui_api,728,138,8,32,83
-	.member	fxos_con_api,760,138,8,32,83
-	.member	fxos_reserved_2_api,792,138,8,32,83
+	.member	Endianness,112,16,8,16
+	.member	VersionMajor,128,16,8,16
+	.member	VersionMinor,144,16,8,16
+	.member	VersionRelease,160,16,8,16
+	.member	topMemory,176,18,8,32
+	.member	bottomMemory,208,18,8,32
+	.member	availableMemory,240,18,8,32
+	.member	availableMemoryK,272,18,8,32
+	.member	availableHeapMemory,304,18,8,32
+	.member	availableHeapMemoryK,336,18,8,32
+	.member	fxos_console_row,368,16,8,16
+	.member	fxos_console_col,384,16,8,16
+	.member	executive,400,129,8,32
+	.member	eventmanager,432,129,8,32
+	.member	devicemanager,464,129,8,32
+	.member	windowmanager,496,129,8,32
+	.member	fxos_kernel_api,528,138,8,32,86
+	.member	fxos_dos_api,560,138,8,32,86
+	.member	fxos_gfx_api,592,138,8,32,86
+	.member	fxos_gui_api,624,138,8,32,86
+	.member	fxos_con_api,656,138,8,32,86
+	.member	fxos_reserved_2_api,688,138,8,32,86
 	.eos
-	.stag	_fx_environment,96,85
+	.stag	_fx_environment,96,89
 	.member	variables,0,142,8,32
 	.member	reserved1,32,5,8,16
 	.member	reserved2,48,5,8,16
 	.member	reserved3,64,5,8,16
 	.member	reserved4,80,5,8,16
 	.eos
-	.stag	_debug_byte_bits,8,86
+	.stag	_debug_byte_bits,8,90
 	.member	bit7,0,14,17,1
 	.member	bit6,1,14,17,1
 	.member	bit5,2,14,17,1
@@ -1010,7 +1025,7 @@ R3	equ	13
 	.member	bit1,6,14,17,1
 	.member	bit0,7,14,17,1
 	.eos
-	.stag	_k_segmentheader,160,87
+	.stag	_k_segmentheader,160,91
 	.member	version_major,0,14,8,8
 	.member	version_minor,8,14,8,8
 	.member	length,16,5,8,16
@@ -1019,14 +1034,14 @@ R3	equ	13
 	.member	segment_size,96,7,8,32
 	.member	main_entry_addr,128,7,8,32
 	.eos
-	.stag	_fx_device_driver,776,88
+	.stag	_fx_device_driver,776,92
 	.member	name,0,110,8,0,32
 	.member	version,256,110,8,0,16
 	.member	hmajor,384,110,8,0,8
 	.member	hminor,448,110,8,0,8
 	.member	type,512,14,8,8
 	.member	designation,520,110,8,0,6
-	.member	reserved_1,568,16,8,16
+	.member	irq_ctl,568,16,8,16
 	.member	f_driver_irq,584,129,8,32
 	.member	driver_context,616,129,8,32
 	.member	f_driver_load,648,129,8,32
@@ -1034,14 +1049,14 @@ R3	equ	13
 	.member	f_driver_write,712,129,8,32
 	.member	f_driver_unload,744,129,8,32
 	.eos
-	.stag	_fx_block_device_driver,808,89
+	.stag	_fx_block_device_driver,808,93
 	.member	name,0,110,8,0,32
 	.member	version,256,110,8,0,16
 	.member	hmajor,384,110,8,0,8
 	.member	hminor,448,110,8,0,8
 	.member	type,512,14,8,8
 	.member	designation,520,110,8,0,6
-	.member	reserved_1,568,16,8,16
+	.member	irq_ctl,568,16,8,16
 	.member	f_driver_irq,584,129,8,32
 	.member	driver_context,616,129,8,32
 	.member	f_driver_load,648,129,8,32
@@ -1050,9 +1065,12 @@ R3	equ	13
 	.member	f_driver_unload,744,129,8,32
 	.member	f_driver_command,776,129,8,32
 	.eos
-	.line	400
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_integrity.c",1
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_integrity.c",27
+	.stag	_k_irq_chain,128,94
+	.member	handlers,0,5217,8,32,4
+	.eos
+	.line	490
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_integrity.c",1
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_integrity.c",27
 	.line	28
 	code
 	xdef	~~umm_integrity_check
@@ -1067,6 +1085,7 @@ R3	equ	13
 	tcs
 	phd
 	tcd
+ppaddress_0	set	4
 	.block	28
 ok_1	set	0
 prev_1	set	2
@@ -1074,26 +1093,27 @@ cur_1	set	6
 	.sym	ok,0,5,1,16
 	.sym	prev,2,18,1,32
 	.sym	cur,6,18,1,32
+	.sym	ppaddress,4,1153,6,32
 	lda	#$1
 	sta	<L3+ok_1
-	.line	35
+	.line	36
 	lda	|~~umm_heap
 	ora	|~~umm_heap+2
 	beq	L5
 	brl	L10001
 L5:
-	.line	36
 	.line	37
-	jsl	~~umm_init
 	.line	38
+	jsl	~~umm_init
+	.line	39
 L10001:
-	.line	41
+	.line	42
 	stz	<L3+prev_1
 	stz	<L3+prev_1+2
-	.line	42
-L10002:
 	.line	43
+L10002:
 	.line	44
+	.line	45
 	lda	<L3+prev_1
 	sta	<R0
 	lda	<L3+prev_1+2
@@ -1125,7 +1145,7 @@ L10002:
 	ldy	#$2
 	lda	[<R2],Y
 	sta	<L3+cur_1+2
-	.line	47
+	.line	48
 	lda	<L3+cur_1
 	cmp	|~~umm_numblocks
 	lda	<L3+cur_1+2
@@ -1133,31 +1153,56 @@ L10002:
 	bcs	L6
 	brl	L10004
 L6:
-	.line	48
-	.line	52
+	.line	49
+	.line	53
 	pei	<L3+cur_1+2
 	pei	<L3+cur_1
 	pea	#^L1
 	pea	#<L1
 	jsl	~~k_debug_long
-	.line	54
-	stz	<L3+ok_1
 	.line	55
-	brl	L10005
-	.line	56
-L10004:
+	lda	<L3+cur_1
+	sta	<R0
+	lda	<L3+cur_1+2
+	sta	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	clc
+	lda	|~~umm_heap
+	adc	<R0
+	sta	<R1
+	lda	|~~umm_heap+2
+	adc	<R0+2
+	sta	<R1+2
+	lda	<R1
+	sta	[<L2+ppaddress_0]
+	lda	<R1+2
+	ldy	#$2
+	sta	[<L2+ppaddress_0],Y
 	.line	57
+	stz	<L3+ok_1
+	.line	58
+	brl	L10005
+	.line	59
+L10004:
+	.line	60
 	lda	<L3+cur_1
 	ora	<L3+cur_1+2
 	beq	L7
 	brl	L10006
 L7:
-	.line	58
-	.line	60
-	brl	L10003
 	.line	61
-L10006:
+	.line	63
+	brl	L10003
 	.line	64
+L10006:
+	.line	67
 	lda	<L3+cur_1
 	sta	<R0
 	lda	<L3+cur_1+2
@@ -1194,20 +1239,45 @@ L8:
 	bne	L9
 	brl	L10007
 L9:
-	.line	65
-	.line	69
+	.line	68
+	.line	72
 	pei	<L3+cur_1+2
 	pei	<L3+cur_1
 	pea	#^L1+48
 	pea	#<L1+48
 	jsl	~~k_debug_long
-	.line	70
+	.line	73
+	lda	<L3+cur_1
+	sta	<R0
+	lda	<L3+cur_1+2
+	sta	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	clc
+	lda	|~~umm_heap
+	adc	<R0
+	sta	<R1
+	lda	|~~umm_heap+2
+	adc	<R0+2
+	sta	<R1+2
+	lda	<R1
+	sta	[<L2+ppaddress_0]
+	lda	<R1+2
+	ldy	#$2
+	sta	[<L2+ppaddress_0],Y
+	.line	75
 	stz	<L3+ok_1
-	.line	71
+	.line	76
 	brl	L10005
-	.line	72
+	.line	77
 L10007:
-	.line	74
+	.line	79
 	lda	<L3+cur_1
 	sta	<R0
 	lda	<L3+cur_1+2
@@ -1237,21 +1307,21 @@ L10007:
 	lda	[<R0]
 	ora	#<$8000
 	sta	[<R0]
-	.line	76
+	.line	81
 	lda	<L3+cur_1
 	sta	<L3+prev_1
 	lda	<L3+cur_1+2
 	sta	<L3+prev_1+2
-	.line	77
+	.line	82
 	brl	L10002
 L10003:
-	.line	80
+	.line	85
 	stz	<L3+prev_1
 	stz	<L3+prev_1+2
-	.line	81
+	.line	86
 L10008:
-	.line	82
-	.line	83
+	.line	87
+	.line	88
 	lda	<L3+prev_1
 	sta	<R0
 	lda	<L3+prev_1+2
@@ -1275,7 +1345,7 @@ L10008:
 	and	#<$7fff
 	sta	<L3+cur_1
 	stz	<L3+cur_1+2
-	.line	86
+	.line	91
 	lda	<L3+cur_1
 	cmp	|~~umm_numblocks
 	lda	<L3+cur_1+2
@@ -1283,14 +1353,14 @@ L10008:
 	bcs	L10
 	brl	L10010
 L10:
-	.line	87
-	.line	91
+	.line	92
+	.line	96
 	pei	<L3+cur_1+2
 	pei	<L3+cur_1
 	pea	#^L1+95
 	pea	#<L1+95
 	jsl	~~k_debug_long
-	.line	92
+	.line	97
 	lda	<L3+prev_1
 	sta	<R0
 	lda	<L3+prev_1+2
@@ -1315,24 +1385,49 @@ L10:
 	pea	#^L1+144
 	pea	#<L1+144
 	jsl	~~k_debug_pointer
-	.line	93
+	.line	99
+	lda	<L3+prev_1
+	sta	<R0
+	lda	<L3+prev_1+2
+	sta	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	clc
+	lda	|~~umm_heap
+	adc	<R0
+	sta	<R1
+	lda	|~~umm_heap+2
+	adc	<R0+2
+	sta	<R1+2
+	lda	<R1
+	sta	[<L2+ppaddress_0]
+	lda	<R1+2
+	ldy	#$2
+	sta	[<L2+ppaddress_0],Y
+	.line	101
 	stz	<L3+ok_1
-	.line	94
+	.line	102
 	brl	L10005
-	.line	95
+	.line	103
 L10010:
-	.line	96
+	.line	104
 	lda	<L3+cur_1
 	ora	<L3+cur_1+2
 	beq	L11
 	brl	L10011
 L11:
-	.line	97
-	.line	99
+	.line	105
+	.line	107
 	brl	L10009
-	.line	100
+	.line	108
 L10011:
-	.line	103
+	.line	111
 	lda	<L3+cur_1
 	sta	<R0
 	lda	<L3+cur_1+2
@@ -1395,8 +1490,8 @@ L12:
 	bne	L13
 	brl	L10012
 L13:
-	.line	105
-	.line	111
+	.line	113
+	.line	119
 	lda	<L3+cur_1
 	sta	<R0
 	lda	<L3+cur_1+2
@@ -1421,13 +1516,38 @@ L13:
 	pea	#^L1+193
 	pea	#<L1+193
 	jsl	~~k_debug_pointer
-	.line	112
+	.line	120
+	lda	<L3+cur_1
+	sta	<R0
+	lda	<L3+cur_1+2
+	sta	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	clc
+	lda	|~~umm_heap
+	adc	<R0
+	sta	<R1
+	lda	|~~umm_heap+2
+	adc	<R0+2
+	sta	<R1+2
+	lda	<R1
+	sta	[<L2+ppaddress_0]
+	lda	<R1+2
+	ldy	#$2
+	sta	[<L2+ppaddress_0],Y
+	.line	122
 	stz	<L3+ok_1
-	.line	113
+	.line	123
 	brl	L10005
-	.line	114
+	.line	124
 L10012:
-	.line	117
+	.line	127
 	lda	<L3+prev_1
 	cmp	<L3+cur_1
 	lda	<L3+prev_1+2
@@ -1435,20 +1555,20 @@ L10012:
 	bcs	L14
 	brl	L10013
 L14:
-	.line	118
-	.line	122
+	.line	128
+	.line	132
 	pei	<L3+cur_1+2
 	pei	<L3+cur_1
 	pea	#^L1+236
 	pea	#<L1+236
 	jsl	~~k_debug_long
-	.line	123
+	.line	133
 	pei	<L3+prev_1+2
 	pei	<L3+prev_1
 	pea	#^L1+294
 	pea	#<L1+294
 	jsl	~~k_debug_long
-	.line	124
+	.line	134
 	lda	<L3+prev_1
 	sta	<R0
 	lda	<L3+prev_1+2
@@ -1473,13 +1593,38 @@ L14:
 	pea	#^L1+352
 	pea	#<L1+352
 	jsl	~~k_debug_pointer
-	.line	125
+	.line	136
+	lda	<L3+prev_1
+	sta	<R0
+	lda	<L3+prev_1+2
+	sta	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	clc
+	lda	|~~umm_heap
+	adc	<R0
+	sta	<R1
+	lda	|~~umm_heap+2
+	adc	<R0+2
+	sta	<R1+2
+	lda	<R1
+	sta	[<L2+ppaddress_0]
+	lda	<R1+2
+	ldy	#$2
+	sta	[<L2+ppaddress_0],Y
+	.line	138
 	stz	<L3+ok_1
-	.line	126
+	.line	139
 	brl	L10005
-	.line	127
+	.line	140
 L10013:
-	.line	130
+	.line	143
 	lda	<L3+cur_1
 	sta	<R0
 	lda	<L3+cur_1+2
@@ -1512,7 +1657,7 @@ L10013:
 	lda	#$0
 	ldy	#$2
 	sta	[<R0],Y
-	.line	133
+	.line	146
 	lda	<L3+cur_1
 	sta	<R0
 	lda	<L3+cur_1+2
@@ -1549,20 +1694,20 @@ L15:
 	bne	L16
 	brl	L10014
 L16:
-	.line	134
-	.line	138
+	.line	147
+	.line	151
 	pei	<L3+prev_1+2
 	pei	<L3+prev_1
 	pea	#^L1+410
 	pea	#<L1+410
 	jsl	~~k_debug_long
-	.line	139
+	.line	152
 	pei	<L3+cur_1+2
 	pei	<L3+cur_1
 	pea	#^L1+464
 	pea	#<L1+464
 	jsl	~~k_debug_long
-	.line	140
+	.line	153
 	lda	<L3+cur_1
 	sta	<R0
 	lda	<L3+cur_1+2
@@ -1597,53 +1742,82 @@ L16:
 	pea	#^L1+518
 	pea	#<L1+518
 	jsl	~~k_debug_long
-	.line	141
+	.line	155
+	lda	<L3+cur_1
+	sta	<R0
+	lda	<L3+cur_1+2
+	sta	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	clc
+	lda	|~~umm_heap
+	adc	<R0
+	sta	<R1
+	lda	|~~umm_heap+2
+	adc	<R0+2
+	sta	<R1+2
+	lda	<R1
+	sta	[<L2+ppaddress_0]
+	lda	<R1+2
+	ldy	#$2
+	sta	[<L2+ppaddress_0],Y
+	.line	157
 	stz	<L3+ok_1
-	.line	142
+	.line	158
 	brl	L10005
-	.line	143
+	.line	159
 L10014:
-	.line	145
+	.line	161
 	lda	<L3+cur_1
 	sta	<L3+prev_1
 	lda	<L3+cur_1+2
 	sta	<L3+prev_1+2
-	.line	146
+	.line	162
 	brl	L10008
 L10009:
-	.line	148
+	.line	164
 L10005:
-	.line	149
+	.line	165
 	lda	<L3+ok_1
 	beq	L17
 	brl	L10015
 L17:
-	.line	150
-	.line	151
+	.line	166
+	.line	167
 	pea	#^L1+572
 	pea	#<L1+572
 	jsl	~~k_debug_string
-	.line	152
+	.line	168
 L10015:
-	.line	153
+	.line	169
 	lda	<L3+ok_1
 L18:
 	tay
+	lda	<L2+2
+	sta	<L2+2+4
+	lda	<L2+1
+	sta	<L2+1+4
 	pld
 	tsc
 	clc
-	adc	#L2
+	adc	#L2+4
 	tcs
 	tya
 	rtl
-	.line	154
-	.endblock	154
+	.line	170
+	.endblock	170
 L2	equ	22
 L3	equ	13
 	ends
 	efunc
-	.endfunc	154,13,22
-	.line	154
+	.endfunc	170,13,22
+	.line	170
 	data
 L1:
 	db	$68,$65,$61,$70,$20,$69,$6E,$74,$65,$67,$72,$69,$74,$79,$20
@@ -1687,10 +1861,10 @@ L1:
 	db	$20,$00,$48,$65,$61,$70,$20,$43,$6F,$72,$72,$75,$70,$74,$69
 	db	$6F,$6E,$21,$0D,$0A,$00
 	ends
-	.line	158
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.c",96
+	.line	174
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.c",96
 ;#include "umm_poison.c"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_poison.c",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_poison.c",0
 	.line	9
 	.line	10
 	code
@@ -1707,9 +1881,10 @@ L1:
 	tcd
 s_0	set	4
 	.block	10
-	.sym	s,4,16,6,16
+	.sym	s,4,18,6,32
 	.line	11
 	lda	<L20+s_0
+	ora	<L20+s_0+2
 	bne	L24
 	brl	L23
 L24:
@@ -1718,26 +1893,32 @@ L24:
 L23:
 	lda	#$0
 L25:
+	sta	<R0
+	lda	<R0
+	sta	<R0
+	stz	<R0+2
+	ldx	<R0+2
+	lda	<R0
 L26:
 	tay
 	lda	<L20+2
-	sta	<L20+2+2
+	sta	<L20+2+4
 	lda	<L20+1
-	sta	<L20+1+2
+	sta	<L20+1+4
 	pld
 	tsc
 	clc
-	adc	#L20+2
+	adc	#L20+4
 	tcs
 	tya
 	rtl
 	.line	15
 	.endblock	15
-L20	equ	0
-L21	equ	1
+L20	equ	4
+L21	equ	5
 	ends
 	efunc
-	.endfunc	15,1,0
+	.endfunc	15,5,4
 	.line	15
 	.line	20
 	.line	21
@@ -1757,30 +1938,37 @@ ptr_0	set	4
 len_0	set	8
 	.block	21
 	.sym	ptr,4,142,6,32
-	.sym	len,8,16,6,16
+	.sym	len,8,18,6,32
 	.line	22
 L10016:
 	lda	<L27+len_0
 	sta	<R0
+	lda	<L27+len_0+2
+	sta	<R0+2
+	lda	<L27+len_0
+	bne	L30
+	dec	<L27+len_0+2
+L30:
 	dec	<L27+len_0
 	lda	<R0
-	bne	L30
+	ora	<R0+2
+	bne	L31
 	brl	L10017
-L30:
+L31:
 	.line	23
 	.line	25
 	brl	L10016
 L10017:
 	.line	26
-L31:
+L32:
 	lda	<L27+2
-	sta	<L27+2+6
+	sta	<L27+2+8
 	lda	<L27+1
-	sta	<L27+1+6
+	sta	<L27+1+8
 	pld
 	tsc
 	clc
-	adc	#L27+6
+	adc	#L27+8
 	tcs
 	rtl
 	.endblock	26
@@ -1800,7 +1988,7 @@ L28	equ	5
 	longi	on
 	tsc
 	sec
-	sbc	#L32
+	sbc	#L33
 	tcs
 	phd
 	tcd
@@ -1808,28 +1996,28 @@ ptr_0	set	4
 poison_size_0	set	8
 	.block	32
 	.sym	ptr,4,142,6,32
-	.sym	poison_size,8,16,6,16
+	.sym	poison_size,8,18,6,32
 	.line	33
-	pei	<L32+poison_size_0
+	pei	<L33+poison_size_0
 	pea	#<$a5
-	pei	<L32+ptr_0+2
-	pei	<L32+ptr_0
+	pei	<L33+ptr_0+2
+	pei	<L33+ptr_0
 	jsl	~~memset
 	.line	34
-L35:
-	lda	<L32+2
-	sta	<L32+2+6
-	lda	<L32+1
-	sta	<L32+1+6
+L36:
+	lda	<L33+2
+	sta	<L33+2+8
+	lda	<L33+1
+	sta	<L33+1+8
 	pld
 	tsc
 	clc
-	adc	#L32+6
+	adc	#L33+8
 	tcs
 	rtl
 	.endblock	34
-L32	equ	0
-L33	equ	1
+L33	equ	0
+L34	equ	1
 	ends
 	efunc
 	.endfunc	34,1,0
@@ -1844,91 +2032,104 @@ L33	equ	1
 	longi	on
 	tsc
 	sec
-	sbc	#L36
+	sbc	#L37
 	tcs
 	phd
 	tcd
 ptr_0	set	4
 poison_size_0	set	8
-where_0	set	10
+where_0	set	12
 	.block	45
 i_1	set	0
-ok_1	set	2
-	.sym	i,0,16,1,16
-	.sym	ok,2,5,1,16
+ok_1	set	4
+	.sym	i,0,18,1,32
+	.sym	ok,4,5,1,16
 	.sym	ptr,4,142,6,32
-	.sym	poison_size,8,16,6,16
-	.sym	where,10,142,6,32
+	.sym	poison_size,8,18,6,32
+	.sym	where,12,142,6,32
 	lda	#$1
-	sta	<L37+ok_1
+	sta	<L38+ok_1
 	.line	49
-	stz	<L37+i_1
+	stz	<L38+i_1
+	stz	<L38+i_1+2
 	brl	L10021
 L10020:
 	.line	50
 	.line	51
+	clc
+	lda	<L37+ptr_0
+	adc	<L38+i_1
+	sta	<R0
+	lda	<L37+ptr_0+2
+	adc	<L38+i_1+2
+	sta	<R0+2
 	sep	#$20
 	longa	off
-	ldy	<L37+i_1
-	lda	[<L36+ptr_0],Y
+	lda	[<R0]
 	cmp	#<$a5
 	rep	#$20
 	longa	on
-	bne	L39
+	bne	L40
 	brl	L10022
-L39:
+L40:
 	.line	52
 	.line	53
-	stz	<L37+ok_1
+	stz	<L38+ok_1
 	.line	54
 	brl	L10019
 	.line	55
 L10022:
 	.line	56
 L10018:
-	inc	<L37+i_1
+	inc	<L38+i_1
+	bne	L41
+	inc	<L38+i_1+2
+L41:
 L10021:
-	lda	<L37+i_1
-	cmp	<L36+poison_size_0
-	bcs	L40
+	lda	<L38+i_1
+	cmp	<L37+poison_size_0
+	lda	<L38+i_1+2
+	sbc	<L37+poison_size_0+2
+	bcs	L42
 	brl	L10020
-L40:
+L42:
 L10019:
 	.line	58
-	lda	<L37+ok_1
-	beq	L41
+	lda	<L38+ok_1
+	beq	L43
 	brl	L10023
-L41:
+L43:
 	.line	59
 	.line	61
-	pei	<L36+poison_size_0
-	pei	<L36+ptr_0+2
-	pei	<L36+ptr_0
+	pei	<L37+poison_size_0+2
+	pei	<L37+poison_size_0
+	pei	<L37+ptr_0+2
+	pei	<L37+ptr_0
 	jsl	~~dump_mem
 	.line	63
 L10023:
 	.line	65
-	lda	<L37+ok_1
-L42:
+	lda	<L38+ok_1
+L44:
 	tay
-	lda	<L36+2
-	sta	<L36+2+10
-	lda	<L36+1
-	sta	<L36+1+10
+	lda	<L37+2
+	sta	<L37+2+12
+	lda	<L37+1
+	sta	<L37+1+12
 	pld
 	tsc
 	clc
-	adc	#L36+10
+	adc	#L37+12
 	tcs
 	tya
 	rtl
 	.line	66
 	.endblock	66
-L36	equ	4
-L37	equ	1
+L37	equ	10
+L38	equ	5
 	ends
 	efunc
-	.endfunc	66,1,4
+	.endfunc	66,5,10
 	.line	66
 	.line	72
 	.line	73
@@ -1940,7 +2141,7 @@ L37	equ	1
 	longi	on
 	tsc
 	sec
-	sbc	#L43
+	sbc	#L45
 	tcs
 	phd
 	tcd
@@ -1948,15 +2149,15 @@ pblock_0	set	4
 	.block	73
 ok_1	set	0
 	.sym	ok,0,5,1,16
-	.sym	pblock,4,138,6,32,52
+	.sym	pblock,4,138,6,32,54
 	lda	#$1
-	sta	<L44+ok_1
+	sta	<L46+ok_1
 	.line	76
-	lda	[<L43+pblock_0]
+	lda	[<L45+pblock_0]
 	and	#<$8000
-	bne	L46
+	bne	L48
 	brl	L10024
-L46:
+L48:
 	.line	77
 	.line	79
 	brl	L10025
@@ -1969,43 +2170,44 @@ pc_cur_2	set	6
 	.sym	pc_cur,6,142,1,32
 	clc
 	lda	#$8
-	adc	<L43+pblock_0
-	sta	<L44+pc_2
+	adc	<L45+pblock_0
+	sta	<L46+pc_2
 	lda	#$0
-	adc	<L43+pblock_0+2
-	sta	<L44+pc_2+2
+	adc	<L45+pblock_0+2
+	sta	<L46+pc_2+2
 	.line	86
 	clc
 	lda	#$2
-	adc	<L44+pc_2
-	sta	<L44+pc_cur_2
+	adc	<L46+pc_2
+	sta	<L46+pc_cur_2
 	lda	#$0
-	adc	<L44+pc_2+2
-	sta	<L44+pc_cur_2+2
+	adc	<L46+pc_2+2
+	sta	<L46+pc_cur_2+2
 	.line	87
 	pea	#^L19
 	pea	#<L19
+	pea	#^$4
 	pea	#<$4
-	pei	<L44+pc_cur_2+2
-	pei	<L44+pc_cur_2
+	pei	<L46+pc_cur_2+2
+	pei	<L46+pc_cur_2
 	jsl	~~check_poison
 	tax
-	beq	L48
+	beq	L50
 	brl	L10026
-L48:
+L50:
 	.line	88
 	.line	89
-	stz	<L44+ok_1
+	stz	<L46+ok_1
 	.line	90
 	brl	L10027
 	.line	91
 L10026:
 	.line	93
 	ldy	#$0
-	lda	[<L44+pc_2]
-	bpl	L49
+	lda	[<L46+pc_2]
+	bpl	L51
 	dey
-L49:
+L51:
 	sta	<R0
 	sty	<R0+2
 	clc
@@ -2016,26 +2218,27 @@ L49:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L44+pc_2
+	lda	<L46+pc_2
 	adc	<R1
-	sta	<L44+pc_cur_2
-	lda	<L44+pc_2+2
+	sta	<L46+pc_cur_2
+	lda	<L46+pc_2+2
 	adc	<R1+2
-	sta	<L44+pc_cur_2+2
+	sta	<L46+pc_cur_2+2
 	.line	94
 	pea	#^L19+7
 	pea	#<L19+7
+	pea	#^$4
 	pea	#<$4
-	pei	<L44+pc_cur_2+2
-	pei	<L44+pc_cur_2
+	pei	<L46+pc_cur_2+2
+	pei	<L46+pc_cur_2
 	jsl	~~check_poison
 	tax
-	beq	L50
+	beq	L52
 	brl	L10028
-L50:
+L52:
 	.line	95
 	.line	96
-	stz	<L44+ok_1
+	stz	<L46+ok_1
 	.line	97
 	brl	L10027
 	.line	98
@@ -2046,24 +2249,24 @@ L10025:
 	.line	101
 L10027:
 	.line	102
-	lda	<L44+ok_1
-L51:
+	lda	<L46+ok_1
+L53:
 	tay
-	lda	<L43+2
-	sta	<L43+2+4
-	lda	<L43+1
-	sta	<L43+1+4
+	lda	<L45+2
+	sta	<L45+2+4
+	lda	<L45+1
+	sta	<L45+1+4
 	pld
 	tsc
 	clc
-	adc	#L43+4
+	adc	#L45+4
 	tcs
 	tya
 	rtl
 	.line	103
 	.endblock	103
-L43	equ	18
-L44	equ	9
+L45	equ	18
+L46	equ	9
 	ends
 	efunc
 	.endfunc	103,9,18
@@ -2082,7 +2285,7 @@ L19:
 	longi	on
 	tsc
 	sec
-	sbc	#L53
+	sbc	#L55
 	tcs
 	phd
 	tcd
@@ -2090,75 +2293,75 @@ ptr_0	set	4
 size_w_poison_0	set	8
 	.block	113
 	.sym	ptr,4,142,6,32
-	.sym	size_w_poison,8,16,6,16
+	.sym	size_w_poison,8,18,6,32
 	.line	114
-	lda	<L53+size_w_poison_0
-	bne	L56
+	lda	<L55+size_w_poison_0
+	ora	<L55+size_w_poison_0+2
+	bne	L58
 	brl	L10029
-L56:
-	lda	<L53+ptr_0
-	ora	<L53+ptr_0+2
-	bne	L57
+L58:
+	lda	<L55+ptr_0
+	ora	<L55+ptr_0+2
+	bne	L59
 	brl	L10029
-L57:
+L59:
 	.line	115
 	.line	118
+	pea	#^$4
 	pea	#<$4
 	clc
 	lda	#$2
-	adc	<L53+ptr_0
+	adc	<L55+ptr_0
 	sta	<R0
 	lda	#$0
-	adc	<L53+ptr_0+2
+	adc	<L55+ptr_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~put_poison
 	.line	120
+	pea	#^$4
 	pea	#<$4
-	lda	<L53+size_w_poison_0
-	sta	<R0
-	stz	<R0+2
 	clc
 	lda	#$fffc
+	adc	<L55+size_w_poison_0
+	sta	<R0
+	lda	#$ffff
+	adc	<L55+size_w_poison_0+2
+	sta	<R0+2
+	clc
+	lda	<L55+ptr_0
 	adc	<R0
 	sta	<R1
-	lda	#$ffff
+	lda	<L55+ptr_0+2
 	adc	<R0+2
 	sta	<R1+2
-	clc
-	lda	<L53+ptr_0
-	adc	<R1
-	sta	<R0
-	lda	<L53+ptr_0+2
-	adc	<R1+2
-	sta	<R0+2
-	pei	<R0+2
-	pei	<R0
+	pei	<R1+2
+	pei	<R1
 	jsl	~~put_poison
 	.line	124
-	lda	<L53+size_w_poison_0
-	sta	[<L53+ptr_0]
+	lda	<L55+size_w_poison_0
+	sta	[<L55+ptr_0]
 	.line	127
 	clc
 	lda	#$6
-	adc	<L53+ptr_0
+	adc	<L55+ptr_0
 	sta	<R0
 	lda	#$0
-	adc	<L53+ptr_0+2
+	adc	<L55+ptr_0+2
 	sta	<R0+2
 	ldx	<R0+2
 	lda	<R0
-L58:
+L60:
 	tay
-	lda	<L53+2
-	sta	<L53+2+6
-	lda	<L53+1
-	sta	<L53+1+6
+	lda	<L55+2
+	sta	<L55+2+8
+	lda	<L55+1
+	sta	<L55+1+8
 	pld
 	tsc
 	clc
-	adc	#L53+6
+	adc	#L55+8
 	tcs
 	tya
 	rtl
@@ -2166,14 +2369,14 @@ L58:
 L10029:
 	.line	130
 	.line	131
-	ldx	<L53+ptr_0+2
-	lda	<L53+ptr_0
-	brl	L58
+	ldx	<L55+ptr_0+2
+	lda	<L55+ptr_0
+	brl	L60
 	.line	132
 	.line	133
 	.endblock	133
-L53	equ	8
-L54	equ	9
+L55	equ	8
+L56	equ	9
 	ends
 	efunc
 	.endfunc	133,9,8
@@ -2188,7 +2391,7 @@ L54	equ	9
 	longi	on
 	tsc
 	sec
-	sbc	#L59
+	sbc	#L61
 	tcs
 	phd
 	tcd
@@ -2196,11 +2399,11 @@ ptr_0	set	4
 	.block	142
 	.sym	ptr,4,142,6,32
 	.line	143
-	lda	<L59+ptr_0
-	ora	<L59+ptr_0+2
-	bne	L62
+	lda	<L61+ptr_0
+	ora	<L61+ptr_0+2
+	bne	L64
 	brl	L10030
-L62:
+L64:
 	.line	144
 	.block	147
 c_2	set	0
@@ -2208,17 +2411,17 @@ c_2	set	0
 	.line	147
 	clc
 	lda	#$fffa
-	adc	<L59+ptr_0
-	sta	<L59+ptr_0
+	adc	<L61+ptr_0
+	sta	<L61+ptr_0
 	lda	#$ffff
-	adc	<L59+ptr_0+2
-	sta	<L59+ptr_0+2
+	adc	<L61+ptr_0+2
+	sta	<L61+ptr_0+2
 	.line	150
 	sec
-	lda	<L59+ptr_0
+	lda	<L61+ptr_0
 	sbc	|~~umm_heap
 	sta	<R0
-	lda	<L59+ptr_0+2
+	lda	<L61+ptr_0+2
 	sbc	|~~umm_heap+2
 	sta	<R0+2
 	pea	#^$10
@@ -2227,12 +2430,12 @@ c_2	set	0
 	pei	<R0
 	xref	~~~ldiv
 	jsl	~~~ldiv
-	sta	<L60+c_2
-	stx	<L60+c_2+2
+	sta	<L62+c_2
+	stx	<L62+c_2+2
 	.line	152
-	lda	<L60+c_2
+	lda	<L62+c_2
 	sta	<R0
-	lda	<L60+c_2+2
+	lda	<L62+c_2+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -2256,25 +2459,25 @@ c_2	set	0
 	.line	153
 L10030:
 	.line	155
-	ldx	<L59+ptr_0+2
-	lda	<L59+ptr_0
-L64:
+	ldx	<L61+ptr_0+2
+	lda	<L61+ptr_0
+L66:
 	tay
-	lda	<L59+2
-	sta	<L59+2+4
-	lda	<L59+1
-	sta	<L59+1+4
+	lda	<L61+2
+	sta	<L61+2+4
+	lda	<L61+1
+	sta	<L61+1+4
 	pld
 	tsc
 	clc
-	adc	#L59+4
+	adc	#L61+4
 	tcs
 	tya
 	rtl
 	.line	156
 	.endblock	156
-L59	equ	12
-L60	equ	9
+L61	equ	12
+L62	equ	9
 	ends
 	efunc
 	.endfunc	156,9,12
@@ -2290,7 +2493,7 @@ L60	equ	9
 	longi	on
 	tsc
 	sec
-	sbc	#L65
+	sbc	#L67
 	tcs
 	phd
 	tcd
@@ -2298,51 +2501,54 @@ size_0	set	4
 	.block	163
 ret_1	set	0
 	.sym	ret,0,129,1,32
-	.sym	size,4,16,6,16
+	.sym	size,4,18,6,32
 	.line	166
-	pei	<L65+size_0
+	pei	<L67+size_0+2
+	pei	<L67+size_0
 	jsl	~~poison_size
 	sta	<R0
+	stx	<R0+2
 	clc
 	lda	<R0
-	adc	<L65+size_0
-	sta	<L65+size_0
+	adc	<L67+size_0
+	sta	<L67+size_0
+	lda	<R0+2
+	adc	<L67+size_0+2
+	sta	<L67+size_0+2
 	.line	168
-	lda	<L65+size_0
-	sta	<R0
-	stz	<R0+2
-	pei	<R0+2
-	pei	<R0
+	pei	<L67+size_0+2
+	pei	<L67+size_0
 	jsl	~~umm_malloc
-	sta	<L66+ret_1
-	stx	<L66+ret_1+2
+	sta	<L68+ret_1
+	stx	<L68+ret_1+2
 	.line	170
-	pei	<L65+size_0
-	pei	<L66+ret_1+2
-	pei	<L66+ret_1
+	pei	<L67+size_0+2
+	pei	<L67+size_0
+	pei	<L68+ret_1+2
+	pei	<L68+ret_1
 	jsl	~~get_poisoned
-	sta	<L66+ret_1
-	stx	<L66+ret_1+2
+	sta	<L68+ret_1
+	stx	<L68+ret_1+2
 	.line	172
-	ldx	<L66+ret_1+2
-	lda	<L66+ret_1
-L68:
+	ldx	<L68+ret_1+2
+	lda	<L68+ret_1
+L70:
 	tay
-	lda	<L65+2
-	sta	<L65+2+2
-	lda	<L65+1
-	sta	<L65+1+2
+	lda	<L67+2
+	sta	<L67+2+4
+	lda	<L67+1
+	sta	<L67+1+4
 	pld
 	tsc
 	clc
-	adc	#L65+2
+	adc	#L67+4
 	tcs
 	tya
 	rtl
 	.line	173
 	.endblock	173
-L65	equ	8
-L66	equ	5
+L67	equ	8
+L68	equ	5
 	ends
 	efunc
 	.endfunc	173,5,8
@@ -2358,84 +2564,90 @@ L66	equ	5
 	longi	on
 	tsc
 	sec
-	sbc	#L69
+	sbc	#L71
 	tcs
 	phd
 	tcd
 num_0	set	4
-item_size_0	set	6
+item_size_0	set	8
 	.block	178
 ret_1	set	0
 size_1	set	4
 	.sym	ret,0,129,1,32
-	.sym	size,4,16,1,16
-	.sym	num,4,16,6,16
-	.sym	item_size,6,16,6,16
-	lda	<L69+item_size_0
-	ldx	<L69+num_0
-	xref	~~~mul
-	jsl	~~~mul
-	sta	<L70+size_1
+	.sym	size,4,18,1,32
+	.sym	num,4,18,6,32
+	.sym	item_size,8,18,6,32
+	pei	<L71+num_0+2
+	pei	<L71+num_0
+	pei	<L71+item_size_0+2
+	pei	<L71+item_size_0
+	xref	~~~lmul
+	jsl	~~~lmul
+	sta	<L72+size_1
+	stx	<L72+size_1+2
 	.line	182
-	pei	<L70+size_1
+	pei	<L72+size_1+2
+	pei	<L72+size_1
 	jsl	~~poison_size
 	sta	<R0
+	stx	<R0+2
 	clc
 	lda	<R0
-	adc	<L70+size_1
-	sta	<L70+size_1
+	adc	<L72+size_1
+	sta	<L72+size_1
+	lda	<R0+2
+	adc	<L72+size_1+2
+	sta	<L72+size_1+2
 	.line	184
-	lda	<L70+size_1
-	sta	<R0
-	stz	<R0+2
-	pei	<R0+2
-	pei	<R0
+	pei	<L72+size_1+2
+	pei	<L72+size_1
 	jsl	~~umm_malloc
-	sta	<L70+ret_1
-	stx	<L70+ret_1+2
+	sta	<L72+ret_1
+	stx	<L72+ret_1+2
 	.line	186
-	lda	<L70+ret_1
-	ora	<L70+ret_1+2
-	bne	L72
+	lda	<L72+ret_1
+	ora	<L72+ret_1+2
+	bne	L74
 	brl	L10031
-L72:
+L74:
 	.line	187
-	pei	<L70+size_1
+	pei	<L72+size_1
 	pea	#<$0
-	pei	<L70+ret_1+2
-	pei	<L70+ret_1
+	pei	<L72+ret_1+2
+	pei	<L72+ret_1
 	jsl	~~memset
 L10031:
 	.line	189
-	pei	<L70+size_1
-	pei	<L70+ret_1+2
-	pei	<L70+ret_1
+	pei	<L72+size_1+2
+	pei	<L72+size_1
+	pei	<L72+ret_1+2
+	pei	<L72+ret_1
 	jsl	~~get_poisoned
-	sta	<L70+ret_1
-	stx	<L70+ret_1+2
+	sta	<L72+ret_1
+	stx	<L72+ret_1+2
 	.line	191
-	ldx	<L70+ret_1+2
-	lda	<L70+ret_1
-L73:
+	ldx	<L72+ret_1+2
+	lda	<L72+ret_1
+L75:
 	tay
-	lda	<L69+2
-	sta	<L69+2+4
-	lda	<L69+1
-	sta	<L69+1+4
+	lda	<L71+2
+	sta	<L71+2+8
+	lda	<L71+1
+	sta	<L71+1+8
 	pld
 	tsc
 	clc
-	adc	#L69+4
+	adc	#L71+8
 	tcs
 	tya
 	rtl
 	.line	192
 	.endblock	192
-L69	equ	10
-L70	equ	5
+L71	equ	12
+L72	equ	5
 	ends
 	efunc
-	.endfunc	192,5,10
+	.endfunc	192,5,12
 	.line	192
 	.line	196
 	.line	197
@@ -2448,7 +2660,7 @@ L70	equ	5
 	longi	on
 	tsc
 	sec
-	sbc	#L74
+	sbc	#L76
 	tcs
 	phd
 	tcd
@@ -2458,59 +2670,62 @@ size_0	set	8
 ret_1	set	0
 	.sym	ret,0,129,1,32
 	.sym	ptr,4,129,6,32
-	.sym	size,8,16,6,16
+	.sym	size,8,18,6,32
 	.line	200
-	pei	<L74+ptr_0+2
-	pei	<L74+ptr_0
+	pei	<L76+ptr_0+2
+	pei	<L76+ptr_0
 	jsl	~~get_unpoisoned
-	sta	<L74+ptr_0
-	stx	<L74+ptr_0+2
+	sta	<L76+ptr_0
+	stx	<L76+ptr_0+2
 	.line	202
-	pei	<L74+size_0
+	pei	<L76+size_0+2
+	pei	<L76+size_0
 	jsl	~~poison_size
 	sta	<R0
+	stx	<R0+2
 	clc
 	lda	<R0
-	adc	<L74+size_0
-	sta	<L74+size_0
+	adc	<L76+size_0
+	sta	<L76+size_0
+	lda	<R0+2
+	adc	<L76+size_0+2
+	sta	<L76+size_0+2
 	.line	203
-	lda	<L74+size_0
-	sta	<R0
-	stz	<R0+2
-	pei	<R0+2
-	pei	<R0
-	pei	<L74+ptr_0+2
-	pei	<L74+ptr_0
+	pei	<L76+size_0+2
+	pei	<L76+size_0
+	pei	<L76+ptr_0+2
+	pei	<L76+ptr_0
 	jsl	~~umm_realloc
-	sta	<L75+ret_1
-	stx	<L75+ret_1+2
+	sta	<L77+ret_1
+	stx	<L77+ret_1+2
 	.line	205
-	pei	<L74+size_0
-	pei	<L75+ret_1+2
-	pei	<L75+ret_1
+	pei	<L76+size_0+2
+	pei	<L76+size_0
+	pei	<L77+ret_1+2
+	pei	<L77+ret_1
 	jsl	~~get_poisoned
-	sta	<L75+ret_1
-	stx	<L75+ret_1+2
+	sta	<L77+ret_1
+	stx	<L77+ret_1+2
 	.line	207
-	ldx	<L75+ret_1+2
-	lda	<L75+ret_1
-L77:
+	ldx	<L77+ret_1+2
+	lda	<L77+ret_1
+L79:
 	tay
-	lda	<L74+2
-	sta	<L74+2+6
-	lda	<L74+1
-	sta	<L74+1+6
+	lda	<L76+2
+	sta	<L76+2+8
+	lda	<L76+1
+	sta	<L76+1+8
 	pld
 	tsc
 	clc
-	adc	#L74+6
+	adc	#L76+8
 	tcs
 	tya
 	rtl
 	.line	208
 	.endblock	208
-L74	equ	8
-L75	equ	5
+L76	equ	8
+L77	equ	5
 	ends
 	efunc
 	.endfunc	208,5,8
@@ -2526,7 +2741,7 @@ L75	equ	5
 	longi	on
 	tsc
 	sec
-	sbc	#L78
+	sbc	#L80
 	tcs
 	phd
 	tcd
@@ -2534,30 +2749,30 @@ ptr_0	set	4
 	.block	213
 	.sym	ptr,4,129,6,32
 	.line	215
-	pei	<L78+ptr_0+2
-	pei	<L78+ptr_0
+	pei	<L80+ptr_0+2
+	pei	<L80+ptr_0
 	jsl	~~get_unpoisoned
-	sta	<L78+ptr_0
-	stx	<L78+ptr_0+2
+	sta	<L80+ptr_0
+	stx	<L80+ptr_0+2
 	.line	217
-	pei	<L78+ptr_0+2
-	pei	<L78+ptr_0
+	pei	<L80+ptr_0+2
+	pei	<L80+ptr_0
 	jsl	~~umm_free
 	.line	218
-L81:
-	lda	<L78+2
-	sta	<L78+2+4
-	lda	<L78+1
-	sta	<L78+1+4
+L83:
+	lda	<L80+2
+	sta	<L80+2+4
+	lda	<L80+1
+	sta	<L80+1+4
 	pld
 	tsc
 	clc
-	adc	#L78+4
+	adc	#L80+4
 	tcs
 	rtl
 	.endblock	218
-L78	equ	0
-L79	equ	1
+L80	equ	0
+L81	equ	1
 	ends
 	efunc
 	.endfunc	218,1,0
@@ -2573,7 +2788,7 @@ L79	equ	1
 	longi	on
 	tsc
 	sec
-	sbc	#L82
+	sbc	#L84
 	tcs
 	phd
 	tcd
@@ -2583,13 +2798,13 @@ cur_1	set	2
 	.sym	ok,0,5,1,16
 	.sym	cur,2,18,1,32
 	lda	#$1
-	sta	<L83+ok_1
+	sta	<L85+ok_1
 	.line	230
 	lda	|~~umm_heap
 	ora	|~~umm_heap+2
-	beq	L85
+	beq	L87
 	brl	L10032
-L85:
+L87:
 	.line	231
 	.line	232
 	jsl	~~umm_init
@@ -2602,13 +2817,13 @@ L10032:
 	sta	<R0+2
 	lda	[<R0]
 	and	#<$7fff
-	sta	<L83+cur_1
-	stz	<L83+cur_1+2
+	sta	<L85+cur_1
+	stz	<L85+cur_1+2
 	.line	238
 L10033:
-	lda	<L83+cur_1
+	lda	<L85+cur_1
 	sta	<R0
-	lda	<L83+cur_1+2
+	lda	<L85+cur_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -2627,14 +2842,14 @@ L10033:
 	sta	<R1+2
 	lda	[<R1]
 	and	#<$7fff
-	bne	L86
+	bne	L88
 	brl	L10034
-L86:
+L88:
 	.line	239
 	.line	240
-	lda	<L83+cur_1
+	lda	<L85+cur_1
 	sta	<R0
-	lda	<L83+cur_1+2
+	lda	<L85+cur_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -2653,14 +2868,14 @@ L86:
 	sta	<R1+2
 	lda	[<R1]
 	and	#<$8000
-	beq	L87
+	beq	L89
 	brl	L10035
-L87:
+L89:
 	.line	241
 	.line	243
-	lda	<L83+cur_1
+	lda	<L85+cur_1
 	sta	<R0
-	lda	<L83+cur_1+2
+	lda	<L85+cur_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -2680,12 +2895,12 @@ L87:
 	pei	<R1+2
 	pei	<R1
 	jsl	~~check_poison_block
-	sta	<L83+ok_1
+	sta	<L85+ok_1
 	.line	244
-	lda	<L83+ok_1
-	beq	L88
+	lda	<L85+ok_1
+	beq	L90
 	brl	L10036
-L88:
+L90:
 	.line	245
 	.line	246
 	brl	L10034
@@ -2694,9 +2909,9 @@ L10036:
 	.line	248
 L10035:
 	.line	250
-	lda	<L83+cur_1
+	lda	<L85+cur_1
 	sta	<R0
-	lda	<L83+cur_1+2
+	lda	<L85+cur_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -2715,34 +2930,34 @@ L10035:
 	sta	<R1+2
 	lda	[<R1]
 	and	#<$7fff
-	sta	<L83+cur_1
-	stz	<L83+cur_1+2
+	sta	<L85+cur_1
+	stz	<L85+cur_1+2
 	.line	251
 	brl	L10033
 L10034:
 	.line	253
-	lda	<L83+ok_1
-L89:
+	lda	<L85+ok_1
+L91:
 	tay
 	pld
 	tsc
 	clc
-	adc	#L82
+	adc	#L84
 	tcs
 	tya
 	rtl
 	.line	254
 	.endblock	254
-L82	equ	14
-L83	equ	9
+L84	equ	14
+L85	equ	9
 	ends
 	efunc
 	.endfunc	254,9,14
 	.line	254
 	.line	259
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.c",97
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.c",97
 ;#include "umm_info.c"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_info.c",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_info.c",0
 	.line	20
 	.line	21
 	code
@@ -2754,7 +2969,7 @@ L83	equ	9
 	longi	on
 	tsc
 	sec
-	sbc	#L90
+	sbc	#L92
 	tcs
 	phd
 	tcd
@@ -2765,7 +2980,7 @@ blockNo_1	set	0
 	.sym	blockNo,0,15,1,16
 	.sym	ptr,4,129,6,32
 	.sym	force,8,5,6,16
-	stz	<L91+blockNo_1
+	stz	<L93+blockNo_1
 	.line	26
 	.line	32
 	pea	#<$20
@@ -2779,7 +2994,7 @@ blockNo_1	set	0
 	pei	<R0
 	jsl	~~memset
 	.line	51
-	lda	<L91+blockNo_1
+	lda	<L93+blockNo_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -2801,7 +3016,7 @@ blockNo_1	set	0
 	sta	<R0
 	stz	<R0+2
 	lda	<R0
-	sta	<L91+blockNo_1
+	sta	<L93+blockNo_1
 	.line	53
 	lda	#$10
 	sta	|~~ummHeapInfo+28
@@ -2809,7 +3024,7 @@ blockNo_1	set	0
 	sta	|~~ummHeapInfo+28+2
 	.line	55
 L10037:
-	lda	<L91+blockNo_1
+	lda	<L93+blockNo_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -2828,17 +3043,17 @@ L10037:
 	sta	<R2+2
 	lda	[<R2]
 	and	#<$7fff
-	bne	L93
+	bne	L95
 	brl	L10038
-L93:
+L95:
 	.line	56
 	.block	59
 curBlocks_2	set	2
-	.sym	curBlocks,2,16,1,16
-	lda	<L91+blockNo_1
+	.sym	curBlocks,2,18,1,32
+	lda	<L93+blockNo_1
 	sta	<R0
 	stz	<R0+2
-	lda	<L91+blockNo_1
+	lda	<L93+blockNo_1
 	sta	<R2
 	stz	<R2+2
 	pei	<R2+2
@@ -2862,30 +3077,25 @@ curBlocks_2	set	2
 	sec
 	lda	<R1
 	sbc	<R0
-	sta	<R3
+	sta	<L93+curBlocks_2
 	lda	<R1+2
 	sbc	<R0+2
-	sta	<R3+2
-	lda	<R3
-	sta	<L91+curBlocks_2
+	sta	<L93+curBlocks_2+2
 	.line	59
 	inc	|~~ummHeapInfo
-	bne	L95
+	bne	L97
 	inc	|~~ummHeapInfo+2
-L95:
+L97:
 	.line	60
-	lda	<L91+curBlocks_2
-	sta	<R0
-	stz	<R0+2
 	clc
-	lda	<R0
-	adc	|~~ummHeapInfo+12
+	lda	|~~ummHeapInfo+12
+	adc	<L93+curBlocks_2
 	sta	|~~ummHeapInfo+12
-	lda	<R0+2
-	adc	|~~ummHeapInfo+12+2
+	lda	|~~ummHeapInfo+12+2
+	adc	<L93+curBlocks_2+2
 	sta	|~~ummHeapInfo+12+2
 	.line	64
-	lda	<L91+blockNo_1
+	lda	<L93+blockNo_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -2904,46 +3114,41 @@ L95:
 	sta	<R2+2
 	lda	[<R2]
 	and	#<$8000
-	bne	L96
+	bne	L98
 	brl	L10039
-L96:
+L98:
 	.line	65
 	.line	66
 	inc	|~~ummHeapInfo+8
-	bne	L97
+	bne	L99
 	inc	|~~ummHeapInfo+8+2
-L97:
+L99:
 	.line	67
-	lda	<L91+curBlocks_2
-	sta	<R0
-	stz	<R0+2
 	clc
-	lda	<R0
-	adc	|~~ummHeapInfo+20
+	lda	|~~ummHeapInfo+20
+	adc	<L93+curBlocks_2
 	sta	|~~ummHeapInfo+20
-	lda	<R0+2
-	adc	|~~ummHeapInfo+20+2
+	lda	|~~ummHeapInfo+20+2
+	adc	<L93+curBlocks_2+2
 	sta	|~~ummHeapInfo+20+2
 	.line	69
-	lda	<L91+curBlocks_2
-	sta	<R0
-	stz	<R0+2
 	lda	|~~ummHeapInfo+24
-	cmp	<R0
+	cmp	<L93+curBlocks_2
 	lda	|~~ummHeapInfo+24+2
-	sbc	<R0+2
-	bcc	L98
+	sbc	<L93+curBlocks_2+2
+	bcc	L100
 	brl	L10040
-L98:
+L100:
 	.line	70
 	.line	71
-	lda	<L91+curBlocks_2
+	lda	<L93+curBlocks_2
 	sta	|~~ummHeapInfo+24
-	stz	|~~ummHeapInfo+24+2
+	lda	<L93+curBlocks_2+2
+	sta	|~~ummHeapInfo+24+2
 	.line	72
 L10040:
 	.line	86
-	lda	<L91+blockNo_1
+	lda	<L93+blockNo_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -2961,29 +3166,29 @@ L10040:
 	adc	<R0+2
 	sta	<R2+2
 	lda	<R2
-	cmp	<L90+ptr_0
-	bne	L99
+	cmp	<L92+ptr_0
+	bne	L101
 	lda	<R2+2
-	cmp	<L90+ptr_0+2
-L99:
-	beq	L100
+	cmp	<L92+ptr_0+2
+L101:
+	beq	L102
 	brl	L10041
-L100:
+L102:
 	.line	87
 	.line	90
 	.line	92
-	ldx	<L90+ptr_0+2
-	lda	<L90+ptr_0
-L101:
+	ldx	<L92+ptr_0+2
+	lda	<L92+ptr_0
+L103:
 	tay
-	lda	<L90+2
-	sta	<L90+2+6
-	lda	<L90+1
-	sta	<L90+1+6
+	lda	<L92+2
+	sta	<L92+2+6
+	lda	<L92+1
+	sta	<L92+1+6
 	pld
 	tsc
 	clc
-	adc	#L90+6
+	adc	#L92+6
 	tcs
 	tya
 	rtl
@@ -2995,24 +3200,21 @@ L10039:
 	.line	96
 	.line	97
 	inc	|~~ummHeapInfo+4
-	bne	L102
+	bne	L104
 	inc	|~~ummHeapInfo+4+2
-L102:
+L104:
 	.line	98
-	lda	<L91+curBlocks_2
-	sta	<R0
-	stz	<R0+2
 	clc
-	lda	<R0
-	adc	|~~ummHeapInfo+16
+	lda	|~~ummHeapInfo+16
+	adc	<L93+curBlocks_2
 	sta	|~~ummHeapInfo+16
-	lda	<R0+2
-	adc	|~~ummHeapInfo+16+2
+	lda	|~~ummHeapInfo+16+2
+	adc	<L93+curBlocks_2+2
 	sta	|~~ummHeapInfo+16+2
 	.line	106
 L10042:
 	.line	108
-	lda	<L91+blockNo_1
+	lda	<L93+blockNo_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -3034,7 +3236,7 @@ L10042:
 	sta	<R0
 	stz	<R0+2
 	lda	<R0
-	sta	<L91+blockNo_1
+	sta	<L93+blockNo_1
 	.endblock	109
 	.line	109
 	brl	L10037
@@ -3042,57 +3244,47 @@ L10038:
 	.line	116
 	.block	118
 curBlocks_3	set	2
-	.sym	curBlocks,2,16,1,16
-	lda	<L91+blockNo_1
+	.sym	curBlocks,2,18,1,32
+	lda	<L93+blockNo_1
 	sta	<R0
 	stz	<R0+2
 	sec
 	lda	|~~umm_numblocks
 	sbc	<R0
-	sta	<R1
+	sta	<L93+curBlocks_3
 	lda	|~~umm_numblocks+2
 	sbc	<R0+2
-	sta	<R1+2
-	lda	<R1
-	sta	<L91+curBlocks_3
+	sta	<L93+curBlocks_3+2
 	.line	118
-	lda	<L91+curBlocks_3
-	sta	<R0
-	stz	<R0+2
 	clc
-	lda	<R0
-	adc	|~~ummHeapInfo+20
+	lda	|~~ummHeapInfo+20
+	adc	<L93+curBlocks_3
 	sta	|~~ummHeapInfo+20
-	lda	<R0+2
-	adc	|~~ummHeapInfo+20+2
+	lda	|~~ummHeapInfo+20+2
+	adc	<L93+curBlocks_3+2
 	sta	|~~ummHeapInfo+20+2
 	.line	119
-	lda	<L91+curBlocks_3
-	sta	<R0
-	stz	<R0+2
 	clc
-	lda	<R0
-	adc	|~~ummHeapInfo+12
+	lda	|~~ummHeapInfo+12
+	adc	<L93+curBlocks_3
 	sta	|~~ummHeapInfo+12
-	lda	<R0+2
-	adc	|~~ummHeapInfo+12+2
+	lda	|~~ummHeapInfo+12+2
+	adc	<L93+curBlocks_3+2
 	sta	|~~ummHeapInfo+12+2
 	.line	121
-	lda	<L91+curBlocks_3
-	sta	<R0
-	stz	<R0+2
 	lda	|~~ummHeapInfo+24
-	cmp	<R0
+	cmp	<L93+curBlocks_3
 	lda	|~~ummHeapInfo+24+2
-	sbc	<R0+2
-	bcc	L104
+	sbc	<L93+curBlocks_3+2
+	bcc	L106
 	brl	L10043
-L104:
+L106:
 	.line	122
 	.line	123
-	lda	<L91+curBlocks_3
+	lda	<L93+curBlocks_3
 	sta	|~~ummHeapInfo+24
-	stz	|~~ummHeapInfo+24+2
+	lda	<L93+curBlocks_3+2
+	sta	|~~ummHeapInfo+24+2
 	.line	124
 L10043:
 	.endblock	125
@@ -3106,14 +3298,14 @@ L10043:
 	sta	<R0+2
 	ldx	<R0+2
 	lda	<R0
-	brl	L101
+	brl	L103
 	.line	155
 	.endblock	155
-L90	equ	20
-L91	equ	17
+L92	equ	22
+L93	equ	17
 	ends
 	efunc
-	.endfunc	155,17,20
+	.endfunc	155,17,22
 	.line	155
 	.line	159
 	.line	160
@@ -3126,7 +3318,7 @@ L91	equ	17
 	longi	on
 	tsc
 	sec
-	sbc	#L105
+	sbc	#L107
 	tcs
 	phd
 	tcd
@@ -3138,35 +3330,44 @@ L91	equ	17
 	jsl	~~umm_info
 	.line	162
 	lda	|~~ummHeapInfo+20
-	asl	A
-	asl	A
-	asl	A
-	asl	A
-L108:
+	sta	<R0
+	lda	|~~ummHeapInfo+20+2
+	sta	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	ldx	<R0+2
+	lda	<R0
+L110:
 	tay
 	pld
 	tsc
 	clc
-	adc	#L105
+	adc	#L107
 	tcs
 	tya
 	rtl
 	.line	163
 	.endblock	163
-L105	equ	0
-L106	equ	1
+L107	equ	4
+L108	equ	5
 	ends
 	efunc
-	.endfunc	163,1,0
+	.endfunc	163,5,4
 	.line	163
 	.line	166
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.c",98
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.c",98
 ;
 ;/* ------------------------------------------------------------------------ */
 ;
-;static unsigned long umm_blocks(size_t size)
+;static unsigned long umm_blocks(ULONG size)
 ;{
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.c",102
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.c",102
 	.line	103
 	code
 	func
@@ -3176,7 +3377,7 @@ L106	equ	1
 	longi	on
 	tsc
 	sec
-	sbc	#L109
+	sbc	#L111
 	tcs
 	phd
 	tcd
@@ -3193,28 +3394,30 @@ size_0	set	4
 ;	 */
 ;
 ;	if (size <= (sizeof(((umm_block *) 0)->body)))
-	.sym	size,4,16,6,16
+	.sym	size,4,18,6,32
 	.line	114
 ;		return (1);
 	lda	#$8
-	cmp	<L109+size_0
-	bcs	L112
+	cmp	<L111+size_0
+	lda	#$0
+	sbc	<L111+size_0+2
+	bcs	L114
 	brl	L10044
-L112:
+L114:
 	.line	115
 	lda	#$0
 	tax
 	lda	#$1
-L113:
+L115:
 	tay
-	lda	<L109+2
-	sta	<L109+2+2
-	lda	<L109+1
-	sta	<L109+1+2
+	lda	<L111+2
+	sta	<L111+2+4
+	lda	<L111+1
+	sta	<L111+1+4
 	pld
 	tsc
 	clc
-	adc	#L109+2
+	adc	#L111+4
 	tcs
 	tya
 	rtl
@@ -3229,32 +3432,41 @@ L10044:
 	.line	122
 	clc
 	lda	#$fff7
-	adc	<L109+size_0
-	sta	<L109+size_0
+	adc	<L111+size_0
+	sta	<L111+size_0
+	lda	#$ffff
+	adc	<L111+size_0+2
+	sta	<L111+size_0+2
 ;
 ;	return (2 + size / (sizeof(umm_block)));
 	.line	124
-	lda	<L109+size_0
-	lsr	A
-	lsr	A
-	lsr	A
-	lsr	A
+	lda	<L111+size_0
 	sta	<R0
+	lda	<L111+size_0+2
+	sta	<R0+2
+	lsr	<R0+2
+	ror	<R0
+	lsr	<R0+2
+	ror	<R0
+	lsr	<R0+2
+	ror	<R0
+	lsr	<R0+2
+	ror	<R0
 	clc
 	lda	#$2
 	adc	<R0
 	sta	<R1
+	lda	#$0
+	adc	<R0+2
+	sta	<R1+2
+	ldx	<R1+2
 	lda	<R1
-	sta	<R0
-	stz	<R0+2
-	ldx	<R0+2
-	lda	<R0
-	brl	L113
+	brl	L115
 ;}
 	.line	125
 	.endblock	125
-L109	equ	8
-L110	equ	9
+L111	equ	8
+L112	equ	9
 	ends
 	efunc
 	.endfunc	125,9,8
@@ -3282,7 +3494,7 @@ L110	equ	9
 	longi	on
 	tsc
 	sec
-	sbc	#L114
+	sbc	#L116
 	tcs
 	phd
 	tcd
@@ -3297,11 +3509,11 @@ new_freemask_0	set	12
 	.sym	new_freemask,12,18,6,32
 	.line	140
 	clc
-	lda	<L114+c_0
-	adc	<L114+blocks_0
+	lda	<L116+c_0
+	adc	<L116+blocks_0
 	sta	<R1
-	lda	<L114+c_0+2
-	adc	<L114+blocks_0+2
+	lda	<L116+c_0+2
+	adc	<L116+blocks_0+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
@@ -3317,9 +3529,9 @@ new_freemask_0	set	12
 	lda	|~~umm_heap+2
 	adc	<R0+2
 	sta	<R2+2
-	lda	<L114+c_0
+	lda	<L116+c_0
 	sta	<R0
-	lda	<L114+c_0+2
+	lda	<L116+c_0+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -3340,10 +3552,10 @@ new_freemask_0	set	12
 	and	#<$7fff
 	sta	<R0
 	stz	<R0+2
-	lda	<L114+new_freemask_0
+	lda	<L116+new_freemask_0
 	ora	<R0
 	sta	<R3
-	lda	<L114+new_freemask_0+2
+	lda	<L116+new_freemask_0+2
 	ora	<R0+2
 	sta	<R3+2
 	lda	<R3
@@ -3354,11 +3566,11 @@ new_freemask_0	set	12
 ;	UMM_PBLOCK(c+blocks) = c;
 	.line	141
 	clc
-	lda	<L114+c_0
-	adc	<L114+blocks_0
+	lda	<L116+c_0
+	adc	<L116+blocks_0
 	sta	<R1
-	lda	<L114+c_0+2
-	adc	<L114+blocks_0+2
+	lda	<L116+c_0+2
+	adc	<L116+blocks_0+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
@@ -3381,17 +3593,17 @@ new_freemask_0	set	12
 	lda	<R2+2
 	adc	<R0+2
 	sta	<R3+2
-	lda	<L114+c_0
+	lda	<L116+c_0
 	sta	[<R3]
-	lda	<L114+c_0+2
+	lda	<L116+c_0+2
 	ldy	#$2
 	sta	[<R3],Y
 ;
 ;	UMM_PBLOCK(UMM_NBLOCK(c) & UMM_BLOCKNO_MASK) = (c + blocks);
 	.line	143
-	lda	<L114+c_0
+	lda	<L116+c_0
 	sta	<R1
-	lda	<L114+c_0+2
+	lda	<L116+c_0+2
 	sta	<R1+2
 	asl	<R1
 	rol	<R1+2
@@ -3434,11 +3646,11 @@ new_freemask_0	set	12
 	adc	<R0+2
 	sta	<R3+2
 	clc
-	lda	<L114+c_0
-	adc	<L114+blocks_0
+	lda	<L116+c_0
+	adc	<L116+blocks_0
 	sta	<R0
-	lda	<L114+c_0+2
-	adc	<L114+blocks_0+2
+	lda	<L116+c_0+2
+	adc	<L116+blocks_0+2
 	sta	<R0+2
 	lda	<R0
 	sta	[<R3]
@@ -3447,9 +3659,9 @@ new_freemask_0	set	12
 	sta	[<R3],Y
 ;	UMM_NBLOCK(c) = (c + blocks);
 	.line	144
-	lda	<L114+c_0
+	lda	<L116+c_0
 	sta	<R0
-	lda	<L114+c_0+2
+	lda	<L116+c_0+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -3467,11 +3679,11 @@ new_freemask_0	set	12
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L114+c_0
-	adc	<L114+blocks_0
+	lda	<L116+c_0
+	adc	<L116+blocks_0
 	sta	<R0
-	lda	<L114+c_0+2
-	adc	<L114+blocks_0+2
+	lda	<L116+c_0+2
+	adc	<L116+blocks_0+2
 	sta	<R0+2
 	lda	<R0
 	sta	[<R1]
@@ -3480,20 +3692,20 @@ new_freemask_0	set	12
 	sta	[<R1],Y
 ;}
 	.line	145
-L117:
-	lda	<L114+2
-	sta	<L114+2+12
-	lda	<L114+1
-	sta	<L114+1+12
+L119:
+	lda	<L116+2
+	sta	<L116+2+12
+	lda	<L116+1
+	sta	<L116+1+12
 	pld
 	tsc
 	clc
-	adc	#L114+12
+	adc	#L116+12
 	tcs
 	rtl
 	.endblock	145
-L114	equ	16
-L115	equ	17
+L116	equ	16
+L117	equ	17
 	ends
 	efunc
 	.endfunc	145,17,16
@@ -3513,7 +3725,7 @@ L115	equ	17
 	longi	on
 	tsc
 	sec
-	sbc	#L118
+	sbc	#L120
 	tcs
 	phd
 	tcd
@@ -3524,9 +3736,9 @@ c_0	set	4
 ;	UMM_NFREE(UMM_PFREE(c)) = UMM_NFREE(c);
 	.sym	c,4,18,6,32
 	.line	153
-	lda	<L118+c_0
+	lda	<L120+c_0
 	sta	<R1
-	lda	<L118+c_0+2
+	lda	<L120+c_0+2
 	sta	<R1+2
 	asl	<R1
 	rol	<R1+2
@@ -3574,9 +3786,9 @@ c_0	set	4
 	lda	<R1+2
 	adc	<R0+2
 	sta	<R2+2
-	lda	<L118+c_0
+	lda	<L120+c_0
 	sta	<R0
-	lda	<L118+c_0+2
+	lda	<L120+c_0+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -3608,9 +3820,9 @@ c_0	set	4
 	sta	[<R2],Y
 ;	UMM_PFREE(UMM_NFREE(c)) = UMM_PFREE(c);
 	.line	154
-	lda	<L118+c_0
+	lda	<L120+c_0
 	sta	<R1
-	lda	<L118+c_0+2
+	lda	<L120+c_0+2
 	sta	<R1+2
 	asl	<R1
 	rol	<R1+2
@@ -3658,9 +3870,9 @@ c_0	set	4
 	lda	<R1+2
 	adc	<R0+2
 	sta	<R2+2
-	lda	<L118+c_0
+	lda	<L120+c_0
 	sta	<R0
-	lda	<L118+c_0+2
+	lda	<L120+c_0+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -3695,9 +3907,9 @@ c_0	set	4
 ;
 ;	UMM_NBLOCK(c) &= (~UMM_FREELIST_MASK);
 	.line	158
-	lda	<L118+c_0
+	lda	<L120+c_0
 	sta	<R0
-	lda	<L118+c_0+2
+	lda	<L120+c_0+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -3722,20 +3934,20 @@ c_0	set	4
 	sta	[<R1],Y
 ;}
 	.line	159
-L121:
-	lda	<L118+2
-	sta	<L118+2+4
-	lda	<L118+1
-	sta	<L118+1+4
+L123:
+	lda	<L120+2
+	sta	<L120+2+4
+	lda	<L120+1
+	sta	<L120+1+4
 	pld
 	tsc
 	clc
-	adc	#L118+4
+	adc	#L120+4
 	tcs
 	rtl
 	.endblock	159
-L118	equ	16
-L119	equ	17
+L120	equ	16
+L121	equ	17
 	ends
 	efunc
 	.endfunc	159,17,16
@@ -3758,7 +3970,7 @@ L119	equ	17
 	longi	on
 	tsc
 	sec
-	sbc	#L122
+	sbc	#L124
 	tcs
 	phd
 	tcd
@@ -3769,9 +3981,9 @@ c_0	set	4
 	.sym	c,4,18,6,32
 	.line	169
 ;	{
-	lda	<L122+c_0
+	lda	<L124+c_0
 	sta	<R1
-	lda	<L122+c_0+2
+	lda	<L124+c_0+2
 	sta	<R1+2
 	asl	<R1
 	rol	<R1+2
@@ -3807,9 +4019,9 @@ c_0	set	4
 	sta	<R1+2
 	lda	[<R1]
 	and	#<$8000
-	bne	L125
+	bne	L127
 	brl	L10045
-L125:
+L127:
 	.line	170
 ;		/*
 ;		 * The next block is a free block, so assimilate up and remove it from
@@ -3821,9 +4033,9 @@ L125:
 ;
 ;		umm_disconnect_from_free_list(UMM_NBLOCK(c));
 	.line	179
-	lda	<L122+c_0
+	lda	<L124+c_0
 	sta	<R0
-	lda	<L122+c_0+2
+	lda	<L124+c_0+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -3851,9 +4063,9 @@ L125:
 ;
 ;		UMM_PBLOCK(UMM_NBLOCK(UMM_NBLOCK(c)) & UMM_BLOCKNO_MASK) = c;
 	.line	183
-	lda	<L122+c_0
+	lda	<L124+c_0
 	sta	<R2
-	lda	<L122+c_0+2
+	lda	<L124+c_0+2
 	sta	<R2+2
 	asl	<R2
 	rol	<R2+2
@@ -3912,16 +4124,16 @@ L125:
 	lda	<R2+2
 	adc	<R0+2
 	sta	<R3+2
-	lda	<L122+c_0
+	lda	<L124+c_0
 	sta	[<R3]
-	lda	<L122+c_0+2
+	lda	<L124+c_0+2
 	ldy	#$2
 	sta	[<R3],Y
 ;		UMM_NBLOCK(c) = UMM_NBLOCK(UMM_NBLOCK(c)) & UMM_BLOCKNO_MASK;
 	.line	184
-	lda	<L122+c_0
+	lda	<L124+c_0
 	sta	<R0
-	lda	<L122+c_0+2
+	lda	<L124+c_0+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -3938,9 +4150,9 @@ L125:
 	lda	|~~umm_heap+2
 	adc	<R0+2
 	sta	<R1+2
-	lda	<L122+c_0
+	lda	<L124+c_0
 	sta	<R2
-	lda	<L122+c_0+2
+	lda	<L124+c_0+2
 	sta	<R2+2
 	asl	<R2
 	rol	<R2+2
@@ -3988,20 +4200,20 @@ L125:
 ;}
 L10045:
 	.line	186
-L126:
-	lda	<L122+2
-	sta	<L122+2+4
-	lda	<L122+1
-	sta	<L122+1+4
+L128:
+	lda	<L124+2
+	sta	<L124+2+4
+	lda	<L124+1
+	sta	<L124+1+4
 	pld
 	tsc
 	clc
-	adc	#L122+4
+	adc	#L124+4
 	tcs
 	rtl
 	.endblock	186
-L122	equ	16
-L123	equ	17
+L124	equ	16
+L125	equ	17
 	ends
 	efunc
 	.endfunc	186,17,16
@@ -4025,7 +4237,7 @@ L123	equ	17
 	longi	on
 	tsc
 	sec
-	sbc	#L127
+	sbc	#L129
 	tcs
 	phd
 	tcd
@@ -4037,9 +4249,9 @@ freemask_0	set	8
 	.sym	c,4,18,6,32
 	.sym	freemask,8,18,6,32
 	.line	197
-	lda	<L127+c_0
+	lda	<L129+c_0
 	sta	<R1
-	lda	<L127+c_0+2
+	lda	<L129+c_0+2
 	sta	<R1+2
 	asl	<R1
 	rol	<R1+2
@@ -4080,9 +4292,9 @@ freemask_0	set	8
 	lda	|~~umm_heap+2
 	adc	<R0+2
 	sta	<R1+2
-	lda	<L127+c_0
+	lda	<L129+c_0
 	sta	<R0
-	lda	<L127+c_0+2
+	lda	<L129+c_0+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -4099,10 +4311,10 @@ freemask_0	set	8
 	lda	|~~umm_heap+2
 	adc	<R0+2
 	sta	<R2+2
-	lda	<L127+freemask_0
+	lda	<L129+freemask_0
 	ora	[<R2]
 	sta	<R0
-	lda	<L127+freemask_0+2
+	lda	<L129+freemask_0+2
 	ldy	#$2
 	ora	[<R2],Y
 	sta	<R0+2
@@ -4113,9 +4325,9 @@ freemask_0	set	8
 	sta	[<R1],Y
 ;	UMM_PBLOCK(UMM_NBLOCK(c)) = UMM_PBLOCK(c);
 	.line	198
-	lda	<L127+c_0
+	lda	<L129+c_0
 	sta	<R1
-	lda	<L127+c_0+2
+	lda	<L129+c_0+2
 	sta	<R1+2
 	asl	<R1
 	rol	<R1+2
@@ -4156,9 +4368,9 @@ freemask_0	set	8
 	lda	<R1+2
 	adc	<R0+2
 	sta	<R2+2
-	lda	<L127+c_0
+	lda	<L129+c_0
 	sta	<R0
-	lda	<L127+c_0+2
+	lda	<L129+c_0+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -4191,9 +4403,9 @@ freemask_0	set	8
 ;
 ;	return (UMM_PBLOCK(c));
 	.line	200
-	lda	<L127+c_0
+	lda	<L129+c_0
 	sta	<R0
-	lda	<L127+c_0+2
+	lda	<L129+c_0+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -4221,24 +4433,24 @@ freemask_0	set	8
 	lda	[<R2],Y
 	tax
 	lda	[<R2]
-L130:
+L132:
 	tay
-	lda	<L127+2
-	sta	<L127+2+8
-	lda	<L127+1
-	sta	<L127+1+8
+	lda	<L129+2
+	sta	<L129+2+8
+	lda	<L129+1
+	sta	<L129+1+8
 	pld
 	tsc
 	clc
-	adc	#L127+8
+	adc	#L129+8
 	tcs
 	tya
 	rtl
 ;}
 	.line	201
 	.endblock	201
-L127	equ	16
-L128	equ	17
+L129	equ	16
+L130	equ	17
 	ends
 	efunc
 	.endfunc	201,17,16
@@ -4259,7 +4471,7 @@ L128	equ	17
 	longi	on
 	tsc
 	sec
-	sbc	#L131
+	sbc	#L133
 	tcs
 	phd
 	tcd
@@ -4269,8 +4481,8 @@ L128	equ	17
 ;	umm_heap = (umm_block *) UMM_MALLOC_CFG_HEAP_ADDR;
 i_1	set	0
 	.sym	i,0,18,1,32
-	stz	<L132+i_1
-	stz	<L132+i_1+2
+	stz	<L134+i_1
+	stz	<L134+i_1+2
 	.line	209
 	lda	#$0
 	sta	|~~umm_heap
@@ -4285,17 +4497,17 @@ i_1	set	0
 ;	//memset(umm_heap, 0x00, UMM_MALLOC_CFG_HEAP_SIZE);
 ;	for(i=0;i<UMM_MALLOC_CFG_HEAP_SIZE;i++)
 	.line	212
-	stz	<L132+i_1
-	stz	<L132+i_1+2
+	stz	<L134+i_1
+	stz	<L134+i_1+2
 L10048:
 ;		((char FAR*)umm_heap)[i] = 0x00;
 	.line	213
 	clc
 	lda	|~~umm_heap
-	adc	<L132+i_1
+	adc	<L134+i_1
 	sta	<R0
 	lda	|~~umm_heap+2
-	adc	<L132+i_1+2
+	adc	<L134+i_1+2
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -4304,17 +4516,17 @@ L10048:
 	rep	#$20
 	longa	on
 L10046:
-	inc	<L132+i_1
-	bne	L134
-	inc	<L132+i_1+2
-L134:
-	lda	<L132+i_1
+	inc	<L134+i_1
+	bne	L136
+	inc	<L134+i_1+2
+L136:
+	lda	<L134+i_1
 	cmp	#<$50000
-	lda	<L132+i_1+2
+	lda	<L134+i_1+2
 	sbc	#^$50000
-	bcs	L135
+	bcs	L137
 	brl	L10048
-L135:
+L137:
 L10047:
 ;
 ;	/* setup initial blank heap structure */
@@ -4336,19 +4548,19 @@ block_last_2	set	12
 	.sym	block_0th,4,18,1,32
 	.sym	block_1th,8,18,1,32
 	.sym	block_last,12,18,1,32
-	stz	<L132+block_0th_2
-	stz	<L132+block_0th_2+2
+	stz	<L134+block_0th_2
+	stz	<L134+block_0th_2+2
 	lda	#$1
-	sta	<L132+block_1th_2
+	sta	<L134+block_1th_2
 	lda	#$0
-	sta	<L132+block_1th_2+2
+	sta	<L134+block_1th_2+2
 	clc
 	lda	#$ffff
 	adc	|~~umm_numblocks
-	sta	<L132+block_last_2
+	sta	<L134+block_last_2
 	lda	#$ffff
 	adc	|~~umm_numblocks+2
-	sta	<L132+block_last_2+2
+	sta	<L134+block_last_2+2
 	.line	225
 	lda	|~~umm_heap
 	sta	<R0
@@ -4408,10 +4620,10 @@ block_last_2	set	12
 	sta	<R0
 	lda	|~~umm_heap+2
 	sta	<R0+2
-	lda	<L132+block_last_2
+	lda	<L134+block_last_2
 	ora	#<$8000
 	sta	<R1
-	lda	<L132+block_last_2+2
+	lda	<L134+block_last_2+2
 	sta	<R1+2
 	lda	<R1
 	ldy	#$10
@@ -4466,9 +4678,9 @@ block_last_2	set	12
 ;		 */
 ;		UMM_NBLOCK(block_last) = 0;
 	.line	260
-	lda	<L132+block_last_2
+	lda	<L134+block_last_2
 	sta	<R0
-	lda	<L132+block_last_2+2
+	lda	<L134+block_last_2+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -4492,9 +4704,9 @@ block_last_2	set	12
 	sta	[<R1],Y
 ;		UMM_PBLOCK(block_last) = block_1th;
 	.line	261
-	lda	<L132+block_last_2
+	lda	<L134+block_last_2
 	sta	<R0
-	lda	<L132+block_last_2+2
+	lda	<L134+block_last_2+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -4528,16 +4740,16 @@ block_last_2	set	12
 	.line	262
 ;}
 	.line	263
-L137:
+L139:
 	pld
 	tsc
 	clc
-	adc	#L131
+	adc	#L133
 	tcs
 	rtl
 	.endblock	263
-L131	equ	28
-L132	equ	13
+L133	equ	28
+L134	equ	13
 	ends
 	efunc
 	.endfunc	263,13,28
@@ -4560,7 +4772,7 @@ L132	equ	13
 	longi	on
 	tsc
 	sec
-	sbc	#L138
+	sbc	#L140
 	tcs
 	phd
 	tcd
@@ -4586,10 +4798,10 @@ c_1	set	0
 	.sym	ptr,4,129,6,32
 	.line	286
 	sec
-	lda	<L138+ptr_0
+	lda	<L140+ptr_0
 	sbc	|~~umm_heap
 	sta	<R0
-	lda	<L138+ptr_0+2
+	lda	<L140+ptr_0+2
 	sbc	|~~umm_heap+2
 	sta	<R0+2
 	pea	#^$10
@@ -4598,8 +4810,8 @@ c_1	set	0
 	pei	<R0
 	xref	~~~ldiv
 	jsl	~~~ldiv
-	sta	<L139+c_1
-	stx	<L139+c_1+2
+	sta	<L141+c_1
+	stx	<L141+c_1+2
 ;
 ;	//DBGLOG_DEBUG( "Freeing block %6i\n", c );
 ;
@@ -4607,8 +4819,8 @@ c_1	set	0
 ;
 ;	umm_assimilate_up(c);
 	.line	292
-	pei	<L139+c_1+2
-	pei	<L139+c_1
+	pei	<L141+c_1+2
+	pei	<L141+c_1
 	jsl	~~umm_assimilate_up
 ;
 ;	/* Then assimilate with the previous block if possible */
@@ -4616,9 +4828,9 @@ c_1	set	0
 ;	if ( UMM_NBLOCK(UMM_PBLOCK(c)) & UMM_FREELIST_MASK)
 	.line	296
 ;	{
-	lda	<L139+c_1
+	lda	<L141+c_1
 	sta	<R1
-	lda	<L139+c_1+2
+	lda	<L141+c_1+2
 	sta	<R1+2
 	asl	<R1
 	rol	<R1+2
@@ -4661,9 +4873,9 @@ c_1	set	0
 	sta	<R1+2
 	lda	[<R1]
 	and	#<$8000
-	bne	L141
+	bne	L143
 	brl	L10049
-L141:
+L143:
 	.line	297
 ;
 ;		//DBGLOG_DEBUG( "Assimilate down to next block, which is FREE\n" );
@@ -4672,11 +4884,11 @@ L141:
 	.line	301
 	pea	#^$8000
 	pea	#<$8000
-	pei	<L139+c_1+2
-	pei	<L139+c_1
+	pei	<L141+c_1+2
+	pei	<L141+c_1
 	jsl	~~umm_assimilate_down
-	sta	<L139+c_1
-	stx	<L139+c_1+2
+	sta	<L141+c_1
+	stx	<L141+c_1+2
 ;	}
 	.line	302
 ;	else
@@ -4721,16 +4933,16 @@ L10049:
 	lda	<R1+2
 	adc	<R0+2
 	sta	<R2+2
-	lda	<L139+c_1
+	lda	<L141+c_1
 	sta	[<R2]
-	lda	<L139+c_1+2
+	lda	<L141+c_1+2
 	ldy	#$2
 	sta	[<R2],Y
 ;		UMM_NFREE(c) = UMM_NFREE(0);
 	.line	312
-	lda	<L139+c_1
+	lda	<L141+c_1
 	sta	<R0
-	lda	<L139+c_1+2
+	lda	<L141+c_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -4767,9 +4979,9 @@ L10049:
 	sta	[<R2],Y
 ;		UMM_PFREE(c) = 0;
 	.line	313
-	lda	<L139+c_1
+	lda	<L141+c_1
 	sta	<R0
-	lda	<L139+c_1+2
+	lda	<L141+c_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -4804,18 +5016,18 @@ L10049:
 	sta	<R0
 	lda	|~~umm_heap+2
 	sta	<R0+2
-	lda	<L139+c_1
+	lda	<L141+c_1
 	ldy	#$8
 	sta	[<R0],Y
-	lda	<L139+c_1+2
+	lda	<L141+c_1+2
 	ldy	#$a
 	sta	[<R0],Y
 ;
 ;		UMM_NBLOCK(c) |= UMM_FREELIST_MASK;
 	.line	316
-	lda	<L139+c_1
+	lda	<L141+c_1
 	sta	<R0
-	lda	<L139+c_1+2
+	lda	<L141+c_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -4840,20 +5052,20 @@ L10049:
 L10050:
 ;}
 	.line	318
-L142:
-	lda	<L138+2
-	sta	<L138+2+4
-	lda	<L138+1
-	sta	<L138+1+4
+L144:
+	lda	<L140+2
+	sta	<L140+2+4
+	lda	<L140+1
+	sta	<L140+1+4
 	pld
 	tsc
 	clc
-	adc	#L138+4
+	adc	#L140+4
 	tcs
 	rtl
 	.endblock	318
-L138	equ	20
-L139	equ	17
+L140	equ	20
+L141	equ	17
 	ends
 	efunc
 	.endfunc	318,17,20
@@ -4874,7 +5086,7 @@ L139	equ	17
 	longi	on
 	tsc
 	sec
-	sbc	#L143
+	sbc	#L145
 	tcs
 	phd
 	tcd
@@ -4887,9 +5099,9 @@ ptr_0	set	4
 ;	{
 	lda	|~~umm_heap
 	ora	|~~umm_heap+2
-	beq	L146
+	beq	L148
 	brl	L10051
-L146:
+L148:
 	.line	326
 ;		umm_init();
 	.line	327
@@ -4903,25 +5115,25 @@ L146:
 L10051:
 	.line	332
 ;	{
-	lda	<L143+ptr_0
-	ora	<L143+ptr_0+2
-	beq	L147
+	lda	<L145+ptr_0
+	ora	<L145+ptr_0+2
+	beq	L149
 	brl	L10052
-L147:
+L149:
 	.line	333
 ;		//DBGLOG_DEBUG( "free a null pointer -> do nothing\n" );
 ;
 ;		return;
 	.line	336
-L148:
-	lda	<L143+2
-	sta	<L143+2+4
-	lda	<L143+1
-	sta	<L143+1+4
+L150:
+	lda	<L145+2
+	sta	<L145+2+4
+	lda	<L145+1
+	sta	<L145+1+4
 	pld
 	tsc
 	clc
-	adc	#L143+4
+	adc	#L145+4
 	tcs
 	rtl
 ;	}
@@ -4935,18 +5147,18 @@ L10052:
 ;
 ;	umm_free_core(ptr);
 	.line	343
-	pei	<L143+ptr_0+2
-	pei	<L143+ptr_0
+	pei	<L145+ptr_0+2
+	pei	<L145+ptr_0
 	jsl	~~umm_free_core
 ;
 ;	UMM_CRITICAL_EXIT();
 	.line	345
 ;}
 	.line	346
-	brl	L148
+	brl	L150
 	.endblock	346
-L143	equ	0
-L144	equ	1
+L145	equ	0
+L146	equ	1
 	ends
 	efunc
 	.endfunc	346,1,0
@@ -4969,7 +5181,7 @@ L144	equ	1
 	longi	on
 	tsc
 	sec
-	sbc	#L149
+	sbc	#L151
 	tcs
 	phd
 	tcd
@@ -4995,13 +5207,14 @@ cf_1	set	16
 	.sym	bestBlock,12,18,1,32
 	.sym	cf,16,18,1,32
 	.sym	size,4,18,6,32
-	stz	<L150+blockSize_1
-	stz	<L150+blockSize_1+2
+	stz	<L152+blockSize_1
+	stz	<L152+blockSize_1+2
 	.line	363
-	pei	<L149+size_0
+	pei	<L151+size_0+2
+	pei	<L151+size_0
 	jsl	~~umm_blocks
-	sta	<L150+blocks_1
-	stx	<L150+blocks_1+2
+	sta	<L152+blocks_1
+	stx	<L152+blocks_1+2
 ;
 ;	/*
 ;	 * Now we can scan through the free list until we find a space that's big
@@ -5019,10 +5232,10 @@ cf_1	set	16
 	sta	<R0+2
 	ldy	#$8
 	lda	[<R0],Y
-	sta	<L150+cf_1
+	sta	<L152+cf_1
 	ldy	#$a
 	lda	[<R0],Y
-	sta	<L150+cf_1+2
+	sta	<L152+cf_1+2
 ;
 ;	bestBlock = UMM_NFREE(0);
 	.line	375
@@ -5032,32 +5245,32 @@ cf_1	set	16
 	sta	<R0+2
 	ldy	#$8
 	lda	[<R0],Y
-	sta	<L150+bestBlock_1
+	sta	<L152+bestBlock_1
 	ldy	#$a
 	lda	[<R0],Y
-	sta	<L150+bestBlock_1+2
+	sta	<L152+bestBlock_1+2
 ;	bestSize = 0x7FFF;
 	.line	376
 	lda	#$7fff
-	sta	<L150+bestSize_1
+	sta	<L152+bestSize_1
 	lda	#$0
-	sta	<L150+bestSize_1+2
+	sta	<L152+bestSize_1+2
 ;
 ;	while (cf)
 	.line	378
 L10053:
-	lda	<L150+cf_1
-	ora	<L150+cf_1+2
-	bne	L152
+	lda	<L152+cf_1
+	ora	<L152+cf_1+2
+	bne	L154
 	brl	L10054
-L152:
+L154:
 ;	{
 	.line	379
 ;		blockSize = (UMM_NBLOCK(cf) & UMM_BLOCKNO_MASK) - cf;
 	.line	380
-	lda	<L150+cf_1
+	lda	<L152+cf_1
 	sta	<R0
-	lda	<L150+cf_1+2
+	lda	<L152+cf_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -5080,11 +5293,11 @@ L152:
 	stz	<R0+2
 	sec
 	lda	<R0
-	sbc	<L150+cf_1
-	sta	<L150+blockSize_1
+	sbc	<L152+cf_1
+	sta	<L152+blockSize_1
 	lda	<R0+2
-	sbc	<L150+cf_1+2
-	sta	<L150+blockSize_1+2
+	sbc	<L152+cf_1+2
+	sta	<L152+blockSize_1+2
 ;
 ;		//DBGLOG_TRACE( "Looking at block %6i size %6i\n", cf, blockSize );
 ;
@@ -5092,33 +5305,33 @@ L152:
 ;		if ((blockSize >= blocks) && (blockSize < bestSize))
 	.line	385
 ;		{
-	lda	<L150+blockSize_1
-	cmp	<L150+blocks_1
-	lda	<L150+blockSize_1+2
-	sbc	<L150+blocks_1+2
-	bcs	L153
+	lda	<L152+blockSize_1
+	cmp	<L152+blocks_1
+	lda	<L152+blockSize_1+2
+	sbc	<L152+blocks_1+2
+	bcs	L155
 	brl	L10055
-L153:
-	lda	<L150+blockSize_1
-	cmp	<L150+bestSize_1
-	lda	<L150+blockSize_1+2
-	sbc	<L150+bestSize_1+2
-	bcc	L154
+L155:
+	lda	<L152+blockSize_1
+	cmp	<L152+bestSize_1
+	lda	<L152+blockSize_1+2
+	sbc	<L152+bestSize_1+2
+	bcc	L156
 	brl	L10055
-L154:
+L156:
 	.line	386
 ;			bestBlock = cf;
 	.line	387
-	lda	<L150+cf_1
-	sta	<L150+bestBlock_1
-	lda	<L150+cf_1+2
-	sta	<L150+bestBlock_1+2
+	lda	<L152+cf_1
+	sta	<L152+bestBlock_1
+	lda	<L152+cf_1+2
+	sta	<L152+bestBlock_1+2
 ;			bestSize = blockSize;
 	.line	388
-	lda	<L150+blockSize_1
-	sta	<L150+bestSize_1
-	lda	<L150+blockSize_1+2
-	sta	<L150+bestSize_1+2
+	lda	<L152+blockSize_1
+	sta	<L152+bestSize_1
+	lda	<L152+blockSize_1+2
+	sta	<L152+bestSize_1+2
 ;		}
 	.line	389
 ;#elif defined UMM_FIRST_FIT
@@ -5132,9 +5345,9 @@ L154:
 ;		cf = UMM_NFREE(cf);
 L10055:
 	.line	398
-	lda	<L150+cf_1
+	lda	<L152+cf_1
 	sta	<R0
-	lda	<L150+cf_1+2
+	lda	<L152+cf_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -5159,10 +5372,10 @@ L10055:
 	adc	<R0+2
 	sta	<R2+2
 	lda	[<R2]
-	sta	<L150+cf_1
+	sta	<L152+cf_1
 	ldy	#$2
 	lda	[<R2],Y
-	sta	<L150+cf_1+2
+	sta	<L152+cf_1+2
 ;	}
 	.line	399
 	brl	L10053
@@ -5171,28 +5384,28 @@ L10054:
 ;	if (0x7FFF != bestSize)
 	.line	401
 ;	{
-	lda	<L150+bestSize_1
+	lda	<L152+bestSize_1
 	cmp	#<$7fff
-	bne	L155
-	lda	<L150+bestSize_1+2
+	bne	L157
+	lda	<L152+bestSize_1+2
 	cmp	#^$7fff
-L155:
-	bne	L156
+L157:
+	bne	L158
 	brl	L10056
-L156:
+L158:
 	.line	402
 ;		cf = bestBlock;
 	.line	403
-	lda	<L150+bestBlock_1
-	sta	<L150+cf_1
-	lda	<L150+bestBlock_1+2
-	sta	<L150+cf_1+2
+	lda	<L152+bestBlock_1
+	sta	<L152+cf_1
+	lda	<L152+bestBlock_1+2
+	sta	<L152+cf_1+2
 ;		blockSize = bestSize;
 	.line	404
-	lda	<L150+bestSize_1
-	sta	<L150+blockSize_1
-	lda	<L150+bestSize_1+2
-	sta	<L150+blockSize_1+2
+	lda	<L152+bestSize_1
+	sta	<L152+blockSize_1
+	lda	<L152+bestSize_1+2
+	sta	<L152+blockSize_1+2
 ;	}
 	.line	405
 ;
@@ -5200,9 +5413,9 @@ L156:
 L10056:
 	.line	407
 ;	{
-	lda	<L150+cf_1
+	lda	<L152+cf_1
 	sta	<R0
-	lda	<L150+cf_1+2
+	lda	<L152+cf_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -5221,16 +5434,16 @@ L10056:
 	sta	<R1+2
 	lda	[<R1]
 	and	#<$7fff
-	bne	L157
+	bne	L159
 	brl	L10057
-L157:
-	lda	<L150+blockSize_1
-	cmp	<L150+blocks_1
-	lda	<L150+blockSize_1+2
-	sbc	<L150+blocks_1+2
-	bcs	L158
+L159:
+	lda	<L152+blockSize_1
+	cmp	<L152+blocks_1
+	lda	<L152+blockSize_1+2
+	sbc	<L152+blocks_1+2
+	bcs	L160
 	brl	L10057
-L158:
+L160:
 	.line	408
 ;		/*
 ;		 * This is an existing block in the memory heap, we just need to split off
@@ -5242,15 +5455,15 @@ L158:
 ;		if (blockSize == blocks)
 	.line	416
 ;		{
-	lda	<L150+blockSize_1
-	cmp	<L150+blocks_1
-	bne	L159
-	lda	<L150+blockSize_1+2
-	cmp	<L150+blocks_1+2
-L159:
-	beq	L160
+	lda	<L152+blockSize_1
+	cmp	<L152+blocks_1
+	bne	L161
+	lda	<L152+blockSize_1+2
+	cmp	<L152+blocks_1+2
+L161:
+	beq	L162
 	brl	L10058
-L160:
+L162:
 	.line	417
 ;			/* It's an exact fit and we don't neet to split off a block. */
 ;			//DBGLOG_DEBUG( "Allocating %6i blocks starting at %6i - exact\n", blocks, cf );
@@ -5258,8 +5471,8 @@ L160:
 ;
 ;			umm_disconnect_from_free_list(cf);
 	.line	422
-	pei	<L150+cf_1+2
-	pei	<L150+cf_1
+	pei	<L152+cf_1+2
+	pei	<L152+cf_1
 	jsl	~~umm_disconnect_from_free_list
 ;
 ;		}
@@ -5280,10 +5493,10 @@ L10058:
 ;					UMM_FREELIST_MASK /*new block is free*/);
 	pea	#^$8000
 	pea	#<$8000
-	pei	<L150+blocks_1+2
-	pei	<L150+blocks_1
-	pei	<L150+cf_1+2
-	pei	<L150+cf_1
+	pei	<L152+blocks_1+2
+	pei	<L152+blocks_1
+	pei	<L152+cf_1+2
+	pei	<L152+cf_1
 	jsl	~~umm_split_block
 ;
 ;			/*
@@ -5296,9 +5509,9 @@ L10058:
 ;			/* previous free block */
 ;			UMM_NFREE( UMM_PFREE(cf) ) = cf + blocks;
 	.line	444
-	lda	<L150+cf_1
+	lda	<L152+cf_1
 	sta	<R1
-	lda	<L150+cf_1+2
+	lda	<L152+cf_1+2
 	sta	<R1+2
 	asl	<R1
 	rol	<R1+2
@@ -5347,11 +5560,11 @@ L10058:
 	adc	<R0+2
 	sta	<R2+2
 	clc
-	lda	<L150+cf_1
-	adc	<L150+blocks_1
+	lda	<L152+cf_1
+	adc	<L152+blocks_1
 	sta	<R0
-	lda	<L150+cf_1+2
-	adc	<L150+blocks_1+2
+	lda	<L152+cf_1+2
+	adc	<L152+blocks_1+2
 	sta	<R0+2
 	lda	<R0
 	sta	[<R2]
@@ -5361,11 +5574,11 @@ L10058:
 ;			UMM_PFREE( cf + blocks ) = UMM_PFREE(cf);
 	.line	445
 	clc
-	lda	<L150+cf_1
-	adc	<L150+blocks_1
+	lda	<L152+cf_1
+	adc	<L152+blocks_1
 	sta	<R1
-	lda	<L150+cf_1+2
-	adc	<L150+blocks_1+2
+	lda	<L152+cf_1+2
+	adc	<L152+blocks_1+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
@@ -5388,9 +5601,9 @@ L10058:
 	lda	<R2+2
 	adc	<R0+2
 	sta	<R3+2
-	lda	<L150+cf_1
+	lda	<L152+cf_1
 	sta	<R0
-	lda	<L150+cf_1+2
+	lda	<L152+cf_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -5424,9 +5637,9 @@ L10058:
 ;			/* next free block */
 ;			UMM_PFREE( UMM_NFREE(cf) ) = cf + blocks;
 	.line	448
-	lda	<L150+cf_1
+	lda	<L152+cf_1
 	sta	<R1
-	lda	<L150+cf_1+2
+	lda	<L152+cf_1+2
 	sta	<R1+2
 	asl	<R1
 	rol	<R1+2
@@ -5475,11 +5688,11 @@ L10058:
 	adc	<R0+2
 	sta	<R2+2
 	clc
-	lda	<L150+cf_1
-	adc	<L150+blocks_1
+	lda	<L152+cf_1
+	adc	<L152+blocks_1
 	sta	<R0
-	lda	<L150+cf_1+2
-	adc	<L150+blocks_1+2
+	lda	<L152+cf_1+2
+	adc	<L152+blocks_1+2
 	sta	<R0+2
 	lda	<R0
 	sta	[<R2]
@@ -5489,11 +5702,11 @@ L10058:
 ;			UMM_NFREE( cf + blocks ) = UMM_NFREE(cf);
 	.line	449
 	clc
-	lda	<L150+cf_1
-	adc	<L150+blocks_1
+	lda	<L152+cf_1
+	adc	<L152+blocks_1
 	sta	<R1
-	lda	<L150+cf_1+2
-	adc	<L150+blocks_1+2
+	lda	<L152+cf_1+2
+	adc	<L152+blocks_1+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
@@ -5516,9 +5729,9 @@ L10058:
 	lda	<R2+2
 	adc	<R0+2
 	sta	<R3+2
-	lda	<L150+cf_1
+	lda	<L152+cf_1
 	sta	<R0
-	lda	<L150+cf_1+2
+	lda	<L152+cf_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -5566,16 +5779,16 @@ L10057:
 	lda	#$0
 	tax
 	lda	#$0
-L161:
+L163:
 	tay
-	lda	<L149+2
-	sta	<L149+2+4
-	lda	<L149+1
-	sta	<L149+1+4
+	lda	<L151+2
+	sta	<L151+2+4
+	lda	<L151+1
+	sta	<L151+1+4
 	pld
 	tsc
 	clc
-	adc	#L149+4
+	adc	#L151+4
 	tcs
 	tya
 	rtl
@@ -5585,9 +5798,9 @@ L10060:
 ;
 ;	return ((void FAR*) &UMM_DATA(cf));
 	.line	460
-	lda	<L150+cf_1
+	lda	<L152+cf_1
 	sta	<R0
-	lda	<L150+cf_1+2
+	lda	<L152+cf_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -5613,12 +5826,12 @@ L10060:
 	sta	<R0+2
 	ldx	<R0+2
 	lda	<R0
-	brl	L161
+	brl	L163
 ;}
 	.line	461
 	.endblock	461
-L149	equ	40
-L150	equ	21
+L151	equ	40
+L152	equ	21
 	ends
 	efunc
 	.endfunc	461,21,40
@@ -5639,7 +5852,7 @@ L150	equ	21
 	longi	on
 	tsc
 	sec
-	sbc	#L162
+	sbc	#L164
 	tcs
 	phd
 	tcd
@@ -5652,15 +5865,15 @@ size_0	set	4
 ptr_1	set	0
 	.sym	ptr,0,129,1,32
 	.sym	size,4,18,6,32
-	stz	<L163+ptr_1
-	stz	<L163+ptr_1+2
+	stz	<L165+ptr_1
+	stz	<L165+ptr_1+2
 	.line	470
 ;	{
 	lda	|~~umm_heap
 	ora	|~~umm_heap+2
-	beq	L165
+	beq	L167
 	brl	L10061
-L165:
+L167:
 	.line	471
 ;		umm_init();
 	.line	472
@@ -5679,28 +5892,28 @@ L165:
 L10061:
 	.line	482
 ;	{
-	lda	<L162+size_0
-	ora	<L162+size_0+2
-	beq	L166
+	lda	<L164+size_0
+	ora	<L164+size_0+2
+	beq	L168
 	brl	L10062
-L166:
+L168:
 	.line	483
 ;		//DBGLOG_DEBUG( "malloc a block of 0 bytes -> do nothing\n" );
 ;
 ;		return (ptr);
 	.line	486
-	ldx	<L163+ptr_1+2
-	lda	<L163+ptr_1
-L167:
+	ldx	<L165+ptr_1+2
+	lda	<L165+ptr_1
+L169:
 	tay
-	lda	<L162+2
-	sta	<L162+2+4
-	lda	<L162+1
-	sta	<L162+1+4
+	lda	<L164+2
+	sta	<L164+2+4
+	lda	<L164+1
+	sta	<L164+1+4
 	pld
 	tsc
 	clc
-	adc	#L162+4
+	adc	#L164+4
 	tcs
 	tya
 	rtl
@@ -5715,25 +5928,25 @@ L10062:
 ;
 ;	ptr = umm_malloc_core(size);
 	.line	493
-	pei	<L162+size_0+2
-	pei	<L162+size_0
+	pei	<L164+size_0+2
+	pei	<L164+size_0
 	jsl	~~umm_malloc_core
-	sta	<L163+ptr_1
-	stx	<L163+ptr_1+2
+	sta	<L165+ptr_1
+	stx	<L165+ptr_1+2
 ;
 ;	UMM_CRITICAL_EXIT();
 	.line	495
 ;
 ;	return (ptr);
 	.line	497
-	ldx	<L163+ptr_1+2
-	lda	<L163+ptr_1
-	brl	L167
+	ldx	<L165+ptr_1+2
+	lda	<L165+ptr_1
+	brl	L169
 ;}
 	.line	498
 	.endblock	498
-L162	equ	4
-L163	equ	1
+L164	equ	4
+L165	equ	1
 	ends
 	efunc
 	.endfunc	498,1,4
@@ -5754,7 +5967,7 @@ L163	equ	1
 	longi	on
 	tsc
 	sec
-	sbc	#L168
+	sbc	#L170
 	tcs
 	phd
 	tcd
@@ -5769,7 +5982,7 @@ size_0	set	8
 ;
 ;	unsigned long c;
 ;
-;	size_t curSize;
+;	ULONG curSize;
 ;
 ;	if (umm_heap == NULL)
 blocks_1	set	0
@@ -5783,20 +5996,20 @@ curSize_1	set	20
 	.sym	prevBlockSize,8,18,1,32
 	.sym	nextBlockSize,12,18,1,32
 	.sym	c,16,18,1,32
-	.sym	curSize,20,16,1,16
+	.sym	curSize,20,18,1,32
 	.sym	ptr,4,129,6,32
 	.sym	size,8,18,6,32
-	stz	<L169+prevBlockSize_1
-	stz	<L169+prevBlockSize_1+2
-	stz	<L169+nextBlockSize_1
-	stz	<L169+nextBlockSize_1+2
+	stz	<L171+prevBlockSize_1
+	stz	<L171+prevBlockSize_1+2
+	stz	<L171+nextBlockSize_1
+	stz	<L171+nextBlockSize_1+2
 	.line	514
 ;	{
 	lda	|~~umm_heap
 	ora	|~~umm_heap+2
-	beq	L171
+	beq	L173
 	brl	L10063
-L171:
+L173:
 	.line	515
 ;		umm_init();
 	.line	516
@@ -5816,33 +6029,33 @@ L171:
 L10063:
 	.line	527
 ;	{
-	lda	<L168+ptr_0
-	ora	<L168+ptr_0+2
-	beq	L172
+	lda	<L170+ptr_0
+	ora	<L170+ptr_0+2
+	beq	L174
 	brl	L10064
-L172:
+L174:
 	.line	528
 ;		//DBGLOG_DEBUG( "realloc the NULL pointer - call malloc()\n" );
 ;
 ;		return (umm_malloc(size));
 	.line	531
-	pei	<L168+size_0+2
-	pei	<L168+size_0
+	pei	<L170+size_0+2
+	pei	<L170+size_0
 	jsl	~~umm_malloc
 	sta	<R0
 	stx	<R0+2
 	ldx	<R0+2
 	lda	<R0
-L173:
+L175:
 	tay
-	lda	<L168+2
-	sta	<L168+2+8
-	lda	<L168+1
-	sta	<L168+1+8
+	lda	<L170+2
+	sta	<L170+2+8
+	lda	<L170+1
+	sta	<L170+1+8
 	pld
 	tsc
 	clc
-	adc	#L168+8
+	adc	#L170+8
 	tcs
 	tya
 	rtl
@@ -5859,18 +6072,18 @@ L173:
 L10064:
 	.line	540
 ;	{
-	lda	<L168+size_0
-	ora	<L168+size_0+2
-	beq	L174
+	lda	<L170+size_0
+	ora	<L170+size_0+2
+	beq	L176
 	brl	L10065
-L174:
+L176:
 	.line	541
 ;		//DBGLOG_DEBUG( "realloc to 0 size, just free the block\n" );
 ;
 ;		umm_free(ptr);
 	.line	544
-	pei	<L168+ptr_0+2
-	pei	<L168+ptr_0
+	pei	<L170+ptr_0+2
+	pei	<L170+ptr_0
 	jsl	~~umm_free
 ;
 ;		return ((void FAR *) NULL);
@@ -5878,7 +6091,7 @@ L174:
 	lda	#$0
 	tax
 	lda	#$0
-	brl	L173
+	brl	L175
 ;	}
 	.line	547
 ;
@@ -5894,20 +6107,21 @@ L174:
 ;	blocks = umm_blocks(size);
 L10065:
 	.line	558
-	pei	<L168+size_0
+	pei	<L170+size_0+2
+	pei	<L170+size_0
 	jsl	~~umm_blocks
-	sta	<L169+blocks_1
-	stx	<L169+blocks_1+2
+	sta	<L171+blocks_1
+	stx	<L171+blocks_1+2
 ;
 ;	/* Figure out which block we're in. Note the use of truncated division... */
 ;
 ;	c = (((char FAR *) ptr) - (char FAR *) (&(umm_heap[0]))) / sizeof(umm_block);
 	.line	562
 	sec
-	lda	<L168+ptr_0
+	lda	<L170+ptr_0
 	sbc	|~~umm_heap
 	sta	<R0
-	lda	<L168+ptr_0+2
+	lda	<L170+ptr_0+2
 	sbc	|~~umm_heap+2
 	sta	<R0+2
 	pea	#^$10
@@ -5916,16 +6130,16 @@ L10065:
 	pei	<R0
 	xref	~~~ldiv
 	jsl	~~~ldiv
-	sta	<L169+c_1
-	stx	<L169+c_1+2
+	sta	<L171+c_1
+	stx	<L171+c_1+2
 ;
 ;	/* Figure out how big this block is ... the free bit is not set :-) */
 ;
 ;	blockSize = (UMM_NBLOCK(c) - c);
 	.line	566
-	lda	<L169+c_1
+	lda	<L171+c_1
 	sta	<R0
-	lda	<L169+c_1+2
+	lda	<L171+c_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -5944,21 +6158,21 @@ L10065:
 	sta	<R1+2
 	sec
 	lda	[<R1]
-	sbc	<L169+c_1
-	sta	<L169+blockSize_1
+	sbc	<L171+c_1
+	sta	<L171+blockSize_1
 	ldy	#$2
 	lda	[<R1],Y
-	sbc	<L169+c_1+2
-	sta	<L169+blockSize_1+2
+	sbc	<L171+c_1+2
+	sta	<L171+blockSize_1+2
 ;
 ;	/* Figure out how many bytes are in this block */
 ;
 ;	curSize = (blockSize * sizeof(umm_block))
 	.line	570
 ;			- (sizeof(((umm_block *) 0)->header));
-	lda	<L169+blockSize_1
+	lda	<L171+blockSize_1
 	sta	<R0
-	lda	<L169+blockSize_1+2
+	lda	<L171+blockSize_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -5971,12 +6185,10 @@ L10065:
 	clc
 	lda	#$fff8
 	adc	<R0
-	sta	<R1
+	sta	<L171+curSize_1
 	lda	#$ffff
 	adc	<R0+2
-	sta	<R1+2
-	lda	<R1
-	sta	<L169+curSize_1
+	sta	<L171+curSize_1+2
 ;
 ;	/* Protect the critical section... */
 ;	UMM_CRITICAL_ENTRY();
@@ -5993,9 +6205,9 @@ L10065:
 ;	if ((UMM_NBLOCK(UMM_NBLOCK(c)) & UMM_FREELIST_MASK))
 	.line	584
 ;	{
-	lda	<L169+c_1
+	lda	<L171+c_1
 	sta	<R1
-	lda	<L169+c_1+2
+	lda	<L171+c_1+2
 	sta	<R1+2
 	asl	<R1
 	rol	<R1+2
@@ -6031,16 +6243,16 @@ L10065:
 	sta	<R1+2
 	lda	[<R1]
 	and	#<$8000
-	bne	L175
+	bne	L177
 	brl	L10066
-L175:
+L177:
 	.line	585
 ;		nextBlockSize = (UMM_NBLOCK(UMM_NBLOCK(c)) & UMM_BLOCKNO_MASK)
 	.line	586
 ;				- UMM_NBLOCK(c);
-	lda	<L169+c_1
+	lda	<L171+c_1
 	sta	<R0
-	lda	<L169+c_1+2
+	lda	<L171+c_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -6057,9 +6269,9 @@ L175:
 	lda	|~~umm_heap+2
 	adc	<R0+2
 	sta	<R1+2
-	lda	<L169+c_1
+	lda	<L171+c_1
 	sta	<R2
-	lda	<L169+c_1+2
+	lda	<L171+c_1+2
 	sta	<R2+2
 	asl	<R2
 	rol	<R2+2
@@ -6100,11 +6312,11 @@ L175:
 	sec
 	lda	<R0
 	sbc	[<R1]
-	sta	<L169+nextBlockSize_1
+	sta	<L171+nextBlockSize_1
 	lda	<R0+2
 	ldy	#$2
 	sbc	[<R1],Y
-	sta	<L169+nextBlockSize_1+2
+	sta	<L171+nextBlockSize_1+2
 ;	}
 	.line	588
 ;
@@ -6112,9 +6324,9 @@ L175:
 L10066:
 	.line	590
 ;	{
-	lda	<L169+c_1
+	lda	<L171+c_1
 	sta	<R1
-	lda	<L169+c_1+2
+	lda	<L171+c_1+2
 	sta	<R1+2
 	asl	<R1
 	rol	<R1+2
@@ -6157,15 +6369,15 @@ L10066:
 	sta	<R1+2
 	lda	[<R1]
 	and	#<$8000
-	bne	L176
+	bne	L178
 	brl	L10067
-L176:
+L178:
 	.line	591
 ;		prevBlockSize = (c - UMM_PBLOCK(c));
 	.line	592
-	lda	<L169+c_1
+	lda	<L171+c_1
 	sta	<R0
-	lda	<L169+c_1+2
+	lda	<L171+c_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -6190,13 +6402,13 @@ L176:
 	adc	<R0+2
 	sta	<R2+2
 	sec
-	lda	<L169+c_1
+	lda	<L171+c_1
 	sbc	[<R2]
-	sta	<L169+prevBlockSize_1
-	lda	<L169+c_1+2
+	sta	<L171+prevBlockSize_1
+	lda	<L171+c_1+2
 	ldy	#$2
 	sbc	[<R2],Y
-	sta	<L169+prevBlockSize_1+2
+	sta	<L171+prevBlockSize_1+2
 ;	}
 	.line	593
 ;
@@ -6230,13 +6442,13 @@ L176:
 L10067:
 	.line	621
 ;	{
-	lda	<L169+blockSize_1
-	cmp	<L169+blocks_1
-	lda	<L169+blockSize_1+2
-	sbc	<L169+blocks_1+2
-	bcs	L177
+	lda	<L171+blockSize_1
+	cmp	<L171+blocks_1
+	lda	<L171+blockSize_1+2
+	sbc	<L171+blocks_1+2
+	bcs	L179
 	brl	L10068
-L177:
+L179:
 	.line	622
 ;		//DBGLOG_DEBUG( "realloc the same or smaller size block - %i, do nothing\n", blocks );
 ;		/* This space intentionally left blank */
@@ -6248,35 +6460,35 @@ L10068:
 	.line	626
 ;	{
 	clc
-	lda	<L169+blockSize_1
-	adc	<L169+nextBlockSize_1
+	lda	<L171+blockSize_1
+	adc	<L171+nextBlockSize_1
 	sta	<R0
-	lda	<L169+blockSize_1+2
-	adc	<L169+nextBlockSize_1+2
+	lda	<L171+blockSize_1+2
+	adc	<L171+nextBlockSize_1+2
 	sta	<R0+2
 	lda	<R0
-	cmp	<L169+blocks_1
+	cmp	<L171+blocks_1
 	lda	<R0+2
-	sbc	<L169+blocks_1+2
-	bcs	L178
+	sbc	<L171+blocks_1+2
+	bcs	L180
 	brl	L10070
-L178:
+L180:
 	.line	627
 ;		//DBGLOG_DEBUG( "realloc using next block - %i\n", blocks );
 ;		umm_assimilate_up(c);
 	.line	629
-	pei	<L169+c_1+2
-	pei	<L169+c_1
+	pei	<L171+c_1+2
+	pei	<L171+c_1
 	jsl	~~umm_assimilate_up
 ;		blockSize += nextBlockSize;
 	.line	630
 	clc
-	lda	<L169+blockSize_1
-	adc	<L169+nextBlockSize_1
-	sta	<L169+blockSize_1
-	lda	<L169+blockSize_1+2
-	adc	<L169+nextBlockSize_1+2
-	sta	<L169+blockSize_1+2
+	lda	<L171+blockSize_1
+	adc	<L171+nextBlockSize_1
+	sta	<L171+blockSize_1
+	lda	<L171+blockSize_1+2
+	adc	<L171+nextBlockSize_1+2
+	sta	<L171+blockSize_1+2
 ;	}
 	.line	631
 ;	else if ((prevBlockSize + blockSize) >= blocks)
@@ -6285,26 +6497,26 @@ L10070:
 	.line	632
 ;	{
 	clc
-	lda	<L169+prevBlockSize_1
-	adc	<L169+blockSize_1
+	lda	<L171+prevBlockSize_1
+	adc	<L171+blockSize_1
 	sta	<R0
-	lda	<L169+prevBlockSize_1+2
-	adc	<L169+blockSize_1+2
+	lda	<L171+prevBlockSize_1+2
+	adc	<L171+blockSize_1+2
 	sta	<R0+2
 	lda	<R0
-	cmp	<L169+blocks_1
+	cmp	<L171+blocks_1
 	lda	<R0+2
-	sbc	<L169+blocks_1+2
-	bcs	L179
+	sbc	<L171+blocks_1+2
+	bcs	L181
 	brl	L10072
-L179:
+L181:
 	.line	633
 ;		//DBGLOG_DEBUG( "realloc using prev block - %i\n", blocks );
 ;		umm_disconnect_from_free_list(UMM_PBLOCK(c));
 	.line	635
-	lda	<L169+c_1
+	lda	<L171+c_1
 	sta	<R0
-	lda	<L169+c_1+2
+	lda	<L171+c_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -6338,19 +6550,19 @@ L179:
 	.line	636
 	pea	#^$0
 	pea	#<$0
-	pei	<L169+c_1+2
-	pei	<L169+c_1
+	pei	<L171+c_1+2
+	pei	<L171+c_1
 	jsl	~~umm_assimilate_down
-	sta	<L169+c_1
-	stx	<L169+c_1+2
+	sta	<L171+c_1
+	stx	<L171+c_1+2
 ;		memmove((void *) &UMM_DATA(c), ptr, curSize);
 	.line	637
-	pei	<L169+curSize_1
-	pei	<L168+ptr_0+2
-	pei	<L168+ptr_0
-	lda	<L169+c_1
+	pei	<L171+curSize_1
+	pei	<L170+ptr_0+2
+	pei	<L170+ptr_0
+	lda	<L171+c_1
 	sta	<R0
-	lda	<L169+c_1+2
+	lda	<L171+c_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -6379,9 +6591,9 @@ L179:
 	jsl	~~memmove
 ;		ptr = (void *) &UMM_DATA(c);
 	.line	638
-	lda	<L169+c_1
+	lda	<L171+c_1
 	sta	<R0
-	lda	<L169+c_1+2
+	lda	<L171+c_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -6401,19 +6613,19 @@ L179:
 	clc
 	lda	|~~umm_heap
 	adc	<R1
-	sta	<L168+ptr_0
+	sta	<L170+ptr_0
 	lda	|~~umm_heap+2
 	adc	<R1+2
-	sta	<L168+ptr_0+2
+	sta	<L170+ptr_0+2
 ;		blockSize += prevBlockSize;
 	.line	639
 	clc
-	lda	<L169+blockSize_1
-	adc	<L169+prevBlockSize_1
-	sta	<L169+blockSize_1
-	lda	<L169+blockSize_1+2
-	adc	<L169+prevBlockSize_1+2
-	sta	<L169+blockSize_1+2
+	lda	<L171+blockSize_1
+	adc	<L171+prevBlockSize_1
+	sta	<L171+blockSize_1
+	lda	<L171+blockSize_1+2
+	adc	<L171+prevBlockSize_1+2
+	sta	<L171+blockSize_1+2
 ;	}
 	.line	640
 ;	else if ((prevBlockSize + blockSize + nextBlockSize) >= blocks)
@@ -6422,38 +6634,38 @@ L10072:
 	.line	641
 ;	{
 	clc
-	lda	<L169+prevBlockSize_1
-	adc	<L169+blockSize_1
+	lda	<L171+prevBlockSize_1
+	adc	<L171+blockSize_1
 	sta	<R0
-	lda	<L169+prevBlockSize_1+2
-	adc	<L169+blockSize_1+2
+	lda	<L171+prevBlockSize_1+2
+	adc	<L171+blockSize_1+2
 	sta	<R0+2
 	clc
 	lda	<R0
-	adc	<L169+nextBlockSize_1
+	adc	<L171+nextBlockSize_1
 	sta	<R1
 	lda	<R0+2
-	adc	<L169+nextBlockSize_1+2
+	adc	<L171+nextBlockSize_1+2
 	sta	<R1+2
 	lda	<R1
-	cmp	<L169+blocks_1
+	cmp	<L171+blocks_1
 	lda	<R1+2
-	sbc	<L169+blocks_1+2
-	bcs	L180
+	sbc	<L171+blocks_1+2
+	bcs	L182
 	brl	L10074
-L180:
+L182:
 	.line	642
 ;		//DBGLOG_DEBUG( "realloc using prev and next block - %i\n", blocks );
 ;		umm_assimilate_up(c);
 	.line	644
-	pei	<L169+c_1+2
-	pei	<L169+c_1
+	pei	<L171+c_1+2
+	pei	<L171+c_1
 	jsl	~~umm_assimilate_up
 ;		umm_disconnect_from_free_list(UMM_PBLOCK(c));
 	.line	645
-	lda	<L169+c_1
+	lda	<L171+c_1
 	sta	<R0
-	lda	<L169+c_1+2
+	lda	<L171+c_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -6487,19 +6699,19 @@ L180:
 	.line	646
 	pea	#^$0
 	pea	#<$0
-	pei	<L169+c_1+2
-	pei	<L169+c_1
+	pei	<L171+c_1+2
+	pei	<L171+c_1
 	jsl	~~umm_assimilate_down
-	sta	<L169+c_1
-	stx	<L169+c_1+2
+	sta	<L171+c_1
+	stx	<L171+c_1+2
 ;		memmove((void *) &UMM_DATA(c), ptr, curSize);
 	.line	647
-	pei	<L169+curSize_1
-	pei	<L168+ptr_0+2
-	pei	<L168+ptr_0
-	lda	<L169+c_1
+	pei	<L171+curSize_1
+	pei	<L170+ptr_0+2
+	pei	<L170+ptr_0
+	lda	<L171+c_1
 	sta	<R0
-	lda	<L169+c_1+2
+	lda	<L171+c_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -6528,9 +6740,9 @@ L180:
 	jsl	~~memmove
 ;		ptr = (void *) &UMM_DATA(c);
 	.line	648
-	lda	<L169+c_1
+	lda	<L171+c_1
 	sta	<R0
-	lda	<L169+c_1+2
+	lda	<L171+c_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -6550,26 +6762,26 @@ L180:
 	clc
 	lda	|~~umm_heap
 	adc	<R1
-	sta	<L168+ptr_0
+	sta	<L170+ptr_0
 	lda	|~~umm_heap+2
 	adc	<R1+2
-	sta	<L168+ptr_0+2
+	sta	<L170+ptr_0+2
 ;		blockSize += (prevBlockSize + nextBlockSize);
 	.line	649
 	clc
-	lda	<L169+blockSize_1
-	adc	<L169+nextBlockSize_1
+	lda	<L171+blockSize_1
+	adc	<L171+nextBlockSize_1
 	sta	<R0
-	lda	<L169+blockSize_1+2
-	adc	<L169+nextBlockSize_1+2
+	lda	<L171+blockSize_1+2
+	adc	<L171+nextBlockSize_1+2
 	sta	<R0+2
 	clc
 	lda	<R0
-	adc	<L169+prevBlockSize_1
-	sta	<L169+blockSize_1
+	adc	<L171+prevBlockSize_1
+	sta	<L171+blockSize_1
 	lda	<R0+2
-	adc	<L169+prevBlockSize_1+2
-	sta	<L169+blockSize_1+2
+	adc	<L171+prevBlockSize_1+2
+	sta	<L171+blockSize_1+2
 ;	}
 	.line	650
 ;	else
@@ -6581,38 +6793,38 @@ L10074:
 ;		void *oldptr = ptr;
 ;		if ((ptr = umm_malloc_core(size)))
 	.block	655
-oldptr_2	set	22
-	.sym	oldptr,22,129,1,32
-	lda	<L168+ptr_0
-	sta	<L169+oldptr_2
-	lda	<L168+ptr_0+2
-	sta	<L169+oldptr_2+2
+oldptr_2	set	24
+	.sym	oldptr,24,129,1,32
+	lda	<L170+ptr_0
+	sta	<L171+oldptr_2
+	lda	<L170+ptr_0+2
+	sta	<L171+oldptr_2+2
 	.line	655
 ;		{
-	pei	<L168+size_0+2
-	pei	<L168+size_0
+	pei	<L170+size_0+2
+	pei	<L170+size_0
 	jsl	~~umm_malloc_core
-	sta	<L168+ptr_0
-	stx	<L168+ptr_0+2
-	lda	<L168+ptr_0
-	ora	<L168+ptr_0+2
-	bne	L182
+	sta	<L170+ptr_0
+	stx	<L170+ptr_0+2
+	lda	<L170+ptr_0
+	ora	<L170+ptr_0+2
+	bne	L184
 	brl	L10076
-L182:
+L184:
 	.line	656
 ;			//DBGLOG_DEBUG( "realloc %i to a bigger block %i, copy, and free the old\n", blockSize, blocks );
 ;			memcpy(ptr, oldptr, curSize);
 	.line	658
-	pei	<L169+curSize_1
-	pei	<L169+oldptr_2+2
-	pei	<L169+oldptr_2
-	pei	<L168+ptr_0+2
-	pei	<L168+ptr_0
+	pei	<L171+curSize_1
+	pei	<L171+oldptr_2+2
+	pei	<L171+oldptr_2
+	pei	<L170+ptr_0+2
+	pei	<L170+ptr_0
 	jsl	~~memcpy
 ;			umm_free_core(oldptr);
 	.line	659
-	pei	<L169+oldptr_2+2
-	pei	<L169+oldptr_2
+	pei	<L171+oldptr_2+2
+	pei	<L171+oldptr_2
 	jsl	~~umm_free_core
 ;		}
 	.line	660
@@ -6628,10 +6840,10 @@ L10076:
 L10077:
 ;		blockSize = blocks;
 	.line	666
-	lda	<L169+blocks_1
-	sta	<L169+blockSize_1
-	lda	<L169+blocks_1+2
-	sta	<L169+blockSize_1+2
+	lda	<L171+blocks_1
+	sta	<L171+blockSize_1
+	lda	<L171+blocks_1+2
+	sta	<L171+blockSize_1+2
 ;	}
 	.endblock	667
 	.line	667
@@ -6647,32 +6859,32 @@ L10069:
 ;	if (blockSize > blocks)
 	.line	673
 ;	{
-	lda	<L169+blocks_1
-	cmp	<L169+blockSize_1
-	lda	<L169+blocks_1+2
-	sbc	<L169+blockSize_1+2
-	bcc	L183
+	lda	<L171+blocks_1
+	cmp	<L171+blockSize_1
+	lda	<L171+blocks_1+2
+	sbc	<L171+blockSize_1+2
+	bcc	L185
 	brl	L10078
-L183:
+L185:
 	.line	674
 ;		//DBGLOG_DEBUG( "split and free %i blocks from %i\n", blocks, blockSize );
 ;		umm_split_block(c, blocks, 0);
 	.line	676
 	pea	#^$0
 	pea	#<$0
-	pei	<L169+blocks_1+2
-	pei	<L169+blocks_1
-	pei	<L169+c_1+2
-	pei	<L169+c_1
+	pei	<L171+blocks_1+2
+	pei	<L171+blocks_1
+	pei	<L171+c_1+2
+	pei	<L171+c_1
 	jsl	~~umm_split_block
 ;		umm_free_core((void *) &UMM_DATA(c + blocks));
 	.line	677
 	clc
-	lda	<L169+c_1
-	adc	<L169+blocks_1
+	lda	<L171+c_1
+	adc	<L171+blocks_1
 	sta	<R1
-	lda	<L169+c_1+2
-	adc	<L169+blocks_1+2
+	lda	<L171+c_1+2
+	adc	<L171+blocks_1+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
@@ -6708,17 +6920,17 @@ L10078:
 ;
 ;	return (ptr);
 	.line	683
-	ldx	<L168+ptr_0+2
-	lda	<L168+ptr_0
-	brl	L173
+	ldx	<L170+ptr_0+2
+	lda	<L170+ptr_0
+	brl	L175
 ;}
 	.line	684
 	.endblock	684
-L168	equ	42
-L169	equ	17
+L170	equ	44
+L171	equ	17
 	ends
 	efunc
-	.endfunc	684,17,42
+	.endfunc	684,17,44
 	.line	684
 ;
 ;/* ------------------------------------------------------------------------ */
@@ -6736,7 +6948,7 @@ L169	equ	17
 	longi	on
 	tsc
 	sec
-	sbc	#L184
+	sbc	#L186
 	tcs
 	phd
 	tcd
@@ -6745,75 +6957,72 @@ item_size_0	set	8
 	.block	689
 ;	void FAR *ret;
 ;
-;	ret = umm_malloc((size_t) (item_size * num));
+;	ret = umm_malloc((ULONG) (item_size * num));
 ret_1	set	0
 	.sym	ret,0,129,1,32
 	.sym	num,4,18,6,32
 	.sym	item_size,8,18,6,32
 	.line	692
-	pei	<L184+num_0+2
-	pei	<L184+num_0
-	pei	<L184+item_size_0+2
-	pei	<L184+item_size_0
+	pei	<L186+num_0+2
+	pei	<L186+num_0
+	pei	<L186+item_size_0+2
+	pei	<L186+item_size_0
 	xref	~~~lmul
 	jsl	~~~lmul
 	sta	<R0
 	stx	<R0+2
-	lda	<R0
-	sta	<R0
-	stz	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~umm_malloc
-	sta	<L185+ret_1
-	stx	<L185+ret_1+2
+	sta	<L187+ret_1
+	stx	<L187+ret_1+2
 ;
 ;	if (ret)
 	.line	694
-;		memset(ret, 0x00, (size_t) (item_size * num));
-	lda	<L185+ret_1
-	ora	<L185+ret_1+2
-	bne	L187
+;		memset(ret, 0x00, (ULONG) (item_size * num));
+	lda	<L187+ret_1
+	ora	<L187+ret_1+2
+	bne	L189
 	brl	L10079
-L187:
+L189:
 	.line	695
-	pei	<L184+num_0+2
-	pei	<L184+num_0
-	pei	<L184+item_size_0+2
-	pei	<L184+item_size_0
+	pei	<L186+num_0+2
+	pei	<L186+num_0
+	pei	<L186+item_size_0+2
+	pei	<L186+item_size_0
 	xref	~~~lmul
 	jsl	~~~lmul
 	sta	<R0
 	stx	<R0+2
 	pei	<R0
 	pea	#<$0
-	pei	<L185+ret_1+2
-	pei	<L185+ret_1
+	pei	<L187+ret_1+2
+	pei	<L187+ret_1
 	jsl	~~memset
 ;
 ;	return ret;
 L10079:
 	.line	697
-	ldx	<L185+ret_1+2
-	lda	<L185+ret_1
-L188:
+	ldx	<L187+ret_1+2
+	lda	<L187+ret_1
+L190:
 	tay
-	lda	<L184+2
-	sta	<L184+2+8
-	lda	<L184+1
-	sta	<L184+1+8
+	lda	<L186+2
+	sta	<L186+2+8
+	lda	<L186+1
+	sta	<L186+1+8
 	pld
 	tsc
 	clc
-	adc	#L184+8
+	adc	#L186+8
 	tcs
 	tya
 	rtl
 ;}
 	.line	698
 	.endblock	698
-L184	equ	8
-L185	equ	5
+L186	equ	8
+L187	equ	5
 	ends
 	efunc
 	.endfunc	698,5,8
@@ -6846,135 +7055,145 @@ L185	equ	5
 	.sym	~~check_poison,~~check_poison,69,3,0
 	.sym	~~put_poison,~~put_poison,65,3,0
 	.sym	~~dump_mem,~~dump_mem,65,3,0
-	.sym	~~poison_size,~~poison_size,80,3,0
-	.sym	DEVICEDRIVER_COMMAND,0,656,14,32
+	.sym	~~poison_size,~~poison_size,82,3,0
+	.sym	PIRQCHAIN,0,138,14,32,94
+	.sym	IRQCHAIN,0,10,14,128,94
+	.sym	DEVICEDRIVER_COMMAND,0,654,14,32
 	.sym	DEVICEDRIVER_UNLOAD,0,654,14,32
-	.sym	DEVICEDRIVER_WRITE,0,656,14,32
-	.sym	DEVICEDRIVER_READ,0,656,14,32
+	.sym	DEVICEDRIVER_WRITE,0,654,14,32
+	.sym	DEVICEDRIVER_READ,0,654,14,32
 	.sym	DEVICEDRIVER_LOAD,0,654,14,32
-	.sym	DEVICEDRIVER_IRQ,0,654,14,32
-	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,89
-	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,89
-	.sym	GETDRIVERDEF,0,8842,14,32,88
-	.sym	PFX_DEVICE_DRIVER,0,138,14,32,88
-	.sym	FX_DEVICE_DRIVER,0,10,14,776,88
+	.sym	DEVICEDRIVER_IRQ,0,641,14,32
+	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,93
+	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,93
+	.sym	GETDRIVERDEF,0,8842,14,32,92
+	.sym	PFX_DEVICE_DRIVER,0,138,14,32,92
+	.sym	FX_DEVICE_DRIVER,0,10,14,776,92
 	.sym	~~k_debug_long,~~k_debug_long,65,18,0
 	.sym	~~k_debug_pointer,~~k_debug_pointer,65,18,0
 	.sym	~~k_debug_string,~~k_debug_string,65,18,0
-	.sym	PSEGMENTHEADER,0,138,14,32,87
-	.sym	SEGMENTHEADER,0,10,14,160,87
-	.sym	PDEBUGBYTEBITS,0,138,14,32,86
-	.sym	DEBUGBYTEBITS,0,10,14,8,86
-	.sym	PFXENVIRONMENT,0,138,14,32,85
-	.sym	FXENVIRONMENT,0,10,14,96,85
-	.sym	PFXZEROPAGE,0,138,14,32,84
-	.sym	FXZEROPAGE,0,10,14,824,84
+	.sym	PSEGMENTHEADER,0,138,14,32,91
+	.sym	SEGMENTHEADER,0,10,14,160,91
+	.sym	PDEBUGBYTEBITS,0,138,14,32,90
+	.sym	DEBUGBYTEBITS,0,10,14,8,90
+	.sym	PFXENVIRONMENT,0,138,14,32,89
+	.sym	FXENVIRONMENT,0,10,14,96,89
+	.sym	PFXZEROPAGE,0,138,14,32,88
+	.sym	FXZEROPAGE,0,10,14,720,88
+	.sym	IRQBUFFER,0,10,14,32,87
 	.sym	KERNELTRAPCALL,0,641,14,32
-	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,83
-	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,83
+	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,86
+	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,86
 	.sym	FRESULT,0,5,14,16
-	.sym	MKFS_PARM,0,10,14,80,82
-	.sym	FILINFO,0,10,14,2224,81
-	.sym	DIR,0,10,14,416,80
-	.sym	FIL,0,10,14,4400,79
-	.sym	FFOBJID,0,10,14,128,78
-	.sym	FATFS,0,10,14,4504,77
+	.sym	MKFS_PARM,0,10,14,80,85
+	.sym	FILINFO,0,10,14,2224,84
+	.sym	DIR,0,10,14,416,83
+	.sym	FIL,0,10,14,4400,82
+	.sym	FFOBJID,0,10,14,128,81
+	.sym	FATFS,0,10,14,4504,80
 	.sym	LBA_t,0,18,14,32
 	.sym	FSIZE_t,0,18,14,32
 	.sym	TCHAR,0,14,14,8
-	.sym	PCOMMANDARGS,0,138,14,32,76
-	.sym	COMMANDARGS,0,10,14,64,76
+	.sym	PCOMMANDARGS,0,138,14,32,79
+	.sym	COMMANDARGS,0,10,14,64,79
 	.sym	PTOKENIZESTATE,0,133,14,32
 	.sym	TOKENIZESTATE,0,5,14,16
-	.sym	PTOKEN,0,138,14,32,75
-	.sym	TOKEN,0,10,14,64,75
+	.sym	PTOKEN,0,138,14,32,78
+	.sym	TOKEN,0,10,14,64,78
 	.sym	PTOKENTYPE,0,133,14,32
 	.sym	TOKENTYPE,0,5,14,16
 	.sym	FXCommandHandler,0,656,14,32
-	.sym	PCONSOLECTX,0,138,14,32,74
-	.sym	CONSOLECTX,0,10,14,1144,74
-	.sym	PSPINNERCTX,0,138,14,32,73
-	.sym	SPINNERCTX,0,10,14,48,73
-	.sym	HCLIP,0,138,14,32,72
-	.sym	PCLIPBOARD_DATA,0,138,14,32,72
-	.sym	CLIPBOARD_DATA,0,10,14,168,72
-	.sym	PEVENTMANAGER,0,138,14,32,71
-	.sym	EVENTMANAGER,0,10,14,192,71
+	.sym	PCONSOLECTX,0,138,14,32,77
+	.sym	CONSOLECTX,0,10,14,1144,77
+	.sym	PSPINNERCTX,0,138,14,32,76
+	.sym	SPINNERCTX,0,10,14,48,76
+	.sym	HCLIP,0,138,14,32,75
+	.sym	PCLIPBOARD_DATA,0,138,14,32,75
+	.sym	CLIPBOARD_DATA,0,10,14,168,75
+	.sym	PEVENTMANAGER,0,138,14,32,74
+	.sym	EVENTMANAGER,0,10,14,192,74
 	.sym	EV_RUN,0,656,14,32
 	.sym	EV_QUERY_METRIC,0,656,14,32
 	.sym	EV_CONFIGURE,0,656,14,32
 	.sym	EV_UNINIT,0,641,14,32
 	.sym	EV_INIT,0,8833,14,32
-	.sym	PMOUSE_MSG_STATE,0,138,14,32,70
-	.sym	MOUSE_MSG_STATE,0,10,14,184,70
-	.sym	PFXEVENTPROCESS,0,138,14,32,69
-	.sym	FXEVENTPROCESS,0,10,14,64,69
-	.sym	PMARSHALDATA,0,139,14,32,68
-	.sym	MARSHALDATA,0,11,14,32,68
+	.sym	PMOUSE_MSG_STATE,0,138,14,32,73
+	.sym	MOUSE_MSG_STATE,0,10,14,184,73
+	.sym	PFXEVENTPROCESS,0,138,14,32,72
+	.sym	FXEVENTPROCESS,0,10,14,64,72
+	.sym	FXASYNCPROCESS,0,641,14,32
+	.sym	PMARSHALDATA,0,139,14,32,71
+	.sym	MARSHALDATA,0,11,14,32,71
 	.sym	FXIDLEPROCESS,0,641,14,32
 	.sym	FXEventProc,0,641,14,32
-	.sym	PMOUSEMSGDATA,0,138,14,32,67
-	.sym	MOUSEMSGDATA,0,10,14,64,67
+	.sym	PMOUSEMSGDATA,0,138,14,32,70
+	.sym	MOUSEMSGDATA,0,10,14,64,70
 	.sym	MSGIRQ,0,5,14,16
-	.sym	MAINLOOPARGS,0,10,14,16,66
-	.sym	PEACHCHILD_MSG,0,138,14,32,65
-	.sym	EACHCHILD_MSG,0,10,14,64,65
-	.sym	PMSGBOX_DATA,0,138,14,32,64
-	.sym	MSGBOX_DATA,0,10,14,96,64
-	.sym	PDESKTOP_DATA,0,138,14,32,63
-	.sym	DESKTOP_DATA,0,10,14,64,63
-	.sym	PWINDOWMANAGER,0,138,14,32,62
-	.sym	WINDOWMANAGER,0,10,14,160,62
+	.sym	MAINLOOPARGS,0,10,14,16,69
+	.sym	PEACHCHILD_MSG,0,138,14,32,68
+	.sym	EACHCHILD_MSG,0,10,14,64,68
+	.sym	PMSGBOX_DATA,0,138,14,32,67
+	.sym	MSGBOX_DATA,0,10,14,96,67
+	.sym	PDESKTOP_DATA,0,138,14,32,66
+	.sym	DESKTOP_DATA,0,10,14,64,66
+	.sym	PWINDOWMANAGER,0,138,14,32,65
+	.sym	WINDOWMANAGER,0,10,14,160,65
 	.sym	WM_DOPROCS,0,641,14,32
 	.sym	WM_QUERY_METRIC,0,656,14,32
 	.sym	WM_CONFIGURE,0,656,14,32
 	.sym	WM_HANDLE_EVENT,0,8833,14,32
 	.sym	WM_EVENTS,0,641,14,32
-	.sym	PCUR_PALETTE_MAP,0,138,14,32,61
-	.sym	CUR_PALETTE_MAP,0,10,14,400,61
-	.sym	PCLICKDETECTED,0,138,14,32,60
-	.sym	CLICKDETECTED,0,10,14,64,60
+	.sym	PCUR_PALETTE_MAP,0,138,14,32,64
+	.sym	CUR_PALETTE_MAP,0,10,14,400,64
+	.sym	PCLICKDETECTED,0,138,14,32,63
+	.sym	CLICKDETECTED,0,10,14,64,63
 	.sym	OBJECTCLICKED,0,641,14,32
-	.sym	PIPCPORT,0,138,14,32,59
-	.sym	IPCPORT,0,10,14,144,59
+	.sym	PALLOCATIONHEADER,0,138,14,32,62
+	.sym	ALLOCATIONHEADER,0,10,14,80,62
+	.sym	PIPCPORT,0,138,14,32,61
+	.sym	IPCPORT,0,10,14,144,61
 	.sym	MemoryCallback,0,641,14,32
-	.sym	PFXMEMORYMAP,0,138,14,32,58
-	.sym	FXMEMORYMAP,0,10,14,2072,58
+	.sym	PFXMEMORYMAP,0,138,14,32,60
+	.sym	FXMEMORYMAP,0,10,14,2072,60
 	.sym	FOREACHNODEUNTIL,0,654,14,32
 	.sym	FOREACHNODE,0,641,14,32
-	.sym	PEXECUTIVE,0,138,14,32,57
-	.sym	EXECUTIVE,0,10,14,128,57
+	.sym	PEXECUTIVE,0,138,14,32,59
+	.sym	EXECUTIVE,0,10,14,128,59
 	.sym	EX_QUERY_METRIC,0,656,14,32
 	.sym	EX_CONFIGURE,0,656,14,32
 	.sym	EX_UNINIT,0,641,14,32
 	.sym	EX_INIT,0,8833,14,32
-	.sym	PFXSTRING,0,138,14,32,56
-	.sym	FXSTRING,0,10,14,64,56
-	.sym	ldiv_t,0,10,14,64,54
-	.sym	div_t,0,10,14,32,53
+	.sym	PFXSTRING,0,138,14,32,58
+	.sym	FXSTRING,0,10,14,64,58
+	.sym	ldiv_t,0,10,14,64,56
+	.sym	div_t,0,10,14,32,55
 	.sym	wctype_t,0,16,14,16
 	.sym	wint_t,0,16,14,16
 	.sym	wchar_t,0,14,14,8
 	.sym	ptrdiff_t,0,7,14,32
 	.sym	~~umm_numblocks,~~umm_numblocks,18,2,32
-	.sym	~~umm_heap,~~umm_heap,138,2,32,52
-	.sym	umm_block,0,10,14,128,52
-	.sym	umm_ptr,0,10,14,64,49
+	.sym	~~umm_heap,~~umm_heap,138,2,32,54
+	.sym	umm_block,0,10,14,128,54
+	.sym	umm_ptr,0,10,14,64,51
 	.sym	~~umm_poison_check,~~umm_poison_check,69,2,0
 	.sym	~~umm_poison_free,~~umm_poison_free,65,2,0
 	.sym	~~umm_poison_realloc,~~umm_poison_realloc,1089,2,32
 	.sym	~~umm_poison_calloc,~~umm_poison_calloc,1089,2,32
 	.sym	~~umm_poison_malloc,~~umm_poison_malloc,1089,2,32
 	.sym	~~umm_integrity_check,~~umm_integrity_check,69,2,0
-	.sym	~~umm_free_heap_size,~~umm_free_heap_size,80,2,0
+	.sym	~~umm_free_heap_size,~~umm_free_heap_size,82,2,0
 	.sym	~~umm_info,~~umm_info,1089,2,32
-	.sym	~~ummHeapInfo,~~ummHeapInfo,10,2,256,48
-	.sym	UMM_HEAP_INFO,0,10,14,256,48
+	.sym	~~ummHeapInfo,~~ummHeapInfo,10,2,256,50
+	.sym	UMM_HEAP_INFO,0,10,14,256,50
 	.sym	~~umm_free,~~umm_free,65,2,0
 	.sym	~~umm_realloc,~~umm_realloc,1089,2,32
 	.sym	~~umm_calloc,~~umm_calloc,1089,2,32
 	.sym	~~umm_malloc,~~umm_malloc,1089,2,32
 	.sym	~~umm_init,~~umm_init,65,2,0
+	.sym	PFXRFHEADER_STRING_ENTRY,0,138,14,32,49
+	.sym	FXRFHEADER_STRING_ENTRY,0,10,14,40,49
+	.sym	PFXRFHEADER_STRING,0,138,14,32,48
+	.sym	FXRFHEADER_STRING,0,10,14,32,48
 	.sym	PFXRFHEADER_FONT,0,138,14,32,47
 	.sym	FXRFHEADER_FONT,0,10,14,144,47
 	.sym	PFXRFHEADER,0,138,14,32,46
@@ -7052,9 +7271,9 @@ L185	equ	5
 	.sym	CONSOLE_CONTROL,0,10,14,448,16
 	.sym	FXProcessProc,0,641,14,32
 	.sym	PFXCMDMESSAGE,0,138,14,32,15
-	.sym	FXCMDMESSAGE,0,10,14,304,15
+	.sym	FXCMDMESSAGE,0,10,14,312,15
 	.sym	PFXOSMESSAGE,0,138,14,32,14
-	.sym	FXOSMESSAGE,0,10,14,304,14
+	.sym	FXOSMESSAGE,0,10,14,312,14
 	.sym	PINT_REGS,0,138,14,32,13
 	.sym	INT_REGS,0,10,14,104,13
 	.sym	TASK_STACK,0,10,14,32,12
@@ -7101,6 +7320,7 @@ L185	equ	5
 	.sym	HRESULT,0,18,14,32
 	.sym	LPWCHAR,0,144,14,32
 	.sym	WCHAR,0,16,14,16
+	.sym	HSTRINGTABLE,0,129,14,32
 	.sym	HCOLOR,0,129,14,32
 	.sym	HFONT,0,129,14,32
 	.sym	HDC,0,129,14,32
@@ -7128,6 +7348,12 @@ L185	equ	5
 	.sym	LPSTR,0,142,14,32
 	.sym	LPCHAR,0,142,14,32
 	.sym	CHAR,0,14,14,8
+	.sym	PUINT_32,0,146,14,32
+	.sym	UINT_32,0,18,14,32
+	.sym	PUINT_16,0,144,14,32
+	.sym	UINT_16,0,16,14,16
+	.sym	PUINT_8,0,142,14,32
+	.sym	UINT_8,0,14,14,8
 	.sym	LPVOID,0,129,14,32
 	.sym	VOID,0,1,14,32
 	.sym	~~memset,~~memset,1089,18,32

@@ -2,15 +2,18 @@
 #include "fxdos.h"
 #include "fxmemorymanager.h"
 
-
+#include "drivers/DRIVER.h"
 #include "drivers/DRIVER_SDC.h"
 //#pragma section CODE=FMXSDCard,offset $08:A500
 
-UCHAR k_sd_initialize(void);
-BOOL  k_pc_initialize(void);
-UCHAR k_read_sd_sector(unsigned long offset,LPCHAR receiveBuffer);
-UCHAR k_write_sd_sector(unsigned long offset,LPCHAR receiveBuffer);
-UCHAR k_read_sd_command(UINT command,LPVOID buffer);
+extern ULONG _pseudo_timer;
+static ULONG default_arg = 0;
+
+static VOID f_driver_irq(void);
+static UCHAR k_sd_initialize(void);
+static UCHAR k_read_sd_sector(unsigned long offset,LPCHAR receiveBuffer);
+static UCHAR k_write_sd_sector(unsigned long offset,LPCHAR receiveBuffer);
+static UCHAR k_read_sd_command(UINT command,LPVOID buffer);
 
 static FX_BLOCK_DEVICE_DRIVER DRIVER_FMXSDCard = {
 											"DRIVER_FMXSDCard\0",
@@ -19,8 +22,8 @@ static FX_BLOCK_DEVICE_DRIVER DRIVER_FMXSDCard = {
 											"1\0",//"4\0",
 											DRIVER_TYPE_SDCARD,
 											"SD:\0",
-											0,
-											NULL,
+											MAKEIRQ(2,7),
+											f_driver_irq,
 											NULL,
 											k_sd_initialize,
 											k_read_sd_sector,
@@ -35,6 +38,14 @@ static PFX_DEVICE_DRIVER f_get_driver(LPCSTR major,LPCSTR minor)
 {
 	return &DRIVER_FMXSDCard;
 }
+
+
+static VOID f_driver_irq(void)
+{
+	k_irq_device_event(IRQE_SDCARD_INS,_pseudo_timer,&default_arg);
+	return;
+}
+
 
 #if defined(USE_FX256_FMX) || defined(USE_FX256_U)
 
@@ -142,7 +153,7 @@ UCHAR k_write_sd_sector(unsigned long offset,LPCHAR sendBuffer)
 }
 
 
-UINT readCluster(unsigned long offset,UINT sectorsPerCluster,LPCHAR receiveBuffer,ULONG file_size)
+UCHAR readCluster(unsigned long offset,UINT sectorsPerCluster,LPCHAR receiveBuffer,ULONG file_size)
 {
 	UINT c = 0;
 	ULONG read = 0;

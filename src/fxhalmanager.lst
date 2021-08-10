@@ -1,0 +1,3308 @@
+  Mon Aug  9 2021 16:52                                                Page 1
+
+
+                     ***************************************
+                     **      WDC 65C816 Macro Assembler   **
+                     **                                   **
+                     **     Version 3.49.1- Feb  6 2006    **
+                     ***************************************
+
+     1                        ;:ts=8
+     2             00000001   R0	equ	1
+     3             00000005   R1	equ	5
+     4             00000009   R2	equ	9
+     5             0000000D   R3	equ	13
+     6                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxhalmanager.c",0
+     7                        ;
+     8                        ;//#include "fxos.h"
+     9                        ;//#include "fxstartup.h"
+    10                        ;//#include "fxeventmanager.h"
+    11                        ;
+    12                        ;#ifdef USE_FX256_FMX
+    13                        ;#include "fxc256fmx.h"
+    14                        ;#elif USE_FX256_U
+    15                        ;#include "fxc256u.h"
+    16                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxc256u.h",0
+    17                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+    18                        	.stag	_fx_bytebits,8,1
+    19                        	.member	b7,0,14,17,1
+    20                        	.member	b6,1,14,17,1
+    21                        	.member	b5,2,14,17,1
+    22                        	.member	b4,3,14,17,1
+    23                        	.member	b3,4,14,17,1
+    24                        	.member	b2,5,14,17,1
+    25                        	.member	b1,6,14,17,1
+    26                        	.member	b0,7,14,17,1
+    27                        	.eos
+    28                        	.stag	_fx_node,384,2
+    29                        	.member	type,0,14,8,8
+    30                        	.member	Reserved0,8,14,8,8
+    31                        	.member	data,16,129,8,32
+    32                        	.member	last,48,138,8,32,2
+    33                        	.member	next,80,138,8,32,2
+    34                        	.member	name,112,110,8,0,32
+    35                        	.member	Reserved1,368,16,8,16
+    36                        	.eos
+    37                        	.stag	_fx_nodelist,96,3
+    38                        	.member	listhead,0,138,8,32,2
+    39                        	.member	listData,32,129,8,32
+    40                        	.member	deallocator,64,641,8,32
+    41                        	.eos
+    42                        	.stag	_fx_queue,80,4
+    43                        	.member	count,0,5,8,16
+    44                        	.member	front,16,138,8,32,2
+    45                        	.member	rear,48,138,8,32,2
+    46                        	.eos
+    47                        	.stag	fake5_,32,5
+    48                        	.member	subsystem,0,14,8,8
+    49                        	.member	level,8,14,8,8
+  Mon Aug  9 2021 16:52                                                Page 2
+
+
+    50                        	.member	error,16,16,8,16
+    51                        	.eos
+    52                        	.stag	_fx_process_signal,16,6
+    53                        	.member	cbSize,0,16,8,16
+    54                        	.eos
+    55                        	.stag	_fx_semaphore,16,7
+    56                        	.member	reserved,0,5,8,16
+    57                        	.eos
+    58                        	.stag	_fx_fileBlock,552,8
+    59                        	.member	openCount,0,16,8,16
+    60                        	.member	lockCount,16,16,8,16
+    61                        	.member	dirty,32,14,8,8
+    62                        	.member	fileBuffer,40,110,8,0,64
+    63                        	.eos
+    64                        	.stag	_fx_irq_data,48,9
+    65                        	.member	line,0,5,8,16
+    66                        	.member	keycode,16,142,8,32
+    67                        	.eos
+    68                        	.stag	_task,48,10
+    69                        	.member	SPL,0,14,8,8
+    70                        	.member	SPH,8,14,8,8
+    71                        	.member	pstack,16,142,8,32
+    72                        	.eos
+    73                        	.stag	_task_stack,32,11
+    74                        	.member	SS,0,142,8,32
+    75                        	.eos
+    76                        	.stag	int_regs,104,12
+    77                        	.member	PB,0,14,8,8
+    78                        	.member	PH,8,14,8,8
+    79                        	.member	PL,16,14,8,8
+    80                        	.member	PP,24,14,8,8
+    81                        	.member	DB,32,14,8,8
+    82                        	.member	DH,40,14,8,8
+    83                        	.member	DL,48,14,8,8
+    84                        	.member	AH,56,14,8,8
+    85                        	.member	AL,64,14,8,8
+    86                        	.member	XH,72,14,8,8
+    87                        	.member	XL,80,14,8,8
+    88                        	.member	YH,88,14,8,8
+    89                        	.member	YL,96,14,8,8
+    90                        	.eos
+    91                        	.stag	_fx_eventMessage,312,13
+    92                        	.member	src,0,18,8,32
+    93                        	.member	dest,32,18,8,32
+    94                        	.member	type,64,16,8,16
+    95                        	.member	hwnd,80,129,8,32
+    96                        	.member	pheap,112,129,8,32
+    97                        	.member	msgTime,144,18,8,32
+    98                        	.member	data,176,110,8,0,16
+    99                        	.member	attr,304,14,8,8
+   100                        	.eos
+   101                        	.stag	_fx_cmdMessage,312,14
+   102                        	.member	src,0,18,8,32
+   103                        	.member	dest,32,18,8,32
+   104                        	.member	type,64,16,8,16
+   105                        	.member	hwnd,80,129,8,32
+   106                        	.member	pheap,112,129,8,32
+   107                        	.member	msgTime,144,18,8,32
+  Mon Aug  9 2021 16:52                                                Page 3
+
+
+   108                        	.member	cmdCId,176,16,8,16
+   109                        	.member	cmdMId,192,16,8,16
+   110                        	.member	parameter1,208,18,8,32
+   111                        	.member	parameter2,240,18,8,32
+   112                        	.member	parameter3,272,18,8,32
+   113                        	.member	attr,304,14,8,8
+   114                        	.eos
+   115                        	.stag	_fx_console_ctl,448,15
+   116                        	.member	maxCols,0,5,8,16
+   117                        	.member	maxRows,16,5,8,16
+   118                        	.member	curX,32,5,8,16
+   119                        	.member	curY,48,5,8,16
+   120                        	.member	fgColor,64,5,8,16
+   121                        	.member	bgColor,80,5,8,16
+   122                        	.member	mode,96,14,8,8
+   123                        	.member	kbBuffer,104,101,8,0,16
+   124                        	.member	screenBuffer,360,142,8,32
+   125                        	.member	desktopMode,392,14,8,8
+   126                        	.member	lastMouseButton,400,5,8,16
+   127                        	.member	lastMouseX,416,5,8,16
+   128                        	.member	lastMouseY,432,5,8,16
+   129                        	.eos
+   130                        	.stag	_fx_desktop_ctl,392,16
+   131                        	.member	desktopMode,0,14,8,8
+   132                        	.member	cursorCtl,8,5,8,16
+   133                        	.member	cursorState,24,5,8,16
+   134                        	.member	backgroundColor,40,5,8,16
+   135                        	.member	foregroundColor,56,5,8,16
+   136                        	.member	menuMode,72,5,8,16
+   137                        	.member	lastMouseButton,88,5,8,16
+   138                        	.member	lastMouseX,104,5,8,16
+   139                        	.member	lastMouseY,120,5,8,16
+   140                        	.member	currentDiskName,136,142,8,32
+   141                        	.member	diskNodes,168,129,8,32
+   142                        	.member	titleNodes,200,129,8,32
+   143                        	.member	menuNodes,232,129,8,32
+   144                        	.member	iconNodes,264,129,8,32
+   145                        	.member	windowNodes,296,129,8,32
+   146                        	.member	fontNodes,328,129,8,32
+   147                        	.member	wndProc,360,138,8,32,3
+   148                        	.eos
+   149                        	.stag	_fx_process,800,17
+   150                        	.member	cbSize,0,5,8,16
+   151                        	.member	procId,16,18,8,32
+   152                        	.member	parentId,48,18,8,32
+   153                        	.member	ctx,80,129,8,32
+   154                        	.member	userId,112,16,8,16
+   155                        	.member	status,128,16,8,16
+   156                        	.member	foregroundActive,144,14,8,8
+   157                        	.member	tls,152,1121,8,32,8
+   158                        	.member	commandLine,408,142,8,32
+   159                        	.member	semaphores,440,138,8,32,3
+   160                        	.member	fileHandles,472,138,8,32,3
+   161                        	.member	pathList,504,138,8,32,3
+   162                        	.member	resources,536,138,8,32,3
+   163                        	.member	timerAware,568,14,8,8
+   164                        	.member	timerTicks,576,112,8,0,2
+   165                        	.member	timerTickCount,608,112,8,0,2
+  Mon Aug  9 2021 16:52                                                Page 4
+
+
+   166                        	.member	kernelError,640,10,8,32,5
+   167                        	.member	consoleCtl,672,138,8,32,15
+   168                        	.member	desktopCtl,704,138,8,32,16
+   169                        	.member	execProc,736,641,8,32
+   170                        	.member	startupArgs,768,129,8,32
+   171                        	.eos
+   172                        	.stag	_fxProcessMessage,112,18
+   173                        	.member	src,0,18,8,32
+   174                        	.member	dest,32,18,8,32
+   175                        	.member	type,64,16,8,16
+   176                        	.member	processInfo,80,138,8,32,17
+   177                        	.eos
+   178                        	.stag	_k_key_state,112,19
+   179                        	.member	scanCode,0,14,8,8
+   180                        	.member	isShifted,8,14,8,8
+   181                        	.member	isAlt,16,14,8,8
+   182                        	.member	isExtended,24,14,8,8
+   183                        	.member	isCapsLock,32,14,8,8
+   184                        	.member	isNumLock,40,14,8,8
+   185                        	.member	isScrollLock,48,14,8,8
+   186                        	.member	keyChar,56,16,8,16
+   187                        	.member	scanTime,72,18,8,32
+   188                        	.member	ledStatus,104,14,8,8
+   189                        	.eos
+   190                        	.stag	_fx_property,384,20
+   191                        	.member	name,0,110,8,0,16
+   192                        	.member	value,128,110,8,0,32
+   193                        	.eos
+   194                        	.utag	_24bitPointer,32,21
+   195                        	.member	address,0,142,11,32
+   196                        	.member	bytes,0,110,11,0,4
+   197                        	.eos
+   198                        	.stag	_PointStruct,32,22
+   199                        	.member	x,0,5,8,16
+   200                        	.member	y,16,5,8,16
+   201                        	.eos
+   202                        	.stag	_RectStruct,112,23
+   203                        	.member	x,0,5,8,16
+   204                        	.member	y,16,5,8,16
+   205                        	.member	z,32,18,8,32
+   206                        	.member	width,64,5,8,16
+   207                        	.member	height,80,5,8,16
+   208                        	.member	attr,96,5,8,16
+   209                        	.eos
+   210                        	.stag	fake24_,96,24
+   211                        	.member	name,0,142,8,32
+   212                        	.member	topLeft,32,10,8,32,22
+   213                        	.member	bottomRight,64,10,8,32,22
+   214                        	.eos
+   215                        	.stag	fake25_,112,25
+   216                        	.member	x,0,5,8,16
+   217                        	.member	y,16,5,8,16
+   218                        	.member	z,32,5,8,16
+   219                        	.member	width,48,5,8,16
+   220                        	.member	height,64,5,8,16
+   221                        	.member	data,80,18,8,32
+   222                        	.eos
+   223                        	.stag	_k_WindowClass,272,26
+  Mon Aug  9 2021 16:52                                                Page 5
+
+
+   224                        	.member	cbSize,0,16,8,16
+   225                        	.member	style,16,16,8,16
+   226                        	.member	styleEx,32,16,8,16
+   227                        	.member	pWndProc,48,654,8,32
+   228                        	.member	hInstance,80,129,8,32
+   229                        	.member	hIcon,112,129,8,32
+   230                        	.member	hCursor,144,129,8,32
+   231                        	.member	hbrBackground,176,129,8,32
+   232                        	.member	lpszMenuName,208,142,8,32
+   233                        	.member	lpszClassName,240,142,8,32
+   234                        	.eos
+   235                        	.stag	_ClickableRect,152,27
+   236                        	.member	area,0,10,8,112,23
+   237                        	.member	z,112,18,8,32
+   238                        	.member	enabled,144,14,8,8
+   239                        	.eos
+   240                        	.stag	_NCClickableRect,136,28
+   241                        	.member	area,0,10,8,112,23
+   242                        	.member	msgType,112,16,8,16
+   243                        	.member	enabled,128,14,8,8
+   244                        	.eos
+   245                        	.stag	_DragData,216,29
+   246                        	.member	area,0,10,8,112,23
+   247                        	.member	xoffset,112,5,8,16
+   248                        	.member	yoffset,128,5,8,16
+   249                        	.member	msgType,144,16,8,16
+   250                        	.member	ncAction,160,16,8,16
+   251                        	.member	isDrag,176,14,8,8
+   252                        	.member	isResize,184,14,8,8
+   253                        	.member	canDrag,192,14,8,8
+   254                        	.member	canDrop,200,14,8,8
+   255                        	.member	didDrag,208,14,8,8
+   256                        	.eos
+   257                        	.stag	_k_WindowStruct,3904,30
+   258                        	.member	cbSize,0,16,8,16
+   259                        	.member	style,16,18,8,32
+   260                        	.member	styleEx,48,18,8,32
+   261                        	.member	win_id,80,5,8,16
+   262                        	.member	win_x,96,5,8,16
+   263                        	.member	win_y,112,5,8,16
+   264                        	.member	win_width,128,5,8,16
+   265                        	.member	win_height,144,5,8,16
+   266                        	.member	win_xoffset,160,5,8,16
+   267                        	.member	win_yoffset,176,5,8,16
+   268                        	.member	win_cxoffset,192,5,8,16
+   269                        	.member	win_cyoffset,208,5,8,16
+   270                        	.member	wndRect,224,10,8,112,23
+   271                        	.member	clientRect,336,10,8,112,23
+   272                        	.member	nonclientGadgets,448,106,8,0,28,16
+   273                        	.member	clickable,2624,129,8,32
+   274                        	.member	win_title,2656,110,8,0,32
+   275                        	.member	Reserved0,2912,16,8,16
+   276                        	.member	win_class,2928,110,8,0,16
+   277                        	.member	win_class_name,3056,110,8,0,32
+   278                        	.member	nBitmapLayer,3312,16,8,16
+   279                        	.member	bgRegion,3328,129,8,32
+   280                        	.member	procid,3360,18,8,32
+   281                        	.member	pWndClass,3392,138,8,32,26
+  Mon Aug  9 2021 16:52                                                Page 6
+
+
+   282                        	.member	pParentWindow,3424,129,8,32
+   283                        	.member	hMenu,3456,129,8,32
+   284                        	.member	hPointer,3488,129,8,32
+   285                        	.member	hBackground,3520,129,8,32
+   286                        	.member	pChildWindows,3552,138,8,32,3
+   287                        	.member	pChildHitList,3584,138,8,32,3
+   288                        	.member	isVisible,3616,14,8,8
+   289                        	.member	windowData,3624,129,8,32
+   290                        	.member	clientData,3656,1121,8,32,6
+   291                        	.member	isClosed,3848,14,8,8
+   292                        	.member	isClosing,3856,14,8,8
+   293                        	.member	isDesktop,3864,14,8,8
+   294                        	.member	clickableNode,3872,138,8,32,2
+   295                        	.eos
+   296                        	.stag	_k_WindowStructEx,3880,31
+   297                        	.member	cbSize,0,16,8,16
+   298                        	.member	style,16,18,8,32
+   299                        	.member	styleEx,48,18,8,32
+   300                        	.member	win_id,80,5,8,16
+   301                        	.member	win_x,96,5,8,16
+   302                        	.member	win_y,112,5,8,16
+   303                        	.member	win_width,128,5,8,16
+   304                        	.member	win_height,144,5,8,16
+   305                        	.member	win_xoffset,160,5,8,16
+   306                        	.member	win_yoffset,176,5,8,16
+   307                        	.member	win_cxoffset,192,5,8,16
+   308                        	.member	win_cyoffset,208,5,8,16
+   309                        	.member	wndRect,224,10,8,112,23
+   310                        	.member	clientRect,336,10,8,112,23
+   311                        	.member	nonclientGadgets,448,106,8,0,28,16
+   312                        	.member	clickable,2624,129,8,32
+   313                        	.member	win_title,2656,110,8,0,32
+   314                        	.member	Reserved0,2912,16,8,16
+   315                        	.member	win_class,2928,110,8,0,16
+   316                        	.member	nBitmapLayer,3056,16,8,16
+   317                        	.member	procid,3072,18,8,32
+   318                        	.member	pWndClass,3104,138,8,32,26
+   319                        	.member	pParentWindow,3136,129,8,32
+   320                        	.member	hMenu,3168,129,8,32
+   321                        	.member	hPointer,3200,129,8,32
+   322                        	.member	hBackground,3232,129,8,32
+   323                        	.member	pChildWindows,3264,138,8,32,3
+   324                        	.member	pChildHitList,3296,138,8,32,3
+   325                        	.member	isVisible,3328,14,8,8
+   326                        	.member	windowData,3336,129,8,32
+   327                        	.member	clientData,3368,1121,8,32,4
+   328                        	.member	isClosed,3496,14,8,8
+   329                        	.member	hWnd,3504,129,8,32
+   330                        	.member	localRect,3536,10,8,112,23
+   331                        	.member	globalRect,3648,10,8,112,23
+   332                        	.member	clientOffsetRect,3760,10,8,112,23
+   333                        	.member	isDesktop,3872,14,8,8
+   334                        	.eos
+   335                        	.stag	_FontMetric,32,32
+   336                        	.member	width,0,5,8,16
+   337                        	.member	height,16,5,8,16
+   338                        	.eos
+   339                        	.stag	_MenuStruct,280,33
+  Mon Aug  9 2021 16:52                                                Page 7
+
+
+   340                        	.member	cx,0,5,8,16
+   341                        	.member	cy,16,5,8,16
+   342                        	.member	width,32,5,8,16
+   343                        	.member	height,48,5,8,16
+   344                        	.member	fcolor,64,14,8,8
+   345                        	.member	bcolor,72,14,8,8
+   346                        	.member	chromeLeft,80,14,8,8
+   347                        	.member	chromeRight1,88,14,8,8
+   348                        	.member	chromeRight2,96,14,8,8
+   349                        	.member	hFont,104,129,8,32
+   350                        	.member	itemId,136,16,8,16
+   351                        	.member	pCaption,152,142,8,32
+   352                        	.member	subMenus,184,138,8,32,3
+   353                        	.member	pBackground,216,129,8,32
+   354                        	.member	hWndOwner,248,129,8,32
+   355                        	.eos
+   356                        	.stag	fake34_,160,34
+   357                        	.member	menuId,0,16,8,16
+   358                        	.member	caption,16,142,8,32
+   359                        	.member	rect,48,10,8,112,23
+   360                        	.eos
+   361                        	.stag	fake35_,5152,35
+   362                        	.member	pParent,0,138,8,32,30
+   363                        	.member	rect,32,10,8,112,23
+   364                        	.member	captions,144,1134,8,32,24
+   365                        	.member	chrome,912,110,8,0,24
+   366                        	.member	ids,1104,112,8,0,24
+   367                        	.member	clickable,1488,106,8,0,27,24
+   368                        	.member	selected,5136,16,8,16
+   369                        	.eos
+   370                        	.stag	_fx_button_t,96,36
+   371                        	.member	pCaption,0,142,8,32
+   372                        	.member	cCaption,32,16,8,16
+   373                        	.member	data,48,129,8,32
+   374                        	.member	captionPixelWidth,80,16,8,16
+   375                        	.eos
+   376                        	.stag	_fx_scrollbar_t,240,37
+   377                        	.member	min,0,16,8,16
+   378                        	.member	max,16,16,8,16
+   379                        	.member	increment,32,16,8,16
+   380                        	.member	stopsize,48,16,8,16
+   381                        	.member	location,64,5,8,16
+   382                        	.member	state,80,5,8,16
+   383                        	.member	rectThumb,96,10,8,112,23
+   384                        	.member	data,208,129,8,32
+   385                        	.eos
+   386                        	.stag	_fx_listbox_t,240,38
+   387                        	.member	pos,0,5,8,16
+   388                        	.member	selected,16,16,8,16
+   389                        	.member	offsetX,32,5,8,16
+   390                        	.member	offsetY,48,5,8,16
+   391                        	.member	inc,64,5,8,16
+   392                        	.member	direction,80,5,8,16
+   393                        	.member	top,96,5,8,16
+   394                        	.member	bottom,112,5,8,16
+   395                        	.member	indexTop,128,5,8,16
+   396                        	.member	indexBottom,144,5,8,16
+   397                        	.member	maxItems,160,16,8,16
+  Mon Aug  9 2021 16:52                                                Page 8
+
+
+   398                        	.member	fontSet,176,142,8,32
+   399                        	.member	data,208,129,8,32
+   400                        	.eos
+   401                        	.stag	_fx_textbox_t,144,39
+   402                        	.member	pos,0,5,8,16
+   403                        	.member	selected,16,16,8,16
+   404                        	.member	offsetX,32,5,8,16
+   405                        	.member	offsetY,48,5,8,16
+   406                        	.member	isShifted,64,14,8,8
+   407                        	.member	cursorState,72,14,8,8
+   408                        	.member	fontSet,80,142,8,32
+   409                        	.member	data,112,129,8,32
+   410                        	.eos
+   411                        	.stag	_fx_msgbox_t,144,40
+   412                        	.member	pos,0,5,8,16
+   413                        	.member	selected,16,16,8,16
+   414                        	.member	offsetX,32,5,8,16
+   415                        	.member	offsetY,48,5,8,16
+   416                        	.member	isShifted,64,14,8,8
+   417                        	.member	cursorState,72,14,8,8
+   418                        	.member	fontSet,80,142,8,32
+   419                        	.member	data,112,129,8,32
+   420                        	.eos
+   421                        	.stag	_fx_menuAnchor_t,272,41
+   422                        	.member	pCaption,0,142,8,32
+   423                        	.member	renderLayoutX,32,16,8,16
+   424                        	.member	renderLayoutY,48,16,8,16
+   425                        	.member	captionPixelWidth,64,16,8,16
+   426                        	.member	data,80,129,8,32
+   427                        	.member	droppedWindow,112,138,8,32,30
+   428                        	.member	bytes,144,110,8,0,16
+   429                        	.eos
+   430                        	.stag	_SubMenuStruct,64,42
+   431                        	.member	caption,0,142,8,32
+   432                        	.member	action,32,641,8,32
+   433                        	.eos
+   434                        	.stag	_SubMenuListStruct,40,43
+   435                        	.member	cMenus,0,14,8,8
+   436                        	.member	psubmenus,8,9354,8,32,42
+   437                        	.eos
+   438                        	.stag	_fx_ComBuffer,2080,44
+   439                        	.member	cbSize,0,16,8,16
+   440                        	.member	cbBuffer,16,16,8,16
+   441                        	.member	buffer,32,110,8,0,256
+   442                        	.eos
+   443                        	.stag	_fx_resource_header,72,45
+   444                        	.member	magic,0,110,8,0,4
+   445                        	.member	major,32,14,8,8
+   446                        	.member	minor,40,14,8,8
+   447                        	.member	type,48,14,8,8
+   448                        	.member	reserved,56,14,8,8
+   449                        	.member	resheaderSize,64,14,8,8
+   450                        	.eos
+   451                        	.stag	_fx_resource_header_font,144,46
+   452                        	.member	title,0,110,8,0,16
+   453                        	.member	height,128,14,8,8
+   454                        	.member	width,136,14,8,8
+   455                        	.eos
+  Mon Aug  9 2021 16:52                                                Page 9
+
+
+   456                        	.stag	_fx_resource_string,32,47
+   457                        	.member	locale,0,110,8,0,2
+   458                        	.member	entries,16,16,8,16
+   459                        	.eos
+   460                        	.stag	_fx_resource_string_entry,40,48
+   461                        	.member	index,0,16,8,16
+   462                        	.member	length,16,16,8,16
+   463                        	.member	data,32,14,8,8
+   464                        	.eos
+   465                        	.line	1064
+   466                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxc256u.h",5
+   467                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fmx_vicky.h",0
+   468                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+   469                        	.line	1064
+   470                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fmx_vicky.h",11
+   471                        	.line	72
+   472                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxc256u.h",6
+   473                        	.line	1960
+   474                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxhalmanager.c",9
+   475                        ;#else
+   476                        ;#include "fxc256.h"
+   477                        ;#endif
+   478                        ;
+   479                        ;#include "fxtypes.h"
+   480                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+   481                        	.line	1064
+   482                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxhalmanager.c",14
+   483                        ;#include "fxkernel.h"
+   484                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxkernel.h",0
+   485                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",0
+   486                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stdlib.h",0
+   487                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stddef.h",0
+   488                        	.line	88
+   489                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stdlib.h",43
+   490                        	.stag	fake49_,32,49
+   491                        	.member	quot,0,5,8,16
+   492                        	.member	rem,16,5,8,16
+   493                        	.eos
+   494                        	.stag	fake50_,64,50
+   495                        	.member	quot,0,7,8,32
+   496                        	.member	rem,32,7,8,32
+   497                        	.eos
+   498                        	.stag	int_sqrt,32,51
+   499                        	.member	sqrt,0,16,8,16
+   500                        	.member	frac,16,16,8,16
+  Mon Aug  9 2021 16:52                                                Page 10
+
+
+   501                        	.eos
+   502                        	.line	205
+   503                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",4
+   504                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    string.h",0
+   505                        	.line	134
+   506                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",5
+   507                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    ctype.h",0
+   508                        	.line	103
+   509                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",6
+   510                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+   511                        	.line	1064
+   512                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",8
+   513                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxstringtable.h",0
+   514                        	.line	90
+   515                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",9
+   516                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxc256u.h",0
+   517                        	.line	1960
+   518                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",16
+   519                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxkernel.h",0
+   520                        	.line	490
+   521                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",22
+   522                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxconsole.h",0
+   523                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    string.h",0
+   524                        	.line	134
+   525                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxconsole.h",5
+   526                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stdlib.h",0
+   527                        	.line	205
+   528                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxconsole.h",6
+   529                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+   530                        	.line	1064
+   531                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxconsole.h",7
+   532                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxc256u.h",0
+   533                        	.line	1960
+   534                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxconsole.h",12
+   535                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxstring.h",0
+  Mon Aug  9 2021 16:52                                                Page 11
+
+
+   536                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stdlib.h",0
+   537                        	.line	205
+   538                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxstring.h",5
+   539                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    string.h",0
+   540                        	.line	134
+   541                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxstring.h",6
+   542                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+   543                        	.line	1064
+   544                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxstring.h",7
+   545                        	.stag	_fx_string,64,52
+   546                        	.member	size,0,16,8,16
+   547                        	.member	pos,16,5,8,16
+   548                        	.member	buffer,32,142,8,32
+   549                        	.eos
+   550                        	.line	141
+   551                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxconsole.h",17
+   552                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxeventmanager.h",0
+   553                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",0
+   554                        	.line	30
+   555                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxeventmanager.h",5
+   556                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxexec.h",0
+   557                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+   558                        	.line	1064
+   559                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxexec.h",5
+   560                        	.stag	_fxos_executive_vtable,128,53
+   561                        	.member	Init,0,8833,8,32
+   562                        	.member	Configure,32,656,8,32
+   563                        	.member	Query,64,656,8,32
+   564                        	.member	Uninit,96,641,8,32
+   565                        	.eos
+   566                        	.line	86
+   567                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxeventmanager.h",6
+   568                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxnode.h",0
+   569                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+   570                        	.line	1064
+   571                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxnode.h",11
+   572                        	.line	118
+   573                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxeventmanager.h",7
+   574                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxconsole.h",0
+  Mon Aug  9 2021 16:52                                                Page 12
+
+
+   575                        	.line	208
+   576                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxeventmanager.h",8
+   577                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxwindowmanager.h",0
+   578                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",0
+   579                        	.line	30
+   580                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxwindowmanager.h",5
+   581                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxmemorymanager.h",0
+   582                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",0
+   583                        	.line	30
+   584                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxmemorymanager.h",5
+   585                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\umm_malloc_cfg.h",0
+   586                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos_build_parameters.h",0
+   587                        	.line	35
+   588                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\umm_malloc_cfg.h",8
+   589                        	.stag	UMM_HEAP_INFO_t,256,54
+   590                        	.member	totalEntries,0,18,8,32
+   591                        	.member	usedEntries,32,18,8,32
+   592                        	.member	freeEntries,64,18,8,32
+   593                        	.member	totalBlocks,96,18,8,32
+   594                        	.member	usedBlocks,128,18,8,32
+   595                        	.member	freeBlocks,160,18,8,32
+   596                        	.member	maxFreeContiguousBlocks,192,18,8,32
+   597                        	.member	blockSize,224,18,8,32
+   598                        	.eos
+   599                        	.line	199
+   600                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxmemorymanager.h",6
+   601                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\umm_malloc.h",0
+   602                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+   603                        	.line	1064
+   604                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\umm_malloc.h",11
+   605                        	.line	24
+   606                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxmemorymanager.h",7
+   607                        	.stag	_fx_memory_map,2072,55
+   608                        	.member	availableMemory,0,18,8,32
+   609                        	.member	valid_segments,32,110,8,0,255
+   610                        	.eos
+   611                        	.stag	_fx_ipc_port,144,56
+   612                        	.member	id,0,18,8,32
+   613                        	.member	type,32,14,8,8
+   614                        	.member	name,40,138,8,32,52
+   615                        	.member	time,72,18,8,32
+   616                        	.member	queue,104,138,8,32,4
+   617                        	.member	reserved_1,136,14,8,8
+  Mon Aug  9 2021 16:52                                                Page 13
+
+
+   618                        	.eos
+   619                        	.stag	_k_mem_alloc_header,80,57
+   620                        	.member	user,0,14,8,8
+   621                        	.member	attr,8,14,8,8
+   622                        	.member	size,16,18,8,32
+   623                        	.member	virtual,48,129,8,32
+   624                        	.eos
+   625                        	.line	129
+   626                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxwindowmanager.h",6
+   627                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxeventmanager.h",0
+   628                        	.line	568
+   629                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxwindowmanager.h",7
+   630                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxgfx.h",0
+   631                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxfont.h",0
+   632                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+   633                        	.line	1064
+   634                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxfont.h",6
+   635                        	.line	74
+   636                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxgfx.h",5
+   637                        	.stag	_click_detected,64,58
+   638                        	.member	window,0,138,8,32,30
+   639                        	.member	handler,32,641,8,32
+   640                        	.eos
+   641                        	.stag	_current_palette_map,400,59
+   642                        	.member	CUR_DESKTOP,0,5,8,16
+   643                        	.member	CUR_BACKGROUND,16,5,8,16
+   644                        	.member	CUR_FONT,32,5,8,16
+   645                        	.member	CUR_SELECTED_FONT,48,5,8,16
+   646                        	.member	CUR_HIGHLIGHT_COLOR,64,5,8,16
+   647                        	.member	CUR_WINDOWFRAME,80,5,8,16
+   648                        	.member	CUR_WINDOWBORDER,96,5,8,16
+   649                        	.member	CUR_WINDOWSHADOW,112,5,8,16
+   650                        	.member	CUR_MENU,128,5,8,16
+   651                        	.member	CUR_GADGET,144,5,8,16
+   652                        	.member	CUR_COLOR,160,101,8,0,15
+   653                        	.eos
+   654                        	.line	359
+   655                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxwindowmanager.h",8
+   656                        	.stag	_fxos_winman_vtable,160,60
+   657                        	.member	Events,0,641,8,32
+   658                        	.member	ConfigureWindowManager,32,656,8,32
+   659                        	.member	ProcessWindowEvent,64,8833,8,32
+   660                        	.member	QueryWindowManager,96,656,8,32
+   661                        	.member	DoWndProcs,128,641,8,32
+   662                        	.eos
+   663                        	.stag	fake61_,64,61
+   664                        	.member	type,0,16,8,16
+   665                        	.member	size,16,16,8,16
+   666                        	.member	desktopAction,32,129,8,32
+  Mon Aug  9 2021 16:52                                                Page 14
+
+
+   667                        	.eos
+   668                        	.stag	fake62_,96,62
+   669                        	.member	type,0,16,8,16
+   670                        	.member	caption,16,138,8,32,52
+   671                        	.member	buttonType,48,16,8,16
+   672                        	.member	x,64,5,8,16
+   673                        	.member	y,80,5,8,16
+   674                        	.eos
+   675                        	.stag	_childMessage_t,64,63
+   676                        	.member	msgType,0,16,8,16
+   677                        	.member	msgData,16,129,8,32
+   678                        	.member	dataSize,48,16,8,16
+   679                        	.eos
+   680                        	.line	594
+   681                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxeventmanager.h",9
+   682                        	.stag	_fx_main_loopvars,16,64
+   683                        	.member	dummy,0,5,8,16
+   684                        	.eos
+   685                        	.stag	_fxMouseMessageData,64,65
+   686                        	.member	button1,0,14,8,8
+   687                        	.member	button2,8,14,8,8
+   688                        	.member	button3,16,14,8,8
+   689                        	.member	button4,24,14,8,8
+   690                        	.member	x,32,16,8,16
+   691                        	.member	y,48,16,8,16
+   692                        	.eos
+   693                        	.utag	marshalled_data,32,66
+   694                        	.member	byteValue,0,14,11,8
+   695                        	.member	verbValue,0,110,11,0,2
+   696                        	.member	intValue,0,16,11,16
+   697                        	.member	longValue,0,18,11,32
+   698                        	.member	pointerValue,0,129,11,32
+   699                        	.eos
+   700                        	.stag	_fx_eventProcess,64,67
+   701                        	.member	process,0,138,8,32,17
+   702                        	.member	eventProc,32,641,8,32
+   703                        	.eos
+   704                        	.stag	_mouse_msg_state,184,68
+   705                        	.member	lastEvent,0,18,8,32
+   706                        	.member	buttonLeftDown,32,14,8,8
+   707                        	.member	lastLeftDown,40,18,8,32
+   708                        	.member	buttonRightDown,72,14,8,8
+   709                        	.member	lastRightDown,80,18,8,32
+   710                        	.member	buttonMiddleDown,112,14,8,8
+   711                        	.member	lastMiddleDown,120,18,8,32
+   712                        	.member	lastX,152,16,8,16
+   713                        	.member	lastY,168,16,8,16
+   714                        	.eos
+   715                        	.stag	_fxos_eventmanager_vtable,192,69
+   716                        	.member	EventQueue,0,138,8,32,4
+   717                        	.member	Init,32,8833,8,32
+   718                        	.member	Run,64,656,8,32
+   719                        	.member	Configure,96,656,8,32
+   720                        	.member	Query,128,656,8,32
+   721                        	.member	Uninit,160,641,8,32
+   722                        	.eos
+   723                        	.stag	_k_clipboard_data,168,70
+  Mon Aug  9 2021 16:52                                                Page 15
+
+
+   724                        	.member	type,0,14,8,8
+   725                        	.member	readable,8,110,8,0,16
+   726                        	.member	data,136,129,8,32
+   727                        	.eos
+   728                        	.line	568
+   729                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxconsole.h",18
+   730                        	.stag	_fx_spinner_ctx,48,71
+   731                        	.member	index,0,5,8,16
+   732                        	.member	spinner,16,142,8,32
+   733                        	.eos
+   734                        	.stag	_fx_console_ctx,1144,72
+   735                        	.member	lineBufferIndex,0,5,8,16
+   736                        	.member	lineBuffer,16,110,8,0,128
+   737                        	.member	isShifted,1040,14,8,8
+   738                        	.member	userData,1048,129,8,32
+   739                        	.member	screenBuffer,1080,129,8,32
+   740                        	.member	Reserved1,1112,129,8,32
+   741                        	.eos
+   742                        	.stag	_token,64,73
+   743                        	.member	type,0,5,8,16
+   744                        	.member	depth,16,16,8,16
+   745                        	.member	text,32,142,8,32
+   746                        	.eos
+   747                        	.stag	_command_args,64,74
+   748                        	.member	proc,0,656,8,32
+   749                        	.member	tokens,32,138,8,32,2
+   750                        	.eos
+   751                        	.line	208
+   752                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",23
+   753                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxstring.h",0
+   754                        	.line	141
+   755                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",24
+   756                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxnode.h",0
+   757                        	.line	118
+   758                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",25
+   759                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\ff/ff.h",0
+   760                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\ff/ffconf.h",0
+   761                        	.line	298
+   762                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\ff/ff.h",29
+   763                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+   764                        	.line	1064
+   765                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\ff/ff.h",30
+   766                        	.stag	fake75_,4504,75
+   767                        	.member	fs_type,0,14,8,8
+   768                        	.member	pdrv,8,14,8,8
+   769                        	.member	n_fats,16,14,8,8
+   770                        	.member	wflag,24,14,8,8
+  Mon Aug  9 2021 16:52                                                Page 16
+
+
+   771                        	.member	fsi_flag,32,14,8,8
+   772                        	.member	id,40,5,8,16
+   773                        	.member	n_rootdir,56,5,8,16
+   774                        	.member	csize,72,5,8,16
+   775                        	.member	lfnbuf,88,144,8,32
+   776                        	.member	last_clst,120,18,8,32
+   777                        	.member	free_clst,152,18,8,32
+   778                        	.member	n_fatent,184,18,8,32
+   779                        	.member	fsize,216,18,8,32
+   780                        	.member	volbase,248,18,8,32
+   781                        	.member	fatbase,280,18,8,32
+   782                        	.member	dirbase,312,18,8,32
+   783                        	.member	database,344,18,8,32
+   784                        	.member	winsect,376,18,8,32
+   785                        	.member	win,408,110,8,0,512
+   786                        	.eos
+   787                        	.stag	fake76_,128,76
+   788                        	.member	fs,0,138,8,32,75
+   789                        	.member	id,32,5,8,16
+   790                        	.member	attr,48,14,8,8
+   791                        	.member	stat,56,14,8,8
+   792                        	.member	sclust,64,18,8,32
+   793                        	.member	objsize,96,18,8,32
+   794                        	.eos
+   795                        	.stag	fake77_,4400,77
+   796                        	.member	obj,0,10,8,128,76
+   797                        	.member	flag,128,14,8,8
+   798                        	.member	err,136,14,8,8
+   799                        	.member	fptr,144,18,8,32
+   800                        	.member	clust,176,18,8,32
+   801                        	.member	sect,208,18,8,32
+   802                        	.member	dir_sect,240,18,8,32
+   803                        	.member	dir_ptr,272,142,8,32
+   804                        	.member	buf,304,110,8,0,512
+   805                        	.eos
+   806                        	.stag	fake78_,416,78
+   807                        	.member	obj,0,10,8,128,76
+   808                        	.member	dptr,128,18,8,32
+   809                        	.member	clust,160,18,8,32
+   810                        	.member	sect,192,18,8,32
+   811                        	.member	dir,224,142,8,32
+   812                        	.member	fn,256,110,8,0,12
+   813                        	.member	blk_ofs,352,18,8,32
+   814                        	.member	pat,384,142,8,32
+   815                        	.eos
+   816                        	.stag	fake79_,2224,79
+   817                        	.member	fsize,0,18,8,32
+   818                        	.member	fdate,32,5,8,16
+   819                        	.member	ftime,48,5,8,16
+   820                        	.member	fattrib,64,14,8,8
+   821                        	.member	altname,72,110,8,0,13
+   822                        	.member	fname,176,110,8,0,256
+   823                        	.eos
+   824                        	.stag	fake80_,80,80
+   825                        	.member	fmt,0,14,8,8
+   826                        	.member	n_fat,8,14,8,8
+   827                        	.member	align,16,16,8,16
+   828                        	.member	n_root,32,16,8,16
+  Mon Aug  9 2021 16:52                                                Page 17
+
+
+   829                        	.member	au_size,48,18,8,32
+   830                        	.eos
+   831                        	.line	429
+   832                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",26
+   833                        	.line	30
+   834                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxkernel.h",5
+   835                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxnode.h",0
+   836                        	.line	118
+   837                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxkernel.h",6
+   838                        	.stag	_fx_api_call_table,8192,81
+   839                        	.member	call_table,0,1121,8,32,256
+   840                        	.eos
+   841                        	.stag	_fx_zero_page_irq_data,32,82
+   842                        	.member	data,0,110,8,0,4
+   843                        	.eos
+   844                        	.stag	_fx_zero_page,720,83
+   845                        	.member	fxos_mouse_byte_0,0,14,8,8
+   846                        	.member	fxos_mouse_byte_1,8,14,8,8
+   847                        	.member	fxos_mouse_byte_2,16,14,8,8
+   848                        	.member	fxos_mouse_byte_t,24,14,8,8
+   849                        	.member	fxos_mouse_byte_x_l,32,14,8,8
+   850                        	.member	fxos_mouse_byte_x_h,40,14,8,8
+   851                        	.member	fxos_mouse_byte_y_l,48,14,8,8
+   852                        	.member	fxos_mouse_byte_y_h,56,14,8,8
+   853                        	.member	fxos_key_byte_0,64,14,8,8
+   854                        	.member	fxos_key_byte_1,72,14,8,8
+   855                        	.member	fxos_key_byte_2,80,14,8,8
+   856                        	.member	fxos_mouse_ctl,88,14,8,8
+   857                        	.member	fxos_mouse_index,96,14,8,8
+   858                        	.member	fxos_mouse_status,104,14,8,8
+   859                        	.member	Endianness,112,16,8,16
+   860                        	.member	VersionMajor,128,16,8,16
+   861                        	.member	VersionMinor,144,16,8,16
+   862                        	.member	VersionRelease,160,16,8,16
+   863                        	.member	topMemory,176,18,8,32
+   864                        	.member	bottomMemory,208,18,8,32
+   865                        	.member	availableMemory,240,18,8,32
+   866                        	.member	availableMemoryK,272,18,8,32
+   867                        	.member	availableHeapMemory,304,18,8,32
+   868                        	.member	availableHeapMemoryK,336,18,8,32
+   869                        	.member	fxos_console_row,368,16,8,16
+   870                        	.member	fxos_console_col,384,16,8,16
+   871                        	.member	executive,400,129,8,32
+   872                        	.member	eventmanager,432,129,8,32
+   873                        	.member	devicemanager,464,129,8,32
+   874                        	.member	windowmanager,496,129,8,32
+   875                        	.member	fxos_kernel_api,528,138,8,32,81
+   876                        	.member	fxos_dos_api,560,138,8,32,81
+   877                        	.member	fxos_gfx_api,592,138,8,32,81
+   878                        	.member	fxos_gui_api,624,138,8,32,81
+   879                        	.member	fxos_con_api,656,138,8,32,81
+   880                        	.member	fxos_reserved_2_api,688,138,8,32,81
+   881                        	.eos
+   882                        	.stag	_fx_environment,96,84
+  Mon Aug  9 2021 16:52                                                Page 18
+
+
+   883                        	.member	variables,0,142,8,32
+   884                        	.member	reserved1,32,5,8,16
+   885                        	.member	reserved2,48,5,8,16
+   886                        	.member	reserved3,64,5,8,16
+   887                        	.member	reserved4,80,5,8,16
+   888                        	.eos
+   889                        	.stag	_debug_byte_bits,8,85
+   890                        	.member	bit7,0,14,17,1
+   891                        	.member	bit6,1,14,17,1
+   892                        	.member	bit5,2,14,17,1
+   893                        	.member	bit4,3,14,17,1
+   894                        	.member	bit3,4,14,17,1
+   895                        	.member	bit2,5,14,17,1
+   896                        	.member	bit1,6,14,17,1
+   897                        	.member	bit0,7,14,17,1
+   898                        	.eos
+   899                        	.stag	_k_segmentheader,160,86
+   900                        	.member	version_major,0,14,8,8
+   901                        	.member	version_minor,8,14,8,8
+   902                        	.member	length,16,5,8,16
+   903                        	.member	segment_start_addr,32,7,8,32
+   904                        	.member	segment_end_addr,64,7,8,32
+   905                        	.member	segment_size,96,7,8,32
+   906                        	.member	main_entry_addr,128,7,8,32
+   907                        	.eos
+   908                        	.stag	_fx_device_driver,776,87
+   909                        	.member	name,0,110,8,0,32
+   910                        	.member	version,256,110,8,0,16
+   911                        	.member	hmajor,384,110,8,0,8
+   912                        	.member	hminor,448,110,8,0,8
+   913                        	.member	type,512,14,8,8
+   914                        	.member	designation,520,110,8,0,6
+   915                        	.member	irq_ctl,568,16,8,16
+   916                        	.member	f_driver_irq,584,129,8,32
+   917                        	.member	driver_context,616,129,8,32
+   918                        	.member	f_driver_load,648,129,8,32
+   919                        	.member	f_driver_read,680,129,8,32
+   920                        	.member	f_driver_write,712,129,8,32
+   921                        	.member	f_driver_unload,744,129,8,32
+   922                        	.eos
+   923                        	.stag	_fx_block_device_driver,808,88
+   924                        	.member	name,0,110,8,0,32
+   925                        	.member	version,256,110,8,0,16
+   926                        	.member	hmajor,384,110,8,0,8
+   927                        	.member	hminor,448,110,8,0,8
+   928                        	.member	type,512,14,8,8
+   929                        	.member	designation,520,110,8,0,6
+   930                        	.member	irq_ctl,568,16,8,16
+   931                        	.member	f_driver_irq,584,129,8,32
+   932                        	.member	driver_context,616,129,8,32
+   933                        	.member	f_driver_load,648,129,8,32
+   934                        	.member	f_driver_read,680,129,8,32
+   935                        	.member	f_driver_write,712,129,8,32
+   936                        	.member	f_driver_unload,744,129,8,32
+   937                        	.member	f_driver_command,776,129,8,32
+   938                        	.eos
+   939                        	.stag	_k_irq_chain,128,89
+   940                        	.member	handlers,0,5217,8,32,4
+  Mon Aug  9 2021 16:52                                                Page 19
+
+
+   941                        	.eos
+   942                        	.line	490
+   943                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxhalmanager.c",15
+   944                        ;#include "drivers/DRIVER.h"
+   945                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\drivers/DRIVER.h",0
+   946                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",0
+   947                        	.line	30
+   948                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\drivers/DRIVER.h",5
+   949                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxmemorymanager.h",0
+   950                        	.line	129
+   951                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\drivers/DRIVER.h",6
+   952                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxc256u.h",0
+   953                        	.line	1960
+   954                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\drivers/DRIVER.h",104
+   955                        	.line	113
+   956                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxhalmanager.c",16
+   957                        ;
+   958                        ;int _irq_keyboardTimeout = 0;
+   959                        	data
+   960                        	xdef	~~_irq_keyboardTimeout
+   961                        ~~_irq_keyboardTimeout:
+   962 00:0000: 00 00        	dw	$0
+   963 00:0002:              	ends
+   964                        ;
+   965                        ;extern BOOL	_k_in_irq_enabled;
+   966                        ;//extern DEVICEDRIVER_IRQ g_irq_handlers[][8];
+   967                        ;extern IRQCHAIN g_irq_handlers[4][8];
+   968                        ;
+   969                        ;
+   970                        ;//static KEYSTATE _irq_key_state_machine = {0,0,0
+                    ,0,0,0,0,0,0,0};
+   971                        ;
+   972                        ;PIPCPORT debugport =  NULL;
+   973                        	data
+   974                        	xdef	~~debugport
+   975                        ~~debugport:
+   976 00:0002: 00 00 00 00  	dl	$0
+   977 00:0006:              	ends
+   978                        ;PIPCPORT kbport =  NULL;
+   979                        	data
+   980                        	xdef	~~kbport
+   981                        ~~kbport:
+   982 00:0006: 00 00 00 00  	dl	$0
+   983 00:000A:              	ends
+   984                        ;PIPCPORT mouseport =  NULL;
+   985                        	data
+   986                        	xdef	~~mouseport
+   987                        ~~mouseport:
+   988 00:000A: 00 00 00 00  	dl	$0
+  Mon Aug  9 2021 16:52                                                Page 20
+
+
+   989 00:000E:              	ends
+   990                        ;
+   991                        ;char boxtop[]    = {0xD6, 0xC4, 0xC4, 0xC4, 0xC4,
+                     0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4,
+                     0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4,
+                     0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4,
+                    0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 
+                    0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 
+                    0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 
+                    0xC4, 0xC4, 0xC4, 0xC4, 0xB7, 0x00};
+   992                        	data
+   993                        	xdef	~~boxtop
+   994                        ~~boxtop:
+   995 00:000E: D6 C4 C4 C4  	db	$D6,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4
+       00:0012: C4 C4 C4 C4 
+       00:0016: C4 C4 
+   996 00:0018: C4 C4 C4 C4  	db	$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4
+       00:001C: C4 C4 C4 C4 
+       00:0020: C4 C4 
+   997 00:0022: C4 C4 C4 C4  	db	$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4
+       00:0026: C4 C4 C4 C4 
+       00:002A: C4 C4 
+   998 00:002C: C4 C4 C4 C4  	db	$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4
+       00:0030: C4 C4 C4 C4 
+       00:0034: C4 C4 
+   999 00:0036: C4 C4 C4 C4  	db	$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4
+       00:003A: C4 C4 C4 C4 
+       00:003E: C4 C4 
+  1000 00:0040: C4 C4 C4 C4  	db	$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4
+       00:0044: C4 C4 C4 C4 
+       00:0048: C4 C4 
+  1001 00:004A: C4 C4 C4 C4  	db	$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$B7
+       00:004E: C4 C4 C4 C4 
+       00:0052: C4 B7 
+  1002 00:0054: 00           	db	$0
+  1003 00:0055:              	ends
+  1004                        ;char boxbottom[] = {0xD3, 0xC4, 0xC4, 0xC4, 0xC4,
+                     0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4,
+                     0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4,
+                     0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4,
+                    0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 
+                    0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 
+                    0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 0xC4, 
+                    0xC4, 0xC4, 0xC4, 0xC4, 0xBD, 0x00};
+  1005                        	data
+  1006                        	xdef	~~boxbottom
+  1007                        ~~boxbottom:
+  1008 00:0055: D3 C4 C4 C4  	db	$D3,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4
+       00:0059: C4 C4 C4 C4 
+       00:005D: C4 C4 
+  1009 00:005F: C4 C4 C4 C4  	db	$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4
+       00:0063: C4 C4 C4 C4 
+       00:0067: C4 C4 
+  1010 00:0069: C4 C4 C4 C4  	db	$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4
+       00:006D: C4 C4 C4 C4 
+       00:0071: C4 C4 
+  1011 00:0073: C4 C4 C4 C4  	db	$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4
+       00:0077: C4 C4 C4 C4 
+  Mon Aug  9 2021 16:52                                                Page 21
+
+
+       00:007B: C4 C4 
+  1012 00:007D: C4 C4 C4 C4  	db	$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4
+       00:0081: C4 C4 C4 C4 
+       00:0085: C4 C4 
+  1013 00:0087: C4 C4 C4 C4  	db	$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4
+       00:008B: C4 C4 C4 C4 
+       00:008F: C4 C4 
+  1014 00:0091: C4 C4 C4 C4  	db	$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$C4,$BD
+       00:0095: C4 C4 C4 C4 
+       00:0099: C4 BD 
+  1015 00:009B: 00           	db	$0
+  1016 00:009C:              	ends
+  1017                        ;char boxside[]    = {0xBA, 0x00};
+  1018                        	data
+  1019                        	xdef	~~boxside
+  1020                        ~~boxside:
+  1021 00:009C: BA 00        	db	$BA,$0
+  1022 00:009E:              	ends
+  1023                        ;
+  1024                        ;#define KTICK_MAX		 (1)
+  1025                        ;
+  1026                        ;extern ULONG _k_exec_context;
+  1027                        ;extern ULONG _k_exec_error;
+  1028                        ;extern UCHAR _k_exec_message[64];
+  1029                        ;
+  1030                        ;//static ULONG _pseudo_timer = -1;
+  1031                        ;ULONG _pseudo_timer = -1;
+  1032                        	data
+  1033                        	xdef	~~_pseudo_timer
+  1034                        ~~_pseudo_timer:
+  1035 00:009E: FF FF FF FF  	dl	$FFFFFFFF
+  1036 00:00A2:              	ends
+  1037                        ;
+  1038                        ;void BRKHandler(void)
+  1039                        ;{
+  1040                        	.line	44
+  1041                        	.line	45
+  1042                        	code
+  1043                        	xdef	~~BRKHandler
+  1044                        	func
+  1045                        	.function	45
+  1046                        ~~BRKHandler:
+  1047                        	longa	on
+  1048                        	longi	on
+  1049 00:0000: 3B           	tsc
+  1050 00:0001: 38           	sec
+  1051 00:0002: E9 62 00     	sbc	#L2
+  1052 00:0005: 1B           	tcs
+  1053 00:0006: 0B           	phd
+  1054 00:0007: 5B           	tcd
+  1055                        	.block	45
+  1056                        ;	CHAR _brk_Buffer[64];
+  1057                        ;	CHAR _buffer[16];
+  1058                        ;	UCHAR flames = 0;
+  1059                        ;	int pos  = 1;
+  1060                        ;	int line = 20;
+  1061                        ;	UINT progcnt = 0;
+  1062                        ;	UINT stack   = 0;
+  Mon Aug  9 2021 16:52                                                Page 22
+
+
+  1063                        ;	BYTE bank;
+  1064                        ;
+  1065                        ;#asm
+  1066             00000000   _brk_Buffer_1	set	0
+  1067             00000040   _buffer_1	set	64
+  1068             00000050   flames_1	set	80
+  1069             00000051   pos_1	set	81
+  1070             00000053   line_1	set	83
+  1071             00000055   progcnt_1	set	85
+  1072             00000057   stack_1	set	87
+  1073             00000059   bank_1	set	89
+  1074                        	.sym	_brk_Buffer,0,110,1,0,64
+  1075                        	.sym	_buffer,64,110,1,0,16
+  1076                        	.sym	flames,80,14,1,8
+  1077                        	.sym	pos,81,5,1,16
+  1078                        	.sym	line,83,5,1,16
+  1079                        	.sym	progcnt,85,16,1,16
+  1080                        	.sym	stack,87,16,1,16
+  1081                        	.sym	bank,89,14,1,8
+  1082 00:0008: E2 20        	sep	#$20
+  1083                        	longa	off
+  1084 00:000A: 64 59        	stz	<L3+flames_1
+  1085 00:000C: C2 20        	rep	#$20
+  1086                        	longa	on
+  1087 00:000E: A9 01 00     	lda	#$1
+  1088 00:0011: 85 5A        	sta	<L3+pos_1
+  1089 00:0013: A9 14 00     	lda	#$14
+  1090 00:0016: 85 5C        	sta	<L3+line_1
+  1091 00:0018: 64 5E        	stz	<L3+progcnt_1
+  1092 00:001A: 64 60        	stz	<L3+stack_1
+  1093                        	.line	55
+  1094                        ;	SEI
+  1095                        ;
+  1096                        ;	LONGA OFF
+  1097                        ;	pha
+  1098                        ;	phk
+  1099                        ;	pla
+  1100                        ;	STA %%bank
+  1101                        ;	pla
+  1102                        ;
+  1103                        ;	LONGA ON
+  1104                        ;	pha
+  1105                        ;	per	0
+  1106                        ;	pla
+  1107                        ;	STA %%progcnt
+  1108                        ;
+  1109                        ;	TSC
+  1110                        ;	STA %%stack
+  1111                        ;
+  1112                        ;	pla
+  1113                        ;
+  1114                        ;#endasm
+  1115                        	asmstart
+  1116 00:001C: 78           	SEI
+  1117                        
+  1118                        	LONGA OFF
+  1119 00:001D: 48           	pha
+  1120 00:001E: 4B           	phk
+  Mon Aug  9 2021 16:52                                                Page 23
+
+
+  1121 00:001F: 68           	pla
+  1122 00:0020: 85 62        	STA <L3+bank_1
+  1123 00:0022: 68           	pla
+  1124                        
+  1125                        	LONGA ON
+  1126 00:0023: 48           	pha
+  1127 00:0024: 62 D9 FF     	per	0
+  1128 00:0027: 68           	pla
+  1129 00:0028: 85 5E        	STA <L3+progcnt_1
+  1130                        
+  1131 00:002A: 3B           	TSC
+  1132 00:002B: 85 60        	STA <L3+stack_1
+  1133                        
+  1134 00:002D: 68           	pla
+  1135                        
+  1136                        	asmend
+  1137                        ;
+  1138                        ;	//k_debug_string("\r\nBRK Exception:\r\n");
+  1139                        ;	//k_longtodec(_k_exec_context,_brk_Buffer);
+  1140                        ;	k_debug_string(k_bytetohex(  0x00           ,_br
+                    k_Buffer));
+  1141                        	.line	80
+  1142 00:002E: F4 00 00     	pea	#0
+  1143 00:0031: 18           	clc
+  1144 00:0032: 7B           	tdc
+  1145 00:0033: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1146 00:0036: 48           	pha
+  1147 00:0037: F4 00 00     	pea	#<$0
+  1148 00:003A: 22 xx xx xx  	jsl	~~k_bytetohex
+  1149 00:003E: 85 01        	sta	<R0
+  1150 00:0040: 86 03        	stx	<R0+2
+  1151 00:0042: DA           	phx
+  1152 00:0043: 48           	pha
+  1153 00:0044: 22 xx xx xx  	jsl	~~k_debug_string
+  1154                        ;	k_debug_string(k_bytetohex(  H24BYTE(_k_exec_con
+                    text)  ,_brk_Buffer));
+  1155                        	.line	81
+  1156 00:0048: F4 00 00     	pea	#0
+  1157 00:004B: 18           	clc
+  1158 00:004C: 7B           	tdc
+  1159 00:004D: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1160 00:0050: 48           	pha
+  1161 00:0051: AD xx xx     	lda	|~~_k_exec_context+2
+  1162 00:0054: 48           	pha
+  1163 00:0055: AD xx xx     	lda	|~~_k_exec_context
+  1164 00:0058: 48           	pha
+  1165 00:0059: A9 10 00     	lda	#$10
+  1166                        	xref	~~~llsr
+  1167 00:005C: 22 xx xx xx  	jsl	~~~llsr
+  1168 00:0060: 85 01        	sta	<R0
+  1169 00:0062: 86 03        	stx	<R0+2
+  1170 00:0064: A5 01        	lda	<R0
+  1171 00:0066: 29 FF 00     	and	#<$ff
+  1172 00:0069: 85 05        	sta	<R1
+  1173 00:006B: 64 07        	stz	<R1+2
+  1174 00:006D: D4 05        	pei	<R1
+  1175 00:006F: 22 xx xx xx  	jsl	~~k_bytetohex
+  1176 00:0073: 85 01        	sta	<R0
+  Mon Aug  9 2021 16:52                                                Page 24
+
+
+  1177 00:0075: 86 03        	stx	<R0+2
+  1178 00:0077: DA           	phx
+  1179 00:0078: 48           	pha
+  1180 00:0079: 22 xx xx xx  	jsl	~~k_debug_string
+  1181                        ;	k_debug_string(k_bytetohex(  M24BYTE(_k_exec_con
+                    text)  ,_brk_Buffer));
+  1182                        	.line	82
+  1183 00:007D: F4 00 00     	pea	#0
+  1184 00:0080: 18           	clc
+  1185 00:0081: 7B           	tdc
+  1186 00:0082: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1187 00:0085: 48           	pha
+  1188 00:0086: AD xx xx     	lda	|~~_k_exec_context+2
+  1189 00:0089: 48           	pha
+  1190 00:008A: AD xx xx     	lda	|~~_k_exec_context
+  1191 00:008D: 48           	pha
+  1192 00:008E: A9 08 00     	lda	#$8
+  1193                        	xref	~~~llsr
+  1194 00:0091: 22 xx xx xx  	jsl	~~~llsr
+  1195 00:0095: 85 01        	sta	<R0
+  1196 00:0097: 86 03        	stx	<R0+2
+  1197 00:0099: A5 01        	lda	<R0
+  1198 00:009B: 29 FF 00     	and	#<$ff
+  1199 00:009E: 85 05        	sta	<R1
+  1200 00:00A0: 64 07        	stz	<R1+2
+  1201 00:00A2: D4 05        	pei	<R1
+  1202 00:00A4: 22 xx xx xx  	jsl	~~k_bytetohex
+  1203 00:00A8: 85 01        	sta	<R0
+  1204 00:00AA: 86 03        	stx	<R0+2
+  1205 00:00AC: DA           	phx
+  1206 00:00AD: 48           	pha
+  1207 00:00AE: 22 xx xx xx  	jsl	~~k_debug_string
+  1208                        ;	k_debug_string(k_bytetohex(  L24BYTE(_k_exec_con
+                    text)  ,_brk_Buffer));
+  1209                        	.line	83
+  1210 00:00B2: F4 00 00     	pea	#0
+  1211 00:00B5: 18           	clc
+  1212 00:00B6: 7B           	tdc
+  1213 00:00B7: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1214 00:00BA: 48           	pha
+  1215 00:00BB: AD xx xx     	lda	|~~_k_exec_context
+  1216 00:00BE: 48           	pha
+  1217 00:00BF: 22 xx xx xx  	jsl	~~k_bytetohex
+  1218 00:00C3: 85 01        	sta	<R0
+  1219 00:00C5: 86 03        	stx	<R0+2
+  1220 00:00C7: DA           	phx
+  1221 00:00C8: 48           	pha
+  1222 00:00C9: 22 xx xx xx  	jsl	~~k_debug_string
+  1223                        ;	//k_debug_string(_brk_Buffer);
+  1224                        ;	k_debug_string("\r\n");
+  1225                        	.line	85
+  1226 00:00CD: F4 xx xx     	pea	#^L1
+  1227 00:00D0: F4 xx xx     	pea	#<L1
+  1228 00:00D3: 22 xx xx xx  	jsl	~~k_debug_string
+  1229                        ;
+  1230                        ;	//k_longtodec(_k_exec_error,_brk_Buffer);
+  1231                        ;	//k_debug_string(_brk_Buffer);
+  1232                        ;	k_debug_string(k_bytetohex(  0x00           ,_br
+  Mon Aug  9 2021 16:52                                                Page 25
+
+
+                    k_Buffer));
+  1233                        	.line	89
+  1234 00:00D7: F4 00 00     	pea	#0
+  1235 00:00DA: 18           	clc
+  1236 00:00DB: 7B           	tdc
+  1237 00:00DC: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1238 00:00DF: 48           	pha
+  1239 00:00E0: F4 00 00     	pea	#<$0
+  1240 00:00E3: 22 xx xx xx  	jsl	~~k_bytetohex
+  1241 00:00E7: 85 01        	sta	<R0
+  1242 00:00E9: 86 03        	stx	<R0+2
+  1243 00:00EB: DA           	phx
+  1244 00:00EC: 48           	pha
+  1245 00:00ED: 22 xx xx xx  	jsl	~~k_debug_string
+  1246                        ;	k_debug_string(k_bytetohex(  H24BYTE(_k_exec_err
+                    or)  ,_brk_Buffer));
+  1247                        	.line	90
+  1248 00:00F1: F4 00 00     	pea	#0
+  1249 00:00F4: 18           	clc
+  1250 00:00F5: 7B           	tdc
+  1251 00:00F6: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1252 00:00F9: 48           	pha
+  1253 00:00FA: AD xx xx     	lda	|~~_k_exec_error+2
+  1254 00:00FD: 48           	pha
+  1255 00:00FE: AD xx xx     	lda	|~~_k_exec_error
+  1256 00:0101: 48           	pha
+  1257 00:0102: A9 10 00     	lda	#$10
+  1258                        	xref	~~~llsr
+  1259 00:0105: 22 xx xx xx  	jsl	~~~llsr
+  1260 00:0109: 85 01        	sta	<R0
+  1261 00:010B: 86 03        	stx	<R0+2
+  1262 00:010D: A5 01        	lda	<R0
+  1263 00:010F: 29 FF 00     	and	#<$ff
+  1264 00:0112: 85 05        	sta	<R1
+  1265 00:0114: 64 07        	stz	<R1+2
+  1266 00:0116: D4 05        	pei	<R1
+  1267 00:0118: 22 xx xx xx  	jsl	~~k_bytetohex
+  1268 00:011C: 85 01        	sta	<R0
+  1269 00:011E: 86 03        	stx	<R0+2
+  1270 00:0120: DA           	phx
+  1271 00:0121: 48           	pha
+  1272 00:0122: 22 xx xx xx  	jsl	~~k_debug_string
+  1273                        ;	k_debug_string(k_bytetohex(  M24BYTE(_k_exec_err
+                    or)  ,_brk_Buffer));
+  1274                        	.line	91
+  1275 00:0126: F4 00 00     	pea	#0
+  1276 00:0129: 18           	clc
+  1277 00:012A: 7B           	tdc
+  1278 00:012B: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1279 00:012E: 48           	pha
+  1280 00:012F: AD xx xx     	lda	|~~_k_exec_error+2
+  1281 00:0132: 48           	pha
+  1282 00:0133: AD xx xx     	lda	|~~_k_exec_error
+  1283 00:0136: 48           	pha
+  1284 00:0137: A9 08 00     	lda	#$8
+  1285                        	xref	~~~llsr
+  1286 00:013A: 22 xx xx xx  	jsl	~~~llsr
+  1287 00:013E: 85 01        	sta	<R0
+  Mon Aug  9 2021 16:52                                                Page 26
+
+
+  1288 00:0140: 86 03        	stx	<R0+2
+  1289 00:0142: A5 01        	lda	<R0
+  1290 00:0144: 29 FF 00     	and	#<$ff
+  1291 00:0147: 85 05        	sta	<R1
+  1292 00:0149: 64 07        	stz	<R1+2
+  1293 00:014B: D4 05        	pei	<R1
+  1294 00:014D: 22 xx xx xx  	jsl	~~k_bytetohex
+  1295 00:0151: 85 01        	sta	<R0
+  1296 00:0153: 86 03        	stx	<R0+2
+  1297 00:0155: DA           	phx
+  1298 00:0156: 48           	pha
+  1299 00:0157: 22 xx xx xx  	jsl	~~k_debug_string
+  1300                        ;	k_debug_string(k_bytetohex(  L24BYTE(_k_exec_err
+                    or)  ,_brk_Buffer));
+  1301                        	.line	92
+  1302 00:015B: F4 00 00     	pea	#0
+  1303 00:015E: 18           	clc
+  1304 00:015F: 7B           	tdc
+  1305 00:0160: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1306 00:0163: 48           	pha
+  1307 00:0164: AD xx xx     	lda	|~~_k_exec_error
+  1308 00:0167: 48           	pha
+  1309 00:0168: 22 xx xx xx  	jsl	~~k_bytetohex
+  1310 00:016C: 85 01        	sta	<R0
+  1311 00:016E: 86 03        	stx	<R0+2
+  1312 00:0170: DA           	phx
+  1313 00:0171: 48           	pha
+  1314 00:0172: 22 xx xx xx  	jsl	~~k_debug_string
+  1315                        ;
+  1316                        ;	k_debug_string("\r\n");
+  1317                        	.line	94
+  1318 00:0176: F4 xx xx     	pea	#^L1+3
+  1319 00:0179: F4 xx xx     	pea	#<L1+3
+  1320 00:017C: 22 xx xx xx  	jsl	~~k_debug_string
+  1321                        ;
+  1322                        ;	k_debug_string("PC: ");
+  1323                        	.line	96
+  1324 00:0180: F4 xx xx     	pea	#^L1+6
+  1325 00:0183: F4 xx xx     	pea	#<L1+6
+  1326 00:0186: 22 xx xx xx  	jsl	~~k_debug_string
+  1327                        ;	k_debug_string(k_bytetohex(  ((LPSTR)&bank)[0]  
+                    ,_brk_Buffer));
+  1328                        	.line	97
+  1329 00:018A: F4 00 00     	pea	#0
+  1330 00:018D: 18           	clc
+  1331 00:018E: 7B           	tdc
+  1332 00:018F: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1333 00:0192: 48           	pha
+  1334 00:0193: D4 62        	pei	<L3+bank_1
+  1335 00:0195: 22 xx xx xx  	jsl	~~k_bytetohex
+  1336 00:0199: 85 01        	sta	<R0
+  1337 00:019B: 86 03        	stx	<R0+2
+  1338 00:019D: DA           	phx
+  1339 00:019E: 48           	pha
+  1340 00:019F: 22 xx xx xx  	jsl	~~k_debug_string
+  1341                        ;	k_debug_string(":");
+  1342                        	.line	98
+  1343 00:01A3: F4 xx xx     	pea	#^L1+11
+  Mon Aug  9 2021 16:52                                                Page 27
+
+
+  1344 00:01A6: F4 xx xx     	pea	#<L1+11
+  1345 00:01A9: 22 xx xx xx  	jsl	~~k_debug_string
+  1346                        ;	k_debug_string(k_bytetohex(  ((LPSTR)&progcnt)[1
+                    ]  ,_brk_Buffer));
+  1347                        	.line	99
+  1348 00:01AD: F4 00 00     	pea	#0
+  1349 00:01B0: 18           	clc
+  1350 00:01B1: 7B           	tdc
+  1351 00:01B2: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1352 00:01B5: 48           	pha
+  1353 00:01B6: D4 5F        	pei	<L3+progcnt_1+1
+  1354 00:01B8: 22 xx xx xx  	jsl	~~k_bytetohex
+  1355 00:01BC: 85 01        	sta	<R0
+  1356 00:01BE: 86 03        	stx	<R0+2
+  1357 00:01C0: DA           	phx
+  1358 00:01C1: 48           	pha
+  1359 00:01C2: 22 xx xx xx  	jsl	~~k_debug_string
+  1360                        ;	k_debug_string(k_bytetohex(  ((LPSTR)&progcnt)[0
+                    ]  ,_brk_Buffer));
+  1361                        	.line	100
+  1362 00:01C6: F4 00 00     	pea	#0
+  1363 00:01C9: 18           	clc
+  1364 00:01CA: 7B           	tdc
+  1365 00:01CB: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1366 00:01CE: 48           	pha
+  1367 00:01CF: D4 5E        	pei	<L3+progcnt_1
+  1368 00:01D1: 22 xx xx xx  	jsl	~~k_bytetohex
+  1369 00:01D5: 85 01        	sta	<R0
+  1370 00:01D7: 86 03        	stx	<R0+2
+  1371 00:01D9: DA           	phx
+  1372 00:01DA: 48           	pha
+  1373 00:01DB: 22 xx xx xx  	jsl	~~k_debug_string
+  1374                        ;	k_debug_string("\r\n");
+  1375                        	.line	101
+  1376 00:01DF: F4 xx xx     	pea	#^L1+13
+  1377 00:01E2: F4 xx xx     	pea	#<L1+13
+  1378 00:01E5: 22 xx xx xx  	jsl	~~k_debug_string
+  1379                        ;
+  1380                        ;	k_debug_string("SS: 00");
+  1381                        	.line	103
+  1382 00:01E9: F4 xx xx     	pea	#^L1+16
+  1383 00:01EC: F4 xx xx     	pea	#<L1+16
+  1384 00:01EF: 22 xx xx xx  	jsl	~~k_debug_string
+  1385                        ;	k_debug_string(":");
+  1386                        	.line	104
+  1387 00:01F3: F4 xx xx     	pea	#^L1+23
+  1388 00:01F6: F4 xx xx     	pea	#<L1+23
+  1389 00:01F9: 22 xx xx xx  	jsl	~~k_debug_string
+  1390                        ;	k_debug_string(k_bytetohex(  ((LPSTR)&stack)[1] 
+                     ,_brk_Buffer));
+  1391                        	.line	105
+  1392 00:01FD: F4 00 00     	pea	#0
+  1393 00:0200: 18           	clc
+  1394 00:0201: 7B           	tdc
+  1395 00:0202: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1396 00:0205: 48           	pha
+  1397 00:0206: D4 61        	pei	<L3+stack_1+1
+  1398 00:0208: 22 xx xx xx  	jsl	~~k_bytetohex
+  Mon Aug  9 2021 16:52                                                Page 28
+
+
+  1399 00:020C: 85 01        	sta	<R0
+  1400 00:020E: 86 03        	stx	<R0+2
+  1401 00:0210: DA           	phx
+  1402 00:0211: 48           	pha
+  1403 00:0212: 22 xx xx xx  	jsl	~~k_debug_string
+  1404                        ;	k_debug_string(k_bytetohex(  ((LPSTR)&stack)[0] 
+                     ,_brk_Buffer));
+  1405                        	.line	106
+  1406 00:0216: F4 00 00     	pea	#0
+  1407 00:0219: 18           	clc
+  1408 00:021A: 7B           	tdc
+  1409 00:021B: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1410 00:021E: 48           	pha
+  1411 00:021F: D4 60        	pei	<L3+stack_1
+  1412 00:0221: 22 xx xx xx  	jsl	~~k_bytetohex
+  1413 00:0225: 85 01        	sta	<R0
+  1414 00:0227: 86 03        	stx	<R0+2
+  1415 00:0229: DA           	phx
+  1416 00:022A: 48           	pha
+  1417 00:022B: 22 xx xx xx  	jsl	~~k_debug_string
+  1418                        ;	k_debug_string("\r\n");
+  1419                        	.line	107
+  1420 00:022F: F4 xx xx     	pea	#^L1+25
+  1421 00:0232: F4 xx xx     	pea	#<L1+25
+  1422 00:0235: 22 xx xx xx  	jsl	~~k_debug_string
+  1423                        ;
+  1424                        ;	//k_put_char(9,irqCOPPos - 1,irqspinner[scbrk++]
+                    ,15,0);
+  1425                        ;	//if(scbrk>3) scbrk = 0;
+  1426                        ;	////asm sei;
+  1427                        ;	//k_enable_text_mode();
+  1428                        ;	//k_enable_text_cursor(1);
+  1429                        ;
+  1430                        ;	k_initialize_text_fonts(0);
+  1431                        	.line	115
+  1432 00:0239: F4 00 00     	pea	#<$0
+  1433 00:023C: 22 xx xx xx  	jsl	~~k_initialize_text_fonts
+  1434                        ;
+  1435                        ;	k_set_text_colors();
+  1436                        	.line	117
+  1437 00:0240: 22 xx xx xx  	jsl	~~k_set_text_colors
+  1438                        ;	k_initialize_text();
+  1439                        	.line	118
+  1440 00:0244: 22 xx xx xx  	jsl	~~k_initialize_text
+  1441                        ;	//k_enable_text_cursor(0);
+  1442                        ;
+  1443                        ;	k_enable_text_mode();
+  1444                        	.line	121
+  1445 00:0248: 22 xx xx xx  	jsl	~~k_enable_text_mode
+  1446                        ;	k_set_border_color(0xFF,0x00,0x00);
+  1447                        	.line	122
+  1448 00:024C: F4 00 00     	pea	#<$0
+  1449 00:024F: F4 00 00     	pea	#<$0
+  1450 00:0252: F4 FF 00     	pea	#<$ff
+  1451 00:0255: 22 xx xx xx  	jsl	~~k_set_border_color
+  1452                        ;	k_enable_border();
+  1453                        	.line	123
+  1454 00:0259: 22 xx xx xx  	jsl	~~k_enable_border
+  Mon Aug  9 2021 16:52                                                Page 29
+
+
+  1455                        ;
+  1456                        ;
+  1457                        ;
+  1458                        ;	//k_disable_text_cursor();
+  1459                        ;	//k_enable_border();
+  1460                        ;	//k_disable_border();
+  1461                        ;	//k_clear_screen(0);
+  1462                        ;	//k_set_border_color(255,0,0);
+  1463                        ;	pos = 1;
+  1464                        	.line	132
+  1465 00:025D: A9 01 00     	lda	#$1
+  1466 00:0260: 85 5A        	sta	<L3+pos_1
+  1467                        ;	pos = k_put_string(pos,line,boxtop,15,0);
+  1468                        	.line	133
+  1469 00:0262: F4 00 00     	pea	#<$0
+  1470 00:0265: F4 0F 00     	pea	#<$f
+  1471 00:0268: A9 xx xx     	lda	#<~~boxtop
+  1472 00:026B: 85 01        	sta	<R0
+  1473                        	xref	_BEG_DATA
+  1474 00:026D: A9 xx xx     	lda	#_BEG_DATA>>16
+  1475 00:0270: 85 03        	sta	<R0+2
+  1476 00:0272: D4 03        	pei	<R0+2
+  1477 00:0274: D4 01        	pei	<R0
+  1478 00:0276: D4 5C        	pei	<L3+line_1
+  1479 00:0278: D4 5A        	pei	<L3+pos_1
+  1480 00:027A: 22 xx xx xx  	jsl	~~k_put_string
+  1481 00:027E: 85 5A        	sta	<L3+pos_1
+  1482                        ;	line++;
+  1483                        	.line	134
+  1484 00:0280: E6 5C        	inc	<L3+line_1
+  1485                        ;	pos = 1;
+  1486                        	.line	135
+  1487 00:0282: A9 01 00     	lda	#$1
+  1488 00:0285: 85 5A        	sta	<L3+pos_1
+  1489                        ;	pos = k_put_string(pos,line,boxside,15,0);
+  1490                        	.line	136
+  1491 00:0287: F4 00 00     	pea	#<$0
+  1492 00:028A: F4 0F 00     	pea	#<$f
+  1493 00:028D: A9 xx xx     	lda	#<~~boxside
+  1494 00:0290: 85 01        	sta	<R0
+  1495                        	xref	_BEG_DATA
+  1496 00:0292: A9 xx xx     	lda	#_BEG_DATA>>16
+  1497 00:0295: 85 03        	sta	<R0+2
+  1498 00:0297: D4 03        	pei	<R0+2
+  1499 00:0299: D4 01        	pei	<R0
+  1500 00:029B: D4 5C        	pei	<L3+line_1
+  1501 00:029D: D4 5A        	pei	<L3+pos_1
+  1502 00:029F: 22 xx xx xx  	jsl	~~k_put_string
+  1503 00:02A3: 85 5A        	sta	<L3+pos_1
+  1504                        ;	pos = 70;
+  1505                        	.line	137
+  1506 00:02A5: A9 46 00     	lda	#$46
+  1507 00:02A8: 85 5A        	sta	<L3+pos_1
+  1508                        ;	pos = k_put_string(pos,line,boxside,15,0);
+  1509                        	.line	138
+  1510 00:02AA: F4 00 00     	pea	#<$0
+  1511 00:02AD: F4 0F 00     	pea	#<$f
+  1512 00:02B0: A9 xx xx     	lda	#<~~boxside
+  Mon Aug  9 2021 16:52                                                Page 30
+
+
+  1513 00:02B3: 85 01        	sta	<R0
+  1514                        	xref	_BEG_DATA
+  1515 00:02B5: A9 xx xx     	lda	#_BEG_DATA>>16
+  1516 00:02B8: 85 03        	sta	<R0+2
+  1517 00:02BA: D4 03        	pei	<R0+2
+  1518 00:02BC: D4 01        	pei	<R0
+  1519 00:02BE: D4 5C        	pei	<L3+line_1
+  1520 00:02C0: D4 5A        	pei	<L3+pos_1
+  1521 00:02C2: 22 xx xx xx  	jsl	~~k_put_string
+  1522 00:02C6: 85 5A        	sta	<L3+pos_1
+  1523                        ;	line++;
+  1524                        	.line	139
+  1525 00:02C8: E6 5C        	inc	<L3+line_1
+  1526                        ;	pos = 1;
+  1527                        	.line	140
+  1528 00:02CA: A9 01 00     	lda	#$1
+  1529 00:02CD: 85 5A        	sta	<L3+pos_1
+  1530                        ;	pos = k_put_string(pos,line,boxside,15,0);
+  1531                        	.line	141
+  1532 00:02CF: F4 00 00     	pea	#<$0
+  1533 00:02D2: F4 0F 00     	pea	#<$f
+  1534 00:02D5: A9 xx xx     	lda	#<~~boxside
+  1535 00:02D8: 85 01        	sta	<R0
+  1536                        	xref	_BEG_DATA
+  1537 00:02DA: A9 xx xx     	lda	#_BEG_DATA>>16
+  1538 00:02DD: 85 03        	sta	<R0+2
+  1539 00:02DF: D4 03        	pei	<R0+2
+  1540 00:02E1: D4 01        	pei	<R0
+  1541 00:02E3: D4 5C        	pei	<L3+line_1
+  1542 00:02E5: D4 5A        	pei	<L3+pos_1
+  1543 00:02E7: 22 xx xx xx  	jsl	~~k_put_string
+  1544 00:02EB: 85 5A        	sta	<L3+pos_1
+  1545                        ;	pos = k_put_string(pos,line,CONST_EXCEPTION_TITL
+                    E,15,0);
+  1546                        	.line	142
+  1547 00:02ED: F4 00 00     	pea	#<$0
+  1548 00:02F0: F4 0F 00     	pea	#<$f
+  1549 00:02F3: F4 xx xx     	pea	#^L1+28
+  1550 00:02F6: F4 xx xx     	pea	#<L1+28
+  1551 00:02F9: D4 5C        	pei	<L3+line_1
+  1552 00:02FB: D4 5A        	pei	<L3+pos_1
+  1553 00:02FD: 22 xx xx xx  	jsl	~~k_put_string
+  1554 00:0301: 85 5A        	sta	<L3+pos_1
+  1555                        ;
+  1556                        ;	//pos = k_put_string(pos,line,k_longtodec(_k_exe
+                    c_context,_brk_Buffer),15,0);
+  1557                        ;	strcpy(_brk_Buffer,"");
+  1558                        	.line	145
+  1559 00:0303: F4 xx xx     	pea	#^L1+44
+  1560 00:0306: F4 xx xx     	pea	#<L1+44
+  1561 00:0309: F4 00 00     	pea	#0
+  1562 00:030C: 18           	clc
+  1563 00:030D: 7B           	tdc
+  1564 00:030E: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1565 00:0311: 48           	pha
+  1566 00:0312: 22 xx xx xx  	jsl	~~strcpy
+  1567                        ;	strcat(_brk_Buffer,k_bytetohex(  0x00,_buffer));
+  1568                        	.line	146
+  Mon Aug  9 2021 16:52                                                Page 31
+
+
+  1569 00:0316: F4 00 00     	pea	#0
+  1570 00:0319: 18           	clc
+  1571 00:031A: 7B           	tdc
+  1572 00:031B: 69 49 00     	adc	#<L3+_buffer_1
+  1573 00:031E: 48           	pha
+  1574 00:031F: F4 00 00     	pea	#<$0
+  1575 00:0322: 22 xx xx xx  	jsl	~~k_bytetohex
+  1576 00:0326: 85 01        	sta	<R0
+  1577 00:0328: 86 03        	stx	<R0+2
+  1578 00:032A: DA           	phx
+  1579 00:032B: 48           	pha
+  1580 00:032C: F4 00 00     	pea	#0
+  1581 00:032F: 18           	clc
+  1582 00:0330: 7B           	tdc
+  1583 00:0331: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1584 00:0334: 48           	pha
+  1585 00:0335: 22 xx xx xx  	jsl	~~strcat
+  1586                        ;	strcat(_brk_Buffer,k_bytetohex(  H24BYTE(_k_exec
+                    _context)  ,_buffer));
+  1587                        	.line	147
+  1588 00:0339: F4 00 00     	pea	#0
+  1589 00:033C: 18           	clc
+  1590 00:033D: 7B           	tdc
+  1591 00:033E: 69 49 00     	adc	#<L3+_buffer_1
+  1592 00:0341: 48           	pha
+  1593 00:0342: AD xx xx     	lda	|~~_k_exec_context+2
+  1594 00:0345: 48           	pha
+  1595 00:0346: AD xx xx     	lda	|~~_k_exec_context
+  1596 00:0349: 48           	pha
+  1597 00:034A: A9 10 00     	lda	#$10
+  1598                        	xref	~~~llsr
+  1599 00:034D: 22 xx xx xx  	jsl	~~~llsr
+  1600 00:0351: 85 01        	sta	<R0
+  1601 00:0353: 86 03        	stx	<R0+2
+  1602 00:0355: A5 01        	lda	<R0
+  1603 00:0357: 29 FF 00     	and	#<$ff
+  1604 00:035A: 85 05        	sta	<R1
+  1605 00:035C: 64 07        	stz	<R1+2
+  1606 00:035E: D4 05        	pei	<R1
+  1607 00:0360: 22 xx xx xx  	jsl	~~k_bytetohex
+  1608 00:0364: 85 01        	sta	<R0
+  1609 00:0366: 86 03        	stx	<R0+2
+  1610 00:0368: DA           	phx
+  1611 00:0369: 48           	pha
+  1612 00:036A: F4 00 00     	pea	#0
+  1613 00:036D: 18           	clc
+  1614 00:036E: 7B           	tdc
+  1615 00:036F: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1616 00:0372: 48           	pha
+  1617 00:0373: 22 xx xx xx  	jsl	~~strcat
+  1618                        ;	strcat(_brk_Buffer,k_bytetohex(  M24BYTE(_k_exec
+                    _context)  ,_buffer));
+  1619                        	.line	148
+  1620 00:0377: F4 00 00     	pea	#0
+  1621 00:037A: 18           	clc
+  1622 00:037B: 7B           	tdc
+  1623 00:037C: 69 49 00     	adc	#<L3+_buffer_1
+  1624 00:037F: 48           	pha
+  Mon Aug  9 2021 16:52                                                Page 32
+
+
+  1625 00:0380: AD xx xx     	lda	|~~_k_exec_context+2
+  1626 00:0383: 48           	pha
+  1627 00:0384: AD xx xx     	lda	|~~_k_exec_context
+  1628 00:0387: 48           	pha
+  1629 00:0388: A9 08 00     	lda	#$8
+  1630                        	xref	~~~llsr
+  1631 00:038B: 22 xx xx xx  	jsl	~~~llsr
+  1632 00:038F: 85 01        	sta	<R0
+  1633 00:0391: 86 03        	stx	<R0+2
+  1634 00:0393: A5 01        	lda	<R0
+  1635 00:0395: 29 FF 00     	and	#<$ff
+  1636 00:0398: 85 05        	sta	<R1
+  1637 00:039A: 64 07        	stz	<R1+2
+  1638 00:039C: D4 05        	pei	<R1
+  1639 00:039E: 22 xx xx xx  	jsl	~~k_bytetohex
+  1640 00:03A2: 85 01        	sta	<R0
+  1641 00:03A4: 86 03        	stx	<R0+2
+  1642 00:03A6: DA           	phx
+  1643 00:03A7: 48           	pha
+  1644 00:03A8: F4 00 00     	pea	#0
+  1645 00:03AB: 18           	clc
+  1646 00:03AC: 7B           	tdc
+  1647 00:03AD: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1648 00:03B0: 48           	pha
+  1649 00:03B1: 22 xx xx xx  	jsl	~~strcat
+  1650                        ;	strcat(_brk_Buffer,k_bytetohex(  L24BYTE(_k_exec
+                    _context)  ,_buffer));
+  1651                        	.line	149
+  1652 00:03B5: F4 00 00     	pea	#0
+  1653 00:03B8: 18           	clc
+  1654 00:03B9: 7B           	tdc
+  1655 00:03BA: 69 49 00     	adc	#<L3+_buffer_1
+  1656 00:03BD: 48           	pha
+  1657 00:03BE: AD xx xx     	lda	|~~_k_exec_context
+  1658 00:03C1: 48           	pha
+  1659 00:03C2: 22 xx xx xx  	jsl	~~k_bytetohex
+  1660 00:03C6: 85 01        	sta	<R0
+  1661 00:03C8: 86 03        	stx	<R0+2
+  1662 00:03CA: DA           	phx
+  1663 00:03CB: 48           	pha
+  1664 00:03CC: F4 00 00     	pea	#0
+  1665 00:03CF: 18           	clc
+  1666 00:03D0: 7B           	tdc
+  1667 00:03D1: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1668 00:03D4: 48           	pha
+  1669 00:03D5: 22 xx xx xx  	jsl	~~strcat
+  1670                        ;	pos = k_put_string(pos,line,_brk_Buffer,15,0);
+  1671                        	.line	150
+  1672 00:03D9: F4 00 00     	pea	#<$0
+  1673 00:03DC: F4 0F 00     	pea	#<$f
+  1674 00:03DF: F4 00 00     	pea	#0
+  1675 00:03E2: 18           	clc
+  1676 00:03E3: 7B           	tdc
+  1677 00:03E4: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1678 00:03E7: 48           	pha
+  1679 00:03E8: D4 5C        	pei	<L3+line_1
+  1680 00:03EA: D4 5A        	pei	<L3+pos_1
+  1681 00:03EC: 22 xx xx xx  	jsl	~~k_put_string
+  Mon Aug  9 2021 16:52                                                Page 33
+
+
+  1682 00:03F0: 85 5A        	sta	<L3+pos_1
+  1683                        ;
+  1684                        ;
+  1685                        ;	//pos = k_put_string(pos,line,k_longtodec(_k_exe
+                    c_context,_brk_Buffer),15,0);
+  1686                        ;	strcpy(_brk_Buffer,"");
+  1687                        	.line	154
+  1688 00:03F2: F4 xx xx     	pea	#^L1+45
+  1689 00:03F5: F4 xx xx     	pea	#<L1+45
+  1690 00:03F8: F4 00 00     	pea	#0
+  1691 00:03FB: 18           	clc
+  1692 00:03FC: 7B           	tdc
+  1693 00:03FD: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1694 00:0400: 48           	pha
+  1695 00:0401: 22 xx xx xx  	jsl	~~strcpy
+  1696                        ;	strcat(_brk_Buffer,k_bytetohex(  0x00,_buffer));
+  1697                        	.line	155
+  1698 00:0405: F4 00 00     	pea	#0
+  1699 00:0408: 18           	clc
+  1700 00:0409: 7B           	tdc
+  1701 00:040A: 69 49 00     	adc	#<L3+_buffer_1
+  1702 00:040D: 48           	pha
+  1703 00:040E: F4 00 00     	pea	#<$0
+  1704 00:0411: 22 xx xx xx  	jsl	~~k_bytetohex
+  1705 00:0415: 85 01        	sta	<R0
+  1706 00:0417: 86 03        	stx	<R0+2
+  1707 00:0419: DA           	phx
+  1708 00:041A: 48           	pha
+  1709 00:041B: F4 00 00     	pea	#0
+  1710 00:041E: 18           	clc
+  1711 00:041F: 7B           	tdc
+  1712 00:0420: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1713 00:0423: 48           	pha
+  1714 00:0424: 22 xx xx xx  	jsl	~~strcat
+  1715                        ;	strcat(_brk_Buffer,k_bytetohex(  H24BYTE(_k_exec
+                    _error),_buffer));
+  1716                        	.line	156
+  1717 00:0428: F4 00 00     	pea	#0
+  1718 00:042B: 18           	clc
+  1719 00:042C: 7B           	tdc
+  1720 00:042D: 69 49 00     	adc	#<L3+_buffer_1
+  1721 00:0430: 48           	pha
+  1722 00:0431: AD xx xx     	lda	|~~_k_exec_error+2
+  1723 00:0434: 48           	pha
+  1724 00:0435: AD xx xx     	lda	|~~_k_exec_error
+  1725 00:0438: 48           	pha
+  1726 00:0439: A9 10 00     	lda	#$10
+  1727                        	xref	~~~llsr
+  1728 00:043C: 22 xx xx xx  	jsl	~~~llsr
+  1729 00:0440: 85 01        	sta	<R0
+  1730 00:0442: 86 03        	stx	<R0+2
+  1731 00:0444: A5 01        	lda	<R0
+  1732 00:0446: 29 FF 00     	and	#<$ff
+  1733 00:0449: 85 05        	sta	<R1
+  1734 00:044B: 64 07        	stz	<R1+2
+  1735 00:044D: D4 05        	pei	<R1
+  1736 00:044F: 22 xx xx xx  	jsl	~~k_bytetohex
+  1737 00:0453: 85 01        	sta	<R0
+  Mon Aug  9 2021 16:52                                                Page 34
+
+
+  1738 00:0455: 86 03        	stx	<R0+2
+  1739 00:0457: DA           	phx
+  1740 00:0458: 48           	pha
+  1741 00:0459: F4 00 00     	pea	#0
+  1742 00:045C: 18           	clc
+  1743 00:045D: 7B           	tdc
+  1744 00:045E: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1745 00:0461: 48           	pha
+  1746 00:0462: 22 xx xx xx  	jsl	~~strcat
+  1747                        ;	strcat(_brk_Buffer,k_bytetohex(  M24BYTE(_k_exec
+                    _error)  ,_buffer));
+  1748                        	.line	157
+  1749 00:0466: F4 00 00     	pea	#0
+  1750 00:0469: 18           	clc
+  1751 00:046A: 7B           	tdc
+  1752 00:046B: 69 49 00     	adc	#<L3+_buffer_1
+  1753 00:046E: 48           	pha
+  1754 00:046F: AD xx xx     	lda	|~~_k_exec_error+2
+  1755 00:0472: 48           	pha
+  1756 00:0473: AD xx xx     	lda	|~~_k_exec_error
+  1757 00:0476: 48           	pha
+  1758 00:0477: A9 08 00     	lda	#$8
+  1759                        	xref	~~~llsr
+  1760 00:047A: 22 xx xx xx  	jsl	~~~llsr
+  1761 00:047E: 85 01        	sta	<R0
+  1762 00:0480: 86 03        	stx	<R0+2
+  1763 00:0482: A5 01        	lda	<R0
+  1764 00:0484: 29 FF 00     	and	#<$ff
+  1765 00:0487: 85 05        	sta	<R1
+  1766 00:0489: 64 07        	stz	<R1+2
+  1767 00:048B: D4 05        	pei	<R1
+  1768 00:048D: 22 xx xx xx  	jsl	~~k_bytetohex
+  1769 00:0491: 85 01        	sta	<R0
+  1770 00:0493: 86 03        	stx	<R0+2
+  1771 00:0495: DA           	phx
+  1772 00:0496: 48           	pha
+  1773 00:0497: F4 00 00     	pea	#0
+  1774 00:049A: 18           	clc
+  1775 00:049B: 7B           	tdc
+  1776 00:049C: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1777 00:049F: 48           	pha
+  1778 00:04A0: 22 xx xx xx  	jsl	~~strcat
+  1779                        ;	strcat(_brk_Buffer,k_bytetohex(  L24BYTE(_k_exec
+                    _error)  ,_buffer));
+  1780                        	.line	158
+  1781 00:04A4: F4 00 00     	pea	#0
+  1782 00:04A7: 18           	clc
+  1783 00:04A8: 7B           	tdc
+  1784 00:04A9: 69 49 00     	adc	#<L3+_buffer_1
+  1785 00:04AC: 48           	pha
+  1786 00:04AD: AD xx xx     	lda	|~~_k_exec_error
+  1787 00:04B0: 48           	pha
+  1788 00:04B1: 22 xx xx xx  	jsl	~~k_bytetohex
+  1789 00:04B5: 85 01        	sta	<R0
+  1790 00:04B7: 86 03        	stx	<R0+2
+  1791 00:04B9: DA           	phx
+  1792 00:04BA: 48           	pha
+  1793 00:04BB: F4 00 00     	pea	#0
+  Mon Aug  9 2021 16:52                                                Page 35
+
+
+  1794 00:04BE: 18           	clc
+  1795 00:04BF: 7B           	tdc
+  1796 00:04C0: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1797 00:04C3: 48           	pha
+  1798 00:04C4: 22 xx xx xx  	jsl	~~strcat
+  1799                        ;
+  1800                        ;	//pos = k_put_string(pos,line,k_longtodec(_k_exe
+                    c_context,_brk_Buffer),15,0);
+  1801                        ;	//pos++;
+  1802                        ;	//pos = k_put_string(pos,line,k_longtodec(   ,_b
+                    rk_Buffer),15,0);
+  1803                        ;
+  1804                        ;	pos = k_put_string(pos,line,":",15,0);
+  1805                        	.line	164
+  1806 00:04C8: F4 00 00     	pea	#<$0
+  1807 00:04CB: F4 0F 00     	pea	#<$f
+  1808 00:04CE: F4 xx xx     	pea	#^L1+46
+  1809 00:04D1: F4 xx xx     	pea	#<L1+46
+  1810 00:04D4: D4 5C        	pei	<L3+line_1
+  1811 00:04D6: D4 5A        	pei	<L3+pos_1
+  1812 00:04D8: 22 xx xx xx  	jsl	~~k_put_string
+  1813 00:04DC: 85 5A        	sta	<L3+pos_1
+  1814                        ;	//pos = k_put_string(pos,line,k_longtodec(_k_exe
+                    c_error,_brk_Buffer),15,0);
+  1815                        ;	pos = k_put_string(pos,line,_brk_Buffer,15,0);
+  1816                        	.line	166
+  1817 00:04DE: F4 00 00     	pea	#<$0
+  1818 00:04E1: F4 0F 00     	pea	#<$f
+  1819 00:04E4: F4 00 00     	pea	#0
+  1820 00:04E7: 18           	clc
+  1821 00:04E8: 7B           	tdc
+  1822 00:04E9: 69 09 00     	adc	#<L3+_brk_Buffer_1
+  1823 00:04EC: 48           	pha
+  1824 00:04ED: D4 5C        	pei	<L3+line_1
+  1825 00:04EF: D4 5A        	pei	<L3+pos_1
+  1826 00:04F1: 22 xx xx xx  	jsl	~~k_put_string
+  1827 00:04F5: 85 5A        	sta	<L3+pos_1
+  1828                        ;	pos = 70;
+  1829                        	.line	167
+  1830 00:04F7: A9 46 00     	lda	#$46
+  1831 00:04FA: 85 5A        	sta	<L3+pos_1
+  1832                        ;	pos = k_put_string(pos,line,boxside,15,0);
+  1833                        	.line	168
+  1834 00:04FC: F4 00 00     	pea	#<$0
+  1835 00:04FF: F4 0F 00     	pea	#<$f
+  1836 00:0502: A9 xx xx     	lda	#<~~boxside
+  1837 00:0505: 85 01        	sta	<R0
+  1838                        	xref	_BEG_DATA
+  1839 00:0507: A9 xx xx     	lda	#_BEG_DATA>>16
+  1840 00:050A: 85 03        	sta	<R0+2
+  1841 00:050C: D4 03        	pei	<R0+2
+  1842 00:050E: D4 01        	pei	<R0
+  1843 00:0510: D4 5C        	pei	<L3+line_1
+  1844 00:0512: D4 5A        	pei	<L3+pos_1
+  1845 00:0514: 22 xx xx xx  	jsl	~~k_put_string
+  1846 00:0518: 85 5A        	sta	<L3+pos_1
+  1847                        ;	line++;
+  1848                        	.line	169
+  Mon Aug  9 2021 16:52                                                Page 36
+
+
+  1849 00:051A: E6 5C        	inc	<L3+line_1
+  1850                        ;	pos = 1;
+  1851                        	.line	170
+  1852 00:051C: A9 01 00     	lda	#$1
+  1853 00:051F: 85 5A        	sta	<L3+pos_1
+  1854                        ;	pos = k_put_string(pos,line,boxside,15,0);
+  1855                        	.line	171
+  1856 00:0521: F4 00 00     	pea	#<$0
+  1857 00:0524: F4 0F 00     	pea	#<$f
+  1858 00:0527: A9 xx xx     	lda	#<~~boxside
+  1859 00:052A: 85 01        	sta	<R0
+  1860                        	xref	_BEG_DATA
+  1861 00:052C: A9 xx xx     	lda	#_BEG_DATA>>16
+  1862 00:052F: 85 03        	sta	<R0+2
+  1863 00:0531: D4 03        	pei	<R0+2
+  1864 00:0533: D4 01        	pei	<R0
+  1865 00:0535: D4 5C        	pei	<L3+line_1
+  1866 00:0537: D4 5A        	pei	<L3+pos_1
+  1867 00:0539: 22 xx xx xx  	jsl	~~k_put_string
+  1868 00:053D: 85 5A        	sta	<L3+pos_1
+  1869                        ;	pos = k_put_string(pos,line,"",15,0);
+  1870                        	.line	172
+  1871 00:053F: F4 00 00     	pea	#<$0
+  1872 00:0542: F4 0F 00     	pea	#<$f
+  1873 00:0545: F4 xx xx     	pea	#^L1+48
+  1874 00:0548: F4 xx xx     	pea	#<L1+48
+  1875 00:054B: D4 5C        	pei	<L3+line_1
+  1876 00:054D: D4 5A        	pei	<L3+pos_1
+  1877 00:054F: 22 xx xx xx  	jsl	~~k_put_string
+  1878 00:0553: 85 5A        	sta	<L3+pos_1
+  1879                        ;	pos = 70;
+  1880                        	.line	173
+  1881 00:0555: A9 46 00     	lda	#$46
+  1882 00:0558: 85 5A        	sta	<L3+pos_1
+  1883                        ;	pos = k_put_string(pos,line,boxside,15,0);
+  1884                        	.line	174
+  1885 00:055A: F4 00 00     	pea	#<$0
+  1886 00:055D: F4 0F 00     	pea	#<$f
+  1887 00:0560: A9 xx xx     	lda	#<~~boxside
+  1888 00:0563: 85 01        	sta	<R0
+  1889                        	xref	_BEG_DATA
+  1890 00:0565: A9 xx xx     	lda	#_BEG_DATA>>16
+  1891 00:0568: 85 03        	sta	<R0+2
+  1892 00:056A: D4 03        	pei	<R0+2
+  1893 00:056C: D4 01        	pei	<R0
+  1894 00:056E: D4 5C        	pei	<L3+line_1
+  1895 00:0570: D4 5A        	pei	<L3+pos_1
+  1896 00:0572: 22 xx xx xx  	jsl	~~k_put_string
+  1897 00:0576: 85 5A        	sta	<L3+pos_1
+  1898                        ;	line++;
+  1899                        	.line	175
+  1900 00:0578: E6 5C        	inc	<L3+line_1
+  1901                        ;	pos = 1;
+  1902                        	.line	176
+  1903 00:057A: A9 01 00     	lda	#$1
+  1904 00:057D: 85 5A        	sta	<L3+pos_1
+  1905                        ;	pos = k_put_string(pos,line,boxside,15,0);
+  1906                        	.line	177
+  Mon Aug  9 2021 16:52                                                Page 37
+
+
+  1907 00:057F: F4 00 00     	pea	#<$0
+  1908 00:0582: F4 0F 00     	pea	#<$f
+  1909 00:0585: A9 xx xx     	lda	#<~~boxside
+  1910 00:0588: 85 01        	sta	<R0
+  1911                        	xref	_BEG_DATA
+  1912 00:058A: A9 xx xx     	lda	#_BEG_DATA>>16
+  1913 00:058D: 85 03        	sta	<R0+2
+  1914 00:058F: D4 03        	pei	<R0+2
+  1915 00:0591: D4 01        	pei	<R0
+  1916 00:0593: D4 5C        	pei	<L3+line_1
+  1917 00:0595: D4 5A        	pei	<L3+pos_1
+  1918 00:0597: 22 xx xx xx  	jsl	~~k_put_string
+  1919 00:059B: 85 5A        	sta	<L3+pos_1
+  1920                        ;	pos = k_put_string(pos,line,_k_exec_message,15,0
+                    );
+  1921                        	.line	178
+  1922 00:059D: F4 00 00     	pea	#<$0
+  1923 00:05A0: F4 0F 00     	pea	#<$f
+  1924 00:05A3: A9 xx xx     	lda	#<~~_k_exec_message
+  1925 00:05A6: 85 01        	sta	<R0
+  1926                        	xref	_BEG_DATA
+  1927 00:05A8: A9 xx xx     	lda	#_BEG_DATA>>16
+  1928 00:05AB: 85 03        	sta	<R0+2
+  1929 00:05AD: D4 03        	pei	<R0+2
+  1930 00:05AF: D4 01        	pei	<R0
+  1931 00:05B1: D4 5C        	pei	<L3+line_1
+  1932 00:05B3: D4 5A        	pei	<L3+pos_1
+  1933 00:05B5: 22 xx xx xx  	jsl	~~k_put_string
+  1934 00:05B9: 85 5A        	sta	<L3+pos_1
+  1935                        ;	pos = 70;
+  1936                        	.line	179
+  1937 00:05BB: A9 46 00     	lda	#$46
+  1938 00:05BE: 85 5A        	sta	<L3+pos_1
+  1939                        ;	pos = k_put_string(pos,line,boxside,15,0);
+  1940                        	.line	180
+  1941 00:05C0: F4 00 00     	pea	#<$0
+  1942 00:05C3: F4 0F 00     	pea	#<$f
+  1943 00:05C6: A9 xx xx     	lda	#<~~boxside
+  1944 00:05C9: 85 01        	sta	<R0
+  1945                        	xref	_BEG_DATA
+  1946 00:05CB: A9 xx xx     	lda	#_BEG_DATA>>16
+  1947 00:05CE: 85 03        	sta	<R0+2
+  1948 00:05D0: D4 03        	pei	<R0+2
+  1949 00:05D2: D4 01        	pei	<R0
+  1950 00:05D4: D4 5C        	pei	<L3+line_1
+  1951 00:05D6: D4 5A        	pei	<L3+pos_1
+  1952 00:05D8: 22 xx xx xx  	jsl	~~k_put_string
+  1953 00:05DC: 85 5A        	sta	<L3+pos_1
+  1954                        ;	line++;
+  1955                        	.line	181
+  1956 00:05DE: E6 5C        	inc	<L3+line_1
+  1957                        ;	pos = 1;
+  1958                        	.line	182
+  1959 00:05E0: A9 01 00     	lda	#$1
+  1960 00:05E3: 85 5A        	sta	<L3+pos_1
+  1961                        ;	pos = k_put_string(pos,line,boxside,15,0);
+  1962                        	.line	183
+  1963 00:05E5: F4 00 00     	pea	#<$0
+  Mon Aug  9 2021 16:52                                                Page 38
+
+
+  1964 00:05E8: F4 0F 00     	pea	#<$f
+  1965 00:05EB: A9 xx xx     	lda	#<~~boxside
+  1966 00:05EE: 85 01        	sta	<R0
+  1967                        	xref	_BEG_DATA
+  1968 00:05F0: A9 xx xx     	lda	#_BEG_DATA>>16
+  1969 00:05F3: 85 03        	sta	<R0+2
+  1970 00:05F5: D4 03        	pei	<R0+2
+  1971 00:05F7: D4 01        	pei	<R0
+  1972 00:05F9: D4 5C        	pei	<L3+line_1
+  1973 00:05FB: D4 5A        	pei	<L3+pos_1
+  1974 00:05FD: 22 xx xx xx  	jsl	~~k_put_string
+  1975 00:0601: 85 5A        	sta	<L3+pos_1
+  1976                        ;	pos = 70;
+  1977                        	.line	184
+  1978 00:0603: A9 46 00     	lda	#$46
+  1979 00:0606: 85 5A        	sta	<L3+pos_1
+  1980                        ;	pos = k_put_string(pos,line,boxside,15,0);
+  1981                        	.line	185
+  1982 00:0608: F4 00 00     	pea	#<$0
+  1983 00:060B: F4 0F 00     	pea	#<$f
+  1984 00:060E: A9 xx xx     	lda	#<~~boxside
+  1985 00:0611: 85 01        	sta	<R0
+  1986                        	xref	_BEG_DATA
+  1987 00:0613: A9 xx xx     	lda	#_BEG_DATA>>16
+  1988 00:0616: 85 03        	sta	<R0+2
+  1989 00:0618: D4 03        	pei	<R0+2
+  1990 00:061A: D4 01        	pei	<R0
+  1991 00:061C: D4 5C        	pei	<L3+line_1
+  1992 00:061E: D4 5A        	pei	<L3+pos_1
+  1993 00:0620: 22 xx xx xx  	jsl	~~k_put_string
+  1994 00:0624: 85 5A        	sta	<L3+pos_1
+  1995                        ;	line++;
+  1996                        	.line	186
+  1997 00:0626: E6 5C        	inc	<L3+line_1
+  1998                        ;	pos = 1;
+  1999                        	.line	187
+  2000 00:0628: A9 01 00     	lda	#$1
+  2001 00:062B: 85 5A        	sta	<L3+pos_1
+  2002                        ;	pos = k_put_string(pos,line,boxbottom,15,0);
+  2003                        	.line	188
+  2004 00:062D: F4 00 00     	pea	#<$0
+  2005 00:0630: F4 0F 00     	pea	#<$f
+  2006 00:0633: A9 xx xx     	lda	#<~~boxbottom
+  2007 00:0636: 85 01        	sta	<R0
+  2008                        	xref	_BEG_DATA
+  2009 00:0638: A9 xx xx     	lda	#_BEG_DATA>>16
+  2010 00:063B: 85 03        	sta	<R0+2
+  2011 00:063D: D4 03        	pei	<R0+2
+  2012 00:063F: D4 01        	pei	<R0
+  2013 00:0641: D4 5C        	pei	<L3+line_1
+  2014 00:0643: D4 5A        	pei	<L3+pos_1
+  2015 00:0645: 22 xx xx xx  	jsl	~~k_put_string
+  2016 00:0649: 85 5A        	sta	<L3+pos_1
+  2017                        ;
+  2018                        ;
+  2019                        ;	k_set_border(25,25,0,0,0);
+  2020                        	.line	191
+  2021 00:064B: F4 00 00     	pea	#<$0
+  Mon Aug  9 2021 16:52                                                Page 39
+
+
+  2022 00:064E: F4 00 00     	pea	#<$0
+  2023 00:0651: F4 00 00     	pea	#<$0
+  2024 00:0654: F4 19 00     	pea	#<$19
+  2025 00:0657: F4 19 00     	pea	#<$19
+  2026 00:065A: 22 xx xx xx  	jsl	~~k_set_border
+  2027                        ;	while(TRUE)
+  2028                        	.line	192
+  2029                        L10001:
+  2030                        ;	{
+  2031                        	.line	193
+  2032                        ;		for(flames=255;flames>64;flames--)
+  2033                        	.line	194
+  2034 00:065E: E2 20        	sep	#$20
+  2035                        	longa	off
+  2036 00:0660: A9 FF        	lda	#$ff
+  2037 00:0662: 85 59        	sta	<L3+flames_1
+  2038 00:0664: C2 20        	rep	#$20
+  2039                        	longa	on
+  2040 00:0666: 82 19 00     	brl	L10006
+  2041                        L10005:
+  2042                        ;		{
+  2043                        	.line	195
+  2044                        ;			k_set_border_color(flames,0,0);
+  2045                        	.line	196
+  2046 00:0669: F4 00 00     	pea	#<$0
+  2047 00:066C: F4 00 00     	pea	#<$0
+  2048 00:066F: D4 59        	pei	<L3+flames_1
+  2049 00:0671: 22 xx xx xx  	jsl	~~k_set_border_color
+  2050                        ;			//k_set_border(10,10,flames,0,0)
+                    ;
+  2051                        ;			k_delay(25);
+  2052                        	.line	198
+  2053 00:0675: F4 19 00     	pea	#<$19
+  2054 00:0678: 22 xx xx xx  	jsl	~~k_delay
+  2055                        ;		}
+  2056                        	.line	199
+  2057                        L10003:
+  2058 00:067C: E2 20        	sep	#$20
+  2059                        	longa	off
+  2060 00:067E: C6 59        	dec	<L3+flames_1
+  2061 00:0680: C2 20        	rep	#$20
+  2062                        	longa	on
+  2063                        L10006:
+  2064 00:0682: E2 20        	sep	#$20
+  2065                        	longa	off
+  2066 00:0684: A9 40        	lda	#$40
+  2067 00:0686: C5 59        	cmp	<L3+flames_1
+  2068 00:0688: C2 20        	rep	#$20
+  2069                        	longa	on
+  2070 00:068A: B0 03        	bcs	L5
+  2071 00:068C: 82 DA FF     	brl	L10005
+  2072                        L5:
+  2073                        L10004:
+  2074                        ;		for(flames=64;flames<255;flames++)
+  2075                        	.line	200
+  2076 00:068F: E2 20        	sep	#$20
+  2077                        	longa	off
+  2078 00:0691: A9 40        	lda	#$40
+  Mon Aug  9 2021 16:52                                                Page 40
+
+
+  2079 00:0693: 85 59        	sta	<L3+flames_1
+  2080 00:0695: C2 20        	rep	#$20
+  2081                        	longa	on
+  2082 00:0697: 82 19 00     	brl	L10010
+  2083                        L10009:
+  2084                        ;		{
+  2085                        	.line	201
+  2086                        ;			k_set_border_color(flames,0,0);
+  2087                        	.line	202
+  2088 00:069A: F4 00 00     	pea	#<$0
+  2089 00:069D: F4 00 00     	pea	#<$0
+  2090 00:06A0: D4 59        	pei	<L3+flames_1
+  2091 00:06A2: 22 xx xx xx  	jsl	~~k_set_border_color
+  2092                        ;			//k_set_border(10,10,flames,0,0)
+                    ;
+  2093                        ;			k_delay(25);
+  2094                        	.line	204
+  2095 00:06A6: F4 19 00     	pea	#<$19
+  2096 00:06A9: 22 xx xx xx  	jsl	~~k_delay
+  2097                        ;		}
+  2098                        	.line	205
+  2099                        L10007:
+  2100 00:06AD: E2 20        	sep	#$20
+  2101                        	longa	off
+  2102 00:06AF: E6 59        	inc	<L3+flames_1
+  2103 00:06B1: C2 20        	rep	#$20
+  2104                        	longa	on
+  2105                        L10010:
+  2106 00:06B3: E2 20        	sep	#$20
+  2107                        	longa	off
+  2108 00:06B5: A5 59        	lda	<L3+flames_1
+  2109 00:06B7: C9 FF        	cmp	#<$ff
+  2110 00:06B9: C2 20        	rep	#$20
+  2111                        	longa	on
+  2112 00:06BB: B0 03        	bcs	L6
+  2113 00:06BD: 82 DA FF     	brl	L10009
+  2114                        L6:
+  2115                        L10008:
+  2116                        ;	}
+  2117                        	.line	206
+  2118 00:06C0: 82 9B FF     	brl	L10001
+  2119                        ;
+  2120                        ;}
+  2121                        	.line	208
+  2122                        	.endblock	208
+  2123             00000062   L2	equ	98
+  2124             00000009   L3	equ	9
+  2125                        	ends
+  2126                        	efunc
+  2127                        	.endfunc	208,9,98
+  2128                        	.line	208
+  2129                        	data
+  2130                        L1:
+  2131 00:00A2: 0D 0A 00 0D  	db	$0D,$0A,$00,$0D,$0A,$00,$50,$43,$3A,$20,
+                    $00,$3A,$00,$0D,$0A
+       00:00A6: 0A 00 50 43 
+       00:00AA: 3A 20 00 3A 
+       00:00AE: 00 0D 0A 
+  Mon Aug  9 2021 16:52                                                Page 41
+
+
+  2132 00:00B1: 00 53 53 3A  	db	$00,$53,$53,$3A,$20,$30,$30,$00,$3A,$00,
+                    $0D,$0A,$00,$20,$46
+       00:00B5: 20 30 30 00 
+       00:00B9: 3A 00 0D 0A 
+       00:00BD: 00 20 46 
+  2133 00:00C0: 6F 65 6E 69  	db	$6F,$65,$6E,$69,$78,$20,$41,$73,$68,$65,
+                    $73,$3A,$20,$00,$00
+       00:00C4: 78 20 41 73 
+       00:00C8: 68 65 73 3A 
+       00:00CC: 20 00 00 
+  2134 00:00CF: 00 3A 00 00  	db	$00,$3A,$00,$00
+  2135 00:00D3:              	ends
+  2136                        ;
+  2137                        ;void COPHandler(void)
+  2138                        ;{
+  2139                        	.line	210
+  2140                        	.line	211
+  2141                        	code
+  2142                        	xdef	~~COPHandler
+  2143                        	func
+  2144                        	.function	211
+  2145                        ~~COPHandler:
+  2146                        	longa	on
+  2147                        	longi	on
+  2148 00:06C3: 3B           	tsc
+  2149 00:06C4: 38           	sec
+  2150 00:06C5: E9 00 00     	sbc	#L8
+  2151 00:06C8: 1B           	tcs
+  2152 00:06C9: 0B           	phd
+  2153 00:06CA: 5B           	tcd
+  2154                        	.block	211
+  2155                        ;	return;
+  2156                        	.line	212
+  2157                        L11:
+  2158 00:06CB: 2B           	pld
+  2159 00:06CC: 3B           	tsc
+  2160 00:06CD: 18           	clc
+  2161 00:06CE: 69 00 00     	adc	#L8
+  2162 00:06D1: 1B           	tcs
+  2163 00:06D2: 6B           	rtl
+  2164                        ;}
+  2165                        	.line	213
+  2166                        	.endblock	213
+  2167             00000000   L8	equ	0
+  2168             00000001   L9	equ	1
+  2169                        	ends
+  2170                        	efunc
+  2171                        	.endfunc	213,1,0
+  2172                        	.line	213
+  2173                        ;
+  2174                        ;
+  2175                        ;
+  2176                        ;static VOID irq_dispatch(VOID)
+  2177                        ;{
+  2178                        	.line	217
+  2179                        	.line	218
+  2180                        	code
+  2181                        	func
+  Mon Aug  9 2021 16:52                                                Page 42
+
+
+  2182                        	.function	218
+  2183                        ~~irq_dispatch:
+  2184                        	longa	on
+  2185                        	longi	on
+  2186 00:06D3: 3B           	tsc
+  2187 00:06D4: 38           	sec
+  2188 00:06D5: E9 15 00     	sbc	#L12
+  2189 00:06D8: 1B           	tcs
+  2190 00:06D9: 0B           	phd
+  2191 00:06DA: 5B           	tcd
+  2192                        	.block	218
+  2193                        ;	BYTE pending;
+  2194                        ;	BYTE irq_mask;
+  2195                        ;	BYTE bus;
+  2196                        ;	BYTE irq_num;
+  2197                        ;	BYTE i;
+  2198                        ;
+  2199                        ;	// For each interrupt block...
+  2200                        ;	for (bus = 0; bus < IRQBUSIDX(g_irq_handlers); b
+                    us++)
+  2201             00000000   pending_1	set	0
+  2202             00000001   irq_mask_1	set	1
+  2203             00000002   bus_1	set	2
+  2204             00000003   irq_num_1	set	3
+  2205             00000004   i_1	set	4
+  2206                        	.sym	pending,0,14,1,8
+  2207                        	.sym	irq_mask,1,14,1,8
+  2208                        	.sym	bus,2,14,1,8
+  2209                        	.sym	irq_num,3,14,1,8
+  2210                        	.sym	i,4,14,1,8
+  2211                        	.line	226
+  2212 00:06DB: E2 20        	sep	#$20
+  2213                        	longa	off
+  2214 00:06DD: 64 13        	stz	<L13+bus_1
+  2215 00:06DF: C2 20        	rep	#$20
+  2216                        	longa	on
+  2217 00:06E1: 82 52 01     	brl	L10014
+  2218                        L10013:
+  2219                        ;	{
+  2220                        	.line	227
+  2221                        ;		irq_mask = 1;
+  2222                        	.line	228
+  2223 00:06E4: E2 20        	sep	#$20
+  2224                        	longa	off
+  2225 00:06E6: A9 01        	lda	#$1
+  2226 00:06E8: 85 12        	sta	<L13+irq_mask_1
+  2227 00:06EA: C2 20        	rep	#$20
+  2228                        	longa	on
+  2229                        ;		// Get that block's list of pending inte
+                    rrupts
+  2230                        ;		pending = INT_PENDING_REG0[bus];
+  2231                        	.line	230
+  2232 00:06EC: A5 13        	lda	<L13+bus_1
+  2233 00:06EE: 29 FF 00     	and	#$ff
+  2234 00:06F1: 85 01        	sta	<R0
+  2235 00:06F3: A9 40 01     	lda	#$140
+  2236 00:06F6: 85 05        	sta	<R1
+  2237 00:06F8: A9 00 00     	lda	#$0
+  Mon Aug  9 2021 16:52                                                Page 43
+
+
+  2238 00:06FB: 85 07        	sta	<R1+2
+  2239 00:06FD: E2 20        	sep	#$20
+  2240                        	longa	off
+  2241 00:06FF: A4 01        	ldy	<R0
+  2242 00:0701: B7 05        	lda	[<R1],Y
+  2243 00:0703: 85 11        	sta	<L13+pending_1
+  2244 00:0705: C2 20        	rep	#$20
+  2245                        	longa	on
+  2246                        ;		if (pending != 0)
+  2247                        	.line	231
+  2248                        ;		{
+  2249 00:0707: A5 11        	lda	<L13+pending_1
+  2250 00:0709: 29 FF 00     	and	#$ff
+  2251 00:070C: D0 03        	bne	L15
+  2252 00:070E: 82 1F 01     	brl	L10015
+  2253                        L15:
+  2254                        	.line	232
+  2255                        ;			for (irq_num = 0; irq_num < IRQN
+                    UMIDX(g_irq_handlers); irq_num++)
+  2256                        	.line	233
+  2257 00:0711: E2 20        	sep	#$20
+  2258                        	longa	off
+  2259 00:0713: 64 14        	stz	<L13+irq_num_1
+  2260 00:0715: C2 20        	rep	#$20
+  2261                        	longa	on
+  2262 00:0717: 82 EE 00     	brl	L10019
+  2263                        L10018:
+  2264                        ;			{
+  2265                        	.line	234
+  2266                        ;				if((pending & irq_mask)!
+                    =0)
+  2267                        	.line	235
+  2268                        ;				{
+  2269 00:071A: E2 20        	sep	#$20
+  2270                        	longa	off
+  2271 00:071C: A5 12        	lda	<L13+irq_mask_1
+  2272 00:071E: 25 11        	and	<L13+pending_1
+  2273 00:0720: C2 20        	rep	#$20
+  2274                        	longa	on
+  2275 00:0722: D0 03        	bne	L16
+  2276 00:0724: 82 D5 00     	brl	L10020
+  2277                        L16:
+  2278                        	.line	236
+  2279                        ;					/*
+  2280                        ;					if (g_irq_handle
+                    rs[block][irq_num] != NULL)
+  2281                        ;					{
+  2282                        ;						(g_irq_h
+                    andlers[block][irq_num])();
+  2283                        ;					}
+  2284                        ;					*/
+  2285                        ;					// iterate any h
+                    ooks
+  2286                        ;					for(i=0;i<4;i++)
+  2287                        	.line	244
+  2288 00:0727: E2 20        	sep	#$20
+  2289                        	longa	off
+  2290 00:0729: 64 15        	stz	<L13+i_1
+  Mon Aug  9 2021 16:52                                                Page 44
+
+
+  2291 00:072B: C2 20        	rep	#$20
+  2292                        	longa	on
+  2293 00:072D: 82 A4 00     	brl	L10024
+  2294                        L10023:
+  2295                        ;					{
+  2296                        	.line	245
+  2297                        ;						//k_debu
+                    g_hex("bus:",bus);
+  2298                        ;						//k_debu
+                    g_hex("irq_num:",irq_num);
+  2299                        ;						//k_debu
+                    g_hex("i:",i);
+  2300                        ;						if (g_ir
+                    q_handlers[bus][irq_num].handlers[i] != NULL)
+  2301                        	.line	249
+  2302                        ;						{
+  2303 00:0730: A5 15        	lda	<L13+i_1
+  2304 00:0732: 29 FF 00     	and	#$ff
+  2305 00:0735: 85 05        	sta	<R1
+  2306 00:0737: A5 05        	lda	<R1
+  2307 00:0739: 0A           	asl	A
+  2308 00:073A: 0A           	asl	A
+  2309 00:073B: 85 01        	sta	<R0
+  2310 00:073D: A5 14        	lda	<L13+irq_num_1
+  2311 00:073F: 29 FF 00     	and	#$ff
+  2312 00:0742: 85 09        	sta	<R2
+  2313 00:0744: A5 09        	lda	<R2
+  2314 00:0746: 0A           	asl	A
+  2315 00:0747: 0A           	asl	A
+  2316 00:0748: 0A           	asl	A
+  2317 00:0749: 0A           	asl	A
+  2318 00:074A: 85 05        	sta	<R1
+  2319 00:074C: A5 13        	lda	<L13+bus_1
+  2320 00:074E: 29 FF 00     	and	#$ff
+  2321 00:0751: A2 07 00     	ldx	#<$7
+  2322                        	xref	~~~asl
+  2323 00:0754: 22 xx xx xx  	jsl	~~~asl
+  2324 00:0758: 85 09        	sta	<R2
+  2325 00:075A: 18           	clc
+  2326 00:075B: A5 09        	lda	<R2
+  2327 00:075D: 65 05        	adc	<R1
+  2328 00:075F: 85 0D        	sta	<R3
+  2329 00:0761: 18           	clc
+  2330 00:0762: A5 0D        	lda	<R3
+  2331 00:0764: 65 01        	adc	<R0
+  2332 00:0766: 85 05        	sta	<R1
+  2333 00:0768: 18           	clc
+  2334 00:0769: A9 xx xx     	lda	#<~~g_irq_handlers
+  2335 00:076C: 65 05        	adc	<R1
+  2336 00:076E: 85 01        	sta	<R0
+  2337 00:0770: B2 01        	lda	(<R0)
+  2338 00:0772: A0 02 00     	ldy	#$2
+  2339 00:0775: 11 01        	ora	(<R0),Y
+  2340 00:0777: D0 03        	bne	L17
+  2341 00:0779: 82 4F 00     	brl	L10025
+  2342                        L17:
+  2343                        	.line	250
+  2344                        ;							
+  Mon Aug  9 2021 16:52                                                Page 45
+
+
+                    (g_irq_handlers[bus][irq_num].handlers[i])();
+  2345                        	.line	251
+  2346 00:077C: A5 15        	lda	<L13+i_1
+  2347 00:077E: 29 FF 00     	and	#$ff
+  2348 00:0781: 85 05        	sta	<R1
+  2349 00:0783: A5 05        	lda	<R1
+  2350 00:0785: 0A           	asl	A
+  2351 00:0786: 0A           	asl	A
+  2352 00:0787: 85 01        	sta	<R0
+  2353 00:0789: A5 14        	lda	<L13+irq_num_1
+  2354 00:078B: 29 FF 00     	and	#$ff
+  2355 00:078E: 85 09        	sta	<R2
+  2356 00:0790: A5 09        	lda	<R2
+  2357 00:0792: 0A           	asl	A
+  2358 00:0793: 0A           	asl	A
+  2359 00:0794: 0A           	asl	A
+  2360 00:0795: 0A           	asl	A
+  2361 00:0796: 85 05        	sta	<R1
+  2362 00:0798: A5 13        	lda	<L13+bus_1
+  2363 00:079A: 29 FF 00     	and	#$ff
+  2364 00:079D: A2 07 00     	ldx	#<$7
+  2365                        	xref	~~~asl
+  2366 00:07A0: 22 xx xx xx  	jsl	~~~asl
+  2367 00:07A4: 85 09        	sta	<R2
+  2368 00:07A6: 18           	clc
+  2369 00:07A7: A5 09        	lda	<R2
+  2370 00:07A9: 65 05        	adc	<R1
+  2371 00:07AB: 85 0D        	sta	<R3
+  2372 00:07AD: 18           	clc
+  2373 00:07AE: A5 0D        	lda	<R3
+  2374 00:07B0: 65 01        	adc	<R0
+  2375 00:07B2: 85 05        	sta	<R1
+  2376 00:07B4: 18           	clc
+  2377 00:07B5: A9 xx xx     	lda	#<~~g_irq_handlers
+  2378 00:07B8: 65 05        	adc	<R1
+  2379 00:07BA: 85 01        	sta	<R0
+  2380 00:07BC: A0 02 00     	ldy	#$2
+  2381 00:07BF: B1 01        	lda	(<R0),Y
+  2382 00:07C1: AA           	tax
+  2383 00:07C2: B2 01        	lda	(<R0)
+  2384                        	xref	~~~lcal
+  2385 00:07C4: 22 xx xx xx  	jsl	~~~lcal
+  2386                        ;						}
+  2387                        	.line	252
+  2388                        ;						else
+  2389 00:07C8: 82 03 00     	brl	L10026
+  2390                        L10025:
+  2391                        ;							
+                    break;
+  2392                        	.line	254
+  2393 00:07CB: 82 13 00     	brl	L10022
+  2394                        L10026:
+  2395                        ;					}
+  2396                        	.line	255
+  2397                        L10021:
+  2398 00:07CE: E2 20        	sep	#$20
+  2399                        	longa	off
+  2400 00:07D0: E6 15        	inc	<L13+i_1
+  Mon Aug  9 2021 16:52                                                Page 46
+
+
+  2401 00:07D2: C2 20        	rep	#$20
+  2402                        	longa	on
+  2403                        L10024:
+  2404 00:07D4: E2 20        	sep	#$20
+  2405                        	longa	off
+  2406 00:07D6: A5 15        	lda	<L13+i_1
+  2407 00:07D8: C9 04        	cmp	#<$4
+  2408 00:07DA: C2 20        	rep	#$20
+  2409                        	longa	on
+  2410 00:07DC: B0 03        	bcs	L18
+  2411 00:07DE: 82 4F FF     	brl	L10023
+  2412                        L18:
+  2413                        L10022:
+  2414                        ;					INT_PENDING_REG0
+                    [bus] = irq_mask;
+  2415                        	.line	256
+  2416 00:07E1: A5 13        	lda	<L13+bus_1
+  2417 00:07E3: 29 FF 00     	and	#$ff
+  2418 00:07E6: 85 01        	sta	<R0
+  2419 00:07E8: A9 40 01     	lda	#$140
+  2420 00:07EB: 85 05        	sta	<R1
+  2421 00:07ED: A9 00 00     	lda	#$0
+  2422 00:07F0: 85 07        	sta	<R1+2
+  2423 00:07F2: E2 20        	sep	#$20
+  2424                        	longa	off
+  2425 00:07F4: A5 12        	lda	<L13+irq_mask_1
+  2426 00:07F6: A4 01        	ldy	<R0
+  2427 00:07F8: 97 05        	sta	[<R1],Y
+  2428 00:07FA: C2 20        	rep	#$20
+  2429                        	longa	on
+  2430                        ;				}
+  2431                        	.line	257
+  2432                        ;
+  2433                        ;				//INT_PENDING_REG0[block
+                    ] = irq_mask;
+  2434                        ;				irq_mask = (irq_mask << 
+                    1);
+  2435                        L10020:
+  2436                        	.line	260
+  2437 00:07FC: E2 20        	sep	#$20
+  2438                        	longa	off
+  2439 00:07FE: 06 12        	asl	<L13+irq_mask_1
+  2440 00:0800: C2 20        	rep	#$20
+  2441                        	longa	on
+  2442                        ;			}
+  2443                        	.line	261
+  2444                        L10016:
+  2445 00:0802: E2 20        	sep	#$20
+  2446                        	longa	off
+  2447 00:0804: E6 14        	inc	<L13+irq_num_1
+  2448 00:0806: C2 20        	rep	#$20
+  2449                        	longa	on
+  2450                        L10019:
+  2451 00:0808: E2 20        	sep	#$20
+  2452                        	longa	off
+  2453 00:080A: A5 14        	lda	<L13+irq_num_1
+  2454 00:080C: C9 08        	cmp	#<$8
+  2455 00:080E: C2 20        	rep	#$20
+  Mon Aug  9 2021 16:52                                                Page 47
+
+
+  2456                        	longa	on
+  2457 00:0810: B0 03        	bcs	L19
+  2458 00:0812: 82 05 FF     	brl	L10018
+  2459                        L19:
+  2460                        L10017:
+  2461                        ;			INT_PENDING_REG0[bus] = 0xFF;
+  2462                        	.line	262
+  2463 00:0815: A5 13        	lda	<L13+bus_1
+  2464 00:0817: 29 FF 00     	and	#$ff
+  2465 00:081A: 85 01        	sta	<R0
+  2466 00:081C: A9 40 01     	lda	#$140
+  2467 00:081F: 85 05        	sta	<R1
+  2468 00:0821: A9 00 00     	lda	#$0
+  2469 00:0824: 85 07        	sta	<R1+2
+  2470 00:0826: E2 20        	sep	#$20
+  2471                        	longa	off
+  2472 00:0828: A9 FF        	lda	#$ff
+  2473 00:082A: A4 01        	ldy	<R0
+  2474 00:082C: 97 05        	sta	[<R1],Y
+  2475 00:082E: C2 20        	rep	#$20
+  2476                        	longa	on
+  2477                        ;			//INT_PENDING_REG0[bus] = 0x00;
+  2478                        ;		}
+  2479                        	.line	264
+  2480                        ;	}
+  2481                        L10015:
+  2482                        	.line	265
+  2483                        L10011:
+  2484 00:0830: E2 20        	sep	#$20
+  2485                        	longa	off
+  2486 00:0832: E6 13        	inc	<L13+bus_1
+  2487 00:0834: C2 20        	rep	#$20
+  2488                        	longa	on
+  2489                        L10014:
+  2490 00:0836: E2 20        	sep	#$20
+  2491                        	longa	off
+  2492 00:0838: A5 13        	lda	<L13+bus_1
+  2493 00:083A: C9 04        	cmp	#<$4
+  2494 00:083C: C2 20        	rep	#$20
+  2495                        	longa	on
+  2496 00:083E: B0 03        	bcs	L20
+  2497 00:0840: 82 A1 FE     	brl	L10013
+  2498                        L20:
+  2499                        L10012:
+  2500                        ;}
+  2501                        	.line	266
+  2502                        L21:
+  2503 00:0843: 2B           	pld
+  2504 00:0844: 3B           	tsc
+  2505 00:0845: 18           	clc
+  2506 00:0846: 69 15 00     	adc	#L12
+  2507 00:0849: 1B           	tcs
+  2508 00:084A: 6B           	rtl
+  2509                        	.endblock	266
+  2510             00000015   L12	equ	21
+  2511             00000011   L13	equ	17
+  2512                        	ends
+  2513                        	efunc
+  Mon Aug  9 2021 16:52                                                Page 48
+
+
+  2514                        	.endfunc	266,17,21
+  2515                        	.line	266
+  2516                        ;
+  2517                        ;
+  2518                        ;void IRQHandler(void)
+  2519                        ;{
+  2520                        	.line	269
+  2521                        	.line	270
+  2522                        	code
+  2523                        	xdef	~~IRQHandler
+  2524                        	func
+  2525                        	.function	270
+  2526                        ~~IRQHandler:
+  2527                        	longa	on
+  2528                        	longi	on
+  2529 00:084B: 3B           	tsc
+  2530 00:084C: 38           	sec
+  2531 00:084D: E9 00 00     	sbc	#L22
+  2532 00:0850: 1B           	tcs
+  2533 00:0851: 0B           	phd
+  2534 00:0852: 5B           	tcd
+  2535                        	.block	270
+  2536                        ;	//_k_irq_handler_calls++;
+  2537                        ;
+  2538                        ;	_k_in_irq_enabled = TRUE;
+  2539                        	.line	273
+  2540 00:0853: E2 20        	sep	#$20
+  2541                        	longa	off
+  2542 00:0855: A9 01        	lda	#$1
+  2543 00:0857: 8D xx xx     	sta	|~~_k_in_irq_enabled
+  2544 00:085A: C2 20        	rep	#$20
+  2545                        	longa	on
+  2546                        ;
+  2547                        ;	irq_dispatch();
+  2548                        	.line	275
+  2549 00:085C: 22 xx xx xx  	jsl	~~irq_dispatch
+  2550                        ;
+  2551                        ;	_k_in_irq_enabled = FALSE;
+  2552                        	.line	277
+  2553 00:0860: E2 20        	sep	#$20
+  2554                        	longa	off
+  2555 00:0862: 9C xx xx     	stz	|~~_k_in_irq_enabled
+  2556 00:0865: C2 20        	rep	#$20
+  2557                        	longa	on
+  2558                        ;
+  2559                        ;	return;
+  2560                        	.line	279
+  2561                        L25:
+  2562 00:0867: 2B           	pld
+  2563 00:0868: 3B           	tsc
+  2564 00:0869: 18           	clc
+  2565 00:086A: 69 00 00     	adc	#L22
+  2566 00:086D: 1B           	tcs
+  2567 00:086E: 6B           	rtl
+  2568                        ;}
+  2569                        	.line	280
+  2570                        	.endblock	280
+  2571             00000000   L22	equ	0
+  Mon Aug  9 2021 16:52                                                Page 49
+
+
+  2572             00000001   L23	equ	1
+  2573                        	ends
+  2574                        	efunc
+  2575                        	.endfunc	280,1,0
+  2576                        	.line	280
+  2577                        ;
+  2578                        ;
+  2579                        ;
+  2580                        ;
+  2581                        ;
+  2582                        	.line	284
+  2583                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxhalmanager.c",269
+  2584                        	xref	~~k_debug_string
+  2585                        	xref	~~k_delay
+  2586                        	xref	~~k_put_string
+  2587                        	xref	~~k_set_border
+  2588                        	xref	~~k_set_border_color
+  2589                        	xref	~~k_enable_border
+  2590                        	xref	~~k_initialize_text_fonts
+  2591                        	xref	~~k_initialize_text
+  2592                        	xref	~~k_set_text_colors
+  2593                        	xref	~~k_enable_text_mode
+  2594                        	xref	~~k_bytetohex
+  2595                        	xref	~~strcpy
+  2596                        	xref	~~strcat
+  2597                        	xref	~~_k_exec_message
+  2598                        	xref	~~_k_exec_error
+  2599                        	xref	~~_k_exec_context
+  2600                        	xref	~~g_irq_handlers
+  2601                        	xref	~~_k_in_irq_enabled
+  2602                        	.sym	~~IRQHandler,~~IRQHandler,65,2,0
+  2603                        	.sym	~~irq_dispatch,~~irq_dispatch,65,3,0
+  2604                        	.sym	~~COPHandler,~~COPHandler,65,2,0
+  2605                        	.sym	~~BRKHandler,~~BRKHandler,65,2,0
+  2606                        	.sym	~~_pseudo_timer,~~_pseudo_timer,18,2,32
+  2607                        	.sym	~~_k_exec_message,~~_k_exec_message,110,
+                    18,0,64
+  2608                        	.sym	~~_k_exec_error,~~_k_exec_error,18,18,32
+  2609                        	.sym	~~_k_exec_context,~~_k_exec_context,18,1
+                    8,32
+  2610                        	.sym	~~boxside,~~boxside,110,2,0,2
+  2611                        	.sym	~~boxbottom,~~boxbottom,110,2,0,71
+  2612                        	.sym	~~boxtop,~~boxtop,110,2,0,71
+  2613                        	.sym	~~mouseport,~~mouseport,138,2,32,56
+  2614                        	.sym	~~kbport,~~kbport,138,2,32,56
+  2615                        	.sym	~~debugport,~~debugport,138,2,32,56
+  2616                        	.sym	~~g_irq_handlers,~~g_irq_handlers,874,18
+                    ,0,89,4,8
+  2617                        	.sym	~~_k_in_irq_enabled,~~_k_in_irq_enabled,
+                    14,18,8
+  2618                        	.sym	~~_irq_keyboardTimeout,~~_irq_keyboardTi
+                    meout,5,2,16
+  2619                        	.sym	PIRQCHAIN,0,138,14,32,89
+  2620                        	.sym	IRQCHAIN,0,10,14,128,89
+  2621                        	.sym	DEVICEDRIVER_COMMAND,0,654,14,32
+  2622                        	.sym	DEVICEDRIVER_UNLOAD,0,654,14,32
+  2623                        	.sym	DEVICEDRIVER_WRITE,0,654,14,32
+  Mon Aug  9 2021 16:52                                                Page 50
+
+
+  2624                        	.sym	DEVICEDRIVER_READ,0,654,14,32
+  2625                        	.sym	DEVICEDRIVER_LOAD,0,654,14,32
+  2626                        	.sym	DEVICEDRIVER_IRQ,0,641,14,32
+  2627                        	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,88
+  2628                        	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,88
+  2629                        	.sym	GETDRIVERDEF,0,8842,14,32,87
+  2630                        	.sym	PFX_DEVICE_DRIVER,0,138,14,32,87
+  2631                        	.sym	FX_DEVICE_DRIVER,0,10,14,776,87
+  2632                        	.sym	~~k_debug_string,~~k_debug_string,65,18,
+                    0
+  2633                        	.sym	~~k_delay,~~k_delay,65,18,0
+  2634                        	.sym	PSEGMENTHEADER,0,138,14,32,86
+  2635                        	.sym	SEGMENTHEADER,0,10,14,160,86
+  2636                        	.sym	PDEBUGBYTEBITS,0,138,14,32,85
+  2637                        	.sym	DEBUGBYTEBITS,0,10,14,8,85
+  2638                        	.sym	PFXENVIRONMENT,0,138,14,32,84
+  2639                        	.sym	FXENVIRONMENT,0,10,14,96,84
+  2640                        	.sym	PFXZEROPAGE,0,138,14,32,83
+  2641                        	.sym	FXZEROPAGE,0,10,14,720,83
+  2642                        	.sym	IRQBUFFER,0,10,14,32,82
+  2643                        	.sym	KERNELTRAPCALL,0,641,14,32
+  2644                        	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,81
+  2645                        	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,81
+  2646                        	.sym	FRESULT,0,5,14,16
+  2647                        	.sym	MKFS_PARM,0,10,14,80,80
+  2648                        	.sym	FILINFO,0,10,14,2224,79
+  2649                        	.sym	DIR,0,10,14,416,78
+  2650                        	.sym	FIL,0,10,14,4400,77
+  2651                        	.sym	FFOBJID,0,10,14,128,76
+  2652                        	.sym	FATFS,0,10,14,4504,75
+  2653                        	.sym	LBA_t,0,18,14,32
+  2654                        	.sym	FSIZE_t,0,18,14,32
+  2655                        	.sym	TCHAR,0,14,14,8
+  2656                        	.sym	~~k_put_string,~~k_put_string,69,18,0
+  2657                        	.sym	~~k_set_border,~~k_set_border,65,18,0
+  2658                        	.sym	~~k_set_border_color,~~k_set_border_colo
+                    r,65,18,0
+  2659                        	.sym	~~k_enable_border,~~k_enable_border,65,1
+                    8,0
+  2660                        	.sym	~~k_initialize_text_fonts,~~k_initialize
+                    _text_fonts,69,18,0
+  2661                        	.sym	~~k_initialize_text,~~k_initialize_text,
+                    65,18,0
+  2662                        	.sym	PCOMMANDARGS,0,138,14,32,74
+  2663                        	.sym	COMMANDARGS,0,10,14,64,74
+  2664                        	.sym	PTOKENIZESTATE,0,133,14,32
+  2665                        	.sym	TOKENIZESTATE,0,5,14,16
+  2666                        	.sym	PTOKEN,0,138,14,32,73
+  2667                        	.sym	TOKEN,0,10,14,64,73
+  2668                        	.sym	PTOKENTYPE,0,133,14,32
+  2669                        	.sym	TOKENTYPE,0,5,14,16
+  2670                        	.sym	FXCommandHandler,0,656,14,32
+  2671                        	.sym	PCONSOLECTX,0,138,14,32,72
+  2672                        	.sym	CONSOLECTX,0,10,14,1144,72
+  2673                        	.sym	PSPINNERCTX,0,138,14,32,71
+  2674                        	.sym	SPINNERCTX,0,10,14,48,71
+  2675                        	.sym	HCLIP,0,138,14,32,70
+  2676                        	.sym	PCLIPBOARD_DATA,0,138,14,32,70
+  Mon Aug  9 2021 16:52                                                Page 51
+
+
+  2677                        	.sym	CLIPBOARD_DATA,0,10,14,168,70
+  2678                        	.sym	PEVENTMANAGER,0,138,14,32,69
+  2679                        	.sym	EVENTMANAGER,0,10,14,192,69
+  2680                        	.sym	EV_RUN,0,656,14,32
+  2681                        	.sym	EV_QUERY_METRIC,0,656,14,32
+  2682                        	.sym	EV_CONFIGURE,0,656,14,32
+  2683                        	.sym	EV_UNINIT,0,641,14,32
+  2684                        	.sym	EV_INIT,0,8833,14,32
+  2685                        	.sym	PMOUSE_MSG_STATE,0,138,14,32,68
+  2686                        	.sym	MOUSE_MSG_STATE,0,10,14,184,68
+  2687                        	.sym	PFXEVENTPROCESS,0,138,14,32,67
+  2688                        	.sym	FXEVENTPROCESS,0,10,14,64,67
+  2689                        	.sym	FXASYNCPROCESS,0,641,14,32
+  2690                        	.sym	PMARSHALDATA,0,139,14,32,66
+  2691                        	.sym	MARSHALDATA,0,11,14,32,66
+  2692                        	.sym	FXIDLEPROCESS,0,641,14,32
+  2693                        	.sym	FXEventProc,0,641,14,32
+  2694                        	.sym	PMOUSEMSGDATA,0,138,14,32,65
+  2695                        	.sym	MOUSEMSGDATA,0,10,14,64,65
+  2696                        	.sym	MSGIRQ,0,5,14,16
+  2697                        	.sym	MAINLOOPARGS,0,10,14,16,64
+  2698                        	.sym	PEACHCHILD_MSG,0,138,14,32,63
+  2699                        	.sym	EACHCHILD_MSG,0,10,14,64,63
+  2700                        	.sym	PMSGBOX_DATA,0,138,14,32,62
+  2701                        	.sym	MSGBOX_DATA,0,10,14,96,62
+  2702                        	.sym	PDESKTOP_DATA,0,138,14,32,61
+  2703                        	.sym	DESKTOP_DATA,0,10,14,64,61
+  2704                        	.sym	PWINDOWMANAGER,0,138,14,32,60
+  2705                        	.sym	WINDOWMANAGER,0,10,14,160,60
+  2706                        	.sym	WM_DOPROCS,0,641,14,32
+  2707                        	.sym	WM_QUERY_METRIC,0,656,14,32
+  2708                        	.sym	WM_CONFIGURE,0,656,14,32
+  2709                        	.sym	WM_HANDLE_EVENT,0,8833,14,32
+  2710                        	.sym	WM_EVENTS,0,641,14,32
+  2711                        	.sym	~~k_set_text_colors,~~k_set_text_colors,
+                    65,18,0
+  2712                        	.sym	~~k_enable_text_mode,~~k_enable_text_mod
+                    e,65,18,0
+  2713                        	.sym	PCUR_PALETTE_MAP,0,138,14,32,59
+  2714                        	.sym	CUR_PALETTE_MAP,0,10,14,400,59
+  2715                        	.sym	PCLICKDETECTED,0,138,14,32,58
+  2716                        	.sym	CLICKDETECTED,0,10,14,64,58
+  2717                        	.sym	OBJECTCLICKED,0,641,14,32
+  2718                        	.sym	PALLOCATIONHEADER,0,138,14,32,57
+  2719                        	.sym	ALLOCATIONHEADER,0,10,14,80,57
+  2720                        	.sym	PIPCPORT,0,138,14,32,56
+  2721                        	.sym	IPCPORT,0,10,14,144,56
+  2722                        	.sym	MemoryCallback,0,641,14,32
+  2723                        	.sym	PFXMEMORYMAP,0,138,14,32,55
+  2724                        	.sym	FXMEMORYMAP,0,10,14,2072,55
+  2725                        	.sym	UMM_HEAP_INFO,0,10,14,256,54
+  2726                        	.sym	FOREACHNODEUNTIL,0,654,14,32
+  2727                        	.sym	FOREACHNODE,0,641,14,32
+  2728                        	.sym	PEXECUTIVE,0,138,14,32,53
+  2729                        	.sym	EXECUTIVE,0,10,14,128,53
+  2730                        	.sym	EX_QUERY_METRIC,0,656,14,32
+  2731                        	.sym	EX_CONFIGURE,0,656,14,32
+  2732                        	.sym	EX_UNINIT,0,641,14,32
+  Mon Aug  9 2021 16:52                                                Page 52
+
+
+  2733                        	.sym	EX_INIT,0,8833,14,32
+  2734                        	.sym	~~k_bytetohex,~~k_bytetohex,1102,18,32
+  2735                        	.sym	PFXSTRING,0,138,14,32,52
+  2736                        	.sym	FXSTRING,0,10,14,64,52
+  2737                        	.sym	~~strcpy,~~strcpy,1102,18,32
+  2738                        	.sym	~~strcat,~~strcat,1102,18,32
+  2739                        	.sym	Boolean_T,0,5,14,16
+  2740                        	.sym	ldiv_t,0,10,14,64,50
+  2741                        	.sym	div_t,0,10,14,32,49
+  2742                        	.sym	wctype_t,0,16,14,16
+  2743                        	.sym	wint_t,0,16,14,16
+  2744                        	.sym	wchar_t,0,14,14,8
+  2745                        	.sym	ptrdiff_t,0,7,14,32
+  2746                        	.sym	size_t,0,16,14,16
+  2747                        	.sym	PFXRFHEADER_STRING_ENTRY,0,138,14,32,48
+  2748                        	.sym	FXRFHEADER_STRING_ENTRY,0,10,14,40,48
+  2749                        	.sym	PFXRFHEADER_STRING,0,138,14,32,47
+  2750                        	.sym	FXRFHEADER_STRING,0,10,14,32,47
+  2751                        	.sym	PFXRFHEADER_FONT,0,138,14,32,46
+  2752                        	.sym	FXRFHEADER_FONT,0,10,14,144,46
+  2753                        	.sym	PFXRFHEADER,0,138,14,32,45
+  2754                        	.sym	FXRFHEADER,0,10,14,72,45
+  2755                        	.sym	PFXCOMBUFFER,0,138,14,32,44
+  2756                        	.sym	FXCOMBUFFER,0,10,14,2080,44
+  2757                        	.sym	PSUBMENULIST,0,138,14,32,43
+  2758                        	.sym	SUBMENULIST,0,10,14,40,43
+  2759                        	.sym	HSUBMENU,0,7,14,32
+  2760                        	.sym	PSUBMENU,0,138,14,32,42
+  2761                        	.sym	SUBMENU,0,10,14,64,42
+  2762                        	.sym	MenuAction,0,641,14,32
+  2763                        	.sym	PMENUANCHOR,0,138,14,32,41
+  2764                        	.sym	MENUANCHOR,0,10,14,272,41
+  2765                        	.sym	PMSGBOX,0,138,14,32,40
+  2766                        	.sym	MSGBOX,0,10,14,144,40
+  2767                        	.sym	PTEXTBOX,0,138,14,32,39
+  2768                        	.sym	TEXTBOX,0,10,14,144,39
+  2769                        	.sym	PLISTBOX,0,138,14,32,38
+  2770                        	.sym	LISTBOX,0,10,14,240,38
+  2771                        	.sym	PSCROLLBAR,0,138,14,32,37
+  2772                        	.sym	SCROLLBAR,0,10,14,240,37
+  2773                        	.sym	PBUTTON,0,138,14,32,36
+  2774                        	.sym	BUTTON,0,10,14,96,36
+  2775                        	.sym	PMENUDROPDOWNDATA,0,138,14,32,35
+  2776                        	.sym	MENUDROPDOWNDATA,0,10,14,5152,35
+  2777                        	.sym	PMENUTAG,0,138,14,32,34
+  2778                        	.sym	MENUTAG,0,10,14,160,34
+  2779                        	.sym	PMENU,0,138,14,32,33
+  2780                        	.sym	MENU,0,10,14,280,33
+  2781                        	.sym	HMENURESOURCE,0,129,14,32
+  2782                        	.sym	FONTMETRIC,0,10,14,32,32
+  2783                        	.sym	TITLE,0,142,14,32
+  2784                        	.sym	PHANDLE,0,1153,14,32
+  2785                        	.sym	HANDLE,0,129,14,32
+  2786                        	.sym	PWINDOWEX,0,138,14,32,31
+  2787                        	.sym	WINDOWEX,0,10,14,3880,31
+  2788                        	.sym	PWINDOW,0,138,14,32,30
+  2789                        	.sym	WINDOW,0,10,14,3904,30
+  2790                        	.sym	PDRAGDATA,0,138,14,32,29
+  Mon Aug  9 2021 16:52                                                Page 53
+
+
+  2791                        	.sym	DRAGDATA,0,10,14,216,29
+  2792                        	.sym	PNCCLICKABLE,0,138,14,32,28
+  2793                        	.sym	NCCLICKABLE,0,10,14,136,28
+  2794                        	.sym	HCLICKABLE,0,7,14,32
+  2795                        	.sym	PCLICKABLE,0,138,14,32,27
+  2796                        	.sym	CLICKABLE,0,10,14,152,27
+  2797                        	.sym	PWNDCLASS,0,138,14,32,26
+  2798                        	.sym	WNDCLASS,0,10,14,272,26
+  2799                        	.sym	HBRUSH,0,129,14,32
+  2800                        	.sym	HCURSOR,0,129,14,32
+  2801                        	.sym	HICON,0,129,14,32
+  2802                        	.sym	HINSTANCE,0,129,14,32
+  2803                        	.sym	FXWndProc,0,654,14,32
+  2804                        	.sym	PDRECT,0,138,14,32,25
+  2805                        	.sym	DRECT,0,10,14,112,25
+  2806                        	.sym	PRECTP,0,138,14,32,24
+  2807                        	.sym	RECTP,0,10,14,96,24
+  2808                        	.sym	PRECT,0,138,14,32,23
+  2809                        	.sym	RECT,0,10,14,112,23
+  2810                        	.sym	PPOINT,0,138,14,32,22
+  2811                        	.sym	POINT,0,10,14,32,22
+  2812                        	.sym	PFXPROPERTY,0,138,14,32,20
+  2813                        	.sym	FXPROPERTY,0,10,14,384,20
+  2814                        	.sym	PKEYSTATE,0,138,14,32,19
+  2815                        	.sym	KEYSTATE,0,10,14,112,19
+  2816                        	.sym	SCANCODE,0,14,14,8
+  2817                        	.sym	KEYCODE,0,16,14,16
+  2818                        	.sym	PFXPROCESSMESSAGE,0,138,14,32,18
+  2819                        	.sym	FXPROCESSMESSAGE,0,10,14,112,18
+  2820                        	.sym	PFXPROCESS,0,138,14,32,17
+  2821                        	.sym	FXPROCESS,0,10,14,800,17
+  2822                        	.sym	PDESKTOP_CONTROL,0,138,14,32,16
+  2823                        	.sym	DESKTOP_CONTROL,0,10,14,392,16
+  2824                        	.sym	PCONSOLE_CONTROL,0,138,14,32,15
+  2825                        	.sym	CONSOLE_CONTROL,0,10,14,448,15
+  2826                        	.sym	FXProcessProc,0,641,14,32
+  2827                        	.sym	PFXCMDMESSAGE,0,138,14,32,14
+  2828                        	.sym	FXCMDMESSAGE,0,10,14,312,14
+  2829                        	.sym	PFXOSMESSAGE,0,138,14,32,13
+  2830                        	.sym	FXOSMESSAGE,0,10,14,312,13
+  2831                        	.sym	PINT_REGS,0,138,14,32,12
+  2832                        	.sym	INT_REGS,0,10,14,104,12
+  2833                        	.sym	TASK_STACK,0,10,14,32,11
+  2834                        	.sym	TASK,0,10,14,48,10
+  2835                        	.sym	PIRQDATA,0,138,14,32,9
+  2836                        	.sym	IRQDATA,0,10,14,48,9
+  2837                        	.sym	HMENU,0,129,14,32
+  2838                        	.sym	HWND,0,129,14,32
+  2839                        	.sym	MSGDATA,0,14,14,8
+  2840                        	.sym	MSGDEST,0,18,14,32
+  2841                        	.sym	MSGSRC,0,18,14,32
+  2842                        	.sym	MSGTYPE,0,16,14,16
+  2843                        	.sym	PROCESS_RESOURCE_LIST,0,138,14,32,3
+  2844                        	.sym	PROCESS_TLS_LIST,0,138,14,32,3
+  2845                        	.sym	SEMAPHORE_LIST,0,138,14,32,3
+  2846                        	.sym	FILE_BLOCK_LIST,0,138,14,32,3
+  2847                        	.sym	FILE_PATH_LIST,0,138,14,32,3
+  2848                        	.sym	PROCEDURE_LIST,0,138,14,32,3
+  Mon Aug  9 2021 16:52                                                Page 54
+
+
+  2849                        	.sym	FILE_HANDLE,0,138,14,32,8
+  2850                        	.sym	FILE_BLOCK,0,10,14,552,8
+  2851                        	.sym	SEMAPHORE,0,10,14,16,7
+  2852                        	.sym	PPROCESS_SIGNAL,0,138,14,32,6
+  2853                        	.sym	PROCESS_SIGNAL,0,10,14,16,6
+  2854                        	.sym	KRESULT,0,18,14,32
+  2855                        	.sym	PKERNEL_ERROR,0,138,14,32,5
+  2856                        	.sym	KERNEL_ERROR,0,10,14,32,5
+  2857                        	.sym	PROCESS_STATUS,0,16,14,16
+  2858                        	.sym	FILE_PATH_NAME,0,142,14,32
+  2859                        	.sym	PROCESS_RESOURCE,0,129,14,32
+  2860                        	.sym	PROCESS_TLS,0,129,14,32
+  2861                        	.sym	PROCESS_CTX,0,129,14,32
+  2862                        	.sym	USERID,0,16,14,16
+  2863                        	.sym	PROCESS_ID,0,18,14,32
+  2864                        	.sym	PROCESS_BANK,0,14,14,8
+  2865                        	.sym	PFXQUEUE,0,138,14,32,4
+  2866                        	.sym	FXQUEUE,0,10,14,80,4
+  2867                        	.sym	PFXNODELIST,0,138,14,32,3
+  2868                        	.sym	FXNODELIST,0,10,14,96,3
+  2869                        	.sym	NodeListDeallocator,0,641,14,32
+  2870                        	.sym	PFXNODE,0,138,14,32,2
+  2871                        	.sym	FXNODE,0,10,14,384,2
+  2872                        	.sym	PBYTEBITS,0,138,14,32,1
+  2873                        	.sym	BYTEBITS,0,10,14,8,1
+  2874                        	.sym	HRESULT,0,18,14,32
+  2875                        	.sym	LPWCHAR,0,144,14,32
+  2876                        	.sym	WCHAR,0,16,14,16
+  2877                        	.sym	HSTRINGTABLE,0,129,14,32
+  2878                        	.sym	HCOLOR,0,129,14,32
+  2879                        	.sym	HFONT,0,129,14,32
+  2880                        	.sym	HDC,0,129,14,32
+  2881                        	.sym	HPOINTER,0,129,14,32
+  2882                        	.sym	uint32_t,0,18,14,32
+  2883                        	.sym	uint8_t,0,14,14,8
+  2884                        	.sym	LPBOOL,0,142,14,32
+  2885                        	.sym	BOOL,0,14,14,8
+  2886                        	.sym	DWORD,0,18,14,32
+  2887                        	.sym	ULONG,0,18,14,32
+  2888                        	.sym	LPLONG,0,135,14,32
+  2889                        	.sym	LONG,0,7,14,32
+  2890                        	.sym	PUINT,0,144,14,32
+  2891                        	.sym	USHORT,0,16,14,16
+  2892                        	.sym	UINT,0,16,14,16
+  2893                        	.sym	INT,0,5,14,16
+  2894                        	.sym	WORD,0,5,14,16
+  2895                        	.sym	PBYTE,0,142,14,32
+  2896                        	.sym	BYTE,0,14,14,8
+  2897                        	.sym	IOPORT,0,142,14,32
+  2898                        	.sym	PUCHAR,0,142,14,32
+  2899                        	.sym	UCHAR,0,14,14,8
+  2900                        	.sym	LPWCSTR,0,142,14,32
+  2901                        	.sym	LPCSTR,0,142,14,32
+  2902                        	.sym	LPSTR,0,142,14,32
+  2903                        	.sym	LPCHAR,0,142,14,32
+  2904                        	.sym	CHAR,0,14,14,8
+  2905                        	.sym	PUINT_32,0,146,14,32
+  2906                        	.sym	UINT_32,0,18,14,32
+  Mon Aug  9 2021 16:52                                                Page 55
+
+
+  2907                        	.sym	PUINT_16,0,144,14,32
+  2908                        	.sym	UINT_16,0,16,14,16
+  2909                        	.sym	PUINT_8,0,142,14,32
+  2910                        	.sym	UINT_8,0,14,14,8
+  2911                        	.sym	LPVOID,0,129,14,32
+  2912                        	.sym	VOID,0,1,14,32
+  2913                        	end
+
+
+      Lines assembled: 2913
+      Errors: 0

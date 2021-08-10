@@ -16,6 +16,7 @@ typedef struct _fx_main_loopvars
 }MAINLOOPARGS;
 
 #define FX_MSG_DEFAULT			(-1)
+#define FX_MSGATTR_FAST			(2)
 
 #define FX_COM1_DATA			(0xFC00)
 #define FX_COM2_DATA			(0xFC01)
@@ -231,6 +232,8 @@ typedef union marshalled_data
 MARSHALDATA;
 typedef MARSHALDATA FAR *PMARSHALDATA;
 
+typedef void (*FXASYNCPROCESS)(PMARSHALDATA);
+
 typedef struct _fx_eventProcess
 {
 	PFXPROCESS  process;
@@ -275,7 +278,7 @@ EVENTMANAGER;
 typedef EVENTMANAGER FAR *PEVENTMANAGER;
 
 ULONG k_get_systemtimer(void);
-PEVENTMANAGER k_initalize_event_manager(void);
+PEVENTMANAGER k_initalize_event_manager(UINT);
 //
 //
 //
@@ -345,6 +348,7 @@ VOID 	IdleCleanup(UINT reason);
 VOID    _k_async_keyboard(UINT reason);
 VOID 	_k_async_mouse(UINT reason);
 VOID    _k_async_debug(UINT reason);
+VOID 	_k_async_execute(UINT reason);
 
 extern  KEYCODE _k_keyCodesSet[];
 extern  KEYCODE _k_keyCodesShiftSet[];

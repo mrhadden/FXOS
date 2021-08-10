@@ -7,6 +7,7 @@ static char bytetohex[] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','
 static char bytetodec[] = {'0','1','2','3','4','5','6','7','8','9'};
 static char bytetosize[] = {' ','1','2','3','4','5','6','7','8','9'};
 
+
 //
 // STRING LIB
 //
@@ -456,7 +457,7 @@ void k_reverse(LPSTR str, int length)
 
 BOOL k_fxstring_ends_with(PFXSTRING path,LPCSTR check)
 {
-	INT index = 0;
+//	INT index = 0;
 	INT size = strlen(check);
 	INT len  = strlen(path->buffer);
 
@@ -466,6 +467,26 @@ BOOL k_fxstring_ends_with(PFXSTRING path,LPCSTR check)
 
 	return (strcmp(&(path->buffer[len - size]),check) == 0) ;
 }
+
+BOOL k_string_ends_with(LPCSTR path,LPCSTR check)
+{
+	INT index = 0;
+	INT size = strlen(check);
+	INT len  = strlen(path);
+
+	k_debug_strings("k_string_ends_with:path:",(LPSTR)path);
+
+	k_debug_integer("k_string_ends_with:size:",size);
+	k_debug_integer("k_string_ends_with:len:",len);
+	k_debug_strings("k_string_ends_with:sub:",(LPSTR)&(path[len - size]));
+
+	index = strcmp(&(path[len - size]),check);
+
+	k_debug_integer("k_string_ends_with:index:",index);
+
+	return (index == 0) ;
+}
+
 
 LPCHAR k_string_trim(LPCHAR lpText)
 {
@@ -873,6 +894,7 @@ LPCHAR k_string_replace(LPCSTR template, LPCSTR marker, LPCSTR replacement)
 {
 	LPCHAR buffer = NULL;
 	LPCHAR tc     = NULL;
+	LPCHAR all    = NULL;
 	LPCHAR p 	  = NULL;
 
 	UINT   mlen = 0;
@@ -884,9 +906,10 @@ LPCHAR k_string_replace(LPCSTR template, LPCSTR marker, LPCSTR replacement)
 
 	if(template && marker && replacement)
 	{
-		tc = k_string_copy_string(template);
-		if(tc)
+		all = k_string_copy_string(template);
+		if(all)
 		{
+			tc = all;
 			mlen = strlen(marker);
 			rlen = strlen(replacement);
 			if(mlen && rlen)
@@ -913,7 +936,7 @@ LPCHAR k_string_replace(LPCSTR template, LPCSTR marker, LPCSTR replacement)
 					strcat(buffer,tc);
 				}
 			}
-			k_mem_deallocate_heap(tc);
+			k_mem_deallocate_heap(all);
 		}
 	}
 

@@ -1,0 +1,20 @@
+Section drvcode:
+	00044d30 _BEG_DRVCODE
+	00044e27 _END_DRVCODE
+
+Section drvdata:
+	00044e27 _BEG_DRVDATA
+	00044e2b ~~DRIVER_DESC
+	00044e27 ~~data
+	00044e8c _END_DRVDATA
+
+ABSOLUTES:
+	00044dd9 ~~f_driver_unload
+	00044dbc ~~f_driver_write
+	00044d9f ~~f_driver_read
+	00044d6e ~~f_driver_load
+	00044d56 ~~f_driver_irq
+	00044d30 ~~f_get_driver
+	00044e0e ~~_local_data
+	00044dee ~~_f_get_driver
+

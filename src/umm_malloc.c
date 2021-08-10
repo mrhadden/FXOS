@@ -99,7 +99,7 @@ unsigned long umm_numblocks = 0;
 
 /* ------------------------------------------------------------------------ */
 
-static unsigned long umm_blocks(size_t size)
+static unsigned long umm_blocks(ULONG size)
 {
 
 	/*
@@ -509,7 +509,7 @@ void FAR *umm_realloc(void FAR *ptr, unsigned long size)
 
 	unsigned long c;
 
-	size_t curSize;
+	ULONG curSize;
 
 	if (umm_heap == NULL)
 	{
@@ -689,10 +689,10 @@ void FAR *umm_calloc(unsigned long num, unsigned long item_size)
 {
 	void FAR *ret;
 
-	ret = umm_malloc((size_t) (item_size * num));
+	ret = umm_malloc((ULONG) (item_size * num));
 
 	if (ret)
-		memset(ret, 0x00, (size_t) (item_size * num));
+		memset(ret, 0x00, (ULONG) (item_size * num));
 
 	return ret;
 }

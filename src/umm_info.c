@@ -54,7 +54,7 @@ void FAR *umm_info( void *ptr, int force )
 
 	while( UMM_NBLOCK(blockNo) & UMM_BLOCKNO_MASK )
 	{
-		size_t curBlocks = (UMM_NBLOCK(blockNo) & UMM_BLOCKNO_MASK )-blockNo;
+		ULONG curBlocks = (UMM_NBLOCK(blockNo) & UMM_BLOCKNO_MASK )-blockNo;
 
 		++ummHeapInfo.totalEntries;
 		ummHeapInfo.totalBlocks += curBlocks;
@@ -114,7 +114,7 @@ void FAR *umm_info( void *ptr, int force )
 	 */
 
 	{
-		size_t curBlocks = UMM_NUMBLOCKS-blockNo;
+		ULONG curBlocks = UMM_NUMBLOCKS-blockNo;
 		ummHeapInfo.freeBlocks += curBlocks;
 		ummHeapInfo.totalBlocks += curBlocks;
 
@@ -156,10 +156,10 @@ void FAR *umm_info( void *ptr, int force )
 
 /* ------------------------------------------------------------------------ */
 
-size_t umm_free_heap_size( void )
+ULONG umm_free_heap_size( void )
 {
 	umm_info(NULL, 0);
-	return (size_t)ummHeapInfo.freeBlocks * sizeof(umm_block);
+	return (ULONG)ummHeapInfo.freeBlocks * sizeof(umm_block);
 }
 
 /* ------------------------------------------------------------------------ */

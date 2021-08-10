@@ -12,11 +12,14 @@
 
 #define ZEROPAGE_VERSION_B2 		  ((unsigned char FAR*)0x001500)
 #define ZEROPAGE_VERSION_CX 		  ((unsigned char FAR*)0x001500)
+#define ZEROPAGE_VERSION_B2 		  ((unsigned char FAR*)0x001500)
+//#define ZEROPAGE_VERSION_CX 		  ((unsigned char FAR*)0x007000)
+//#define ZEROPAGE_VERSION_A1 		  ((unsigned char FAR*)0x007000)
 
-#ifdef C256_REVC
-#define ZEROPAGE ZEROPAGE_VERSION_CX
-#else
+#ifdef C256_REVB
 #define ZEROPAGE ZEROPAGE_VERSION_B2
+#else
+#define ZEROPAGE ZEROPAGE_VERSION_CX
 #endif
 
 typedef struct _fx_api_call_table
@@ -25,11 +28,20 @@ typedef struct _fx_api_call_table
 }FXKERNEL_API_CALLTABLE;
 typedef FXKERNEL_API_CALLTABLE FAR * PFXKERNEL_API_CALLTABLE;
 
-#// kernel trap call
+
+
+// kernel trap call
 typedef VOID (*KERNELTRAPCALL)(VOID);
 
 
 #define VERSION_MAX_LENGTH	(2)
+#define ENDIAN_LITTLE	    (0)
+#define ENDIAN_BIG	    	(1)
+
+typedef struct _fx_zero_page_irq_data
+{
+	BYTE data[4];
+}IRQBUFFER;
 
 typedef struct _fx_zero_page
 {
@@ -51,14 +63,14 @@ typedef struct _fx_zero_page
 	unsigned char fxos_mouse_index;
 	unsigned char fxos_mouse_status;
 
-	unsigned long fxos_mouse_dbg_1;
-	unsigned long fxos_mouse_dbg_2;
-	unsigned long fxos_mouse_dbg_3;
+	//unsigned long fxos_mouse_dbg_1;
+	//unsigned long fxos_mouse_dbg_2;
+	//unsigned long fxos_mouse_dbg_3;
 
-	char fxos_vicky_byte_0;
-	char fxos_vicky_byte_1;
-	char fxos_vicky_byte_2;
-
+	//char fxos_vicky_byte_0;
+	//char fxos_vicky_byte_1;
+	//char fxos_vicky_byte_2;
+	unsigned int Endianness;
 	unsigned int VersionMajor;
 	unsigned int VersionMinor;
 	unsigned int VersionRelease;
@@ -75,10 +87,13 @@ typedef struct _fx_zero_page
 	unsigned int fxos_console_row;
 	unsigned int fxos_console_col;
 
+	//FXOSMESSAGE	 irq_buffer[64];
+
 	LPVOID	executive;
 	LPVOID  eventmanager;
 	LPVOID  devicemanager;
 	LPVOID  windowmanager;
+	//PFXKERNEL_API_CALLTABLE  *kernel_call_tables;
 
 	PFXKERNEL_API_CALLTABLE		fxos_kernel_api;
 	PFXKERNEL_API_CALLTABLE		fxos_dos_api;
@@ -86,10 +101,15 @@ typedef struct _fx_zero_page
 	PFXKERNEL_API_CALLTABLE		fxos_gui_api;
 	PFXKERNEL_API_CALLTABLE		fxos_con_api;
 	PFXKERNEL_API_CALLTABLE		fxos_reserved_2_api;
+
+
+
 	//PFXKERNEL_API_CALLTABLE		fxos_reserved_3_api;
 
 }FXZEROPAGE;
 typedef FXZEROPAGE FAR* PFXZEROPAGE;
+
+#define	FXOS_CALLTABLES		(5)
 
 #define	API_CALLTABLE_KERNEL_IDX	(0)
 #define	API_CALLTABLE_DOS_IDX		(1)
@@ -215,10 +235,20 @@ void k_delay(int millisecs);
 // Debugging API
 //
 //
+
+void k_debug_char_com1(char c);
+void k_debug_char_com2(char c);
+
 void k_debug_string_com1(char FAR* debugString);
 void k_debug_string_com2(char FAR* debugString);
 void k_debug_nstring_com2(char FAR* debugString,int nsize);
 void k_debug_nstring_com1(char FAR* debugString,int nsize);
+
+UINT k_lock_depth(VOID);
+UINT k_lock_irq(VOID);
+UINT k_unlock_irq(VOID);
+VOID k_enable_locking(VOID);
+
 
 EXPORT_FUNC_KERNEL(DebugOut)
 void k_debug_string(char FAR* debugString);
@@ -234,7 +264,7 @@ void k_debug_integer(char FAR* debugString, UINT n);
 EXPORT_FUNC_KERNEL(DebugHexInteger)
 void k_debug_hex_integer(char FAR* debugString, UINT n);
 
-EXPORT_FUNC_KERNEL(GetMouseClientPoint)
+EXPORT_FUNC_KERNEL(DebugIntegerArray)
 void k_debug_integer_array(char FAR* debugString,UINT FAR *n,UINT size);
 EXPORT_FUNC_KERNEL(DebugLong)
 void k_debug_long(char FAR* debugString, ULONG n);
@@ -286,6 +316,8 @@ VOID k_user_EnableOSDebug(VOID);
 EXPORT_FUNC_KERNEL(DebugOff)
 VOID k_user_DisableOSDebug(VOID);
 
+EXPORT_FUNC_KERNEL(GetMilliseconds)
+ULONG k_millis(VOID);
 //
 //
 //
@@ -320,6 +352,22 @@ void k_get_c256_minor_version(char *buffer);
 EXPORT_FUNC_KERNEL(GetHardwareRelease)
 void k_get_c256_release(char *buffer);
 
+EXPORT_FUNC_KERNEL(CriticalSectionEnter)
+BOOL k_enter_critical_section(VOID);
+EXPORT_FUNC_KERNEL(CriticalSectionExit)
+VOID k_exit_critical_section(VOID);
+
+
+//////////////////////////
+// KERNEL BOOT MODE
+//////////////////////////
+
+#define BOOTMODE_CONSOLE	(1)
+#define BOOTMODE_DESKTOP	(2)
+#define BOOTMODE_EXTERN		(3)
+#define BOOTMODE_DEBUG		(16)
+#define BOOTMODE_DEFAULT	(BOOTMODE_CONSOLE)
+
 //////////////////////////
 // KERNEL/USER INTERFACE
 //////////////////////////
@@ -347,7 +395,34 @@ VOID k_DebugOutString(VOID);
 #define DRIVER_TYPE_FD		 (0x07)
 #define DRIVER_TYPE_IDE		 (0x08)
 
+#define DRIVER_TYPE_TIM0	 (0x09)
+#define DRIVER_TYPE_TIM1	 (0x0A)
+#define DRIVER_TYPE_TIM2	 (0x0B)
+#define DRIVER_TYPE_SOL		 (0x0C)
+#define DRIVER_TYPE_RTC		 (0x0D)
+#define DRIVER_TYPE_PS2		 (0x0E)
+
 #define DRIVER_TYPE_SOUND	 (0xA0)
+
+
+
+#define DRIVER_TYPE_EXT_0    (0xE0)
+#define DRIVER_TYPE_EXT_1    (0xE1)
+#define DRIVER_TYPE_EXT_2    (0xE2)
+#define DRIVER_TYPE_EXT_3    (0xE3)
+#define DRIVER_TYPE_EXT_4    (0xE4)
+#define DRIVER_TYPE_EXT_5    (0xE5)
+#define DRIVER_TYPE_EXT_6    (0xE6)
+#define DRIVER_TYPE_EXT_7    (0xE7)
+#define DRIVER_TYPE_EXT_8    (0xE8)
+#define DRIVER_TYPE_EXT_9    (0xE9)
+#define DRIVER_TYPE_EXT_10   (0xEA)
+#define DRIVER_TYPE_EXT_11   (0xEB)
+#define DRIVER_TYPE_EXT_13   (0xEC)
+#define DRIVER_TYPE_EXT_14   (0xED)
+#define DRIVER_TYPE_EXT_15   (0xEE)
+#define DRIVER_TYPE_EXT_16   (0xEF)
+
 #define DRIVER_TYPE_EXTENDED (0xF0)
 #define DRIVER_TYPE_UNIMPL   (0xFF)
 
@@ -359,7 +434,7 @@ typedef struct _fx_device_driver
 	CHAR    hminor[8];
 	BYTE    type;
 	CHAR	designation[6];
-	UINT	reserved_1;
+	UINT	irq_ctl;
 	LPVOID	f_driver_irq;
 	LPVOID  driver_context;
 	LPVOID  f_driver_load;
@@ -379,7 +454,7 @@ typedef struct _fx_block_device_driver
 	CHAR    hminor[8];
 	BYTE    type;
 	CHAR	designation[6];
-	UINT	reserved_1;
+	UINT	irq_ctl;
 	LPVOID	f_driver_irq;
 	LPVOID  driver_context;
 	LPVOID  f_driver_load;
@@ -390,11 +465,26 @@ typedef struct _fx_block_device_driver
 }FX_BLOCK_DEVICE_DRIVER;
 typedef FX_BLOCK_DEVICE_DRIVER FAR* PFX_BLOCK_DEVICE_DRIVER;
 
-typedef BOOL (*DEVICEDRIVER_IRQ)(VOID);
+
+
+typedef VOID (*DEVICEDRIVER_IRQ)(VOID);
 typedef BOOL (*DEVICEDRIVER_LOAD)(VOID);
-typedef UINT (*DEVICEDRIVER_READ)(ULONG offset,LPVOID buffer);
-typedef UINT (*DEVICEDRIVER_WRITE)(UINT size,LPVOID buffer);
+typedef UCHAR (*DEVICEDRIVER_READ)(ULONG offset,LPVOID buffer);
+typedef UCHAR (*DEVICEDRIVER_WRITE)(UINT size,LPVOID buffer);
 typedef BOOL (*DEVICEDRIVER_UNLOAD)(VOID);
-typedef UINT (*DEVICEDRIVER_COMMAND)(UINT command,LPVOID buffer);
+typedef UCHAR (*DEVICEDRIVER_COMMAND)(UINT command,LPVOID buffer);
+
+typedef struct _k_irq_chain
+{
+	DEVICEDRIVER_IRQ handlers[4];
+}IRQCHAIN;
+typedef IRQCHAIN FAR *PIRQCHAIN;
+
+UINT k_irq_register_handler(BYTE bus,BYTE irq,DEVICEDRIVER_IRQ handler);
+DEVICEDRIVER_IRQ k_irq_replace_handler(BYTE id,BYTE bus,BYTE irq,DEVICEDRIVER_IRQ handler);
+VOID k_irq_unregister_handler(BYTE bus,BYTE irq,DEVICEDRIVER_IRQ handler);
+
+EXPORT_FUNC_KERNEL(RaiseException)
+VOID k_exec_throw_exception(LPVOID ctxId,ULONG errorId,LPVOID exceptionMessage,UINT exMsgSize);
 
 #endif

@@ -1,5 +1,6 @@
 
 #include "fxkernel.h"
+#include "drivers/DRIVER.h"
 #include "drivers/DRIVER_SLOT_10.h"
 
 static FX_DEVICE_DRIVER DRIVER_SLOT_10 = {
@@ -9,7 +10,7 @@ static FX_DEVICE_DRIVER DRIVER_SLOT_10 = {
 										"1\0",
 										DRIVER_TYPE_UNIMPL,
 										"SL10:\0",
-										0,
+										NOIRQ,
 										NULL,
 										NULL,
 										NULL,
@@ -34,7 +35,7 @@ static FX_DEVICE_DRIVER DRIVER_SLOT_11 = {
 										"1\0",
 										DRIVER_TYPE_UNIMPL,
 										"SL11:\0",
-										0,
+										NOIRQ,
 										NULL,
 										NULL,
 										NULL,
@@ -58,7 +59,7 @@ static FX_DEVICE_DRIVER DRIVER_SLOT_12 = {
 										"1\0",
 										DRIVER_TYPE_UNIMPL,
 										"SL12:\0",
-										0,
+										NOIRQ,
 										NULL,
 										NULL,
 										NULL,
@@ -82,7 +83,7 @@ static FX_DEVICE_DRIVER DRIVER_SLOT_13 = {
 										"1\0",
 										DRIVER_TYPE_UNIMPL,
 										"SL12:\0",
-										0,
+										NOIRQ,
 										NULL,
 										NULL,
 										NULL,
@@ -106,7 +107,7 @@ static FX_DEVICE_DRIVER DRIVER_SLOT_14 = {
 										"1\0",
 										DRIVER_TYPE_UNIMPL,
 										"SL14:\0",
-										0,
+										NOIRQ,
 										NULL,
 										NULL,
 										NULL,
@@ -130,7 +131,7 @@ static FX_DEVICE_DRIVER DRIVER_SLOT_15 = {
 										"1\0",
 										DRIVER_TYPE_UNIMPL,
 										"SL15:\0",
-										0,
+										NOIRQ,
 										NULL,
 										NULL,
 										NULL,
@@ -154,7 +155,7 @@ static FX_DEVICE_DRIVER DRIVER_SLOT_16 = {
 										"1\0",
 										DRIVER_TYPE_UNIMPL,
 										"SL16:\0",
-										0,
+										NOIRQ,
 										NULL,
 										NULL,
 										NULL,

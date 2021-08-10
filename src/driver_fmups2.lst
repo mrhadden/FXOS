@@ -1,0 +1,3326 @@
+  Mon Aug  9 2021 16:52                                                Page 1
+
+
+                     ***************************************
+                     **      WDC 65C816 Macro Assembler   **
+                     **                                   **
+                     **     Version 3.49.1- Feb  6 2006    **
+                     ***************************************
+
+     1                        ;:ts=8
+     2             00000001   R0	equ	1
+     3             00000005   R1	equ	5
+     4             00000009   R2	equ	9
+     5             0000000D   R3	equ	13
+     6                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\drivers/driver_fmups2.c",0
+     7                        ;
+     8                        ;#include "fxkernel.h"
+     9                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxkernel.h",0
+    10                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",0
+    11                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stdlib.h",0
+    12                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stddef.h",0
+    13                        	.line	88
+    14                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stdlib.h",43
+    15                        	.stag	fake1_,32,1
+    16                        	.member	quot,0,5,8,16
+    17                        	.member	rem,16,5,8,16
+    18                        	.eos
+    19                        	.stag	fake2_,64,2
+    20                        	.member	quot,0,7,8,32
+    21                        	.member	rem,32,7,8,32
+    22                        	.eos
+    23                        	.stag	int_sqrt,32,3
+    24                        	.member	sqrt,0,16,8,16
+    25                        	.member	frac,16,16,8,16
+    26                        	.eos
+    27                        	.line	205
+    28                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",4
+    29                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    string.h",0
+    30                        	.line	134
+    31                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",5
+    32                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    ctype.h",0
+    33                        	.line	103
+    34                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",6
+    35                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+    36                        	.stag	_fx_bytebits,8,4
+    37                        	.member	b7,0,14,17,1
+    38                        	.member	b6,1,14,17,1
+    39                        	.member	b5,2,14,17,1
+    40                        	.member	b4,3,14,17,1
+  Mon Aug  9 2021 16:52                                                Page 2
+
+
+    41                        	.member	b3,4,14,17,1
+    42                        	.member	b2,5,14,17,1
+    43                        	.member	b1,6,14,17,1
+    44                        	.member	b0,7,14,17,1
+    45                        	.eos
+    46                        	.stag	_fx_node,384,5
+    47                        	.member	type,0,14,8,8
+    48                        	.member	Reserved0,8,14,8,8
+    49                        	.member	data,16,129,8,32
+    50                        	.member	last,48,138,8,32,5
+    51                        	.member	next,80,138,8,32,5
+    52                        	.member	name,112,110,8,0,32
+    53                        	.member	Reserved1,368,16,8,16
+    54                        	.eos
+    55                        	.stag	_fx_nodelist,96,6
+    56                        	.member	listhead,0,138,8,32,5
+    57                        	.member	listData,32,129,8,32
+    58                        	.member	deallocator,64,641,8,32
+    59                        	.eos
+    60                        	.stag	_fx_queue,80,7
+    61                        	.member	count,0,5,8,16
+    62                        	.member	front,16,138,8,32,5
+    63                        	.member	rear,48,138,8,32,5
+    64                        	.eos
+    65                        	.stag	fake8_,32,8
+    66                        	.member	subsystem,0,14,8,8
+    67                        	.member	level,8,14,8,8
+    68                        	.member	error,16,16,8,16
+    69                        	.eos
+    70                        	.stag	_fx_process_signal,16,9
+    71                        	.member	cbSize,0,16,8,16
+    72                        	.eos
+    73                        	.stag	_fx_semaphore,16,10
+    74                        	.member	reserved,0,5,8,16
+    75                        	.eos
+    76                        	.stag	_fx_fileBlock,552,11
+    77                        	.member	openCount,0,16,8,16
+    78                        	.member	lockCount,16,16,8,16
+    79                        	.member	dirty,32,14,8,8
+    80                        	.member	fileBuffer,40,110,8,0,64
+    81                        	.eos
+    82                        	.stag	_fx_irq_data,48,12
+    83                        	.member	line,0,5,8,16
+    84                        	.member	keycode,16,142,8,32
+    85                        	.eos
+    86                        	.stag	_task,48,13
+    87                        	.member	SPL,0,14,8,8
+    88                        	.member	SPH,8,14,8,8
+    89                        	.member	pstack,16,142,8,32
+    90                        	.eos
+    91                        	.stag	_task_stack,32,14
+    92                        	.member	SS,0,142,8,32
+    93                        	.eos
+    94                        	.stag	int_regs,104,15
+    95                        	.member	PB,0,14,8,8
+    96                        	.member	PH,8,14,8,8
+    97                        	.member	PL,16,14,8,8
+    98                        	.member	PP,24,14,8,8
+  Mon Aug  9 2021 16:52                                                Page 3
+
+
+    99                        	.member	DB,32,14,8,8
+   100                        	.member	DH,40,14,8,8
+   101                        	.member	DL,48,14,8,8
+   102                        	.member	AH,56,14,8,8
+   103                        	.member	AL,64,14,8,8
+   104                        	.member	XH,72,14,8,8
+   105                        	.member	XL,80,14,8,8
+   106                        	.member	YH,88,14,8,8
+   107                        	.member	YL,96,14,8,8
+   108                        	.eos
+   109                        	.stag	_fx_eventMessage,312,16
+   110                        	.member	src,0,18,8,32
+   111                        	.member	dest,32,18,8,32
+   112                        	.member	type,64,16,8,16
+   113                        	.member	hwnd,80,129,8,32
+   114                        	.member	pheap,112,129,8,32
+   115                        	.member	msgTime,144,18,8,32
+   116                        	.member	data,176,110,8,0,16
+   117                        	.member	attr,304,14,8,8
+   118                        	.eos
+   119                        	.stag	_fx_cmdMessage,312,17
+   120                        	.member	src,0,18,8,32
+   121                        	.member	dest,32,18,8,32
+   122                        	.member	type,64,16,8,16
+   123                        	.member	hwnd,80,129,8,32
+   124                        	.member	pheap,112,129,8,32
+   125                        	.member	msgTime,144,18,8,32
+   126                        	.member	cmdCId,176,16,8,16
+   127                        	.member	cmdMId,192,16,8,16
+   128                        	.member	parameter1,208,18,8,32
+   129                        	.member	parameter2,240,18,8,32
+   130                        	.member	parameter3,272,18,8,32
+   131                        	.member	attr,304,14,8,8
+   132                        	.eos
+   133                        	.stag	_fx_console_ctl,448,18
+   134                        	.member	maxCols,0,5,8,16
+   135                        	.member	maxRows,16,5,8,16
+   136                        	.member	curX,32,5,8,16
+   137                        	.member	curY,48,5,8,16
+   138                        	.member	fgColor,64,5,8,16
+   139                        	.member	bgColor,80,5,8,16
+   140                        	.member	mode,96,14,8,8
+   141                        	.member	kbBuffer,104,101,8,0,16
+   142                        	.member	screenBuffer,360,142,8,32
+   143                        	.member	desktopMode,392,14,8,8
+   144                        	.member	lastMouseButton,400,5,8,16
+   145                        	.member	lastMouseX,416,5,8,16
+   146                        	.member	lastMouseY,432,5,8,16
+   147                        	.eos
+   148                        	.stag	_fx_desktop_ctl,392,19
+   149                        	.member	desktopMode,0,14,8,8
+   150                        	.member	cursorCtl,8,5,8,16
+   151                        	.member	cursorState,24,5,8,16
+   152                        	.member	backgroundColor,40,5,8,16
+   153                        	.member	foregroundColor,56,5,8,16
+   154                        	.member	menuMode,72,5,8,16
+   155                        	.member	lastMouseButton,88,5,8,16
+   156                        	.member	lastMouseX,104,5,8,16
+  Mon Aug  9 2021 16:52                                                Page 4
+
+
+   157                        	.member	lastMouseY,120,5,8,16
+   158                        	.member	currentDiskName,136,142,8,32
+   159                        	.member	diskNodes,168,129,8,32
+   160                        	.member	titleNodes,200,129,8,32
+   161                        	.member	menuNodes,232,129,8,32
+   162                        	.member	iconNodes,264,129,8,32
+   163                        	.member	windowNodes,296,129,8,32
+   164                        	.member	fontNodes,328,129,8,32
+   165                        	.member	wndProc,360,138,8,32,6
+   166                        	.eos
+   167                        	.stag	_fx_process,800,20
+   168                        	.member	cbSize,0,5,8,16
+   169                        	.member	procId,16,18,8,32
+   170                        	.member	parentId,48,18,8,32
+   171                        	.member	ctx,80,129,8,32
+   172                        	.member	userId,112,16,8,16
+   173                        	.member	status,128,16,8,16
+   174                        	.member	foregroundActive,144,14,8,8
+   175                        	.member	tls,152,1121,8,32,8
+   176                        	.member	commandLine,408,142,8,32
+   177                        	.member	semaphores,440,138,8,32,6
+   178                        	.member	fileHandles,472,138,8,32,6
+   179                        	.member	pathList,504,138,8,32,6
+   180                        	.member	resources,536,138,8,32,6
+   181                        	.member	timerAware,568,14,8,8
+   182                        	.member	timerTicks,576,112,8,0,2
+   183                        	.member	timerTickCount,608,112,8,0,2
+   184                        	.member	kernelError,640,10,8,32,8
+   185                        	.member	consoleCtl,672,138,8,32,18
+   186                        	.member	desktopCtl,704,138,8,32,19
+   187                        	.member	execProc,736,641,8,32
+   188                        	.member	startupArgs,768,129,8,32
+   189                        	.eos
+   190                        	.stag	_fxProcessMessage,112,21
+   191                        	.member	src,0,18,8,32
+   192                        	.member	dest,32,18,8,32
+   193                        	.member	type,64,16,8,16
+   194                        	.member	processInfo,80,138,8,32,20
+   195                        	.eos
+   196                        	.stag	_k_key_state,112,22
+   197                        	.member	scanCode,0,14,8,8
+   198                        	.member	isShifted,8,14,8,8
+   199                        	.member	isAlt,16,14,8,8
+   200                        	.member	isExtended,24,14,8,8
+   201                        	.member	isCapsLock,32,14,8,8
+   202                        	.member	isNumLock,40,14,8,8
+   203                        	.member	isScrollLock,48,14,8,8
+   204                        	.member	keyChar,56,16,8,16
+   205                        	.member	scanTime,72,18,8,32
+   206                        	.member	ledStatus,104,14,8,8
+   207                        	.eos
+   208                        	.stag	_fx_property,384,23
+   209                        	.member	name,0,110,8,0,16
+   210                        	.member	value,128,110,8,0,32
+   211                        	.eos
+   212                        	.utag	_24bitPointer,32,24
+   213                        	.member	address,0,142,11,32
+   214                        	.member	bytes,0,110,11,0,4
+  Mon Aug  9 2021 16:52                                                Page 5
+
+
+   215                        	.eos
+   216                        	.stag	_PointStruct,32,25
+   217                        	.member	x,0,5,8,16
+   218                        	.member	y,16,5,8,16
+   219                        	.eos
+   220                        	.stag	_RectStruct,112,26
+   221                        	.member	x,0,5,8,16
+   222                        	.member	y,16,5,8,16
+   223                        	.member	z,32,18,8,32
+   224                        	.member	width,64,5,8,16
+   225                        	.member	height,80,5,8,16
+   226                        	.member	attr,96,5,8,16
+   227                        	.eos
+   228                        	.stag	fake27_,96,27
+   229                        	.member	name,0,142,8,32
+   230                        	.member	topLeft,32,10,8,32,25
+   231                        	.member	bottomRight,64,10,8,32,25
+   232                        	.eos
+   233                        	.stag	fake28_,112,28
+   234                        	.member	x,0,5,8,16
+   235                        	.member	y,16,5,8,16
+   236                        	.member	z,32,5,8,16
+   237                        	.member	width,48,5,8,16
+   238                        	.member	height,64,5,8,16
+   239                        	.member	data,80,18,8,32
+   240                        	.eos
+   241                        	.stag	_k_WindowClass,272,29
+   242                        	.member	cbSize,0,16,8,16
+   243                        	.member	style,16,16,8,16
+   244                        	.member	styleEx,32,16,8,16
+   245                        	.member	pWndProc,48,654,8,32
+   246                        	.member	hInstance,80,129,8,32
+   247                        	.member	hIcon,112,129,8,32
+   248                        	.member	hCursor,144,129,8,32
+   249                        	.member	hbrBackground,176,129,8,32
+   250                        	.member	lpszMenuName,208,142,8,32
+   251                        	.member	lpszClassName,240,142,8,32
+   252                        	.eos
+   253                        	.stag	_ClickableRect,152,30
+   254                        	.member	area,0,10,8,112,26
+   255                        	.member	z,112,18,8,32
+   256                        	.member	enabled,144,14,8,8
+   257                        	.eos
+   258                        	.stag	_NCClickableRect,136,31
+   259                        	.member	area,0,10,8,112,26
+   260                        	.member	msgType,112,16,8,16
+   261                        	.member	enabled,128,14,8,8
+   262                        	.eos
+   263                        	.stag	_DragData,216,32
+   264                        	.member	area,0,10,8,112,26
+   265                        	.member	xoffset,112,5,8,16
+   266                        	.member	yoffset,128,5,8,16
+   267                        	.member	msgType,144,16,8,16
+   268                        	.member	ncAction,160,16,8,16
+   269                        	.member	isDrag,176,14,8,8
+   270                        	.member	isResize,184,14,8,8
+   271                        	.member	canDrag,192,14,8,8
+   272                        	.member	canDrop,200,14,8,8
+  Mon Aug  9 2021 16:52                                                Page 6
+
+
+   273                        	.member	didDrag,208,14,8,8
+   274                        	.eos
+   275                        	.stag	_k_WindowStruct,3904,33
+   276                        	.member	cbSize,0,16,8,16
+   277                        	.member	style,16,18,8,32
+   278                        	.member	styleEx,48,18,8,32
+   279                        	.member	win_id,80,5,8,16
+   280                        	.member	win_x,96,5,8,16
+   281                        	.member	win_y,112,5,8,16
+   282                        	.member	win_width,128,5,8,16
+   283                        	.member	win_height,144,5,8,16
+   284                        	.member	win_xoffset,160,5,8,16
+   285                        	.member	win_yoffset,176,5,8,16
+   286                        	.member	win_cxoffset,192,5,8,16
+   287                        	.member	win_cyoffset,208,5,8,16
+   288                        	.member	wndRect,224,10,8,112,26
+   289                        	.member	clientRect,336,10,8,112,26
+   290                        	.member	nonclientGadgets,448,106,8,0,31,16
+   291                        	.member	clickable,2624,129,8,32
+   292                        	.member	win_title,2656,110,8,0,32
+   293                        	.member	Reserved0,2912,16,8,16
+   294                        	.member	win_class,2928,110,8,0,16
+   295                        	.member	win_class_name,3056,110,8,0,32
+   296                        	.member	nBitmapLayer,3312,16,8,16
+   297                        	.member	bgRegion,3328,129,8,32
+   298                        	.member	procid,3360,18,8,32
+   299                        	.member	pWndClass,3392,138,8,32,29
+   300                        	.member	pParentWindow,3424,129,8,32
+   301                        	.member	hMenu,3456,129,8,32
+   302                        	.member	hPointer,3488,129,8,32
+   303                        	.member	hBackground,3520,129,8,32
+   304                        	.member	pChildWindows,3552,138,8,32,6
+   305                        	.member	pChildHitList,3584,138,8,32,6
+   306                        	.member	isVisible,3616,14,8,8
+   307                        	.member	windowData,3624,129,8,32
+   308                        	.member	clientData,3656,1121,8,32,6
+   309                        	.member	isClosed,3848,14,8,8
+   310                        	.member	isClosing,3856,14,8,8
+   311                        	.member	isDesktop,3864,14,8,8
+   312                        	.member	clickableNode,3872,138,8,32,5
+   313                        	.eos
+   314                        	.stag	_k_WindowStructEx,3880,34
+   315                        	.member	cbSize,0,16,8,16
+   316                        	.member	style,16,18,8,32
+   317                        	.member	styleEx,48,18,8,32
+   318                        	.member	win_id,80,5,8,16
+   319                        	.member	win_x,96,5,8,16
+   320                        	.member	win_y,112,5,8,16
+   321                        	.member	win_width,128,5,8,16
+   322                        	.member	win_height,144,5,8,16
+   323                        	.member	win_xoffset,160,5,8,16
+   324                        	.member	win_yoffset,176,5,8,16
+   325                        	.member	win_cxoffset,192,5,8,16
+   326                        	.member	win_cyoffset,208,5,8,16
+   327                        	.member	wndRect,224,10,8,112,26
+   328                        	.member	clientRect,336,10,8,112,26
+   329                        	.member	nonclientGadgets,448,106,8,0,31,16
+   330                        	.member	clickable,2624,129,8,32
+  Mon Aug  9 2021 16:52                                                Page 7
+
+
+   331                        	.member	win_title,2656,110,8,0,32
+   332                        	.member	Reserved0,2912,16,8,16
+   333                        	.member	win_class,2928,110,8,0,16
+   334                        	.member	nBitmapLayer,3056,16,8,16
+   335                        	.member	procid,3072,18,8,32
+   336                        	.member	pWndClass,3104,138,8,32,29
+   337                        	.member	pParentWindow,3136,129,8,32
+   338                        	.member	hMenu,3168,129,8,32
+   339                        	.member	hPointer,3200,129,8,32
+   340                        	.member	hBackground,3232,129,8,32
+   341                        	.member	pChildWindows,3264,138,8,32,6
+   342                        	.member	pChildHitList,3296,138,8,32,6
+   343                        	.member	isVisible,3328,14,8,8
+   344                        	.member	windowData,3336,129,8,32
+   345                        	.member	clientData,3368,1121,8,32,4
+   346                        	.member	isClosed,3496,14,8,8
+   347                        	.member	hWnd,3504,129,8,32
+   348                        	.member	localRect,3536,10,8,112,26
+   349                        	.member	globalRect,3648,10,8,112,26
+   350                        	.member	clientOffsetRect,3760,10,8,112,26
+   351                        	.member	isDesktop,3872,14,8,8
+   352                        	.eos
+   353                        	.stag	_FontMetric,32,35
+   354                        	.member	width,0,5,8,16
+   355                        	.member	height,16,5,8,16
+   356                        	.eos
+   357                        	.stag	_MenuStruct,280,36
+   358                        	.member	cx,0,5,8,16
+   359                        	.member	cy,16,5,8,16
+   360                        	.member	width,32,5,8,16
+   361                        	.member	height,48,5,8,16
+   362                        	.member	fcolor,64,14,8,8
+   363                        	.member	bcolor,72,14,8,8
+   364                        	.member	chromeLeft,80,14,8,8
+   365                        	.member	chromeRight1,88,14,8,8
+   366                        	.member	chromeRight2,96,14,8,8
+   367                        	.member	hFont,104,129,8,32
+   368                        	.member	itemId,136,16,8,16
+   369                        	.member	pCaption,152,142,8,32
+   370                        	.member	subMenus,184,138,8,32,6
+   371                        	.member	pBackground,216,129,8,32
+   372                        	.member	hWndOwner,248,129,8,32
+   373                        	.eos
+   374                        	.stag	fake37_,160,37
+   375                        	.member	menuId,0,16,8,16
+   376                        	.member	caption,16,142,8,32
+   377                        	.member	rect,48,10,8,112,26
+   378                        	.eos
+   379                        	.stag	fake38_,5152,38
+   380                        	.member	pParent,0,138,8,32,33
+   381                        	.member	rect,32,10,8,112,26
+   382                        	.member	captions,144,1134,8,32,24
+   383                        	.member	chrome,912,110,8,0,24
+   384                        	.member	ids,1104,112,8,0,24
+   385                        	.member	clickable,1488,106,8,0,30,24
+   386                        	.member	selected,5136,16,8,16
+   387                        	.eos
+   388                        	.stag	_fx_button_t,96,39
+  Mon Aug  9 2021 16:52                                                Page 8
+
+
+   389                        	.member	pCaption,0,142,8,32
+   390                        	.member	cCaption,32,16,8,16
+   391                        	.member	data,48,129,8,32
+   392                        	.member	captionPixelWidth,80,16,8,16
+   393                        	.eos
+   394                        	.stag	_fx_scrollbar_t,240,40
+   395                        	.member	min,0,16,8,16
+   396                        	.member	max,16,16,8,16
+   397                        	.member	increment,32,16,8,16
+   398                        	.member	stopsize,48,16,8,16
+   399                        	.member	location,64,5,8,16
+   400                        	.member	state,80,5,8,16
+   401                        	.member	rectThumb,96,10,8,112,26
+   402                        	.member	data,208,129,8,32
+   403                        	.eos
+   404                        	.stag	_fx_listbox_t,240,41
+   405                        	.member	pos,0,5,8,16
+   406                        	.member	selected,16,16,8,16
+   407                        	.member	offsetX,32,5,8,16
+   408                        	.member	offsetY,48,5,8,16
+   409                        	.member	inc,64,5,8,16
+   410                        	.member	direction,80,5,8,16
+   411                        	.member	top,96,5,8,16
+   412                        	.member	bottom,112,5,8,16
+   413                        	.member	indexTop,128,5,8,16
+   414                        	.member	indexBottom,144,5,8,16
+   415                        	.member	maxItems,160,16,8,16
+   416                        	.member	fontSet,176,142,8,32
+   417                        	.member	data,208,129,8,32
+   418                        	.eos
+   419                        	.stag	_fx_textbox_t,144,42
+   420                        	.member	pos,0,5,8,16
+   421                        	.member	selected,16,16,8,16
+   422                        	.member	offsetX,32,5,8,16
+   423                        	.member	offsetY,48,5,8,16
+   424                        	.member	isShifted,64,14,8,8
+   425                        	.member	cursorState,72,14,8,8
+   426                        	.member	fontSet,80,142,8,32
+   427                        	.member	data,112,129,8,32
+   428                        	.eos
+   429                        	.stag	_fx_msgbox_t,144,43
+   430                        	.member	pos,0,5,8,16
+   431                        	.member	selected,16,16,8,16
+   432                        	.member	offsetX,32,5,8,16
+   433                        	.member	offsetY,48,5,8,16
+   434                        	.member	isShifted,64,14,8,8
+   435                        	.member	cursorState,72,14,8,8
+   436                        	.member	fontSet,80,142,8,32
+   437                        	.member	data,112,129,8,32
+   438                        	.eos
+   439                        	.stag	_fx_menuAnchor_t,272,44
+   440                        	.member	pCaption,0,142,8,32
+   441                        	.member	renderLayoutX,32,16,8,16
+   442                        	.member	renderLayoutY,48,16,8,16
+   443                        	.member	captionPixelWidth,64,16,8,16
+   444                        	.member	data,80,129,8,32
+   445                        	.member	droppedWindow,112,138,8,32,33
+   446                        	.member	bytes,144,110,8,0,16
+  Mon Aug  9 2021 16:52                                                Page 9
+
+
+   447                        	.eos
+   448                        	.stag	_SubMenuStruct,64,45
+   449                        	.member	caption,0,142,8,32
+   450                        	.member	action,32,641,8,32
+   451                        	.eos
+   452                        	.stag	_SubMenuListStruct,40,46
+   453                        	.member	cMenus,0,14,8,8
+   454                        	.member	psubmenus,8,9354,8,32,45
+   455                        	.eos
+   456                        	.stag	_fx_ComBuffer,2080,47
+   457                        	.member	cbSize,0,16,8,16
+   458                        	.member	cbBuffer,16,16,8,16
+   459                        	.member	buffer,32,110,8,0,256
+   460                        	.eos
+   461                        	.stag	_fx_resource_header,72,48
+   462                        	.member	magic,0,110,8,0,4
+   463                        	.member	major,32,14,8,8
+   464                        	.member	minor,40,14,8,8
+   465                        	.member	type,48,14,8,8
+   466                        	.member	reserved,56,14,8,8
+   467                        	.member	resheaderSize,64,14,8,8
+   468                        	.eos
+   469                        	.stag	_fx_resource_header_font,144,49
+   470                        	.member	title,0,110,8,0,16
+   471                        	.member	height,128,14,8,8
+   472                        	.member	width,136,14,8,8
+   473                        	.eos
+   474                        	.stag	_fx_resource_string,32,50
+   475                        	.member	locale,0,110,8,0,2
+   476                        	.member	entries,16,16,8,16
+   477                        	.eos
+   478                        	.stag	_fx_resource_string_entry,40,51
+   479                        	.member	index,0,16,8,16
+   480                        	.member	length,16,16,8,16
+   481                        	.member	data,32,14,8,8
+   482                        	.eos
+   483                        	.line	1064
+   484                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",8
+   485                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxstringtable.h",0
+   486                        	.line	90
+   487                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",9
+   488                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxc256u.h",0
+   489                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+   490                        	.line	1064
+   491                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxc256u.h",5
+   492                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fmx_vicky.h",0
+   493                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+   494                        	.line	1064
+   495                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fmx_vicky.h",11
+  Mon Aug  9 2021 16:52                                                Page 10
+
+
+   496                        	.line	72
+   497                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxc256u.h",6
+   498                        	.line	1960
+   499                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",16
+   500                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxkernel.h",0
+   501                        	.line	490
+   502                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",22
+   503                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxconsole.h",0
+   504                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    string.h",0
+   505                        	.line	134
+   506                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxconsole.h",5
+   507                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stdlib.h",0
+   508                        	.line	205
+   509                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxconsole.h",6
+   510                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+   511                        	.line	1064
+   512                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxconsole.h",7
+   513                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxc256u.h",0
+   514                        	.line	1960
+   515                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxconsole.h",12
+   516                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxstring.h",0
+   517                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    stdlib.h",0
+   518                        	.line	205
+   519                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxstring.h",5
+   520                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
+                    string.h",0
+   521                        	.line	134
+   522                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxstring.h",6
+   523                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+   524                        	.line	1064
+   525                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxstring.h",7
+   526                        	.stag	_fx_string,64,52
+   527                        	.member	size,0,16,8,16
+   528                        	.member	pos,16,5,8,16
+   529                        	.member	buffer,32,142,8,32
+   530                        	.eos
+   531                        	.line	141
+   532                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxconsole.h",17
+  Mon Aug  9 2021 16:52                                                Page 11
+
+
+   533                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxeventmanager.h",0
+   534                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",0
+   535                        	.line	30
+   536                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxeventmanager.h",5
+   537                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxexec.h",0
+   538                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+   539                        	.line	1064
+   540                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxexec.h",5
+   541                        	.stag	_fxos_executive_vtable,128,53
+   542                        	.member	Init,0,8833,8,32
+   543                        	.member	Configure,32,656,8,32
+   544                        	.member	Query,64,656,8,32
+   545                        	.member	Uninit,96,641,8,32
+   546                        	.eos
+   547                        	.line	86
+   548                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxeventmanager.h",6
+   549                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxnode.h",0
+   550                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+   551                        	.line	1064
+   552                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxnode.h",11
+   553                        	.line	118
+   554                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxeventmanager.h",7
+   555                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxconsole.h",0
+   556                        	.line	208
+   557                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxeventmanager.h",8
+   558                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxwindowmanager.h",0
+   559                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",0
+   560                        	.line	30
+   561                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxwindowmanager.h",5
+   562                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxmemorymanager.h",0
+   563                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",0
+   564                        	.line	30
+   565                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxmemorymanager.h",5
+   566                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\umm_malloc_cfg.h",0
+   567                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos_build_parameters.h",0
+   568                        	.line	35
+   569                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+  Mon Aug  9 2021 16:52                                                Page 12
+
+
+                    space\FXOS-Beta\src\umm_malloc_cfg.h",8
+   570                        	.stag	UMM_HEAP_INFO_t,256,54
+   571                        	.member	totalEntries,0,18,8,32
+   572                        	.member	usedEntries,32,18,8,32
+   573                        	.member	freeEntries,64,18,8,32
+   574                        	.member	totalBlocks,96,18,8,32
+   575                        	.member	usedBlocks,128,18,8,32
+   576                        	.member	freeBlocks,160,18,8,32
+   577                        	.member	maxFreeContiguousBlocks,192,18,8,32
+   578                        	.member	blockSize,224,18,8,32
+   579                        	.eos
+   580                        	.line	199
+   581                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxmemorymanager.h",6
+   582                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\umm_malloc.h",0
+   583                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+   584                        	.line	1064
+   585                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\umm_malloc.h",11
+   586                        	.line	24
+   587                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxmemorymanager.h",7
+   588                        	.stag	_fx_memory_map,2072,55
+   589                        	.member	availableMemory,0,18,8,32
+   590                        	.member	valid_segments,32,110,8,0,255
+   591                        	.eos
+   592                        	.stag	_fx_ipc_port,144,56
+   593                        	.member	id,0,18,8,32
+   594                        	.member	type,32,14,8,8
+   595                        	.member	name,40,138,8,32,52
+   596                        	.member	time,72,18,8,32
+   597                        	.member	queue,104,138,8,32,7
+   598                        	.member	reserved_1,136,14,8,8
+   599                        	.eos
+   600                        	.stag	_k_mem_alloc_header,80,57
+   601                        	.member	user,0,14,8,8
+   602                        	.member	attr,8,14,8,8
+   603                        	.member	size,16,18,8,32
+   604                        	.member	virtual,48,129,8,32
+   605                        	.eos
+   606                        	.line	129
+   607                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxwindowmanager.h",6
+   608                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxeventmanager.h",0
+   609                        	.line	568
+   610                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxwindowmanager.h",7
+   611                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxgfx.h",0
+   612                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxfont.h",0
+   613                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+   614                        	.line	1064
+   615                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+  Mon Aug  9 2021 16:52                                                Page 13
+
+
+                    space\FXOS-Beta\src\fxfont.h",6
+   616                        	.line	74
+   617                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxgfx.h",5
+   618                        	.stag	_click_detected,64,58
+   619                        	.member	window,0,138,8,32,33
+   620                        	.member	handler,32,641,8,32
+   621                        	.eos
+   622                        	.stag	_current_palette_map,400,59
+   623                        	.member	CUR_DESKTOP,0,5,8,16
+   624                        	.member	CUR_BACKGROUND,16,5,8,16
+   625                        	.member	CUR_FONT,32,5,8,16
+   626                        	.member	CUR_SELECTED_FONT,48,5,8,16
+   627                        	.member	CUR_HIGHLIGHT_COLOR,64,5,8,16
+   628                        	.member	CUR_WINDOWFRAME,80,5,8,16
+   629                        	.member	CUR_WINDOWBORDER,96,5,8,16
+   630                        	.member	CUR_WINDOWSHADOW,112,5,8,16
+   631                        	.member	CUR_MENU,128,5,8,16
+   632                        	.member	CUR_GADGET,144,5,8,16
+   633                        	.member	CUR_COLOR,160,101,8,0,15
+   634                        	.eos
+   635                        	.line	359
+   636                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxwindowmanager.h",8
+   637                        	.stag	_fxos_winman_vtable,160,60
+   638                        	.member	Events,0,641,8,32
+   639                        	.member	ConfigureWindowManager,32,656,8,32
+   640                        	.member	ProcessWindowEvent,64,8833,8,32
+   641                        	.member	QueryWindowManager,96,656,8,32
+   642                        	.member	DoWndProcs,128,641,8,32
+   643                        	.eos
+   644                        	.stag	fake61_,64,61
+   645                        	.member	type,0,16,8,16
+   646                        	.member	size,16,16,8,16
+   647                        	.member	desktopAction,32,129,8,32
+   648                        	.eos
+   649                        	.stag	fake62_,96,62
+   650                        	.member	type,0,16,8,16
+   651                        	.member	caption,16,138,8,32,52
+   652                        	.member	buttonType,48,16,8,16
+   653                        	.member	x,64,5,8,16
+   654                        	.member	y,80,5,8,16
+   655                        	.eos
+   656                        	.stag	_childMessage_t,64,63
+   657                        	.member	msgType,0,16,8,16
+   658                        	.member	msgData,16,129,8,32
+   659                        	.member	dataSize,48,16,8,16
+   660                        	.eos
+   661                        	.line	594
+   662                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxeventmanager.h",9
+   663                        	.stag	_fx_main_loopvars,16,64
+   664                        	.member	dummy,0,5,8,16
+   665                        	.eos
+   666                        	.stag	_fxMouseMessageData,64,65
+   667                        	.member	button1,0,14,8,8
+   668                        	.member	button2,8,14,8,8
+   669                        	.member	button3,16,14,8,8
+  Mon Aug  9 2021 16:52                                                Page 14
+
+
+   670                        	.member	button4,24,14,8,8
+   671                        	.member	x,32,16,8,16
+   672                        	.member	y,48,16,8,16
+   673                        	.eos
+   674                        	.utag	marshalled_data,32,66
+   675                        	.member	byteValue,0,14,11,8
+   676                        	.member	verbValue,0,110,11,0,2
+   677                        	.member	intValue,0,16,11,16
+   678                        	.member	longValue,0,18,11,32
+   679                        	.member	pointerValue,0,129,11,32
+   680                        	.eos
+   681                        	.stag	_fx_eventProcess,64,67
+   682                        	.member	process,0,138,8,32,20
+   683                        	.member	eventProc,32,641,8,32
+   684                        	.eos
+   685                        	.stag	_mouse_msg_state,184,68
+   686                        	.member	lastEvent,0,18,8,32
+   687                        	.member	buttonLeftDown,32,14,8,8
+   688                        	.member	lastLeftDown,40,18,8,32
+   689                        	.member	buttonRightDown,72,14,8,8
+   690                        	.member	lastRightDown,80,18,8,32
+   691                        	.member	buttonMiddleDown,112,14,8,8
+   692                        	.member	lastMiddleDown,120,18,8,32
+   693                        	.member	lastX,152,16,8,16
+   694                        	.member	lastY,168,16,8,16
+   695                        	.eos
+   696                        	.stag	_fxos_eventmanager_vtable,192,69
+   697                        	.member	EventQueue,0,138,8,32,7
+   698                        	.member	Init,32,8833,8,32
+   699                        	.member	Run,64,656,8,32
+   700                        	.member	Configure,96,656,8,32
+   701                        	.member	Query,128,656,8,32
+   702                        	.member	Uninit,160,641,8,32
+   703                        	.eos
+   704                        	.stag	_k_clipboard_data,168,70
+   705                        	.member	type,0,14,8,8
+   706                        	.member	readable,8,110,8,0,16
+   707                        	.member	data,136,129,8,32
+   708                        	.eos
+   709                        	.line	568
+   710                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxconsole.h",18
+   711                        	.stag	_fx_spinner_ctx,48,71
+   712                        	.member	index,0,5,8,16
+   713                        	.member	spinner,16,142,8,32
+   714                        	.eos
+   715                        	.stag	_fx_console_ctx,1144,72
+   716                        	.member	lineBufferIndex,0,5,8,16
+   717                        	.member	lineBuffer,16,110,8,0,128
+   718                        	.member	isShifted,1040,14,8,8
+   719                        	.member	userData,1048,129,8,32
+   720                        	.member	screenBuffer,1080,129,8,32
+   721                        	.member	Reserved1,1112,129,8,32
+   722                        	.eos
+   723                        	.stag	_token,64,73
+   724                        	.member	type,0,5,8,16
+   725                        	.member	depth,16,16,8,16
+   726                        	.member	text,32,142,8,32
+  Mon Aug  9 2021 16:52                                                Page 15
+
+
+   727                        	.eos
+   728                        	.stag	_command_args,64,74
+   729                        	.member	proc,0,656,8,32
+   730                        	.member	tokens,32,138,8,32,5
+   731                        	.eos
+   732                        	.line	208
+   733                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",23
+   734                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxstring.h",0
+   735                        	.line	141
+   736                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",24
+   737                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxnode.h",0
+   738                        	.line	118
+   739                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",25
+   740                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\ff/ff.h",0
+   741                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\ff/ffconf.h",0
+   742                        	.line	298
+   743                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\ff/ff.h",29
+   744                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+   745                        	.line	1064
+   746                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\ff/ff.h",30
+   747                        	.stag	fake75_,4504,75
+   748                        	.member	fs_type,0,14,8,8
+   749                        	.member	pdrv,8,14,8,8
+   750                        	.member	n_fats,16,14,8,8
+   751                        	.member	wflag,24,14,8,8
+   752                        	.member	fsi_flag,32,14,8,8
+   753                        	.member	id,40,5,8,16
+   754                        	.member	n_rootdir,56,5,8,16
+   755                        	.member	csize,72,5,8,16
+   756                        	.member	lfnbuf,88,144,8,32
+   757                        	.member	last_clst,120,18,8,32
+   758                        	.member	free_clst,152,18,8,32
+   759                        	.member	n_fatent,184,18,8,32
+   760                        	.member	fsize,216,18,8,32
+   761                        	.member	volbase,248,18,8,32
+   762                        	.member	fatbase,280,18,8,32
+   763                        	.member	dirbase,312,18,8,32
+   764                        	.member	database,344,18,8,32
+   765                        	.member	winsect,376,18,8,32
+   766                        	.member	win,408,110,8,0,512
+   767                        	.eos
+   768                        	.stag	fake76_,128,76
+   769                        	.member	fs,0,138,8,32,75
+   770                        	.member	id,32,5,8,16
+   771                        	.member	attr,48,14,8,8
+   772                        	.member	stat,56,14,8,8
+   773                        	.member	sclust,64,18,8,32
+   774                        	.member	objsize,96,18,8,32
+  Mon Aug  9 2021 16:52                                                Page 16
+
+
+   775                        	.eos
+   776                        	.stag	fake77_,4400,77
+   777                        	.member	obj,0,10,8,128,76
+   778                        	.member	flag,128,14,8,8
+   779                        	.member	err,136,14,8,8
+   780                        	.member	fptr,144,18,8,32
+   781                        	.member	clust,176,18,8,32
+   782                        	.member	sect,208,18,8,32
+   783                        	.member	dir_sect,240,18,8,32
+   784                        	.member	dir_ptr,272,142,8,32
+   785                        	.member	buf,304,110,8,0,512
+   786                        	.eos
+   787                        	.stag	fake78_,416,78
+   788                        	.member	obj,0,10,8,128,76
+   789                        	.member	dptr,128,18,8,32
+   790                        	.member	clust,160,18,8,32
+   791                        	.member	sect,192,18,8,32
+   792                        	.member	dir,224,142,8,32
+   793                        	.member	fn,256,110,8,0,12
+   794                        	.member	blk_ofs,352,18,8,32
+   795                        	.member	pat,384,142,8,32
+   796                        	.eos
+   797                        	.stag	fake79_,2224,79
+   798                        	.member	fsize,0,18,8,32
+   799                        	.member	fdate,32,5,8,16
+   800                        	.member	ftime,48,5,8,16
+   801                        	.member	fattrib,64,14,8,8
+   802                        	.member	altname,72,110,8,0,13
+   803                        	.member	fname,176,110,8,0,256
+   804                        	.eos
+   805                        	.stag	fake80_,80,80
+   806                        	.member	fmt,0,14,8,8
+   807                        	.member	n_fat,8,14,8,8
+   808                        	.member	align,16,16,8,16
+   809                        	.member	n_root,32,16,8,16
+   810                        	.member	au_size,48,18,8,32
+   811                        	.eos
+   812                        	.line	429
+   813                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",26
+   814                        	.line	30
+   815                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxkernel.h",5
+   816                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxnode.h",0
+   817                        	.line	118
+   818                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxkernel.h",6
+   819                        	.stag	_fx_api_call_table,8192,81
+   820                        	.member	call_table,0,1121,8,32,256
+   821                        	.eos
+   822                        	.stag	_fx_zero_page_irq_data,32,82
+   823                        	.member	data,0,110,8,0,4
+   824                        	.eos
+   825                        	.stag	_fx_zero_page,720,83
+   826                        	.member	fxos_mouse_byte_0,0,14,8,8
+   827                        	.member	fxos_mouse_byte_1,8,14,8,8
+   828                        	.member	fxos_mouse_byte_2,16,14,8,8
+  Mon Aug  9 2021 16:52                                                Page 17
+
+
+   829                        	.member	fxos_mouse_byte_t,24,14,8,8
+   830                        	.member	fxos_mouse_byte_x_l,32,14,8,8
+   831                        	.member	fxos_mouse_byte_x_h,40,14,8,8
+   832                        	.member	fxos_mouse_byte_y_l,48,14,8,8
+   833                        	.member	fxos_mouse_byte_y_h,56,14,8,8
+   834                        	.member	fxos_key_byte_0,64,14,8,8
+   835                        	.member	fxos_key_byte_1,72,14,8,8
+   836                        	.member	fxos_key_byte_2,80,14,8,8
+   837                        	.member	fxos_mouse_ctl,88,14,8,8
+   838                        	.member	fxos_mouse_index,96,14,8,8
+   839                        	.member	fxos_mouse_status,104,14,8,8
+   840                        	.member	Endianness,112,16,8,16
+   841                        	.member	VersionMajor,128,16,8,16
+   842                        	.member	VersionMinor,144,16,8,16
+   843                        	.member	VersionRelease,160,16,8,16
+   844                        	.member	topMemory,176,18,8,32
+   845                        	.member	bottomMemory,208,18,8,32
+   846                        	.member	availableMemory,240,18,8,32
+   847                        	.member	availableMemoryK,272,18,8,32
+   848                        	.member	availableHeapMemory,304,18,8,32
+   849                        	.member	availableHeapMemoryK,336,18,8,32
+   850                        	.member	fxos_console_row,368,16,8,16
+   851                        	.member	fxos_console_col,384,16,8,16
+   852                        	.member	executive,400,129,8,32
+   853                        	.member	eventmanager,432,129,8,32
+   854                        	.member	devicemanager,464,129,8,32
+   855                        	.member	windowmanager,496,129,8,32
+   856                        	.member	fxos_kernel_api,528,138,8,32,81
+   857                        	.member	fxos_dos_api,560,138,8,32,81
+   858                        	.member	fxos_gfx_api,592,138,8,32,81
+   859                        	.member	fxos_gui_api,624,138,8,32,81
+   860                        	.member	fxos_con_api,656,138,8,32,81
+   861                        	.member	fxos_reserved_2_api,688,138,8,32,81
+   862                        	.eos
+   863                        	.stag	_fx_environment,96,84
+   864                        	.member	variables,0,142,8,32
+   865                        	.member	reserved1,32,5,8,16
+   866                        	.member	reserved2,48,5,8,16
+   867                        	.member	reserved3,64,5,8,16
+   868                        	.member	reserved4,80,5,8,16
+   869                        	.eos
+   870                        	.stag	_debug_byte_bits,8,85
+   871                        	.member	bit7,0,14,17,1
+   872                        	.member	bit6,1,14,17,1
+   873                        	.member	bit5,2,14,17,1
+   874                        	.member	bit4,3,14,17,1
+   875                        	.member	bit3,4,14,17,1
+   876                        	.member	bit2,5,14,17,1
+   877                        	.member	bit1,6,14,17,1
+   878                        	.member	bit0,7,14,17,1
+   879                        	.eos
+   880                        	.stag	_k_segmentheader,160,86
+   881                        	.member	version_major,0,14,8,8
+   882                        	.member	version_minor,8,14,8,8
+   883                        	.member	length,16,5,8,16
+   884                        	.member	segment_start_addr,32,7,8,32
+   885                        	.member	segment_end_addr,64,7,8,32
+   886                        	.member	segment_size,96,7,8,32
+  Mon Aug  9 2021 16:52                                                Page 18
+
+
+   887                        	.member	main_entry_addr,128,7,8,32
+   888                        	.eos
+   889                        	.stag	_fx_device_driver,776,87
+   890                        	.member	name,0,110,8,0,32
+   891                        	.member	version,256,110,8,0,16
+   892                        	.member	hmajor,384,110,8,0,8
+   893                        	.member	hminor,448,110,8,0,8
+   894                        	.member	type,512,14,8,8
+   895                        	.member	designation,520,110,8,0,6
+   896                        	.member	irq_ctl,568,16,8,16
+   897                        	.member	f_driver_irq,584,129,8,32
+   898                        	.member	driver_context,616,129,8,32
+   899                        	.member	f_driver_load,648,129,8,32
+   900                        	.member	f_driver_read,680,129,8,32
+   901                        	.member	f_driver_write,712,129,8,32
+   902                        	.member	f_driver_unload,744,129,8,32
+   903                        	.eos
+   904                        	.stag	_fx_block_device_driver,808,88
+   905                        	.member	name,0,110,8,0,32
+   906                        	.member	version,256,110,8,0,16
+   907                        	.member	hmajor,384,110,8,0,8
+   908                        	.member	hminor,448,110,8,0,8
+   909                        	.member	type,512,14,8,8
+   910                        	.member	designation,520,110,8,0,6
+   911                        	.member	irq_ctl,568,16,8,16
+   912                        	.member	f_driver_irq,584,129,8,32
+   913                        	.member	driver_context,616,129,8,32
+   914                        	.member	f_driver_load,648,129,8,32
+   915                        	.member	f_driver_read,680,129,8,32
+   916                        	.member	f_driver_write,712,129,8,32
+   917                        	.member	f_driver_unload,744,129,8,32
+   918                        	.member	f_driver_command,776,129,8,32
+   919                        	.eos
+   920                        	.stag	_k_irq_chain,128,89
+   921                        	.member	handlers,0,5217,8,32,4
+   922                        	.eos
+   923                        	.line	490
+   924                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\drivers/driver_fmups2.c",2
+   925                        ;#include "DRIVERS/DRIVER.h"
+   926                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\DRIVERS/DRIVER.h",0
+   927                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxos.h",0
+   928                        	.line	30
+   929                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\DRIVERS/DRIVER.h",5
+   930                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxmemorymanager.h",0
+   931                        	.line	129
+   932                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\DRIVERS/DRIVER.h",6
+   933                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxc256u.h",0
+   934                        	.line	1960
+   935                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\DRIVERS/DRIVER.h",104
+   936                        	.line	113
+  Mon Aug  9 2021 16:52                                                Page 19
+
+
+   937                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\drivers/driver_fmups2.c",3
+   938                        ;#include "DRIVERS/ps2ctl.h"
+   939                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\DRIVERS/ps2ctl.h",0
+   940                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+   941                        	.line	1064
+   942                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\DRIVERS/ps2ctl.h",4
+   943                        	.stag	fake90_,88,90
+   944                        	.member	present,0,14,8,8
+   945                        	.member	num,8,18,8,32
+   946                        	.member	type,40,18,8,32
+   947                        	.member	first_id_byte,72,14,8,8
+   948                        	.member	second_id_byte,80,14,8,8
+   949                        	.eos
+   950                        	.line	84
+   951                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\drivers/driver_fmups2.c",4
+   952                        ;#include "DRIVERS/DRIVER_FMUPS2.h"
+   953                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\DRIVERS/DRIVER_FMUPS2.h",0
+   954                        	.line	5
+   955                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\drivers/driver_fmups2.c",5
+   956                        ;
+   957                        ;static BOOL f_driver_load(void);
+   958                        ;static UINT f_driver_read(LPVOID buffer);
+   959                        ;static UINT f_driver_write(UINT size,LPVOID buffe
+                    r);
+   960                        ;static BOOL f_driver_unload(void);
+   961                        ;
+   962                        ;static LPVOID _f_get_driver(VOID);
+   963                        ;
+   964                        ;#pragma section CODE=FMXUPS2,offset $04:05F0
+   965                        FMXUPS2	section	offset $04:05F0
+   966 04:05F0:              	ends
+   967                        ;
+   968                        ;/*
+   969                        ;static FX_DEVICE_DRIVER DRIVER_FMXUPS2 = {
+   970                        ;							
+                    			"DRIVER_FMXUPS2\0",
+   971                        ;							
+                    			"v1.0.0\0",
+   972                        ;							
+                    			"A\0",
+   973                        ;							
+                    			"1\0",
+   974                        ;							
+                    			DRIVER_TYPE_PS2,
+   975                        ;							
+                    			"PS2:\0",
+   976                        ;							
+                    			NOIRQ,
+   977                        ;							
+                    			NULL,
+   978                        ;							
+  Mon Aug  9 2021 16:52                                                Page 20
+
+
+                    			NULL,
+   979                        ;							
+                    			f_driver_load,
+   980                        ;							
+                    			f_driver_read,
+   981                        ;							
+                    			f_driver_write,
+   982                        ;							
+                    			f_driver_unload
+   983                        ;							
+                    	    };
+   984                        ;
+   985                        ;*/
+   986                        ;static PFX_DEVICE_DRIVER f_get_driver(LPCSTR majo
+                    r,LPCSTR minor)
+   987                        ;{
+   988                        	.line	34
+   989                        	.line	35
+   990                        	FMXUPS2
+   991                        	func
+   992                        	.function	35
+   993                        ~~f_get_driver:
+   994                        	longa	on
+   995                        	longi	on
+   996 04:05F0: 3B           	tsc
+   997 04:05F1: 38           	sec
+   998 04:05F2: E9 04 00     	sbc	#L2
+   999 04:05F5: 1B           	tcs
+  1000 04:05F6: 0B           	phd
+  1001 04:05F7: 5B           	tcd
+  1002             00000004   major_0	set	4
+  1003             00000008   minor_0	set	8
+  1004                        	.block	35
+  1005                        ;	//return &DRIVER_FMXUPS2;
+  1006                        ;	return _f_get_driver();
+  1007                        	.sym	major,4,142,6,32
+  1008                        	.sym	minor,8,142,6,32
+  1009                        	.line	37
+  1010 04:05F8: 22 B2 0A 04  	jsl	~~_f_get_driver
+  1011 04:05FC: 85 01        	sta	<R0
+  1012 04:05FE: 86 03        	stx	<R0+2
+  1013 04:0600: A6 03        	ldx	<R0+2
+  1014 04:0602: A5 01        	lda	<R0
+  1015                        L5:
+  1016 04:0604: A8           	tay
+  1017 04:0605: A5 06        	lda	<L2+2
+  1018 04:0607: 85 0E        	sta	<L2+2+8
+  1019 04:0609: A5 05        	lda	<L2+1
+  1020 04:060B: 85 0D        	sta	<L2+1+8
+  1021 04:060D: 2B           	pld
+  1022 04:060E: 3B           	tsc
+  1023 04:060F: 18           	clc
+  1024 04:0610: 69 0C 00     	adc	#L2+8
+  1025 04:0613: 1B           	tcs
+  1026 04:0614: 98           	tya
+  1027 04:0615: 6B           	rtl
+  1028                        ;}
+  1029                        	.line	38
+  Mon Aug  9 2021 16:52                                                Page 21
+
+
+  1030                        	.endblock	38
+  1031             00000004   L2	equ	4
+  1032             00000005   L3	equ	5
+  1033 04:0616:              	ends
+  1034                        	efunc
+  1035                        	.endfunc	38,5,4
+  1036                        	.line	38
+  1037                        ;
+  1038                        ;static BOOL f_driver_load(void)
+  1039                        ;{
+  1040                        	.line	40
+  1041                        	.line	41
+  1042                        	FMXUPS2
+  1043                        	func
+  1044                        	.function	41
+  1045                        ~~f_driver_load:
+  1046                        	longa	on
+  1047                        	longi	on
+  1048 04:0616: 3B           	tsc
+  1049 04:0617: 38           	sec
+  1050 04:0618: E9 00 00     	sbc	#L6
+  1051 04:061B: 1B           	tcs
+  1052 04:061C: 0B           	phd
+  1053 04:061D: 5B           	tcd
+  1054                        	.block	41
+  1055                        ;	init_ps2();
+  1056                        	.line	42
+  1057 04:061E: 22 7E 06 04  	jsl	~~init_ps2
+  1058                        ;
+  1059                        ;	return TRUE;
+  1060                        	.line	44
+  1061 04:0622: A9 01 00     	lda	#$1
+  1062                        L9:
+  1063 04:0625: A8           	tay
+  1064 04:0626: 2B           	pld
+  1065 04:0627: 3B           	tsc
+  1066 04:0628: 18           	clc
+  1067 04:0629: 69 00 00     	adc	#L6
+  1068 04:062C: 1B           	tcs
+  1069 04:062D: 98           	tya
+  1070 04:062E: 6B           	rtl
+  1071                        ;}
+  1072                        	.line	45
+  1073                        	.endblock	45
+  1074             00000000   L6	equ	0
+  1075             00000001   L7	equ	1
+  1076 04:062F:              	ends
+  1077                        	efunc
+  1078                        	.endfunc	45,1,0
+  1079                        	.line	45
+  1080                        ;
+  1081                        ;static UINT f_driver_read(LPVOID buffer)
+  1082                        ;{
+  1083                        	.line	47
+  1084                        	.line	48
+  1085                        	FMXUPS2
+  1086                        	func
+  1087                        	.function	48
+  Mon Aug  9 2021 16:52                                                Page 22
+
+
+  1088                        ~~f_driver_read:
+  1089                        	longa	on
+  1090                        	longi	on
+  1091 04:062F: 3B           	tsc
+  1092 04:0630: 38           	sec
+  1093 04:0631: E9 00 00     	sbc	#L10
+  1094 04:0634: 1B           	tcs
+  1095 04:0635: 0B           	phd
+  1096 04:0636: 5B           	tcd
+  1097             00000004   buffer_0	set	4
+  1098                        	.block	48
+  1099                        ;	return 0;
+  1100                        	.sym	buffer,4,129,6,32
+  1101                        	.line	49
+  1102 04:0637: A9 00 00     	lda	#$0
+  1103                        L13:
+  1104 04:063A: A8           	tay
+  1105 04:063B: A5 02        	lda	<L10+2
+  1106 04:063D: 85 06        	sta	<L10+2+4
+  1107 04:063F: A5 01        	lda	<L10+1
+  1108 04:0641: 85 05        	sta	<L10+1+4
+  1109 04:0643: 2B           	pld
+  1110 04:0644: 3B           	tsc
+  1111 04:0645: 18           	clc
+  1112 04:0646: 69 04 00     	adc	#L10+4
+  1113 04:0649: 1B           	tcs
+  1114 04:064A: 98           	tya
+  1115 04:064B: 6B           	rtl
+  1116                        ;}
+  1117                        	.line	50
+  1118                        	.endblock	50
+  1119             00000000   L10	equ	0
+  1120             00000001   L11	equ	1
+  1121 04:064C:              	ends
+  1122                        	efunc
+  1123                        	.endfunc	50,1,0
+  1124                        	.line	50
+  1125                        ;
+  1126                        ;static UINT f_driver_write(UINT size,LPVOID buffe
+                    r)
+  1127                        ;{
+  1128                        	.line	52
+  1129                        	.line	53
+  1130                        	FMXUPS2
+  1131                        	func
+  1132                        	.function	53
+  1133                        ~~f_driver_write:
+  1134                        	longa	on
+  1135                        	longi	on
+  1136 04:064C: 3B           	tsc
+  1137 04:064D: 38           	sec
+  1138 04:064E: E9 00 00     	sbc	#L14
+  1139 04:0651: 1B           	tcs
+  1140 04:0652: 0B           	phd
+  1141 04:0653: 5B           	tcd
+  1142             00000004   size_0	set	4
+  1143             00000006   buffer_0	set	6
+  1144                        	.block	53
+  Mon Aug  9 2021 16:52                                                Page 23
+
+
+  1145                        ;	return 0;
+  1146                        	.sym	size,4,16,6,16
+  1147                        	.sym	buffer,6,129,6,32
+  1148                        	.line	54
+  1149 04:0654: A9 00 00     	lda	#$0
+  1150                        L17:
+  1151 04:0657: A8           	tay
+  1152 04:0658: A5 02        	lda	<L14+2
+  1153 04:065A: 85 08        	sta	<L14+2+6
+  1154 04:065C: A5 01        	lda	<L14+1
+  1155 04:065E: 85 07        	sta	<L14+1+6
+  1156 04:0660: 2B           	pld
+  1157 04:0661: 3B           	tsc
+  1158 04:0662: 18           	clc
+  1159 04:0663: 69 06 00     	adc	#L14+6
+  1160 04:0666: 1B           	tcs
+  1161 04:0667: 98           	tya
+  1162 04:0668: 6B           	rtl
+  1163                        ;}
+  1164                        	.line	55
+  1165                        	.endblock	55
+  1166             00000000   L14	equ	0
+  1167             00000001   L15	equ	1
+  1168 04:0669:              	ends
+  1169                        	efunc
+  1170                        	.endfunc	55,1,0
+  1171                        	.line	55
+  1172                        ;
+  1173                        ;static BOOL f_driver_unload(void)
+  1174                        ;{
+  1175                        	.line	57
+  1176                        	.line	58
+  1177                        	FMXUPS2
+  1178                        	func
+  1179                        	.function	58
+  1180                        ~~f_driver_unload:
+  1181                        	longa	on
+  1182                        	longi	on
+  1183 04:0669: 3B           	tsc
+  1184 04:066A: 38           	sec
+  1185 04:066B: E9 00 00     	sbc	#L18
+  1186 04:066E: 1B           	tcs
+  1187 04:066F: 0B           	phd
+  1188 04:0670: 5B           	tcd
+  1189                        	.block	58
+  1190                        ;	return FALSE;
+  1191                        	.line	59
+  1192 04:0671: A9 00 00     	lda	#$0
+  1193                        L21:
+  1194 04:0674: A8           	tay
+  1195 04:0675: 2B           	pld
+  1196 04:0676: 3B           	tsc
+  1197 04:0677: 18           	clc
+  1198 04:0678: 69 00 00     	adc	#L18
+  1199 04:067B: 1B           	tcs
+  1200 04:067C: 98           	tya
+  1201 04:067D: 6B           	rtl
+  1202                        ;}
+  Mon Aug  9 2021 16:52                                                Page 24
+
+
+  1203                        	.line	60
+  1204                        	.endblock	60
+  1205             00000000   L18	equ	0
+  1206             00000001   L19	equ	1
+  1207 04:067E:              	ends
+  1208                        	efunc
+  1209                        	.endfunc	60,1,0
+  1210                        	.line	60
+  1211                        ;/* Performs discovery and initialisation of PS/2 
+                    controllers and devices.
+  1212                        ; * A lot of redundancy here because of poorly-ind
+                    exed identifiers.
+  1213                        ; */
+  1214                        ;void init_ps2(VOID)
+  1215                        ;{
+  1216                        	.line	64
+  1217                        	.line	65
+  1218                        	FMXUPS2
+  1219                        	xdef	~~init_ps2
+  1220                        	func
+  1221                        	.function	65
+  1222                        ~~init_ps2:
+  1223                        	longa	on
+  1224                        	longi	on
+  1225 04:067E: 3B           	tsc
+  1226 04:067F: 38           	sec
+  1227 04:0680: E9 11 00     	sbc	#L22
+  1228 04:0683: 1B           	tcs
+  1229 04:0684: 0B           	phd
+  1230 04:0685: 5B           	tcd
+  1231                        	.block	65
+  1232                        ;	BOOL controllers[] = { TRUE, TRUE };
+  1233                        	data
+  1234                        L25:
+  1235 00:0000: 01 01        	db	$1,$1
+  1236 00:0002:              	ends
+  1237                        ;
+  1238                        ;	BOOL dual_channel = TRUE;
+  1239                        ;	BYTE config = 0;
+  1240                        ;	BYTE ret =  0;
+  1241                        ;	ULONG i,c;
+  1242                        ;
+  1243                        ;	ps2_write(PS2_CMD, PS2_DISABLE_FIRST);
+  1244             00000000   controllers_1	set	0
+  1245             00000002   dual_channel_1	set	2
+  1246             00000003   config_1	set	3
+  1247             00000004   ret_1	set	4
+  1248             00000005   i_1	set	5
+  1249             00000009   c_1	set	9
+  1250                        	.sym	controllers,0,110,1,0,2
+  1251                        	.sym	dual_channel,2,14,1,8
+  1252                        	.sym	config,3,14,1,8
+  1253                        	.sym	ret,4,14,1,8
+  1254                        	.sym	i,5,18,1,32
+  1255                        	.sym	c,9,18,1,32
+  1256 04:0686: F4 xx xx     	pea	#^L25
+  1257 04:0689: F4 xx xx     	pea	#<L25
+  1258 04:068C: 18           	clc
+  Mon Aug  9 2021 16:52                                                Page 25
+
+
+  1259 04:068D: 7B           	tdc
+  1260 04:068E: 69 05 00     	adc	#<L23+controllers_1
+  1261 04:0691: 85 01        	sta	<R0
+  1262 04:0693: A9 00 00     	lda	#$0
+  1263 04:0696: 85 03        	sta	<R0+2
+  1264 04:0698: D4 03        	pei	<R0+2
+  1265 04:069A: D4 01        	pei	<R0
+  1266 04:069C: A9 02 00     	lda	#$2
+  1267                        	xref	~~~fmov
+  1268 04:069F: 22 xx xx xx  	jsl	~~~fmov
+  1269 04:06A3: E2 20        	sep	#$20
+  1270                        	longa	off
+  1271 04:06A5: A9 01        	lda	#$1
+  1272 04:06A7: 85 07        	sta	<L23+dual_channel_1
+  1273 04:06A9: C2 20        	rep	#$20
+  1274                        	longa	on
+  1275 04:06AB: E2 20        	sep	#$20
+  1276                        	longa	off
+  1277 04:06AD: 64 08        	stz	<L23+config_1
+  1278 04:06AF: C2 20        	rep	#$20
+  1279                        	longa	on
+  1280 04:06B1: E2 20        	sep	#$20
+  1281                        	longa	off
+  1282 04:06B3: 64 09        	stz	<L23+ret_1
+  1283 04:06B5: C2 20        	rep	#$20
+  1284                        	longa	on
+  1285                        	.line	73
+  1286 04:06B7: F4 AD 00     	pea	#<$ad
+  1287 04:06BA: F4 00 00     	pea	#^$64
+  1288 04:06BD: F4 64 00     	pea	#<$64
+  1289 04:06C0: 22 44 09 04  	jsl	~~ps2_write
+  1290                        ;	ps2_write(PS2_CMD, PS2_DISABLE_SECOND);
+  1291                        	.line	74
+  1292 04:06C4: F4 A7 00     	pea	#<$a7
+  1293 04:06C7: F4 00 00     	pea	#^$64
+  1294 04:06CA: F4 64 00     	pea	#<$64
+  1295 04:06CD: 22 44 09 04  	jsl	~~ps2_write
+  1296                        ;
+  1297                        ;	// Flush output bufffer: if the controller had a
+                    nything to say, ignore it
+  1298                        ;	inportb(PS2_DATA);
+  1299                        	.line	77
+  1300                        ;
+  1301                        ;	// Get the controller configuration byte
+  1302                        ;	ps2_write(PS2_CMD, PS2_READ_CONFIG);
+  1303                        	.line	80
+  1304 04:06D1: F4 20 00     	pea	#<$20
+  1305 04:06D4: F4 00 00     	pea	#^$64
+  1306 04:06D7: F4 64 00     	pea	#<$64
+  1307 04:06DA: 22 44 09 04  	jsl	~~ps2_write
+  1308                        ;	config = ps2_read(PS2_DATA);
+  1309                        	.line	81
+  1310 04:06DE: F4 00 00     	pea	#^$60
+  1311 04:06E1: F4 60 00     	pea	#<$60
+  1312 04:06E4: 22 DF 08 04  	jsl	~~ps2_read
+  1313 04:06E8: E2 20        	sep	#$20
+  1314                        	longa	off
+  1315 04:06EA: 85 08        	sta	<L23+config_1
+  Mon Aug  9 2021 16:52                                                Page 26
+
+
+  1316 04:06EC: C2 20        	rep	#$20
+  1317                        	longa	on
+  1318                        ;
+  1319                        ;	//k_debug_hex("[PS2] Initializing PS/2 config:",
+                    config);
+  1320                        ;
+  1321                        ;	// Check the basics
+  1322                        ;	config |= PS2_CFG_SYSTEM_FLAG;
+  1323                        	.line	86
+  1324 04:06EE: E2 20        	sep	#$20
+  1325                        	longa	off
+  1326 04:06F0: A9 04        	lda	#$4
+  1327 04:06F2: 04 08        	tsb	<L23+config_1
+  1328 04:06F4: C2 20        	rep	#$20
+  1329                        	longa	on
+  1330                        ;
+  1331                        ;	if (config & PS2_CFG_MUST_BE_ZERO)
+  1332                        	.line	88
+  1333                        ;	{
+  1334 04:06F6: E2 20        	sep	#$20
+  1335                        	longa	off
+  1336 04:06F8: A5 08        	lda	<L23+config_1
+  1337 04:06FA: 29 80        	and	#<$80
+  1338 04:06FC: C2 20        	rep	#$20
+  1339                        	longa	on
+  1340 04:06FE: D0 03        	bne	L26
+  1341 04:0700: 82 00 00     	brl	L10001
+  1342                        L26:
+  1343                        	.line	89
+  1344                        ;		//k_debug_string("[PS2] Invalid bit set 
+                    in configuration byte\r\n");
+  1345                        ;	}
+  1346                        	.line	91
+  1347                        ;
+  1348                        ;	// Disable interrupts and scan code translation
+  1349                        ;	config &= ~(PS2_CFG_FIRST_PORT | PS2_CFG_SECOND_
+                    PORT | PS2_CFG_TRANSLATION);
+  1350                        L10001:
+  1351                        	.line	94
+  1352 04:0703: E2 20        	sep	#$20
+  1353                        	longa	off
+  1354 04:0705: A9 43        	lda	#$43
+  1355 04:0707: 14 08        	trb	<L23+config_1
+  1356 04:0709: C2 20        	rep	#$20
+  1357                        	longa	on
+  1358                        ;
+  1359                        ;	// Update configuration byte
+  1360                        ;	ps2_write(PS2_CMD, PS2_WRITE_CONFIG);
+  1361                        	.line	97
+  1362 04:070B: F4 60 00     	pea	#<$60
+  1363 04:070E: F4 00 00     	pea	#^$64
+  1364 04:0711: F4 64 00     	pea	#<$64
+  1365 04:0714: 22 44 09 04  	jsl	~~ps2_write
+  1366                        ;	ps2_write(PS2_DATA, config);
+  1367                        	.line	98
+  1368 04:0718: D4 08        	pei	<L23+config_1
+  1369 04:071A: F4 00 00     	pea	#^$60
+  1370 04:071D: F4 60 00     	pea	#<$60
+  Mon Aug  9 2021 16:52                                                Page 27
+
+
+  1371 04:0720: 22 44 09 04  	jsl	~~ps2_write
+  1372                        ;
+  1373                        ;	// Controller self-test
+  1374                        ;	ps2_write(PS2_CMD, PS2_SELF_TEST);
+  1375                        	.line	101
+  1376 04:0724: F4 AA 00     	pea	#<$aa
+  1377 04:0727: F4 00 00     	pea	#^$64
+  1378 04:072A: F4 64 00     	pea	#<$64
+  1379 04:072D: 22 44 09 04  	jsl	~~ps2_write
+  1380                        ;
+  1381                        ;	if (ps2_read(PS2_DATA) != PS2_SELF_TEST_OK)
+  1382                        	.line	103
+  1383                        ;	{
+  1384 04:0731: F4 00 00     	pea	#^$60
+  1385 04:0734: F4 60 00     	pea	#<$60
+  1386 04:0737: 22 DF 08 04  	jsl	~~ps2_read
+  1387 04:073B: E2 20        	sep	#$20
+  1388                        	longa	off
+  1389 04:073D: 85 01        	sta	<R0
+  1390 04:073F: C2 20        	rep	#$20
+  1391                        	longa	on
+  1392 04:0741: E2 20        	sep	#$20
+  1393                        	longa	off
+  1394 04:0743: A5 01        	lda	<R0
+  1395 04:0745: C9 55        	cmp	#<$55
+  1396 04:0747: C2 20        	rep	#$20
+  1397                        	longa	on
+  1398 04:0749: D0 03        	bne	L27
+  1399 04:074B: 82 14 00     	brl	L10002
+  1400                        L27:
+  1401                        	.line	104
+  1402                        ;		//k_debug_string("[PS2] Controller faile
+                    d self-test\r\n");
+  1403                        ;
+  1404                        ;		controllers[0] = FALSE;
+  1405                        	.line	107
+  1406 04:074E: E2 20        	sep	#$20
+  1407                        	longa	off
+  1408 04:0750: 64 05        	stz	<L23+controllers_1
+  1409 04:0752: C2 20        	rep	#$20
+  1410                        	longa	on
+  1411                        ;		controllers[1] = FALSE;
+  1412                        	.line	108
+  1413 04:0754: E2 20        	sep	#$20
+  1414                        	longa	off
+  1415 04:0756: 64 06        	stz	<L23+controllers_1+1
+  1416 04:0758: C2 20        	rep	#$20
+  1417                        	longa	on
+  1418                        ;
+  1419                        ;		return;
+  1420                        	.line	110
+  1421                        L28:
+  1422 04:075A: 2B           	pld
+  1423 04:075B: 3B           	tsc
+  1424 04:075C: 18           	clc
+  1425 04:075D: 69 11 00     	adc	#L22
+  1426 04:0760: 1B           	tcs
+  1427 04:0761: 6B           	rtl
+  Mon Aug  9 2021 16:52                                                Page 28
+
+
+  1428                        ;	}
+  1429                        	.line	111
+  1430                        ;
+  1431                        ;	//k_debug_string("[PS2] Controller self-test pas
+                    sed....\r\n");
+  1432                        ;	// The last write may have reset our controller:
+  1433                        ;	// better reset our configuration byte just in c
+                    ase
+  1434                        ;	ps2_write(PS2_CMD, PS2_WRITE_CONFIG);
+  1435                        L10002:
+  1436                        	.line	116
+  1437 04:0762: F4 60 00     	pea	#<$60
+  1438 04:0765: F4 00 00     	pea	#^$64
+  1439 04:0768: F4 64 00     	pea	#<$64
+  1440 04:076B: 22 44 09 04  	jsl	~~ps2_write
+  1441                        ;	ps2_write(PS2_DATA, config);
+  1442                        	.line	117
+  1443 04:076F: D4 08        	pei	<L23+config_1
+  1444 04:0771: F4 00 00     	pea	#^$60
+  1445 04:0774: F4 60 00     	pea	#<$60
+  1446 04:0777: 22 44 09 04  	jsl	~~ps2_write
+  1447                        ;
+  1448                        ;	// Check if we _really_ have two channels
+  1449                        ;	ps2_write(PS2_CMD, PS2_ENABLE_SECOND);
+  1450                        	.line	120
+  1451 04:077B: F4 A8 00     	pea	#<$a8
+  1452 04:077E: F4 00 00     	pea	#^$64
+  1453 04:0781: F4 64 00     	pea	#<$64
+  1454 04:0784: 22 44 09 04  	jsl	~~ps2_write
+  1455                        ;	//ps2_write(PS2_CMD, PS2_READ_CONFIG);
+  1456                        ;	//config = ps2_read(PS2_DATA);
+  1457                        ;
+  1458                        ;	//k_debug_hex("[PS2] Check config:", config);
+  1459                        ;
+  1460                        ;	if (config & PS2_CFG_SECOND_CLOCK)
+  1461                        	.line	126
+  1462                        ;	{
+  1463 04:0788: E2 20        	sep	#$20
+  1464                        	longa	off
+  1465 04:078A: A5 08        	lda	<L23+config_1
+  1466 04:078C: 29 20        	and	#<$20
+  1467 04:078E: C2 20        	rep	#$20
+  1468                        	longa	on
+  1469 04:0790: D0 03        	bne	L29
+  1470 04:0792: 82 0F 00     	brl	L10003
+  1471                        L29:
+  1472                        	.line	127
+  1473                        ;		//k_debug_string("[PS2] Only one PS/2 co
+                    ntroller\r\n");
+  1474                        ;		dual_channel   = FALSE;
+  1475                        	.line	129
+  1476 04:0795: E2 20        	sep	#$20
+  1477                        	longa	off
+  1478 04:0797: 64 07        	stz	<L23+dual_channel_1
+  1479 04:0799: C2 20        	rep	#$20
+  1480                        	longa	on
+  1481                        ;		controllers[1] = FALSE;
+  1482                        	.line	130
+  Mon Aug  9 2021 16:52                                                Page 29
+
+
+  1483 04:079B: E2 20        	sep	#$20
+  1484                        	longa	off
+  1485 04:079D: 64 06        	stz	<L23+controllers_1+1
+  1486 04:079F: C2 20        	rep	#$20
+  1487                        	longa	on
+  1488                        ;	}
+  1489                        	.line	131
+  1490                        ;	else
+  1491 04:07A1: 82 0D 00     	brl	L10004
+  1492                        L10003:
+  1493                        ;	{
+  1494                        	.line	133
+  1495                        ;		ps2_write(PS2_CMD, PS2_DISABLE_SECOND); 
+                    // Re-disable the second controller
+  1496                        	.line	134
+  1497 04:07A4: F4 A7 00     	pea	#<$a7
+  1498 04:07A7: F4 00 00     	pea	#^$64
+  1499 04:07AA: F4 64 00     	pea	#<$64
+  1500 04:07AD: 22 44 09 04  	jsl	~~ps2_write
+  1501                        ;	}
+  1502                        	.line	135
+  1503                        L10004:
+  1504                        ;
+  1505                        ;	// Test the controllers
+  1506                        ;	ps2_write(PS2_CMD, PS2_TEST_FIRST);
+  1507                        	.line	138
+  1508 04:07B1: F4 AB 00     	pea	#<$ab
+  1509 04:07B4: F4 00 00     	pea	#^$64
+  1510 04:07B7: F4 64 00     	pea	#<$64
+  1511 04:07BA: 22 44 09 04  	jsl	~~ps2_write
+  1512                        ;
+  1513                        ;	if (ps2_read(PS2_DATA) != PS2_TEST_OK)
+  1514                        	.line	140
+  1515                        ;	{
+  1516 04:07BE: F4 00 00     	pea	#^$60
+  1517 04:07C1: F4 60 00     	pea	#<$60
+  1518 04:07C4: 22 DF 08 04  	jsl	~~ps2_read
+  1519 04:07C8: 29 FF 00     	and	#$ff
+  1520 04:07CB: D0 03        	bne	L30
+  1521 04:07CD: 82 06 00     	brl	L10005
+  1522                        L30:
+  1523                        	.line	141
+  1524                        ;		//k_debug_string("[PS2] First PS/2 port 
+                    failed testing\r\n");
+  1525                        ;		controllers[0] = FALSE;
+  1526                        	.line	143
+  1527 04:07D0: E2 20        	sep	#$20
+  1528                        	longa	off
+  1529 04:07D2: 64 05        	stz	<L23+controllers_1
+  1530 04:07D4: C2 20        	rep	#$20
+  1531                        	longa	on
+  1532                        ;	}
+  1533                        	.line	144
+  1534                        ;
+  1535                        ;	//k_debug_string("[PS2] First PS/2 port passed t
+                    esting\r\n");
+  1536                        ;
+  1537                        ;	if (dual_channel)
+  Mon Aug  9 2021 16:52                                                Page 30
+
+
+  1538                        L10005:
+  1539                        	.line	148
+  1540                        ;	{
+  1541 04:07D6: A5 07        	lda	<L23+dual_channel_1
+  1542 04:07D8: 29 FF 00     	and	#$ff
+  1543 04:07DB: D0 03        	bne	L31
+  1544 04:07DD: 82 25 00     	brl	L10006
+  1545                        L31:
+  1546                        	.line	149
+  1547                        ;		//k_debug_string("[PS2] Dual Channel det
+                    ected...\r\n");
+  1548                        ;
+  1549                        ;		ps2_write(PS2_CMD, PS2_TEST_SECOND);
+  1550                        	.line	152
+  1551 04:07E0: F4 A9 00     	pea	#<$a9
+  1552 04:07E3: F4 00 00     	pea	#^$64
+  1553 04:07E6: F4 64 00     	pea	#<$64
+  1554 04:07E9: 22 44 09 04  	jsl	~~ps2_write
+  1555                        ;
+  1556                        ;		if (ps2_read(PS2_DATA) != PS2_TEST_OK)
+  1557                        	.line	154
+  1558                        ;		{
+  1559 04:07ED: F4 00 00     	pea	#^$60
+  1560 04:07F0: F4 60 00     	pea	#<$60
+  1561 04:07F3: 22 DF 08 04  	jsl	~~ps2_read
+  1562 04:07F7: 29 FF 00     	and	#$ff
+  1563 04:07FA: D0 03        	bne	L32
+  1564 04:07FC: 82 06 00     	brl	L10007
+  1565                        L32:
+  1566                        	.line	155
+  1567                        ;			//k_debug_string("[PS2] Second P
+                    S/2 port failed testing\r\n");
+  1568                        ;			controllers[1] = FALSE;
+  1569                        	.line	157
+  1570 04:07FF: E2 20        	sep	#$20
+  1571                        	longa	off
+  1572 04:0801: 64 06        	stz	<L23+controllers_1+1
+  1573 04:0803: C2 20        	rep	#$20
+  1574                        	longa	on
+  1575                        ;		}
+  1576                        	.line	158
+  1577                        ;
+  1578                        ;
+  1579                        ;	}
+  1580                        L10007:
+  1581                        	.line	161
+  1582                        ;	/*
+  1583                        ;	// Enable available ports
+  1584                        ;	if (controllers[0])
+  1585                        ;	{
+  1586                        ;		//k_debug_string("[PS2] First PS/2 PS2_E
+                    NABLE_FIRST\r\n");
+  1587                        ;		ps2_write(PS2_CMD, PS2_ENABLE_FIRST);
+  1588                        ;		config |= PS2_CFG_FIRST_PORT;
+  1589                        ;		//config &= ~PS2_CFG_FIRST_CLOCK;
+  1590                        ;	}
+  1591                        ;
+  1592                        ;	if (controllers[1])
+  Mon Aug  9 2021 16:52                                                Page 31
+
+
+  1593                        ;	{
+  1594                        ;		//k_debug_string("[PS2] Second PS/2 PS2_
+                    ENABLE_SECOND\r\n");
+  1595                        ;		ps2_write(PS2_CMD, PS2_ENABLE_SECOND);
+  1596                        ;		config |= PS2_CFG_SECOND_PORT;
+  1597                        ;		//config &= ~PS2_CFG_SECOND_CLOCK;
+  1598                        ;	}
+  1599                        ;
+  1600                        ;	//k_debug_hex("[PS2] Write config:", config);
+  1601                        ;	*/
+  1602                        ;	// Enable interrupts from detected controllers
+  1603                        ;	ps2_write(PS2_CMD, PS2_WRITE_CONFIG);
+  1604                        L10006:
+  1605                        	.line	183
+  1606 04:0805: F4 60 00     	pea	#<$60
+  1607 04:0808: F4 00 00     	pea	#^$64
+  1608 04:080B: F4 64 00     	pea	#<$64
+  1609 04:080E: 22 44 09 04  	jsl	~~ps2_write
+  1610                        ;	ps2_write(PS2_DATA, 0x45);
+  1611                        	.line	184
+  1612 04:0812: F4 45 00     	pea	#<$45
+  1613 04:0815: F4 00 00     	pea	#^$60
+  1614 04:0818: F4 60 00     	pea	#<$60
+  1615 04:081B: 22 44 09 04  	jsl	~~ps2_write
+  1616                        ;
+  1617                        ;	/*
+  1618                        ;	i = 0;
+  1619                        ;	ps2_write_device(0,0xFF);
+  1620                        ;	while (ps2_read(PS2_DATA) != PS2_DEV_RESET_ACK)
+  1621                        ;	{
+  1622                        ;		asm NOP;
+  1623                        ;		asm NOP;
+  1624                        ;		asm NOP;
+  1625                        ;		asm NOP;
+  1626                        ;		asm NOP;
+  1627                        ;		asm NOP;
+  1628                        ;
+  1629                        ;		i++;
+  1630                        ;		if(i > 1000)
+  1631                        ;		{
+  1632                        ;			k_debug_char_com1('B');
+  1633                        ;			break;
+  1634                        ;		}
+  1635                        ;	}
+  1636                        ;	*/
+  1637                        ;	k_debug_char_com1('K');
+  1638                        	.line	206
+  1639 04:081F: F4 4B 00     	pea	#<$4b
+  1640 04:0822: 22 xx xx xx  	jsl	~~k_debug_char_com1
+  1641                        ;
+  1642                        ;	//i = k_irq_register_handler(0,0,sol_handler);
+  1643                        ;}
+  1644                        	.line	209
+  1645 04:0826: 82 31 FF     	brl	L28
+  1646                        	.endblock	209
+  1647             00000011   L22	equ	17
+  1648             00000005   L23	equ	5
+  1649 04:0829:              	ends
+  Mon Aug  9 2021 16:52                                                Page 32
+
+
+  1650                        	efunc
+  1651                        	.endfunc	209,5,17
+  1652                        	.line	209
+  1653                        ;
+  1654                        ;/* Asks the device to identify itself, returns an
+                     enum value.
+  1655                        ; * Useful as some devices's identities are severa
+                    l bytes long.
+  1656                        ; */
+  1657                        ;/*
+  1658                        ;static ULONG ps2_identify_device(ULONG num)
+  1659                        ;{
+  1660                        ;	UINT i = 0;
+  1661                        ;	BYTE ACK = 0xFC;
+  1662                        ;	ULONG first_id_byte = 0L;
+  1663                        ;	ULONG second_id_byte = 0L;
+  1664                        ;
+  1665                        ;
+  1666                        ;	//k_debug_string("[PS2] PS2_DEV_DISABLE_SCAN\r\n
+                    ");
+  1667                        ;	ps2_write_device(num, PS2_DEV_DISABLE_SCAN); // 
+                    Disables scanning
+  1668                        ;	ps2_expect_ack();
+  1669                        ;
+  1670                        ;	//k_debug_string("[PS2] PS2_DEV_IDENTIFY\r\n");
+  1671                        ;	ACK = 0xFC;
+  1672                        ;	while(ACK == 0xFC)
+  1673                        ;	{
+  1674                        ;		ps2_write_device(num, PS2_DEV_IDENTIFY);
+                     // Identify
+  1675                        ;		ACK = ps2_expect_ack();
+  1676                        ;		//k_debug_hex("[PS2] PS2_DEV_IDENTIFY AC
+                    K:" , ACK);
+  1677                        ;	}
+  1678                        ;
+  1679                        ;
+  1680                        ;	first_id_byte = ps2_read(PS2_DATA);
+  1681                        ;	second_id_byte = ps2_read(PS2_DATA);
+  1682                        ;
+  1683                        ;	//return ps2_identity_bytes_to_type(first_id_byt
+                    e, second_id_byte);
+  1684                        ;	return 0;
+  1685                        ;}
+  1686                        ;*/
+  1687                        ;/* Converts the (one or two) bytes sent by a PS/2
+                     device in response to an
+  1688                        ; * `identity` request to a code representing the 
+                    device type.
+  1689                        ; */
+  1690                        ;/*
+  1691                        ;static ULONG ps2_identity_bytes_to_type(BYTE firs
+                    t, BYTE second)
+  1692                        ;{
+  1693                        ;
+  1694                        ;	//k_debug_hex("[PS2] ps2_identity_bytes_to_type 
+                    code1:", first);
+  1695                        ;	//k_debug_hex("[PS2] ps2_identity_bytes_to_type 
+                    code2:", second);
+  Mon Aug  9 2021 16:52                                                Page 33
+
+
+  1696                        ;
+  1697                        ;
+  1698                        ;	if (first == 0x00 || first == 0x03 || first == 0
+                    x04)
+  1699                        ;	{
+  1700                        ;		return first; // PS2_MOUSE* match the fi
+                    rst byte
+  1701                        ;	}
+  1702                        ;	else if (first == 0xAB)
+  1703                        ;	{
+  1704                        ;		if (second == 0x41 || second == 0xC1)
+  1705                        ;		{
+  1706                        ;			return PS2_KEYBOARD_TRANSLATED;
+  1707                        ;		}
+  1708                        ;		else if (second == 0x83 || second == 0x3
+                    C)
+  1709                        ;		{
+  1710                        ;			return PS2_KEYBOARD;
+  1711                        ;		}
+  1712                        ;	}
+  1713                        ;
+  1714                        ;	return PS2_DEVICE_UNKNOWN;
+  1715                        ;}
+  1716                        ;*/
+  1717                        ;
+  1718                        ;/* Loops until the controller's input buffer is e
+                    mpty or our timer has expired.
+  1719                        ; * Call this function before writing to the contr
+                    oller's command port, PS2_CMD.
+  1720                        ; */
+  1721                        ;BOOL ps2_wait_write(VOID)
+  1722                        ;{
+  1723                        	.line	278
+  1724                        	.line	279
+  1725                        	FMXUPS2
+  1726                        	xdef	~~ps2_wait_write
+  1727                        	func
+  1728                        	.function	279
+  1729                        ~~ps2_wait_write:
+  1730                        	longa	on
+  1731                        	longi	on
+  1732 04:0829: 3B           	tsc
+  1733 04:082A: 38           	sec
+  1734 04:082B: E9 06 00     	sbc	#L33
+  1735 04:082E: 1B           	tcs
+  1736 04:082F: 0B           	phd
+  1737 04:0830: 5B           	tcd
+  1738                        	.block	279
+  1739                        ;	int timer = PS2_TIMEOUT;
+  1740                        ;
+  1741                        ;	while (( inportb(0xAF1807) & 2 ) && (timer-- > 0
+                    ))
+  1742             00000000   timer_1	set	0
+  1743                        	.sym	timer,0,5,1,16
+  1744 04:0831: A9 F4 01     	lda	#$1f4
+  1745 04:0834: 85 05        	sta	<L34+timer_1
+  1746                        	.line	282
+  1747                        L10008:
+  Mon Aug  9 2021 16:52                                                Page 34
+
+
+  1748 04:0836: E2 20        	sep	#$20
+  1749                        	longa	off
+  1750 04:0838: AF 07 18 AF  	lda	>11474951
+  1751 04:083C: 29 02        	and	#<$2
+  1752 04:083E: C2 20        	rep	#$20
+  1753                        	longa	on
+  1754 04:0840: D0 03        	bne	L36
+  1755 04:0842: 82 2D 00     	brl	L10009
+  1756                        L36:
+  1757 04:0845: A5 05        	lda	<L34+timer_1
+  1758 04:0847: 85 01        	sta	<R0
+  1759 04:0849: C6 05        	dec	<L34+timer_1
+  1760 04:084B: 38           	sec
+  1761 04:084C: A9 00 00     	lda	#$0
+  1762 04:084F: E5 01        	sbc	<R0
+  1763 04:0851: 70 03        	bvs	L37
+  1764 04:0853: 49 00 80     	eor	#$8000
+  1765                        L37:
+  1766 04:0856: 10 03        	bpl	L38
+  1767 04:0858: 82 17 00     	brl	L10009
+  1768                        L38:
+  1769                        ;	{
+  1770                        	.line	283
+  1771                        ;		asm NOP;
+  1772                        	.line	284
+  1773                        	asmstart
+  1774 04:085B: EA           	NOP
+  1775                        	asmend
+  1776                        ;		asm NOP;
+  1777                        	.line	285
+  1778                        	asmstart
+  1779 04:085C: EA           	NOP
+  1780                        	asmend
+  1781                        ;		asm NOP;
+  1782                        	.line	286
+  1783                        	asmstart
+  1784 04:085D: EA           	NOP
+  1785                        	asmend
+  1786                        ;		asm NOP;
+  1787                        	.line	287
+  1788                        	asmstart
+  1789 04:085E: EA           	NOP
+  1790                        	asmend
+  1791                        ;		asm NOP;
+  1792                        	.line	288
+  1793                        	asmstart
+  1794 04:085F: EA           	NOP
+  1795                        	asmend
+  1796                        ;		asm NOP;
+  1797                        	.line	289
+  1798                        	asmstart
+  1799 04:0860: EA           	NOP
+  1800                        	asmend
+  1801                        ;		asm NOP;
+  1802                        	.line	290
+  1803                        	asmstart
+  1804 04:0861: EA           	NOP
+  1805                        	asmend
+  Mon Aug  9 2021 16:52                                                Page 35
+
+
+  1806                        ;		asm NOP;
+  1807                        	.line	291
+  1808                        	asmstart
+  1809 04:0862: EA           	NOP
+  1810                        	asmend
+  1811                        ;		k_debug_integer("[PS2] ps2_wait_write:",
+                    timer);
+  1812                        	.line	292
+  1813 04:0863: D4 05        	pei	<L34+timer_1
+  1814 04:0865: F4 xx xx     	pea	#^L1
+  1815 04:0868: F4 xx xx     	pea	#<L1
+  1816 04:086B: 22 xx xx xx  	jsl	~~k_debug_integer
+  1817                        ;	}
+  1818                        	.line	293
+  1819 04:086F: 82 C4 FF     	brl	L10008
+  1820                        L10009:
+  1821                        ;
+  1822                        ;	return timer != 0;
+  1823                        	.line	295
+  1824 04:0872: 64 01        	stz	<R0
+  1825 04:0874: A5 05        	lda	<L34+timer_1
+  1826 04:0876: D0 03        	bne	L40
+  1827 04:0878: 82 02 00     	brl	L39
+  1828                        L40:
+  1829 04:087B: E6 01        	inc	<R0
+  1830                        L39:
+  1831 04:087D: A5 01        	lda	<R0
+  1832 04:087F: 29 FF 00     	and	#$ff
+  1833                        L41:
+  1834 04:0882: A8           	tay
+  1835 04:0883: 2B           	pld
+  1836 04:0884: 3B           	tsc
+  1837 04:0885: 18           	clc
+  1838 04:0886: 69 06 00     	adc	#L33
+  1839 04:0889: 1B           	tcs
+  1840 04:088A: 98           	tya
+  1841 04:088B: 6B           	rtl
+  1842                        ;}
+  1843                        	.line	296
+  1844                        	.endblock	296
+  1845             00000006   L33	equ	6
+  1846             00000005   L34	equ	5
+  1847 04:088C:              	ends
+  1848                        	efunc
+  1849                        	.endfunc	296,5,6
+  1850                        	.line	296
+  1851                        	data
+  1852                        L1:
+  1853 00:0002: 5B 50 53 32  	db	$5B,$50,$53,$32,$5D,$20,$70,$73,$32,$5F,
+                    $77,$61,$69,$74,$5F
+       00:0006: 5D 20 70 73 
+       00:000A: 32 5F 77 61 
+       00:000E: 69 74 5F 
+  1854 00:0011: 77 72 69 74  	db	$77,$72,$69,$74,$65,$3A,$00
+       00:0015: 65 3A 00 
+  1855 00:0018:              	ends
+  1856                        ;
+  1857                        ;/* Loops until data is available in the controlle
+  Mon Aug  9 2021 16:52                                                Page 36
+
+
+                    r's output buffer or until our
+  1858                        ; * timer has expired.
+  1859                        ; * Call this function before reading from the con
+                    troller's data port, PS2_DATA.
+  1860                        ; */
+  1861                        ;BOOL ps2_wait_read(VOID)
+  1862                        ;{
+  1863                        	.line	302
+  1864                        	.line	303
+  1865                        	FMXUPS2
+  1866                        	xdef	~~ps2_wait_read
+  1867                        	func
+  1868                        	.function	303
+  1869                        ~~ps2_wait_read:
+  1870                        	longa	on
+  1871                        	longi	on
+  1872 04:088C: 3B           	tsc
+  1873 04:088D: 38           	sec
+  1874 04:088E: E9 06 00     	sbc	#L43
+  1875 04:0891: 1B           	tcs
+  1876 04:0892: 0B           	phd
+  1877 04:0893: 5B           	tcd
+  1878                        	.block	303
+  1879                        ;	int timer = PS2_TIMEOUT;
+  1880                        ;
+  1881                        ;	while (((inportb(0xAF1807) & 1) != 1) && timer--
+                     >= 0)
+  1882             00000000   timer_1	set	0
+  1883                        	.sym	timer,0,5,1,16
+  1884 04:0894: A9 F4 01     	lda	#$1f4
+  1885 04:0897: 85 05        	sta	<L44+timer_1
+  1886                        	.line	306
+  1887                        L10010:
+  1888 04:0899: AF 07 18 AF  	lda	>11474951
+  1889 04:089D: 29 01 00     	and	#<$1
+  1890 04:08A0: 85 01        	sta	<R0
+  1891 04:08A2: A5 01        	lda	<R0
+  1892 04:08A4: C9 01 00     	cmp	#<$1
+  1893 04:08A7: D0 03        	bne	L46
+  1894 04:08A9: 82 19 00     	brl	L10011
+  1895                        L46:
+  1896 04:08AC: A5 05        	lda	<L44+timer_1
+  1897 04:08AE: 85 01        	sta	<R0
+  1898 04:08B0: C6 05        	dec	<L44+timer_1
+  1899 04:08B2: A5 01        	lda	<R0
+  1900 04:08B4: 10 03        	bpl	L47
+  1901 04:08B6: 82 0C 00     	brl	L10011
+  1902                        L47:
+  1903                        ;	{
+  1904                        	.line	307
+  1905                        ;		asm NOP;
+  1906                        	.line	308
+  1907                        	asmstart
+  1908 04:08B9: EA           	NOP
+  1909                        	asmend
+  1910                        ;		asm NOP;
+  1911                        	.line	309
+  1912                        	asmstart
+  Mon Aug  9 2021 16:52                                                Page 37
+
+
+  1913 04:08BA: EA           	NOP
+  1914                        	asmend
+  1915                        ;		asm NOP;
+  1916                        	.line	310
+  1917                        	asmstart
+  1918 04:08BB: EA           	NOP
+  1919                        	asmend
+  1920                        ;		asm NOP;
+  1921                        	.line	311
+  1922                        	asmstart
+  1923 04:08BC: EA           	NOP
+  1924                        	asmend
+  1925                        ;		asm NOP;
+  1926                        	.line	312
+  1927                        	asmstart
+  1928 04:08BD: EA           	NOP
+  1929                        	asmend
+  1930                        ;		asm NOP;
+  1931                        	.line	313
+  1932                        	asmstart
+  1933 04:08BE: EA           	NOP
+  1934                        	asmend
+  1935                        ;		asm NOP;
+  1936                        	.line	314
+  1937                        	asmstart
+  1938 04:08BF: EA           	NOP
+  1939                        	asmend
+  1940                        ;		asm NOP;
+  1941                        	.line	315
+  1942                        	asmstart
+  1943 04:08C0: EA           	NOP
+  1944                        	asmend
+  1945                        ;		asm NOP;
+  1946                        	.line	316
+  1947                        	asmstart
+  1948 04:08C1: EA           	NOP
+  1949                        	asmend
+  1950                        ;	}
+  1951                        	.line	317
+  1952 04:08C2: 82 D4 FF     	brl	L10010
+  1953                        L10011:
+  1954                        ;
+  1955                        ;	return timer != 0;
+  1956                        	.line	319
+  1957 04:08C5: 64 01        	stz	<R0
+  1958 04:08C7: A5 05        	lda	<L44+timer_1
+  1959 04:08C9: D0 03        	bne	L49
+  1960 04:08CB: 82 02 00     	brl	L48
+  1961                        L49:
+  1962 04:08CE: E6 01        	inc	<R0
+  1963                        L48:
+  1964 04:08D0: A5 01        	lda	<R0
+  1965 04:08D2: 29 FF 00     	and	#$ff
+  1966                        L50:
+  1967 04:08D5: A8           	tay
+  1968 04:08D6: 2B           	pld
+  1969 04:08D7: 3B           	tsc
+  1970 04:08D8: 18           	clc
+  Mon Aug  9 2021 16:52                                                Page 38
+
+
+  1971 04:08D9: 69 06 00     	adc	#L43
+  1972 04:08DC: 1B           	tcs
+  1973 04:08DD: 98           	tya
+  1974 04:08DE: 6B           	rtl
+  1975                        ;}
+  1976                        	.line	320
+  1977                        	.endblock	320
+  1978             00000006   L43	equ	6
+  1979             00000005   L44	equ	5
+  1980 04:08DF:              	ends
+  1981                        	efunc
+  1982                        	.endfunc	320,5,6
+  1983                        	.line	320
+  1984                        ;
+  1985                        ;/* Returns the first byte of data available from 
+                    `port`.
+  1986                        ; * Returns `(BYTE) -1` on read error, and also wh
+                    en this value was
+  1987                        ; * legitimately read. TODO: room for improvement.
+  1988                        ; */
+  1989                        ;BYTE ps2_read(ULONG port)
+  1990                        ;{
+  1991                        	.line	326
+  1992                        	.line	327
+  1993                        	FMXUPS2
+  1994                        	xdef	~~ps2_read
+  1995                        	func
+  1996                        	.function	327
+  1997                        ~~ps2_read:
+  1998                        	longa	on
+  1999                        	longi	on
+  2000 04:08DF: 3B           	tsc
+  2001 04:08E0: 38           	sec
+  2002 04:08E1: E9 01 00     	sbc	#L51
+  2003 04:08E4: 1B           	tcs
+  2004 04:08E5: 0B           	phd
+  2005 04:08E6: 5B           	tcd
+  2006             00000004   port_0	set	4
+  2007                        	.block	327
+  2008                        ;	BYTE data = 0;
+  2009                        ;	if (ps2_wait_read())
+  2010             00000000   data_1	set	0
+  2011                        	.sym	data,0,14,1,8
+  2012                        	.sym	port,4,18,6,32
+  2013 04:08E7: E2 20        	sep	#$20
+  2014                        	longa	off
+  2015 04:08E9: 64 01        	stz	<L52+data_1
+  2016 04:08EB: C2 20        	rep	#$20
+  2017                        	longa	on
+  2018                        	.line	329
+  2019                        ;	{
+  2020 04:08ED: 22 8C 08 04  	jsl	~~ps2_wait_read
+  2021 04:08F1: 29 FF 00     	and	#$ff
+  2022 04:08F4: D0 03        	bne	L54
+  2023 04:08F6: 82 45 00     	brl	L10012
+  2024                        L54:
+  2025                        	.line	330
+  2026                        ;
+  Mon Aug  9 2021 16:52                                                Page 39
+
+
+  2027                        ;		if(port == 0x64)
+  2028                        	.line	332
+  2029                        ;		{
+  2030 04:08F9: A5 05        	lda	<L51+port_0
+  2031 04:08FB: C9 64 00     	cmp	#<$64
+  2032 04:08FE: D0 05        	bne	L55
+  2033 04:0900: A5 07        	lda	<L51+port_0+2
+  2034 04:0902: C9 00 00     	cmp	#^$64
+  2035                        L55:
+  2036 04:0905: F0 03        	beq	L56
+  2037 04:0907: 82 19 00     	brl	L10013
+  2038                        L56:
+  2039                        	.line	333
+  2040                        ;			return inportb(0xAF1807);
+  2041                        	.line	334
+  2042 04:090A: AF 07 18 AF  	lda	>11474951
+  2043 04:090E: 29 FF 00     	and	#$ff
+  2044                        L57:
+  2045 04:0911: A8           	tay
+  2046 04:0912: A5 03        	lda	<L51+2
+  2047 04:0914: 85 07        	sta	<L51+2+4
+  2048 04:0916: A5 02        	lda	<L51+1
+  2049 04:0918: 85 06        	sta	<L51+1+4
+  2050 04:091A: 2B           	pld
+  2051 04:091B: 3B           	tsc
+  2052 04:091C: 18           	clc
+  2053 04:091D: 69 05 00     	adc	#L51+4
+  2054 04:0920: 1B           	tcs
+  2055 04:0921: 98           	tya
+  2056 04:0922: 6B           	rtl
+  2057                        ;		}
+  2058                        	.line	335
+  2059                        ;		else if(port == 0x60)
+  2060                        L10013:
+  2061                        	.line	336
+  2062                        ;		{
+  2063 04:0923: A5 05        	lda	<L51+port_0
+  2064 04:0925: C9 60 00     	cmp	#<$60
+  2065 04:0928: D0 05        	bne	L58
+  2066 04:092A: A5 07        	lda	<L51+port_0+2
+  2067 04:092C: C9 00 00     	cmp	#^$60
+  2068                        L58:
+  2069 04:092F: F0 03        	beq	L59
+  2070 04:0931: 82 0A 00     	brl	L10014
+  2071                        L59:
+  2072                        	.line	337
+  2073                        ;			return inportb(0xAF1803);
+  2074                        	.line	338
+  2075 04:0934: AF 03 18 AF  	lda	>11474947
+  2076 04:0938: 29 FF 00     	and	#$ff
+  2077 04:093B: 82 D3 FF     	brl	L57
+  2078                        ;		}
+  2079                        	.line	339
+  2080                        ;		//return inportb(port);
+  2081                        ;	}
+  2082                        L10014:
+  2083                        	.line	341
+  2084                        ;
+  Mon Aug  9 2021 16:52                                                Page 40
+
+
+  2085                        ;	//k_debug_string("[PS2] Read failed\r\n");
+  2086                        ;
+  2087                        ;	return -1;
+  2088                        L10012:
+  2089                        	.line	345
+  2090 04:093E: A9 FF 00     	lda	#$ff
+  2091 04:0941: 82 CD FF     	brl	L57
+  2092                        ;}
+  2093                        	.line	346
+  2094                        	.endblock	346
+  2095             00000001   L51	equ	1
+  2096             00000001   L52	equ	1
+  2097 04:0944:              	ends
+  2098                        	efunc
+  2099                        	.endfunc	346,1,1
+  2100                        	.line	346
+  2101                        ;
+  2102                        ;/* Tries to write a byte on the specified port, a
+                    nd returns whether the
+  2103                        ; * operation was successful.
+  2104                        ; */
+  2105                        ;BOOL ps2_write(ULONG port, BYTE b)
+  2106                        ;{
+  2107                        	.line	351
+  2108                        	.line	352
+  2109                        	FMXUPS2
+  2110                        	xdef	~~ps2_write
+  2111                        	func
+  2112                        	.function	352
+  2113                        ~~ps2_write:
+  2114                        	longa	on
+  2115                        	longi	on
+  2116 04:0944: 3B           	tsc
+  2117 04:0945: 38           	sec
+  2118 04:0946: E9 00 00     	sbc	#L60
+  2119 04:0949: 1B           	tcs
+  2120 04:094A: 0B           	phd
+  2121 04:094B: 5B           	tcd
+  2122             00000004   port_0	set	4
+  2123             00000008   b_0	set	8
+  2124                        	.block	352
+  2125                        ;	if(ps2_wait_write())
+  2126                        	.sym	port,4,18,6,32
+  2127                        	.sym	b,8,14,6,8
+  2128                        	.line	353
+  2129                        ;	{
+  2130 04:094C: 22 29 08 04  	jsl	~~ps2_wait_write
+  2131 04:0950: 29 FF 00     	and	#$ff
+  2132 04:0953: D0 03        	bne	L63
+  2133 04:0955: 82 4E 00     	brl	L10015
+  2134                        L63:
+  2135                        	.line	354
+  2136                        ;		if(port == 0x64)
+  2137                        	.line	355
+  2138                        ;		{
+  2139 04:0958: A5 04        	lda	<L60+port_0
+  2140 04:095A: C9 64 00     	cmp	#<$64
+  2141 04:095D: D0 05        	bne	L64
+  Mon Aug  9 2021 16:52                                                Page 41
+
+
+  2142 04:095F: A5 06        	lda	<L60+port_0+2
+  2143 04:0961: C9 00 00     	cmp	#^$64
+  2144                        L64:
+  2145 04:0964: F0 03        	beq	L65
+  2146 04:0966: 82 0D 00     	brl	L10016
+  2147                        L65:
+  2148                        	.line	356
+  2149                        ;			outportb(0xAF1807, b);
+  2150                        	.line	357
+  2151 04:0969: E2 20        	sep	#$20
+  2152                        	longa	off
+  2153 04:096B: A5 08        	lda	<L60+b_0
+  2154 04:096D: 8F 07 18 AF  	sta	>11474951
+  2155 04:0971: C2 20        	rep	#$20
+  2156                        	longa	on
+  2157                        ;			//k_debug_hex("ps2_write c:", b)
+                    ;
+  2158                        ;		}
+  2159                        	.line	359
+  2160                        ;		else if(port == 0x60)
+  2161 04:0973: 82 1B 00     	brl	L10017
+  2162                        L10016:
+  2163                        	.line	360
+  2164                        ;		{
+  2165 04:0976: A5 04        	lda	<L60+port_0
+  2166 04:0978: C9 60 00     	cmp	#<$60
+  2167 04:097B: D0 05        	bne	L66
+  2168 04:097D: A5 06        	lda	<L60+port_0+2
+  2169 04:097F: C9 00 00     	cmp	#^$60
+  2170                        L66:
+  2171 04:0982: F0 03        	beq	L67
+  2172 04:0984: 82 0A 00     	brl	L10018
+  2173                        L67:
+  2174                        	.line	361
+  2175                        ;			outportb(0xAF1803, b);
+  2176                        	.line	362
+  2177 04:0987: E2 20        	sep	#$20
+  2178                        	longa	off
+  2179 04:0989: A5 08        	lda	<L60+b_0
+  2180 04:098B: 8F 03 18 AF  	sta	>11474947
+  2181 04:098F: C2 20        	rep	#$20
+  2182                        	longa	on
+  2183                        ;			//k_debug_hex("ps2_write d:", b)
+                    ;
+  2184                        ;		}
+  2185                        	.line	364
+  2186                        ;		return TRUE;
+  2187                        L10018:
+  2188                        L10017:
+  2189                        	.line	365
+  2190 04:0991: A9 01 00     	lda	#$1
+  2191                        L68:
+  2192 04:0994: A8           	tay
+  2193 04:0995: A5 02        	lda	<L60+2
+  2194 04:0997: 85 08        	sta	<L60+2+6
+  2195 04:0999: A5 01        	lda	<L60+1
+  2196 04:099B: 85 07        	sta	<L60+1+6
+  2197 04:099D: 2B           	pld
+  Mon Aug  9 2021 16:52                                                Page 42
+
+
+  2198 04:099E: 3B           	tsc
+  2199 04:099F: 18           	clc
+  2200 04:09A0: 69 06 00     	adc	#L60+6
+  2201 04:09A3: 1B           	tcs
+  2202 04:09A4: 98           	tya
+  2203 04:09A5: 6B           	rtl
+  2204                        ;	}
+  2205                        	.line	366
+  2206                        ;
+  2207                        ;	k_debug_string("[PS2] Write failed\r\n");
+  2208                        L10015:
+  2209                        	.line	368
+  2210 04:09A6: F4 xx xx     	pea	#^L42
+  2211 04:09A9: F4 xx xx     	pea	#<L42
+  2212 04:09AC: 22 xx xx xx  	jsl	~~k_debug_string
+  2213                        ;
+  2214                        ;	return FALSE;
+  2215                        	.line	370
+  2216 04:09B0: A9 00 00     	lda	#$0
+  2217 04:09B3: 82 DE FF     	brl	L68
+  2218                        ;}
+  2219                        	.line	371
+  2220                        	.endblock	371
+  2221             00000000   L60	equ	0
+  2222             00000001   L61	equ	1
+  2223 04:09B6:              	ends
+  2224                        	efunc
+  2225                        	.endfunc	371,1,0
+  2226                        	.line	371
+  2227                        	data
+  2228                        L42:
+  2229 00:0018: 5B 50 53 32  	db	$5B,$50,$53,$32,$5D,$20,$57,$72,$69,$74,
+                    $65,$20,$66,$61,$69
+       00:001C: 5D 20 57 72 
+       00:0020: 69 74 65 20 
+       00:0024: 66 61 69 
+  2230 00:0027: 6C 65 64 0D  	db	$6C,$65,$64,$0D,$0A,$00
+       00:002B: 0A 00 
+  2231 00:002D:              	ends
+  2232                        ;
+  2233                        ;/* Write a byte to the specified `device` input b
+                    uffer.
+  2234                        ; * This function is used to send command to devic
+                    es.
+  2235                        ; */
+  2236                        ;BOOL ps2_write_device(ULONG device, BYTE b)
+  2237                        ;{
+  2238                        	.line	376
+  2239                        	.line	377
+  2240                        	FMXUPS2
+  2241                        	xdef	~~ps2_write_device
+  2242                        	func
+  2243                        	.function	377
+  2244                        ~~ps2_write_device:
+  2245                        	longa	on
+  2246                        	longi	on
+  2247 04:09B6: 3B           	tsc
+  2248 04:09B7: 38           	sec
+  Mon Aug  9 2021 16:52                                                Page 43
+
+
+  2249 04:09B8: E9 04 00     	sbc	#L70
+  2250 04:09BB: 1B           	tcs
+  2251 04:09BC: 0B           	phd
+  2252 04:09BD: 5B           	tcd
+  2253             00000004   device_0	set	4
+  2254             00000008   b_0	set	8
+  2255                        	.block	377
+  2256                        ;	if (device != 0)
+  2257                        	.sym	device,4,18,6,32
+  2258                        	.sym	b,8,14,6,8
+  2259                        	.line	378
+  2260                        ;	{
+  2261 04:09BE: A5 08        	lda	<L70+device_0
+  2262 04:09C0: 05 0A        	ora	<L70+device_0+2
+  2263 04:09C2: D0 03        	bne	L73
+  2264 04:09C4: 82 2A 00     	brl	L10019
+  2265                        L73:
+  2266                        	.line	379
+  2267                        ;		if (!ps2_write(PS2_CMD, PS2_WRITE_SECOND
+                    ))
+  2268                        	.line	380
+  2269                        ;		{
+  2270 04:09C7: F4 D4 00     	pea	#<$d4
+  2271 04:09CA: F4 00 00     	pea	#^$64
+  2272 04:09CD: F4 64 00     	pea	#<$64
+  2273 04:09D0: 22 44 09 04  	jsl	~~ps2_write
+  2274 04:09D4: 29 FF 00     	and	#$ff
+  2275 04:09D7: F0 03        	beq	L74
+  2276 04:09D9: 82 15 00     	brl	L10020
+  2277                        L74:
+  2278                        	.line	381
+  2279                        ;			return FALSE;
+  2280                        	.line	382
+  2281 04:09DC: A9 00 00     	lda	#$0
+  2282                        L75:
+  2283 04:09DF: A8           	tay
+  2284 04:09E0: A5 06        	lda	<L70+2
+  2285 04:09E2: 85 0C        	sta	<L70+2+6
+  2286 04:09E4: A5 05        	lda	<L70+1
+  2287 04:09E6: 85 0B        	sta	<L70+1+6
+  2288 04:09E8: 2B           	pld
+  2289 04:09E9: 3B           	tsc
+  2290 04:09EA: 18           	clc
+  2291 04:09EB: 69 0A 00     	adc	#L70+6
+  2292 04:09EE: 1B           	tcs
+  2293 04:09EF: 98           	tya
+  2294 04:09F0: 6B           	rtl
+  2295                        ;		}
+  2296                        	.line	383
+  2297                        ;	}
+  2298                        L10020:
+  2299                        	.line	384
+  2300                        ;
+  2301                        ;	return ps2_write(PS2_DATA, b);
+  2302                        L10019:
+  2303                        	.line	386
+  2304 04:09F1: D4 0C        	pei	<L70+b_0
+  2305 04:09F3: F4 00 00     	pea	#^$60
+  Mon Aug  9 2021 16:52                                                Page 44
+
+
+  2306 04:09F6: F4 60 00     	pea	#<$60
+  2307 04:09F9: 22 44 09 04  	jsl	~~ps2_write
+  2308 04:09FD: E2 20        	sep	#$20
+  2309                        	longa	off
+  2310 04:09FF: 85 01        	sta	<R0
+  2311 04:0A01: C2 20        	rep	#$20
+  2312                        	longa	on
+  2313 04:0A03: A5 01        	lda	<R0
+  2314 04:0A05: 29 FF 00     	and	#$ff
+  2315 04:0A08: 82 D4 FF     	brl	L75
+  2316                        ;}
+  2317                        	.line	387
+  2318                        	.endblock	387
+  2319             00000004   L70	equ	4
+  2320             00000005   L71	equ	5
+  2321 04:0A0B:              	ends
+  2322                        	efunc
+  2323                        	.endfunc	387,5,4
+  2324                        	.line	387
+  2325                        ;
+  2326                        ;/* Returns TRUE if a device replied with `PS2_DEV
+                    _ACK`.
+  2327                        ; * This is usually in reply to a command sent to 
+                    that device.
+  2328                        ; */
+  2329                        ;BYTE ps2_expect_ack(VOID)
+  2330                        ;{
+  2331                        	.line	392
+  2332                        	.line	393
+  2333                        	FMXUPS2
+  2334                        	xdef	~~ps2_expect_ack
+  2335                        	func
+  2336                        	.function	393
+  2337                        ~~ps2_expect_ack:
+  2338                        	longa	on
+  2339                        	longi	on
+  2340 04:0A0B: 3B           	tsc
+  2341 04:0A0C: 38           	sec
+  2342 04:0A0D: E9 07 00     	sbc	#L76
+  2343 04:0A10: 1B           	tcs
+  2344 04:0A11: 0B           	phd
+  2345 04:0A12: 5B           	tcd
+  2346                        	.block	393
+  2347                        ;	INT timeout = 100;
+  2348                        ;	BYTE ret = ps2_read(PS2_DATA);
+  2349                        ;
+  2350                        ;	while(ret != PS2_DEV_ACK &&  ret != PS2_DEV_RESE
+                    ND)
+  2351             00000000   timeout_1	set	0
+  2352             00000002   ret_1	set	2
+  2353                        	.sym	timeout,0,5,1,16
+  2354                        	.sym	ret,2,14,1,8
+  2355 04:0A13: A9 64 00     	lda	#$64
+  2356 04:0A16: 85 05        	sta	<L77+timeout_1
+  2357 04:0A18: F4 00 00     	pea	#^$60
+  2358 04:0A1B: F4 60 00     	pea	#<$60
+  2359 04:0A1E: 22 DF 08 04  	jsl	~~ps2_read
+  2360 04:0A22: E2 20        	sep	#$20
+  Mon Aug  9 2021 16:52                                                Page 45
+
+
+  2361                        	longa	off
+  2362 04:0A24: 85 07        	sta	<L77+ret_1
+  2363 04:0A26: C2 20        	rep	#$20
+  2364                        	longa	on
+  2365                        	.line	397
+  2366                        L10021:
+  2367 04:0A28: E2 20        	sep	#$20
+  2368                        	longa	off
+  2369 04:0A2A: A5 07        	lda	<L77+ret_1
+  2370 04:0A2C: C9 FA        	cmp	#<$fa
+  2371 04:0A2E: C2 20        	rep	#$20
+  2372                        	longa	on
+  2373 04:0A30: D0 03        	bne	L79
+  2374 04:0A32: 82 42 00     	brl	L10022
+  2375                        L79:
+  2376 04:0A35: E2 20        	sep	#$20
+  2377                        	longa	off
+  2378 04:0A37: A5 07        	lda	<L77+ret_1
+  2379 04:0A39: C9 FE        	cmp	#<$fe
+  2380 04:0A3B: C2 20        	rep	#$20
+  2381                        	longa	on
+  2382 04:0A3D: D0 03        	bne	L80
+  2383 04:0A3F: 82 35 00     	brl	L10022
+  2384                        L80:
+  2385                        ;	{
+  2386                        	.line	398
+  2387                        ;		////k_debug_string("[PS2] Device failed 
+                    to acknowledge command\n\n");
+  2388                        ;		k_debug_hex("ps2_expect_ack:", ret);
+  2389                        	.line	400
+  2390 04:0A42: D4 07        	pei	<L77+ret_1
+  2391 04:0A44: F4 xx xx     	pea	#^L69
+  2392 04:0A47: F4 xx xx     	pea	#<L69
+  2393 04:0A4A: 22 xx xx xx  	jsl	~~k_debug_hex
+  2394                        ;		//if(timeout-- < 1 || ret == 0xFC)
+  2395                        ;		if(timeout-- < 1)
+  2396                        	.line	402
+  2397                        ;			break;
+  2398 04:0A4E: A5 05        	lda	<L77+timeout_1
+  2399 04:0A50: 85 01        	sta	<R0
+  2400 04:0A52: C6 05        	dec	<L77+timeout_1
+  2401 04:0A54: A5 01        	lda	<R0
+  2402 04:0A56: 30 03        	bmi	L81
+  2403 04:0A58: 3A           	dea
+  2404 04:0A59: 10 03        	bpl	L82
+  2405                        L81:
+  2406 04:0A5B: 82 19 00     	brl	L10022
+  2407                        L82:
+  2408                        ;
+  2409                        ;		asm NOP;
+  2410                        	.line	405
+  2411                        	asmstart
+  2412 04:0A5E: EA           	NOP
+  2413                        	asmend
+  2414                        ;		asm NOP;
+  2415                        	.line	406
+  2416                        	asmstart
+  2417 04:0A5F: EA           	NOP
+  Mon Aug  9 2021 16:52                                                Page 46
+
+
+  2418                        	asmend
+  2419                        ;		asm NOP;
+  2420                        	.line	407
+  2421                        	asmstart
+  2422 04:0A60: EA           	NOP
+  2423                        	asmend
+  2424                        ;		asm NOP;
+  2425                        	.line	408
+  2426                        	asmstart
+  2427 04:0A61: EA           	NOP
+  2428                        	asmend
+  2429                        ;		asm NOP;
+  2430                        	.line	409
+  2431                        	asmstart
+  2432 04:0A62: EA           	NOP
+  2433                        	asmend
+  2434                        ;		asm NOP;
+  2435                        	.line	410
+  2436                        	asmstart
+  2437 04:0A63: EA           	NOP
+  2438                        	asmend
+  2439                        ;
+  2440                        ;		ret = ps2_read(PS2_DATA);
+  2441                        	.line	412
+  2442 04:0A64: F4 00 00     	pea	#^$60
+  2443 04:0A67: F4 60 00     	pea	#<$60
+  2444 04:0A6A: 22 DF 08 04  	jsl	~~ps2_read
+  2445 04:0A6E: E2 20        	sep	#$20
+  2446                        	longa	off
+  2447 04:0A70: 85 07        	sta	<L77+ret_1
+  2448 04:0A72: C2 20        	rep	#$20
+  2449                        	longa	on
+  2450                        ;	}
+  2451                        	.line	413
+  2452 04:0A74: 82 B1 FF     	brl	L10021
+  2453                        L10022:
+  2454                        ;	k_debug_hex("ps2_expect_ack:", ret);
+  2455                        	.line	414
+  2456 04:0A77: D4 07        	pei	<L77+ret_1
+  2457 04:0A79: F4 xx xx     	pea	#^L69+16
+  2458 04:0A7C: F4 xx xx     	pea	#<L69+16
+  2459 04:0A7F: 22 xx xx xx  	jsl	~~k_debug_hex
+  2460                        ;	return ret;
+  2461                        	.line	415
+  2462 04:0A83: A5 07        	lda	<L77+ret_1
+  2463 04:0A85: 29 FF 00     	and	#$ff
+  2464                        L83:
+  2465 04:0A88: A8           	tay
+  2466 04:0A89: 2B           	pld
+  2467 04:0A8A: 3B           	tsc
+  2468 04:0A8B: 18           	clc
+  2469 04:0A8C: 69 07 00     	adc	#L76
+  2470 04:0A8F: 1B           	tcs
+  2471 04:0A90: 98           	tya
+  2472 04:0A91: 6B           	rtl
+  2473                        ;}
+  2474                        	.line	416
+  2475                        	.endblock	416
+  Mon Aug  9 2021 16:52                                                Page 47
+
+
+  2476             00000007   L76	equ	7
+  2477             00000005   L77	equ	5
+  2478 04:0A92:              	ends
+  2479                        	efunc
+  2480                        	.endfunc	416,5,7
+  2481                        	.line	416
+  2482                        	data
+  2483                        L69:
+  2484 00:002D: 70 73 32 5F  	db	$70,$73,$32,$5F,$65,$78,$70,$65,$63,$74,
+                    $5F,$61,$63,$6B,$3A
+       00:0031: 65 78 70 65 
+       00:0035: 63 74 5F 61 
+       00:0039: 63 6B 3A 
+  2485 00:003C: 00 70 73 32  	db	$00,$70,$73,$32,$5F,$65,$78,$70,$65,$63,
+                    $74,$5F,$61,$63,$6B
+       00:0040: 5F 65 78 70 
+       00:0044: 65 63 74 5F 
+       00:0048: 61 63 6B 
+  2486 00:004B: 3A 00        	db	$3A,$00
+  2487 00:004D:              	ends
+  2488                        ;
+  2489                        ;BOOL ps2_can_read(VOID)
+  2490                        ;{
+  2491                        	.line	418
+  2492                        	.line	419
+  2493                        	FMXUPS2
+  2494                        	xdef	~~ps2_can_read
+  2495                        	func
+  2496                        	.function	419
+  2497                        ~~ps2_can_read:
+  2498                        	longa	on
+  2499                        	longi	on
+  2500 04:0A92: 3B           	tsc
+  2501 04:0A93: 38           	sec
+  2502 04:0A94: E9 04 00     	sbc	#L85
+  2503 04:0A97: 1B           	tcs
+  2504 04:0A98: 0B           	phd
+  2505 04:0A99: 5B           	tcd
+  2506                        	.block	419
+  2507                        ;	return inportb(PS2_CMD) & 1;
+  2508                        	.line	420
+  2509 04:0A9A: AF 64 00 00  	lda	>100
+  2510 04:0A9E: 29 01 00     	and	#<$1
+  2511 04:0AA1: 85 01        	sta	<R0
+  2512 04:0AA3: A5 01        	lda	<R0
+  2513 04:0AA5: 29 FF 00     	and	#$ff
+  2514                        L88:
+  2515 04:0AA8: A8           	tay
+  2516 04:0AA9: 2B           	pld
+  2517 04:0AAA: 3B           	tsc
+  2518 04:0AAB: 18           	clc
+  2519 04:0AAC: 69 04 00     	adc	#L85
+  2520 04:0AAF: 1B           	tcs
+  2521 04:0AB0: 98           	tya
+  2522 04:0AB1: 6B           	rtl
+  2523                        ;}
+  2524                        	.line	421
+  2525                        	.endblock	421
+  Mon Aug  9 2021 16:52                                                Page 48
+
+
+  2526             00000004   L85	equ	4
+  2527             00000005   L86	equ	5
+  2528 04:0AB2:              	ends
+  2529                        	efunc
+  2530                        	.endfunc	421,5,4
+  2531                        	.line	421
+  2532                        ;
+  2533                        ;#pragma section DATA=DFMXUPS2
+  2534                        DFMXUPS2	section
+  2535                        	ends
+  2536                        ;
+  2537                        ;static FX_DEVICE_DRIVER DRIVER_FMXUPS2 = {
+  2538                        	DFMXUPS2
+  2539                        ~~DRIVER_FMXUPS2:
+  2540                        ;							
+                    			"DRIVER_FMXUPS2\0",
+  2541 00:0000: 44 52 49 56  	db	$44,$52,$49,$56,$45,$52,$5F,$46,$4D,$58
+       00:0004: 45 52 5F 46 
+       00:0008: 4D 58 
+  2542 00:000A: 55 50 53 32  	db	$55,$50,$53,$32,$0,$0
+       00:000E: 00 00 
+  2543 00:0010:              	ds	16
+  2544                        ;							
+                    			"v1.0.0\0",
+  2545 00:0020: 76 31 2E 30  	db	$76,$31,$2E,$30,$2E,$30,$0,$0
+       00:0024: 2E 30 00 00 
+  2546 00:0028:              	ds	8
+  2547                        ;							
+                    			"A\0",
+  2548 00:0030: 41 00 00     	db	$41,$0,$0
+  2549 00:0033:              	ds	5
+  2550                        ;							
+                    			"1\0",
+  2551 00:0038: 31 00 00     	db	$31,$0,$0
+  2552 00:003B:              	ds	5
+  2553                        ;							
+                    			DRIVER_TYPE_PS2,
+  2554 00:0040: 0E           	db	$E
+  2555                        ;							
+                    			"PS2:\0",
+  2556 00:0041: 50 53 32 3A  	db	$50,$53,$32,$3A,$0,$0
+       00:0045: 00 00 
+  2557                        ;							
+                    			NOIRQ,
+  2558 00:0047: FF FF        	dw	$FFFF
+  2559                        ;							
+                    			NULL,
+  2560 00:0049: 00 00 00 00  	dl	$0
+  2561                        ;							
+                    			NULL,
+  2562 00:004D: 00 00 00 00  	dl	$0
+  2563                        ;							
+                    			f_driver_load,
+  2564 00:0051: 16 06 04 00  	dl	~~f_driver_load
+  2565                        ;							
+                    			f_driver_read,
+  2566 00:0055: 2F 06 04 00  	dl	~~f_driver_read
+  2567                        ;							
+  Mon Aug  9 2021 16:52                                                Page 49
+
+
+                    			f_driver_write,
+  2568 00:0059: 4C 06 04 00  	dl	~~f_driver_write
+  2569                        ;							
+                    			f_driver_unload
+  2570                        ;							
+                    	    };
+  2571 00:005D: 69 06 04 00  	dl	~~f_driver_unload
+  2572 00:0061:              	ends
+  2573                        ;
+  2574                        ;static LPVOID _f_get_driver(VOID)
+  2575                        ;{
+  2576                        	.line	441
+  2577                        	.line	442
+  2578                        	FMXUPS2
+  2579                        	func
+  2580                        	.function	442
+  2581                        ~~_f_get_driver:
+  2582                        	longa	on
+  2583                        	longi	on
+  2584 04:0AB2: 3B           	tsc
+  2585 04:0AB3: 38           	sec
+  2586 04:0AB4: E9 04 00     	sbc	#L89
+  2587 04:0AB7: 1B           	tcs
+  2588 04:0AB8: 0B           	phd
+  2589 04:0AB9: 5B           	tcd
+  2590                        	.block	442
+  2591                        ;	FX_EXPORT_DEFINITION(DRIVER_FMXUPS2);
+  2592             00000000   p_1	set	0
+  2593                        	.sym	p,0,18,1,32
+  2594 04:0ABA: A9 xx xx     	lda	#<~~DRIVER_FMXUPS2
+  2595 04:0ABD: 85 01        	sta	<L90+p_1
+  2596 04:0ABF: 64 03        	stz	<L90+p_1+2
+  2597                        	.line	443
+  2598 04:0AC1: A6 03        	ldx	<L90+p_1+2
+  2599 04:0AC3: A5 01        	lda	<L90+p_1
+  2600                        L92:
+  2601 04:0AC5: A8           	tay
+  2602 04:0AC6: 2B           	pld
+  2603 04:0AC7: 3B           	tsc
+  2604 04:0AC8: 18           	clc
+  2605 04:0AC9: 69 04 00     	adc	#L89
+  2606 04:0ACC: 1B           	tcs
+  2607 04:0ACD: 98           	tya
+  2608 04:0ACE: 6B           	rtl
+  2609                        	.line	443
+  2610                        ;}
+  2611                        	.line	444
+  2612                        	.endblock	444
+  2613             00000004   L89	equ	4
+  2614             00000001   L90	equ	1
+  2615 04:0ACF:              	ends
+  2616                        	efunc
+  2617                        	.endfunc	444,1,4
+  2618                        	.line	444
+  2619                        ;
+  2620                        ;
+  2621                        	.line	445
+  2622                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+  Mon Aug  9 2021 16:52                                                Page 50
+
+
+                    space\FXOS-Beta\src\drivers/driver_fmups2.c",441
+  2623                        	xref	~~k_debug_hex
+  2624                        	xref	~~k_debug_integer
+  2625                        	xref	~~k_debug_string
+  2626                        	xref	~~k_debug_char_com1
+  2627                        	.sym	~~DRIVER_FMXUPS2,~~DRIVER_FMXUPS2,10,3,7
+                    76,87
+  2628                        	.sym	~~f_get_driver,~~f_get_driver,1098,3,32,
+                    87
+  2629                        	.sym	~~_f_get_driver,~~_f_get_driver,1089,3,3
+                    2
+  2630                        	.sym	~~f_driver_unload,~~f_driver_unload,78,3
+                    ,0
+  2631                        	.sym	~~f_driver_write,~~f_driver_write,80,3,0
+  2632                        	.sym	~~f_driver_read,~~f_driver_read,80,3,0
+  2633                        	.sym	~~f_driver_load,~~f_driver_load,78,3,0
+  2634                        	.sym	~~ps2_can_read,~~ps2_can_read,78,2,0
+  2635                        	.sym	~~ps2_expect_ack,~~ps2_expect_ack,78,2,0
+  2636                        	.sym	~~ps2_write_device,~~ps2_write_device,78
+                    ,2,0
+  2637                        	.sym	~~ps2_write,~~ps2_write,78,2,0
+  2638                        	.sym	~~ps2_read,~~ps2_read,78,2,0
+  2639                        	.sym	~~ps2_wait_read,~~ps2_wait_read,78,2,0
+  2640                        	.sym	~~ps2_wait_write,~~ps2_wait_write,78,2,0
+  2641                        	.sym	~~init_ps2,~~init_ps2,65,2,0
+  2642                        	.sym	ps2_device_t,0,10,14,88,90
+  2643                        	.sym	PIRQCHAIN,0,138,14,32,89
+  2644                        	.sym	IRQCHAIN,0,10,14,128,89
+  2645                        	.sym	DEVICEDRIVER_COMMAND,0,654,14,32
+  2646                        	.sym	DEVICEDRIVER_UNLOAD,0,654,14,32
+  2647                        	.sym	DEVICEDRIVER_WRITE,0,654,14,32
+  2648                        	.sym	DEVICEDRIVER_READ,0,654,14,32
+  2649                        	.sym	DEVICEDRIVER_LOAD,0,654,14,32
+  2650                        	.sym	DEVICEDRIVER_IRQ,0,641,14,32
+  2651                        	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,88
+  2652                        	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,88
+  2653                        	.sym	GETDRIVERDEF,0,8842,14,32,87
+  2654                        	.sym	PFX_DEVICE_DRIVER,0,138,14,32,87
+  2655                        	.sym	FX_DEVICE_DRIVER,0,10,14,776,87
+  2656                        	.sym	~~k_debug_hex,~~k_debug_hex,65,18,0
+  2657                        	.sym	~~k_debug_integer,~~k_debug_integer,65,1
+                    8,0
+  2658                        	.sym	~~k_debug_string,~~k_debug_string,65,18,
+                    0
+  2659                        	.sym	~~k_debug_char_com1,~~k_debug_char_com1,
+                    65,18,0
+  2660                        	.sym	PSEGMENTHEADER,0,138,14,32,86
+  2661                        	.sym	SEGMENTHEADER,0,10,14,160,86
+  2662                        	.sym	PDEBUGBYTEBITS,0,138,14,32,85
+  2663                        	.sym	DEBUGBYTEBITS,0,10,14,8,85
+  2664                        	.sym	PFXENVIRONMENT,0,138,14,32,84
+  2665                        	.sym	FXENVIRONMENT,0,10,14,96,84
+  2666                        	.sym	PFXZEROPAGE,0,138,14,32,83
+  2667                        	.sym	FXZEROPAGE,0,10,14,720,83
+  2668                        	.sym	IRQBUFFER,0,10,14,32,82
+  2669                        	.sym	KERNELTRAPCALL,0,641,14,32
+  2670                        	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,81
+  2671                        	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,81
+  Mon Aug  9 2021 16:52                                                Page 51
+
+
+  2672                        	.sym	FRESULT,0,5,14,16
+  2673                        	.sym	MKFS_PARM,0,10,14,80,80
+  2674                        	.sym	FILINFO,0,10,14,2224,79
+  2675                        	.sym	DIR,0,10,14,416,78
+  2676                        	.sym	FIL,0,10,14,4400,77
+  2677                        	.sym	FFOBJID,0,10,14,128,76
+  2678                        	.sym	FATFS,0,10,14,4504,75
+  2679                        	.sym	LBA_t,0,18,14,32
+  2680                        	.sym	FSIZE_t,0,18,14,32
+  2681                        	.sym	TCHAR,0,14,14,8
+  2682                        	.sym	PCOMMANDARGS,0,138,14,32,74
+  2683                        	.sym	COMMANDARGS,0,10,14,64,74
+  2684                        	.sym	PTOKENIZESTATE,0,133,14,32
+  2685                        	.sym	TOKENIZESTATE,0,5,14,16
+  2686                        	.sym	PTOKEN,0,138,14,32,73
+  2687                        	.sym	TOKEN,0,10,14,64,73
+  2688                        	.sym	PTOKENTYPE,0,133,14,32
+  2689                        	.sym	TOKENTYPE,0,5,14,16
+  2690                        	.sym	FXCommandHandler,0,656,14,32
+  2691                        	.sym	PCONSOLECTX,0,138,14,32,72
+  2692                        	.sym	CONSOLECTX,0,10,14,1144,72
+  2693                        	.sym	PSPINNERCTX,0,138,14,32,71
+  2694                        	.sym	SPINNERCTX,0,10,14,48,71
+  2695                        	.sym	HCLIP,0,138,14,32,70
+  2696                        	.sym	PCLIPBOARD_DATA,0,138,14,32,70
+  2697                        	.sym	CLIPBOARD_DATA,0,10,14,168,70
+  2698                        	.sym	PEVENTMANAGER,0,138,14,32,69
+  2699                        	.sym	EVENTMANAGER,0,10,14,192,69
+  2700                        	.sym	EV_RUN,0,656,14,32
+  2701                        	.sym	EV_QUERY_METRIC,0,656,14,32
+  2702                        	.sym	EV_CONFIGURE,0,656,14,32
+  2703                        	.sym	EV_UNINIT,0,641,14,32
+  2704                        	.sym	EV_INIT,0,8833,14,32
+  2705                        	.sym	PMOUSE_MSG_STATE,0,138,14,32,68
+  2706                        	.sym	MOUSE_MSG_STATE,0,10,14,184,68
+  2707                        	.sym	PFXEVENTPROCESS,0,138,14,32,67
+  2708                        	.sym	FXEVENTPROCESS,0,10,14,64,67
+  2709                        	.sym	FXASYNCPROCESS,0,641,14,32
+  2710                        	.sym	PMARSHALDATA,0,139,14,32,66
+  2711                        	.sym	MARSHALDATA,0,11,14,32,66
+  2712                        	.sym	FXIDLEPROCESS,0,641,14,32
+  2713                        	.sym	FXEventProc,0,641,14,32
+  2714                        	.sym	PMOUSEMSGDATA,0,138,14,32,65
+  2715                        	.sym	MOUSEMSGDATA,0,10,14,64,65
+  2716                        	.sym	MSGIRQ,0,5,14,16
+  2717                        	.sym	MAINLOOPARGS,0,10,14,16,64
+  2718                        	.sym	PEACHCHILD_MSG,0,138,14,32,63
+  2719                        	.sym	EACHCHILD_MSG,0,10,14,64,63
+  2720                        	.sym	PMSGBOX_DATA,0,138,14,32,62
+  2721                        	.sym	MSGBOX_DATA,0,10,14,96,62
+  2722                        	.sym	PDESKTOP_DATA,0,138,14,32,61
+  2723                        	.sym	DESKTOP_DATA,0,10,14,64,61
+  2724                        	.sym	PWINDOWMANAGER,0,138,14,32,60
+  2725                        	.sym	WINDOWMANAGER,0,10,14,160,60
+  2726                        	.sym	WM_DOPROCS,0,641,14,32
+  2727                        	.sym	WM_QUERY_METRIC,0,656,14,32
+  2728                        	.sym	WM_CONFIGURE,0,656,14,32
+  2729                        	.sym	WM_HANDLE_EVENT,0,8833,14,32
+  Mon Aug  9 2021 16:52                                                Page 52
+
+
+  2730                        	.sym	WM_EVENTS,0,641,14,32
+  2731                        	.sym	PCUR_PALETTE_MAP,0,138,14,32,59
+  2732                        	.sym	CUR_PALETTE_MAP,0,10,14,400,59
+  2733                        	.sym	PCLICKDETECTED,0,138,14,32,58
+  2734                        	.sym	CLICKDETECTED,0,10,14,64,58
+  2735                        	.sym	OBJECTCLICKED,0,641,14,32
+  2736                        	.sym	PALLOCATIONHEADER,0,138,14,32,57
+  2737                        	.sym	ALLOCATIONHEADER,0,10,14,80,57
+  2738                        	.sym	PIPCPORT,0,138,14,32,56
+  2739                        	.sym	IPCPORT,0,10,14,144,56
+  2740                        	.sym	MemoryCallback,0,641,14,32
+  2741                        	.sym	PFXMEMORYMAP,0,138,14,32,55
+  2742                        	.sym	FXMEMORYMAP,0,10,14,2072,55
+  2743                        	.sym	UMM_HEAP_INFO,0,10,14,256,54
+  2744                        	.sym	FOREACHNODEUNTIL,0,654,14,32
+  2745                        	.sym	FOREACHNODE,0,641,14,32
+  2746                        	.sym	PEXECUTIVE,0,138,14,32,53
+  2747                        	.sym	EXECUTIVE,0,10,14,128,53
+  2748                        	.sym	EX_QUERY_METRIC,0,656,14,32
+  2749                        	.sym	EX_CONFIGURE,0,656,14,32
+  2750                        	.sym	EX_UNINIT,0,641,14,32
+  2751                        	.sym	EX_INIT,0,8833,14,32
+  2752                        	.sym	PFXSTRING,0,138,14,32,52
+  2753                        	.sym	FXSTRING,0,10,14,64,52
+  2754                        	.sym	PFXRFHEADER_STRING_ENTRY,0,138,14,32,51
+  2755                        	.sym	FXRFHEADER_STRING_ENTRY,0,10,14,40,51
+  2756                        	.sym	PFXRFHEADER_STRING,0,138,14,32,50
+  2757                        	.sym	FXRFHEADER_STRING,0,10,14,32,50
+  2758                        	.sym	PFXRFHEADER_FONT,0,138,14,32,49
+  2759                        	.sym	FXRFHEADER_FONT,0,10,14,144,49
+  2760                        	.sym	PFXRFHEADER,0,138,14,32,48
+  2761                        	.sym	FXRFHEADER,0,10,14,72,48
+  2762                        	.sym	PFXCOMBUFFER,0,138,14,32,47
+  2763                        	.sym	FXCOMBUFFER,0,10,14,2080,47
+  2764                        	.sym	PSUBMENULIST,0,138,14,32,46
+  2765                        	.sym	SUBMENULIST,0,10,14,40,46
+  2766                        	.sym	HSUBMENU,0,7,14,32
+  2767                        	.sym	PSUBMENU,0,138,14,32,45
+  2768                        	.sym	SUBMENU,0,10,14,64,45
+  2769                        	.sym	MenuAction,0,641,14,32
+  2770                        	.sym	PMENUANCHOR,0,138,14,32,44
+  2771                        	.sym	MENUANCHOR,0,10,14,272,44
+  2772                        	.sym	PMSGBOX,0,138,14,32,43
+  2773                        	.sym	MSGBOX,0,10,14,144,43
+  2774                        	.sym	PTEXTBOX,0,138,14,32,42
+  2775                        	.sym	TEXTBOX,0,10,14,144,42
+  2776                        	.sym	PLISTBOX,0,138,14,32,41
+  2777                        	.sym	LISTBOX,0,10,14,240,41
+  2778                        	.sym	PSCROLLBAR,0,138,14,32,40
+  2779                        	.sym	SCROLLBAR,0,10,14,240,40
+  2780                        	.sym	PBUTTON,0,138,14,32,39
+  2781                        	.sym	BUTTON,0,10,14,96,39
+  2782                        	.sym	PMENUDROPDOWNDATA,0,138,14,32,38
+  2783                        	.sym	MENUDROPDOWNDATA,0,10,14,5152,38
+  2784                        	.sym	PMENUTAG,0,138,14,32,37
+  2785                        	.sym	MENUTAG,0,10,14,160,37
+  2786                        	.sym	PMENU,0,138,14,32,36
+  2787                        	.sym	MENU,0,10,14,280,36
+  Mon Aug  9 2021 16:52                                                Page 53
+
+
+  2788                        	.sym	HMENURESOURCE,0,129,14,32
+  2789                        	.sym	FONTMETRIC,0,10,14,32,35
+  2790                        	.sym	TITLE,0,142,14,32
+  2791                        	.sym	PHANDLE,0,1153,14,32
+  2792                        	.sym	HANDLE,0,129,14,32
+  2793                        	.sym	PWINDOWEX,0,138,14,32,34
+  2794                        	.sym	WINDOWEX,0,10,14,3880,34
+  2795                        	.sym	PWINDOW,0,138,14,32,33
+  2796                        	.sym	WINDOW,0,10,14,3904,33
+  2797                        	.sym	PDRAGDATA,0,138,14,32,32
+  2798                        	.sym	DRAGDATA,0,10,14,216,32
+  2799                        	.sym	PNCCLICKABLE,0,138,14,32,31
+  2800                        	.sym	NCCLICKABLE,0,10,14,136,31
+  2801                        	.sym	HCLICKABLE,0,7,14,32
+  2802                        	.sym	PCLICKABLE,0,138,14,32,30
+  2803                        	.sym	CLICKABLE,0,10,14,152,30
+  2804                        	.sym	PWNDCLASS,0,138,14,32,29
+  2805                        	.sym	WNDCLASS,0,10,14,272,29
+  2806                        	.sym	HBRUSH,0,129,14,32
+  2807                        	.sym	HCURSOR,0,129,14,32
+  2808                        	.sym	HICON,0,129,14,32
+  2809                        	.sym	HINSTANCE,0,129,14,32
+  2810                        	.sym	FXWndProc,0,654,14,32
+  2811                        	.sym	PDRECT,0,138,14,32,28
+  2812                        	.sym	DRECT,0,10,14,112,28
+  2813                        	.sym	PRECTP,0,138,14,32,27
+  2814                        	.sym	RECTP,0,10,14,96,27
+  2815                        	.sym	PRECT,0,138,14,32,26
+  2816                        	.sym	RECT,0,10,14,112,26
+  2817                        	.sym	PPOINT,0,138,14,32,25
+  2818                        	.sym	POINT,0,10,14,32,25
+  2819                        	.sym	PFXPROPERTY,0,138,14,32,23
+  2820                        	.sym	FXPROPERTY,0,10,14,384,23
+  2821                        	.sym	PKEYSTATE,0,138,14,32,22
+  2822                        	.sym	KEYSTATE,0,10,14,112,22
+  2823                        	.sym	SCANCODE,0,14,14,8
+  2824                        	.sym	KEYCODE,0,16,14,16
+  2825                        	.sym	PFXPROCESSMESSAGE,0,138,14,32,21
+  2826                        	.sym	FXPROCESSMESSAGE,0,10,14,112,21
+  2827                        	.sym	PFXPROCESS,0,138,14,32,20
+  2828                        	.sym	FXPROCESS,0,10,14,800,20
+  2829                        	.sym	PDESKTOP_CONTROL,0,138,14,32,19
+  2830                        	.sym	DESKTOP_CONTROL,0,10,14,392,19
+  2831                        	.sym	PCONSOLE_CONTROL,0,138,14,32,18
+  2832                        	.sym	CONSOLE_CONTROL,0,10,14,448,18
+  2833                        	.sym	FXProcessProc,0,641,14,32
+  2834                        	.sym	PFXCMDMESSAGE,0,138,14,32,17
+  2835                        	.sym	FXCMDMESSAGE,0,10,14,312,17
+  2836                        	.sym	PFXOSMESSAGE,0,138,14,32,16
+  2837                        	.sym	FXOSMESSAGE,0,10,14,312,16
+  2838                        	.sym	PINT_REGS,0,138,14,32,15
+  2839                        	.sym	INT_REGS,0,10,14,104,15
+  2840                        	.sym	TASK_STACK,0,10,14,32,14
+  2841                        	.sym	TASK,0,10,14,48,13
+  2842                        	.sym	PIRQDATA,0,138,14,32,12
+  2843                        	.sym	IRQDATA,0,10,14,48,12
+  2844                        	.sym	HMENU,0,129,14,32
+  2845                        	.sym	HWND,0,129,14,32
+  Mon Aug  9 2021 16:52                                                Page 54
+
+
+  2846                        	.sym	MSGDATA,0,14,14,8
+  2847                        	.sym	MSGDEST,0,18,14,32
+  2848                        	.sym	MSGSRC,0,18,14,32
+  2849                        	.sym	MSGTYPE,0,16,14,16
+  2850                        	.sym	PROCESS_RESOURCE_LIST,0,138,14,32,6
+  2851                        	.sym	PROCESS_TLS_LIST,0,138,14,32,6
+  2852                        	.sym	SEMAPHORE_LIST,0,138,14,32,6
+  2853                        	.sym	FILE_BLOCK_LIST,0,138,14,32,6
+  2854                        	.sym	FILE_PATH_LIST,0,138,14,32,6
+  2855                        	.sym	PROCEDURE_LIST,0,138,14,32,6
+  2856                        	.sym	FILE_HANDLE,0,138,14,32,11
+  2857                        	.sym	FILE_BLOCK,0,10,14,552,11
+  2858                        	.sym	SEMAPHORE,0,10,14,16,10
+  2859                        	.sym	PPROCESS_SIGNAL,0,138,14,32,9
+  2860                        	.sym	PROCESS_SIGNAL,0,10,14,16,9
+  2861                        	.sym	KRESULT,0,18,14,32
+  2862                        	.sym	PKERNEL_ERROR,0,138,14,32,8
+  2863                        	.sym	KERNEL_ERROR,0,10,14,32,8
+  2864                        	.sym	PROCESS_STATUS,0,16,14,16
+  2865                        	.sym	FILE_PATH_NAME,0,142,14,32
+  2866                        	.sym	PROCESS_RESOURCE,0,129,14,32
+  2867                        	.sym	PROCESS_TLS,0,129,14,32
+  2868                        	.sym	PROCESS_CTX,0,129,14,32
+  2869                        	.sym	USERID,0,16,14,16
+  2870                        	.sym	PROCESS_ID,0,18,14,32
+  2871                        	.sym	PROCESS_BANK,0,14,14,8
+  2872                        	.sym	PFXQUEUE,0,138,14,32,7
+  2873                        	.sym	FXQUEUE,0,10,14,80,7
+  2874                        	.sym	PFXNODELIST,0,138,14,32,6
+  2875                        	.sym	FXNODELIST,0,10,14,96,6
+  2876                        	.sym	NodeListDeallocator,0,641,14,32
+  2877                        	.sym	PFXNODE,0,138,14,32,5
+  2878                        	.sym	FXNODE,0,10,14,384,5
+  2879                        	.sym	PBYTEBITS,0,138,14,32,4
+  2880                        	.sym	BYTEBITS,0,10,14,8,4
+  2881                        	.sym	HRESULT,0,18,14,32
+  2882                        	.sym	LPWCHAR,0,144,14,32
+  2883                        	.sym	WCHAR,0,16,14,16
+  2884                        	.sym	HSTRINGTABLE,0,129,14,32
+  2885                        	.sym	HCOLOR,0,129,14,32
+  2886                        	.sym	HFONT,0,129,14,32
+  2887                        	.sym	HDC,0,129,14,32
+  2888                        	.sym	HPOINTER,0,129,14,32
+  2889                        	.sym	uint32_t,0,18,14,32
+  2890                        	.sym	uint8_t,0,14,14,8
+  2891                        	.sym	LPBOOL,0,142,14,32
+  2892                        	.sym	BOOL,0,14,14,8
+  2893                        	.sym	DWORD,0,18,14,32
+  2894                        	.sym	ULONG,0,18,14,32
+  2895                        	.sym	LPLONG,0,135,14,32
+  2896                        	.sym	LONG,0,7,14,32
+  2897                        	.sym	PUINT,0,144,14,32
+  2898                        	.sym	USHORT,0,16,14,16
+  2899                        	.sym	UINT,0,16,14,16
+  2900                        	.sym	INT,0,5,14,16
+  2901                        	.sym	WORD,0,5,14,16
+  2902                        	.sym	PBYTE,0,142,14,32
+  2903                        	.sym	BYTE,0,14,14,8
+  Mon Aug  9 2021 16:52                                                Page 55
+
+
+  2904                        	.sym	IOPORT,0,142,14,32
+  2905                        	.sym	PUCHAR,0,142,14,32
+  2906                        	.sym	UCHAR,0,14,14,8
+  2907                        	.sym	LPWCSTR,0,142,14,32
+  2908                        	.sym	LPCSTR,0,142,14,32
+  2909                        	.sym	LPSTR,0,142,14,32
+  2910                        	.sym	LPCHAR,0,142,14,32
+  2911                        	.sym	CHAR,0,14,14,8
+  2912                        	.sym	PUINT_32,0,146,14,32
+  2913                        	.sym	UINT_32,0,18,14,32
+  2914                        	.sym	PUINT_16,0,144,14,32
+  2915                        	.sym	UINT_16,0,16,14,16
+  2916                        	.sym	PUINT_8,0,142,14,32
+  2917                        	.sym	UINT_8,0,14,14,8
+  2918                        	.sym	LPVOID,0,129,14,32
+  2919                        	.sym	VOID,0,1,14,32
+  2920                        	.sym	Boolean_T,0,5,14,16
+  2921                        	.sym	ldiv_t,0,10,14,64,2
+  2922                        	.sym	div_t,0,10,14,32,1
+  2923                        	.sym	wctype_t,0,16,14,16
+  2924                        	.sym	wint_t,0,16,14,16
+  2925                        	.sym	wchar_t,0,14,14,8
+  2926                        	.sym	ptrdiff_t,0,7,14,32
+  2927                        	.sym	size_t,0,16,14,16
+  2928                        	end
+
+
+      Lines assembled: 2928
+      Errors: 0

@@ -1,13 +1,10 @@
 
-
-//#pragma section CODE=HEAPNEAR, offset $06:0000
-#pragma section CODE=HEAPNEAR, offset $06:0000
-
-static char HEAPNEAR[1] = {0};
-
 /*
-void far * k_mem_get_heap_near(void)
-{
-	return (void far *)k_mem_get_heap_near;
-}
-*/
+ *
+ *  Marker Segment to protect the FAR heap
+ *
+ */
+#pragma section DATA=nearbank,offset $2:0000,ref_only
+
+static char HEAPNEAR_00[1] = {0};
+

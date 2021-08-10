@@ -1,6 +1,6 @@
 /*
  * FXOS_GFX_DISPATCH_SDK.c
- * Jul 7, 2021 9:34:32 PM
+ * Jul 29, 2021 10:56:51 PM
  */
 #include "fxkernel.h"
 #include "fxdos.h"
@@ -60,6 +60,6 @@ EXPORT_GFX(EXPORT_GFX_DRAWWINDOWICONSCALED,	k_put_winicon_scaled);
 EXPORT_GFX(EXPORT_GFX_GETFONTHEIGHT,	k_font_getFontHeight);
 EXPORT_GFX(EXPORT_GFX_GETFONTWIDTH,	k_font_getFontWidth);
 EXPORT_GFX(EXPORT_GFX_MOUSEPOINTERINIT,	k_gui_init_mousepointer);
-EXPORT_GFX(EXPORT_GFX_SETMOUSEPOINTER,	k_gui_set_mousepointer);
+EXPORT_GFX(EXPORT_GFX_SETMOUSEPOINTERDATA,	k_gui_set_mousepointer);
 
 }

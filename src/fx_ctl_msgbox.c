@@ -165,6 +165,14 @@ BOOL msgboxWindowProc(PFXOSMESSAGE pMsg)
 			return TRUE;
 
 			break;
+		case FX_KEY_DOWN:
+			k_debug_hex("msgboxWindowProc::FX_KEY_DOWN SCANCODE:",((PKEYSTATE)pMsg->data)->scanCode);
+			pWin = k_getWindowFromHandle(pMsg->hwnd);
+			if((CHAR)((PKEYSTATE)pMsg->data)->scanCode == 0x01)
+			{
+				 k_user_DestroyWindow(pWin);
+			}
+			break;
 		default:
 			break;
 		}

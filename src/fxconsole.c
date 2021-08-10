@@ -3,7 +3,9 @@
 #include "fxdos.h"
 #include "fxnode.h"
 #include "fxmemorymanager.h"
-#include "fxgui.h"
+#include "fxgfx.h"
+
+#define CONSOLE_FIRST_LINE (5)
 
 static int 	_k_window_index = 0;
 static WINDOW _k_window_list[10];
@@ -292,7 +294,7 @@ void k_clear_console(VOID)
 	{
 		k_clear_screen(0x00);
 		zp->fxos_console_col = 0;
-		zp->fxos_console_row = 0;
+		zp->fxos_console_row = CONSOLE_FIRST_LINE;
 	}
 }
 
@@ -359,7 +361,7 @@ int k_write_console(LPCSTR message)
 						k_put_string(zp->fxos_console_col,zp->fxos_console_row,(LPSTR)line,0x0F,0x00);
 					}
 					zp->fxos_console_row++;
-					zp->fxos_console_col = 0;
+					zp->fxos_console_col = CONSOLE_FIRST_LINE;
 					line[0] = 0;
 					lc = 0;
 				}
@@ -393,6 +395,9 @@ int k_write_console(LPCSTR message)
 			//k_debug_string("found no char\r\n");
 			zp->fxos_console_col = k_put_string(zp->fxos_console_col,zp->fxos_console_row,(LPSTR)message,0x0F,0x00);
 		}
+
+		k_mem_deallocate_heap(line);
+
 		return zp->fxos_console_col;
 	}
 	return 0;
@@ -784,7 +789,7 @@ void DefConsoleProc(PFXOSMESSAGE pMsg)
 				{
 					p->consoleCtl->bgColor = 0;
 					p->consoleCtl->curX    = 0;
-					p->consoleCtl->curY    = 0;
+					p->consoleCtl->curY    = CONSOLE_FIRST_LINE;
 					p->consoleCtl->fgColor = 15;
 					p->consoleCtl->maxCols = k_get_cols_visible();
 					p->consoleCtl->maxRows = k_get_lines_visible();
@@ -875,13 +880,22 @@ void DefConsoleProc(PFXOSMESSAGE pMsg)
 			//k_debug_integer("DefConsoleProc::curX:",p->consoleCtl->curX);
 			//k_debug_integer("DefConsoleProc::curY:",p->consoleCtl->curY);
 
+			k_debug_hex("DefConsoleProc::FX_KEY_DOWN SCANCODE:",((PKEYSTATE)pMsg->data)->scanCode);
+			//k_debug_hex("DesktopWindowProc::FX_KEY_DOWN EXT:",pMsg->data[3]);
+			//k_debug_hex("DesktopWindowProc::FX_KEY_DOWN SHIFTED:",pMsg->data[1]);
+			//k_debug_hex("DesktopWindowProc::FX_KEY_DOWN ALT:",pMsg->data[2]);
+			k_debug_char("DefConsoleProc::FX_KEY_DOWN CHAR:",(CHAR)((PKEYSTATE)pMsg->data)->keyChar);
+			//k_debug_hex_integer("DesktopWindowProc::FX_KEY_DOWN CHAR:",*((PUINT)(&pMsg->data[0])));
+
+			pctx->isShifted = ((PKEYSTATE)pMsg->data)->isShifted;
+
 			if(pMsg->data[0] == 54 || pMsg->data[0] == 42)
 			{
 				pctx->isShifted = TRUE;
 			}
 			else
 			{
-				if(pMsg->data[2] == 13)
+				if((CHAR)((PKEYSTATE)pMsg->data)->keyChar == 13)
 				{
 					k_put_char(p->consoleCtl->curX,
 										   p->consoleCtl->curY,
@@ -899,7 +913,7 @@ void DefConsoleProc(PFXOSMESSAGE pMsg)
 					pctx->lineBufferIndex = 0;
 
 				}
-				else if(pMsg->data[2] == 8)
+				else if((CHAR)((PKEYSTATE)pMsg->data)->keyChar == 8)
 				{
 					k_put_char(p->consoleCtl->curX,
 										   p->consoleCtl->curY,
@@ -920,8 +934,8 @@ void DefConsoleProc(PFXOSMESSAGE pMsg)
 
 					pctx->lineBuffer[pctx->lineBufferIndex] = 0;
 
-					if(p->consoleCtl->curY < 0)
-						p->consoleCtl->curY = 0;
+					if(p->consoleCtl->curY < CONSOLE_FIRST_LINE)
+						p->consoleCtl->curY = CONSOLE_FIRST_LINE;
 					if(p->consoleCtl->curX < 0)
 						p->consoleCtl->curX = 0;
 				}
@@ -929,10 +943,14 @@ void DefConsoleProc(PFXOSMESSAGE pMsg)
 				{
 					k_debug_integer("DefConsoleProc::lineBufferIndexA:",pctx->lineBufferIndex);
 
+					/*
 					if(pctx->isShifted)
 						decodedKey = k_getKeyboardChar(pMsg->data[0],pMsg->data[1],pctx->isShifted,0);
 					else
 						decodedKey = pMsg->data[2];
+					*/
+
+					decodedKey = (CHAR)((PKEYSTATE)pMsg->data)->keyChar;
 
 					pctx->lineBuffer[pctx->lineBufferIndex] = decodedKey;
 
@@ -960,7 +978,7 @@ void DefConsoleProc(PFXOSMESSAGE pMsg)
 
 					if(pctx->lineBufferIndex > 127)
 					{
-						k_exec_throw_exception(0,0,"lineBufferIndex too large",-1);
+						k_exec_throw_exception(DefConsoleProc,0,"lineBufferIndex too large",-1);
 					}
 					//k_debug_integer("DefConsoleProc::lineBufferIndexB:",pctx->lineBufferIndex);
 					//k_debug_string("DefConsoleProc::lineBuffer:");

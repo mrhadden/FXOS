@@ -82,6 +82,10 @@ EXPORT_FUNC_KERNEL(NodeListClear)
 PFXNODELIST	k_nodelist_clear_list(PFXNODELIST nodelist);
 EXPORT_FUNC_KERNEL(NodeListFindByName)
 PFXNODE		k_nodelist_searchByName(PFXNODELIST list,LPCSTR name);
+
+EXPORT_FUNC_KERNEL(NodeListFindById)
+PFXNODE	k_nodelist_searchById(PFXNODELIST list,ULONG objId);
+
 EXPORT_FUNC_KERNEL(NodeListFindByType)
 PFXNODE		k_nodelist_searchByType(PFXNODELIST list,BYTE type);
 EXPORT_FUNC_KERNEL(NodeListGetName)

@@ -1,4 +1,4 @@
-  Sat Jul 10 2021  1:15                                                Page 1
+  Mon Aug  9 2021 16:52                                                Page 1
 
 
                      ***************************************
@@ -13,33 +13,31 @@
      4             00000009   R2	equ	9
      5             0000000D   R3	equ	13
      6                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
-                    space\FXOSv1\src\fxheapnear.c",0
+                    space\FXOS-Beta\src\fxheapnear.c",0
      7                        ;
-     8                        ;
-     9                        ;//#pragma section CODE=HEAPNEAR, offset $06:0000
-    10                        ;#pragma section CODE=HEAPNEAR, offset $06:0000
-    11                        HEAPNEAR	section	 offset $06:0000
-    12 06:0000:              	ends
-    13                        ;
-    14                        ;static char HEAPNEAR[1] = {0};
-    15                        	data
-    16                        ~~HEAPNEAR:
-    17 00:0000: 00           	db	$0
-    18 00:0001:              	ends
-    19                        ;
-    20                        ;/*
-    21                        ;void far * k_mem_get_heap_near(void)
-    22                        ;{
-    23                        ;	return (void far *)k_mem_get_heap_near;
-    24                        ;}
-    25                        ;*/
-    26                        ;
-    27                        	.line	13
-    28                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
-                    space\FXOSv1\src\fxheapnear.c",0
-    29                        	.sym	~~HEAPNEAR,~~HEAPNEAR,110,3,0,1
-    30                        	end
+     8                        ;/*
+     9                        ; *
+    10                        ; *  Marker Segment to protect the FAR heap
+    11                        ; *
+    12                        ; */
+    13                        ;#pragma section DATA=nearbank,offset $2:0000,ref_
+                    only
+    14                        nearbank	section	offset $2:0000,ref_only
+    15 02:0000:              	ends
+    16                        ;
+    17                        ;static char HEAPNEAR_00[1] = {0};
+    18                        	nearbank
+    19                        ~~HEAPNEAR_00:
+    20 02:0000:              	db	$0
+    21 02:0001:              	ends
+    22                        ;
+    23                        ;
+    24                        	.line	10
+    25                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxheapnear.c",0
+    26                        	.sym	~~HEAPNEAR_00,~~HEAPNEAR_00,110,3,0,1
+    27                        	end
 
 
-      Lines assembled: 30
+      Lines assembled: 27
       Errors: 0

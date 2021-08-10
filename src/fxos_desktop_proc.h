@@ -14,7 +14,7 @@
 
 #include "fxstring.h"
 #include "fxeventmanager.h"
-#include "fxgui.h"
+#include "fxgfx.h"
 #include "fxwindowmanager.h"
 
 #define DESK_MENU_C_PALETTE (10)

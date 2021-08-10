@@ -23,7 +23,7 @@
 #include "fxconsole.h"
 #include "fxstring.h"
 #include "fxnode.h"
-#include "ff.h"
+#include "ff/ff.h"
 
 
 

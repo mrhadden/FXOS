@@ -1,4 +1,5 @@
 
+#include "fxkernel.h"
 #include "fxmemorymanager.h"
 #include "fxos_build_parameters.h"
 
@@ -9,6 +10,8 @@ static ULONG THIS_MODULE = 0xB0000000;
 
 LPVOID heap_start = (LPVOID)FXOS_BUILD_NEAR_HEAP_ADDR;
 LPVOID heap_end   = (LPVOID)FXOS_BUILD_NEAR_HEAP_TOP;
+
+ULONG _current_allocation = 0L;
 
 #define IPC_PORT_DEBUG		(0)
 #define IPC_PORT_BROADCAST  (1)
@@ -26,10 +29,13 @@ PFXNODELIST _ipc_ports = NULL;
 
 ULONG  k_heap_integrity_check(void)
 {
+	LPVOID pAddress = NULL;
 	UMM_HEAP_INFO *pheapInfo = NULL;
 
-	if(!umm_integrity_check())
-		k_exec_throw_exception(THIS_MODULE,0xFFF0000,"Memory Fault: Heap corruption detected.",-1);
+	k_lock_irq();
+
+	if(!umm_integrity_check(&pAddress))
+		k_exec_throw_exception(k_heap_integrity_check,(ULONG)pAddress," Memory Fault: Heap corruption detected.",-1);
 
 	pheapInfo = umm_info(NULL,0);
 
@@ -45,6 +51,8 @@ ULONG  k_heap_integrity_check(void)
 	k_getZeroPage()->availableHeapMemoryK = k_getZeroPage()->availableHeapMemory/1024;
 
 	//k_debug_long("heap:availableHeapMemory:", k_getZeroPage()->availableHeapMemory);
+
+	k_unlock_irq();
 
 	return (pheapInfo->freeBlocks * pheapInfo->blockSize);
 }
@@ -182,28 +190,57 @@ LPVOID k_mem_get_segment_info(HANDLE handle)
 	return NULL;
 }
 
-LPVOID k_mem_allocate_heap(UINT size)
+LPVOID k_mem_allocate_heap(ULONG size)
 {
 	int i = 0;
 	LPVOID p = NULL;
 
-	//k_debug_integer("k_mem_allocate_heap::enter:",size);
+
+	//if(size == 48)
+		//k_debug_long("**** k_mem_allocate_heap:size:",size);
+
 	if(size)
 	{
+		_current_allocation+=size;
+		//k_debug_long("    pool:",_current_allocation);
+
+		/*
 		if(size == 4)
 		{
 			k_debug_integer("**** k_mem_allocate_heap::possible wrong size allocation ****",size);
 		}
-		p = umm_malloc((size_t)size);
+		*/
+		k_lock_irq();
+		/*
+		p = umm_malloc((size_t)(size+sizeof(UINT)));
+		*((UINT*)p) = size;
+		((LPSTR)p)+=sizeof(UINT);
+		*/
+		p = umm_malloc((ULONG)(size+sizeof(ALLOCATIONHEADER)));
+		//k_debug_pointer("k_mem_allocate_heap:block:",p);
+
+		((PALLOCATIONHEADER)p)->user 	= 0xFF;
+		((PALLOCATIONHEADER)p)->attr 	= MEM_ATTR_LOCKED;
+		((PALLOCATIONHEADER)p)->virtual = NULL;
+		((PALLOCATIONHEADER)p)->size    = (ULONG)size;
+
+		((LPSTR)p)+=sizeof(ALLOCATIONHEADER);
+
+
+		k_unlock_irq();
 		//p = umm_poison_malloc((size_t)size);
+		//k_debug_pointer("k_mem_allocate_heap:",p);
 	}
 	else
 	{
 		k_heap_integrity_check();
-		k_exec_throw_exception(THIS_MODULE,0x00010002,"Memory allocation of size zero",-1);
+		k_exec_throw_exception(k_mem_allocate_heap,0x00010002,"Memory allocation of size zero",-1);
 	}
 	if(!p)
+	{
 		k_debug_pointer("k_mem_allocate_heap::exit:",p);
+		k_debug_integer("k_mem_allocate_heap::size:",size);
+	}
 
 	//umm_integrity_check();
 	/*
@@ -217,12 +254,34 @@ LPVOID k_mem_allocate_heap(UINT size)
 
 VOID k_mem_deallocate_heap(LPVOID lpBuffer)
 {
+	ULONG size = 0;
+
 	//k_debug_pointer("k_mem_deallocate_heap:",lpBuffer);
 	if(lpBuffer!=NULL)
+	{
+		k_lock_irq();
+
+		lpBuffer = (LPVOID)(((ULONG)lpBuffer) - sizeof(ALLOCATIONHEADER));
+		size = ((PALLOCATIONHEADER)lpBuffer)->size;
+		//k_debug_long("k_mem_deallocate_heap:size:",size);
+		_current_allocation-=size;
+		//k_debug_long("deallocate:", size );
+		//k_debug_long("    pool:",_current_allocation);
+		/*
+		lpBuffer = (LPVOID)(((ULONG)lpBuffer) - sizeof(UINT));
+		size = *((UINT*)lpBuffer);
+		k_debug_integer("deallocate:", size );
+		_current_allocation-=size;
+		k_debug_long("    pool:",_current_allocation);
+		*/
 		umm_free(lpBuffer);
+
+		k_unlock_irq();
 		//umm_poison_free(lpBuffer);
+	}
 	else
-		k_exec_throw_exception(THIS_MODULE,0x00010001,"Memory deallocation of NULL reference",-1);
+		k_exec_throw_exception(k_mem_deallocate_heap,0x00010001,"Memory deallocation of NULL reference",-1);
+
 }
 
 LPVOID k_calloc(UINT num,UINT bytes)
@@ -241,7 +300,7 @@ PIPCPORT k_get_ipc_port(LPCSTR portName)
 	PFXNODE node = NULL;
 
 	BYTE type = 0;
-	//k_debug_string("k_get_ipc_port::enter...\r\n");
+	//k_debug_strings("k_get_ipc_port::enter:",(LPSTR)portName);
 
 	if(portName!=NULL && portName[0] == '@')
 	{
@@ -265,6 +324,10 @@ PIPCPORT k_get_ipc_port(LPCSTR portName)
 		else if(strcmp(portName,IPC_SYS_CLIPBOARD) == 0)
 		{
 			type = IPC_PORT_CLIPBOARD;
+		}
+		else if(strcmp(portName,IPC_SYS_ASYNCPROC) == 0)
+		{
+			type = IPC_PORT_PROC;
 		}
 
 		if(_ipc_global_ports[type] == NULL)
@@ -327,7 +390,12 @@ PIPCPORT k_open_ipc_port(LPCSTR portName,BYTE type)
 
 			if(_ipc_ports!=NULL)
 			{
-				k_nodelist_addtolist(_ipc_ports,type,port->name->buffer,port);
+				if(k_enter_critical_section())
+				{
+					k_nodelist_addtolist(_ipc_ports,type,port->name->buffer,port);
+
+					k_exit_critical_section();
+				}
 			}
 
 		}
@@ -434,4 +502,26 @@ void k_ipc_marshal_long(PIPCPORT port,ULONG data)
 	pm = k_mem_allocate_heap(sizeof(MARSHALDATA));
 	pm->longValue = data;
 	k_write_ipc_port(port,pm,0);
+}
+
+HANDLE k_mem_change_block_attr(LPVOID memBlock, UINT attr)
+{
+	return NULL;
+}
+
+PALLOCATIONHEADER k_mem_get_block_attr(LPVOID memBlock)
+{
+	return NULL;
+}
+
+HANDLE k_mem_change_block_virtual(LPVOID memBlock, UINT attr)
+{
+
+	return NULL;
+
+}
+
+BOOL k_mem_change_block_user(LPVOID memBlock,UINT userId)
+{
+	return FALSE;
 }

@@ -3,7 +3,7 @@ R0	equ	1
 R1	equ	5
 R2	equ	9
 R3	equ	13
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.c",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.c",0
 ;/*----------------------------------------------------------------------------/
 ; /  FatFs - Generic FAT Filesystem Module  R0.14                               /
 ; /-----------------------------------------------------------------------------/
@@ -25,7 +25,7 @@ R3	equ	13
 ; /----------------------------------------------------------------------------*/
 ;
 ;#include "fxtypes.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
 	.stag	_fx_bytebits,8,1
 	.member	b7,0,14,17,1
 	.member	b6,1,14,17,1
@@ -99,7 +99,7 @@ R3	equ	13
 	.member	YH,88,14,8,8
 	.member	YL,96,14,8,8
 	.eos
-	.stag	_fx_eventMessage,304,13
+	.stag	_fx_eventMessage,312,13
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -107,8 +107,9 @@ R3	equ	13
 	.member	pheap,112,129,8,32
 	.member	msgTime,144,18,8,32
 	.member	data,176,110,8,0,16
+	.member	attr,304,14,8,8
 	.eos
-	.stag	_fx_cmdMessage,304,14
+	.stag	_fx_cmdMessage,312,14
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -120,6 +121,7 @@ R3	equ	13
 	.member	parameter1,208,18,8,32
 	.member	parameter2,240,18,8,32
 	.member	parameter3,272,18,8,32
+	.member	attr,304,14,8,8
 	.eos
 	.stag	_fx_console_ctl,448,15
 	.member	maxCols,0,5,8,16
@@ -462,124 +464,133 @@ R3	equ	13
 	.member	height,128,14,8,8
 	.member	width,136,14,8,8
 	.eos
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.c",21
+	.stag	_fx_resource_string,32,47
+	.member	locale,0,110,8,0,2
+	.member	entries,16,16,8,16
+	.eos
+	.stag	_fx_resource_string_entry,40,48
+	.member	index,0,16,8,16
+	.member	length,16,16,8,16
+	.member	data,32,14,8,8
+	.eos
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.c",21
 ;#include "fxkernel.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stddef.h",0
 	.line	88
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",43
-	.stag	fake47_,32,47
+	.stag	fake49_,32,49
 	.member	quot,0,5,8,16
 	.member	rem,16,5,8,16
 	.eos
-	.stag	fake48_,64,48
+	.stag	fake50_,64,50
 	.member	quot,0,7,8,32
 	.member	rem,32,7,8,32
 	.eos
-	.stag	int_sqrt,32,49
+	.stag	int_sqrt,32,51
 	.member	sqrt,0,16,8,16
 	.member	frac,16,16,8,16
 	.eos
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",4
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",4
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\ctype.h",0
 	.line	103
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",8
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstringtable.h",0
-	.line	89
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",9
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fmx_vicky.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fmx_vicky.h",11
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",8
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstringtable.h",0
+	.line	90
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",9
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",11
 	.line	72
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",6
 	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",16
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",0
-	.line	400
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",22
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",16
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
+	.line	490
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",22
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
 	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",12
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",12
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",7
-	.stag	_fx_string,64,50
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",7
+	.stag	_fx_string,64,52
 	.member	size,0,16,8,16
 	.member	pos,16,5,8,16
 	.member	buffer,32,142,8,32
 	.eos
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",17
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",17
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",5
-	.stag	_fxos_executive_vtable,128,51
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",5
+	.stag	_fxos_executive_vtable,128,53
 	.member	Init,0,8833,8,32
 	.member	Configure,32,656,8,32
 	.member	Query,64,656,8,32
 	.member	Uninit,96,641,8,32
 	.eos
 	.line	86
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",11
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",11
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.line	208
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",8
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",8
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos_build_parameters.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_build_parameters.h",0
 	.line	35
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",8
-	.stag	UMM_HEAP_INFO_t,256,52
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",8
+	.stag	UMM_HEAP_INFO_t,256,54
 	.member	totalEntries,0,18,8,32
 	.member	usedEntries,32,18,8,32
 	.member	freeEntries,64,18,8,32
@@ -590,42 +601,48 @@ R3	equ	13
 	.member	blockSize,224,18,8,32
 	.eos
 	.line	199
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",11
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",11
 	.line	24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",7
-	.stag	_fx_memory_map,2072,53
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",7
+	.stag	_fx_memory_map,2072,55
 	.member	availableMemory,0,18,8,32
 	.member	valid_segments,32,110,8,0,255
 	.eos
-	.stag	_fx_ipc_port,144,54
+	.stag	_fx_ipc_port,144,56
 	.member	id,0,18,8,32
 	.member	type,32,14,8,8
-	.member	name,40,138,8,32,50
+	.member	name,40,138,8,32,52
 	.member	time,72,18,8,32
 	.member	queue,104,138,8,32,4
 	.member	reserved_1,136,14,8,8
 	.eos
-	.line	105
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",6
+	.stag	_k_mem_alloc_header,80,57
+	.member	user,0,14,8,8
+	.member	attr,8,14,8,8
+	.member	size,16,18,8,32
+	.member	virtual,48,129,8,32
+	.eos
+	.line	129
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",6
 	.line	74
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",5
-	.stag	_click_detected,64,55
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",5
+	.stag	_click_detected,64,58
 	.member	window,0,138,8,32,30
 	.member	handler,32,641,8,32
 	.eos
-	.stag	_current_palette_map,400,56
+	.stag	_current_palette_map,400,59
 	.member	CUR_DESKTOP,0,5,8,16
 	.member	CUR_BACKGROUND,16,5,8,16
 	.member	CUR_FONT,32,5,8,16
@@ -639,37 +656,37 @@ R3	equ	13
 	.member	CUR_COLOR,160,101,8,0,15
 	.eos
 	.line	359
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",8
-	.stag	_fxos_winman_vtable,160,57
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",8
+	.stag	_fxos_winman_vtable,160,60
 	.member	Events,0,641,8,32
 	.member	ConfigureWindowManager,32,656,8,32
 	.member	ProcessWindowEvent,64,8833,8,32
 	.member	QueryWindowManager,96,656,8,32
 	.member	DoWndProcs,128,641,8,32
 	.eos
-	.stag	fake58_,64,58
+	.stag	fake61_,64,61
 	.member	type,0,16,8,16
 	.member	size,16,16,8,16
 	.member	desktopAction,32,129,8,32
 	.eos
-	.stag	fake59_,96,59
+	.stag	fake62_,96,62
 	.member	type,0,16,8,16
-	.member	caption,16,138,8,32,50
+	.member	caption,16,138,8,32,52
 	.member	buttonType,48,16,8,16
 	.member	x,64,5,8,16
 	.member	y,80,5,8,16
 	.eos
-	.stag	_childMessage_t,64,60
+	.stag	_childMessage_t,64,63
 	.member	msgType,0,16,8,16
 	.member	msgData,16,129,8,32
 	.member	dataSize,48,16,8,16
 	.eos
-	.line	581
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",9
-	.stag	_fx_main_loopvars,16,61
+	.line	594
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",9
+	.stag	_fx_main_loopvars,16,64
 	.member	dummy,0,5,8,16
 	.eos
-	.stag	_fxMouseMessageData,64,62
+	.stag	_fxMouseMessageData,64,65
 	.member	button1,0,14,8,8
 	.member	button2,8,14,8,8
 	.member	button3,16,14,8,8
@@ -677,18 +694,18 @@ R3	equ	13
 	.member	x,32,16,8,16
 	.member	y,48,16,8,16
 	.eos
-	.utag	marshalled_data,32,63
+	.utag	marshalled_data,32,66
 	.member	byteValue,0,14,11,8
 	.member	verbValue,0,110,11,0,2
 	.member	intValue,0,16,11,16
 	.member	longValue,0,18,11,32
 	.member	pointerValue,0,129,11,32
 	.eos
-	.stag	_fx_eventProcess,64,64
+	.stag	_fx_eventProcess,64,67
 	.member	process,0,138,8,32,17
 	.member	eventProc,32,641,8,32
 	.eos
-	.stag	_mouse_msg_state,184,65
+	.stag	_mouse_msg_state,184,68
 	.member	lastEvent,0,18,8,32
 	.member	buttonLeftDown,32,14,8,8
 	.member	lastLeftDown,40,18,8,32
@@ -699,7 +716,7 @@ R3	equ	13
 	.member	lastX,152,16,8,16
 	.member	lastY,168,16,8,16
 	.eos
-	.stag	_fxos_eventmanager_vtable,192,66
+	.stag	_fxos_eventmanager_vtable,192,69
 	.member	EventQueue,0,138,8,32,4
 	.member	Init,32,8833,8,32
 	.member	Run,64,656,8,32
@@ -707,18 +724,18 @@ R3	equ	13
 	.member	Query,128,656,8,32
 	.member	Uninit,160,641,8,32
 	.eos
-	.stag	_k_clipboard_data,168,67
+	.stag	_k_clipboard_data,168,70
 	.member	type,0,14,8,8
 	.member	readable,8,110,8,0,16
 	.member	data,136,129,8,32
 	.eos
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",18
-	.stag	_fx_spinner_ctx,48,68
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",18
+	.stag	_fx_spinner_ctx,48,71
 	.member	index,0,5,8,16
 	.member	spinner,16,142,8,32
 	.eos
-	.stag	_fx_console_ctx,1144,69
+	.stag	_fx_console_ctx,1144,72
 	.member	lineBufferIndex,0,5,8,16
 	.member	lineBuffer,16,110,8,0,128
 	.member	isShifted,1040,14,8,8
@@ -726,31 +743,31 @@ R3	equ	13
 	.member	screenBuffer,1080,129,8,32
 	.member	Reserved1,1112,129,8,32
 	.eos
-	.stag	_token,64,70
+	.stag	_token,64,73
 	.member	type,0,5,8,16
 	.member	depth,16,16,8,16
 	.member	text,32,142,8,32
 	.eos
-	.stag	_command_args,64,71
+	.stag	_command_args,64,74
 	.member	proc,0,656,8,32
 	.member	tokens,32,138,8,32,2
 	.eos
 	.line	208
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",23
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",25
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ffconf.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",23
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",24
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",25
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ffconf.h",0
 	.line	298
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",29
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",30
-	.stag	fake72_,4504,72
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",29
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",30
+	.stag	fake75_,4504,75
 	.member	fs_type,0,14,8,8
 	.member	pdrv,8,14,8,8
 	.member	n_fats,16,14,8,8
@@ -771,16 +788,16 @@ R3	equ	13
 	.member	winsect,376,18,8,32
 	.member	win,408,110,8,0,512
 	.eos
-	.stag	fake73_,128,73
-	.member	fs,0,138,8,32,72
+	.stag	fake76_,128,76
+	.member	fs,0,138,8,32,75
 	.member	id,32,5,8,16
 	.member	attr,48,14,8,8
 	.member	stat,56,14,8,8
 	.member	sclust,64,18,8,32
 	.member	objsize,96,18,8,32
 	.eos
-	.stag	fake74_,4400,74
-	.member	obj,0,10,8,128,73
+	.stag	fake77_,4400,77
+	.member	obj,0,10,8,128,76
 	.member	flag,128,14,8,8
 	.member	err,136,14,8,8
 	.member	fptr,144,18,8,32
@@ -790,8 +807,8 @@ R3	equ	13
 	.member	dir_ptr,272,142,8,32
 	.member	buf,304,110,8,0,512
 	.eos
-	.stag	fake75_,416,75
-	.member	obj,0,10,8,128,73
+	.stag	fake78_,416,78
+	.member	obj,0,10,8,128,76
 	.member	dptr,128,18,8,32
 	.member	clust,160,18,8,32
 	.member	sect,192,18,8,32
@@ -800,7 +817,7 @@ R3	equ	13
 	.member	blk_ofs,352,18,8,32
 	.member	pat,384,142,8,32
 	.eos
-	.stag	fake76_,2224,76
+	.stag	fake79_,2224,79
 	.member	fsize,0,18,8,32
 	.member	fdate,32,5,8,16
 	.member	ftime,48,5,8,16
@@ -808,7 +825,7 @@ R3	equ	13
 	.member	altname,72,110,8,0,13
 	.member	fname,176,110,8,0,256
 	.eos
-	.stag	fake77_,80,77
+	.stag	fake80_,80,80
 	.member	fmt,0,14,8,8
 	.member	n_fat,8,14,8,8
 	.member	align,16,16,8,16
@@ -816,16 +833,19 @@ R3	equ	13
 	.member	au_size,48,18,8,32
 	.eos
 	.line	429
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",26
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",26
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",6
-	.stag	_fx_api_call_table,8192,78
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",6
+	.stag	_fx_api_call_table,8192,81
 	.member	call_table,0,1121,8,32,256
 	.eos
-	.stag	_fx_zero_page,824,79
+	.stag	_fx_zero_page_irq_data,32,82
+	.member	data,0,110,8,0,4
+	.eos
+	.stag	_fx_zero_page,720,83
 	.member	fxos_mouse_byte_0,0,14,8,8
 	.member	fxos_mouse_byte_1,8,14,8,8
 	.member	fxos_mouse_byte_2,16,14,8,8
@@ -840,42 +860,37 @@ R3	equ	13
 	.member	fxos_mouse_ctl,88,14,8,8
 	.member	fxos_mouse_index,96,14,8,8
 	.member	fxos_mouse_status,104,14,8,8
-	.member	fxos_mouse_dbg_1,112,18,8,32
-	.member	fxos_mouse_dbg_2,144,18,8,32
-	.member	fxos_mouse_dbg_3,176,18,8,32
-	.member	fxos_vicky_byte_0,208,14,8,8
-	.member	fxos_vicky_byte_1,216,14,8,8
-	.member	fxos_vicky_byte_2,224,14,8,8
-	.member	VersionMajor,232,16,8,16
-	.member	VersionMinor,248,16,8,16
-	.member	VersionRelease,264,16,8,16
-	.member	topMemory,280,18,8,32
-	.member	bottomMemory,312,18,8,32
-	.member	availableMemory,344,18,8,32
-	.member	availableMemoryK,376,18,8,32
-	.member	availableHeapMemory,408,18,8,32
-	.member	availableHeapMemoryK,440,18,8,32
-	.member	fxos_console_row,472,16,8,16
-	.member	fxos_console_col,488,16,8,16
-	.member	executive,504,129,8,32
-	.member	eventmanager,536,129,8,32
-	.member	devicemanager,568,129,8,32
-	.member	windowmanager,600,129,8,32
-	.member	fxos_kernel_api,632,138,8,32,78
-	.member	fxos_dos_api,664,138,8,32,78
-	.member	fxos_gfx_api,696,138,8,32,78
-	.member	fxos_gui_api,728,138,8,32,78
-	.member	fxos_con_api,760,138,8,32,78
-	.member	fxos_reserved_2_api,792,138,8,32,78
+	.member	Endianness,112,16,8,16
+	.member	VersionMajor,128,16,8,16
+	.member	VersionMinor,144,16,8,16
+	.member	VersionRelease,160,16,8,16
+	.member	topMemory,176,18,8,32
+	.member	bottomMemory,208,18,8,32
+	.member	availableMemory,240,18,8,32
+	.member	availableMemoryK,272,18,8,32
+	.member	availableHeapMemory,304,18,8,32
+	.member	availableHeapMemoryK,336,18,8,32
+	.member	fxos_console_row,368,16,8,16
+	.member	fxos_console_col,384,16,8,16
+	.member	executive,400,129,8,32
+	.member	eventmanager,432,129,8,32
+	.member	devicemanager,464,129,8,32
+	.member	windowmanager,496,129,8,32
+	.member	fxos_kernel_api,528,138,8,32,81
+	.member	fxos_dos_api,560,138,8,32,81
+	.member	fxos_gfx_api,592,138,8,32,81
+	.member	fxos_gui_api,624,138,8,32,81
+	.member	fxos_con_api,656,138,8,32,81
+	.member	fxos_reserved_2_api,688,138,8,32,81
 	.eos
-	.stag	_fx_environment,96,80
+	.stag	_fx_environment,96,84
 	.member	variables,0,142,8,32
 	.member	reserved1,32,5,8,16
 	.member	reserved2,48,5,8,16
 	.member	reserved3,64,5,8,16
 	.member	reserved4,80,5,8,16
 	.eos
-	.stag	_debug_byte_bits,8,81
+	.stag	_debug_byte_bits,8,85
 	.member	bit7,0,14,17,1
 	.member	bit6,1,14,17,1
 	.member	bit5,2,14,17,1
@@ -885,7 +900,7 @@ R3	equ	13
 	.member	bit1,6,14,17,1
 	.member	bit0,7,14,17,1
 	.eos
-	.stag	_k_segmentheader,160,82
+	.stag	_k_segmentheader,160,86
 	.member	version_major,0,14,8,8
 	.member	version_minor,8,14,8,8
 	.member	length,16,5,8,16
@@ -894,14 +909,14 @@ R3	equ	13
 	.member	segment_size,96,7,8,32
 	.member	main_entry_addr,128,7,8,32
 	.eos
-	.stag	_fx_device_driver,776,83
+	.stag	_fx_device_driver,776,87
 	.member	name,0,110,8,0,32
 	.member	version,256,110,8,0,16
 	.member	hmajor,384,110,8,0,8
 	.member	hminor,448,110,8,0,8
 	.member	type,512,14,8,8
 	.member	designation,520,110,8,0,6
-	.member	reserved_1,568,16,8,16
+	.member	irq_ctl,568,16,8,16
 	.member	f_driver_irq,584,129,8,32
 	.member	driver_context,616,129,8,32
 	.member	f_driver_load,648,129,8,32
@@ -909,14 +924,14 @@ R3	equ	13
 	.member	f_driver_write,712,129,8,32
 	.member	f_driver_unload,744,129,8,32
 	.eos
-	.stag	_fx_block_device_driver,808,84
+	.stag	_fx_block_device_driver,808,88
 	.member	name,0,110,8,0,32
 	.member	version,256,110,8,0,16
 	.member	hmajor,384,110,8,0,8
 	.member	hminor,448,110,8,0,8
 	.member	type,512,14,8,8
 	.member	designation,520,110,8,0,6
-	.member	reserved_1,568,16,8,16
+	.member	irq_ctl,568,16,8,16
 	.member	f_driver_irq,584,129,8,32
 	.member	driver_context,616,129,8,32
 	.member	f_driver_load,648,129,8,32
@@ -925,39 +940,42 @@ R3	equ	13
 	.member	f_driver_unload,744,129,8,32
 	.member	f_driver_command,776,129,8,32
 	.eos
-	.line	400
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.c",22
+	.stag	_k_irq_chain,128,89
+	.member	handlers,0,5217,8,32,4
+	.eos
+	.line	490
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.c",22
 ;#include "fxdos.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",0
 	.line	429
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\diskio.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\diskio.h",0
 	.line	85
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.h",7
-	.stag	_fx_sd_direntry,256,85
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",7
+	.stag	_fx_sd_direntry,256,90
 	.member	filename,0,110,8,0,11
 	.member	type,88,14,8,8
 	.member	attrs,96,110,8,0,20
 	.eos
-	.stag	_fx_info,416,86
+	.stag	_fx_info,416,91
 	.member	stgName,0,110,8,0,32
 	.member	Reserved1,256,14,8,8
 	.member	stgType,264,16,8,16
 	.member	Reserved2,280,14,8,8
 	.member	stgReserved,288,110,8,0,16
 	.eos
-	.stag	_fx_fileinfo,136,87
+	.stag	_fx_fileinfo,136,92
 	.member	type,0,14,8,8
 	.member	pFilename,8,142,8,32
 	.member	lSize,40,18,8,32
 	.member	lcreateDate,72,18,8,32
 	.member	lchangeDate,104,18,8,32
 	.eos
-	.stag	_FX_FAT_DIR_INFO,256,88
+	.stag	_FX_FAT_DIR_INFO,256,93
 	.member	DIR_Name,0,110,8,0,11
 	.member	DIR_Attr,88,14,8,8
 	.member	DIR_NTRes,96,14,8,8
@@ -971,7 +989,7 @@ R3	equ	13
 	.member	DIR_FstClusLO,208,16,8,16
 	.member	DIR_FileSize,224,18,8,32
 	.eos
-	.stag	fat_extBS_32,416,89
+	.stag	fat_extBS_32,416,94
 	.member	table_size_32,0,18,8,32
 	.member	extended_flags,32,16,8,16
 	.member	fat_version,48,16,8,16
@@ -986,7 +1004,7 @@ R3	equ	13
 	.member	volume_label,264,110,8,0,11
 	.member	fat_type_label,352,110,8,0,8
 	.eos
-	.stag	fat_extBS_16,192,90
+	.stag	fat_extBS_16,192,95
 	.member	bios_drive_num,0,14,8,8
 	.member	reserved1,8,14,8,8
 	.member	boot_signature,16,14,8,8
@@ -994,7 +1012,7 @@ R3	equ	13
 	.member	volume_label,40,110,8,0,11
 	.member	fat_type_label,128,110,8,0,8
 	.eos
-	.stag	fat_BS,688,91
+	.stag	fat_BS,688,96
 	.member	bootjmp,0,110,8,0,3
 	.member	oem_name,24,110,8,0,8
 	.member	bytes_per_sector,88,16,8,16
@@ -1011,7 +1029,7 @@ R3	equ	13
 	.member	total_sectors_32,240,16,8,16
 	.member	extended_section,256,110,8,0,54
 	.eos
-	.stag	__FATBootSector,928,92
+	.stag	__FATBootSector,928,97
 	.member	bootjmp,0,110,8,0,3
 	.member	oem_name,24,110,8,0,8
 	.member	bytes_per_sector,88,16,8,16
@@ -1034,7 +1052,7 @@ R3	equ	13
 	.member	file_system_type,432,110,8,0,8
 	.member	extended_section,496,110,8,0,54
 	.eos
-	.stag	__PARTITIONTABLE,128,93
+	.stag	__PARTITIONTABLE,128,98
 	.member	first_byte,0,14,8,8
 	.member	start_chs,8,110,8,0,3
 	.member	partition_type,32,14,8,8
@@ -1042,7 +1060,7 @@ R3	equ	13
 	.member	start_sector,64,18,8,32
 	.member	length_sectors,96,18,8,32
 	.eos
-	.stag	fake94_,4096,94
+	.stag	fake99_,4096,99
 	.member	jmp,0,110,8,0,3
 	.member	oem,24,110,8,0,8
 	.member	sector_size,88,15,8,16
@@ -1066,7 +1084,7 @@ R3	equ	13
 	.member	boot_code,496,110,8,0,448
 	.member	boot_sector_signature,4080,15,8,16
 	.eos
-	.stag	__FAT16ENTRY,256,95
+	.stag	__FAT16ENTRY,256,100
 	.member	filename,0,110,8,0,8
 	.member	ext,64,110,8,0,3
 	.member	attributes,88,14,8,8
@@ -1076,7 +1094,7 @@ R3	equ	13
 	.member	starting_cluster,208,16,8,16
 	.member	file_size,224,18,8,32
 	.eos
-	.stag	__FAT16ENTRYLONG,288,96
+	.stag	__FAT16ENTRYLONG,288,101
 	.member	filename,0,110,8,0,8
 	.member	ext,64,110,8,0,3
 	.member	attributes,88,14,8,8
@@ -1087,7 +1105,7 @@ R3	equ	13
 	.member	file_size,224,18,8,32
 	.member	plongfileName,256,142,8,32
 	.eos
-	.stag	_LongFileName,256,97
+	.stag	_LongFileName,256,102
 	.member	sequenceNo,0,14,8,8
 	.member	fileName_Part1,8,110,8,0,10
 	.member	fileattribute,88,14,8,8
@@ -1097,7 +1115,7 @@ R3	equ	13
 	.member	fstclusLO,208,5,8,16
 	.member	fileName_Part3,224,110,8,0,4
 	.eos
-	.stag	_IDSECTOR,2048,98
+	.stag	_IDSECTOR,2048,103
 	.member	wGenConfig,0,16,8,16
 	.member	wNumCyls,16,16,8,16
 	.member	wReserved,32,16,8,16
@@ -1129,7 +1147,7 @@ R3	equ	13
 	.member	wMultiWordDMA,1008,16,8,16
 	.member	bReserved,1024,110,8,0,128
 	.eos
-	.stag	fake99_,16,99
+	.stag	fake104_,16,104
 	.member	Reserved1,0,16,17,1
 	.member	Retired3,1,16,17,1
 	.member	ResponseIncomplete,2,16,17,1
@@ -1139,11 +1157,11 @@ R3	equ	13
 	.member	Retired1,8,16,17,7
 	.member	DeviceType,15,16,17,1
 	.eos
-	.stag	fake100_,16,100
+	.stag	fake105_,16,105
 	.member	FeatureSupported,0,16,17,1
 	.member	Reserved,1,16,17,15
 	.eos
-	.stag	fake101_,32,101
+	.stag	fake106_,32,106
 	.member	CurrentLongPhysicalSectorAlignment,0,14,17,2
 	.member	ReservedByte49,2,14,17,6
 	.member	DmaSupported,8,14,17,1
@@ -1155,7 +1173,7 @@ R3	equ	13
 	.member	Reserved2,14,14,17,2
 	.member	ReservedWord50,16,16,8,16
 	.eos
-	.stag	fake102_,16,102
+	.stag	fake107_,16,107
 	.member	ZonedCapabilities,0,16,17,2
 	.member	NonVolatileWriteCache,2,16,17,1
 	.member	ExtendedUserAddressableSectorsSupported,3,16,17,1
@@ -1172,7 +1190,7 @@ R3	equ	13
 	.member	DeterministicReadAfterTrimSupported,14,16,17,1
 	.member	CFastSpecSupported,15,16,17,1
 	.eos
-	.stag	fake103_,32,103
+	.stag	fake108_,32,108
 	.member	Reserved0,0,16,17,1
 	.member	SataGen1,1,16,17,1
 	.member	SataGen2,2,16,17,1
@@ -1194,7 +1212,7 @@ R3	equ	13
 	.member	DEVSLPtoReducedPwrState,23,16,17,1
 	.member	Reserved3,24,16,17,8
 	.eos
-	.stag	fake104_,16,104
+	.stag	fake109_,16,109
 	.member	Reserved0,0,16,17,1
 	.member	NonZeroOffsets,1,16,17,1
 	.member	DmaSetupAutoActivate,2,16,17,1
@@ -1207,7 +1225,7 @@ R3	equ	13
 	.member	HybridInformation,9,16,17,1
 	.member	Reserved1,10,16,17,6
 	.eos
-	.stag	fake105_,16,105
+	.stag	fake110_,16,110
 	.member	Reserved0,0,16,17,1
 	.member	NonZeroOffsets,1,16,17,1
 	.member	DmaSetupAutoActivate,2,16,17,1
@@ -1220,7 +1238,7 @@ R3	equ	13
 	.member	HybridInformation,9,16,17,1
 	.member	Reserved1,10,16,17,6
 	.eos
-	.stag	fake106_,48,106
+	.stag	fake111_,48,111
 	.member	SmartCommands,0,16,17,1
 	.member	SecurityMode,1,16,17,1
 	.member	RemovableMediaFeature,2,16,17,1
@@ -1267,7 +1285,7 @@ R3	equ	13
 	.member	IdleWithUnloadFeature,45,16,17,1
 	.member	WordValid,46,16,17,2
 	.eos
-	.stag	fake107_,48,107
+	.stag	fake112_,48,112
 	.member	SmartCommands,0,16,17,1
 	.member	SecurityMode,1,16,17,1
 	.member	RemovableMediaFeature,2,16,17,1
@@ -1315,22 +1333,22 @@ R3	equ	13
 	.member	IdleWithUnloadFeature,45,16,17,1
 	.member	Reserved4,46,16,17,2
 	.eos
-	.stag	fake108_,16,108
+	.stag	fake113_,16,113
 	.member	TimeRequired,0,16,17,15
 	.member	ExtendedTimeReported,15,16,17,1
 	.eos
-	.stag	fake109_,16,109
+	.stag	fake114_,16,114
 	.member	TimeRequired,0,16,17,15
 	.member	ExtendedTimeReported,15,16,17,1
 	.eos
-	.stag	fake110_,16,110
+	.stag	fake115_,16,115
 	.member	LogicalSectorsPerPhysicalSector,0,16,17,4
 	.member	Reserved0,4,16,17,8
 	.member	LogicalSectorLongerThan256Words,12,16,17,1
 	.member	MultipleLogicalSectorsPerPhysicalSector,13,16,17,1
 	.member	Reserved1,14,16,17,2
 	.eos
-	.stag	fake111_,16,111
+	.stag	fake116_,16,116
 	.member	ReservedForDrqTechnicalReport,0,16,17,1
 	.member	WriteReadVerify,1,16,17,1
 	.member	WriteUncorrectableExt,2,16,17,1
@@ -1342,7 +1360,7 @@ R3	equ	13
 	.member	Reserved0,8,16,17,6
 	.member	WordValid,14,16,17,2
 	.eos
-	.stag	fake112_,16,112
+	.stag	fake117_,16,117
 	.member	ReservedForDrqTechnicalReport,0,16,17,1
 	.member	WriteReadVerify,1,16,17,1
 	.member	WriteUncorrectableExt,2,16,17,1
@@ -1354,7 +1372,7 @@ R3	equ	13
 	.member	Reserved0,8,16,17,6
 	.member	Reserved1,14,16,17,2
 	.eos
-	.stag	fake113_,16,113
+	.stag	fake118_,16,118
 	.member	SecuritySupported,0,16,17,1
 	.member	SecurityEnabled,1,16,17,1
 	.member	SecurityLocked,2,16,17,1
@@ -1365,18 +1383,18 @@ R3	equ	13
 	.member	SecurityLevel,8,16,17,1
 	.member	Reserved1,9,16,17,7
 	.eos
-	.stag	fake114_,16,114
+	.stag	fake119_,16,119
 	.member	MaximumCurrentInMA,0,16,17,12
 	.member	CfaPowerMode1Disabled,12,16,17,1
 	.member	CfaPowerMode1Required,13,16,17,1
 	.member	Reserved0,14,16,17,1
 	.member	Word160Supported,15,16,17,1
 	.eos
-	.stag	fake115_,16,115
+	.stag	fake120_,16,120
 	.member	SupportsTrim,0,16,17,1
 	.member	Reserved0,1,16,17,15
 	.eos
-	.stag	fake116_,16,116
+	.stag	fake121_,16,121
 	.member	Supported,0,16,17,1
 	.member	Reserved0,1,16,17,1
 	.member	WriteSameSuported,2,16,17,1
@@ -1386,12 +1404,12 @@ R3	equ	13
 	.member	Reserved1,6,16,17,6
 	.member	VendorSpecific,12,16,17,4
 	.eos
-	.stag	fake117_,16,117
+	.stag	fake122_,16,122
 	.member	AlignmentOfLogicalWithinPhysical,0,16,17,14
 	.member	Word209Supported,14,16,17,1
 	.member	Reserved0,15,16,17,1
 	.eos
-	.stag	fake118_,16,118
+	.stag	fake123_,16,123
 	.member	NVCachePowerModeEnabled,0,16,17,1
 	.member	Reserved0,1,16,17,3
 	.member	NVCacheFeatureSetEnabled,4,16,17,1
@@ -1399,16 +1417,16 @@ R3	equ	13
 	.member	NVCachePowerModeVersion,8,16,17,4
 	.member	NVCacheFeatureSetVersion,12,16,17,4
 	.eos
-	.stag	fake119_,16,119
+	.stag	fake124_,16,124
 	.member	NVCacheEstimatedTimeToSpinUpInSeconds,0,14,8,8
 	.member	Reserved,8,14,8,8
 	.eos
-	.stag	fake120_,16,120
+	.stag	fake125_,16,125
 	.member	MajorVersion,0,16,17,12
 	.member	TransportType,12,16,17,4
 	.eos
-	.stag	_IDENTIFY_DEVICE_DATA,4096,121
-	.member	GeneralConfiguration,0,10,8,16,99
+	.stag	_IDENTIFY_DEVICE_DATA,4096,126
+	.member	GeneralConfiguration,0,10,8,16,104
 	.member	NumCylinders,16,16,8,16
 	.member	SpecificConfiguration,32,16,8,16
 	.member	NumHeads,48,16,8,16
@@ -1422,8 +1440,8 @@ R3	equ	13
 	.member	ModelNumber,432,110,8,0,40
 	.member	MaximumBlockTransfer,752,14,8,8
 	.member	VendorUnique2,760,14,8,8
-	.member	TrustedComputing,768,10,8,16,100
-	.member	Capabilities,784,10,8,32,101
+	.member	TrustedComputing,768,10,8,16,105
+	.member	Capabilities,784,10,8,32,106
 	.member	ObsoleteWords51,816,112,8,0,2
 	.member	TranslationFieldsValid,848,16,17,3
 	.member	Reserved3,851,16,17,5
@@ -1449,21 +1467,21 @@ R3	equ	13
 	.member	RecommendedMWXferCycleTime,1056,16,8,16
 	.member	MinimumPIOCycleTime,1072,16,8,16
 	.member	MinimumPIOCycleTimeIORDY,1088,16,8,16
-	.member	AdditionalSupported,1104,10,8,16,102
+	.member	AdditionalSupported,1104,10,8,16,107
 	.member	ReservedWords70,1120,112,8,0,5
 	.member	QueueDepth,1200,16,17,5
 	.member	ReservedWord75,1205,16,17,11
-	.member	SerialAtaCapabilities,1216,10,8,32,103
-	.member	SerialAtaFeaturesSupported,1248,10,8,16,104
-	.member	SerialAtaFeaturesEnabled,1264,10,8,16,105
+	.member	SerialAtaCapabilities,1216,10,8,32,108
+	.member	SerialAtaFeaturesSupported,1248,10,8,16,109
+	.member	SerialAtaFeaturesEnabled,1264,10,8,16,110
 	.member	MajorRevision,1280,16,8,16
 	.member	MinorRevision,1296,16,8,16
-	.member	CommandSetSupport,1312,10,8,48,106
-	.member	CommandSetActive,1360,10,8,48,107
+	.member	CommandSetSupport,1312,10,8,48,111
+	.member	CommandSetActive,1360,10,8,48,112
 	.member	UltraDMASupport,1408,16,17,8
 	.member	UltraDMAActive,1416,16,17,8
-	.member	NormalSecurityEraseUnit,1424,10,8,16,108
-	.member	EnhancedSecurityEraseUnit,1440,10,8,16,109
+	.member	NormalSecurityEraseUnit,1424,10,8,16,113
+	.member	EnhancedSecurityEraseUnit,1440,10,8,16,114
 	.member	CurrentAPMLevel,1456,16,17,8
 	.member	ReservedWord91,1464,16,17,8
 	.member	MasterPasswordID,1472,16,8,16
@@ -1477,42 +1495,42 @@ R3	equ	13
 	.member	Max48BitLBA,1600,114,8,0,2
 	.member	StreamingTransferTime,1664,16,8,16
 	.member	DsmCap,1680,16,8,16
-	.member	PhysicalLogicalSectorSize,1696,10,8,16,110
+	.member	PhysicalLogicalSectorSize,1696,10,8,16,115
 	.member	InterSeekDelay,1712,16,8,16
 	.member	WorldWideName,1728,112,8,0,4
 	.member	ReservedForWorldWideName128,1792,112,8,0,4
 	.member	ReservedForTlcTechnicalReport,1856,16,8,16
 	.member	WordsPerLogicalSector,1872,112,8,0,2
-	.member	CommandSetSupportExt,1904,10,8,16,111
-	.member	CommandSetActiveExt,1920,10,8,16,112
+	.member	CommandSetSupportExt,1904,10,8,16,116
+	.member	CommandSetActiveExt,1920,10,8,16,117
 	.member	ReservedForExpandedSupportandActive,1936,112,8,0,6
 	.member	MsnSupport,2032,16,17,2
 	.member	ReservedWord127,2034,16,17,14
-	.member	SecurityStatus,2048,10,8,16,113
+	.member	SecurityStatus,2048,10,8,16,118
 	.member	ReservedWord129,2064,112,8,0,31
-	.member	CfaPowerMode1,2560,10,8,16,114
+	.member	CfaPowerMode1,2560,10,8,16,119
 	.member	ReservedForCfaWord161,2576,112,8,0,7
 	.member	NominalFormFactor,2688,16,17,4
 	.member	ReservedWord168,2692,16,17,12
-	.member	DataSetManagementFeature,2704,10,8,16,115
+	.member	DataSetManagementFeature,2704,10,8,16,120
 	.member	AdditionalProductID,2720,112,8,0,4
 	.member	ReservedForCfaWord174,2784,112,8,0,2
 	.member	CurrentMediaSerialNumber,2816,112,8,0,30
-	.member	SCTCommandTransport,3296,10,8,16,116
+	.member	SCTCommandTransport,3296,10,8,16,121
 	.member	ReservedWord207,3312,112,8,0,2
-	.member	BlockAlignment,3344,10,8,16,117
+	.member	BlockAlignment,3344,10,8,16,122
 	.member	WriteReadVerifySectorCountMode3Only,3360,112,8,0,2
 	.member	WriteReadVerifySectorCountMode2Only,3392,112,8,0,2
-	.member	NVCacheCapabilities,3424,10,8,16,118
+	.member	NVCacheCapabilities,3424,10,8,16,123
 	.member	NVCacheSizeLSW,3440,16,8,16
 	.member	NVCacheSizeMSW,3456,16,8,16
 	.member	NominalMediaRotationRate,3472,16,8,16
 	.member	ReservedWord218,3488,16,8,16
-	.member	NVCacheOptions,3504,10,8,16,119
+	.member	NVCacheOptions,3504,10,8,16,124
 	.member	WriteReadVerifySectorCountMode,3520,16,17,8
 	.member	ReservedWord220,3528,16,17,8
 	.member	ReservedWord221,3536,16,8,16
-	.member	TransportMajorVersion,3552,10,8,16,120
+	.member	TransportMajorVersion,3552,10,8,16,125
 	.member	TransportMinorVersion,3568,16,8,16
 	.member	ReservedWord224,3584,112,8,0,6
 	.member	ExtendedNumberOfUserAddressableSectors,3680,114,8,0,2
@@ -1522,13 +1540,13 @@ R3	equ	13
 	.member	Signature,4080,16,17,8
 	.member	CheckSum,4088,16,17,8
 	.eos
-	.stag	_FXDosDevice,5744,122
+	.stag	_FXDosDevice,5744,127
 	.member	type,0,14,8,8
 	.member	initialized,8,14,8,8
 	.member	devdata,16,129,8,32
 	.member	devstatus,48,14,8,8
-	.member	bootSector,56,10,8,928,92
-	.member	partitionTable,984,10,8,128,93
+	.member	bootSector,56,10,8,928,97
+	.member	partitionTable,984,10,8,128,98
 	.member	fileAllocationTable,1112,110,8,0,512
 	.member	bsOffset,5208,18,8,32
 	.member	rootDirSectors,5240,18,8,32
@@ -1546,35 +1564,44 @@ R3	equ	13
 	.member	pfReader,5680,654,8,32
 	.member	pfWriter,5712,654,8,32
 	.eos
-	.utag	item,32,123
-	.member	dir,0,138,11,32,75
-	.member	file,0,138,11,32,74
-	.member	fileInfo,0,138,11,32,76
+	.utag	item,32,128
+	.member	dir,0,138,11,32,78
+	.member	file,0,138,11,32,77
+	.member	fileInfo,0,138,11,32,79
 	.eos
-	.stag	_dos_handle,80,124
-	.member	fs,0,138,8,32,72
+	.stag	_dos_handle,80,129
+	.member	fs,0,138,8,32,75
 	.member	fr,32,5,8,16
 	.member	path,48,142,8,32
 	.eos
-	.line	800
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.c",23
-;#include "ff.h"			/* Declarations of FatFs API */
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",0
+	.stag	fx_file,112,130
+	.member	fs,0,138,8,32,75
+	.member	fileInfo,32,138,8,32,79
+	.member	f,64,138,8,32,77
+	.member	fr,96,5,8,16
+	.eos
+	.line	812
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.c",23
+;#include "ff/ff.h"			/* Declarations of FatFs API */
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",0
 	.line	429
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.c",24
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.c",24
 ;#include "diskio.h"		/* Declarations of device I/O functions */
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\diskio.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\diskio.h",0
 	.line	85
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.c",25
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.c",25
 ;
 ;#include <stdarg.h>
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdarg.h",0
 	.line	51
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.c",27
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.c",27
 ;
 ;#pragma section CODE=FFDOS,offset $08:0000
 FFDOS	section	offset $08:0000
 	ends
+;
+;
+;//extern PFXNODELIST _k_eventManager_IdleProcList;
 ;
 ;/*--------------------------------------------------------------------------
 ;
@@ -1994,7 +2021,11 @@ FFDOS	section	offset $08:0000
 ;#if FF_VOLUMES < 1 || FF_VOLUMES > 10
 ;#error Wrong FF_VOLUMES setting
 ;#endif
-;static FATFS* FatFs[FF_VOLUMES]; /* Pointer to the filesystem objects (logical drives) */
+;static FATFS FAR * FatFs[FF_VOLUMES] = {NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL}; /* Pointer to the filesystem objects (logical drives) */
+	data
+~~FatFs:
+	dl	$0,$0,$0,$0,$0,$0,$0,$0
+	ends
 ;static WORD Fsid; /* Filesystem mount ID */
 ;
 ;#if FF_FS_RPATH != 0
@@ -2021,7 +2052,7 @@ FFDOS	section	offset $08:0000
 	ends
 	data
 L1:
-	db	$52,$41,$4D,$00,$4E,$41,$4E,$44,$00,$50,$43,$00,$53,$44,$00
+	db	$52,$41,$4D,$00,$4E,$41,$4E,$44,$00,$46,$44,$00,$53,$44,$00
 	db	$48,$44,$00,$55,$53,$42,$00,$55,$53,$42,$32,$00,$55,$53,$42
 	db	$33,$00
 	ends
@@ -2180,11 +2211,11 @@ L1:
 ;
 ;static WORD ld_word(const BYTE* ptr) /*	 Load a 2-byte little-endian word */
 ;{
-	.line	595
-	.line	596
+	.line	598
+	.line	599
 	FFDOS
 	func
-	.function	596
+	.function	599
 ~~ld_word:
 	longa	on
 	longi	on
@@ -2195,7 +2226,7 @@ L1:
 	phd
 	tcd
 ptr_0	set	4
-	.block	596
+	.block	599
 ;	WORD rv;
 ;
 ;	//////k_debug_integer("ld_word::before:", *((UINT*)ptr)  );
@@ -2204,13 +2235,13 @@ ptr_0	set	4
 rv_1	set	0
 	.sym	rv,0,5,1,16
 	.sym	ptr,4,142,6,32
-	.line	601
+	.line	604
 	ldy	#$1
 	lda	[<L3+ptr_0],Y
 	and	#$ff
 	sta	<L4+rv_1
 ;	rv = rv << 8 | ptr[0];
-	.line	602
+	.line	605
 	lda	<L4+rv_1
 	xba
 	and	#$ff00
@@ -2225,7 +2256,7 @@ rv_1	set	0
 ;	//////k_debug_integer("ld_word::after:", rv);
 ;
 ;	return rv;
-	.line	606
+	.line	609
 	lda	<L4+rv_1
 L6:
 	tay
@@ -2241,22 +2272,22 @@ L6:
 	tya
 	rtl
 ;}
-	.line	607
-	.endblock	607
+	.line	610
+	.endblock	610
 L3	equ	10
 L4	equ	9
 	ends
 	efunc
-	.endfunc	607,9,10
-	.line	607
+	.endfunc	610,9,10
+	.line	610
 ;
 ;static DWORD ld_dword(const BYTE* ptr) /* Load a 4-byte little-endian word */
 ;{
-	.line	609
-	.line	610
+	.line	612
+	.line	613
 	FFDOS
 	func
-	.function	610
+	.function	613
 ~~ld_dword:
 	longa	on
 	longi	on
@@ -2267,21 +2298,21 @@ L4	equ	9
 	phd
 	tcd
 ptr_0	set	4
-	.block	610
+	.block	613
 ;	DWORD rv;
 ;
 ;	rv = ptr[3];
 rv_1	set	0
 	.sym	rv,0,18,1,32
 	.sym	ptr,4,142,6,32
-	.line	613
+	.line	616
 	ldy	#$3
 	lda	[<L7+ptr_0],Y
 	and	#$ff
 	sta	<L8+rv_1
 	stz	<L8+rv_1+2
 ;	rv = rv << 8 | ptr[2];
-	.line	614
+	.line	617
 	pei	<L8+rv_1+2
 	pei	<L8+rv_1
 	lda	#$8
@@ -2301,7 +2332,7 @@ rv_1	set	0
 	ora	<R0+2
 	sta	<L8+rv_1+2
 ;	rv = rv << 8 | ptr[1];
-	.line	615
+	.line	618
 	pei	<L8+rv_1+2
 	pei	<L8+rv_1
 	lda	#$8
@@ -2321,7 +2352,7 @@ rv_1	set	0
 	ora	<R0+2
 	sta	<L8+rv_1+2
 ;	rv = rv << 8 | ptr[0];
-	.line	616
+	.line	619
 	pei	<L8+rv_1+2
 	pei	<L8+rv_1
 	lda	#$8
@@ -2340,7 +2371,7 @@ rv_1	set	0
 	ora	<R0+2
 	sta	<L8+rv_1+2
 ;	return rv;
-	.line	617
+	.line	620
 	ldx	<L8+rv_1+2
 	lda	<L8+rv_1
 L10:
@@ -2357,14 +2388,14 @@ L10:
 	tya
 	rtl
 ;}
-	.line	618
-	.endblock	618
+	.line	621
+	.endblock	621
 L7	equ	12
 L8	equ	9
 	ends
 	efunc
-	.endfunc	618,9,12
-	.line	618
+	.endfunc	621,9,12
+	.line	621
 ;
 ;#if FF_FS_EXFAT
 ;static QWORD ld_qword (const BYTE* ptr) /* Load an 8-byte little-endian word */
@@ -2386,11 +2417,11 @@ L8	equ	9
 ;#if !FF_FS_READONLY
 ;static void st_word(BYTE* ptr, WORD val) /* Store a 2-byte word in little-endian */
 ;{
-	.line	638
-	.line	639
+	.line	641
+	.line	642
 	FFDOS
 	func
-	.function	639
+	.function	642
 ~~st_word:
 	longa	on
 	longi	on
@@ -2402,11 +2433,11 @@ L8	equ	9
 	tcd
 ptr_0	set	4
 val_0	set	8
-	.block	639
+	.block	642
 ;	*ptr++ = (BYTE) val;
 	.sym	ptr,4,142,6,32
 	.sym	val,8,5,6,16
-	.line	640
+	.line	643
 	sep	#$20
 	longa	off
 	lda	<L11+val_0
@@ -2418,14 +2449,14 @@ val_0	set	8
 	inc	<L11+ptr_0+2
 L14:
 ;	val >>= 8;
-	.line	641
+	.line	644
 	lda	<L11+val_0
 	ldx	#<$8
 	xref	~~~asr
 	jsl	~~~asr
 	sta	<L11+val_0
 ;	*ptr++ = (BYTE) val;
-	.line	642
+	.line	645
 	sep	#$20
 	longa	off
 	lda	<L11+val_0
@@ -2437,7 +2468,7 @@ L14:
 	inc	<L11+ptr_0+2
 L15:
 ;}
-	.line	643
+	.line	646
 L16:
 	lda	<L11+2
 	sta	<L11+2+6
@@ -2449,21 +2480,21 @@ L16:
 	adc	#L11+6
 	tcs
 	rtl
-	.endblock	643
+	.endblock	646
 L11	equ	0
 L12	equ	1
 	ends
 	efunc
-	.endfunc	643,1,0
-	.line	643
+	.endfunc	646,1,0
+	.line	646
 ;
 ;static void st_dword(BYTE* ptr, DWORD val) /* Store a 4-byte word in little-endian */
 ;{
-	.line	645
-	.line	646
+	.line	648
+	.line	649
 	FFDOS
 	func
-	.function	646
+	.function	649
 ~~st_dword:
 	longa	on
 	longi	on
@@ -2475,11 +2506,11 @@ L12	equ	1
 	tcd
 ptr_0	set	4
 val_0	set	8
-	.block	646
+	.block	649
 ;	*ptr++ = (BYTE) val;
 	.sym	ptr,4,142,6,32
 	.sym	val,8,18,6,32
-	.line	647
+	.line	650
 	sep	#$20
 	longa	off
 	lda	<L17+val_0
@@ -2491,7 +2522,7 @@ val_0	set	8
 	inc	<L17+ptr_0+2
 L20:
 ;	val >>= 8;
-	.line	648
+	.line	651
 	pei	<L17+val_0+2
 	pei	<L17+val_0
 	lda	#$8
@@ -2500,7 +2531,7 @@ L20:
 	sta	<L17+val_0
 	stx	<L17+val_0+2
 ;	*ptr++ = (BYTE) val;
-	.line	649
+	.line	652
 	sep	#$20
 	longa	off
 	lda	<L17+val_0
@@ -2512,7 +2543,7 @@ L20:
 	inc	<L17+ptr_0+2
 L21:
 ;	val >>= 8;
-	.line	650
+	.line	653
 	pei	<L17+val_0+2
 	pei	<L17+val_0
 	lda	#$8
@@ -2521,7 +2552,7 @@ L21:
 	sta	<L17+val_0
 	stx	<L17+val_0+2
 ;	*ptr++ = (BYTE) val;
-	.line	651
+	.line	654
 	sep	#$20
 	longa	off
 	lda	<L17+val_0
@@ -2533,7 +2564,7 @@ L21:
 	inc	<L17+ptr_0+2
 L22:
 ;	val >>= 8;
-	.line	652
+	.line	655
 	pei	<L17+val_0+2
 	pei	<L17+val_0
 	lda	#$8
@@ -2542,7 +2573,7 @@ L22:
 	sta	<L17+val_0
 	stx	<L17+val_0+2
 ;	*ptr++ = (BYTE) val;
-	.line	653
+	.line	656
 	sep	#$20
 	longa	off
 	lda	<L17+val_0
@@ -2554,7 +2585,7 @@ L22:
 	inc	<L17+ptr_0+2
 L23:
 ;}
-	.line	654
+	.line	657
 L24:
 	lda	<L17+2
 	sta	<L17+2+8
@@ -2566,13 +2597,13 @@ L24:
 	adc	#L17+8
 	tcs
 	rtl
-	.endblock	654
+	.endblock	657
 L17	equ	0
 L18	equ	1
 	ends
 	efunc
-	.endfunc	654,1,0
-	.line	654
+	.endfunc	657,1,0
+	.line	657
 ;
 ;#if FF_FS_EXFAT
 ;static void st_qword (BYTE* ptr, QWORD val) /* Store an 8-byte word in little-endian */
@@ -2596,11 +2627,11 @@ L18	equ	1
 ;/* Copy memory to memory */
 ;static void mem_cpy(void* dst, const void* src, UINT cnt)
 ;{
-	.line	676
-	.line	677
+	.line	679
+	.line	680
 	FFDOS
 	func
-	.function	677
+	.function	680
 ~~mem_cpy:
 	longa	on
 	longi	on
@@ -2613,7 +2644,7 @@ L18	equ	1
 dst_0	set	4
 src_0	set	8
 cnt_0	set	12
-	.block	677
+	.block	680
 ;	BYTE *d = (BYTE*) dst;
 ;	const BYTE *s = (const BYTE*) src;
 ;
@@ -2633,20 +2664,20 @@ s_1	set	4
 	sta	<L26+s_1
 	lda	<L25+src_0+2
 	sta	<L26+s_1+2
-	.line	681
+	.line	684
 ;	{
 	lda	<L25+cnt_0
 	bne	L28
 	brl	L10001
 L28:
-	.line	682
+	.line	685
 ;		do
-	.line	683
+	.line	686
 L10004:
 ;		{
-	.line	684
+	.line	687
 ;			*d++ = *s++;
-	.line	685
+	.line	688
 	sep	#$20
 	longa	off
 	lda	[<L26+s_1]
@@ -2662,7 +2693,7 @@ L29:
 	inc	<L26+d_1+2
 L30:
 ;		} while (--cnt);
-	.line	686
+	.line	689
 L10002:
 	dec	<L25+cnt_0
 	lda	<L25+cnt_0
@@ -2671,10 +2702,10 @@ L10002:
 L31:
 L10003:
 ;	}
-	.line	687
+	.line	690
 ;}
 L10001:
-	.line	688
+	.line	691
 L32:
 	lda	<L25+2
 	sta	<L25+2+10
@@ -2686,22 +2717,22 @@ L32:
 	adc	#L25+10
 	tcs
 	rtl
-	.endblock	688
+	.endblock	691
 L25	equ	8
 L26	equ	1
 	ends
 	efunc
-	.endfunc	688,1,8
-	.line	688
+	.endfunc	691,1,8
+	.line	691
 ;
 ;/* Fill memory block */
 ;static void mem_set(void* dst, int val, UINT cnt)
 ;{
-	.line	691
-	.line	692
+	.line	694
+	.line	695
 	FFDOS
 	func
-	.function	692
+	.function	695
 ~~mem_set:
 	longa	on
 	longi	on
@@ -2714,7 +2745,7 @@ L26	equ	1
 dst_0	set	4
 val_0	set	8
 cnt_0	set	10
-	.block	692
+	.block	695
 ;	BYTE *d = (BYTE*) dst;
 ;
 ;	do
@@ -2727,12 +2758,12 @@ d_1	set	0
 	sta	<L34+d_1
 	lda	<L33+dst_0+2
 	sta	<L34+d_1+2
-	.line	695
+	.line	698
 L10007:
 ;	{
-	.line	696
+	.line	699
 ;		*d++ = (BYTE) val;
-	.line	697
+	.line	700
 	sep	#$20
 	longa	off
 	lda	<L33+val_0
@@ -2744,7 +2775,7 @@ L10007:
 	inc	<L34+d_1+2
 L36:
 ;	} while (--cnt);
-	.line	698
+	.line	701
 L10005:
 	dec	<L33+cnt_0
 	lda	<L33+cnt_0
@@ -2753,7 +2784,7 @@ L10005:
 L37:
 L10006:
 ;}
-	.line	699
+	.line	702
 L38:
 	lda	<L33+2
 	sta	<L33+2+8
@@ -2765,22 +2796,22 @@ L38:
 	adc	#L33+8
 	tcs
 	rtl
-	.endblock	699
+	.endblock	702
 L33	equ	4
 L34	equ	1
 	ends
 	efunc
-	.endfunc	699,1,4
-	.line	699
+	.endfunc	702,1,4
+	.line	702
 ;
 ;/* Compare memory block */
 ;static int mem_cmp(const void* dst, const void* src, UINT cnt) /* ZR:same, NZ:different */
 ;{
-	.line	702
-	.line	703
+	.line	705
+	.line	706
 	FFDOS
 	func
-	.function	703
+	.function	706
 ~~mem_cmp:
 	longa	on
 	longi	on
@@ -2793,7 +2824,7 @@ L34	equ	1
 dst_0	set	4
 src_0	set	8
 cnt_0	set	12
-	.block	703
+	.block	706
 ;	const BYTE *d = (const BYTE *) dst, *s = (const BYTE *) src;
 ;	int r = 0;
 ;
@@ -2816,12 +2847,12 @@ r_1	set	8
 	lda	<L39+src_0+2
 	sta	<L40+s_1+2
 	stz	<L40+r_1
-	.line	707
+	.line	710
 L10010:
 ;	{
-	.line	708
+	.line	711
 ;		r = *d++ - *s++;
-	.line	709
+	.line	712
 	lda	[<L40+s_1]
 	and	#$ff
 	sta	<R0
@@ -2841,7 +2872,7 @@ L42:
 	inc	<L40+d_1+2
 L43:
 ;	} while (--cnt && r == 0);
-	.line	710
+	.line	713
 L10008:
 	dec	<L39+cnt_0
 	lda	<L39+cnt_0
@@ -2856,7 +2887,7 @@ L44:
 L10009:
 ;
 ;	return r;
-	.line	712
+	.line	715
 	lda	<L40+r_1
 L47:
 	tay
@@ -2872,23 +2903,23 @@ L47:
 	tya
 	rtl
 ;}
-	.line	713
-	.endblock	713
+	.line	716
+	.endblock	716
 L39	equ	18
 L40	equ	9
 	ends
 	efunc
-	.endfunc	713,9,18
-	.line	713
+	.endfunc	716,9,18
+	.line	716
 ;
 ;/* Check if chr is contained in the string */
 ;static int chk_chr(const char* str, int chr) /* NZ:contained, ZR:not contained */
 ;{
-	.line	716
-	.line	717
+	.line	719
+	.line	720
 	FFDOS
 	func
-	.function	717
+	.function	720
 ~~chk_chr:
 	longa	on
 	longi	on
@@ -2900,11 +2931,11 @@ L40	equ	9
 	tcd
 str_0	set	4
 chr_0	set	8
-	.block	717
+	.block	720
 ;	while (*str && *str != chr)
 	.sym	str,4,142,6,32
 	.sym	chr,8,5,6,16
-	.line	718
+	.line	721
 L10011:
 	lda	[<L48+str_0]
 	and	#$ff
@@ -2920,7 +2951,7 @@ L51:
 	brl	L10012
 L52:
 ;		str++;
-	.line	719
+	.line	722
 	inc	<L48+str_0
 	bne	L53
 	inc	<L48+str_0+2
@@ -2928,7 +2959,7 @@ L53:
 	brl	L10011
 L10012:
 ;	return *str;
-	.line	720
+	.line	723
 	lda	[<L48+str_0]
 	and	#$ff
 L54:
@@ -2945,23 +2976,23 @@ L54:
 	tya
 	rtl
 ;}
-	.line	721
-	.endblock	721
+	.line	724
+	.endblock	724
 L48	equ	4
 L49	equ	5
 	ends
 	efunc
-	.endfunc	721,5,4
-	.line	721
+	.endfunc	724,5,4
+	.line	724
 ;
 ;/* Test if the byte is DBC 1st byte */
 ;static int dbc_1st(BYTE c)
 ;{
-	.line	724
-	.line	725
+	.line	727
+	.line	728
 	FFDOS
 	func
-	.function	725
+	.function	728
 ~~dbc_1st:
 	longa	on
 	longi	on
@@ -2972,7 +3003,7 @@ L49	equ	5
 	phd
 	tcd
 c_0	set	4
-	.block	725
+	.block	728
 ;#if FF_CODE_PAGE == 0		/* Variable code page */
 ;	if (DbcTbl && c >= DbcTbl[0])
 ;	{
@@ -2988,14 +3019,14 @@ c_0	set	4
 ;#else						/* SBCS fixed code page */
 ;	if (c != 0)
 	.sym	c,4,14,6,8
-	.line	739
+	.line	742
 ;		return 0; /* Always false */
 	lda	<L55+c_0
 	and	#$ff
 	bne	L58
 	brl	L10013
 L58:
-	.line	740
+	.line	743
 	lda	#$0
 L59:
 	tay
@@ -3013,27 +3044,27 @@ L59:
 ;#endif
 ;	return 0;
 L10013:
-	.line	742
+	.line	745
 	lda	#$0
 	brl	L59
 ;}
-	.line	743
-	.endblock	743
+	.line	746
+	.endblock	746
 L55	equ	0
 L56	equ	1
 	ends
 	efunc
-	.endfunc	743,1,0
-	.line	743
+	.endfunc	746,1,0
+	.line	746
 ;
 ;/* Test if the byte is DBC 2nd byte */
 ;static int dbc_2nd(BYTE c)
 ;{
-	.line	746
-	.line	747
+	.line	749
+	.line	750
 	FFDOS
 	func
-	.function	747
+	.function	750
 ~~dbc_2nd:
 	longa	on
 	longi	on
@@ -3044,7 +3075,7 @@ L56	equ	1
 	phd
 	tcd
 c_0	set	4
-	.block	747
+	.block	750
 ;#if FF_CODE_PAGE == 0		/* Variable code page */
 ;	if (DbcTbl && c >= DbcTbl[4])
 ;	{
@@ -3062,14 +3093,14 @@ c_0	set	4
 ;#else						/* SBCS fixed code page */
 ;	if (c != 0)
 	.sym	c,4,14,6,8
-	.line	763
+	.line	766
 ;		return 0; /* Always false */
 	lda	<L60+c_0
 	and	#$ff
 	bne	L63
 	brl	L10014
 L63:
-	.line	764
+	.line	767
 	lda	#$0
 L64:
 	tay
@@ -3087,18 +3118,18 @@ L64:
 ;#endif
 ;	return 0;
 L10014:
-	.line	766
+	.line	769
 	lda	#$0
 	brl	L64
 ;}
-	.line	767
-	.endblock	767
+	.line	770
+	.endblock	770
 L60	equ	0
 L61	equ	1
 	ends
 	efunc
-	.endfunc	767,1,0
-	.line	767
+	.endfunc	770,1,0
+	.line	770
 ;
 ;#if FF_USE_LFN
 ;
@@ -3107,11 +3138,11 @@ L61	equ	1
 ;		const TCHAR** str /* Pointer to pointer to TCHAR string in configured encoding */
 ;)
 ;{
-	.line	772
 	.line	775
+	.line	778
 	FFDOS
 	func
-	.function	775
+	.function	778
 ~~tchar2uni:
 	longa	on
 	longi	on
@@ -3122,7 +3153,7 @@ L61	equ	1
 	phd
 	tcd
 str_0	set	4
-	.block	775
+	.block	778
 ;	DWORD uc;
 ;	const TCHAR *p = *str;
 ;
@@ -3156,7 +3187,7 @@ nf_1	set	9
 	ldy	#$2
 	lda	[<L65+str_0],Y
 	sta	<L66+p_1+2
-	.line	794
+	.line	797
 	lda	[<L66+p_1]
 	and	#$ff
 	sta	<L66+uc_1
@@ -3166,16 +3197,16 @@ nf_1	set	9
 	inc	<L66+p_1+2
 L68:
 ;	if (uc & 0x80)
-	.line	795
+	.line	798
 ;	{ /* Multiple byte code? */
 	lda	<L66+uc_1
 	and	#<$80
 	bne	L69
 	brl	L10015
 L69:
-	.line	796
+	.line	799
 ;		if ((uc & 0xE0) == 0xC0)
-	.line	797
+	.line	800
 ;		{ /* 2-byte sequence? */
 	lda	<L66+uc_1
 	and	#<$e0
@@ -3190,25 +3221,25 @@ L70:
 	beq	L71
 	brl	L10016
 L71:
-	.line	798
+	.line	801
 ;			uc &= 0x1F; nf = 1;
-	.line	799
+	.line	802
 	lda	<L66+uc_1
 	and	#<$1f
 	sta	<L66+uc_1
 	stz	<L66+uc_1+2
-	.line	799
+	.line	802
 	lda	#$1
 	sta	<L66+nf_1
 ;		}
-	.line	800
+	.line	803
 ;		else
 	brl	L10017
 L10016:
 ;		{
-	.line	802
+	.line	805
 ;			if ((uc & 0xF0) == 0xE0)
-	.line	803
+	.line	806
 ;			{ /* 3-byte sequence? */
 	lda	<L66+uc_1
 	and	#<$f0
@@ -3223,25 +3254,25 @@ L72:
 	beq	L73
 	brl	L10018
 L73:
-	.line	804
+	.line	807
 ;				uc &= 0x0F; nf = 2;
-	.line	805
+	.line	808
 	lda	<L66+uc_1
 	and	#<$f
 	sta	<L66+uc_1
 	stz	<L66+uc_1+2
-	.line	805
+	.line	808
 	lda	#$2
 	sta	<L66+nf_1
 ;			}
-	.line	806
+	.line	809
 ;			else
 	brl	L10019
 L10018:
 ;			{
-	.line	808
+	.line	811
 ;				if ((uc & 0xF8) == 0xF0)
-	.line	809
+	.line	812
 ;				{ /* 4-byte sequence? */
 	lda	<L66+uc_1
 	and	#<$f8
@@ -3256,25 +3287,25 @@ L74:
 	beq	L75
 	brl	L10020
 L75:
-	.line	810
+	.line	813
 ;					uc &= 0x07; nf = 3;
-	.line	811
+	.line	814
 	lda	<L66+uc_1
 	and	#<$7
 	sta	<L66+uc_1
 	stz	<L66+uc_1+2
-	.line	811
+	.line	814
 	lda	#$3
 	sta	<L66+nf_1
 ;				}
-	.line	812
+	.line	815
 ;				else
 	brl	L10021
 L10020:
 ;				{ /* Wrong sequence */
-	.line	814
+	.line	817
 ;					return 0xFFFFFFFF;
-	.line	815
+	.line	818
 	lda	#$ffff
 	tax
 	lda	#$ffff
@@ -3292,21 +3323,21 @@ L76:
 	tya
 	rtl
 ;				}
-	.line	816
+	.line	819
 L10021:
 ;			}
-	.line	817
+	.line	820
 L10019:
 ;		}
-	.line	818
+	.line	821
 L10017:
 ;		do
-	.line	819
+	.line	822
 L10024:
 ;		{ /* Get trailing bytes */
-	.line	820
+	.line	823
 ;			b = (BYTE)*p++;
-	.line	821
+	.line	824
 	sep	#$20
 	longa	off
 	lda	[<L66+p_1]
@@ -3318,7 +3349,7 @@ L10024:
 	inc	<L66+p_1+2
 L77:
 ;			if ((b & 0xC0) != 0x80) return 0xFFFFFFFF; /* Wrong sequence? */
-	.line	822
+	.line	825
 	lda	<L66+b_1
 	and	#<$c0
 	sta	<R0
@@ -3327,14 +3358,14 @@ L77:
 	bne	L78
 	brl	L10025
 L78:
-	.line	822
+	.line	825
 	lda	#$ffff
 	tax
 	lda	#$ffff
 	brl	L76
 ;			uc = uc << 6 | (b & 0x3F);
 L10025:
-	.line	823
+	.line	826
 	pei	<L66+uc_1+2
 	pei	<L66+uc_1
 	lda	#$6
@@ -3359,7 +3390,7 @@ L79:
 	ora	<R0+2
 	sta	<L66+uc_1+2
 ;		}while (--nf != 0);
-	.line	824
+	.line	827
 L10022:
 	dec	<L66+nf_1
 	lda	<L66+nf_1
@@ -3368,7 +3399,7 @@ L10022:
 L80:
 L10023:
 ;		if (uc < 0x80 || IsSurrogate(uc) || uc >= 0x110000) return 0xFFFFFFFF; /* Wrong code? */
-	.line	825
+	.line	828
 	lda	<L66+uc_1
 	cmp	#<$80
 	lda	<L66+uc_1+2
@@ -3399,14 +3430,14 @@ L83:
 	brl	L10026
 L86:
 L81:
-	.line	825
+	.line	828
 	lda	#$ffff
 	tax
 	lda	#$ffff
 	brl	L76
 ;		if (uc >= 0x010000) uc = 0xD800DC00 | ((uc - 0x10000) << 6 & 0x3FF0000) | (uc & 0x3FF); /* Make a surrogate pair if needed */
 L10026:
-	.line	826
+	.line	829
 	lda	<L66+uc_1
 	cmp	#<$10000
 	lda	<L66+uc_1+2
@@ -3414,7 +3445,7 @@ L10026:
 	bcs	L87
 	brl	L10027
 L87:
-	.line	826
+	.line	829
 	clc
 	lda	#$0
 	adc	<L66+uc_1
@@ -3451,7 +3482,7 @@ L87:
 	sta	<L66+uc_1+2
 ;	}
 L10027:
-	.line	827
+	.line	830
 ;
 ;#elif FF_LFN_UNICODE == 3	/* UTF-32 input */
 ;	uc = (TCHAR)*p++; /* Get a unit */
@@ -3479,26 +3510,26 @@ L10027:
 ;#endif
 ;	*str = p; /* Next read pointer */
 L10015:
-	.line	853
+	.line	856
 	lda	<L66+p_1
 	sta	[<L65+str_0]
 	lda	<L66+p_1+2
 	ldy	#$2
 	sta	[<L65+str_0],Y
 ;	return uc;
-	.line	854
+	.line	857
 	ldx	<L66+uc_1+2
 	lda	<L66+uc_1
 	brl	L76
 ;}
-	.line	855
-	.endblock	855
+	.line	858
+	.endblock	858
 L65	equ	27
 L66	equ	17
 	ends
 	efunc
-	.endfunc	855,17,27
-	.line	855
+	.endfunc	858,17,27
+	.line	858
 ;
 ;/* Output a TCHAR string in defined API encoding */
 ;static BYTE put_utf ( /* Returns number of encoding units written (0:buffer overflow or wrong encoding) */
@@ -3507,11 +3538,11 @@ L66	equ	17
 ;		UINT szb /* Size of the buffer */
 ;)
 ;{
-	.line	858
-	.line	863
+	.line	861
+	.line	866
 	FFDOS
 	func
-	.function	863
+	.function	866
 ~~put_utf:
 	longa	on
 	longi	on
@@ -3524,7 +3555,7 @@ L66	equ	17
 chr_0	set	4
 buf_0	set	8
 szb_0	set	12
-	.block	863
+	.block	866
 ;#if FF_LFN_UNICODE == 1	/* UTF-16 output */
 ;	WCHAR hs, wc;
 ;
@@ -3550,7 +3581,7 @@ hc_1	set	0
 	.sym	chr,4,18,6,32
 	.sym	buf,8,142,6,32
 	.sym	szb,12,16,6,16
-	.line	883
+	.line	886
 ;	{ /* Single byte code? */
 	lda	<L88+chr_0
 	cmp	#<$80
@@ -3559,15 +3590,15 @@ hc_1	set	0
 	bcc	L91
 	brl	L10028
 L91:
-	.line	884
+	.line	887
 ;		if (szb < 1) return 0; /* Buffer overflow? */
-	.line	885
+	.line	888
 	lda	<L88+szb_0
 	cmp	#<$1
 	bcc	L92
 	brl	L10029
 L92:
-	.line	885
+	.line	888
 	lda	#$0
 L93:
 	tay
@@ -3584,7 +3615,7 @@ L93:
 	rtl
 ;		*buf = (TCHAR)chr;
 L10029:
-	.line	886
+	.line	889
 	sep	#$20
 	longa	off
 	lda	<L88+chr_0
@@ -3592,14 +3623,14 @@ L10029:
 	rep	#$20
 	longa	on
 ;		return 1;
-	.line	887
+	.line	890
 	lda	#$1
 	brl	L93
 ;	}
-	.line	888
+	.line	891
 ;	if (chr < 0x800)
 L10028:
-	.line	889
+	.line	892
 ;	{ /* 2-byte sequence? */
 	lda	<L88+chr_0
 	cmp	#<$800
@@ -3608,20 +3639,20 @@ L10028:
 	bcc	L94
 	brl	L10030
 L94:
-	.line	890
+	.line	893
 ;		if (szb < 2) return 0; /* Buffer overflow? */
-	.line	891
+	.line	894
 	lda	<L88+szb_0
 	cmp	#<$2
 	bcc	L95
 	brl	L10031
 L95:
-	.line	891
+	.line	894
 	lda	#$0
 	brl	L93
 ;		*buf++ = (TCHAR)(0xC0 | (chr >> 6 & 0x1F));
 L10031:
-	.line	892
+	.line	895
 	pei	<L88+chr_0+2
 	pei	<L88+chr_0
 	lda	#$6
@@ -3649,7 +3680,7 @@ L10031:
 	inc	<L88+buf_0+2
 L96:
 ;		*buf++ = (TCHAR)(0x80 | (chr >> 0 & 0x3F));
-	.line	893
+	.line	896
 	lda	<L88+chr_0
 	and	#<$3f
 	sta	<R0
@@ -3670,14 +3701,14 @@ L96:
 	inc	<L88+buf_0+2
 L97:
 ;		return 2;
-	.line	894
+	.line	897
 	lda	#$2
 	brl	L93
 ;	}
-	.line	895
+	.line	898
 ;	if (chr < 0x10000)
 L10030:
-	.line	896
+	.line	899
 ;	{ /* 3-byte sequence? */
 	lda	<L88+chr_0
 	cmp	#<$10000
@@ -3686,9 +3717,9 @@ L10030:
 	bcc	L98
 	brl	L10032
 L98:
-	.line	897
+	.line	900
 ;		if (szb < 3 || IsSurrogate(chr)) return 0; /* Buffer overflow or wrong code? */
-	.line	898
+	.line	901
 	lda	<L88+szb_0
 	cmp	#<$3
 	bcs	L100
@@ -3709,12 +3740,12 @@ L101:
 	brl	L10033
 L102:
 L99:
-	.line	898
+	.line	901
 	lda	#$0
 	brl	L93
 ;		*buf++ = (TCHAR)(0xE0 | (chr >> 12 & 0x0F));
 L10033:
-	.line	899
+	.line	902
 	pei	<L88+chr_0+2
 	pei	<L88+chr_0
 	lda	#$c
@@ -3742,7 +3773,7 @@ L10033:
 	inc	<L88+buf_0+2
 L103:
 ;		*buf++ = (TCHAR)(0x80 | (chr >> 6 & 0x3F));
-	.line	900
+	.line	903
 	pei	<L88+chr_0+2
 	pei	<L88+chr_0
 	lda	#$6
@@ -3770,7 +3801,7 @@ L103:
 	inc	<L88+buf_0+2
 L104:
 ;		*buf++ = (TCHAR)(0x80 | (chr >> 0 & 0x3F));
-	.line	901
+	.line	904
 	lda	<L88+chr_0
 	and	#<$3f
 	sta	<R0
@@ -3791,26 +3822,26 @@ L104:
 	inc	<L88+buf_0+2
 L105:
 ;		return 3;
-	.line	902
+	.line	905
 	lda	#$3
 	brl	L93
 ;	}
-	.line	903
+	.line	906
 ;	/* 4-byte sequence */
 ;	if (szb < 4) return 0; /* Buffer overflow? */
 L10032:
-	.line	905
+	.line	908
 	lda	<L88+szb_0
 	cmp	#<$4
 	bcc	L106
 	brl	L10034
 L106:
-	.line	905
+	.line	908
 	lda	#$0
 	brl	L93
 ;	hc = ((chr & 0xFFFF0000) - 0xD8000000) >> 6; /* Get high 10 bits */
 L10034:
-	.line	906
+	.line	909
 	stz	<R0
 	lda	<L88+chr_0+2
 	sta	<R0+2
@@ -3829,7 +3860,7 @@ L10034:
 	sta	<L89+hc_1
 	stx	<L89+hc_1+2
 ;	chr = (chr & 0xFFFF) - 0xDC00; /* Get low 10 bits */
-	.line	907
+	.line	910
 	lda	<L88+chr_0
 	sta	<R0
 	stz	<R0+2
@@ -3841,7 +3872,7 @@ L10034:
 	adc	<R0+2
 	sta	<L88+chr_0+2
 ;	if (hc >= 0x100000 || chr >= 0x400) return 0; /* Wrong surrogate? */
-	.line	908
+	.line	911
 	lda	<L89+hc_1
 	cmp	#<$100000
 	lda	<L89+hc_1+2
@@ -3857,12 +3888,12 @@ L108:
 	brl	L10035
 L109:
 L107:
-	.line	908
+	.line	911
 	lda	#$0
 	brl	L93
 ;	chr = (hc | chr) + 0x10000;
 L10035:
-	.line	909
+	.line	912
 	lda	<L88+chr_0
 	ora	<L89+hc_1
 	sta	<R0
@@ -3877,7 +3908,7 @@ L10035:
 	adc	<R0+2
 	sta	<L88+chr_0+2
 ;	*buf++ = (TCHAR)(0xF0 | (chr >> 18 & 0x07));
-	.line	910
+	.line	913
 	pei	<L88+chr_0+2
 	pei	<L88+chr_0
 	lda	#$12
@@ -3905,7 +3936,7 @@ L10035:
 	inc	<L88+buf_0+2
 L110:
 ;	*buf++ = (TCHAR)(0x80 | (chr >> 12 & 0x3F));
-	.line	911
+	.line	914
 	pei	<L88+chr_0+2
 	pei	<L88+chr_0
 	lda	#$c
@@ -3933,7 +3964,7 @@ L110:
 	inc	<L88+buf_0+2
 L111:
 ;	*buf++ = (TCHAR)(0x80 | (chr >> 6 & 0x3F));
-	.line	912
+	.line	915
 	pei	<L88+chr_0+2
 	pei	<L88+chr_0
 	lda	#$6
@@ -3961,7 +3992,7 @@ L111:
 	inc	<L88+buf_0+2
 L112:
 ;	*buf++ = (TCHAR)(0x80 | (chr >> 0 & 0x3F));
-	.line	913
+	.line	916
 	lda	<L88+chr_0
 	and	#<$3f
 	sta	<R0
@@ -3982,7 +4013,7 @@ L112:
 	inc	<L88+buf_0+2
 L113:
 ;	return 4;
-	.line	914
+	.line	917
 	lda	#$4
 	brl	L93
 ;
@@ -4016,14 +4047,14 @@ L113:
 ;	return 1;
 ;#endif
 ;}
-	.line	945
-	.endblock	945
+	.line	948
+	.endblock	948
 L88	equ	12
 L89	equ	9
 	ends
 	efunc
-	.endfunc	945,9,12
-	.line	945
+	.endfunc	948,9,12
+	.line	948
 ;#endif	/* FF_USE_LFN */
 ;
 ;#if FF_FS_REENTRANT
@@ -4170,11 +4201,11 @@ L89	equ	9
 ;FATFS* fs /* Filesystem object */
 ;)
 ;{
-	.line	1088
 	.line	1091
+	.line	1094
 	FFDOS
 	func
-	.function	1091
+	.function	1094
 ~~sync_window:
 	longa	on
 	longi	on
@@ -4185,7 +4216,7 @@ L89	equ	9
 	phd
 	tcd
 fs_0	set	4
-	.block	1091
+	.block	1094
 ;	FRESULT res = FR_OK;
 ;
 ;	//k_debug_string("sync_window...\r\n");
@@ -4193,9 +4224,9 @@ fs_0	set	4
 ;	if (fs->wflag)
 res_1	set	0
 	.sym	res,0,5,1,16
-	.sym	fs,4,138,6,32,72
+	.sym	fs,4,138,6,32,75
 	stz	<L115+res_1
-	.line	1096
+	.line	1099
 ;	{ /* Is the disk access window dirty? */
 	ldy	#$3
 	lda	[<L114+fs_0],Y
@@ -4203,21 +4234,10 @@ res_1	set	0
 	bne	L117
 	brl	L10036
 L117:
-	.line	1097
-;		k_debug_long("sync_window:fs->wflag:",fs->wflag);
-	.line	1098
-	ldy	#$3
-	lda	[<L114+fs_0],Y
-	and	#$ff
-	sta	<R0
-	stz	<R0+2
-	pei	<R0+2
-	pei	<R0
-	pea	#^L2
-	pea	#<L2
-	jsl	~~k_debug_long
+	.line	1100
+;		//k_debug_long("sync_window:fs->wflag:",fs->wflag);
 ;		if (disk_write(fs->pdrv, fs->win, fs->winsect, 1) == RES_OK)
-	.line	1099
+	.line	1102
 ;		{
 	pea	#<$1
 	ldy	#$31
@@ -4243,17 +4263,11 @@ L117:
 	beq	L118
 	brl	L10037
 L118:
-	.line	1100
-;			k_debug_long("sync_window:disk_write:",0);
-	.line	1101
-	pea	#^$0
-	pea	#<$0
-	pea	#^L2+23
-	pea	#<L2+23
-	jsl	~~k_debug_long
+	.line	1103
+;			//k_debug_long("sync_window:disk_write:",0);
 ;			/* Write it back into the volume */
 ;			fs->wflag = 0; /* Clear window dirty flag */
-	.line	1103
+	.line	1106
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -4262,7 +4276,7 @@ L118:
 	rep	#$20
 	longa	on
 ;			if (fs->winsect - fs->fatbase < fs->fsize)
-	.line	1104
+	.line	1107
 ;			{ /* Is it in the 1st FAT? */
 	sec
 	ldy	#$2f
@@ -4284,9 +4298,9 @@ L118:
 	bcc	L119
 	brl	L10038
 L119:
-	.line	1105
+	.line	1108
 ;				if (fs->n_fats == 2)
-	.line	1106
+	.line	1109
 ;					disk_write(fs->pdrv, fs->win, fs->winsect + fs->fsize, 1); /* Reflect it to 2nd FAT if needed */
 	sep	#$20
 	longa	off
@@ -4298,7 +4312,7 @@ L119:
 	beq	L120
 	brl	L10039
 L120:
-	.line	1107
+	.line	1110
 	pea	#<$1
 	clc
 	ldy	#$2f
@@ -4328,27 +4342,27 @@ L120:
 	jsl	~~disk_write
 ;			}
 L10039:
-	.line	1108
+	.line	1111
 ;		}
 L10038:
-	.line	1109
+	.line	1112
 ;		else
 	brl	L10040
 L10037:
 ;		{
-	.line	1111
+	.line	1114
 ;			res = FR_DISK_ERR;
-	.line	1112
+	.line	1115
 	lda	#$1
 	sta	<L115+res_1
 ;		}
-	.line	1113
+	.line	1116
 L10040:
 ;	}
-	.line	1114
+	.line	1117
 ;	return res;
 L10036:
-	.line	1115
+	.line	1118
 	lda	<L115+res_1
 L121:
 	tay
@@ -4364,21 +4378,14 @@ L121:
 	tya
 	rtl
 ;}
-	.line	1116
-	.endblock	1116
+	.line	1119
+	.endblock	1119
 L114	equ	10
 L115	equ	9
 	ends
 	efunc
-	.endfunc	1116,9,10
-	.line	1116
-	data
-L2:
-	db	$73,$79,$6E,$63,$5F,$77,$69,$6E,$64,$6F,$77,$3A,$66,$73,$2D
-	db	$3E,$77,$66,$6C,$61,$67,$3A,$00,$73,$79,$6E,$63,$5F,$77,$69
-	db	$6E,$64,$6F,$77,$3A,$64,$69,$73,$6B,$5F,$77,$72,$69,$74,$65
-	db	$3A,$00
-	ends
+	.endfunc	1119,9,10
+	.line	1119
 ;#endif
 ;
 ;static FRESULT move_window( /* Returns FR_OK or FR_DISK_ERR */
@@ -4386,23 +4393,23 @@ L2:
 ;LBA_t sect /* Sector LBA to make appearance in the fs->win[] */
 ;)
 ;{
-	.line	1119
-	.line	1123
+	.line	1122
+	.line	1126
 	FFDOS
 	func
-	.function	1123
+	.function	1126
 ~~move_window:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L123
+	sbc	#L122
 	tcs
 	phd
 	tcd
 fs_0	set	4
 sect_0	set	8
-	.block	1123
+	.block	1126
 ;	FRESULT res = FR_OK;
 ;
 ;	//k_debug_string("move_window...\r\n");
@@ -4410,117 +4417,117 @@ sect_0	set	8
 ;	if (sect != fs->winsect)
 res_1	set	0
 	.sym	res,0,5,1,16
-	.sym	fs,4,138,6,32,72
+	.sym	fs,4,138,6,32,75
 	.sym	sect,8,18,6,32
-	stz	<L124+res_1
-	.line	1128
+	stz	<L123+res_1
+	.line	1131
 ;	{ /* Window offset changed? */
-	lda	<L123+sect_0
+	lda	<L122+sect_0
 	ldy	#$2f
-	cmp	[<L123+fs_0],Y
-	bne	L126
-	lda	<L123+sect_0+2
+	cmp	[<L122+fs_0],Y
+	bne	L125
+	lda	<L122+sect_0+2
 	ldy	#$31
-	cmp	[<L123+fs_0],Y
-L126:
-	bne	L127
+	cmp	[<L122+fs_0],Y
+L125:
+	bne	L126
 	brl	L10041
-L127:
-	.line	1129
+L126:
+	.line	1132
 ;#if !FF_FS_READONLY
 ;		res = sync_window(fs); /* Flush the window */
-	.line	1131
-	pei	<L123+fs_0+2
-	pei	<L123+fs_0
+	.line	1134
+	pei	<L122+fs_0+2
+	pei	<L122+fs_0
 	jsl	~~sync_window
-	sta	<L124+res_1
+	sta	<L123+res_1
 ;#endif
 ;		if (res == FR_OK)
-	.line	1133
+	.line	1136
 ;		{ /* Fill sector window with new data */
-	lda	<L124+res_1
-	beq	L128
+	lda	<L123+res_1
+	beq	L127
 	brl	L10042
-L128:
-	.line	1134
+L127:
+	.line	1137
 ;			if (disk_read(fs->pdrv, fs->win, sect, 1) != RES_OK)
-	.line	1135
+	.line	1138
 ;			{
 	pea	#<$1
-	pei	<L123+sect_0+2
-	pei	<L123+sect_0
+	pei	<L122+sect_0+2
+	pei	<L122+sect_0
 	clc
 	lda	#$33
-	adc	<L123+fs_0
+	adc	<L122+fs_0
 	sta	<R0
 	lda	#$0
-	adc	<L123+fs_0+2
+	adc	<L122+fs_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$1
-	lda	[<L123+fs_0],Y
+	lda	[<L122+fs_0],Y
 	pha
 	jsl	~~disk_read
 	tax
-	bne	L129
+	bne	L128
 	brl	L10043
-L129:
-	.line	1136
-;				sect = (LBA_t) 0 - 1; /* Invalidate window if read data is not valid */
-	.line	1137
-	lda	#$ffff
-	sta	<L123+sect_0
-	lda	#$ffff
-	sta	<L123+sect_0+2
-;				res = FR_DISK_ERR;
-	.line	1138
-	lda	#$1
-	sta	<L124+res_1
-;			}
+L128:
 	.line	1139
+;				sect = (LBA_t) 0 - 1; /* Invalidate window if read data is not valid */
+	.line	1140
+	lda	#$ffff
+	sta	<L122+sect_0
+	lda	#$ffff
+	sta	<L122+sect_0+2
+;				res = FR_DISK_ERR;
+	.line	1141
+	lda	#$1
+	sta	<L123+res_1
+;			}
+	.line	1142
 ;			fs->winsect = sect;
 L10043:
-	.line	1140
-	lda	<L123+sect_0
+	.line	1143
+	lda	<L122+sect_0
 	ldy	#$2f
-	sta	[<L123+fs_0],Y
-	lda	<L123+sect_0+2
+	sta	[<L122+fs_0],Y
+	lda	<L122+sect_0+2
 	ldy	#$31
-	sta	[<L123+fs_0],Y
+	sta	[<L122+fs_0],Y
 ;			//k_debug_long("move_window::sect:",sect);
 ;		}
-	.line	1142
+	.line	1145
 ;	}
 L10042:
-	.line	1143
+	.line	1146
 ;	//k_debug_hex("move_window::res:",res);
 ;	return res;
 L10041:
-	.line	1145
-	lda	<L124+res_1
-L130:
+	.line	1148
+	lda	<L123+res_1
+L129:
 	tay
-	lda	<L123+2
-	sta	<L123+2+8
-	lda	<L123+1
-	sta	<L123+1+8
+	lda	<L122+2
+	sta	<L122+2+8
+	lda	<L122+1
+	sta	<L122+1+8
 	pld
 	tsc
 	clc
-	adc	#L123+8
+	adc	#L122+8
 	tcs
 	tya
 	rtl
 ;}
-	.line	1146
-	.endblock	1146
-L123	equ	6
-L124	equ	5
+	.line	1149
+	.endblock	1149
+L122	equ	6
+L123	equ	5
 	ends
 	efunc
-	.endfunc	1146,5,6
-	.line	1146
+	.endfunc	1149,5,6
+	.line	1149
 ;
 ;#if !FF_FS_READONLY
 ;/*-----------------------------------------------------------------------*/
@@ -4531,256 +4538,256 @@ L124	equ	5
 ;FATFS* fs /* Filesystem object */
 ;)
 ;{
-	.line	1153
 	.line	1156
+	.line	1159
 	FFDOS
 	func
-	.function	1156
+	.function	1159
 ~~sync_fs:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L131
+	sbc	#L130
 	tcs
 	phd
 	tcd
 fs_0	set	4
-	.block	1156
+	.block	1159
 ;	FRESULT res;
 ;
 ;	res = sync_window(fs);
 res_1	set	0
 	.sym	res,0,5,1,16
-	.sym	fs,4,138,6,32,72
-	.line	1159
-	pei	<L131+fs_0+2
-	pei	<L131+fs_0
-	jsl	~~sync_window
-	sta	<L132+res_1
-;	if (res == FR_OK)
-	.line	1160
-;	{
-	lda	<L132+res_1
-	beq	L134
-	brl	L10044
-L134:
-	.line	1161
-;		if (fs->fs_type == FS_FAT32 && fs->fsi_flag == 1)
+	.sym	fs,4,138,6,32,75
 	.line	1162
+	pei	<L130+fs_0+2
+	pei	<L130+fs_0
+	jsl	~~sync_window
+	sta	<L131+res_1
+;	if (res == FR_OK)
+	.line	1163
+;	{
+	lda	<L131+res_1
+	beq	L133
+	brl	L10044
+L133:
+	.line	1164
+;		if (fs->fs_type == FS_FAT32 && fs->fsi_flag == 1)
+	.line	1165
 ;		{ /* FAT32: Update FSInfo sector if needed */
 	sep	#$20
 	longa	off
-	lda	[<L131+fs_0]
+	lda	[<L130+fs_0]
 	cmp	#<$3
+	rep	#$20
+	longa	on
+	beq	L134
+	brl	L10045
+L134:
+	sep	#$20
+	longa	off
+	ldy	#$4
+	lda	[<L130+fs_0],Y
+	cmp	#<$1
 	rep	#$20
 	longa	on
 	beq	L135
 	brl	L10045
 L135:
-	sep	#$20
-	longa	off
-	ldy	#$4
-	lda	[<L131+fs_0],Y
-	cmp	#<$1
-	rep	#$20
-	longa	on
-	beq	L136
-	brl	L10045
-L136:
-	.line	1163
+	.line	1166
 ;			/* Create FSInfo structure */
 ;			mem_set(fs->win, 0, sizeof fs->win);
-	.line	1165
+	.line	1168
 	pea	#<$200
 	pea	#<$0
 	clc
 	lda	#$33
-	adc	<L131+fs_0
+	adc	<L130+fs_0
 	sta	<R0
 	lda	#$0
-	adc	<L131+fs_0+2
+	adc	<L130+fs_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~mem_set
 ;			st_word(fs->win + BS_55AA, 0xAA55);
-	.line	1166
+	.line	1169
 	pea	#<$aa55
 	clc
 	lda	#$231
-	adc	<L131+fs_0
+	adc	<L130+fs_0
 	sta	<R0
 	lda	#$0
-	adc	<L131+fs_0+2
+	adc	<L130+fs_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_word
 ;			st_dword(fs->win + FSI_LeadSig, 0x41615252);
-	.line	1167
+	.line	1170
 	pea	#^$41615252
 	pea	#<$41615252
 	clc
 	lda	#$33
-	adc	<L131+fs_0
+	adc	<L130+fs_0
 	sta	<R0
 	lda	#$0
-	adc	<L131+fs_0+2
+	adc	<L130+fs_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;			st_dword(fs->win + FSI_StrucSig, 0x61417272);
-	.line	1168
+	.line	1171
 	pea	#^$61417272
 	pea	#<$61417272
 	clc
 	lda	#$217
-	adc	<L131+fs_0
+	adc	<L130+fs_0
 	sta	<R0
 	lda	#$0
-	adc	<L131+fs_0+2
+	adc	<L130+fs_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;			st_dword(fs->win + FSI_Free_Count, fs->free_clst);
-	.line	1169
+	.line	1172
 	ldy	#$15
-	lda	[<L131+fs_0],Y
+	lda	[<L130+fs_0],Y
 	pha
 	ldy	#$13
-	lda	[<L131+fs_0],Y
+	lda	[<L130+fs_0],Y
 	pha
 	clc
 	lda	#$21b
-	adc	<L131+fs_0
+	adc	<L130+fs_0
 	sta	<R0
 	lda	#$0
-	adc	<L131+fs_0+2
+	adc	<L130+fs_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;			st_dword(fs->win + FSI_Nxt_Free, fs->last_clst);
-	.line	1170
+	.line	1173
 	ldy	#$11
-	lda	[<L131+fs_0],Y
+	lda	[<L130+fs_0],Y
 	pha
 	ldy	#$f
-	lda	[<L131+fs_0],Y
+	lda	[<L130+fs_0],Y
 	pha
 	clc
 	lda	#$21f
-	adc	<L131+fs_0
+	adc	<L130+fs_0
 	sta	<R0
 	lda	#$0
-	adc	<L131+fs_0+2
+	adc	<L130+fs_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;			/* Write it into the FSInfo sector */
 ;			fs->winsect = fs->volbase + 1;
-	.line	1172
+	.line	1175
 	clc
 	lda	#$1
 	ldy	#$1f
-	adc	[<L131+fs_0],Y
+	adc	[<L130+fs_0],Y
 	sta	<R0
 	lda	#$0
 	ldy	#$21
-	adc	[<L131+fs_0],Y
+	adc	[<L130+fs_0],Y
 	sta	<R0+2
 	lda	<R0
 	ldy	#$2f
-	sta	[<L131+fs_0],Y
+	sta	[<L130+fs_0],Y
 	lda	<R0+2
 	ldy	#$31
-	sta	[<L131+fs_0],Y
+	sta	[<L130+fs_0],Y
 ;			disk_write(fs->pdrv, fs->win, fs->winsect, 1);
-	.line	1173
+	.line	1176
 	pea	#<$1
 	ldy	#$31
-	lda	[<L131+fs_0],Y
+	lda	[<L130+fs_0],Y
 	pha
 	ldy	#$2f
-	lda	[<L131+fs_0],Y
+	lda	[<L130+fs_0],Y
 	pha
 	clc
 	lda	#$33
-	adc	<L131+fs_0
+	adc	<L130+fs_0
 	sta	<R0
 	lda	#$0
-	adc	<L131+fs_0+2
+	adc	<L130+fs_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$1
-	lda	[<L131+fs_0],Y
+	lda	[<L130+fs_0],Y
 	pha
 	jsl	~~disk_write
 ;			fs->fsi_flag = 0;
-	.line	1174
+	.line	1177
 	sep	#$20
 	longa	off
 	lda	#$0
 	ldy	#$4
-	sta	[<L131+fs_0],Y
+	sta	[<L130+fs_0],Y
 	rep	#$20
 	longa	on
 ;		}
-	.line	1175
+	.line	1178
 ;		/* Make sure that no pending write process in the lower layer */
 ;		if (disk_ioctl(fs->pdrv, CTRL_SYNC, 0) != RES_OK)
 L10045:
-	.line	1177
+	.line	1180
 ;			res = FR_DISK_ERR;
 	pea	#^$0
 	pea	#<$0
 	pea	#<$0
 	ldy	#$1
-	lda	[<L131+fs_0],Y
+	lda	[<L130+fs_0],Y
 	pha
 	jsl	~~disk_ioctl
 	tax
-	bne	L137
+	bne	L136
 	brl	L10046
-L137:
-	.line	1178
+L136:
+	.line	1181
 	lda	#$1
-	sta	<L132+res_1
+	sta	<L131+res_1
 ;	}
 L10046:
-	.line	1179
+	.line	1182
 ;
 ;	return res;
 L10044:
-	.line	1181
-	lda	<L132+res_1
-L138:
+	.line	1184
+	lda	<L131+res_1
+L137:
 	tay
-	lda	<L131+2
-	sta	<L131+2+4
-	lda	<L131+1
-	sta	<L131+1+4
+	lda	<L130+2
+	sta	<L130+2+4
+	lda	<L130+1
+	sta	<L130+1+4
 	pld
 	tsc
 	clc
-	adc	#L131+4
+	adc	#L130+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	1182
-	.endblock	1182
-L131	equ	6
-L132	equ	5
+	.line	1185
+	.endblock	1185
+L130	equ	6
+L131	equ	5
 	ends
 	efunc
-	.endfunc	1182,5,6
-	.line	1182
+	.endfunc	1185,5,6
+	.line	1185
 ;
 ;#endif
 ;
@@ -4793,87 +4800,87 @@ L132	equ	5
 ;DWORD clst /* Cluster# to be converted */
 ;)
 ;{
-	.line	1190
-	.line	1194
+	.line	1193
+	.line	1197
 	FFDOS
 	func
-	.function	1194
+	.function	1197
 ~~clst2sect:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L139
+	sbc	#L138
 	tcs
 	phd
 	tcd
 fs_0	set	4
 clst_0	set	8
-	.block	1194
+	.block	1197
 ;	clst -= 2; /* Cluster number is origin from 2 */
-	.sym	fs,4,138,6,32,72
+	.sym	fs,4,138,6,32,75
 	.sym	clst,8,18,6,32
-	.line	1195
+	.line	1198
 	clc
 	lda	#$fffe
-	adc	<L139+clst_0
-	sta	<L139+clst_0
+	adc	<L138+clst_0
+	sta	<L138+clst_0
 	lda	#$ffff
-	adc	<L139+clst_0+2
-	sta	<L139+clst_0+2
+	adc	<L138+clst_0+2
+	sta	<L138+clst_0+2
 ;	if (clst >= fs->n_fatent - 2)
-	.line	1196
+	.line	1199
 ;		return 0; /* Is it invalid cluster number? */
 	clc
 	lda	#$fffe
 	ldy	#$17
-	adc	[<L139+fs_0],Y
+	adc	[<L138+fs_0],Y
 	sta	<R0
 	lda	#$ffff
 	ldy	#$19
-	adc	[<L139+fs_0],Y
+	adc	[<L138+fs_0],Y
 	sta	<R0+2
-	lda	<L139+clst_0
+	lda	<L138+clst_0
 	cmp	<R0
-	lda	<L139+clst_0+2
+	lda	<L138+clst_0+2
 	sbc	<R0+2
-	bcs	L142
+	bcs	L141
 	brl	L10047
-L142:
-	.line	1197
+L141:
+	.line	1200
 	lda	#$0
 	tax
 	lda	#$0
-L143:
+L142:
 	tay
-	lda	<L139+2
-	sta	<L139+2+8
-	lda	<L139+1
-	sta	<L139+1+8
+	lda	<L138+2
+	sta	<L138+2+8
+	lda	<L138+1
+	sta	<L138+1+8
 	pld
 	tsc
 	clc
-	adc	#L139+8
+	adc	#L138+8
 	tcs
 	tya
 	rtl
 ;	return fs->database + (LBA_t) fs->csize * clst; /* Start sector number of the cluster */
 L10047:
-	.line	1198
+	.line	1201
 	ldy	#$0
 	phy
 	ldy	#$9
-	lda	[<L139+fs_0],Y
+	lda	[<L138+fs_0],Y
 	ply
 	rol	A
 	ror	A
-	bpl	L144
+	bpl	L143
 	dey
-L144:
+L143:
 	sta	<R0
 	sty	<R0+2
-	pei	<L139+clst_0+2
-	pei	<L139+clst_0
+	pei	<L138+clst_0+2
+	pei	<L138+clst_0
 	pei	<R0+2
 	pei	<R0
 	xref	~~~lmul
@@ -4883,24 +4890,24 @@ L144:
 	clc
 	lda	<R0
 	ldy	#$2b
-	adc	[<L139+fs_0],Y
+	adc	[<L138+fs_0],Y
 	sta	<R1
 	lda	<R0+2
 	ldy	#$2d
-	adc	[<L139+fs_0],Y
+	adc	[<L138+fs_0],Y
 	sta	<R1+2
 	ldx	<R1+2
 	lda	<R1
-	brl	L143
+	brl	L142
 ;}
-	.line	1199
-	.endblock	1199
-L139	equ	8
-L140	equ	9
+	.line	1202
+	.endblock	1202
+L138	equ	8
+L139	equ	9
 	ends
 	efunc
-	.endfunc	1199,9,8
-	.line	1199
+	.endfunc	1202,9,8
+	.line	1202
 ;
 ;/*-----------------------------------------------------------------------*/
 ;/* FAT access - Read value of a FAT entry                                */
@@ -4911,23 +4918,23 @@ L140	equ	9
 ;DWORD clst /* Cluster number to get the value */
 ;)
 ;{
-	.line	1205
-	.line	1209
+	.line	1208
+	.line	1212
 	FFDOS
 	func
-	.function	1209
+	.function	1212
 ~~get_fat:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L145
+	sbc	#L144
 	tcs
 	phd
 	tcd
 obj_0	set	4
 clst_0	set	8
-	.block	1209
+	.block	1212
 ;	UINT wc, bc;
 ;	DWORD val;
 ;	FATFS *fs = obj->fs;
@@ -4945,86 +4952,86 @@ p_1	set	14
 	.sym	wc,0,16,1,16
 	.sym	bc,2,16,1,16
 	.sym	val,4,18,1,32
-	.sym	fs,8,138,1,32,72
+	.sym	fs,8,138,1,32,75
 	.sym	rv,12,5,1,16
 	.sym	p,14,142,1,32
-	.sym	obj,4,138,6,32,73
+	.sym	obj,4,138,6,32,76
 	.sym	clst,8,18,6,32
-	lda	[<L145+obj_0]
-	sta	<L146+fs_1
+	lda	[<L144+obj_0]
+	sta	<L145+fs_1
 	ldy	#$2
-	lda	[<L145+obj_0],Y
-	sta	<L146+fs_1+2
-	.line	1217
+	lda	[<L144+obj_0],Y
+	sta	<L145+fs_1+2
+	.line	1220
 ;	{ /* Check if in valid range */
-	lda	<L145+clst_0
+	lda	<L144+clst_0
 	cmp	#<$2
-	lda	<L145+clst_0+2
+	lda	<L144+clst_0+2
 	sbc	#^$2
-	bcs	L149
-	brl	L148
-L149:
-	lda	<L145+clst_0
-	ldy	#$17
-	cmp	[<L146+fs_1],Y
-	lda	<L145+clst_0+2
-	ldy	#$19
-	sbc	[<L146+fs_1],Y
-	bcs	L150
-	brl	L10048
-L150:
+	bcs	L148
+	brl	L147
 L148:
-	.line	1218
+	lda	<L144+clst_0
+	ldy	#$17
+	cmp	[<L145+fs_1],Y
+	lda	<L144+clst_0+2
+	ldy	#$19
+	sbc	[<L145+fs_1],Y
+	bcs	L149
+	brl	L10048
+L149:
+L147:
+	.line	1221
 ;		val = 1; /* Internal error */
-	.line	1219
+	.line	1222
 	lda	#$1
-	sta	<L146+val_1
+	sta	<L145+val_1
 	lda	#$0
-	sta	<L146+val_1+2
+	sta	<L145+val_1+2
 ;
 ;	}
-	.line	1221
+	.line	1224
 ;	else
 	brl	L10049
 L10048:
 ;	{
-	.line	1223
+	.line	1226
 ;		val = 0xFFFFFFFF; /* Default value fails on disk error */
-	.line	1224
+	.line	1227
 	lda	#$ffff
-	sta	<L146+val_1
+	sta	<L145+val_1
 	lda	#$ffff
-	sta	<L146+val_1+2
+	sta	<L145+val_1+2
 ;
 ;		////k_debug_long("get_fat::fs->fs_type:",fs->fs_type);
 ;
 ;		switch (fs->fs_type)
-	.line	1228
-	lda	[<L146+fs_1]
+	.line	1231
+	lda	[<L145+fs_1]
 	and	#$ff
 	brl	L10050
 ;		{
-	.line	1229
+	.line	1232
 ;		case FS_FAT12:
-	.line	1230
+	.line	1233
 L10052:
 ;			bc = (UINT) clst;
-	.line	1231
-	lda	<L145+clst_0
-	sta	<L146+bc_1
+	.line	1234
+	lda	<L144+clst_0
+	sta	<L145+bc_1
 ;			bc += bc / 2;
-	.line	1232
-	lda	<L146+bc_1
+	.line	1235
+	lda	<L145+bc_1
 	lsr	A
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L146+bc_1
-	sta	<L146+bc_1
+	adc	<L145+bc_1
+	sta	<L145+bc_1
 ;			if (move_window(fs, fs->fatbase + (bc / SS(fs))) != FR_OK)
-	.line	1233
+	.line	1236
 ;				break;
-	lda	<L146+bc_1
+	lda	<L145+bc_1
 	ldx	#<$9
 	xref	~~~lsr
 	jsl	~~~lsr
@@ -5035,24 +5042,24 @@ L10052:
 	clc
 	lda	<R0
 	ldy	#$23
-	adc	[<L146+fs_1],Y
+	adc	[<L145+fs_1],Y
 	sta	<R1
 	lda	<R0+2
 	ldy	#$25
-	adc	[<L146+fs_1],Y
+	adc	[<L145+fs_1],Y
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
-	pei	<L146+fs_1+2
-	pei	<L146+fs_1
+	pei	<L145+fs_1+2
+	pei	<L145+fs_1
 	jsl	~~move_window
 	tax
-	beq	L151
+	beq	L150
 	brl	L10051
-L151:
+L150:
 ;			wc = fs->win[bc++ % SS(fs)]; /* Get 1st byte of the entry */
-	.line	1235
-	lda	<L146+bc_1
+	.line	1238
+	lda	<L145+bc_1
 	and	#<$1ff
 	sta	<R0
 	clc
@@ -5060,14 +5067,14 @@ L151:
 	adc	<R0
 	sta	<R1
 	ldy	<R1
-	lda	[<L146+fs_1],Y
+	lda	[<L145+fs_1],Y
 	and	#$ff
-	sta	<L146+wc_1
-	inc	<L146+bc_1
+	sta	<L145+wc_1
+	inc	<L145+bc_1
 ;			if (move_window(fs, fs->fatbase + (bc / SS(fs))) != FR_OK)
-	.line	1236
+	.line	1239
 ;				break;
-	lda	<L146+bc_1
+	lda	<L145+bc_1
 	ldx	#<$9
 	xref	~~~lsr
 	jsl	~~~lsr
@@ -5078,24 +5085,24 @@ L151:
 	clc
 	lda	<R0
 	ldy	#$23
-	adc	[<L146+fs_1],Y
+	adc	[<L145+fs_1],Y
 	sta	<R1
 	lda	<R0+2
 	ldy	#$25
-	adc	[<L146+fs_1],Y
+	adc	[<L145+fs_1],Y
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
-	pei	<L146+fs_1+2
-	pei	<L146+fs_1
+	pei	<L145+fs_1+2
+	pei	<L145+fs_1
 	jsl	~~move_window
 	tax
-	beq	L152
+	beq	L151
 	brl	L10051
-L152:
+L151:
 ;			wc |= fs->win[bc % SS(fs)] << 8; /* Merge 2nd byte of the entry */
-	.line	1238
-	lda	<L146+bc_1
+	.line	1241
+	lda	<L145+bc_1
 	and	#<$1ff
 	sta	<R1
 	clc
@@ -5103,7 +5110,7 @@ L152:
 	adc	<R1
 	sta	<R2
 	ldy	<R2
-	lda	[<L146+fs_1],Y
+	lda	[<L145+fs_1],Y
 	and	#$ff
 	sta	<R1
 	lda	<R1
@@ -5111,44 +5118,44 @@ L152:
 	and	#$ff00
 	sta	<R0
 	lda	<R0
-	tsb	<L146+wc_1
+	tsb	<L145+wc_1
 ;			val = (clst & 1) ? (wc >> 4) : (wc & 0xFFF); /* Adjust bit position */
-	.line	1239
-	lda	<L145+clst_0
+	.line	1242
+	lda	<L144+clst_0
 	and	#<$1
-	bne	L154
-	brl	L153
-L154:
-	lda	<L146+wc_1
+	bne	L153
+	brl	L152
+L153:
+	lda	<L145+wc_1
 	lsr	A
 	lsr	A
 	lsr	A
 	lsr	A
 	sta	<R0
 	lda	<R0
-	bra	L155
-L153:
-	lda	<L146+wc_1
+	bra	L154
+L152:
+	lda	<L145+wc_1
 	and	#<$fff
 	sta	<R0
 	lda	<R0
-L155:
+L154:
 	sta	<R0
 	lda	<R0
-	sta	<L146+val_1
-	stz	<L146+val_1+2
+	sta	<L145+val_1
+	stz	<L145+val_1+2
 ;			break;
-	.line	1240
+	.line	1243
 	brl	L10051
 ;
 ;		case FS_FAT16:
-	.line	1242
+	.line	1245
 L10053:
 ;			if (move_window(fs, fs->fatbase + (clst / (SS(fs) / 2))) != FR_OK)
-	.line	1243
+	.line	1246
 ;				break;
-	pei	<L145+clst_0+2
-	pei	<L145+clst_0
+	pei	<L144+clst_0+2
+	pei	<L144+clst_0
 	lda	#$8
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -5157,21 +5164,21 @@ L10053:
 	clc
 	lda	<R0
 	ldy	#$23
-	adc	[<L146+fs_1],Y
+	adc	[<L145+fs_1],Y
 	sta	<R1
 	lda	<R0+2
 	ldy	#$25
-	adc	[<L146+fs_1],Y
+	adc	[<L145+fs_1],Y
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
-	pei	<L146+fs_1+2
-	pei	<L146+fs_1
+	pei	<L145+fs_1+2
+	pei	<L145+fs_1
 	jsl	~~move_window
 	tax
-	beq	L156
+	beq	L155
 	brl	L10051
-L156:
+L155:
 ;
 ;			//k_debug_byte_array("fs->win:",fs->win,512);
 ;
@@ -5180,10 +5187,10 @@ L156:
 ;			//k_debug_byte_array("fs->win:",(LPSTR)(fs->win + clst * 2 % SS(fs)),4);
 ;
 ;			val = ld_word(fs->win + clst * 2 % SS(fs)); /* Simple WORD array */
-	.line	1252
-	lda	<L145+clst_0
+	.line	1255
+	lda	<L144+clst_0
 	sta	<R0
-	lda	<L145+clst_0+2
+	lda	<L144+clst_0+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -5199,10 +5206,10 @@ L156:
 	adc	<R1+2
 	sta	<R0+2
 	clc
-	lda	<L146+fs_1
+	lda	<L145+fs_1
 	adc	<R0
 	sta	<R1
-	lda	<L146+fs_1+2
+	lda	<L145+fs_1+2
 	adc	<R0+2
 	sta	<R1+2
 	pei	<R1+2
@@ -5211,11 +5218,11 @@ L156:
 	sta	<R2
 	ldy	#$0
 	lda	<R2
-	bpl	L157
+	bpl	L156
 	dey
-L157:
-	sta	<L146+val_1
-	sty	<L146+val_1+2
+L156:
+	sta	<L145+val_1
+	sty	<L145+val_1+2
 ;
 ;			/*
 ;			p = ((UCHAR*)((ULONG)fs->win + (ULONG)clst * 2L % ((ULONG)SS(fs)) ));
@@ -5239,17 +5246,17 @@ L157:
 ;			*/
 ;
 ;			break;
-	.line	1275
+	.line	1278
 	brl	L10051
 ;
 ;		case FS_FAT32:
-	.line	1277
+	.line	1280
 L10054:
 ;			if (move_window(fs, fs->fatbase + (clst / (SS(fs) / 4))) != FR_OK)
-	.line	1278
+	.line	1281
 ;				break;
-	pei	<L145+clst_0+2
-	pei	<L145+clst_0
+	pei	<L144+clst_0+2
+	pei	<L144+clst_0
 	lda	#$7
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -5258,26 +5265,26 @@ L10054:
 	clc
 	lda	<R0
 	ldy	#$23
-	adc	[<L146+fs_1],Y
+	adc	[<L145+fs_1],Y
 	sta	<R1
 	lda	<R0+2
 	ldy	#$25
-	adc	[<L146+fs_1],Y
+	adc	[<L145+fs_1],Y
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
-	pei	<L146+fs_1+2
-	pei	<L146+fs_1
+	pei	<L145+fs_1+2
+	pei	<L145+fs_1
 	jsl	~~move_window
 	tax
-	beq	L158
+	beq	L157
 	brl	L10051
-L158:
+L157:
 ;			val = ld_dword(fs->win + clst * 4 % SS(fs)) & 0x0FFFFFFF; /* Simple DWORD array but mask out upper 4 bits */
-	.line	1280
-	lda	<L145+clst_0
+	.line	1283
+	lda	<L144+clst_0
 	sta	<R0
-	lda	<L145+clst_0+2
+	lda	<L144+clst_0+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -5295,10 +5302,10 @@ L158:
 	adc	<R1+2
 	sta	<R0+2
 	clc
-	lda	<L146+fs_1
+	lda	<L145+fs_1
 	adc	<R0
 	sta	<R1
-	lda	<L146+fs_1+2
+	lda	<L145+fs_1+2
 	adc	<R0+2
 	sta	<R1+2
 	pei	<R1+2
@@ -5307,12 +5314,12 @@ L158:
 	sta	<R2
 	stx	<R2+2
 	lda	<R2
-	sta	<L146+val_1
+	sta	<L145+val_1
 	lda	<R2+2
 	and	#^$fffffff
-	sta	<L146+val_1+2
+	sta	<L145+val_1+2
 ;			break;
-	.line	1281
+	.line	1284
 	brl	L10051
 ;#if FF_FS_EXFAT
 ;			case FS_EXFAT :
@@ -5348,16 +5355,16 @@ L158:
 ;			/* go to default */
 ;#endif
 ;		default:
-	.line	1315
+	.line	1318
 L10055:
 ;			val = 1; /* Internal error */
-	.line	1316
+	.line	1319
 	lda	#$1
-	sta	<L146+val_1
+	sta	<L145+val_1
 	lda	#$0
-	sta	<L146+val_1+2
+	sta	<L145+val_1+2
 ;		}
-	.line	1317
+	.line	1320
 	brl	L10051
 L10050:
 	xref	~~~swt
@@ -5372,37 +5379,37 @@ L10050:
 	dw	L10055-1
 L10051:
 ;	}
-	.line	1318
+	.line	1321
 L10049:
 ;
 ;	////k_debug_long("get_fat::val:",val);
 ;
 ;	return val;
-	.line	1322
-	ldx	<L146+val_1+2
-	lda	<L146+val_1
-L159:
+	.line	1325
+	ldx	<L145+val_1+2
+	lda	<L145+val_1
+L158:
 	tay
-	lda	<L145+2
-	sta	<L145+2+8
-	lda	<L145+1
-	sta	<L145+1+8
+	lda	<L144+2
+	sta	<L144+2+8
+	lda	<L144+1
+	sta	<L144+1+8
 	pld
 	tsc
 	clc
-	adc	#L145+8
+	adc	#L144+8
 	tcs
 	tya
 	rtl
 ;}
-	.line	1323
-	.endblock	1323
-L145	equ	30
-L146	equ	13
+	.line	1326
+	.endblock	1326
+L144	equ	30
+L145	equ	13
 	ends
 	efunc
-	.endfunc	1323,13,30
-	.line	1323
+	.endfunc	1326,13,30
+	.line	1326
 ;
 ;#if !FF_FS_READONLY
 ;/*-----------------------------------------------------------------------*/
@@ -5415,24 +5422,24 @@ L146	equ	13
 ;DWORD val /* New value to be set to the entry */
 ;)
 ;{
-	.line	1330
-	.line	1335
+	.line	1333
+	.line	1338
 	FFDOS
 	func
-	.function	1335
+	.function	1338
 ~~put_fat:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L160
+	sbc	#L159
 	tcs
 	phd
 	tcd
 fs_0	set	4
 clst_0	set	8
 val_0	set	12
-	.block	1335
+	.block	1338
 ;	UINT bc;
 ;	BYTE *p;
 ;	FRESULT res = FR_INT_ERR;
@@ -5444,56 +5451,56 @@ res_1	set	6
 	.sym	bc,0,16,1,16
 	.sym	p,2,142,1,32
 	.sym	res,6,5,1,16
-	.sym	fs,4,138,6,32,72
+	.sym	fs,4,138,6,32,75
 	.sym	clst,8,18,6,32
 	.sym	val,12,18,6,32
 	lda	#$2
-	sta	<L161+res_1
-	.line	1340
+	sta	<L160+res_1
+	.line	1343
 ;	{ /* Check if in valid range */
-	lda	<L160+clst_0
+	lda	<L159+clst_0
 	cmp	#<$2
-	lda	<L160+clst_0+2
+	lda	<L159+clst_0+2
 	sbc	#^$2
-	bcs	L163
+	bcs	L162
+	brl	L10056
+L162:
+	lda	<L159+clst_0
+	ldy	#$17
+	cmp	[<L159+fs_0],Y
+	lda	<L159+clst_0+2
+	ldy	#$19
+	sbc	[<L159+fs_0],Y
+	bcc	L163
 	brl	L10056
 L163:
-	lda	<L160+clst_0
-	ldy	#$17
-	cmp	[<L160+fs_0],Y
-	lda	<L160+clst_0+2
-	ldy	#$19
-	sbc	[<L160+fs_0],Y
-	bcc	L164
-	brl	L10056
-L164:
-	.line	1341
+	.line	1344
 ;		switch (fs->fs_type)
-	.line	1342
-	lda	[<L160+fs_0]
+	.line	1345
+	lda	[<L159+fs_0]
 	and	#$ff
 	brl	L10057
 ;		{
-	.line	1343
+	.line	1346
 ;		case FS_FAT12:
-	.line	1344
+	.line	1347
 L10059:
 ;			bc = (UINT) clst;
-	.line	1345
-	lda	<L160+clst_0
-	sta	<L161+bc_1
+	.line	1348
+	lda	<L159+clst_0
+	sta	<L160+bc_1
 ;			bc += bc / 2; /* bc: byte offset of the entry */
-	.line	1346
-	lda	<L161+bc_1
+	.line	1349
+	lda	<L160+bc_1
 	lsr	A
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L161+bc_1
-	sta	<L161+bc_1
+	adc	<L160+bc_1
+	sta	<L160+bc_1
 ;			res = move_window(fs, fs->fatbase + (bc / SS(fs)));
-	.line	1347
-	lda	<L161+bc_1
+	.line	1350
+	lda	<L160+bc_1
 	ldx	#<$9
 	xref	~~~lsr
 	jsl	~~~lsr
@@ -5504,28 +5511,28 @@ L10059:
 	clc
 	lda	<R0
 	ldy	#$23
-	adc	[<L160+fs_0],Y
+	adc	[<L159+fs_0],Y
 	sta	<R1
 	lda	<R0+2
 	ldy	#$25
-	adc	[<L160+fs_0],Y
+	adc	[<L159+fs_0],Y
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
-	pei	<L160+fs_0+2
-	pei	<L160+fs_0
+	pei	<L159+fs_0+2
+	pei	<L159+fs_0
 	jsl	~~move_window
-	sta	<L161+res_1
+	sta	<L160+res_1
 ;			if (res != FR_OK)
-	.line	1348
+	.line	1351
 ;				break;
-	lda	<L161+res_1
-	beq	L165
+	lda	<L160+res_1
+	beq	L164
 	brl	L10058
-L165:
+L164:
 ;			p = fs->win + bc++ % SS(fs);
-	.line	1350
-	lda	<L161+bc_1
+	.line	1353
+	lda	<L160+bc_1
 	and	#<$1ff
 	sta	<R0
 	lda	<R0
@@ -5539,24 +5546,24 @@ L165:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L160+fs_0
+	lda	<L159+fs_0
 	adc	<R1
-	sta	<L161+p_1
-	lda	<L160+fs_0+2
+	sta	<L160+p_1
+	lda	<L159+fs_0+2
 	adc	<R1+2
-	sta	<L161+p_1+2
-	inc	<L161+bc_1
+	sta	<L160+p_1+2
+	inc	<L160+bc_1
 ;			*p = (clst & 1) ? ((*p & 0x0F) | ((BYTE) val << 4)) : (BYTE) val; /* Update 1st byte */
-	.line	1351
-	lda	<L160+clst_0
+	.line	1354
+	lda	<L159+clst_0
 	and	#<$1
-	bne	L167
-	brl	L166
-L167:
-	lda	[<L161+p_1]
+	bne	L166
+	brl	L165
+L166:
+	lda	[<L160+p_1]
 	and	#<$f
 	sta	<R0
-	lda	<L160+val_0
+	lda	<L159+val_0
 	and	#$ff
 	sta	<R2
 	lda	<R2
@@ -5567,28 +5574,28 @@ L167:
 	sta	<R1
 	lda	<R1
 	ora	<R0
-	bra	L168
-L166:
-	lda	<L160+val_0
+	bra	L167
+L165:
+	lda	<L159+val_0
 	and	#$ff
-L168:
+L167:
 	sep	#$20
 	longa	off
-	sta	[<L161+p_1]
+	sta	[<L160+p_1]
 	rep	#$20
 	longa	on
 ;			fs->wflag = 1;
-	.line	1352
+	.line	1355
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$3
-	sta	[<L160+fs_0],Y
+	sta	[<L159+fs_0],Y
 	rep	#$20
 	longa	on
 ;			res = move_window(fs, fs->fatbase + (bc / SS(fs)));
-	.line	1353
-	lda	<L161+bc_1
+	.line	1356
+	lda	<L160+bc_1
 	ldx	#<$9
 	xref	~~~lsr
 	jsl	~~~lsr
@@ -5599,28 +5606,28 @@ L168:
 	clc
 	lda	<R0
 	ldy	#$23
-	adc	[<L160+fs_0],Y
+	adc	[<L159+fs_0],Y
 	sta	<R1
 	lda	<R0+2
 	ldy	#$25
-	adc	[<L160+fs_0],Y
+	adc	[<L159+fs_0],Y
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
-	pei	<L160+fs_0+2
-	pei	<L160+fs_0
+	pei	<L159+fs_0+2
+	pei	<L159+fs_0
 	jsl	~~move_window
-	sta	<L161+res_1
+	sta	<L160+res_1
 ;			if (res != FR_OK)
-	.line	1354
+	.line	1357
 ;				break;
-	lda	<L161+res_1
-	beq	L169
+	lda	<L160+res_1
+	beq	L168
 	brl	L10058
-L169:
+L168:
 ;			p = fs->win + bc % SS(fs);
-	.line	1356
-	lda	<L161+bc_1
+	.line	1359
+	lda	<L160+bc_1
 	and	#<$1ff
 	sta	<R0
 	lda	<R0
@@ -5634,24 +5641,24 @@ L169:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L160+fs_0
+	lda	<L159+fs_0
 	adc	<R1
-	sta	<L161+p_1
-	lda	<L160+fs_0+2
+	sta	<L160+p_1
+	lda	<L159+fs_0+2
 	adc	<R1+2
-	sta	<L161+p_1+2
+	sta	<L160+p_1+2
 ;			*p = (clst & 1) ?
-	.line	1357
+	.line	1360
 ;					(BYTE) (val >> 4) :
 ;					((*p & 0xF0) | ((BYTE) (val >> 8) & 0x0F)); /* Update 2nd byte */
-	lda	<L160+clst_0
+	lda	<L159+clst_0
 	and	#<$1
-	bne	L171
-	brl	L170
-L171:
-	lda	<L160+val_0
+	bne	L170
+	brl	L169
+L170:
+	lda	<L159+val_0
 	sta	<R0
-	lda	<L160+val_0+2
+	lda	<L159+val_0+2
 	sta	<R0+2
 	lsr	<R0+2
 	ror	<R0
@@ -5663,10 +5670,10 @@ L171:
 	ror	<R0
 	lda	<R0
 	and	#$ff
-	bra	L172
-L170:
-	pei	<L160+val_0+2
-	pei	<L160+val_0
+	bra	L171
+L169:
+	pei	<L159+val_0+2
+	pei	<L159+val_0
 	lda	#$8
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -5675,37 +5682,37 @@ L170:
 	lda	<R0
 	and	#<$f
 	sta	<R1
-	lda	[<L161+p_1]
+	lda	[<L160+p_1]
 	and	#<$f0
 	sta	<R0
 	lda	<R0
 	ora	<R1
-L172:
+L171:
 	sep	#$20
 	longa	off
-	sta	[<L161+p_1]
+	sta	[<L160+p_1]
 	rep	#$20
 	longa	on
 ;			fs->wflag = 1;
-	.line	1360
+	.line	1363
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$3
-	sta	[<L160+fs_0],Y
+	sta	[<L159+fs_0],Y
 	rep	#$20
 	longa	on
 ;			break;
-	.line	1361
+	.line	1364
 	brl	L10058
 ;
 ;		case FS_FAT16:
-	.line	1363
+	.line	1366
 L10060:
 ;			res = move_window(fs, fs->fatbase + (clst / (SS(fs) / 2)));
-	.line	1364
-	pei	<L160+clst_0+2
-	pei	<L160+clst_0
+	.line	1367
+	pei	<L159+clst_0+2
+	pei	<L159+clst_0
 	lda	#$8
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -5714,31 +5721,31 @@ L10060:
 	clc
 	lda	<R0
 	ldy	#$23
-	adc	[<L160+fs_0],Y
+	adc	[<L159+fs_0],Y
 	sta	<R1
 	lda	<R0+2
 	ldy	#$25
-	adc	[<L160+fs_0],Y
+	adc	[<L159+fs_0],Y
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
-	pei	<L160+fs_0+2
-	pei	<L160+fs_0
+	pei	<L159+fs_0+2
+	pei	<L159+fs_0
 	jsl	~~move_window
-	sta	<L161+res_1
+	sta	<L160+res_1
 ;			if (res != FR_OK)
-	.line	1365
+	.line	1368
 ;				break;
-	lda	<L161+res_1
-	beq	L173
+	lda	<L160+res_1
+	beq	L172
 	brl	L10058
-L173:
+L172:
 ;			st_word(fs->win + clst * 2 % SS(fs), (WORD) val); /* Simple WORD array */
-	.line	1367
-	pei	<L160+val_0
-	lda	<L160+clst_0
+	.line	1370
+	pei	<L159+val_0
+	lda	<L159+clst_0
 	sta	<R0
-	lda	<L160+clst_0+2
+	lda	<L159+clst_0+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -5754,38 +5761,38 @@ L173:
 	adc	<R1+2
 	sta	<R0+2
 	clc
-	lda	<L160+fs_0
+	lda	<L159+fs_0
 	adc	<R0
 	sta	<R1
-	lda	<L160+fs_0+2
+	lda	<L159+fs_0+2
 	adc	<R0+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~st_word
 ;			fs->wflag = 1;
-	.line	1368
+	.line	1371
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$3
-	sta	[<L160+fs_0],Y
+	sta	[<L159+fs_0],Y
 	rep	#$20
 	longa	on
 ;			break;
-	.line	1369
+	.line	1372
 	brl	L10058
 ;
 ;		case FS_FAT32:
-	.line	1371
+	.line	1374
 L10061:
 ;#if FF_FS_EXFAT
 ;			case FS_EXFAT :
 ;#endif
 ;			res = move_window(fs, fs->fatbase + (clst / (SS(fs) / 4)));
-	.line	1375
-	pei	<L160+clst_0+2
-	pei	<L160+clst_0
+	.line	1378
+	pei	<L159+clst_0+2
+	pei	<L159+clst_0
 	lda	#$7
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -5794,46 +5801,46 @@ L10061:
 	clc
 	lda	<R0
 	ldy	#$23
-	adc	[<L160+fs_0],Y
+	adc	[<L159+fs_0],Y
 	sta	<R1
 	lda	<R0+2
 	ldy	#$25
-	adc	[<L160+fs_0],Y
+	adc	[<L159+fs_0],Y
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
-	pei	<L160+fs_0+2
-	pei	<L160+fs_0
+	pei	<L159+fs_0+2
+	pei	<L159+fs_0
 	jsl	~~move_window
-	sta	<L161+res_1
+	sta	<L160+res_1
 ;			if (res != FR_OK)
-	.line	1376
+	.line	1379
 ;				break;
-	lda	<L161+res_1
-	beq	L174
+	lda	<L160+res_1
+	beq	L173
 	brl	L10058
-L174:
+L173:
 ;			if (!FF_FS_EXFAT || fs->fs_type != FS_EXFAT)
-	.line	1378
+	.line	1381
 ;			{
-	brl	L175
+	brl	L174
 	sep	#$20
 	longa	off
-	lda	[<L160+fs_0]
+	lda	[<L159+fs_0]
 	cmp	#<$4
 	rep	#$20
 	longa	on
-	bne	L176
+	bne	L175
 	brl	L10062
-L176:
 L175:
-	.line	1379
+L174:
+	.line	1382
 ;				val = (val & 0x0FFFFFFF)
-	.line	1380
+	.line	1383
 ;						| (ld_dword(fs->win + clst * 4 % SS(fs)) & 0xF0000000);
-	lda	<L160+clst_0
+	lda	<L159+clst_0
 	sta	<R0
-	lda	<L160+clst_0+2
+	lda	<L159+clst_0+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -5851,10 +5858,10 @@ L175:
 	adc	<R1+2
 	sta	<R0+2
 	clc
-	lda	<L160+fs_0
+	lda	<L159+fs_0
 	adc	<R0
 	sta	<R1
-	lda	<L160+fs_0+2
+	lda	<L159+fs_0+2
 	adc	<R0+2
 	sta	<R1+2
 	pei	<R1+2
@@ -5866,27 +5873,27 @@ L175:
 	lda	<R2+2
 	and	#^$f0000000
 	sta	<R3+2
-	lda	<L160+val_0
+	lda	<L159+val_0
 	sta	<R2
-	lda	<L160+val_0+2
+	lda	<L159+val_0+2
 	and	#^$fffffff
 	sta	<R2+2
 	lda	<R2
 	ora	<R3
-	sta	<L160+val_0
+	sta	<L159+val_0
 	lda	<R2+2
 	ora	<R3+2
-	sta	<L160+val_0+2
+	sta	<L159+val_0+2
 ;			}
-	.line	1382
+	.line	1385
 ;			st_dword(fs->win + clst * 4 % SS(fs), val);
 L10062:
-	.line	1383
-	pei	<L160+val_0+2
-	pei	<L160+val_0
-	lda	<L160+clst_0
+	.line	1386
+	pei	<L159+val_0+2
+	pei	<L159+val_0
+	lda	<L159+clst_0
 	sta	<R0
-	lda	<L160+clst_0+2
+	lda	<L159+clst_0+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -5904,29 +5911,29 @@ L10062:
 	adc	<R1+2
 	sta	<R0+2
 	clc
-	lda	<L160+fs_0
+	lda	<L159+fs_0
 	adc	<R0
 	sta	<R1
-	lda	<L160+fs_0+2
+	lda	<L159+fs_0+2
 	adc	<R0+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~st_dword
 ;			fs->wflag = 1;
-	.line	1384
+	.line	1387
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$3
-	sta	[<L160+fs_0],Y
+	sta	[<L159+fs_0],Y
 	rep	#$20
 	longa	on
 ;			break;
-	.line	1385
+	.line	1388
 	brl	L10058
 ;		}
-	.line	1386
+	.line	1389
 L10057:
 	xref	~~~swt
 	jsl	~~~swt
@@ -5940,33 +5947,33 @@ L10057:
 	dw	L10058-1
 L10058:
 ;	}
-	.line	1387
+	.line	1390
 ;	return res;
 L10056:
-	.line	1388
-	lda	<L161+res_1
-L177:
+	.line	1391
+	lda	<L160+res_1
+L176:
 	tay
-	lda	<L160+2
-	sta	<L160+2+12
-	lda	<L160+1
-	sta	<L160+1+12
+	lda	<L159+2
+	sta	<L159+2+12
+	lda	<L159+1
+	sta	<L159+1+12
 	pld
 	tsc
 	clc
-	adc	#L160+12
+	adc	#L159+12
 	tcs
 	tya
 	rtl
 ;}
-	.line	1389
-	.endblock	1389
-L160	equ	24
-L161	equ	17
+	.line	1392
+	.endblock	1392
+L159	equ	24
+L160	equ	17
 	ends
 	efunc
-	.endfunc	1389,17,24
-	.line	1389
+	.endfunc	1392,17,24
+	.line	1392
 ;
 ;#endif /* !FF_FS_READONLY */
 ;
@@ -6114,24 +6121,24 @@ L161	equ	17
 ;DWORD pclst /* Previous cluster of clst (0 if entire chain) */
 ;)
 ;{
-	.line	1531
-	.line	1536
+	.line	1534
+	.line	1539
 	FFDOS
 	func
-	.function	1536
+	.function	1539
 ~~remove_chain:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L178
+	sbc	#L177
 	tcs
 	phd
 	tcd
 obj_0	set	4
 clst_0	set	8
 pclst_0	set	12
-	.block	1536
+	.block	1539
 ;	FRESULT res = FR_OK;
 ;	DWORD nxt;
 ;	FATFS *fs = obj->fs;
@@ -6148,47 +6155,47 @@ nxt_1	set	2
 fs_1	set	6
 	.sym	res,0,5,1,16
 	.sym	nxt,2,18,1,32
-	.sym	fs,6,138,1,32,72
-	.sym	obj,4,138,6,32,73
+	.sym	fs,6,138,1,32,75
+	.sym	obj,4,138,6,32,76
 	.sym	clst,8,18,6,32
 	.sym	pclst,12,18,6,32
-	stz	<L179+res_1
-	lda	[<L178+obj_0]
-	sta	<L179+fs_1
+	stz	<L178+res_1
+	lda	[<L177+obj_0]
+	sta	<L178+fs_1
 	ldy	#$2
-	lda	[<L178+obj_0],Y
-	sta	<L179+fs_1+2
-	.line	1547
+	lda	[<L177+obj_0],Y
+	sta	<L178+fs_1+2
+	.line	1550
 ;		return FR_INT_ERR; /* Check if in valid range */
-	lda	<L178+clst_0
+	lda	<L177+clst_0
 	cmp	#<$2
-	lda	<L178+clst_0+2
+	lda	<L177+clst_0+2
 	sbc	#^$2
-	bcs	L182
-	brl	L181
-L182:
-	lda	<L178+clst_0
-	ldy	#$17
-	cmp	[<L179+fs_1],Y
-	lda	<L178+clst_0+2
-	ldy	#$19
-	sbc	[<L179+fs_1],Y
-	bcs	L183
-	brl	L10063
-L183:
+	bcs	L181
+	brl	L180
 L181:
-	.line	1548
+	lda	<L177+clst_0
+	ldy	#$17
+	cmp	[<L178+fs_1],Y
+	lda	<L177+clst_0+2
+	ldy	#$19
+	sbc	[<L178+fs_1],Y
+	bcs	L182
+	brl	L10063
+L182:
+L180:
+	.line	1551
 	lda	#$2
-L184:
+L183:
 	tay
-	lda	<L178+2
-	sta	<L178+2+12
-	lda	<L178+1
-	sta	<L178+1+12
+	lda	<L177+2
+	sta	<L177+2+12
+	lda	<L177+1
+	sta	<L177+1+12
 	pld
 	tsc
 	clc
-	adc	#L178+12
+	adc	#L177+12
 	tcs
 	tya
 	rtl
@@ -6196,198 +6203,198 @@ L184:
 ;	/* Mark the previous cluster 'EOC' on the FAT if it exists */
 ;	if (pclst != 0
 L10063:
-	.line	1551
+	.line	1554
 ;			&& (!FF_FS_EXFAT || fs->fs_type != FS_EXFAT || obj->stat != 2))
 ;	{
-	lda	<L178+pclst_0
-	ora	<L178+pclst_0+2
-	bne	L185
+	lda	<L177+pclst_0
+	ora	<L177+pclst_0+2
+	bne	L184
 	brl	L10064
-L185:
-	brl	L186
+L184:
+	brl	L185
 	sep	#$20
 	longa	off
-	lda	[<L179+fs_1]
+	lda	[<L178+fs_1]
 	cmp	#<$4
 	rep	#$20
 	longa	on
-	beq	L187
-	brl	L186
-L187:
+	beq	L186
+	brl	L185
+L186:
 	sep	#$20
 	longa	off
 	ldy	#$7
-	lda	[<L178+obj_0],Y
+	lda	[<L177+obj_0],Y
 	cmp	#<$2
 	rep	#$20
 	longa	on
-	bne	L188
+	bne	L187
 	brl	L10064
-L188:
-L186:
-	.line	1553
+L187:
+L185:
+	.line	1556
 ;		res = put_fat(fs, pclst, 0xFFFFFFFF);
-	.line	1554
+	.line	1557
 	pea	#^$ffffffff
 	pea	#<$ffffffff
-	pei	<L178+pclst_0+2
-	pei	<L178+pclst_0
-	pei	<L179+fs_1+2
-	pei	<L179+fs_1
+	pei	<L177+pclst_0+2
+	pei	<L177+pclst_0
+	pei	<L178+fs_1+2
+	pei	<L178+fs_1
 	jsl	~~put_fat
-	sta	<L179+res_1
+	sta	<L178+res_1
 ;		if (res != FR_OK)
-	.line	1555
+	.line	1558
 ;			return res;
-	lda	<L179+res_1
-	bne	L189
+	lda	<L178+res_1
+	bne	L188
 	brl	L10065
-L189:
-	.line	1556
-	lda	<L179+res_1
-	brl	L184
+L188:
+	.line	1559
+	lda	<L178+res_1
+	brl	L183
 ;	}
 L10065:
-	.line	1557
+	.line	1560
 ;
 ;	/* Remove the chain */
 ;	do
 L10064:
-	.line	1560
+	.line	1563
 L10068:
 ;	{
-	.line	1561
+	.line	1564
 ;		nxt = get_fat(obj, clst); /* Get cluster status */
-	.line	1562
-	pei	<L178+clst_0+2
-	pei	<L178+clst_0
-	pei	<L178+obj_0+2
-	pei	<L178+obj_0
-	jsl	~~get_fat
-	sta	<L179+nxt_1
-	stx	<L179+nxt_1+2
-;		if (nxt == 0)
-	.line	1563
-;			break; /* Empty cluster? */
-	lda	<L179+nxt_1
-	ora	<L179+nxt_1+2
-	bne	L190
-	brl	L10067
-L190:
-;		if (nxt == 1)
 	.line	1565
-;			return FR_INT_ERR; /* Internal error? */
-	lda	<L179+nxt_1
-	cmp	#<$1
-	bne	L191
-	lda	<L179+nxt_1+2
-	cmp	#^$1
-L191:
-	beq	L192
-	brl	L10069
-L192:
+	pei	<L177+clst_0+2
+	pei	<L177+clst_0
+	pei	<L177+obj_0+2
+	pei	<L177+obj_0
+	jsl	~~get_fat
+	sta	<L178+nxt_1
+	stx	<L178+nxt_1+2
+;		if (nxt == 0)
 	.line	1566
+;			break; /* Empty cluster? */
+	lda	<L178+nxt_1
+	ora	<L178+nxt_1+2
+	bne	L189
+	brl	L10067
+L189:
+;		if (nxt == 1)
+	.line	1568
+;			return FR_INT_ERR; /* Internal error? */
+	lda	<L178+nxt_1
+	cmp	#<$1
+	bne	L190
+	lda	<L178+nxt_1+2
+	cmp	#^$1
+L190:
+	beq	L191
+	brl	L10069
+L191:
+	.line	1569
 	lda	#$2
-	brl	L184
+	brl	L183
 ;		if (nxt == 0xFFFFFFFF)
 L10069:
-	.line	1567
+	.line	1570
 ;			return FR_DISK_ERR; /* Disk error? */
-	lda	<L179+nxt_1
+	lda	<L178+nxt_1
 	cmp	#<$ffffffff
-	bne	L193
-	lda	<L179+nxt_1+2
+	bne	L192
+	lda	<L178+nxt_1+2
 	cmp	#^$ffffffff
-L193:
-	beq	L194
+L192:
+	beq	L193
 	brl	L10070
-L194:
-	.line	1568
+L193:
+	.line	1571
 	lda	#$1
-	brl	L184
+	brl	L183
 ;		if (!FF_FS_EXFAT || fs->fs_type != FS_EXFAT)
 L10070:
-	.line	1569
+	.line	1572
 ;		{
-	brl	L195
+	brl	L194
 	sep	#$20
 	longa	off
-	lda	[<L179+fs_1]
+	lda	[<L178+fs_1]
 	cmp	#<$4
 	rep	#$20
 	longa	on
-	bne	L196
+	bne	L195
 	brl	L10071
-L196:
 L195:
-	.line	1570
+L194:
+	.line	1573
 ;			res = put_fat(fs, clst, 0); /* Mark the cluster 'free' on the FAT */
-	.line	1571
+	.line	1574
 	pea	#^$0
 	pea	#<$0
-	pei	<L178+clst_0+2
-	pei	<L178+clst_0
-	pei	<L179+fs_1+2
-	pei	<L179+fs_1
+	pei	<L177+clst_0+2
+	pei	<L177+clst_0
+	pei	<L178+fs_1+2
+	pei	<L178+fs_1
 	jsl	~~put_fat
-	sta	<L179+res_1
+	sta	<L178+res_1
 ;			if (res != FR_OK)
-	.line	1572
+	.line	1575
 ;				return res;
-	lda	<L179+res_1
-	bne	L197
+	lda	<L178+res_1
+	bne	L196
 	brl	L10072
-L197:
-	.line	1573
-	lda	<L179+res_1
-	brl	L184
+L196:
+	.line	1576
+	lda	<L178+res_1
+	brl	L183
 ;		}
 L10072:
-	.line	1574
+	.line	1577
 ;		if (fs->free_clst < fs->n_fatent - 2)
 L10071:
-	.line	1575
+	.line	1578
 ;		{ /* Update FSINFO */
 	clc
 	lda	#$fffe
 	ldy	#$17
-	adc	[<L179+fs_1],Y
+	adc	[<L178+fs_1],Y
 	sta	<R0
 	lda	#$ffff
 	ldy	#$19
-	adc	[<L179+fs_1],Y
+	adc	[<L178+fs_1],Y
 	sta	<R0+2
 	ldy	#$13
-	lda	[<L179+fs_1],Y
+	lda	[<L178+fs_1],Y
 	cmp	<R0
 	ldy	#$15
-	lda	[<L179+fs_1],Y
+	lda	[<L178+fs_1],Y
 	sbc	<R0+2
-	bcc	L198
+	bcc	L197
 	brl	L10073
-L198:
-	.line	1576
+L197:
+	.line	1579
 ;			fs->free_clst++;
-	.line	1577
+	.line	1580
 	clc
 	lda	#$1
 	ldy	#$13
-	adc	[<L179+fs_1],Y
+	adc	[<L178+fs_1],Y
 	ldy	#$13
-	sta	[<L179+fs_1],Y
+	sta	[<L178+fs_1],Y
 	lda	#$0
 	ldy	#$15
-	adc	[<L179+fs_1],Y
+	adc	[<L178+fs_1],Y
 	ldy	#$15
-	sta	[<L179+fs_1],Y
+	sta	[<L178+fs_1],Y
 ;			fs->fsi_flag |= 1;
-	.line	1578
+	.line	1581
 	clc
 	lda	#$4
-	adc	<L179+fs_1
+	adc	<L178+fs_1
 	sta	<R0
 	lda	#$0
-	adc	<L179+fs_1+2
+	adc	<L178+fs_1+2
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -6397,7 +6404,7 @@ L198:
 	rep	#$20
 	longa	on
 ;		}
-	.line	1579
+	.line	1582
 ;#if FF_FS_EXFAT || FF_USE_TRIM
 ;		if (ecl + 1 == nxt)
 ;		{ /* Is next cluster contiguous? */
@@ -6422,23 +6429,23 @@ L198:
 ;#endif
 ;		clst = nxt; /* Next cluster */
 L10073:
-	.line	1602
-	lda	<L179+nxt_1
-	sta	<L178+clst_0
-	lda	<L179+nxt_1+2
-	sta	<L178+clst_0+2
+	.line	1605
+	lda	<L178+nxt_1
+	sta	<L177+clst_0
+	lda	<L178+nxt_1+2
+	sta	<L177+clst_0+2
 ;	} while (clst < fs->n_fatent); /* Repeat while not the last link */
-	.line	1603
+	.line	1606
 L10066:
-	lda	<L178+clst_0
+	lda	<L177+clst_0
 	ldy	#$17
-	cmp	[<L179+fs_1],Y
-	lda	<L178+clst_0+2
+	cmp	[<L178+fs_1],Y
+	lda	<L177+clst_0+2
 	ldy	#$19
-	sbc	[<L179+fs_1],Y
-	bcs	L199
+	sbc	[<L178+fs_1],Y
+	bcs	L198
 	brl	L10068
-L199:
+L198:
 L10067:
 ;
 ;#if FF_FS_EXFAT
@@ -6478,18 +6485,18 @@ L10067:
 ;	}
 ;#endif
 ;	return FR_OK;
-	.line	1641
+	.line	1644
 	lda	#$0
-	brl	L184
+	brl	L183
 ;}
-	.line	1642
-	.endblock	1642
-L178	equ	14
-L179	equ	5
+	.line	1645
+	.endblock	1645
+L177	equ	14
+L178	equ	5
 	ends
 	efunc
-	.endfunc	1642,5,14
-	.line	1642
+	.endfunc	1645,5,14
+	.line	1645
 ;
 ;/*-----------------------------------------------------------------------*/
 ;/* FAT handling - Stretch a chain or Create a new chain                  */
@@ -6500,23 +6507,23 @@ L179	equ	5
 ;DWORD clst /* Cluster# to stretch, 0:Create a new chain */
 ;)
 ;{
-	.line	1648
-	.line	1652
+	.line	1651
+	.line	1655
 	FFDOS
 	func
-	.function	1652
+	.function	1655
 ~~create_chain:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L200
+	sbc	#L199
 	tcs
 	phd
 	tcd
 obj_0	set	4
 clst_0	set	8
-	.block	1652
+	.block	1655
 ;	DWORD cs, ncl, scl;
 ;	FRESULT res;
 ;	FATFS *fs = obj->fs;
@@ -6533,165 +6540,165 @@ fs_1	set	14
 	.sym	ncl,4,18,1,32
 	.sym	scl,8,18,1,32
 	.sym	res,12,5,1,16
-	.sym	fs,14,138,1,32,72
-	.sym	obj,4,138,6,32,73
+	.sym	fs,14,138,1,32,75
+	.sym	obj,4,138,6,32,76
 	.sym	clst,8,18,6,32
-	lda	[<L200+obj_0]
-	sta	<L201+fs_1
+	lda	[<L199+obj_0]
+	sta	<L200+fs_1
 	ldy	#$2
-	lda	[<L200+obj_0],Y
-	sta	<L201+fs_1+2
-	.line	1659
-;	{ /* Create a new chain */
-	lda	<L200+clst_0
-	ora	<L200+clst_0+2
-	beq	L203
-	brl	L10074
-L203:
-	.line	1660
-;		scl = fs->last_clst; /* Suggested cluster to start to find */
-	.line	1661
-	ldy	#$f
-	lda	[<L201+fs_1],Y
-	sta	<L201+scl_1
-	ldy	#$11
-	lda	[<L201+fs_1],Y
-	sta	<L201+scl_1+2
-;		if (scl == 0 || scl >= fs->n_fatent)
+	lda	[<L199+obj_0],Y
+	sta	<L200+fs_1+2
 	.line	1662
-;			scl = 1;
-	lda	<L201+scl_1
-	ora	<L201+scl_1+2
-	bne	L205
-	brl	L204
-L205:
-	lda	<L201+scl_1
-	ldy	#$17
-	cmp	[<L201+fs_1],Y
-	lda	<L201+scl_1+2
-	ldy	#$19
-	sbc	[<L201+fs_1],Y
-	bcs	L206
-	brl	L10075
-L206:
-L204:
+;	{ /* Create a new chain */
+	lda	<L199+clst_0
+	ora	<L199+clst_0+2
+	beq	L202
+	brl	L10074
+L202:
 	.line	1663
+;		scl = fs->last_clst; /* Suggested cluster to start to find */
+	.line	1664
+	ldy	#$f
+	lda	[<L200+fs_1],Y
+	sta	<L200+scl_1
+	ldy	#$11
+	lda	[<L200+fs_1],Y
+	sta	<L200+scl_1+2
+;		if (scl == 0 || scl >= fs->n_fatent)
+	.line	1665
+;			scl = 1;
+	lda	<L200+scl_1
+	ora	<L200+scl_1+2
+	bne	L204
+	brl	L203
+L204:
+	lda	<L200+scl_1
+	ldy	#$17
+	cmp	[<L200+fs_1],Y
+	lda	<L200+scl_1+2
+	ldy	#$19
+	sbc	[<L200+fs_1],Y
+	bcs	L205
+	brl	L10075
+L205:
+L203:
+	.line	1666
 	lda	#$1
-	sta	<L201+scl_1
+	sta	<L200+scl_1
 	lda	#$0
-	sta	<L201+scl_1+2
+	sta	<L200+scl_1+2
 ;
 ;		//k_debug_long("create_chain::scl:",scl);
 ;	}
 L10075:
-	.line	1666
+	.line	1669
 ;	else
 	brl	L10076
 L10074:
 ;	{ /* Stretch a chain */
-	.line	1668
+	.line	1671
 ;		cs = get_fat(obj, clst); /* Check the cluster status */
-	.line	1669
-	pei	<L200+clst_0+2
-	pei	<L200+clst_0
-	pei	<L200+obj_0+2
-	pei	<L200+obj_0
+	.line	1672
+	pei	<L199+clst_0+2
+	pei	<L199+clst_0
+	pei	<L199+obj_0+2
+	pei	<L199+obj_0
 	jsl	~~get_fat
-	sta	<L201+cs_1
-	stx	<L201+cs_1+2
+	sta	<L200+cs_1
+	stx	<L200+cs_1+2
 ;
 ;		//k_debug_long("create_chain::cs1:",cs);
 ;
 ;
 ;		if (cs < 2)
-	.line	1674
+	.line	1677
 ;			return 1; /* Test for insanity */
-	lda	<L201+cs_1
+	lda	<L200+cs_1
 	cmp	#<$2
-	lda	<L201+cs_1+2
+	lda	<L200+cs_1+2
 	sbc	#^$2
-	bcc	L207
+	bcc	L206
 	brl	L10077
-L207:
-	.line	1675
+L206:
+	.line	1678
 	lda	#$0
 	tax
 	lda	#$1
-L208:
+L207:
 	tay
-	lda	<L200+2
-	sta	<L200+2+8
-	lda	<L200+1
-	sta	<L200+1+8
+	lda	<L199+2
+	sta	<L199+2+8
+	lda	<L199+1
+	sta	<L199+1+8
 	pld
 	tsc
 	clc
-	adc	#L200+8
+	adc	#L199+8
 	tcs
 	tya
 	rtl
 ;		if (cs == 0xFFFFFFFF)
 L10077:
-	.line	1676
+	.line	1679
 ;			return cs; /* Test for disk error */
-	lda	<L201+cs_1
+	lda	<L200+cs_1
 	cmp	#<$ffffffff
-	bne	L209
-	lda	<L201+cs_1+2
+	bne	L208
+	lda	<L200+cs_1+2
 	cmp	#^$ffffffff
-L209:
-	beq	L210
+L208:
+	beq	L209
 	brl	L10078
-L210:
-	.line	1677
-	ldx	<L201+cs_1+2
-	lda	<L201+cs_1
-	brl	L208
+L209:
+	.line	1680
+	ldx	<L200+cs_1+2
+	lda	<L200+cs_1
+	brl	L207
 ;		if (cs < fs->n_fatent)
 L10078:
-	.line	1678
+	.line	1681
 ;			return cs; /* It is already followed by next cluster */
-	lda	<L201+cs_1
+	lda	<L200+cs_1
 	ldy	#$17
-	cmp	[<L201+fs_1],Y
-	lda	<L201+cs_1+2
+	cmp	[<L200+fs_1],Y
+	lda	<L200+cs_1+2
 	ldy	#$19
-	sbc	[<L201+fs_1],Y
-	bcc	L211
+	sbc	[<L200+fs_1],Y
+	bcc	L210
 	brl	L10079
-L211:
-	.line	1679
-	ldx	<L201+cs_1+2
-	lda	<L201+cs_1
-	brl	L208
+L210:
+	.line	1682
+	ldx	<L200+cs_1+2
+	lda	<L200+cs_1
+	brl	L207
 ;		scl = clst; /* Cluster to start to find */
 L10079:
-	.line	1680
-	lda	<L200+clst_0
-	sta	<L201+scl_1
-	lda	<L200+clst_0+2
-	sta	<L201+scl_1+2
+	.line	1683
+	lda	<L199+clst_0
+	sta	<L200+scl_1
+	lda	<L199+clst_0+2
+	sta	<L200+scl_1+2
 ;	}
-	.line	1681
+	.line	1684
 L10076:
 ;
 ;	//k_debug_long("create_chain::fs->free_clst:",fs->free_clst);
 ;
 ;	if (fs->free_clst == 0)
-	.line	1685
+	.line	1688
 ;		return 0; /* No free cluster */
 	ldy	#$13
-	lda	[<L201+fs_1],Y
+	lda	[<L200+fs_1],Y
 	ldy	#$15
-	ora	[<L201+fs_1],Y
-	beq	L212
+	ora	[<L200+fs_1],Y
+	beq	L211
 	brl	L10080
-L212:
-	.line	1686
+L211:
+	.line	1689
 	lda	#$0
 	tax
 	lda	#$0
-	brl	L208
+	brl	L207
 ;
 ;#if FF_FS_EXFAT
 ;	if (fs->fs_type == FS_EXFAT)
@@ -6731,381 +6738,381 @@ L212:
 ;#endif
 ;	{ /* On the FAT/FAT32 volume */
 L10080:
-	.line	1724
-;		ncl = 0;
-	.line	1725
-	stz	<L201+ncl_1
-	stz	<L201+ncl_1+2
-;		if (scl == clst)
-	.line	1726
-;		{
-	lda	<L201+scl_1
-	cmp	<L200+clst_0
-	bne	L213
-	lda	<L201+scl_1+2
-	cmp	<L200+clst_0+2
-L213:
-	beq	L214
-	brl	L10081
-L214:
 	.line	1727
+;		ncl = 0;
+	.line	1728
+	stz	<L200+ncl_1
+	stz	<L200+ncl_1+2
+;		if (scl == clst)
+	.line	1729
+;		{
+	lda	<L200+scl_1
+	cmp	<L199+clst_0
+	bne	L212
+	lda	<L200+scl_1+2
+	cmp	<L199+clst_0+2
+L212:
+	beq	L213
+	brl	L10081
+L213:
+	.line	1730
 ;			//k_debug_long("create_chain::(scl == clst):",(scl == clst));
 ;
 ;			/* Stretching an existing chain? */
 ;			ncl = scl + 1; /* Test if next cluster is free */
-	.line	1731
+	.line	1734
 	clc
 	lda	#$1
-	adc	<L201+scl_1
-	sta	<L201+ncl_1
+	adc	<L200+scl_1
+	sta	<L200+ncl_1
 	lda	#$0
-	adc	<L201+scl_1+2
-	sta	<L201+ncl_1+2
+	adc	<L200+scl_1+2
+	sta	<L200+ncl_1+2
 ;			if (ncl >= fs->n_fatent)
-	.line	1732
+	.line	1735
 ;				ncl = 2;
-	lda	<L201+ncl_1
+	lda	<L200+ncl_1
 	ldy	#$17
-	cmp	[<L201+fs_1],Y
-	lda	<L201+ncl_1+2
+	cmp	[<L200+fs_1],Y
+	lda	<L200+ncl_1+2
 	ldy	#$19
-	sbc	[<L201+fs_1],Y
-	bcs	L215
+	sbc	[<L200+fs_1],Y
+	bcs	L214
 	brl	L10082
-L215:
-	.line	1733
+L214:
+	.line	1736
 	lda	#$2
-	sta	<L201+ncl_1
+	sta	<L200+ncl_1
 	lda	#$0
-	sta	<L201+ncl_1+2
+	sta	<L200+ncl_1+2
 ;			cs = get_fat(obj, ncl); /* Get next cluster status */
 L10082:
-	.line	1734
-	pei	<L201+ncl_1+2
-	pei	<L201+ncl_1
-	pei	<L200+obj_0+2
-	pei	<L200+obj_0
+	.line	1737
+	pei	<L200+ncl_1+2
+	pei	<L200+ncl_1
+	pei	<L199+obj_0+2
+	pei	<L199+obj_0
 	jsl	~~get_fat
-	sta	<L201+cs_1
-	stx	<L201+cs_1+2
+	sta	<L200+cs_1
+	stx	<L200+cs_1+2
 ;
 ;			//k_debug_long("create_chain::cs2:",cs);
 ;
 ;			if (cs == 1 || cs == 0xFFFFFFFF)
-	.line	1738
+	.line	1741
 ;				return cs; /* Test for error */
-	lda	<L201+cs_1
+	lda	<L200+cs_1
 	cmp	#<$1
-	bne	L217
-	lda	<L201+cs_1+2
+	bne	L216
+	lda	<L200+cs_1+2
 	cmp	#^$1
-L217:
-	bne	L218
-	brl	L216
-L218:
-	lda	<L201+cs_1
-	cmp	#<$ffffffff
-	bne	L219
-	lda	<L201+cs_1+2
-	cmp	#^$ffffffff
-L219:
-	beq	L220
-	brl	L10083
-L220:
 L216:
-	.line	1739
-	ldx	<L201+cs_1+2
-	lda	<L201+cs_1
-	brl	L208
+	bne	L217
+	brl	L215
+L217:
+	lda	<L200+cs_1
+	cmp	#<$ffffffff
+	bne	L218
+	lda	<L200+cs_1+2
+	cmp	#^$ffffffff
+L218:
+	beq	L219
+	brl	L10083
+L219:
+L215:
+	.line	1742
+	ldx	<L200+cs_1+2
+	lda	<L200+cs_1
+	brl	L207
 ;			if (cs != 0)
 L10083:
-	.line	1740
-;			{ /* Not free? */
-	lda	<L201+cs_1
-	ora	<L201+cs_1+2
-	bne	L221
-	brl	L10084
-L221:
-	.line	1741
-;				cs = fs->last_clst; /* Start at suggested cluster if it is valid */
-	.line	1742
-	ldy	#$f
-	lda	[<L201+fs_1],Y
-	sta	<L201+cs_1
-	ldy	#$11
-	lda	[<L201+fs_1],Y
-	sta	<L201+cs_1+2
-;				if (cs >= 2 && cs < fs->n_fatent)
 	.line	1743
+;			{ /* Not free? */
+	lda	<L200+cs_1
+	ora	<L200+cs_1+2
+	bne	L220
+	brl	L10084
+L220:
+	.line	1744
+;				cs = fs->last_clst; /* Start at suggested cluster if it is valid */
+	.line	1745
+	ldy	#$f
+	lda	[<L200+fs_1],Y
+	sta	<L200+cs_1
+	ldy	#$11
+	lda	[<L200+fs_1],Y
+	sta	<L200+cs_1+2
+;				if (cs >= 2 && cs < fs->n_fatent)
+	.line	1746
 ;					scl = cs;
-	lda	<L201+cs_1
+	lda	<L200+cs_1
 	cmp	#<$2
-	lda	<L201+cs_1+2
+	lda	<L200+cs_1+2
 	sbc	#^$2
-	bcs	L222
+	bcs	L221
+	brl	L10085
+L221:
+	lda	<L200+cs_1
+	ldy	#$17
+	cmp	[<L200+fs_1],Y
+	lda	<L200+cs_1+2
+	ldy	#$19
+	sbc	[<L200+fs_1],Y
+	bcc	L222
 	brl	L10085
 L222:
-	lda	<L201+cs_1
-	ldy	#$17
-	cmp	[<L201+fs_1],Y
-	lda	<L201+cs_1+2
-	ldy	#$19
-	sbc	[<L201+fs_1],Y
-	bcc	L223
-	brl	L10085
-L223:
-	.line	1744
-	lda	<L201+cs_1
-	sta	<L201+scl_1
-	lda	<L201+cs_1+2
-	sta	<L201+scl_1+2
+	.line	1747
+	lda	<L200+cs_1
+	sta	<L200+scl_1
+	lda	<L200+cs_1+2
+	sta	<L200+scl_1+2
 ;				ncl = 0;
 L10085:
-	.line	1745
-	stz	<L201+ncl_1
-	stz	<L201+ncl_1+2
+	.line	1748
+	stz	<L200+ncl_1
+	stz	<L200+ncl_1+2
 ;			}
-	.line	1746
+	.line	1749
 ;		}
 L10084:
-	.line	1747
+	.line	1750
 ;		if (ncl == 0)
 L10081:
-	.line	1748
-;		{ /* The new cluster cannot be contiguous and find another fragment */
-	lda	<L201+ncl_1
-	ora	<L201+ncl_1+2
-	beq	L224
-	brl	L10086
-L224:
-	.line	1749
-;			ncl = scl; /* Start cluster */
-	.line	1750
-	lda	<L201+scl_1
-	sta	<L201+ncl_1
-	lda	<L201+scl_1+2
-	sta	<L201+ncl_1+2
-;			for (;;)
 	.line	1751
+;		{ /* The new cluster cannot be contiguous and find another fragment */
+	lda	<L200+ncl_1
+	ora	<L200+ncl_1+2
+	beq	L223
+	brl	L10086
+L223:
+	.line	1752
+;			ncl = scl; /* Start cluster */
+	.line	1753
+	lda	<L200+scl_1
+	sta	<L200+ncl_1
+	lda	<L200+scl_1+2
+	sta	<L200+ncl_1+2
+;			for (;;)
+	.line	1754
 L10089:
 ;			{
-	.line	1752
-;				ncl++; /* Next cluster */
-	.line	1753
-	inc	<L201+ncl_1
-	bne	L225
-	inc	<L201+ncl_1+2
-L225:
-;				if (ncl >= fs->n_fatent)
-	.line	1754
-;				{ /* Check wrap-around */
-	lda	<L201+ncl_1
-	ldy	#$17
-	cmp	[<L201+fs_1],Y
-	lda	<L201+ncl_1+2
-	ldy	#$19
-	sbc	[<L201+fs_1],Y
-	bcs	L226
-	brl	L10090
-L226:
 	.line	1755
-;					ncl = 2;
+;				ncl++; /* Next cluster */
 	.line	1756
-	lda	#$2
-	sta	<L201+ncl_1
-	lda	#$0
-	sta	<L201+ncl_1+2
-;					if (ncl > scl)
+	inc	<L200+ncl_1
+	bne	L224
+	inc	<L200+ncl_1+2
+L224:
+;				if (ncl >= fs->n_fatent)
 	.line	1757
-;						return 0; /* No free cluster found? */
-	lda	<L201+scl_1
-	cmp	<L201+ncl_1
-	lda	<L201+scl_1+2
-	sbc	<L201+ncl_1+2
-	bcc	L227
-	brl	L10091
-L227:
+;				{ /* Check wrap-around */
+	lda	<L200+ncl_1
+	ldy	#$17
+	cmp	[<L200+fs_1],Y
+	lda	<L200+ncl_1+2
+	ldy	#$19
+	sbc	[<L200+fs_1],Y
+	bcs	L225
+	brl	L10090
+L225:
 	.line	1758
+;					ncl = 2;
+	.line	1759
+	lda	#$2
+	sta	<L200+ncl_1
+	lda	#$0
+	sta	<L200+ncl_1+2
+;					if (ncl > scl)
+	.line	1760
+;						return 0; /* No free cluster found? */
+	lda	<L200+scl_1
+	cmp	<L200+ncl_1
+	lda	<L200+scl_1+2
+	sbc	<L200+ncl_1+2
+	bcc	L226
+	brl	L10091
+L226:
+	.line	1761
 	lda	#$0
 	tax
 	lda	#$0
-	brl	L208
+	brl	L207
 ;				}
 L10091:
-	.line	1759
+	.line	1762
 ;				cs = get_fat(obj, ncl); /* Get the cluster status */
 L10090:
-	.line	1760
-	pei	<L201+ncl_1+2
-	pei	<L201+ncl_1
-	pei	<L200+obj_0+2
-	pei	<L200+obj_0
+	.line	1763
+	pei	<L200+ncl_1+2
+	pei	<L200+ncl_1
+	pei	<L199+obj_0+2
+	pei	<L199+obj_0
 	jsl	~~get_fat
-	sta	<L201+cs_1
-	stx	<L201+cs_1+2
+	sta	<L200+cs_1
+	stx	<L200+cs_1+2
 ;
 ;
 ;				//k_debug_long("create_chain::get_fat::cs:",cs);
 ;
 ;
 ;				if (cs == 0)
-	.line	1766
-;					break; /* Found a free cluster? */
-	lda	<L201+cs_1
-	ora	<L201+cs_1+2
-	bne	L228
-	brl	L10088
-L228:
-;				if (cs == 1 || cs == 0xFFFFFFFF)
-	.line	1768
-;					return cs; /* Test for error */
-	lda	<L201+cs_1
-	cmp	#<$1
-	bne	L230
-	lda	<L201+cs_1+2
-	cmp	#^$1
-L230:
-	bne	L231
-	brl	L229
-L231:
-	lda	<L201+cs_1
-	cmp	#<$ffffffff
-	bne	L232
-	lda	<L201+cs_1+2
-	cmp	#^$ffffffff
-L232:
-	beq	L233
-	brl	L10092
-L233:
-L229:
 	.line	1769
-	ldx	<L201+cs_1+2
-	lda	<L201+cs_1
-	brl	L208
+;					break; /* Found a free cluster? */
+	lda	<L200+cs_1
+	ora	<L200+cs_1+2
+	bne	L227
+	brl	L10088
+L227:
+;				if (cs == 1 || cs == 0xFFFFFFFF)
+	.line	1771
+;					return cs; /* Test for error */
+	lda	<L200+cs_1
+	cmp	#<$1
+	bne	L229
+	lda	<L200+cs_1+2
+	cmp	#^$1
+L229:
+	bne	L230
+	brl	L228
+L230:
+	lda	<L200+cs_1
+	cmp	#<$ffffffff
+	bne	L231
+	lda	<L200+cs_1+2
+	cmp	#^$ffffffff
+L231:
+	beq	L232
+	brl	L10092
+L232:
+L228:
+	.line	1772
+	ldx	<L200+cs_1+2
+	lda	<L200+cs_1
+	brl	L207
 ;				if (ncl == scl)
 L10092:
-	.line	1770
+	.line	1773
 ;					return 0; /* No free cluster found? */
-	lda	<L201+ncl_1
-	cmp	<L201+scl_1
-	bne	L234
-	lda	<L201+ncl_1+2
-	cmp	<L201+scl_1+2
-L234:
-	beq	L235
+	lda	<L200+ncl_1
+	cmp	<L200+scl_1
+	bne	L233
+	lda	<L200+ncl_1+2
+	cmp	<L200+scl_1+2
+L233:
+	beq	L234
 	brl	L10093
-L235:
-	.line	1771
+L234:
+	.line	1774
 	lda	#$0
 	tax
 	lda	#$0
-	brl	L208
+	brl	L207
 ;			}
 L10093:
-	.line	1772
+	.line	1775
 L10087:
 	brl	L10089
 L10088:
 ;		}
-	.line	1773
+	.line	1776
 ;		res = put_fat(fs, ncl, 0xFFFFFFFF); /* Mark the new cluster 'EOC' */
 L10086:
-	.line	1774
+	.line	1777
 	pea	#^$ffffffff
 	pea	#<$ffffffff
-	pei	<L201+ncl_1+2
-	pei	<L201+ncl_1
-	pei	<L201+fs_1+2
-	pei	<L201+fs_1
+	pei	<L200+ncl_1+2
+	pei	<L200+ncl_1
+	pei	<L200+fs_1+2
+	pei	<L200+fs_1
 	jsl	~~put_fat
-	sta	<L201+res_1
+	sta	<L200+res_1
 ;		if (res == FR_OK && clst != 0)
-	.line	1775
+	.line	1778
 ;		{
-	lda	<L201+res_1
-	beq	L236
+	lda	<L200+res_1
+	beq	L235
+	brl	L10094
+L235:
+	lda	<L199+clst_0
+	ora	<L199+clst_0+2
+	bne	L236
 	brl	L10094
 L236:
-	lda	<L200+clst_0
-	ora	<L200+clst_0+2
-	bne	L237
-	brl	L10094
-L237:
-	.line	1776
+	.line	1779
 ;			res = put_fat(fs, clst, ncl); /* Link it from the previous one if needed */
-	.line	1777
-	pei	<L201+ncl_1+2
-	pei	<L201+ncl_1
-	pei	<L200+clst_0+2
-	pei	<L200+clst_0
-	pei	<L201+fs_1+2
-	pei	<L201+fs_1
+	.line	1780
+	pei	<L200+ncl_1+2
+	pei	<L200+ncl_1
+	pei	<L199+clst_0+2
+	pei	<L199+clst_0
+	pei	<L200+fs_1+2
+	pei	<L200+fs_1
 	jsl	~~put_fat
-	sta	<L201+res_1
+	sta	<L200+res_1
 ;		}
-	.line	1778
+	.line	1781
 ;	}
 L10094:
-	.line	1779
+	.line	1782
 ;
 ;	if (res == FR_OK)
-	.line	1781
-;	{ /* Update FSINFO if function succeeded. */
-	lda	<L201+res_1
-	beq	L238
-	brl	L10095
-L238:
-	.line	1782
-;		fs->last_clst = ncl;
-	.line	1783
-	lda	<L201+ncl_1
-	ldy	#$f
-	sta	[<L201+fs_1],Y
-	lda	<L201+ncl_1+2
-	ldy	#$11
-	sta	[<L201+fs_1],Y
-;		if (fs->free_clst <= fs->n_fatent - 2)
 	.line	1784
+;	{ /* Update FSINFO if function succeeded. */
+	lda	<L200+res_1
+	beq	L237
+	brl	L10095
+L237:
+	.line	1785
+;		fs->last_clst = ncl;
+	.line	1786
+	lda	<L200+ncl_1
+	ldy	#$f
+	sta	[<L200+fs_1],Y
+	lda	<L200+ncl_1+2
+	ldy	#$11
+	sta	[<L200+fs_1],Y
+;		if (fs->free_clst <= fs->n_fatent - 2)
+	.line	1787
 ;			fs->free_clst--;
 	clc
 	lda	#$fffe
 	ldy	#$17
-	adc	[<L201+fs_1],Y
+	adc	[<L200+fs_1],Y
 	sta	<R0
 	lda	#$ffff
 	ldy	#$19
-	adc	[<L201+fs_1],Y
+	adc	[<L200+fs_1],Y
 	sta	<R0+2
 	lda	<R0
 	ldy	#$13
-	cmp	[<L201+fs_1],Y
+	cmp	[<L200+fs_1],Y
 	lda	<R0+2
 	ldy	#$15
-	sbc	[<L201+fs_1],Y
-	bcs	L239
+	sbc	[<L200+fs_1],Y
+	bcs	L238
 	brl	L10096
-L239:
-	.line	1785
+L238:
+	.line	1788
 	clc
 	lda	#$ffff
 	ldy	#$13
-	adc	[<L201+fs_1],Y
+	adc	[<L200+fs_1],Y
 	ldy	#$13
-	sta	[<L201+fs_1],Y
+	sta	[<L200+fs_1],Y
 	lda	#$ffff
 	ldy	#$15
-	adc	[<L201+fs_1],Y
+	adc	[<L200+fs_1],Y
 	ldy	#$15
-	sta	[<L201+fs_1],Y
+	sta	[<L200+fs_1],Y
 ;		fs->fsi_flag |= 1;
 L10096:
-	.line	1786
+	.line	1789
 	clc
 	lda	#$4
-	adc	<L201+fs_1
+	adc	<L200+fs_1
 	sta	<R0
 	lda	#$0
-	adc	<L201+fs_1+2
+	adc	<L200+fs_1+2
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -7115,52 +7122,52 @@ L10096:
 	rep	#$20
 	longa	on
 ;	}
-	.line	1787
+	.line	1790
 ;	else
 	brl	L10097
 L10095:
 ;	{
-	.line	1789
+	.line	1792
 ;		ncl = (res == FR_DISK_ERR) ? 0xFFFFFFFF : 1; /* Failed. Generate error status */
-	.line	1790
-	lda	<L201+res_1
+	.line	1793
+	lda	<L200+res_1
 	cmp	#<$1
-	beq	L241
-	brl	L240
-L241:
+	beq	L240
+	brl	L239
+L240:
 	lda	#$ffff
 	tax
 	lda	#$ffff
-	bra	L242
-L240:
+	bra	L241
+L239:
 	lda	#$0
 	tax
 	lda	#$1
-L242:
+L241:
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
-	sta	<L201+ncl_1
+	sta	<L200+ncl_1
 	lda	<R0+2
-	sta	<L201+ncl_1+2
+	sta	<L200+ncl_1+2
 ;	}
-	.line	1791
+	.line	1794
 L10097:
 ;
 ;	return ncl; /* Return new cluster number or error status */
-	.line	1793
-	ldx	<L201+ncl_1+2
-	lda	<L201+ncl_1
-	brl	L208
+	.line	1796
+	ldx	<L200+ncl_1+2
+	lda	<L200+ncl_1
+	brl	L207
 ;}
-	.line	1794
-	.endblock	1794
-L200	equ	22
-L201	equ	5
+	.line	1797
+	.endblock	1797
+L199	equ	22
+L200	equ	5
 	ends
 	efunc
-	.endfunc	1794,5,22
-	.line	1794
+	.endfunc	1797,5,22
+	.line	1797
 ;
 ;#endif /* !FF_FS_READONLY */
 ;
@@ -7201,23 +7208,23 @@ L201	equ	5
 ;DWORD clst /* Directory table to clear */
 ;)
 ;{
-	.line	1830
-	.line	1834
+	.line	1833
+	.line	1837
 	FFDOS
 	func
-	.function	1834
+	.function	1837
 ~~dir_clear:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L243
+	sbc	#L242
 	tcs
 	phd
 	tcd
 fs_0	set	4
 clst_0	set	8
-	.block	1834
+	.block	1837
 ;	LBA_t sect;
 ;	UINT n, szb;
 ;	BYTE *ibuf;
@@ -7233,29 +7240,29 @@ ibuf_1	set	8
 	.sym	n,4,16,1,16
 	.sym	szb,6,16,1,16
 	.sym	ibuf,8,142,1,32
-	.sym	fs,4,138,6,32,72
+	.sym	fs,4,138,6,32,75
 	.sym	clst,8,18,6,32
-	.line	1841
+	.line	1844
 ;		return FR_DISK_ERR; /* Flush disk access window */
-	pei	<L243+fs_0+2
-	pei	<L243+fs_0
+	pei	<L242+fs_0+2
+	pei	<L242+fs_0
 	jsl	~~sync_window
 	tax
-	bne	L246
+	bne	L245
 	brl	L10098
-L246:
-	.line	1842
+L245:
+	.line	1845
 	lda	#$1
-L247:
+L246:
 	tay
-	lda	<L243+2
-	sta	<L243+2+8
-	lda	<L243+1
-	sta	<L243+1+8
+	lda	<L242+2
+	sta	<L242+2+8
+	lda	<L242+1
+	sta	<L242+1+8
 	pld
 	tsc
 	clc
-	adc	#L243+8
+	adc	#L242+8
 	tcs
 	tya
 	rtl
@@ -7264,32 +7271,32 @@ L247:
 ;
 ;	sect = clst2sect(fs, clst); /* Top of the cluster */
 L10098:
-	.line	1846
-	pei	<L243+clst_0+2
-	pei	<L243+clst_0
-	pei	<L243+fs_0+2
-	pei	<L243+fs_0
+	.line	1849
+	pei	<L242+clst_0+2
+	pei	<L242+clst_0
+	pei	<L242+fs_0+2
+	pei	<L242+fs_0
 	jsl	~~clst2sect
-	sta	<L244+sect_1
-	stx	<L244+sect_1+2
+	sta	<L243+sect_1
+	stx	<L243+sect_1+2
 ;	fs->winsect = sect; /* Set window to top of the cluster */
-	.line	1847
-	lda	<L244+sect_1
+	.line	1850
+	lda	<L243+sect_1
 	ldy	#$2f
-	sta	[<L243+fs_0],Y
-	lda	<L244+sect_1+2
+	sta	[<L242+fs_0],Y
+	lda	<L243+sect_1+2
 	ldy	#$31
-	sta	[<L243+fs_0],Y
+	sta	[<L242+fs_0],Y
 ;	mem_set(fs->win, 0, sizeof fs->win); /* Clear window buffer */
-	.line	1848
+	.line	1851
 	pea	#<$200
 	pea	#<$0
 	clc
 	lda	#$33
-	adc	<L243+fs_0
+	adc	<L242+fs_0
 	sta	<R0
 	lda	#$0
-	adc	<L243+fs_0+2
+	adc	<L242+fs_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
@@ -7297,17 +7304,17 @@ L10098:
 ;#if FF_USE_LFN == 3		/* Quick table clear by using multi-secter write */
 ;	/* Allocate a temporary buffer */
 ;	for (szb = ((DWORD)fs->csize * SS(fs) >= MAX_MALLOC) ? MAX_MALLOC : fs->csize * SS(fs), ibuf = 0; szb > SS(fs) && (ibuf = ff_memalloc(szb)) == 0; szb /= 2);
-	.line	1851
+	.line	1854
 	ldy	#$0
 	phy
 	ldy	#$9
-	lda	[<L243+fs_0],Y
+	lda	[<L242+fs_0],Y
 	ply
 	rol	A
 	ror	A
-	bpl	L249
+	bpl	L248
 	dey
-L249:
+L248:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -7321,213 +7328,213 @@ L249:
 	cmp	#<$400
 	lda	<R0+2
 	sbc	#^$400
-	bcs	L250
-	brl	L248
-L250:
+	bcs	L249
+	brl	L247
+L249:
 	lda	#$400
-	bra	L251
-L248:
+	bra	L250
+L247:
 	ldy	#$9
-	lda	[<L243+fs_0],Y
+	lda	[<L242+fs_0],Y
 	ldx	#<$9
 	xref	~~~asl
 	jsl	~~~asl
-L251:
-	sta	<L244+szb_1
-	stz	<L244+ibuf_1
-	stz	<L244+ibuf_1+2
+L250:
+	sta	<L243+szb_1
+	stz	<L243+ibuf_1
+	stz	<L243+ibuf_1+2
 	brl	L10102
 L10101:
-	.line	1851
+	.line	1854
 L10099:
-	lsr	<L244+szb_1
+	lsr	<L243+szb_1
 L10102:
 	lda	#$200
-	cmp	<L244+szb_1
-	bcc	L253
-	brl	L252
-L253:
-	pei	<L244+szb_1
-	jsl	~~ff_memalloc
-	sta	<L244+ibuf_1
-	stx	<L244+ibuf_1+2
-	lda	<L244+ibuf_1
-	ora	<L244+ibuf_1+2
-	bne	L254
-	brl	L10101
-L254:
+	cmp	<L243+szb_1
+	bcc	L252
+	brl	L251
 L252:
+	pei	<L243+szb_1
+	jsl	~~ff_memalloc
+	sta	<L243+ibuf_1
+	stx	<L243+ibuf_1+2
+	lda	<L243+ibuf_1
+	ora	<L243+ibuf_1+2
+	bne	L253
+	brl	L10101
+L253:
+L251:
 L10100:
 ;
 ;
 ;	if (szb > SS(fs))
-	.line	1854
+	.line	1857
 ;	{ /* Buffer allocated? */
 	lda	#$200
-	cmp	<L244+szb_1
-	bcc	L255
+	cmp	<L243+szb_1
+	bcc	L254
 	brl	L10103
-L255:
-	.line	1855
+L254:
+	.line	1858
 ;		mem_set(ibuf, 0, szb);
-	.line	1856
-	pei	<L244+szb_1
+	.line	1859
+	pei	<L243+szb_1
 	pea	#<$0
-	pei	<L244+ibuf_1+2
-	pei	<L244+ibuf_1
+	pei	<L243+ibuf_1+2
+	pei	<L243+ibuf_1
 	jsl	~~mem_set
 ;		szb /= SS(fs); /* Bytes -> Sectors */
-	.line	1857
-	lda	<L244+szb_1
+	.line	1860
+	lda	<L243+szb_1
 	ldx	#<$9
 	xref	~~~lsr
 	jsl	~~~lsr
-	sta	<L244+szb_1
+	sta	<L243+szb_1
 ;		for (n = 0; n < fs->csize && disk_write(fs->pdrv, ibuf, sect + n, szb) == RES_OK; n += szb); /* Fill the cluster with 0 */
-	.line	1858
-	stz	<L244+n_1
+	.line	1861
+	stz	<L243+n_1
 	brl	L10107
 L10106:
-	.line	1858
+	.line	1861
 L10104:
 	clc
-	lda	<L244+n_1
-	adc	<L244+szb_1
-	sta	<L244+n_1
+	lda	<L243+n_1
+	adc	<L243+szb_1
+	sta	<L243+n_1
 L10107:
-	lda	<L244+n_1
+	lda	<L243+n_1
 	ldy	#$9
-	cmp	[<L243+fs_0],Y
-	bcc	L257
-	brl	L256
-L257:
-	pei	<L244+szb_1
-	lda	<L244+n_1
+	cmp	[<L242+fs_0],Y
+	bcc	L256
+	brl	L255
+L256:
+	pei	<L243+szb_1
+	lda	<L243+n_1
 	sta	<R0
 	stz	<R0+2
 	clc
 	lda	<R0
-	adc	<L244+sect_1
+	adc	<L243+sect_1
 	sta	<R1
 	lda	<R0+2
-	adc	<L244+sect_1+2
+	adc	<L243+sect_1+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
-	pei	<L244+ibuf_1+2
-	pei	<L244+ibuf_1
+	pei	<L243+ibuf_1+2
+	pei	<L243+ibuf_1
 	ldy	#$1
-	lda	[<L243+fs_0],Y
+	lda	[<L242+fs_0],Y
 	pha
 	jsl	~~disk_write
 	tax
-	bne	L258
+	bne	L257
 	brl	L10106
-L258:
-L256:
+L257:
+L255:
 L10105:
 ;		ff_memfree(ibuf);
-	.line	1859
-	pei	<L244+ibuf_1+2
-	pei	<L244+ibuf_1
+	.line	1862
+	pei	<L243+ibuf_1+2
+	pei	<L243+ibuf_1
 	jsl	~~ff_memfree
 ;	}
-	.line	1860
+	.line	1863
 ;	else
 	brl	L10108
 L10103:
 ;#endif
 ;	{
-	.line	1863
+	.line	1866
 ;		ibuf = fs->win;
-	.line	1864
+	.line	1867
 	clc
 	lda	#$33
-	adc	<L243+fs_0
-	sta	<L244+ibuf_1
+	adc	<L242+fs_0
+	sta	<L243+ibuf_1
 	lda	#$0
-	adc	<L243+fs_0+2
-	sta	<L244+ibuf_1+2
+	adc	<L242+fs_0+2
+	sta	<L243+ibuf_1+2
 ;		szb = 1; /* Use window buffer (many single-sector writes may take a time) */
-	.line	1865
+	.line	1868
 	lda	#$1
-	sta	<L244+szb_1
+	sta	<L243+szb_1
 ;		for (n = 0;
-	.line	1866
+	.line	1869
 ;				n < fs->csize
 ;						&& disk_write(fs->pdrv, ibuf, sect + n, szb) == RES_OK;
-	stz	<L244+n_1
+	stz	<L243+n_1
 	brl	L10112
 ;				n += szb)
 L10111:
 ;			; /* Fill the cluster with 0 */
-	.line	1870
+	.line	1873
 L10109:
 	clc
-	lda	<L244+n_1
-	adc	<L244+szb_1
-	sta	<L244+n_1
+	lda	<L243+n_1
+	adc	<L243+szb_1
+	sta	<L243+n_1
 L10112:
-	lda	<L244+n_1
+	lda	<L243+n_1
 	ldy	#$9
-	cmp	[<L243+fs_0],Y
-	bcc	L260
-	brl	L259
-L260:
-	pei	<L244+szb_1
-	lda	<L244+n_1
+	cmp	[<L242+fs_0],Y
+	bcc	L259
+	brl	L258
+L259:
+	pei	<L243+szb_1
+	lda	<L243+n_1
 	sta	<R0
 	stz	<R0+2
 	clc
 	lda	<R0
-	adc	<L244+sect_1
+	adc	<L243+sect_1
 	sta	<R1
 	lda	<R0+2
-	adc	<L244+sect_1+2
+	adc	<L243+sect_1+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
-	pei	<L244+ibuf_1+2
-	pei	<L244+ibuf_1
+	pei	<L243+ibuf_1+2
+	pei	<L243+ibuf_1
 	ldy	#$1
-	lda	[<L243+fs_0],Y
+	lda	[<L242+fs_0],Y
 	pha
 	jsl	~~disk_write
 	tax
-	bne	L261
+	bne	L260
 	brl	L10111
-L261:
-L259:
+L260:
+L258:
 L10110:
 ;	}
-	.line	1871
+	.line	1874
 L10108:
 ;
 ;	//k_debug_long("dir_clear:ret:",(n == fs->csize));
 ;
 ;	return (n == fs->csize) ? FR_OK : FR_DISK_ERR;
-	.line	1875
-	lda	<L244+n_1
+	.line	1878
+	lda	<L243+n_1
 	ldy	#$9
-	cmp	[<L243+fs_0],Y
-	beq	L263
-	brl	L262
-L263:
-	lda	#$0
-	bra	L264
+	cmp	[<L242+fs_0],Y
+	beq	L262
+	brl	L261
 L262:
+	lda	#$0
+	bra	L263
+L261:
 	lda	#$1
-L264:
-	brl	L247
+L263:
+	brl	L246
 ;}
-	.line	1876
-	.endblock	1876
-L243	equ	20
-L244	equ	9
+	.line	1879
+	.endblock	1879
+L242	equ	20
+L243	equ	9
 	ends
 	efunc
-	.endfunc	1876,9,20
-	.line	1876
+	.endfunc	1879,9,20
+	.line	1879
 ;#endif	/* !FF_FS_READONLY */
 ;
 ;/*-----------------------------------------------------------------------*/
@@ -7539,23 +7546,23 @@ L244	equ	9
 ;DWORD ofs /* Offset of directory table */
 ;)
 ;{
-	.line	1883
-	.line	1887
+	.line	1886
+	.line	1890
 	FFDOS
 	func
-	.function	1887
+	.function	1890
 ~~dir_sdi:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L265
+	sbc	#L264
 	tcs
 	phd
 	tcd
 dp_0	set	4
 ofs_0	set	8
-	.block	1887
+	.block	1890
 ;	DWORD csz, clst;
 ;	FATFS *fs = dp->obj.fs;
 ;
@@ -7565,158 +7572,158 @@ clst_1	set	4
 fs_1	set	8
 	.sym	csz,0,18,1,32
 	.sym	clst,4,18,1,32
-	.sym	fs,8,138,1,32,72
-	.sym	dp,4,138,6,32,75
+	.sym	fs,8,138,1,32,75
+	.sym	dp,4,138,6,32,78
 	.sym	ofs,8,18,6,32
-	lda	[<L265+dp_0]
-	sta	<L266+fs_1
+	lda	[<L264+dp_0]
+	sta	<L265+fs_1
 	ldy	#$2
-	lda	[<L265+dp_0],Y
-	sta	<L266+fs_1+2
-	.line	1891
+	lda	[<L264+dp_0],Y
+	sta	<L265+fs_1+2
+	.line	1894
 ;			>= (DWORD) (
 ;					(FF_FS_EXFAT && fs->fs_type == FS_EXFAT) ?
 ;							MAX_DIR_EX : MAX_DIR) || ofs % SZDIRE)
 ;	{ /* Check range of offset and alignment */
-	brl	L269
+	brl	L268
 	sep	#$20
 	longa	off
-	lda	[<L266+fs_1]
+	lda	[<L265+fs_1]
 	cmp	#<$4
 	rep	#$20
 	longa	on
-	beq	L270
-	brl	L269
-L270:
+	beq	L269
+	brl	L268
+L269:
 	lda	#$1000
 	tax
 	lda	#$0
-	bra	L271
-L269:
+	bra	L270
+L268:
 	lda	#$20
 	tax
 	lda	#$0
-L271:
+L270:
 	sta	<R0
 	stx	<R0+2
-	lda	<L265+ofs_0
+	lda	<L264+ofs_0
 	cmp	<R0
-	lda	<L265+ofs_0+2
+	lda	<L264+ofs_0+2
 	sbc	<R0+2
-	bcc	L272
-	brl	L268
-L272:
-	lda	<L265+ofs_0
+	bcc	L271
+	brl	L267
+L271:
+	lda	<L264+ofs_0
 	and	#<$1f
-	bne	L273
+	bne	L272
 	brl	L10113
-L273:
-L268:
-	.line	1895
+L272:
+L267:
+	.line	1898
 ;		return FR_INT_ERR;
-	.line	1896
+	.line	1899
 	lda	#$2
-L274:
+L273:
 	tay
-	lda	<L265+2
-	sta	<L265+2+8
-	lda	<L265+1
-	sta	<L265+1+8
+	lda	<L264+2
+	sta	<L264+2+8
+	lda	<L264+1
+	sta	<L264+1+8
 	pld
 	tsc
 	clc
-	adc	#L265+8
+	adc	#L264+8
 	tcs
 	tya
 	rtl
 ;	}
-	.line	1897
+	.line	1900
 ;	dp->dptr = ofs; /* Set current offset */
 L10113:
-	.line	1898
-	lda	<L265+ofs_0
+	.line	1901
+	lda	<L264+ofs_0
 	ldy	#$10
-	sta	[<L265+dp_0],Y
-	lda	<L265+ofs_0+2
+	sta	[<L264+dp_0],Y
+	lda	<L264+ofs_0+2
 	ldy	#$12
-	sta	[<L265+dp_0],Y
+	sta	[<L264+dp_0],Y
 ;	clst = dp->obj.sclust; /* Table start cluster (0:root) */
-	.line	1899
+	.line	1902
 	ldy	#$8
-	lda	[<L265+dp_0],Y
-	sta	<L266+clst_1
+	lda	[<L264+dp_0],Y
+	sta	<L265+clst_1
 	ldy	#$a
-	lda	[<L265+dp_0],Y
-	sta	<L266+clst_1+2
+	lda	[<L264+dp_0],Y
+	sta	<L265+clst_1+2
 ;	if (clst == 0 && fs->fs_type >= FS_FAT32)
-	.line	1900
+	.line	1903
 ;	{ /* Replace cluster# 0 with root cluster# */
-	lda	<L266+clst_1
-	ora	<L266+clst_1+2
-	beq	L275
+	lda	<L265+clst_1
+	ora	<L265+clst_1+2
+	beq	L274
 	brl	L10114
-L275:
+L274:
 	sep	#$20
 	longa	off
-	lda	[<L266+fs_1]
+	lda	[<L265+fs_1]
 	cmp	#<$3
 	rep	#$20
 	longa	on
-	bcs	L276
+	bcs	L275
 	brl	L10114
-L276:
-	.line	1901
+L275:
+	.line	1904
 ;		clst = (DWORD) fs->dirbase;
-	.line	1902
+	.line	1905
 	ldy	#$27
-	lda	[<L266+fs_1],Y
-	sta	<L266+clst_1
+	lda	[<L265+fs_1],Y
+	sta	<L265+clst_1
 	ldy	#$29
-	lda	[<L266+fs_1],Y
-	sta	<L266+clst_1+2
+	lda	[<L265+fs_1],Y
+	sta	<L265+clst_1+2
 ;		if (FF_FS_EXFAT)
-	.line	1903
+	.line	1906
 ;			dp->obj.stat = 0; /* exFAT: Root dir has an FAT chain */
 	brl	L10115
-	.line	1904
+	.line	1907
 	sep	#$20
 	longa	off
 	lda	#$0
 	ldy	#$7
-	sta	[<L265+dp_0],Y
+	sta	[<L264+dp_0],Y
 	rep	#$20
 	longa	on
 ;	}
 L10115:
-	.line	1905
+	.line	1908
 ;
 ;	if (clst == 0)
 L10114:
-	.line	1907
+	.line	1910
 ;	{ /* Static table (root-directory on the FAT volume) */
-	lda	<L266+clst_1
-	ora	<L266+clst_1+2
-	beq	L277
+	lda	<L265+clst_1
+	ora	<L265+clst_1+2
+	beq	L276
 	brl	L10116
-L277:
-	.line	1908
+L276:
+	.line	1911
 ;		if (ofs / SZDIRE >= fs->n_rootdir)
-	.line	1909
+	.line	1912
 ;			return FR_INT_ERR; /* Is index out of range? */
 	ldy	#$0
 	phy
 	ldy	#$7
-	lda	[<L266+fs_1],Y
+	lda	[<L265+fs_1],Y
 	ply
 	rol	A
 	ror	A
-	bpl	L278
+	bpl	L277
 	dey
-L278:
+L277:
 	sta	<R0
 	sty	<R0+2
-	pei	<L265+ofs_0+2
-	pei	<L265+ofs_0
+	pei	<L264+ofs_0+2
+	pei	<L264+ofs_0
 	lda	#$5
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -7726,43 +7733,43 @@ L278:
 	cmp	<R0
 	lda	<R1+2
 	sbc	<R0+2
-	bcs	L279
+	bcs	L278
 	brl	L10117
-L279:
-	.line	1910
+L278:
+	.line	1913
 	lda	#$2
-	brl	L274
+	brl	L273
 ;		dp->sect = fs->dirbase;
 L10117:
-	.line	1911
+	.line	1914
 	ldy	#$27
-	lda	[<L266+fs_1],Y
+	lda	[<L265+fs_1],Y
 	ldy	#$18
-	sta	[<L265+dp_0],Y
+	sta	[<L264+dp_0],Y
 	ldy	#$29
-	lda	[<L266+fs_1],Y
+	lda	[<L265+fs_1],Y
 	ldy	#$1a
-	sta	[<L265+dp_0],Y
+	sta	[<L264+dp_0],Y
 ;
 ;	}
-	.line	1913
+	.line	1916
 ;	else
 	brl	L10118
 L10116:
 ;	{ /* Dynamic table (sub-directory or root-directory on the FAT32/exFAT volume) */
-	.line	1915
+	.line	1918
 ;		csz = (DWORD) fs->csize * SS(fs); /* Bytes per cluster */
-	.line	1916
+	.line	1919
 	ldy	#$0
 	phy
 	ldy	#$9
-	lda	[<L266+fs_1],Y
+	lda	[<L265+fs_1],Y
 	ply
 	rol	A
 	ror	A
-	bpl	L280
+	bpl	L279
 	dey
-L280:
+L279:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
@@ -7770,133 +7777,133 @@ L280:
 	lda	#$9
 	xref	~~~lasl
 	jsl	~~~lasl
-	sta	<L266+csz_1
-	stx	<L266+csz_1+2
+	sta	<L265+csz_1
+	stx	<L265+csz_1+2
 ;		while (ofs >= csz)
-	.line	1917
-L10119:
-	lda	<L265+ofs_0
-	cmp	<L266+csz_1
-	lda	<L265+ofs_0+2
-	sbc	<L266+csz_1+2
-	bcs	L281
-	brl	L10120
-L281:
-;		{ /* Follow cluster chain */
-	.line	1918
-;			clst = get_fat(&dp->obj, clst); /* Get next cluster */
-	.line	1919
-	pei	<L266+clst_1+2
-	pei	<L266+clst_1
-	pei	<L265+dp_0+2
-	pei	<L265+dp_0
-	jsl	~~get_fat
-	sta	<L266+clst_1
-	stx	<L266+clst_1+2
-;			if (clst == 0xFFFFFFFF)
 	.line	1920
-;				return FR_DISK_ERR; /* Disk error */
-	lda	<L266+clst_1
-	cmp	#<$ffffffff
-	bne	L282
-	lda	<L266+clst_1+2
-	cmp	#^$ffffffff
-L282:
-	beq	L283
-	brl	L10121
-L283:
+L10119:
+	lda	<L264+ofs_0
+	cmp	<L265+csz_1
+	lda	<L264+ofs_0+2
+	sbc	<L265+csz_1+2
+	bcs	L280
+	brl	L10120
+L280:
+;		{ /* Follow cluster chain */
 	.line	1921
+;			clst = get_fat(&dp->obj, clst); /* Get next cluster */
+	.line	1922
+	pei	<L265+clst_1+2
+	pei	<L265+clst_1
+	pei	<L264+dp_0+2
+	pei	<L264+dp_0
+	jsl	~~get_fat
+	sta	<L265+clst_1
+	stx	<L265+clst_1+2
+;			if (clst == 0xFFFFFFFF)
+	.line	1923
+;				return FR_DISK_ERR; /* Disk error */
+	lda	<L265+clst_1
+	cmp	#<$ffffffff
+	bne	L281
+	lda	<L265+clst_1+2
+	cmp	#^$ffffffff
+L281:
+	beq	L282
+	brl	L10121
+L282:
+	.line	1924
 	lda	#$1
-	brl	L274
+	brl	L273
 ;			if (clst < 2 || clst >= fs->n_fatent)
 L10121:
-	.line	1922
+	.line	1925
 ;				return FR_INT_ERR; /* Reached to end of table or internal error */
-	lda	<L266+clst_1
+	lda	<L265+clst_1
 	cmp	#<$2
-	lda	<L266+clst_1+2
+	lda	<L265+clst_1+2
 	sbc	#^$2
-	bcs	L285
-	brl	L284
-L285:
-	lda	<L266+clst_1
-	ldy	#$17
-	cmp	[<L266+fs_1],Y
-	lda	<L266+clst_1+2
-	ldy	#$19
-	sbc	[<L266+fs_1],Y
-	bcs	L286
-	brl	L10122
-L286:
+	bcs	L284
+	brl	L283
 L284:
-	.line	1923
+	lda	<L265+clst_1
+	ldy	#$17
+	cmp	[<L265+fs_1],Y
+	lda	<L265+clst_1+2
+	ldy	#$19
+	sbc	[<L265+fs_1],Y
+	bcs	L285
+	brl	L10122
+L285:
+L283:
+	.line	1926
 	lda	#$2
-	brl	L274
+	brl	L273
 ;			ofs -= csz;
 L10122:
-	.line	1924
+	.line	1927
 	sec
-	lda	<L265+ofs_0
-	sbc	<L266+csz_1
-	sta	<L265+ofs_0
-	lda	<L265+ofs_0+2
-	sbc	<L266+csz_1+2
-	sta	<L265+ofs_0+2
+	lda	<L264+ofs_0
+	sbc	<L265+csz_1
+	sta	<L264+ofs_0
+	lda	<L264+ofs_0+2
+	sbc	<L265+csz_1+2
+	sta	<L264+ofs_0+2
 ;		}
-	.line	1925
+	.line	1928
 	brl	L10119
 L10120:
 ;		dp->sect = clst2sect(fs, clst);
-	.line	1926
-	pei	<L266+clst_1+2
-	pei	<L266+clst_1
-	pei	<L266+fs_1+2
-	pei	<L266+fs_1
+	.line	1929
+	pei	<L265+clst_1+2
+	pei	<L265+clst_1
+	pei	<L265+fs_1+2
+	pei	<L265+fs_1
 	jsl	~~clst2sect
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
 	ldy	#$18
-	sta	[<L265+dp_0],Y
+	sta	[<L264+dp_0],Y
 	lda	<R0+2
 	ldy	#$1a
-	sta	[<L265+dp_0],Y
+	sta	[<L264+dp_0],Y
 ;	}
-	.line	1927
+	.line	1930
 L10118:
 ;	dp->clust = clst; /* Current cluster# */
-	.line	1928
-	lda	<L266+clst_1
+	.line	1931
+	lda	<L265+clst_1
 	ldy	#$14
-	sta	[<L265+dp_0],Y
-	lda	<L266+clst_1+2
+	sta	[<L264+dp_0],Y
+	lda	<L265+clst_1+2
 	ldy	#$16
-	sta	[<L265+dp_0],Y
+	sta	[<L264+dp_0],Y
 ;	if (dp->sect == 0)
-	.line	1929
+	.line	1932
 ;		return FR_INT_ERR;
 	ldy	#$18
-	lda	[<L265+dp_0],Y
+	lda	[<L264+dp_0],Y
 	ldy	#$1a
-	ora	[<L265+dp_0],Y
-	beq	L287
+	ora	[<L264+dp_0],Y
+	beq	L286
 	brl	L10123
-L287:
-	.line	1930
+L286:
+	.line	1933
 	lda	#$2
-	brl	L274
+	brl	L273
 ;	dp->sect += ofs / SS(fs); /* Sector# of the directory entry */
 L10123:
-	.line	1931
+	.line	1934
 	clc
 	lda	#$18
-	adc	<L265+dp_0
+	adc	<L264+dp_0
 	sta	<R0
 	lda	#$0
-	adc	<L265+dp_0+2
+	adc	<L264+dp_0+2
 	sta	<R0+2
-	pei	<L265+ofs_0+2
-	pei	<L265+ofs_0
+	pei	<L264+ofs_0+2
+	pei	<L264+ofs_0
 	lda	#$9
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -7912,8 +7919,8 @@ L10123:
 	ldy	#$2
 	sta	[<R0],Y
 ;	dp->dir = fs->win + (ofs % SS(fs)); /* Pointer to the entry in the win[] */
-	.line	1932
-	lda	<L265+ofs_0
+	.line	1935
+	lda	<L264+ofs_0
 	and	#<$1ff
 	sta	<R0
 	stz	<R0+2
@@ -7925,32 +7932,32 @@ L10123:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L266+fs_1
+	lda	<L265+fs_1
 	adc	<R1
 	sta	<R0
-	lda	<L266+fs_1+2
+	lda	<L265+fs_1+2
 	adc	<R1+2
 	sta	<R0+2
 	lda	<R0
 	ldy	#$1c
-	sta	[<L265+dp_0],Y
+	sta	[<L264+dp_0],Y
 	lda	<R0+2
 	ldy	#$1e
-	sta	[<L265+dp_0],Y
+	sta	[<L264+dp_0],Y
 ;
 ;	return FR_OK;
-	.line	1934
+	.line	1937
 	lda	#$0
-	brl	L274
+	brl	L273
 ;}
-	.line	1935
-	.endblock	1935
-L265	equ	20
-L266	equ	9
+	.line	1938
+	.endblock	1938
+L264	equ	20
+L265	equ	9
 	ends
 	efunc
-	.endfunc	1935,9,20
-	.line	1935
+	.endfunc	1938,9,20
+	.line	1938
 ;
 ;/*-----------------------------------------------------------------------*/
 ;/* Directory handling - Move directory table index next                  */
@@ -7961,23 +7968,23 @@ L266	equ	9
 ;int stretch /* 0: Do not stretch table, 1: Stretch table if needed */
 ;)
 ;{
-	.line	1941
-	.line	1945
+	.line	1944
+	.line	1948
 	FFDOS
 	func
-	.function	1945
+	.function	1948
 ~~dir_next:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L288
+	sbc	#L287
 	tcs
 	phd
 	tcd
 dp_0	set	4
 stretch_0	set	8
-	.block	1945
+	.block	1948
 ;	DWORD ofs, clst;
 ;	FATFS *fs = dp->obj.fs;
 ;
@@ -7987,144 +7994,144 @@ clst_1	set	4
 fs_1	set	8
 	.sym	ofs,0,18,1,32
 	.sym	clst,4,18,1,32
-	.sym	fs,8,138,1,32,72
-	.sym	dp,4,138,6,32,75
+	.sym	fs,8,138,1,32,75
+	.sym	dp,4,138,6,32,78
 	.sym	stretch,8,5,6,16
-	lda	[<L288+dp_0]
-	sta	<L289+fs_1
+	lda	[<L287+dp_0]
+	sta	<L288+fs_1
 	ldy	#$2
-	lda	[<L288+dp_0],Y
-	sta	<L289+fs_1+2
-	.line	1949
+	lda	[<L287+dp_0],Y
+	sta	<L288+fs_1+2
+	.line	1952
 	clc
 	lda	#$20
 	ldy	#$10
-	adc	[<L288+dp_0],Y
-	sta	<L289+ofs_1
+	adc	[<L287+dp_0],Y
+	sta	<L288+ofs_1
 	lda	#$0
 	ldy	#$12
-	adc	[<L288+dp_0],Y
-	sta	<L289+ofs_1+2
+	adc	[<L287+dp_0],Y
+	sta	<L288+ofs_1+2
 ;	if (ofs
-	.line	1950
+	.line	1953
 ;			>= (DWORD) (
 ;					(FF_FS_EXFAT && fs->fs_type == FS_EXFAT) ?
 ;							MAX_DIR_EX : MAX_DIR))
 ;		dp->sect = 0; /* Disable it if the offset reached the max value */
-	brl	L291
+	brl	L290
 	sep	#$20
 	longa	off
-	lda	[<L289+fs_1]
+	lda	[<L288+fs_1]
 	cmp	#<$4
 	rep	#$20
 	longa	on
-	beq	L292
-	brl	L291
-L292:
+	beq	L291
+	brl	L290
+L291:
 	lda	#$1000
 	tax
 	lda	#$0
-	bra	L293
-L291:
+	bra	L292
+L290:
 	lda	#$20
 	tax
 	lda	#$0
-L293:
+L292:
 	sta	<R0
 	stx	<R0+2
-	lda	<L289+ofs_1
+	lda	<L288+ofs_1
 	cmp	<R0
-	lda	<L289+ofs_1+2
+	lda	<L288+ofs_1+2
 	sbc	<R0+2
-	bcs	L294
+	bcs	L293
 	brl	L10124
-L294:
-	.line	1954
+L293:
+	.line	1957
 	lda	#$0
 	ldy	#$18
-	sta	[<L288+dp_0],Y
+	sta	[<L287+dp_0],Y
 	lda	#$0
 	ldy	#$1a
-	sta	[<L288+dp_0],Y
+	sta	[<L287+dp_0],Y
 ;	if (dp->sect == 0)
 L10124:
-	.line	1955
+	.line	1958
 ;		return FR_NO_FILE; /* Report EOT if it has been disabled */
 	ldy	#$18
-	lda	[<L288+dp_0],Y
+	lda	[<L287+dp_0],Y
 	ldy	#$1a
-	ora	[<L288+dp_0],Y
-	beq	L295
+	ora	[<L287+dp_0],Y
+	beq	L294
 	brl	L10125
-L295:
-	.line	1956
+L294:
+	.line	1959
 	lda	#$4
-L296:
+L295:
 	tay
-	lda	<L288+2
-	sta	<L288+2+6
-	lda	<L288+1
-	sta	<L288+1+6
+	lda	<L287+2
+	sta	<L287+2+6
+	lda	<L287+1
+	sta	<L287+1+6
 	pld
 	tsc
 	clc
-	adc	#L288+6
+	adc	#L287+6
 	tcs
 	tya
 	rtl
 ;
 ;	if (ofs % SS(fs) == 0)
 L10125:
-	.line	1958
+	.line	1961
 ;	{ /* Sector changed? */
-	lda	<L289+ofs_1
+	lda	<L288+ofs_1
 	and	#<$1ff
-	beq	L297
+	beq	L296
 	brl	L10126
-L297:
-	.line	1959
+L296:
+	.line	1962
 ;		dp->sect++; /* Next sector */
-	.line	1960
+	.line	1963
 	clc
 	lda	#$1
 	ldy	#$18
-	adc	[<L288+dp_0],Y
+	adc	[<L287+dp_0],Y
 	ldy	#$18
-	sta	[<L288+dp_0],Y
+	sta	[<L287+dp_0],Y
 	lda	#$0
 	ldy	#$1a
-	adc	[<L288+dp_0],Y
+	adc	[<L287+dp_0],Y
 	ldy	#$1a
-	sta	[<L288+dp_0],Y
+	sta	[<L287+dp_0],Y
 ;
 ;		if (dp->clust == 0)
-	.line	1962
+	.line	1965
 ;		{ /* Static table */
 	ldy	#$14
-	lda	[<L288+dp_0],Y
+	lda	[<L287+dp_0],Y
 	ldy	#$16
-	ora	[<L288+dp_0],Y
-	beq	L298
+	ora	[<L287+dp_0],Y
+	beq	L297
 	brl	L10127
-L298:
-	.line	1963
+L297:
+	.line	1966
 ;			if (ofs / SZDIRE >= fs->n_rootdir)
-	.line	1964
+	.line	1967
 ;			{ /* Report EOT if it reached end of static table */
 	ldy	#$0
 	phy
 	ldy	#$7
-	lda	[<L289+fs_1],Y
+	lda	[<L288+fs_1],Y
 	ply
 	rol	A
 	ror	A
-	bpl	L299
+	bpl	L298
 	dey
-L299:
+L298:
 	sta	<R0
 	sty	<R0+2
-	pei	<L289+ofs_1+2
-	pei	<L289+ofs_1
+	pei	<L288+ofs_1+2
+	pei	<L288+ofs_1
 	lda	#$5
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -8134,37 +8141,37 @@ L299:
 	cmp	<R0
 	lda	<R1+2
 	sbc	<R0+2
-	bcs	L300
+	bcs	L299
 	brl	L10128
-L300:
-	.line	1965
+L299:
+	.line	1968
 ;				dp->sect = 0;
-	.line	1966
+	.line	1969
 	lda	#$0
 	ldy	#$18
-	sta	[<L288+dp_0],Y
+	sta	[<L287+dp_0],Y
 	lda	#$0
 	ldy	#$1a
-	sta	[<L288+dp_0],Y
+	sta	[<L287+dp_0],Y
 ;				return FR_NO_FILE;
-	.line	1967
+	.line	1970
 	lda	#$4
-	brl	L296
+	brl	L295
 ;			}
-	.line	1968
+	.line	1971
 ;		}
 L10128:
-	.line	1969
+	.line	1972
 ;		else
 	brl	L10129
 L10127:
 ;		{ /* Dynamic table */
-	.line	1971
+	.line	1974
 ;			if ((ofs / SS(fs) & (fs->csize - 1)) == 0)
-	.line	1972
+	.line	1975
 ;			{ /* Cluster changed? */
-	pei	<L289+ofs_1+2
-	pei	<L289+ofs_1
+	pei	<L288+ofs_1+2
+	pei	<L288+ofs_1
 	lda	#$9
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -8173,13 +8180,13 @@ L10127:
 	clc
 	lda	#$ffff
 	ldy	#$9
-	adc	[<L289+fs_1],Y
+	adc	[<L288+fs_1],Y
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L301
+	bpl	L300
 	dey
-L301:
+L300:
 	sta	<R1
 	sty	<R1+2
 	lda	<R1
@@ -8190,174 +8197,174 @@ L301:
 	sta	<R2+2
 	lda	<R2
 	ora	<R2+2
-	beq	L302
+	beq	L301
 	brl	L10130
-L302:
-	.line	1973
+L301:
+	.line	1976
 ;				clst = get_fat(&dp->obj, dp->clust); /* Get next cluster */
-	.line	1974
+	.line	1977
 	ldy	#$16
-	lda	[<L288+dp_0],Y
+	lda	[<L287+dp_0],Y
 	pha
 	ldy	#$14
-	lda	[<L288+dp_0],Y
+	lda	[<L287+dp_0],Y
 	pha
-	pei	<L288+dp_0+2
-	pei	<L288+dp_0
+	pei	<L287+dp_0+2
+	pei	<L287+dp_0
 	jsl	~~get_fat
-	sta	<L289+clst_1
-	stx	<L289+clst_1+2
+	sta	<L288+clst_1
+	stx	<L288+clst_1+2
 ;				if (clst <= 1)
-	.line	1975
+	.line	1978
 ;					return FR_INT_ERR; /* Internal error */
 	lda	#$1
-	cmp	<L289+clst_1
+	cmp	<L288+clst_1
 	lda	#$0
-	sbc	<L289+clst_1+2
-	bcs	L303
+	sbc	<L288+clst_1+2
+	bcs	L302
 	brl	L10131
-L303:
-	.line	1976
+L302:
+	.line	1979
 	lda	#$2
-	brl	L296
+	brl	L295
 ;				if (clst == 0xFFFFFFFF)
 L10131:
-	.line	1977
+	.line	1980
 ;					return FR_DISK_ERR; /* Disk error */
-	lda	<L289+clst_1
+	lda	<L288+clst_1
 	cmp	#<$ffffffff
-	bne	L304
-	lda	<L289+clst_1+2
+	bne	L303
+	lda	<L288+clst_1+2
 	cmp	#^$ffffffff
-L304:
-	beq	L305
+L303:
+	beq	L304
 	brl	L10132
-L305:
-	.line	1978
+L304:
+	.line	1981
 	lda	#$1
-	brl	L296
+	brl	L295
 ;				if (clst >= fs->n_fatent)
 L10132:
-	.line	1979
+	.line	1982
 ;				{ /* It reached end of dynamic table */
-	lda	<L289+clst_1
+	lda	<L288+clst_1
 	ldy	#$17
-	cmp	[<L289+fs_1],Y
-	lda	<L289+clst_1+2
+	cmp	[<L288+fs_1],Y
+	lda	<L288+clst_1+2
 	ldy	#$19
-	sbc	[<L289+fs_1],Y
-	bcs	L306
+	sbc	[<L288+fs_1],Y
+	bcs	L305
 	brl	L10133
-L306:
-	.line	1980
+L305:
+	.line	1983
 ;#if !FF_FS_READONLY
 ;					if (!stretch)
-	.line	1982
+	.line	1985
 ;					{ /* If no stretch, report EOT */
-	lda	<L288+stretch_0
-	beq	L307
+	lda	<L287+stretch_0
+	beq	L306
 	brl	L10134
-L307:
-	.line	1983
+L306:
+	.line	1986
 ;						dp->sect = 0;
-	.line	1984
+	.line	1987
 	lda	#$0
 	ldy	#$18
-	sta	[<L288+dp_0],Y
+	sta	[<L287+dp_0],Y
 	lda	#$0
 	ldy	#$1a
-	sta	[<L288+dp_0],Y
+	sta	[<L287+dp_0],Y
 ;						return FR_NO_FILE;
-	.line	1985
+	.line	1988
 	lda	#$4
-	brl	L296
+	brl	L295
 ;					}
-	.line	1986
+	.line	1989
 ;					clst = create_chain(&dp->obj, dp->clust); /* Allocate a cluster */
 L10134:
-	.line	1987
+	.line	1990
 	ldy	#$16
-	lda	[<L288+dp_0],Y
+	lda	[<L287+dp_0],Y
 	pha
 	ldy	#$14
-	lda	[<L288+dp_0],Y
+	lda	[<L287+dp_0],Y
 	pha
-	pei	<L288+dp_0+2
-	pei	<L288+dp_0
+	pei	<L287+dp_0+2
+	pei	<L287+dp_0
 	jsl	~~create_chain
-	sta	<L289+clst_1
-	stx	<L289+clst_1+2
+	sta	<L288+clst_1
+	stx	<L288+clst_1+2
 ;					if (clst == 0)
-	.line	1988
+	.line	1991
 ;						return FR_DENIED; /* No free cluster */
-	lda	<L289+clst_1
-	ora	<L289+clst_1+2
-	beq	L308
+	lda	<L288+clst_1
+	ora	<L288+clst_1+2
+	beq	L307
 	brl	L10135
-L308:
-	.line	1989
+L307:
+	.line	1992
 	lda	#$7
-	brl	L296
+	brl	L295
 ;					if (clst == 1)
 L10135:
-	.line	1990
+	.line	1993
 ;						return FR_INT_ERR; /* Internal error */
-	lda	<L289+clst_1
+	lda	<L288+clst_1
 	cmp	#<$1
-	bne	L309
-	lda	<L289+clst_1+2
+	bne	L308
+	lda	<L288+clst_1+2
 	cmp	#^$1
-L309:
-	beq	L310
+L308:
+	beq	L309
 	brl	L10136
-L310:
-	.line	1991
+L309:
+	.line	1994
 	lda	#$2
-	brl	L296
+	brl	L295
 ;					if (clst == 0xFFFFFFFF)
 L10136:
-	.line	1992
+	.line	1995
 ;						return FR_DISK_ERR; /* Disk error */
-	lda	<L289+clst_1
+	lda	<L288+clst_1
 	cmp	#<$ffffffff
-	bne	L311
-	lda	<L289+clst_1+2
+	bne	L310
+	lda	<L288+clst_1+2
 	cmp	#^$ffffffff
-L311:
-	beq	L312
+L310:
+	beq	L311
 	brl	L10137
-L312:
-	.line	1993
+L311:
+	.line	1996
 	lda	#$1
-	brl	L296
+	brl	L295
 ;					if (dir_clear(fs, clst) != FR_OK)
 L10137:
-	.line	1994
+	.line	1997
 ;						return FR_DISK_ERR; /* Clean up the stretched table */
-	pei	<L289+clst_1+2
-	pei	<L289+clst_1
-	pei	<L289+fs_1+2
-	pei	<L289+fs_1
+	pei	<L288+clst_1+2
+	pei	<L288+clst_1
+	pei	<L288+fs_1+2
+	pei	<L288+fs_1
 	jsl	~~dir_clear
 	tax
-	bne	L313
+	bne	L312
 	brl	L10138
-L313:
-	.line	1995
+L312:
+	.line	1998
 	lda	#$1
-	brl	L296
+	brl	L295
 ;					if (FF_FS_EXFAT)
 L10138:
-	.line	1996
+	.line	1999
 ;						dp->obj.stat |= 4; /* exFAT: The directory has been stretched */
 	brl	L10139
-	.line	1997
+	.line	2000
 	clc
 	lda	#$7
-	adc	<L288+dp_0
+	adc	<L287+dp_0
 	sta	<R0
 	lda	#$0
-	adc	<L288+dp_0+2
+	adc	<L287+dp_0+2
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -8372,51 +8379,51 @@ L10138:
 ;#endif
 ;				}
 L10139:
-	.line	2002
+	.line	2005
 ;				dp->clust = clst; /* Initialize data for new cluster */
 L10133:
-	.line	2003
-	lda	<L289+clst_1
+	.line	2006
+	lda	<L288+clst_1
 	ldy	#$14
-	sta	[<L288+dp_0],Y
-	lda	<L289+clst_1+2
+	sta	[<L287+dp_0],Y
+	lda	<L288+clst_1+2
 	ldy	#$16
-	sta	[<L288+dp_0],Y
+	sta	[<L287+dp_0],Y
 ;				dp->sect = clst2sect(fs, clst);
-	.line	2004
-	pei	<L289+clst_1+2
-	pei	<L289+clst_1
-	pei	<L289+fs_1+2
-	pei	<L289+fs_1
+	.line	2007
+	pei	<L288+clst_1+2
+	pei	<L288+clst_1
+	pei	<L288+fs_1+2
+	pei	<L288+fs_1
 	jsl	~~clst2sect
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
 	ldy	#$18
-	sta	[<L288+dp_0],Y
+	sta	[<L287+dp_0],Y
 	lda	<R0+2
 	ldy	#$1a
-	sta	[<L288+dp_0],Y
+	sta	[<L287+dp_0],Y
 ;			}
-	.line	2005
+	.line	2008
 ;		}
 L10130:
-	.line	2006
+	.line	2009
 L10129:
 ;	}
-	.line	2007
+	.line	2010
 ;	dp->dptr = ofs; /* Current entry */
 L10126:
-	.line	2008
-	lda	<L289+ofs_1
+	.line	2011
+	lda	<L288+ofs_1
 	ldy	#$10
-	sta	[<L288+dp_0],Y
-	lda	<L289+ofs_1+2
+	sta	[<L287+dp_0],Y
+	lda	<L288+ofs_1+2
 	ldy	#$12
-	sta	[<L288+dp_0],Y
+	sta	[<L287+dp_0],Y
 ;	dp->dir = fs->win + ofs % SS(fs); /* Pointer to the entry in the win[] */
-	.line	2009
-	lda	<L289+ofs_1
+	.line	2012
+	lda	<L288+ofs_1
 	and	#<$1ff
 	sta	<R0
 	stz	<R0+2
@@ -8428,32 +8435,32 @@ L10126:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L289+fs_1
+	lda	<L288+fs_1
 	adc	<R1
 	sta	<R0
-	lda	<L289+fs_1+2
+	lda	<L288+fs_1+2
 	adc	<R1+2
 	sta	<R0+2
 	lda	<R0
 	ldy	#$1c
-	sta	[<L288+dp_0],Y
+	sta	[<L287+dp_0],Y
 	lda	<R0+2
 	ldy	#$1e
-	sta	[<L288+dp_0],Y
+	sta	[<L287+dp_0],Y
 ;
 ;	return FR_OK;
-	.line	2011
+	.line	2014
 	lda	#$0
-	brl	L296
+	brl	L295
 ;}
-	.line	2012
-	.endblock	2012
-L288	equ	24
-L289	equ	13
+	.line	2015
+	.endblock	2015
+L287	equ	24
+L288	equ	13
 	ends
 	efunc
-	.endfunc	2012,13,24
-	.line	2012
+	.endfunc	2015,13,24
+	.line	2015
 ;
 ;#if !FF_FS_READONLY
 ;/*-----------------------------------------------------------------------*/
@@ -8465,23 +8472,23 @@ L289	equ	13
 ;UINT nent /* Number of contiguous entries to allocate */
 ;)
 ;{
-	.line	2019
-	.line	2023
+	.line	2022
+	.line	2026
 	FFDOS
 	func
-	.function	2023
+	.function	2026
 ~~dir_alloc:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L314
+	sbc	#L313
 	tcs
 	phd
 	tcd
 dp_0	set	4
 nent_0	set	8
-	.block	2023
+	.block	2026
 ;	FRESULT res;
 ;	UINT n;
 ;	FATFS *fs = dp->obj.fs;
@@ -8492,68 +8499,68 @@ n_1	set	2
 fs_1	set	4
 	.sym	res,0,5,1,16
 	.sym	n,2,16,1,16
-	.sym	fs,4,138,1,32,72
-	.sym	dp,4,138,6,32,75
+	.sym	fs,4,138,1,32,75
+	.sym	dp,4,138,6,32,78
 	.sym	nent,8,16,6,16
-	lda	[<L314+dp_0]
-	sta	<L315+fs_1
+	lda	[<L313+dp_0]
+	sta	<L314+fs_1
 	ldy	#$2
-	lda	[<L314+dp_0],Y
-	sta	<L315+fs_1+2
-	.line	2028
+	lda	[<L313+dp_0],Y
+	sta	<L314+fs_1+2
+	.line	2031
 	pea	#^$0
 	pea	#<$0
-	pei	<L314+dp_0+2
-	pei	<L314+dp_0
+	pei	<L313+dp_0+2
+	pei	<L313+dp_0
 	jsl	~~dir_sdi
-	sta	<L315+res_1
+	sta	<L314+res_1
 ;	if (res == FR_OK)
-	.line	2029
-;	{
-	lda	<L315+res_1
-	beq	L317
-	brl	L10140
-L317:
-	.line	2030
-;		n = 0;
-	.line	2031
-	stz	<L315+n_1
-;		do
 	.line	2032
+;	{
+	lda	<L314+res_1
+	beq	L316
+	brl	L10140
+L316:
+	.line	2033
+;		n = 0;
+	.line	2034
+	stz	<L314+n_1
+;		do
+	.line	2035
 L10143:
 ;		{
-	.line	2033
+	.line	2036
 ;			res = move_window(fs, dp->sect);
-	.line	2034
+	.line	2037
 	ldy	#$1a
-	lda	[<L314+dp_0],Y
+	lda	[<L313+dp_0],Y
 	pha
 	ldy	#$18
-	lda	[<L314+dp_0],Y
+	lda	[<L313+dp_0],Y
 	pha
-	pei	<L315+fs_1+2
-	pei	<L315+fs_1
+	pei	<L314+fs_1+2
+	pei	<L314+fs_1
 	jsl	~~move_window
-	sta	<L315+res_1
+	sta	<L314+res_1
 ;			if (res != FR_OK)
-	.line	2035
+	.line	2038
 ;				break;
-	lda	<L315+res_1
-	beq	L318
+	lda	<L314+res_1
+	beq	L317
 	brl	L10142
-L318:
+L317:
 ;#if FF_FS_EXFAT
 ;			if ((fs->fs_type == FS_EXFAT) ? (int)((dp->dir[XDIR_Type] & 0x80) == 0) : (int)(dp->dir[DIR_Name] == DDEM || dp->dir[DIR_Name] == 0))
 ;			{
 ;#else
 ;			if (dp->dir[DIR_Name] == DDEM || dp->dir[DIR_Name] == 0)
-	.line	2041
+	.line	2044
 ;			{
 	ldy	#$1c
-	lda	[<L314+dp_0],Y
+	lda	[<L313+dp_0],Y
 	sta	<R0
 	ldy	#$1e
-	lda	[<L314+dp_0],Y
+	lda	[<L313+dp_0],Y
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -8561,101 +8568,101 @@ L318:
 	cmp	#<$e5
 	rep	#$20
 	longa	on
-	bne	L320
-	brl	L319
-L320:
+	bne	L319
+	brl	L318
+L319:
 	ldy	#$1c
-	lda	[<L314+dp_0],Y
+	lda	[<L313+dp_0],Y
 	sta	<R0
 	ldy	#$1e
-	lda	[<L314+dp_0],Y
+	lda	[<L313+dp_0],Y
 	sta	<R0+2
 	lda	[<R0]
 	and	#$ff
-	beq	L321
+	beq	L320
 	brl	L10144
-L321:
-L319:
-	.line	2042
+L320:
+L318:
+	.line	2045
 ;#endif
 ;				if (++n == nent)
-	.line	2044
+	.line	2047
 ;					break; /* A block of contiguous free entries is found */
-	inc	<L315+n_1
-	lda	<L315+n_1
-	cmp	<L314+nent_0
-	bne	L322
+	inc	<L314+n_1
+	lda	<L314+n_1
+	cmp	<L313+nent_0
+	bne	L321
 	brl	L10142
-L322:
+L321:
 ;			}
-	.line	2046
+	.line	2049
 ;			else
 	brl	L10145
 L10144:
 ;			{
-	.line	2048
+	.line	2051
 ;				n = 0; /* Not a blank entry. Restart to search */
-	.line	2049
-	stz	<L315+n_1
+	.line	2052
+	stz	<L314+n_1
 ;			}
-	.line	2050
+	.line	2053
 L10145:
 ;			res = dir_next(dp, 1);
-	.line	2051
+	.line	2054
 	pea	#<$1
-	pei	<L314+dp_0+2
-	pei	<L314+dp_0
+	pei	<L313+dp_0+2
+	pei	<L313+dp_0
 	jsl	~~dir_next
-	sta	<L315+res_1
+	sta	<L314+res_1
 ;		} while (res == FR_OK); /* Next entry with table stretch enabled */
-	.line	2052
+	.line	2055
 L10141:
-	lda	<L315+res_1
-	bne	L323
+	lda	<L314+res_1
+	bne	L322
 	brl	L10143
-L323:
+L322:
 L10142:
 ;	}
-	.line	2053
+	.line	2056
 ;
 ;	if (res == FR_NO_FILE)
 L10140:
-	.line	2055
+	.line	2058
 ;		res = FR_DENIED; /* No directory entry to allocate */
-	lda	<L315+res_1
+	lda	<L314+res_1
 	cmp	#<$4
-	beq	L324
+	beq	L323
 	brl	L10146
-L324:
-	.line	2056
+L323:
+	.line	2059
 	lda	#$7
-	sta	<L315+res_1
+	sta	<L314+res_1
 ;	return res;
 L10146:
-	.line	2057
-	lda	<L315+res_1
-L325:
+	.line	2060
+	lda	<L314+res_1
+L324:
 	tay
-	lda	<L314+2
-	sta	<L314+2+6
-	lda	<L314+1
-	sta	<L314+1+6
+	lda	<L313+2
+	sta	<L313+2+6
+	lda	<L313+1
+	sta	<L313+1+6
 	pld
 	tsc
 	clc
-	adc	#L314+6
+	adc	#L313+6
 	tcs
 	tya
 	rtl
 ;}
-	.line	2058
-	.endblock	2058
-L314	equ	12
-L315	equ	5
+	.line	2061
+	.endblock	2061
+L313	equ	12
+L314	equ	5
 	ends
 	efunc
-	.endfunc	2058,5,12
-	.line	2058
+	.endfunc	2061,5,12
+	.line	2061
 ;
 ;#endif	/* !FF_FS_READONLY */
 ;
@@ -8668,37 +8675,37 @@ L315	equ	5
 ;const BYTE* dir /* Pointer to the key entry */
 ;)
 ;{
-	.line	2066
-	.line	2070
+	.line	2069
+	.line	2073
 	FFDOS
 	func
-	.function	2070
+	.function	2073
 ~~ld_clust:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L326
+	sbc	#L325
 	tcs
 	phd
 	tcd
 fs_0	set	4
 dir_0	set	8
-	.block	2070
+	.block	2073
 ;	DWORD cl;
 ;
 ;	cl = ld_word(dir + DIR_FstClusLO);
 cl_1	set	0
 	.sym	cl,0,18,1,32
-	.sym	fs,4,138,6,32,72
+	.sym	fs,4,138,6,32,75
 	.sym	dir,8,142,6,32
-	.line	2073
+	.line	2076
 	clc
 	lda	#$1a
-	adc	<L326+dir_0
+	adc	<L325+dir_0
 	sta	<R0
 	lda	#$0
-	adc	<L326+dir_0+2
+	adc	<L325+dir_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
@@ -8706,32 +8713,32 @@ cl_1	set	0
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L329
+	bpl	L328
 	dey
-L329:
-	sta	<L327+cl_1
-	sty	<L327+cl_1+2
+L328:
+	sta	<L326+cl_1
+	sty	<L326+cl_1+2
 ;	if (fs->fs_type == FS_FAT32)
-	.line	2074
+	.line	2077
 ;	{
 	sep	#$20
 	longa	off
-	lda	[<L326+fs_0]
+	lda	[<L325+fs_0]
 	cmp	#<$3
 	rep	#$20
 	longa	on
-	beq	L330
+	beq	L329
 	brl	L10147
-L330:
-	.line	2075
+L329:
+	.line	2078
 ;		cl |= (DWORD) ld_word(dir + DIR_FstClusHI) << 16;
-	.line	2076
+	.line	2079
 	clc
 	lda	#$14
-	adc	<L326+dir_0
+	adc	<L325+dir_0
 	sta	<R1
 	lda	#$0
-	adc	<L326+dir_0+2
+	adc	<L325+dir_0+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
@@ -8739,9 +8746,9 @@ L330:
 	sta	<R2
 	ldy	#$0
 	lda	<R2
-	bpl	L331
+	bpl	L330
 	dey
-L331:
+L330:
 	sta	<R2
 	sty	<R2+2
 	pei	<R2+2
@@ -8751,42 +8758,42 @@ L331:
 	jsl	~~~lasl
 	sta	<R0
 	stx	<R0+2
-	lda	<L327+cl_1
+	lda	<L326+cl_1
 	ora	<R0
-	sta	<L327+cl_1
-	lda	<L327+cl_1+2
+	sta	<L326+cl_1
+	lda	<L326+cl_1+2
 	ora	<R0+2
-	sta	<L327+cl_1+2
+	sta	<L326+cl_1+2
 ;	}
-	.line	2077
+	.line	2080
 ;
 ;	return cl;
 L10147:
-	.line	2079
-	ldx	<L327+cl_1+2
-	lda	<L327+cl_1
-L332:
+	.line	2082
+	ldx	<L326+cl_1+2
+	lda	<L326+cl_1
+L331:
 	tay
-	lda	<L326+2
-	sta	<L326+2+8
-	lda	<L326+1
-	sta	<L326+1+8
+	lda	<L325+2
+	sta	<L325+2+8
+	lda	<L325+1
+	sta	<L325+1+8
 	pld
 	tsc
 	clc
-	adc	#L326+8
+	adc	#L325+8
 	tcs
 	tya
 	rtl
 ;}
-	.line	2080
-	.endblock	2080
-L326	equ	16
-L327	equ	13
+	.line	2083
+	.endblock	2083
+L325	equ	16
+L326	equ	13
 	ends
 	efunc
-	.endfunc	2080,13,16
-	.line	2080
+	.endfunc	2083,13,16
+	.line	2083
 ;
 ;#if !FF_FS_READONLY
 ;static void st_clust(FATFS* fs, /* Pointer to the fs object */
@@ -8794,57 +8801,57 @@ L327	equ	13
 ;DWORD cl /* Value to be set */
 ;)
 ;{
-	.line	2083
-	.line	2087
+	.line	2086
+	.line	2090
 	FFDOS
 	func
-	.function	2087
+	.function	2090
 ~~st_clust:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L333
+	sbc	#L332
 	tcs
 	phd
 	tcd
 fs_0	set	4
 dir_0	set	8
 cl_0	set	12
-	.block	2087
+	.block	2090
 ;	st_word(dir + DIR_FstClusLO, (WORD) cl);
-	.sym	fs,4,138,6,32,72
+	.sym	fs,4,138,6,32,75
 	.sym	dir,8,142,6,32
 	.sym	cl,12,18,6,32
-	.line	2088
-	pei	<L333+cl_0
+	.line	2091
+	pei	<L332+cl_0
 	clc
 	lda	#$1a
-	adc	<L333+dir_0
+	adc	<L332+dir_0
 	sta	<R0
 	lda	#$0
-	adc	<L333+dir_0+2
+	adc	<L332+dir_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_word
 ;	if (fs->fs_type == FS_FAT32)
-	.line	2089
+	.line	2092
 ;	{
 	sep	#$20
 	longa	off
-	lda	[<L333+fs_0]
+	lda	[<L332+fs_0]
 	cmp	#<$3
 	rep	#$20
 	longa	on
-	beq	L336
+	beq	L335
 	brl	L10148
-L336:
-	.line	2090
+L335:
+	.line	2093
 ;		st_word(dir + DIR_FstClusHI, (WORD) (cl >> 16));
-	.line	2091
-	pei	<L333+cl_0+2
-	pei	<L333+cl_0
+	.line	2094
+	pei	<L332+cl_0+2
+	pei	<L332+cl_0
 	lda	#$10
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -8853,37 +8860,37 @@ L336:
 	pei	<R0
 	clc
 	lda	#$14
-	adc	<L333+dir_0
+	adc	<L332+dir_0
 	sta	<R1
 	lda	#$0
-	adc	<L333+dir_0+2
+	adc	<L332+dir_0+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~st_word
 ;	}
-	.line	2092
+	.line	2095
 ;}
 L10148:
-	.line	2093
-L337:
-	lda	<L333+2
-	sta	<L333+2+12
-	lda	<L333+1
-	sta	<L333+1+12
+	.line	2096
+L336:
+	lda	<L332+2
+	sta	<L332+2+12
+	lda	<L332+1
+	sta	<L332+1+12
 	pld
 	tsc
 	clc
-	adc	#L333+12
+	adc	#L332+12
 	tcs
 	rtl
-	.endblock	2093
-L333	equ	8
-L334	equ	9
+	.endblock	2096
+L332	equ	8
+L333	equ	9
 	ends
 	efunc
-	.endfunc	2093,9,8
-	.line	2093
+	.endfunc	2096,9,8
+	.line	2096
 ;#endif
 ;
 ;#if FF_USE_LFN
@@ -8896,23 +8903,23 @@ L334	equ	9
 ;		BYTE* dir /* Pointer to the directory entry containing the part of LFN */
 ;)
 ;{
-	.line	2101
-	.line	2105
+	.line	2104
+	.line	2108
 	FFDOS
 	func
-	.function	2105
+	.function	2108
 ~~cmp_lfn:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L338
+	sbc	#L337
 	tcs
 	phd
 	tcd
 lfnbuf_0	set	4
 dir_0	set	8
-	.block	2105
+	.block	2108
 ;	UINT i, s;
 ;	WCHAR wc, uc;
 ;
@@ -8927,41 +8934,41 @@ uc_1	set	6
 	.sym	uc,6,16,1,16
 	.sym	lfnbuf,4,144,6,32
 	.sym	dir,8,142,6,32
-	.line	2109
+	.line	2112
 	clc
 	lda	#$1a
-	adc	<L338+dir_0
+	adc	<L337+dir_0
 	sta	<R0
 	lda	#$0
-	adc	<L338+dir_0+2
+	adc	<L337+dir_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~ld_word
 	tax
-	bne	L341
+	bne	L340
 	brl	L10149
-L341:
-	.line	2109
+L340:
+	.line	2112
 	lda	#$0
-L342:
+L341:
 	tay
-	lda	<L338+2
-	sta	<L338+2+8
-	lda	<L338+1
-	sta	<L338+1+8
+	lda	<L337+2
+	sta	<L337+2+8
+	lda	<L337+1
+	sta	<L337+1+8
 	pld
 	tsc
 	clc
-	adc	#L338+8
+	adc	#L337+8
 	tcs
 	tya
 	rtl
 ;
 ;	i = ((dir[LDIR_Ord] & 0x3F) - 1) * 13; /* Offset in the LFN buffer */
 L10149:
-	.line	2111
-	lda	[<L338+dir_0]
+	.line	2114
+	lda	[<L337+dir_0]
 	and	#<$3f
 	sta	<R0
 	lda	<R0
@@ -8972,54 +8979,54 @@ L10149:
 	clc
 	lda	#$fff3
 	adc	<R0
-	sta	<L339+i_1
+	sta	<L338+i_1
 ;
 ;	for (wc = 1, s = 0; s < 13; s++)
-	.line	2113
+	.line	2116
 	lda	#$1
-	sta	<L339+wc_1
-	stz	<L339+s_1
+	sta	<L338+wc_1
+	stz	<L338+s_1
 	brl	L10153
 L10152:
 ;	{ /* Process all characters in the entry */
-	.line	2114
+	.line	2117
 ;		uc = ld_word(dir + LfnOfs[s]); /* Pick an LFN character */
-	.line	2115
-	ldx	<L339+s_1
+	.line	2118
+	ldx	<L338+s_1
 	lda	|~~LfnOfs,X
 	and	#$ff
 	sta	<R0
 	stz	<R0+2
 	clc
-	lda	<L338+dir_0
+	lda	<L337+dir_0
 	adc	<R0
 	sta	<R1
-	lda	<L338+dir_0+2
+	lda	<L337+dir_0+2
 	adc	<R0+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~ld_word
-	sta	<L339+uc_1
+	sta	<L338+uc_1
 ;		if (wc != 0)
-	.line	2116
+	.line	2119
 ;		{
-	lda	<L339+wc_1
-	bne	L343
+	lda	<L338+wc_1
+	bne	L342
 	brl	L10154
-L343:
-	.line	2117
+L342:
+	.line	2120
 ;			if (i >= FF_MAX_LFN + 1 || ff_wtoupper(uc) != ff_wtoupper(lfnbuf[i++]))
-	.line	2118
+	.line	2121
 ;			{ /* Compare it */
-	lda	<L339+i_1
+	lda	<L338+i_1
 	cmp	#<$100
-	bcc	L345
-	brl	L344
-L345:
-	lda	<L339+i_1
+	bcc	L344
+	brl	L343
+L344:
+	lda	<L338+i_1
 	sta	<R1
-	inc	<L339+i_1
+	inc	<L338+i_1
 	lda	<R1
 	sta	<R1
 	stz	<R1+2
@@ -9031,10 +9038,10 @@ L345:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L338+lfnbuf_0
+	lda	<L337+lfnbuf_0
 	adc	<R0
 	sta	<R2
-	lda	<L338+lfnbuf_0+2
+	lda	<L337+lfnbuf_0+2
 	adc	<R0+2
 	sta	<R2+2
 	lda	[<R2]
@@ -9045,7 +9052,7 @@ L345:
 	jsl	~~ff_wtoupper
 	sta	<R2
 	stx	<R2+2
-	lda	<L339+uc_1
+	lda	<L338+uc_1
 	sta	<R3
 	stz	<R3+2
 	pei	<R3+2
@@ -9055,75 +9062,75 @@ L345:
 	stx	<17+2
 	lda	<17
 	cmp	<R2
-	bne	L346
+	bne	L345
 	lda	<17+2
 	cmp	<R2+2
-L346:
-	bne	L347
+L345:
+	bne	L346
 	brl	L10155
-L347:
-L344:
-	.line	2119
+L346:
+L343:
+	.line	2122
 ;				return 0; /* Not matched */
-	.line	2120
+	.line	2123
 	lda	#$0
-	brl	L342
+	brl	L341
 ;			}
-	.line	2121
+	.line	2124
 ;			wc = uc;
 L10155:
-	.line	2122
-	lda	<L339+uc_1
-	sta	<L339+wc_1
+	.line	2125
+	lda	<L338+uc_1
+	sta	<L338+wc_1
 ;		}
-	.line	2123
+	.line	2126
 ;		else
 	brl	L10156
 L10154:
 ;		{
-	.line	2125
+	.line	2128
 ;			if (uc != 0xFFFF) return 0; /* Check filler */
-	.line	2126
-	lda	<L339+uc_1
+	.line	2129
+	lda	<L338+uc_1
 	cmp	#<$ffff
-	bne	L348
+	bne	L347
 	brl	L10157
-L348:
-	.line	2126
+L347:
+	.line	2129
 	lda	#$0
-	brl	L342
+	brl	L341
 ;		}
 L10157:
-	.line	2127
+	.line	2130
 L10156:
 ;	}
-	.line	2128
+	.line	2131
 L10150:
-	inc	<L339+s_1
+	inc	<L338+s_1
 L10153:
-	lda	<L339+s_1
+	lda	<L338+s_1
 	cmp	#<$d
-	bcs	L349
+	bcs	L348
 	brl	L10152
-L349:
+L348:
 L10151:
 ;
 ;	if ((dir[LDIR_Ord] & LLEF) && wc && lfnbuf[i]) return 0; /* Last segment matched but different length */
-	.line	2130
+	.line	2133
 	sep	#$20
 	longa	off
-	lda	[<L338+dir_0]
+	lda	[<L337+dir_0]
 	and	#<$40
 	rep	#$20
 	longa	on
+	bne	L349
+	brl	L10158
+L349:
+	lda	<L338+wc_1
 	bne	L350
 	brl	L10158
 L350:
-	lda	<L339+wc_1
-	bne	L351
-	brl	L10158
-L351:
-	lda	<L339+i_1
+	lda	<L338+i_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -9134,34 +9141,34 @@ L351:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L338+lfnbuf_0
+	lda	<L337+lfnbuf_0
 	adc	<R0
 	sta	<R2
-	lda	<L338+lfnbuf_0+2
+	lda	<L337+lfnbuf_0+2
 	adc	<R0+2
 	sta	<R2+2
 	lda	[<R2]
-	bne	L352
+	bne	L351
 	brl	L10158
-L352:
-	.line	2130
+L351:
+	.line	2133
 	lda	#$0
-	brl	L342
+	brl	L341
 ;
 ;	return 1; /* The part of LFN matched */
 L10158:
-	.line	2132
+	.line	2135
 	lda	#$1
-	brl	L342
+	brl	L341
 ;}
-	.line	2133
-	.endblock	2133
-L338	equ	28
-L339	equ	21
+	.line	2136
+	.endblock	2136
+L337	equ	28
+L338	equ	21
 	ends
 	efunc
-	.endfunc	2133,21,28
-	.line	2133
+	.endfunc	2136,21,28
+	.line	2136
 ;
 ;#if FF_FS_MINIMIZE <= 1 || FF_FS_RPATH >= 2 || FF_USE_LABEL || FF_FS_EXFAT
 ;/*-----------------------------------------------------*/
@@ -9173,23 +9180,23 @@ L339	equ	21
 ;		BYTE* dir /* Pointer to the LFN entry */
 ;)
 ;{
-	.line	2140
-	.line	2144
+	.line	2143
+	.line	2147
 	FFDOS
 	func
-	.function	2144
+	.function	2147
 ~~pick_lfn:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L353
+	sbc	#L352
 	tcs
 	phd
 	tcd
 lfnbuf_0	set	4
 dir_0	set	8
-	.block	2144
+	.block	2147
 ;	UINT i, s;
 ;	WCHAR wc, uc;
 ;
@@ -9204,41 +9211,41 @@ uc_1	set	6
 	.sym	uc,6,16,1,16
 	.sym	lfnbuf,4,144,6,32
 	.sym	dir,8,142,6,32
-	.line	2148
+	.line	2151
 	clc
 	lda	#$1a
-	adc	<L353+dir_0
+	adc	<L352+dir_0
 	sta	<R0
 	lda	#$0
-	adc	<L353+dir_0+2
+	adc	<L352+dir_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~ld_word
 	tax
-	bne	L356
+	bne	L355
 	brl	L10159
-L356:
-	.line	2148
+L355:
+	.line	2151
 	lda	#$0
-L357:
+L356:
 	tay
-	lda	<L353+2
-	sta	<L353+2+8
-	lda	<L353+1
-	sta	<L353+1+8
+	lda	<L352+2
+	sta	<L352+2+8
+	lda	<L352+1
+	sta	<L352+1+8
 	pld
 	tsc
 	clc
-	adc	#L353+8
+	adc	#L352+8
 	tcs
 	tya
 	rtl
 ;
 ;	i = ((dir[LDIR_Ord] & ~LLEF) - 1) * 13; /* Offset in the LFN buffer */
 L10159:
-	.line	2150
-	lda	[<L353+dir_0]
+	.line	2153
+	lda	[<L352+dir_0]
 	and	#$ff
 	and	#<$ffffffbf
 	sta	<R0
@@ -9250,57 +9257,57 @@ L10159:
 	clc
 	lda	#$fff3
 	adc	<R0
-	sta	<L354+i_1
+	sta	<L353+i_1
 ;
 ;	for (wc = 1, s = 0; s < 13; s++)
-	.line	2152
+	.line	2155
 	lda	#$1
-	sta	<L354+wc_1
-	stz	<L354+s_1
+	sta	<L353+wc_1
+	stz	<L353+s_1
 	brl	L10163
 L10162:
 ;	{ /* Process all characters in the entry */
-	.line	2153
+	.line	2156
 ;		uc = ld_word(dir + LfnOfs[s]); /* Pick an LFN character */
-	.line	2154
-	ldx	<L354+s_1
+	.line	2157
+	ldx	<L353+s_1
 	lda	|~~LfnOfs,X
 	and	#$ff
 	sta	<R0
 	stz	<R0+2
 	clc
-	lda	<L353+dir_0
+	lda	<L352+dir_0
 	adc	<R0
 	sta	<R1
-	lda	<L353+dir_0+2
+	lda	<L352+dir_0+2
 	adc	<R0+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~ld_word
-	sta	<L354+uc_1
+	sta	<L353+uc_1
 ;		if (wc != 0)
-	.line	2155
+	.line	2158
 ;		{
-	lda	<L354+wc_1
-	bne	L358
+	lda	<L353+wc_1
+	bne	L357
 	brl	L10164
-L358:
-	.line	2156
+L357:
+	.line	2159
 ;			if (i >= FF_MAX_LFN + 1) return 0; /* Buffer overflow? */
-	.line	2157
-	lda	<L354+i_1
+	.line	2160
+	lda	<L353+i_1
 	cmp	#<$100
-	bcs	L359
+	bcs	L358
 	brl	L10165
-L359:
-	.line	2157
+L358:
+	.line	2160
 	lda	#$0
-	brl	L357
+	brl	L356
 ;			lfnbuf[i++] = wc = uc; /* Store it */
 L10165:
-	.line	2158
-	lda	<L354+i_1
+	.line	2161
+	lda	<L353+i_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -9311,81 +9318,81 @@ L10165:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L353+lfnbuf_0
+	lda	<L352+lfnbuf_0
 	adc	<R0
 	sta	<R2
-	lda	<L353+lfnbuf_0+2
+	lda	<L352+lfnbuf_0+2
 	adc	<R0+2
 	sta	<R2+2
-	lda	<L354+uc_1
-	sta	<L354+wc_1
-	lda	<L354+uc_1
+	lda	<L353+uc_1
+	sta	<L353+wc_1
+	lda	<L353+uc_1
 	sta	[<R2]
-	inc	<L354+i_1
+	inc	<L353+i_1
 ;		}
-	.line	2159
+	.line	2162
 ;		else
 	brl	L10166
 L10164:
 ;		{
-	.line	2161
+	.line	2164
 ;			if (uc != 0xFFFF) return 0; /* Check filler */
-	.line	2162
-	lda	<L354+uc_1
+	.line	2165
+	lda	<L353+uc_1
 	cmp	#<$ffff
-	bne	L360
+	bne	L359
 	brl	L10167
-L360:
-	.line	2162
+L359:
+	.line	2165
 	lda	#$0
-	brl	L357
+	brl	L356
 ;		}
 L10167:
-	.line	2163
+	.line	2166
 L10166:
 ;	}
-	.line	2164
+	.line	2167
 L10160:
-	inc	<L354+s_1
+	inc	<L353+s_1
 L10163:
-	lda	<L354+s_1
+	lda	<L353+s_1
 	cmp	#<$d
-	bcs	L361
+	bcs	L360
 	brl	L10162
-L361:
+L360:
 L10161:
 ;
 ;	if (dir[LDIR_Ord] & LLEF && wc != 0)
-	.line	2166
+	.line	2169
 ;	{ /* Put terminator if it is the last LFN part and not terminated */
 	sep	#$20
 	longa	off
-	lda	[<L353+dir_0]
+	lda	[<L352+dir_0]
 	and	#<$40
 	rep	#$20
 	longa	on
+	bne	L361
+	brl	L10168
+L361:
+	lda	<L353+wc_1
 	bne	L362
 	brl	L10168
 L362:
-	lda	<L354+wc_1
-	bne	L363
-	brl	L10168
-L363:
-	.line	2167
+	.line	2170
 ;		if (i >= FF_MAX_LFN + 1) return 0; /* Buffer overflow? */
-	.line	2168
-	lda	<L354+i_1
+	.line	2171
+	lda	<L353+i_1
 	cmp	#<$100
-	bcs	L364
+	bcs	L363
 	brl	L10169
-L364:
-	.line	2168
+L363:
+	.line	2171
 	lda	#$0
-	brl	L357
+	brl	L356
 ;		lfnbuf[i] = 0;
 L10169:
-	.line	2169
-	lda	<L354+i_1
+	.line	2172
+	lda	<L353+i_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -9396,31 +9403,31 @@ L10169:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L353+lfnbuf_0
+	lda	<L352+lfnbuf_0
 	adc	<R0
 	sta	<R2
-	lda	<L353+lfnbuf_0+2
+	lda	<L352+lfnbuf_0+2
 	adc	<R0+2
 	sta	<R2+2
 	lda	#$0
 	sta	[<R2]
 ;	}
-	.line	2170
+	.line	2173
 ;
 ;	return 1; /* The part of LFN is valid */
 L10168:
-	.line	2172
+	.line	2175
 	lda	#$1
-	brl	L357
+	brl	L356
 ;}
-	.line	2173
-	.endblock	2173
-L353	equ	20
-L354	equ	13
+	.line	2176
+	.endblock	2176
+L352	equ	20
+L353	equ	13
 	ends
 	efunc
-	.endfunc	2173,13,20
-	.line	2173
+	.endfunc	2176,13,20
+	.line	2176
 ;#endif
 ;
 ;#if !FF_FS_READONLY
@@ -9435,17 +9442,17 @@ L354	equ	13
 ;		BYTE sum /* Checksum of the corresponding SFN */
 ;)
 ;{
-	.line	2181
-	.line	2187
+	.line	2184
+	.line	2190
 	FFDOS
 	func
-	.function	2187
+	.function	2190
 ~~put_lfn:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L365
+	sbc	#L364
 	tcs
 	phd
 	tcd
@@ -9453,7 +9460,7 @@ lfn_0	set	4
 dir_0	set	8
 ord_0	set	12
 sum_0	set	14
-	.block	2187
+	.block	2190
 ;	UINT i, s;
 ;	WCHAR wc;
 ;
@@ -9468,49 +9475,49 @@ wc_1	set	4
 	.sym	dir,8,142,6,32
 	.sym	ord,12,14,6,8
 	.sym	sum,14,14,6,8
-	.line	2191
+	.line	2194
 	sep	#$20
 	longa	off
-	lda	<L365+sum_0
+	lda	<L364+sum_0
 	ldy	#$d
-	sta	[<L365+dir_0],Y
+	sta	[<L364+dir_0],Y
 	rep	#$20
 	longa	on
 ;	dir[LDIR_Attr] = AM_LFN; /* Set attribute. LFN entry */
-	.line	2192
+	.line	2195
 	sep	#$20
 	longa	off
 	lda	#$f
 	ldy	#$b
-	sta	[<L365+dir_0],Y
+	sta	[<L364+dir_0],Y
 	rep	#$20
 	longa	on
 ;	dir[LDIR_Type] = 0;
-	.line	2193
+	.line	2196
 	sep	#$20
 	longa	off
 	lda	#$0
 	ldy	#$c
-	sta	[<L365+dir_0],Y
+	sta	[<L364+dir_0],Y
 	rep	#$20
 	longa	on
 ;	st_word(dir + LDIR_FstClusLO, 0);
-	.line	2194
+	.line	2197
 	pea	#<$0
 	clc
 	lda	#$1a
-	adc	<L365+dir_0
+	adc	<L364+dir_0
 	sta	<R0
 	lda	#$0
-	adc	<L365+dir_0+2
+	adc	<L364+dir_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_word
 ;
 ;	i = (ord - 1) * 13; /* Get offset in the LFN working buffer */
-	.line	2196
-	lda	<L365+ord_0
+	.line	2199
+	lda	<L364+ord_0
 	and	#$ff
 	sta	<R0
 	lda	<R0
@@ -9521,25 +9528,25 @@ wc_1	set	4
 	clc
 	lda	#$fff3
 	adc	<R0
-	sta	<L366+i_1
+	sta	<L365+i_1
 ;	s = wc = 0;
-	.line	2197
-	stz	<L366+wc_1
-	stz	<L366+s_1
+	.line	2200
+	stz	<L365+wc_1
+	stz	<L365+s_1
 ;	do
-	.line	2198
+	.line	2201
 L10172:
 ;	{
-	.line	2199
+	.line	2202
 ;		if (wc != 0xFFFF) wc = lfn[i++]; /* Get an effective character */
-	.line	2200
-	lda	<L366+wc_1
+	.line	2203
+	lda	<L365+wc_1
 	cmp	#<$ffff
-	bne	L368
+	bne	L367
 	brl	L10173
-L368:
-	.line	2200
-	lda	<L366+i_1
+L367:
+	.line	2203
+	lda	<L365+i_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -9550,62 +9557,62 @@ L368:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L365+lfn_0
+	lda	<L364+lfn_0
 	adc	<R0
 	sta	<R2
-	lda	<L365+lfn_0+2
+	lda	<L364+lfn_0+2
 	adc	<R0+2
 	sta	<R2+2
 	lda	[<R2]
-	sta	<L366+wc_1
-	inc	<L366+i_1
+	sta	<L365+wc_1
+	inc	<L365+i_1
 ;		st_word(dir + LfnOfs[s], wc); /* Put it */
 L10173:
-	.line	2201
-	pei	<L366+wc_1
-	ldx	<L366+s_1
+	.line	2204
+	pei	<L365+wc_1
+	ldx	<L365+s_1
 	lda	|~~LfnOfs,X
 	and	#$ff
 	sta	<R0
 	stz	<R0+2
 	clc
-	lda	<L365+dir_0
+	lda	<L364+dir_0
 	adc	<R0
 	sta	<R1
-	lda	<L365+dir_0+2
+	lda	<L364+dir_0+2
 	adc	<R0+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~st_word
 ;		if (wc == 0) wc = 0xFFFF; /* Padding characters for following items */
-	.line	2202
-	lda	<L366+wc_1
-	beq	L369
+	.line	2205
+	lda	<L365+wc_1
+	beq	L368
 	brl	L10174
-L369:
-	.line	2202
+L368:
+	.line	2205
 	lda	#$ffff
-	sta	<L366+wc_1
+	sta	<L365+wc_1
 ;	}while (++s < 13);
 L10174:
-	.line	2203
+	.line	2206
 L10170:
-	inc	<L366+s_1
-	lda	<L366+s_1
+	inc	<L365+s_1
+	lda	<L365+s_1
 	cmp	#<$d
-	bcs	L370
+	bcs	L369
 	brl	L10172
-L370:
+L369:
 L10171:
 ;	if (wc == 0xFFFF || !lfn[i]) ord |= LLEF; /* Last LFN part is the start of LFN sequence */
-	.line	2204
-	lda	<L366+wc_1
+	.line	2207
+	lda	<L365+wc_1
 	cmp	#<$ffff
-	bne	L372
-	brl	L371
-L372:
-	lda	<L366+i_1
+	bne	L371
+	brl	L370
+L371:
+	lda	<L365+i_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -9616,53 +9623,53 @@ L372:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L365+lfn_0
+	lda	<L364+lfn_0
 	adc	<R0
 	sta	<R2
-	lda	<L365+lfn_0+2
+	lda	<L364+lfn_0+2
 	adc	<R0+2
 	sta	<R2+2
 	lda	[<R2]
-	beq	L373
+	beq	L372
 	brl	L10175
-L373:
-L371:
-	.line	2204
+L372:
+L370:
+	.line	2207
 	sep	#$20
 	longa	off
 	lda	#$40
-	tsb	<L365+ord_0
+	tsb	<L364+ord_0
 	rep	#$20
 	longa	on
 ;	dir[LDIR_Ord] = ord; /* Set the LFN order */
 L10175:
-	.line	2205
+	.line	2208
 	sep	#$20
 	longa	off
-	lda	<L365+ord_0
-	sta	[<L365+dir_0]
+	lda	<L364+ord_0
+	sta	[<L364+dir_0]
 	rep	#$20
 	longa	on
 ;}
-	.line	2206
-L374:
-	lda	<L365+2
-	sta	<L365+2+12
-	lda	<L365+1
-	sta	<L365+1+12
+	.line	2209
+L373:
+	lda	<L364+2
+	sta	<L364+2+12
+	lda	<L364+1
+	sta	<L364+1+12
 	pld
 	tsc
 	clc
-	adc	#L365+12
+	adc	#L364+12
 	tcs
 	rtl
-	.endblock	2206
-L365	equ	18
-L366	equ	13
+	.endblock	2209
+L364	equ	18
+L365	equ	13
 	ends
 	efunc
-	.endfunc	2206,13,18
-	.line	2206
+	.endfunc	2209,13,18
+	.line	2209
 ;
 ;#endif	/* !FF_FS_READONLY */
 ;#endif	/* FF_USE_LFN */
@@ -9679,17 +9686,17 @@ L366	equ	13
 ;		UINT seq /* Sequence number */
 ;)
 ;{
-	.line	2216
-	.line	2222
+	.line	2219
+	.line	2225
 	FFDOS
 	func
-	.function	2222
+	.function	2225
 ~~gen_numname:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L375
+	sbc	#L374
 	tcs
 	phd
 	tcd
@@ -9697,7 +9704,7 @@ dst_0	set	4
 src_0	set	8
 lfn_0	set	12
 seq_0	set	16
-	.block	2222
+	.block	2225
 ;	BYTE ns[8], c;
 ;	UINT i, j;
 ;	WCHAR wc;
@@ -9720,128 +9727,128 @@ sreg_1	set	15
 	.sym	src,8,142,6,32
 	.sym	lfn,12,144,6,32
 	.sym	seq,16,16,6,16
-	.line	2228
+	.line	2231
 	pea	#<$b
-	pei	<L375+src_0+2
-	pei	<L375+src_0
-	pei	<L375+dst_0+2
-	pei	<L375+dst_0
+	pei	<L374+src_0+2
+	pei	<L374+src_0
+	pei	<L374+dst_0+2
+	pei	<L374+dst_0
 	jsl	~~mem_cpy
 ;
 ;	if (seq > 5)
-	.line	2230
+	.line	2233
 ;	{ /* In case of many collisions, generate a hash number instead of sequential number */
 	lda	#$5
-	cmp	<L375+seq_0
-	bcc	L378
+	cmp	<L374+seq_0
+	bcc	L377
 	brl	L10176
-L378:
-	.line	2231
-;		sreg = seq;
-	.line	2232
-	lda	<L375+seq_0
-	sta	<L376+sreg_1
-	stz	<L376+sreg_1+2
-;		while (*lfn)
-	.line	2233
-L10177:
-	lda	[<L375+lfn_0]
-	bne	L379
-	brl	L10178
-L379:
-;		{ /* Create a CRC as hash value */
+L377:
 	.line	2234
-;			wc = *lfn++;
+;		sreg = seq;
 	.line	2235
-	lda	[<L375+lfn_0]
-	sta	<L376+wc_1
+	lda	<L374+seq_0
+	sta	<L375+sreg_1
+	stz	<L375+sreg_1+2
+;		while (*lfn)
+	.line	2236
+L10177:
+	lda	[<L374+lfn_0]
+	bne	L378
+	brl	L10178
+L378:
+;		{ /* Create a CRC as hash value */
+	.line	2237
+;			wc = *lfn++;
+	.line	2238
+	lda	[<L374+lfn_0]
+	sta	<L375+wc_1
 	clc
 	lda	#$2
-	adc	<L375+lfn_0
-	sta	<L375+lfn_0
-	bcc	L380
-	inc	<L375+lfn_0+2
-L380:
+	adc	<L374+lfn_0
+	sta	<L374+lfn_0
+	bcc	L379
+	inc	<L374+lfn_0+2
+L379:
 ;			for (i = 0; i < 16; i++)
-	.line	2236
-	stz	<L376+i_1
+	.line	2239
+	stz	<L375+i_1
 L10181:
 ;			{
-	.line	2237
+	.line	2240
 ;				sreg = (sreg << 1) + (wc & 1);
-	.line	2238
-	lda	<L376+wc_1
+	.line	2241
+	lda	<L375+wc_1
 	and	#<$1
 	sta	<R0
 	lda	<R0
 	sta	<R0
 	stz	<R0+2
-	lda	<L376+sreg_1
+	lda	<L375+sreg_1
 	sta	<R1
-	lda	<L376+sreg_1+2
+	lda	<L375+sreg_1+2
 	sta	<R1+2
 	asl	<R1
 	rol	<R1+2
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L376+sreg_1
+	sta	<L375+sreg_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L376+sreg_1+2
+	sta	<L375+sreg_1+2
 ;				wc >>= 1;
-	.line	2239
-	lsr	<L376+wc_1
+	.line	2242
+	lsr	<L375+wc_1
 ;				if (sreg & 0x10000) sreg ^= 0x11021;
-	.line	2240
-	lda	<L376+sreg_1+2
+	.line	2243
+	lda	<L375+sreg_1+2
 	and	#^$10000
-	bne	L381
+	bne	L380
 	brl	L10182
-L381:
-	.line	2240
-	lda	<L376+sreg_1
+L380:
+	.line	2243
+	lda	<L375+sreg_1
 	eor	#<$11021
-	sta	<L376+sreg_1
-	lda	<L376+sreg_1+2
+	sta	<L375+sreg_1
+	lda	<L375+sreg_1+2
 	eor	#^$11021
-	sta	<L376+sreg_1+2
+	sta	<L375+sreg_1+2
 ;			}
 L10182:
-	.line	2241
+	.line	2244
 L10179:
-	inc	<L376+i_1
-	lda	<L376+i_1
+	inc	<L375+i_1
+	lda	<L375+i_1
 	cmp	#<$10
-	bcs	L382
+	bcs	L381
 	brl	L10181
-L382:
+L381:
 L10180:
 ;		}
-	.line	2242
+	.line	2245
 	brl	L10177
 L10178:
 ;		seq = (UINT)sreg;
-	.line	2243
-	lda	<L376+sreg_1
-	sta	<L375+seq_0
+	.line	2246
+	lda	<L375+sreg_1
+	sta	<L374+seq_0
 ;	}
-	.line	2244
+	.line	2247
 ;
 ;	/* itoa (hexdecimal) */
 ;	i = 7;
 L10176:
-	.line	2247
+	.line	2250
 	lda	#$7
-	sta	<L376+i_1
+	sta	<L375+i_1
 ;	do
-	.line	2248
+	.line	2251
 L10185:
 ;	{
-	.line	2249
+	.line	2252
 ;		c = (BYTE)((seq % 16) + '0');
-	.line	2250
-	lda	<L375+seq_0
+	.line	2253
+	lda	<L374+seq_0
 	and	#<$f
 	sta	<R0
 	clc
@@ -9851,185 +9858,185 @@ L10185:
 	sep	#$20
 	longa	off
 	lda	<R1
-	sta	<L376+c_1
+	sta	<L375+c_1
 	rep	#$20
 	longa	on
 ;		if (c > '9') c += 7;
-	.line	2251
+	.line	2254
 	sep	#$20
 	longa	off
 	lda	#$39
-	cmp	<L376+c_1
+	cmp	<L375+c_1
 	rep	#$20
 	longa	on
-	bcc	L383
+	bcc	L382
 	brl	L10186
-L383:
-	.line	2251
+L382:
+	.line	2254
 	sep	#$20
 	longa	off
 	clc
 	lda	#$7
-	adc	<L376+c_1
-	sta	<L376+c_1
+	adc	<L375+c_1
+	sta	<L375+c_1
 	rep	#$20
 	longa	on
 ;		ns[i--] = c;
 L10186:
-	.line	2252
-	sep	#$20
-	longa	off
-	lda	<L376+c_1
-	ldx	<L376+i_1
-	sta	<L376+ns_1,X
-	rep	#$20
-	longa	on
-	dec	<L376+i_1
-;		seq /= 16;
-	.line	2253
-	lda	<L375+seq_0
-	lsr	A
-	lsr	A
-	lsr	A
-	lsr	A
-	sta	<L375+seq_0
-;	}while (seq);
-	.line	2254
-L10183:
-	lda	<L375+seq_0
-	beq	L384
-	brl	L10185
-L384:
-L10184:
-;	ns[i] = '~';
 	.line	2255
 	sep	#$20
 	longa	off
+	lda	<L375+c_1
+	ldx	<L375+i_1
+	sta	<L375+ns_1,X
+	rep	#$20
+	longa	on
+	dec	<L375+i_1
+;		seq /= 16;
+	.line	2256
+	lda	<L374+seq_0
+	lsr	A
+	lsr	A
+	lsr	A
+	lsr	A
+	sta	<L374+seq_0
+;	}while (seq);
+	.line	2257
+L10183:
+	lda	<L374+seq_0
+	beq	L383
+	brl	L10185
+L383:
+L10184:
+;	ns[i] = '~';
+	.line	2258
+	sep	#$20
+	longa	off
 	lda	#$7e
-	ldx	<L376+i_1
-	sta	<L376+ns_1,X
+	ldx	<L375+i_1
+	sta	<L375+ns_1,X
 	rep	#$20
 	longa	on
 ;
 ;	/* Append the number to the SFN body */
 ;	for (j = 0; j < i && dst[j] != ' '; j++)
-	.line	2258
-	stz	<L376+j_1
+	.line	2261
+	stz	<L375+j_1
 	brl	L10190
 L10189:
 ;	{
-	.line	2259
+	.line	2262
 ;		if (dbc_1st(dst[j]))
-	.line	2260
+	.line	2263
 ;		{
-	ldy	<L376+j_1
-	lda	[<L375+dst_0],Y
+	ldy	<L375+j_1
+	lda	[<L374+dst_0],Y
 	pha
 	jsl	~~dbc_1st
 	tax
-	bne	L385
+	bne	L384
 	brl	L10191
-L385:
-	.line	2261
+L384:
+	.line	2264
 ;			if (j == i - 1) break;
-	.line	2262
+	.line	2265
 	clc
 	lda	#$ffff
-	adc	<L376+i_1
+	adc	<L375+i_1
 	sta	<R0
 	lda	<R0
-	cmp	<L376+j_1
-	bne	L386
+	cmp	<L375+j_1
+	bne	L385
 	brl	L10188
-L386:
+L385:
 ;			j++;
-	.line	2263
-	inc	<L376+j_1
+	.line	2266
+	inc	<L375+j_1
 ;		}
-	.line	2264
+	.line	2267
 ;	}
 L10191:
-	.line	2265
+	.line	2268
 L10187:
-	inc	<L376+j_1
+	inc	<L375+j_1
 L10190:
-	lda	<L376+j_1
-	cmp	<L376+i_1
-	bcc	L388
-	brl	L387
-L388:
+	lda	<L375+j_1
+	cmp	<L375+i_1
+	bcc	L387
+	brl	L386
+L387:
 	sep	#$20
 	longa	off
-	ldy	<L376+j_1
-	lda	[<L375+dst_0],Y
+	ldy	<L375+j_1
+	lda	[<L374+dst_0],Y
 	cmp	#<$20
 	rep	#$20
 	longa	on
-	beq	L389
+	beq	L388
 	brl	L10189
-L389:
-L387:
+L388:
+L386:
 L10188:
 ;	do
-	.line	2266
+	.line	2269
 L10194:
 ;	{
-	.line	2267
+	.line	2270
 ;		dst[j++] = (i < 8) ? ns[i++] : ' ';
-	.line	2268
-	lda	<L376+j_1
+	.line	2271
+	lda	<L375+j_1
 	sta	<R0
-	inc	<L376+j_1
-	lda	<L376+i_1
+	inc	<L375+j_1
+	lda	<L375+i_1
 	cmp	#<$8
-	bcc	L391
-	brl	L390
-L391:
-	lda	<L376+i_1
-	sta	<R1
-	inc	<L376+i_1
-	ldx	<R1
-	lda	<L376+ns_1,X
-	and	#$ff
-	bra	L392
+	bcc	L390
+	brl	L389
 L390:
+	lda	<L375+i_1
+	sta	<R1
+	inc	<L375+i_1
+	ldx	<R1
+	lda	<L375+ns_1,X
+	and	#$ff
+	bra	L391
+L389:
 	lda	#$20
-L392:
+L391:
 	sep	#$20
 	longa	off
 	ldy	<R0
-	sta	[<L375+dst_0],Y
+	sta	[<L374+dst_0],Y
 	rep	#$20
 	longa	on
 ;	}while (j < 8);
-	.line	2269
+	.line	2272
 L10192:
-	lda	<L376+j_1
+	lda	<L375+j_1
 	cmp	#<$8
-	bcs	L393
+	bcs	L392
 	brl	L10194
-L393:
+L392:
 L10193:
 ;}
-	.line	2270
-L394:
-	lda	<L375+2
-	sta	<L375+2+14
-	lda	<L375+1
-	sta	<L375+1+14
+	.line	2273
+L393:
+	lda	<L374+2
+	sta	<L374+2+14
+	lda	<L374+1
+	sta	<L374+1+14
 	pld
 	tsc
 	clc
-	adc	#L375+14
+	adc	#L374+14
 	tcs
 	rtl
-	.endblock	2270
-L375	equ	27
-L376	equ	9
+	.endblock	2273
+L374	equ	27
+L375	equ	9
 	ends
 	efunc
-	.endfunc	2270,9,27
-	.line	2270
+	.endfunc	2273,9,27
+	.line	2273
 ;#endif	/* FF_USE_LFN && !FF_FS_READONLY */
 ;
 ;#if FF_USE_LFN
@@ -10041,22 +10048,22 @@ L376	equ	9
 ;		const BYTE* dir /* Pointer to the SFN entry */
 ;)
 ;{
-	.line	2278
 	.line	2281
+	.line	2284
 	FFDOS
 	func
-	.function	2281
+	.function	2284
 ~~sum_sfn:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L395
+	sbc	#L394
 	tcs
 	phd
 	tcd
 dir_0	set	4
-	.block	2281
+	.block	2284
 ;	BYTE sum = 0;
 ;	UINT n = 11;
 ;
@@ -10068,18 +10075,18 @@ n_1	set	1
 	.sym	dir,4,142,6,32
 	sep	#$20
 	longa	off
-	stz	<L396+sum_1
+	stz	<L395+sum_1
 	rep	#$20
 	longa	on
 	lda	#$b
-	sta	<L396+n_1
-	.line	2285
+	sta	<L395+n_1
+	.line	2288
 L10197:
 ;	{
-	.line	2286
+	.line	2289
 ;		sum = (sum >> 1) + (sum << 7) + *dir++;
-	.line	2287
-	lda	<L396+sum_1
+	.line	2290
+	lda	<L395+sum_1
 	ldx	#<$7
 	xref	~~~casl
 	jsl	~~~casl
@@ -10090,7 +10097,7 @@ L10197:
 	longa	on
 	sep	#$20
 	longa	off
-	lda	<L396+sum_1
+	lda	<L395+sum_1
 	lsr	A
 	sta	<R1
 	rep	#$20
@@ -10107,49 +10114,49 @@ L10197:
 	longa	off
 	clc
 	lda	<R2
-	adc	[<L395+dir_0]
-	sta	<L396+sum_1
+	adc	[<L394+dir_0]
+	sta	<L395+sum_1
 	rep	#$20
 	longa	on
-	inc	<L395+dir_0
-	bne	L398
-	inc	<L395+dir_0+2
-L398:
+	inc	<L394+dir_0
+	bne	L397
+	inc	<L394+dir_0+2
+L397:
 ;	}while (--n);
-	.line	2288
+	.line	2291
 L10195:
-	dec	<L396+n_1
-	lda	<L396+n_1
-	beq	L399
+	dec	<L395+n_1
+	lda	<L395+n_1
+	beq	L398
 	brl	L10197
-L399:
+L398:
 L10196:
 ;	return sum;
-	.line	2289
-	lda	<L396+sum_1
+	.line	2292
+	lda	<L395+sum_1
 	and	#$ff
-L400:
+L399:
 	tay
-	lda	<L395+2
-	sta	<L395+2+4
-	lda	<L395+1
-	sta	<L395+1+4
+	lda	<L394+2
+	sta	<L394+2+4
+	lda	<L394+1
+	sta	<L394+1+4
 	pld
 	tsc
 	clc
-	adc	#L395+4
+	adc	#L394+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	2290
-	.endblock	2290
-L395	equ	15
-L396	equ	13
+	.line	2293
+	.endblock	2293
+L394	equ	15
+L395	equ	13
 	ends
 	efunc
-	.endfunc	2290,13,15
-	.line	2290
+	.endfunc	2293,13,15
+	.line	2293
 ;
 ;#endif	/* FF_USE_LFN */
 ;
@@ -10432,23 +10439,23 @@ L396	equ	13
 ;int vol /* Filtered by 0:file/directory or 1:volume label */
 ;)
 ;{
-	.line	2569
 	.line	2572
+	.line	2575
 	FFDOS
 	func
-	.function	2572
+	.function	2575
 ~~dir_read:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L401
+	sbc	#L400
 	tcs
 	phd
 	tcd
 dp_0	set	4
 vol_0	set	8
-	.block	2572
+	.block	2575
 ;	FRESULT res = FR_NO_FILE;
 ;	FATFS *fs = dp->obj.fs;
 ;	BYTE attr, b;
@@ -10464,94 +10471,94 @@ b_1	set	7
 ord_1	set	8
 sum_1	set	9
 	.sym	res,0,5,1,16
-	.sym	fs,2,138,1,32,72
+	.sym	fs,2,138,1,32,75
 	.sym	attr,6,14,1,8
 	.sym	b,7,14,1,8
 	.sym	ord,8,14,1,8
 	.sym	sum,9,14,1,8
-	.sym	dp,4,138,6,32,75
+	.sym	dp,4,138,6,32,78
 	.sym	vol,8,5,6,16
 	lda	#$4
-	sta	<L402+res_1
-	lda	[<L401+dp_0]
-	sta	<L402+fs_1
+	sta	<L401+res_1
+	lda	[<L400+dp_0]
+	sta	<L401+fs_1
 	ldy	#$2
-	lda	[<L401+dp_0],Y
-	sta	<L402+fs_1+2
+	lda	[<L400+dp_0],Y
+	sta	<L401+fs_1+2
 	sep	#$20
 	longa	off
 	lda	#$ff
-	sta	<L402+ord_1
+	sta	<L401+ord_1
 	rep	#$20
 	longa	on
 	sep	#$20
 	longa	off
 	lda	#$ff
-	sta	<L402+sum_1
+	sta	<L401+sum_1
 	rep	#$20
 	longa	on
-	.line	2580
+	.line	2583
 L10198:
 	ldy	#$18
-	lda	[<L401+dp_0],Y
+	lda	[<L400+dp_0],Y
 	ldy	#$1a
-	ora	[<L401+dp_0],Y
-	bne	L404
+	ora	[<L400+dp_0],Y
+	bne	L403
 	brl	L10199
-L404:
+L403:
 ;	{
-	.line	2581
+	.line	2584
 ;		res = move_window(fs, dp->sect);
-	.line	2582
+	.line	2585
 	ldy	#$1a
-	lda	[<L401+dp_0],Y
+	lda	[<L400+dp_0],Y
 	pha
 	ldy	#$18
-	lda	[<L401+dp_0],Y
+	lda	[<L400+dp_0],Y
 	pha
-	pei	<L402+fs_1+2
-	pei	<L402+fs_1
+	pei	<L401+fs_1+2
+	pei	<L401+fs_1
 	jsl	~~move_window
-	sta	<L402+res_1
+	sta	<L401+res_1
 ;		if (res != FR_OK)
-	.line	2583
+	.line	2586
 ;			break;
-	lda	<L402+res_1
-	beq	L405
+	lda	<L401+res_1
+	beq	L404
 	brl	L10199
-L405:
+L404:
 ;		b = dp->dir[DIR_Name]; /* Test for the entry type */
-	.line	2585
+	.line	2588
 	ldy	#$1c
-	lda	[<L401+dp_0],Y
+	lda	[<L400+dp_0],Y
 	sta	<R0
 	ldy	#$1e
-	lda	[<L401+dp_0],Y
+	lda	[<L400+dp_0],Y
 	sta	<R0+2
 	sep	#$20
 	longa	off
 	lda	[<R0]
-	sta	<L402+b_1
+	sta	<L401+b_1
 	rep	#$20
 	longa	on
 ;		if (b == 0)
-	.line	2586
-;		{
-	lda	<L402+b_1
-	and	#$ff
-	beq	L406
-	brl	L10200
-L406:
-	.line	2587
-;			res = FR_NO_FILE;
-	.line	2588
-	lda	#$4
-	sta	<L402+res_1
-;			break; /* Reached to end of the directory */
 	.line	2589
+;		{
+	lda	<L401+b_1
+	and	#$ff
+	beq	L405
+	brl	L10200
+L405:
+	.line	2590
+;			res = FR_NO_FILE;
+	.line	2591
+	lda	#$4
+	sta	<L401+res_1
+;			break; /* Reached to end of the directory */
+	.line	2592
 	brl	L10199
 ;		}
-	.line	2590
+	.line	2593
 ;#if FF_FS_EXFAT
 ;		if (fs->fs_type == FS_EXFAT)
 ;		{ /* On the exFAT volume */
@@ -10577,201 +10584,201 @@ L406:
 ;#endif
 ;		{ /* On the FAT/FAT32 volume */
 L10200:
-	.line	2614
+	.line	2617
 ;			dp->obj.attr = attr = dp->dir[DIR_Attr] & AM_MASK; /* Get attribute */
-	.line	2615
+	.line	2618
 	ldy	#$1c
-	lda	[<L401+dp_0],Y
+	lda	[<L400+dp_0],Y
 	sta	<R0
 	ldy	#$1e
-	lda	[<L401+dp_0],Y
+	lda	[<L400+dp_0],Y
 	sta	<R0+2
 	sep	#$20
 	longa	off
 	ldy	#$b
 	lda	[<R0],Y
 	and	#<$3f
-	sta	<L402+attr_1
+	sta	<L401+attr_1
 	rep	#$20
 	longa	on
 	sep	#$20
 	longa	off
-	lda	<L402+attr_1
+	lda	<L401+attr_1
 	ldy	#$6
-	sta	[<L401+dp_0],Y
+	sta	[<L400+dp_0],Y
 	rep	#$20
 	longa	on
 ;#if FF_USE_LFN		/* LFN configuration */
 ;			if (b == DDEM || b == '.' || (int)((attr & ~AM_ARC) == AM_VOL) != vol)
-	.line	2617
+	.line	2620
 ;			{ /* An entry without valid data */
 	sep	#$20
 	longa	off
-	lda	<L402+b_1
+	lda	<L401+b_1
 	cmp	#<$e5
 	rep	#$20
 	longa	on
-	bne	L408
-	brl	L407
-L408:
+	bne	L407
+	brl	L406
+L407:
 	sep	#$20
 	longa	off
-	lda	<L402+b_1
+	lda	<L401+b_1
 	cmp	#<$2e
 	rep	#$20
 	longa	on
-	bne	L409
-	brl	L407
-L409:
+	bne	L408
+	brl	L406
+L408:
 	stz	<R0
-	lda	<L402+attr_1
+	lda	<L401+attr_1
 	and	#$ff
 	and	#<$ffffffdf
 	sta	<R1
 	lda	<R1
 	cmp	#<$8
-	beq	L411
-	brl	L410
-L411:
-	inc	<R0
+	beq	L410
+	brl	L409
 L410:
+	inc	<R0
+L409:
 	lda	<R0
-	cmp	<L401+vol_0
-	bne	L412
+	cmp	<L400+vol_0
+	bne	L411
 	brl	L10201
-L412:
-L407:
-	.line	2618
+L411:
+L406:
+	.line	2621
 ;				ord = 0xFF;
-	.line	2619
+	.line	2622
 	sep	#$20
 	longa	off
 	lda	#$ff
-	sta	<L402+ord_1
+	sta	<L401+ord_1
 	rep	#$20
 	longa	on
 ;			}
-	.line	2620
+	.line	2623
 ;			else
 	brl	L10202
 L10201:
 ;			{
-	.line	2622
+	.line	2625
 ;				if (attr == AM_LFN)
-	.line	2623
+	.line	2626
 ;				{ /* An LFN entry is found */
 	sep	#$20
 	longa	off
-	lda	<L402+attr_1
+	lda	<L401+attr_1
 	cmp	#<$f
 	rep	#$20
 	longa	on
-	beq	L413
+	beq	L412
 	brl	L10203
-L413:
-	.line	2624
+L412:
+	.line	2627
 ;					if (b & LLEF)
-	.line	2625
+	.line	2628
 ;					{ /* Is it start of an LFN sequence? */
 	sep	#$20
 	longa	off
-	lda	<L402+b_1
+	lda	<L401+b_1
 	and	#<$40
 	rep	#$20
 	longa	on
-	bne	L414
+	bne	L413
 	brl	L10204
-L414:
-	.line	2626
+L413:
+	.line	2629
 ;						sum = dp->dir[LDIR_Chksum];
-	.line	2627
+	.line	2630
 	ldy	#$1c
-	lda	[<L401+dp_0],Y
+	lda	[<L400+dp_0],Y
 	sta	<R0
 	ldy	#$1e
-	lda	[<L401+dp_0],Y
+	lda	[<L400+dp_0],Y
 	sta	<R0+2
 	sep	#$20
 	longa	off
 	ldy	#$d
 	lda	[<R0],Y
-	sta	<L402+sum_1
+	sta	<L401+sum_1
 	rep	#$20
 	longa	on
 ;						b &= (BYTE)~LLEF; ord = b;
-	.line	2628
+	.line	2631
 	sep	#$20
 	longa	off
 	lda	#$40
-	trb	<L402+b_1
+	trb	<L401+b_1
 	rep	#$20
 	longa	on
-	.line	2628
+	.line	2631
 	sep	#$20
 	longa	off
-	lda	<L402+b_1
-	sta	<L402+ord_1
+	lda	<L401+b_1
+	sta	<L401+ord_1
 	rep	#$20
 	longa	on
 ;						dp->blk_ofs = dp->dptr;
-	.line	2629
+	.line	2632
 	ldy	#$10
-	lda	[<L401+dp_0],Y
+	lda	[<L400+dp_0],Y
 	ldy	#$2c
-	sta	[<L401+dp_0],Y
+	sta	[<L400+dp_0],Y
 	ldy	#$12
-	lda	[<L401+dp_0],Y
+	lda	[<L400+dp_0],Y
 	ldy	#$2e
-	sta	[<L401+dp_0],Y
+	sta	[<L400+dp_0],Y
 ;					}
-	.line	2630
+	.line	2633
 ;					/* Check LFN validity and capture it */
 ;					ord = (b == ord && sum == dp->dir[LDIR_Chksum] && pick_lfn(fs->lfnbuf, dp->dir)) ? ord - 1 : 0xFF;
 L10204:
-	.line	2632
+	.line	2635
 	sep	#$20
 	longa	off
-	lda	<L402+b_1
-	cmp	<L402+ord_1
+	lda	<L401+b_1
+	cmp	<L401+ord_1
 	rep	#$20
 	longa	on
-	beq	L416
-	brl	L415
-L416:
+	beq	L415
+	brl	L414
+L415:
 	ldy	#$1c
-	lda	[<L401+dp_0],Y
+	lda	[<L400+dp_0],Y
 	sta	<R0
 	ldy	#$1e
-	lda	[<L401+dp_0],Y
+	lda	[<L400+dp_0],Y
 	sta	<R0+2
 	sep	#$20
 	longa	off
-	lda	<L402+sum_1
+	lda	<L401+sum_1
 	ldy	#$d
 	cmp	[<R0],Y
 	rep	#$20
 	longa	on
-	beq	L417
-	brl	L415
-L417:
+	beq	L416
+	brl	L414
+L416:
 	ldy	#$1e
-	lda	[<L401+dp_0],Y
+	lda	[<L400+dp_0],Y
 	pha
 	ldy	#$1c
-	lda	[<L401+dp_0],Y
+	lda	[<L400+dp_0],Y
 	pha
 	ldy	#$d
-	lda	[<L402+fs_1],Y
+	lda	[<L401+fs_1],Y
 	pha
 	ldy	#$b
-	lda	[<L402+fs_1],Y
+	lda	[<L401+fs_1],Y
 	pha
 	jsl	~~pick_lfn
 	tax
-	bne	L418
-	brl	L415
-L418:
-	lda	<L402+ord_1
+	bne	L417
+	brl	L414
+L417:
+	lda	<L401+ord_1
 	and	#$ff
 	sta	<R0
 	clc
@@ -10779,37 +10786,37 @@ L418:
 	adc	<R0
 	sta	<R1
 	lda	<R1
-	bra	L419
-L415:
+	bra	L418
+L414:
 	lda	#$ff
-L419:
+L418:
 	sta	<R0
 	sep	#$20
 	longa	off
 	lda	<R0
-	sta	<L402+ord_1
+	sta	<L401+ord_1
 	rep	#$20
 	longa	on
 ;				}
-	.line	2633
+	.line	2636
 ;				else
 	brl	L10205
 L10203:
 ;				{ /* An SFN entry is found */
-	.line	2635
+	.line	2638
 ;					if (ord != 0 || sum != sum_sfn(dp->dir))
-	.line	2636
+	.line	2639
 ;					{ /* Is there a valid LFN? */
-	lda	<L402+ord_1
+	lda	<L401+ord_1
 	and	#$ff
-	beq	L421
-	brl	L420
-L421:
+	beq	L420
+	brl	L419
+L420:
 	ldy	#$1e
-	lda	[<L401+dp_0],Y
+	lda	[<L400+dp_0],Y
 	pha
 	ldy	#$1c
-	lda	[<L401+dp_0],Y
+	lda	[<L400+dp_0],Y
 	pha
 	jsl	~~sum_sfn
 	sep	#$20
@@ -10820,33 +10827,33 @@ L421:
 	sep	#$20
 	longa	off
 	lda	<R0
-	cmp	<L402+sum_1
+	cmp	<L401+sum_1
 	rep	#$20
 	longa	on
-	bne	L422
+	bne	L421
 	brl	L10206
-L422:
-L420:
-	.line	2637
+L421:
+L419:
+	.line	2640
 ;						dp->blk_ofs = 0xFFFFFFFF; /* It has no LFN. */
-	.line	2638
+	.line	2641
 	lda	#$ffff
 	ldy	#$2c
-	sta	[<L401+dp_0],Y
+	sta	[<L400+dp_0],Y
 	lda	#$ffff
 	ldy	#$2e
-	sta	[<L401+dp_0],Y
+	sta	[<L400+dp_0],Y
 ;					}
-	.line	2639
+	.line	2642
 ;					break;
 L10206:
-	.line	2640
+	.line	2643
 	brl	L10199
 ;				}
-	.line	2641
+	.line	2644
 L10205:
 ;			}
-	.line	2642
+	.line	2645
 L10202:
 ;#else		/* Non LFN configuration */
 ;			if (b != DDEM && b != '.' && attr != AM_LFN
@@ -10856,66 +10863,66 @@ L10202:
 ;			}
 ;#endif
 ;		}
-	.line	2650
+	.line	2653
 ;		res = dir_next(dp, 0); /* Next entry */
-	.line	2651
-	pea	#<$0
-	pei	<L401+dp_0+2
-	pei	<L401+dp_0
-	jsl	~~dir_next
-	sta	<L402+res_1
-;		if (res != FR_OK)
-	.line	2652
-;			break;
-	lda	<L402+res_1
-	beq	L423
-	brl	L10199
-L423:
-;	}
 	.line	2654
+	pea	#<$0
+	pei	<L400+dp_0+2
+	pei	<L400+dp_0
+	jsl	~~dir_next
+	sta	<L401+res_1
+;		if (res != FR_OK)
+	.line	2655
+;			break;
+	lda	<L401+res_1
+	beq	L422
+	brl	L10199
+L422:
+;	}
+	.line	2657
 	brl	L10198
 L10199:
 ;
 ;	if (res != FR_OK)
-	.line	2656
+	.line	2659
 ;		dp->sect = 0; /* Terminate the read operation on error or EOT */
-	lda	<L402+res_1
-	bne	L424
+	lda	<L401+res_1
+	bne	L423
 	brl	L10207
-L424:
-	.line	2657
+L423:
+	.line	2660
 	lda	#$0
 	ldy	#$18
-	sta	[<L401+dp_0],Y
+	sta	[<L400+dp_0],Y
 	lda	#$0
 	ldy	#$1a
-	sta	[<L401+dp_0],Y
+	sta	[<L400+dp_0],Y
 ;	return res;
 L10207:
-	.line	2658
-	lda	<L402+res_1
-L425:
+	.line	2661
+	lda	<L401+res_1
+L424:
 	tay
-	lda	<L401+2
-	sta	<L401+2+6
-	lda	<L401+1
-	sta	<L401+1+6
+	lda	<L400+2
+	sta	<L400+2+6
+	lda	<L400+1
+	sta	<L400+1+6
 	pld
 	tsc
 	clc
-	adc	#L401+6
+	adc	#L400+6
 	tcs
 	tya
 	rtl
 ;}
-	.line	2659
-	.endblock	2659
-L401	equ	18
-L402	equ	9
+	.line	2662
+	.endblock	2662
+L400	equ	18
+L401	equ	9
 	ends
 	efunc
-	.endfunc	2659,9,18
-	.line	2659
+	.endfunc	2662,9,18
+	.line	2662
 ;
 ;#endif	/* FF_FS_MINIMIZE <= 1 || FF_USE_LABEL || FF_FS_RPATH >= 2 */
 ;
@@ -10927,22 +10934,22 @@ L402	equ	9
 ;DIR* dp /* Pointer to the directory object with the file name */
 ;)
 ;{
-	.line	2667
 	.line	2670
+	.line	2673
 	FFDOS
 	func
-	.function	2670
+	.function	2673
 ~~dir_find:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L426
+	sbc	#L425
 	tcs
 	phd
 	tcd
 dp_0	set	4
-	.block	2670
+	.block	2673
 ;	FRESULT res;
 ;	FATFS *fs = dp->obj.fs;
 ;	BYTE c;
@@ -10958,43 +10965,43 @@ a_1	set	7
 ord_1	set	8
 sum_1	set	9
 	.sym	res,0,5,1,16
-	.sym	fs,2,138,1,32,72
+	.sym	fs,2,138,1,32,75
 	.sym	c,6,14,1,8
 	.sym	a,7,14,1,8
 	.sym	ord,8,14,1,8
 	.sym	sum,9,14,1,8
-	.sym	dp,4,138,6,32,75
-	lda	[<L426+dp_0]
-	sta	<L427+fs_1
+	.sym	dp,4,138,6,32,78
+	lda	[<L425+dp_0]
+	sta	<L426+fs_1
 	ldy	#$2
-	lda	[<L426+dp_0],Y
-	sta	<L427+fs_1+2
-	.line	2678
+	lda	[<L425+dp_0],Y
+	sta	<L426+fs_1+2
+	.line	2681
 	pea	#^$0
 	pea	#<$0
-	pei	<L426+dp_0+2
-	pei	<L426+dp_0
+	pei	<L425+dp_0+2
+	pei	<L425+dp_0
 	jsl	~~dir_sdi
-	sta	<L427+res_1
+	sta	<L426+res_1
 ;	if (res != FR_OK)
-	.line	2679
+	.line	2682
 ;		return res;
-	lda	<L427+res_1
-	bne	L429
+	lda	<L426+res_1
+	bne	L428
 	brl	L10208
+L428:
+	.line	2683
+	lda	<L426+res_1
 L429:
-	.line	2680
-	lda	<L427+res_1
-L430:
 	tay
-	lda	<L426+2
-	sta	<L426+2+4
-	lda	<L426+1
-	sta	<L426+1+4
+	lda	<L425+2
+	sta	<L425+2+4
+	lda	<L425+1
+	sta	<L425+1+4
 	pld
 	tsc
 	clc
-	adc	#L426+4
+	adc	#L425+4
 	tcs
 	tya
 	rtl
@@ -11025,291 +11032,291 @@ L430:
 ;#if FF_USE_LFN
 ;	ord = sum = 0xFF; dp->blk_ofs = 0xFFFFFFFF; /* Reset LFN sequence */
 L10208:
-	.line	2706
+	.line	2709
 	sep	#$20
 	longa	off
 	lda	#$ff
-	sta	<L427+sum_1
+	sta	<L426+sum_1
 	rep	#$20
 	longa	on
 	sep	#$20
 	longa	off
 	lda	#$ff
-	sta	<L427+ord_1
+	sta	<L426+ord_1
 	rep	#$20
 	longa	on
-	.line	2706
+	.line	2709
 	lda	#$ffff
 	ldy	#$2c
-	sta	[<L426+dp_0],Y
+	sta	[<L425+dp_0],Y
 	lda	#$ffff
 	ldy	#$2e
-	sta	[<L426+dp_0],Y
+	sta	[<L425+dp_0],Y
 ;#endif
 ;	do
-	.line	2708
+	.line	2711
 L10211:
 ;	{
-	.line	2709
+	.line	2712
 ;		res = move_window(fs, dp->sect);
-	.line	2710
+	.line	2713
 	ldy	#$1a
-	lda	[<L426+dp_0],Y
+	lda	[<L425+dp_0],Y
 	pha
 	ldy	#$18
-	lda	[<L426+dp_0],Y
+	lda	[<L425+dp_0],Y
 	pha
-	pei	<L427+fs_1+2
-	pei	<L427+fs_1
+	pei	<L426+fs_1+2
+	pei	<L426+fs_1
 	jsl	~~move_window
-	sta	<L427+res_1
+	sta	<L426+res_1
 ;		if (res != FR_OK)
-	.line	2711
+	.line	2714
 ;			break;
-	lda	<L427+res_1
-	beq	L431
+	lda	<L426+res_1
+	beq	L430
 	brl	L10210
-L431:
+L430:
 ;		c = dp->dir[DIR_Name];
-	.line	2713
+	.line	2716
 	ldy	#$1c
-	lda	[<L426+dp_0],Y
+	lda	[<L425+dp_0],Y
 	sta	<R0
 	ldy	#$1e
-	lda	[<L426+dp_0],Y
+	lda	[<L425+dp_0],Y
 	sta	<R0+2
 	sep	#$20
 	longa	off
 	lda	[<R0]
-	sta	<L427+c_1
+	sta	<L426+c_1
 	rep	#$20
 	longa	on
 ;		if (c == 0)
-	.line	2714
-;		{
-	lda	<L427+c_1
-	and	#$ff
-	beq	L432
-	brl	L10212
-L432:
-	.line	2715
-;			res = FR_NO_FILE;
-	.line	2716
-	lda	#$4
-	sta	<L427+res_1
-;			break;
 	.line	2717
+;		{
+	lda	<L426+c_1
+	and	#$ff
+	beq	L431
+	brl	L10212
+L431:
+	.line	2718
+;			res = FR_NO_FILE;
+	.line	2719
+	lda	#$4
+	sta	<L426+res_1
+;			break;
+	.line	2720
 	brl	L10210
 ;		} /* Reached to end of table */
-	.line	2718
+	.line	2721
 ;#if FF_USE_LFN		/* LFN configuration */
 ;		dp->obj.attr = a = dp->dir[DIR_Attr] & AM_MASK;
 L10212:
-	.line	2720
+	.line	2723
 	ldy	#$1c
-	lda	[<L426+dp_0],Y
+	lda	[<L425+dp_0],Y
 	sta	<R0
 	ldy	#$1e
-	lda	[<L426+dp_0],Y
+	lda	[<L425+dp_0],Y
 	sta	<R0+2
 	sep	#$20
 	longa	off
 	ldy	#$b
 	lda	[<R0],Y
 	and	#<$3f
-	sta	<L427+a_1
+	sta	<L426+a_1
 	rep	#$20
 	longa	on
 	sep	#$20
 	longa	off
-	lda	<L427+a_1
+	lda	<L426+a_1
 	ldy	#$6
-	sta	[<L426+dp_0],Y
+	sta	[<L425+dp_0],Y
 	rep	#$20
 	longa	on
 ;		if (c == DDEM || ((a & AM_VOL) && a != AM_LFN))
-	.line	2721
+	.line	2724
 ;		{ /* An entry without valid data */
 	sep	#$20
 	longa	off
-	lda	<L427+c_1
+	lda	<L426+c_1
 	cmp	#<$e5
 	rep	#$20
 	longa	on
+	bne	L433
+	brl	L432
+L433:
+	sep	#$20
+	longa	off
+	lda	<L426+a_1
+	and	#<$8
+	rep	#$20
+	longa	on
 	bne	L434
-	brl	L433
+	brl	L10213
 L434:
 	sep	#$20
 	longa	off
-	lda	<L427+a_1
-	and	#<$8
+	lda	<L426+a_1
+	cmp	#<$f
 	rep	#$20
 	longa	on
 	bne	L435
 	brl	L10213
 L435:
-	sep	#$20
-	longa	off
-	lda	<L427+a_1
-	cmp	#<$f
-	rep	#$20
-	longa	on
-	bne	L436
-	brl	L10213
-L436:
-L433:
-	.line	2722
+L432:
+	.line	2725
 ;			ord = 0xFF; dp->blk_ofs = 0xFFFFFFFF; /* Reset LFN sequence */
-	.line	2723
+	.line	2726
 	sep	#$20
 	longa	off
 	lda	#$ff
-	sta	<L427+ord_1
+	sta	<L426+ord_1
 	rep	#$20
 	longa	on
-	.line	2723
+	.line	2726
 	lda	#$ffff
 	ldy	#$2c
-	sta	[<L426+dp_0],Y
+	sta	[<L425+dp_0],Y
 	lda	#$ffff
 	ldy	#$2e
-	sta	[<L426+dp_0],Y
+	sta	[<L425+dp_0],Y
 ;		}
-	.line	2724
+	.line	2727
 ;		else
 	brl	L10214
 L10213:
 ;		{
-	.line	2726
+	.line	2729
 ;			if (a == AM_LFN)
-	.line	2727
+	.line	2730
 ;			{ /* An LFN entry is found */
 	sep	#$20
 	longa	off
-	lda	<L427+a_1
+	lda	<L426+a_1
 	cmp	#<$f
 	rep	#$20
 	longa	on
-	beq	L437
+	beq	L436
 	brl	L10215
-L437:
-	.line	2728
+L436:
+	.line	2731
 ;				if (!(dp->fn[NSFLAG] & NS_NOLFN))
-	.line	2729
+	.line	2732
 ;				{
 	sep	#$20
 	longa	off
 	ldy	#$2b
-	lda	[<L426+dp_0],Y
+	lda	[<L425+dp_0],Y
 	and	#<$40
 	rep	#$20
 	longa	on
-	beq	L438
+	beq	L437
 	brl	L10216
-L438:
-	.line	2730
+L437:
+	.line	2733
 ;					if (c & LLEF)
-	.line	2731
+	.line	2734
 ;					{ /* Is it start of LFN sequence? */
 	sep	#$20
 	longa	off
-	lda	<L427+c_1
+	lda	<L426+c_1
 	and	#<$40
 	rep	#$20
 	longa	on
-	bne	L439
+	bne	L438
 	brl	L10217
-L439:
-	.line	2732
+L438:
+	.line	2735
 ;						sum = dp->dir[LDIR_Chksum];
-	.line	2733
+	.line	2736
 	ldy	#$1c
-	lda	[<L426+dp_0],Y
+	lda	[<L425+dp_0],Y
 	sta	<R0
 	ldy	#$1e
-	lda	[<L426+dp_0],Y
+	lda	[<L425+dp_0],Y
 	sta	<R0+2
 	sep	#$20
 	longa	off
 	ldy	#$d
 	lda	[<R0],Y
-	sta	<L427+sum_1
+	sta	<L426+sum_1
 	rep	#$20
 	longa	on
 ;						c &= (BYTE)~LLEF; ord = c; /* LFN start order */
-	.line	2734
+	.line	2737
 	sep	#$20
 	longa	off
 	lda	#$40
-	trb	<L427+c_1
+	trb	<L426+c_1
 	rep	#$20
 	longa	on
-	.line	2734
+	.line	2737
 	sep	#$20
 	longa	off
-	lda	<L427+c_1
-	sta	<L427+ord_1
+	lda	<L426+c_1
+	sta	<L426+ord_1
 	rep	#$20
 	longa	on
 ;						dp->blk_ofs = dp->dptr; /* Start offset of LFN */
-	.line	2735
+	.line	2738
 	ldy	#$10
-	lda	[<L426+dp_0],Y
+	lda	[<L425+dp_0],Y
 	ldy	#$2c
-	sta	[<L426+dp_0],Y
+	sta	[<L425+dp_0],Y
 	ldy	#$12
-	lda	[<L426+dp_0],Y
+	lda	[<L425+dp_0],Y
 	ldy	#$2e
-	sta	[<L426+dp_0],Y
+	sta	[<L425+dp_0],Y
 ;					}
-	.line	2736
+	.line	2739
 ;					/* Check validity of the LFN entry and compare it with given name */
 ;					ord = (c == ord && sum == dp->dir[LDIR_Chksum] && cmp_lfn(fs->lfnbuf, dp->dir)) ? ord - 1 : 0xFF;
 L10217:
-	.line	2738
+	.line	2741
 	sep	#$20
 	longa	off
-	lda	<L427+c_1
-	cmp	<L427+ord_1
+	lda	<L426+c_1
+	cmp	<L426+ord_1
 	rep	#$20
 	longa	on
-	beq	L441
-	brl	L440
-L441:
+	beq	L440
+	brl	L439
+L440:
 	ldy	#$1c
-	lda	[<L426+dp_0],Y
+	lda	[<L425+dp_0],Y
 	sta	<R0
 	ldy	#$1e
-	lda	[<L426+dp_0],Y
+	lda	[<L425+dp_0],Y
 	sta	<R0+2
 	sep	#$20
 	longa	off
-	lda	<L427+sum_1
+	lda	<L426+sum_1
 	ldy	#$d
 	cmp	[<R0],Y
 	rep	#$20
 	longa	on
-	beq	L442
-	brl	L440
-L442:
+	beq	L441
+	brl	L439
+L441:
 	ldy	#$1e
-	lda	[<L426+dp_0],Y
+	lda	[<L425+dp_0],Y
 	pha
 	ldy	#$1c
-	lda	[<L426+dp_0],Y
+	lda	[<L425+dp_0],Y
 	pha
 	ldy	#$d
-	lda	[<L427+fs_1],Y
+	lda	[<L426+fs_1],Y
 	pha
 	ldy	#$b
-	lda	[<L427+fs_1],Y
+	lda	[<L426+fs_1],Y
 	pha
 	jsl	~~cmp_lfn
 	tax
-	bne	L443
-	brl	L440
-L443:
-	lda	<L427+ord_1
+	bne	L442
+	brl	L439
+L442:
+	lda	<L426+ord_1
 	and	#$ff
 	sta	<R0
 	clc
@@ -11317,39 +11324,39 @@ L443:
 	adc	<R0
 	sta	<R1
 	lda	<R1
-	bra	L444
-L440:
+	bra	L443
+L439:
 	lda	#$ff
-L444:
+L443:
 	sta	<R0
 	sep	#$20
 	longa	off
 	lda	<R0
-	sta	<L427+ord_1
+	sta	<L426+ord_1
 	rep	#$20
 	longa	on
 ;				}
-	.line	2739
+	.line	2742
 ;			}
 L10216:
-	.line	2740
+	.line	2743
 ;			else
 	brl	L10218
 L10215:
 ;			{ /* An SFN entry is found */
-	.line	2742
+	.line	2745
 ;				if (ord == 0 && sum == sum_sfn(dp->dir)) break; /* LFN matched? */
-	.line	2743
-	lda	<L427+ord_1
+	.line	2746
+	lda	<L426+ord_1
 	and	#$ff
-	beq	L446
-	brl	L445
-L446:
+	beq	L445
+	brl	L444
+L445:
 	ldy	#$1e
-	lda	[<L426+dp_0],Y
+	lda	[<L425+dp_0],Y
 	pha
 	ldy	#$1c
-	lda	[<L426+dp_0],Y
+	lda	[<L425+dp_0],Y
 	pha
 	jsl	~~sum_sfn
 	sep	#$20
@@ -11360,67 +11367,67 @@ L446:
 	sep	#$20
 	longa	off
 	lda	<R0
-	cmp	<L427+sum_1
+	cmp	<L426+sum_1
 	rep	#$20
 	longa	on
-	bne	L447
+	bne	L446
 	brl	L10210
-L447:
-L445:
+L446:
+L444:
 ;				if (!(dp->fn[NSFLAG] & NS_LOSS) && !mem_cmp(dp->dir, dp->fn, 11)) break; /* SFN matched? */
-	.line	2744
+	.line	2747
 	sep	#$20
 	longa	off
 	ldy	#$2b
-	lda	[<L426+dp_0],Y
+	lda	[<L425+dp_0],Y
 	and	#<$1
 	rep	#$20
 	longa	on
-	beq	L449
-	brl	L448
-L449:
+	beq	L448
+	brl	L447
+L448:
 	pea	#<$b
 	clc
 	lda	#$20
-	adc	<L426+dp_0
+	adc	<L425+dp_0
 	sta	<R0
 	lda	#$0
-	adc	<L426+dp_0+2
+	adc	<L425+dp_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$1e
-	lda	[<L426+dp_0],Y
+	lda	[<L425+dp_0],Y
 	pha
 	ldy	#$1c
-	lda	[<L426+dp_0],Y
+	lda	[<L425+dp_0],Y
 	pha
 	jsl	~~mem_cmp
 	tax
-	bne	L450
+	bne	L449
 	brl	L10210
-L450:
-L448:
+L449:
+L447:
 ;				ord = 0xFF; dp->blk_ofs = 0xFFFFFFFF; /* Reset LFN sequence */
-	.line	2745
+	.line	2748
 	sep	#$20
 	longa	off
 	lda	#$ff
-	sta	<L427+ord_1
+	sta	<L426+ord_1
 	rep	#$20
 	longa	on
-	.line	2745
+	.line	2748
 	lda	#$ffff
 	ldy	#$2c
-	sta	[<L426+dp_0],Y
+	sta	[<L425+dp_0],Y
 	lda	#$ffff
 	ldy	#$2e
-	sta	[<L426+dp_0],Y
+	sta	[<L425+dp_0],Y
 ;			}
-	.line	2746
+	.line	2749
 L10218:
 ;		}
-	.line	2747
+	.line	2750
 L10214:
 ;#else		/* Non LFN configuration */
 ;		dp->obj.attr = dp->dir[DIR_Attr] & AM_MASK;
@@ -11428,34 +11435,34 @@ L10214:
 ;			break; /* Is it a valid entry? */
 ;#endif
 ;		res = dir_next(dp, 0); /* Next entry */
-	.line	2753
+	.line	2756
 	pea	#<$0
-	pei	<L426+dp_0+2
-	pei	<L426+dp_0
+	pei	<L425+dp_0+2
+	pei	<L425+dp_0
 	jsl	~~dir_next
-	sta	<L427+res_1
+	sta	<L426+res_1
 ;	} while (res == FR_OK);
-	.line	2754
+	.line	2757
 L10209:
-	lda	<L427+res_1
-	bne	L451
+	lda	<L426+res_1
+	bne	L450
 	brl	L10211
-L451:
+L450:
 L10210:
 ;
 ;	return res;
-	.line	2756
-	lda	<L427+res_1
-	brl	L430
+	.line	2759
+	lda	<L426+res_1
+	brl	L429
 ;}
-	.line	2757
-	.endblock	2757
-L426	equ	18
-L427	equ	9
+	.line	2760
+	.endblock	2760
+L425	equ	18
+L426	equ	9
 	ends
 	efunc
-	.endfunc	2757,9,18
-	.line	2757
+	.endfunc	2760,9,18
+	.line	2760
 ;
 ;#if !FF_FS_READONLY
 ;/*-----------------------------------------------------------------------*/
@@ -11466,22 +11473,22 @@ L427	equ	9
 ;DIR* dp /* Target directory with object name to be created */
 ;)
 ;{
-	.line	2764
 	.line	2767
+	.line	2770
 	FFDOS
 	func
-	.function	2767
+	.function	2770
 ~~dir_register:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L452
+	sbc	#L451
 	tcs
 	phd
 	tcd
 dp_0	set	4
-	.block	2767
+	.block	2770
 ;	FRESULT res;
 ;	FATFS *fs = dp->obj.fs;
 ;#if FF_USE_LFN		/* LFN configuration */
@@ -11497,55 +11504,55 @@ nent_1	set	10
 sn_1	set	12
 sum_1	set	24
 	.sym	res,0,5,1,16
-	.sym	fs,2,138,1,32,72
+	.sym	fs,2,138,1,32,75
 	.sym	n,6,16,1,16
 	.sym	nlen,8,16,1,16
 	.sym	nent,10,16,1,16
 	.sym	sn,12,110,1,0,12
 	.sym	sum,24,14,1,8
-	.sym	dp,4,138,6,32,75
-	lda	[<L452+dp_0]
-	sta	<L453+fs_1
+	.sym	dp,4,138,6,32,78
+	lda	[<L451+dp_0]
+	sta	<L452+fs_1
 	ldy	#$2
-	lda	[<L452+dp_0],Y
-	sta	<L453+fs_1+2
-	.line	2774
+	lda	[<L451+dp_0],Y
+	sta	<L452+fs_1+2
+	.line	2777
 	sep	#$20
 	longa	off
 	ldy	#$2b
-	lda	[<L452+dp_0],Y
+	lda	[<L451+dp_0],Y
 	and	#<$a0
 	rep	#$20
 	longa	on
-	bne	L455
+	bne	L454
 	brl	L10219
-L455:
-	.line	2774
+L454:
+	.line	2777
 	lda	#$6
-L456:
+L455:
 	tay
-	lda	<L452+2
-	sta	<L452+2+4
-	lda	<L452+1
-	sta	<L452+1+4
+	lda	<L451+2
+	sta	<L451+2+4
+	lda	<L451+1
+	sta	<L451+1+4
 	pld
 	tsc
 	clc
-	adc	#L452+4
+	adc	#L451+4
 	tcs
 	tya
 	rtl
 ;	for (nlen = 0; fs->lfnbuf[nlen]; nlen++); /* Get lfn length */
 L10219:
-	.line	2775
-	stz	<L453+nlen_1
+	.line	2778
+	stz	<L452+nlen_1
 	brl	L10223
 L10222:
-	.line	2775
+	.line	2778
 L10220:
-	inc	<L453+nlen_1
+	inc	<L452+nlen_1
 L10223:
-	lda	<L453+nlen_1
+	lda	<L452+nlen_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -11557,17 +11564,17 @@ L10223:
 	stx	<R0+2
 	clc
 	ldy	#$b
-	lda	[<L453+fs_1],Y
+	lda	[<L452+fs_1],Y
 	adc	<R0
 	sta	<R2
 	ldy	#$d
-	lda	[<L453+fs_1],Y
+	lda	[<L452+fs_1],Y
 	adc	<R0+2
 	sta	<R2+2
 	lda	[<R2]
-	beq	L457
+	beq	L456
 	brl	L10222
-L457:
+L456:
 L10221:
 ;
 ;#if FF_FS_EXFAT
@@ -11606,148 +11613,148 @@ L10221:
 ;#endif
 ;	/* On the FAT/FAT32 volume */
 ;	mem_cpy(sn, dp->fn, 12);
-	.line	2812
+	.line	2815
 	pea	#<$c
 	clc
 	lda	#$20
-	adc	<L452+dp_0
+	adc	<L451+dp_0
 	sta	<R0
 	lda	#$0
-	adc	<L452+dp_0+2
+	adc	<L451+dp_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	pea	#0
 	clc
 	tdc
-	adc	#<L453+sn_1
+	adc	#<L452+sn_1
 	pha
 	jsl	~~mem_cpy
 ;	if (sn[NSFLAG] & NS_LOSS)
-	.line	2813
+	.line	2816
 ;	{ /* When LFN is out of 8.3 format, generate a numbered name */
 	sep	#$20
 	longa	off
-	lda	<L453+sn_1+11
+	lda	<L452+sn_1+11
 	and	#<$1
 	rep	#$20
 	longa	on
-	bne	L458
+	bne	L457
 	brl	L10224
-L458:
-	.line	2814
+L457:
+	.line	2817
 ;		dp->fn[NSFLAG] = NS_NOLFN; /* Find only SFN */
-	.line	2815
+	.line	2818
 	sep	#$20
 	longa	off
 	lda	#$40
 	ldy	#$2b
-	sta	[<L452+dp_0],Y
+	sta	[<L451+dp_0],Y
 	rep	#$20
 	longa	on
 ;		for (n = 1; n < 100; n++)
-	.line	2816
+	.line	2819
 	lda	#$1
-	sta	<L453+n_1
+	sta	<L452+n_1
 L10227:
 ;		{
-	.line	2817
+	.line	2820
 ;			gen_numname(dp->fn, sn, fs->lfnbuf, n); /* Generate a numbered name */
-	.line	2818
-	pei	<L453+n_1
+	.line	2821
+	pei	<L452+n_1
 	ldy	#$d
-	lda	[<L453+fs_1],Y
+	lda	[<L452+fs_1],Y
 	pha
 	ldy	#$b
-	lda	[<L453+fs_1],Y
+	lda	[<L452+fs_1],Y
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L453+sn_1
+	adc	#<L452+sn_1
 	pha
 	clc
 	lda	#$20
-	adc	<L452+dp_0
+	adc	<L451+dp_0
 	sta	<R0
 	lda	#$0
-	adc	<L452+dp_0+2
+	adc	<L451+dp_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~gen_numname
 ;			res = dir_find(dp); /* Check if the name collides with existing SFN */
-	.line	2819
-	pei	<L452+dp_0+2
-	pei	<L452+dp_0
+	.line	2822
+	pei	<L451+dp_0+2
+	pei	<L451+dp_0
 	jsl	~~dir_find
-	sta	<L453+res_1
+	sta	<L452+res_1
 ;			if (res != FR_OK) break;
-	.line	2820
-	lda	<L453+res_1
-	beq	L459
+	.line	2823
+	lda	<L452+res_1
+	beq	L458
 	brl	L10226
-L459:
+L458:
 ;		}
-	.line	2821
+	.line	2824
 L10225:
-	inc	<L453+n_1
-	lda	<L453+n_1
+	inc	<L452+n_1
+	lda	<L452+n_1
 	cmp	#<$64
-	bcs	L460
+	bcs	L459
 	brl	L10227
-L460:
+L459:
 L10226:
 ;		if (n == 100) return FR_DENIED; /* Abort if too many collisions */
-	.line	2822
-	lda	<L453+n_1
+	.line	2825
+	lda	<L452+n_1
 	cmp	#<$64
-	beq	L461
+	beq	L460
 	brl	L10228
-L461:
-	.line	2822
+L460:
+	.line	2825
 	lda	#$7
-	brl	L456
+	brl	L455
 ;		if (res != FR_NO_FILE) return res; /* Abort if the result is other than 'not collided' */
 L10228:
-	.line	2823
-	lda	<L453+res_1
+	.line	2826
+	lda	<L452+res_1
 	cmp	#<$4
-	bne	L462
+	bne	L461
 	brl	L10229
-L462:
-	.line	2823
-	lda	<L453+res_1
-	brl	L456
+L461:
+	.line	2826
+	lda	<L452+res_1
+	brl	L455
 ;		dp->fn[NSFLAG] = sn[NSFLAG];
 L10229:
-	.line	2824
+	.line	2827
 	sep	#$20
 	longa	off
-	lda	<L453+sn_1+11
+	lda	<L452+sn_1+11
 	ldy	#$2b
-	sta	[<L452+dp_0],Y
+	sta	[<L451+dp_0],Y
 	rep	#$20
 	longa	on
 ;	}
-	.line	2825
+	.line	2828
 ;
 ;	/* Create an SFN with/without LFNs. */
 ;	nent = (sn[NSFLAG] & NS_LFN) ? (nlen + 12) / 13 + 1 : 1; /* Number of entries to allocate */
 L10224:
-	.line	2828
+	.line	2831
 	sep	#$20
 	longa	off
-	lda	<L453+sn_1+11
+	lda	<L452+sn_1+11
 	and	#<$2
 	rep	#$20
 	longa	on
-	bne	L464
-	brl	L463
-L464:
+	bne	L463
+	brl	L462
+L463:
 	clc
 	lda	#$c
-	adc	<L453+nlen_1
+	adc	<L452+nlen_1
 	sta	<R0
 	lda	<R0
 	ldx	#<$d
@@ -11756,34 +11763,34 @@ L464:
 	sta	<R0
 	lda	<R0
 	ina
-	bra	L465
-L463:
+	bra	L464
+L462:
 	lda	#$1
-L465:
-	sta	<L453+nent_1
+L464:
+	sta	<L452+nent_1
 ;	res = dir_alloc(dp, nent); /* Allocate entries */
-	.line	2829
-	pei	<L453+nent_1
-	pei	<L452+dp_0+2
-	pei	<L452+dp_0
+	.line	2832
+	pei	<L452+nent_1
+	pei	<L451+dp_0+2
+	pei	<L451+dp_0
 	jsl	~~dir_alloc
-	sta	<L453+res_1
+	sta	<L452+res_1
 ;	if (res == FR_OK && --nent)
-	.line	2830
+	.line	2833
 ;	{ /* Set LFN entry if needed */
-	lda	<L453+res_1
-	beq	L466
+	lda	<L452+res_1
+	beq	L465
+	brl	L10230
+L465:
+	dec	<L452+nent_1
+	lda	<L452+nent_1
+	bne	L466
 	brl	L10230
 L466:
-	dec	<L453+nent_1
-	lda	<L453+nent_1
-	bne	L467
-	brl	L10230
-L467:
-	.line	2831
+	.line	2834
 ;		res = dir_sdi(dp, dp->dptr - nent * SZDIRE);
-	.line	2832
-	lda	<L453+nent_1
+	.line	2835
+	lda	<L452+nent_1
 	asl	A
 	asl	A
 	asl	A
@@ -11795,119 +11802,119 @@ L467:
 	stz	<R0+2
 	sec
 	ldy	#$10
-	lda	[<L452+dp_0],Y
+	lda	[<L451+dp_0],Y
 	sbc	<R0
 	sta	<R1
 	ldy	#$12
-	lda	[<L452+dp_0],Y
+	lda	[<L451+dp_0],Y
 	sbc	<R0+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
-	pei	<L452+dp_0+2
-	pei	<L452+dp_0
+	pei	<L451+dp_0+2
+	pei	<L451+dp_0
 	jsl	~~dir_sdi
-	sta	<L453+res_1
+	sta	<L452+res_1
 ;		if (res == FR_OK)
-	.line	2833
+	.line	2836
 ;		{
-	lda	<L453+res_1
-	beq	L468
+	lda	<L452+res_1
+	beq	L467
 	brl	L10231
-L468:
-	.line	2834
+L467:
+	.line	2837
 ;			sum = sum_sfn(dp->fn); /* Checksum value of the SFN tied to the LFN */
-	.line	2835
+	.line	2838
 	clc
 	lda	#$20
-	adc	<L452+dp_0
+	adc	<L451+dp_0
 	sta	<R0
 	lda	#$0
-	adc	<L452+dp_0+2
+	adc	<L451+dp_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~sum_sfn
 	sep	#$20
 	longa	off
-	sta	<L453+sum_1
+	sta	<L452+sum_1
 	rep	#$20
 	longa	on
 ;			do
-	.line	2836
+	.line	2839
 L10234:
 ;			{ /* Store LFN entries in bottom first */
-	.line	2837
+	.line	2840
 ;				res = move_window(fs, dp->sect);
-	.line	2838
+	.line	2841
 	ldy	#$1a
-	lda	[<L452+dp_0],Y
+	lda	[<L451+dp_0],Y
 	pha
 	ldy	#$18
-	lda	[<L452+dp_0],Y
+	lda	[<L451+dp_0],Y
 	pha
-	pei	<L453+fs_1+2
-	pei	<L453+fs_1
+	pei	<L452+fs_1+2
+	pei	<L452+fs_1
 	jsl	~~move_window
-	sta	<L453+res_1
+	sta	<L452+res_1
 ;				if (res != FR_OK) break;
-	.line	2839
-	lda	<L453+res_1
-	beq	L469
+	.line	2842
+	lda	<L452+res_1
+	beq	L468
 	brl	L10233
-L469:
+L468:
 ;				put_lfn(fs->lfnbuf, dp->dir, (BYTE)nent, sum);
-	.line	2840
-	pei	<L453+sum_1
-	pei	<L453+nent_1
+	.line	2843
+	pei	<L452+sum_1
+	pei	<L452+nent_1
 	ldy	#$1e
-	lda	[<L452+dp_0],Y
+	lda	[<L451+dp_0],Y
 	pha
 	ldy	#$1c
-	lda	[<L452+dp_0],Y
+	lda	[<L451+dp_0],Y
 	pha
 	ldy	#$d
-	lda	[<L453+fs_1],Y
+	lda	[<L452+fs_1],Y
 	pha
 	ldy	#$b
-	lda	[<L453+fs_1],Y
+	lda	[<L452+fs_1],Y
 	pha
 	jsl	~~put_lfn
 ;				fs->wflag = 1;
-	.line	2841
+	.line	2844
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$3
-	sta	[<L453+fs_1],Y
+	sta	[<L452+fs_1],Y
 	rep	#$20
 	longa	on
 ;				res = dir_next(dp, 0); /* Next entry */
-	.line	2842
+	.line	2845
 	pea	#<$0
-	pei	<L452+dp_0+2
-	pei	<L452+dp_0
+	pei	<L451+dp_0+2
+	pei	<L451+dp_0
 	jsl	~~dir_next
-	sta	<L453+res_1
+	sta	<L452+res_1
 ;			}while (res == FR_OK && --nent);
-	.line	2843
+	.line	2846
 L10232:
-	lda	<L453+res_1
-	beq	L471
-	brl	L470
-L471:
-	dec	<L453+nent_1
-	lda	<L453+nent_1
-	beq	L472
-	brl	L10234
-L472:
+	lda	<L452+res_1
+	beq	L470
+	brl	L469
 L470:
+	dec	<L452+nent_1
+	lda	<L452+nent_1
+	beq	L471
+	brl	L10234
+L471:
+L469:
 L10233:
 ;		}
-	.line	2844
+	.line	2847
 ;	}
 L10231:
-	.line	2845
+	.line	2848
 ;
 ;#else	/* Non LFN configuration */
 ;	res = dir_alloc(dp, 1); /* Allocate an entry for SFN */
@@ -11917,76 +11924,76 @@ L10231:
 ;	/* Set SFN entry */
 ;	if (res == FR_OK)
 L10230:
-	.line	2853
+	.line	2856
 ;	{
-	lda	<L453+res_1
-	beq	L473
+	lda	<L452+res_1
+	beq	L472
 	brl	L10235
-L473:
-	.line	2854
+L472:
+	.line	2857
 ;		res = move_window(fs, dp->sect);
-	.line	2855
+	.line	2858
 	ldy	#$1a
-	lda	[<L452+dp_0],Y
+	lda	[<L451+dp_0],Y
 	pha
 	ldy	#$18
-	lda	[<L452+dp_0],Y
+	lda	[<L451+dp_0],Y
 	pha
-	pei	<L453+fs_1+2
-	pei	<L453+fs_1
+	pei	<L452+fs_1+2
+	pei	<L452+fs_1
 	jsl	~~move_window
-	sta	<L453+res_1
+	sta	<L452+res_1
 ;		if (res == FR_OK)
-	.line	2856
+	.line	2859
 ;		{
-	lda	<L453+res_1
-	beq	L474
+	lda	<L452+res_1
+	beq	L473
 	brl	L10236
-L474:
-	.line	2857
+L473:
+	.line	2860
 ;			mem_set(dp->dir, 0, SZDIRE); /* Clean the entry */
-	.line	2858
+	.line	2861
 	pea	#<$20
 	pea	#<$0
 	ldy	#$1e
-	lda	[<L452+dp_0],Y
+	lda	[<L451+dp_0],Y
 	pha
 	ldy	#$1c
-	lda	[<L452+dp_0],Y
+	lda	[<L451+dp_0],Y
 	pha
 	jsl	~~mem_set
 ;			mem_cpy(dp->dir + DIR_Name, dp->fn, 11); /* Put SFN */
-	.line	2859
+	.line	2862
 	pea	#<$b
 	clc
 	lda	#$20
-	adc	<L452+dp_0
+	adc	<L451+dp_0
 	sta	<R0
 	lda	#$0
-	adc	<L452+dp_0+2
+	adc	<L451+dp_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$1e
-	lda	[<L452+dp_0],Y
+	lda	[<L451+dp_0],Y
 	pha
 	ldy	#$1c
-	lda	[<L452+dp_0],Y
+	lda	[<L451+dp_0],Y
 	pha
 	jsl	~~mem_cpy
 ;#if FF_USE_LFN
 ;			dp->dir[DIR_NTres] = dp->fn[NSFLAG] & (NS_BODY | NS_EXT); /* Put NT flag */
-	.line	2861
+	.line	2864
 	ldy	#$1c
-	lda	[<L452+dp_0],Y
+	lda	[<L451+dp_0],Y
 	sta	<R0
 	ldy	#$1e
-	lda	[<L452+dp_0],Y
+	lda	[<L451+dp_0],Y
 	sta	<R0+2
 	sep	#$20
 	longa	off
 	ldy	#$2b
-	lda	[<L452+dp_0],Y
+	lda	[<L451+dp_0],Y
 	and	#<$18
 	rep	#$20
 	longa	on
@@ -11998,34 +12005,34 @@ L474:
 	longa	on
 ;#endif
 ;			fs->wflag = 1;
-	.line	2863
+	.line	2866
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$3
-	sta	[<L453+fs_1],Y
+	sta	[<L452+fs_1],Y
 	rep	#$20
 	longa	on
 ;		}
-	.line	2864
+	.line	2867
 ;	}
 L10236:
-	.line	2865
+	.line	2868
 ;
 ;	return res;
 L10235:
-	.line	2867
-	lda	<L453+res_1
-	brl	L456
+	.line	2870
+	lda	<L452+res_1
+	brl	L455
 ;}
-	.line	2868
-	.endblock	2868
-L452	equ	37
-L453	equ	13
+	.line	2871
+	.endblock	2871
+L451	equ	37
+L452	equ	13
 	ends
 	efunc
-	.endfunc	2868,13,37
-	.line	2868
+	.endfunc	2871,13,37
+	.line	2871
 ;
 ;#endif /* !FF_FS_READONLY */
 ;
@@ -12038,22 +12045,22 @@ L453	equ	13
 ;DIR* dp /* Directory object pointing the entry to be removed */
 ;)
 ;{
-	.line	2877
 	.line	2880
+	.line	2883
 	FFDOS
 	func
-	.function	2880
+	.function	2883
 ~~dir_remove:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L475
+	sbc	#L474
 	tcs
 	phd
 	tcd
 dp_0	set	4
-	.block	2880
+	.block	2883
 ;	FRESULT res;
 ;	FATFS *fs = dp->obj.fs;
 ;#if FF_USE_LFN		/* LFN configuration */
@@ -12064,98 +12071,98 @@ res_1	set	0
 fs_1	set	2
 last_1	set	6
 	.sym	res,0,5,1,16
-	.sym	fs,2,138,1,32,72
+	.sym	fs,2,138,1,32,75
 	.sym	last,6,18,1,32
-	.sym	dp,4,138,6,32,75
-	lda	[<L475+dp_0]
-	sta	<L476+fs_1
+	.sym	dp,4,138,6,32,78
+	lda	[<L474+dp_0]
+	sta	<L475+fs_1
 	ldy	#$2
-	lda	[<L475+dp_0],Y
-	sta	<L476+fs_1+2
+	lda	[<L474+dp_0],Y
+	sta	<L475+fs_1+2
 	ldy	#$10
-	lda	[<L475+dp_0],Y
-	sta	<L476+last_1
+	lda	[<L474+dp_0],Y
+	sta	<L475+last_1
 	ldy	#$12
-	lda	[<L475+dp_0],Y
-	sta	<L476+last_1+2
-	.line	2886
-	ldy	#$2c
-	lda	[<L475+dp_0],Y
-	cmp	#<$ffffffff
-	bne	L479
-	ldy	#$2e
-	lda	[<L475+dp_0],Y
-	cmp	#^$ffffffff
-L479:
-	beq	L480
-	brl	L478
-L480:
-	lda	#$0
-	bra	L481
-L478:
-	ldy	#$2e
-	lda	[<L475+dp_0],Y
-	pha
-	ldy	#$2c
-	lda	[<L475+dp_0],Y
-	pha
-	pei	<L475+dp_0+2
-	pei	<L475+dp_0
-	jsl	~~dir_sdi
-L481:
-	sta	<L476+res_1
-;	if (res == FR_OK)
-	.line	2887
-;	{
-	lda	<L476+res_1
-	beq	L482
-	brl	L10237
-L482:
-	.line	2888
-;		do
+	lda	[<L474+dp_0],Y
+	sta	<L475+last_1+2
 	.line	2889
+	ldy	#$2c
+	lda	[<L474+dp_0],Y
+	cmp	#<$ffffffff
+	bne	L478
+	ldy	#$2e
+	lda	[<L474+dp_0],Y
+	cmp	#^$ffffffff
+L478:
+	beq	L479
+	brl	L477
+L479:
+	lda	#$0
+	bra	L480
+L477:
+	ldy	#$2e
+	lda	[<L474+dp_0],Y
+	pha
+	ldy	#$2c
+	lda	[<L474+dp_0],Y
+	pha
+	pei	<L474+dp_0+2
+	pei	<L474+dp_0
+	jsl	~~dir_sdi
+L480:
+	sta	<L475+res_1
+;	if (res == FR_OK)
+	.line	2890
+;	{
+	lda	<L475+res_1
+	beq	L481
+	brl	L10237
+L481:
+	.line	2891
+;		do
+	.line	2892
 L10240:
 ;		{
-	.line	2890
+	.line	2893
 ;			res = move_window(fs, dp->sect);
-	.line	2891
+	.line	2894
 	ldy	#$1a
-	lda	[<L475+dp_0],Y
+	lda	[<L474+dp_0],Y
 	pha
 	ldy	#$18
-	lda	[<L475+dp_0],Y
+	lda	[<L474+dp_0],Y
 	pha
-	pei	<L476+fs_1+2
-	pei	<L476+fs_1
+	pei	<L475+fs_1+2
+	pei	<L475+fs_1
 	jsl	~~move_window
-	sta	<L476+res_1
+	sta	<L475+res_1
 ;			if (res != FR_OK) break;
-	.line	2892
-	lda	<L476+res_1
-	beq	L483
+	.line	2895
+	lda	<L475+res_1
+	beq	L482
 	brl	L10239
-L483:
+L482:
 ;			if (FF_FS_EXFAT && fs->fs_type == FS_EXFAT)
-	.line	2893
+	.line	2896
 ;			{ /* On the exFAT volume */
 	brl	L10241
 	sep	#$20
 	longa	off
-	lda	[<L476+fs_1]
+	lda	[<L475+fs_1]
 	cmp	#<$4
 	rep	#$20
 	longa	on
-	beq	L484
+	beq	L483
 	brl	L10241
-L484:
-	.line	2894
+L483:
+	.line	2897
 ;				dp->dir[XDIR_Type] &= 0x7F; /* Clear the entry InUse flag. */
-	.line	2895
+	.line	2898
 	ldy	#$1c
-	lda	[<L475+dp_0],Y
+	lda	[<L474+dp_0],Y
 	sta	<R0
 	ldy	#$1e
-	lda	[<L475+dp_0],Y
+	lda	[<L474+dp_0],Y
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -12165,19 +12172,19 @@ L484:
 	rep	#$20
 	longa	on
 ;			}
-	.line	2896
+	.line	2899
 ;			else
 	brl	L10242
 L10241:
 ;			{ /* On the FAT/FAT32 volume */
-	.line	2898
+	.line	2901
 ;				dp->dir[DIR_Name] = DDEM; /* Mark the entry 'deleted'. */
-	.line	2899
+	.line	2902
 	ldy	#$1c
-	lda	[<L475+dp_0],Y
+	lda	[<L474+dp_0],Y
 	sta	<R0
 	ldy	#$1e
-	lda	[<L475+dp_0],Y
+	lda	[<L474+dp_0],Y
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -12186,56 +12193,56 @@ L10241:
 	rep	#$20
 	longa	on
 ;			}
-	.line	2900
+	.line	2903
 L10242:
 ;			fs->wflag = 1;
-	.line	2901
+	.line	2904
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$3
-	sta	[<L476+fs_1],Y
+	sta	[<L475+fs_1],Y
 	rep	#$20
 	longa	on
 ;			if (dp->dptr >= last) break; /* If reached last entry then all entries of the object has been deleted. */
-	.line	2902
+	.line	2905
 	ldy	#$10
-	lda	[<L475+dp_0],Y
-	cmp	<L476+last_1
+	lda	[<L474+dp_0],Y
+	cmp	<L475+last_1
 	ldy	#$12
-	lda	[<L475+dp_0],Y
-	sbc	<L476+last_1+2
-	bcc	L485
+	lda	[<L474+dp_0],Y
+	sbc	<L475+last_1+2
+	bcc	L484
 	brl	L10239
-L485:
+L484:
 ;			res = dir_next(dp, 0); /* Next entry */
-	.line	2903
+	.line	2906
 	pea	#<$0
-	pei	<L475+dp_0+2
-	pei	<L475+dp_0
+	pei	<L474+dp_0+2
+	pei	<L474+dp_0
 	jsl	~~dir_next
-	sta	<L476+res_1
+	sta	<L475+res_1
 ;		}while (res == FR_OK);
-	.line	2904
+	.line	2907
 L10238:
-	lda	<L476+res_1
-	bne	L486
+	lda	<L475+res_1
+	bne	L485
 	brl	L10240
-L486:
+L485:
 L10239:
 ;		if (res == FR_NO_FILE) res = FR_INT_ERR;
-	.line	2905
-	lda	<L476+res_1
+	.line	2908
+	lda	<L475+res_1
 	cmp	#<$4
-	beq	L487
+	beq	L486
 	brl	L10243
-L487:
-	.line	2905
+L486:
+	.line	2908
 	lda	#$2
-	sta	<L476+res_1
+	sta	<L475+res_1
 ;	}
 L10243:
-	.line	2906
+	.line	2909
 ;#else			/* Non LFN configuration */
 ;
 ;	res = move_window(fs, dp->sect);
@@ -12248,30 +12255,30 @@ L10243:
 ;
 ;	return res;
 L10237:
-	.line	2917
-	lda	<L476+res_1
-L488:
+	.line	2920
+	lda	<L475+res_1
+L487:
 	tay
-	lda	<L475+2
-	sta	<L475+2+4
-	lda	<L475+1
-	sta	<L475+1+4
+	lda	<L474+2
+	sta	<L474+2+4
+	lda	<L474+1
+	sta	<L474+1+4
 	pld
 	tsc
 	clc
-	adc	#L475+4
+	adc	#L474+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	2918
-	.endblock	2918
-L475	equ	14
-L476	equ	5
+	.line	2921
+	.endblock	2921
+L474	equ	14
+L475	equ	5
 	ends
 	efunc
-	.endfunc	2918,5,14
-	.line	2918
+	.endfunc	2921,5,14
+	.line	2921
 ;
 ;#endif /* !FF_FS_READONLY && FF_FS_MINIMIZE == 0 */
 ;
@@ -12284,23 +12291,23 @@ L476	equ	5
 ;FILINFO* fno /* Pointer to the file information to be filled */
 ;)
 ;{
-	.line	2927
 	.line	2930
+	.line	2933
 	FFDOS
 	func
-	.function	2930
+	.function	2933
 ~~get_fileinfo:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L489
+	sbc	#L488
 	tcs
 	phd
 	tcd
 dp_0	set	4
 fno_0	set	8
-	.block	2930
+	.block	2933
 ;	UINT si, di;
 ;#if FF_USE_LFN
 ;	BYTE lcf;
@@ -12322,42 +12329,42 @@ fs_1	set	9
 	.sym	lcf,4,14,1,8
 	.sym	wc,5,16,1,16
 	.sym	hs,7,16,1,16
-	.sym	fs,9,138,1,32,72
-	.sym	dp,4,138,6,32,75
-	.sym	fno,8,138,6,32,76
-	lda	[<L489+dp_0]
-	sta	<L490+fs_1
+	.sym	fs,9,138,1,32,75
+	.sym	dp,4,138,6,32,78
+	.sym	fno,8,138,6,32,79
+	lda	[<L488+dp_0]
+	sta	<L489+fs_1
 	ldy	#$2
-	lda	[<L489+dp_0],Y
-	sta	<L490+fs_1+2
-	.line	2940
+	lda	[<L488+dp_0],Y
+	sta	<L489+fs_1+2
+	.line	2943
 	sep	#$20
 	longa	off
 	lda	#$0
 	ldy	#$16
-	sta	[<L489+fno_0],Y
+	sta	[<L488+fno_0],Y
 	rep	#$20
 	longa	on
 ;	if (dp->sect == 0)
-	.line	2941
+	.line	2944
 ;		return; /* Exit if read pointer has reached end of directory */
 	ldy	#$18
-	lda	[<L489+dp_0],Y
+	lda	[<L488+dp_0],Y
 	ldy	#$1a
-	ora	[<L489+dp_0],Y
-	beq	L492
+	ora	[<L488+dp_0],Y
+	beq	L491
 	brl	L10244
+L491:
+	.line	2945
 L492:
-	.line	2942
-L493:
-	lda	<L489+2
-	sta	<L489+2+8
-	lda	<L489+1
-	sta	<L489+1+8
+	lda	<L488+2
+	sta	<L488+2+8
+	lda	<L488+1
+	sta	<L488+1+8
 	pld
 	tsc
 	clc
-	adc	#L489+8
+	adc	#L488+8
 	tcs
 	rtl
 ;
@@ -12372,58 +12379,31 @@ L493:
 ;#endif
 ;	{ /* On the FAT/FAT32 volume */
 L10244:
-	.line	2953
+	.line	2956
 ;		if (dp->blk_ofs != 0xFFFFFFFF)
-	.line	2954
+	.line	2957
 ;		{ /* Get LFN if available */
 	ldy	#$2c
-	lda	[<L489+dp_0],Y
+	lda	[<L488+dp_0],Y
 	cmp	#<$ffffffff
-	bne	L494
+	bne	L493
 	ldy	#$2e
-	lda	[<L489+dp_0],Y
+	lda	[<L488+dp_0],Y
 	cmp	#^$ffffffff
-L494:
-	bne	L495
+L493:
+	bne	L494
 	brl	L10245
-L495:
-	.line	2955
-;			si = di = hs = 0;
-	.line	2956
-	stz	<L490+hs_1
-	stz	<L490+di_1
-	stz	<L490+si_1
-;			while (fs->lfnbuf[si] != 0)
-	.line	2957
-L10246:
-	lda	<L490+si_1
-	sta	<R1
-	stz	<R1+2
-	pei	<R1+2
-	pei	<R1
-	lda	#$1
-	xref	~~~lasl
-	jsl	~~~lasl
-	sta	<R0
-	stx	<R0+2
-	clc
-	ldy	#$b
-	lda	[<L490+fs_1],Y
-	adc	<R0
-	sta	<R2
-	ldy	#$d
-	lda	[<L490+fs_1],Y
-	adc	<R0+2
-	sta	<R2+2
-	lda	[<R2]
-	bne	L496
-	brl	L10247
-L496:
-;			{
+L494:
 	.line	2958
-;				wc = fs->lfnbuf[si++]; /* Get an LFN character (UTF-16) */
+;			si = di = hs = 0;
 	.line	2959
-	lda	<L490+si_1
+	stz	<L489+hs_1
+	stz	<L489+di_1
+	stz	<L489+si_1
+;			while (fs->lfnbuf[si] != 0)
+	.line	2960
+L10246:
+	lda	<L489+si_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -12435,50 +12415,77 @@ L496:
 	stx	<R0+2
 	clc
 	ldy	#$b
-	lda	[<L490+fs_1],Y
+	lda	[<L489+fs_1],Y
 	adc	<R0
 	sta	<R2
 	ldy	#$d
-	lda	[<L490+fs_1],Y
+	lda	[<L489+fs_1],Y
 	adc	<R0+2
 	sta	<R2+2
 	lda	[<R2]
-	sta	<L490+wc_1
-	inc	<L490+si_1
+	bne	L495
+	brl	L10247
+L495:
+;			{
+	.line	2961
+;				wc = fs->lfnbuf[si++]; /* Get an LFN character (UTF-16) */
+	.line	2962
+	lda	<L489+si_1
+	sta	<R1
+	stz	<R1+2
+	pei	<R1+2
+	pei	<R1
+	lda	#$1
+	xref	~~~lasl
+	jsl	~~~lasl
+	sta	<R0
+	stx	<R0+2
+	clc
+	ldy	#$b
+	lda	[<L489+fs_1],Y
+	adc	<R0
+	sta	<R2
+	ldy	#$d
+	lda	[<L489+fs_1],Y
+	adc	<R0+2
+	sta	<R2+2
+	lda	[<R2]
+	sta	<L489+wc_1
+	inc	<L489+si_1
 ;				if (hs == 0 && IsSurrogate(wc))
-	.line	2960
+	.line	2963
 ;				{ /* Is it a surrogate? */
-	lda	<L490+hs_1
-	beq	L497
+	lda	<L489+hs_1
+	beq	L496
+	brl	L10248
+L496:
+	lda	<L489+wc_1
+	cmp	#<$d800
+	bcs	L497
 	brl	L10248
 L497:
-	lda	<L490+wc_1
-	cmp	#<$d800
+	lda	#$dfff
+	cmp	<L489+wc_1
 	bcs	L498
 	brl	L10248
 L498:
-	lda	#$dfff
-	cmp	<L490+wc_1
-	bcs	L499
-	brl	L10248
-L499:
-	.line	2961
+	.line	2964
 ;					hs = wc; continue; /* Get low surrogate */
-	.line	2962
-	lda	<L490+wc_1
-	sta	<L490+hs_1
-	.line	2962
+	.line	2965
+	lda	<L489+wc_1
+	sta	<L489+hs_1
+	.line	2965
 	brl	L10246
 ;				}
-	.line	2963
+	.line	2966
 ;				wc = put_utf((DWORD)hs << 16 | wc, &fno->fname[di], FF_LFN_BUF - di); /* Store it in UTF-16 or UTF-8 encoding */
 L10248:
-	.line	2964
+	.line	2967
 	sec
 	lda	#$ff
-	sbc	<L490+di_1
+	sbc	<L489+di_1
 	pha
-	lda	<L490+di_1
+	lda	<L489+di_1
 	sta	<R0
 	stz	<R0+2
 	clc
@@ -12489,15 +12496,15 @@ L10248:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L489+fno_0
+	lda	<L488+fno_0
 	adc	<R1
 	sta	<R0
-	lda	<L489+fno_0+2
+	lda	<L488+fno_0+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
-	lda	<L490+hs_1
+	lda	<L489+hs_1
 	sta	<R3
 	stz	<R3+2
 	pei	<R3+2
@@ -12507,7 +12514,7 @@ L10248:
 	jsl	~~~lasl
 	sta	<R2
 	stx	<R2+2
-	lda	<L490+wc_1
+	lda	<L489+wc_1
 	sta	<17
 	stz	<17+2
 	lda	<17
@@ -12526,218 +12533,218 @@ L10248:
 	longa	on
 	lda	<R2
 	and	#$ff
-	sta	<L490+wc_1
+	sta	<L489+wc_1
 ;				if (wc == 0)
-	.line	2965
+	.line	2968
 ;				{	di = 0; break;} /* Invalid char or buffer overflow? */
-	lda	<L490+wc_1
-	beq	L500
+	lda	<L489+wc_1
+	beq	L499
 	brl	L10249
-L500:
-	.line	2966
-	.line	2966
-	stz	<L490+di_1
-	.line	2966
+L499:
+	.line	2969
+	.line	2969
+	stz	<L489+di_1
+	.line	2969
 	brl	L10247
-	.line	2966
+	.line	2969
 ;				di += wc;
 L10249:
-	.line	2967
+	.line	2970
 	clc
-	lda	<L490+di_1
-	adc	<L490+wc_1
-	sta	<L490+di_1
+	lda	<L489+di_1
+	adc	<L489+wc_1
+	sta	<L489+di_1
 ;				hs = 0;
-	.line	2968
-	stz	<L490+hs_1
+	.line	2971
+	stz	<L489+hs_1
 ;			}
-	.line	2969
+	.line	2972
 	brl	L10246
 L10247:
 ;			if (hs != 0) di = 0; /* Broken surrogate pair? */
-	.line	2970
-	lda	<L490+hs_1
-	bne	L501
+	.line	2973
+	lda	<L489+hs_1
+	bne	L500
 	brl	L10250
-L501:
-	.line	2970
-	stz	<L490+di_1
+L500:
+	.line	2973
+	stz	<L489+di_1
 ;			fno->fname[di] = 0; /* Terminate the LFN (null string means LFN is invalid) */
 L10250:
-	.line	2971
+	.line	2974
 	clc
 	lda	#$16
-	adc	<L490+di_1
+	adc	<L489+di_1
 	sta	<R0
 	sep	#$20
 	longa	off
 	lda	#$0
 	ldy	<R0
-	sta	[<L489+fno_0],Y
+	sta	[<L488+fno_0],Y
 	rep	#$20
 	longa	on
 ;		}
-	.line	2972
+	.line	2975
 ;	}
 L10245:
-	.line	2973
+	.line	2976
 ;
 ;	si = di = 0;
-	.line	2975
-	stz	<L490+di_1
-	stz	<L490+si_1
-;	while (si < 11)
-	.line	2976
-L10251:
-	lda	<L490+si_1
-	cmp	#<$b
-	bcc	L502
-	brl	L10252
-L502:
-;	{ /* Get SFN from SFN entry */
-	.line	2977
-;		wc = dp->dir[si++]; /* Get a char */
 	.line	2978
+	stz	<L489+di_1
+	stz	<L489+si_1
+;	while (si < 11)
+	.line	2979
+L10251:
+	lda	<L489+si_1
+	cmp	#<$b
+	bcc	L501
+	brl	L10252
+L501:
+;	{ /* Get SFN from SFN entry */
+	.line	2980
+;		wc = dp->dir[si++]; /* Get a char */
+	.line	2981
 	ldy	#$1c
-	lda	[<L489+dp_0],Y
+	lda	[<L488+dp_0],Y
 	sta	<R0
 	ldy	#$1e
-	lda	[<L489+dp_0],Y
+	lda	[<L488+dp_0],Y
 	sta	<R0+2
-	ldy	<L490+si_1
+	ldy	<L489+si_1
 	lda	[<R0],Y
 	and	#$ff
-	sta	<L490+wc_1
-	inc	<L490+si_1
+	sta	<L489+wc_1
+	inc	<L489+si_1
 ;		if (wc == ' ') continue; /* Skip padding spaces */
-	.line	2979
-	lda	<L490+wc_1
+	.line	2982
+	lda	<L489+wc_1
 	cmp	#<$20
-	bne	L503
+	bne	L502
 	brl	L10251
-L503:
+L502:
 ;		if (wc == RDDEM) wc = DDEM; /* Restore replaced DDEM character */
-	.line	2980
-	lda	<L490+wc_1
+	.line	2983
+	lda	<L489+wc_1
 	cmp	#<$5
-	beq	L504
+	beq	L503
 	brl	L10253
-L504:
-	.line	2980
+L503:
+	.line	2983
 	lda	#$e5
-	sta	<L490+wc_1
+	sta	<L489+wc_1
 ;		if (si == 9 && di < FF_SFN_BUF) fno->altname[di++] = '.'; /* Insert a . if extension is exist */
 L10253:
-	.line	2981
-	lda	<L490+si_1
+	.line	2984
+	lda	<L489+si_1
 	cmp	#<$9
-	beq	L505
+	beq	L504
+	brl	L10254
+L504:
+	lda	<L489+di_1
+	cmp	#<$c
+	bcc	L505
 	brl	L10254
 L505:
-	lda	<L490+di_1
-	cmp	#<$c
-	bcc	L506
-	brl	L10254
-L506:
-	.line	2981
+	.line	2984
 	clc
 	lda	#$9
-	adc	<L490+di_1
+	adc	<L489+di_1
 	sta	<R0
 	sep	#$20
 	longa	off
 	lda	#$2e
 	ldy	<R0
-	sta	[<L489+fno_0],Y
+	sta	[<L488+fno_0],Y
 	rep	#$20
 	longa	on
-	inc	<L490+di_1
+	inc	<L489+di_1
 ;#if FF_LFN_UNICODE >= 1	/* Unicode output */
 ;		if (dbc_1st((BYTE)wc) && si != 8 && si != 11 && dbc_2nd(dp->dir[si]))
 L10254:
-	.line	2983
+	.line	2986
 ;		{ /* Make a DBC if needed */
-	pei	<L490+wc_1
+	pei	<L489+wc_1
 	jsl	~~dbc_1st
 	tax
+	bne	L506
+	brl	L10255
+L506:
+	lda	<L489+si_1
+	cmp	#<$8
 	bne	L507
 	brl	L10255
 L507:
-	lda	<L490+si_1
-	cmp	#<$8
+	lda	<L489+si_1
+	cmp	#<$b
 	bne	L508
 	brl	L10255
 L508:
-	lda	<L490+si_1
-	cmp	#<$b
-	bne	L509
-	brl	L10255
-L509:
 	ldy	#$1c
-	lda	[<L489+dp_0],Y
+	lda	[<L488+dp_0],Y
 	sta	<R0
 	ldy	#$1e
-	lda	[<L489+dp_0],Y
+	lda	[<L488+dp_0],Y
 	sta	<R0+2
-	ldy	<L490+si_1
+	ldy	<L489+si_1
 	lda	[<R0],Y
 	pha
 	jsl	~~dbc_2nd
 	tax
-	bne	L510
+	bne	L509
 	brl	L10255
-L510:
-	.line	2984
+L509:
+	.line	2987
 ;			wc = wc << 8 | dp->dir[si++];
-	.line	2985
+	.line	2988
 	ldy	#$1c
-	lda	[<L489+dp_0],Y
+	lda	[<L488+dp_0],Y
 	sta	<R0
 	ldy	#$1e
-	lda	[<L489+dp_0],Y
+	lda	[<L488+dp_0],Y
 	sta	<R0+2
-	ldy	<L490+si_1
+	ldy	<L489+si_1
 	lda	[<R0],Y
 	and	#$ff
 	sta	<R0
-	lda	<L490+wc_1
+	lda	<L489+wc_1
 	xba
 	and	#$ff00
 	sta	<R1
 	lda	<R1
 	ora	<R0
-	sta	<L490+wc_1
-	inc	<L490+si_1
+	sta	<L489+wc_1
+	inc	<L489+si_1
 ;		}
-	.line	2986
+	.line	2989
 ;		wc = ff_oem2uni(wc, CODEPAGE); /* ANSI/OEM -> Unicode */
 L10255:
-	.line	2987
+	.line	2990
 	pea	#<$1b5
-	pei	<L490+wc_1
+	pei	<L489+wc_1
 	jsl	~~ff_oem2uni
-	sta	<L490+wc_1
+	sta	<L489+wc_1
 ;		if (wc == 0)
-	.line	2988
+	.line	2991
 ;		{	di = 0; break;} /* Wrong char in the current code page? */
-	lda	<L490+wc_1
-	beq	L511
+	lda	<L489+wc_1
+	beq	L510
 	brl	L10256
-L511:
-	.line	2989
-	.line	2989
-	stz	<L490+di_1
-	.line	2989
+L510:
+	.line	2992
+	.line	2992
+	stz	<L489+di_1
+	.line	2992
 	brl	L10252
-	.line	2989
+	.line	2992
 ;		wc = put_utf(wc, &fno->altname[di], FF_SFN_BUF - di); /* Store it in Unicode */
 L10256:
-	.line	2990
+	.line	2993
 	sec
 	lda	#$c
-	sbc	<L490+di_1
+	sbc	<L489+di_1
 	pha
-	lda	<L490+di_1
+	lda	<L489+di_1
 	sta	<R0
 	stz	<R0+2
 	clc
@@ -12748,15 +12755,15 @@ L10256:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L489+fno_0
+	lda	<L488+fno_0
 	adc	<R1
 	sta	<R0
-	lda	<L489+fno_0+2
+	lda	<L488+fno_0+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
-	lda	<L490+wc_1
+	lda	<L489+wc_1
 	sta	<R2
 	stz	<R2+2
 	pei	<R2+2
@@ -12769,231 +12776,231 @@ L10256:
 	longa	on
 	lda	<R3
 	and	#$ff
-	sta	<L490+wc_1
+	sta	<L489+wc_1
 ;		if (wc == 0)
-	.line	2991
+	.line	2994
 ;		{	di = 0; break;} /* Buffer overflow? */
-	lda	<L490+wc_1
-	beq	L512
+	lda	<L489+wc_1
+	beq	L511
 	brl	L10257
-L512:
-	.line	2992
-	.line	2992
-	stz	<L490+di_1
-	.line	2992
+L511:
+	.line	2995
+	.line	2995
+	stz	<L489+di_1
+	.line	2995
 	brl	L10252
-	.line	2992
+	.line	2995
 ;		di += wc;
 L10257:
-	.line	2993
+	.line	2996
 	clc
-	lda	<L490+di_1
-	adc	<L490+wc_1
-	sta	<L490+di_1
+	lda	<L489+di_1
+	adc	<L489+wc_1
+	sta	<L489+di_1
 ;#else					/* ANSI/OEM output */
 ;		fno->altname[di++] = (TCHAR)wc; /* Store it without any conversion */
 ;#endif
 ;	}
-	.line	2997
+	.line	3000
 	brl	L10251
 L10252:
 ;	fno->altname[di] = 0; /* Terminate the SFN  (null string means SFN is invalid) */
-	.line	2998
+	.line	3001
 	clc
 	lda	#$9
-	adc	<L490+di_1
+	adc	<L489+di_1
 	sta	<R0
 	sep	#$20
 	longa	off
 	lda	#$0
 	ldy	<R0
-	sta	[<L489+fno_0],Y
+	sta	[<L488+fno_0],Y
 	rep	#$20
 	longa	on
 ;
 ;	if (fno->fname[0] == 0)
-	.line	3000
+	.line	3003
 ;	{ /* If LFN is invalid, altname[] needs to be copied to fname[] */
 	ldy	#$16
-	lda	[<L489+fno_0],Y
+	lda	[<L488+fno_0],Y
 	and	#$ff
-	beq	L513
+	beq	L512
 	brl	L10258
-L513:
-	.line	3001
-;		if (di == 0)
-	.line	3002
-;		{ /* If LFN and SFN both are invalid, this object is inaccesible */
-	lda	<L490+di_1
-	beq	L514
-	brl	L10259
-L514:
-	.line	3003
-;			fno->fname[di++] = '?';
+L512:
 	.line	3004
+;		if (di == 0)
+	.line	3005
+;		{ /* If LFN and SFN both are invalid, this object is inaccesible */
+	lda	<L489+di_1
+	beq	L513
+	brl	L10259
+L513:
+	.line	3006
+;			fno->fname[di++] = '?';
+	.line	3007
 	clc
 	lda	#$16
-	adc	<L490+di_1
+	adc	<L489+di_1
 	sta	<R0
 	sep	#$20
 	longa	off
 	lda	#$3f
 	ldy	<R0
-	sta	[<L489+fno_0],Y
+	sta	[<L488+fno_0],Y
 	rep	#$20
 	longa	on
-	inc	<L490+di_1
+	inc	<L489+di_1
 ;		}
-	.line	3005
+	.line	3008
 ;		else
 	brl	L10260
 L10259:
 ;		{
-	.line	3007
+	.line	3010
 ;			for (si = di = 0, lcf = NS_BODY; fno->altname[si]; si++, di++)
-	.line	3008
-	stz	<L490+di_1
-	stz	<L490+si_1
+	.line	3011
+	stz	<L489+di_1
+	stz	<L489+si_1
 	sep	#$20
 	longa	off
 	lda	#$8
-	sta	<L490+lcf_1
+	sta	<L489+lcf_1
 	rep	#$20
 	longa	on
 	brl	L10264
 L10263:
 ;			{ /* Copy altname[] to fname[] with case information */
-	.line	3009
+	.line	3012
 ;				wc = (WCHAR)fno->altname[si];
-	.line	3010
+	.line	3013
 	clc
 	lda	#$9
-	adc	<L490+si_1
+	adc	<L489+si_1
 	sta	<R0
 	ldy	<R0
-	lda	[<L489+fno_0],Y
+	lda	[<L488+fno_0],Y
 	and	#$ff
-	sta	<L490+wc_1
+	sta	<L489+wc_1
 ;				if (wc == '.') lcf = NS_EXT;
-	.line	3011
-	lda	<L490+wc_1
+	.line	3014
+	lda	<L489+wc_1
 	cmp	#<$2e
-	beq	L515
+	beq	L514
 	brl	L10265
-L515:
-	.line	3011
+L514:
+	.line	3014
 	sep	#$20
 	longa	off
 	lda	#$10
-	sta	<L490+lcf_1
+	sta	<L489+lcf_1
 	rep	#$20
 	longa	on
 ;				if (IsUpper(wc) && (dp->dir[DIR_NTres] & lcf)) wc += 0x20;
 L10265:
-	.line	3012
-	lda	<L490+wc_1
+	.line	3015
+	lda	<L489+wc_1
 	cmp	#<$41
+	bcs	L515
+	brl	L10266
+L515:
+	lda	#$5a
+	cmp	<L489+wc_1
 	bcs	L516
 	brl	L10266
 L516:
-	lda	#$5a
-	cmp	<L490+wc_1
-	bcs	L517
-	brl	L10266
-L517:
 	ldy	#$1c
-	lda	[<L489+dp_0],Y
+	lda	[<L488+dp_0],Y
 	sta	<R0
 	ldy	#$1e
-	lda	[<L489+dp_0],Y
+	lda	[<L488+dp_0],Y
 	sta	<R0+2
 	sep	#$20
 	longa	off
-	lda	<L490+lcf_1
+	lda	<L489+lcf_1
 	ldy	#$c
 	and	[<R0],Y
 	rep	#$20
 	longa	on
-	bne	L518
+	bne	L517
 	brl	L10266
-L518:
-	.line	3012
+L517:
+	.line	3015
 	clc
 	lda	#$20
-	adc	<L490+wc_1
-	sta	<L490+wc_1
+	adc	<L489+wc_1
+	sta	<L489+wc_1
 ;				fno->fname[di] = (TCHAR)wc;
 L10266:
-	.line	3013
-	clc
-	lda	#$16
-	adc	<L490+di_1
-	sta	<R0
-	sep	#$20
-	longa	off
-	lda	<L490+wc_1
-	ldy	<R0
-	sta	[<L489+fno_0],Y
-	rep	#$20
-	longa	on
-;			}
-	.line	3014
-L10261:
-	inc	<L490+di_1
-	inc	<L490+si_1
-L10264:
-	clc
-	lda	#$9
-	adc	<L490+si_1
-	sta	<R0
-	ldy	<R0
-	lda	[<L489+fno_0],Y
-	and	#$ff
-	beq	L519
-	brl	L10263
-L519:
-L10262:
-;		}
-	.line	3015
-L10260:
-;		fno->fname[di] = 0; /* Terminate the LFN */
 	.line	3016
 	clc
 	lda	#$16
-	adc	<L490+di_1
+	adc	<L489+di_1
+	sta	<R0
+	sep	#$20
+	longa	off
+	lda	<L489+wc_1
+	ldy	<R0
+	sta	[<L488+fno_0],Y
+	rep	#$20
+	longa	on
+;			}
+	.line	3017
+L10261:
+	inc	<L489+di_1
+	inc	<L489+si_1
+L10264:
+	clc
+	lda	#$9
+	adc	<L489+si_1
+	sta	<R0
+	ldy	<R0
+	lda	[<L488+fno_0],Y
+	and	#$ff
+	beq	L518
+	brl	L10263
+L518:
+L10262:
+;		}
+	.line	3018
+L10260:
+;		fno->fname[di] = 0; /* Terminate the LFN */
+	.line	3019
+	clc
+	lda	#$16
+	adc	<L489+di_1
 	sta	<R0
 	sep	#$20
 	longa	off
 	lda	#$0
 	ldy	<R0
-	sta	[<L489+fno_0],Y
+	sta	[<L488+fno_0],Y
 	rep	#$20
 	longa	on
 ;		if (!dp->dir[DIR_NTres]) fno->altname[0] = 0; /* Altname is not needed if neither LFN nor case info is exist. */
-	.line	3017
+	.line	3020
 	ldy	#$1c
-	lda	[<L489+dp_0],Y
+	lda	[<L488+dp_0],Y
 	sta	<R0
 	ldy	#$1e
-	lda	[<L489+dp_0],Y
+	lda	[<L488+dp_0],Y
 	sta	<R0+2
 	ldy	#$c
 	lda	[<R0],Y
 	and	#$ff
-	beq	L520
+	beq	L519
 	brl	L10267
-L520:
-	.line	3017
+L519:
+	.line	3020
 	sep	#$20
 	longa	off
 	lda	#$0
 	ldy	#$9
-	sta	[<L489+fno_0],Y
+	sta	[<L488+fno_0],Y
 	rep	#$20
 	longa	on
 ;	}
 L10267:
-	.line	3018
+	.line	3021
 ;
 ;#else	/* Non-LFN configuration */
 ;	si = di = 0;
@@ -13013,31 +13020,31 @@ L10267:
 ;
 ;	fno->fattrib = dp->dir[DIR_Attr]; /* Attribute */
 L10258:
-	.line	3036
+	.line	3039
 	ldy	#$1c
-	lda	[<L489+dp_0],Y
+	lda	[<L488+dp_0],Y
 	sta	<R0
 	ldy	#$1e
-	lda	[<L489+dp_0],Y
+	lda	[<L488+dp_0],Y
 	sta	<R0+2
 	sep	#$20
 	longa	off
 	ldy	#$b
 	lda	[<R0],Y
 	ldy	#$8
-	sta	[<L489+fno_0],Y
+	sta	[<L488+fno_0],Y
 	rep	#$20
 	longa	on
 ;	fno->fsize = ld_dword(dp->dir + DIR_FileSize); /* Size */
-	.line	3037
+	.line	3040
 	clc
 	lda	#$1c
 	ldy	#$1c
-	adc	[<L489+dp_0],Y
+	adc	[<L488+dp_0],Y
 	sta	<R0
 	lda	#$0
 	ldy	#$1e
-	adc	[<L489+dp_0],Y
+	adc	[<L488+dp_0],Y
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
@@ -13045,52 +13052,52 @@ L10258:
 	sta	<R1
 	stx	<R1+2
 	lda	<R1
-	sta	[<L489+fno_0]
+	sta	[<L488+fno_0]
 	lda	<R1+2
 	ldy	#$2
-	sta	[<L489+fno_0],Y
+	sta	[<L488+fno_0],Y
 ;	fno->ftime = ld_word(dp->dir + DIR_ModTime + 0); /* Time */
-	.line	3038
+	.line	3041
 	clc
 	lda	#$16
 	ldy	#$1c
-	adc	[<L489+dp_0],Y
+	adc	[<L488+dp_0],Y
 	sta	<R0
 	lda	#$0
 	ldy	#$1e
-	adc	[<L489+dp_0],Y
+	adc	[<L488+dp_0],Y
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~ld_word
 	ldy	#$6
-	sta	[<L489+fno_0],Y
+	sta	[<L488+fno_0],Y
 ;	fno->fdate = ld_word(dp->dir + DIR_ModTime + 2); /* Date */
-	.line	3039
+	.line	3042
 	clc
 	lda	#$18
 	ldy	#$1c
-	adc	[<L489+dp_0],Y
+	adc	[<L488+dp_0],Y
 	sta	<R0
 	lda	#$0
 	ldy	#$1e
-	adc	[<L489+dp_0],Y
+	adc	[<L488+dp_0],Y
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~ld_word
 	ldy	#$4
-	sta	[<L489+fno_0],Y
+	sta	[<L488+fno_0],Y
 ;}
-	.line	3040
-	brl	L493
-	.endblock	3040
-L489	equ	37
-L490	equ	25
+	.line	3043
+	brl	L492
+	.endblock	3043
+L488	equ	37
+L489	equ	25
 	ends
 	efunc
-	.endfunc	3040,25,37
-	.line	3040
+	.endfunc	3043,25,37
+	.line	3043
 ;
 ;#endif /* FF_FS_MINIMIZE <= 1 || FF_FS_RPATH >= 2 */
 ;
@@ -13103,22 +13110,22 @@ L490	equ	25
 ;		const TCHAR** ptr /* Pointer to pointer to the ANSI/OEM or Unicode string */
 ;)
 ;{
-	.line	3049
 	.line	3052
+	.line	3055
 	FFDOS
 	func
-	.function	3052
+	.function	3055
 ~~get_achar:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L521
+	sbc	#L520
 	tcs
 	phd
 	tcd
 ptr_0	set	4
-	.block	3052
+	.block	3055
 ;	DWORD chr;
 ;
 ;#if FF_USE_LFN && FF_LFN_UNICODE >= 1	/* Unicode input */
@@ -13126,34 +13133,34 @@ ptr_0	set	4
 chr_1	set	0
 	.sym	chr,0,18,1,32
 	.sym	ptr,4,1166,6,32
-	.line	3056
-	pei	<L521+ptr_0+2
-	pei	<L521+ptr_0
+	.line	3059
+	pei	<L520+ptr_0+2
+	pei	<L520+ptr_0
 	jsl	~~tchar2uni
-	sta	<L522+chr_1
-	stx	<L522+chr_1+2
+	sta	<L521+chr_1
+	stx	<L521+chr_1+2
 ;	if (chr == 0xFFFFFFFF) chr = 0; /* Wrong UTF encoding is recognized as end of the string */
-	.line	3057
-	lda	<L522+chr_1
+	.line	3060
+	lda	<L521+chr_1
 	cmp	#<$ffffffff
-	bne	L524
-	lda	<L522+chr_1+2
+	bne	L523
+	lda	<L521+chr_1+2
 	cmp	#^$ffffffff
-L524:
-	beq	L525
+L523:
+	beq	L524
 	brl	L10268
-L525:
-	.line	3057
-	stz	<L522+chr_1
-	stz	<L522+chr_1+2
+L524:
+	.line	3060
+	stz	<L521+chr_1
+	stz	<L521+chr_1+2
 ;	chr = ff_wtoupper(chr);
 L10268:
-	.line	3058
-	pei	<L522+chr_1+2
-	pei	<L522+chr_1
+	.line	3061
+	pei	<L521+chr_1+2
+	pei	<L521+chr_1
 	jsl	~~ff_wtoupper
-	sta	<L522+chr_1
-	stx	<L522+chr_1+2
+	sta	<L521+chr_1
+	stx	<L521+chr_1+2
 ;
 ;#else									/* ANSI/OEM input */
 ;	chr = (BYTE)*(*ptr)++; /* Get a byte */
@@ -13172,31 +13179,31 @@ L10268:
 ;
 ;#endif
 ;	return chr;
-	.line	3076
-	ldx	<L522+chr_1+2
-	lda	<L522+chr_1
-L526:
+	.line	3079
+	ldx	<L521+chr_1+2
+	lda	<L521+chr_1
+L525:
 	tay
-	lda	<L521+2
-	sta	<L521+2+4
-	lda	<L521+1
-	sta	<L521+1+4
+	lda	<L520+2
+	sta	<L520+2+4
+	lda	<L520+1
+	sta	<L520+1+4
 	pld
 	tsc
 	clc
-	adc	#L521+4
+	adc	#L520+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	3077
-	.endblock	3077
-L521	equ	4
-L522	equ	1
+	.line	3080
+	.endblock	3080
+L520	equ	4
+L521	equ	1
 	ends
 	efunc
-	.endfunc	3077,1,4
-	.line	3077
+	.endfunc	3080,1,4
+	.line	3080
 ;
 ;static int pattern_matching ( /* 0:not matched, 1:matched */
 ;		const TCHAR* pat, /* Matching pattern */
@@ -13205,17 +13212,17 @@ L522	equ	1
 ;		int inf /* Infinite search (* specified) */
 ;)
 ;{
-	.line	3079
-	.line	3085
+	.line	3082
+	.line	3088
 	FFDOS
 	func
-	.function	3085
+	.function	3088
 ~~pattern_matching:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L527
+	sbc	#L526
 	tcs
 	phd
 	tcd
@@ -13223,7 +13230,7 @@ pat_0	set	4
 nam_0	set	8
 skip_0	set	12
 inf_0	set	14
-	.block	3085
+	.block	3088
 ;	const TCHAR *pp, *np;
 ;	DWORD pc, nc;
 ;	int nm, nx;
@@ -13245,282 +13252,282 @@ nx_1	set	18
 	.sym	nam,8,142,6,32
 	.sym	skip,12,5,6,16
 	.sym	inf,14,5,6,16
-	.line	3090
+	.line	3093
 L10269:
-	lda	<L527+skip_0
+	lda	<L526+skip_0
 	sta	<R0
-	dec	<L527+skip_0
+	dec	<L526+skip_0
 	lda	<R0
-	bne	L530
+	bne	L529
 	brl	L10270
-L530:
+L529:
 ;	{ /* Pre-skip name chars */
-	.line	3091
+	.line	3094
 ;		if (!get_achar(&nam)) return 0; /* Branch mismatched if less name chars */
-	.line	3092
+	.line	3095
 	pea	#0
 	clc
 	tdc
-	adc	#<L527+nam_0
+	adc	#<L526+nam_0
 	pha
 	jsl	~~get_achar
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
 	ora	<R0+2
-	beq	L531
+	beq	L530
 	brl	L10271
-L531:
-	.line	3092
+L530:
+	.line	3095
 	lda	#$0
-L532:
+L531:
 	tay
-	lda	<L527+2
-	sta	<L527+2+12
-	lda	<L527+1
-	sta	<L527+1+12
+	lda	<L526+2
+	sta	<L526+2+12
+	lda	<L526+1
+	sta	<L526+1+12
 	pld
 	tsc
 	clc
-	adc	#L527+12
+	adc	#L526+12
 	tcs
 	tya
 	rtl
 ;	}
 L10271:
-	.line	3093
+	.line	3096
 	brl	L10269
 L10270:
 ;	if (*pat == 0 && inf) return 1; /* (short circuit) */
-	.line	3094
-	lda	[<L527+pat_0]
+	.line	3097
+	lda	[<L526+pat_0]
 	and	#$ff
-	beq	L533
+	beq	L532
+	brl	L10272
+L532:
+	lda	<L526+inf_0
+	bne	L533
 	brl	L10272
 L533:
-	lda	<L527+inf_0
-	bne	L534
-	brl	L10272
-L534:
-	.line	3094
+	.line	3097
 	lda	#$1
-	brl	L532
+	brl	L531
 ;
 ;	do
 L10272:
-	.line	3096
+	.line	3099
 L10275:
 ;	{
-	.line	3097
+	.line	3100
 ;		pp = pat; np = nam; /* Top of pattern and name to match */
-	.line	3098
-	lda	<L527+pat_0
-	sta	<L528+pp_1
-	lda	<L527+pat_0+2
-	sta	<L528+pp_1+2
-	.line	3098
-	lda	<L527+nam_0
-	sta	<L528+np_1
-	lda	<L527+nam_0+2
-	sta	<L528+np_1+2
+	.line	3101
+	lda	<L526+pat_0
+	sta	<L527+pp_1
+	lda	<L526+pat_0+2
+	sta	<L527+pp_1+2
+	.line	3101
+	lda	<L526+nam_0
+	sta	<L527+np_1
+	lda	<L526+nam_0+2
+	sta	<L527+np_1+2
 ;		for (;;)
-	.line	3099
+	.line	3102
 L10278:
 ;		{
-	.line	3100
+	.line	3103
 ;			if (*pp == '?' || *pp == '*')
-	.line	3101
+	.line	3104
 ;			{ /* Wildcard? */
 	sep	#$20
 	longa	off
-	lda	[<L528+pp_1]
+	lda	[<L527+pp_1]
 	cmp	#<$3f
 	rep	#$20
 	longa	on
-	bne	L536
-	brl	L535
-L536:
+	bne	L535
+	brl	L534
+L535:
 	sep	#$20
 	longa	off
-	lda	[<L528+pp_1]
+	lda	[<L527+pp_1]
 	cmp	#<$2a
 	rep	#$20
 	longa	on
-	beq	L537
+	beq	L536
 	brl	L10279
-L537:
-L535:
-	.line	3102
+L536:
+L534:
+	.line	3105
 ;				nm = nx = 0;
-	.line	3103
-	stz	<L528+nx_1
-	stz	<L528+nm_1
+	.line	3106
+	stz	<L527+nx_1
+	stz	<L527+nm_1
 ;				do
-	.line	3104
+	.line	3107
 L10282:
 ;				{ /* Analyze the wildcard block */
-	.line	3105
+	.line	3108
 ;					if (*pp++ == '?') nm++;
-	.line	3106
-	lda	<L528+pp_1
+	.line	3109
+	lda	<L527+pp_1
 	sta	<R0
-	lda	<L528+pp_1+2
+	lda	<L527+pp_1+2
 	sta	<R0+2
-	inc	<L528+pp_1
-	bne	L538
-	inc	<L528+pp_1+2
-L538:
+	inc	<L527+pp_1
+	bne	L537
+	inc	<L527+pp_1+2
+L537:
 	sep	#$20
 	longa	off
 	lda	[<R0]
 	cmp	#<$3f
 	rep	#$20
 	longa	on
-	beq	L539
+	beq	L538
 	brl	L10283
-L539:
-	.line	3106
-	inc	<L528+nm_1
+L538:
+	.line	3109
+	inc	<L527+nm_1
 ;					else nx = 1;
 	brl	L10284
 L10283:
-	.line	3107
+	.line	3110
 	lda	#$1
-	sta	<L528+nx_1
+	sta	<L527+nx_1
 L10284:
 ;				}while (*pp == '?' || *pp == '*');
-	.line	3108
+	.line	3111
 L10280:
 	sep	#$20
 	longa	off
-	lda	[<L528+pp_1]
+	lda	[<L527+pp_1]
 	cmp	#<$3f
+	rep	#$20
+	longa	on
+	bne	L539
+	brl	L10282
+L539:
+	sep	#$20
+	longa	off
+	lda	[<L527+pp_1]
+	cmp	#<$2a
 	rep	#$20
 	longa	on
 	bne	L540
 	brl	L10282
 L540:
-	sep	#$20
-	longa	off
-	lda	[<L528+pp_1]
-	cmp	#<$2a
-	rep	#$20
-	longa	on
-	bne	L541
-	brl	L10282
-L541:
 L10281:
 ;				if (pattern_matching(pp, np, nm, nx)) return 1; /* Test new branch (recurs upto number of wildcard blocks in the pattern) */
-	.line	3109
-	pei	<L528+nx_1
-	pei	<L528+nm_1
-	pei	<L528+np_1+2
-	pei	<L528+np_1
-	pei	<L528+pp_1+2
-	pei	<L528+pp_1
+	.line	3112
+	pei	<L527+nx_1
+	pei	<L527+nm_1
+	pei	<L527+np_1+2
+	pei	<L527+np_1
+	pei	<L527+pp_1+2
+	pei	<L527+pp_1
 	jsl	~~pattern_matching
 	tax
-	bne	L542
+	bne	L541
 	brl	L10285
-L542:
-	.line	3109
+L541:
+	.line	3112
 	lda	#$1
-	brl	L532
+	brl	L531
 ;				nc = *np; break; /* Branch mismatched */
 L10285:
-	.line	3110
-	lda	[<L528+np_1]
+	.line	3113
+	lda	[<L527+np_1]
 	and	#$ff
-	sta	<L528+nc_1
-	stz	<L528+nc_1+2
-	.line	3110
+	sta	<L527+nc_1
+	stz	<L527+nc_1+2
+	.line	3113
 	brl	L10277
 ;			}
-	.line	3111
+	.line	3114
 ;			pc = get_achar(&pp); /* Get a pattern char */
 L10279:
-	.line	3112
+	.line	3115
 	pea	#0
 	clc
 	tdc
-	adc	#<L528+pp_1
+	adc	#<L527+pp_1
 	pha
 	jsl	~~get_achar
-	sta	<L528+pc_1
-	stx	<L528+pc_1+2
+	sta	<L527+pc_1
+	stx	<L527+pc_1+2
 ;			nc = get_achar(&np); /* Get a name char */
-	.line	3113
+	.line	3116
 	pea	#0
 	clc
 	tdc
-	adc	#<L528+np_1
+	adc	#<L527+np_1
 	pha
 	jsl	~~get_achar
-	sta	<L528+nc_1
-	stx	<L528+nc_1+2
+	sta	<L527+nc_1
+	stx	<L527+nc_1+2
 ;			if (pc != nc) break; /* Branch mismatched? */
-	.line	3114
-	lda	<L528+pc_1
-	cmp	<L528+nc_1
-	bne	L543
-	lda	<L528+pc_1+2
-	cmp	<L528+nc_1+2
-L543:
-	beq	L544
+	.line	3117
+	lda	<L527+pc_1
+	cmp	<L527+nc_1
+	bne	L542
+	lda	<L527+pc_1+2
+	cmp	<L527+nc_1+2
+L542:
+	beq	L543
 	brl	L10277
-L544:
+L543:
 ;			if (pc == 0) return 1; /* Branch matched? (matched at end of both strings) */
-	.line	3115
-	lda	<L528+pc_1
-	ora	<L528+pc_1+2
-	beq	L545
+	.line	3118
+	lda	<L527+pc_1
+	ora	<L527+pc_1+2
+	beq	L544
 	brl	L10286
-L545:
-	.line	3115
+L544:
+	.line	3118
 	lda	#$1
-	brl	L532
+	brl	L531
 ;		}
 L10286:
-	.line	3116
+	.line	3119
 L10276:
 	brl	L10278
 L10277:
 ;		get_achar(&nam); /* nam++ */
-	.line	3117
+	.line	3120
 	pea	#0
 	clc
 	tdc
-	adc	#<L527+nam_0
+	adc	#<L526+nam_0
 	pha
 	jsl	~~get_achar
 ;	}while (inf && nc); /* Retry until end of name if infinite search is specified */
-	.line	3118
+	.line	3121
 L10273:
-	lda	<L527+inf_0
-	bne	L547
-	brl	L546
-L547:
-	lda	<L528+nc_1
-	ora	<L528+nc_1+2
-	beq	L548
-	brl	L10275
-L548:
+	lda	<L526+inf_0
+	bne	L546
+	brl	L545
 L546:
+	lda	<L527+nc_1
+	ora	<L527+nc_1+2
+	beq	L547
+	brl	L10275
+L547:
+L545:
 L10274:
 ;
 ;	return 0;
-	.line	3120
+	.line	3123
 	lda	#$0
-	brl	L532
+	brl	L531
 ;}
-	.line	3121
-	.endblock	3121
-L527	equ	24
-L528	equ	5
+	.line	3124
+	.endblock	3124
+L526	equ	24
+L527	equ	5
 	ends
 	efunc
-	.endfunc	3121,5,24
-	.line	3121
+	.endfunc	3124,5,24
+	.line	3124
 ;
 ;#endif /* FF_USE_FIND && FF_FS_MINIMIZE <= 1 */
 ;
@@ -13533,23 +13540,23 @@ L528	equ	5
 ;const TCHAR** path /* Pointer to pointer to the segment in the path string */
 ;)
 ;{
-	.line	3129
-	.line	3133
+	.line	3132
+	.line	3136
 	FFDOS
 	func
-	.function	3133
+	.function	3136
 ~~create_name:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L549
+	sbc	#L548
 	tcs
 	phd
 	tcd
 dp_0	set	4
 path_0	set	8
-	.block	3133
+	.block	3136
 ;#if FF_USE_LFN		/* LFN configuration */
 ;	BYTE b, cf;
 ;	WCHAR wc, *lfn;
@@ -13579,81 +13586,81 @@ p_1	set	20
 	.sym	si,16,16,1,16
 	.sym	di,18,16,1,16
 	.sym	p,20,142,1,32
-	.sym	dp,4,138,6,32,75
+	.sym	dp,4,138,6,32,78
 	.sym	path,8,1166,6,32
-	.line	3142
-	lda	[<L549+path_0]
-	sta	<L550+p_1
+	.line	3145
+	lda	[<L548+path_0]
+	sta	<L549+p_1
 	ldy	#$2
-	lda	[<L549+path_0],Y
-	sta	<L550+p_1+2
-	.line	3142
-	lda	[<L549+dp_0]
+	lda	[<L548+path_0],Y
+	sta	<L549+p_1+2
+	.line	3145
+	lda	[<L548+dp_0]
 	sta	<R0
 	ldy	#$2
-	lda	[<L549+dp_0],Y
+	lda	[<L548+dp_0],Y
 	sta	<R0+2
 	ldy	#$b
 	lda	[<R0],Y
-	sta	<L550+lfn_1
+	sta	<L549+lfn_1
 	ldy	#$d
 	lda	[<R0],Y
-	sta	<L550+lfn_1+2
-	.line	3142
-	stz	<L550+di_1
+	sta	<L549+lfn_1+2
+	.line	3145
+	stz	<L549+di_1
 ;	for (;;)
-	.line	3143
+	.line	3146
 L10289:
 ;	{
-	.line	3144
+	.line	3147
 ;		uc = tchar2uni(&p); /* Get a character */
-	.line	3145
+	.line	3148
 	pea	#0
 	clc
 	tdc
-	adc	#<L550+p_1
+	adc	#<L549+p_1
 	pha
 	jsl	~~tchar2uni
-	sta	<L550+uc_1
-	stx	<L550+uc_1+2
+	sta	<L549+uc_1
+	stx	<L549+uc_1+2
 ;		if (uc == 0xFFFFFFFF) return FR_INVALID_NAME; /* Invalid code or UTF decode error */
-	.line	3146
-	lda	<L550+uc_1
+	.line	3149
+	lda	<L549+uc_1
 	cmp	#<$ffffffff
-	bne	L552
-	lda	<L550+uc_1+2
+	bne	L551
+	lda	<L549+uc_1+2
 	cmp	#^$ffffffff
-L552:
-	beq	L553
+L551:
+	beq	L552
 	brl	L10290
-L553:
-	.line	3146
+L552:
+	.line	3149
 	lda	#$6
-L554:
+L553:
 	tay
-	lda	<L549+2
-	sta	<L549+2+8
-	lda	<L549+1
-	sta	<L549+1+8
+	lda	<L548+2
+	sta	<L548+2+8
+	lda	<L548+1
+	sta	<L548+1+8
 	pld
 	tsc
 	clc
-	adc	#L549+8
+	adc	#L548+8
 	tcs
 	tya
 	rtl
 ;		if (uc >= 0x10000) lfn[di++] = (WCHAR)(uc >> 16); /* Store high surrogate if needed */
 L10290:
-	.line	3147
-	lda	<L550+uc_1
+	.line	3150
+	lda	<L549+uc_1
 	cmp	#<$10000
-	lda	<L550+uc_1+2
+	lda	<L549+uc_1+2
 	sbc	#^$10000
-	bcs	L555
+	bcs	L554
 	brl	L10291
-L555:
-	.line	3147
-	lda	<L550+di_1
+L554:
+	.line	3150
+	lda	<L549+di_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -13664,14 +13671,14 @@ L555:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L550+lfn_1
+	lda	<L549+lfn_1
 	adc	<R0
 	sta	<R2
-	lda	<L550+lfn_1+2
+	lda	<L549+lfn_1+2
 	adc	<R0+2
 	sta	<R2+2
-	pei	<L550+uc_1+2
-	pei	<L550+uc_1
+	pei	<L549+uc_1+2
+	pei	<L549+uc_1
 	lda	#$10
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -13679,62 +13686,62 @@ L555:
 	stx	<R0+2
 	lda	<R0
 	sta	[<R2]
-	inc	<L550+di_1
+	inc	<L549+di_1
 ;		wc = (WCHAR)uc;
 L10291:
-	.line	3148
-	lda	<L550+uc_1
-	sta	<L550+wc_1
+	.line	3151
+	lda	<L549+uc_1
+	sta	<L549+wc_1
 ;		if (wc < ' ' || wc == '/' || wc == '\\') break; /* Break if end of the path or a separator is found */
-	.line	3149
-	lda	<L550+wc_1
+	.line	3152
+	lda	<L549+wc_1
 	cmp	#<$20
-	bcs	L556
+	bcs	L555
+	brl	L10288
+L555:
+	lda	<L549+wc_1
+	cmp	#<$2f
+	bne	L556
 	brl	L10288
 L556:
-	lda	<L550+wc_1
-	cmp	#<$2f
+	lda	<L549+wc_1
+	cmp	#<$5c
 	bne	L557
 	brl	L10288
 L557:
-	lda	<L550+wc_1
-	cmp	#<$5c
-	bne	L558
-	brl	L10288
-L558:
 ;		if (wc < 0x80 && chk_chr("\"*:<>\?|\x7F", wc)) return FR_INVALID_NAME; /* Reject illegal characters for LFN */
-	.line	3150
-	lda	<L550+wc_1
+	.line	3153
+	lda	<L549+wc_1
 	cmp	#<$80
-	bcc	L559
+	bcc	L558
 	brl	L10292
-L559:
-	pei	<L550+wc_1
-	pea	#^L122
-	pea	#<L122
+L558:
+	pei	<L549+wc_1
+	pea	#^L2
+	pea	#<L2
 	jsl	~~chk_chr
 	tax
-	bne	L560
+	bne	L559
 	brl	L10292
-L560:
-	.line	3150
+L559:
+	.line	3153
 	lda	#$6
-	brl	L554
+	brl	L553
 ;		if (di >= FF_MAX_LFN) return FR_INVALID_NAME; /* Reject too long name */
 L10292:
-	.line	3151
-	lda	<L550+di_1
+	.line	3154
+	lda	<L549+di_1
 	cmp	#<$ff
-	bcs	L561
+	bcs	L560
 	brl	L10293
-L561:
-	.line	3151
+L560:
+	.line	3154
 	lda	#$6
-	brl	L554
+	brl	L553
 ;		lfn[di++] = wc; /* Store the Unicode character */
 L10293:
-	.line	3152
-	lda	<L550+di_1
+	.line	3155
+	lda	<L549+di_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -13745,90 +13752,90 @@ L10293:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L550+lfn_1
+	lda	<L549+lfn_1
 	adc	<R0
 	sta	<R2
-	lda	<L550+lfn_1+2
+	lda	<L549+lfn_1+2
 	adc	<R0+2
 	sta	<R2+2
-	lda	<L550+wc_1
+	lda	<L549+wc_1
 	sta	[<R2]
-	inc	<L550+di_1
+	inc	<L549+di_1
 ;	}
-	.line	3153
+	.line	3156
 L10287:
 	brl	L10289
 L10288:
 ;	if (wc < ' ')
-	.line	3154
+	.line	3157
 ;	{ /* End of path? */
-	lda	<L550+wc_1
+	lda	<L549+wc_1
 	cmp	#<$20
-	bcc	L562
+	bcc	L561
 	brl	L10294
-L562:
-	.line	3155
+L561:
+	.line	3158
 ;		cf = NS_LAST; /* Set last segment flag */
-	.line	3156
+	.line	3159
 	sep	#$20
 	longa	off
 	lda	#$4
-	sta	<L550+cf_1
+	sta	<L549+cf_1
 	rep	#$20
 	longa	on
 ;	}
-	.line	3157
+	.line	3160
 ;	else
 	brl	L10295
 L10294:
 ;	{
-	.line	3159
+	.line	3162
 ;		cf = 0; /* Next segment follows */
-	.line	3160
+	.line	3163
 	sep	#$20
 	longa	off
-	stz	<L550+cf_1
+	stz	<L549+cf_1
 	rep	#$20
 	longa	on
 ;		while (*p == '/' || *p == '\\') p++; /* Skip duplicated separators if exist */
-	.line	3161
+	.line	3164
 L10296:
 	sep	#$20
 	longa	off
-	lda	[<L550+p_1]
+	lda	[<L549+p_1]
 	cmp	#<$2f
 	rep	#$20
 	longa	on
-	bne	L564
-	brl	L563
-L564:
+	bne	L563
+	brl	L562
+L563:
 	sep	#$20
 	longa	off
-	lda	[<L550+p_1]
+	lda	[<L549+p_1]
 	cmp	#<$5c
 	rep	#$20
 	longa	on
-	beq	L565
+	beq	L564
 	brl	L10297
+L564:
+L562:
+	.line	3164
+	inc	<L549+p_1
+	bne	L565
+	inc	<L549+p_1+2
 L565:
-L563:
-	.line	3161
-	inc	<L550+p_1
-	bne	L566
-	inc	<L550+p_1+2
-L566:
 	brl	L10296
 L10297:
 ;	}
-	.line	3162
+	.line	3165
 L10295:
 ;	*path = p; /* Return pointer to the next segment */
-	.line	3163
-	lda	<L550+p_1
-	sta	[<L549+path_0]
-	lda	<L550+p_1+2
+	.line	3166
+	lda	<L549+p_1
+	sta	[<L548+path_0]
+	lda	<L549+p_1+2
 	ldy	#$2
-	sta	[<L549+path_0],Y
+	sta	[<L548+path_0],Y
 ;
 ;#if FF_FS_RPATH != 0
 ;	if ((di == 1 && lfn[di - 1] == '.') ||
@@ -13844,19 +13851,19 @@ L10295:
 ;	}
 ;#endif
 ;	while (di)
-	.line	3178
+	.line	3181
 L10298:
-	lda	<L550+di_1
-	bne	L567
+	lda	<L549+di_1
+	bne	L566
 	brl	L10299
-L567:
+L566:
 ;	{ /* Snip off trailing spaces and dots if exist */
-	.line	3179
+	.line	3182
 ;		wc = lfn[di - 1];
-	.line	3180
+	.line	3183
 	clc
 	lda	#$ffff
-	adc	<L550+di_1
+	adc	<L549+di_1
 	sta	<R1
 	lda	<R1
 	sta	<R1
@@ -13869,37 +13876,37 @@ L567:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L550+lfn_1
+	lda	<L549+lfn_1
 	adc	<R0
 	sta	<R2
-	lda	<L550+lfn_1+2
+	lda	<L549+lfn_1+2
 	adc	<R0+2
 	sta	<R2+2
 	lda	[<R2]
-	sta	<L550+wc_1
+	sta	<L549+wc_1
 ;		if (wc != ' ' && wc != '.') break;
-	.line	3181
-	lda	<L550+wc_1
+	.line	3184
+	lda	<L549+wc_1
 	cmp	#<$20
-	bne	L569
-	brl	L568
-L569:
-	lda	<L550+wc_1
-	cmp	#<$2e
-	beq	L570
-	brl	L10299
-L570:
+	bne	L568
+	brl	L567
 L568:
+	lda	<L549+wc_1
+	cmp	#<$2e
+	beq	L569
+	brl	L10299
+L569:
+L567:
 ;		di--;
-	.line	3182
-	dec	<L550+di_1
+	.line	3185
+	dec	<L549+di_1
 ;	}
-	.line	3183
+	.line	3186
 	brl	L10298
 L10299:
 ;	lfn[di] = 0; /* LFN is created into the working buffer */
-	.line	3184
-	lda	<L550+di_1
+	.line	3187
+	lda	<L549+di_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -13910,36 +13917,36 @@ L10299:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L550+lfn_1
+	lda	<L549+lfn_1
 	adc	<R0
 	sta	<R2
-	lda	<L550+lfn_1+2
+	lda	<L549+lfn_1+2
 	adc	<R0+2
 	sta	<R2+2
 	lda	#$0
 	sta	[<R2]
 ;	if (di == 0) return FR_INVALID_NAME; /* Reject null name */
-	.line	3185
-	lda	<L550+di_1
-	beq	L571
+	.line	3188
+	lda	<L549+di_1
+	beq	L570
 	brl	L10300
-L571:
-	.line	3185
+L570:
+	.line	3188
 	lda	#$6
-	brl	L554
+	brl	L553
 ;
 ;	/* Create SFN in directory form */
 ;	for (si = 0; lfn[si] == ' '; si++); /* Remove leading spaces */
 L10300:
-	.line	3188
-	stz	<L550+si_1
+	.line	3191
+	stz	<L549+si_1
 	brl	L10304
 L10303:
-	.line	3188
+	.line	3191
 L10301:
-	inc	<L550+si_1
+	inc	<L549+si_1
 L10304:
-	lda	<L550+si_1
+	lda	<L549+si_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -13950,26 +13957,26 @@ L10304:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L550+lfn_1
+	lda	<L549+lfn_1
 	adc	<R0
 	sta	<R2
-	lda	<L550+lfn_1+2
+	lda	<L549+lfn_1+2
 	adc	<R0+2
 	sta	<R2+2
 	lda	[<R2]
 	cmp	#<$20
-	bne	L572
+	bne	L571
 	brl	L10303
-L572:
+L571:
 L10302:
 ;	if (si > 0 || lfn[si] == '.') cf |= NS_LOSS | NS_LFN; /* Is there any leading space or dot? */
-	.line	3189
+	.line	3192
 	lda	#$0
-	cmp	<L550+si_1
-	bcs	L574
-	brl	L573
-L574:
-	lda	<L550+si_1
+	cmp	<L549+si_1
+	bcs	L573
+	brl	L572
+L573:
+	lda	<L549+si_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -13980,37 +13987,37 @@ L574:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L550+lfn_1
+	lda	<L549+lfn_1
 	adc	<R0
 	sta	<R2
-	lda	<L550+lfn_1+2
+	lda	<L549+lfn_1+2
 	adc	<R0+2
 	sta	<R2+2
 	lda	[<R2]
 	cmp	#<$2e
-	beq	L575
+	beq	L574
 	brl	L10305
-L575:
-L573:
-	.line	3189
+L574:
+L572:
+	.line	3192
 	sep	#$20
 	longa	off
 	lda	#$3
-	tsb	<L550+cf_1
+	tsb	<L549+cf_1
 	rep	#$20
 	longa	on
 ;	while (di > 0 && lfn[di - 1] != '.') di--; /* Find last dot (di<=si: no extension) */
 L10305:
-	.line	3190
+	.line	3193
 L10306:
 	lda	#$0
-	cmp	<L550+di_1
-	bcc	L576
+	cmp	<L549+di_1
+	bcc	L575
 	brl	L10307
-L576:
+L575:
 	clc
 	lda	#$ffff
-	adc	<L550+di_1
+	adc	<L549+di_1
 	sta	<R1
 	lda	<R1
 	sta	<R1
@@ -14023,57 +14030,57 @@ L576:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L550+lfn_1
+	lda	<L549+lfn_1
 	adc	<R0
 	sta	<R2
-	lda	<L550+lfn_1+2
+	lda	<L549+lfn_1+2
 	adc	<R0+2
 	sta	<R2+2
 	lda	[<R2]
 	cmp	#<$2e
-	bne	L577
+	bne	L576
 	brl	L10307
-L577:
-	.line	3190
-	dec	<L550+di_1
+L576:
+	.line	3193
+	dec	<L549+di_1
 	brl	L10306
 L10307:
 ;
 ;	mem_set(dp->fn, ' ', 11);
-	.line	3192
+	.line	3195
 	pea	#<$b
 	pea	#<$20
 	clc
 	lda	#$20
-	adc	<L549+dp_0
+	adc	<L548+dp_0
 	sta	<R0
 	lda	#$0
-	adc	<L549+dp_0+2
+	adc	<L548+dp_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~mem_set
 ;	i = b = 0; ni = 8;
-	.line	3193
+	.line	3196
 	sep	#$20
 	longa	off
-	stz	<L550+b_1
+	stz	<L549+b_1
 	rep	#$20
 	longa	on
 	lda	#$0
 	and	#$ff
-	sta	<L550+i_1
-	.line	3193
+	sta	<L549+i_1
+	.line	3196
 	lda	#$8
-	sta	<L550+ni_1
+	sta	<L549+ni_1
 ;	for (;;)
-	.line	3194
+	.line	3197
 L10310:
 ;	{
-	.line	3195
+	.line	3198
 ;		wc = lfn[si++]; /* Get an LFN character */
-	.line	3196
-	lda	<L550+si_1
+	.line	3199
+	lda	<L549+si_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -14084,155 +14091,155 @@ L10310:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L550+lfn_1
+	lda	<L549+lfn_1
 	adc	<R0
 	sta	<R2
-	lda	<L550+lfn_1+2
+	lda	<L549+lfn_1+2
 	adc	<R0+2
 	sta	<R2+2
 	lda	[<R2]
-	sta	<L550+wc_1
-	inc	<L550+si_1
+	sta	<L549+wc_1
+	inc	<L549+si_1
 ;		if (wc == 0) break; /* Break on end of the LFN */
-	.line	3197
-	lda	<L550+wc_1
-	bne	L578
+	.line	3200
+	lda	<L549+wc_1
+	bne	L577
 	brl	L10309
-L578:
+L577:
 ;		if (wc == ' ' || (wc == '.' && si != di))
-	.line	3198
+	.line	3201
 ;		{ /* Remove embedded spaces and dots */
-	lda	<L550+wc_1
+	lda	<L549+wc_1
 	cmp	#<$20
-	bne	L580
-	brl	L579
-L580:
-	lda	<L550+wc_1
+	bne	L579
+	brl	L578
+L579:
+	lda	<L549+wc_1
 	cmp	#<$2e
-	beq	L581
+	beq	L580
+	brl	L10311
+L580:
+	lda	<L549+si_1
+	cmp	<L549+di_1
+	bne	L581
 	brl	L10311
 L581:
-	lda	<L550+si_1
-	cmp	<L550+di_1
-	bne	L582
-	brl	L10311
-L582:
-L579:
-	.line	3199
+L578:
+	.line	3202
 ;			cf |= NS_LOSS | NS_LFN;
-	.line	3200
+	.line	3203
 	sep	#$20
 	longa	off
 	lda	#$3
-	tsb	<L550+cf_1
+	tsb	<L549+cf_1
 	rep	#$20
 	longa	on
 ;			continue;
-	.line	3201
+	.line	3204
 	brl	L10308
 ;		}
-	.line	3202
+	.line	3205
 ;
 ;		if (i >= ni || si == di)
 L10311:
-	.line	3204
-;		{ /* End of field? */
-	lda	<L550+i_1
-	cmp	<L550+ni_1
-	bcc	L584
-	brl	L583
-L584:
-	lda	<L550+si_1
-	cmp	<L550+di_1
-	beq	L585
-	brl	L10312
-L585:
-L583:
-	.line	3205
-;			if (ni == 11)
-	.line	3206
-;			{ /* Name extension overflow? */
-	lda	<L550+ni_1
-	cmp	#<$b
-	beq	L586
-	brl	L10313
-L586:
 	.line	3207
-;				cf |= NS_LOSS | NS_LFN;
+;		{ /* End of field? */
+	lda	<L549+i_1
+	cmp	<L549+ni_1
+	bcc	L583
+	brl	L582
+L583:
+	lda	<L549+si_1
+	cmp	<L549+di_1
+	beq	L584
+	brl	L10312
+L584:
+L582:
 	.line	3208
+;			if (ni == 11)
+	.line	3209
+;			{ /* Name extension overflow? */
+	lda	<L549+ni_1
+	cmp	#<$b
+	beq	L585
+	brl	L10313
+L585:
+	.line	3210
+;				cf |= NS_LOSS | NS_LFN;
+	.line	3211
 	sep	#$20
 	longa	off
 	lda	#$3
-	tsb	<L550+cf_1
+	tsb	<L549+cf_1
 	rep	#$20
 	longa	on
 ;				break;
-	.line	3209
+	.line	3212
 	brl	L10309
 ;			}
-	.line	3210
+	.line	3213
 ;			if (si != di) cf |= NS_LOSS | NS_LFN; /* Name body overflow? */
 L10313:
-	.line	3211
-	lda	<L550+si_1
-	cmp	<L550+di_1
-	bne	L587
+	.line	3214
+	lda	<L549+si_1
+	cmp	<L549+di_1
+	bne	L586
 	brl	L10314
-L587:
-	.line	3211
+L586:
+	.line	3214
 	sep	#$20
 	longa	off
 	lda	#$3
-	tsb	<L550+cf_1
+	tsb	<L549+cf_1
 	rep	#$20
 	longa	on
 ;			if (si > di) break; /* No name extension? */
 L10314:
-	.line	3212
-	lda	<L550+di_1
-	cmp	<L550+si_1
-	bcs	L588
+	.line	3215
+	lda	<L549+di_1
+	cmp	<L549+si_1
+	bcs	L587
 	brl	L10309
-L588:
+L587:
 ;			si = di; i = 8; ni = 11; b <<= 2; /* Enter name extension */
-	.line	3213
-	lda	<L550+di_1
-	sta	<L550+si_1
-	.line	3213
+	.line	3216
+	lda	<L549+di_1
+	sta	<L549+si_1
+	.line	3216
 	lda	#$8
-	sta	<L550+i_1
-	.line	3213
+	sta	<L549+i_1
+	.line	3216
 	lda	#$b
-	sta	<L550+ni_1
-	.line	3213
+	sta	<L549+ni_1
+	.line	3216
 	sep	#$20
 	longa	off
-	asl	<L550+b_1
-	asl	<L550+b_1
+	asl	<L549+b_1
+	asl	<L549+b_1
 	rep	#$20
 	longa	on
 ;			continue;
-	.line	3214
+	.line	3217
 	brl	L10308
 ;		}
-	.line	3215
+	.line	3218
 ;
 ;		if (wc >= 0x80)
 L10312:
-	.line	3217
+	.line	3220
 ;		{ /* Is this a non-ASCII character? */
-	lda	<L550+wc_1
+	lda	<L549+wc_1
 	cmp	#<$80
-	bcs	L589
+	bcs	L588
 	brl	L10315
-L589:
-	.line	3218
+L588:
+	.line	3221
 ;			cf |= NS_LFN; /* LFN entry needs to be created */
-	.line	3219
+	.line	3222
 	sep	#$20
 	longa	off
 	lda	#$2
-	tsb	<L550+cf_1
+	tsb	<L549+cf_1
 	rep	#$20
 	longa	on
 ;#if FF_CODE_PAGE == 0
@@ -14247,349 +14254,349 @@ L589:
 ;			}
 ;#elif FF_CODE_PAGE < 900	/* SBCS cfg */
 ;			wc = ff_uni2oem(wc, CODEPAGE); /* Unicode ==> ANSI/OEM code */
-	.line	3231
+	.line	3234
 	pea	#<$1b5
-	lda	<L550+wc_1
+	lda	<L549+wc_1
 	sta	<R0
 	stz	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~ff_uni2oem
-	sta	<L550+wc_1
+	sta	<L549+wc_1
 ;			if (wc & 0x80) wc = ExCvt[wc & 0x7F]; /* Convert extended character to upper (SBCS) */
-	.line	3232
-	lda	<L550+wc_1
+	.line	3235
+	lda	<L549+wc_1
 	and	#<$80
-	bne	L590
+	bne	L589
 	brl	L10316
-L590:
-	.line	3232
-	lda	<L550+wc_1
+L589:
+	.line	3235
+	lda	<L549+wc_1
 	and	#<$7f
 	sta	<R0
 	ldx	<R0
 	lda	|~~ExCvt,X
 	and	#$ff
-	sta	<L550+wc_1
+	sta	<L549+wc_1
 ;#else						/* DBCS cfg */
 ;			wc = ff_uni2oem(ff_wtoupper(wc), CODEPAGE); /* Unicode ==> Upper convert ==> ANSI/OEM code */
 ;#endif
 ;		}
 L10316:
-	.line	3236
+	.line	3239
 ;
 ;		if (wc >= 0x100)
 L10315:
-	.line	3238
+	.line	3241
 ;		{ /* Is this a DBC? */
-	lda	<L550+wc_1
+	lda	<L549+wc_1
 	cmp	#<$100
-	bcs	L591
+	bcs	L590
 	brl	L10317
-L591:
-	.line	3239
+L590:
+	.line	3242
 ;			if (i >= ni - 1)
-	.line	3240
+	.line	3243
 ;			{ /* Field overflow? */
 	clc
 	lda	#$ffff
-	adc	<L550+ni_1
+	adc	<L549+ni_1
 	sta	<R0
-	lda	<L550+i_1
+	lda	<L549+i_1
 	cmp	<R0
-	bcs	L592
+	bcs	L591
 	brl	L10318
-L592:
-	.line	3241
+L591:
+	.line	3244
 ;				cf |= NS_LOSS | NS_LFN;
-	.line	3242
+	.line	3245
 	sep	#$20
 	longa	off
 	lda	#$3
-	tsb	<L550+cf_1
+	tsb	<L549+cf_1
 	rep	#$20
 	longa	on
 ;				i = ni; continue; /* Next field */
-	.line	3243
-	lda	<L550+ni_1
-	sta	<L550+i_1
-	.line	3243
+	.line	3246
+	lda	<L549+ni_1
+	sta	<L549+i_1
+	.line	3246
 	brl	L10308
 ;			}
-	.line	3244
+	.line	3247
 ;			dp->fn[i++] = (BYTE)(wc >> 8); /* Put 1st byte */
 L10318:
-	.line	3245
+	.line	3248
 	clc
 	lda	#$20
-	adc	<L550+i_1
+	adc	<L549+i_1
 	sta	<R0
-	lda	<L550+wc_1
+	lda	<L549+wc_1
 	xba
 	and	#$00ff
 	sep	#$20
 	longa	off
 	ldy	<R0
-	sta	[<L549+dp_0],Y
+	sta	[<L548+dp_0],Y
 	rep	#$20
 	longa	on
-	inc	<L550+i_1
+	inc	<L549+i_1
 ;		}
-	.line	3246
+	.line	3249
 ;		else
 	brl	L10319
 L10317:
 ;		{ /* SBC */
-	.line	3248
+	.line	3251
 ;			if (wc == 0 || chk_chr("+,;=[]", wc))
-	.line	3249
+	.line	3252
 ;			{ /* Replace illegal characters for SFN if needed */
-	lda	<L550+wc_1
-	bne	L594
-	brl	L593
-L594:
-	pei	<L550+wc_1
-	pea	#^L122+9
-	pea	#<L122+9
+	lda	<L549+wc_1
+	bne	L593
+	brl	L592
+L593:
+	pei	<L549+wc_1
+	pea	#^L2+9
+	pea	#<L2+9
 	jsl	~~chk_chr
 	tax
-	bne	L595
+	bne	L594
 	brl	L10320
-L595:
-L593:
-	.line	3250
+L594:
+L592:
+	.line	3253
 ;				wc = '_'; cf |= NS_LOSS | NS_LFN;/* Lossy conversion */
-	.line	3251
+	.line	3254
 	lda	#$5f
-	sta	<L550+wc_1
-	.line	3251
+	sta	<L549+wc_1
+	.line	3254
 	sep	#$20
 	longa	off
 	lda	#$3
-	tsb	<L550+cf_1
+	tsb	<L549+cf_1
 	rep	#$20
 	longa	on
 ;			}
-	.line	3252
+	.line	3255
 ;			else
 	brl	L10321
 L10320:
 ;			{
-	.line	3254
+	.line	3257
 ;				if (IsUpper(wc))
-	.line	3255
+	.line	3258
 ;				{ /* ASCII upper case? */
-	lda	<L550+wc_1
+	lda	<L549+wc_1
 	cmp	#<$41
+	bcs	L595
+	brl	L10322
+L595:
+	lda	#$5a
+	cmp	<L549+wc_1
 	bcs	L596
 	brl	L10322
 L596:
-	lda	#$5a
-	cmp	<L550+wc_1
-	bcs	L597
-	brl	L10322
-L597:
-	.line	3256
+	.line	3259
 ;					b |= 2;
-	.line	3257
+	.line	3260
 	sep	#$20
 	longa	off
 	lda	#$2
-	tsb	<L550+b_1
+	tsb	<L549+b_1
 	rep	#$20
 	longa	on
 ;				}
-	.line	3258
+	.line	3261
 ;				if (IsLower(wc))
 L10322:
-	.line	3259
+	.line	3262
 ;				{ /* ASCII lower case? */
-	lda	<L550+wc_1
+	lda	<L549+wc_1
 	cmp	#<$61
+	bcs	L597
+	brl	L10323
+L597:
+	lda	#$7a
+	cmp	<L549+wc_1
 	bcs	L598
 	brl	L10323
 L598:
-	lda	#$7a
-	cmp	<L550+wc_1
-	bcs	L599
-	brl	L10323
-L599:
-	.line	3260
+	.line	3263
 ;					b |= 1; wc -= 0x20;
-	.line	3261
+	.line	3264
 	sep	#$20
 	longa	off
 	lda	#$1
-	tsb	<L550+b_1
+	tsb	<L549+b_1
 	rep	#$20
 	longa	on
-	.line	3261
+	.line	3264
 	clc
 	lda	#$ffe0
-	adc	<L550+wc_1
-	sta	<L550+wc_1
+	adc	<L549+wc_1
+	sta	<L549+wc_1
 ;				}
-	.line	3262
+	.line	3265
 ;			}
 L10323:
-	.line	3263
+	.line	3266
 L10321:
 ;		}
-	.line	3264
+	.line	3267
 L10319:
 ;		dp->fn[i++] = (BYTE)wc;
-	.line	3265
+	.line	3268
 	clc
 	lda	#$20
-	adc	<L550+i_1
+	adc	<L549+i_1
 	sta	<R0
 	sep	#$20
 	longa	off
-	lda	<L550+wc_1
+	lda	<L549+wc_1
 	ldy	<R0
-	sta	[<L549+dp_0],Y
+	sta	[<L548+dp_0],Y
 	rep	#$20
 	longa	on
-	inc	<L550+i_1
+	inc	<L549+i_1
 ;	}
-	.line	3266
+	.line	3269
 L10308:
 	brl	L10310
 L10309:
 ;
 ;	if (dp->fn[0] == DDEM) dp->fn[0] = RDDEM; /* If the first character collides with DDEM, replace it with RDDEM */
-	.line	3268
+	.line	3271
 	sep	#$20
 	longa	off
 	ldy	#$20
-	lda	[<L549+dp_0],Y
+	lda	[<L548+dp_0],Y
 	cmp	#<$e5
 	rep	#$20
 	longa	on
-	beq	L600
+	beq	L599
 	brl	L10324
-L600:
-	.line	3268
+L599:
+	.line	3271
 	sep	#$20
 	longa	off
 	lda	#$5
 	ldy	#$20
-	sta	[<L549+dp_0],Y
+	sta	[<L548+dp_0],Y
 	rep	#$20
 	longa	on
 ;
 ;	if (ni == 8) b <<= 2; /* Shift capital flags if no extension */
 L10324:
-	.line	3270
-	lda	<L550+ni_1
+	.line	3273
+	lda	<L549+ni_1
 	cmp	#<$8
-	beq	L601
+	beq	L600
 	brl	L10325
-L601:
-	.line	3270
+L600:
+	.line	3273
 	sep	#$20
 	longa	off
-	asl	<L550+b_1
-	asl	<L550+b_1
+	asl	<L549+b_1
+	asl	<L549+b_1
 	rep	#$20
 	longa	on
 ;	if ((b & 0x0C) == 0x0C || (b & 0x03) == 0x03) cf |= NS_LFN; /* LFN entry needs to be created if composite capitals */
 L10325:
-	.line	3271
-	lda	<L550+b_1
+	.line	3274
+	lda	<L549+b_1
 	and	#<$c
 	sta	<R0
 	lda	<R0
 	cmp	#<$c
-	bne	L603
-	brl	L602
-L603:
-	lda	<L550+b_1
+	bne	L602
+	brl	L601
+L602:
+	lda	<L549+b_1
 	and	#<$3
 	sta	<R0
 	lda	<R0
 	cmp	#<$3
-	beq	L604
+	beq	L603
 	brl	L10326
-L604:
-L602:
-	.line	3271
+L603:
+L601:
+	.line	3274
 	sep	#$20
 	longa	off
 	lda	#$2
-	tsb	<L550+cf_1
+	tsb	<L549+cf_1
 	rep	#$20
 	longa	on
 ;	if (!(cf & NS_LFN))
 L10326:
-	.line	3272
+	.line	3275
 ;	{ /* When LFN is in 8.3 format without extended character, NT flags are created */
 	sep	#$20
 	longa	off
-	lda	<L550+cf_1
+	lda	<L549+cf_1
 	and	#<$2
 	rep	#$20
 	longa	on
-	beq	L605
+	beq	L604
 	brl	L10327
-L605:
-	.line	3273
+L604:
+	.line	3276
 ;		if (b & 0x01) cf |= NS_EXT; /* NT flag (Extension has small capital letters only) */
-	.line	3274
+	.line	3277
 	sep	#$20
 	longa	off
-	lda	<L550+b_1
+	lda	<L549+b_1
 	and	#<$1
 	rep	#$20
 	longa	on
-	bne	L606
+	bne	L605
 	brl	L10328
-L606:
-	.line	3274
+L605:
+	.line	3277
 	sep	#$20
 	longa	off
 	lda	#$10
-	tsb	<L550+cf_1
+	tsb	<L549+cf_1
 	rep	#$20
 	longa	on
 ;		if (b & 0x04) cf |= NS_BODY; /* NT flag (Body has small capital letters only) */
 L10328:
-	.line	3275
+	.line	3278
 	sep	#$20
 	longa	off
-	lda	<L550+b_1
+	lda	<L549+b_1
 	and	#<$4
 	rep	#$20
 	longa	on
-	bne	L607
+	bne	L606
 	brl	L10329
-L607:
-	.line	3275
+L606:
+	.line	3278
 	sep	#$20
 	longa	off
 	lda	#$8
-	tsb	<L550+cf_1
+	tsb	<L549+cf_1
 	rep	#$20
 	longa	on
 ;	}
 L10329:
-	.line	3276
+	.line	3279
 ;
 ;	dp->fn[NSFLAG] = cf; /* SFN is created into dp->fn[] */
 L10327:
-	.line	3278
+	.line	3281
 	sep	#$20
 	longa	off
-	lda	<L550+cf_1
+	lda	<L549+cf_1
 	ldy	#$2b
-	sta	[<L549+dp_0],Y
+	sta	[<L548+dp_0],Y
 	rep	#$20
 	longa	on
 ;
 ;	return FR_OK;
-	.line	3280
+	.line	3283
 	lda	#$0
-	brl	L554
+	brl	L553
 ;
 ;#else	/* FF_USE_LFN : Non-LFN configuration */
 ;	BYTE c, d, *sfn;
@@ -14675,16 +14682,16 @@ L10327:
 ;	return FR_OK;
 ;#endif /* FF_USE_LFN */
 ;}
-	.line	3365
-	.endblock	3365
-L549	equ	36
-L550	equ	13
+	.line	3368
+	.endblock	3368
+L548	equ	36
+L549	equ	13
 	ends
 	efunc
-	.endfunc	3365,13,36
-	.line	3365
+	.endfunc	3368,13,36
+	.line	3368
 	data
-L122:
+L2:
 	db	$22,$2A,$3A,$3C,$3E,$3F,$7C,$7F,$00,$2B,$2C,$3B,$3D,$5B,$5D
 	db	$00
 	ends
@@ -14698,23 +14705,23 @@ L122:
 ;const TCHAR* path /* Full-path string to find a file or directory */
 ;)
 ;{
-	.line	3371
-	.line	3375
+	.line	3374
+	.line	3378
 	FFDOS
 	func
-	.function	3375
+	.function	3378
 ~~follow_path:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L609
+	sbc	#L608
 	tcs
 	phd
 	tcd
 dp_0	set	4
 path_0	set	8
-	.block	3375
+	.block	3378
 ;	FRESULT res;
 ;	BYTE ns;
 ;	FATFS *fs = dp->obj.fs;
@@ -14734,55 +14741,55 @@ ns_1	set	2
 fs_1	set	3
 	.sym	res,0,5,1,16
 	.sym	ns,2,14,1,8
-	.sym	fs,3,138,1,32,72
-	.sym	dp,4,138,6,32,75
+	.sym	fs,3,138,1,32,75
+	.sym	dp,4,138,6,32,78
 	.sym	path,8,142,6,32
-	lda	[<L609+dp_0]
-	sta	<L610+fs_1
+	lda	[<L608+dp_0]
+	sta	<L609+fs_1
 	ldy	#$2
-	lda	[<L609+dp_0],Y
-	sta	<L610+fs_1+2
-	.line	3389
+	lda	[<L608+dp_0],Y
+	sta	<L609+fs_1+2
+	.line	3392
 ;		while (*path == '/' || *path == '\\')
-	.line	3390
+	.line	3393
 L10330:
 	sep	#$20
 	longa	off
-	lda	[<L609+path_0]
+	lda	[<L608+path_0]
 	cmp	#<$2f
 	rep	#$20
 	longa	on
-	bne	L613
-	brl	L612
-L613:
+	bne	L612
+	brl	L611
+L612:
 	sep	#$20
 	longa	off
-	lda	[<L609+path_0]
+	lda	[<L608+path_0]
 	cmp	#<$5c
 	rep	#$20
 	longa	on
-	beq	L614
+	beq	L613
 	brl	L10331
-L614:
-L612:
+L613:
+L611:
 ;			path++; /* Strip heading separator */
-	.line	3391
-	inc	<L609+path_0
-	bne	L615
-	inc	<L609+path_0+2
-L615:
+	.line	3394
+	inc	<L608+path_0
+	bne	L614
+	inc	<L608+path_0+2
+L614:
 	brl	L10330
 L10331:
 ;		dp->obj.sclust = 0; /* Start from root directory */
-	.line	3392
+	.line	3395
 	lda	#$0
 	ldy	#$8
-	sta	[<L609+dp_0],Y
+	sta	[<L608+dp_0],Y
 	lda	#$0
 	ldy	#$a
-	sta	[<L609+dp_0],Y
+	sta	[<L608+dp_0],Y
 ;	}
-	.line	3393
+	.line	3396
 ;#if FF_FS_EXFAT
 ;	dp->obj.n_frag = 0; /* Invalidate last fragment counter of the object */
 ;#if FF_FS_RPATH != 0
@@ -14802,207 +14809,207 @@ L10331:
 ;#endif
 ;
 ;	if ((UINT) *path < ' ')
-	.line	3412
+	.line	3415
 ;	{ /* Null path name is the origin directory itself */
 	sep	#$20
 	longa	off
-	lda	[<L609+path_0]
+	lda	[<L608+path_0]
 	cmp	#<$20
 	rep	#$20
 	longa	on
-	bcc	L616
+	bcc	L615
 	brl	L10332
-L616:
-	.line	3413
+L615:
+	.line	3416
 ;		dp->fn[NSFLAG] = NS_NONAME;
-	.line	3414
+	.line	3417
 	sep	#$20
 	longa	off
 	lda	#$80
 	ldy	#$2b
-	sta	[<L609+dp_0],Y
+	sta	[<L608+dp_0],Y
 	rep	#$20
 	longa	on
 ;		res = dir_sdi(dp, 0);
-	.line	3415
+	.line	3418
 	pea	#^$0
 	pea	#<$0
-	pei	<L609+dp_0+2
-	pei	<L609+dp_0
+	pei	<L608+dp_0+2
+	pei	<L608+dp_0
 	jsl	~~dir_sdi
-	sta	<L610+res_1
+	sta	<L609+res_1
 ;
 ;	}
-	.line	3417
+	.line	3420
 ;	else
 	brl	L10333
 L10332:
 ;	{ /* Follow path */
-	.line	3419
+	.line	3422
 ;		for (;;)
-	.line	3420
+	.line	3423
 L10336:
 ;		{
-	.line	3421
+	.line	3424
 ;			res = create_name(dp, &path); /* Get a segment name of the path */
-	.line	3422
+	.line	3425
 	pea	#0
 	clc
 	tdc
-	adc	#<L609+path_0
+	adc	#<L608+path_0
 	pha
-	pei	<L609+dp_0+2
-	pei	<L609+dp_0
+	pei	<L608+dp_0+2
+	pei	<L608+dp_0
 	jsl	~~create_name
-	sta	<L610+res_1
+	sta	<L609+res_1
 ;			if (res != FR_OK)
-	.line	3423
-;				break;
-	lda	<L610+res_1
-	beq	L617
-	brl	L10335
-L617:
-;			res = dir_find(dp); /* Find an object with the segment name */
-	.line	3425
-	pei	<L609+dp_0+2
-	pei	<L609+dp_0
-	jsl	~~dir_find
-	sta	<L610+res_1
-;			ns = dp->fn[NSFLAG];
 	.line	3426
+;				break;
+	lda	<L609+res_1
+	beq	L616
+	brl	L10335
+L616:
+;			res = dir_find(dp); /* Find an object with the segment name */
+	.line	3428
+	pei	<L608+dp_0+2
+	pei	<L608+dp_0
+	jsl	~~dir_find
+	sta	<L609+res_1
+;			ns = dp->fn[NSFLAG];
+	.line	3429
 	sep	#$20
 	longa	off
 	ldy	#$2b
-	lda	[<L609+dp_0],Y
-	sta	<L610+ns_1
+	lda	[<L608+dp_0],Y
+	sta	<L609+ns_1
 	rep	#$20
 	longa	on
 ;			if (res != FR_OK)
-	.line	3427
-;			{ /* Failed to find the object */
-	lda	<L610+res_1
-	bne	L618
-	brl	L10337
-L618:
-	.line	3428
-;				if (res == FR_NO_FILE)
-	.line	3429
-;				{ /* Object is not found */
-	lda	<L610+res_1
-	cmp	#<$4
-	beq	L619
-	brl	L10338
-L619:
 	.line	3430
-;					if (FF_FS_RPATH && (ns & NS_DOT))
+;			{ /* Failed to find the object */
+	lda	<L609+res_1
+	bne	L617
+	brl	L10337
+L617:
 	.line	3431
+;				if (res == FR_NO_FILE)
+	.line	3432
+;				{ /* Object is not found */
+	lda	<L609+res_1
+	cmp	#<$4
+	beq	L618
+	brl	L10338
+L618:
+	.line	3433
+;					if (FF_FS_RPATH && (ns & NS_DOT))
+	.line	3434
 ;					{ /* If dot entry is not exist, stay there */
 	brl	L10339
 	sep	#$20
 	longa	off
-	lda	<L610+ns_1
+	lda	<L609+ns_1
 	and	#<$20
 	rep	#$20
 	longa	on
-	bne	L620
+	bne	L619
 	brl	L10339
-L620:
-	.line	3432
+L619:
+	.line	3435
 ;						if (!(ns & NS_LAST))
-	.line	3433
+	.line	3436
 ;							continue; /* Continue to follow if not last segment */
 	sep	#$20
 	longa	off
-	lda	<L610+ns_1
+	lda	<L609+ns_1
 	and	#<$4
 	rep	#$20
 	longa	on
-	bne	L621
+	bne	L620
 	brl	L10334
-L621:
+L620:
 ;						dp->fn[NSFLAG] = NS_NONAME;
-	.line	3435
+	.line	3438
 	sep	#$20
 	longa	off
 	lda	#$80
 	ldy	#$2b
-	sta	[<L609+dp_0],Y
+	sta	[<L608+dp_0],Y
 	rep	#$20
 	longa	on
 ;						res = FR_OK;
-	.line	3436
-	stz	<L610+res_1
+	.line	3439
+	stz	<L609+res_1
 ;					}
-	.line	3437
+	.line	3440
 ;					else
 	brl	L10340
 L10339:
 ;					{ /* Could not find the object */
-	.line	3439
+	.line	3442
 ;						if (!(ns & NS_LAST))
-	.line	3440
+	.line	3443
 ;							res = FR_NO_PATH; /* Adjust error code if not last segment */
 	sep	#$20
 	longa	off
-	lda	<L610+ns_1
+	lda	<L609+ns_1
+	and	#<$4
+	rep	#$20
+	longa	on
+	beq	L621
+	brl	L10341
+L621:
+	.line	3444
+	lda	#$5
+	sta	<L609+res_1
+;					}
+L10341:
+	.line	3445
+L10340:
+;				}
+	.line	3446
+;				break;
+L10338:
+	.line	3447
+	brl	L10335
+;			}
+	.line	3448
+;			if (ns & NS_LAST)
+L10337:
+	.line	3449
+;				break; /* Last segment matched. Function completed. */
+	sep	#$20
+	longa	off
+	lda	<L609+ns_1
 	and	#<$4
 	rep	#$20
 	longa	on
 	beq	L622
-	brl	L10341
+	brl	L10335
 L622:
-	.line	3441
-	lda	#$5
-	sta	<L610+res_1
-;					}
-L10341:
-	.line	3442
-L10340:
-;				}
-	.line	3443
-;				break;
-L10338:
-	.line	3444
-	brl	L10335
-;			}
-	.line	3445
-;			if (ns & NS_LAST)
-L10337:
-	.line	3446
-;				break; /* Last segment matched. Function completed. */
-	sep	#$20
-	longa	off
-	lda	<L610+ns_1
-	and	#<$4
-	rep	#$20
-	longa	on
-	beq	L623
-	brl	L10335
-L623:
 ;			/* Get into the sub-directory */
 ;			if (!(dp->obj.attr & AM_DIR))
-	.line	3449
+	.line	3452
 ;			{ /* It is not a sub-directory and cannot follow */
 	sep	#$20
 	longa	off
 	ldy	#$6
-	lda	[<L609+dp_0],Y
+	lda	[<L608+dp_0],Y
 	and	#<$10
 	rep	#$20
 	longa	on
-	beq	L624
+	beq	L623
 	brl	L10342
-L624:
-	.line	3450
+L623:
+	.line	3453
 ;				res = FR_NO_PATH;
-	.line	3451
+	.line	3454
 	lda	#$5
-	sta	<L610+res_1
+	sta	<L609+res_1
 ;				break;
-	.line	3452
+	.line	3455
 	brl	L10335
 ;			}
-	.line	3453
+	.line	3456
 ;#if FF_FS_EXFAT
 ;			if (fs->fs_type == FS_EXFAT)
 ;			{ /* Save containing directory information for next dir */
@@ -15015,11 +15022,11 @@ L624:
 ;#endif
 ;			{
 L10342:
-	.line	3464
+	.line	3467
 ;				dp->obj.sclust = ld_clust(fs, fs->win + dp->dptr % SS(fs)); /* Open next directory */
-	.line	3465
+	.line	3468
 	ldy	#$10
-	lda	[<L609+dp_0],Y
+	lda	[<L608+dp_0],Y
 	and	#<$1ff
 	sta	<R0
 	stz	<R0+2
@@ -15031,61 +15038,61 @@ L10342:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L610+fs_1
+	lda	<L609+fs_1
 	adc	<R1
 	sta	<R0
-	lda	<L610+fs_1+2
+	lda	<L609+fs_1+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pei	<L610+fs_1+2
-	pei	<L610+fs_1
+	pei	<L609+fs_1+2
+	pei	<L609+fs_1
 	jsl	~~ld_clust
 	sta	<R2
 	stx	<R2+2
 	lda	<R2
 	ldy	#$8
-	sta	[<L609+dp_0],Y
+	sta	[<L608+dp_0],Y
 	lda	<R2+2
 	ldy	#$a
-	sta	[<L609+dp_0],Y
+	sta	[<L608+dp_0],Y
 ;			}
-	.line	3466
+	.line	3469
 ;		}
-	.line	3467
+	.line	3470
 L10334:
 	brl	L10336
 L10335:
 ;	}
-	.line	3468
+	.line	3471
 L10333:
 ;
 ;	return res;
-	.line	3470
-	lda	<L610+res_1
-L625:
+	.line	3473
+	lda	<L609+res_1
+L624:
 	tay
-	lda	<L609+2
-	sta	<L609+2+8
-	lda	<L609+1
-	sta	<L609+1+8
+	lda	<L608+2
+	sta	<L608+2+8
+	lda	<L608+1
+	sta	<L608+1+8
 	pld
 	tsc
 	clc
-	adc	#L609+8
+	adc	#L608+8
 	tcs
 	tya
 	rtl
 ;}
-	.line	3471
-	.endblock	3471
-L609	equ	19
-L610	equ	13
+	.line	3474
+	.endblock	3474
+L608	equ	19
+L609	equ	13
 	ends
 	efunc
-	.endfunc	3471,13,19
-	.line	3471
+	.endfunc	3474,13,19
+	.line	3474
 ;
 ;/*-----------------------------------------------------------------------*/
 ;/* Get logical drive number from path name                               */
@@ -15095,22 +15102,22 @@ L610	equ	13
 ;const TCHAR** path /* Pointer to pointer to the path name */
 ;)
 ;{
-	.line	3477
 	.line	3480
+	.line	3483
 	FFDOS
 	func
-	.function	3480
+	.function	3483
 ~~get_ldnumber:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L626
+	sbc	#L625
 	tcs
 	phd
 	tcd
 path_0	set	4
-	.block	3480
+	.block	3483
 ;	const TCHAR *tp, *tt;
 ;	TCHAR tc;
 ;	int i, vol = -1;
@@ -15136,162 +15143,162 @@ c_1	set	17
 	.sym	c,17,14,1,8
 	.sym	path,4,1166,6,32
 	lda	#$ffff
-	sta	<L627+vol_1
-	.line	3489
-	lda	[<L626+path_0]
-	sta	<L627+tp_1
+	sta	<L626+vol_1
+	.line	3492
+	lda	[<L625+path_0]
+	sta	<L626+tp_1
 	ldy	#$2
-	lda	[<L626+path_0],Y
-	sta	<L627+tp_1+2
-	lda	<L627+tp_1
-	sta	<L627+tt_1
-	lda	<L627+tp_1+2
-	sta	<L627+tt_1+2
+	lda	[<L625+path_0],Y
+	sta	<L626+tp_1+2
+	lda	<L626+tp_1
+	sta	<L626+tt_1
+	lda	<L626+tp_1+2
+	sta	<L626+tt_1+2
 ;	if (!tp)
-	.line	3490
+	.line	3493
 ;		return vol; /* Invalid path name? */
-	lda	<L627+tp_1
-	ora	<L627+tp_1+2
-	beq	L629
+	lda	<L626+tp_1
+	ora	<L626+tp_1+2
+	beq	L628
 	brl	L10343
+L628:
+	.line	3494
+	lda	<L626+vol_1
 L629:
-	.line	3491
-	lda	<L627+vol_1
-L630:
 	tay
-	lda	<L626+2
-	sta	<L626+2+4
-	lda	<L626+1
-	sta	<L626+1+4
+	lda	<L625+2
+	sta	<L625+2+4
+	lda	<L625+1
+	sta	<L625+1+4
 	pld
 	tsc
 	clc
-	adc	#L626+4
+	adc	#L625+4
 	tcs
 	tya
 	rtl
 ;	do
 L10343:
-	.line	3492
+	.line	3495
 L10346:
 ;		tc = *tt++;
-	.line	3493
+	.line	3496
 	sep	#$20
 	longa	off
-	lda	[<L627+tt_1]
-	sta	<L627+tc_1
+	lda	[<L626+tt_1]
+	sta	<L626+tc_1
 	rep	#$20
 	longa	on
-	inc	<L627+tt_1
-	bne	L631
-	inc	<L627+tt_1+2
-L631:
+	inc	<L626+tt_1
+	bne	L630
+	inc	<L626+tt_1+2
+L630:
 ;	while ((UINT) tc >= (FF_USE_LFN ? ' ' : '!') && tc != ':'); /* Find a colon in the path */
 L10344:
 	sep	#$20
 	longa	off
-	lda	<L627+tc_1
+	lda	<L626+tc_1
 	cmp	#<$20
 	rep	#$20
 	longa	on
-	bcs	L633
-	brl	L632
-L633:
+	bcs	L632
+	brl	L631
+L632:
 	sep	#$20
 	longa	off
-	lda	<L627+tc_1
+	lda	<L626+tc_1
+	cmp	#<$3a
+	rep	#$20
+	longa	on
+	beq	L633
+	brl	L10346
+L633:
+L631:
+L10345:
+;
+;	if (tc == ':')
+	.line	3499
+;	{ /* DOS/Windows style volume ID? */
+	sep	#$20
+	longa	off
+	lda	<L626+tc_1
 	cmp	#<$3a
 	rep	#$20
 	longa	on
 	beq	L634
-	brl	L10346
-L634:
-L632:
-L10345:
-;
-;	if (tc == ':')
-	.line	3496
-;	{ /* DOS/Windows style volume ID? */
-	sep	#$20
-	longa	off
-	lda	<L627+tc_1
-	cmp	#<$3a
-	rep	#$20
-	longa	on
-	beq	L635
 	brl	L10347
-L635:
-	.line	3497
+L634:
+	.line	3500
 ;		i = FF_VOLUMES;
-	.line	3498
+	.line	3501
 	lda	#$8
-	sta	<L627+i_1
+	sta	<L626+i_1
 ;		if (IsDigit(*tp) && tp + 2 == tt)
-	.line	3499
+	.line	3502
 ;		{ /* Is there a numeric volume ID + colon? */
 	sep	#$20
 	longa	off
-	lda	[<L627+tp_1]
+	lda	[<L626+tp_1]
 	cmp	#<$30
+	rep	#$20
+	longa	on
+	bcs	L635
+	brl	L10348
+L635:
+	sep	#$20
+	longa	off
+	lda	#$39
+	cmp	[<L626+tp_1]
 	rep	#$20
 	longa	on
 	bcs	L636
 	brl	L10348
 L636:
-	sep	#$20
-	longa	off
-	lda	#$39
-	cmp	[<L627+tp_1]
-	rep	#$20
-	longa	on
-	bcs	L637
-	brl	L10348
-L637:
 	clc
 	lda	#$2
-	adc	<L627+tp_1
+	adc	<L626+tp_1
 	sta	<R0
 	lda	#$0
-	adc	<L627+tp_1+2
+	adc	<L626+tp_1+2
 	sta	<R0+2
-	lda	<L627+tt_1
+	lda	<L626+tt_1
 	cmp	<R0
-	bne	L638
-	lda	<L627+tt_1+2
+	bne	L637
+	lda	<L626+tt_1+2
 	cmp	<R0+2
-L638:
-	beq	L639
+L637:
+	beq	L638
 	brl	L10348
-L639:
-	.line	3500
+L638:
+	.line	3503
 ;			i = (int) *tp - '0'; /* Get the LD number */
-	.line	3501
-	lda	[<L627+tp_1]
+	.line	3504
+	lda	[<L626+tp_1]
 	and	#$ff
 	sta	<R0
 	clc
 	lda	#$ffd0
 	adc	<R0
-	sta	<L627+i_1
+	sta	<L626+i_1
 ;		}
-	.line	3502
+	.line	3505
 ;#if FF_STR_VOLUME_ID == 1	/* Arbitrary string is enabled */
 ;		else
 	brl	L10349
 L10348:
 ;		{
-	.line	3505
+	.line	3508
 ;			i = 0;
-	.line	3506
-	stz	<L627+i_1
+	.line	3509
+	stz	<L626+i_1
 ;			do
-	.line	3507
+	.line	3510
 L10352:
 ;			{
-	.line	3508
+	.line	3511
 ;				sp = VolumeStr[i]; tp = *path; /* This string volume ID and path name */
-	.line	3509
-	lda	<L627+i_1
+	.line	3512
+	lda	<L626+i_1
 	asl	A
 	asl	A
 	sta	<R0
@@ -15300,66 +15307,66 @@ L10352:
 	adc	<R0
 	sta	<R1
 	lda	(<R1)
-	sta	<L627+sp_1
+	sta	<L626+sp_1
 	ldy	#$2
 	lda	(<R1),Y
-	sta	<L627+sp_1+2
-	.line	3509
-	lda	[<L626+path_0]
-	sta	<L627+tp_1
+	sta	<L626+sp_1+2
+	.line	3512
+	lda	[<L625+path_0]
+	sta	<L626+tp_1
 	ldy	#$2
-	lda	[<L626+path_0],Y
-	sta	<L627+tp_1+2
+	lda	[<L625+path_0],Y
+	sta	<L626+tp_1+2
 ;				do
-	.line	3510
+	.line	3513
 L10355:
 ;				{ /* Compare the volume ID with path name */
-	.line	3511
+	.line	3514
 ;					c = *sp++; tc = *tp++;
-	.line	3512
+	.line	3515
 	sep	#$20
 	longa	off
-	lda	[<L627+sp_1]
-	sta	<L627+c_1
+	lda	[<L626+sp_1]
+	sta	<L626+c_1
 	rep	#$20
 	longa	on
-	inc	<L627+sp_1
+	inc	<L626+sp_1
+	bne	L639
+	inc	<L626+sp_1+2
+L639:
+	.line	3515
+	sep	#$20
+	longa	off
+	lda	[<L626+tp_1]
+	sta	<L626+tc_1
+	rep	#$20
+	longa	on
+	inc	<L626+tp_1
 	bne	L640
-	inc	<L627+sp_1+2
+	inc	<L626+tp_1+2
 L640:
-	.line	3512
+;					if (IsLower(c)) c -= 0x20;
+	.line	3516
 	sep	#$20
 	longa	off
-	lda	[<L627+tp_1]
-	sta	<L627+tc_1
+	lda	<L626+c_1
+	cmp	#<$61
 	rep	#$20
 	longa	on
-	inc	<L627+tp_1
-	bne	L641
-	inc	<L627+tp_1+2
+	bcs	L641
+	brl	L10356
 L641:
-;					if (IsLower(c)) c -= 0x20;
-	.line	3513
 	sep	#$20
 	longa	off
-	lda	<L627+c_1
-	cmp	#<$61
+	lda	#$7a
+	cmp	<L626+c_1
 	rep	#$20
 	longa	on
 	bcs	L642
 	brl	L10356
 L642:
-	sep	#$20
-	longa	off
-	lda	#$7a
-	cmp	<L627+c_1
-	rep	#$20
-	longa	on
-	bcs	L643
-	brl	L10356
-L643:
-	.line	3513
-	lda	<L627+c_1
+	.line	3516
+	lda	<L626+c_1
 	and	#$ff
 	sta	<R0
 	clc
@@ -15369,32 +15376,32 @@ L643:
 	sep	#$20
 	longa	off
 	lda	<R1
-	sta	<L627+c_1
+	sta	<L626+c_1
 	rep	#$20
 	longa	on
 ;					if (IsLower(tc)) tc -= 0x20;
 L10356:
-	.line	3514
+	.line	3517
 	sep	#$20
 	longa	off
-	lda	<L627+tc_1
+	lda	<L626+tc_1
 	cmp	#<$61
+	rep	#$20
+	longa	on
+	bcs	L643
+	brl	L10357
+L643:
+	sep	#$20
+	longa	off
+	lda	#$7a
+	cmp	<L626+tc_1
 	rep	#$20
 	longa	on
 	bcs	L644
 	brl	L10357
 L644:
-	sep	#$20
-	longa	off
-	lda	#$7a
-	cmp	<L627+tc_1
-	rep	#$20
-	longa	on
-	bcs	L645
-	brl	L10357
-L645:
-	.line	3514
-	lda	<L627+tc_1
+	.line	3517
+	lda	<L626+tc_1
 	and	#$ff
 	sta	<R0
 	clc
@@ -15404,96 +15411,96 @@ L645:
 	sep	#$20
 	longa	off
 	lda	<R1
-	sta	<L627+tc_1
+	sta	<L626+tc_1
 	rep	#$20
 	longa	on
 ;				}while (c && (TCHAR)c == tc);
 L10357:
-	.line	3515
+	.line	3518
 L10353:
-	lda	<L627+c_1
+	lda	<L626+c_1
 	and	#$ff
-	bne	L647
-	brl	L646
-L647:
+	bne	L646
+	brl	L645
+L646:
 	sep	#$20
 	longa	off
-	lda	<L627+c_1
-	cmp	<L627+tc_1
+	lda	<L626+c_1
+	cmp	<L626+tc_1
 	rep	#$20
 	longa	on
-	bne	L648
+	bne	L647
 	brl	L10355
-L648:
-L646:
+L647:
+L645:
 L10354:
 ;			}while ((c || tp != tt) && ++i < FF_VOLUMES); /* Repeat for each id until pattern match */
-	.line	3516
+	.line	3519
 L10350:
-	lda	<L627+c_1
+	lda	<L626+c_1
 	and	#$ff
-	beq	L651
-	brl	L650
-L651:
-	lda	<L627+tp_1
-	cmp	<L627+tt_1
-	bne	L652
-	lda	<L627+tp_1+2
-	cmp	<L627+tt_1+2
-L652:
-	bne	L653
+	beq	L650
 	brl	L649
-L653:
 L650:
-	inc	<L627+i_1
-	sec
-	lda	<L627+i_1
-	sbc	#<$8
-	bvs	L654
-	eor	#$8000
-L654:
-	bmi	L655
-	brl	L10352
-L655:
+	lda	<L626+tp_1
+	cmp	<L626+tt_1
+	bne	L651
+	lda	<L626+tp_1+2
+	cmp	<L626+tt_1+2
+L651:
+	bne	L652
+	brl	L648
+L652:
 L649:
+	inc	<L626+i_1
+	sec
+	lda	<L626+i_1
+	sbc	#<$8
+	bvs	L653
+	eor	#$8000
+L653:
+	bmi	L654
+	brl	L10352
+L654:
+L648:
 L10351:
 ;		}
-	.line	3517
+	.line	3520
 L10349:
 ;#endif
 ;		if (i < FF_VOLUMES)
-	.line	3519
+	.line	3522
 ;		{ /* If a volume ID is found, get the drive number and strip it */
 	sec
-	lda	<L627+i_1
+	lda	<L626+i_1
 	sbc	#<$8
-	bvs	L656
+	bvs	L655
 	eor	#$8000
-L656:
-	bpl	L657
+L655:
+	bpl	L656
 	brl	L10358
-L657:
-	.line	3520
-;			vol = i; /* Drive number */
-	.line	3521
-	lda	<L627+i_1
-	sta	<L627+vol_1
-;			*path = tt; /* Snip the drive prefix off */
-	.line	3522
-	lda	<L627+tt_1
-	sta	[<L626+path_0]
-	lda	<L627+tt_1+2
-	ldy	#$2
-	sta	[<L626+path_0],Y
-;		}
+L656:
 	.line	3523
+;			vol = i; /* Drive number */
+	.line	3524
+	lda	<L626+i_1
+	sta	<L626+vol_1
+;			*path = tt; /* Snip the drive prefix off */
+	.line	3525
+	lda	<L626+tt_1
+	sta	[<L625+path_0]
+	lda	<L626+tt_1+2
+	ldy	#$2
+	sta	[<L625+path_0],Y
+;		}
+	.line	3526
 ;		return vol;
 L10358:
-	.line	3524
-	lda	<L627+vol_1
-	brl	L630
+	.line	3527
+	lda	<L626+vol_1
+	brl	L629
 ;	}
-	.line	3525
+	.line	3528
 ;#if FF_STR_VOLUME_ID == 2		/* Unix style volume ID is enabled */
 ;	if (*tp == '/')
 ;	{
@@ -15522,22 +15529,22 @@ L10358:
 ;#else
 ;	vol = 0; /* Default drive is 0 */
 L10347:
-	.line	3552
-	stz	<L627+vol_1
+	.line	3555
+	stz	<L626+vol_1
 ;#endif
 ;	return vol; /* Return the default drive */
-	.line	3554
-	lda	<L627+vol_1
-	brl	L630
+	.line	3557
+	lda	<L626+vol_1
+	brl	L629
 ;}
-	.line	3555
-	.endblock	3555
-L626	equ	26
-L627	equ	9
+	.line	3558
+	.endblock	3558
+L625	equ	26
+L626	equ	9
 	ends
 	efunc
-	.endfunc	3555,9,26
-	.line	3555
+	.endfunc	3558,9,26
+	.line	3558
 ;
 ;/*-----------------------------------------------------------------------*/
 ;/* GPT support functions                                                 */
@@ -15617,69 +15624,69 @@ L627	equ	9
 ;LBA_t sect /* Sector to load and check if it is an FAT-VBR or not */
 ;)
 ;{
-	.line	3630
-	.line	3634
+	.line	3633
+	.line	3637
 	FFDOS
 	func
-	.function	3634
+	.function	3637
 ~~check_fs:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L658
+	sbc	#L657
 	tcs
 	phd
 	tcd
 fs_0	set	4
 sect_0	set	8
-	.block	3634
+	.block	3637
 ;
 ;	////k_debug_long("check_fs:", sect);
 ;
 ;	fs->wflag = 0;
-	.sym	fs,4,138,6,32,72
+	.sym	fs,4,138,6,32,75
 	.sym	sect,8,18,6,32
-	.line	3638
+	.line	3641
 	sep	#$20
 	longa	off
 	lda	#$0
 	ldy	#$3
-	sta	[<L658+fs_0],Y
+	sta	[<L657+fs_0],Y
 	rep	#$20
 	longa	on
 ;	fs->winsect = (LBA_t) 0 - 1; /* Invaidate window */
-	.line	3639
+	.line	3642
 	lda	#$ffff
 	ldy	#$2f
-	sta	[<L658+fs_0],Y
+	sta	[<L657+fs_0],Y
 	lda	#$ffff
 	ldy	#$31
-	sta	[<L658+fs_0],Y
+	sta	[<L657+fs_0],Y
 ;	if (move_window(fs, sect) != FR_OK)
-	.line	3640
+	.line	3643
 ;		return 4; /* Load the boot sector */
-	pei	<L658+sect_0+2
-	pei	<L658+sect_0
-	pei	<L658+fs_0+2
-	pei	<L658+fs_0
+	pei	<L657+sect_0+2
+	pei	<L657+sect_0
+	pei	<L657+fs_0+2
+	pei	<L657+fs_0
 	jsl	~~move_window
 	tax
-	bne	L661
+	bne	L660
 	brl	L10359
-L661:
-	.line	3641
+L660:
+	.line	3644
 	lda	#$4
-L662:
+L661:
 	tay
-	lda	<L658+2
-	sta	<L658+2+8
-	lda	<L658+1
-	sta	<L658+1+8
+	lda	<L657+2
+	sta	<L657+2+8
+	lda	<L657+1
+	sta	<L657+1+8
 	pld
 	tsc
 	clc
-	adc	#L658+8
+	adc	#L657+8
 	tcs
 	tya
 	rtl
@@ -15687,14 +15694,14 @@ L662:
 ;	//k_debug_integer("check_fs:ld_word(&fs->win[BS_55AA]):",ld_word(&fs->win[BS_55AA]));
 ;	if (ld_word(&fs->win[BS_55AA]) != 0xAA55)
 L10359:
-	.line	3644
+	.line	3647
 ;		return 3; /* Check boot signature (always here regardless of the sector size) */
 	clc
 	lda	#$231
-	adc	<L658+fs_0
+	adc	<L657+fs_0
 	sta	<R0
 	lda	#$0
-	adc	<L658+fs_0+2
+	adc	<L657+fs_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
@@ -15702,145 +15709,145 @@ L10359:
 	sta	<R1
 	lda	<R1
 	cmp	#<$aa55
-	bne	L663
+	bne	L662
 	brl	L10360
-L663:
-	.line	3645
+L662:
+	.line	3648
 	lda	#$3
-	brl	L662
+	brl	L661
 ;
 ;	if (FF_FS_EXFAT
 L10360:
-	.line	3647
+	.line	3650
 ;			&& !mem_cmp(&(fs->win[BS_JmpBoot]), "\xEB\x76\x90" "EXFAT   ", 11))
 ;		return 1; /* Check if exFAT VBR */
 	brl	L10361
 	pea	#<$b
-	pea	#^L608
-	pea	#<L608
+	pea	#^L607
+	pea	#<L607
 	clc
 	lda	#$33
-	adc	<L658+fs_0
+	adc	<L657+fs_0
 	sta	<R0
 	lda	#$0
-	adc	<L658+fs_0+2
+	adc	<L657+fs_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~mem_cmp
 	tax
-	beq	L664
+	beq	L663
 	brl	L10361
-L664:
-	.line	3649
+L663:
+	.line	3652
 	lda	#$1
-	brl	L662
+	brl	L661
 ;
 ;	////k_debug_hex("check_fs:BS_JmpBoot:", fs->win[BS_JmpBoot]);
 ;
 ;	if (fs->win[BS_JmpBoot] == 0xE9 || fs->win[BS_JmpBoot] == 0xEB
 L10361:
-	.line	3653
+	.line	3656
 ;			|| fs->win[BS_JmpBoot] == 0xE8)
 ;	{ /* Valid JumpBoot code? */
 	sep	#$20
 	longa	off
 	ldy	#$33
-	lda	[<L658+fs_0],Y
+	lda	[<L657+fs_0],Y
 	cmp	#<$e9
 	rep	#$20
 	longa	on
+	bne	L665
+	brl	L664
+L665:
+	sep	#$20
+	longa	off
+	ldy	#$33
+	lda	[<L657+fs_0],Y
+	cmp	#<$eb
+	rep	#$20
+	longa	on
 	bne	L666
-	brl	L665
+	brl	L664
 L666:
 	sep	#$20
 	longa	off
 	ldy	#$33
-	lda	[<L658+fs_0],Y
-	cmp	#<$eb
-	rep	#$20
-	longa	on
-	bne	L667
-	brl	L665
-L667:
-	sep	#$20
-	longa	off
-	ldy	#$33
-	lda	[<L658+fs_0],Y
+	lda	[<L657+fs_0],Y
 	cmp	#<$e8
 	rep	#$20
 	longa	on
-	beq	L668
+	beq	L667
 	brl	L10362
-L668:
-L665:
-	.line	3655
+L667:
+L664:
+	.line	3658
 ;		if (!mem_cmp(&(fs->win[BS_FilSysType]), "FAT", 3))
-	.line	3656
+	.line	3659
 ;			return 0; /* Is it an FAT VBR? */
 	pea	#<$3
-	pea	#^L608+12
-	pea	#<L608+12
+	pea	#^L607+12
+	pea	#<L607+12
 	clc
 	lda	#$69
-	adc	<L658+fs_0
+	adc	<L657+fs_0
 	sta	<R0
 	lda	#$0
-	adc	<L658+fs_0+2
+	adc	<L657+fs_0+2
+	sta	<R0+2
+	pei	<R0+2
+	pei	<R0
+	jsl	~~mem_cmp
+	tax
+	beq	L668
+	brl	L10363
+L668:
+	.line	3660
+	lda	#$0
+	brl	L661
+;		if (!mem_cmp(&(fs->win[BS_FilSysType32]), "FAT32", 5))
+L10363:
+	.line	3661
+;			return 0; /* Is it an FAT32 VBR? */
+	pea	#<$5
+	pea	#^L607+16
+	pea	#<L607+16
+	clc
+	lda	#$85
+	adc	<L657+fs_0
+	sta	<R0
+	lda	#$0
+	adc	<L657+fs_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~mem_cmp
 	tax
 	beq	L669
-	brl	L10363
-L669:
-	.line	3657
-	lda	#$0
-	brl	L662
-;		if (!mem_cmp(&(fs->win[BS_FilSysType32]), "FAT32", 5))
-L10363:
-	.line	3658
-;			return 0; /* Is it an FAT32 VBR? */
-	pea	#<$5
-	pea	#^L608+16
-	pea	#<L608+16
-	clc
-	lda	#$85
-	adc	<L658+fs_0
-	sta	<R0
-	lda	#$0
-	adc	<L658+fs_0+2
-	sta	<R0+2
-	pei	<R0+2
-	pei	<R0
-	jsl	~~mem_cmp
-	tax
-	beq	L670
 	brl	L10364
-L670:
-	.line	3659
+L669:
+	.line	3662
 	lda	#$0
-	brl	L662
+	brl	L661
 ;	}
 L10364:
-	.line	3660
+	.line	3663
 ;	return 2; /* Valid BS but not FAT */
 L10362:
-	.line	3661
+	.line	3664
 	lda	#$2
-	brl	L662
+	brl	L661
 ;}
-	.line	3662
-	.endblock	3662
-L658	equ	8
-L659	equ	9
+	.line	3665
+	.endblock	3665
+L657	equ	8
+L658	equ	9
 	ends
 	efunc
-	.endfunc	3662,9,8
-	.line	3662
+	.endfunc	3665,9,8
+	.line	3665
 	data
-L608:
+L607:
 	db	$EB,$76,$FFFFFF90,$45,$58,$46,$41,$54,$20,$20,$20,$00,$46,$41,$54
 	db	$00,$46,$41,$54,$33,$32,$00
 	ends
@@ -15853,29 +15860,31 @@ L608:
 ;UINT part /* Partition to fined = 0:auto, 1..:forced */
 ;)
 ;{
-	.line	3667
-	.line	3671
+	.line	3670
+	.line	3674
 	FFDOS
 	func
-	.function	3671
+	.function	3674
 ~~find_volume:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L672
+	sbc	#L671
 	tcs
 	phd
 	tcd
 fs_0	set	4
 part_0	set	8
-	.block	3671
+	.block	3674
 ;	UINT fmt, i;
 ;	DWORD mbr_pt[4];
 ;
 ;	PPARTITIONTABLE ppt[4];
 ;
-;	k_debug_string("find_volume...\r\n");
+;	//k_debug_string("find_volume...\r\n");
+;
+;	fmt = check_fs(fs, 0); /* Load sector 0 and check if it is an FAT VBR as SFD */
 fmt_1	set	0
 i_1	set	2
 mbr_pt_1	set	4
@@ -15883,62 +15892,56 @@ ppt_1	set	20
 	.sym	fmt,0,16,1,16
 	.sym	i,2,16,1,16
 	.sym	mbr_pt,4,114,1,0,4
-	.sym	ppt,20,1130,1,32,93,4
-	.sym	fs,4,138,6,32,72
+	.sym	ppt,20,1130,1,32,98,4
+	.sym	fs,4,138,6,32,75
 	.sym	part,8,16,6,16
-	.line	3677
-	pea	#^L671
-	pea	#<L671
-	jsl	~~k_debug_string
-;
-;	fmt = check_fs(fs, 0); /* Load sector 0 and check if it is an FAT VBR as SFD */
-	.line	3679
+	.line	3682
 	pea	#^$0
 	pea	#<$0
-	pei	<L672+fs_0+2
-	pei	<L672+fs_0
+	pei	<L671+fs_0+2
+	pei	<L671+fs_0
 	jsl	~~check_fs
-	sta	<L673+fmt_1
+	sta	<L672+fmt_1
 ;
 ;	//k_debug_integer("find_volume:fmt:", fmt);
 ;
 ;	if (fmt != 2 && (fmt >= 3 || part == 0))
-	.line	3683
+	.line	3686
 ;	{
-	lda	<L673+fmt_1
+	lda	<L672+fmt_1
 	cmp	#<$2
-	bne	L675
+	bne	L674
 	brl	L10365
-L675:
-	lda	<L673+fmt_1
+L674:
+	lda	<L672+fmt_1
 	cmp	#<$3
-	bcc	L677
-	brl	L676
-L677:
-	lda	<L672+part_0
-	beq	L678
-	brl	L10365
-L678:
+	bcc	L676
+	brl	L675
 L676:
-	.line	3684
+	lda	<L671+part_0
+	beq	L677
+	brl	L10365
+L677:
+L675:
+	.line	3687
 ;		return fmt; /* Returns if it is a FAT VBR as auto scan, not a BS or disk error */
-	.line	3685
-	lda	<L673+fmt_1
-L679:
+	.line	3688
+	lda	<L672+fmt_1
+L678:
 	tay
-	lda	<L672+2
-	sta	<L672+2+6
-	lda	<L672+1
-	sta	<L672+1+6
+	lda	<L671+2
+	sta	<L671+2+6
+	lda	<L671+1
+	sta	<L671+1+6
 	pld
 	tsc
 	clc
-	adc	#L672+6
+	adc	#L671+6
 	tcs
 	tya
 	rtl
 ;	}
-	.line	3686
+	.line	3689
 ;	/* Sector 0 is not an FAT VBR or forced partition number wants a partition */
 ;
 ;#if FF_LBA64
@@ -15968,30 +15971,30 @@ L679:
 ;#endif
 ;	if (FF_MULTI_PARTITION && part > 4)
 L10365:
-	.line	3714
+	.line	3717
 ;		return 3; /* MBR has 4 partitions max */
 	brl	L10366
 	lda	#$4
-	cmp	<L672+part_0
-	bcc	L680
+	cmp	<L671+part_0
+	bcc	L679
 	brl	L10366
-L680:
-	.line	3715
+L679:
+	.line	3718
 	lda	#$3
-	brl	L679
+	brl	L678
 ;	for (i = 0; i < 4; i++)
 L10366:
-	.line	3716
-	stz	<L673+i_1
+	.line	3719
+	stz	<L672+i_1
 L10369:
 ;	{ /* Load partition offset in the MBR */
-	.line	3717
+	.line	3720
 ;		//mbr_pt[i] = ld_dword(&(fs->win[ MBR_Table + i * SZ_PTE + PTE_StLba ]));
 ;
 ;		ppt[i] = (PPARTITIONTABLE) &(fs->win[(ULONG) MBR_Table
-	.line	3720
+	.line	3723
 ;				+ ((ULONG) i * 0x10L)]);
-	lda	<L673+i_1
+	lda	<L672+i_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -16003,7 +16006,7 @@ L10369:
 	stx	<R0+2
 	clc
 	tdc
-	adc	#<L673+ppt_1
+	adc	#<L672+ppt_1
 	sta	<R2
 	lda	#$0
 	sta	<R2+2
@@ -16014,7 +16017,7 @@ L10369:
 	lda	<R2+2
 	adc	<R0+2
 	sta	<R3+2
-	lda	<L673+i_1
+	lda	<L672+i_1
 	sta	<R2
 	stz	<R2+2
 	pei	<R2+2
@@ -16032,10 +16035,10 @@ L10369:
 	adc	<R0+2
 	sta	<17+2
 	clc
-	lda	<L672+fs_0
+	lda	<L671+fs_0
 	adc	<17
 	sta	<R0
-	lda	<L672+fs_0+2
+	lda	<L671+fs_0+2
 	adc	<17+2
 	sta	<R0+2
 	lda	<R0
@@ -16047,9 +16050,9 @@ L10369:
 ;		////k_debug_long("find_volume:ppt[i].start_sector:", ppt[i]->start_sector);
 ;
 ;		mbr_pt[i] = ld_dword(
-	.line	3725
+	.line	3728
 ;				&(fs->win[(ULONG) MBR_Table + ((ULONG) i * 0x10L)]));
-	lda	<L673+i_1
+	lda	<L672+i_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -16061,7 +16064,7 @@ L10369:
 	stx	<R0+2
 	clc
 	tdc
-	adc	#<L673+mbr_pt_1
+	adc	#<L672+mbr_pt_1
 	sta	<R2
 	lda	#$0
 	sta	<R2+2
@@ -16072,7 +16075,7 @@ L10369:
 	lda	<R2+2
 	adc	<R0+2
 	sta	<R3+2
-	lda	<L673+i_1
+	lda	<L672+i_1
 	sta	<R2
 	stz	<R2+2
 	pei	<R2+2
@@ -16090,10 +16093,10 @@ L10369:
 	adc	<R0+2
 	sta	<17+2
 	clc
-	lda	<L672+fs_0
+	lda	<L671+fs_0
 	adc	<17
 	sta	<R0
-	lda	<L672+fs_0+2
+	lda	<L671+fs_0+2
 	adc	<17+2
 	sta	<R0+2
 	pei	<R0+2
@@ -16108,41 +16111,41 @@ L10369:
 	sta	[<R3],Y
 ;		////k_debug_long("find_volume:mbr_pt[i]:", mbr_pt[i]);
 ;	}
-	.line	3728
+	.line	3731
 L10367:
-	inc	<L673+i_1
-	lda	<L673+i_1
+	inc	<L672+i_1
+	lda	<L672+i_1
 	cmp	#<$4
-	bcs	L681
+	bcs	L680
 	brl	L10369
-L681:
+L680:
 L10368:
 ;
 ;	i = part ? part - 1 : 0; /* Table index to find first */
-	.line	3730
-	lda	<L672+part_0
-	bne	L683
-	brl	L682
-L683:
+	.line	3733
+	lda	<L671+part_0
+	bne	L682
+	brl	L681
+L682:
 	clc
 	lda	#$ffff
-	adc	<L672+part_0
-	bra	L684
-L682:
+	adc	<L671+part_0
+	bra	L683
+L681:
 	lda	#$0
-L684:
-	sta	<L673+i_1
+L683:
+	sta	<L672+i_1
 ;
 ;	do
-	.line	3732
+	.line	3735
 L10372:
 ;	{ /* Find an FAT volume */
-	.line	3733
+	.line	3736
 ;
 ;		//fmt = mbr_pt[i] ? check_fs(fs,  mbr_pt[i]) : 3;	/* Check if the partition is FAT */
 ;		fmt = mbr_pt[i] ? check_fs(fs, ppt[i]->start_sector) : 3; /* Check if the partition is FAT */
-	.line	3736
-	lda	<L673+i_1
+	.line	3739
+	lda	<L672+i_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -16154,7 +16157,7 @@ L10372:
 	stx	<R0+2
 	clc
 	tdc
-	adc	#<L673+mbr_pt_1
+	adc	#<L672+mbr_pt_1
 	sta	<R2
 	lda	#$0
 	sta	<R2+2
@@ -16168,10 +16171,10 @@ L10372:
 	lda	[<R3]
 	ldy	#$2
 	ora	[<R3],Y
-	bne	L686
-	brl	L685
-L686:
-	lda	<L673+i_1
+	bne	L685
+	brl	L684
+L685:
+	lda	<L672+i_1
 	sta	<R2
 	stz	<R2+2
 	pei	<R2+2
@@ -16183,7 +16186,7 @@ L686:
 	stx	<R0+2
 	clc
 	tdc
-	adc	#<L673+ppt_1
+	adc	#<L672+ppt_1
 	sta	<R3
 	lda	#$0
 	sta	<R3+2
@@ -16205,56 +16208,51 @@ L686:
 	ldy	#$8
 	lda	[<R0],Y
 	pha
-	pei	<L672+fs_0+2
-	pei	<L672+fs_0
+	pei	<L671+fs_0+2
+	pei	<L671+fs_0
 	jsl	~~check_fs
-	bra	L687
-L685:
+	bra	L686
+L684:
 	lda	#$3
-L687:
-	sta	<L673+fmt_1
+L686:
+	sta	<L672+fmt_1
 ;		////k_debug_integer("find_volume:part-fmt:", fmt);
 ;	} while (part == 0 && fmt >= 2 && ++i < 4);
-	.line	3738
+	.line	3741
 L10370:
-	lda	<L672+part_0
-	beq	L689
-	brl	L688
-L689:
-	lda	<L673+fmt_1
-	cmp	#<$2
-	bcs	L690
-	brl	L688
-L690:
-	inc	<L673+i_1
-	lda	<L673+i_1
-	cmp	#<$4
-	bcs	L691
-	brl	L10372
-L691:
+	lda	<L671+part_0
+	beq	L688
+	brl	L687
 L688:
+	lda	<L672+fmt_1
+	cmp	#<$2
+	bcs	L689
+	brl	L687
+L689:
+	inc	<L672+i_1
+	lda	<L672+i_1
+	cmp	#<$4
+	bcs	L690
+	brl	L10372
+L690:
+L687:
 L10371:
 ;
 ;	//k_debug_integer("find_volume:fmt2:", fmt);
 ;
 ;	return fmt;
-	.line	3742
-	lda	<L673+fmt_1
-	brl	L679
+	.line	3745
+	lda	<L672+fmt_1
+	brl	L678
 ;}
-	.line	3743
-	.endblock	3743
-L672	equ	60
-L673	equ	25
+	.line	3746
+	.endblock	3746
+L671	equ	60
+L672	equ	25
 	ends
 	efunc
-	.endfunc	3743,25,60
-	.line	3743
-	data
-L671:
-	db	$66,$69,$6E,$64,$5F,$76,$6F,$6C,$75,$6D,$65,$2E,$2E,$2E,$0D
-	db	$0A,$00
-	ends
+	.endfunc	3746,25,60
+	.line	3746
 ;
 ;/*-----------------------------------------------------------------------*/
 ;/* Determine logical drive number and mount the volume if needed         */
@@ -16266,24 +16264,24 @@ L671:
 ;BYTE mode /* !=0: Check write protection for write access */
 ;)
 ;{
-	.line	3749
-	.line	3754
+	.line	3752
+	.line	3757
 	FFDOS
 	func
-	.function	3754
+	.function	3757
 ~~mount_volume:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L693
+	sbc	#L691
 	tcs
 	phd
 	tcd
 path_0	set	4
 rfs_0	set	8
 mode_0	set	12
-	.block	3754
+	.block	3757
 ;	int vol;
 ;	DSTATUS stat;
 ;	LBA_t bsect;
@@ -16293,6 +16291,7 @@ mode_0	set	12
 ;	UINT fmt;
 ;
 ;	//k_debug_string("mount_volume...\r\n");
+;	//k_debug_pointer("mount_volume:1:_k_eventManager_IdleProcList->listhead:",_k_eventManager_IdleProcList->listhead);
 ;
 ;	/* Get logical drive number */
 ;	*rfs = 0;
@@ -16316,45 +16315,49 @@ fmt_1	set	33
 	.sym	nclst,19,18,1,32
 	.sym	szbfat,23,18,1,32
 	.sym	nrsv,27,5,1,16
-	.sym	fs,29,138,1,32,72
+	.sym	fs,29,138,1,32,75
 	.sym	fmt,33,16,1,16
 	.sym	path,4,1166,6,32
-	.sym	rfs,8,1162,6,32,72
+	.sym	rfs,8,1162,6,32,75
 	.sym	mode,12,14,6,8
-	.line	3766
+	.line	3770
 	lda	#$0
-	sta	[<L693+rfs_0]
+	sta	[<L691+rfs_0]
 	lda	#$0
 	ldy	#$2
-	sta	[<L693+rfs_0],Y
+	sta	[<L691+rfs_0],Y
 ;	vol = get_ldnumber(path);
-	.line	3767
-	pei	<L693+path_0+2
-	pei	<L693+path_0
+	.line	3771
+	pei	<L691+path_0+2
+	pei	<L691+path_0
 	jsl	~~get_ldnumber
-	sta	<L694+vol_1
+	sta	<L692+vol_1
 ;
-;	////k_debug_integer("mount_volume:vol:", vol);
+;
+;	;
+	.line	3774
+;
+;	//k_debug_integer("mount_volume:vol:", vol);
 ;
 ;	if (vol < 0)
-	.line	3771
+	.line	3778
 ;		return FR_INVALID_DRIVE;
-	lda	<L694+vol_1
-	bmi	L696
+	lda	<L692+vol_1
+	bmi	L694
 	brl	L10373
-L696:
-	.line	3772
+L694:
+	.line	3779
 	lda	#$b
-L697:
+L695:
 	tay
-	lda	<L693+2
-	sta	<L693+2+10
-	lda	<L693+1
-	sta	<L693+1+10
+	lda	<L691+2
+	sta	<L691+2+10
+	lda	<L691+1
+	sta	<L691+1+10
 	pld
 	tsc
 	clc
-	adc	#L693+10
+	adc	#L691+10
 	tcs
 	tya
 	rtl
@@ -16362,8 +16365,8 @@ L697:
 ;	/* Check if the filesystem object is valid or not */
 ;	fs = FatFs[vol]; /* Get pointer to the filesystem object */
 L10373:
-	.line	3775
-	lda	<L694+vol_1
+	.line	3782
+	lda	<L692+vol_1
 	asl	A
 	asl	A
 	sta	<R0
@@ -16372,188 +16375,190 @@ L10373:
 	adc	<R0
 	sta	<R1
 	lda	(<R1)
-	sta	<L694+fs_1
+	sta	<L692+fs_1
 	ldy	#$2
 	lda	(<R1),Y
-	sta	<L694+fs_1+2
+	sta	<L692+fs_1+2
 ;	if (!fs)
-	.line	3776
+	.line	3783
 ;		return FR_NOT_ENABLED; /* Is the filesystem object available? */
-	lda	<L694+fs_1
-	ora	<L694+fs_1+2
-	beq	L698
+	lda	<L692+fs_1
+	ora	<L692+fs_1+2
+	beq	L696
 	brl	L10374
-L698:
-	.line	3777
+L696:
+	.line	3784
 	lda	#$c
-	brl	L697
+	brl	L695
 ;#if FF_FS_REENTRANT
 ;	if (!lock_fs(fs)) return FR_TIMEOUT; /* Lock the volume */
 ;#endif
 ;	*rfs = fs; /* Return pointer to the filesystem object */
 L10374:
-	.line	3781
-	lda	<L694+fs_1
-	sta	[<L693+rfs_0]
-	lda	<L694+fs_1+2
+	.line	3788
+	lda	<L692+fs_1
+	sta	[<L691+rfs_0]
+	lda	<L692+fs_1+2
 	ldy	#$2
-	sta	[<L693+rfs_0],Y
+	sta	[<L691+rfs_0],Y
+;
+;	//k_debug_pointer("mount_volume:3:_k_eventManager_IdleProcList->listhead:",_k_eventManager_IdleProcList->listhead);
 ;
 ;	mode &= (BYTE) ~FA_READ; /* Desired access mode, write access or not */
-	.line	3783
+	.line	3792
 	sep	#$20
 	longa	off
 	lda	#$1
-	trb	<L693+mode_0
+	trb	<L691+mode_0
 	rep	#$20
 	longa	on
 ;	if (fs->fs_type != 0)
-	.line	3784
+	.line	3793
 ;	{ /* If the volume has been mounted */
-	lda	[<L694+fs_1]
+	lda	[<L692+fs_1]
 	and	#$ff
-	bne	L699
+	bne	L697
 	brl	L10375
-L699:
-	.line	3785
+L697:
+	.line	3794
 ;		stat = disk_status(fs->pdrv);
-	.line	3786
+	.line	3795
 	ldy	#$1
-	lda	[<L694+fs_1],Y
+	lda	[<L692+fs_1],Y
 	pha
 	jsl	~~disk_status
 	sep	#$20
 	longa	off
-	sta	<L694+stat_1
+	sta	<L692+stat_1
 	rep	#$20
 	longa	on
 ;		if (!(stat & STA_NOINIT))
-	.line	3787
+	.line	3796
 ;		{ /* and the physical drive is kept initialized */
 	sep	#$20
 	longa	off
-	lda	<L694+stat_1
+	lda	<L692+stat_1
 	and	#<$1
 	rep	#$20
 	longa	on
-	beq	L700
+	beq	L698
 	brl	L10376
-L700:
-	.line	3788
+L698:
+	.line	3797
 ;			if (!FF_FS_READONLY && mode && (stat & STA_PROTECT))
-	.line	3789
+	.line	3798
 ;			{ /* Check write protection if needed */
-	lda	<L693+mode_0
+	lda	<L691+mode_0
 	and	#$ff
-	bne	L701
+	bne	L699
 	brl	L10377
-L701:
+L699:
 	sep	#$20
 	longa	off
-	lda	<L694+stat_1
+	lda	<L692+stat_1
 	and	#<$4
 	rep	#$20
 	longa	on
-	bne	L702
+	bne	L700
 	brl	L10377
-L702:
-	.line	3790
+L700:
+	.line	3799
 ;				return FR_WRITE_PROTECTED;
-	.line	3791
+	.line	3800
 	lda	#$a
-	brl	L697
+	brl	L695
 ;			}
-	.line	3792
+	.line	3801
 ;
 ;			////k_debug_integer("mount_volume:FR_OK:", FR_OK);
 ;
 ;			return FR_OK; /* The filesystem object is already valid */
 L10377:
-	.line	3796
+	.line	3805
 	lda	#$0
-	brl	L697
+	brl	L695
 ;		}
-	.line	3797
+	.line	3806
 ;	}
 L10376:
-	.line	3798
+	.line	3807
 ;
 ;	/* The filesystem object is not valid. */
 ;	/* Following code attempts to mount the volume. (find a FAT volume, analyze the BPB and initialize the filesystem object) */
 ;
 ;	fs->fs_type = 0; /* Clear the filesystem object */
 L10375:
-	.line	3803
+	.line	3812
 	sep	#$20
 	longa	off
 	lda	#$0
-	sta	[<L694+fs_1]
+	sta	[<L692+fs_1]
 	rep	#$20
 	longa	on
 ;	fs->pdrv = LD2PD(vol); /* Volume hosting physical drive */
-	.line	3804
+	.line	3813
 	sep	#$20
 	longa	off
-	lda	<L694+vol_1
+	lda	<L692+vol_1
 	ldy	#$1
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 	rep	#$20
 	longa	on
 ;	stat = disk_initialize(fs->pdrv); /* Initialize the physical drive */
-	.line	3805
+	.line	3814
 	ldy	#$1
-	lda	[<L694+fs_1],Y
+	lda	[<L692+fs_1],Y
 	pha
 	jsl	~~disk_initialize
 	sep	#$20
 	longa	off
-	sta	<L694+stat_1
+	sta	<L692+stat_1
 	rep	#$20
 	longa	on
 ;	if (stat & STA_NOINIT)
-	.line	3806
+	.line	3815
 ;	{ /* Check if the initialization succeeded */
 	sep	#$20
 	longa	off
-	lda	<L694+stat_1
+	lda	<L692+stat_1
 	and	#<$1
 	rep	#$20
 	longa	on
-	bne	L703
+	bne	L701
 	brl	L10378
-L703:
-	.line	3807
+L701:
+	.line	3816
 ;		return FR_NOT_READY; /* Failed to initialize due to no medium or hard error */
-	.line	3808
+	.line	3817
 	lda	#$3
-	brl	L697
+	brl	L695
 ;	}
-	.line	3809
+	.line	3818
 ;	if (!FF_FS_READONLY && mode && (stat & STA_PROTECT))
 L10378:
-	.line	3810
+	.line	3819
 ;	{ /* Check disk write protection if needed */
-	lda	<L693+mode_0
+	lda	<L691+mode_0
 	and	#$ff
-	bne	L704
+	bne	L702
 	brl	L10379
-L704:
+L702:
 	sep	#$20
 	longa	off
-	lda	<L694+stat_1
+	lda	<L692+stat_1
 	and	#<$4
 	rep	#$20
 	longa	on
-	bne	L705
+	bne	L703
 	brl	L10379
-L705:
-	.line	3811
+L703:
+	.line	3820
 ;		return FR_WRITE_PROTECTED;
-	.line	3812
+	.line	3821
 	lda	#$a
-	brl	L697
+	brl	L695
 ;	}
-	.line	3813
+	.line	3822
 ;#if FF_MAX_SS != FF_MIN_SS				/* Get sector size (multiple sector size cfg only) */
 ;	if (disk_ioctl(fs->pdrv, GET_SECTOR_SIZE, &SS(fs)) != RES_OK) return FR_DISK_ERR;
 ;	if (SS(fs) > FF_MAX_SS || SS(fs) < FF_MIN_SS || (SS(fs) & (SS(fs) - 1))) return FR_DISK_ERR;
@@ -16562,49 +16567,51 @@ L705:
 ;	/* Find an FAT volume on the drive */
 ;	fmt = find_volume(fs, LD2PT(vol));
 L10379:
-	.line	3820
+	.line	3829
 	pea	#<$0
-	pei	<L694+fs_1+2
-	pei	<L694+fs_1
+	pei	<L692+fs_1+2
+	pei	<L692+fs_1
 	jsl	~~find_volume
-	sta	<L694+fmt_1
+	sta	<L692+fmt_1
+;
+;	//k_debug_pointer("mount_volume:4:_k_eventManager_IdleProcList->listhead:",_k_eventManager_IdleProcList->listhead);
 ;
 ;	////k_debug_integer("mount_volume:fmt:", fmt);
 ;	//k_debug_integer("mount_volume::fmt:",fmt);
 ;
 ;	if (fmt == 4)
-	.line	3825
+	.line	3836
 ;		return FR_DISK_ERR; /* An error occured in the disk I/O layer */
-	lda	<L694+fmt_1
+	lda	<L692+fmt_1
 	cmp	#<$4
-	beq	L706
+	beq	L704
 	brl	L10380
-L706:
-	.line	3826
+L704:
+	.line	3837
 	lda	#$1
-	brl	L697
+	brl	L695
 ;	//if (fmt >= 2) return FR_NO_FILESYSTEM;	/* No FAT volume is found */
 ;	if (fmt == 2)
 L10380:
-	.line	3828
+	.line	3839
 ;		return FR_NO_FILESYSTEM; /* No FAT volume is found */
-	lda	<L694+fmt_1
+	lda	<L692+fmt_1
 	cmp	#<$2
-	beq	L707
+	beq	L705
 	brl	L10381
-L707:
-	.line	3829
+L705:
+	.line	3840
 	lda	#$d
-	brl	L697
+	brl	L695
 ;	bsect = fs->winsect; /* Volume location */
 L10381:
-	.line	3830
+	.line	3841
 	ldy	#$2f
-	lda	[<L694+fs_1],Y
-	sta	<L694+bsect_1
+	lda	[<L692+fs_1],Y
+	sta	<L692+bsect_1
 	ldy	#$31
-	lda	[<L694+fs_1],Y
-	sta	<L694+bsect_1+2
+	lda	[<L692+fs_1],Y
+	sta	<L692+bsect_1+2
 ;
 ;	////k_debug_long("mount_volume:bsect:", bsect);
 ;	/* An FAT volume is found (bsect). Following code initializes the filesystem object */
@@ -16679,7 +16686,7 @@ L10381:
 ;	else
 ;#endif	/* FF_FS_EXFAT */
 ;	{
-	.line	3904
+	.line	3915
 ;
 ;		////k_debug_pointer("mount_volume:fs->win:", fs->win);
 ;		//k_debug_long( "mount_volume:BPB_BytsPerSec:",(long)BPB_BytsPerSec);
@@ -16688,14 +16695,14 @@ L10381:
 ;
 ;
 ;		if (ld_word(FADDR(BPB_BytsPerSec)) != SS(fs))
-	.line	3912
+	.line	3923
 ;			return FR_NO_FILESYSTEM; /* (BPB_BytsPerSec must be equal to the physical sector size) */
 	clc
 	lda	#$3e
-	adc	<L694+fs_1
+	adc	<L692+fs_1
 	sta	<R0
 	lda	#$0
-	adc	<L694+fs_1+2
+	adc	<L692+fs_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
@@ -16703,22 +16710,22 @@ L10381:
 	sta	<R1
 	lda	<R1
 	cmp	#<$200
-	bne	L708
+	bne	L706
 	brl	L10382
-L708:
-	.line	3913
+L706:
+	.line	3924
 	lda	#$d
-	brl	L697
+	brl	L695
 ;
 ;		fasize = ld_word(FADDR(BPB_FATSz16)); /* Number of sectors per FAT */
 L10382:
-	.line	3915
+	.line	3926
 	clc
 	lda	#$49
-	adc	<L694+fs_1
+	adc	<L692+fs_1
 	sta	<R0
 	lda	#$0
-	adc	<L694+fs_1+2
+	adc	<L692+fs_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
@@ -16726,166 +16733,167 @@ L10382:
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L709
+	bpl	L707
 	dey
-L709:
-	sta	<L694+fasize_1
-	sty	<L694+fasize_1+2
+L707:
+	sta	<L692+fasize_1
+	sty	<L692+fasize_1+2
 ;		if (fasize == 0)
-	.line	3916
+	.line	3927
 ;			fasize = ld_dword(&(fs->win[BPB_FATSz32]));
-	lda	<L694+fasize_1
-	ora	<L694+fasize_1+2
-	beq	L710
+	lda	<L692+fasize_1
+	ora	<L692+fasize_1+2
+	beq	L708
 	brl	L10383
-L710:
-	.line	3917
+L708:
+	.line	3928
 	clc
 	lda	#$57
-	adc	<L694+fs_1
+	adc	<L692+fs_1
 	sta	<R0
 	lda	#$0
-	adc	<L694+fs_1+2
+	adc	<L692+fs_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~ld_dword
-	sta	<L694+fasize_1
-	stx	<L694+fasize_1+2
+	sta	<L692+fasize_1
+	stx	<L692+fasize_1+2
 ;		fs->fsize = fasize;
 L10383:
-	.line	3918
-	lda	<L694+fasize_1
+	.line	3929
+	lda	<L692+fasize_1
 	ldy	#$1b
-	sta	[<L694+fs_1],Y
-	lda	<L694+fasize_1+2
+	sta	[<L692+fs_1],Y
+	lda	<L692+fasize_1+2
 	ldy	#$1d
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 ;
 ;		fs->n_fats = fs->win[BPB_NumFATs]; /* Number of FATs */
-	.line	3920
+	.line	3931
 	sep	#$20
 	longa	off
 	ldy	#$43
-	lda	[<L694+fs_1],Y
+	lda	[<L692+fs_1],Y
 	ldy	#$2
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 	rep	#$20
 	longa	on
 ;
 ;		//k_debug_long("mount_volume:n_fats:", fs->n_fats);
+;		//k_debug_pointer("mount_volume:5:_k_eventManager_IdleProcList->listhead:",_k_eventManager_IdleProcList->listhead);
 ;
 ;		if (fs->n_fats != 1 && fs->n_fats != 2)
-	.line	3924
+	.line	3936
 ;			return FR_NO_FILESYSTEM; /* (Must be 1 or 2) */
 	sep	#$20
 	longa	off
 	ldy	#$2
-	lda	[<L694+fs_1],Y
+	lda	[<L692+fs_1],Y
 	cmp	#<$1
 	rep	#$20
 	longa	on
-	bne	L711
+	bne	L709
 	brl	L10384
-L711:
+L709:
 	sep	#$20
 	longa	off
 	ldy	#$2
-	lda	[<L694+fs_1],Y
+	lda	[<L692+fs_1],Y
 	cmp	#<$2
 	rep	#$20
 	longa	on
-	bne	L712
+	bne	L710
 	brl	L10384
-L712:
-	.line	3925
+L710:
+	.line	3937
 	lda	#$d
-	brl	L697
+	brl	L695
 ;		fasize *= fs->n_fats; /* Number of sectors for FAT area */
 L10384:
-	.line	3926
+	.line	3938
 	ldy	#$2
-	lda	[<L694+fs_1],Y
+	lda	[<L692+fs_1],Y
 	and	#$ff
 	sta	<R0
 	stz	<R0+2
-	pei	<L694+fasize_1+2
-	pei	<L694+fasize_1
+	pei	<L692+fasize_1+2
+	pei	<L692+fasize_1
 	pei	<R0+2
 	pei	<R0
 	xref	~~~lmul
 	jsl	~~~lmul
-	sta	<L694+fasize_1
-	stx	<L694+fasize_1+2
+	sta	<L692+fasize_1
+	stx	<L692+fasize_1+2
 ;
 ;		fs->csize = fs->win[BPB_SecPerClus]; /* Cluster size */
-	.line	3928
+	.line	3940
 	ldy	#$40
-	lda	[<L694+fs_1],Y
+	lda	[<L692+fs_1],Y
 	and	#$ff
 	ldy	#$9
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 ;		if (fs->csize == 0 || (fs->csize & (fs->csize - 1)))
-	.line	3929
+	.line	3941
 ;			return FR_NO_FILESYSTEM; /* (Must be power of 2) */
 	ldy	#$9
-	lda	[<L694+fs_1],Y
-	bne	L714
-	brl	L713
-L714:
+	lda	[<L692+fs_1],Y
+	bne	L712
+	brl	L711
+L712:
 	clc
 	lda	#$ffff
 	ldy	#$9
-	adc	[<L694+fs_1],Y
+	adc	[<L692+fs_1],Y
 	sta	<R0
 	ldy	#$9
-	lda	[<L694+fs_1],Y
+	lda	[<L692+fs_1],Y
 	and	<R0
-	bne	L715
+	bne	L713
 	brl	L10385
-L715:
 L713:
-	.line	3930
+L711:
+	.line	3942
 	lda	#$d
-	brl	L697
+	brl	L695
 ;
 ;		fs->n_rootdir = ld_word(FADDR(BPB_RootEntCnt)); /* Number of root directory entries */
 L10385:
-	.line	3932
+	.line	3944
 	clc
 	lda	#$44
-	adc	<L694+fs_1
+	adc	<L692+fs_1
 	sta	<R0
 	lda	#$0
-	adc	<L694+fs_1+2
+	adc	<L692+fs_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~ld_word
 	ldy	#$7
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 ;		if (fs->n_rootdir % (SS(fs) / SZDIRE))
-	.line	3933
+	.line	3945
 ;			return FR_NO_FILESYSTEM; /* (Must be sector aligned) */
 	ldy	#$7
-	lda	[<L694+fs_1],Y
+	lda	[<L692+fs_1],Y
 	and	#<$f
-	bne	L716
+	bne	L714
 	brl	L10386
-L716:
-	.line	3934
+L714:
+	.line	3946
 	lda	#$d
-	brl	L697
+	brl	L695
 ;
 ;		tsect = ld_word(FADDR(BPB_TotSec16)); /* Number of sectors on the volume */
 L10386:
-	.line	3936
+	.line	3948
 	clc
 	lda	#$46
-	adc	<L694+fs_1
+	adc	<L692+fs_1
 	sta	<R0
 	lda	#$0
-	adc	<L694+fs_1+2
+	adc	<L692+fs_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
@@ -16893,64 +16901,64 @@ L10386:
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L717
+	bpl	L715
 	dey
-L717:
-	sta	<L694+tsect_1
-	sty	<L694+tsect_1+2
+L715:
+	sta	<L692+tsect_1
+	sty	<L692+tsect_1+2
 ;		if (tsect == 0)
-	.line	3937
+	.line	3949
 ;			tsect = ld_dword(fs->win + BPB_TotSec32);
-	lda	<L694+tsect_1
-	ora	<L694+tsect_1+2
-	beq	L718
+	lda	<L692+tsect_1
+	ora	<L692+tsect_1+2
+	beq	L716
 	brl	L10387
-L718:
-	.line	3938
+L716:
+	.line	3950
 	clc
 	lda	#$53
-	adc	<L694+fs_1
+	adc	<L692+fs_1
 	sta	<R0
 	lda	#$0
-	adc	<L694+fs_1+2
+	adc	<L692+fs_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~ld_dword
-	sta	<L694+tsect_1
-	stx	<L694+tsect_1+2
+	sta	<L692+tsect_1
+	stx	<L692+tsect_1+2
 ;
 ;		nrsv = ld_word(FADDR(BPB_RsvdSecCnt)); /* Number of reserved sectors */
 L10387:
-	.line	3940
+	.line	3952
 	clc
 	lda	#$41
-	adc	<L694+fs_1
+	adc	<L692+fs_1
 	sta	<R0
 	lda	#$0
-	adc	<L694+fs_1+2
+	adc	<L692+fs_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~ld_word
-	sta	<L694+nrsv_1
+	sta	<L692+nrsv_1
 ;		if (nrsv == 0)
-	.line	3941
+	.line	3953
 ;			return FR_NO_FILESYSTEM; /* (Must not be 0) */
-	lda	<L694+nrsv_1
-	beq	L719
+	lda	<L692+nrsv_1
+	beq	L717
 	brl	L10388
-L719:
-	.line	3942
+L717:
+	.line	3954
 	lda	#$d
-	brl	L697
+	brl	L695
 ;
 ;		/* Determine the FAT sub type */
 ;		sysect = nrsv + fasize + fs->n_rootdir / (SS(fs) / SZDIRE); /* RSV + FAT + DIR */
 L10388:
-	.line	3945
+	.line	3957
 	ldy	#$7
-	lda	[<L694+fs_1],Y
+	lda	[<L692+fs_1],Y
 	lsr	A
 	lsr	A
 	lsr	A
@@ -16960,10 +16968,10 @@ L10388:
 	sta	<R0
 	stz	<R0+2
 	ldy	#$0
-	lda	<L694+nrsv_1
-	bpl	L720
+	lda	<L692+nrsv_1
+	bpl	L718
 	dey
-L720:
+L718:
 	sta	<R1
 	sty	<R1+2
 	clc
@@ -16975,45 +16983,45 @@ L720:
 	sta	<R2+2
 	clc
 	lda	<R2
-	adc	<L694+fasize_1
-	sta	<L694+sysect_1
+	adc	<L692+fasize_1
+	sta	<L692+sysect_1
 	lda	<R2+2
-	adc	<L694+fasize_1+2
-	sta	<L694+sysect_1+2
+	adc	<L692+fasize_1+2
+	sta	<L692+sysect_1+2
 ;		if (tsect < sysect)
-	.line	3946
+	.line	3958
 ;			return FR_NO_FILESYSTEM; /* (Invalid volume size) */
-	lda	<L694+tsect_1
-	cmp	<L694+sysect_1
-	lda	<L694+tsect_1+2
-	sbc	<L694+sysect_1+2
-	bcc	L721
+	lda	<L692+tsect_1
+	cmp	<L692+sysect_1
+	lda	<L692+tsect_1+2
+	sbc	<L692+sysect_1+2
+	bcc	L719
 	brl	L10389
-L721:
-	.line	3947
+L719:
+	.line	3959
 	lda	#$d
-	brl	L697
+	brl	L695
 ;		nclst = (tsect - sysect) / fs->csize; /* Number of clusters */
 L10389:
-	.line	3948
+	.line	3960
 	ldy	#$0
 	phy
 	ldy	#$9
-	lda	[<L694+fs_1],Y
+	lda	[<L692+fs_1],Y
 	ply
 	rol	A
 	ror	A
-	bpl	L722
+	bpl	L720
 	dey
-L722:
+L720:
 	sta	<R0
 	sty	<R0+2
 	sec
-	lda	<L694+tsect_1
-	sbc	<L694+sysect_1
+	lda	<L692+tsect_1
+	sbc	<L692+sysect_1
 	sta	<R1
-	lda	<L694+tsect_1+2
-	sbc	<L694+sysect_1+2
+	lda	<L692+tsect_1+2
+	sbc	<L692+sysect_1+2
 	sta	<R1+2
 	pei	<R0+2
 	pei	<R0
@@ -17021,188 +17029,188 @@ L722:
 	pei	<R1
 	xref	~~~ludv
 	jsl	~~~ludv
-	sta	<L694+nclst_1
-	stx	<L694+nclst_1+2
+	sta	<L692+nclst_1
+	stx	<L692+nclst_1+2
 ;		if (nclst == 0)
-	.line	3949
+	.line	3961
 ;			return FR_NO_FILESYSTEM; /* (Invalid volume size) */
-	lda	<L694+nclst_1
-	ora	<L694+nclst_1+2
-	beq	L723
+	lda	<L692+nclst_1
+	ora	<L692+nclst_1+2
+	beq	L721
 	brl	L10390
-L723:
-	.line	3950
+L721:
+	.line	3962
 	lda	#$d
-	brl	L697
+	brl	L695
 ;		fmt = 0;
 L10390:
-	.line	3951
-	stz	<L694+fmt_1
+	.line	3963
+	stz	<L692+fmt_1
 ;		if (nclst <= MAX_FAT32)
-	.line	3952
+	.line	3964
 ;			fmt = FS_FAT32;
 	lda	#$fff5
-	cmp	<L694+nclst_1
+	cmp	<L692+nclst_1
 	lda	#$fff
-	sbc	<L694+nclst_1+2
-	bcs	L724
+	sbc	<L692+nclst_1+2
+	bcs	L722
 	brl	L10391
-L724:
-	.line	3953
+L722:
+	.line	3965
 	lda	#$3
-	sta	<L694+fmt_1
+	sta	<L692+fmt_1
 ;		if (nclst <= MAX_FAT16)
 L10391:
-	.line	3954
+	.line	3966
 ;			fmt = FS_FAT16;
 	lda	#$fff5
-	cmp	<L694+nclst_1
+	cmp	<L692+nclst_1
 	lda	#$0
-	sbc	<L694+nclst_1+2
-	bcs	L725
+	sbc	<L692+nclst_1+2
+	bcs	L723
 	brl	L10392
-L725:
-	.line	3955
+L723:
+	.line	3967
 	lda	#$2
-	sta	<L694+fmt_1
+	sta	<L692+fmt_1
 ;		if (nclst <= MAX_FAT12)
 L10392:
-	.line	3956
+	.line	3968
 ;			fmt = FS_FAT12;
 	lda	#$ff5
-	cmp	<L694+nclst_1
+	cmp	<L692+nclst_1
 	lda	#$0
-	sbc	<L694+nclst_1+2
-	bcs	L726
+	sbc	<L692+nclst_1+2
+	bcs	L724
 	brl	L10393
-L726:
-	.line	3957
+L724:
+	.line	3969
 	lda	#$1
-	sta	<L694+fmt_1
+	sta	<L692+fmt_1
 ;		if (fmt == 0)
 L10393:
-	.line	3958
+	.line	3970
 ;			return FR_NO_FILESYSTEM;
-	lda	<L694+fmt_1
-	beq	L727
+	lda	<L692+fmt_1
+	beq	L725
 	brl	L10394
-L727:
-	.line	3959
+L725:
+	.line	3971
 	lda	#$d
-	brl	L697
+	brl	L695
 ;
 ;		/* Boundaries and Limits */
 ;		fs->n_fatent = nclst + 2; /* Number of FAT entries */
 L10394:
-	.line	3962
+	.line	3974
 	clc
 	lda	#$2
-	adc	<L694+nclst_1
+	adc	<L692+nclst_1
 	sta	<R0
 	lda	#$0
-	adc	<L694+nclst_1+2
+	adc	<L692+nclst_1+2
 	sta	<R0+2
 	lda	<R0
 	ldy	#$17
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 	lda	<R0+2
 	ldy	#$19
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 ;		fs->volbase = bsect; /* Volume start sector */
-	.line	3963
-	lda	<L694+bsect_1
+	.line	3975
+	lda	<L692+bsect_1
 	ldy	#$1f
-	sta	[<L694+fs_1],Y
-	lda	<L694+bsect_1+2
+	sta	[<L692+fs_1],Y
+	lda	<L692+bsect_1+2
 	ldy	#$21
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 ;		fs->fatbase = bsect + nrsv; /* FAT start sector */
-	.line	3964
+	.line	3976
 	ldy	#$0
-	lda	<L694+nrsv_1
-	bpl	L728
+	lda	<L692+nrsv_1
+	bpl	L726
 	dey
-L728:
+L726:
 	sta	<R0
 	sty	<R0+2
 	clc
 	lda	<R0
-	adc	<L694+bsect_1
+	adc	<L692+bsect_1
 	sta	<R1
 	lda	<R0+2
-	adc	<L694+bsect_1+2
+	adc	<L692+bsect_1+2
 	sta	<R1+2
 	lda	<R1
 	ldy	#$23
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 	lda	<R1+2
 	ldy	#$25
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 ;		fs->database = bsect + sysect; /* Data start sector */
-	.line	3965
+	.line	3977
 	clc
-	lda	<L694+bsect_1
-	adc	<L694+sysect_1
+	lda	<L692+bsect_1
+	adc	<L692+sysect_1
 	sta	<R0
-	lda	<L694+bsect_1+2
-	adc	<L694+sysect_1+2
+	lda	<L692+bsect_1+2
+	adc	<L692+sysect_1+2
 	sta	<R0+2
 	lda	<R0
 	ldy	#$2b
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 	lda	<R0+2
 	ldy	#$2d
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 ;		if (fmt == FS_FAT32)
-	.line	3966
+	.line	3978
 ;		{
-	lda	<L694+fmt_1
+	lda	<L692+fmt_1
 	cmp	#<$3
-	beq	L729
+	beq	L727
 	brl	L10395
-L729:
-	.line	3967
+L727:
+	.line	3979
 ;			if (ld_word(FADDR(BPB_FSVer32)) != 0)
-	.line	3968
+	.line	3980
 ;				return FR_NO_FILESYSTEM; /* (Must be FAT32 revision 0.0) */
 	clc
 	lda	#$5d
-	adc	<L694+fs_1
+	adc	<L692+fs_1
 	sta	<R0
 	lda	#$0
-	adc	<L694+fs_1+2
+	adc	<L692+fs_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~ld_word
 	tax
-	bne	L730
+	bne	L728
 	brl	L10396
-L730:
-	.line	3969
+L728:
+	.line	3981
 	lda	#$d
-	brl	L697
+	brl	L695
 ;			if (fs->n_rootdir != 0)
 L10396:
-	.line	3970
+	.line	3982
 ;				return FR_NO_FILESYSTEM; /* (BPB_RootEntCnt must be 0) */
 	ldy	#$7
-	lda	[<L694+fs_1],Y
-	bne	L731
+	lda	[<L692+fs_1],Y
+	bne	L729
 	brl	L10397
-L731:
-	.line	3971
+L729:
+	.line	3983
 	lda	#$d
-	brl	L697
+	brl	L695
 ;			fs->dirbase = ld_dword(fs->win + BPB_RootClus32); /* Root directory start cluster */
 L10397:
-	.line	3972
+	.line	3984
 	clc
 	lda	#$5f
-	adc	<L694+fs_1
+	adc	<L692+fs_1
 	sta	<R0
 	lda	#$0
-	adc	<L694+fs_1+2
+	adc	<L692+fs_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
@@ -17211,72 +17219,72 @@ L10397:
 	stx	<R1+2
 	lda	<R1
 	ldy	#$27
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 	lda	<R1+2
 	ldy	#$29
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 ;			szbfat = fs->n_fatent * 4; /* (Needed FAT size) */
-	.line	3973
+	.line	3985
 	ldy	#$19
-	lda	[<L694+fs_1],Y
+	lda	[<L692+fs_1],Y
 	pha
 	ldy	#$17
-	lda	[<L694+fs_1],Y
+	lda	[<L692+fs_1],Y
 	pha
 	lda	#$2
 	xref	~~~lasl
 	jsl	~~~lasl
-	sta	<L694+szbfat_1
-	stx	<L694+szbfat_1+2
+	sta	<L692+szbfat_1
+	stx	<L692+szbfat_1+2
 ;		}
-	.line	3974
+	.line	3986
 ;		else
 	brl	L10398
 L10395:
 ;		{
-	.line	3976
+	.line	3988
 ;			if (fs->n_rootdir == 0)
-	.line	3977
+	.line	3989
 ;				return FR_NO_FILESYSTEM; /* (BPB_RootEntCnt must not be 0) */
 	ldy	#$7
-	lda	[<L694+fs_1],Y
-	beq	L732
+	lda	[<L692+fs_1],Y
+	beq	L730
 	brl	L10399
-L732:
-	.line	3978
+L730:
+	.line	3990
 	lda	#$d
-	brl	L697
+	brl	L695
 ;			fs->dirbase = fs->fatbase + fasize; /* Root directory start sector */
 L10399:
-	.line	3979
+	.line	3991
 	clc
 	ldy	#$23
-	lda	[<L694+fs_1],Y
-	adc	<L694+fasize_1
+	lda	[<L692+fs_1],Y
+	adc	<L692+fasize_1
 	sta	<R0
 	ldy	#$25
-	lda	[<L694+fs_1],Y
-	adc	<L694+fasize_1+2
+	lda	[<L692+fs_1],Y
+	adc	<L692+fasize_1+2
 	sta	<R0+2
 	lda	<R0
 	ldy	#$27
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 	lda	<R0+2
 	ldy	#$29
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 ;			szbfat = (fmt == FS_FAT16) ? /* (Needed FAT size) */
-	.line	3980
+	.line	3992
 ;			fs->n_fatent * 2 : fs->n_fatent * 3 / 2 + (fs->n_fatent & 1);
-	lda	<L694+fmt_1
+	lda	<L692+fmt_1
 	cmp	#<$2
-	beq	L734
-	brl	L733
-L734:
+	beq	L732
+	brl	L731
+L732:
 	ldy	#$19
-	lda	[<L694+fs_1],Y
+	lda	[<L692+fs_1],Y
 	pha
 	ldy	#$17
-	lda	[<L694+fs_1],Y
+	lda	[<L692+fs_1],Y
 	pha
 	lda	#$1
 	xref	~~~lasl
@@ -17285,20 +17293,20 @@ L734:
 	stx	<R0+2
 	ldx	<R0+2
 	lda	<R0
-	bra	L735
-L733:
+	bra	L733
+L731:
 	ldy	#$17
-	lda	[<L694+fs_1],Y
+	lda	[<L692+fs_1],Y
 	and	#<$1
 	sta	<R0
 	stz	<R0+2
 	pea	#^$3
 	pea	#<$3
 	ldy	#$19
-	lda	[<L694+fs_1],Y
+	lda	[<L692+fs_1],Y
 	pha
 	ldy	#$17
-	lda	[<L694+fs_1],Y
+	lda	[<L692+fs_1],Y
 	pha
 	xref	~~~lmul
 	jsl	~~~lmul
@@ -17320,25 +17328,25 @@ L733:
 	sta	<R3+2
 	ldx	<R3+2
 	lda	<R3
-L735:
+L733:
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
-	sta	<L694+szbfat_1
+	sta	<L692+szbfat_1
 	lda	<R0+2
-	sta	<L694+szbfat_1+2
+	sta	<L692+szbfat_1+2
 ;		}
-	.line	3982
+	.line	3994
 L10398:
 ;		if (fs->fsize < (szbfat + (SS(fs) - 1)) / SS(fs))
-	.line	3983
+	.line	3995
 ;			return FR_NO_FILESYSTEM; /* (BPB_FATSz must not be less than the size needed) */
 	clc
 	lda	#$1ff
-	adc	<L694+szbfat_1
+	adc	<L692+szbfat_1
 	sta	<R1
 	lda	#$0
-	adc	<L694+szbfat_1+2
+	adc	<L692+szbfat_1+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
@@ -17348,61 +17356,61 @@ L10398:
 	sta	<R0
 	stx	<R0+2
 	ldy	#$1b
-	lda	[<L694+fs_1],Y
+	lda	[<L692+fs_1],Y
 	cmp	<R0
 	ldy	#$1d
-	lda	[<L694+fs_1],Y
+	lda	[<L692+fs_1],Y
 	sbc	<R0+2
-	bcc	L736
+	bcc	L734
 	brl	L10400
-L736:
-	.line	3984
+L734:
+	.line	3996
 	lda	#$d
-	brl	L697
+	brl	L695
 ;
 ;#if !FF_FS_READONLY
 ;		/* Get FSInfo if available */
 ;		fs->last_clst = fs->free_clst = 0xFFFFFFFF; /* Initialize cluster allocation information */
 L10400:
-	.line	3988
+	.line	4000
 	lda	#$ffff
 	ldy	#$13
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 	lda	#$ffff
 	ldy	#$15
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 	lda	#$ffff
 	ldy	#$f
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 	lda	#$ffff
 	ldy	#$11
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 ;		fs->fsi_flag = 0x80;
-	.line	3989
+	.line	4001
 	sep	#$20
 	longa	off
 	lda	#$80
 	ldy	#$4
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 	rep	#$20
 	longa	on
 ;#if (FF_FS_NOFSINFO & 3) != 3
 ;		if (fmt == FS_FAT32 /* Allow to update FSInfo only if BPB_FSInfo32 == 1 */
-	.line	3991
+	.line	4003
 ;		&& ld_word(fs->win + BPB_FSInfo32) == 1
 ;				&& move_window(fs, bsect + 1) == FR_OK)
 ;		{
-	lda	<L694+fmt_1
+	lda	<L692+fmt_1
 	cmp	#<$3
-	beq	L737
+	beq	L735
 	brl	L10401
-L737:
+L735:
 	clc
 	lda	#$63
-	adc	<L694+fs_1
+	adc	<L692+fs_1
 	sta	<R0
 	lda	#$0
-	adc	<L694+fs_1+2
+	adc	<L692+fs_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
@@ -17410,46 +17418,46 @@ L737:
 	sta	<R1
 	lda	<R1
 	cmp	#<$1
-	beq	L738
+	beq	L736
 	brl	L10401
-L738:
+L736:
 	clc
 	lda	#$1
-	adc	<L694+bsect_1
+	adc	<L692+bsect_1
 	sta	<R1
 	lda	#$0
-	adc	<L694+bsect_1+2
+	adc	<L692+bsect_1+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
-	pei	<L694+fs_1+2
-	pei	<L694+fs_1
+	pei	<L692+fs_1+2
+	pei	<L692+fs_1
 	jsl	~~move_window
 	tax
-	beq	L739
+	beq	L737
 	brl	L10401
-L739:
-	.line	3994
+L737:
+	.line	4006
 ;			fs->fsi_flag = 0;
-	.line	3995
+	.line	4007
 	sep	#$20
 	longa	off
 	lda	#$0
 	ldy	#$4
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 	rep	#$20
 	longa	on
 ;			if (ld_word(fs->win + BS_55AA) == 0xAA55 /* Load FSInfo data if available */
-	.line	3996
+	.line	4008
 ;			&& ld_dword(fs->win + FSI_LeadSig) == 0x41615252
 ;					&& ld_dword(fs->win + FSI_StrucSig) == 0x61417272)
 ;			{
 	clc
 	lda	#$231
-	adc	<L694+fs_1
+	adc	<L692+fs_1
 	sta	<R0
 	lda	#$0
-	adc	<L694+fs_1+2
+	adc	<L692+fs_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
@@ -17457,15 +17465,15 @@ L739:
 	sta	<R1
 	lda	<R1
 	cmp	#<$aa55
-	beq	L740
+	beq	L738
 	brl	L10402
-L740:
+L738:
 	clc
 	lda	#$33
-	adc	<L694+fs_1
+	adc	<L692+fs_1
 	sta	<R1
 	lda	#$0
-	adc	<L694+fs_1+2
+	adc	<L692+fs_1+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
@@ -17474,19 +17482,19 @@ L740:
 	stx	<R2+2
 	lda	<R2
 	cmp	#<$41615252
-	bne	L741
+	bne	L739
 	lda	<R2+2
 	cmp	#^$41615252
-L741:
-	beq	L742
+L739:
+	beq	L740
 	brl	L10402
-L742:
+L740:
 	clc
 	lda	#$217
-	adc	<L694+fs_1
+	adc	<L692+fs_1
 	sta	<R2
 	lda	#$0
-	adc	<L694+fs_1+2
+	adc	<L692+fs_1+2
 	sta	<R2+2
 	pei	<R2+2
 	pei	<R2
@@ -17495,26 +17503,26 @@ L742:
 	stx	<R3+2
 	lda	<R3
 	cmp	#<$61417272
-	bne	L743
+	bne	L741
 	lda	<R3+2
 	cmp	#^$61417272
-L743:
-	beq	L744
+L741:
+	beq	L742
 	brl	L10402
-L744:
-	.line	3999
+L742:
+	.line	4011
 ;#if (FF_FS_NOFSINFO & 1) == 0
 ;				fs->free_clst = ld_dword(fs->win + FSI_Free_Count);
 ;#endif
 ;#if (FF_FS_NOFSINFO & 2) == 0
 ;				fs->last_clst = ld_dword(fs->win + FSI_Nxt_Free);
-	.line	4004
+	.line	4016
 	clc
 	lda	#$21f
-	adc	<L694+fs_1
+	adc	<L692+fs_1
 	sta	<R0
 	lda	#$0
-	adc	<L694+fs_1+2
+	adc	<L692+fs_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
@@ -17523,36 +17531,36 @@ L744:
 	stx	<R1+2
 	lda	<R1
 	ldy	#$f
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 	lda	<R1+2
 	ldy	#$11
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 ;#endif
 ;			}
-	.line	4006
+	.line	4018
 ;		}
 L10402:
-	.line	4007
+	.line	4019
 ;#endif	/* (FF_FS_NOFSINFO & 3) != 3 */
 ;#endif	/* !FF_FS_READONLY */
 ;	}
 L10401:
-	.line	4010
+	.line	4022
 ;
 ;	fs->fs_type = (BYTE) fmt;/* FAT sub-type */
-	.line	4012
+	.line	4024
 	sep	#$20
 	longa	off
-	lda	<L694+fmt_1
-	sta	[<L694+fs_1]
+	lda	<L692+fmt_1
+	sta	[<L692+fs_1]
 	rep	#$20
 	longa	on
 ;	fs->id = ++Fsid; /* Volume mount ID */
-	.line	4013
+	.line	4025
 	inc	|~~Fsid
 	lda	|~~Fsid
 	ldy	#$5
-	sta	[<L694+fs_1],Y
+	sta	[<L692+fs_1],Y
 ;#if FF_USE_LFN == 1
 ;	fs->lfnbuf = LfnBuf; /* Static LFN working buffer */
 ;#if FF_FS_EXFAT
@@ -17566,18 +17574,18 @@ L10401:
 ;	clear_lock(fs);
 ;#endif
 ;	return FR_OK;
-	.line	4026
+	.line	4038
 	lda	#$0
-	brl	L697
+	brl	L695
 ;}
-	.line	4027
-	.endblock	4027
-L693	equ	51
-L694	equ	17
+	.line	4039
+	.endblock	4039
+L691	equ	51
+L692	equ	17
 	ends
 	efunc
-	.endfunc	4027,17,51
-	.line	4027
+	.endfunc	4039,17,51
+	.line	4039
 ;
 ;/*-----------------------------------------------------------------------*/
 ;/* Check if the file/directory object is valid or not                    */
@@ -17588,68 +17596,68 @@ L694	equ	17
 ;FATFS** rfs /* Pointer to pointer to the owner filesystem object to return */
 ;)
 ;{
-	.line	4033
-	.line	4037
+	.line	4045
+	.line	4049
 	FFDOS
 	func
-	.function	4037
+	.function	4049
 ~~validate:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L745
+	sbc	#L743
 	tcs
 	phd
 	tcd
 obj_0	set	4
 rfs_0	set	8
-	.block	4037
+	.block	4049
 ;	FRESULT res = FR_INVALID_OBJECT;
 ;
 ;	if (obj && obj->fs && obj->fs->fs_type && obj->id == obj->fs->id)
 res_1	set	0
 	.sym	res,0,5,1,16
-	.sym	obj,4,138,6,32,73
-	.sym	rfs,8,1162,6,32,72
+	.sym	obj,4,138,6,32,76
+	.sym	rfs,8,1162,6,32,75
 	lda	#$9
-	sta	<L746+res_1
-	.line	4040
+	sta	<L744+res_1
+	.line	4052
 ;	{ /* Test if the object is valid */
-	lda	<L745+obj_0
-	ora	<L745+obj_0+2
-	bne	L748
+	lda	<L743+obj_0
+	ora	<L743+obj_0+2
+	bne	L746
 	brl	L10403
-L748:
-	lda	[<L745+obj_0]
+L746:
+	lda	[<L743+obj_0]
 	ldy	#$2
-	ora	[<L745+obj_0],Y
-	bne	L749
+	ora	[<L743+obj_0],Y
+	bne	L747
 	brl	L10403
-L749:
-	lda	[<L745+obj_0]
+L747:
+	lda	[<L743+obj_0]
 	sta	<R0
 	ldy	#$2
-	lda	[<L745+obj_0],Y
+	lda	[<L743+obj_0],Y
 	sta	<R0+2
 	lda	[<R0]
 	and	#$ff
-	bne	L750
+	bne	L748
 	brl	L10403
-L750:
-	lda	[<L745+obj_0]
+L748:
+	lda	[<L743+obj_0]
 	sta	<R0
 	ldy	#$2
-	lda	[<L745+obj_0],Y
+	lda	[<L743+obj_0],Y
 	sta	<R0+2
 	ldy	#$4
-	lda	[<L745+obj_0],Y
+	lda	[<L743+obj_0],Y
 	ldy	#$5
 	cmp	[<R0],Y
-	beq	L751
+	beq	L749
 	brl	L10403
-L751:
-	.line	4041
+L749:
+	.line	4053
 ;#if FF_FS_REENTRANT
 ;		if (lock_fs(obj->fs))
 ;		{ /* Obtain the filesystem object */
@@ -17668,12 +17676,12 @@ L751:
 ;		}
 ;#else
 ;		if (!(disk_status(obj->fs->pdrv) & STA_NOINIT))
-	.line	4059
+	.line	4071
 ;		{ /* Test if the phsical drive is kept initialized */
-	lda	[<L745+obj_0]
+	lda	[<L743+obj_0]
 	sta	<R0
 	ldy	#$2
-	lda	[<L745+obj_0],Y
+	lda	[<L743+obj_0],Y
 	sta	<R0+2
 	ldy	#$1
 	lda	[<R0],Y
@@ -17684,68 +17692,68 @@ L751:
 	and	#<$1
 	rep	#$20
 	longa	on
-	beq	L752
+	beq	L750
 	brl	L10404
-L752:
-	.line	4060
+L750:
+	.line	4072
 ;			res = FR_OK;
-	.line	4061
-	stz	<L746+res_1
+	.line	4073
+	stz	<L744+res_1
 ;		}
-	.line	4062
+	.line	4074
 ;#endif
 ;	}
 L10404:
-	.line	4064
+	.line	4076
 ;	*rfs = (res == FR_OK) ? obj->fs : 0; /* Corresponding filesystem object */
 L10403:
-	.line	4065
-	lda	<L746+res_1
-	beq	L754
-	brl	L753
-L754:
+	.line	4077
+	lda	<L744+res_1
+	beq	L752
+	brl	L751
+L752:
 	ldy	#$2
-	lda	[<L745+obj_0],Y
+	lda	[<L743+obj_0],Y
 	tax
-	lda	[<L745+obj_0]
-	bra	L755
+	lda	[<L743+obj_0]
+	bra	L753
+L751:
+	lda	#$0
+	tax
+	lda	#$0
 L753:
-	lda	#$0
-	tax
-	lda	#$0
-L755:
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
-	sta	[<L745+rfs_0]
+	sta	[<L743+rfs_0]
 	lda	<R0+2
 	ldy	#$2
-	sta	[<L745+rfs_0],Y
+	sta	[<L743+rfs_0],Y
 ;	return res;
-	.line	4066
-	lda	<L746+res_1
-L756:
+	.line	4078
+	lda	<L744+res_1
+L754:
 	tay
-	lda	<L745+2
-	sta	<L745+2+8
-	lda	<L745+1
-	sta	<L745+1+8
+	lda	<L743+2
+	sta	<L743+2+8
+	lda	<L743+1
+	sta	<L743+1+8
 	pld
 	tsc
 	clc
-	adc	#L745+8
+	adc	#L743+8
 	tcs
 	tya
 	rtl
 ;}
-	.line	4067
-	.endblock	4067
-L745	equ	6
-L746	equ	5
+	.line	4079
+	.endblock	4079
+L743	equ	6
+L744	equ	5
 	ends
 	efunc
-	.endfunc	4067,5,6
-	.line	4067
+	.endfunc	4079,5,6
+	.line	4079
 ;
 ;/*---------------------------------------------------------------------------
 ;
@@ -17762,25 +17770,25 @@ L746	equ	5
 ;BYTE opt /* Mode option 0:Do not mount (delayed mount), 1:Mount immediately */
 ;)
 ;{
-	.line	4079
-	.line	4083
+	.line	4091
+	.line	4095
 	FFDOS
 	xdef	~~f_mount
 	func
-	.function	4083
+	.function	4095
 ~~f_mount:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L757
+	sbc	#L755
 	tcs
 	phd
 	tcd
 fs_0	set	4
 path_0	set	8
 opt_0	set	12
-	.block	4083
+	.block	4095
 ;	FATFS *cfs;
 ;	int vol;
 ;	FRESULT res;
@@ -17794,51 +17802,52 @@ cfs_1	set	0
 vol_1	set	4
 res_1	set	6
 rp_1	set	8
-	.sym	cfs,0,138,1,32,72
+	.sym	cfs,0,138,1,32,75
 	.sym	vol,4,5,1,16
 	.sym	res,6,5,1,16
 	.sym	rp,8,142,1,32
-	.sym	fs,4,138,6,32,72
+	.sym	fs,4,138,6,32,75
 	.sym	path,8,142,6,32
 	.sym	opt,12,14,6,8
-	lda	<L757+path_0
-	sta	<L758+rp_1
-	lda	<L757+path_0+2
-	sta	<L758+rp_1+2
-	.line	4092
+	lda	<L755+path_0
+	sta	<L756+rp_1
+	lda	<L755+path_0+2
+	sta	<L756+rp_1+2
+	.line	4104
 	pea	#0
 	clc
 	tdc
-	adc	#<L758+rp_1
+	adc	#<L756+rp_1
 	pha
 	jsl	~~get_ldnumber
-	sta	<L758+vol_1
+	sta	<L756+vol_1
 ;	if (vol < 0)
-	.line	4093
+	.line	4105
 ;		return FR_INVALID_DRIVE;
-	lda	<L758+vol_1
-	bmi	L760
+	lda	<L756+vol_1
+	bmi	L758
 	brl	L10405
-L760:
-	.line	4094
+L758:
+	.line	4106
 	lda	#$b
-L761:
+L759:
 	tay
-	lda	<L757+2
-	sta	<L757+2+10
-	lda	<L757+1
-	sta	<L757+1+10
+	lda	<L755+2
+	sta	<L755+2+10
+	lda	<L755+1
+	sta	<L755+1+10
 	pld
 	tsc
 	clc
-	adc	#L757+10
+	adc	#L755+10
 	tcs
 	tya
 	rtl
+;
 ;	cfs = FatFs[vol]; /* Pointer to fs object */
 L10405:
-	.line	4095
-	lda	<L758+vol_1
+	.line	4108
+	lda	<L756+vol_1
 	asl	A
 	asl	A
 	sta	<R0
@@ -17847,22 +17856,30 @@ L10405:
 	adc	<R0
 	sta	<R1
 	lda	(<R1)
-	sta	<L758+cfs_1
+	sta	<L756+cfs_1
 	ldy	#$2
 	lda	(<R1),Y
-	sta	<L758+cfs_1+2
+	sta	<L756+cfs_1+2
 ;
 ;	////k_debug_pointer("f_mount:cfs:",cfs);
+;	//k_debug_pointer("f_mount:1:_k_eventManager_IdleProcList->listhead:",_k_eventManager_IdleProcList->listhead);
+;	//k_debug_pointer("f_mount:1:cfs:",cfs);
 ;
-;	if (cfs)
-	.line	4099
+;	//if (cfs)
+;	if (cfs && fs)
+	.line	4115
 ;	{
-	lda	<L758+cfs_1
-	ora	<L758+cfs_1+2
-	bne	L762
+	lda	<L756+cfs_1
+	ora	<L756+cfs_1+2
+	bne	L760
 	brl	L10406
-L762:
-	.line	4100
+L760:
+	lda	<L755+fs_0
+	ora	<L755+fs_0+2
+	bne	L761
+	brl	L10406
+L761:
+	.line	4116
 ;#if FF_FS_LOCK != 0
 ;		clear_lock(cfs);
 ;#endif
@@ -17870,43 +17887,45 @@ L762:
 ;		if (!ff_del_syncobj(cfs->sobj)) return FR_INT_ERR;
 ;#endif
 ;		cfs->fs_type = 0; /* Clear old fs object */
-	.line	4107
+	.line	4123
 	sep	#$20
 	longa	off
 	lda	#$0
-	sta	[<L758+cfs_1]
+	sta	[<L756+cfs_1]
 	rep	#$20
 	longa	on
 ;	}
-	.line	4108
+	.line	4124
+;
+;	//k_debug_pointer("f_mount:2:_k_eventManager_IdleProcList->listhead:",_k_eventManager_IdleProcList->listhead);
 ;
 ;	if (fs)
 L10406:
-	.line	4110
+	.line	4128
 ;	{
-	lda	<L757+fs_0
-	ora	<L757+fs_0+2
-	bne	L763
+	lda	<L755+fs_0
+	ora	<L755+fs_0+2
+	bne	L762
 	brl	L10407
-L763:
-	.line	4111
+L762:
+	.line	4129
 ;		fs->fs_type = 0; /* Clear new fs object */
-	.line	4112
+	.line	4130
 	sep	#$20
 	longa	off
 	lda	#$0
-	sta	[<L757+fs_0]
+	sta	[<L755+fs_0]
 	rep	#$20
 	longa	on
 ;#if FF_FS_REENTRANT						/* Create sync object for the new volume */
 ;		if (!ff_cre_syncobj((BYTE)vol, &fs->sobj)) return FR_INT_ERR;
 ;#endif
 ;	}
-	.line	4116
+	.line	4134
 ;	FatFs[vol] = fs; /* Register new fs object */
 L10407:
-	.line	4117
-	lda	<L758+vol_1
+	.line	4135
+	lda	<L756+vol_1
 	asl	A
 	asl	A
 	sta	<R0
@@ -17914,53 +17933,55 @@ L10407:
 	lda	#<~~FatFs
 	adc	<R0
 	sta	<R1
-	lda	<L757+fs_0
+	lda	<L755+fs_0
 	sta	(<R1)
-	lda	<L757+fs_0+2
+	lda	<L755+fs_0+2
 	ldy	#$2
 	sta	(<R1),Y
 ;
+;	//k_debug_pointer("f_mount:3:_k_eventManager_IdleProcList->listhead:",_k_eventManager_IdleProcList->listhead);
+;
 ;	if (opt == 0)
-	.line	4119
+	.line	4139
 ;		return FR_OK; /* Do not mount now, it will be mounted later */
-	lda	<L757+opt_0
+	lda	<L755+opt_0
 	and	#$ff
-	beq	L764
+	beq	L763
 	brl	L10408
-L764:
-	.line	4120
+L763:
+	.line	4140
 	lda	#$0
-	brl	L761
+	brl	L759
 ;
 ;	res = mount_volume(&path, &fs, 0); /* Force mounted the volume */
 L10408:
-	.line	4122
+	.line	4142
 	pea	#<$0
 	pea	#0
 	clc
 	tdc
-	adc	#<L757+fs_0
+	adc	#<L755+fs_0
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L757+path_0
+	adc	#<L755+path_0
 	pha
 	jsl	~~mount_volume
-	sta	<L758+res_1
+	sta	<L756+res_1
 ;	LEAVE_FF(fs, res);
-	.line	4123
-	lda	<L758+res_1
-	brl	L761
+	.line	4143
+	lda	<L756+res_1
+	brl	L759
 ;}
-	.line	4124
-	.endblock	4124
-L757	equ	20
-L758	equ	9
+	.line	4144
+	.endblock	4144
+L755	equ	20
+L756	equ	9
 	ends
 	efunc
-	.endfunc	4124,9,20
-	.line	4124
+	.endfunc	4144,9,20
+	.line	4144
 ;
 ;/*-----------------------------------------------------------------------*/
 ;/* Open or Create a File                                                 */
@@ -17971,25 +17992,25 @@ L758	equ	9
 ;BYTE mode /* Access mode and file open mode flags */
 ;)
 ;{
-	.line	4130
-	.line	4134
+	.line	4150
+	.line	4154
 	FFDOS
 	xdef	~~f_open
 	func
-	.function	4134
+	.function	4154
 ~~f_open:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L765
+	sbc	#L764
 	tcs
 	phd
 	tcd
 fp_0	set	4
 path_0	set	8
 mode_0	set	12
-	.block	4134
+	.block	4154
 ;	FRESULT res;
 ;	DIR dj;
 ;	FATFS *fs;
@@ -18013,36 +18034,36 @@ sc_1	set	70
 ofs_1	set	74
 lfn_1	set	78
 	.sym	res,0,5,1,16
-	.sym	dj,2,10,1,416,75
-	.sym	fs,54,138,1,32,72
+	.sym	dj,2,10,1,416,78
+	.sym	fs,54,138,1,32,75
 	.sym	cl,58,18,1,32
 	.sym	bcs,62,18,1,32
 	.sym	clst,66,18,1,32
 	.sym	sc,70,18,1,32
 	.sym	ofs,74,18,1,32
 	.sym	lfn,78,144,1,32
-	.sym	fp,4,138,6,32,74
+	.sym	fp,4,138,6,32,77
 	.sym	path,8,142,6,32
 	.sym	mode,12,14,6,8
-	.line	4147
+	.line	4167
 ;		return FR_INVALID_OBJECT;
-	lda	<L765+fp_0
-	ora	<L765+fp_0+2
-	beq	L768
+	lda	<L764+fp_0
+	ora	<L764+fp_0+2
+	beq	L767
 	brl	L10409
-L768:
-	.line	4148
+L767:
+	.line	4168
 	lda	#$9
-L769:
+L768:
 	tay
-	lda	<L765+2
-	sta	<L765+2+10
-	lda	<L765+1
-	sta	<L765+1+10
+	lda	<L764+2
+	sta	<L764+2+10
+	lda	<L764+1
+	sta	<L764+1+10
 	pld
 	tsc
 	clc
-	adc	#L765+10
+	adc	#L764+10
 	tcs
 	tya
 	rtl
@@ -18050,114 +18071,114 @@ L769:
 ;	/* Get logical drive number */
 ;	mode &= FF_FS_READONLY ?
 L10409:
-	.line	4151
+	.line	4171
 ;			FA_READ :
 ;			FA_READ | FA_WRITE | FA_CREATE_ALWAYS | FA_CREATE_NEW
 ;					| FA_OPEN_ALWAYS | FA_OPEN_APPEND;
 	sep	#$20
 	longa	off
 	lda	#$c0
-	trb	<L765+mode_0
+	trb	<L764+mode_0
 	rep	#$20
 	longa	on
 ;	res = mount_volume(&path, &fs, mode);
-	.line	4155
-	pei	<L765+mode_0
+	.line	4175
+	pei	<L764+mode_0
 	pea	#0
 	clc
 	tdc
-	adc	#<L766+fs_1
+	adc	#<L765+fs_1
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L765+path_0
+	adc	#<L764+path_0
 	pha
 	jsl	~~mount_volume
-	sta	<L766+res_1
+	sta	<L765+res_1
 ;
-;	////k_debug_long("f_open:mount_volume:",res);
+;	//k_debug_long("f_open:mount_volume:",res);
 ;
 ;	if (res == FR_OK)
-	.line	4159
+	.line	4179
 ;	{
-	lda	<L766+res_1
-	beq	L770
+	lda	<L765+res_1
+	beq	L769
 	brl	L10410
-L770:
-	.line	4160
+L769:
+	.line	4180
 ;		dj.obj.fs = fs;
-	.line	4161
-	lda	<L766+fs_1
-	sta	<L766+dj_1
-	lda	<L766+fs_1+2
-	sta	<L766+dj_1+2
+	.line	4181
+	lda	<L765+fs_1
+	sta	<L765+dj_1
+	lda	<L765+fs_1+2
+	sta	<L765+dj_1+2
 ;		INIT_NAMBUF(fs);
-	.line	4162
-	.line	4162
+	.line	4182
+	.line	4182
 	pea	#<$200
 	jsl	~~ff_memalloc
-	sta	<L766+lfn_1
-	stx	<L766+lfn_1+2
-	.line	4162
-	lda	<L766+lfn_1
-	ora	<L766+lfn_1+2
-	beq	L771
+	sta	<L765+lfn_1
+	stx	<L765+lfn_1+2
+	.line	4182
+	lda	<L765+lfn_1
+	ora	<L765+lfn_1+2
+	beq	L770
 	brl	L10411
-L771:
-	.line	4162
+L770:
+	.line	4182
 	lda	#$11
-	brl	L769
+	brl	L768
 L10411:
-	.line	4162
-	lda	<L766+lfn_1
+	.line	4182
+	lda	<L765+lfn_1
 	ldy	#$b
-	sta	[<L766+fs_1],Y
-	lda	<L766+lfn_1+2
+	sta	[<L765+fs_1],Y
+	lda	<L765+lfn_1+2
 	ldy	#$d
-	sta	[<L766+fs_1],Y
-	.line	4162
-	.line	4162
+	sta	[<L765+fs_1],Y
+	.line	4182
+	.line	4182
 ;		res = follow_path(&dj, path); /* Follow the file path */
-	.line	4163
-	pei	<L765+path_0+2
-	pei	<L765+path_0
+	.line	4183
+	pei	<L764+path_0+2
+	pei	<L764+path_0
 	pea	#0
 	clc
 	tdc
-	adc	#<L766+dj_1
+	adc	#<L765+dj_1
 	pha
 	jsl	~~follow_path
-	sta	<L766+res_1
+	sta	<L765+res_1
 ;#if !FF_FS_READONLY	/* Read/Write configuration */
 ;		if (res == FR_OK)
-	.line	4165
+	.line	4185
 ;		{
-	lda	<L766+res_1
-	beq	L772
+	lda	<L765+res_1
+	beq	L771
 	brl	L10412
-L772:
-	.line	4166
+L771:
+	.line	4186
 ;			if (dj.fn[NSFLAG] & NS_NONAME)
-	.line	4167
+	.line	4187
 ;			{ /* Origin directory itself? */
 	sep	#$20
 	longa	off
-	lda	<L766+dj_1+43
+	lda	<L765+dj_1+43
 	and	#<$80
 	rep	#$20
 	longa	on
-	bne	L773
+	bne	L772
 	brl	L10413
-L773:
-	.line	4168
+L772:
+	.line	4188
 ;				////k_debug_string("f_open mode:FR_INVALID_NAME\r\n");
 ;				res = FR_INVALID_NAME;
-	.line	4170
+	.line	4190
 	lda	#$6
-	sta	<L766+res_1
+	sta	<L765+res_1
 ;			}
-	.line	4171
+	.line	4191
 ;#if FF_FS_LOCK != 0
 ;			else
 ;			{
@@ -18166,136 +18187,136 @@ L773:
 ;#endif
 ;		}
 L10413:
-	.line	4178
+	.line	4198
 ;
-;		////k_debug_integer("f_open mode:", mode);
+;		//k_debug_integer("f_open mode:", mode);
 ;
 ;		/* Create or Open a file */
 ;		if (mode & (FA_CREATE_ALWAYS | FA_OPEN_ALWAYS | FA_CREATE_NEW))
 L10412:
-	.line	4183
+	.line	4203
 ;		{
 	sep	#$20
 	longa	off
-	lda	<L765+mode_0
+	lda	<L764+mode_0
 	and	#<$1c
 	rep	#$20
 	longa	on
-	bne	L774
+	bne	L773
 	brl	L10414
-L774:
-	.line	4184
+L773:
+	.line	4204
 ;			if (res != FR_OK)
-	.line	4185
+	.line	4205
 ;			{ /* No file, create new */
-	lda	<L766+res_1
-	bne	L775
+	lda	<L765+res_1
+	bne	L774
 	brl	L10415
-L775:
-	.line	4186
+L774:
+	.line	4206
 ;				if (res == FR_NO_FILE)
-	.line	4187
+	.line	4207
 ;				{ /* There is no file to open, create a new entry */
-	lda	<L766+res_1
+	lda	<L765+res_1
 	cmp	#<$4
-	beq	L776
+	beq	L775
 	brl	L10416
-L776:
-	.line	4188
+L775:
+	.line	4208
 ;#if FF_FS_LOCK != 0
 ;					res = enq_lock() ? dir_register(&dj) : FR_TOO_MANY_OPEN_FILES;
 ;#else
 ;					res = dir_register(&dj);
-	.line	4192
+	.line	4212
 	pea	#0
 	clc
 	tdc
-	adc	#<L766+dj_1
+	adc	#<L765+dj_1
 	pha
 	jsl	~~dir_register
-	sta	<L766+res_1
+	sta	<L765+res_1
 ;#endif
 ;				}
-	.line	4194
+	.line	4214
 ;				mode |= FA_CREATE_ALWAYS; /* File is created */
 L10416:
-	.line	4195
+	.line	4215
 	sep	#$20
 	longa	off
 	lda	#$8
-	tsb	<L765+mode_0
+	tsb	<L764+mode_0
 	rep	#$20
 	longa	on
 ;			}
-	.line	4196
+	.line	4216
 ;			else
 	brl	L10417
 L10415:
 ;			{ /* Any object with the same name is already existing */
-	.line	4198
+	.line	4218
 ;				if (dj.obj.attr & (AM_RDO | AM_DIR))
-	.line	4199
+	.line	4219
 ;				{ /* Cannot overwrite it (R/O or DIR) */
 	sep	#$20
 	longa	off
-	lda	<L766+dj_1+6
+	lda	<L765+dj_1+6
 	and	#<$11
 	rep	#$20
 	longa	on
-	bne	L777
+	bne	L776
 	brl	L10418
-L777:
-	.line	4200
+L776:
+	.line	4220
 ;					res = FR_DENIED;
-	.line	4201
+	.line	4221
 	lda	#$7
-	sta	<L766+res_1
+	sta	<L765+res_1
 ;				}
-	.line	4202
+	.line	4222
 ;				else
 	brl	L10419
 L10418:
 ;				{
-	.line	4204
+	.line	4224
 ;					if (mode & FA_CREATE_NEW)
-	.line	4205
+	.line	4225
 ;						res = FR_EXIST; /* Cannot create as new file */
 	sep	#$20
 	longa	off
-	lda	<L765+mode_0
+	lda	<L764+mode_0
 	and	#<$4
 	rep	#$20
 	longa	on
-	bne	L778
+	bne	L777
 	brl	L10420
-L778:
-	.line	4206
+L777:
+	.line	4226
 	lda	#$8
-	sta	<L766+res_1
+	sta	<L765+res_1
 ;				}
 L10420:
-	.line	4207
+	.line	4227
 L10419:
 ;			}
-	.line	4208
+	.line	4228
 L10417:
 ;			if (res == FR_OK && (mode & FA_CREATE_ALWAYS))
-	.line	4209
+	.line	4229
 ;			{ /* Truncate the file if overwrite mode */
-	lda	<L766+res_1
-	beq	L779
+	lda	<L765+res_1
+	beq	L778
 	brl	L10421
-L779:
+L778:
 	sep	#$20
 	longa	off
-	lda	<L765+mode_0
+	lda	<L764+mode_0
 	and	#<$8
 	rep	#$20
 	longa	on
-	bne	L780
+	bne	L779
 	brl	L10421
-L780:
-	.line	4210
+L779:
+	.line	4230
 ;#if FF_FS_EXFAT
 ;				if (fs->fs_type == FS_EXFAT)
 ;				{
@@ -18318,274 +18339,274 @@ L780:
 ;				else
 ;#endif
 ;				{
-	.line	4232
+	.line	4252
 ;					//k_debug_string("f_open::Set directory entry initial state...\r\n");
 ;					/* Set directory entry initial state */
 ;					cl = ld_clust(fs, dj.dir); /* Get current cluster chain */
-	.line	4235
-	pei	<L766+dj_1+30
-	pei	<L766+dj_1+28
-	pei	<L766+fs_1+2
-	pei	<L766+fs_1
+	.line	4255
+	pei	<L765+dj_1+30
+	pei	<L765+dj_1+28
+	pei	<L765+fs_1+2
+	pei	<L765+fs_1
 	jsl	~~ld_clust
-	sta	<L766+cl_1
-	stx	<L766+cl_1+2
+	sta	<L765+cl_1
+	stx	<L765+cl_1+2
 ;					st_dword(dj.dir + DIR_CrtTime, GET_FATTIME()); /* Set created time */
-	.line	4236
+	.line	4256
 	pea	#^$52210000
 	pea	#<$52210000
 	clc
 	lda	#$e
-	adc	<L766+dj_1+28
+	adc	<L765+dj_1+28
 	sta	<R0
 	lda	#$0
-	adc	<L766+dj_1+30
+	adc	<L765+dj_1+30
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;					dj.dir[DIR_Attr] = AM_ARC; /* Reset attribute */
-	.line	4237
+	.line	4257
 	sep	#$20
 	longa	off
 	lda	#$20
 	ldy	#$b
-	sta	[<L766+dj_1+28],Y
+	sta	[<L765+dj_1+28],Y
 	rep	#$20
 	longa	on
 ;					st_clust(fs, dj.dir, 0); /* Reset file allocation info */
-	.line	4238
+	.line	4258
 	pea	#^$0
 	pea	#<$0
-	pei	<L766+dj_1+30
-	pei	<L766+dj_1+28
-	pei	<L766+fs_1+2
-	pei	<L766+fs_1
+	pei	<L765+dj_1+30
+	pei	<L765+dj_1+28
+	pei	<L765+fs_1+2
+	pei	<L765+fs_1
 	jsl	~~st_clust
 ;					st_dword(dj.dir + DIR_FileSize, 0);
-	.line	4239
+	.line	4259
 	pea	#^$0
 	pea	#<$0
 	clc
 	lda	#$1c
-	adc	<L766+dj_1+28
+	adc	<L765+dj_1+28
 	sta	<R0
 	lda	#$0
-	adc	<L766+dj_1+30
+	adc	<L765+dj_1+30
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;					fs->wflag = 1;
-	.line	4240
+	.line	4260
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$3
-	sta	[<L766+fs_1],Y
+	sta	[<L765+fs_1],Y
 	rep	#$20
 	longa	on
 ;					if (cl != 0)
-	.line	4241
+	.line	4261
 ;					{ /* Remove the cluster chain if exist */
-	lda	<L766+cl_1
-	ora	<L766+cl_1+2
-	bne	L781
+	lda	<L765+cl_1
+	ora	<L765+cl_1+2
+	bne	L780
 	brl	L10422
-L781:
-	.line	4242
+L780:
+	.line	4262
 ;						sc = fs->winsect;
-	.line	4243
+	.line	4263
 	ldy	#$2f
-	lda	[<L766+fs_1],Y
-	sta	<L766+sc_1
+	lda	[<L765+fs_1],Y
+	sta	<L765+sc_1
 	ldy	#$31
-	lda	[<L766+fs_1],Y
-	sta	<L766+sc_1+2
+	lda	[<L765+fs_1],Y
+	sta	<L765+sc_1+2
 ;						res = remove_chain(&dj.obj, cl, 0);
-	.line	4244
+	.line	4264
 	pea	#^$0
 	pea	#<$0
-	pei	<L766+cl_1+2
-	pei	<L766+cl_1
+	pei	<L765+cl_1+2
+	pei	<L765+cl_1
 	pea	#0
 	clc
 	tdc
-	adc	#<L766+dj_1
+	adc	#<L765+dj_1
 	pha
 	jsl	~~remove_chain
-	sta	<L766+res_1
+	sta	<L765+res_1
 ;						if (res == FR_OK)
-	.line	4245
+	.line	4265
 ;						{
-	lda	<L766+res_1
-	beq	L782
+	lda	<L765+res_1
+	beq	L781
 	brl	L10423
-L782:
-	.line	4246
+L781:
+	.line	4266
 ;							res = move_window(fs, sc);
-	.line	4247
-	pei	<L766+sc_1+2
-	pei	<L766+sc_1
-	pei	<L766+fs_1+2
-	pei	<L766+fs_1
+	.line	4267
+	pei	<L765+sc_1+2
+	pei	<L765+sc_1
+	pei	<L765+fs_1+2
+	pei	<L765+fs_1
 	jsl	~~move_window
-	sta	<L766+res_1
+	sta	<L765+res_1
 ;							fs->last_clst = cl - 1; /* Reuse the cluster hole */
-	.line	4248
+	.line	4268
 	clc
 	lda	#$ffff
-	adc	<L766+cl_1
+	adc	<L765+cl_1
 	sta	<R0
 	lda	#$ffff
-	adc	<L766+cl_1+2
+	adc	<L765+cl_1+2
 	sta	<R0+2
 	lda	<R0
 	ldy	#$f
-	sta	[<L766+fs_1],Y
+	sta	[<L765+fs_1],Y
 	lda	<R0+2
 	ldy	#$11
-	sta	[<L766+fs_1],Y
+	sta	[<L765+fs_1],Y
 ;						}
-	.line	4249
+	.line	4269
 ;					}
 L10423:
-	.line	4250
+	.line	4270
 ;				}
 L10422:
-	.line	4251
+	.line	4271
 ;			}
-	.line	4252
+	.line	4272
 ;		}
 L10421:
-	.line	4253
+	.line	4273
 ;		else
 	brl	L10424
 L10414:
 ;		{ /* Open an existing file */
-	.line	4255
+	.line	4275
 ;			if (res == FR_OK)
-	.line	4256
+	.line	4276
 ;			{ /* Is the object exsiting? */
-	lda	<L766+res_1
-	beq	L783
+	lda	<L765+res_1
+	beq	L782
 	brl	L10425
-L783:
-	.line	4257
+L782:
+	.line	4277
 ;				if (dj.obj.attr & AM_DIR)
-	.line	4258
+	.line	4278
 ;				{ /* File open against a directory */
 	sep	#$20
 	longa	off
-	lda	<L766+dj_1+6
+	lda	<L765+dj_1+6
 	and	#<$10
 	rep	#$20
 	longa	on
-	bne	L784
+	bne	L783
 	brl	L10426
-L784:
-	.line	4259
+L783:
+	.line	4279
 ;					res = FR_NO_FILE;
-	.line	4260
+	.line	4280
 	lda	#$4
-	sta	<L766+res_1
+	sta	<L765+res_1
 ;				}
-	.line	4261
+	.line	4281
 ;				else
 	brl	L10427
 L10426:
 ;				{
-	.line	4263
+	.line	4283
 ;					if ((mode & FA_WRITE) && (dj.obj.attr & AM_RDO))
-	.line	4264
+	.line	4284
 ;					{ /* Write mode open against R/O file */
 	sep	#$20
 	longa	off
-	lda	<L765+mode_0
+	lda	<L764+mode_0
 	and	#<$2
+	rep	#$20
+	longa	on
+	bne	L784
+	brl	L10428
+L784:
+	sep	#$20
+	longa	off
+	lda	<L765+dj_1+6
+	and	#<$1
 	rep	#$20
 	longa	on
 	bne	L785
 	brl	L10428
 L785:
-	sep	#$20
-	longa	off
-	lda	<L766+dj_1+6
-	and	#<$1
-	rep	#$20
-	longa	on
-	bne	L786
-	brl	L10428
-L786:
-	.line	4265
+	.line	4285
 ;						res = FR_DENIED;
-	.line	4266
+	.line	4286
 	lda	#$7
-	sta	<L766+res_1
+	sta	<L765+res_1
 ;					}
-	.line	4267
+	.line	4287
 ;				}
 L10428:
-	.line	4268
+	.line	4288
 L10427:
 ;			}
-	.line	4269
+	.line	4289
 ;		}
 L10425:
-	.line	4270
+	.line	4290
 L10424:
 ;		if (res == FR_OK)
-	.line	4271
+	.line	4291
 ;		{
-	lda	<L766+res_1
-	beq	L787
+	lda	<L765+res_1
+	beq	L786
 	brl	L10429
-L787:
-	.line	4272
+L786:
+	.line	4292
 ;			if (mode & FA_CREATE_ALWAYS)
-	.line	4273
+	.line	4293
 ;				mode |= FA_MODIFIED; /* Set file change flag if created or overwritten */
 	sep	#$20
 	longa	off
-	lda	<L765+mode_0
+	lda	<L764+mode_0
 	and	#<$8
 	rep	#$20
 	longa	on
-	bne	L788
+	bne	L787
 	brl	L10430
-L788:
-	.line	4274
+L787:
+	.line	4294
 	sep	#$20
 	longa	off
 	lda	#$40
-	tsb	<L765+mode_0
+	tsb	<L764+mode_0
 	rep	#$20
 	longa	on
 ;			fp->dir_sect = fs->winsect; /* Pointer to the directory entry */
 L10430:
-	.line	4275
+	.line	4295
 	ldy	#$2f
-	lda	[<L766+fs_1],Y
+	lda	[<L765+fs_1],Y
 	ldy	#$1e
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 	ldy	#$31
-	lda	[<L766+fs_1],Y
+	lda	[<L765+fs_1],Y
 	ldy	#$20
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 ;			fp->dir_ptr = dj.dir;
-	.line	4276
-	lda	<L766+dj_1+28
+	.line	4296
+	lda	<L765+dj_1+28
 	ldy	#$22
-	sta	[<L765+fp_0],Y
-	lda	<L766+dj_1+30
+	sta	[<L764+fp_0],Y
+	lda	<L765+dj_1+30
 	ldy	#$24
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 ;#if FF_FS_LOCK != 0
 ;			fp->obj.lockid = inc_lock(&dj, (mode & ~FA_READ) ? 1 : 0); /* Lock the file for this session */
 ;			if (fp->obj.lockid == 0) res = FR_INT_ERR;
 ;#endif
 ;		}
-	.line	4281
+	.line	4301
 ;#else		/* R/O configuration */
 ;		if (res == FR_OK)
 ;		{
@@ -18605,13 +18626,13 @@ L10430:
 ;
 ;		if (res == FR_OK)
 L10429:
-	.line	4299
+	.line	4319
 ;		{
-	lda	<L766+res_1
-	beq	L789
+	lda	<L765+res_1
+	beq	L788
 	brl	L10431
-L789:
-	.line	4300
+L788:
+	.line	4320
 ;#if FF_FS_EXFAT
 ;			if (fs->fs_type == FS_EXFAT)
 ;			{
@@ -18623,30 +18644,30 @@ L789:
 ;			else
 ;#endif
 ;			{
-	.line	4311
+	.line	4331
 ;				fp->obj.sclust = ld_clust(fs, dj.dir); /* Get object allocation info */
-	.line	4312
-	pei	<L766+dj_1+30
-	pei	<L766+dj_1+28
-	pei	<L766+fs_1+2
-	pei	<L766+fs_1
+	.line	4332
+	pei	<L765+dj_1+30
+	pei	<L765+dj_1+28
+	pei	<L765+fs_1+2
+	pei	<L765+fs_1
 	jsl	~~ld_clust
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
 	ldy	#$8
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 	lda	<R0+2
 	ldy	#$a
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 ;				fp->obj.objsize = ld_dword(dj.dir + DIR_FileSize);
-	.line	4313
+	.line	4333
 	clc
 	lda	#$1c
-	adc	<L766+dj_1+28
+	adc	<L765+dj_1+28
 	sta	<R0
 	lda	#$0
-	adc	<L766+dj_1+30
+	adc	<L765+dj_1+30
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
@@ -18655,123 +18676,123 @@ L789:
 	stx	<R1+2
 	lda	<R1
 	ldy	#$c
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 	lda	<R1+2
 	ldy	#$e
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 ;			}
-	.line	4314
+	.line	4334
 ;#if FF_USE_FASTSEEK
 ;			fp->cltbl = 0; /* Disable fast seek mode */
 ;#endif
 ;			fp->obj.fs = fs; /* Validate the file object */
-	.line	4318
-	lda	<L766+fs_1
-	sta	[<L765+fp_0]
-	lda	<L766+fs_1+2
+	.line	4338
+	lda	<L765+fs_1
+	sta	[<L764+fp_0]
+	lda	<L765+fs_1+2
 	ldy	#$2
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 ;			fp->obj.id = fs->id;
-	.line	4319
+	.line	4339
 	ldy	#$5
-	lda	[<L766+fs_1],Y
+	lda	[<L765+fs_1],Y
 	ldy	#$4
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 ;			fp->flag = mode; /* Set file access mode */
-	.line	4320
+	.line	4340
 	sep	#$20
 	longa	off
-	lda	<L765+mode_0
+	lda	<L764+mode_0
 	ldy	#$10
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 	rep	#$20
 	longa	on
 ;			fp->err = 0; /* Clear error flag */
-	.line	4321
+	.line	4341
 	sep	#$20
 	longa	off
 	lda	#$0
 	ldy	#$11
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 	rep	#$20
 	longa	on
 ;			fp->sect = 0; /* Invalidate current data sector */
-	.line	4322
+	.line	4342
 	lda	#$0
 	ldy	#$1a
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 	lda	#$0
 	ldy	#$1c
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 ;			fp->fptr = 0; /* Set file pointer top of the file */
-	.line	4323
+	.line	4343
 	lda	#$0
 	ldy	#$12
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 	lda	#$0
 	ldy	#$14
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 ;#if !FF_FS_READONLY
 ;#if !FF_FS_TINY
 ;			mem_set(fp->buf, 0, sizeof fp->buf); /* Clear sector buffer */
-	.line	4326
+	.line	4346
 	pea	#<$200
 	pea	#<$0
 	clc
 	lda	#$26
-	adc	<L765+fp_0
+	adc	<L764+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L765+fp_0+2
+	adc	<L764+fp_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~mem_set
 ;#endif
 ;			if ((mode & FA_SEEKEND) && fp->obj.objsize > 0)
-	.line	4328
+	.line	4348
 ;			{ /* Seek to end of file if FA_OPEN_APPEND is specified */
 	sep	#$20
 	longa	off
-	lda	<L765+mode_0
+	lda	<L764+mode_0
 	and	#<$20
 	rep	#$20
 	longa	on
-	bne	L790
+	bne	L789
+	brl	L10432
+L789:
+	lda	#$0
+	ldy	#$c
+	cmp	[<L764+fp_0],Y
+	lda	#$0
+	ldy	#$e
+	sbc	[<L764+fp_0],Y
+	bcc	L790
 	brl	L10432
 L790:
-	lda	#$0
-	ldy	#$c
-	cmp	[<L765+fp_0],Y
-	lda	#$0
-	ldy	#$e
-	sbc	[<L765+fp_0],Y
-	bcc	L791
-	brl	L10432
-L791:
-	.line	4329
+	.line	4349
 ;				fp->fptr = fp->obj.objsize; /* Offset to seek */
-	.line	4330
+	.line	4350
 	ldy	#$c
-	lda	[<L765+fp_0],Y
+	lda	[<L764+fp_0],Y
 	ldy	#$12
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 	ldy	#$e
-	lda	[<L765+fp_0],Y
+	lda	[<L764+fp_0],Y
 	ldy	#$14
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 ;				bcs = (DWORD) fs->csize * SS(fs); /* Cluster size in byte */
-	.line	4331
+	.line	4351
 	ldy	#$0
 	phy
 	ldy	#$9
-	lda	[<L766+fs_1],Y
+	lda	[<L765+fs_1],Y
 	ply
 	rol	A
 	ror	A
-	bpl	L792
+	bpl	L791
 	dey
-L792:
+L791:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
@@ -18779,146 +18800,146 @@ L792:
 	lda	#$9
 	xref	~~~lasl
 	jsl	~~~lasl
-	sta	<L766+bcs_1
-	stx	<L766+bcs_1+2
+	sta	<L765+bcs_1
+	stx	<L765+bcs_1+2
 ;				clst = fp->obj.sclust; /* Follow the cluster chain */
-	.line	4332
+	.line	4352
 	ldy	#$8
-	lda	[<L765+fp_0],Y
-	sta	<L766+clst_1
+	lda	[<L764+fp_0],Y
+	sta	<L765+clst_1
 	ldy	#$a
-	lda	[<L765+fp_0],Y
-	sta	<L766+clst_1+2
+	lda	[<L764+fp_0],Y
+	sta	<L765+clst_1+2
 ;				for (ofs = fp->obj.objsize; res == FR_OK && ofs > bcs; ofs -=
-	.line	4333
+	.line	4353
 	ldy	#$c
-	lda	[<L765+fp_0],Y
-	sta	<L766+ofs_1
+	lda	[<L764+fp_0],Y
+	sta	<L765+ofs_1
 	ldy	#$e
-	lda	[<L765+fp_0],Y
-	sta	<L766+ofs_1+2
+	lda	[<L764+fp_0],Y
+	sta	<L765+ofs_1+2
 	brl	L10436
 ;						bcs)
 L10435:
 ;				{
-	.line	4335
+	.line	4355
 ;					clst = get_fat(&fp->obj, clst);
-	.line	4336
-	pei	<L766+clst_1+2
-	pei	<L766+clst_1
-	pei	<L765+fp_0+2
-	pei	<L765+fp_0
+	.line	4356
+	pei	<L765+clst_1+2
+	pei	<L765+clst_1
+	pei	<L764+fp_0+2
+	pei	<L764+fp_0
 	jsl	~~get_fat
-	sta	<L766+clst_1
-	stx	<L766+clst_1+2
+	sta	<L765+clst_1
+	stx	<L765+clst_1+2
 ;					if (clst <= 1)
-	.line	4337
+	.line	4357
 ;						res = FR_INT_ERR;
 	lda	#$1
-	cmp	<L766+clst_1
+	cmp	<L765+clst_1
 	lda	#$0
-	sbc	<L766+clst_1+2
-	bcs	L793
+	sbc	<L765+clst_1+2
+	bcs	L792
 	brl	L10437
-L793:
-	.line	4338
+L792:
+	.line	4358
 	lda	#$2
-	sta	<L766+res_1
+	sta	<L765+res_1
 ;					if (clst == 0xFFFFFFFF)
 L10437:
-	.line	4339
+	.line	4359
 ;						res = FR_DISK_ERR;
-	lda	<L766+clst_1
+	lda	<L765+clst_1
 	cmp	#<$ffffffff
-	bne	L794
-	lda	<L766+clst_1+2
+	bne	L793
+	lda	<L765+clst_1+2
 	cmp	#^$ffffffff
-L794:
-	beq	L795
+L793:
+	beq	L794
 	brl	L10438
-L795:
-	.line	4340
+L794:
+	.line	4360
 	lda	#$1
-	sta	<L766+res_1
+	sta	<L765+res_1
 ;				}
 L10438:
-	.line	4341
+	.line	4361
 L10433:
 	sec
-	lda	<L766+ofs_1
-	sbc	<L766+bcs_1
-	sta	<L766+ofs_1
-	lda	<L766+ofs_1+2
-	sbc	<L766+bcs_1+2
-	sta	<L766+ofs_1+2
+	lda	<L765+ofs_1
+	sbc	<L765+bcs_1
+	sta	<L765+ofs_1
+	lda	<L765+ofs_1+2
+	sbc	<L765+bcs_1+2
+	sta	<L765+ofs_1+2
 L10436:
-	lda	<L766+res_1
-	beq	L797
-	brl	L796
-L797:
-	lda	<L766+bcs_1
-	cmp	<L766+ofs_1
-	lda	<L766+bcs_1+2
-	sbc	<L766+ofs_1+2
-	bcs	L798
-	brl	L10435
-L798:
+	lda	<L765+res_1
+	beq	L796
+	brl	L795
 L796:
+	lda	<L765+bcs_1
+	cmp	<L765+ofs_1
+	lda	<L765+bcs_1+2
+	sbc	<L765+ofs_1+2
+	bcs	L797
+	brl	L10435
+L797:
+L795:
 L10434:
 ;				fp->clust = clst;
-	.line	4342
-	lda	<L766+clst_1
+	.line	4362
+	lda	<L765+clst_1
 	ldy	#$16
-	sta	[<L765+fp_0],Y
-	lda	<L766+clst_1+2
+	sta	[<L764+fp_0],Y
+	lda	<L765+clst_1+2
 	ldy	#$18
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 ;				if (res == FR_OK && ofs % SS(fs))
-	.line	4343
+	.line	4363
 ;				{ /* Fill sector buffer if not on the sector boundary */
-	lda	<L766+res_1
-	beq	L799
+	lda	<L765+res_1
+	beq	L798
+	brl	L10439
+L798:
+	lda	<L765+ofs_1
+	and	#<$1ff
+	bne	L799
 	brl	L10439
 L799:
-	lda	<L766+ofs_1
-	and	#<$1ff
-	bne	L800
-	brl	L10439
-L800:
-	.line	4344
+	.line	4364
 ;					sc = clst2sect(fs, clst);
-	.line	4345
-	pei	<L766+clst_1+2
-	pei	<L766+clst_1
-	pei	<L766+fs_1+2
-	pei	<L766+fs_1
+	.line	4365
+	pei	<L765+clst_1+2
+	pei	<L765+clst_1
+	pei	<L765+fs_1+2
+	pei	<L765+fs_1
 	jsl	~~clst2sect
-	sta	<L766+sc_1
-	stx	<L766+sc_1+2
+	sta	<L765+sc_1
+	stx	<L765+sc_1+2
 ;					if (sc == 0)
-	.line	4346
+	.line	4366
 ;					{
-	lda	<L766+sc_1
-	ora	<L766+sc_1+2
-	beq	L801
+	lda	<L765+sc_1
+	ora	<L765+sc_1+2
+	beq	L800
 	brl	L10440
-L801:
-	.line	4347
+L800:
+	.line	4367
 ;						res = FR_INT_ERR;
-	.line	4348
+	.line	4368
 	lda	#$2
-	sta	<L766+res_1
+	sta	<L765+res_1
 ;					}
-	.line	4349
+	.line	4369
 ;					else
 	brl	L10441
 L10440:
 ;					{
-	.line	4351
+	.line	4371
 ;						fp->sect = sc + (DWORD) (ofs / SS(fs));
-	.line	4352
-	pei	<L766+ofs_1+2
-	pei	<L766+ofs_1
+	.line	4372
+	pei	<L765+ofs_1+2
+	pei	<L765+ofs_1
 	lda	#$9
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -18926,101 +18947,101 @@ L10440:
 	stx	<R0+2
 	clc
 	lda	<R0
-	adc	<L766+sc_1
+	adc	<L765+sc_1
 	sta	<R1
 	lda	<R0+2
-	adc	<L766+sc_1+2
+	adc	<L765+sc_1+2
 	sta	<R1+2
 	lda	<R1
 	ldy	#$1a
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 	lda	<R1+2
 	ldy	#$1c
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 ;#if !FF_FS_TINY
 ;						if (disk_read(fs->pdrv, fp->buf, fp->sect, 1) != RES_OK)
-	.line	4354
+	.line	4374
 ;							res = FR_DISK_ERR;
 	pea	#<$1
 	ldy	#$1c
-	lda	[<L765+fp_0],Y
+	lda	[<L764+fp_0],Y
 	pha
 	ldy	#$1a
-	lda	[<L765+fp_0],Y
+	lda	[<L764+fp_0],Y
 	pha
 	clc
 	lda	#$26
-	adc	<L765+fp_0
+	adc	<L764+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L765+fp_0+2
+	adc	<L764+fp_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$1
-	lda	[<L766+fs_1],Y
+	lda	[<L765+fs_1],Y
 	pha
 	jsl	~~disk_read
 	tax
-	bne	L802
+	bne	L801
 	brl	L10442
-L802:
-	.line	4355
+L801:
+	.line	4375
 	lda	#$1
-	sta	<L766+res_1
+	sta	<L765+res_1
 ;#endif
 ;					}
 L10442:
-	.line	4357
+	.line	4377
 L10441:
 ;				}
-	.line	4358
+	.line	4378
 ;			}
 L10439:
-	.line	4359
+	.line	4379
 ;#endif
 ;		}
 L10432:
-	.line	4361
+	.line	4381
 ;
 ;		FREE_NAMBUF();
 L10431:
-	.line	4363
-	pei	<L766+lfn_1+2
-	pei	<L766+lfn_1
+	.line	4383
+	pei	<L765+lfn_1+2
+	pei	<L765+lfn_1
 	jsl	~~ff_memfree
 ;	}
-	.line	4364
+	.line	4384
 ;
 ;	if (res != FR_OK)
 L10410:
-	.line	4366
+	.line	4386
 ;		fp->obj.fs = 0; /* Invalidate file object on error */
-	lda	<L766+res_1
-	bne	L803
+	lda	<L765+res_1
+	bne	L802
 	brl	L10443
-L803:
-	.line	4367
+L802:
+	.line	4387
 	lda	#$0
-	sta	[<L765+fp_0]
+	sta	[<L764+fp_0]
 	lda	#$0
 	ldy	#$2
-	sta	[<L765+fp_0],Y
+	sta	[<L764+fp_0],Y
 ;
 ;	LEAVE_FF(fs, res);
 L10443:
-	.line	4369
-	lda	<L766+res_1
-	brl	L769
+	.line	4389
+	lda	<L765+res_1
+	brl	L768
 ;}
-	.line	4370
-	.endblock	4370
-L765	equ	90
-L766	equ	9
+	.line	4390
+	.endblock	4390
+L764	equ	90
+L765	equ	9
 	ends
 	efunc
-	.endfunc	4370,9,90
-	.line	4370
+	.endfunc	4390,9,90
+	.line	4390
 ;
 ;/*-----------------------------------------------------------------------*/
 ;/* Read File                                                             */
@@ -19032,18 +19053,18 @@ L766	equ	9
 ;UINT* br /* Pointer to number of bytes read */
 ;)
 ;{
-	.line	4376
-	.line	4381
+	.line	4396
+	.line	4401
 	FFDOS
 	xdef	~~f_read
 	func
-	.function	4381
+	.function	4401
 ~~f_read:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L804
+	sbc	#L803
 	tcs
 	phd
 	tcd
@@ -19051,7 +19072,7 @@ fp_0	set	4
 buff_0	set	8
 btr_0	set	12
 br_0	set	14
-	.block	4381
+	.block	4401
 ;	FRESULT res;
 ;	FATFS *fs;
 ;	DWORD clst;
@@ -19073,7 +19094,7 @@ cc_1	set	20
 csect_1	set	22
 rbuff_1	set	24
 	.sym	res,0,5,1,16
-	.sym	fs,2,138,1,32,72
+	.sym	fs,2,138,1,32,75
 	.sym	clst,6,18,1,32
 	.sym	sect,10,18,1,32
 	.sym	remain,14,18,1,32
@@ -19081,135 +19102,135 @@ rbuff_1	set	24
 	.sym	cc,20,16,1,16
 	.sym	csect,22,16,1,16
 	.sym	rbuff,24,142,1,32
-	.sym	fp,4,138,6,32,74
+	.sym	fp,4,138,6,32,77
 	.sym	buff,8,129,6,32
 	.sym	btr,12,16,6,16
 	.sym	br,14,144,6,32
-	lda	<L804+buff_0
-	sta	<L805+rbuff_1
-	lda	<L804+buff_0+2
-	sta	<L805+rbuff_1+2
-	.line	4392
+	lda	<L803+buff_0
+	sta	<L804+rbuff_1
+	lda	<L803+buff_0+2
+	sta	<L804+rbuff_1+2
+	.line	4412
 	lda	#$0
-	sta	[<L804+br_0]
+	sta	[<L803+br_0]
 ;	res = validate(&fp->obj, &fs); /* Check validity of the file object */
-	.line	4393
+	.line	4413
 	pea	#0
 	clc
 	tdc
-	adc	#<L805+fs_1
+	adc	#<L804+fs_1
 	pha
-	pei	<L804+fp_0+2
-	pei	<L804+fp_0
+	pei	<L803+fp_0+2
+	pei	<L803+fp_0
 	jsl	~~validate
-	sta	<L805+res_1
+	sta	<L804+res_1
 ;
 ;	////k_debug_long("f_read:res:", res);
 ;
 ;	if (res != FR_OK || (res = (FRESULT) fp->err) != FR_OK)
-	.line	4397
+	.line	4417
 ;		LEAVE_FF(fs, res); /* Check validity */
-	lda	<L805+res_1
-	beq	L808
-	brl	L807
-L808:
-	ldy	#$11
-	lda	[<L804+fp_0],Y
-	and	#$ff
-	sta	<L805+res_1
-	lda	<L805+res_1
-	bne	L809
-	brl	L10444
-L809:
+	lda	<L804+res_1
+	beq	L807
+	brl	L806
 L807:
-	.line	4398
-	lda	<L805+res_1
-L810:
+	ldy	#$11
+	lda	[<L803+fp_0],Y
+	and	#$ff
+	sta	<L804+res_1
+	lda	<L804+res_1
+	bne	L808
+	brl	L10444
+L808:
+L806:
+	.line	4418
+	lda	<L804+res_1
+L809:
 	tay
-	lda	<L804+2
-	sta	<L804+2+14
-	lda	<L804+1
-	sta	<L804+1+14
+	lda	<L803+2
+	sta	<L803+2+14
+	lda	<L803+1
+	sta	<L803+1+14
 	pld
 	tsc
 	clc
-	adc	#L804+14
+	adc	#L803+14
 	tcs
 	tya
 	rtl
 ;	if (!(fp->flag & FA_READ))
 L10444:
-	.line	4399
+	.line	4419
 ;		LEAVE_FF(fs, FR_DENIED); /* Check access mode */
 	sep	#$20
 	longa	off
 	ldy	#$10
-	lda	[<L804+fp_0],Y
+	lda	[<L803+fp_0],Y
 	and	#<$1
 	rep	#$20
 	longa	on
-	beq	L811
+	beq	L810
 	brl	L10445
-L811:
-	.line	4400
+L810:
+	.line	4420
 	lda	#$7
-	brl	L810
+	brl	L809
 ;	remain = fp->obj.objsize - fp->fptr;
 L10445:
-	.line	4401
+	.line	4421
 	sec
 	ldy	#$c
-	lda	[<L804+fp_0],Y
+	lda	[<L803+fp_0],Y
 	ldy	#$12
-	sbc	[<L804+fp_0],Y
-	sta	<L805+remain_1
+	sbc	[<L803+fp_0],Y
+	sta	<L804+remain_1
 	ldy	#$e
-	lda	[<L804+fp_0],Y
+	lda	[<L803+fp_0],Y
 	ldy	#$14
-	sbc	[<L804+fp_0],Y
-	sta	<L805+remain_1+2
+	sbc	[<L803+fp_0],Y
+	sta	<L804+remain_1+2
 ;	if (btr > remain)
-	.line	4402
+	.line	4422
 ;		btr = (UINT) remain; /* Truncate btr by remaining bytes */
-	lda	<L804+btr_0
+	lda	<L803+btr_0
 	sta	<R0
 	stz	<R0+2
-	lda	<L805+remain_1
+	lda	<L804+remain_1
 	cmp	<R0
-	lda	<L805+remain_1+2
+	lda	<L804+remain_1+2
 	sbc	<R0+2
-	bcc	L812
+	bcc	L811
 	brl	L10446
-L812:
-	.line	4403
-	lda	<L805+remain_1
-	sta	<L804+btr_0
+L811:
+	.line	4423
+	lda	<L804+remain_1
+	sta	<L803+btr_0
 ;
 ;	for (; btr; /* Repeat until btr bytes read */
 L10446:
-	.line	4405
+	.line	4425
 	brl	L10450
 ;	btr -= rcnt, *br += rcnt, rbuff += rcnt, fp->fptr += rcnt)
 L10449:
 ;	{
-	.line	4407
+	.line	4427
 ;		if (fp->fptr % SS(fs) == 0)
-	.line	4408
+	.line	4428
 ;		{ /* On the sector boundary? */
 	ldy	#$12
-	lda	[<L804+fp_0],Y
+	lda	[<L803+fp_0],Y
 	and	#<$1ff
-	beq	L813
+	beq	L812
 	brl	L10451
-L813:
-	.line	4409
+L812:
+	.line	4429
 ;			csect = (UINT) (fp->fptr / SS(fs) & (fs->csize - 1)); /* Sector offset in the cluster */
-	.line	4410
+	.line	4430
 	ldy	#$14
-	lda	[<L804+fp_0],Y
+	lda	[<L803+fp_0],Y
 	pha
 	ldy	#$12
-	lda	[<L804+fp_0],Y
+	lda	[<L803+fp_0],Y
 	pha
 	lda	#$9
 	xref	~~~llsr
@@ -19219,13 +19240,13 @@ L813:
 	clc
 	lda	#$ffff
 	ldy	#$9
-	adc	[<L805+fs_1],Y
+	adc	[<L804+fs_1],Y
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L814
+	bpl	L813
 	dey
-L814:
+L813:
 	sta	<R1
 	sty	<R1+2
 	lda	<R1
@@ -19235,41 +19256,41 @@ L814:
 	and	<R0+2
 	sta	<R2+2
 	lda	<R2
-	sta	<L805+csect_1
+	sta	<L804+csect_1
 ;			if (csect == 0)
-	.line	4411
+	.line	4431
 ;			{ /* On the cluster boundary? */
-	lda	<L805+csect_1
-	beq	L815
+	lda	<L804+csect_1
+	beq	L814
 	brl	L10452
-L815:
-	.line	4412
+L814:
+	.line	4432
 ;				if (fp->fptr == 0)
-	.line	4413
+	.line	4433
 ;				{ /* On the top of the file? */
 	ldy	#$12
-	lda	[<L804+fp_0],Y
+	lda	[<L803+fp_0],Y
 	ldy	#$14
-	ora	[<L804+fp_0],Y
-	beq	L816
+	ora	[<L803+fp_0],Y
+	beq	L815
 	brl	L10453
-L816:
-	.line	4414
+L815:
+	.line	4434
 ;					clst = fp->obj.sclust; /* Follow cluster chain from the origin */
-	.line	4415
+	.line	4435
 	ldy	#$8
-	lda	[<L804+fp_0],Y
-	sta	<L805+clst_1
+	lda	[<L803+fp_0],Y
+	sta	<L804+clst_1
 	ldy	#$a
-	lda	[<L804+fp_0],Y
-	sta	<L805+clst_1+2
+	lda	[<L803+fp_0],Y
+	sta	<L804+clst_1+2
 ;				}
-	.line	4416
+	.line	4436
 ;				else
 	brl	L10454
 L10453:
 ;				{ /* Middle or end of the file */
-	.line	4418
+	.line	4438
 ;#if FF_USE_FASTSEEK
 ;					if (fp->cltbl)
 ;					{
@@ -19278,207 +19299,207 @@ L10453:
 ;					else
 ;#endif
 ;					{
-	.line	4426
+	.line	4446
 ;						clst = get_fat(&fp->obj, fp->clust); /* Follow cluster chain on the FAT */
-	.line	4427
+	.line	4447
 	ldy	#$18
-	lda	[<L804+fp_0],Y
+	lda	[<L803+fp_0],Y
 	pha
 	ldy	#$16
-	lda	[<L804+fp_0],Y
+	lda	[<L803+fp_0],Y
 	pha
-	pei	<L804+fp_0+2
-	pei	<L804+fp_0
+	pei	<L803+fp_0+2
+	pei	<L803+fp_0
 	jsl	~~get_fat
-	sta	<L805+clst_1
-	stx	<L805+clst_1+2
+	sta	<L804+clst_1
+	stx	<L804+clst_1+2
 ;					}
-	.line	4428
+	.line	4448
 ;				}
-	.line	4429
+	.line	4449
 L10454:
 ;				if (clst < 2)
-	.line	4430
+	.line	4450
 ;					ABORT(fs, FR_INT_ERR);
-	lda	<L805+clst_1
+	lda	<L804+clst_1
 	cmp	#<$2
-	lda	<L805+clst_1+2
+	lda	<L804+clst_1+2
 	sbc	#^$2
-	bcc	L817
+	bcc	L816
 	brl	L10455
-L817:
-	.line	4431
-	.line	4431
+L816:
+	.line	4451
+	.line	4451
 	sep	#$20
 	longa	off
 	lda	#$2
 	ldy	#$11
-	sta	[<L804+fp_0],Y
+	sta	[<L803+fp_0],Y
 	rep	#$20
 	longa	on
-	.line	4431
+	.line	4451
 	lda	#$2
-	brl	L810
-	.line	4431
+	brl	L809
+	.line	4451
 L10455:
-	.line	4431
+	.line	4451
 ;				if (clst == 0xFFFFFFFF)
-	.line	4432
+	.line	4452
 ;					ABORT(fs, FR_DISK_ERR);
-	lda	<L805+clst_1
+	lda	<L804+clst_1
 	cmp	#<$ffffffff
-	bne	L818
-	lda	<L805+clst_1+2
+	bne	L817
+	lda	<L804+clst_1+2
 	cmp	#^$ffffffff
-L818:
-	beq	L819
+L817:
+	beq	L818
 	brl	L10456
-L819:
-	.line	4433
-	.line	4433
+L818:
+	.line	4453
+	.line	4453
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$11
-	sta	[<L804+fp_0],Y
+	sta	[<L803+fp_0],Y
 	rep	#$20
 	longa	on
-	.line	4433
+	.line	4453
 	lda	#$1
-	brl	L810
-	.line	4433
+	brl	L809
+	.line	4453
 L10456:
-	.line	4433
+	.line	4453
 ;				fp->clust = clst; /* Update current cluster */
-	.line	4434
-	lda	<L805+clst_1
+	.line	4454
+	lda	<L804+clst_1
 	ldy	#$16
-	sta	[<L804+fp_0],Y
-	lda	<L805+clst_1+2
+	sta	[<L803+fp_0],Y
+	lda	<L804+clst_1+2
 	ldy	#$18
-	sta	[<L804+fp_0],Y
+	sta	[<L803+fp_0],Y
 ;			}
-	.line	4435
+	.line	4455
 ;			sect = clst2sect(fs, fp->clust); /* Get current sector */
 L10452:
-	.line	4436
+	.line	4456
 	ldy	#$18
-	lda	[<L804+fp_0],Y
+	lda	[<L803+fp_0],Y
 	pha
 	ldy	#$16
-	lda	[<L804+fp_0],Y
+	lda	[<L803+fp_0],Y
 	pha
-	pei	<L805+fs_1+2
-	pei	<L805+fs_1
+	pei	<L804+fs_1+2
+	pei	<L804+fs_1
 	jsl	~~clst2sect
-	sta	<L805+sect_1
-	stx	<L805+sect_1+2
+	sta	<L804+sect_1
+	stx	<L804+sect_1+2
 ;			if (sect == 0)
-	.line	4437
+	.line	4457
 ;				ABORT(fs, FR_INT_ERR);
-	lda	<L805+sect_1
-	ora	<L805+sect_1+2
-	beq	L820
+	lda	<L804+sect_1
+	ora	<L804+sect_1+2
+	beq	L819
 	brl	L10457
-L820:
-	.line	4438
-	.line	4438
+L819:
+	.line	4458
+	.line	4458
 	sep	#$20
 	longa	off
 	lda	#$2
 	ldy	#$11
-	sta	[<L804+fp_0],Y
+	sta	[<L803+fp_0],Y
 	rep	#$20
 	longa	on
-	.line	4438
+	.line	4458
 	lda	#$2
-	brl	L810
-	.line	4438
+	brl	L809
+	.line	4458
 L10457:
-	.line	4438
+	.line	4458
 ;			sect += csect;
-	.line	4439
-	lda	<L805+csect_1
+	.line	4459
+	lda	<L804+csect_1
 	sta	<R0
 	stz	<R0+2
 	clc
 	lda	<R0
-	adc	<L805+sect_1
-	sta	<L805+sect_1
+	adc	<L804+sect_1
+	sta	<L804+sect_1
 	lda	<R0+2
-	adc	<L805+sect_1+2
-	sta	<L805+sect_1+2
+	adc	<L804+sect_1+2
+	sta	<L804+sect_1+2
 ;			cc = btr / SS(fs); /* When remaining bytes >= sector size, */
-	.line	4440
-	lda	<L804+btr_0
+	.line	4460
+	lda	<L803+btr_0
 	ldx	#<$9
 	xref	~~~lsr
 	jsl	~~~lsr
-	sta	<L805+cc_1
+	sta	<L804+cc_1
 ;			if (cc > 0)
-	.line	4441
+	.line	4461
 ;			{ /* Read maximum contiguous sectors directly */
 	lda	#$0
-	cmp	<L805+cc_1
-	bcc	L821
+	cmp	<L804+cc_1
+	bcc	L820
 	brl	L10458
-L821:
-	.line	4442
+L820:
+	.line	4462
 ;				if (csect + cc > fs->csize)
-	.line	4443
+	.line	4463
 ;				{ /* Clip at cluster boundary */
 	clc
-	lda	<L805+csect_1
-	adc	<L805+cc_1
+	lda	<L804+csect_1
+	adc	<L804+cc_1
 	sta	<R0
 	ldy	#$9
-	lda	[<L805+fs_1],Y
+	lda	[<L804+fs_1],Y
 	cmp	<R0
-	bcc	L822
+	bcc	L821
 	brl	L10459
-L822:
-	.line	4444
+L821:
+	.line	4464
 ;					cc = fs->csize - csect;
-	.line	4445
+	.line	4465
 	sec
 	ldy	#$9
-	lda	[<L805+fs_1],Y
-	sbc	<L805+csect_1
-	sta	<L805+cc_1
+	lda	[<L804+fs_1],Y
+	sbc	<L804+csect_1
+	sta	<L804+cc_1
 ;				}
-	.line	4446
+	.line	4466
 ;				if (disk_read(fs->pdrv, rbuff, sect, cc) != RES_OK)
 L10459:
-	.line	4447
+	.line	4467
 ;					ABORT(fs, FR_DISK_ERR);
-	pei	<L805+cc_1
-	pei	<L805+sect_1+2
-	pei	<L805+sect_1
-	pei	<L805+rbuff_1+2
-	pei	<L805+rbuff_1
+	pei	<L804+cc_1
+	pei	<L804+sect_1+2
+	pei	<L804+sect_1
+	pei	<L804+rbuff_1+2
+	pei	<L804+rbuff_1
 	ldy	#$1
-	lda	[<L805+fs_1],Y
+	lda	[<L804+fs_1],Y
 	pha
 	jsl	~~disk_read
 	tax
-	bne	L823
+	bne	L822
 	brl	L10460
-L823:
-	.line	4448
-	.line	4448
+L822:
+	.line	4468
+	.line	4468
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$11
-	sta	[<L804+fp_0],Y
+	sta	[<L803+fp_0],Y
 	rep	#$20
 	longa	on
-	.line	4448
+	.line	4468
 	lda	#$1
-	brl	L810
-	.line	4448
+	brl	L809
+	.line	4468
 L10460:
-	.line	4448
+	.line	4468
 ;#if !FF_FS_READONLY && FF_FS_MINIMIZE <= 2		/* Replace one of the read sectors with cached data if it contains a dirty sector */
 ;#if FF_FS_TINY
 ;				if (fs->wflag && fs->winsect - sect < cc)
@@ -19487,59 +19508,59 @@ L10460:
 ;				}
 ;#else
 ;				if ((fp->flag & FA_DIRTY) && fp->sect - sect < cc)
-	.line	4456
+	.line	4476
 ;				{
 	sep	#$20
 	longa	off
 	ldy	#$10
-	lda	[<L804+fp_0],Y
+	lda	[<L803+fp_0],Y
 	and	#<$80
 	rep	#$20
 	longa	on
-	bne	L824
+	bne	L823
 	brl	L10461
-L824:
-	lda	<L805+cc_1
+L823:
+	lda	<L804+cc_1
 	sta	<R0
 	stz	<R0+2
 	sec
 	ldy	#$1a
-	lda	[<L804+fp_0],Y
-	sbc	<L805+sect_1
+	lda	[<L803+fp_0],Y
+	sbc	<L804+sect_1
 	sta	<R1
 	ldy	#$1c
-	lda	[<L804+fp_0],Y
-	sbc	<L805+sect_1+2
+	lda	[<L803+fp_0],Y
+	sbc	<L804+sect_1+2
 	sta	<R1+2
 	lda	<R1
 	cmp	<R0
 	lda	<R1+2
 	sbc	<R0+2
-	bcc	L825
+	bcc	L824
 	brl	L10461
-L825:
-	.line	4457
+L824:
+	.line	4477
 ;					mem_cpy(rbuff + ((fp->sect - sect) * SS(fs)), fp->buf,
-	.line	4458
+	.line	4478
 ;							SS(fs));
 	pea	#<$200
 	clc
 	lda	#$26
-	adc	<L804+fp_0
+	adc	<L803+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L804+fp_0+2
+	adc	<L803+fp_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	sec
 	ldy	#$1a
-	lda	[<L804+fp_0],Y
-	sbc	<L805+sect_1
+	lda	[<L803+fp_0],Y
+	sbc	<L804+sect_1
 	sta	<R2
 	ldy	#$1c
-	lda	[<L804+fp_0],Y
-	sbc	<L805+sect_1+2
+	lda	[<L803+fp_0],Y
+	sbc	<L804+sect_1+2
 	sta	<R2+2
 	pei	<R2+2
 	pei	<R2
@@ -19549,114 +19570,114 @@ L825:
 	sta	<R1
 	stx	<R1+2
 	clc
-	lda	<L805+rbuff_1
+	lda	<L804+rbuff_1
 	adc	<R1
 	sta	<R3
-	lda	<L805+rbuff_1+2
+	lda	<L804+rbuff_1+2
 	adc	<R1+2
 	sta	<R3+2
 	pei	<R3+2
 	pei	<R3
 	jsl	~~mem_cpy
 ;				}
-	.line	4460
+	.line	4480
 ;#endif
 ;#endif
 ;				rcnt = SS(fs) * cc; /* Number of bytes transferred */
 L10461:
-	.line	4463
-	lda	<L805+cc_1
+	.line	4483
+	lda	<L804+cc_1
 	ldx	#<$9
 	xref	~~~asl
 	jsl	~~~asl
-	sta	<L805+rcnt_1
+	sta	<L804+rcnt_1
 ;				continue;
-	.line	4464
+	.line	4484
 	brl	L10447
 ;			}
-	.line	4465
+	.line	4485
 ;#if !FF_FS_TINY
 ;			if (fp->sect != sect)
 L10458:
-	.line	4467
+	.line	4487
 ;			{ /* Load data sector if not in cache */
 	ldy	#$1a
-	lda	[<L804+fp_0],Y
-	cmp	<L805+sect_1
-	bne	L826
+	lda	[<L803+fp_0],Y
+	cmp	<L804+sect_1
+	bne	L825
 	ldy	#$1c
-	lda	[<L804+fp_0],Y
-	cmp	<L805+sect_1+2
-L826:
-	bne	L827
+	lda	[<L803+fp_0],Y
+	cmp	<L804+sect_1+2
+L825:
+	bne	L826
 	brl	L10462
-L827:
-	.line	4468
+L826:
+	.line	4488
 ;#if !FF_FS_READONLY
 ;				if (fp->flag & FA_DIRTY)
-	.line	4470
+	.line	4490
 ;				{ /* Write-back dirty sector cache */
 	sep	#$20
 	longa	off
 	ldy	#$10
-	lda	[<L804+fp_0],Y
+	lda	[<L803+fp_0],Y
 	and	#<$80
 	rep	#$20
 	longa	on
-	bne	L828
+	bne	L827
 	brl	L10463
-L828:
-	.line	4471
+L827:
+	.line	4491
 ;					if (disk_write(fs->pdrv, fp->buf, fp->sect, 1) != RES_OK)
-	.line	4472
+	.line	4492
 ;						ABORT(fs, FR_DISK_ERR);
 	pea	#<$1
 	ldy	#$1c
-	lda	[<L804+fp_0],Y
+	lda	[<L803+fp_0],Y
 	pha
 	ldy	#$1a
-	lda	[<L804+fp_0],Y
+	lda	[<L803+fp_0],Y
 	pha
 	clc
 	lda	#$26
-	adc	<L804+fp_0
+	adc	<L803+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L804+fp_0+2
+	adc	<L803+fp_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$1
-	lda	[<L805+fs_1],Y
+	lda	[<L804+fs_1],Y
 	pha
 	jsl	~~disk_write
 	tax
-	bne	L829
+	bne	L828
 	brl	L10464
-L829:
-	.line	4473
-	.line	4473
+L828:
+	.line	4493
+	.line	4493
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$11
-	sta	[<L804+fp_0],Y
+	sta	[<L803+fp_0],Y
 	rep	#$20
 	longa	on
-	.line	4473
+	.line	4493
 	lda	#$1
-	brl	L810
-	.line	4473
+	brl	L809
+	.line	4493
 L10464:
-	.line	4473
+	.line	4493
 ;					fp->flag &= (BYTE) ~FA_DIRTY;
-	.line	4474
+	.line	4494
 	clc
 	lda	#$10
-	adc	<L804+fp_0
+	adc	<L803+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L804+fp_0+2
+	adc	<L803+fp_0+2
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -19666,93 +19687,93 @@ L10464:
 	rep	#$20
 	longa	on
 ;				}
-	.line	4475
+	.line	4495
 ;#endif
 ;				if (disk_read(fs->pdrv, fp->buf, sect, 1) != RES_OK)
 L10463:
-	.line	4477
+	.line	4497
 ;					ABORT(fs, FR_DISK_ERR); /* Fill sector cache */
 	pea	#<$1
-	pei	<L805+sect_1+2
-	pei	<L805+sect_1
+	pei	<L804+sect_1+2
+	pei	<L804+sect_1
 	clc
 	lda	#$26
-	adc	<L804+fp_0
+	adc	<L803+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L804+fp_0+2
+	adc	<L803+fp_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$1
-	lda	[<L805+fs_1],Y
+	lda	[<L804+fs_1],Y
 	pha
 	jsl	~~disk_read
 	tax
-	bne	L830
+	bne	L829
 	brl	L10465
-L830:
-	.line	4478
-	.line	4478
+L829:
+	.line	4498
+	.line	4498
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$11
-	sta	[<L804+fp_0],Y
+	sta	[<L803+fp_0],Y
 	rep	#$20
 	longa	on
-	.line	4478
+	.line	4498
 	lda	#$1
-	brl	L810
-	.line	4478
+	brl	L809
+	.line	4498
 L10465:
-	.line	4478
+	.line	4498
 ;			}
-	.line	4479
+	.line	4499
 ;#endif
 ;			fp->sect = sect;
 L10462:
-	.line	4481
-	lda	<L805+sect_1
+	.line	4501
+	lda	<L804+sect_1
 	ldy	#$1a
-	sta	[<L804+fp_0],Y
-	lda	<L805+sect_1+2
+	sta	[<L803+fp_0],Y
+	lda	<L804+sect_1+2
 	ldy	#$1c
-	sta	[<L804+fp_0],Y
+	sta	[<L803+fp_0],Y
 ;		}
-	.line	4482
+	.line	4502
 ;		rcnt = SS(fs) - (UINT) fp->fptr % SS(fs); /* Number of bytes remains in the sector */
 L10451:
-	.line	4483
+	.line	4503
 	ldy	#$12
-	lda	[<L804+fp_0],Y
+	lda	[<L803+fp_0],Y
 	and	#<$1ff
 	sta	<R0
 	sec
 	lda	#$200
 	sbc	<R0
-	sta	<L805+rcnt_1
+	sta	<L804+rcnt_1
 ;		if (rcnt > btr)
-	.line	4484
+	.line	4504
 ;			rcnt = btr; /* Clip it by btr if needed */
-	lda	<L804+btr_0
-	cmp	<L805+rcnt_1
-	bcc	L831
+	lda	<L803+btr_0
+	cmp	<L804+rcnt_1
+	bcc	L830
 	brl	L10466
-L831:
-	.line	4485
-	lda	<L804+btr_0
-	sta	<L805+rcnt_1
+L830:
+	.line	4505
+	lda	<L803+btr_0
+	sta	<L804+rcnt_1
 ;#if FF_FS_TINY
 ;		if (move_window(fs, fp->sect) != FR_OK) ABORT(fs, FR_DISK_ERR); /* Move sector window */
 ;		mem_cpy(rbuff, fs->win + fp->fptr % SS(fs), rcnt); /* Extract partial sector */
 ;#else
 ;		mem_cpy(rbuff, fp->buf + fp->fptr % SS(fs), rcnt); /* Extract partial sector */
 L10466:
-	.line	4490
-	pei	<L805+rcnt_1
+	.line	4510
+	pei	<L804+rcnt_1
 	ldy	#$12
-	lda	[<L804+fp_0],Y
+	lda	[<L803+fp_0],Y
 	and	#<$1ff
 	sta	<R0
 	stz	<R0+2
@@ -19764,47 +19785,47 @@ L10466:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L804+fp_0
+	lda	<L803+fp_0
 	adc	<R1
 	sta	<R0
-	lda	<L804+fp_0+2
+	lda	<L803+fp_0+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pei	<L805+rbuff_1+2
-	pei	<L805+rbuff_1
+	pei	<L804+rbuff_1+2
+	pei	<L804+rbuff_1
 	jsl	~~mem_cpy
 ;#endif
 ;	}
-	.line	4492
+	.line	4512
 L10447:
 	sec
-	lda	<L804+btr_0
-	sbc	<L805+rcnt_1
-	sta	<L804+btr_0
+	lda	<L803+btr_0
+	sbc	<L804+rcnt_1
+	sta	<L803+btr_0
 	clc
-	lda	[<L804+br_0]
-	adc	<L805+rcnt_1
-	sta	[<L804+br_0]
-	lda	<L805+rcnt_1
+	lda	[<L803+br_0]
+	adc	<L804+rcnt_1
+	sta	[<L803+br_0]
+	lda	<L804+rcnt_1
 	sta	<R0
 	stz	<R0+2
 	clc
-	lda	<L805+rbuff_1
+	lda	<L804+rbuff_1
 	adc	<R0
-	sta	<L805+rbuff_1
-	lda	<L805+rbuff_1+2
+	sta	<L804+rbuff_1
+	lda	<L804+rbuff_1+2
 	adc	<R0+2
-	sta	<L805+rbuff_1+2
+	sta	<L804+rbuff_1+2
 	clc
 	lda	#$12
-	adc	<L804+fp_0
+	adc	<L803+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L804+fp_0+2
+	adc	<L803+fp_0+2
 	sta	<R0+2
-	lda	<L805+rcnt_1
+	lda	<L804+rcnt_1
 	sta	<R1
 	stz	<R1+2
 	clc
@@ -19817,25 +19838,25 @@ L10447:
 	ldy	#$2
 	sta	[<R0],Y
 L10450:
-	lda	<L804+btr_0
-	beq	L832
+	lda	<L803+btr_0
+	beq	L831
 	brl	L10449
-L832:
+L831:
 L10448:
 ;
 ;	LEAVE_FF(fs, FR_OK);
-	.line	4494
+	.line	4514
 	lda	#$0
-	brl	L810
+	brl	L809
 ;}
-	.line	4495
-	.endblock	4495
-L804	equ	44
-L805	equ	17
+	.line	4515
+	.endblock	4515
+L803	equ	44
+L804	equ	17
 	ends
 	efunc
-	.endfunc	4495,17,44
-	.line	4495
+	.endfunc	4515,17,44
+	.line	4515
 ;
 ;#if !FF_FS_READONLY
 ;/*-----------------------------------------------------------------------*/
@@ -19848,18 +19869,18 @@ L805	equ	17
 ;UINT* bw /* Pointer to number of bytes written */
 ;)
 ;{
-	.line	4502
-	.line	4507
+	.line	4522
+	.line	4527
 	FFDOS
 	xdef	~~f_write
 	func
-	.function	4507
+	.function	4527
 ~~f_write:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L833
+	sbc	#L832
 	tcs
 	phd
 	tcd
@@ -19867,7 +19888,7 @@ fp_0	set	4
 buff_0	set	8
 btw_0	set	12
 bw_0	set	14
-	.block	4507
+	.block	4527
 ;	FRESULT res;
 ;	FATFS *fs;
 ;	DWORD clst;
@@ -19885,166 +19906,166 @@ cc_1	set	16
 csect_1	set	18
 wbuff_1	set	20
 	.sym	res,0,5,1,16
-	.sym	fs,2,138,1,32,72
+	.sym	fs,2,138,1,32,75
 	.sym	clst,6,18,1,32
 	.sym	sect,10,18,1,32
 	.sym	wcnt,14,16,1,16
 	.sym	cc,16,16,1,16
 	.sym	csect,18,16,1,16
 	.sym	wbuff,20,142,1,32
-	.sym	fp,4,138,6,32,74
+	.sym	fp,4,138,6,32,77
 	.sym	buff,8,129,6,32
 	.sym	btw,12,16,6,16
 	.sym	bw,14,144,6,32
-	lda	<L833+buff_0
-	sta	<L834+wbuff_1
-	lda	<L833+buff_0+2
-	sta	<L834+wbuff_1+2
-	.line	4515
+	lda	<L832+buff_0
+	sta	<L833+wbuff_1
+	lda	<L832+buff_0+2
+	sta	<L833+wbuff_1+2
+	.line	4535
 	lda	#$0
-	sta	[<L833+bw_0]
+	sta	[<L832+bw_0]
 ;	res = validate(&fp->obj, &fs); /* Check validity of the file object */
-	.line	4516
+	.line	4536
 	pea	#0
 	clc
 	tdc
-	adc	#<L834+fs_1
+	adc	#<L833+fs_1
 	pha
-	pei	<L833+fp_0+2
-	pei	<L833+fp_0
+	pei	<L832+fp_0+2
+	pei	<L832+fp_0
 	jsl	~~validate
-	sta	<L834+res_1
+	sta	<L833+res_1
 ;	if (res != FR_OK || (res = (FRESULT) fp->err) != FR_OK)
-	.line	4517
+	.line	4537
 ;		LEAVE_FF(fs, res); /* Check validity */
-	lda	<L834+res_1
-	beq	L837
-	brl	L836
-L837:
-	ldy	#$11
-	lda	[<L833+fp_0],Y
-	and	#$ff
-	sta	<L834+res_1
-	lda	<L834+res_1
-	bne	L838
-	brl	L10467
-L838:
+	lda	<L833+res_1
+	beq	L836
+	brl	L835
 L836:
-	.line	4518
-	lda	<L834+res_1
-L839:
+	ldy	#$11
+	lda	[<L832+fp_0],Y
+	and	#$ff
+	sta	<L833+res_1
+	lda	<L833+res_1
+	bne	L837
+	brl	L10467
+L837:
+L835:
+	.line	4538
+	lda	<L833+res_1
+L838:
 	tay
-	lda	<L833+2
-	sta	<L833+2+14
-	lda	<L833+1
-	sta	<L833+1+14
+	lda	<L832+2
+	sta	<L832+2+14
+	lda	<L832+1
+	sta	<L832+1+14
 	pld
 	tsc
 	clc
-	adc	#L833+14
+	adc	#L832+14
 	tcs
 	tya
 	rtl
 ;	if (!(fp->flag & FA_WRITE))
 L10467:
-	.line	4519
+	.line	4539
 ;		LEAVE_FF(fs, FR_DENIED); /* Check access mode */
 	sep	#$20
 	longa	off
 	ldy	#$10
-	lda	[<L833+fp_0],Y
+	lda	[<L832+fp_0],Y
 	and	#<$2
 	rep	#$20
 	longa	on
-	beq	L840
+	beq	L839
 	brl	L10468
-L840:
-	.line	4520
+L839:
+	.line	4540
 	lda	#$7
-	brl	L839
+	brl	L838
 ;
 ;	/* Check fptr wrap-around (file size cannot reach 4 GiB at FAT volume) */
 ;	if ((!FF_FS_EXFAT || fs->fs_type != FS_EXFAT)
 L10468:
-	.line	4523
+	.line	4543
 ;			&& (DWORD) (fp->fptr + btw) < (DWORD) fp->fptr)
 ;	{
-	brl	L841
+	brl	L840
 	sep	#$20
 	longa	off
-	lda	[<L834+fs_1]
+	lda	[<L833+fs_1]
 	cmp	#<$4
 	rep	#$20
 	longa	on
-	bne	L842
+	bne	L841
 	brl	L10469
-L842:
 L841:
-	lda	<L833+btw_0
+L840:
+	lda	<L832+btw_0
 	sta	<R0
 	stz	<R0+2
 	clc
 	lda	<R0
 	ldy	#$12
-	adc	[<L833+fp_0],Y
+	adc	[<L832+fp_0],Y
 	sta	<R1
 	lda	<R0+2
 	ldy	#$14
-	adc	[<L833+fp_0],Y
+	adc	[<L832+fp_0],Y
 	sta	<R1+2
 	lda	<R1
 	ldy	#$12
-	cmp	[<L833+fp_0],Y
+	cmp	[<L832+fp_0],Y
 	lda	<R1+2
 	ldy	#$14
-	sbc	[<L833+fp_0],Y
-	bcc	L843
+	sbc	[<L832+fp_0],Y
+	bcc	L842
 	brl	L10469
-L843:
-	.line	4525
+L842:
+	.line	4545
 ;		btw = (UINT) (0xFFFFFFFF - (DWORD) fp->fptr);
-	.line	4526
+	.line	4546
 	sec
 	lda	#$ffff
 	ldy	#$12
-	sbc	[<L833+fp_0],Y
+	sbc	[<L832+fp_0],Y
 	sta	<R0
 	lda	#$ffff
 	ldy	#$14
-	sbc	[<L833+fp_0],Y
+	sbc	[<L832+fp_0],Y
 	sta	<R0+2
 	lda	<R0
-	sta	<L833+btw_0
+	sta	<L832+btw_0
 ;	}
-	.line	4527
+	.line	4547
 ;
 ;	for (; btw;
 L10469:
-	.line	4529
+	.line	4549
 	brl	L10473
 ;			/* Repeat until all data written */
 ;			btw -= wcnt, *bw += wcnt, wbuff += wcnt, fp->fptr += wcnt, fp->obj.objsize =
 ;					(fp->fptr > fp->obj.objsize) ? fp->fptr : fp->obj.objsize)
 L10472:
 ;	{
-	.line	4533
+	.line	4553
 ;		if (fp->fptr % SS(fs) == 0)
-	.line	4534
+	.line	4554
 ;		{ /* On the sector boundary? */
 	ldy	#$12
-	lda	[<L833+fp_0],Y
+	lda	[<L832+fp_0],Y
 	and	#<$1ff
-	beq	L844
+	beq	L843
 	brl	L10474
-L844:
-	.line	4535
+L843:
+	.line	4555
 ;			csect = (UINT) (fp->fptr / SS(fs)) & (fs->csize - 1); /* Sector offset in the cluster */
-	.line	4536
+	.line	4556
 	ldy	#$14
-	lda	[<L833+fp_0],Y
+	lda	[<L832+fp_0],Y
 	pha
 	ldy	#$12
-	lda	[<L833+fp_0],Y
+	lda	[<L832+fp_0],Y
 	pha
 	lda	#$9
 	xref	~~~llsr
@@ -20054,66 +20075,66 @@ L844:
 	clc
 	lda	#$ffff
 	ldy	#$9
-	adc	[<L834+fs_1],Y
+	adc	[<L833+fs_1],Y
 	sta	<R1
 	lda	<R1
 	and	<R0
-	sta	<L834+csect_1
+	sta	<L833+csect_1
 ;			if (csect == 0)
-	.line	4537
+	.line	4557
 ;			{ /* On the cluster boundary? */
-	lda	<L834+csect_1
-	beq	L845
+	lda	<L833+csect_1
+	beq	L844
 	brl	L10475
-L845:
-	.line	4538
+L844:
+	.line	4558
 ;				if (fp->fptr == 0)
-	.line	4539
+	.line	4559
 ;				{ /* On the top of the file? */
 	ldy	#$12
-	lda	[<L833+fp_0],Y
+	lda	[<L832+fp_0],Y
 	ldy	#$14
-	ora	[<L833+fp_0],Y
-	beq	L846
+	ora	[<L832+fp_0],Y
+	beq	L845
 	brl	L10476
-L846:
-	.line	4540
+L845:
+	.line	4560
 ;					clst = fp->obj.sclust; /* Follow from the origin */
-	.line	4541
+	.line	4561
 	ldy	#$8
-	lda	[<L833+fp_0],Y
-	sta	<L834+clst_1
+	lda	[<L832+fp_0],Y
+	sta	<L833+clst_1
 	ldy	#$a
-	lda	[<L833+fp_0],Y
-	sta	<L834+clst_1+2
+	lda	[<L832+fp_0],Y
+	sta	<L833+clst_1+2
 ;					if (clst == 0)
-	.line	4542
+	.line	4562
 ;					{ /* If no cluster is allocated, */
-	lda	<L834+clst_1
-	ora	<L834+clst_1+2
-	beq	L847
+	lda	<L833+clst_1
+	ora	<L833+clst_1+2
+	beq	L846
 	brl	L10477
-L847:
-	.line	4543
+L846:
+	.line	4563
 ;						clst = create_chain(&fp->obj, 0); /* create a new cluster chain */
-	.line	4544
+	.line	4564
 	pea	#^$0
 	pea	#<$0
-	pei	<L833+fp_0+2
-	pei	<L833+fp_0
+	pei	<L832+fp_0+2
+	pei	<L832+fp_0
 	jsl	~~create_chain
-	sta	<L834+clst_1
-	stx	<L834+clst_1+2
+	sta	<L833+clst_1
+	stx	<L833+clst_1+2
 ;					}
-	.line	4545
+	.line	4565
 ;				}
 L10477:
-	.line	4546
+	.line	4566
 ;				else
 	brl	L10478
 L10476:
 ;				{ /* On the middle or end of the file */
-	.line	4548
+	.line	4568
 ;#if FF_USE_FASTSEEK
 ;					if (fp->cltbl)
 ;					{
@@ -20122,183 +20143,183 @@ L10476:
 ;					else
 ;#endif
 ;					{
-	.line	4556
+	.line	4576
 ;						clst = create_chain(&fp->obj, fp->clust); /* Follow or stretch cluster chain on the FAT */
-	.line	4557
+	.line	4577
 	ldy	#$18
-	lda	[<L833+fp_0],Y
+	lda	[<L832+fp_0],Y
 	pha
 	ldy	#$16
-	lda	[<L833+fp_0],Y
+	lda	[<L832+fp_0],Y
 	pha
-	pei	<L833+fp_0+2
-	pei	<L833+fp_0
+	pei	<L832+fp_0+2
+	pei	<L832+fp_0
 	jsl	~~create_chain
-	sta	<L834+clst_1
-	stx	<L834+clst_1+2
+	sta	<L833+clst_1
+	stx	<L833+clst_1+2
 ;					}
-	.line	4558
+	.line	4578
 ;				}
-	.line	4559
+	.line	4579
 L10478:
 ;				if (clst == 0)
-	.line	4560
+	.line	4580
 ;					break; /* Could not allocate a new cluster (disk full) */
-	lda	<L834+clst_1
-	ora	<L834+clst_1+2
-	bne	L848
+	lda	<L833+clst_1
+	ora	<L833+clst_1+2
+	bne	L847
 	brl	L10471
-L848:
+L847:
 ;				if (clst == 1)
-	.line	4562
+	.line	4582
 ;					ABORT(fs, FR_INT_ERR);
-	lda	<L834+clst_1
+	lda	<L833+clst_1
 	cmp	#<$1
-	bne	L849
-	lda	<L834+clst_1+2
+	bne	L848
+	lda	<L833+clst_1+2
 	cmp	#^$1
-L849:
-	beq	L850
+L848:
+	beq	L849
 	brl	L10479
-L850:
-	.line	4563
-	.line	4563
+L849:
+	.line	4583
+	.line	4583
 	sep	#$20
 	longa	off
 	lda	#$2
 	ldy	#$11
-	sta	[<L833+fp_0],Y
+	sta	[<L832+fp_0],Y
 	rep	#$20
 	longa	on
-	.line	4563
+	.line	4583
 	lda	#$2
-	brl	L839
-	.line	4563
+	brl	L838
+	.line	4583
 L10479:
-	.line	4563
+	.line	4583
 ;				if (clst == 0xFFFFFFFF)
-	.line	4564
+	.line	4584
 ;					ABORT(fs, FR_DISK_ERR);
-	lda	<L834+clst_1
+	lda	<L833+clst_1
 	cmp	#<$ffffffff
-	bne	L851
-	lda	<L834+clst_1+2
+	bne	L850
+	lda	<L833+clst_1+2
 	cmp	#^$ffffffff
-L851:
-	beq	L852
+L850:
+	beq	L851
 	brl	L10480
-L852:
-	.line	4565
-	.line	4565
+L851:
+	.line	4585
+	.line	4585
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$11
-	sta	[<L833+fp_0],Y
+	sta	[<L832+fp_0],Y
 	rep	#$20
 	longa	on
-	.line	4565
+	.line	4585
 	lda	#$1
-	brl	L839
-	.line	4565
+	brl	L838
+	.line	4585
 L10480:
-	.line	4565
+	.line	4585
 ;				fp->clust = clst; /* Update current cluster */
-	.line	4566
-	lda	<L834+clst_1
+	.line	4586
+	lda	<L833+clst_1
 	ldy	#$16
-	sta	[<L833+fp_0],Y
-	lda	<L834+clst_1+2
+	sta	[<L832+fp_0],Y
+	lda	<L833+clst_1+2
 	ldy	#$18
-	sta	[<L833+fp_0],Y
+	sta	[<L832+fp_0],Y
 ;				if (fp->obj.sclust == 0)
-	.line	4567
+	.line	4587
 ;					fp->obj.sclust = clst; /* Set start cluster if the first write */
 	ldy	#$8
-	lda	[<L833+fp_0],Y
+	lda	[<L832+fp_0],Y
 	ldy	#$a
-	ora	[<L833+fp_0],Y
-	beq	L853
+	ora	[<L832+fp_0],Y
+	beq	L852
 	brl	L10481
-L853:
-	.line	4568
-	lda	<L834+clst_1
+L852:
+	.line	4588
+	lda	<L833+clst_1
 	ldy	#$8
-	sta	[<L833+fp_0],Y
-	lda	<L834+clst_1+2
+	sta	[<L832+fp_0],Y
+	lda	<L833+clst_1+2
 	ldy	#$a
-	sta	[<L833+fp_0],Y
+	sta	[<L832+fp_0],Y
 ;			}
 L10481:
-	.line	4569
+	.line	4589
 ;#if FF_FS_TINY
 ;			if (fs->winsect == fp->sect && sync_window(fs) != FR_OK) ABORT(fs, FR_DISK_ERR); /* Write-back sector cache */
 ;#else
 ;			if (fp->flag & FA_DIRTY)
 L10475:
-	.line	4573
+	.line	4593
 ;			{ /* Write-back sector cache */
 	sep	#$20
 	longa	off
 	ldy	#$10
-	lda	[<L833+fp_0],Y
+	lda	[<L832+fp_0],Y
 	and	#<$80
 	rep	#$20
 	longa	on
-	bne	L854
+	bne	L853
 	brl	L10482
-L854:
-	.line	4574
+L853:
+	.line	4594
 ;				if (disk_write(fs->pdrv, fp->buf, fp->sect, 1) != RES_OK)
-	.line	4575
+	.line	4595
 ;					ABORT(fs, FR_DISK_ERR);
 	pea	#<$1
 	ldy	#$1c
-	lda	[<L833+fp_0],Y
+	lda	[<L832+fp_0],Y
 	pha
 	ldy	#$1a
-	lda	[<L833+fp_0],Y
+	lda	[<L832+fp_0],Y
 	pha
 	clc
 	lda	#$26
-	adc	<L833+fp_0
+	adc	<L832+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L833+fp_0+2
+	adc	<L832+fp_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$1
-	lda	[<L834+fs_1],Y
+	lda	[<L833+fs_1],Y
 	pha
 	jsl	~~disk_write
 	tax
-	bne	L855
+	bne	L854
 	brl	L10483
-L855:
-	.line	4576
-	.line	4576
+L854:
+	.line	4596
+	.line	4596
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$11
-	sta	[<L833+fp_0],Y
+	sta	[<L832+fp_0],Y
 	rep	#$20
 	longa	on
-	.line	4576
+	.line	4596
 	lda	#$1
-	brl	L839
-	.line	4576
+	brl	L838
+	.line	4596
 L10483:
-	.line	4576
+	.line	4596
 ;				fp->flag &= (BYTE) ~FA_DIRTY;
-	.line	4577
+	.line	4597
 	clc
 	lda	#$10
-	adc	<L833+fp_0
+	adc	<L832+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L833+fp_0+2
+	adc	<L832+fp_0+2
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -20308,128 +20329,128 @@ L10483:
 	rep	#$20
 	longa	on
 ;			}
-	.line	4578
+	.line	4598
 ;#endif
 ;			sect = clst2sect(fs, fp->clust); /* Get current sector */
 L10482:
-	.line	4580
+	.line	4600
 	ldy	#$18
-	lda	[<L833+fp_0],Y
+	lda	[<L832+fp_0],Y
 	pha
 	ldy	#$16
-	lda	[<L833+fp_0],Y
+	lda	[<L832+fp_0],Y
 	pha
-	pei	<L834+fs_1+2
-	pei	<L834+fs_1
+	pei	<L833+fs_1+2
+	pei	<L833+fs_1
 	jsl	~~clst2sect
-	sta	<L834+sect_1
-	stx	<L834+sect_1+2
+	sta	<L833+sect_1
+	stx	<L833+sect_1+2
 ;			if (sect == 0)
-	.line	4581
+	.line	4601
 ;				ABORT(fs, FR_INT_ERR);
-	lda	<L834+sect_1
-	ora	<L834+sect_1+2
-	beq	L856
+	lda	<L833+sect_1
+	ora	<L833+sect_1+2
+	beq	L855
 	brl	L10484
-L856:
-	.line	4582
-	.line	4582
+L855:
+	.line	4602
+	.line	4602
 	sep	#$20
 	longa	off
 	lda	#$2
 	ldy	#$11
-	sta	[<L833+fp_0],Y
+	sta	[<L832+fp_0],Y
 	rep	#$20
 	longa	on
-	.line	4582
+	.line	4602
 	lda	#$2
-	brl	L839
-	.line	4582
+	brl	L838
+	.line	4602
 L10484:
-	.line	4582
+	.line	4602
 ;			sect += csect;
-	.line	4583
-	lda	<L834+csect_1
+	.line	4603
+	lda	<L833+csect_1
 	sta	<R0
 	stz	<R0+2
 	clc
 	lda	<R0
-	adc	<L834+sect_1
-	sta	<L834+sect_1
+	adc	<L833+sect_1
+	sta	<L833+sect_1
 	lda	<R0+2
-	adc	<L834+sect_1+2
-	sta	<L834+sect_1+2
+	adc	<L833+sect_1+2
+	sta	<L833+sect_1+2
 ;			cc = btw / SS(fs); /* When remaining bytes >= sector size, */
-	.line	4584
-	lda	<L833+btw_0
+	.line	4604
+	lda	<L832+btw_0
 	ldx	#<$9
 	xref	~~~lsr
 	jsl	~~~lsr
-	sta	<L834+cc_1
+	sta	<L833+cc_1
 ;			if (cc > 0)
-	.line	4585
+	.line	4605
 ;			{ /* Write maximum contiguous sectors directly */
 	lda	#$0
-	cmp	<L834+cc_1
-	bcc	L857
+	cmp	<L833+cc_1
+	bcc	L856
 	brl	L10485
-L857:
-	.line	4586
+L856:
+	.line	4606
 ;				if (csect + cc > fs->csize)
-	.line	4587
+	.line	4607
 ;				{ /* Clip at cluster boundary */
 	clc
-	lda	<L834+csect_1
-	adc	<L834+cc_1
+	lda	<L833+csect_1
+	adc	<L833+cc_1
 	sta	<R0
 	ldy	#$9
-	lda	[<L834+fs_1],Y
+	lda	[<L833+fs_1],Y
 	cmp	<R0
-	bcc	L858
+	bcc	L857
 	brl	L10486
-L858:
-	.line	4588
+L857:
+	.line	4608
 ;					cc = fs->csize - csect;
-	.line	4589
+	.line	4609
 	sec
 	ldy	#$9
-	lda	[<L834+fs_1],Y
-	sbc	<L834+csect_1
-	sta	<L834+cc_1
+	lda	[<L833+fs_1],Y
+	sbc	<L833+csect_1
+	sta	<L833+cc_1
 ;				}
-	.line	4590
+	.line	4610
 ;				if (disk_write(fs->pdrv, wbuff, sect, cc) != RES_OK)
 L10486:
-	.line	4591
+	.line	4611
 ;					ABORT(fs, FR_DISK_ERR);
-	pei	<L834+cc_1
-	pei	<L834+sect_1+2
-	pei	<L834+sect_1
-	pei	<L834+wbuff_1+2
-	pei	<L834+wbuff_1
+	pei	<L833+cc_1
+	pei	<L833+sect_1+2
+	pei	<L833+sect_1
+	pei	<L833+wbuff_1+2
+	pei	<L833+wbuff_1
 	ldy	#$1
-	lda	[<L834+fs_1],Y
+	lda	[<L833+fs_1],Y
 	pha
 	jsl	~~disk_write
 	tax
-	bne	L859
+	bne	L858
 	brl	L10487
-L859:
-	.line	4592
-	.line	4592
+L858:
+	.line	4612
+	.line	4612
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$11
-	sta	[<L833+fp_0],Y
+	sta	[<L832+fp_0],Y
 	rep	#$20
 	longa	on
-	.line	4592
+	.line	4612
 	lda	#$1
-	brl	L839
-	.line	4592
+	brl	L838
+	.line	4612
 L10487:
-	.line	4592
+	.line	4612
 ;#if FF_FS_MINIMIZE <= 2
 ;#if FF_FS_TINY
 ;				if (fs->winsect - sect < cc)
@@ -20439,40 +20460,40 @@ L10487:
 ;				}
 ;#else
 ;				if (fp->sect - sect < cc)
-	.line	4601
+	.line	4621
 ;				{ /* Refill sector cache if it gets invalidated by the direct write */
-	lda	<L834+cc_1
+	lda	<L833+cc_1
 	sta	<R0
 	stz	<R0+2
 	sec
 	ldy	#$1a
-	lda	[<L833+fp_0],Y
-	sbc	<L834+sect_1
+	lda	[<L832+fp_0],Y
+	sbc	<L833+sect_1
 	sta	<R1
 	ldy	#$1c
-	lda	[<L833+fp_0],Y
-	sbc	<L834+sect_1+2
+	lda	[<L832+fp_0],Y
+	sbc	<L833+sect_1+2
 	sta	<R1+2
 	lda	<R1
 	cmp	<R0
 	lda	<R1+2
 	sbc	<R0+2
-	bcc	L860
+	bcc	L859
 	brl	L10488
-L860:
-	.line	4602
+L859:
+	.line	4622
 ;					mem_cpy(fp->buf, wbuff + ((fp->sect - sect) * SS(fs)),
-	.line	4603
+	.line	4623
 ;							SS(fs));
 	pea	#<$200
 	sec
 	ldy	#$1a
-	lda	[<L833+fp_0],Y
-	sbc	<L834+sect_1
+	lda	[<L832+fp_0],Y
+	sbc	<L833+sect_1
 	sta	<R1
 	ldy	#$1c
-	lda	[<L833+fp_0],Y
-	sbc	<L834+sect_1+2
+	lda	[<L832+fp_0],Y
+	sbc	<L833+sect_1+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
@@ -20482,32 +20503,32 @@ L860:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L834+wbuff_1
+	lda	<L833+wbuff_1
 	adc	<R0
 	sta	<R2
-	lda	<L834+wbuff_1+2
+	lda	<L833+wbuff_1+2
 	adc	<R0+2
 	sta	<R2+2
 	pei	<R2+2
 	pei	<R2
 	clc
 	lda	#$26
-	adc	<L833+fp_0
+	adc	<L832+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L833+fp_0+2
+	adc	<L832+fp_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~mem_cpy
 ;					fp->flag &= (BYTE) ~FA_DIRTY;
-	.line	4605
+	.line	4625
 	clc
 	lda	#$10
-	adc	<L833+fp_0
+	adc	<L832+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L833+fp_0+2
+	adc	<L832+fp_0+2
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -20517,22 +20538,22 @@ L860:
 	rep	#$20
 	longa	on
 ;				}
-	.line	4606
+	.line	4626
 ;#endif
 ;#endif
 ;				wcnt = SS(fs) * cc; /* Number of bytes transferred */
 L10488:
-	.line	4609
-	lda	<L834+cc_1
+	.line	4629
+	lda	<L833+cc_1
 	ldx	#<$9
 	xref	~~~asl
 	jsl	~~~asl
-	sta	<L834+wcnt_1
+	sta	<L833+wcnt_1
 ;				continue;
-	.line	4610
+	.line	4630
 	brl	L10470
 ;			}
-	.line	4611
+	.line	4631
 ;#if FF_FS_TINY
 ;			if (fp->fptr >= fp->obj.objsize)
 ;			{ /* Avoid silly cache filling on the growing edge */
@@ -20542,104 +20563,104 @@ L10488:
 ;#else
 ;			if (fp->sect != sect && /* Fill sector cache with file data */
 L10485:
-	.line	4619
+	.line	4639
 ;			fp->fptr < fp->obj.objsize
 ;					&& disk_read(fs->pdrv, fp->buf, sect, 1) != RES_OK)
 ;			{
 	ldy	#$1a
-	lda	[<L833+fp_0],Y
-	cmp	<L834+sect_1
-	bne	L861
+	lda	[<L832+fp_0],Y
+	cmp	<L833+sect_1
+	bne	L860
 	ldy	#$1c
-	lda	[<L833+fp_0],Y
-	cmp	<L834+sect_1+2
+	lda	[<L832+fp_0],Y
+	cmp	<L833+sect_1+2
+L860:
+	bne	L861
+	brl	L10489
 L861:
-	bne	L862
+	ldy	#$12
+	lda	[<L832+fp_0],Y
+	ldy	#$c
+	cmp	[<L832+fp_0],Y
+	ldy	#$14
+	lda	[<L832+fp_0],Y
+	ldy	#$e
+	sbc	[<L832+fp_0],Y
+	bcc	L862
 	brl	L10489
 L862:
-	ldy	#$12
-	lda	[<L833+fp_0],Y
-	ldy	#$c
-	cmp	[<L833+fp_0],Y
-	ldy	#$14
-	lda	[<L833+fp_0],Y
-	ldy	#$e
-	sbc	[<L833+fp_0],Y
-	bcc	L863
-	brl	L10489
-L863:
 	pea	#<$1
-	pei	<L834+sect_1+2
-	pei	<L834+sect_1
+	pei	<L833+sect_1+2
+	pei	<L833+sect_1
 	clc
 	lda	#$26
-	adc	<L833+fp_0
+	adc	<L832+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L833+fp_0+2
+	adc	<L832+fp_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$1
-	lda	[<L834+fs_1],Y
+	lda	[<L833+fs_1],Y
 	pha
 	jsl	~~disk_read
 	tax
-	bne	L864
+	bne	L863
 	brl	L10489
-L864:
-	.line	4622
+L863:
+	.line	4642
 ;				ABORT(fs, FR_DISK_ERR);
-	.line	4623
-	.line	4623
+	.line	4643
+	.line	4643
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$11
-	sta	[<L833+fp_0],Y
+	sta	[<L832+fp_0],Y
 	rep	#$20
 	longa	on
-	.line	4623
+	.line	4643
 	lda	#$1
-	brl	L839
-	.line	4623
-	.line	4623
+	brl	L838
+	.line	4643
+	.line	4643
 ;			}
-	.line	4624
+	.line	4644
 ;#endif
 ;			fp->sect = sect;
 L10489:
-	.line	4626
-	lda	<L834+sect_1
+	.line	4646
+	lda	<L833+sect_1
 	ldy	#$1a
-	sta	[<L833+fp_0],Y
-	lda	<L834+sect_1+2
+	sta	[<L832+fp_0],Y
+	lda	<L833+sect_1+2
 	ldy	#$1c
-	sta	[<L833+fp_0],Y
+	sta	[<L832+fp_0],Y
 ;		}
-	.line	4627
+	.line	4647
 ;		wcnt = SS(fs) - (UINT) fp->fptr % SS(fs); /* Number of bytes remains in the sector */
 L10474:
-	.line	4628
+	.line	4648
 	ldy	#$12
-	lda	[<L833+fp_0],Y
+	lda	[<L832+fp_0],Y
 	and	#<$1ff
 	sta	<R0
 	sec
 	lda	#$200
 	sbc	<R0
-	sta	<L834+wcnt_1
+	sta	<L833+wcnt_1
 ;		if (wcnt > btw)
-	.line	4629
+	.line	4649
 ;			wcnt = btw; /* Clip it by btw if needed */
-	lda	<L833+btw_0
-	cmp	<L834+wcnt_1
-	bcc	L865
+	lda	<L832+btw_0
+	cmp	<L833+wcnt_1
+	bcc	L864
 	brl	L10490
-L865:
-	.line	4630
-	lda	<L833+btw_0
-	sta	<L834+wcnt_1
+L864:
+	.line	4650
+	lda	<L832+btw_0
+	sta	<L833+wcnt_1
 ;#if FF_FS_TINY
 ;		if (move_window(fs, fp->sect) != FR_OK) ABORT(fs, FR_DISK_ERR); /* Move sector window */
 ;		mem_cpy(fs->win + fp->fptr % SS(fs), wbuff, wcnt); /* Fit data to the sector */
@@ -20647,12 +20668,12 @@ L865:
 ;#else
 ;		mem_cpy(fp->buf + fp->fptr % SS(fs), wbuff, wcnt); /* Fit data to the sector */
 L10490:
-	.line	4636
-	pei	<L834+wcnt_1
-	pei	<L834+wbuff_1+2
-	pei	<L834+wbuff_1
+	.line	4656
+	pei	<L833+wcnt_1
+	pei	<L833+wbuff_1+2
+	pei	<L833+wbuff_1
 	ldy	#$12
-	lda	[<L833+fp_0],Y
+	lda	[<L832+fp_0],Y
 	and	#<$1ff
 	sta	<R0
 	stz	<R0+2
@@ -20664,23 +20685,23 @@ L10490:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L833+fp_0
+	lda	<L832+fp_0
 	adc	<R1
 	sta	<R0
-	lda	<L833+fp_0+2
+	lda	<L832+fp_0+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~mem_cpy
 ;		fp->flag |= FA_DIRTY;
-	.line	4637
+	.line	4657
 	clc
 	lda	#$10
-	adc	<L833+fp_0
+	adc	<L832+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L833+fp_0+2
+	adc	<L832+fp_0+2
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -20691,34 +20712,34 @@ L10490:
 	longa	on
 ;#endif
 ;	}
-	.line	4639
+	.line	4659
 L10470:
 	sec
-	lda	<L833+btw_0
-	sbc	<L834+wcnt_1
-	sta	<L833+btw_0
+	lda	<L832+btw_0
+	sbc	<L833+wcnt_1
+	sta	<L832+btw_0
 	clc
-	lda	[<L833+bw_0]
-	adc	<L834+wcnt_1
-	sta	[<L833+bw_0]
-	lda	<L834+wcnt_1
+	lda	[<L832+bw_0]
+	adc	<L833+wcnt_1
+	sta	[<L832+bw_0]
+	lda	<L833+wcnt_1
 	sta	<R0
 	stz	<R0+2
 	clc
-	lda	<L834+wbuff_1
+	lda	<L833+wbuff_1
 	adc	<R0
-	sta	<L834+wbuff_1
-	lda	<L834+wbuff_1+2
+	sta	<L833+wbuff_1
+	lda	<L833+wbuff_1+2
 	adc	<R0+2
-	sta	<L834+wbuff_1+2
+	sta	<L833+wbuff_1+2
 	clc
 	lda	#$12
-	adc	<L833+fp_0
+	adc	<L832+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L833+fp_0+2
+	adc	<L832+fp_0+2
 	sta	<R0+2
-	lda	<L834+wcnt_1
+	lda	<L833+wcnt_1
 	sta	<R1
 	stz	<R1+2
 	clc
@@ -20731,52 +20752,52 @@ L10470:
 	ldy	#$2
 	sta	[<R0],Y
 	ldy	#$c
-	lda	[<L833+fp_0],Y
+	lda	[<L832+fp_0],Y
 	ldy	#$12
-	cmp	[<L833+fp_0],Y
+	cmp	[<L832+fp_0],Y
 	ldy	#$e
-	lda	[<L833+fp_0],Y
+	lda	[<L832+fp_0],Y
 	ldy	#$14
-	sbc	[<L833+fp_0],Y
-	bcc	L867
-	brl	L866
-L867:
+	sbc	[<L832+fp_0],Y
+	bcc	L866
+	brl	L865
+L866:
 	ldy	#$14
-	lda	[<L833+fp_0],Y
+	lda	[<L832+fp_0],Y
 	tax
 	ldy	#$12
-	lda	[<L833+fp_0],Y
-	bra	L868
-L866:
+	lda	[<L832+fp_0],Y
+	bra	L867
+L865:
 	ldy	#$e
-	lda	[<L833+fp_0],Y
+	lda	[<L832+fp_0],Y
 	tax
 	ldy	#$c
-	lda	[<L833+fp_0],Y
-L868:
+	lda	[<L832+fp_0],Y
+L867:
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
 	ldy	#$c
-	sta	[<L833+fp_0],Y
+	sta	[<L832+fp_0],Y
 	lda	<R0+2
 	ldy	#$e
-	sta	[<L833+fp_0],Y
+	sta	[<L832+fp_0],Y
 L10473:
-	lda	<L833+btw_0
-	beq	L869
+	lda	<L832+btw_0
+	beq	L868
 	brl	L10472
-L869:
+L868:
 L10471:
 ;
 ;	fp->flag |= FA_MODIFIED; /* Set file change flag */
-	.line	4641
+	.line	4661
 	clc
 	lda	#$10
-	adc	<L833+fp_0
+	adc	<L832+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L833+fp_0+2
+	adc	<L832+fp_0+2
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -20787,18 +20808,18 @@ L10471:
 	longa	on
 ;
 ;	LEAVE_FF(fs, FR_OK);
-	.line	4643
+	.line	4663
 	lda	#$0
-	brl	L839
+	brl	L838
 ;}
-	.line	4644
-	.endblock	4644
-L833	equ	36
-L834	equ	13
+	.line	4664
+	.endblock	4664
+L832	equ	36
+L833	equ	13
 	ends
 	efunc
-	.endfunc	4644,13,36
-	.line	4644
+	.endfunc	4664,13,36
+	.line	4664
 ;
 ;/*-----------------------------------------------------------------------*/
 ;/* Synchronize the File                                                  */
@@ -20807,23 +20828,23 @@ L834	equ	13
 ;FRESULT f_sync(FIL* fp /* Pointer to the file object */
 ;)
 ;{
-	.line	4650
-	.line	4652
+	.line	4670
+	.line	4672
 	FFDOS
 	xdef	~~f_sync
 	func
-	.function	4652
+	.function	4672
 ~~f_sync:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L870
+	sbc	#L869
 	tcs
 	phd
 	tcd
 fp_0	set	4
-	.block	4652
+	.block	4672
 ;	FRESULT res;
 ;	FATFS *fs;
 ;	DWORD tm;
@@ -20835,108 +20856,108 @@ fs_1	set	2
 tm_1	set	6
 dir_1	set	10
 	.sym	res,0,5,1,16
-	.sym	fs,2,138,1,32,72
+	.sym	fs,2,138,1,32,75
 	.sym	tm,6,18,1,32
 	.sym	dir,10,142,1,32
-	.sym	fp,4,138,6,32,74
-	.line	4658
+	.sym	fp,4,138,6,32,77
+	.line	4678
 	pea	#0
 	clc
 	tdc
-	adc	#<L871+fs_1
+	adc	#<L870+fs_1
 	pha
-	pei	<L870+fp_0+2
-	pei	<L870+fp_0
+	pei	<L869+fp_0+2
+	pei	<L869+fp_0
 	jsl	~~validate
-	sta	<L871+res_1
+	sta	<L870+res_1
 ;	if (res == FR_OK)
-	.line	4659
+	.line	4679
 ;	{
-	lda	<L871+res_1
-	beq	L873
+	lda	<L870+res_1
+	beq	L872
 	brl	L10491
-L873:
-	.line	4660
+L872:
+	.line	4680
 ;		if (fp->flag & FA_MODIFIED)
-	.line	4661
+	.line	4681
 ;		{ /* Is there any change to the file? */
 	sep	#$20
 	longa	off
 	ldy	#$10
-	lda	[<L870+fp_0],Y
+	lda	[<L869+fp_0],Y
 	and	#<$40
 	rep	#$20
 	longa	on
-	bne	L874
+	bne	L873
 	brl	L10492
-L874:
-	.line	4662
+L873:
+	.line	4682
 ;#if !FF_FS_TINY
 ;			if (fp->flag & FA_DIRTY)
-	.line	4664
+	.line	4684
 ;			{ /* Write-back cached data if needed */
 	sep	#$20
 	longa	off
 	ldy	#$10
-	lda	[<L870+fp_0],Y
+	lda	[<L869+fp_0],Y
 	and	#<$80
 	rep	#$20
 	longa	on
-	bne	L875
+	bne	L874
 	brl	L10493
-L875:
-	.line	4665
+L874:
+	.line	4685
 ;				if (disk_write(fs->pdrv, fp->buf, fp->sect, 1) != RES_OK)
-	.line	4666
+	.line	4686
 ;					LEAVE_FF(fs, FR_DISK_ERR);
 	pea	#<$1
 	ldy	#$1c
-	lda	[<L870+fp_0],Y
+	lda	[<L869+fp_0],Y
 	pha
 	ldy	#$1a
-	lda	[<L870+fp_0],Y
+	lda	[<L869+fp_0],Y
 	pha
 	clc
 	lda	#$26
-	adc	<L870+fp_0
+	adc	<L869+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L870+fp_0+2
+	adc	<L869+fp_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$1
-	lda	[<L871+fs_1],Y
+	lda	[<L870+fs_1],Y
 	pha
 	jsl	~~disk_write
 	tax
-	bne	L876
+	bne	L875
 	brl	L10494
-L876:
-	.line	4667
+L875:
+	.line	4687
 	lda	#$1
-L877:
+L876:
 	tay
-	lda	<L870+2
-	sta	<L870+2+4
-	lda	<L870+1
-	sta	<L870+1+4
+	lda	<L869+2
+	sta	<L869+2+4
+	lda	<L869+1
+	sta	<L869+1+4
 	pld
 	tsc
 	clc
-	adc	#L870+4
+	adc	#L869+4
 	tcs
 	tya
 	rtl
 ;				fp->flag &= (BYTE) ~FA_DIRTY;
 L10494:
-	.line	4668
+	.line	4688
 	clc
 	lda	#$10
-	adc	<L870+fp_0
+	adc	<L869+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L870+fp_0+2
+	adc	<L869+fp_0+2
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -20946,16 +20967,16 @@ L10494:
 	rep	#$20
 	longa	on
 ;			}
-	.line	4669
+	.line	4689
 ;#endif
 ;			/* Update the directory entry */
 ;			tm = GET_FATTIME(); /* Modified time */
 L10493:
-	.line	4672
+	.line	4692
 	lda	#$0
-	sta	<L871+tm_1
+	sta	<L870+tm_1
 	lda	#$5221
-	sta	<L871+tm_1+2
+	sta	<L870+tm_1+2
 ;#if FF_FS_EXFAT
 ;			if (fs->fs_type == FS_EXFAT)
 ;			{
@@ -20994,43 +21015,43 @@ L10493:
 ;			else
 ;#endif
 ;			{
-	.line	4710
+	.line	4730
 ;				res = move_window(fs, fp->dir_sect);
-	.line	4711
+	.line	4731
 	ldy	#$20
-	lda	[<L870+fp_0],Y
+	lda	[<L869+fp_0],Y
 	pha
 	ldy	#$1e
-	lda	[<L870+fp_0],Y
+	lda	[<L869+fp_0],Y
 	pha
-	pei	<L871+fs_1+2
-	pei	<L871+fs_1
+	pei	<L870+fs_1+2
+	pei	<L870+fs_1
 	jsl	~~move_window
-	sta	<L871+res_1
+	sta	<L870+res_1
 ;				if (res == FR_OK)
-	.line	4712
+	.line	4732
 ;				{
-	lda	<L871+res_1
-	beq	L878
+	lda	<L870+res_1
+	beq	L877
 	brl	L10495
-L878:
-	.line	4713
+L877:
+	.line	4733
 ;					dir = fp->dir_ptr;
-	.line	4714
+	.line	4734
 	ldy	#$22
-	lda	[<L870+fp_0],Y
-	sta	<L871+dir_1
+	lda	[<L869+fp_0],Y
+	sta	<L870+dir_1
 	ldy	#$24
-	lda	[<L870+fp_0],Y
-	sta	<L871+dir_1+2
+	lda	[<L869+fp_0],Y
+	sta	<L870+dir_1+2
 ;					dir[DIR_Attr] |= AM_ARC; /* Set archive attribute to indicate that the file has been changed */
-	.line	4715
+	.line	4735
 	clc
 	lda	#$b
-	adc	<L871+dir_1
+	adc	<L870+dir_1
 	sta	<R0
 	lda	#$0
-	adc	<L871+dir_1+2
+	adc	<L870+dir_1+2
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -21040,89 +21061,89 @@ L878:
 	rep	#$20
 	longa	on
 ;					st_clust(fp->obj.fs, dir, fp->obj.sclust); /* Update file allocation information  */
-	.line	4716
+	.line	4736
 	ldy	#$a
-	lda	[<L870+fp_0],Y
+	lda	[<L869+fp_0],Y
 	pha
 	ldy	#$8
-	lda	[<L870+fp_0],Y
+	lda	[<L869+fp_0],Y
 	pha
-	pei	<L871+dir_1+2
-	pei	<L871+dir_1
+	pei	<L870+dir_1+2
+	pei	<L870+dir_1
 	ldy	#$2
-	lda	[<L870+fp_0],Y
+	lda	[<L869+fp_0],Y
 	pha
-	lda	[<L870+fp_0]
+	lda	[<L869+fp_0]
 	pha
 	jsl	~~st_clust
 ;					st_dword(dir + DIR_FileSize, (DWORD) fp->obj.objsize); /* Update file size */
-	.line	4717
+	.line	4737
 	ldy	#$e
-	lda	[<L870+fp_0],Y
+	lda	[<L869+fp_0],Y
 	pha
 	ldy	#$c
-	lda	[<L870+fp_0],Y
+	lda	[<L869+fp_0],Y
 	pha
 	clc
 	lda	#$1c
-	adc	<L871+dir_1
+	adc	<L870+dir_1
 	sta	<R0
 	lda	#$0
-	adc	<L871+dir_1+2
+	adc	<L870+dir_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;					st_dword(dir + DIR_ModTime, tm); /* Update modified time */
-	.line	4718
-	pei	<L871+tm_1+2
-	pei	<L871+tm_1
+	.line	4738
+	pei	<L870+tm_1+2
+	pei	<L870+tm_1
 	clc
 	lda	#$16
-	adc	<L871+dir_1
+	adc	<L870+dir_1
 	sta	<R0
 	lda	#$0
-	adc	<L871+dir_1+2
+	adc	<L870+dir_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;					st_word(dir + DIR_LstAccDate, 0);
-	.line	4719
+	.line	4739
 	pea	#<$0
 	clc
 	lda	#$12
-	adc	<L871+dir_1
+	adc	<L870+dir_1
 	sta	<R0
 	lda	#$0
-	adc	<L871+dir_1+2
+	adc	<L870+dir_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_word
 ;					fs->wflag = 1;
-	.line	4720
+	.line	4740
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$3
-	sta	[<L871+fs_1],Y
+	sta	[<L870+fs_1],Y
 	rep	#$20
 	longa	on
 ;					res = sync_fs(fs); /* Restore it to the directory */
-	.line	4721
-	pei	<L871+fs_1+2
-	pei	<L871+fs_1
+	.line	4741
+	pei	<L870+fs_1+2
+	pei	<L870+fs_1
 	jsl	~~sync_fs
-	sta	<L871+res_1
+	sta	<L870+res_1
 ;					fp->flag &= (BYTE) ~FA_MODIFIED;
-	.line	4722
+	.line	4742
 	clc
 	lda	#$10
-	adc	<L870+fp_0
+	adc	<L869+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L870+fp_0+2
+	adc	<L869+fp_0+2
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -21132,30 +21153,30 @@ L878:
 	rep	#$20
 	longa	on
 ;				}
-	.line	4723
+	.line	4743
 ;			}
 L10495:
-	.line	4724
+	.line	4744
 ;		}
-	.line	4725
+	.line	4745
 ;	}
 L10492:
-	.line	4726
+	.line	4746
 ;
 ;	LEAVE_FF(fs, res);
 L10491:
-	.line	4728
-	lda	<L871+res_1
-	brl	L877
+	.line	4748
+	lda	<L870+res_1
+	brl	L876
 ;}
-	.line	4729
-	.endblock	4729
-L870	equ	18
-L871	equ	5
+	.line	4749
+	.endblock	4749
+L869	equ	18
+L870	equ	5
 	ends
 	efunc
-	.endfunc	4729,5,18
-	.line	4729
+	.endfunc	4749,5,18
+	.line	4749
 ;
 ;#endif /* !FF_FS_READONLY */
 ;
@@ -21166,23 +21187,23 @@ L871	equ	5
 ;FRESULT f_close(FIL* fp /* Pointer to the file object to be closed */
 ;)
 ;{
-	.line	4737
-	.line	4739
+	.line	4757
+	.line	4759
 	FFDOS
 	xdef	~~f_close
 	func
-	.function	4739
+	.function	4759
 ~~f_close:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L879
+	sbc	#L878
 	tcs
 	phd
 	tcd
 fp_0	set	4
-	.block	4739
+	.block	4759
 ;	FRESULT res;
 ;	FATFS *fs;
 ;
@@ -21191,87 +21212,87 @@ fp_0	set	4
 res_1	set	0
 fs_1	set	2
 	.sym	res,0,5,1,16
-	.sym	fs,2,138,1,32,72
-	.sym	fp,4,138,6,32,74
-	.line	4744
-	pei	<L879+fp_0+2
-	pei	<L879+fp_0
+	.sym	fs,2,138,1,32,75
+	.sym	fp,4,138,6,32,77
+	.line	4764
+	pei	<L878+fp_0+2
+	pei	<L878+fp_0
 	jsl	~~f_sync
-	sta	<L880+res_1
+	sta	<L879+res_1
 ;	if (res == FR_OK)
-	.line	4745
+	.line	4765
 ;#endif
 ;	{
-	lda	<L880+res_1
-	beq	L882
+	lda	<L879+res_1
+	beq	L881
 	brl	L10496
-L882:
-	.line	4747
+L881:
+	.line	4767
 ;		res = validate(&fp->obj, &fs); /* Lock volume */
-	.line	4748
+	.line	4768
 	pea	#0
 	clc
 	tdc
-	adc	#<L880+fs_1
+	adc	#<L879+fs_1
 	pha
-	pei	<L879+fp_0+2
-	pei	<L879+fp_0
+	pei	<L878+fp_0+2
+	pei	<L878+fp_0
 	jsl	~~validate
-	sta	<L880+res_1
+	sta	<L879+res_1
 ;		if (res == FR_OK)
-	.line	4749
+	.line	4769
 ;		{
-	lda	<L880+res_1
-	beq	L883
+	lda	<L879+res_1
+	beq	L882
 	brl	L10497
-L883:
-	.line	4750
+L882:
+	.line	4770
 ;#if FF_FS_LOCK != 0
 ;			res = dec_lock(fp->obj.lockid); /* Decrement file open counter */
 ;			if (res == FR_OK) fp->obj.fs = 0; /* Invalidate file object */
 ;#else
 ;			fp->obj.fs = 0; /* Invalidate file object */
-	.line	4755
+	.line	4775
 	lda	#$0
-	sta	[<L879+fp_0]
+	sta	[<L878+fp_0]
 	lda	#$0
 	ldy	#$2
-	sta	[<L879+fp_0],Y
+	sta	[<L878+fp_0],Y
 ;#endif
 ;#if FF_FS_REENTRANT
 ;			unlock_fs(fs, FR_OK); /* Unlock volume */
 ;#endif
 ;		}
-	.line	4760
+	.line	4780
 ;	}
 L10497:
-	.line	4761
+	.line	4781
 ;	return res;
 L10496:
-	.line	4762
-	lda	<L880+res_1
-L884:
+	.line	4782
+	lda	<L879+res_1
+L883:
 	tay
-	lda	<L879+2
-	sta	<L879+2+4
-	lda	<L879+1
-	sta	<L879+1+4
+	lda	<L878+2
+	sta	<L878+2+4
+	lda	<L878+1
+	sta	<L878+1+4
 	pld
 	tsc
 	clc
-	adc	#L879+4
+	adc	#L878+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	4763
-	.endblock	4763
-L879	equ	6
-L880	equ	1
+	.line	4783
+	.endblock	4783
+L878	equ	6
+L879	equ	1
 	ends
 	efunc
-	.endfunc	4763,1,6
-	.line	4763
+	.endfunc	4783,1,6
+	.line	4783
 ;
 ;#if FF_FS_RPATH >= 1
 ;/*-----------------------------------------------------------------------*/
@@ -21476,24 +21497,24 @@ L880	equ	1
 ;FSIZE_t ofs /* File pointer from top of file */
 ;)
 ;{
-	.line	4964
-	.line	4967
+	.line	4984
+	.line	4987
 	FFDOS
 	xdef	~~f_lseek
 	func
-	.function	4967
+	.function	4987
 ~~f_lseek:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L885
+	sbc	#L884
 	tcs
 	phd
 	tcd
 fp_0	set	4
 ofs_0	set	8
-	.block	4967
+	.block	4987
 ;	FRESULT res;
 ;	FATFS *fs;
 ;	DWORD clst, bcs;
@@ -21512,35 +21533,35 @@ bcs_1	set	10
 nsect_1	set	14
 ifptr_1	set	18
 	.sym	res,0,5,1,16
-	.sym	fs,2,138,1,32,72
+	.sym	fs,2,138,1,32,75
 	.sym	clst,6,18,1,32
 	.sym	bcs,10,18,1,32
 	.sym	nsect,14,18,1,32
 	.sym	ifptr,18,18,1,32
-	.sym	fp,4,138,6,32,74
+	.sym	fp,4,138,6,32,77
 	.sym	ofs,8,18,6,32
-	.line	4978
+	.line	4998
 	pea	#0
 	clc
 	tdc
-	adc	#<L886+fs_1
+	adc	#<L885+fs_1
 	pha
-	pei	<L885+fp_0+2
-	pei	<L885+fp_0
+	pei	<L884+fp_0+2
+	pei	<L884+fp_0
 	jsl	~~validate
-	sta	<L886+res_1
+	sta	<L885+res_1
 ;	if (res == FR_OK)
-	.line	4979
+	.line	4999
 ;		res = (FRESULT) fp->err;
-	lda	<L886+res_1
-	beq	L888
+	lda	<L885+res_1
+	beq	L887
 	brl	L10498
-L888:
-	.line	4980
+L887:
+	.line	5000
 	ldy	#$11
-	lda	[<L885+fp_0],Y
+	lda	[<L884+fp_0],Y
 	and	#$ff
-	sta	<L886+res_1
+	sta	<L885+res_1
 ;#if FF_FS_EXFAT && !FF_FS_READONLY
 ;	if (res == FR_OK && fs->fs_type == FS_EXFAT)
 ;	{
@@ -21549,24 +21570,24 @@ L888:
 ;#endif
 ;	if (res != FR_OK)
 L10498:
-	.line	4987
+	.line	5007
 ;		LEAVE_FF(fs, res);
-	lda	<L886+res_1
-	bne	L889
+	lda	<L885+res_1
+	bne	L888
 	brl	L10499
+L888:
+	.line	5008
+	lda	<L885+res_1
 L889:
-	.line	4988
-	lda	<L886+res_1
-L890:
 	tay
-	lda	<L885+2
-	sta	<L885+2+8
-	lda	<L885+1
-	sta	<L885+1+8
+	lda	<L884+2
+	sta	<L884+2+8
+	lda	<L884+1
+	sta	<L884+1+8
 	pld
 	tsc
 	clc
-	adc	#L885+8
+	adc	#L884+8
 	tcs
 	tya
 	rtl
@@ -21641,86 +21662,86 @@ L890:
 ;	/* Normal Seek */
 ;	{
 L10499:
-	.line	5058
+	.line	5078
 ;#if FF_FS_EXFAT
 ;		if (fs->fs_type != FS_EXFAT && ofs >= 0x100000000) ofs = 0xFFFFFFFF; /* Clip at 4 GiB - 1 if at FATxx */
 ;#endif
 ;		if (ofs > fp->obj.objsize && (FF_FS_READONLY || !(fp->flag & FA_WRITE)))
-	.line	5062
+	.line	5082
 ;		{ /* In read-only mode, clip offset with the file size */
 	ldy	#$c
-	lda	[<L885+fp_0],Y
-	cmp	<L885+ofs_0
+	lda	[<L884+fp_0],Y
+	cmp	<L884+ofs_0
 	ldy	#$e
-	lda	[<L885+fp_0],Y
-	sbc	<L885+ofs_0+2
-	bcc	L891
+	lda	[<L884+fp_0],Y
+	sbc	<L884+ofs_0+2
+	bcc	L890
 	brl	L10500
-L891:
+L890:
 	sep	#$20
 	longa	off
 	ldy	#$10
-	lda	[<L885+fp_0],Y
+	lda	[<L884+fp_0],Y
 	and	#<$2
 	rep	#$20
 	longa	on
-	beq	L893
+	beq	L892
 	brl	L10500
-L893:
 L892:
-	.line	5063
+L891:
+	.line	5083
 ;			ofs = fp->obj.objsize;
-	.line	5064
+	.line	5084
 	ldy	#$c
-	lda	[<L885+fp_0],Y
-	sta	<L885+ofs_0
+	lda	[<L884+fp_0],Y
+	sta	<L884+ofs_0
 	ldy	#$e
-	lda	[<L885+fp_0],Y
-	sta	<L885+ofs_0+2
+	lda	[<L884+fp_0],Y
+	sta	<L884+ofs_0+2
 ;		}
-	.line	5065
+	.line	5085
 ;		ifptr = fp->fptr;
 L10500:
-	.line	5066
+	.line	5086
 	ldy	#$12
-	lda	[<L885+fp_0],Y
-	sta	<L886+ifptr_1
+	lda	[<L884+fp_0],Y
+	sta	<L885+ifptr_1
 	ldy	#$14
-	lda	[<L885+fp_0],Y
-	sta	<L886+ifptr_1+2
+	lda	[<L884+fp_0],Y
+	sta	<L885+ifptr_1+2
 ;		fp->fptr = nsect = 0;
-	.line	5067
-	stz	<L886+nsect_1
-	stz	<L886+nsect_1+2
+	.line	5087
+	stz	<L885+nsect_1
+	stz	<L885+nsect_1+2
 	lda	#$0
 	ldy	#$12
-	sta	[<L885+fp_0],Y
+	sta	[<L884+fp_0],Y
 	lda	#$0
 	ldy	#$14
-	sta	[<L885+fp_0],Y
+	sta	[<L884+fp_0],Y
 ;		if (ofs > 0)
-	.line	5068
+	.line	5088
 ;		{
 	lda	#$0
-	cmp	<L885+ofs_0
+	cmp	<L884+ofs_0
 	lda	#$0
-	sbc	<L885+ofs_0+2
-	bcc	L894
+	sbc	<L884+ofs_0+2
+	bcc	L893
 	brl	L10501
-L894:
-	.line	5069
+L893:
+	.line	5089
 ;			bcs = (DWORD) fs->csize * SS(fs); /* Cluster size (byte) */
-	.line	5070
+	.line	5090
 	ldy	#$0
 	phy
 	ldy	#$9
-	lda	[<L886+fs_1],Y
+	lda	[<L885+fs_1],Y
 	ply
 	rol	A
 	ror	A
-	bpl	L895
+	bpl	L894
 	dey
-L895:
+L894:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
@@ -21728,27 +21749,27 @@ L895:
 	lda	#$9
 	xref	~~~lasl
 	jsl	~~~lasl
-	sta	<L886+bcs_1
-	stx	<L886+bcs_1+2
+	sta	<L885+bcs_1
+	stx	<L885+bcs_1+2
 ;			if (ifptr > 0 && (ofs - 1) / bcs >= (ifptr - 1) / bcs)
-	.line	5071
+	.line	5091
 ;			{ /* When seek to same or following cluster, */
 	lda	#$0
-	cmp	<L886+ifptr_1
+	cmp	<L885+ifptr_1
 	lda	#$0
-	sbc	<L886+ifptr_1+2
-	bcc	L896
+	sbc	<L885+ifptr_1+2
+	bcc	L895
 	brl	L10502
-L896:
+L895:
 	clc
 	lda	#$ffff
-	adc	<L886+ifptr_1
+	adc	<L885+ifptr_1
 	sta	<R0
 	lda	#$ffff
-	adc	<L886+ifptr_1+2
+	adc	<L885+ifptr_1+2
 	sta	<R0+2
-	pei	<L886+bcs_1+2
-	pei	<L886+bcs_1
+	pei	<L885+bcs_1+2
+	pei	<L885+bcs_1
 	pei	<R0+2
 	pei	<R0
 	xref	~~~ludv
@@ -21757,13 +21778,13 @@ L896:
 	stx	<R0+2
 	clc
 	lda	#$ffff
-	adc	<L885+ofs_0
+	adc	<L884+ofs_0
 	sta	<R1
 	lda	#$ffff
-	adc	<L885+ofs_0+2
+	adc	<L884+ofs_0+2
 	sta	<R1+2
-	pei	<L886+bcs_1+2
-	pei	<L886+bcs_1
+	pei	<L885+bcs_1+2
+	pei	<L885+bcs_1
 	pei	<R1+2
 	pei	<R1
 	xref	~~~ludv
@@ -21774,25 +21795,25 @@ L896:
 	cmp	<R0
 	lda	<R1+2
 	sbc	<R0+2
-	bcs	L897
+	bcs	L896
 	brl	L10502
-L897:
-	.line	5072
+L896:
+	.line	5092
 ;				fp->fptr = (ifptr - 1) & ~(FSIZE_t) (bcs - 1); /* start from the current cluster */
-	.line	5073
+	.line	5093
 	clc
 	lda	#$ffff
-	adc	<L886+ifptr_1
+	adc	<L885+ifptr_1
 	sta	<R0
 	lda	#$ffff
-	adc	<L886+ifptr_1+2
+	adc	<L885+ifptr_1+2
 	sta	<R0+2
 	clc
 	lda	#$ffff
-	adc	<L886+bcs_1
+	adc	<L885+bcs_1
 	sta	<R1
 	lda	#$ffff
-	adc	<L886+bcs_1+2
+	adc	<L885+bcs_1+2
 	sta	<R1+2
 	lda	<R1
 	eor	#<$ffffffff
@@ -21808,237 +21829,237 @@ L897:
 	sta	<R1+2
 	lda	<R1
 	ldy	#$12
-	sta	[<L885+fp_0],Y
+	sta	[<L884+fp_0],Y
 	lda	<R1+2
 	ldy	#$14
-	sta	[<L885+fp_0],Y
+	sta	[<L884+fp_0],Y
 ;				ofs -= fp->fptr;
-	.line	5074
+	.line	5094
 	sec
-	lda	<L885+ofs_0
+	lda	<L884+ofs_0
 	ldy	#$12
-	sbc	[<L885+fp_0],Y
-	sta	<L885+ofs_0
-	lda	<L885+ofs_0+2
+	sbc	[<L884+fp_0],Y
+	sta	<L884+ofs_0
+	lda	<L884+ofs_0+2
 	ldy	#$14
-	sbc	[<L885+fp_0],Y
-	sta	<L885+ofs_0+2
+	sbc	[<L884+fp_0],Y
+	sta	<L884+ofs_0+2
 ;				clst = fp->clust;
-	.line	5075
+	.line	5095
 	ldy	#$16
-	lda	[<L885+fp_0],Y
-	sta	<L886+clst_1
+	lda	[<L884+fp_0],Y
+	sta	<L885+clst_1
 	ldy	#$18
-	lda	[<L885+fp_0],Y
-	sta	<L886+clst_1+2
+	lda	[<L884+fp_0],Y
+	sta	<L885+clst_1+2
 ;			}
-	.line	5076
+	.line	5096
 ;			else
 	brl	L10503
 L10502:
 ;			{ /* When seek to back cluster, */
-	.line	5078
+	.line	5098
 ;				clst = fp->obj.sclust; /* start from the first cluster */
-	.line	5079
+	.line	5099
 	ldy	#$8
-	lda	[<L885+fp_0],Y
-	sta	<L886+clst_1
+	lda	[<L884+fp_0],Y
+	sta	<L885+clst_1
 	ldy	#$a
-	lda	[<L885+fp_0],Y
-	sta	<L886+clst_1+2
+	lda	[<L884+fp_0],Y
+	sta	<L885+clst_1+2
 ;#if !FF_FS_READONLY
 ;				if (clst == 0)
-	.line	5081
+	.line	5101
 ;				{ /* If no cluster chain, create a new chain */
-	lda	<L886+clst_1
-	ora	<L886+clst_1+2
-	beq	L898
+	lda	<L885+clst_1
+	ora	<L885+clst_1+2
+	beq	L897
 	brl	L10504
-L898:
-	.line	5082
+L897:
+	.line	5102
 ;					clst = create_chain(&fp->obj, 0);
-	.line	5083
+	.line	5103
 	pea	#^$0
 	pea	#<$0
-	pei	<L885+fp_0+2
-	pei	<L885+fp_0
+	pei	<L884+fp_0+2
+	pei	<L884+fp_0
 	jsl	~~create_chain
-	sta	<L886+clst_1
-	stx	<L886+clst_1+2
+	sta	<L885+clst_1
+	stx	<L885+clst_1+2
 ;					if (clst == 1)
-	.line	5084
+	.line	5104
 ;						ABORT(fs, FR_INT_ERR);
-	lda	<L886+clst_1
+	lda	<L885+clst_1
 	cmp	#<$1
-	bne	L899
-	lda	<L886+clst_1+2
+	bne	L898
+	lda	<L885+clst_1+2
 	cmp	#^$1
-L899:
-	beq	L900
+L898:
+	beq	L899
 	brl	L10505
-L900:
-	.line	5085
-	.line	5085
+L899:
+	.line	5105
+	.line	5105
 	sep	#$20
 	longa	off
 	lda	#$2
 	ldy	#$11
-	sta	[<L885+fp_0],Y
+	sta	[<L884+fp_0],Y
 	rep	#$20
 	longa	on
-	.line	5085
+	.line	5105
 	lda	#$2
-	brl	L890
-	.line	5085
+	brl	L889
+	.line	5105
 L10505:
-	.line	5085
+	.line	5105
 ;					if (clst == 0xFFFFFFFF)
-	.line	5086
+	.line	5106
 ;						ABORT(fs, FR_DISK_ERR);
-	lda	<L886+clst_1
+	lda	<L885+clst_1
 	cmp	#<$ffffffff
-	bne	L901
-	lda	<L886+clst_1+2
+	bne	L900
+	lda	<L885+clst_1+2
 	cmp	#^$ffffffff
-L901:
-	beq	L902
+L900:
+	beq	L901
 	brl	L10506
-L902:
-	.line	5087
-	.line	5087
+L901:
+	.line	5107
+	.line	5107
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$11
-	sta	[<L885+fp_0],Y
+	sta	[<L884+fp_0],Y
 	rep	#$20
 	longa	on
-	.line	5087
+	.line	5107
 	lda	#$1
-	brl	L890
-	.line	5087
+	brl	L889
+	.line	5107
 L10506:
-	.line	5087
+	.line	5107
 ;					fp->obj.sclust = clst;
-	.line	5088
-	lda	<L886+clst_1
+	.line	5108
+	lda	<L885+clst_1
 	ldy	#$8
-	sta	[<L885+fp_0],Y
-	lda	<L886+clst_1+2
+	sta	[<L884+fp_0],Y
+	lda	<L885+clst_1+2
 	ldy	#$a
-	sta	[<L885+fp_0],Y
+	sta	[<L884+fp_0],Y
 ;				}
-	.line	5089
+	.line	5109
 ;#endif
 ;				fp->clust = clst;
 L10504:
-	.line	5091
-	lda	<L886+clst_1
+	.line	5111
+	lda	<L885+clst_1
 	ldy	#$16
-	sta	[<L885+fp_0],Y
-	lda	<L886+clst_1+2
+	sta	[<L884+fp_0],Y
+	lda	<L885+clst_1+2
 	ldy	#$18
-	sta	[<L885+fp_0],Y
+	sta	[<L884+fp_0],Y
 ;			}
-	.line	5092
+	.line	5112
 L10503:
 ;			if (clst != 0)
-	.line	5093
+	.line	5113
 ;			{
-	lda	<L886+clst_1
-	ora	<L886+clst_1+2
-	bne	L903
+	lda	<L885+clst_1
+	ora	<L885+clst_1+2
+	bne	L902
 	brl	L10507
-L903:
-	.line	5094
+L902:
+	.line	5114
 ;				while (ofs > bcs)
-	.line	5095
+	.line	5115
 L10508:
-	lda	<L886+bcs_1
-	cmp	<L885+ofs_0
-	lda	<L886+bcs_1+2
-	sbc	<L885+ofs_0+2
-	bcc	L904
+	lda	<L885+bcs_1
+	cmp	<L884+ofs_0
+	lda	<L885+bcs_1+2
+	sbc	<L884+ofs_0+2
+	bcc	L903
 	brl	L10509
-L904:
+L903:
 ;				{ /* Cluster following loop */
-	.line	5096
+	.line	5116
 ;					ofs -= bcs;
-	.line	5097
+	.line	5117
 	sec
-	lda	<L885+ofs_0
-	sbc	<L886+bcs_1
-	sta	<L885+ofs_0
-	lda	<L885+ofs_0+2
-	sbc	<L886+bcs_1+2
-	sta	<L885+ofs_0+2
+	lda	<L884+ofs_0
+	sbc	<L885+bcs_1
+	sta	<L884+ofs_0
+	lda	<L884+ofs_0+2
+	sbc	<L885+bcs_1+2
+	sta	<L884+ofs_0+2
 ;					fp->fptr += bcs;
-	.line	5098
+	.line	5118
 	clc
 	lda	#$12
-	adc	<L885+fp_0
+	adc	<L884+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L885+fp_0+2
+	adc	<L884+fp_0+2
 	sta	<R0+2
 	clc
 	lda	[<R0]
-	adc	<L886+bcs_1
+	adc	<L885+bcs_1
 	sta	[<R0]
 	ldy	#$2
 	lda	[<R0],Y
-	adc	<L886+bcs_1+2
+	adc	<L885+bcs_1+2
 	ldy	#$2
 	sta	[<R0],Y
 ;#if !FF_FS_READONLY
 ;					if (fp->flag & FA_WRITE)
-	.line	5100
+	.line	5120
 ;					{ /* Check if in write mode or not */
 	sep	#$20
 	longa	off
 	ldy	#$10
-	lda	[<L885+fp_0],Y
+	lda	[<L884+fp_0],Y
 	and	#<$2
 	rep	#$20
 	longa	on
-	bne	L905
+	bne	L904
 	brl	L10510
-L905:
-	.line	5101
+L904:
+	.line	5121
 ;						if (FF_FS_EXFAT && fp->fptr > fp->obj.objsize)
-	.line	5102
+	.line	5122
 ;						{ /* No FAT chain object needs correct objsize to generate FAT value */
 	brl	L10511
 	ldy	#$c
-	lda	[<L885+fp_0],Y
+	lda	[<L884+fp_0],Y
 	ldy	#$12
-	cmp	[<L885+fp_0],Y
+	cmp	[<L884+fp_0],Y
 	ldy	#$e
-	lda	[<L885+fp_0],Y
+	lda	[<L884+fp_0],Y
 	ldy	#$14
-	sbc	[<L885+fp_0],Y
-	bcc	L906
+	sbc	[<L884+fp_0],Y
+	bcc	L905
 	brl	L10511
-L906:
-	.line	5103
+L905:
+	.line	5123
 ;							fp->obj.objsize = fp->fptr;
-	.line	5104
+	.line	5124
 	ldy	#$12
-	lda	[<L885+fp_0],Y
+	lda	[<L884+fp_0],Y
 	ldy	#$c
-	sta	[<L885+fp_0],Y
+	sta	[<L884+fp_0],Y
 	ldy	#$14
-	lda	[<L885+fp_0],Y
+	lda	[<L884+fp_0],Y
 	ldy	#$e
-	sta	[<L885+fp_0],Y
+	sta	[<L884+fp_0],Y
 ;							fp->flag |= FA_MODIFIED;
-	.line	5105
+	.line	5125
 	clc
 	lda	#$10
-	adc	<L885+fp_0
+	adc	<L884+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L885+fp_0+2
+	adc	<L884+fp_0+2
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -22048,193 +22069,193 @@ L906:
 	rep	#$20
 	longa	on
 ;						}
-	.line	5106
+	.line	5126
 ;						clst = create_chain(&fp->obj, clst); /* Follow chain with forceed stretch */
 L10511:
-	.line	5107
-	pei	<L886+clst_1+2
-	pei	<L886+clst_1
-	pei	<L885+fp_0+2
-	pei	<L885+fp_0
+	.line	5127
+	pei	<L885+clst_1+2
+	pei	<L885+clst_1
+	pei	<L884+fp_0+2
+	pei	<L884+fp_0
 	jsl	~~create_chain
-	sta	<L886+clst_1
-	stx	<L886+clst_1+2
+	sta	<L885+clst_1
+	stx	<L885+clst_1+2
 ;						if (clst == 0)
-	.line	5108
+	.line	5128
 ;						{ /* Clip file size in case of disk full */
-	lda	<L886+clst_1
-	ora	<L886+clst_1+2
-	beq	L907
+	lda	<L885+clst_1
+	ora	<L885+clst_1+2
+	beq	L906
 	brl	L10512
-L907:
-	.line	5109
+L906:
+	.line	5129
 ;							ofs = 0;
-	.line	5110
-	stz	<L885+ofs_0
-	stz	<L885+ofs_0+2
+	.line	5130
+	stz	<L884+ofs_0
+	stz	<L884+ofs_0+2
 ;							break;
-	.line	5111
+	.line	5131
 	brl	L10509
 ;						}
-	.line	5112
+	.line	5132
 ;					}
 L10512:
-	.line	5113
+	.line	5133
 ;					else
 	brl	L10513
 L10510:
 ;#endif
 ;					{
-	.line	5116
+	.line	5136
 ;						clst = get_fat(&fp->obj, clst); /* Follow cluster chain if not in write mode */
-	.line	5117
-	pei	<L886+clst_1+2
-	pei	<L886+clst_1
-	pei	<L885+fp_0+2
-	pei	<L885+fp_0
+	.line	5137
+	pei	<L885+clst_1+2
+	pei	<L885+clst_1
+	pei	<L884+fp_0+2
+	pei	<L884+fp_0
 	jsl	~~get_fat
-	sta	<L886+clst_1
-	stx	<L886+clst_1+2
+	sta	<L885+clst_1
+	stx	<L885+clst_1+2
 ;					}
-	.line	5118
+	.line	5138
 L10513:
 ;					if (clst == 0xFFFFFFFF)
-	.line	5119
+	.line	5139
 ;						ABORT(fs, FR_DISK_ERR);
-	lda	<L886+clst_1
+	lda	<L885+clst_1
 	cmp	#<$ffffffff
-	bne	L908
-	lda	<L886+clst_1+2
+	bne	L907
+	lda	<L885+clst_1+2
 	cmp	#^$ffffffff
-L908:
-	beq	L909
+L907:
+	beq	L908
 	brl	L10514
-L909:
-	.line	5120
-	.line	5120
+L908:
+	.line	5140
+	.line	5140
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$11
-	sta	[<L885+fp_0],Y
+	sta	[<L884+fp_0],Y
 	rep	#$20
 	longa	on
-	.line	5120
+	.line	5140
 	lda	#$1
-	brl	L890
-	.line	5120
+	brl	L889
+	.line	5140
 L10514:
-	.line	5120
+	.line	5140
 ;					if (clst <= 1 || clst >= fs->n_fatent)
-	.line	5121
+	.line	5141
 ;						ABORT(fs, FR_INT_ERR);
 	lda	#$1
-	cmp	<L886+clst_1
+	cmp	<L885+clst_1
 	lda	#$0
-	sbc	<L886+clst_1+2
-	bcc	L911
-	brl	L910
-L911:
-	lda	<L886+clst_1
-	ldy	#$17
-	cmp	[<L886+fs_1],Y
-	lda	<L886+clst_1+2
-	ldy	#$19
-	sbc	[<L886+fs_1],Y
-	bcs	L912
-	brl	L10515
-L912:
+	sbc	<L885+clst_1+2
+	bcc	L910
+	brl	L909
 L910:
-	.line	5122
-	.line	5122
+	lda	<L885+clst_1
+	ldy	#$17
+	cmp	[<L885+fs_1],Y
+	lda	<L885+clst_1+2
+	ldy	#$19
+	sbc	[<L885+fs_1],Y
+	bcs	L911
+	brl	L10515
+L911:
+L909:
+	.line	5142
+	.line	5142
 	sep	#$20
 	longa	off
 	lda	#$2
 	ldy	#$11
-	sta	[<L885+fp_0],Y
+	sta	[<L884+fp_0],Y
 	rep	#$20
 	longa	on
-	.line	5122
+	.line	5142
 	lda	#$2
-	brl	L890
-	.line	5122
+	brl	L889
+	.line	5142
 L10515:
-	.line	5122
+	.line	5142
 ;					fp->clust = clst;
-	.line	5123
-	lda	<L886+clst_1
+	.line	5143
+	lda	<L885+clst_1
 	ldy	#$16
-	sta	[<L885+fp_0],Y
-	lda	<L886+clst_1+2
+	sta	[<L884+fp_0],Y
+	lda	<L885+clst_1+2
 	ldy	#$18
-	sta	[<L885+fp_0],Y
+	sta	[<L884+fp_0],Y
 ;				}
-	.line	5124
+	.line	5144
 	brl	L10508
 L10509:
 ;				fp->fptr += ofs;
-	.line	5125
+	.line	5145
 	clc
 	lda	#$12
-	adc	<L885+fp_0
+	adc	<L884+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L885+fp_0+2
+	adc	<L884+fp_0+2
 	sta	<R0+2
 	clc
 	lda	[<R0]
-	adc	<L885+ofs_0
+	adc	<L884+ofs_0
 	sta	[<R0]
 	ldy	#$2
 	lda	[<R0],Y
-	adc	<L885+ofs_0+2
+	adc	<L884+ofs_0+2
 	ldy	#$2
 	sta	[<R0],Y
 ;				if (ofs % SS(fs))
-	.line	5126
+	.line	5146
 ;				{
-	lda	<L885+ofs_0
+	lda	<L884+ofs_0
 	and	#<$1ff
-	bne	L913
+	bne	L912
 	brl	L10516
-L913:
-	.line	5127
+L912:
+	.line	5147
 ;					nsect = clst2sect(fs, clst); /* Current sector */
-	.line	5128
-	pei	<L886+clst_1+2
-	pei	<L886+clst_1
-	pei	<L886+fs_1+2
-	pei	<L886+fs_1
+	.line	5148
+	pei	<L885+clst_1+2
+	pei	<L885+clst_1
+	pei	<L885+fs_1+2
+	pei	<L885+fs_1
 	jsl	~~clst2sect
-	sta	<L886+nsect_1
-	stx	<L886+nsect_1+2
+	sta	<L885+nsect_1
+	stx	<L885+nsect_1+2
 ;					if (nsect == 0)
-	.line	5129
+	.line	5149
 ;						ABORT(fs, FR_INT_ERR);
-	lda	<L886+nsect_1
-	ora	<L886+nsect_1+2
-	beq	L914
+	lda	<L885+nsect_1
+	ora	<L885+nsect_1+2
+	beq	L913
 	brl	L10517
-L914:
-	.line	5130
-	.line	5130
+L913:
+	.line	5150
+	.line	5150
 	sep	#$20
 	longa	off
 	lda	#$2
 	ldy	#$11
-	sta	[<L885+fp_0],Y
+	sta	[<L884+fp_0],Y
 	rep	#$20
 	longa	on
-	.line	5130
+	.line	5150
 	lda	#$2
-	brl	L890
-	.line	5130
+	brl	L889
+	.line	5150
 L10517:
-	.line	5130
+	.line	5150
 ;					nsect += (DWORD) (ofs / SS(fs));
-	.line	5131
-	pei	<L885+ofs_0+2
-	pei	<L885+ofs_0
+	.line	5151
+	pei	<L884+ofs_0+2
+	pei	<L884+ofs_0
 	lda	#$9
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -22242,53 +22263,53 @@ L10517:
 	stx	<R0+2
 	clc
 	lda	<R0
-	adc	<L886+nsect_1
-	sta	<L886+nsect_1
+	adc	<L885+nsect_1
+	sta	<L885+nsect_1
 	lda	<R0+2
-	adc	<L886+nsect_1+2
-	sta	<L886+nsect_1+2
+	adc	<L885+nsect_1+2
+	sta	<L885+nsect_1+2
 ;				}
-	.line	5132
+	.line	5152
 ;			}
 L10516:
-	.line	5133
+	.line	5153
 ;		}
 L10507:
-	.line	5134
+	.line	5154
 ;		if (!FF_FS_READONLY && fp->fptr > fp->obj.objsize)
 L10501:
-	.line	5135
+	.line	5155
 ;		{ /* Set file change flag if the file size is extended */
 	ldy	#$c
-	lda	[<L885+fp_0],Y
+	lda	[<L884+fp_0],Y
 	ldy	#$12
-	cmp	[<L885+fp_0],Y
+	cmp	[<L884+fp_0],Y
 	ldy	#$e
-	lda	[<L885+fp_0],Y
+	lda	[<L884+fp_0],Y
 	ldy	#$14
-	sbc	[<L885+fp_0],Y
-	bcc	L915
+	sbc	[<L884+fp_0],Y
+	bcc	L914
 	brl	L10518
-L915:
-	.line	5136
+L914:
+	.line	5156
 ;			fp->obj.objsize = fp->fptr;
-	.line	5137
+	.line	5157
 	ldy	#$12
-	lda	[<L885+fp_0],Y
+	lda	[<L884+fp_0],Y
 	ldy	#$c
-	sta	[<L885+fp_0],Y
+	sta	[<L884+fp_0],Y
 	ldy	#$14
-	lda	[<L885+fp_0],Y
+	lda	[<L884+fp_0],Y
 	ldy	#$e
-	sta	[<L885+fp_0],Y
+	sta	[<L884+fp_0],Y
 ;			fp->flag |= FA_MODIFIED;
-	.line	5138
+	.line	5158
 	clc
 	lda	#$10
-	adc	<L885+fp_0
+	adc	<L884+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L885+fp_0+2
+	adc	<L884+fp_0+2
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -22298,95 +22319,95 @@ L915:
 	rep	#$20
 	longa	on
 ;		}
-	.line	5139
+	.line	5159
 ;		if (fp->fptr % SS(fs) && nsect != fp->sect)
 L10518:
-	.line	5140
+	.line	5160
 ;		{ /* Fill sector cache if needed */
 	ldy	#$12
-	lda	[<L885+fp_0],Y
+	lda	[<L884+fp_0],Y
 	and	#<$1ff
-	bne	L916
+	bne	L915
 	brl	L10519
-L916:
-	lda	<L886+nsect_1
+L915:
+	lda	<L885+nsect_1
 	ldy	#$1a
-	cmp	[<L885+fp_0],Y
-	bne	L917
-	lda	<L886+nsect_1+2
+	cmp	[<L884+fp_0],Y
+	bne	L916
+	lda	<L885+nsect_1+2
 	ldy	#$1c
-	cmp	[<L885+fp_0],Y
-L917:
-	bne	L918
+	cmp	[<L884+fp_0],Y
+L916:
+	bne	L917
 	brl	L10519
-L918:
-	.line	5141
+L917:
+	.line	5161
 ;#if !FF_FS_TINY
 ;#if !FF_FS_READONLY
 ;			if (fp->flag & FA_DIRTY)
-	.line	5144
+	.line	5164
 ;			{ /* Write-back dirty sector cache */
 	sep	#$20
 	longa	off
 	ldy	#$10
-	lda	[<L885+fp_0],Y
+	lda	[<L884+fp_0],Y
 	and	#<$80
 	rep	#$20
 	longa	on
-	bne	L919
+	bne	L918
 	brl	L10520
-L919:
-	.line	5145
+L918:
+	.line	5165
 ;				if (disk_write(fs->pdrv, fp->buf, fp->sect, 1) != RES_OK)
-	.line	5146
+	.line	5166
 ;					ABORT(fs, FR_DISK_ERR);
 	pea	#<$1
 	ldy	#$1c
-	lda	[<L885+fp_0],Y
+	lda	[<L884+fp_0],Y
 	pha
 	ldy	#$1a
-	lda	[<L885+fp_0],Y
+	lda	[<L884+fp_0],Y
 	pha
 	clc
 	lda	#$26
-	adc	<L885+fp_0
+	adc	<L884+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L885+fp_0+2
+	adc	<L884+fp_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$1
-	lda	[<L886+fs_1],Y
+	lda	[<L885+fs_1],Y
 	pha
 	jsl	~~disk_write
 	tax
-	bne	L920
+	bne	L919
 	brl	L10521
-L920:
-	.line	5147
-	.line	5147
+L919:
+	.line	5167
+	.line	5167
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$11
-	sta	[<L885+fp_0],Y
+	sta	[<L884+fp_0],Y
 	rep	#$20
 	longa	on
-	.line	5147
+	.line	5167
 	lda	#$1
-	brl	L890
-	.line	5147
+	brl	L889
+	.line	5167
 L10521:
-	.line	5147
+	.line	5167
 ;				fp->flag &= (BYTE) ~FA_DIRTY;
-	.line	5148
+	.line	5168
 	clc
 	lda	#$10
-	adc	<L885+fp_0
+	adc	<L884+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L885+fp_0+2
+	adc	<L884+fp_0+2
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -22396,75 +22417,75 @@ L10521:
 	rep	#$20
 	longa	on
 ;			}
-	.line	5149
+	.line	5169
 ;#endif
 ;			if (disk_read(fs->pdrv, fp->buf, nsect, 1) != RES_OK)
 L10520:
-	.line	5151
+	.line	5171
 ;				ABORT(fs, FR_DISK_ERR); /* Fill sector cache */
 	pea	#<$1
-	pei	<L886+nsect_1+2
-	pei	<L886+nsect_1
+	pei	<L885+nsect_1+2
+	pei	<L885+nsect_1
 	clc
 	lda	#$26
-	adc	<L885+fp_0
+	adc	<L884+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L885+fp_0+2
+	adc	<L884+fp_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$1
-	lda	[<L886+fs_1],Y
+	lda	[<L885+fs_1],Y
 	pha
 	jsl	~~disk_read
 	tax
-	bne	L921
+	bne	L920
 	brl	L10522
-L921:
-	.line	5152
-	.line	5152
+L920:
+	.line	5172
+	.line	5172
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$11
-	sta	[<L885+fp_0],Y
+	sta	[<L884+fp_0],Y
 	rep	#$20
 	longa	on
-	.line	5152
+	.line	5172
 	lda	#$1
-	brl	L890
-	.line	5152
+	brl	L889
+	.line	5172
 L10522:
-	.line	5152
+	.line	5172
 ;#endif
 ;			fp->sect = nsect;
-	.line	5154
-	lda	<L886+nsect_1
+	.line	5174
+	lda	<L885+nsect_1
 	ldy	#$1a
-	sta	[<L885+fp_0],Y
-	lda	<L886+nsect_1+2
+	sta	[<L884+fp_0],Y
+	lda	<L885+nsect_1+2
 	ldy	#$1c
-	sta	[<L885+fp_0],Y
+	sta	[<L884+fp_0],Y
 ;		}
-	.line	5155
+	.line	5175
 ;	}
 L10519:
-	.line	5156
+	.line	5176
 ;
 ;	LEAVE_FF(fs, res);
-	.line	5158
-	lda	<L886+res_1
-	brl	L890
+	.line	5178
+	lda	<L885+res_1
+	brl	L889
 ;}
-	.line	5159
-	.endblock	5159
-L885	equ	34
-L886	equ	13
+	.line	5179
+	.endblock	5179
+L884	equ	34
+L885	equ	13
 	ends
 	efunc
-	.endfunc	5159,13,34
-	.line	5159
+	.endfunc	5179,13,34
+	.line	5179
 ;
 ;#if FF_FS_MINIMIZE <= 1
 ;/*-----------------------------------------------------------------------*/
@@ -22475,24 +22496,24 @@ L886	equ	13
 ;const TCHAR* path /* Pointer to the directory path */
 ;)
 ;{
-	.line	5166
-	.line	5169
+	.line	5186
+	.line	5189
 	FFDOS
 	xdef	~~f_opendir
 	func
-	.function	5169
+	.function	5189
 ~~f_opendir:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L922
+	sbc	#L921
 	tcs
 	phd
 	tcd
 dp_0	set	4
 path_0	set	8
-	.block	5169
+	.block	5189
 ;	FRESULT res;
 ;	FATFS *fs;
 ;	DEF_NAMBUF
@@ -22502,29 +22523,29 @@ res_1	set	0
 fs_1	set	2
 lfn_1	set	6
 	.sym	res,0,5,1,16
-	.sym	fs,2,138,1,32,72
+	.sym	fs,2,138,1,32,75
 	.sym	lfn,6,144,1,32
-	.sym	dp,4,138,6,32,75
+	.sym	dp,4,138,6,32,78
 	.sym	path,8,142,6,32
-	.line	5174
+	.line	5194
 ;		return FR_INVALID_OBJECT;
-	lda	<L922+dp_0
-	ora	<L922+dp_0+2
-	beq	L925
+	lda	<L921+dp_0
+	ora	<L921+dp_0+2
+	beq	L924
 	brl	L10523
-L925:
-	.line	5175
+L924:
+	.line	5195
 	lda	#$9
-L926:
+L925:
 	tay
-	lda	<L922+2
-	sta	<L922+2+8
-	lda	<L922+1
-	sta	<L922+1+8
+	lda	<L921+2
+	sta	<L921+2+8
+	lda	<L921+1
+	sta	<L921+1+8
 	pld
 	tsc
 	clc
-	adc	#L922+8
+	adc	#L921+8
 	tcs
 	tya
 	rtl
@@ -22534,105 +22555,105 @@ L926:
 ;	/* Get logical drive */
 ;	res = mount_volume(&path, &fs, 0);
 L10523:
-	.line	5180
+	.line	5200
 	pea	#<$0
 	pea	#0
 	clc
 	tdc
-	adc	#<L923+fs_1
+	adc	#<L922+fs_1
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L922+path_0
+	adc	#<L921+path_0
 	pha
 	jsl	~~mount_volume
-	sta	<L923+res_1
+	sta	<L922+res_1
 ;	if (res == FR_OK)
-	.line	5181
+	.line	5201
 ;	{
-	lda	<L923+res_1
-	beq	L927
+	lda	<L922+res_1
+	beq	L926
 	brl	L10524
-L927:
-	.line	5182
+L926:
+	.line	5202
 ;		dp->obj.fs = fs;
-	.line	5183
-	lda	<L923+fs_1
-	sta	[<L922+dp_0]
-	lda	<L923+fs_1+2
+	.line	5203
+	lda	<L922+fs_1
+	sta	[<L921+dp_0]
+	lda	<L922+fs_1+2
 	ldy	#$2
-	sta	[<L922+dp_0],Y
+	sta	[<L921+dp_0],Y
 ;		INIT_NAMBUF(fs);
-	.line	5184
-	.line	5184
+	.line	5204
+	.line	5204
 	pea	#<$200
 	jsl	~~ff_memalloc
-	sta	<L923+lfn_1
-	stx	<L923+lfn_1+2
-	.line	5184
-	lda	<L923+lfn_1
-	ora	<L923+lfn_1+2
-	beq	L928
+	sta	<L922+lfn_1
+	stx	<L922+lfn_1+2
+	.line	5204
+	lda	<L922+lfn_1
+	ora	<L922+lfn_1+2
+	beq	L927
 	brl	L10525
-L928:
-	.line	5184
+L927:
+	.line	5204
 	lda	#$11
-	brl	L926
+	brl	L925
 L10525:
-	.line	5184
-	lda	<L923+lfn_1
+	.line	5204
+	lda	<L922+lfn_1
 	ldy	#$b
-	sta	[<L923+fs_1],Y
-	lda	<L923+lfn_1+2
+	sta	[<L922+fs_1],Y
+	lda	<L922+lfn_1+2
 	ldy	#$d
-	sta	[<L923+fs_1],Y
-	.line	5184
-	.line	5184
+	sta	[<L922+fs_1],Y
+	.line	5204
+	.line	5204
 ;		res = follow_path(dp, path); /* Follow the path to the directory */
-	.line	5185
-	pei	<L922+path_0+2
-	pei	<L922+path_0
-	pei	<L922+dp_0+2
-	pei	<L922+dp_0
+	.line	5205
+	pei	<L921+path_0+2
+	pei	<L921+path_0
+	pei	<L921+dp_0+2
+	pei	<L921+dp_0
 	jsl	~~follow_path
-	sta	<L923+res_1
+	sta	<L922+res_1
 ;		if (res == FR_OK)
-	.line	5186
+	.line	5206
 ;		{ /* Follow completed */
-	lda	<L923+res_1
-	beq	L929
+	lda	<L922+res_1
+	beq	L928
 	brl	L10526
-L929:
-	.line	5187
+L928:
+	.line	5207
 ;			if (!(dp->fn[NSFLAG] & NS_NONAME))
-	.line	5188
+	.line	5208
 ;			{ /* It is not the origin directory itself */
 	sep	#$20
 	longa	off
 	ldy	#$2b
-	lda	[<L922+dp_0],Y
+	lda	[<L921+dp_0],Y
 	and	#<$80
 	rep	#$20
 	longa	on
-	beq	L930
+	beq	L929
 	brl	L10527
-L930:
-	.line	5189
+L929:
+	.line	5209
 ;				if (dp->obj.attr & AM_DIR)
-	.line	5190
+	.line	5210
 ;				{ /* This object is a sub-directory */
 	sep	#$20
 	longa	off
 	ldy	#$6
-	lda	[<L922+dp_0],Y
+	lda	[<L921+dp_0],Y
 	and	#<$10
 	rep	#$20
 	longa	on
-	bne	L931
+	bne	L930
 	brl	L10528
-L931:
-	.line	5191
+L930:
+	.line	5211
 ;#if FF_FS_EXFAT
 ;					if (fs->fs_type == FS_EXFAT)
 ;					{
@@ -22644,67 +22665,67 @@ L931:
 ;					else
 ;#endif
 ;					{
-	.line	5202
+	.line	5222
 ;						dp->obj.sclust = ld_clust(fs, dp->dir); /* Get object allocation info */
-	.line	5203
+	.line	5223
 	ldy	#$1e
-	lda	[<L922+dp_0],Y
+	lda	[<L921+dp_0],Y
 	pha
 	ldy	#$1c
-	lda	[<L922+dp_0],Y
+	lda	[<L921+dp_0],Y
 	pha
-	pei	<L923+fs_1+2
-	pei	<L923+fs_1
+	pei	<L922+fs_1+2
+	pei	<L922+fs_1
 	jsl	~~ld_clust
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
 	ldy	#$8
-	sta	[<L922+dp_0],Y
+	sta	[<L921+dp_0],Y
 	lda	<R0+2
 	ldy	#$a
-	sta	[<L922+dp_0],Y
+	sta	[<L921+dp_0],Y
 ;					}
-	.line	5204
+	.line	5224
 ;				}
-	.line	5205
+	.line	5225
 ;				else
 	brl	L10529
 L10528:
 ;				{ /* This object is a file */
-	.line	5207
+	.line	5227
 ;					res = FR_NO_PATH;
-	.line	5208
+	.line	5228
 	lda	#$5
-	sta	<L923+res_1
+	sta	<L922+res_1
 ;				}
-	.line	5209
+	.line	5229
 L10529:
 ;			}
-	.line	5210
+	.line	5230
 ;			if (res == FR_OK)
 L10527:
-	.line	5211
+	.line	5231
 ;			{
-	lda	<L923+res_1
-	beq	L932
+	lda	<L922+res_1
+	beq	L931
 	brl	L10530
-L932:
-	.line	5212
+L931:
+	.line	5232
 ;				dp->obj.id = fs->id;
-	.line	5213
+	.line	5233
 	ldy	#$5
-	lda	[<L923+fs_1],Y
+	lda	[<L922+fs_1],Y
 	ldy	#$4
-	sta	[<L922+dp_0],Y
+	sta	[<L921+dp_0],Y
 ;				res = dir_sdi(dp, 0); /* Rewind directory */
-	.line	5214
+	.line	5234
 	pea	#^$0
 	pea	#<$0
-	pei	<L922+dp_0+2
-	pei	<L922+dp_0
+	pei	<L921+dp_0+2
+	pei	<L921+dp_0
 	jsl	~~dir_sdi
-	sta	<L923+res_1
+	sta	<L922+res_1
 ;#if FF_FS_LOCK != 0
 ;				if (res == FR_OK)
 ;				{
@@ -22720,58 +22741,58 @@ L932:
 ;				}
 ;#endif
 ;			}
-	.line	5229
+	.line	5249
 ;		} FREE_NAMBUF();
 L10530:
-	.line	5230
+	.line	5250
 L10526:
-	.line	5230
-	pei	<L923+lfn_1+2
-	pei	<L923+lfn_1
+	.line	5250
+	pei	<L922+lfn_1+2
+	pei	<L922+lfn_1
 	jsl	~~ff_memfree
 ;		if (res == FR_NO_FILE)
-	.line	5231
+	.line	5251
 ;			res = FR_NO_PATH;
-	lda	<L923+res_1
+	lda	<L922+res_1
 	cmp	#<$4
-	beq	L933
+	beq	L932
 	brl	L10531
-L933:
-	.line	5232
+L932:
+	.line	5252
 	lda	#$5
-	sta	<L923+res_1
+	sta	<L922+res_1
 ;	}
 L10531:
-	.line	5233
+	.line	5253
 ;	if (res != FR_OK)
 L10524:
-	.line	5234
+	.line	5254
 ;		dp->obj.fs = 0; /* Invalidate the directory object if function faild */
-	lda	<L923+res_1
-	bne	L934
+	lda	<L922+res_1
+	bne	L933
 	brl	L10532
-L934:
-	.line	5235
+L933:
+	.line	5255
 	lda	#$0
-	sta	[<L922+dp_0]
+	sta	[<L921+dp_0]
 	lda	#$0
 	ldy	#$2
-	sta	[<L922+dp_0],Y
+	sta	[<L921+dp_0],Y
 ;
 ;	LEAVE_FF(fs, res);
 L10532:
-	.line	5237
-	lda	<L923+res_1
-	brl	L926
+	.line	5257
+	lda	<L922+res_1
+	brl	L925
 ;}
-	.line	5238
-	.endblock	5238
-L922	equ	14
-L923	equ	5
+	.line	5258
+	.endblock	5258
+L921	equ	14
+L922	equ	5
 	ends
 	efunc
-	.endfunc	5238,5,14
-	.line	5238
+	.endfunc	5258,5,14
+	.line	5258
 ;
 ;/*-----------------------------------------------------------------------*/
 ;/* Close Directory                                                       */
@@ -22780,23 +22801,23 @@ L923	equ	5
 ;FRESULT f_closedir(DIR *dp /* Pointer to the directory object to be closed */
 ;)
 ;{
-	.line	5244
-	.line	5246
+	.line	5264
+	.line	5266
 	FFDOS
 	xdef	~~f_closedir
 	func
-	.function	5246
+	.function	5266
 ~~f_closedir:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L935
+	sbc	#L934
 	tcs
 	phd
 	tcd
 dp_0	set	4
-	.block	5246
+	.block	5266
 ;	FRESULT res;
 ;	FATFS *fs;
 ;
@@ -22804,69 +22825,69 @@ dp_0	set	4
 res_1	set	0
 fs_1	set	2
 	.sym	res,0,5,1,16
-	.sym	fs,2,138,1,32,72
-	.sym	dp,4,138,6,32,75
-	.line	5250
+	.sym	fs,2,138,1,32,75
+	.sym	dp,4,138,6,32,78
+	.line	5270
 	pea	#0
 	clc
 	tdc
-	adc	#<L936+fs_1
+	adc	#<L935+fs_1
 	pha
-	pei	<L935+dp_0+2
-	pei	<L935+dp_0
+	pei	<L934+dp_0+2
+	pei	<L934+dp_0
 	jsl	~~validate
-	sta	<L936+res_1
+	sta	<L935+res_1
 ;	if (res == FR_OK)
-	.line	5251
+	.line	5271
 ;	{
-	lda	<L936+res_1
-	beq	L938
+	lda	<L935+res_1
+	beq	L937
 	brl	L10533
-L938:
-	.line	5252
+L937:
+	.line	5272
 ;#if FF_FS_LOCK != 0
 ;		if (dp->obj.lockid) res = dec_lock(dp->obj.lockid); /* Decrement sub-directory open counter */
 ;		if (res == FR_OK) dp->obj.fs = 0; /* Invalidate directory object */
 ;#else
 ;		dp->obj.fs = 0; /* Invalidate directory object */
-	.line	5257
+	.line	5277
 	lda	#$0
-	sta	[<L935+dp_0]
+	sta	[<L934+dp_0]
 	lda	#$0
 	ldy	#$2
-	sta	[<L935+dp_0],Y
+	sta	[<L934+dp_0],Y
 ;#endif
 ;#if FF_FS_REENTRANT
 ;		unlock_fs(fs, FR_OK); /* Unlock volume */
 ;#endif
 ;	}
-	.line	5262
+	.line	5282
 ;	return res;
 L10533:
-	.line	5263
-	lda	<L936+res_1
-L939:
+	.line	5283
+	lda	<L935+res_1
+L938:
 	tay
-	lda	<L935+2
-	sta	<L935+2+4
-	lda	<L935+1
-	sta	<L935+1+4
+	lda	<L934+2
+	sta	<L934+2+4
+	lda	<L934+1
+	sta	<L934+1+4
 	pld
 	tsc
 	clc
-	adc	#L935+4
+	adc	#L934+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	5264
-	.endblock	5264
-L935	equ	6
-L936	equ	1
+	.line	5284
+	.endblock	5284
+L934	equ	6
+L935	equ	1
 	ends
 	efunc
-	.endfunc	5264,1,6
-	.line	5264
+	.endfunc	5284,1,6
+	.line	5284
 ;
 ;/*-----------------------------------------------------------------------*/
 ;/* Read Directory Entries in Sequence                                    */
@@ -22876,24 +22897,24 @@ L936	equ	1
 ;FILINFO* fno /* Pointer to file information to return */
 ;)
 ;{
-	.line	5270
-	.line	5273
+	.line	5290
+	.line	5293
 	FFDOS
 	xdef	~~f_readdir
 	func
-	.function	5273
+	.function	5293
 ~~f_readdir:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L940
+	sbc	#L939
 	tcs
 	phd
 	tcd
 dp_0	set	4
 fno_0	set	8
-	.block	5273
+	.block	5293
 ;	FRESULT res;
 ;	FATFS *fs;
 ;	DEF_NAMBUF
@@ -22903,167 +22924,167 @@ res_1	set	0
 fs_1	set	2
 lfn_1	set	6
 	.sym	res,0,5,1,16
-	.sym	fs,2,138,1,32,72
+	.sym	fs,2,138,1,32,75
 	.sym	lfn,6,144,1,32
-	.sym	dp,4,138,6,32,75
-	.sym	fno,8,138,6,32,76
-	.line	5278
+	.sym	dp,4,138,6,32,78
+	.sym	fno,8,138,6,32,79
+	.line	5298
 	pea	#0
 	clc
 	tdc
-	adc	#<L941+fs_1
+	adc	#<L940+fs_1
 	pha
-	pei	<L940+dp_0+2
-	pei	<L940+dp_0
+	pei	<L939+dp_0+2
+	pei	<L939+dp_0
 	jsl	~~validate
-	sta	<L941+res_1
+	sta	<L940+res_1
 ;	if (res == FR_OK)
-	.line	5279
+	.line	5299
 ;	{
-	lda	<L941+res_1
-	beq	L943
+	lda	<L940+res_1
+	beq	L942
 	brl	L10534
-L943:
-	.line	5280
+L942:
+	.line	5300
 ;		if (!fno)
-	.line	5281
+	.line	5301
 ;		{
-	lda	<L940+fno_0
-	ora	<L940+fno_0+2
-	beq	L944
+	lda	<L939+fno_0
+	ora	<L939+fno_0+2
+	beq	L943
 	brl	L10535
-L944:
-	.line	5282
+L943:
+	.line	5302
 ;			res = dir_sdi(dp, 0); /* Rewind the directory object */
-	.line	5283
+	.line	5303
 	pea	#^$0
 	pea	#<$0
-	pei	<L940+dp_0+2
-	pei	<L940+dp_0
+	pei	<L939+dp_0+2
+	pei	<L939+dp_0
 	jsl	~~dir_sdi
-	sta	<L941+res_1
+	sta	<L940+res_1
 ;		}
-	.line	5284
+	.line	5304
 ;		else
 	brl	L10536
 L10535:
 ;		{
-	.line	5286
+	.line	5306
 ;			INIT_NAMBUF(fs);
-	.line	5287
-	.line	5287
+	.line	5307
+	.line	5307
 	pea	#<$200
 	jsl	~~ff_memalloc
-	sta	<L941+lfn_1
-	stx	<L941+lfn_1+2
-	.line	5287
-	lda	<L941+lfn_1
-	ora	<L941+lfn_1+2
-	beq	L945
+	sta	<L940+lfn_1
+	stx	<L940+lfn_1+2
+	.line	5307
+	lda	<L940+lfn_1
+	ora	<L940+lfn_1+2
+	beq	L944
 	brl	L10537
-L945:
-	.line	5287
+L944:
+	.line	5307
 	lda	#$11
-L946:
+L945:
 	tay
-	lda	<L940+2
-	sta	<L940+2+8
-	lda	<L940+1
-	sta	<L940+1+8
+	lda	<L939+2
+	sta	<L939+2+8
+	lda	<L939+1
+	sta	<L939+1+8
 	pld
 	tsc
 	clc
-	adc	#L940+8
+	adc	#L939+8
 	tcs
 	tya
 	rtl
 L10537:
-	.line	5287
-	lda	<L941+lfn_1
+	.line	5307
+	lda	<L940+lfn_1
 	ldy	#$b
-	sta	[<L941+fs_1],Y
-	lda	<L941+lfn_1+2
+	sta	[<L940+fs_1],Y
+	lda	<L940+lfn_1+2
 	ldy	#$d
-	sta	[<L941+fs_1],Y
-	.line	5287
-	.line	5287
+	sta	[<L940+fs_1],Y
+	.line	5307
+	.line	5307
 ;			res = DIR_READ_FILE(dp); /* Read an item */
-	.line	5288
+	.line	5308
 	pea	#<$0
-	pei	<L940+dp_0+2
-	pei	<L940+dp_0
+	pei	<L939+dp_0+2
+	pei	<L939+dp_0
 	jsl	~~dir_read
-	sta	<L941+res_1
+	sta	<L940+res_1
 ;			if (res == FR_NO_FILE)
-	.line	5289
+	.line	5309
 ;				res = FR_OK; /* Ignore end of directory */
-	lda	<L941+res_1
+	lda	<L940+res_1
 	cmp	#<$4
-	beq	L947
+	beq	L946
 	brl	L10538
-L947:
-	.line	5290
-	stz	<L941+res_1
+L946:
+	.line	5310
+	stz	<L940+res_1
 ;			if (res == FR_OK)
 L10538:
-	.line	5291
+	.line	5311
 ;			{ /* A valid entry is found */
-	lda	<L941+res_1
-	beq	L948
+	lda	<L940+res_1
+	beq	L947
 	brl	L10539
-L948:
-	.line	5292
+L947:
+	.line	5312
 ;				get_fileinfo(dp, fno); /* Get the object information */
-	.line	5293
-	pei	<L940+fno_0+2
-	pei	<L940+fno_0
-	pei	<L940+dp_0+2
-	pei	<L940+dp_0
+	.line	5313
+	pei	<L939+fno_0+2
+	pei	<L939+fno_0
+	pei	<L939+dp_0+2
+	pei	<L939+dp_0
 	jsl	~~get_fileinfo
 ;				res = dir_next(dp, 0); /* Increment index for next */
-	.line	5294
+	.line	5314
 	pea	#<$0
-	pei	<L940+dp_0+2
-	pei	<L940+dp_0
+	pei	<L939+dp_0+2
+	pei	<L939+dp_0
 	jsl	~~dir_next
-	sta	<L941+res_1
+	sta	<L940+res_1
 ;				if (res == FR_NO_FILE)
-	.line	5295
+	.line	5315
 ;					res = FR_OK; /* Ignore end of directory now */
-	lda	<L941+res_1
+	lda	<L940+res_1
 	cmp	#<$4
-	beq	L949
+	beq	L948
 	brl	L10540
-L949:
-	.line	5296
-	stz	<L941+res_1
+L948:
+	.line	5316
+	stz	<L940+res_1
 ;			} FREE_NAMBUF();
 L10540:
-	.line	5297
+	.line	5317
 L10539:
-	.line	5297
-	pei	<L941+lfn_1+2
-	pei	<L941+lfn_1
+	.line	5317
+	pei	<L940+lfn_1+2
+	pei	<L940+lfn_1
 	jsl	~~ff_memfree
 ;		}
-	.line	5298
+	.line	5318
 L10536:
 ;	}
-	.line	5299
+	.line	5319
 ;	LEAVE_FF(fs, res);
 L10534:
-	.line	5300
-	lda	<L941+res_1
-	brl	L946
+	.line	5320
+	lda	<L940+res_1
+	brl	L945
 ;}
-	.line	5301
-	.endblock	5301
-L940	equ	10
-L941	equ	1
+	.line	5321
+	.endblock	5321
+L939	equ	10
+L940	equ	1
 	ends
 	efunc
-	.endfunc	5301,1,10
-	.line	5301
+	.endfunc	5321,1,10
+	.line	5321
 ;
 ;#if FF_USE_FIND
 ;/*-----------------------------------------------------------------------*/
@@ -23075,140 +23096,140 @@ L941	equ	1
 ;		FILINFO* fno /* Pointer to the file information structure */
 ;)
 ;{
-	.line	5308
-	.line	5312
+	.line	5328
+	.line	5332
 	FFDOS
 	xdef	~~f_findnext
 	func
-	.function	5312
+	.function	5332
 ~~f_findnext:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L950
+	sbc	#L949
 	tcs
 	phd
 	tcd
 dp_0	set	4
 fno_0	set	8
-	.block	5312
+	.block	5332
 ;	FRESULT res;
 ;
 ;	for (;;)
 res_1	set	0
 	.sym	res,0,5,1,16
-	.sym	dp,4,138,6,32,75
-	.sym	fno,8,138,6,32,76
-	.line	5315
+	.sym	dp,4,138,6,32,78
+	.sym	fno,8,138,6,32,79
+	.line	5335
 L10543:
 ;	{
-	.line	5316
+	.line	5336
 ;		res = f_readdir(dp, fno); /* Get a directory item */
-	.line	5317
-	pei	<L950+fno_0+2
-	pei	<L950+fno_0
-	pei	<L950+dp_0+2
-	pei	<L950+dp_0
+	.line	5337
+	pei	<L949+fno_0+2
+	pei	<L949+fno_0
+	pei	<L949+dp_0+2
+	pei	<L949+dp_0
 	jsl	~~f_readdir
-	sta	<L951+res_1
+	sta	<L950+res_1
 ;		if (res != FR_OK || !fno || !fno->fname[0]) break; /* Terminate if any error or end of directory */
-	.line	5318
-	lda	<L951+res_1
-	beq	L953
+	.line	5338
+	lda	<L950+res_1
+	beq	L952
+	brl	L10542
+L952:
+	lda	<L949+fno_0
+	ora	<L949+fno_0+2
+	bne	L953
 	brl	L10542
 L953:
-	lda	<L950+fno_0
-	ora	<L950+fno_0+2
+	ldy	#$16
+	lda	[<L949+fno_0],Y
+	and	#$ff
 	bne	L954
 	brl	L10542
 L954:
-	ldy	#$16
-	lda	[<L950+fno_0],Y
-	and	#$ff
-	bne	L955
-	brl	L10542
-L955:
 ;		if (pattern_matching(dp->pat, fno->fname, 0, 0)) break; /* Test for the file name */
-	.line	5319
+	.line	5339
 	pea	#<$0
 	pea	#<$0
 	clc
 	lda	#$16
-	adc	<L950+fno_0
+	adc	<L949+fno_0
 	sta	<R0
 	lda	#$0
-	adc	<L950+fno_0+2
+	adc	<L949+fno_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$32
-	lda	[<L950+dp_0],Y
+	lda	[<L949+dp_0],Y
 	pha
 	ldy	#$30
-	lda	[<L950+dp_0],Y
+	lda	[<L949+dp_0],Y
+	pha
+	jsl	~~pattern_matching
+	tax
+	beq	L955
+	brl	L10542
+L955:
+;#if FF_USE_LFN && FF_USE_FIND == 2
+;		if (pattern_matching(dp->pat, fno->altname, 0, 0)) break; /* Test for alternative name if exist */
+	.line	5341
+	pea	#<$0
+	pea	#<$0
+	clc
+	lda	#$9
+	adc	<L949+fno_0
+	sta	<R0
+	lda	#$0
+	adc	<L949+fno_0+2
+	sta	<R0+2
+	pei	<R0+2
+	pei	<R0
+	ldy	#$32
+	lda	[<L949+dp_0],Y
+	pha
+	ldy	#$30
+	lda	[<L949+dp_0],Y
 	pha
 	jsl	~~pattern_matching
 	tax
 	beq	L956
 	brl	L10542
 L956:
-;#if FF_USE_LFN && FF_USE_FIND == 2
-;		if (pattern_matching(dp->pat, fno->altname, 0, 0)) break; /* Test for alternative name if exist */
-	.line	5321
-	pea	#<$0
-	pea	#<$0
-	clc
-	lda	#$9
-	adc	<L950+fno_0
-	sta	<R0
-	lda	#$0
-	adc	<L950+fno_0+2
-	sta	<R0+2
-	pei	<R0+2
-	pei	<R0
-	ldy	#$32
-	lda	[<L950+dp_0],Y
-	pha
-	ldy	#$30
-	lda	[<L950+dp_0],Y
-	pha
-	jsl	~~pattern_matching
-	tax
-	beq	L957
-	brl	L10542
-L957:
 ;#endif
 ;	}
-	.line	5323
+	.line	5343
 L10541:
 	brl	L10543
 L10542:
 ;	return res;
-	.line	5324
-	lda	<L951+res_1
-L958:
+	.line	5344
+	lda	<L950+res_1
+L957:
 	tay
-	lda	<L950+2
-	sta	<L950+2+8
-	lda	<L950+1
-	sta	<L950+1+8
+	lda	<L949+2
+	sta	<L949+2+8
+	lda	<L949+1
+	sta	<L949+1+8
 	pld
 	tsc
 	clc
-	adc	#L950+8
+	adc	#L949+8
 	tcs
 	tya
 	rtl
 ;}
-	.line	5325
-	.endblock	5325
-L950	equ	6
-L951	equ	5
+	.line	5345
+	.endblock	5345
+L949	equ	6
+L950	equ	5
 	ends
 	efunc
-	.endfunc	5325,5,6
-	.line	5325
+	.endfunc	5345,5,6
+	.line	5345
 ;
 ;/*-----------------------------------------------------------------------*/
 ;/* Find First File                                                       */
@@ -23221,18 +23242,18 @@ L951	equ	5
 ;		const TCHAR* pattern /* Pointer to the matching pattern */
 ;)
 ;{
-	.line	5331
-	.line	5337
+	.line	5351
+	.line	5357
 	FFDOS
 	xdef	~~f_findfirst
 	func
-	.function	5337
+	.function	5357
 ~~f_findfirst:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L959
+	sbc	#L958
 	tcs
 	phd
 	tcd
@@ -23240,75 +23261,75 @@ dp_0	set	4
 fno_0	set	8
 path_0	set	12
 pattern_0	set	16
-	.block	5337
+	.block	5357
 ;	FRESULT res;
 ;
 ;	dp->pat = pattern; /* Save pointer to pattern string */
 res_1	set	0
 	.sym	res,0,5,1,16
-	.sym	dp,4,138,6,32,75
-	.sym	fno,8,138,6,32,76
+	.sym	dp,4,138,6,32,78
+	.sym	fno,8,138,6,32,79
 	.sym	path,12,142,6,32
 	.sym	pattern,16,142,6,32
-	.line	5340
-	lda	<L959+pattern_0
+	.line	5360
+	lda	<L958+pattern_0
 	ldy	#$30
-	sta	[<L959+dp_0],Y
-	lda	<L959+pattern_0+2
+	sta	[<L958+dp_0],Y
+	lda	<L958+pattern_0+2
 	ldy	#$32
-	sta	[<L959+dp_0],Y
+	sta	[<L958+dp_0],Y
 ;	res = f_opendir(dp, path); /* Open the target directory */
-	.line	5341
-	pei	<L959+path_0+2
-	pei	<L959+path_0
-	pei	<L959+dp_0+2
-	pei	<L959+dp_0
+	.line	5361
+	pei	<L958+path_0+2
+	pei	<L958+path_0
+	pei	<L958+dp_0+2
+	pei	<L958+dp_0
 	jsl	~~f_opendir
-	sta	<L960+res_1
+	sta	<L959+res_1
 ;	if (res == FR_OK)
-	.line	5342
+	.line	5362
 ;	{
-	lda	<L960+res_1
-	beq	L962
+	lda	<L959+res_1
+	beq	L961
 	brl	L10544
-L962:
-	.line	5343
+L961:
+	.line	5363
 ;		res = f_findnext(dp, fno); /* Find the first item */
-	.line	5344
-	pei	<L959+fno_0+2
-	pei	<L959+fno_0
-	pei	<L959+dp_0+2
-	pei	<L959+dp_0
+	.line	5364
+	pei	<L958+fno_0+2
+	pei	<L958+fno_0
+	pei	<L958+dp_0+2
+	pei	<L958+dp_0
 	jsl	~~f_findnext
-	sta	<L960+res_1
+	sta	<L959+res_1
 ;	}
-	.line	5345
+	.line	5365
 ;	return res;
 L10544:
-	.line	5346
-	lda	<L960+res_1
-L963:
+	.line	5366
+	lda	<L959+res_1
+L962:
 	tay
-	lda	<L959+2
-	sta	<L959+2+16
-	lda	<L959+1
-	sta	<L959+1+16
+	lda	<L958+2
+	sta	<L958+2+16
+	lda	<L958+1
+	sta	<L958+1+16
 	pld
 	tsc
 	clc
-	adc	#L959+16
+	adc	#L958+16
 	tcs
 	tya
 	rtl
 ;}
-	.line	5347
-	.endblock	5347
-L959	equ	2
-L960	equ	1
+	.line	5367
+	.endblock	5367
+L958	equ	2
+L959	equ	1
 	ends
 	efunc
-	.endfunc	5347,1,2
-	.line	5347
+	.endfunc	5367,1,2
+	.line	5367
 ;
 ;#endif	/* FF_USE_FIND */
 ;
@@ -23321,24 +23342,24 @@ L960	equ	1
 ;FILINFO* fno /* Pointer to file information to return */
 ;)
 ;{
-	.line	5356
-	.line	5359
+	.line	5376
+	.line	5379
 	FFDOS
 	xdef	~~f_stat
 	func
-	.function	5359
+	.function	5379
 ~~f_stat:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L964
+	sbc	#L963
 	tcs
 	phd
 	tcd
 path_0	set	4
 fno_0	set	8
-	.block	5359
+	.block	5379
 ;	FRESULT res;
 ;	DIR dj;
 ;	DEF_NAMBUF
@@ -23349,158 +23370,158 @@ res_1	set	0
 dj_1	set	2
 lfn_1	set	54
 	.sym	res,0,5,1,16
-	.sym	dj,2,10,1,416,75
+	.sym	dj,2,10,1,416,78
 	.sym	lfn,54,144,1,32
 	.sym	path,4,142,6,32
-	.sym	fno,8,138,6,32,76
-	.line	5365
+	.sym	fno,8,138,6,32,79
+	.line	5385
 	pea	#<$0
 	pea	#0
 	clc
 	tdc
-	adc	#<L965+dj_1
+	adc	#<L964+dj_1
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L964+path_0
+	adc	#<L963+path_0
 	pha
 	jsl	~~mount_volume
-	sta	<L965+res_1
+	sta	<L964+res_1
 ;	if (res == FR_OK)
-	.line	5366
+	.line	5386
 ;	{
-	lda	<L965+res_1
-	beq	L967
+	lda	<L964+res_1
+	beq	L966
 	brl	L10545
-L967:
-	.line	5367
+L966:
+	.line	5387
 ;		INIT_NAMBUF(dj.obj.fs);
-	.line	5368
-	.line	5368
+	.line	5388
+	.line	5388
 	pea	#<$200
 	jsl	~~ff_memalloc
-	sta	<L965+lfn_1
-	stx	<L965+lfn_1+2
-	.line	5368
-	lda	<L965+lfn_1
-	ora	<L965+lfn_1+2
-	beq	L968
+	sta	<L964+lfn_1
+	stx	<L964+lfn_1+2
+	.line	5388
+	lda	<L964+lfn_1
+	ora	<L964+lfn_1+2
+	beq	L967
 	brl	L10546
-L968:
-	.line	5368
+L967:
+	.line	5388
 	lda	#$11
-L969:
+L968:
 	tay
-	lda	<L964+2
-	sta	<L964+2+8
-	lda	<L964+1
-	sta	<L964+1+8
+	lda	<L963+2
+	sta	<L963+2+8
+	lda	<L963+1
+	sta	<L963+1+8
 	pld
 	tsc
 	clc
-	adc	#L964+8
+	adc	#L963+8
 	tcs
 	tya
 	rtl
 L10546:
-	.line	5368
-	lda	<L965+lfn_1
+	.line	5388
+	lda	<L964+lfn_1
 	ldy	#$b
-	sta	[<L965+dj_1],Y
-	lda	<L965+lfn_1+2
+	sta	[<L964+dj_1],Y
+	lda	<L964+lfn_1+2
 	ldy	#$d
-	sta	[<L965+dj_1],Y
-	.line	5368
-	.line	5368
+	sta	[<L964+dj_1],Y
+	.line	5388
+	.line	5388
 ;		res = follow_path(&dj, path); /* Follow the file path */
-	.line	5369
-	pei	<L964+path_0+2
-	pei	<L964+path_0
+	.line	5389
+	pei	<L963+path_0+2
+	pei	<L963+path_0
 	pea	#0
 	clc
 	tdc
-	adc	#<L965+dj_1
+	adc	#<L964+dj_1
 	pha
 	jsl	~~follow_path
-	sta	<L965+res_1
+	sta	<L964+res_1
 ;		if (res == FR_OK)
-	.line	5370
+	.line	5390
 ;		{ /* Follow completed */
-	lda	<L965+res_1
-	beq	L970
+	lda	<L964+res_1
+	beq	L969
 	brl	L10547
-L970:
-	.line	5371
+L969:
+	.line	5391
 ;			if (dj.fn[NSFLAG] & NS_NONAME)
-	.line	5372
+	.line	5392
 ;			{ /* It is origin directory */
 	sep	#$20
 	longa	off
-	lda	<L965+dj_1+43
+	lda	<L964+dj_1+43
 	and	#<$80
 	rep	#$20
 	longa	on
-	bne	L971
+	bne	L970
 	brl	L10548
-L971:
-	.line	5373
+L970:
+	.line	5393
 ;				res = FR_INVALID_NAME;
-	.line	5374
+	.line	5394
 	lda	#$6
-	sta	<L965+res_1
+	sta	<L964+res_1
 ;			}
-	.line	5375
+	.line	5395
 ;			else
 	brl	L10549
 L10548:
 ;			{ /* Found an object */
-	.line	5377
+	.line	5397
 ;				if (fno)
-	.line	5378
+	.line	5398
 ;					get_fileinfo(&dj, fno);
-	lda	<L964+fno_0
-	ora	<L964+fno_0+2
-	bne	L972
+	lda	<L963+fno_0
+	ora	<L963+fno_0+2
+	bne	L971
 	brl	L10550
-L972:
-	.line	5379
-	pei	<L964+fno_0+2
-	pei	<L964+fno_0
+L971:
+	.line	5399
+	pei	<L963+fno_0+2
+	pei	<L963+fno_0
 	pea	#0
 	clc
 	tdc
-	adc	#<L965+dj_1
+	adc	#<L964+dj_1
 	pha
 	jsl	~~get_fileinfo
 ;			}
 L10550:
-	.line	5380
+	.line	5400
 L10549:
 ;		} FREE_NAMBUF();
-	.line	5381
+	.line	5401
 L10547:
-	.line	5381
-	pei	<L965+lfn_1+2
-	pei	<L965+lfn_1
+	.line	5401
+	pei	<L964+lfn_1+2
+	pei	<L964+lfn_1
 	jsl	~~ff_memfree
 ;	}
-	.line	5382
+	.line	5402
 ;
 ;	LEAVE_FF(dj.obj.fs, res);
 L10545:
-	.line	5384
-	lda	<L965+res_1
-	brl	L969
+	.line	5404
+	lda	<L964+res_1
+	brl	L968
 ;}
-	.line	5385
-	.endblock	5385
-L964	equ	58
-L965	equ	1
+	.line	5405
+	.endblock	5405
+L963	equ	58
+L964	equ	1
 	ends
 	efunc
-	.endfunc	5385,1,58
-	.line	5385
+	.endfunc	5405,1,58
+	.line	5405
 ;
 ;#if !FF_FS_READONLY
 ;/*-----------------------------------------------------------------------*/
@@ -23512,25 +23533,25 @@ L965	equ	1
 ;FATFS** fatfs /* Pointer to return pointer to corresponding filesystem object */
 ;)
 ;{
-	.line	5392
-	.line	5396
+	.line	5412
+	.line	5416
 	FFDOS
 	xdef	~~f_getfree
 	func
-	.function	5396
+	.function	5416
 ~~f_getfree:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L973
+	sbc	#L972
 	tcs
 	phd
 	tcd
 path_0	set	4
 nclst_0	set	8
 fatfs_0	set	12
-	.block	5396
+	.block	5416
 ;	FRESULT res;
 ;	FATFS *fs;
 ;	DWORD nfree, clst, stat;
@@ -23549,215 +23570,215 @@ sect_1	set	18
 i_1	set	22
 obj_1	set	24
 	.sym	res,0,5,1,16
-	.sym	fs,2,138,1,32,72
+	.sym	fs,2,138,1,32,75
 	.sym	nfree,6,18,1,32
 	.sym	clst,10,18,1,32
 	.sym	stat,14,18,1,32
 	.sym	sect,18,18,1,32
 	.sym	i,22,16,1,16
-	.sym	obj,24,10,1,128,73
+	.sym	obj,24,10,1,128,76
 	.sym	path,4,142,6,32
 	.sym	nclst,8,146,6,32
-	.sym	fatfs,12,1162,6,32,72
-	.line	5405
+	.sym	fatfs,12,1162,6,32,75
+	.line	5425
 	pea	#<$0
 	pea	#0
 	clc
 	tdc
-	adc	#<L974+fs_1
+	adc	#<L973+fs_1
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L973+path_0
+	adc	#<L972+path_0
 	pha
 	jsl	~~mount_volume
-	sta	<L974+res_1
+	sta	<L973+res_1
 ;	if (res == FR_OK)
-	.line	5406
+	.line	5426
 ;	{
-	lda	<L974+res_1
-	beq	L976
+	lda	<L973+res_1
+	beq	L975
 	brl	L10551
-L976:
-	.line	5407
+L975:
+	.line	5427
 ;		*fatfs = fs; /* Return ptr to the fs object */
-	.line	5408
-	lda	<L974+fs_1
-	sta	[<L973+fatfs_0]
-	lda	<L974+fs_1+2
+	.line	5428
+	lda	<L973+fs_1
+	sta	[<L972+fatfs_0]
+	lda	<L973+fs_1+2
 	ldy	#$2
-	sta	[<L973+fatfs_0],Y
+	sta	[<L972+fatfs_0],Y
 ;		/* If free_clst is valid, return it without full FAT scan */
 ;		if (fs->free_clst <= fs->n_fatent - 2)
-	.line	5410
+	.line	5430
 ;		{
 	clc
 	lda	#$fffe
 	ldy	#$17
-	adc	[<L974+fs_1],Y
+	adc	[<L973+fs_1],Y
 	sta	<R0
 	lda	#$ffff
 	ldy	#$19
-	adc	[<L974+fs_1],Y
+	adc	[<L973+fs_1],Y
 	sta	<R0+2
 	lda	<R0
 	ldy	#$13
-	cmp	[<L974+fs_1],Y
+	cmp	[<L973+fs_1],Y
 	lda	<R0+2
 	ldy	#$15
-	sbc	[<L974+fs_1],Y
-	bcs	L977
+	sbc	[<L973+fs_1],Y
+	bcs	L976
 	brl	L10552
-L977:
-	.line	5411
+L976:
+	.line	5431
 ;			*nclst = fs->free_clst;
-	.line	5412
+	.line	5432
 	ldy	#$13
-	lda	[<L974+fs_1],Y
-	sta	[<L973+nclst_0]
+	lda	[<L973+fs_1],Y
+	sta	[<L972+nclst_0]
 	ldy	#$15
-	lda	[<L974+fs_1],Y
+	lda	[<L973+fs_1],Y
 	ldy	#$2
-	sta	[<L973+nclst_0],Y
+	sta	[<L972+nclst_0],Y
 ;		}
-	.line	5413
+	.line	5433
 ;		else
 	brl	L10553
 L10552:
 ;		{
-	.line	5415
+	.line	5435
 ;			/* Scan FAT to obtain number of free clusters */
 ;			nfree = 0;
-	.line	5417
-	stz	<L974+nfree_1
-	stz	<L974+nfree_1+2
+	.line	5437
+	stz	<L973+nfree_1
+	stz	<L973+nfree_1+2
 ;			if (fs->fs_type == FS_FAT12)
-	.line	5418
+	.line	5438
 ;			{ /* FAT12: Scan bit field FAT entries */
 	sep	#$20
 	longa	off
-	lda	[<L974+fs_1]
+	lda	[<L973+fs_1]
 	cmp	#<$1
 	rep	#$20
 	longa	on
-	beq	L978
+	beq	L977
 	brl	L10554
-L978:
-	.line	5419
+L977:
+	.line	5439
 ;				clst = 2;
-	.line	5420
+	.line	5440
 	lda	#$2
-	sta	<L974+clst_1
+	sta	<L973+clst_1
 	lda	#$0
-	sta	<L974+clst_1+2
+	sta	<L973+clst_1+2
 ;				obj.fs = fs;
-	.line	5421
-	lda	<L974+fs_1
-	sta	<L974+obj_1
-	lda	<L974+fs_1+2
-	sta	<L974+obj_1+2
+	.line	5441
+	lda	<L973+fs_1
+	sta	<L973+obj_1
+	lda	<L973+fs_1+2
+	sta	<L973+obj_1+2
 ;				do
-	.line	5422
+	.line	5442
 L10557:
 ;				{
-	.line	5423
+	.line	5443
 ;					stat = get_fat(&obj, clst);
-	.line	5424
-	pei	<L974+clst_1+2
-	pei	<L974+clst_1
+	.line	5444
+	pei	<L973+clst_1+2
+	pei	<L973+clst_1
 	pea	#0
 	clc
 	tdc
-	adc	#<L974+obj_1
+	adc	#<L973+obj_1
 	pha
 	jsl	~~get_fat
-	sta	<L974+stat_1
-	stx	<L974+stat_1+2
+	sta	<L973+stat_1
+	stx	<L973+stat_1+2
 ;					if (stat == 0xFFFFFFFF)
-	.line	5425
+	.line	5445
 ;					{
-	lda	<L974+stat_1
+	lda	<L973+stat_1
 	cmp	#<$ffffffff
-	bne	L979
-	lda	<L974+stat_1+2
+	bne	L978
+	lda	<L973+stat_1+2
 	cmp	#^$ffffffff
-L979:
-	beq	L980
+L978:
+	beq	L979
 	brl	L10558
-L980:
-	.line	5426
+L979:
+	.line	5446
 ;						res = FR_DISK_ERR;
-	.line	5427
+	.line	5447
 	lda	#$1
-	sta	<L974+res_1
+	sta	<L973+res_1
 ;						break;
-	.line	5428
+	.line	5448
 	brl	L10556
 ;					}
-	.line	5429
+	.line	5449
 ;					if (stat == 1)
 L10558:
-	.line	5430
+	.line	5450
 ;					{
-	lda	<L974+stat_1
+	lda	<L973+stat_1
 	cmp	#<$1
-	bne	L981
-	lda	<L974+stat_1+2
+	bne	L980
+	lda	<L973+stat_1+2
 	cmp	#^$1
-L981:
-	beq	L982
+L980:
+	beq	L981
 	brl	L10559
-L982:
-	.line	5431
+L981:
+	.line	5451
 ;						res = FR_INT_ERR;
-	.line	5432
+	.line	5452
 	lda	#$2
-	sta	<L974+res_1
+	sta	<L973+res_1
 ;						break;
-	.line	5433
+	.line	5453
 	brl	L10556
 ;					}
-	.line	5434
+	.line	5454
 ;					if (stat == 0)
 L10559:
-	.line	5435
+	.line	5455
 ;						nfree++;
-	lda	<L974+stat_1
-	ora	<L974+stat_1+2
-	beq	L983
+	lda	<L973+stat_1
+	ora	<L973+stat_1+2
+	beq	L982
 	brl	L10560
+L982:
+	.line	5456
+	inc	<L973+nfree_1
+	bne	L983
+	inc	<L973+nfree_1+2
 L983:
-	.line	5436
-	inc	<L974+nfree_1
-	bne	L984
-	inc	<L974+nfree_1+2
-L984:
 ;				} while (++clst < fs->n_fatent);
 L10560:
-	.line	5437
+	.line	5457
 L10555:
-	inc	<L974+clst_1
-	bne	L985
-	inc	<L974+clst_1+2
-L985:
-	lda	<L974+clst_1
+	inc	<L973+clst_1
+	bne	L984
+	inc	<L973+clst_1+2
+L984:
+	lda	<L973+clst_1
 	ldy	#$17
-	cmp	[<L974+fs_1],Y
-	lda	<L974+clst_1+2
+	cmp	[<L973+fs_1],Y
+	lda	<L973+clst_1+2
 	ldy	#$19
-	sbc	[<L974+fs_1],Y
-	bcs	L986
+	sbc	[<L973+fs_1],Y
+	bcs	L985
 	brl	L10557
-L986:
+L985:
 L10556:
 ;			}
-	.line	5438
+	.line	5458
 ;			else
 	brl	L10561
 L10554:
 ;			{
-	.line	5440
+	.line	5460
 ;#if FF_FS_EXFAT
 ;				if (fs->fs_type == FS_EXFAT)
 ;				{ /* exFAT: Scan allocation bitmap */
@@ -23785,82 +23806,82 @@ L10554:
 ;				else
 ;#endif
 ;				{ /* FAT16/32: Scan WORD/DWORD FAT entries */
-	.line	5467
+	.line	5487
 ;					clst = fs->n_fatent; /* Number of entries */
-	.line	5468
+	.line	5488
 	ldy	#$17
-	lda	[<L974+fs_1],Y
-	sta	<L974+clst_1
+	lda	[<L973+fs_1],Y
+	sta	<L973+clst_1
 	ldy	#$19
-	lda	[<L974+fs_1],Y
-	sta	<L974+clst_1+2
+	lda	[<L973+fs_1],Y
+	sta	<L973+clst_1+2
 ;					sect = fs->fatbase; /* Top of the FAT */
-	.line	5469
+	.line	5489
 	ldy	#$23
-	lda	[<L974+fs_1],Y
-	sta	<L974+sect_1
+	lda	[<L973+fs_1],Y
+	sta	<L973+sect_1
 	ldy	#$25
-	lda	[<L974+fs_1],Y
-	sta	<L974+sect_1+2
+	lda	[<L973+fs_1],Y
+	sta	<L973+sect_1+2
 ;					i = 0; /* Offset in the sector */
-	.line	5470
-	stz	<L974+i_1
+	.line	5490
+	stz	<L973+i_1
 ;					do
-	.line	5471
+	.line	5491
 L10564:
 ;					{ /* Counts numbuer of entries with zero in the FAT */
-	.line	5472
+	.line	5492
 ;						if (i == 0)
-	.line	5473
+	.line	5493
 ;						{
-	lda	<L974+i_1
-	beq	L987
+	lda	<L973+i_1
+	beq	L986
 	brl	L10565
-L987:
-	.line	5474
+L986:
+	.line	5494
 ;							res = move_window(fs, sect++);
-	.line	5475
-	lda	<L974+sect_1
+	.line	5495
+	lda	<L973+sect_1
 	sta	<R0
-	lda	<L974+sect_1+2
+	lda	<L973+sect_1+2
 	sta	<R0+2
-	inc	<L974+sect_1
-	bne	L988
-	inc	<L974+sect_1+2
-L988:
+	inc	<L973+sect_1
+	bne	L987
+	inc	<L973+sect_1+2
+L987:
 	pei	<R0+2
 	pei	<R0
-	pei	<L974+fs_1+2
-	pei	<L974+fs_1
+	pei	<L973+fs_1+2
+	pei	<L973+fs_1
 	jsl	~~move_window
-	sta	<L974+res_1
+	sta	<L973+res_1
 ;							if (res != FR_OK)
-	.line	5476
+	.line	5496
 ;								break;
-	lda	<L974+res_1
-	beq	L989
+	lda	<L973+res_1
+	beq	L988
 	brl	L10563
-L989:
+L988:
 ;						}
-	.line	5478
+	.line	5498
 ;						if (fs->fs_type == FS_FAT16)
 L10565:
-	.line	5479
+	.line	5499
 ;						{
 	sep	#$20
 	longa	off
-	lda	[<L974+fs_1]
+	lda	[<L973+fs_1]
 	cmp	#<$2
 	rep	#$20
 	longa	on
-	beq	L990
+	beq	L989
 	brl	L10566
-L990:
-	.line	5480
+L989:
+	.line	5500
 ;							if (ld_word(fs->win + i) == 0)
-	.line	5481
+	.line	5501
 ;								nfree++;
-	lda	<L974+i_1
+	lda	<L973+i_1
 	sta	<R0
 	stz	<R0+2
 	clc
@@ -23871,40 +23892,40 @@ L990:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L974+fs_1
+	lda	<L973+fs_1
 	adc	<R1
 	sta	<R0
-	lda	<L974+fs_1+2
+	lda	<L973+fs_1+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~ld_word
 	tax
-	beq	L991
+	beq	L990
 	brl	L10567
+L990:
+	.line	5502
+	inc	<L973+nfree_1
+	bne	L991
+	inc	<L973+nfree_1+2
 L991:
-	.line	5482
-	inc	<L974+nfree_1
-	bne	L992
-	inc	<L974+nfree_1+2
-L992:
 ;							i += 2;
 L10567:
-	.line	5483
-	inc	<L974+i_1
-	inc	<L974+i_1
+	.line	5503
+	inc	<L973+i_1
+	inc	<L973+i_1
 ;						}
-	.line	5484
+	.line	5504
 ;						else
 	brl	L10568
 L10566:
 ;						{
-	.line	5486
+	.line	5506
 ;							if ((ld_dword(fs->win + i) & 0x0FFFFFFF) == 0)
-	.line	5487
+	.line	5507
 ;								nfree++;
-	lda	<L974+i_1
+	lda	<L973+i_1
 	sta	<R0
 	stz	<R0+2
 	clc
@@ -23915,10 +23936,10 @@ L10566:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L974+fs_1
+	lda	<L973+fs_1
 	adc	<R1
 	sta	<R0
-	lda	<L974+fs_1+2
+	lda	<L973+fs_1+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
@@ -23933,70 +23954,70 @@ L10566:
 	sta	<R3+2
 	lda	<R3
 	ora	<R3+2
-	beq	L993
+	beq	L992
 	brl	L10569
+L992:
+	.line	5508
+	inc	<L973+nfree_1
+	bne	L993
+	inc	<L973+nfree_1+2
 L993:
-	.line	5488
-	inc	<L974+nfree_1
-	bne	L994
-	inc	<L974+nfree_1+2
-L994:
 ;							i += 4;
 L10569:
-	.line	5489
+	.line	5509
 	clc
 	lda	#$4
-	adc	<L974+i_1
-	sta	<L974+i_1
+	adc	<L973+i_1
+	sta	<L973+i_1
 ;						}
-	.line	5490
+	.line	5510
 L10568:
 ;						i %= SS(fs);
-	.line	5491
+	.line	5511
 	lda	#$fe00
-	trb	<L974+i_1
+	trb	<L973+i_1
 ;					} while (--clst);
-	.line	5492
+	.line	5512
 L10562:
-	lda	<L974+clst_1
-	bne	L995
-	dec	<L974+clst_1+2
-L995:
-	dec	<L974+clst_1
-	lda	<L974+clst_1
-	ora	<L974+clst_1+2
-	beq	L996
+	lda	<L973+clst_1
+	bne	L994
+	dec	<L973+clst_1+2
+L994:
+	dec	<L973+clst_1
+	lda	<L973+clst_1
+	ora	<L973+clst_1+2
+	beq	L995
 	brl	L10564
-L996:
+L995:
 L10563:
 ;				}
-	.line	5493
+	.line	5513
 ;			}
-	.line	5494
+	.line	5514
 L10561:
 ;			*nclst = nfree; /* Return the free clusters */
-	.line	5495
-	lda	<L974+nfree_1
-	sta	[<L973+nclst_0]
-	lda	<L974+nfree_1+2
+	.line	5515
+	lda	<L973+nfree_1
+	sta	[<L972+nclst_0]
+	lda	<L973+nfree_1+2
 	ldy	#$2
-	sta	[<L973+nclst_0],Y
+	sta	[<L972+nclst_0],Y
 ;			fs->free_clst = nfree; /* Now free_clst is valid */
-	.line	5496
-	lda	<L974+nfree_1
+	.line	5516
+	lda	<L973+nfree_1
 	ldy	#$13
-	sta	[<L974+fs_1],Y
-	lda	<L974+nfree_1+2
+	sta	[<L973+fs_1],Y
+	lda	<L973+nfree_1+2
 	ldy	#$15
-	sta	[<L974+fs_1],Y
+	sta	[<L973+fs_1],Y
 ;			fs->fsi_flag |= 1; /* FAT32: FSInfo is to be updated */
-	.line	5497
+	.line	5517
 	clc
 	lda	#$4
-	adc	<L974+fs_1
+	adc	<L973+fs_1
 	sta	<R0
 	lda	#$0
-	adc	<L974+fs_1+2
+	adc	<L973+fs_1+2
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -24006,37 +24027,37 @@ L10561:
 	rep	#$20
 	longa	on
 ;		}
-	.line	5498
+	.line	5518
 L10553:
 ;	}
-	.line	5499
+	.line	5519
 ;
 ;	LEAVE_FF(fs, res);
 L10551:
-	.line	5501
-	lda	<L974+res_1
-L997:
+	.line	5521
+	lda	<L973+res_1
+L996:
 	tay
-	lda	<L973+2
-	sta	<L973+2+12
-	lda	<L973+1
-	sta	<L973+1+12
+	lda	<L972+2
+	sta	<L972+2+12
+	lda	<L972+1
+	sta	<L972+1+12
 	pld
 	tsc
 	clc
-	adc	#L973+12
+	adc	#L972+12
 	tcs
 	tya
 	rtl
 ;}
-	.line	5502
-	.endblock	5502
-L973	equ	56
-L974	equ	17
+	.line	5522
+	.endblock	5522
+L972	equ	56
+L973	equ	17
 	ends
 	efunc
-	.endfunc	5502,17,56
-	.line	5502
+	.endfunc	5522,17,56
+	.line	5522
 ;
 ;/*-----------------------------------------------------------------------*/
 ;/* Truncate File                                                         */
@@ -24045,23 +24066,23 @@ L974	equ	17
 ;FRESULT f_truncate(FIL* fp /* Pointer to the file object */
 ;)
 ;{
-	.line	5508
-	.line	5510
+	.line	5528
+	.line	5530
 	FFDOS
 	xdef	~~f_truncate
 	func
-	.function	5510
+	.function	5530
 ~~f_truncate:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L998
+	sbc	#L997
 	tcs
 	phd
 	tcd
 fp_0	set	4
-	.block	5510
+	.block	5530
 ;	FRESULT res;
 ;	FATFS *fs;
 ;	DWORD ncl;
@@ -24071,227 +24092,227 @@ res_1	set	0
 fs_1	set	2
 ncl_1	set	6
 	.sym	res,0,5,1,16
-	.sym	fs,2,138,1,32,72
+	.sym	fs,2,138,1,32,75
 	.sym	ncl,6,18,1,32
-	.sym	fp,4,138,6,32,74
-	.line	5515
+	.sym	fp,4,138,6,32,77
+	.line	5535
 	pea	#0
 	clc
 	tdc
-	adc	#<L999+fs_1
+	adc	#<L998+fs_1
 	pha
-	pei	<L998+fp_0+2
-	pei	<L998+fp_0
+	pei	<L997+fp_0+2
+	pei	<L997+fp_0
 	jsl	~~validate
-	sta	<L999+res_1
+	sta	<L998+res_1
 ;	if (res != FR_OK || (res = (FRESULT) fp->err) != FR_OK)
-	.line	5516
+	.line	5536
 ;		LEAVE_FF(fs, res);
-	lda	<L999+res_1
-	beq	L1002
-	brl	L1001
-L1002:
-	ldy	#$11
-	lda	[<L998+fp_0],Y
-	and	#$ff
-	sta	<L999+res_1
-	lda	<L999+res_1
-	bne	L1003
-	brl	L10570
-L1003:
+	lda	<L998+res_1
+	beq	L1001
+	brl	L1000
 L1001:
-	.line	5517
-	lda	<L999+res_1
-L1004:
+	ldy	#$11
+	lda	[<L997+fp_0],Y
+	and	#$ff
+	sta	<L998+res_1
+	lda	<L998+res_1
+	bne	L1002
+	brl	L10570
+L1002:
+L1000:
+	.line	5537
+	lda	<L998+res_1
+L1003:
 	tay
-	lda	<L998+2
-	sta	<L998+2+4
-	lda	<L998+1
-	sta	<L998+1+4
+	lda	<L997+2
+	sta	<L997+2+4
+	lda	<L997+1
+	sta	<L997+1+4
 	pld
 	tsc
 	clc
-	adc	#L998+4
+	adc	#L997+4
 	tcs
 	tya
 	rtl
 ;	if (!(fp->flag & FA_WRITE))
 L10570:
-	.line	5518
+	.line	5538
 ;		LEAVE_FF(fs, FR_DENIED); /* Check access mode */
 	sep	#$20
 	longa	off
 	ldy	#$10
-	lda	[<L998+fp_0],Y
+	lda	[<L997+fp_0],Y
 	and	#<$2
 	rep	#$20
 	longa	on
-	beq	L1005
+	beq	L1004
 	brl	L10571
-L1005:
-	.line	5519
+L1004:
+	.line	5539
 	lda	#$7
-	brl	L1004
+	brl	L1003
 ;
 ;	if (fp->fptr < fp->obj.objsize)
 L10571:
-	.line	5521
+	.line	5541
 ;	{ /* Process when fptr is not on the eof */
 	ldy	#$12
-	lda	[<L998+fp_0],Y
+	lda	[<L997+fp_0],Y
 	ldy	#$c
-	cmp	[<L998+fp_0],Y
+	cmp	[<L997+fp_0],Y
 	ldy	#$14
-	lda	[<L998+fp_0],Y
+	lda	[<L997+fp_0],Y
 	ldy	#$e
-	sbc	[<L998+fp_0],Y
-	bcc	L1006
+	sbc	[<L997+fp_0],Y
+	bcc	L1005
 	brl	L10572
-L1006:
-	.line	5522
+L1005:
+	.line	5542
 ;		if (fp->fptr == 0)
-	.line	5523
+	.line	5543
 ;		{ /* When set file size to zero, remove entire cluster chain */
 	ldy	#$12
-	lda	[<L998+fp_0],Y
+	lda	[<L997+fp_0],Y
 	ldy	#$14
-	ora	[<L998+fp_0],Y
-	beq	L1007
+	ora	[<L997+fp_0],Y
+	beq	L1006
 	brl	L10573
-L1007:
-	.line	5524
+L1006:
+	.line	5544
 ;			res = remove_chain(&fp->obj, fp->obj.sclust, 0);
-	.line	5525
+	.line	5545
 	pea	#^$0
 	pea	#<$0
 	ldy	#$a
-	lda	[<L998+fp_0],Y
+	lda	[<L997+fp_0],Y
 	pha
 	ldy	#$8
-	lda	[<L998+fp_0],Y
+	lda	[<L997+fp_0],Y
 	pha
-	pei	<L998+fp_0+2
-	pei	<L998+fp_0
+	pei	<L997+fp_0+2
+	pei	<L997+fp_0
 	jsl	~~remove_chain
-	sta	<L999+res_1
+	sta	<L998+res_1
 ;			fp->obj.sclust = 0;
-	.line	5526
+	.line	5546
 	lda	#$0
 	ldy	#$8
-	sta	[<L998+fp_0],Y
+	sta	[<L997+fp_0],Y
 	lda	#$0
 	ldy	#$a
-	sta	[<L998+fp_0],Y
+	sta	[<L997+fp_0],Y
 ;		}
-	.line	5527
+	.line	5547
 ;		else
 	brl	L10574
 L10573:
 ;		{ /* When truncate a part of the file, remove remaining clusters */
-	.line	5529
+	.line	5549
 ;			ncl = get_fat(&fp->obj, fp->clust);
-	.line	5530
+	.line	5550
 	ldy	#$18
-	lda	[<L998+fp_0],Y
+	lda	[<L997+fp_0],Y
 	pha
 	ldy	#$16
-	lda	[<L998+fp_0],Y
+	lda	[<L997+fp_0],Y
 	pha
-	pei	<L998+fp_0+2
-	pei	<L998+fp_0
+	pei	<L997+fp_0+2
+	pei	<L997+fp_0
 	jsl	~~get_fat
-	sta	<L999+ncl_1
-	stx	<L999+ncl_1+2
+	sta	<L998+ncl_1
+	stx	<L998+ncl_1+2
 ;			res = FR_OK;
-	.line	5531
-	stz	<L999+res_1
+	.line	5551
+	stz	<L998+res_1
 ;			if (ncl == 0xFFFFFFFF)
-	.line	5532
+	.line	5552
 ;				res = FR_DISK_ERR;
-	lda	<L999+ncl_1
+	lda	<L998+ncl_1
 	cmp	#<$ffffffff
-	bne	L1008
-	lda	<L999+ncl_1+2
+	bne	L1007
+	lda	<L998+ncl_1+2
 	cmp	#^$ffffffff
-L1008:
-	beq	L1009
+L1007:
+	beq	L1008
 	brl	L10575
-L1009:
-	.line	5533
+L1008:
+	.line	5553
 	lda	#$1
-	sta	<L999+res_1
+	sta	<L998+res_1
 ;			if (ncl == 1)
 L10575:
-	.line	5534
+	.line	5554
 ;				res = FR_INT_ERR;
-	lda	<L999+ncl_1
+	lda	<L998+ncl_1
 	cmp	#<$1
-	bne	L1010
-	lda	<L999+ncl_1+2
+	bne	L1009
+	lda	<L998+ncl_1+2
 	cmp	#^$1
-L1010:
-	beq	L1011
+L1009:
+	beq	L1010
 	brl	L10576
-L1011:
-	.line	5535
+L1010:
+	.line	5555
 	lda	#$2
-	sta	<L999+res_1
+	sta	<L998+res_1
 ;			if (res == FR_OK && ncl < fs->n_fatent)
 L10576:
-	.line	5536
+	.line	5556
 ;			{
-	lda	<L999+res_1
-	beq	L1012
+	lda	<L998+res_1
+	beq	L1011
+	brl	L10577
+L1011:
+	lda	<L998+ncl_1
+	ldy	#$17
+	cmp	[<L998+fs_1],Y
+	lda	<L998+ncl_1+2
+	ldy	#$19
+	sbc	[<L998+fs_1],Y
+	bcc	L1012
 	brl	L10577
 L1012:
-	lda	<L999+ncl_1
-	ldy	#$17
-	cmp	[<L999+fs_1],Y
-	lda	<L999+ncl_1+2
-	ldy	#$19
-	sbc	[<L999+fs_1],Y
-	bcc	L1013
-	brl	L10577
-L1013:
-	.line	5537
+	.line	5557
 ;				res = remove_chain(&fp->obj, ncl, fp->clust);
-	.line	5538
+	.line	5558
 	ldy	#$18
-	lda	[<L998+fp_0],Y
+	lda	[<L997+fp_0],Y
 	pha
 	ldy	#$16
-	lda	[<L998+fp_0],Y
+	lda	[<L997+fp_0],Y
 	pha
-	pei	<L999+ncl_1+2
-	pei	<L999+ncl_1
-	pei	<L998+fp_0+2
-	pei	<L998+fp_0
+	pei	<L998+ncl_1+2
+	pei	<L998+ncl_1
+	pei	<L997+fp_0+2
+	pei	<L997+fp_0
 	jsl	~~remove_chain
-	sta	<L999+res_1
+	sta	<L998+res_1
 ;			}
-	.line	5539
+	.line	5559
 ;		}
 L10577:
-	.line	5540
+	.line	5560
 L10574:
 ;		fp->obj.objsize = fp->fptr; /* Set file size to current read/write point */
-	.line	5541
+	.line	5561
 	ldy	#$12
-	lda	[<L998+fp_0],Y
+	lda	[<L997+fp_0],Y
 	ldy	#$c
-	sta	[<L998+fp_0],Y
+	sta	[<L997+fp_0],Y
 	ldy	#$14
-	lda	[<L998+fp_0],Y
+	lda	[<L997+fp_0],Y
 	ldy	#$e
-	sta	[<L998+fp_0],Y
+	sta	[<L997+fp_0],Y
 ;		fp->flag |= FA_MODIFIED;
-	.line	5542
+	.line	5562
 	clc
 	lda	#$10
-	adc	<L998+fp_0
+	adc	<L997+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L998+fp_0+2
+	adc	<L997+fp_0+2
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -24302,70 +24323,70 @@ L10574:
 	longa	on
 ;#if !FF_FS_TINY
 ;		if (res == FR_OK && (fp->flag & FA_DIRTY))
-	.line	5544
+	.line	5564
 ;		{
-	lda	<L999+res_1
-	beq	L1014
+	lda	<L998+res_1
+	beq	L1013
 	brl	L10578
-L1014:
+L1013:
 	sep	#$20
 	longa	off
 	ldy	#$10
-	lda	[<L998+fp_0],Y
+	lda	[<L997+fp_0],Y
 	and	#<$80
 	rep	#$20
 	longa	on
-	bne	L1015
+	bne	L1014
 	brl	L10578
-L1015:
-	.line	5545
+L1014:
+	.line	5565
 ;			if (disk_write(fs->pdrv, fp->buf, fp->sect, 1) != RES_OK)
-	.line	5546
+	.line	5566
 ;			{
 	pea	#<$1
 	ldy	#$1c
-	lda	[<L998+fp_0],Y
+	lda	[<L997+fp_0],Y
 	pha
 	ldy	#$1a
-	lda	[<L998+fp_0],Y
+	lda	[<L997+fp_0],Y
 	pha
 	clc
 	lda	#$26
-	adc	<L998+fp_0
+	adc	<L997+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L998+fp_0+2
+	adc	<L997+fp_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$1
-	lda	[<L999+fs_1],Y
+	lda	[<L998+fs_1],Y
 	pha
 	jsl	~~disk_write
 	tax
-	bne	L1016
+	bne	L1015
 	brl	L10579
-L1016:
-	.line	5547
+L1015:
+	.line	5567
 ;				res = FR_DISK_ERR;
-	.line	5548
+	.line	5568
 	lda	#$1
-	sta	<L999+res_1
+	sta	<L998+res_1
 ;			}
-	.line	5549
+	.line	5569
 ;			else
 	brl	L10580
 L10579:
 ;			{
-	.line	5551
+	.line	5571
 ;				fp->flag &= (BYTE) ~FA_DIRTY;
-	.line	5552
+	.line	5572
 	clc
 	lda	#$10
-	adc	<L998+fp_0
+	adc	<L997+fp_0
 	sta	<R0
 	lda	#$0
-	adc	<L998+fp_0+2
+	adc	<L997+fp_0+2
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -24375,51 +24396,51 @@ L10579:
 	rep	#$20
 	longa	on
 ;			}
-	.line	5553
+	.line	5573
 L10580:
 ;		}
-	.line	5554
+	.line	5574
 ;#endif
 ;		if (res != FR_OK)
 L10578:
-	.line	5556
+	.line	5576
 ;			ABORT(fs, res);
-	lda	<L999+res_1
-	bne	L1017
+	lda	<L998+res_1
+	bne	L1016
 	brl	L10581
-L1017:
-	.line	5557
-	.line	5557
+L1016:
+	.line	5577
+	.line	5577
 	sep	#$20
 	longa	off
-	lda	<L999+res_1
+	lda	<L998+res_1
 	ldy	#$11
-	sta	[<L998+fp_0],Y
+	sta	[<L997+fp_0],Y
 	rep	#$20
 	longa	on
-	.line	5557
-	lda	<L999+res_1
-	brl	L1004
-	.line	5557
+	.line	5577
+	lda	<L998+res_1
+	brl	L1003
+	.line	5577
 L10581:
-	.line	5557
+	.line	5577
 ;	}
-	.line	5558
+	.line	5578
 ;
 ;	LEAVE_FF(fs, res);
 L10572:
-	.line	5560
-	lda	<L999+res_1
-	brl	L1004
+	.line	5580
+	lda	<L998+res_1
+	brl	L1003
 ;}
-	.line	5561
-	.endblock	5561
-L998	equ	14
-L999	equ	5
+	.line	5581
+	.endblock	5581
+L997	equ	14
+L998	equ	5
 	ends
 	efunc
-	.endfunc	5561,5,14
-	.line	5561
+	.endfunc	5581,5,14
+	.line	5581
 ;
 ;/*-----------------------------------------------------------------------*/
 ;/* Delete a File/Directory                                               */
@@ -24428,23 +24449,23 @@ L999	equ	5
 ;FRESULT f_unlink(const TCHAR* path /* Pointer to the file or directory path */
 ;)
 ;{
-	.line	5567
-	.line	5569
+	.line	5587
+	.line	5589
 	FFDOS
 	xdef	~~f_unlink
 	func
-	.function	5569
+	.function	5589
 ~~f_unlink:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1018
+	sbc	#L1017
 	tcs
 	phd
 	tcd
 path_0	set	4
-	.block	5569
+	.block	5589
 ;	FRESULT res;
 ;	DIR dj, sdj;
 ;	DWORD dclst = 0;
@@ -24463,182 +24484,182 @@ dclst_1	set	106
 fs_1	set	110
 lfn_1	set	114
 	.sym	res,0,5,1,16
-	.sym	dj,2,10,1,416,75
-	.sym	sdj,54,10,1,416,75
+	.sym	dj,2,10,1,416,78
+	.sym	sdj,54,10,1,416,78
 	.sym	dclst,106,18,1,32
-	.sym	fs,110,138,1,32,72
+	.sym	fs,110,138,1,32,75
 	.sym	lfn,114,144,1,32
 	.sym	path,4,142,6,32
-	stz	<L1019+dclst_1
-	stz	<L1019+dclst_1+2
-	.line	5580
+	stz	<L1018+dclst_1
+	stz	<L1018+dclst_1+2
+	.line	5600
 	pea	#<$2
 	pea	#0
 	clc
 	tdc
-	adc	#<L1019+fs_1
+	adc	#<L1018+fs_1
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L1018+path_0
+	adc	#<L1017+path_0
 	pha
 	jsl	~~mount_volume
-	sta	<L1019+res_1
+	sta	<L1018+res_1
 ;	if (res == FR_OK)
-	.line	5581
+	.line	5601
 ;	{
-	lda	<L1019+res_1
-	beq	L1021
+	lda	<L1018+res_1
+	beq	L1020
 	brl	L10582
-L1021:
-	.line	5582
+L1020:
+	.line	5602
 ;		dj.obj.fs = fs;
-	.line	5583
-	lda	<L1019+fs_1
-	sta	<L1019+dj_1
-	lda	<L1019+fs_1+2
-	sta	<L1019+dj_1+2
+	.line	5603
+	lda	<L1018+fs_1
+	sta	<L1018+dj_1
+	lda	<L1018+fs_1+2
+	sta	<L1018+dj_1+2
 ;		INIT_NAMBUF(fs);
-	.line	5584
-	.line	5584
+	.line	5604
+	.line	5604
 	pea	#<$200
 	jsl	~~ff_memalloc
-	sta	<L1019+lfn_1
-	stx	<L1019+lfn_1+2
-	.line	5584
-	lda	<L1019+lfn_1
-	ora	<L1019+lfn_1+2
-	beq	L1022
+	sta	<L1018+lfn_1
+	stx	<L1018+lfn_1+2
+	.line	5604
+	lda	<L1018+lfn_1
+	ora	<L1018+lfn_1+2
+	beq	L1021
 	brl	L10583
-L1022:
-	.line	5584
+L1021:
+	.line	5604
 	lda	#$11
-L1023:
+L1022:
 	tay
-	lda	<L1018+2
-	sta	<L1018+2+4
-	lda	<L1018+1
-	sta	<L1018+1+4
+	lda	<L1017+2
+	sta	<L1017+2+4
+	lda	<L1017+1
+	sta	<L1017+1+4
 	pld
 	tsc
 	clc
-	adc	#L1018+4
+	adc	#L1017+4
 	tcs
 	tya
 	rtl
 L10583:
-	.line	5584
-	lda	<L1019+lfn_1
+	.line	5604
+	lda	<L1018+lfn_1
 	ldy	#$b
-	sta	[<L1019+fs_1],Y
-	lda	<L1019+lfn_1+2
+	sta	[<L1018+fs_1],Y
+	lda	<L1018+lfn_1+2
 	ldy	#$d
-	sta	[<L1019+fs_1],Y
-	.line	5584
-	.line	5584
+	sta	[<L1018+fs_1],Y
+	.line	5604
+	.line	5604
 ;		res = follow_path(&dj, path); /* Follow the file path */
-	.line	5585
-	pei	<L1018+path_0+2
-	pei	<L1018+path_0
+	.line	5605
+	pei	<L1017+path_0+2
+	pei	<L1017+path_0
 	pea	#0
 	clc
 	tdc
-	adc	#<L1019+dj_1
+	adc	#<L1018+dj_1
 	pha
 	jsl	~~follow_path
-	sta	<L1019+res_1
+	sta	<L1018+res_1
 ;		if (FF_FS_RPATH && res == FR_OK && (dj.fn[NSFLAG] & NS_DOT))
-	.line	5586
+	.line	5606
 ;		{
 	brl	L10584
-	lda	<L1019+res_1
-	beq	L1024
+	lda	<L1018+res_1
+	beq	L1023
 	brl	L10584
-L1024:
+L1023:
 	sep	#$20
 	longa	off
-	lda	<L1019+dj_1+43
+	lda	<L1018+dj_1+43
 	and	#<$20
 	rep	#$20
 	longa	on
-	bne	L1025
+	bne	L1024
 	brl	L10584
-L1025:
-	.line	5587
+L1024:
+	.line	5607
 ;			res = FR_INVALID_NAME; /* Cannot remove dot entry */
-	.line	5588
+	.line	5608
 	lda	#$6
-	sta	<L1019+res_1
+	sta	<L1018+res_1
 ;		}
-	.line	5589
+	.line	5609
 ;#if FF_FS_LOCK != 0
 ;		if (res == FR_OK) res = chk_lock(&dj, 2); /* Check if it is an open object */
 ;#endif
 ;		if (res == FR_OK)
 L10584:
-	.line	5593
+	.line	5613
 ;		{ /* The object is accessible */
-	lda	<L1019+res_1
-	beq	L1026
+	lda	<L1018+res_1
+	beq	L1025
 	brl	L10585
-L1026:
-	.line	5594
+L1025:
+	.line	5614
 ;			if (dj.fn[NSFLAG] & NS_NONAME)
-	.line	5595
+	.line	5615
 ;			{
 	sep	#$20
 	longa	off
-	lda	<L1019+dj_1+43
+	lda	<L1018+dj_1+43
 	and	#<$80
 	rep	#$20
 	longa	on
-	bne	L1027
+	bne	L1026
 	brl	L10586
-L1027:
-	.line	5596
+L1026:
+	.line	5616
 ;				res = FR_INVALID_NAME; /* Cannot remove the origin directory */
-	.line	5597
+	.line	5617
 	lda	#$6
-	sta	<L1019+res_1
+	sta	<L1018+res_1
 ;			}
-	.line	5598
+	.line	5618
 ;			else
 	brl	L10587
 L10586:
 ;			{
-	.line	5600
+	.line	5620
 ;				if (dj.obj.attr & AM_RDO)
-	.line	5601
+	.line	5621
 ;				{
 	sep	#$20
 	longa	off
-	lda	<L1019+dj_1+6
+	lda	<L1018+dj_1+6
 	and	#<$1
 	rep	#$20
 	longa	on
-	bne	L1028
+	bne	L1027
 	brl	L10588
-L1028:
-	.line	5602
+L1027:
+	.line	5622
 ;					res = FR_DENIED; /* Cannot remove R/O object */
-	.line	5603
+	.line	5623
 	lda	#$7
-	sta	<L1019+res_1
+	sta	<L1018+res_1
 ;				}
-	.line	5604
+	.line	5624
 ;			}
 L10588:
-	.line	5605
+	.line	5625
 L10587:
 ;			if (res == FR_OK)
-	.line	5606
+	.line	5626
 ;			{
-	lda	<L1019+res_1
-	beq	L1029
+	lda	<L1018+res_1
+	beq	L1028
 	brl	L10589
-L1029:
-	.line	5607
+L1028:
+	.line	5627
 ;#if FF_FS_EXFAT
 ;				obj.fs = fs;
 ;				if (fs->fs_type == FS_EXFAT)
@@ -24649,31 +24670,31 @@ L1029:
 ;				else
 ;#endif
 ;				{
-	.line	5617
+	.line	5637
 ;					dclst = ld_clust(fs, dj.dir);
-	.line	5618
-	pei	<L1019+dj_1+30
-	pei	<L1019+dj_1+28
-	pei	<L1019+fs_1+2
-	pei	<L1019+fs_1
+	.line	5638
+	pei	<L1018+dj_1+30
+	pei	<L1018+dj_1+28
+	pei	<L1018+fs_1+2
+	pei	<L1018+fs_1
 	jsl	~~ld_clust
-	sta	<L1019+dclst_1
-	stx	<L1019+dclst_1+2
+	sta	<L1018+dclst_1
+	stx	<L1018+dclst_1+2
 ;				}
-	.line	5619
+	.line	5639
 ;				if (dj.obj.attr & AM_DIR)
-	.line	5620
+	.line	5640
 ;				{ /* Is it a sub-directory? */
 	sep	#$20
 	longa	off
-	lda	<L1019+dj_1+6
+	lda	<L1018+dj_1+6
 	and	#<$10
 	rep	#$20
 	longa	on
-	bne	L1030
+	bne	L1029
 	brl	L10590
-L1030:
-	.line	5621
+L1029:
+	.line	5641
 ;#if FF_FS_RPATH != 0
 ;					if (dclst == fs->cdir)
 ;					{ /* Is it the current directory? */
@@ -24682,19 +24703,19 @@ L1030:
 ;					else
 ;#endif
 ;					{
-	.line	5629
+	.line	5649
 ;						sdj.obj.fs = fs; /* Open the sub-directory */
-	.line	5630
-	lda	<L1019+fs_1
-	sta	<L1019+sdj_1
-	lda	<L1019+fs_1+2
-	sta	<L1019+sdj_1+2
+	.line	5650
+	lda	<L1018+fs_1
+	sta	<L1018+sdj_1
+	lda	<L1018+fs_1+2
+	sta	<L1018+sdj_1+2
 ;						sdj.obj.sclust = dclst;
-	.line	5631
-	lda	<L1019+dclst_1
-	sta	<L1019+sdj_1+8
-	lda	<L1019+dclst_1+2
-	sta	<L1019+sdj_1+10
+	.line	5651
+	lda	<L1018+dclst_1
+	sta	<L1018+sdj_1+8
+	lda	<L1018+dclst_1+2
+	sta	<L1018+sdj_1+10
 ;#if FF_FS_EXFAT
 ;						if (fs->fs_type == FS_EXFAT)
 ;						{
@@ -24703,157 +24724,157 @@ L1030:
 ;						}
 ;#endif
 ;						res = dir_sdi(&sdj, 0);
-	.line	5639
+	.line	5659
 	pea	#^$0
 	pea	#<$0
 	pea	#0
 	clc
 	tdc
-	adc	#<L1019+sdj_1
+	adc	#<L1018+sdj_1
 	pha
 	jsl	~~dir_sdi
-	sta	<L1019+res_1
+	sta	<L1018+res_1
 ;						if (res == FR_OK)
-	.line	5640
+	.line	5660
 ;						{
-	lda	<L1019+res_1
-	beq	L1031
+	lda	<L1018+res_1
+	beq	L1030
 	brl	L10591
-L1031:
-	.line	5641
+L1030:
+	.line	5661
 ;							res = DIR_READ_FILE(&sdj); /* Test if the directory is empty */
-	.line	5642
+	.line	5662
 	pea	#<$0
 	pea	#0
 	clc
 	tdc
-	adc	#<L1019+sdj_1
+	adc	#<L1018+sdj_1
 	pha
 	jsl	~~dir_read
-	sta	<L1019+res_1
+	sta	<L1018+res_1
 ;							if (res == FR_OK)
-	.line	5643
+	.line	5663
 ;								res = FR_DENIED; /* Not empty? */
-	lda	<L1019+res_1
-	beq	L1032
+	lda	<L1018+res_1
+	beq	L1031
 	brl	L10592
-L1032:
-	.line	5644
+L1031:
+	.line	5664
 	lda	#$7
-	sta	<L1019+res_1
+	sta	<L1018+res_1
 ;							if (res == FR_NO_FILE)
 L10592:
-	.line	5645
+	.line	5665
 ;								res = FR_OK; /* Empty? */
-	lda	<L1019+res_1
+	lda	<L1018+res_1
 	cmp	#<$4
-	beq	L1033
+	beq	L1032
 	brl	L10593
-L1033:
-	.line	5646
-	stz	<L1019+res_1
+L1032:
+	.line	5666
+	stz	<L1018+res_1
 ;						}
 L10593:
-	.line	5647
+	.line	5667
 ;					}
 L10591:
-	.line	5648
+	.line	5668
 ;				}
-	.line	5649
+	.line	5669
 ;			}
 L10590:
-	.line	5650
+	.line	5670
 ;			if (res == FR_OK)
 L10589:
-	.line	5651
+	.line	5671
 ;			{
-	lda	<L1019+res_1
-	beq	L1034
+	lda	<L1018+res_1
+	beq	L1033
 	brl	L10594
-L1034:
-	.line	5652
+L1033:
+	.line	5672
 ;				res = dir_remove(&dj); /* Remove the directory entry */
-	.line	5653
+	.line	5673
 	pea	#0
 	clc
 	tdc
-	adc	#<L1019+dj_1
+	adc	#<L1018+dj_1
 	pha
 	jsl	~~dir_remove
-	sta	<L1019+res_1
+	sta	<L1018+res_1
 ;				if (res == FR_OK && dclst != 0)
-	.line	5654
+	.line	5674
 ;				{ /* Remove the cluster chain if exist */
-	lda	<L1019+res_1
-	beq	L1035
+	lda	<L1018+res_1
+	beq	L1034
+	brl	L10595
+L1034:
+	lda	<L1018+dclst_1
+	ora	<L1018+dclst_1+2
+	bne	L1035
 	brl	L10595
 L1035:
-	lda	<L1019+dclst_1
-	ora	<L1019+dclst_1+2
-	bne	L1036
-	brl	L10595
-L1036:
-	.line	5655
+	.line	5675
 ;#if FF_FS_EXFAT
 ;					res = remove_chain(&obj, dclst, 0);
 ;#else
 ;					res = remove_chain(&dj.obj, dclst, 0);
-	.line	5659
+	.line	5679
 	pea	#^$0
 	pea	#<$0
-	pei	<L1019+dclst_1+2
-	pei	<L1019+dclst_1
+	pei	<L1018+dclst_1+2
+	pei	<L1018+dclst_1
 	pea	#0
 	clc
 	tdc
-	adc	#<L1019+dj_1
+	adc	#<L1018+dj_1
 	pha
 	jsl	~~remove_chain
-	sta	<L1019+res_1
+	sta	<L1018+res_1
 ;#endif
 ;				}
-	.line	5661
+	.line	5681
 ;				if (res == FR_OK)
 L10595:
-	.line	5662
+	.line	5682
 ;					res = sync_fs(fs);
-	lda	<L1019+res_1
-	beq	L1037
+	lda	<L1018+res_1
+	beq	L1036
 	brl	L10596
-L1037:
-	.line	5663
-	pei	<L1019+fs_1+2
-	pei	<L1019+fs_1
+L1036:
+	.line	5683
+	pei	<L1018+fs_1+2
+	pei	<L1018+fs_1
 	jsl	~~sync_fs
-	sta	<L1019+res_1
+	sta	<L1018+res_1
 ;			}
 L10596:
-	.line	5664
+	.line	5684
 ;		} FREE_NAMBUF();
 L10594:
-	.line	5665
+	.line	5685
 L10585:
-	.line	5665
-	pei	<L1019+lfn_1+2
-	pei	<L1019+lfn_1
+	.line	5685
+	pei	<L1018+lfn_1+2
+	pei	<L1018+lfn_1
 	jsl	~~ff_memfree
 ;	}
-	.line	5666
+	.line	5686
 ;
 ;	LEAVE_FF(fs, res);
 L10582:
-	.line	5668
-	lda	<L1019+res_1
-	brl	L1023
+	.line	5688
+	lda	<L1018+res_1
+	brl	L1022
 ;}
-	.line	5669
-	.endblock	5669
-L1018	equ	118
-L1019	equ	1
+	.line	5689
+	.endblock	5689
+L1017	equ	118
+L1018	equ	1
 	ends
 	efunc
-	.endfunc	5669,1,118
-	.line	5669
+	.endfunc	5689,1,118
+	.line	5689
 ;
 ;/*-----------------------------------------------------------------------*/
 ;/* Create a Directory                                                    */
@@ -24862,23 +24883,23 @@ L1019	equ	1
 ;FRESULT f_mkdir(const TCHAR* path /* Pointer to the directory path */
 ;)
 ;{
-	.line	5675
-	.line	5677
+	.line	5695
+	.line	5697
 	FFDOS
 	xdef	~~f_mkdir
 	func
-	.function	5677
+	.function	5697
 ~~f_mkdir:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1038
+	sbc	#L1037
 	tcs
 	phd
 	tcd
 path_0	set	4
-	.block	5677
+	.block	5697
 ;	FRESULT res;
 ;	DIR dj;
 ;	FFOBJID sobj;
@@ -24896,431 +24917,409 @@ pcl_1	set	78
 tm_1	set	82
 lfn_1	set	86
 	.sym	res,0,5,1,16
-	.sym	dj,2,10,1,416,75
-	.sym	sobj,54,10,1,128,73
-	.sym	fs,70,138,1,32,72
+	.sym	dj,2,10,1,416,78
+	.sym	sobj,54,10,1,128,76
+	.sym	fs,70,138,1,32,75
 	.sym	dcl,74,18,1,32
 	.sym	pcl,78,18,1,32
 	.sym	tm,82,18,1,32
 	.sym	lfn,86,144,1,32
 	.sym	path,4,142,6,32
-	.line	5685
+	.line	5705
 	pea	#<$2
 	pea	#0
 	clc
 	tdc
-	adc	#<L1039+fs_1
+	adc	#<L1038+fs_1
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L1038+path_0
+	adc	#<L1037+path_0
 	pha
 	jsl	~~mount_volume
-	sta	<L1039+res_1
+	sta	<L1038+res_1
 ;	if (res == FR_OK)
-	.line	5686
+	.line	5706
 ;	{
-	lda	<L1039+res_1
-	beq	L1041
+	lda	<L1038+res_1
+	beq	L1040
 	brl	L10597
-L1041:
-	.line	5687
+L1040:
+	.line	5707
 ;		dj.obj.fs = fs;
-	.line	5688
-	lda	<L1039+fs_1
-	sta	<L1039+dj_1
-	lda	<L1039+fs_1+2
-	sta	<L1039+dj_1+2
+	.line	5708
+	lda	<L1038+fs_1
+	sta	<L1038+dj_1
+	lda	<L1038+fs_1+2
+	sta	<L1038+dj_1+2
 ;		INIT_NAMBUF(fs);
-	.line	5689
-	.line	5689
+	.line	5709
+	.line	5709
 	pea	#<$200
 	jsl	~~ff_memalloc
-	sta	<L1039+lfn_1
-	stx	<L1039+lfn_1+2
-	.line	5689
-	lda	<L1039+lfn_1
-	ora	<L1039+lfn_1+2
-	beq	L1042
+	sta	<L1038+lfn_1
+	stx	<L1038+lfn_1+2
+	.line	5709
+	lda	<L1038+lfn_1
+	ora	<L1038+lfn_1+2
+	beq	L1041
 	brl	L10598
-L1042:
-	.line	5689
+L1041:
+	.line	5709
 	lda	#$11
-L1043:
+L1042:
 	tay
-	lda	<L1038+2
-	sta	<L1038+2+4
-	lda	<L1038+1
-	sta	<L1038+1+4
+	lda	<L1037+2
+	sta	<L1037+2+4
+	lda	<L1037+1
+	sta	<L1037+1+4
 	pld
 	tsc
 	clc
-	adc	#L1038+4
+	adc	#L1037+4
 	tcs
 	tya
 	rtl
 L10598:
-	.line	5689
-	lda	<L1039+lfn_1
+	.line	5709
+	lda	<L1038+lfn_1
 	ldy	#$b
-	sta	[<L1039+fs_1],Y
-	lda	<L1039+lfn_1+2
+	sta	[<L1038+fs_1],Y
+	lda	<L1038+lfn_1+2
 	ldy	#$d
-	sta	[<L1039+fs_1],Y
-	.line	5689
-	.line	5689
+	sta	[<L1038+fs_1],Y
+	.line	5709
+	.line	5709
 ;		res = follow_path(&dj, path); /* Follow the file path */
-	.line	5690
-	pei	<L1038+path_0+2
-	pei	<L1038+path_0
+	.line	5710
+	pei	<L1037+path_0+2
+	pei	<L1037+path_0
 	pea	#0
 	clc
 	tdc
-	adc	#<L1039+dj_1
+	adc	#<L1038+dj_1
 	pha
 	jsl	~~follow_path
-	sta	<L1039+res_1
+	sta	<L1038+res_1
 ;		if (res == FR_OK)
-	.line	5691
+	.line	5711
 ;			res = FR_EXIST; /* Name collision? */
-	lda	<L1039+res_1
-	beq	L1044
+	lda	<L1038+res_1
+	beq	L1043
 	brl	L10599
-L1044:
-	.line	5692
+L1043:
+	.line	5712
 	lda	#$8
-	sta	<L1039+res_1
+	sta	<L1038+res_1
 ;		if (FF_FS_RPATH && res == FR_NO_FILE && (dj.fn[NSFLAG] & NS_DOT))
 L10599:
-	.line	5693
+	.line	5713
 ;		{ /* Invalid name? */
 	brl	L10600
-	lda	<L1039+res_1
+	lda	<L1038+res_1
 	cmp	#<$4
-	beq	L1045
+	beq	L1044
 	brl	L10600
-L1045:
+L1044:
 	sep	#$20
 	longa	off
-	lda	<L1039+dj_1+43
+	lda	<L1038+dj_1+43
 	and	#<$20
 	rep	#$20
 	longa	on
-	bne	L1046
+	bne	L1045
 	brl	L10600
-L1046:
-	.line	5694
+L1045:
+	.line	5714
 ;			res = FR_INVALID_NAME;
-	.line	5695
+	.line	5715
 	lda	#$6
-	sta	<L1039+res_1
+	sta	<L1038+res_1
 ;		}
-	.line	5696
+	.line	5716
 ;		if (res == FR_NO_FILE)
 L10600:
-	.line	5697
+	.line	5717
 ;		{ /* It is clear to create a new directory */
-	lda	<L1039+res_1
+	lda	<L1038+res_1
 	cmp	#<$4
-	beq	L1047
+	beq	L1046
 	brl	L10601
-L1047:
-	.line	5698
+L1046:
+	.line	5718
 ;			sobj.fs = fs; /* New object id to create a new chain */
-	.line	5699
-	lda	<L1039+fs_1
-	sta	<L1039+sobj_1
-	lda	<L1039+fs_1+2
-	sta	<L1039+sobj_1+2
+	.line	5719
+	lda	<L1038+fs_1
+	sta	<L1038+sobj_1
+	lda	<L1038+fs_1+2
+	sta	<L1038+sobj_1+2
 ;			dcl = create_chain(&sobj, 0); /* Allocate a cluster for the new directory */
-	.line	5700
+	.line	5720
 	pea	#^$0
 	pea	#<$0
 	pea	#0
 	clc
 	tdc
-	adc	#<L1039+sobj_1
+	adc	#<L1038+sobj_1
 	pha
 	jsl	~~create_chain
-	sta	<L1039+dcl_1
-	stx	<L1039+dcl_1+2
+	sta	<L1038+dcl_1
+	stx	<L1038+dcl_1+2
 ;
-;			k_debug_long("f_mkdir::create_chain:dcl:",dcl);
-	.line	5702
-	pei	<L1039+dcl_1+2
-	pei	<L1039+dcl_1
-	pea	#^L692
-	pea	#<L692
-	jsl	~~k_debug_long
+;			//k_debug_long("f_mkdir::create_chain:dcl:",dcl);
 ;
 ;			res = FR_OK;
-	.line	5704
-	stz	<L1039+res_1
+	.line	5724
+	stz	<L1038+res_1
 ;			if (dcl == 0)
-	.line	5705
+	.line	5725
 ;				res = FR_DENIED; /* No space to allocate a new cluster? */
-	lda	<L1039+dcl_1
-	ora	<L1039+dcl_1+2
-	beq	L1048
+	lda	<L1038+dcl_1
+	ora	<L1038+dcl_1+2
+	beq	L1047
 	brl	L10602
-L1048:
-	.line	5706
+L1047:
+	.line	5726
 	lda	#$7
-	sta	<L1039+res_1
+	sta	<L1038+res_1
 ;			if (dcl == 1)
 L10602:
-	.line	5707
+	.line	5727
 ;				res = FR_INT_ERR; /* Any insanity? */
-	lda	<L1039+dcl_1
+	lda	<L1038+dcl_1
 	cmp	#<$1
-	bne	L1049
-	lda	<L1039+dcl_1+2
+	bne	L1048
+	lda	<L1038+dcl_1+2
 	cmp	#^$1
-L1049:
-	beq	L1050
+L1048:
+	beq	L1049
 	brl	L10603
-L1050:
-	.line	5708
+L1049:
+	.line	5728
 	lda	#$2
-	sta	<L1039+res_1
+	sta	<L1038+res_1
 ;			if (dcl == 0xFFFFFFFF)
 L10603:
-	.line	5709
+	.line	5729
 ;				res = FR_DISK_ERR; /* Disk error? */
-	lda	<L1039+dcl_1
+	lda	<L1038+dcl_1
 	cmp	#<$ffffffff
-	bne	L1051
-	lda	<L1039+dcl_1+2
+	bne	L1050
+	lda	<L1038+dcl_1+2
 	cmp	#^$ffffffff
-L1051:
-	beq	L1052
+L1050:
+	beq	L1051
 	brl	L10604
-L1052:
-	.line	5710
+L1051:
+	.line	5730
 	lda	#$1
-	sta	<L1039+res_1
+	sta	<L1038+res_1
 ;
 ;			tm = GET_FATTIME();
 L10604:
-	.line	5712
+	.line	5732
 	lda	#$0
-	sta	<L1039+tm_1
+	sta	<L1038+tm_1
 	lda	#$5221
-	sta	<L1039+tm_1+2
+	sta	<L1038+tm_1+2
 ;
-;			k_debug_long("f_mkdir::create_chain:tm:",tm);
-	.line	5714
-	pei	<L1039+tm_1+2
-	pei	<L1039+tm_1
-	pea	#^L692+27
-	pea	#<L692+27
-	jsl	~~k_debug_long
+;			//k_debug_long("f_mkdir::create_chain:tm:",tm);
 ;			//k_debug_integer("f_mkdir::create_chain:res:",res);
 ;
 ;			if (res == FR_OK)
-	.line	5717
+	.line	5737
 ;			{
-	lda	<L1039+res_1
-	beq	L1053
+	lda	<L1038+res_1
+	beq	L1052
 	brl	L10605
-L1053:
-	.line	5718
+L1052:
+	.line	5738
 ;				res = dir_clear(fs, dcl); /* Clean up the new table */
-	.line	5719
-	pei	<L1039+dcl_1+2
-	pei	<L1039+dcl_1
-	pei	<L1039+fs_1+2
-	pei	<L1039+fs_1
+	.line	5739
+	pei	<L1038+dcl_1+2
+	pei	<L1038+dcl_1
+	pei	<L1038+fs_1+2
+	pei	<L1038+fs_1
 	jsl	~~dir_clear
-	sta	<L1039+res_1
+	sta	<L1038+res_1
 ;
-;				k_debug_integer("f_mkdir::dir_clear:",res);
-	.line	5721
-	pei	<L1039+res_1
-	pea	#^L692+53
-	pea	#<L692+53
-	jsl	~~k_debug_integer
+;				//k_debug_integer("f_mkdir::dir_clear:",res);
 ;
 ;				if (res == FR_OK)
-	.line	5723
+	.line	5743
 ;				{
-	lda	<L1039+res_1
-	beq	L1054
+	lda	<L1038+res_1
+	beq	L1053
 	brl	L10606
-L1054:
-	.line	5724
+L1053:
+	.line	5744
 ;					if (!FF_FS_EXFAT || fs->fs_type != FS_EXFAT)
-	.line	5725
+	.line	5745
 ;					{ /* Create dot entries (FAT only) */
-	brl	L1055
+	brl	L1054
 	sep	#$20
 	longa	off
-	lda	[<L1039+fs_1]
+	lda	[<L1038+fs_1]
 	cmp	#<$4
 	rep	#$20
 	longa	on
-	bne	L1056
+	bne	L1055
 	brl	L10607
-L1056:
 L1055:
-	.line	5726
+L1054:
+	.line	5746
 ;						mem_set(fs->win + DIR_Name, ' ', 11); /* Create "." entry */
-	.line	5727
+	.line	5747
 	pea	#<$b
 	pea	#<$20
 	clc
 	lda	#$33
-	adc	<L1039+fs_1
+	adc	<L1038+fs_1
 	sta	<R0
 	lda	#$0
-	adc	<L1039+fs_1+2
+	adc	<L1038+fs_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~mem_set
 ;						fs->win[DIR_Name] = '.';
-	.line	5728
+	.line	5748
 	sep	#$20
 	longa	off
 	lda	#$2e
 	ldy	#$33
-	sta	[<L1039+fs_1],Y
+	sta	[<L1038+fs_1],Y
 	rep	#$20
 	longa	on
 ;						fs->win[DIR_Attr] = AM_DIR;
-	.line	5729
+	.line	5749
 	sep	#$20
 	longa	off
 	lda	#$10
 	ldy	#$3e
-	sta	[<L1039+fs_1],Y
+	sta	[<L1038+fs_1],Y
 	rep	#$20
 	longa	on
 ;						st_dword(fs->win + DIR_ModTime, tm);
-	.line	5730
-	pei	<L1039+tm_1+2
-	pei	<L1039+tm_1
+	.line	5750
+	pei	<L1038+tm_1+2
+	pei	<L1038+tm_1
 	clc
 	lda	#$49
-	adc	<L1039+fs_1
+	adc	<L1038+fs_1
 	sta	<R0
 	lda	#$0
-	adc	<L1039+fs_1+2
+	adc	<L1038+fs_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;						st_clust(fs, fs->win, dcl);
-	.line	5731
-	pei	<L1039+dcl_1+2
-	pei	<L1039+dcl_1
+	.line	5751
+	pei	<L1038+dcl_1+2
+	pei	<L1038+dcl_1
 	clc
 	lda	#$33
-	adc	<L1039+fs_1
+	adc	<L1038+fs_1
 	sta	<R0
 	lda	#$0
-	adc	<L1039+fs_1+2
+	adc	<L1038+fs_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pei	<L1039+fs_1+2
-	pei	<L1039+fs_1
+	pei	<L1038+fs_1+2
+	pei	<L1038+fs_1
 	jsl	~~st_clust
 ;						mem_cpy(fs->win + SZDIRE, fs->win, SZDIRE); /* Create ".." entry */
-	.line	5732
+	.line	5752
 	pea	#<$20
 	clc
 	lda	#$33
-	adc	<L1039+fs_1
+	adc	<L1038+fs_1
 	sta	<R0
 	lda	#$0
-	adc	<L1039+fs_1+2
+	adc	<L1038+fs_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
 	lda	#$53
-	adc	<L1039+fs_1
+	adc	<L1038+fs_1
 	sta	<R1
 	lda	#$0
-	adc	<L1039+fs_1+2
+	adc	<L1038+fs_1+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~mem_cpy
 ;						fs->win[SZDIRE + 1] = '.';
-	.line	5733
+	.line	5753
 	sep	#$20
 	longa	off
 	lda	#$2e
 	ldy	#$54
-	sta	[<L1039+fs_1],Y
+	sta	[<L1038+fs_1],Y
 	rep	#$20
 	longa	on
 ;						pcl = dj.obj.sclust;
-	.line	5734
-	lda	<L1039+dj_1+8
-	sta	<L1039+pcl_1
-	lda	<L1039+dj_1+10
-	sta	<L1039+pcl_1+2
+	.line	5754
+	lda	<L1038+dj_1+8
+	sta	<L1038+pcl_1
+	lda	<L1038+dj_1+10
+	sta	<L1038+pcl_1+2
 ;						st_clust(fs, fs->win + SZDIRE, pcl);
-	.line	5735
-	pei	<L1039+pcl_1+2
-	pei	<L1039+pcl_1
+	.line	5755
+	pei	<L1038+pcl_1+2
+	pei	<L1038+pcl_1
 	clc
 	lda	#$53
-	adc	<L1039+fs_1
+	adc	<L1038+fs_1
 	sta	<R0
 	lda	#$0
-	adc	<L1039+fs_1+2
+	adc	<L1038+fs_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pei	<L1039+fs_1+2
-	pei	<L1039+fs_1
+	pei	<L1038+fs_1+2
+	pei	<L1038+fs_1
 	jsl	~~st_clust
 ;						fs->wflag = 1;
-	.line	5736
+	.line	5756
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$3
-	sta	[<L1039+fs_1],Y
+	sta	[<L1038+fs_1],Y
 	rep	#$20
 	longa	on
 ;					}
-	.line	5737
+	.line	5757
 ;					res = dir_register(&dj); /* Register the object to the parent directoy */
 L10607:
-	.line	5738
+	.line	5758
 	pea	#0
 	clc
 	tdc
-	adc	#<L1039+dj_1
+	adc	#<L1038+dj_1
 	pha
 	jsl	~~dir_register
-	sta	<L1039+res_1
-;					k_debug_integer("f_mkdir::dir_register:",res);
-	.line	5739
-	pei	<L1039+res_1
-	pea	#^L692+73
-	pea	#<L692+73
-	jsl	~~k_debug_integer
+	sta	<L1038+res_1
+;					//k_debug_integer("f_mkdir::dir_register:",res);
 ;				}
-	.line	5740
+	.line	5760
 ;			}
 L10606:
-	.line	5741
+	.line	5761
 ;			if (res == FR_OK)
 L10605:
-	.line	5742
+	.line	5762
 ;			{
-	lda	<L1039+res_1
-	beq	L1057
+	lda	<L1038+res_1
+	beq	L1056
 	brl	L10608
-L1057:
-	.line	5743
+L1056:
+	.line	5763
 ;#if FF_FS_EXFAT
 ;				if (fs->fs_type == FS_EXFAT)
 ;				{ /* Initialize directory entry block */
@@ -25335,131 +25334,115 @@ L1057:
 ;				else
 ;#endif
 ;				{
-	.line	5757
+	.line	5777
 ;					st_dword(dj.dir + DIR_ModTime, tm); /* Created time */
-	.line	5758
-	pei	<L1039+tm_1+2
-	pei	<L1039+tm_1
+	.line	5778
+	pei	<L1038+tm_1+2
+	pei	<L1038+tm_1
 	clc
 	lda	#$16
-	adc	<L1039+dj_1+28
+	adc	<L1038+dj_1+28
 	sta	<R0
 	lda	#$0
-	adc	<L1039+dj_1+30
+	adc	<L1038+dj_1+30
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;					st_clust(fs, dj.dir, dcl); /* Table start cluster */
-	.line	5759
-	pei	<L1039+dcl_1+2
-	pei	<L1039+dcl_1
-	pei	<L1039+dj_1+30
-	pei	<L1039+dj_1+28
-	pei	<L1039+fs_1+2
-	pei	<L1039+fs_1
+	.line	5779
+	pei	<L1038+dcl_1+2
+	pei	<L1038+dcl_1
+	pei	<L1038+dj_1+30
+	pei	<L1038+dj_1+28
+	pei	<L1038+fs_1+2
+	pei	<L1038+fs_1
 	jsl	~~st_clust
 ;					dj.dir[DIR_Attr] = AM_DIR; /* Attribute */
-	.line	5760
+	.line	5780
 	sep	#$20
 	longa	off
 	lda	#$10
 	ldy	#$b
-	sta	[<L1039+dj_1+28],Y
+	sta	[<L1038+dj_1+28],Y
 	rep	#$20
 	longa	on
 ;					fs->wflag = 1;
-	.line	5761
+	.line	5781
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$3
-	sta	[<L1039+fs_1],Y
+	sta	[<L1038+fs_1],Y
 	rep	#$20
 	longa	on
 ;				}
-	.line	5762
+	.line	5782
 ;				if (res == FR_OK)
-	.line	5763
+	.line	5783
 ;				{
-	lda	<L1039+res_1
-	beq	L1058
+	lda	<L1038+res_1
+	beq	L1057
 	brl	L10609
-L1058:
-	.line	5764
+L1057:
+	.line	5784
 ;					res = sync_fs(fs);
-	.line	5765
-	pei	<L1039+fs_1+2
-	pei	<L1039+fs_1
+	.line	5785
+	pei	<L1038+fs_1+2
+	pei	<L1038+fs_1
 	jsl	~~sync_fs
-	sta	<L1039+res_1
+	sta	<L1038+res_1
 ;				}
-	.line	5766
+	.line	5786
 ;
-;				k_debug_integer("f_mkdir::sync_fs:",res);
-L10609:
-	.line	5768
-	pei	<L1039+res_1
-	pea	#^L692+96
-	pea	#<L692+96
-	jsl	~~k_debug_integer
+;				//k_debug_integer("f_mkdir::sync_fs:",res);
 ;			}
-	.line	5769
+L10609:
+	.line	5789
 ;			else
 	brl	L10610
 L10608:
 ;			{
-	.line	5771
+	.line	5791
 ;				remove_chain(&sobj, dcl, 0); /* Could not register, remove the allocated cluster */
-	.line	5772
+	.line	5792
 	pea	#^$0
 	pea	#<$0
-	pei	<L1039+dcl_1+2
-	pei	<L1039+dcl_1
+	pei	<L1038+dcl_1+2
+	pei	<L1038+dcl_1
 	pea	#0
 	clc
 	tdc
-	adc	#<L1039+sobj_1
+	adc	#<L1038+sobj_1
 	pha
 	jsl	~~remove_chain
 ;			}
-	.line	5773
+	.line	5793
 L10610:
 ;		} FREE_NAMBUF();
-	.line	5774
+	.line	5794
 L10601:
-	.line	5774
-	pei	<L1039+lfn_1+2
-	pei	<L1039+lfn_1
+	.line	5794
+	pei	<L1038+lfn_1+2
+	pei	<L1038+lfn_1
 	jsl	~~ff_memfree
 ;	}
-	.line	5775
+	.line	5795
 ;
 ;	LEAVE_FF(fs, res);
 L10597:
-	.line	5777
-	lda	<L1039+res_1
-	brl	L1043
+	.line	5797
+	lda	<L1038+res_1
+	brl	L1042
 ;}
-	.line	5778
-	.endblock	5778
-L1038	equ	98
-L1039	equ	9
+	.line	5798
+	.endblock	5798
+L1037	equ	98
+L1038	equ	9
 	ends
 	efunc
-	.endfunc	5778,9,98
-	.line	5778
-	data
-L692:
-	db	$66,$5F,$6D,$6B,$64,$69,$72,$3A,$3A,$63,$72,$65,$61,$74,$65
-	db	$5F,$63,$68,$61,$69,$6E,$3A,$64,$63,$6C,$3A,$00,$66,$5F,$6D
-	db	$6B,$64,$69,$72,$3A,$3A,$63,$72,$65,$61,$74,$65,$5F,$63,$68
-	db	$61,$69,$6E,$3A,$74,$6D,$3A,$00,$66,$5F,$6D,$6B,$64,$69,$72
-	db	$3A,$3A,$64,$69,$72,$5F,$63,$6C,$65,$61,$72,$3A,$00,$66,$5F
-	db	$6D,$6B,$64,$69,$72,$3A,$3A,$64,$69,$72,$5F,$72,$65,$67,$69
-	db	$73,$74,$65,$72,$3A,$00,$66,$5F,$6D,$6B,$64,$69,$72,$3A,$3A
-	db	$73,$79,$6E,$63,$5F,$66,$73,$3A,$00
-	ends
+	.endfunc	5798,9,98
+	.line	5798
 ;
 ;/*-----------------------------------------------------------------------*/
 ;/* Rename a File/Directory                                               */
@@ -25469,24 +25452,24 @@ L692:
 ;const TCHAR* path_new /* Pointer to the new name */
 ;)
 ;{
-	.line	5784
-	.line	5787
+	.line	5804
+	.line	5807
 	FFDOS
 	xdef	~~f_rename
 	func
-	.function	5787
+	.function	5807
 ~~f_rename:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1060
+	sbc	#L1058
 	tcs
 	phd
 	tcd
 path_old_0	set	4
 path_new_0	set	8
-	.block	5787
+	.block	5807
 ;	FRESULT res;
 ;	DIR djo, djn;
 ;	FATFS *fs;
@@ -25504,119 +25487,119 @@ dir_1	set	142
 sect_1	set	146
 lfn_1	set	150
 	.sym	res,0,5,1,16
-	.sym	djo,2,10,1,416,75
-	.sym	djn,54,10,1,416,75
-	.sym	fs,106,138,1,32,72
+	.sym	djo,2,10,1,416,78
+	.sym	djn,54,10,1,416,78
+	.sym	fs,106,138,1,32,75
 	.sym	buf,110,110,1,0,32
 	.sym	dir,142,142,1,32
 	.sym	sect,146,18,1,32
 	.sym	lfn,150,144,1,32
 	.sym	path_old,4,142,6,32
 	.sym	path_new,8,142,6,32
-	.line	5795
+	.line	5815
 	pea	#0
 	clc
 	tdc
-	adc	#<L1060+path_new_0
+	adc	#<L1058+path_new_0
 	pha
 	jsl	~~get_ldnumber
 ;	res = mount_volume(&path_old, &fs, FA_WRITE); /* Get logical drive of the old object */
-	.line	5796
+	.line	5816
 	pea	#<$2
 	pea	#0
 	clc
 	tdc
-	adc	#<L1061+fs_1
+	adc	#<L1059+fs_1
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L1060+path_old_0
+	adc	#<L1058+path_old_0
 	pha
 	jsl	~~mount_volume
-	sta	<L1061+res_1
+	sta	<L1059+res_1
 ;	if (res == FR_OK)
-	.line	5797
+	.line	5817
 ;	{
-	lda	<L1061+res_1
-	beq	L1063
+	lda	<L1059+res_1
+	beq	L1061
 	brl	L10611
-L1063:
-	.line	5798
+L1061:
+	.line	5818
 ;		djo.obj.fs = fs;
-	.line	5799
-	lda	<L1061+fs_1
-	sta	<L1061+djo_1
-	lda	<L1061+fs_1+2
-	sta	<L1061+djo_1+2
+	.line	5819
+	lda	<L1059+fs_1
+	sta	<L1059+djo_1
+	lda	<L1059+fs_1+2
+	sta	<L1059+djo_1+2
 ;		INIT_NAMBUF(fs);
-	.line	5800
-	.line	5800
+	.line	5820
+	.line	5820
 	pea	#<$200
 	jsl	~~ff_memalloc
-	sta	<L1061+lfn_1
-	stx	<L1061+lfn_1+2
-	.line	5800
-	lda	<L1061+lfn_1
-	ora	<L1061+lfn_1+2
-	beq	L1064
+	sta	<L1059+lfn_1
+	stx	<L1059+lfn_1+2
+	.line	5820
+	lda	<L1059+lfn_1
+	ora	<L1059+lfn_1+2
+	beq	L1062
 	brl	L10612
-L1064:
-	.line	5800
+L1062:
+	.line	5820
 	lda	#$11
-L1065:
+L1063:
 	tay
-	lda	<L1060+2
-	sta	<L1060+2+8
-	lda	<L1060+1
-	sta	<L1060+1+8
+	lda	<L1058+2
+	sta	<L1058+2+8
+	lda	<L1058+1
+	sta	<L1058+1+8
 	pld
 	tsc
 	clc
-	adc	#L1060+8
+	adc	#L1058+8
 	tcs
 	tya
 	rtl
 L10612:
-	.line	5800
-	lda	<L1061+lfn_1
+	.line	5820
+	lda	<L1059+lfn_1
 	ldy	#$b
-	sta	[<L1061+fs_1],Y
-	lda	<L1061+lfn_1+2
+	sta	[<L1059+fs_1],Y
+	lda	<L1059+lfn_1+2
 	ldy	#$d
-	sta	[<L1061+fs_1],Y
-	.line	5800
-	.line	5800
+	sta	[<L1059+fs_1],Y
+	.line	5820
+	.line	5820
 ;		res = follow_path(&djo, path_old); /* Check old object */
-	.line	5801
-	pei	<L1060+path_old_0+2
-	pei	<L1060+path_old_0
+	.line	5821
+	pei	<L1058+path_old_0+2
+	pei	<L1058+path_old_0
 	pea	#0
 	clc
 	tdc
-	adc	#<L1061+djo_1
+	adc	#<L1059+djo_1
 	pha
 	jsl	~~follow_path
-	sta	<L1061+res_1
+	sta	<L1059+res_1
 ;		if (res == FR_OK && (djo.fn[NSFLAG] & (NS_DOT | NS_NONAME)))
-	.line	5802
+	.line	5822
 ;			res = FR_INVALID_NAME; /* Check validity of name */
-	lda	<L1061+res_1
-	beq	L1066
+	lda	<L1059+res_1
+	beq	L1064
 	brl	L10613
-L1066:
+L1064:
 	sep	#$20
 	longa	off
-	lda	<L1061+djo_1+43
+	lda	<L1059+djo_1+43
 	and	#<$a0
 	rep	#$20
 	longa	on
-	bne	L1067
+	bne	L1065
 	brl	L10613
-L1067:
-	.line	5803
+L1065:
+	.line	5823
 	lda	#$6
-	sta	<L1061+res_1
+	sta	<L1059+res_1
 ;#if FF_FS_LOCK != 0
 ;		if (res == FR_OK)
 ;		{
@@ -25625,13 +25608,13 @@ L1067:
 ;#endif
 ;		if (res == FR_OK)
 L10613:
-	.line	5810
+	.line	5830
 ;		{ /* Object to be renamed is found */
-	lda	<L1061+res_1
-	beq	L1068
+	lda	<L1059+res_1
+	beq	L1066
 	brl	L10614
-L1068:
-	.line	5811
+L1066:
+	.line	5831
 ;#if FF_FS_EXFAT
 ;			if (fs->fs_type == FS_EXFAT)
 ;			{ /* At exFAT volume */
@@ -25664,160 +25647,160 @@ L1068:
 ;			else
 ;#endif
 ;			{ /* At FAT/FAT32 volume */
-	.line	5843
+	.line	5863
 ;				mem_cpy(buf, djo.dir, SZDIRE); /* Save directory entry of the object */
-	.line	5844
+	.line	5864
 	pea	#<$20
-	pei	<L1061+djo_1+30
-	pei	<L1061+djo_1+28
+	pei	<L1059+djo_1+30
+	pei	<L1059+djo_1+28
 	pea	#0
 	clc
 	tdc
-	adc	#<L1061+buf_1
+	adc	#<L1059+buf_1
 	pha
 	jsl	~~mem_cpy
 ;				mem_cpy(&djn, &djo, sizeof(DIR)); /* Duplicate the directory object */
-	.line	5845
+	.line	5865
 	pea	#<$34
 	pea	#0
 	clc
 	tdc
-	adc	#<L1061+djo_1
+	adc	#<L1059+djo_1
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L1061+djn_1
+	adc	#<L1059+djn_1
 	pha
 	jsl	~~mem_cpy
 ;				res = follow_path(&djn, path_new); /* Make sure if new object name is not in use */
-	.line	5846
-	pei	<L1060+path_new_0+2
-	pei	<L1060+path_new_0
+	.line	5866
+	pei	<L1058+path_new_0+2
+	pei	<L1058+path_new_0
 	pea	#0
 	clc
 	tdc
-	adc	#<L1061+djn_1
+	adc	#<L1059+djn_1
 	pha
 	jsl	~~follow_path
-	sta	<L1061+res_1
+	sta	<L1059+res_1
 ;				if (res == FR_OK)
-	.line	5847
+	.line	5867
 ;				{ /* Is new name already in use by any other object? */
-	lda	<L1061+res_1
-	beq	L1069
+	lda	<L1059+res_1
+	beq	L1067
 	brl	L10615
-L1069:
-	.line	5848
+L1067:
+	.line	5868
 ;					res = (djn.obj.sclust == djo.obj.sclust
-	.line	5849
+	.line	5869
 ;							&& djn.dptr == djo.dptr) ? FR_NO_FILE : FR_EXIST;
-	lda	<L1061+djn_1+8
-	cmp	<L1061+djo_1+8
+	lda	<L1059+djn_1+8
+	cmp	<L1059+djo_1+8
+	bne	L1069
+	lda	<L1059+djn_1+10
+	cmp	<L1059+djo_1+10
+L1069:
+	beq	L1070
+	brl	L1068
+L1070:
+	lda	<L1059+djn_1+16
+	cmp	<L1059+djo_1+16
 	bne	L1071
-	lda	<L1061+djn_1+10
-	cmp	<L1061+djo_1+10
+	lda	<L1059+djn_1+18
+	cmp	<L1059+djo_1+18
 L1071:
 	beq	L1072
-	brl	L1070
+	brl	L1068
 L1072:
-	lda	<L1061+djn_1+16
-	cmp	<L1061+djo_1+16
-	bne	L1073
-	lda	<L1061+djn_1+18
-	cmp	<L1061+djo_1+18
-L1073:
-	beq	L1074
-	brl	L1070
-L1074:
 	lda	#$4
-	bra	L1075
-L1070:
+	bra	L1073
+L1068:
 	lda	#$8
-L1075:
-	sta	<L1061+res_1
+L1073:
+	sta	<L1059+res_1
 ;				}
-	.line	5851
+	.line	5871
 ;				if (res == FR_NO_FILE)
 L10615:
-	.line	5852
+	.line	5872
 ;				{ /* It is a valid path and no name collision */
-	lda	<L1061+res_1
+	lda	<L1059+res_1
 	cmp	#<$4
-	beq	L1076
+	beq	L1074
 	brl	L10616
-L1076:
-	.line	5853
+L1074:
+	.line	5873
 ;					res = dir_register(&djn); /* Register the new entry */
-	.line	5854
+	.line	5874
 	pea	#0
 	clc
 	tdc
-	adc	#<L1061+djn_1
+	adc	#<L1059+djn_1
 	pha
 	jsl	~~dir_register
-	sta	<L1061+res_1
+	sta	<L1059+res_1
 ;					if (res == FR_OK)
-	.line	5855
+	.line	5875
 ;					{
-	lda	<L1061+res_1
-	beq	L1077
+	lda	<L1059+res_1
+	beq	L1075
 	brl	L10617
-L1077:
-	.line	5856
+L1075:
+	.line	5876
 ;						dir = djn.dir; /* Copy directory entry of the object except name */
-	.line	5857
-	lda	<L1061+djn_1+28
-	sta	<L1061+dir_1
-	lda	<L1061+djn_1+30
-	sta	<L1061+dir_1+2
+	.line	5877
+	lda	<L1059+djn_1+28
+	sta	<L1059+dir_1
+	lda	<L1059+djn_1+30
+	sta	<L1059+dir_1+2
 ;						mem_cpy(dir + 13, buf + 13, SZDIRE - 13);
-	.line	5858
+	.line	5878
 	pea	#<$13
 	pea	#0
 	clc
 	tdc
-	adc	#<L1061+buf_1+13
+	adc	#<L1059+buf_1+13
 	pha
 	clc
 	lda	#$d
-	adc	<L1061+dir_1
+	adc	<L1059+dir_1
 	sta	<R0
 	lda	#$0
-	adc	<L1061+dir_1+2
+	adc	<L1059+dir_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~mem_cpy
 ;						dir[DIR_Attr] = buf[DIR_Attr];
-	.line	5859
+	.line	5879
 	sep	#$20
 	longa	off
-	lda	<L1061+buf_1+11
+	lda	<L1059+buf_1+11
 	ldy	#$b
-	sta	[<L1061+dir_1],Y
+	sta	[<L1059+dir_1],Y
 	rep	#$20
 	longa	on
 ;						if (!(dir[DIR_Attr] & AM_DIR))
-	.line	5860
+	.line	5880
 ;							dir[DIR_Attr] |= AM_ARC; /* Set archive attribute if it is a file */
 	sep	#$20
 	longa	off
 	ldy	#$b
-	lda	[<L1061+dir_1],Y
+	lda	[<L1059+dir_1],Y
 	and	#<$10
 	rep	#$20
 	longa	on
-	beq	L1078
+	beq	L1076
 	brl	L10618
-L1078:
-	.line	5861
+L1076:
+	.line	5881
 	clc
 	lda	#$b
-	adc	<L1061+dir_1
+	adc	<L1059+dir_1
 	sta	<R0
 	lda	#$0
-	adc	<L1061+dir_1+2
+	adc	<L1059+dir_1+2
 	sta	<R0+2
 	sep	#$20
 	longa	off
@@ -25828,207 +25811,207 @@ L1078:
 	longa	on
 ;						fs->wflag = 1;
 L10618:
-	.line	5862
+	.line	5882
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$3
-	sta	[<L1061+fs_1],Y
+	sta	[<L1059+fs_1],Y
 	rep	#$20
 	longa	on
 ;						if ((dir[DIR_Attr] & AM_DIR)
-	.line	5863
+	.line	5883
 ;								&& djo.obj.sclust != djn.obj.sclust)
 ;						{ /* Update .. entry in the sub-directory if needed */
 	sep	#$20
 	longa	off
 	ldy	#$b
-	lda	[<L1061+dir_1],Y
+	lda	[<L1059+dir_1],Y
 	and	#<$10
 	rep	#$20
 	longa	on
+	bne	L1077
+	brl	L10619
+L1077:
+	lda	<L1059+djo_1+8
+	cmp	<L1059+djn_1+8
+	bne	L1078
+	lda	<L1059+djo_1+10
+	cmp	<L1059+djn_1+10
+L1078:
 	bne	L1079
 	brl	L10619
 L1079:
-	lda	<L1061+djo_1+8
-	cmp	<L1061+djn_1+8
-	bne	L1080
-	lda	<L1061+djo_1+10
-	cmp	<L1061+djn_1+10
-L1080:
-	bne	L1081
-	brl	L10619
-L1081:
-	.line	5865
+	.line	5885
 ;							sect = clst2sect(fs, ld_clust(fs, dir));
-	.line	5866
-	pei	<L1061+dir_1+2
-	pei	<L1061+dir_1
-	pei	<L1061+fs_1+2
-	pei	<L1061+fs_1
+	.line	5886
+	pei	<L1059+dir_1+2
+	pei	<L1059+dir_1
+	pei	<L1059+fs_1+2
+	pei	<L1059+fs_1
 	jsl	~~ld_clust
 	sta	<R0
 	stx	<R0+2
 	phx
 	pha
-	pei	<L1061+fs_1+2
-	pei	<L1061+fs_1
+	pei	<L1059+fs_1+2
+	pei	<L1059+fs_1
 	jsl	~~clst2sect
-	sta	<L1061+sect_1
-	stx	<L1061+sect_1+2
+	sta	<L1059+sect_1
+	stx	<L1059+sect_1+2
 ;							if (sect == 0)
-	.line	5867
+	.line	5887
 ;							{
-	lda	<L1061+sect_1
-	ora	<L1061+sect_1+2
-	beq	L1082
+	lda	<L1059+sect_1
+	ora	<L1059+sect_1+2
+	beq	L1080
 	brl	L10620
-L1082:
-	.line	5868
+L1080:
+	.line	5888
 ;								res = FR_INT_ERR;
-	.line	5869
+	.line	5889
 	lda	#$2
-	sta	<L1061+res_1
+	sta	<L1059+res_1
 ;							}
-	.line	5870
+	.line	5890
 ;							else
 	brl	L10621
 L10620:
 ;							{
-	.line	5872
+	.line	5892
 ;								/* Start of critical section where an interruption can cause a cross-link */
 ;								res = move_window(fs, sect);
-	.line	5874
-	pei	<L1061+sect_1+2
-	pei	<L1061+sect_1
-	pei	<L1061+fs_1+2
-	pei	<L1061+fs_1
+	.line	5894
+	pei	<L1059+sect_1+2
+	pei	<L1059+sect_1
+	pei	<L1059+fs_1+2
+	pei	<L1059+fs_1
 	jsl	~~move_window
-	sta	<L1061+res_1
+	sta	<L1059+res_1
 ;								dir = fs->win + SZDIRE * 1; /* Ptr to .. entry */
-	.line	5875
+	.line	5895
 	clc
 	lda	#$53
-	adc	<L1061+fs_1
-	sta	<L1061+dir_1
+	adc	<L1059+fs_1
+	sta	<L1059+dir_1
 	lda	#$0
-	adc	<L1061+fs_1+2
-	sta	<L1061+dir_1+2
+	adc	<L1059+fs_1+2
+	sta	<L1059+dir_1+2
 ;								if (res == FR_OK && dir[1] == '.')
-	.line	5876
+	.line	5896
 ;								{
-	lda	<L1061+res_1
-	beq	L1083
+	lda	<L1059+res_1
+	beq	L1081
 	brl	L10622
-L1083:
+L1081:
 	sep	#$20
 	longa	off
 	ldy	#$1
-	lda	[<L1061+dir_1],Y
+	lda	[<L1059+dir_1],Y
 	cmp	#<$2e
 	rep	#$20
 	longa	on
-	beq	L1084
+	beq	L1082
 	brl	L10622
-L1084:
-	.line	5877
+L1082:
+	.line	5897
 ;									st_clust(fs, dir, djn.obj.sclust);
-	.line	5878
-	pei	<L1061+djn_1+10
-	pei	<L1061+djn_1+8
-	pei	<L1061+dir_1+2
-	pei	<L1061+dir_1
-	pei	<L1061+fs_1+2
-	pei	<L1061+fs_1
+	.line	5898
+	pei	<L1059+djn_1+10
+	pei	<L1059+djn_1+8
+	pei	<L1059+dir_1+2
+	pei	<L1059+dir_1
+	pei	<L1059+fs_1+2
+	pei	<L1059+fs_1
 	jsl	~~st_clust
 ;									fs->wflag = 1;
-	.line	5879
+	.line	5899
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$3
-	sta	[<L1061+fs_1],Y
+	sta	[<L1059+fs_1],Y
 	rep	#$20
 	longa	on
 ;								}
-	.line	5880
+	.line	5900
 ;							}
 L10622:
-	.line	5881
+	.line	5901
 L10621:
 ;						}
-	.line	5882
+	.line	5902
 ;					}
 L10619:
-	.line	5883
+	.line	5903
 ;				}
 L10617:
-	.line	5884
+	.line	5904
 ;			}
 L10616:
-	.line	5885
+	.line	5905
 ;			if (res == FR_OK)
-	.line	5886
+	.line	5906
 ;			{
-	lda	<L1061+res_1
-	beq	L1085
+	lda	<L1059+res_1
+	beq	L1083
 	brl	L10623
-L1085:
-	.line	5887
+L1083:
+	.line	5907
 ;				res = dir_remove(&djo); /* Remove old entry */
-	.line	5888
+	.line	5908
 	pea	#0
 	clc
 	tdc
-	adc	#<L1061+djo_1
+	adc	#<L1059+djo_1
 	pha
 	jsl	~~dir_remove
-	sta	<L1061+res_1
+	sta	<L1059+res_1
 ;				if (res == FR_OK)
-	.line	5889
+	.line	5909
 ;				{
-	lda	<L1061+res_1
-	beq	L1086
+	lda	<L1059+res_1
+	beq	L1084
 	brl	L10624
-L1086:
-	.line	5890
+L1084:
+	.line	5910
 ;					res = sync_fs(fs);
-	.line	5891
-	pei	<L1061+fs_1+2
-	pei	<L1061+fs_1
+	.line	5911
+	pei	<L1059+fs_1+2
+	pei	<L1059+fs_1
 	jsl	~~sync_fs
-	sta	<L1061+res_1
+	sta	<L1059+res_1
 ;				}
-	.line	5892
+	.line	5912
 ;			}
 L10624:
-	.line	5893
+	.line	5913
 ;			/* End of the critical section */
 ;		} FREE_NAMBUF();
 L10623:
-	.line	5895
+	.line	5915
 L10614:
-	.line	5895
-	pei	<L1061+lfn_1+2
-	pei	<L1061+lfn_1
+	.line	5915
+	pei	<L1059+lfn_1+2
+	pei	<L1059+lfn_1
 	jsl	~~ff_memfree
 ;	}
-	.line	5896
+	.line	5916
 ;
 ;	LEAVE_FF(fs, res);
 L10611:
-	.line	5898
-	lda	<L1061+res_1
-	brl	L1065
+	.line	5918
+	lda	<L1059+res_1
+	brl	L1063
 ;}
-	.line	5899
-	.endblock	5899
-L1060	equ	158
-L1061	equ	5
+	.line	5919
+	.endblock	5919
+L1058	equ	158
+L1059	equ	5
 	ends
 	efunc
-	.endfunc	5899,5,158
-	.line	5899
+	.endfunc	5919,5,158
+	.line	5919
 ;
 ;#endif /* !FF_FS_READONLY */
 ;#endif /* FF_FS_MINIMIZE == 0 */
@@ -26143,25 +26126,25 @@ L1061	equ	5
 ;		DWORD* vsn /* Variable to store the volume serial number */
 ;)
 ;{
-	.line	6008
-	.line	6013
+	.line	6028
+	.line	6033
 	FFDOS
 	xdef	~~f_getlabel
 	func
-	.function	6013
+	.function	6033
 ~~f_getlabel:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1087
+	sbc	#L1085
 	tcs
 	phd
 	tcd
 path_0	set	4
 label_0	set	8
 vsn_0	set	12
-	.block	6013
+	.block	6033
 ;	FRESULT res;
 ;	DIR dj;
 ;	FATFS *fs;
@@ -26177,89 +26160,89 @@ si_1	set	58
 di_1	set	60
 wc_1	set	62
 	.sym	res,0,5,1,16
-	.sym	dj,2,10,1,416,75
-	.sym	fs,54,138,1,32,72
+	.sym	dj,2,10,1,416,78
+	.sym	fs,54,138,1,32,75
 	.sym	si,58,16,1,16
 	.sym	di,60,16,1,16
 	.sym	wc,62,16,1,16
 	.sym	path,4,142,6,32
 	.sym	label,8,142,6,32
 	.sym	vsn,12,146,6,32
-	.line	6021
+	.line	6041
 	pea	#<$0
 	pea	#0
 	clc
 	tdc
-	adc	#<L1088+fs_1
+	adc	#<L1086+fs_1
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L1087+path_0
+	adc	#<L1085+path_0
 	pha
 	jsl	~~mount_volume
-	sta	<L1088+res_1
+	sta	<L1086+res_1
 ;
 ;	/* Get volume label */
 ;	if (res == FR_OK && label)
-	.line	6024
+	.line	6044
 ;	{
-	lda	<L1088+res_1
-	beq	L1090
+	lda	<L1086+res_1
+	beq	L1088
 	brl	L10625
-L1090:
-	lda	<L1087+label_0
-	ora	<L1087+label_0+2
-	bne	L1091
+L1088:
+	lda	<L1085+label_0
+	ora	<L1085+label_0+2
+	bne	L1089
 	brl	L10625
-L1091:
-	.line	6025
+L1089:
+	.line	6045
 ;		dj.obj.fs = fs; dj.obj.sclust = 0; /* Open root directory */
-	.line	6026
-	lda	<L1088+fs_1
-	sta	<L1088+dj_1
-	lda	<L1088+fs_1+2
-	sta	<L1088+dj_1+2
-	.line	6026
-	stz	<L1088+dj_1+8
-	stz	<L1088+dj_1+10
+	.line	6046
+	lda	<L1086+fs_1
+	sta	<L1086+dj_1
+	lda	<L1086+fs_1+2
+	sta	<L1086+dj_1+2
+	.line	6046
+	stz	<L1086+dj_1+8
+	stz	<L1086+dj_1+10
 ;		res = dir_sdi(&dj, 0);
-	.line	6027
+	.line	6047
 	pea	#^$0
 	pea	#<$0
 	pea	#0
 	clc
 	tdc
-	adc	#<L1088+dj_1
+	adc	#<L1086+dj_1
 	pha
 	jsl	~~dir_sdi
-	sta	<L1088+res_1
+	sta	<L1086+res_1
 ;		if (res == FR_OK)
-	.line	6028
+	.line	6048
 ;		{
-	lda	<L1088+res_1
-	beq	L1092
+	lda	<L1086+res_1
+	beq	L1090
 	brl	L10626
-L1092:
-	.line	6029
+L1090:
+	.line	6049
 ;			res = DIR_READ_LABEL(&dj); /* Find a volume label entry */
-	.line	6030
+	.line	6050
 	pea	#<$1
 	pea	#0
 	clc
 	tdc
-	adc	#<L1088+dj_1
+	adc	#<L1086+dj_1
 	pha
 	jsl	~~dir_read
-	sta	<L1088+res_1
+	sta	<L1086+res_1
 ;			if (res == FR_OK)
-	.line	6031
+	.line	6051
 ;			{
-	lda	<L1088+res_1
-	beq	L1093
+	lda	<L1086+res_1
+	beq	L1091
 	brl	L10627
-L1093:
-	.line	6032
+L1091:
+	.line	6052
 ;#if FF_FS_EXFAT
 ;				if (fs->fs_type == FS_EXFAT)
 ;				{
@@ -26284,83 +26267,83 @@ L1093:
 ;				else
 ;#endif
 ;				{
-	.line	6056
+	.line	6076
 ;					si = di = 0; /* Extract volume label from AM_VOL entry */
-	.line	6057
-	stz	<L1088+di_1
-	stz	<L1088+si_1
+	.line	6077
+	stz	<L1086+di_1
+	stz	<L1086+si_1
 ;					while (si < 11)
-	.line	6058
+	.line	6078
 L10628:
-	lda	<L1088+si_1
+	lda	<L1086+si_1
 	cmp	#<$b
-	bcc	L1094
+	bcc	L1092
 	brl	L10629
-L1094:
+L1092:
 ;					{
-	.line	6059
+	.line	6079
 ;						wc = dj.dir[si++];
-	.line	6060
-	ldy	<L1088+si_1
-	lda	[<L1088+dj_1+28],Y
+	.line	6080
+	ldy	<L1086+si_1
+	lda	[<L1086+dj_1+28],Y
 	and	#$ff
-	sta	<L1088+wc_1
-	inc	<L1088+si_1
+	sta	<L1086+wc_1
+	inc	<L1086+si_1
 ;#if FF_USE_LFN && FF_LFN_UNICODE >= 1 	/* Unicode output */
 ;						if (dbc_1st((BYTE)wc) && si < 11) wc = wc << 8 | dj.dir[si++]; /* Is it a DBC? */
-	.line	6062
-	pei	<L1088+wc_1
+	.line	6082
+	pei	<L1086+wc_1
 	jsl	~~dbc_1st
 	tax
-	bne	L1095
+	bne	L1093
 	brl	L10630
-L1095:
-	lda	<L1088+si_1
+L1093:
+	lda	<L1086+si_1
 	cmp	#<$b
-	bcc	L1096
+	bcc	L1094
 	brl	L10630
-L1096:
-	.line	6062
-	ldy	<L1088+si_1
-	lda	[<L1088+dj_1+28],Y
+L1094:
+	.line	6082
+	ldy	<L1086+si_1
+	lda	[<L1086+dj_1+28],Y
 	and	#$ff
 	sta	<R0
-	lda	<L1088+wc_1
+	lda	<L1086+wc_1
 	xba
 	and	#$ff00
 	sta	<R1
 	lda	<R1
 	ora	<R0
-	sta	<L1088+wc_1
-	inc	<L1088+si_1
+	sta	<L1086+wc_1
+	inc	<L1086+si_1
 ;						wc = ff_oem2uni(wc, CODEPAGE); /* Convert it into Unicode */
 L10630:
-	.line	6063
+	.line	6083
 	pea	#<$1b5
-	pei	<L1088+wc_1
+	pei	<L1086+wc_1
 	jsl	~~ff_oem2uni
-	sta	<L1088+wc_1
+	sta	<L1086+wc_1
 ;						if (wc != 0) wc = put_utf(wc, &label[di], 4); /* Put it in Unicode */
-	.line	6064
-	lda	<L1088+wc_1
-	bne	L1097
+	.line	6084
+	lda	<L1086+wc_1
+	bne	L1095
 	brl	L10631
-L1097:
-	.line	6064
+L1095:
+	.line	6084
 	pea	#<$4
-	lda	<L1088+di_1
+	lda	<L1086+di_1
 	sta	<R0
 	stz	<R0+2
 	clc
-	lda	<L1087+label_0
+	lda	<L1085+label_0
 	adc	<R0
 	sta	<R1
-	lda	<L1087+label_0+2
+	lda	<L1085+label_0+2
 	adc	<R0+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
-	lda	<L1088+wc_1
+	lda	<L1086+wc_1
 	sta	<R0
 	stz	<R0+2
 	pei	<R0+2
@@ -26373,175 +26356,175 @@ L1097:
 	longa	on
 	lda	<R2
 	and	#$ff
-	sta	<L1088+wc_1
+	sta	<L1086+wc_1
 ;						if (wc == 0)
 L10631:
-	.line	6065
+	.line	6085
 ;						{	di = 0; break;}
-	lda	<L1088+wc_1
-	beq	L1098
+	lda	<L1086+wc_1
+	beq	L1096
 	brl	L10632
-L1098:
-	.line	6066
-	.line	6066
-	stz	<L1088+di_1
-	.line	6066
+L1096:
+	.line	6086
+	.line	6086
+	stz	<L1086+di_1
+	.line	6086
 	brl	L10629
-	.line	6066
+	.line	6086
 ;						di += wc;
 L10632:
-	.line	6067
+	.line	6087
 	clc
-	lda	<L1088+di_1
-	adc	<L1088+wc_1
-	sta	<L1088+di_1
+	lda	<L1086+di_1
+	adc	<L1086+wc_1
+	sta	<L1086+di_1
 ;#else									/* ANSI/OEM output */
 ;						label[di++] = (TCHAR)wc;
 ;#endif
 ;					}
-	.line	6071
+	.line	6091
 	brl	L10628
 L10629:
 ;					do
-	.line	6072
+	.line	6092
 L10635:
 ;					{ /* Truncate trailing spaces */
-	.line	6073
+	.line	6093
 ;						label[di] = 0;
-	.line	6074
+	.line	6094
 	sep	#$20
 	longa	off
 	lda	#$0
-	ldy	<L1088+di_1
-	sta	[<L1087+label_0],Y
+	ldy	<L1086+di_1
+	sta	[<L1085+label_0],Y
 	rep	#$20
 	longa	on
 ;						if (di == 0) break;
-	.line	6075
-	lda	<L1088+di_1
-	bne	L1099
+	.line	6095
+	lda	<L1086+di_1
+	bne	L1097
 	brl	L10634
-L1099:
+L1097:
 ;					}while (label[--di] == ' ');
-	.line	6076
+	.line	6096
 L10633:
-	dec	<L1088+di_1
+	dec	<L1086+di_1
 	sep	#$20
 	longa	off
-	ldy	<L1088+di_1
-	lda	[<L1087+label_0],Y
+	ldy	<L1086+di_1
+	lda	[<L1085+label_0],Y
 	cmp	#<$20
 	rep	#$20
 	longa	on
-	bne	L1100
+	bne	L1098
 	brl	L10635
-L1100:
+L1098:
 L10634:
 ;				}
-	.line	6077
+	.line	6097
 ;			}
-	.line	6078
+	.line	6098
 ;		}
 L10627:
-	.line	6079
+	.line	6099
 ;		if (res == FR_NO_FILE)
 L10626:
-	.line	6080
+	.line	6100
 ;		{ /* No label entry and return nul string */
-	lda	<L1088+res_1
+	lda	<L1086+res_1
 	cmp	#<$4
-	beq	L1101
+	beq	L1099
 	brl	L10636
-L1101:
-	.line	6081
+L1099:
+	.line	6101
 ;			label[0] = 0;
-	.line	6082
+	.line	6102
 	sep	#$20
 	longa	off
 	lda	#$0
-	sta	[<L1087+label_0]
+	sta	[<L1085+label_0]
 	rep	#$20
 	longa	on
 ;			res = FR_OK;
-	.line	6083
-	stz	<L1088+res_1
+	.line	6103
+	stz	<L1086+res_1
 ;		}
-	.line	6084
+	.line	6104
 ;	}
 L10636:
-	.line	6085
+	.line	6105
 ;
 ;	/* Get volume serial number */
 ;	if (res == FR_OK && vsn)
 L10625:
-	.line	6088
+	.line	6108
 ;	{
-	lda	<L1088+res_1
-	beq	L1102
+	lda	<L1086+res_1
+	beq	L1100
 	brl	L10637
-L1102:
-	lda	<L1087+vsn_0
-	ora	<L1087+vsn_0+2
-	bne	L1103
+L1100:
+	lda	<L1085+vsn_0
+	ora	<L1085+vsn_0+2
+	bne	L1101
 	brl	L10637
-L1103:
-	.line	6089
+L1101:
+	.line	6109
 ;		res = move_window(fs, fs->volbase);
-	.line	6090
+	.line	6110
 	ldy	#$21
-	lda	[<L1088+fs_1],Y
+	lda	[<L1086+fs_1],Y
 	pha
 	ldy	#$1f
-	lda	[<L1088+fs_1],Y
+	lda	[<L1086+fs_1],Y
 	pha
-	pei	<L1088+fs_1+2
-	pei	<L1088+fs_1
+	pei	<L1086+fs_1+2
+	pei	<L1086+fs_1
 	jsl	~~move_window
-	sta	<L1088+res_1
+	sta	<L1086+res_1
 ;		if (res == FR_OK)
-	.line	6091
+	.line	6111
 ;		{
-	lda	<L1088+res_1
-	beq	L1104
+	lda	<L1086+res_1
+	beq	L1102
 	brl	L10638
-L1104:
-	.line	6092
+L1102:
+	.line	6112
 ;			switch (fs->fs_type)
-	.line	6093
-	lda	[<L1088+fs_1]
+	.line	6113
+	lda	[<L1086+fs_1]
 	and	#$ff
 	brl	L10639
 ;			{
-	.line	6094
+	.line	6114
 ;				case FS_EXFAT:
-	.line	6095
+	.line	6115
 L10641:
 ;				di = BPB_VolIDEx; break;
-	.line	6096
+	.line	6116
 	lda	#$64
-	sta	<L1088+di_1
-	.line	6096
+	sta	<L1086+di_1
+	.line	6116
 	brl	L10640
 ;
 ;				case FS_FAT32:
-	.line	6098
+	.line	6118
 L10642:
 ;				di = BS_VolID32; break;
-	.line	6099
+	.line	6119
 	lda	#$43
-	sta	<L1088+di_1
-	.line	6099
+	sta	<L1086+di_1
+	.line	6119
 	brl	L10640
 ;
 ;				default:
-	.line	6101
+	.line	6121
 L10643:
 ;				di = BS_VolID;
-	.line	6102
+	.line	6122
 	lda	#$27
-	sta	<L1088+di_1
+	sta	<L1086+di_1
 ;			}
-	.line	6103
+	.line	6123
 	brl	L10640
 L10639:
 	xref	~~~swt
@@ -26554,8 +26537,8 @@ L10639:
 	dw	L10643-1
 L10640:
 ;			*vsn = ld_dword(fs->win + di);
-	.line	6104
-	lda	<L1088+di_1
+	.line	6124
+	lda	<L1086+di_1
 	sta	<R0
 	stz	<R0+2
 	clc
@@ -26566,10 +26549,10 @@ L10640:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L1088+fs_1
+	lda	<L1086+fs_1
 	adc	<R1
 	sta	<R0
-	lda	<L1088+fs_1+2
+	lda	<L1086+fs_1+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
@@ -26578,42 +26561,42 @@ L10640:
 	sta	<R2
 	stx	<R2+2
 	lda	<R2
-	sta	[<L1087+vsn_0]
+	sta	[<L1085+vsn_0]
 	lda	<R2+2
 	ldy	#$2
-	sta	[<L1087+vsn_0],Y
+	sta	[<L1085+vsn_0],Y
 ;		}
-	.line	6105
+	.line	6125
 ;	}
 L10638:
-	.line	6106
+	.line	6126
 ;
 ;	LEAVE_FF(fs, res);
 L10637:
-	.line	6108
-	lda	<L1088+res_1
-L1105:
+	.line	6128
+	lda	<L1086+res_1
+L1103:
 	tay
-	lda	<L1087+2
-	sta	<L1087+2+12
-	lda	<L1087+1
-	sta	<L1087+1+12
+	lda	<L1085+2
+	sta	<L1085+2+12
+	lda	<L1085+1
+	sta	<L1085+1+12
 	pld
 	tsc
 	clc
-	adc	#L1087+12
+	adc	#L1085+12
 	tcs
 	tya
 	rtl
 ;}
-	.line	6109
-	.endblock	6109
-L1087	equ	76
-L1088	equ	13
+	.line	6129
+	.endblock	6129
+L1085	equ	76
+L1086	equ	13
 	ends
 	efunc
-	.endfunc	6109,13,76
-	.line	6109
+	.endfunc	6129,13,76
+	.line	6129
 ;
 ;#if !FF_FS_READONLY
 ;/*-----------------------------------------------------------------------*/
@@ -26624,23 +26607,23 @@ L1088	equ	13
 ;		const TCHAR* label /* Volume label to set with heading logical drive number */
 ;)
 ;{
-	.line	6116
-	.line	6119
+	.line	6136
+	.line	6139
 	FFDOS
 	xdef	~~f_setlabel
 	func
-	.function	6119
+	.function	6139
 ~~f_setlabel:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1106
+	sbc	#L1104
 	tcs
 	phd
 	tcd
 label_0	set	4
-	.block	6119
+	.block	6139
 ;	FRESULT res;
 ;	DIR dj;
 ;	FATFS *fs;
@@ -26649,7 +26632,7 @@ label_0	set	4
 ;	WCHAR wc;
 ;	static const char badchr[] = "+.,;=[]/\\\"*:<>\?|\x7F"; /* [0..] for FAT, [7..] for exFAT */
 	data
-L1109:
+L1107:
 	db	$2B,$2E,$2C,$3B,$3D,$5B,$5D,$2F,$5C,$22
 	db	$2A,$3A,$3C,$3E,$3F,$7C,$7F,$0
 	ends
@@ -26667,46 +26650,46 @@ di_1	set	80
 wc_1	set	82
 dc_1	set	84
 	.sym	res,0,5,1,16
-	.sym	dj,2,10,1,416,75
-	.sym	fs,54,138,1,32,72
+	.sym	dj,2,10,1,416,78
+	.sym	fs,54,138,1,32,75
 	.sym	dirvn,58,110,1,0,22
 	.sym	di,80,16,1,16
 	.sym	wc,82,16,1,16
-	.sym	badchr,1109,110,19,0,18
+	.sym	badchr,1107,110,19,0,18
 	.sym	dc,84,18,1,32
 	.sym	label,4,142,6,32
-	.line	6132
+	.line	6152
 	pea	#<$2
 	pea	#0
 	clc
 	tdc
-	adc	#<L1107+fs_1
+	adc	#<L1105+fs_1
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L1106+label_0
+	adc	#<L1104+label_0
 	pha
 	jsl	~~mount_volume
-	sta	<L1107+res_1
+	sta	<L1105+res_1
 ;	if (res != FR_OK) LEAVE_FF(fs, res);
-	.line	6133
-	lda	<L1107+res_1
-	bne	L1110
+	.line	6153
+	lda	<L1105+res_1
+	bne	L1108
 	brl	L10644
-L1110:
-	.line	6133
-	lda	<L1107+res_1
-L1111:
+L1108:
+	.line	6153
+	lda	<L1105+res_1
+L1109:
 	tay
-	lda	<L1106+2
-	sta	<L1106+2+4
-	lda	<L1106+1
-	sta	<L1106+1+4
+	lda	<L1104+2
+	sta	<L1104+2+4
+	lda	<L1104+1
+	sta	<L1104+1+4
 	pld
 	tsc
 	clc
-	adc	#L1106+4
+	adc	#L1104+4
 	tcs
 	tya
 	rtl
@@ -26741,68 +26724,68 @@ L1111:
 ;#endif
 ;	{ /* On the FAT/FAT32 volume */
 L10644:
-	.line	6163
+	.line	6183
 ;		mem_set(dirvn, ' ', 11);
-	.line	6164
+	.line	6184
 	pea	#<$b
 	pea	#<$20
 	pea	#0
 	clc
 	tdc
-	adc	#<L1107+dirvn_1
+	adc	#<L1105+dirvn_1
 	pha
 	jsl	~~mem_set
 ;		di = 0;
-	.line	6165
-	stz	<L1107+di_1
+	.line	6185
+	stz	<L1105+di_1
 ;		while ((UINT)*label >= ' ')
-	.line	6166
+	.line	6186
 L10645:
 	sep	#$20
 	longa	off
-	lda	[<L1106+label_0]
+	lda	[<L1104+label_0]
 	cmp	#<$20
 	rep	#$20
 	longa	on
-	bcs	L1112
+	bcs	L1110
 	brl	L10646
-L1112:
+L1110:
 ;		{ /* Create volume label */
-	.line	6167
+	.line	6187
 ;#if FF_USE_LFN
 ;			dc = tchar2uni(&label);
-	.line	6169
+	.line	6189
 	pea	#0
 	clc
 	tdc
-	adc	#<L1106+label_0
+	adc	#<L1104+label_0
 	pha
 	jsl	~~tchar2uni
-	sta	<L1107+dc_1
-	stx	<L1107+dc_1+2
+	sta	<L1105+dc_1
+	stx	<L1105+dc_1+2
 ;			wc = (dc < 0x10000) ? ff_uni2oem(ff_wtoupper(dc), CODEPAGE) : 0;
-	.line	6170
-	lda	<L1107+dc_1
+	.line	6190
+	lda	<L1105+dc_1
 	cmp	#<$10000
-	lda	<L1107+dc_1+2
+	lda	<L1105+dc_1+2
 	sbc	#^$10000
-	bcc	L1114
-	brl	L1113
-L1114:
+	bcc	L1112
+	brl	L1111
+L1112:
 	pea	#<$1b5
-	pei	<L1107+dc_1+2
-	pei	<L1107+dc_1
+	pei	<L1105+dc_1+2
+	pei	<L1105+dc_1
 	jsl	~~ff_wtoupper
 	sta	<R0
 	stx	<R0+2
 	phx
 	pha
 	jsl	~~ff_uni2oem
-	bra	L1115
-L1113:
+	bra	L1113
+L1111:
 	lda	#$0
-L1115:
-	sta	<L1107+wc_1
+L1113:
+	sta	<L1105+wc_1
 ;#else									/* ANSI/OEM input */
 ;			wc = (BYTE)*label++;
 ;			if (dbc_1st((BYTE)wc)) wc = dbc_2nd((BYTE)*label) ? wc << 8 | (BYTE)*label++ : 0;
@@ -26814,14 +26797,14 @@ L1115:
 ;#endif
 ;#endif
 ;			if (wc == 0 || chk_chr(badchr + 0, (int)wc) || di >= (UINT)((wc >= 0x100) ? 10 : 11))
-	.line	6181
+	.line	6201
 ;			{ /* Reject invalid characters for volume label */
-	lda	<L1107+wc_1
-	bne	L1117
-	brl	L1116
-L1117:
-	pei	<L1107+wc_1
-	lda	#<L1109
+	lda	<L1105+wc_1
+	bne	L1115
+	brl	L1114
+L1115:
+	pei	<L1105+wc_1
+	lda	#<L1107
 	sta	<R0
 	xref	_BEG_DATA
 	lda	#_BEG_DATA>>16
@@ -26830,435 +26813,435 @@ L1117:
 	pei	<R0
 	jsl	~~chk_chr
 	tax
-	beq	L1118
-	brl	L1116
-L1118:
-	lda	<L1107+wc_1
-	cmp	#<$100
-	bcs	L1120
-	brl	L1119
-L1120:
-	lda	#$a
-	bra	L1121
-L1119:
-	lda	#$b
-L1121:
-	sta	<R1
-	lda	<L1107+di_1
-	cmp	<R1
-	bcs	L1122
-	brl	L10647
-L1122:
+	beq	L1116
+	brl	L1114
 L1116:
-	.line	6182
+	lda	<L1105+wc_1
+	cmp	#<$100
+	bcs	L1118
+	brl	L1117
+L1118:
+	lda	#$a
+	bra	L1119
+L1117:
+	lda	#$b
+L1119:
+	sta	<R1
+	lda	<L1105+di_1
+	cmp	<R1
+	bcs	L1120
+	brl	L10647
+L1120:
+L1114:
+	.line	6202
 ;				LEAVE_FF(fs, FR_INVALID_NAME);
-	.line	6183
+	.line	6203
 	lda	#$6
-	brl	L1111
+	brl	L1109
 ;			}
-	.line	6184
+	.line	6204
 ;			if (wc >= 0x100) dirvn[di++] = (BYTE)(wc >> 8);
 L10647:
-	.line	6185
-	lda	<L1107+wc_1
+	.line	6205
+	lda	<L1105+wc_1
 	cmp	#<$100
-	bcs	L1123
+	bcs	L1121
 	brl	L10648
-L1123:
-	.line	6185
-	lda	<L1107+wc_1
+L1121:
+	.line	6205
+	lda	<L1105+wc_1
 	xba
 	and	#$00ff
 	sep	#$20
 	longa	off
-	ldx	<L1107+di_1
-	sta	<L1107+dirvn_1,X
+	ldx	<L1105+di_1
+	sta	<L1105+dirvn_1,X
 	rep	#$20
 	longa	on
-	inc	<L1107+di_1
+	inc	<L1105+di_1
 ;			dirvn[di++] = (BYTE)wc;
 L10648:
-	.line	6186
+	.line	6206
 	sep	#$20
 	longa	off
-	lda	<L1107+wc_1
-	ldx	<L1107+di_1
-	sta	<L1107+dirvn_1,X
+	lda	<L1105+wc_1
+	ldx	<L1105+di_1
+	sta	<L1105+dirvn_1,X
 	rep	#$20
 	longa	on
-	inc	<L1107+di_1
+	inc	<L1105+di_1
 ;		}
-	.line	6187
+	.line	6207
 	brl	L10645
 L10646:
 ;		if (dirvn[0] == DDEM) LEAVE_FF(fs, FR_INVALID_NAME); /* Reject illegal name (heading DDEM) */
-	.line	6188
+	.line	6208
 	sep	#$20
 	longa	off
-	lda	<L1107+dirvn_1
+	lda	<L1105+dirvn_1
 	cmp	#<$e5
 	rep	#$20
 	longa	on
-	beq	L1124
+	beq	L1122
 	brl	L10649
-L1124:
-	.line	6188
+L1122:
+	.line	6208
 	lda	#$6
-	brl	L1111
+	brl	L1109
 ;		while (di && dirvn[di - 1] == ' ') di--; /* Snip trailing spaces */
 L10649:
-	.line	6189
+	.line	6209
 L10650:
-	lda	<L1107+di_1
-	bne	L1125
+	lda	<L1105+di_1
+	bne	L1123
 	brl	L10651
-L1125:
+L1123:
 	clc
 	lda	#$ffff
-	adc	<L1107+di_1
+	adc	<L1105+di_1
 	sta	<R0
 	sep	#$20
 	longa	off
 	ldx	<R0
-	lda	<L1107+dirvn_1,X
+	lda	<L1105+dirvn_1,X
 	cmp	#<$20
 	rep	#$20
 	longa	on
-	beq	L1126
+	beq	L1124
 	brl	L10651
-L1126:
-	.line	6189
-	dec	<L1107+di_1
+L1124:
+	.line	6209
+	dec	<L1105+di_1
 	brl	L10650
 L10651:
 ;	}
-	.line	6190
+	.line	6210
 ;
 ;	/* Set volume label */
 ;	dj.obj.fs = fs; dj.obj.sclust = 0; /* Open root directory */
-	.line	6193
-	lda	<L1107+fs_1
-	sta	<L1107+dj_1
-	lda	<L1107+fs_1+2
-	sta	<L1107+dj_1+2
-	.line	6193
-	stz	<L1107+dj_1+8
-	stz	<L1107+dj_1+10
+	.line	6213
+	lda	<L1105+fs_1
+	sta	<L1105+dj_1
+	lda	<L1105+fs_1+2
+	sta	<L1105+dj_1+2
+	.line	6213
+	stz	<L1105+dj_1+8
+	stz	<L1105+dj_1+10
 ;	res = dir_sdi(&dj, 0);
-	.line	6194
+	.line	6214
 	pea	#^$0
 	pea	#<$0
 	pea	#0
 	clc
 	tdc
-	adc	#<L1107+dj_1
+	adc	#<L1105+dj_1
 	pha
 	jsl	~~dir_sdi
-	sta	<L1107+res_1
+	sta	<L1105+res_1
 ;	if (res == FR_OK)
-	.line	6195
+	.line	6215
 ;	{
-	lda	<L1107+res_1
-	beq	L1127
+	lda	<L1105+res_1
+	beq	L1125
 	brl	L10652
-L1127:
-	.line	6196
+L1125:
+	.line	6216
 ;		res = DIR_READ_LABEL(&dj); /* Get volume label entry */
-	.line	6197
+	.line	6217
 	pea	#<$1
 	pea	#0
 	clc
 	tdc
-	adc	#<L1107+dj_1
+	adc	#<L1105+dj_1
 	pha
 	jsl	~~dir_read
-	sta	<L1107+res_1
+	sta	<L1105+res_1
 ;		if (res == FR_OK)
-	.line	6198
+	.line	6218
 ;		{
-	lda	<L1107+res_1
-	beq	L1128
+	lda	<L1105+res_1
+	beq	L1126
 	brl	L10653
-L1128:
-	.line	6199
+L1126:
+	.line	6219
 ;			if (FF_FS_EXFAT && fs->fs_type == FS_EXFAT)
-	.line	6200
+	.line	6220
 ;			{
 	brl	L10654
 	sep	#$20
 	longa	off
-	lda	[<L1107+fs_1]
+	lda	[<L1105+fs_1]
 	cmp	#<$4
 	rep	#$20
 	longa	on
-	beq	L1129
+	beq	L1127
 	brl	L10654
-L1129:
-	.line	6201
+L1127:
+	.line	6221
 ;				dj.dir[XDIR_NumLabel] = (BYTE)di; /* Change the volume label */
-	.line	6202
+	.line	6222
 	sep	#$20
 	longa	off
-	lda	<L1107+di_1
+	lda	<L1105+di_1
 	ldy	#$1
-	sta	[<L1107+dj_1+28],Y
+	sta	[<L1105+dj_1+28],Y
 	rep	#$20
 	longa	on
 ;				mem_cpy(dj.dir + XDIR_Label, dirvn, 22);
-	.line	6203
+	.line	6223
 	pea	#<$16
 	pea	#0
 	clc
 	tdc
-	adc	#<L1107+dirvn_1
+	adc	#<L1105+dirvn_1
 	pha
 	clc
 	lda	#$2
-	adc	<L1107+dj_1+28
+	adc	<L1105+dj_1+28
 	sta	<R0
 	lda	#$0
-	adc	<L1107+dj_1+30
+	adc	<L1105+dj_1+30
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~mem_cpy
 ;			}
-	.line	6204
+	.line	6224
 ;			else
 	brl	L10655
 L10654:
 ;			{
-	.line	6206
+	.line	6226
 ;				if (di != 0)
-	.line	6207
+	.line	6227
 ;				{
-	lda	<L1107+di_1
-	bne	L1130
+	lda	<L1105+di_1
+	bne	L1128
 	brl	L10656
-L1130:
-	.line	6208
+L1128:
+	.line	6228
 ;					mem_cpy(dj.dir, dirvn, 11); /* Change the volume label */
-	.line	6209
+	.line	6229
 	pea	#<$b
 	pea	#0
 	clc
 	tdc
-	adc	#<L1107+dirvn_1
+	adc	#<L1105+dirvn_1
 	pha
-	pei	<L1107+dj_1+30
-	pei	<L1107+dj_1+28
+	pei	<L1105+dj_1+30
+	pei	<L1105+dj_1+28
 	jsl	~~mem_cpy
 ;				}
-	.line	6210
+	.line	6230
 ;				else
 	brl	L10657
 L10656:
 ;				{
-	.line	6212
+	.line	6232
 ;					dj.dir[DIR_Name] = DDEM; /* Remove the volume label */
-	.line	6213
+	.line	6233
 	sep	#$20
 	longa	off
 	lda	#$e5
-	sta	[<L1107+dj_1+28]
+	sta	[<L1105+dj_1+28]
 	rep	#$20
 	longa	on
 ;				}
-	.line	6214
+	.line	6234
 L10657:
 ;			}
-	.line	6215
+	.line	6235
 L10655:
 ;			fs->wflag = 1;
-	.line	6216
+	.line	6236
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$3
-	sta	[<L1107+fs_1],Y
+	sta	[<L1105+fs_1],Y
 	rep	#$20
 	longa	on
 ;			res = sync_fs(fs);
-	.line	6217
-	pei	<L1107+fs_1+2
-	pei	<L1107+fs_1
+	.line	6237
+	pei	<L1105+fs_1+2
+	pei	<L1105+fs_1
 	jsl	~~sync_fs
-	sta	<L1107+res_1
+	sta	<L1105+res_1
 ;		}
-	.line	6218
+	.line	6238
 ;		else
 	brl	L10658
 L10653:
 ;		{ /* No volume label entry or an error */
-	.line	6220
+	.line	6240
 ;			if (res == FR_NO_FILE)
-	.line	6221
+	.line	6241
 ;			{
-	lda	<L1107+res_1
+	lda	<L1105+res_1
 	cmp	#<$4
-	beq	L1131
+	beq	L1129
 	brl	L10659
-L1131:
-	.line	6222
+L1129:
+	.line	6242
 ;				res = FR_OK;
-	.line	6223
-	stz	<L1107+res_1
+	.line	6243
+	stz	<L1105+res_1
 ;				if (di != 0)
-	.line	6224
+	.line	6244
 ;				{ /* Create a volume label entry */
-	lda	<L1107+di_1
-	bne	L1132
+	lda	<L1105+di_1
+	bne	L1130
 	brl	L10660
-L1132:
-	.line	6225
+L1130:
+	.line	6245
 ;					res = dir_alloc(&dj, 1); /* Allocate an entry */
-	.line	6226
+	.line	6246
 	pea	#<$1
 	pea	#0
 	clc
 	tdc
-	adc	#<L1107+dj_1
+	adc	#<L1105+dj_1
 	pha
 	jsl	~~dir_alloc
-	sta	<L1107+res_1
+	sta	<L1105+res_1
 ;					if (res == FR_OK)
-	.line	6227
+	.line	6247
 ;					{
-	lda	<L1107+res_1
-	beq	L1133
+	lda	<L1105+res_1
+	beq	L1131
 	brl	L10661
-L1133:
-	.line	6228
+L1131:
+	.line	6248
 ;						mem_set(dj.dir, 0, SZDIRE); /* Clean the entry */
-	.line	6229
+	.line	6249
 	pea	#<$20
 	pea	#<$0
-	pei	<L1107+dj_1+30
-	pei	<L1107+dj_1+28
+	pei	<L1105+dj_1+30
+	pei	<L1105+dj_1+28
 	jsl	~~mem_set
 ;						if (FF_FS_EXFAT && fs->fs_type == FS_EXFAT)
-	.line	6230
+	.line	6250
 ;						{
 	brl	L10662
 	sep	#$20
 	longa	off
-	lda	[<L1107+fs_1]
+	lda	[<L1105+fs_1]
 	cmp	#<$4
 	rep	#$20
 	longa	on
-	beq	L1134
+	beq	L1132
 	brl	L10662
-L1134:
-	.line	6231
+L1132:
+	.line	6251
 ;							dj.dir[XDIR_Type] = ET_VLABEL; /* Create volume label entry */
-	.line	6232
+	.line	6252
 	sep	#$20
 	longa	off
 	lda	#$83
-	sta	[<L1107+dj_1+28]
+	sta	[<L1105+dj_1+28]
 	rep	#$20
 	longa	on
 ;							dj.dir[XDIR_NumLabel] = (BYTE)di;
-	.line	6233
+	.line	6253
 	sep	#$20
 	longa	off
-	lda	<L1107+di_1
+	lda	<L1105+di_1
 	ldy	#$1
-	sta	[<L1107+dj_1+28],Y
+	sta	[<L1105+dj_1+28],Y
 	rep	#$20
 	longa	on
 ;							mem_cpy(dj.dir + XDIR_Label, dirvn, 22);
-	.line	6234
+	.line	6254
 	pea	#<$16
 	pea	#0
 	clc
 	tdc
-	adc	#<L1107+dirvn_1
+	adc	#<L1105+dirvn_1
 	pha
 	clc
 	lda	#$2
-	adc	<L1107+dj_1+28
+	adc	<L1105+dj_1+28
 	sta	<R0
 	lda	#$0
-	adc	<L1107+dj_1+30
+	adc	<L1105+dj_1+30
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~mem_cpy
 ;						}
-	.line	6235
+	.line	6255
 ;						else
 	brl	L10663
 L10662:
 ;						{
-	.line	6237
+	.line	6257
 ;							dj.dir[DIR_Attr] = AM_VOL; /* Create volume label entry */
-	.line	6238
+	.line	6258
 	sep	#$20
 	longa	off
 	lda	#$8
 	ldy	#$b
-	sta	[<L1107+dj_1+28],Y
+	sta	[<L1105+dj_1+28],Y
 	rep	#$20
 	longa	on
 ;							mem_cpy(dj.dir, dirvn, 11);
-	.line	6239
+	.line	6259
 	pea	#<$b
 	pea	#0
 	clc
 	tdc
-	adc	#<L1107+dirvn_1
+	adc	#<L1105+dirvn_1
 	pha
-	pei	<L1107+dj_1+30
-	pei	<L1107+dj_1+28
+	pei	<L1105+dj_1+30
+	pei	<L1105+dj_1+28
 	jsl	~~mem_cpy
 ;						}
-	.line	6240
+	.line	6260
 L10663:
 ;						fs->wflag = 1;
-	.line	6241
+	.line	6261
 	sep	#$20
 	longa	off
 	lda	#$1
 	ldy	#$3
-	sta	[<L1107+fs_1],Y
+	sta	[<L1105+fs_1],Y
 	rep	#$20
 	longa	on
 ;						res = sync_fs(fs);
-	.line	6242
-	pei	<L1107+fs_1+2
-	pei	<L1107+fs_1
+	.line	6262
+	pei	<L1105+fs_1+2
+	pei	<L1105+fs_1
 	jsl	~~sync_fs
-	sta	<L1107+res_1
+	sta	<L1105+res_1
 ;					}
-	.line	6243
+	.line	6263
 ;				}
 L10661:
-	.line	6244
+	.line	6264
 ;			}
 L10660:
-	.line	6245
+	.line	6265
 ;		}
 L10659:
-	.line	6246
+	.line	6266
 L10658:
 ;	}
-	.line	6247
+	.line	6267
 ;
 ;	LEAVE_FF(fs, res);
 L10652:
-	.line	6249
-	lda	<L1107+res_1
-	brl	L1111
+	.line	6269
+	lda	<L1105+res_1
+	brl	L1109
 ;}
-	.line	6250
-	.endblock	6250
-L1106	equ	96
-L1107	equ	9
+	.line	6270
+	.endblock	6270
+L1104	equ	96
+L1105	equ	9
 	ends
 	efunc
-	.endfunc	6250,9,96
-	.line	6250
+	.endfunc	6270,9,96
+	.line	6270
 ;
 ;#endif /* !FF_FS_READONLY */
 ;#endif /* FF_USE_LABEL */
@@ -27463,17 +27446,17 @@ L1107	equ	9
 ;		BYTE* buf /* Working buffer for a sector */
 ;)
 ;{
-	.line	6448
-	.line	6454
+	.line	6468
+	.line	6474
 	FFDOS
 	func
-	.function	6454
+	.function	6474
 ~~create_partition:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1135
+	sbc	#L1133
 	tcs
 	phd
 	tcd
@@ -27481,7 +27464,7 @@ drv_0	set	4
 plst_0	set	6
 sys_0	set	10
 buf_0	set	12
-	.block	6454
+	.block	6474
 ;	UINT i, cy;
 ;	LBA_t sz_drv;
 ;	DWORD sz_drv32, s_lba32, n_lba32;
@@ -27515,31 +27498,31 @@ n_sc_1	set	27
 	.sym	plst,6,146,6,32
 	.sym	sys,10,16,6,16
 	.sym	buf,12,142,6,32
-	.line	6461
+	.line	6481
 	pea	#0
 	clc
 	tdc
-	adc	#<L1136+sz_drv_1
+	adc	#<L1134+sz_drv_1
 	pha
 	pea	#<$1
-	pei	<L1135+drv_0
+	pei	<L1133+drv_0
 	jsl	~~disk_ioctl
 	tax
-	bne	L1138
+	bne	L1136
 	brl	L10664
-L1138:
-	.line	6461
+L1136:
+	.line	6481
 	lda	#$1
-L1139:
+L1137:
 	tay
-	lda	<L1135+2
-	sta	<L1135+2+12
-	lda	<L1135+1
-	sta	<L1135+1+12
+	lda	<L1133+2
+	sta	<L1133+2+12
+	lda	<L1133+1
+	sta	<L1133+1+12
 	pld
 	tsc
 	clc
-	adc	#L1135+12
+	adc	#L1133+12
 	tcs
 	tya
 	rtl
@@ -27638,56 +27621,56 @@ L1139:
 ;#endif
 ;	{ /* Create partitions in MBR */
 L10664:
-	.line	6555
+	.line	6575
 ;		sz_drv32 = (DWORD)sz_drv;
-	.line	6556
-	lda	<L1136+sz_drv_1
-	sta	<L1136+sz_drv32_1
-	lda	<L1136+sz_drv_1+2
-	sta	<L1136+sz_drv32_1+2
+	.line	6576
+	lda	<L1134+sz_drv_1
+	sta	<L1134+sz_drv32_1
+	lda	<L1134+sz_drv_1+2
+	sta	<L1134+sz_drv32_1+2
 ;		n_sc = N_SEC_TRACK; /* Determine drive CHS without any consideration of the drive geometry */
-	.line	6557
+	.line	6577
 	sep	#$20
 	longa	off
 	lda	#$3f
-	sta	<L1136+n_sc_1
+	sta	<L1134+n_sc_1
 	rep	#$20
 	longa	on
 ;		for (n_hd = 8; n_hd != 0 && sz_drv32 / n_hd / n_sc > 1024; n_hd *= 2);
-	.line	6558
+	.line	6578
 	sep	#$20
 	longa	off
 	lda	#$8
-	sta	<L1136+n_hd_1
+	sta	<L1134+n_hd_1
 	rep	#$20
 	longa	on
 	brl	L10668
 L10667:
-	.line	6558
+	.line	6578
 L10665:
 	sep	#$20
 	longa	off
-	asl	<L1136+n_hd_1
+	asl	<L1134+n_hd_1
 	rep	#$20
 	longa	on
 L10668:
-	lda	<L1136+n_hd_1
+	lda	<L1134+n_hd_1
 	and	#$ff
-	bne	L1141
-	brl	L1140
-L1141:
-	lda	<L1136+n_sc_1
+	bne	L1139
+	brl	L1138
+L1139:
+	lda	<L1134+n_sc_1
 	and	#$ff
 	sta	<R0
 	stz	<R0+2
-	lda	<L1136+n_hd_1
+	lda	<L1134+n_hd_1
 	and	#$ff
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
 	pei	<R1
-	pei	<L1136+sz_drv32_1+2
-	pei	<L1136+sz_drv32_1
+	pei	<L1134+sz_drv32_1+2
+	pei	<L1134+sz_drv32_1
 	xref	~~~ludv
 	jsl	~~~ludv
 	sta	<R1
@@ -27704,57 +27687,57 @@ L1141:
 	cmp	<R0
 	lda	#$0
 	sbc	<R0+2
-	bcs	L1142
+	bcs	L1140
 	brl	L10667
-L1142:
 L1140:
+L1138:
 L10666:
 ;		if (n_hd == 0) n_hd = 255; /* Number of heads needs to be <256 */
-	.line	6559
-	lda	<L1136+n_hd_1
+	.line	6579
+	lda	<L1134+n_hd_1
 	and	#$ff
-	beq	L1143
+	beq	L1141
 	brl	L10669
-L1143:
-	.line	6559
+L1141:
+	.line	6579
 	sep	#$20
 	longa	off
 	lda	#$ff
-	sta	<L1136+n_hd_1
+	sta	<L1134+n_hd_1
 	rep	#$20
 	longa	on
 ;
 ;		mem_set(buf, 0, FF_MAX_SS); /* Clear MBR */
 L10669:
-	.line	6561
+	.line	6581
 	pea	#<$200
 	pea	#<$0
-	pei	<L1135+buf_0+2
-	pei	<L1135+buf_0
+	pei	<L1133+buf_0+2
+	pei	<L1133+buf_0
 	jsl	~~mem_set
 ;		pte = buf + MBR_Table; /* Partition table in the MBR */
-	.line	6562
+	.line	6582
 	clc
 	lda	#$1be
-	adc	<L1135+buf_0
-	sta	<L1136+pte_1
+	adc	<L1133+buf_0
+	sta	<L1134+pte_1
 	lda	#$0
-	adc	<L1135+buf_0+2
-	sta	<L1136+pte_1+2
+	adc	<L1133+buf_0+2
+	sta	<L1134+pte_1+2
 ;		for (i = 0, s_lba32 = n_sc; i < 4 && s_lba32 != 0 && s_lba32 < sz_drv32; i++, s_lba32 += n_lba32)
-	.line	6563
-	stz	<L1136+i_1
-	lda	<L1136+n_sc_1
+	.line	6583
+	stz	<L1134+i_1
+	lda	<L1134+n_sc_1
 	and	#$ff
-	sta	<L1136+s_lba32_1
-	stz	<L1136+s_lba32_1+2
+	sta	<L1134+s_lba32_1
+	stz	<L1134+s_lba32_1+2
 	brl	L10673
 L10672:
 ;		{
-	.line	6564
+	.line	6584
 ;			n_lba32 = (DWORD)plst[i]; /* Get partition size */
-	.line	6565
-	lda	<L1136+i_1
+	.line	6585
+	lda	<L1134+i_1
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
@@ -27765,50 +27748,50 @@ L10672:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L1135+plst_0
+	lda	<L1133+plst_0
 	adc	<R0
 	sta	<R2
-	lda	<L1135+plst_0+2
+	lda	<L1133+plst_0+2
 	adc	<R0+2
 	sta	<R2+2
 	lda	[<R2]
-	sta	<L1136+n_lba32_1
+	sta	<L1134+n_lba32_1
 	ldy	#$2
 	lda	[<R2],Y
-	sta	<L1136+n_lba32_1+2
+	sta	<L1134+n_lba32_1+2
 ;			if (n_lba32 <= 100) n_lba32 = (n_lba32 == 100) ? sz_drv32 : sz_drv32 / 100 * n_lba32; /* Size in percentage? */
-	.line	6566
+	.line	6586
 	lda	#$64
-	cmp	<L1136+n_lba32_1
+	cmp	<L1134+n_lba32_1
 	lda	#$0
-	sbc	<L1136+n_lba32_1+2
-	bcs	L1144
+	sbc	<L1134+n_lba32_1+2
+	bcs	L1142
 	brl	L10674
-L1144:
-	.line	6566
-	lda	<L1136+n_lba32_1
+L1142:
+	.line	6586
+	lda	<L1134+n_lba32_1
 	cmp	#<$64
-	bne	L1146
-	lda	<L1136+n_lba32_1+2
+	bne	L1144
+	lda	<L1134+n_lba32_1+2
 	cmp	#^$64
-L1146:
-	beq	L1147
-	brl	L1145
-L1147:
-	ldx	<L1136+sz_drv32_1+2
-	lda	<L1136+sz_drv32_1
-	bra	L1148
+L1144:
+	beq	L1145
+	brl	L1143
 L1145:
+	ldx	<L1134+sz_drv32_1+2
+	lda	<L1134+sz_drv32_1
+	bra	L1146
+L1143:
 	pea	#^$64
 	pea	#<$64
-	pei	<L1136+sz_drv32_1+2
-	pei	<L1136+sz_drv32_1
+	pei	<L1134+sz_drv32_1+2
+	pei	<L1134+sz_drv32_1
 	xref	~~~ludv
 	jsl	~~~ludv
 	sta	<R0
 	stx	<R0+2
-	pei	<L1136+n_lba32_1+2
-	pei	<L1136+n_lba32_1
+	pei	<L1134+n_lba32_1+2
+	pei	<L1134+n_lba32_1
 	pei	<R0+2
 	pei	<R0
 	xref	~~~lmul
@@ -27817,114 +27800,114 @@ L1145:
 	stx	<R0+2
 	ldx	<R0+2
 	lda	<R0
-L1148:
+L1146:
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
-	sta	<L1136+n_lba32_1
+	sta	<L1134+n_lba32_1
 	lda	<R0+2
-	sta	<L1136+n_lba32_1+2
+	sta	<L1134+n_lba32_1+2
 ;			if (s_lba32 + n_lba32 > sz_drv32 || s_lba32 + n_lba32 < s_lba32) n_lba32 = sz_drv32 - s_lba32; /* Clip at drive size */
 L10674:
-	.line	6567
+	.line	6587
 	clc
-	lda	<L1136+s_lba32_1
-	adc	<L1136+n_lba32_1
+	lda	<L1134+s_lba32_1
+	adc	<L1134+n_lba32_1
 	sta	<R0
-	lda	<L1136+s_lba32_1+2
-	adc	<L1136+n_lba32_1+2
+	lda	<L1134+s_lba32_1+2
+	adc	<L1134+n_lba32_1+2
 	sta	<R0+2
-	lda	<L1136+sz_drv32_1
+	lda	<L1134+sz_drv32_1
 	cmp	<R0
-	lda	<L1136+sz_drv32_1+2
+	lda	<L1134+sz_drv32_1+2
 	sbc	<R0+2
-	bcs	L1150
-	brl	L1149
-L1150:
+	bcs	L1148
+	brl	L1147
+L1148:
 	clc
-	lda	<L1136+s_lba32_1
-	adc	<L1136+n_lba32_1
+	lda	<L1134+s_lba32_1
+	adc	<L1134+n_lba32_1
 	sta	<R0
-	lda	<L1136+s_lba32_1+2
-	adc	<L1136+n_lba32_1+2
+	lda	<L1134+s_lba32_1+2
+	adc	<L1134+n_lba32_1+2
 	sta	<R0+2
 	lda	<R0
-	cmp	<L1136+s_lba32_1
+	cmp	<L1134+s_lba32_1
 	lda	<R0+2
-	sbc	<L1136+s_lba32_1+2
-	bcc	L1151
+	sbc	<L1134+s_lba32_1+2
+	bcc	L1149
 	brl	L10675
-L1151:
 L1149:
-	.line	6567
+L1147:
+	.line	6587
 	sec
-	lda	<L1136+sz_drv32_1
-	sbc	<L1136+s_lba32_1
-	sta	<L1136+n_lba32_1
-	lda	<L1136+sz_drv32_1+2
-	sbc	<L1136+s_lba32_1+2
-	sta	<L1136+n_lba32_1+2
+	lda	<L1134+sz_drv32_1
+	sbc	<L1134+s_lba32_1
+	sta	<L1134+n_lba32_1
+	lda	<L1134+sz_drv32_1+2
+	sbc	<L1134+s_lba32_1+2
+	sta	<L1134+n_lba32_1+2
 ;			if (n_lba32 == 0) break; /* End of table or no sector to allocate? */
 L10675:
-	.line	6568
-	lda	<L1136+n_lba32_1
-	ora	<L1136+n_lba32_1+2
-	bne	L1152
+	.line	6588
+	lda	<L1134+n_lba32_1
+	ora	<L1134+n_lba32_1+2
+	bne	L1150
 	brl	L10671
-L1152:
+L1150:
 ;
 ;			st_dword(pte + PTE_StLba, s_lba32); /* Start LBA */
-	.line	6570
-	pei	<L1136+s_lba32_1+2
-	pei	<L1136+s_lba32_1
+	.line	6590
+	pei	<L1134+s_lba32_1+2
+	pei	<L1134+s_lba32_1
 	clc
 	lda	#$8
-	adc	<L1136+pte_1
+	adc	<L1134+pte_1
 	sta	<R0
 	lda	#$0
-	adc	<L1136+pte_1+2
+	adc	<L1134+pte_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;			st_dword(pte + PTE_SizLba, n_lba32); /* Number of sectors */
-	.line	6571
-	pei	<L1136+n_lba32_1+2
-	pei	<L1136+n_lba32_1
+	.line	6591
+	pei	<L1134+n_lba32_1+2
+	pei	<L1134+n_lba32_1
 	clc
 	lda	#$c
-	adc	<L1136+pte_1
+	adc	<L1134+pte_1
 	sta	<R0
 	lda	#$0
-	adc	<L1136+pte_1+2
+	adc	<L1134+pte_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;			pte[PTE_System] = (BYTE)sys; /* System type */
-	.line	6572
+	.line	6592
 	sep	#$20
 	longa	off
-	lda	<L1135+sys_0
+	lda	<L1133+sys_0
 	ldy	#$4
-	sta	[<L1136+pte_1],Y
+	sta	[<L1134+pte_1],Y
 	rep	#$20
 	longa	on
 ;
 ;			cy = (UINT)(s_lba32 / n_sc / n_hd); /* Start cylinder */
-	.line	6574
-	lda	<L1136+n_hd_1
+	.line	6594
+	lda	<L1134+n_hd_1
 	and	#$ff
 	sta	<R0
 	stz	<R0+2
-	lda	<L1136+n_sc_1
+	lda	<L1134+n_sc_1
 	and	#$ff
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
 	pei	<R1
-	pei	<L1136+s_lba32_1+2
-	pei	<L1136+s_lba32_1
+	pei	<L1134+s_lba32_1+2
+	pei	<L1134+s_lba32_1
 	xref	~~~ludv
 	jsl	~~~ludv
 	sta	<R1
@@ -27938,21 +27921,21 @@ L1152:
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
-	sta	<L1136+cy_1
+	sta	<L1134+cy_1
 ;			hd = (BYTE)(s_lba32 / n_sc % n_hd); /* Start head */
-	.line	6575
-	lda	<L1136+n_hd_1
+	.line	6595
+	lda	<L1134+n_hd_1
 	and	#$ff
 	sta	<R0
 	stz	<R0+2
-	lda	<L1136+n_sc_1
+	lda	<L1134+n_sc_1
 	and	#$ff
 	sta	<R1
 	stz	<R1+2
 	pei	<R1+2
 	pei	<R1
-	pei	<L1136+s_lba32_1+2
-	pei	<L1136+s_lba32_1
+	pei	<L1134+s_lba32_1+2
+	pei	<L1134+s_lba32_1
 	xref	~~~ludv
 	jsl	~~~ludv
 	sta	<R1
@@ -27968,19 +27951,19 @@ L1152:
 	sep	#$20
 	longa	off
 	lda	<R0
-	sta	<L1136+hd_1
+	sta	<L1134+hd_1
 	rep	#$20
 	longa	on
 ;			sc = (BYTE)(s_lba32 % n_sc + 1); /* Start sector */
-	.line	6576
-	lda	<L1136+n_sc_1
+	.line	6596
+	lda	<L1134+n_sc_1
 	and	#$ff
 	sta	<R0
 	stz	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pei	<L1136+s_lba32_1+2
-	pei	<L1136+s_lba32_1
+	pei	<L1134+s_lba32_1+2
+	pei	<L1134+s_lba32_1
 	xref	~~~lumd
 	jsl	~~~lumd
 	sta	<R0
@@ -27995,26 +27978,26 @@ L1152:
 	sep	#$20
 	longa	off
 	lda	<R1
-	sta	<L1136+sc_1
+	sta	<L1134+sc_1
 	rep	#$20
 	longa	on
 ;			pte[PTE_StHead] = hd;
-	.line	6577
+	.line	6597
 	sep	#$20
 	longa	off
-	lda	<L1136+hd_1
+	lda	<L1134+hd_1
 	ldy	#$1
-	sta	[<L1136+pte_1],Y
+	sta	[<L1134+pte_1],Y
 	rep	#$20
 	longa	on
 ;			pte[PTE_StSec] = (BYTE)((cy >> 2 & 0xC0) | sc);
-	.line	6578
-	lda	<L1136+cy_1
+	.line	6598
+	lda	<L1134+cy_1
 	lsr	A
 	lsr	A
 	and	#<$c0
 	sta	<R0
-	lda	<L1136+sc_1
+	lda	<L1134+sc_1
 	and	#$ff
 	sta	<R1
 	lda	<R1
@@ -28022,35 +28005,35 @@ L1152:
 	sep	#$20
 	longa	off
 	ldy	#$2
-	sta	[<L1136+pte_1],Y
+	sta	[<L1134+pte_1],Y
 	rep	#$20
 	longa	on
 ;			pte[PTE_StCyl] = (BYTE)cy;
-	.line	6579
+	.line	6599
 	sep	#$20
 	longa	off
-	lda	<L1136+cy_1
+	lda	<L1134+cy_1
 	ldy	#$3
-	sta	[<L1136+pte_1],Y
+	sta	[<L1134+pte_1],Y
 	rep	#$20
 	longa	on
 ;
 ;			cy = (UINT)((s_lba32 + n_lba32 - 1) / n_sc / n_hd); /* End cylinder */
-	.line	6581
-	lda	<L1136+n_hd_1
+	.line	6601
+	lda	<L1134+n_hd_1
 	and	#$ff
 	sta	<R0
 	stz	<R0+2
-	lda	<L1136+n_sc_1
+	lda	<L1134+n_sc_1
 	and	#$ff
 	sta	<R1
 	stz	<R1+2
 	clc
-	lda	<L1136+s_lba32_1
-	adc	<L1136+n_lba32_1
+	lda	<L1134+s_lba32_1
+	adc	<L1134+n_lba32_1
 	sta	<R2
-	lda	<L1136+s_lba32_1+2
-	adc	<L1136+n_lba32_1+2
+	lda	<L1134+s_lba32_1+2
+	adc	<L1134+n_lba32_1+2
 	sta	<R2+2
 	clc
 	lda	#$ffff
@@ -28076,23 +28059,23 @@ L1152:
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
-	sta	<L1136+cy_1
+	sta	<L1134+cy_1
 ;			hd = (BYTE)((s_lba32 + n_lba32 - 1) / n_sc % n_hd); /* End head */
-	.line	6582
-	lda	<L1136+n_hd_1
+	.line	6602
+	lda	<L1134+n_hd_1
 	and	#$ff
 	sta	<R0
 	stz	<R0+2
-	lda	<L1136+n_sc_1
+	lda	<L1134+n_sc_1
 	and	#$ff
 	sta	<R1
 	stz	<R1+2
 	clc
-	lda	<L1136+s_lba32_1
-	adc	<L1136+n_lba32_1
+	lda	<L1134+s_lba32_1
+	adc	<L1134+n_lba32_1
 	sta	<R2
-	lda	<L1136+s_lba32_1+2
-	adc	<L1136+n_lba32_1+2
+	lda	<L1134+s_lba32_1+2
+	adc	<L1134+n_lba32_1+2
 	sta	<R2+2
 	clc
 	lda	#$ffff
@@ -28120,21 +28103,21 @@ L1152:
 	sep	#$20
 	longa	off
 	lda	<R0
-	sta	<L1136+hd_1
+	sta	<L1134+hd_1
 	rep	#$20
 	longa	on
 ;			sc = (BYTE)((s_lba32 + n_lba32 - 1) % n_sc + 1); /* End sector */
-	.line	6583
-	lda	<L1136+n_sc_1
+	.line	6603
+	lda	<L1134+n_sc_1
 	and	#$ff
 	sta	<R0
 	stz	<R0+2
 	clc
-	lda	<L1136+s_lba32_1
-	adc	<L1136+n_lba32_1
+	lda	<L1134+s_lba32_1
+	adc	<L1134+n_lba32_1
 	sta	<R1
-	lda	<L1136+s_lba32_1+2
-	adc	<L1136+n_lba32_1+2
+	lda	<L1134+s_lba32_1+2
+	adc	<L1134+n_lba32_1+2
 	sta	<R1+2
 	clc
 	lda	#$ffff
@@ -28161,26 +28144,26 @@ L1152:
 	sep	#$20
 	longa	off
 	lda	<R1
-	sta	<L1136+sc_1
+	sta	<L1134+sc_1
 	rep	#$20
 	longa	on
 ;			pte[PTE_EdHead] = hd;
-	.line	6584
+	.line	6604
 	sep	#$20
 	longa	off
-	lda	<L1136+hd_1
+	lda	<L1134+hd_1
 	ldy	#$5
-	sta	[<L1136+pte_1],Y
+	sta	[<L1134+pte_1],Y
 	rep	#$20
 	longa	on
 ;			pte[PTE_EdSec] = (BYTE)((cy >> 2 & 0xC0) | sc);
-	.line	6585
-	lda	<L1136+cy_1
+	.line	6605
+	lda	<L1134+cy_1
 	lsr	A
 	lsr	A
 	and	#<$c0
 	sta	<R0
-	lda	<L1136+sc_1
+	lda	<L1134+sc_1
 	and	#$ff
 	sta	<R1
 	lda	<R1
@@ -28188,106 +28171,106 @@ L1152:
 	sep	#$20
 	longa	off
 	ldy	#$6
-	sta	[<L1136+pte_1],Y
+	sta	[<L1134+pte_1],Y
 	rep	#$20
 	longa	on
 ;			pte[PTE_EdCyl] = (BYTE)cy;
-	.line	6586
+	.line	6606
 	sep	#$20
 	longa	off
-	lda	<L1136+cy_1
+	lda	<L1134+cy_1
 	ldy	#$7
-	sta	[<L1136+pte_1],Y
+	sta	[<L1134+pte_1],Y
 	rep	#$20
 	longa	on
 ;
 ;			pte += SZ_PTE; /* Next entry */
-	.line	6588
+	.line	6608
 	clc
 	lda	#$10
-	adc	<L1136+pte_1
-	sta	<L1136+pte_1
-	bcc	L1153
-	inc	<L1136+pte_1+2
-L1153:
+	adc	<L1134+pte_1
+	sta	<L1134+pte_1
+	bcc	L1151
+	inc	<L1134+pte_1+2
+L1151:
 ;		}
-	.line	6589
+	.line	6609
 L10670:
 	clc
-	lda	<L1136+s_lba32_1
-	adc	<L1136+n_lba32_1
-	sta	<L1136+s_lba32_1
-	lda	<L1136+s_lba32_1+2
-	adc	<L1136+n_lba32_1+2
-	sta	<L1136+s_lba32_1+2
-	inc	<L1136+i_1
+	lda	<L1134+s_lba32_1
+	adc	<L1134+n_lba32_1
+	sta	<L1134+s_lba32_1
+	lda	<L1134+s_lba32_1+2
+	adc	<L1134+n_lba32_1+2
+	sta	<L1134+s_lba32_1+2
+	inc	<L1134+i_1
 L10673:
-	lda	<L1136+i_1
+	lda	<L1134+i_1
 	cmp	#<$4
-	bcc	L1155
-	brl	L1154
-L1155:
-	lda	<L1136+s_lba32_1
-	ora	<L1136+s_lba32_1+2
-	bne	L1156
-	brl	L1154
-L1156:
-	lda	<L1136+s_lba32_1
-	cmp	<L1136+sz_drv32_1
-	lda	<L1136+s_lba32_1+2
-	sbc	<L1136+sz_drv32_1+2
-	bcs	L1157
-	brl	L10672
-L1157:
+	bcc	L1153
+	brl	L1152
+L1153:
+	lda	<L1134+s_lba32_1
+	ora	<L1134+s_lba32_1+2
+	bne	L1154
+	brl	L1152
 L1154:
+	lda	<L1134+s_lba32_1
+	cmp	<L1134+sz_drv32_1
+	lda	<L1134+s_lba32_1+2
+	sbc	<L1134+sz_drv32_1+2
+	bcs	L1155
+	brl	L10672
+L1155:
+L1152:
 L10671:
 ;
 ;		st_word(buf + BS_55AA, 0xAA55); /* MBR signature */
-	.line	6591
+	.line	6611
 	pea	#<$aa55
 	clc
 	lda	#$1fe
-	adc	<L1135+buf_0
+	adc	<L1133+buf_0
 	sta	<R0
 	lda	#$0
-	adc	<L1135+buf_0+2
+	adc	<L1133+buf_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_word
 ;		if (disk_write(drv, buf, 0, 1) != RES_OK) return FR_DISK_ERR; /* Write it to the MBR */
-	.line	6592
+	.line	6612
 	pea	#<$1
 	pea	#^$0
 	pea	#<$0
-	pei	<L1135+buf_0+2
-	pei	<L1135+buf_0
-	pei	<L1135+drv_0
+	pei	<L1133+buf_0+2
+	pei	<L1133+buf_0
+	pei	<L1133+drv_0
 	jsl	~~disk_write
 	tax
-	bne	L1158
+	bne	L1156
 	brl	L10676
-L1158:
-	.line	6592
+L1156:
+	.line	6612
 	lda	#$1
-	brl	L1139
+	brl	L1137
 ;	}
 L10676:
-	.line	6593
+	.line	6613
 ;
 ;	return FR_OK;
-	.line	6595
+	.line	6615
 	lda	#$0
-	brl	L1139
+	brl	L1137
 ;}
-	.line	6596
-	.endblock	6596
-L1135	equ	44
-L1136	equ	17
+	.line	6616
+	.endblock	6616
+L1133	equ	44
+L1134	equ	17
 	ends
 	efunc
-	.endfunc	6596,17,44
-	.line	6596
+	.endfunc	6616,17,44
+	.line	6616
 ;
 ;FRESULT f_mkfs (
 ;		const TCHAR* path, /* Logical drive number */
@@ -28296,18 +28279,18 @@ L1136	equ	17
 ;		UINT len /* Size of working buffer [byte] */
 ;)
 ;{
-	.line	6598
-	.line	6604
+	.line	6618
+	.line	6624
 	FFDOS
 	xdef	~~f_mkfs
 	func
-	.function	6604
+	.function	6624
 ~~f_mkfs:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1159
+	sbc	#L1157
 	tcs
 	phd
 	tcd
@@ -28315,22 +28298,22 @@ path_0	set	4
 opt_0	set	8
 work_0	set	12
 len_0	set	16
-	.block	6604
+	.block	6624
 ;	static const WORD cst[] =
 	data
-L1162:
+L1160:
 ;	{	1, 4, 16, 64, 256, 512, 0}; /* Cluster size boundary for FAT volume (4Ks unit) */
 	dw	$1,$4,$10,$40,$100,$200,$0
 	ends
 ;	static const WORD cst32[] =
 	data
-L1163:
+L1161:
 ;	{	1, 2, 4, 8, 16, 32, 0}; /* Cluster size boundary for FAT32 volume (128Ks unit) */
 	dw	$1,$2,$4,$8,$10,$20,$0
 	ends
 ;	static const MKFS_PARM defopt =
 	data
-L1164:
+L1162:
 ;	{	FM_ANY, 0, 0, 0, 0}; /* Default parameter */
 	db	$7,$0
 	dw	$0,$0
@@ -28379,9 +28362,9 @@ i_1	set	87
 vol_1	set	89
 ds_1	set	91
 fr_1	set	92
-	.sym	cst,1162,101,19,0,7
-	.sym	cst32,1163,101,19,0,7
-	.sym	defopt,1164,10,19,80,77
+	.sym	cst,1160,101,19,0,7
+	.sym	cst32,1161,101,19,0,7
+	.sym	defopt,1162,10,19,80,80
 	.sym	fsopt,0,14,1,8
 	.sym	fsty,1,14,1,8
 	.sym	sys,2,14,1,8
@@ -28413,42 +28396,42 @@ fr_1	set	92
 	.sym	ds,91,14,1,8
 	.sym	fr,92,5,1,16
 	.sym	path,4,142,6,32
-	.sym	opt,8,138,6,32,77
+	.sym	opt,8,138,6,32,80
 	.sym	work,12,129,6,32
 	.sym	len,16,16,6,16
-	.line	6623
+	.line	6643
 	pea	#0
 	clc
 	tdc
-	adc	#<L1159+path_0
+	adc	#<L1157+path_0
 	pha
 	jsl	~~get_ldnumber
-	sta	<L1160+vol_1
+	sta	<L1158+vol_1
 ;	if (vol < 0) return FR_INVALID_DRIVE;
-	.line	6624
-	lda	<L1160+vol_1
-	bmi	L1165
+	.line	6644
+	lda	<L1158+vol_1
+	bmi	L1163
 	brl	L10677
-L1165:
-	.line	6624
+L1163:
+	.line	6644
 	lda	#$b
-L1166:
+L1164:
 	tay
-	lda	<L1159+2
-	sta	<L1159+2+14
-	lda	<L1159+1
-	sta	<L1159+1+14
+	lda	<L1157+2
+	sta	<L1157+2+14
+	lda	<L1157+1
+	sta	<L1157+1+14
 	pld
 	tsc
 	clc
-	adc	#L1159+14
+	adc	#L1157+14
 	tcs
 	tya
 	rtl
 ;	if (FatFs[vol]) FatFs[vol]->fs_type = 0; /* Clear the fs object if mounted */
 L10677:
-	.line	6625
-	lda	<L1160+vol_1
+	.line	6645
+	lda	<L1158+vol_1
 	asl	A
 	asl	A
 	sta	<R0
@@ -28459,11 +28442,11 @@ L10677:
 	lda	(<R1)
 	ldy	#$2
 	ora	(<R1),Y
-	bne	L1167
+	bne	L1165
 	brl	L10678
-L1167:
-	.line	6625
-	lda	<L1160+vol_1
+L1165:
+	.line	6645
+	lda	<L1158+vol_1
 	asl	A
 	asl	A
 	sta	<R0
@@ -28484,204 +28467,204 @@ L1167:
 	longa	on
 ;	pdrv = LD2PD(vol); /* Physical drive */
 L10678:
-	.line	6626
+	.line	6646
 	sep	#$20
 	longa	off
-	lda	<L1160+vol_1
-	sta	<L1160+pdrv_1
+	lda	<L1158+vol_1
+	sta	<L1158+pdrv_1
 	rep	#$20
 	longa	on
 ;	ipart = LD2PT(vol); /* Partition (0:create as new, 1..:get from partition table) */
-	.line	6627
+	.line	6647
 	sep	#$20
 	longa	off
-	stz	<L1160+ipart_1
+	stz	<L1158+ipart_1
 	rep	#$20
 	longa	on
 ;	if (!opt) opt = &defopt; /* Use default parameter if it is not given */
-	.line	6628
-	lda	<L1159+opt_0
-	ora	<L1159+opt_0+2
-	beq	L1168
+	.line	6648
+	lda	<L1157+opt_0
+	ora	<L1157+opt_0+2
+	beq	L1166
 	brl	L10679
-L1168:
-	.line	6628
-	lda	#<L1164
-	sta	<L1159+opt_0
+L1166:
+	.line	6648
+	lda	#<L1162
+	sta	<L1157+opt_0
 	xref	_BEG_DATA
 	lda	#_BEG_DATA>>16
-	sta	<L1159+opt_0+2
+	sta	<L1157+opt_0+2
 ;
 ;	/* Get physical drive status (sz_drv, sz_blk, ss) */
 ;	ds = disk_initialize(pdrv);
 L10679:
-	.line	6631
-	pei	<L1160+pdrv_1
+	.line	6651
+	pei	<L1158+pdrv_1
 	jsl	~~disk_initialize
 	sep	#$20
 	longa	off
-	sta	<L1160+ds_1
+	sta	<L1158+ds_1
 	rep	#$20
 	longa	on
 ;	if (ds & STA_NOINIT) return FR_NOT_READY;
-	.line	6632
+	.line	6652
 	sep	#$20
 	longa	off
-	lda	<L1160+ds_1
+	lda	<L1158+ds_1
 	and	#<$1
 	rep	#$20
 	longa	on
-	bne	L1169
+	bne	L1167
 	brl	L10680
-L1169:
-	.line	6632
+L1167:
+	.line	6652
 	lda	#$3
-	brl	L1166
+	brl	L1164
 ;	if (ds & STA_PROTECT) return FR_WRITE_PROTECTED;
 L10680:
-	.line	6633
+	.line	6653
 	sep	#$20
 	longa	off
-	lda	<L1160+ds_1
+	lda	<L1158+ds_1
 	and	#<$4
 	rep	#$20
 	longa	on
-	bne	L1170
+	bne	L1168
 	brl	L10681
-L1170:
-	.line	6633
+L1168:
+	.line	6653
 	lda	#$a
-	brl	L1166
+	brl	L1164
 ;	sz_blk = opt->align;
 L10681:
-	.line	6634
+	.line	6654
 	ldy	#$2
-	lda	[<L1159+opt_0],Y
-	sta	<L1160+sz_blk_1
-	stz	<L1160+sz_blk_1+2
+	lda	[<L1157+opt_0],Y
+	sta	<L1158+sz_blk_1
+	stz	<L1158+sz_blk_1+2
 ;	if (sz_blk == 0 && disk_ioctl(pdrv, GET_BLOCK_SIZE, &sz_blk) != RES_OK) sz_blk = 1;
-	.line	6635
-	lda	<L1160+sz_blk_1
-	ora	<L1160+sz_blk_1+2
-	beq	L1171
+	.line	6655
+	lda	<L1158+sz_blk_1
+	ora	<L1158+sz_blk_1+2
+	beq	L1169
 	brl	L10682
-L1171:
+L1169:
 	pea	#0
 	clc
 	tdc
-	adc	#<L1160+sz_blk_1
+	adc	#<L1158+sz_blk_1
 	pha
 	pea	#<$3
-	pei	<L1160+pdrv_1
+	pei	<L1158+pdrv_1
 	jsl	~~disk_ioctl
 	tax
-	bne	L1172
+	bne	L1170
 	brl	L10682
-L1172:
-	.line	6635
+L1170:
+	.line	6655
 	lda	#$1
-	sta	<L1160+sz_blk_1
+	sta	<L1158+sz_blk_1
 	lda	#$0
-	sta	<L1160+sz_blk_1+2
+	sta	<L1158+sz_blk_1+2
 ;	if (sz_blk == 0 || sz_blk > 0x8000 || (sz_blk & (sz_blk - 1))) sz_blk = 1;
 L10682:
-	.line	6636
-	lda	<L1160+sz_blk_1
-	ora	<L1160+sz_blk_1+2
-	bne	L1174
-	brl	L1173
-L1174:
+	.line	6656
+	lda	<L1158+sz_blk_1
+	ora	<L1158+sz_blk_1+2
+	bne	L1172
+	brl	L1171
+L1172:
 	lda	#$8000
-	cmp	<L1160+sz_blk_1
+	cmp	<L1158+sz_blk_1
 	lda	#$0
-	sbc	<L1160+sz_blk_1+2
-	bcs	L1175
-	brl	L1173
-L1175:
+	sbc	<L1158+sz_blk_1+2
+	bcs	L1173
+	brl	L1171
+L1173:
 	clc
 	lda	#$ffff
-	adc	<L1160+sz_blk_1
+	adc	<L1158+sz_blk_1
 	sta	<R0
 	lda	#$ffff
-	adc	<L1160+sz_blk_1+2
+	adc	<L1158+sz_blk_1+2
 	sta	<R0+2
-	lda	<L1160+sz_blk_1
+	lda	<L1158+sz_blk_1
 	and	<R0
 	sta	<R1
-	lda	<L1160+sz_blk_1+2
+	lda	<L1158+sz_blk_1+2
 	and	<R0+2
 	sta	<R1+2
 	lda	<R1
 	ora	<R1+2
-	bne	L1176
+	bne	L1174
 	brl	L10683
-L1176:
-L1173:
-	.line	6636
+L1174:
+L1171:
+	.line	6656
 	lda	#$1
-	sta	<L1160+sz_blk_1
+	sta	<L1158+sz_blk_1
 	lda	#$0
-	sta	<L1160+sz_blk_1+2
+	sta	<L1158+sz_blk_1+2
 ;#if FF_MAX_SS != FF_MIN_SS
 ;	if (disk_ioctl(pdrv, GET_SECTOR_SIZE, &ss) != RES_OK) return FR_DISK_ERR;
 ;	if (ss > FF_MAX_SS || ss < FF_MIN_SS || (ss & (ss - 1))) return FR_DISK_ERR;
 ;#else
 ;	ss = FF_MAX_SS;
 L10683:
-	.line	6641
+	.line	6661
 	lda	#$200
-	sta	<L1160+ss_1
+	sta	<L1158+ss_1
 ;#endif
 ;	/* Options for FAT sub-type and FAT parameters */
 ;	fsopt = opt->fmt & (FM_ANY | FM_SFD);
-	.line	6644
+	.line	6664
 	sep	#$20
 	longa	off
-	lda	[<L1159+opt_0]
+	lda	[<L1157+opt_0]
 	and	#<$f
-	sta	<L1160+fsopt_1
+	sta	<L1158+fsopt_1
 	rep	#$20
 	longa	on
 ;	n_fat = (opt->n_fat >= 1 && opt->n_fat <= 2) ? opt->n_fat : 1;
-	.line	6645
+	.line	6665
 	sep	#$20
 	longa	off
 	ldy	#$1
-	lda	[<L1159+opt_0],Y
+	lda	[<L1157+opt_0],Y
 	cmp	#<$1
 	rep	#$20
 	longa	on
-	bcs	L1178
-	brl	L1177
-L1178:
+	bcs	L1176
+	brl	L1175
+L1176:
 	sep	#$20
 	longa	off
 	lda	#$2
 	ldy	#$1
-	cmp	[<L1159+opt_0],Y
+	cmp	[<L1157+opt_0],Y
 	rep	#$20
 	longa	on
-	bcs	L1179
-	brl	L1177
-L1179:
-	ldy	#$1
-	lda	[<L1159+opt_0],Y
-	and	#$ff
-	bra	L1180
+	bcs	L1177
+	brl	L1175
 L1177:
+	ldy	#$1
+	lda	[<L1157+opt_0],Y
+	and	#$ff
+	bra	L1178
+L1175:
 	lda	#$1
-L1180:
-	sta	<L1160+n_fat_1
+L1178:
+	sta	<L1158+n_fat_1
 ;	n_root = (opt->n_root >= 1 && opt->n_root <= 32768 && (opt->n_root % (ss / SZDIRE)) == 0) ? opt->n_root : 512;
-	.line	6646
+	.line	6666
 	ldy	#$4
-	lda	[<L1159+opt_0],Y
+	lda	[<L1157+opt_0],Y
 	cmp	#<$1
-	bcs	L1182
-	brl	L1181
-L1182:
+	bcs	L1180
+	brl	L1179
+L1180:
 	ldy	#$4
-	lda	[<L1159+opt_0],Y
+	lda	[<L1157+opt_0],Y
 	sta	<R0
 	stz	<R0+2
 	sec
@@ -28689,147 +28672,147 @@ L1182:
 	sbc	<R0
 	lda	#$0
 	sbc	<R0+2
-	bvs	L1183
+	bvs	L1181
 	eor	#$8000
-L1183:
-	bmi	L1184
-	brl	L1181
-L1184:
-	lda	<L1160+ss_1
+L1181:
+	bmi	L1182
+	brl	L1179
+L1182:
+	lda	<L1158+ss_1
 	ldx	#<$20
 	xref	~~~div
 	jsl	~~~div
 	sta	<R0
 	ldy	#$4
-	lda	[<L1159+opt_0],Y
+	lda	[<L1157+opt_0],Y
 	ldx	<R0
 	xref	~~~umd
 	jsl	~~~umd
 	tax
-	beq	L1185
-	brl	L1181
-L1185:
+	beq	L1183
+	brl	L1179
+L1183:
 	ldy	#$4
-	lda	[<L1159+opt_0],Y
-	bra	L1186
-L1181:
+	lda	[<L1157+opt_0],Y
+	bra	L1184
+L1179:
 	lda	#$200
-L1186:
-	sta	<L1160+n_root_1
+L1184:
+	sta	<L1158+n_root_1
 ;	sz_au = (opt->au_size <= 0x1000000 && (opt->au_size & (opt->au_size - 1)) == 0) ? opt->au_size : 0;
-	.line	6647
+	.line	6667
 	lda	#$0
 	ldy	#$6
-	cmp	[<L1159+opt_0],Y
+	cmp	[<L1157+opt_0],Y
 	lda	#$100
 	ldy	#$8
-	sbc	[<L1159+opt_0],Y
-	bcs	L1188
-	brl	L1187
-L1188:
+	sbc	[<L1157+opt_0],Y
+	bcs	L1186
+	brl	L1185
+L1186:
 	clc
 	lda	#$ffff
 	ldy	#$6
-	adc	[<L1159+opt_0],Y
+	adc	[<L1157+opt_0],Y
 	sta	<R0
 	lda	#$ffff
 	ldy	#$8
-	adc	[<L1159+opt_0],Y
+	adc	[<L1157+opt_0],Y
 	sta	<R0+2
 	ldy	#$6
-	lda	[<L1159+opt_0],Y
+	lda	[<L1157+opt_0],Y
 	and	<R0
 	sta	<R1
 	ldy	#$8
-	lda	[<L1159+opt_0],Y
+	lda	[<L1157+opt_0],Y
 	and	<R0+2
 	sta	<R1+2
 	lda	<R1
 	ora	<R1+2
-	beq	L1189
-	brl	L1187
-L1189:
+	beq	L1187
+	brl	L1185
+L1187:
 	ldy	#$8
-	lda	[<L1159+opt_0],Y
+	lda	[<L1157+opt_0],Y
 	tax
 	ldy	#$6
-	lda	[<L1159+opt_0],Y
-	bra	L1190
-L1187:
+	lda	[<L1157+opt_0],Y
+	bra	L1188
+L1185:
 	lda	#$0
 	tax
 	lda	#$0
-L1190:
+L1188:
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
-	sta	<L1160+sz_au_1
+	sta	<L1158+sz_au_1
 	lda	<R0+2
-	sta	<L1160+sz_au_1+2
+	sta	<L1158+sz_au_1+2
 ;	sz_au /= ss; /* Byte --> Sector */
-	.line	6648
+	.line	6668
 	ldy	#$0
-	lda	<L1160+ss_1
-	bpl	L1191
+	lda	<L1158+ss_1
+	bpl	L1189
 	dey
-L1191:
+L1189:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pei	<L1160+sz_au_1+2
-	pei	<L1160+sz_au_1
+	pei	<L1158+sz_au_1+2
+	pei	<L1158+sz_au_1
 	xref	~~~ludv
 	jsl	~~~ludv
-	sta	<L1160+sz_au_1
-	stx	<L1160+sz_au_1+2
+	sta	<L1158+sz_au_1
+	stx	<L1158+sz_au_1+2
 ;
 ;	/* Get working buffer */
 ;	sz_buf = len / ss; /* Size of working buffer [sector] */
-	.line	6651
-	lda	<L1159+len_0
-	ldx	<L1160+ss_1
+	.line	6671
+	lda	<L1157+len_0
+	ldx	<L1158+ss_1
 	xref	~~~udv
 	jsl	~~~udv
 	sta	<R0
 	lda	<R0
-	sta	<L1160+sz_buf_1
-	stz	<L1160+sz_buf_1+2
+	sta	<L1158+sz_buf_1
+	stz	<L1158+sz_buf_1+2
 ;	if (sz_buf == 0) return FR_NOT_ENOUGH_CORE;
-	.line	6652
-	lda	<L1160+sz_buf_1
-	ora	<L1160+sz_buf_1+2
-	beq	L1192
+	.line	6672
+	lda	<L1158+sz_buf_1
+	ora	<L1158+sz_buf_1+2
+	beq	L1190
 	brl	L10684
-L1192:
-	.line	6652
+L1190:
+	.line	6672
 	lda	#$11
-	brl	L1166
+	brl	L1164
 ;	buf = (BYTE*)work; /* Working buffer */
 L10684:
-	.line	6653
-	lda	<L1159+work_0
-	sta	<L1160+buf_1
-	lda	<L1159+work_0+2
-	sta	<L1160+buf_1+2
+	.line	6673
+	lda	<L1157+work_0
+	sta	<L1158+buf_1
+	lda	<L1157+work_0+2
+	sta	<L1158+buf_1+2
 ;#if FF_USE_LFN == 3
 ;	if (!buf) buf = ff_memalloc(sz_buf * ss); /* Use heap memory for working buffer */
-	.line	6655
-	lda	<L1160+buf_1
-	ora	<L1160+buf_1+2
-	beq	L1193
+	.line	6675
+	lda	<L1158+buf_1
+	ora	<L1158+buf_1+2
+	beq	L1191
 	brl	L10685
-L1193:
-	.line	6655
+L1191:
+	.line	6675
 	ldy	#$0
-	lda	<L1160+ss_1
-	bpl	L1194
+	lda	<L1158+ss_1
+	bpl	L1192
 	dey
-L1194:
+L1192:
 	sta	<R0
 	sty	<R0+2
-	pei	<L1160+sz_buf_1+2
-	pei	<L1160+sz_buf_1
+	pei	<L1158+sz_buf_1+2
+	pei	<L1158+sz_buf_1
 	pei	<R0+2
 	pei	<R0
 	xref	~~~lmul
@@ -28838,79 +28821,79 @@ L1194:
 	stx	<R0+2
 	pei	<R0
 	jsl	~~ff_memalloc
-	sta	<L1160+buf_1
-	stx	<L1160+buf_1+2
+	sta	<L1158+buf_1
+	stx	<L1158+buf_1+2
 ;#endif
 ;	if (!buf) return FR_NOT_ENOUGH_CORE;
 L10685:
-	.line	6657
-	lda	<L1160+buf_1
-	ora	<L1160+buf_1+2
-	beq	L1195
+	.line	6677
+	lda	<L1158+buf_1
+	ora	<L1158+buf_1+2
+	beq	L1193
 	brl	L10686
-L1195:
-	.line	6657
+L1193:
+	.line	6677
 	lda	#$11
-	brl	L1166
+	brl	L1164
 ;
 ;	/* Determine where the volume to be located (b_vol, sz_vol) */
 ;	b_vol = sz_vol = 0;
 L10686:
-	.line	6660
-	stz	<L1160+sz_vol_1
-	stz	<L1160+sz_vol_1+2
-	stz	<L1160+b_vol_1
-	stz	<L1160+b_vol_1+2
+	.line	6680
+	stz	<L1158+sz_vol_1
+	stz	<L1158+sz_vol_1+2
+	stz	<L1158+b_vol_1
+	stz	<L1158+b_vol_1+2
 ;	if (FF_MULTI_PARTITION && ipart != 0)
-	.line	6661
+	.line	6681
 ;	{ /* Is the volume associated with any specific partition? */
 	brl	L10687
-	lda	<L1160+ipart_1
+	lda	<L1158+ipart_1
 	and	#$ff
-	bne	L1196
+	bne	L1194
 	brl	L10687
-L1196:
-	.line	6662
+L1194:
+	.line	6682
 ;		/* Get partition location from the existing partition table */
 ;		if (disk_read(pdrv, buf, 0, 1) != RES_OK) LEAVE_MKFS(FR_DISK_ERR); /* Load MBR */
-	.line	6664
+	.line	6684
 	pea	#<$1
 	pea	#^$0
 	pea	#<$0
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
-	pei	<L1160+pdrv_1
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
+	pei	<L1158+pdrv_1
 	jsl	~~disk_read
 	tax
-	bne	L1197
+	bne	L1195
 	brl	L10688
-L1197:
-	.line	6664
-	.line	6664
-	lda	<L1159+work_0
-	ora	<L1159+work_0+2
-	beq	L1198
+L1195:
+	.line	6684
+	.line	6684
+	lda	<L1157+work_0
+	ora	<L1157+work_0+2
+	beq	L1196
 	brl	L10689
-L1198:
-	.line	6664
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+L1196:
+	.line	6684
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~ff_memfree
 L10689:
-	.line	6664
+	.line	6684
 	lda	#$1
-	brl	L1166
-	.line	6664
+	brl	L1164
+	.line	6684
 L10688:
-	.line	6664
+	.line	6684
 ;		if (ld_word(buf + BS_55AA) != 0xAA55) LEAVE_MKFS(FR_MKFS_ABORTED); /* Check if MBR is valid */
-	.line	6665
+	.line	6685
 	clc
 	lda	#$1fe
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
@@ -28918,27 +28901,27 @@ L10688:
 	sta	<R1
 	lda	<R1
 	cmp	#<$aa55
-	bne	L1199
+	bne	L1197
 	brl	L10690
-L1199:
-	.line	6665
-	.line	6665
-	lda	<L1159+work_0
-	ora	<L1159+work_0+2
-	beq	L1200
+L1197:
+	.line	6685
+	.line	6685
+	lda	<L1157+work_0
+	ora	<L1157+work_0+2
+	beq	L1198
 	brl	L10691
-L1200:
-	.line	6665
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+L1198:
+	.line	6685
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~ff_memfree
 L10691:
-	.line	6665
+	.line	6685
 	lda	#$e
-	brl	L1166
-	.line	6665
+	brl	L1164
+	.line	6685
 L10690:
-	.line	6665
+	.line	6685
 ;#if FF_LBA64
 ;		if (buf[MBR_Table + PTE_System] == 0xEE)
 ;		{ /* GPT protective MBR? */
@@ -28968,10 +28951,10 @@ L10690:
 ;		else
 ;#endif
 ;		{ /* Get the partition location from MBR partition table */
-	.line	6694
+	.line	6714
 ;			pte = buf + (MBR_Table + (ipart - 1) * SZ_PTE);
-	.line	6695
-	lda	<L1160+ipart_1
+	.line	6715
+	lda	<L1158+ipart_1
 	and	#$ff
 	sta	<R1
 	lda	<R1
@@ -28986,136 +28969,136 @@ L10690:
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L1201
+	bpl	L1199
 	dey
-L1201:
+L1199:
 	sta	<R0
 	sty	<R0+2
 	clc
-	lda	<L1160+buf_1
+	lda	<L1158+buf_1
 	adc	<R0
-	sta	<L1160+pte_1
-	lda	<L1160+buf_1+2
+	sta	<L1158+pte_1
+	lda	<L1158+buf_1+2
 	adc	<R0+2
-	sta	<L1160+pte_1+2
+	sta	<L1158+pte_1+2
 ;			if (ipart > 4 || pte[PTE_System] == 0) LEAVE_MKFS(FR_MKFS_ABORTED); /* No partition? */
-	.line	6696
+	.line	6716
 	sep	#$20
 	longa	off
 	lda	#$4
-	cmp	<L1160+ipart_1
+	cmp	<L1158+ipart_1
 	rep	#$20
 	longa	on
-	bcs	L1203
-	brl	L1202
-L1203:
+	bcs	L1201
+	brl	L1200
+L1201:
 	ldy	#$4
-	lda	[<L1160+pte_1],Y
+	lda	[<L1158+pte_1],Y
 	and	#$ff
-	beq	L1204
+	beq	L1202
 	brl	L10692
-L1204:
 L1202:
-	.line	6696
-	.line	6696
-	lda	<L1159+work_0
-	ora	<L1159+work_0+2
-	beq	L1205
+L1200:
+	.line	6716
+	.line	6716
+	lda	<L1157+work_0
+	ora	<L1157+work_0+2
+	beq	L1203
 	brl	L10693
-L1205:
-	.line	6696
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+L1203:
+	.line	6716
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~ff_memfree
 L10693:
-	.line	6696
+	.line	6716
 	lda	#$e
-	brl	L1166
-	.line	6696
+	brl	L1164
+	.line	6716
 L10692:
-	.line	6696
+	.line	6716
 ;			b_vol = ld_dword(pte + PTE_StLba); /* Get volume start sector */
-	.line	6697
+	.line	6717
 	clc
 	lda	#$8
-	adc	<L1160+pte_1
+	adc	<L1158+pte_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+pte_1+2
+	adc	<L1158+pte_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~ld_dword
-	sta	<L1160+b_vol_1
-	stx	<L1160+b_vol_1+2
+	sta	<L1158+b_vol_1
+	stx	<L1158+b_vol_1+2
 ;			sz_vol = ld_dword(pte + PTE_SizLba); /* Get volume size */
-	.line	6698
+	.line	6718
 	clc
 	lda	#$c
-	adc	<L1160+pte_1
+	adc	<L1158+pte_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+pte_1+2
+	adc	<L1158+pte_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~ld_dword
-	sta	<L1160+sz_vol_1
-	stx	<L1160+sz_vol_1+2
+	sta	<L1158+sz_vol_1
+	stx	<L1158+sz_vol_1+2
 ;		}
-	.line	6699
+	.line	6719
 ;	}
-	.line	6700
+	.line	6720
 ;	else
 	brl	L10694
 L10687:
 ;	{ /* The volume is associated with a physical drive */
-	.line	6702
+	.line	6722
 ;		if (disk_ioctl(pdrv, GET_SECTOR_COUNT, &sz_vol) != RES_OK) LEAVE_MKFS(FR_DISK_ERR);
-	.line	6703
+	.line	6723
 	pea	#0
 	clc
 	tdc
-	adc	#<L1160+sz_vol_1
+	adc	#<L1158+sz_vol_1
 	pha
 	pea	#<$1
-	pei	<L1160+pdrv_1
+	pei	<L1158+pdrv_1
 	jsl	~~disk_ioctl
 	tax
-	bne	L1206
+	bne	L1204
 	brl	L10695
-L1206:
-	.line	6703
-	.line	6703
-	lda	<L1159+work_0
-	ora	<L1159+work_0+2
-	beq	L1207
+L1204:
+	.line	6723
+	.line	6723
+	lda	<L1157+work_0
+	ora	<L1157+work_0+2
+	beq	L1205
 	brl	L10696
-L1207:
-	.line	6703
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+L1205:
+	.line	6723
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~ff_memfree
 L10696:
-	.line	6703
+	.line	6723
 	lda	#$1
-	brl	L1166
-	.line	6703
+	brl	L1164
+	.line	6723
 L10695:
-	.line	6703
+	.line	6723
 ;		if (!(fsopt & FM_SFD))
-	.line	6704
+	.line	6724
 ;		{ /* To be partitioned? */
 	sep	#$20
 	longa	off
-	lda	<L1160+fsopt_1
+	lda	<L1158+fsopt_1
 	and	#<$8
 	rep	#$20
 	longa	on
-	beq	L1208
+	beq	L1206
 	brl	L10697
-L1208:
-	.line	6705
+L1206:
+	.line	6725
 ;			/* Create a single-partition on the drive in this function */
 ;#if FF_LBA64
 ;			if (sz_vol >= FF_MIN_GPT)
@@ -29126,234 +29109,234 @@ L1208:
 ;			else
 ;#endif
 ;			{ /* Partitioning is in MBR */
-	.line	6715
+	.line	6735
 ;				if (sz_vol > N_SEC_TRACK)
-	.line	6716
+	.line	6736
 ;				{
 	lda	#$3f
-	cmp	<L1160+sz_vol_1
+	cmp	<L1158+sz_vol_1
 	lda	#$0
-	sbc	<L1160+sz_vol_1+2
-	bcc	L1209
+	sbc	<L1158+sz_vol_1+2
+	bcc	L1207
 	brl	L10698
-L1209:
-	.line	6717
+L1207:
+	.line	6737
 ;					b_vol = N_SEC_TRACK; sz_vol -= b_vol; /* Estimated partition offset and size */
-	.line	6718
+	.line	6738
 	lda	#$3f
-	sta	<L1160+b_vol_1
+	sta	<L1158+b_vol_1
 	lda	#$0
-	sta	<L1160+b_vol_1+2
-	.line	6718
+	sta	<L1158+b_vol_1+2
+	.line	6738
 	sec
-	lda	<L1160+sz_vol_1
-	sbc	<L1160+b_vol_1
-	sta	<L1160+sz_vol_1
-	lda	<L1160+sz_vol_1+2
-	sbc	<L1160+b_vol_1+2
-	sta	<L1160+sz_vol_1+2
+	lda	<L1158+sz_vol_1
+	sbc	<L1158+b_vol_1
+	sta	<L1158+sz_vol_1
+	lda	<L1158+sz_vol_1+2
+	sbc	<L1158+b_vol_1+2
+	sta	<L1158+sz_vol_1+2
 ;				}
-	.line	6719
+	.line	6739
 ;			}
 L10698:
-	.line	6720
+	.line	6740
 ;		}
-	.line	6721
+	.line	6741
 ;	}
 L10697:
-	.line	6722
+	.line	6742
 L10694:
 ;	if (sz_vol < 128) LEAVE_MKFS(FR_MKFS_ABORTED); /* Check if volume size is >=128s */
-	.line	6723
-	lda	<L1160+sz_vol_1
+	.line	6743
+	lda	<L1158+sz_vol_1
 	cmp	#<$80
-	lda	<L1160+sz_vol_1+2
+	lda	<L1158+sz_vol_1+2
 	sbc	#^$80
-	bcc	L1210
+	bcc	L1208
 	brl	L10699
-L1210:
-	.line	6723
-	.line	6723
-	lda	<L1159+work_0
-	ora	<L1159+work_0+2
-	beq	L1211
+L1208:
+	.line	6743
+	.line	6743
+	lda	<L1157+work_0
+	ora	<L1157+work_0+2
+	beq	L1209
 	brl	L10700
-L1211:
-	.line	6723
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+L1209:
+	.line	6743
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~ff_memfree
 L10700:
-	.line	6723
+	.line	6743
 	lda	#$e
-	brl	L1166
-	.line	6723
+	brl	L1164
+	.line	6743
 L10699:
-	.line	6723
+	.line	6743
 ;
 ;	/* Now start to create a FAT volume at b_vol and sz_vol */
 ;
 ;	do
-	.line	6727
+	.line	6747
 L10703:
 ;	{ /* Pre-determine the FAT type */
-	.line	6728
+	.line	6748
 ;		if (FF_FS_EXFAT && (fsopt & FM_EXFAT))
-	.line	6729
+	.line	6749
 ;		{ /* exFAT possible? */
 	brl	L10704
 	sep	#$20
 	longa	off
-	lda	<L1160+fsopt_1
+	lda	<L1158+fsopt_1
 	and	#<$4
 	rep	#$20
 	longa	on
-	bne	L1212
+	bne	L1210
 	brl	L10704
-L1212:
-	.line	6730
+L1210:
+	.line	6750
 ;			if ((fsopt & FM_ANY) == FM_EXFAT || sz_vol >= 0x4000000 || sz_au > 128)
-	.line	6731
+	.line	6751
 ;			{ /* exFAT only, vol >= 64MS or sz_au > 128S ? */
-	lda	<L1160+fsopt_1
+	lda	<L1158+fsopt_1
 	and	#<$7
 	sta	<R0
 	lda	<R0
 	cmp	#<$4
-	bne	L1214
-	brl	L1213
-L1214:
-	lda	<L1160+sz_vol_1
+	bne	L1212
+	brl	L1211
+L1212:
+	lda	<L1158+sz_vol_1
 	cmp	#<$4000000
-	lda	<L1160+sz_vol_1+2
+	lda	<L1158+sz_vol_1+2
 	sbc	#^$4000000
-	bcc	L1215
-	brl	L1213
-L1215:
-	lda	#$80
-	cmp	<L1160+sz_au_1
-	lda	#$0
-	sbc	<L1160+sz_au_1+2
-	bcc	L1216
-	brl	L10705
-L1216:
+	bcc	L1213
+	brl	L1211
 L1213:
-	.line	6732
+	lda	#$80
+	cmp	<L1158+sz_au_1
+	lda	#$0
+	sbc	<L1158+sz_au_1+2
+	bcc	L1214
+	brl	L10705
+L1214:
+L1211:
+	.line	6752
 ;				fsty = FS_EXFAT; break;
-	.line	6733
+	.line	6753
 	sep	#$20
 	longa	off
 	lda	#$4
-	sta	<L1160+fsty_1
+	sta	<L1158+fsty_1
 	rep	#$20
 	longa	on
-	.line	6733
+	.line	6753
 	brl	L10702
 ;			}
-	.line	6734
+	.line	6754
 ;		}
 L10705:
-	.line	6735
+	.line	6755
 ;#if FF_LBA64
 ;		if (sz_vol >= 0x100000000) LEAVE_MKFS(FR_MKFS_ABORTED); /* Too large volume for FAT/FAT32 */
 ;#endif
 ;		if (sz_au > 128) sz_au = 128; /* Invalid AU for FAT/FAT32? */
 L10704:
-	.line	6739
+	.line	6759
 	lda	#$80
-	cmp	<L1160+sz_au_1
+	cmp	<L1158+sz_au_1
 	lda	#$0
-	sbc	<L1160+sz_au_1+2
-	bcc	L1217
+	sbc	<L1158+sz_au_1+2
+	bcc	L1215
 	brl	L10706
-L1217:
-	.line	6739
+L1215:
+	.line	6759
 	lda	#$80
-	sta	<L1160+sz_au_1
+	sta	<L1158+sz_au_1
 	lda	#$0
-	sta	<L1160+sz_au_1+2
+	sta	<L1158+sz_au_1+2
 ;		if (fsopt & FM_FAT32)
 L10706:
-	.line	6740
+	.line	6760
 ;		{ /* FAT32 possible? */
 	sep	#$20
 	longa	off
-	lda	<L1160+fsopt_1
+	lda	<L1158+fsopt_1
 	and	#<$2
 	rep	#$20
 	longa	on
-	bne	L1218
+	bne	L1216
 	brl	L10707
-L1218:
-	.line	6741
+L1216:
+	.line	6761
 ;			if (!(fsopt & FM_FAT))
-	.line	6742
+	.line	6762
 ;			{ /* no-FAT? */
 	sep	#$20
 	longa	off
-	lda	<L1160+fsopt_1
+	lda	<L1158+fsopt_1
 	and	#<$1
 	rep	#$20
 	longa	on
-	beq	L1219
+	beq	L1217
 	brl	L10708
-L1219:
-	.line	6743
+L1217:
+	.line	6763
 ;				fsty = FS_FAT32; break;
-	.line	6744
+	.line	6764
 	sep	#$20
 	longa	off
 	lda	#$3
-	sta	<L1160+fsty_1
+	sta	<L1158+fsty_1
 	rep	#$20
 	longa	on
-	.line	6744
+	.line	6764
 	brl	L10702
 ;			}
-	.line	6745
+	.line	6765
 ;		}
 L10708:
-	.line	6746
+	.line	6766
 ;		if (!(fsopt & FM_FAT)) LEAVE_MKFS(FR_INVALID_PARAMETER); /* no-FAT? */
 L10707:
-	.line	6747
+	.line	6767
 	sep	#$20
 	longa	off
-	lda	<L1160+fsopt_1
+	lda	<L1158+fsopt_1
 	and	#<$1
 	rep	#$20
 	longa	on
-	beq	L1220
+	beq	L1218
 	brl	L10709
-L1220:
-	.line	6747
-	.line	6747
-	lda	<L1159+work_0
-	ora	<L1159+work_0+2
-	beq	L1221
+L1218:
+	.line	6767
+	.line	6767
+	lda	<L1157+work_0
+	ora	<L1157+work_0+2
+	beq	L1219
 	brl	L10710
-L1221:
-	.line	6747
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+L1219:
+	.line	6767
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~ff_memfree
 L10710:
-	.line	6747
+	.line	6767
 	lda	#$13
-	brl	L1166
-	.line	6747
+	brl	L1164
+	.line	6767
 L10709:
-	.line	6747
+	.line	6767
 ;		fsty = FS_FAT16;
-	.line	6748
+	.line	6768
 	sep	#$20
 	longa	off
 	lda	#$2
-	sta	<L1160+fsty_1
+	sta	<L1158+fsty_1
 	rep	#$20
 	longa	on
 ;	}while (0);
-	.line	6749
+	.line	6769
 L10701:
 L10702:
 ;
@@ -29539,125 +29522,125 @@ L10702:
 ;	else
 ;#endif	/* FF_FS_EXFAT */
 ;	{ /* Create an FAT/FAT32 volume */
-	.line	6932
+	.line	6952
 ;		do
-	.line	6933
+	.line	6953
 L10713:
 ;		{
-	.line	6934
+	.line	6954
 ;			pau = sz_au;
-	.line	6935
-	lda	<L1160+sz_au_1
-	sta	<L1160+pau_1
-	lda	<L1160+sz_au_1+2
-	sta	<L1160+pau_1+2
+	.line	6955
+	lda	<L1158+sz_au_1
+	sta	<L1158+pau_1
+	lda	<L1158+sz_au_1+2
+	sta	<L1158+pau_1+2
 ;			/* Pre-determine number of clusters and FAT sub-type */
 ;			if (fsty == FS_FAT32)
-	.line	6937
+	.line	6957
 ;			{ /* FAT32 volume */
 	sep	#$20
 	longa	off
-	lda	<L1160+fsty_1
+	lda	<L1158+fsty_1
 	cmp	#<$3
 	rep	#$20
 	longa	on
-	beq	L1222
+	beq	L1220
 	brl	L10714
-L1222:
-	.line	6938
+L1220:
+	.line	6958
 ;				if (pau == 0)
-	.line	6939
+	.line	6959
 ;				{ /* AU auto-selection */
-	lda	<L1160+pau_1
-	ora	<L1160+pau_1+2
-	beq	L1223
+	lda	<L1158+pau_1
+	ora	<L1158+pau_1+2
+	beq	L1221
 	brl	L10715
-L1223:
-	.line	6940
+L1221:
+	.line	6960
 ;					n = (DWORD)sz_vol / 0x20000; /* Volume size in unit of 128KS */
-	.line	6941
-	pei	<L1160+sz_vol_1+2
-	pei	<L1160+sz_vol_1
+	.line	6961
+	pei	<L1158+sz_vol_1+2
+	pei	<L1158+sz_vol_1
 	lda	#$11
 	xref	~~~llsr
 	jsl	~~~llsr
-	sta	<L1160+n_1
-	stx	<L1160+n_1+2
+	sta	<L1158+n_1
+	stx	<L1158+n_1+2
 ;					for (i = 0, pau = 1; cst32[i] && cst32[i] <= n; i++, pau <<= 1); /* Get from table */
-	.line	6942
-	stz	<L1160+i_1
+	.line	6962
+	stz	<L1158+i_1
 	lda	#$1
-	sta	<L1160+pau_1
+	sta	<L1158+pau_1
 	lda	#$0
-	sta	<L1160+pau_1+2
+	sta	<L1158+pau_1+2
 	brl	L10719
 L10718:
-	.line	6942
+	.line	6962
 L10716:
-	asl	<L1160+pau_1
-	rol	<L1160+pau_1+2
-	inc	<L1160+i_1
+	asl	<L1158+pau_1
+	rol	<L1158+pau_1+2
+	inc	<L1158+i_1
 L10719:
-	lda	<L1160+i_1
+	lda	<L1158+i_1
 	asl	A
 	sta	<R0
 	ldx	<R0
-	lda	|L1163,X ;cst32
-	bne	L1225
-	brl	L1224
-L1225:
-	lda	<L1160+i_1
+	lda	|L1161,X ;cst32
+	bne	L1223
+	brl	L1222
+L1223:
+	lda	<L1158+i_1
 	asl	A
 	sta	<R1
 	ldy	#$0
 	ldx	<R1
-	lda	|L1163,X ;cst32
+	lda	|L1161,X ;cst32
+	bpl	L1224
+	dey
+L1224:
+	sta	<R2
+	sty	<R2+2
+	lda	<L1158+n_1
+	cmp	<R2
+	lda	<L1158+n_1+2
+	sbc	<R2+2
+	bcc	L1225
+	brl	L10718
+L1225:
+L1222:
+L10717:
+;				}
+	.line	6963
+;				n_clst = (DWORD)sz_vol / pau; /* Number of clusters */
+L10715:
+	.line	6964
+	pei	<L1158+pau_1+2
+	pei	<L1158+pau_1
+	pei	<L1158+sz_vol_1+2
+	pei	<L1158+sz_vol_1
+	xref	~~~ludv
+	jsl	~~~ludv
+	sta	<L1158+n_clst_1
+	stx	<L1158+n_clst_1+2
+;				sz_fat = (n_clst * 4 + 8 + ss - 1) / ss; /* FAT size [sector] */
+	.line	6965
+	ldy	#$0
+	lda	<L1158+ss_1
 	bpl	L1226
 	dey
 L1226:
-	sta	<R2
-	sty	<R2+2
-	lda	<L1160+n_1
-	cmp	<R2
-	lda	<L1160+n_1+2
-	sbc	<R2+2
-	bcc	L1227
-	brl	L10718
-L1227:
-L1224:
-L10717:
-;				}
-	.line	6943
-;				n_clst = (DWORD)sz_vol / pau; /* Number of clusters */
-L10715:
-	.line	6944
-	pei	<L1160+pau_1+2
-	pei	<L1160+pau_1
-	pei	<L1160+sz_vol_1+2
-	pei	<L1160+sz_vol_1
-	xref	~~~ludv
-	jsl	~~~ludv
-	sta	<L1160+n_clst_1
-	stx	<L1160+n_clst_1+2
-;				sz_fat = (n_clst * 4 + 8 + ss - 1) / ss; /* FAT size [sector] */
-	.line	6945
-	ldy	#$0
-	lda	<L1160+ss_1
-	bpl	L1228
-	dey
-L1228:
 	sta	<R0
 	sty	<R0+2
 	ldy	#$0
-	lda	<L1160+ss_1
-	bpl	L1229
+	lda	<L1158+ss_1
+	bpl	L1227
 	dey
-L1229:
+L1227:
 	sta	<R1
 	sty	<R1+2
-	lda	<L1160+n_clst_1
+	lda	<L1158+n_clst_1
 	sta	<R2
-	lda	<L1160+n_clst_1+2
+	lda	<L1158+n_clst_1+2
 	sta	<R2+2
 	asl	<R2
 	rol	<R2+2
@@ -29683,181 +29666,181 @@ L1229:
 	pei	<R1
 	xref	~~~ludv
 	jsl	~~~ludv
-	sta	<L1160+sz_fat_1
-	stx	<L1160+sz_fat_1+2
+	sta	<L1158+sz_fat_1
+	stx	<L1158+sz_fat_1+2
 ;				sz_rsv = 32; /* Number of reserved sectors */
-	.line	6946
+	.line	6966
 	lda	#$20
-	sta	<L1160+sz_rsv_1
+	sta	<L1158+sz_rsv_1
 	lda	#$0
-	sta	<L1160+sz_rsv_1+2
+	sta	<L1158+sz_rsv_1+2
 ;				sz_dir = 0; /* No static directory */
-	.line	6947
-	stz	<L1160+sz_dir_1
-	stz	<L1160+sz_dir_1+2
+	.line	6967
+	stz	<L1158+sz_dir_1
+	stz	<L1158+sz_dir_1+2
 ;				if (n_clst <= MAX_FAT16 || n_clst > MAX_FAT32) LEAVE_MKFS(FR_MKFS_ABORTED);
-	.line	6948
+	.line	6968
 	lda	#$fff5
-	cmp	<L1160+n_clst_1
+	cmp	<L1158+n_clst_1
 	lda	#$0
-	sbc	<L1160+n_clst_1+2
-	bcc	L1231
-	brl	L1230
-L1231:
+	sbc	<L1158+n_clst_1+2
+	bcc	L1229
+	brl	L1228
+L1229:
 	lda	#$fff5
-	cmp	<L1160+n_clst_1
+	cmp	<L1158+n_clst_1
 	lda	#$fff
-	sbc	<L1160+n_clst_1+2
-	bcc	L1232
+	sbc	<L1158+n_clst_1+2
+	bcc	L1230
 	brl	L10720
-L1232:
 L1230:
-	.line	6948
-	.line	6948
-	lda	<L1159+work_0
-	ora	<L1159+work_0+2
-	beq	L1233
+L1228:
+	.line	6968
+	.line	6968
+	lda	<L1157+work_0
+	ora	<L1157+work_0+2
+	beq	L1231
 	brl	L10721
-L1233:
-	.line	6948
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+L1231:
+	.line	6968
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~ff_memfree
 L10721:
-	.line	6948
+	.line	6968
 	lda	#$e
-	brl	L1166
-	.line	6948
+	brl	L1164
+	.line	6968
 L10720:
-	.line	6948
+	.line	6968
 ;			}
-	.line	6949
+	.line	6969
 ;			else
 	brl	L10722
 L10714:
 ;			{ /* FAT volume */
-	.line	6951
+	.line	6971
 ;				if (pau == 0)
-	.line	6952
+	.line	6972
 ;				{ /* au auto-selection */
-	lda	<L1160+pau_1
-	ora	<L1160+pau_1+2
-	beq	L1234
+	lda	<L1158+pau_1
+	ora	<L1158+pau_1+2
+	beq	L1232
 	brl	L10723
-L1234:
-	.line	6953
+L1232:
+	.line	6973
 ;					n = (DWORD)sz_vol / 0x1000; /* Volume size in unit of 4KS */
-	.line	6954
-	pei	<L1160+sz_vol_1+2
-	pei	<L1160+sz_vol_1
+	.line	6974
+	pei	<L1158+sz_vol_1+2
+	pei	<L1158+sz_vol_1
 	lda	#$c
 	xref	~~~llsr
 	jsl	~~~llsr
-	sta	<L1160+n_1
-	stx	<L1160+n_1+2
+	sta	<L1158+n_1
+	stx	<L1158+n_1+2
 ;					for (i = 0, pau = 1; cst[i] && cst[i] <= n; i++, pau <<= 1); /* Get from table */
-	.line	6955
-	stz	<L1160+i_1
+	.line	6975
+	stz	<L1158+i_1
 	lda	#$1
-	sta	<L1160+pau_1
+	sta	<L1158+pau_1
 	lda	#$0
-	sta	<L1160+pau_1+2
+	sta	<L1158+pau_1+2
 	brl	L10727
 L10726:
-	.line	6955
+	.line	6975
 L10724:
-	asl	<L1160+pau_1
-	rol	<L1160+pau_1+2
-	inc	<L1160+i_1
+	asl	<L1158+pau_1
+	rol	<L1158+pau_1+2
+	inc	<L1158+i_1
 L10727:
-	lda	<L1160+i_1
+	lda	<L1158+i_1
 	asl	A
 	sta	<R0
 	ldx	<R0
-	lda	|L1162,X ;cst
-	bne	L1236
-	brl	L1235
-L1236:
-	lda	<L1160+i_1
+	lda	|L1160,X ;cst
+	bne	L1234
+	brl	L1233
+L1234:
+	lda	<L1158+i_1
 	asl	A
 	sta	<R1
 	ldy	#$0
 	ldx	<R1
-	lda	|L1162,X ;cst
-	bpl	L1237
+	lda	|L1160,X ;cst
+	bpl	L1235
 	dey
-L1237:
+L1235:
 	sta	<R2
 	sty	<R2+2
-	lda	<L1160+n_1
+	lda	<L1158+n_1
 	cmp	<R2
-	lda	<L1160+n_1+2
+	lda	<L1158+n_1+2
 	sbc	<R2+2
-	bcc	L1238
+	bcc	L1236
 	brl	L10726
-L1238:
-L1235:
+L1236:
+L1233:
 L10725:
 ;				}
-	.line	6956
+	.line	6976
 ;				n_clst = (DWORD)sz_vol / pau;
 L10723:
-	.line	6957
-	pei	<L1160+pau_1+2
-	pei	<L1160+pau_1
-	pei	<L1160+sz_vol_1+2
-	pei	<L1160+sz_vol_1
+	.line	6977
+	pei	<L1158+pau_1+2
+	pei	<L1158+pau_1
+	pei	<L1158+sz_vol_1+2
+	pei	<L1158+sz_vol_1
 	xref	~~~ludv
 	jsl	~~~ludv
-	sta	<L1160+n_clst_1
-	stx	<L1160+n_clst_1+2
+	sta	<L1158+n_clst_1
+	stx	<L1158+n_clst_1+2
 ;				if (n_clst > MAX_FAT12)
-	.line	6958
+	.line	6978
 ;				{
 	lda	#$ff5
-	cmp	<L1160+n_clst_1
+	cmp	<L1158+n_clst_1
 	lda	#$0
-	sbc	<L1160+n_clst_1+2
-	bcc	L1239
+	sbc	<L1158+n_clst_1+2
+	bcc	L1237
 	brl	L10728
-L1239:
-	.line	6959
+L1237:
+	.line	6979
 ;					n = n_clst * 2 + 4; /* FAT size [byte] */
-	.line	6960
-	lda	<L1160+n_clst_1
+	.line	6980
+	lda	<L1158+n_clst_1
 	sta	<R0
-	lda	<L1160+n_clst_1+2
+	lda	<L1158+n_clst_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
 	clc
 	lda	#$4
 	adc	<R0
-	sta	<L1160+n_1
+	sta	<L1158+n_1
 	lda	#$0
 	adc	<R0+2
-	sta	<L1160+n_1+2
+	sta	<L1158+n_1+2
 ;				}
-	.line	6961
+	.line	6981
 ;				else
 	brl	L10729
 L10728:
 ;				{
-	.line	6963
+	.line	6983
 ;					fsty = FS_FAT12;
-	.line	6964
+	.line	6984
 	sep	#$20
 	longa	off
 	lda	#$1
-	sta	<L1160+fsty_1
+	sta	<L1158+fsty_1
 	rep	#$20
 	longa	on
 ;					n = (n_clst * 3 + 1) / 2 + 3; /* FAT size [byte] */
-	.line	6965
+	.line	6985
 	pea	#^$3
 	pea	#<$3
-	pei	<L1160+n_clst_1+2
-	pei	<L1160+n_clst_1
+	pei	<L1158+n_clst_1+2
+	pei	<L1158+n_clst_1
 	xref	~~~lmul
 	jsl	~~~lmul
 	sta	<R1
@@ -29879,35 +29862,35 @@ L10728:
 	clc
 	lda	#$3
 	adc	<R0
-	sta	<L1160+n_1
+	sta	<L1158+n_1
 	lda	#$0
 	adc	<R0+2
-	sta	<L1160+n_1+2
+	sta	<L1158+n_1+2
 ;				}
-	.line	6966
+	.line	6986
 L10729:
 ;				sz_fat = (n + ss - 1) / ss; /* FAT size [sector] */
-	.line	6967
+	.line	6987
 	ldy	#$0
-	lda	<L1160+ss_1
-	bpl	L1240
+	lda	<L1158+ss_1
+	bpl	L1238
 	dey
-L1240:
+L1238:
 	sta	<R0
 	sty	<R0+2
 	ldy	#$0
-	lda	<L1160+ss_1
-	bpl	L1241
+	lda	<L1158+ss_1
+	bpl	L1239
 	dey
-L1241:
+L1239:
 	sta	<R1
 	sty	<R1+2
 	clc
 	lda	<R1
-	adc	<L1160+n_1
+	adc	<L1158+n_1
 	sta	<R2
 	lda	<R1+2
-	adc	<L1160+n_1+2
+	adc	<L1158+n_1+2
 	sta	<R2+2
 	clc
 	lda	#$ffff
@@ -29922,24 +29905,24 @@ L1241:
 	pei	<R1
 	xref	~~~ludv
 	jsl	~~~ludv
-	sta	<L1160+sz_fat_1
-	stx	<L1160+sz_fat_1+2
+	sta	<L1158+sz_fat_1
+	stx	<L1158+sz_fat_1+2
 ;				sz_rsv = 1; /* Number of reserved sectors */
-	.line	6968
+	.line	6988
 	lda	#$1
-	sta	<L1160+sz_rsv_1
+	sta	<L1158+sz_rsv_1
 	lda	#$0
-	sta	<L1160+sz_rsv_1+2
+	sta	<L1158+sz_rsv_1+2
 ;				sz_dir = (DWORD)n_root * SZDIRE / ss; /* Root dir size [sector] */
-	.line	6969
+	.line	6989
 	ldy	#$0
-	lda	<L1160+ss_1
-	bpl	L1242
+	lda	<L1158+ss_1
+	bpl	L1240
 	dey
-L1242:
+L1240:
 	sta	<R0
 	sty	<R0+2
-	lda	<L1160+n_root_1
+	lda	<L1158+n_root_1
 	sta	<R2
 	stz	<R2+2
 	pei	<R2+2
@@ -29955,27 +29938,27 @@ L1242:
 	pei	<R1
 	xref	~~~ludv
 	jsl	~~~ludv
-	sta	<L1160+sz_dir_1
-	stx	<L1160+sz_dir_1+2
+	sta	<L1158+sz_dir_1
+	stx	<L1158+sz_dir_1+2
 ;			}
-	.line	6970
+	.line	6990
 L10722:
 ;			b_fat = b_vol + sz_rsv; /* FAT base */
-	.line	6971
+	.line	6991
 	clc
-	lda	<L1160+b_vol_1
-	adc	<L1160+sz_rsv_1
-	sta	<L1160+b_fat_1
-	lda	<L1160+b_vol_1+2
-	adc	<L1160+sz_rsv_1+2
-	sta	<L1160+b_fat_1+2
+	lda	<L1158+b_vol_1
+	adc	<L1158+sz_rsv_1
+	sta	<L1158+b_fat_1
+	lda	<L1158+b_vol_1+2
+	adc	<L1158+sz_rsv_1+2
+	sta	<L1158+b_fat_1+2
 ;			b_data = b_fat + sz_fat * n_fat + sz_dir; /* Data base */
-	.line	6972
-	lda	<L1160+n_fat_1
+	.line	6992
+	lda	<L1158+n_fat_1
 	sta	<R0
 	stz	<R0+2
-	pei	<L1160+sz_fat_1+2
-	pei	<L1160+sz_fat_1
+	pei	<L1158+sz_fat_1+2
+	pei	<L1158+sz_fat_1
 	pei	<R0+2
 	pei	<R0
 	xref	~~~lmul
@@ -29984,28 +29967,28 @@ L10722:
 	stx	<R0+2
 	clc
 	lda	<R0
-	adc	<L1160+b_fat_1
+	adc	<L1158+b_fat_1
 	sta	<R1
 	lda	<R0+2
-	adc	<L1160+b_fat_1+2
+	adc	<L1158+b_fat_1+2
 	sta	<R1+2
 	clc
 	lda	<R1
-	adc	<L1160+sz_dir_1
-	sta	<L1160+b_data_1
+	adc	<L1158+sz_dir_1
+	sta	<L1158+b_data_1
 	lda	<R1+2
-	adc	<L1160+sz_dir_1+2
-	sta	<L1160+b_data_1+2
+	adc	<L1158+sz_dir_1+2
+	sta	<L1158+b_data_1+2
 ;
 ;			/* Align data area to erase block boundary (for flash memory media) */
 ;			n = (DWORD)(((b_data + sz_blk - 1) & ~(sz_blk - 1)) - b_data); /* Sectors to next nearest from current data base */
-	.line	6975
+	.line	6995
 	clc
-	lda	<L1160+b_data_1
-	adc	<L1160+sz_blk_1
+	lda	<L1158+b_data_1
+	adc	<L1158+sz_blk_1
 	sta	<R0
-	lda	<L1160+b_data_1+2
-	adc	<L1160+sz_blk_1+2
+	lda	<L1158+b_data_1+2
+	adc	<L1158+sz_blk_1+2
 	sta	<R0+2
 	clc
 	lda	#$ffff
@@ -30016,10 +29999,10 @@ L10722:
 	sta	<R1+2
 	clc
 	lda	#$ffff
-	adc	<L1160+sz_blk_1
+	adc	<L1158+sz_blk_1
 	sta	<R0
 	lda	#$ffff
-	adc	<L1160+sz_blk_1+2
+	adc	<L1158+sz_blk_1+2
 	sta	<R0+2
 	lda	<R0
 	eor	#<$ffffffff
@@ -30035,118 +30018,118 @@ L10722:
 	sta	<R0+2
 	sec
 	lda	<R0
-	sbc	<L1160+b_data_1
-	sta	<L1160+n_1
+	sbc	<L1158+b_data_1
+	sta	<L1158+n_1
 	lda	<R0+2
-	sbc	<L1160+b_data_1+2
-	sta	<L1160+n_1+2
+	sbc	<L1158+b_data_1+2
+	sta	<L1158+n_1+2
 ;			if (fsty == FS_FAT32)
-	.line	6976
+	.line	6996
 ;			{ /* FAT32: Move FAT */
 	sep	#$20
 	longa	off
-	lda	<L1160+fsty_1
+	lda	<L1158+fsty_1
 	cmp	#<$3
 	rep	#$20
 	longa	on
-	beq	L1243
+	beq	L1241
 	brl	L10730
-L1243:
-	.line	6977
+L1241:
+	.line	6997
 ;				sz_rsv += n; b_fat += n;
-	.line	6978
+	.line	6998
 	clc
-	lda	<L1160+sz_rsv_1
-	adc	<L1160+n_1
-	sta	<L1160+sz_rsv_1
-	lda	<L1160+sz_rsv_1+2
-	adc	<L1160+n_1+2
-	sta	<L1160+sz_rsv_1+2
-	.line	6978
+	lda	<L1158+sz_rsv_1
+	adc	<L1158+n_1
+	sta	<L1158+sz_rsv_1
+	lda	<L1158+sz_rsv_1+2
+	adc	<L1158+n_1+2
+	sta	<L1158+sz_rsv_1+2
+	.line	6998
 	clc
-	lda	<L1160+b_fat_1
-	adc	<L1160+n_1
-	sta	<L1160+b_fat_1
-	lda	<L1160+b_fat_1+2
-	adc	<L1160+n_1+2
-	sta	<L1160+b_fat_1+2
+	lda	<L1158+b_fat_1
+	adc	<L1158+n_1
+	sta	<L1158+b_fat_1
+	lda	<L1158+b_fat_1+2
+	adc	<L1158+n_1+2
+	sta	<L1158+b_fat_1+2
 ;			}
-	.line	6979
+	.line	6999
 ;			else
 	brl	L10731
 L10730:
 ;			{ /* FAT: Expand FAT */
-	.line	6981
+	.line	7001
 ;				if (n % n_fat)
-	.line	6982
+	.line	7002
 ;				{ /* Adjust fractional error if needed */
-	lda	<L1160+n_fat_1
+	lda	<L1158+n_fat_1
 	sta	<R0
 	stz	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pei	<L1160+n_1+2
-	pei	<L1160+n_1
+	pei	<L1158+n_1+2
+	pei	<L1158+n_1
 	xref	~~~lumd
 	jsl	~~~lumd
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
 	ora	<R0+2
-	bne	L1244
+	bne	L1242
 	brl	L10732
-L1244:
-	.line	6983
+L1242:
+	.line	7003
 ;					n--; sz_rsv++; b_fat++;
-	.line	6984
-	lda	<L1160+n_1
+	.line	7004
+	lda	<L1158+n_1
+	bne	L1243
+	dec	<L1158+n_1+2
+L1243:
+	dec	<L1158+n_1
+	.line	7004
+	inc	<L1158+sz_rsv_1
+	bne	L1244
+	inc	<L1158+sz_rsv_1+2
+L1244:
+	.line	7004
+	inc	<L1158+b_fat_1
 	bne	L1245
-	dec	<L1160+n_1+2
+	inc	<L1158+b_fat_1+2
 L1245:
-	dec	<L1160+n_1
-	.line	6984
-	inc	<L1160+sz_rsv_1
-	bne	L1246
-	inc	<L1160+sz_rsv_1+2
-L1246:
-	.line	6984
-	inc	<L1160+b_fat_1
-	bne	L1247
-	inc	<L1160+b_fat_1+2
-L1247:
 ;				}
-	.line	6985
+	.line	7005
 ;				sz_fat += n / n_fat;
 L10732:
-	.line	6986
-	lda	<L1160+n_fat_1
+	.line	7006
+	lda	<L1158+n_fat_1
 	sta	<R0
 	stz	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pei	<L1160+n_1+2
-	pei	<L1160+n_1
+	pei	<L1158+n_1+2
+	pei	<L1158+n_1
 	xref	~~~ludv
 	jsl	~~~ludv
 	sta	<R0
 	stx	<R0+2
 	clc
 	lda	<R0
-	adc	<L1160+sz_fat_1
-	sta	<L1160+sz_fat_1
+	adc	<L1158+sz_fat_1
+	sta	<L1158+sz_fat_1
 	lda	<R0+2
-	adc	<L1160+sz_fat_1+2
-	sta	<L1160+sz_fat_1+2
+	adc	<L1158+sz_fat_1+2
+	sta	<L1158+sz_fat_1+2
 ;			}
-	.line	6987
+	.line	7007
 L10731:
 ;
 ;			/* Determine number of clusters and final check of validity of the FAT sub-type */
 ;			if (sz_vol < b_data + pau * 16 - b_vol) LEAVE_MKFS(FR_MKFS_ABORTED); /* Too small volume? */
-	.line	6990
-	lda	<L1160+pau_1
+	.line	7010
+	lda	<L1158+pau_1
 	sta	<R0
-	lda	<L1160+pau_1+2
+	lda	<L1158+pau_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -30158,50 +30141,50 @@ L10731:
 	rol	<R0+2
 	clc
 	lda	<R0
-	adc	<L1160+b_data_1
+	adc	<L1158+b_data_1
 	sta	<R1
 	lda	<R0+2
-	adc	<L1160+b_data_1+2
+	adc	<L1158+b_data_1+2
 	sta	<R1+2
 	sec
 	lda	<R1
-	sbc	<L1160+b_vol_1
+	sbc	<L1158+b_vol_1
 	sta	<R0
 	lda	<R1+2
-	sbc	<L1160+b_vol_1+2
+	sbc	<L1158+b_vol_1+2
 	sta	<R0+2
-	lda	<L1160+sz_vol_1
+	lda	<L1158+sz_vol_1
 	cmp	<R0
-	lda	<L1160+sz_vol_1+2
+	lda	<L1158+sz_vol_1+2
 	sbc	<R0+2
-	bcc	L1248
+	bcc	L1246
 	brl	L10733
-L1248:
-	.line	6990
-	.line	6990
-	lda	<L1159+work_0
-	ora	<L1159+work_0+2
-	beq	L1249
+L1246:
+	.line	7010
+	.line	7010
+	lda	<L1157+work_0
+	ora	<L1157+work_0+2
+	beq	L1247
 	brl	L10734
-L1249:
-	.line	6990
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+L1247:
+	.line	7010
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~ff_memfree
 L10734:
-	.line	6990
+	.line	7010
 	lda	#$e
-	brl	L1166
-	.line	6990
+	brl	L1164
+	.line	7010
 L10733:
-	.line	6990
+	.line	7010
 ;			n_clst = ((DWORD)sz_vol - sz_rsv - sz_fat * n_fat - sz_dir) / pau;
-	.line	6991
-	lda	<L1160+n_fat_1
+	.line	7011
+	lda	<L1158+n_fat_1
 	sta	<R0
 	stz	<R0+2
-	pei	<L1160+sz_fat_1+2
-	pei	<L1160+sz_fat_1
+	pei	<L1158+sz_fat_1+2
+	pei	<L1158+sz_fat_1
 	pei	<R0+2
 	pei	<R0
 	xref	~~~lmul
@@ -30209,11 +30192,11 @@ L10733:
 	sta	<R0
 	stx	<R0+2
 	sec
-	lda	<L1160+sz_vol_1
-	sbc	<L1160+sz_rsv_1
+	lda	<L1158+sz_vol_1
+	sbc	<L1158+sz_rsv_1
 	sta	<R1
-	lda	<L1160+sz_vol_1+2
-	sbc	<L1160+sz_rsv_1+2
+	lda	<L1158+sz_vol_1+2
+	sbc	<L1158+sz_rsv_1+2
 	sta	<R1+2
 	sec
 	lda	<R1
@@ -30224,121 +30207,121 @@ L10733:
 	sta	<R2+2
 	sec
 	lda	<R2
-	sbc	<L1160+sz_dir_1
+	sbc	<L1158+sz_dir_1
 	sta	<R0
 	lda	<R2+2
-	sbc	<L1160+sz_dir_1+2
+	sbc	<L1158+sz_dir_1+2
 	sta	<R0+2
-	pei	<L1160+pau_1+2
-	pei	<L1160+pau_1
+	pei	<L1158+pau_1+2
+	pei	<L1158+pau_1
 	pei	<R0+2
 	pei	<R0
 	xref	~~~ludv
 	jsl	~~~ludv
-	sta	<L1160+n_clst_1
-	stx	<L1160+n_clst_1+2
+	sta	<L1158+n_clst_1
+	stx	<L1158+n_clst_1+2
 ;			if (fsty == FS_FAT32)
-	.line	6992
+	.line	7012
 ;			{
 	sep	#$20
 	longa	off
-	lda	<L1160+fsty_1
+	lda	<L1158+fsty_1
 	cmp	#<$3
 	rep	#$20
 	longa	on
-	beq	L1250
+	beq	L1248
 	brl	L10735
-L1250:
-	.line	6993
+L1248:
+	.line	7013
 ;				if (n_clst <= MAX_FAT16)
-	.line	6994
+	.line	7014
 ;				{ /* Too few clusters for FAT32? */
 	lda	#$fff5
-	cmp	<L1160+n_clst_1
+	cmp	<L1158+n_clst_1
 	lda	#$0
-	sbc	<L1160+n_clst_1+2
-	bcs	L1251
+	sbc	<L1158+n_clst_1+2
+	bcs	L1249
 	brl	L10736
-L1251:
-	.line	6995
+L1249:
+	.line	7015
 ;					if (sz_au == 0 && (sz_au = pau / 2) != 0) continue; /* Adjust cluster size and retry */
-	.line	6996
-	lda	<L1160+sz_au_1
-	ora	<L1160+sz_au_1+2
-	beq	L1253
-	brl	L1252
-L1253:
-	lda	<L1160+pau_1
-	sta	<L1160+sz_au_1
-	lda	<L1160+pau_1+2
-	sta	<L1160+sz_au_1+2
-	lsr	<L1160+sz_au_1+2
-	ror	<L1160+sz_au_1
-	lda	<L1160+sz_au_1
-	ora	<L1160+sz_au_1+2
-	beq	L1254
+	.line	7016
+	lda	<L1158+sz_au_1
+	ora	<L1158+sz_au_1+2
+	beq	L1251
+	brl	L1250
+L1251:
+	lda	<L1158+pau_1
+	sta	<L1158+sz_au_1
+	lda	<L1158+pau_1+2
+	sta	<L1158+sz_au_1+2
+	lsr	<L1158+sz_au_1+2
+	ror	<L1158+sz_au_1
+	lda	<L1158+sz_au_1
+	ora	<L1158+sz_au_1+2
+	beq	L1252
 	brl	L10711
-L1254:
 L1252:
+L1250:
 ;					LEAVE_MKFS(FR_MKFS_ABORTED);
-	.line	6997
-	.line	6997
-	lda	<L1159+work_0
-	ora	<L1159+work_0+2
-	beq	L1255
+	.line	7017
+	.line	7017
+	lda	<L1157+work_0
+	ora	<L1157+work_0+2
+	beq	L1253
 	brl	L10737
-L1255:
-	.line	6997
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+L1253:
+	.line	7017
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~ff_memfree
 L10737:
-	.line	6997
+	.line	7017
 	lda	#$e
-	brl	L1166
-	.line	6997
-	.line	6997
+	brl	L1164
+	.line	7017
+	.line	7017
 ;				}
-	.line	6998
+	.line	7018
 ;			}
 L10736:
-	.line	6999
+	.line	7019
 ;			if (fsty == FS_FAT16)
 L10735:
-	.line	7000
+	.line	7020
 ;			{
 	sep	#$20
 	longa	off
-	lda	<L1160+fsty_1
+	lda	<L1158+fsty_1
 	cmp	#<$2
 	rep	#$20
 	longa	on
-	beq	L1256
+	beq	L1254
 	brl	L10738
-L1256:
-	.line	7001
+L1254:
+	.line	7021
 ;				if (n_clst > MAX_FAT16)
-	.line	7002
+	.line	7022
 ;				{ /* Too many clusters for FAT16 */
 	lda	#$fff5
-	cmp	<L1160+n_clst_1
+	cmp	<L1158+n_clst_1
 	lda	#$0
-	sbc	<L1160+n_clst_1+2
-	bcc	L1257
+	sbc	<L1158+n_clst_1+2
+	bcc	L1255
 	brl	L10739
-L1257:
-	.line	7003
+L1255:
+	.line	7023
 ;					if (sz_au == 0 && (pau * 2) <= 64)
-	.line	7004
+	.line	7024
 ;					{
-	lda	<L1160+sz_au_1
-	ora	<L1160+sz_au_1+2
-	beq	L1258
+	lda	<L1158+sz_au_1
+	ora	<L1158+sz_au_1+2
+	beq	L1256
 	brl	L10740
-L1258:
-	lda	<L1160+pau_1
+L1256:
+	lda	<L1158+pau_1
 	sta	<R0
-	lda	<L1160+pau_1+2
+	lda	<L1158+pau_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -30346,190 +30329,190 @@ L1258:
 	cmp	<R0
 	lda	#$0
 	sbc	<R0+2
-	bcs	L1259
+	bcs	L1257
 	brl	L10740
-L1259:
-	.line	7005
+L1257:
+	.line	7025
 ;						sz_au = pau * 2; continue; /* Adjust cluster size and retry */
-	.line	7006
-	lda	<L1160+pau_1
-	sta	<L1160+sz_au_1
-	lda	<L1160+pau_1+2
-	sta	<L1160+sz_au_1+2
-	asl	<L1160+sz_au_1
-	rol	<L1160+sz_au_1+2
-	.line	7006
+	.line	7026
+	lda	<L1158+pau_1
+	sta	<L1158+sz_au_1
+	lda	<L1158+pau_1+2
+	sta	<L1158+sz_au_1+2
+	asl	<L1158+sz_au_1
+	rol	<L1158+sz_au_1+2
+	.line	7026
 	brl	L10711
 ;					}
-	.line	7007
+	.line	7027
 ;					if ((fsopt & FM_FAT32))
 L10740:
-	.line	7008
+	.line	7028
 ;					{
 	sep	#$20
 	longa	off
-	lda	<L1160+fsopt_1
+	lda	<L1158+fsopt_1
 	and	#<$2
 	rep	#$20
 	longa	on
-	bne	L1260
+	bne	L1258
 	brl	L10741
-L1260:
-	.line	7009
+L1258:
+	.line	7029
 ;						fsty = FS_FAT32; continue; /* Switch type to FAT32 and retry */
-	.line	7010
+	.line	7030
 	sep	#$20
 	longa	off
 	lda	#$3
-	sta	<L1160+fsty_1
+	sta	<L1158+fsty_1
 	rep	#$20
 	longa	on
-	.line	7010
+	.line	7030
 	brl	L10711
 ;					}
-	.line	7011
+	.line	7031
 ;					if (sz_au == 0 && (sz_au = pau * 2) <= 128) continue; /* Adjust cluster size and retry */
 L10741:
-	.line	7012
-	lda	<L1160+sz_au_1
-	ora	<L1160+sz_au_1+2
-	beq	L1262
-	brl	L1261
-L1262:
-	lda	<L1160+pau_1
-	sta	<L1160+sz_au_1
-	lda	<L1160+pau_1+2
-	sta	<L1160+sz_au_1+2
-	asl	<L1160+sz_au_1
-	rol	<L1160+sz_au_1+2
+	.line	7032
+	lda	<L1158+sz_au_1
+	ora	<L1158+sz_au_1+2
+	beq	L1260
+	brl	L1259
+L1260:
+	lda	<L1158+pau_1
+	sta	<L1158+sz_au_1
+	lda	<L1158+pau_1+2
+	sta	<L1158+sz_au_1+2
+	asl	<L1158+sz_au_1
+	rol	<L1158+sz_au_1+2
 	lda	#$80
-	cmp	<L1160+sz_au_1
+	cmp	<L1158+sz_au_1
 	lda	#$0
-	sbc	<L1160+sz_au_1+2
-	bcc	L1263
+	sbc	<L1158+sz_au_1+2
+	bcc	L1261
 	brl	L10711
-L1263:
 L1261:
+L1259:
 ;					LEAVE_MKFS(FR_MKFS_ABORTED);
-	.line	7013
-	.line	7013
-	lda	<L1159+work_0
-	ora	<L1159+work_0+2
-	beq	L1264
+	.line	7033
+	.line	7033
+	lda	<L1157+work_0
+	ora	<L1157+work_0+2
+	beq	L1262
 	brl	L10742
-L1264:
-	.line	7013
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+L1262:
+	.line	7033
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~ff_memfree
 L10742:
-	.line	7013
+	.line	7033
 	lda	#$e
-	brl	L1166
-	.line	7013
-	.line	7013
+	brl	L1164
+	.line	7033
+	.line	7033
 ;				}
-	.line	7014
+	.line	7034
 ;				if (n_clst <= MAX_FAT12)
 L10739:
-	.line	7015
+	.line	7035
 ;				{ /* Too few clusters for FAT16 */
 	lda	#$ff5
-	cmp	<L1160+n_clst_1
+	cmp	<L1158+n_clst_1
 	lda	#$0
-	sbc	<L1160+n_clst_1+2
-	bcs	L1265
+	sbc	<L1158+n_clst_1+2
+	bcs	L1263
 	brl	L10743
-L1265:
-	.line	7016
+L1263:
+	.line	7036
 ;					if (sz_au == 0 && (sz_au = pau * 2) <= 128) continue; /* Adjust cluster size and retry */
-	.line	7017
-	lda	<L1160+sz_au_1
-	ora	<L1160+sz_au_1+2
-	beq	L1267
-	brl	L1266
-L1267:
-	lda	<L1160+pau_1
-	sta	<L1160+sz_au_1
-	lda	<L1160+pau_1+2
-	sta	<L1160+sz_au_1+2
-	asl	<L1160+sz_au_1
-	rol	<L1160+sz_au_1+2
+	.line	7037
+	lda	<L1158+sz_au_1
+	ora	<L1158+sz_au_1+2
+	beq	L1265
+	brl	L1264
+L1265:
+	lda	<L1158+pau_1
+	sta	<L1158+sz_au_1
+	lda	<L1158+pau_1+2
+	sta	<L1158+sz_au_1+2
+	asl	<L1158+sz_au_1
+	rol	<L1158+sz_au_1+2
 	lda	#$80
-	cmp	<L1160+sz_au_1
+	cmp	<L1158+sz_au_1
 	lda	#$0
-	sbc	<L1160+sz_au_1+2
-	bcc	L1268
+	sbc	<L1158+sz_au_1+2
+	bcc	L1266
 	brl	L10711
-L1268:
 L1266:
+L1264:
 ;					LEAVE_MKFS(FR_MKFS_ABORTED);
-	.line	7018
-	.line	7018
-	lda	<L1159+work_0
-	ora	<L1159+work_0+2
-	beq	L1269
+	.line	7038
+	.line	7038
+	lda	<L1157+work_0
+	ora	<L1157+work_0+2
+	beq	L1267
 	brl	L10744
-L1269:
-	.line	7018
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+L1267:
+	.line	7038
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~ff_memfree
 L10744:
-	.line	7018
+	.line	7038
 	lda	#$e
-	brl	L1166
-	.line	7018
-	.line	7018
+	brl	L1164
+	.line	7038
+	.line	7038
 ;				}
-	.line	7019
+	.line	7039
 ;			}
 L10743:
-	.line	7020
+	.line	7040
 ;			if (fsty == FS_FAT12 && n_clst > MAX_FAT12) LEAVE_MKFS(FR_MKFS_ABORTED); /* Too many clusters for FAT12 */
 L10738:
-	.line	7021
+	.line	7041
 	sep	#$20
 	longa	off
-	lda	<L1160+fsty_1
+	lda	<L1158+fsty_1
 	cmp	#<$1
 	rep	#$20
 	longa	on
-	beq	L1270
+	beq	L1268
 	brl	L10745
-L1270:
+L1268:
 	lda	#$ff5
-	cmp	<L1160+n_clst_1
+	cmp	<L1158+n_clst_1
 	lda	#$0
-	sbc	<L1160+n_clst_1+2
-	bcc	L1271
+	sbc	<L1158+n_clst_1+2
+	bcc	L1269
 	brl	L10745
-L1271:
-	.line	7021
-	.line	7021
-	lda	<L1159+work_0
-	ora	<L1159+work_0+2
-	beq	L1272
+L1269:
+	.line	7041
+	.line	7041
+	lda	<L1157+work_0
+	ora	<L1157+work_0+2
+	beq	L1270
 	brl	L10746
-L1272:
-	.line	7021
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+L1270:
+	.line	7041
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~ff_memfree
 L10746:
-	.line	7021
+	.line	7041
 	lda	#$e
-	brl	L1166
-	.line	7021
+	brl	L1164
+	.line	7041
 L10745:
-	.line	7021
+	.line	7041
 ;
 ;			/* Ok, it is the valid cluster configuration */
 ;			break;
-	.line	7024
+	.line	7044
 	brl	L10712
 ;		}while (1);
-	.line	7025
+	.line	7045
 L10711:
 	brl	L10713
 L10712:
@@ -30540,571 +30523,571 @@ L10712:
 ;#endif
 ;		/* Create FAT VBR */
 ;		mem_set(buf, 0, ss);
-	.line	7032
-	pei	<L1160+ss_1
+	.line	7052
+	pei	<L1158+ss_1
 	pea	#<$0
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~mem_set
 ;		mem_cpy(buf + BS_JmpBoot, "\xEB\xFE\x90" "MSDOS5.0", 11);/* Boot jump code (x86), OEM name */
-	.line	7033
+	.line	7053
 	pea	#<$b
-	pea	#^L1059
-	pea	#<L1059
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+	pea	#^L670
+	pea	#<L670
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~mem_cpy
 ;		st_word(buf + BPB_BytsPerSec, ss); /* Sector size [byte] */
-	.line	7034
-	pei	<L1160+ss_1
+	.line	7054
+	pei	<L1158+ss_1
 	clc
 	lda	#$b
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_word
 ;		buf[BPB_SecPerClus] = (BYTE)pau; /* Cluster size [sector] */
-	.line	7035
+	.line	7055
 	sep	#$20
 	longa	off
-	lda	<L1160+pau_1
+	lda	<L1158+pau_1
 	ldy	#$d
-	sta	[<L1160+buf_1],Y
+	sta	[<L1158+buf_1],Y
 	rep	#$20
 	longa	on
 ;		st_word(buf + BPB_RsvdSecCnt, (WORD)sz_rsv); /* Size of reserved area */
-	.line	7036
-	pei	<L1160+sz_rsv_1
+	.line	7056
+	pei	<L1158+sz_rsv_1
 	clc
 	lda	#$e
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_word
 ;		buf[BPB_NumFATs] = (BYTE)n_fat; /* Number of FATs */
-	.line	7037
+	.line	7057
 	sep	#$20
 	longa	off
-	lda	<L1160+n_fat_1
+	lda	<L1158+n_fat_1
 	ldy	#$10
-	sta	[<L1160+buf_1],Y
+	sta	[<L1158+buf_1],Y
 	rep	#$20
 	longa	on
 ;		st_word(buf + BPB_RootEntCnt, (WORD)((fsty == FS_FAT32) ? 0 : n_root)); /* Number of root directory entries */
-	.line	7038
+	.line	7058
 	sep	#$20
 	longa	off
-	lda	<L1160+fsty_1
+	lda	<L1158+fsty_1
 	cmp	#<$3
 	rep	#$20
 	longa	on
-	beq	L1274
-	brl	L1273
-L1274:
+	beq	L1272
+	brl	L1271
+L1272:
 	lda	#$0
-	bra	L1275
+	bra	L1273
+L1271:
+	lda	<L1158+n_root_1
 L1273:
-	lda	<L1160+n_root_1
-L1275:
 	pha
 	clc
 	lda	#$11
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_word
 ;		if (sz_vol < 0x10000)
-	.line	7039
+	.line	7059
 ;		{
-	lda	<L1160+sz_vol_1
+	lda	<L1158+sz_vol_1
 	cmp	#<$10000
-	lda	<L1160+sz_vol_1+2
+	lda	<L1158+sz_vol_1+2
 	sbc	#^$10000
-	bcc	L1276
+	bcc	L1274
 	brl	L10747
-L1276:
-	.line	7040
+L1274:
+	.line	7060
 ;			st_word(buf + BPB_TotSec16, (WORD)sz_vol); /* Volume size in 16-bit LBA */
-	.line	7041
-	pei	<L1160+sz_vol_1
+	.line	7061
+	pei	<L1158+sz_vol_1
 	clc
 	lda	#$13
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_word
 ;		}
-	.line	7042
+	.line	7062
 ;		else
 	brl	L10748
 L10747:
 ;		{
-	.line	7044
+	.line	7064
 ;			st_dword(buf + BPB_TotSec32, (DWORD)sz_vol); /* Volume size in 32-bit LBA */
-	.line	7045
-	pei	<L1160+sz_vol_1+2
-	pei	<L1160+sz_vol_1
+	.line	7065
+	pei	<L1158+sz_vol_1+2
+	pei	<L1158+sz_vol_1
 	clc
 	lda	#$20
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;		}
-	.line	7046
+	.line	7066
 L10748:
 ;		buf[BPB_Media] = 0xF8; /* Media descriptor byte */
-	.line	7047
+	.line	7067
 	sep	#$20
 	longa	off
 	lda	#$f8
 	ldy	#$15
-	sta	[<L1160+buf_1],Y
+	sta	[<L1158+buf_1],Y
 	rep	#$20
 	longa	on
 ;		st_word(buf + BPB_SecPerTrk, 63); /* Number of sectors per track (for int13) */
-	.line	7048
+	.line	7068
 	pea	#<$3f
 	clc
 	lda	#$18
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_word
 ;		st_word(buf + BPB_NumHeads, 255); /* Number of heads (for int13) */
-	.line	7049
+	.line	7069
 	pea	#<$ff
 	clc
 	lda	#$1a
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_word
 ;		st_dword(buf + BPB_HiddSec, (DWORD)b_vol); /* Volume offset in the physical drive [sector] */
-	.line	7050
-	pei	<L1160+b_vol_1+2
-	pei	<L1160+b_vol_1
+	.line	7070
+	pei	<L1158+b_vol_1+2
+	pei	<L1158+b_vol_1
 	clc
 	lda	#$1c
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;		if (fsty == FS_FAT32)
-	.line	7051
+	.line	7071
 ;		{
 	sep	#$20
 	longa	off
-	lda	<L1160+fsty_1
+	lda	<L1158+fsty_1
 	cmp	#<$3
 	rep	#$20
 	longa	on
-	beq	L1277
+	beq	L1275
 	brl	L10749
-L1277:
-	.line	7052
+L1275:
+	.line	7072
 ;			st_dword(buf + BS_VolID32, GET_FATTIME()); /* VSN */
-	.line	7053
+	.line	7073
 	pea	#^$52210000
 	pea	#<$52210000
 	clc
 	lda	#$43
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;			st_dword(buf + BPB_FATSz32, sz_fat); /* FAT size [sector] */
-	.line	7054
-	pei	<L1160+sz_fat_1+2
-	pei	<L1160+sz_fat_1
+	.line	7074
+	pei	<L1158+sz_fat_1+2
+	pei	<L1158+sz_fat_1
 	clc
 	lda	#$24
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;			st_dword(buf + BPB_RootClus32, 2); /* Root directory cluster # (2) */
-	.line	7055
+	.line	7075
 	pea	#^$2
 	pea	#<$2
 	clc
 	lda	#$2c
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;			st_word(buf + BPB_FSInfo32, 1); /* Offset of FSINFO sector (VBR + 1) */
-	.line	7056
+	.line	7076
 	pea	#<$1
 	clc
 	lda	#$30
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_word
 ;			st_word(buf + BPB_BkBootSec32, 6); /* Offset of backup VBR (VBR + 6) */
-	.line	7057
+	.line	7077
 	pea	#<$6
 	clc
 	lda	#$32
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_word
 ;			buf[BS_DrvNum32] = 0x80; /* Drive number (for int13) */
-	.line	7058
+	.line	7078
 	sep	#$20
 	longa	off
 	lda	#$80
 	ldy	#$40
-	sta	[<L1160+buf_1],Y
+	sta	[<L1158+buf_1],Y
 	rep	#$20
 	longa	on
 ;			buf[BS_BootSig32] = 0x29; /* Extended boot signature */
-	.line	7059
+	.line	7079
 	sep	#$20
 	longa	off
 	lda	#$29
 	ldy	#$42
-	sta	[<L1160+buf_1],Y
+	sta	[<L1158+buf_1],Y
 	rep	#$20
 	longa	on
 ;			mem_cpy(buf + BS_VolLab32, "NO NAME    " "FAT32   ", 19); /* Volume label, FAT signature */
-	.line	7060
+	.line	7080
 	pea	#<$13
-	pea	#^L1059+12
-	pea	#<L1059+12
+	pea	#^L670+12
+	pea	#<L670+12
 	clc
 	lda	#$47
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~mem_cpy
 ;		}
-	.line	7061
+	.line	7081
 ;		else
 	brl	L10750
 L10749:
 ;		{
-	.line	7063
+	.line	7083
 ;			st_dword(buf + BS_VolID, GET_FATTIME()); /* VSN */
-	.line	7064
+	.line	7084
 	pea	#^$52210000
 	pea	#<$52210000
 	clc
 	lda	#$27
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;			st_word(buf + BPB_FATSz16, (WORD)sz_fat); /* FAT size [sector] */
-	.line	7065
-	pei	<L1160+sz_fat_1
+	.line	7085
+	pei	<L1158+sz_fat_1
 	clc
 	lda	#$16
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_word
 ;			buf[BS_DrvNum] = 0x80; /* Drive number (for int13) */
-	.line	7066
+	.line	7086
 	sep	#$20
 	longa	off
 	lda	#$80
 	ldy	#$24
-	sta	[<L1160+buf_1],Y
+	sta	[<L1158+buf_1],Y
 	rep	#$20
 	longa	on
 ;			buf[BS_BootSig] = 0x29; /* Extended boot signature */
-	.line	7067
+	.line	7087
 	sep	#$20
 	longa	off
 	lda	#$29
 	ldy	#$26
-	sta	[<L1160+buf_1],Y
+	sta	[<L1158+buf_1],Y
 	rep	#$20
 	longa	on
 ;			mem_cpy(buf + BS_VolLab, "NO NAME    " "FAT     ", 19); /* Volume label, FAT signature */
-	.line	7068
+	.line	7088
 	pea	#<$13
-	pea	#^L1059+32
-	pea	#<L1059+32
+	pea	#^L670+32
+	pea	#<L670+32
 	clc
 	lda	#$2b
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~mem_cpy
 ;		}
-	.line	7069
+	.line	7089
 L10750:
 ;		st_word(buf + BS_55AA, 0xAA55); /* Signature (offset is fixed here regardless of sector size) */
-	.line	7070
+	.line	7090
 	pea	#<$aa55
 	clc
 	lda	#$1fe
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_word
 ;		if (disk_write(pdrv, buf, b_vol, 1) != RES_OK) LEAVE_MKFS(FR_DISK_ERR); /* Write it to the VBR sector */
-	.line	7071
+	.line	7091
 	pea	#<$1
-	pei	<L1160+b_vol_1+2
-	pei	<L1160+b_vol_1
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
-	pei	<L1160+pdrv_1
+	pei	<L1158+b_vol_1+2
+	pei	<L1158+b_vol_1
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
+	pei	<L1158+pdrv_1
 	jsl	~~disk_write
 	tax
-	bne	L1278
+	bne	L1276
 	brl	L10751
-L1278:
-	.line	7071
-	.line	7071
-	lda	<L1159+work_0
-	ora	<L1159+work_0+2
-	beq	L1279
+L1276:
+	.line	7091
+	.line	7091
+	lda	<L1157+work_0
+	ora	<L1157+work_0+2
+	beq	L1277
 	brl	L10752
-L1279:
-	.line	7071
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+L1277:
+	.line	7091
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~ff_memfree
 L10752:
-	.line	7071
+	.line	7091
 	lda	#$1
-	brl	L1166
-	.line	7071
+	brl	L1164
+	.line	7091
 L10751:
-	.line	7071
+	.line	7091
 ;
 ;		/* Create FSINFO record if needed */
 ;		if (fsty == FS_FAT32)
-	.line	7074
+	.line	7094
 ;		{
 	sep	#$20
 	longa	off
-	lda	<L1160+fsty_1
+	lda	<L1158+fsty_1
 	cmp	#<$3
 	rep	#$20
 	longa	on
-	beq	L1280
+	beq	L1278
 	brl	L10753
-L1280:
-	.line	7075
+L1278:
+	.line	7095
 ;			disk_write(pdrv, buf, b_vol + 6, 1); /* Write backup VBR (VBR + 6) */
-	.line	7076
+	.line	7096
 	pea	#<$1
 	clc
 	lda	#$6
-	adc	<L1160+b_vol_1
+	adc	<L1158+b_vol_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+b_vol_1+2
+	adc	<L1158+b_vol_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
-	pei	<L1160+pdrv_1
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
+	pei	<L1158+pdrv_1
 	jsl	~~disk_write
 ;			mem_set(buf, 0, ss);
-	.line	7077
-	pei	<L1160+ss_1
+	.line	7097
+	pei	<L1158+ss_1
 	pea	#<$0
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~mem_set
 ;			st_dword(buf + FSI_LeadSig, 0x41615252);
-	.line	7078
+	.line	7098
 	pea	#^$41615252
 	pea	#<$41615252
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~st_dword
 ;			st_dword(buf + FSI_StrucSig, 0x61417272);
-	.line	7079
+	.line	7099
 	pea	#^$61417272
 	pea	#<$61417272
 	clc
 	lda	#$1e4
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;			st_dword(buf + FSI_Free_Count, n_clst - 1); /* Number of free clusters */
-	.line	7080
+	.line	7100
 	clc
 	lda	#$ffff
-	adc	<L1160+n_clst_1
+	adc	<L1158+n_clst_1
 	sta	<R0
 	lda	#$ffff
-	adc	<L1160+n_clst_1+2
+	adc	<L1158+n_clst_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
 	lda	#$1e8
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R1
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~st_dword
 ;			st_dword(buf + FSI_Nxt_Free, 2); /* Last allocated cluster# */
-	.line	7081
+	.line	7101
 	pea	#^$2
 	pea	#<$2
 	clc
 	lda	#$1ec
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;			st_word(buf + BS_55AA, 0xAA55);
-	.line	7082
+	.line	7102
 	pea	#<$aa55
 	clc
 	lda	#$1fe
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_word
 ;			disk_write(pdrv, buf, b_vol + 7, 1); /* Write backup FSINFO (VBR + 7) */
-	.line	7083
+	.line	7103
 	pea	#<$1
 	clc
 	lda	#$7
-	adc	<L1160+b_vol_1
+	adc	<L1158+b_vol_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+b_vol_1+2
+	adc	<L1158+b_vol_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
-	pei	<L1160+pdrv_1
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
+	pei	<L1158+pdrv_1
 	jsl	~~disk_write
 ;			disk_write(pdrv, buf, b_vol + 1, 1); /* Write original FSINFO (VBR + 1) */
-	.line	7084
+	.line	7104
 	pea	#<$1
 	clc
 	lda	#$1
-	adc	<L1160+b_vol_1
+	adc	<L1158+b_vol_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+b_vol_1+2
+	adc	<L1158+b_vol_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
-	pei	<L1160+pdrv_1
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
+	pei	<L1158+pdrv_1
 	jsl	~~disk_write
 ;		}
-	.line	7085
+	.line	7105
 ;
 ;		/* Initialize FAT area */
 ;		mem_set(buf, 0, sz_buf * ss);
 L10753:
-	.line	7088
+	.line	7108
 	ldy	#$0
-	lda	<L1160+ss_1
-	bpl	L1281
+	lda	<L1158+ss_1
+	bpl	L1279
 	dey
-L1281:
+L1279:
 	sta	<R0
 	sty	<R0+2
-	pei	<L1160+sz_buf_1+2
-	pei	<L1160+sz_buf_1
+	pei	<L1158+sz_buf_1+2
+	pei	<L1158+sz_buf_1
 	pei	<R0+2
 	pei	<R0
 	xref	~~~lmul
@@ -31113,508 +31096,508 @@ L1281:
 	stx	<R0+2
 	pei	<R0
 	pea	#<$0
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~mem_set
 ;		sect = b_fat; /* FAT start sector */
-	.line	7089
-	lda	<L1160+b_fat_1
-	sta	<L1160+sect_1
-	lda	<L1160+b_fat_1+2
-	sta	<L1160+sect_1+2
+	.line	7109
+	lda	<L1158+b_fat_1
+	sta	<L1158+sect_1
+	lda	<L1158+b_fat_1+2
+	sta	<L1158+sect_1+2
 ;		for (i = 0; i < n_fat; i++)
-	.line	7090
-	stz	<L1160+i_1
+	.line	7110
+	stz	<L1158+i_1
 	brl	L10757
 L10756:
 ;		{ /* Initialize FATs each */
-	.line	7091
+	.line	7111
 ;			if (fsty == FS_FAT32)
-	.line	7092
+	.line	7112
 ;			{
 	sep	#$20
 	longa	off
-	lda	<L1160+fsty_1
+	lda	<L1158+fsty_1
 	cmp	#<$3
 	rep	#$20
 	longa	on
-	beq	L1282
+	beq	L1280
 	brl	L10758
-L1282:
-	.line	7093
+L1280:
+	.line	7113
 ;				st_dword(buf + 0, 0xFFFFFFF8); /* FAT[0] */
-	.line	7094
+	.line	7114
 	pea	#^$fffffff8
 	pea	#<$fffffff8
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~st_dword
 ;				st_dword(buf + 4, 0xFFFFFFFF); /* FAT[1] */
-	.line	7095
+	.line	7115
 	pea	#^$ffffffff
 	pea	#<$ffffffff
 	clc
 	lda	#$4
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;				st_dword(buf + 8, 0x0FFFFFFF); /* FAT[2] (root directory) */
-	.line	7096
+	.line	7116
 	pea	#^$fffffff
 	pea	#<$fffffff
 	clc
 	lda	#$8
-	adc	<L1160+buf_1
+	adc	<L1158+buf_1
 	sta	<R0
 	lda	#$0
-	adc	<L1160+buf_1+2
+	adc	<L1158+buf_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~st_dword
 ;			}
-	.line	7097
+	.line	7117
 ;			else
 	brl	L10759
 L10758:
 ;			{
-	.line	7099
+	.line	7119
 ;				st_dword(buf + 0, (fsty == FS_FAT12) ? 0xFFFFF8 : 0xFFFFFFF8); /* FAT[0] and FAT[1] */
-	.line	7100
+	.line	7120
 	sep	#$20
 	longa	off
-	lda	<L1160+fsty_1
+	lda	<L1158+fsty_1
 	cmp	#<$1
 	rep	#$20
 	longa	on
-	beq	L1284
-	brl	L1283
-L1284:
+	beq	L1282
+	brl	L1281
+L1282:
 	lda	#$ff
 	tax
 	lda	#$fff8
-	bra	L1285
-L1283:
+	bra	L1283
+L1281:
 	lda	#$ffff
 	tax
 	lda	#$fff8
-L1285:
+L1283:
 	sta	<R0
 	stx	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~st_dword
 ;			}
-	.line	7101
+	.line	7121
 L10759:
 ;			nsect = sz_fat; /* Number of FAT sectors */
-	.line	7102
-	lda	<L1160+sz_fat_1
-	sta	<L1160+nsect_1
-	lda	<L1160+sz_fat_1+2
-	sta	<L1160+nsect_1+2
+	.line	7122
+	lda	<L1158+sz_fat_1
+	sta	<L1158+nsect_1
+	lda	<L1158+sz_fat_1+2
+	sta	<L1158+nsect_1+2
 ;			do
-	.line	7103
+	.line	7123
 L10762:
 ;			{ /* Fill FAT sectors */
-	.line	7104
+	.line	7124
 ;				n = (nsect > sz_buf) ? sz_buf : nsect;
-	.line	7105
-	lda	<L1160+sz_buf_1
-	cmp	<L1160+nsect_1
-	lda	<L1160+sz_buf_1+2
-	sbc	<L1160+nsect_1+2
-	bcc	L1287
-	brl	L1286
-L1287:
-	ldx	<L1160+sz_buf_1+2
-	lda	<L1160+sz_buf_1
-	bra	L1288
+	.line	7125
+	lda	<L1158+sz_buf_1
+	cmp	<L1158+nsect_1
+	lda	<L1158+sz_buf_1+2
+	sbc	<L1158+nsect_1+2
+	bcc	L1285
+	brl	L1284
+L1285:
+	ldx	<L1158+sz_buf_1+2
+	lda	<L1158+sz_buf_1
+	bra	L1286
+L1284:
+	ldx	<L1158+nsect_1+2
+	lda	<L1158+nsect_1
 L1286:
-	ldx	<L1160+nsect_1+2
-	lda	<L1160+nsect_1
-L1288:
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
-	sta	<L1160+n_1
+	sta	<L1158+n_1
 	lda	<R0+2
-	sta	<L1160+n_1+2
+	sta	<L1158+n_1+2
 ;				if (disk_write(pdrv, buf, sect, (UINT)n) != RES_OK) LEAVE_MKFS(FR_DISK_ERR);
-	.line	7106
-	pei	<L1160+n_1
-	pei	<L1160+sect_1+2
-	pei	<L1160+sect_1
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
-	pei	<L1160+pdrv_1
+	.line	7126
+	pei	<L1158+n_1
+	pei	<L1158+sect_1+2
+	pei	<L1158+sect_1
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
+	pei	<L1158+pdrv_1
 	jsl	~~disk_write
 	tax
-	bne	L1289
+	bne	L1287
 	brl	L10763
-L1289:
-	.line	7106
-	.line	7106
-	lda	<L1159+work_0
-	ora	<L1159+work_0+2
-	beq	L1290
+L1287:
+	.line	7126
+	.line	7126
+	lda	<L1157+work_0
+	ora	<L1157+work_0+2
+	beq	L1288
 	brl	L10764
-L1290:
-	.line	7106
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+L1288:
+	.line	7126
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~ff_memfree
 L10764:
-	.line	7106
+	.line	7126
 	lda	#$1
-	brl	L1166
-	.line	7106
+	brl	L1164
+	.line	7126
 L10763:
-	.line	7106
+	.line	7126
 ;				mem_set(buf, 0, ss); /* Rest of FAT all are cleared */
-	.line	7107
-	pei	<L1160+ss_1
+	.line	7127
+	pei	<L1158+ss_1
 	pea	#<$0
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~mem_set
 ;				sect += n; nsect -= n;
-	.line	7108
+	.line	7128
 	clc
-	lda	<L1160+sect_1
-	adc	<L1160+n_1
-	sta	<L1160+sect_1
-	lda	<L1160+sect_1+2
-	adc	<L1160+n_1+2
-	sta	<L1160+sect_1+2
-	.line	7108
+	lda	<L1158+sect_1
+	adc	<L1158+n_1
+	sta	<L1158+sect_1
+	lda	<L1158+sect_1+2
+	adc	<L1158+n_1+2
+	sta	<L1158+sect_1+2
+	.line	7128
 	sec
-	lda	<L1160+nsect_1
-	sbc	<L1160+n_1
-	sta	<L1160+nsect_1
-	lda	<L1160+nsect_1+2
-	sbc	<L1160+n_1+2
-	sta	<L1160+nsect_1+2
+	lda	<L1158+nsect_1
+	sbc	<L1158+n_1
+	sta	<L1158+nsect_1
+	lda	<L1158+nsect_1+2
+	sbc	<L1158+n_1+2
+	sta	<L1158+nsect_1+2
 ;			}while (nsect);
-	.line	7109
+	.line	7129
 L10760:
-	lda	<L1160+nsect_1
-	ora	<L1160+nsect_1+2
-	beq	L1291
+	lda	<L1158+nsect_1
+	ora	<L1158+nsect_1+2
+	beq	L1289
 	brl	L10762
-L1291:
+L1289:
 L10761:
 ;		}
-	.line	7110
+	.line	7130
 L10754:
-	inc	<L1160+i_1
+	inc	<L1158+i_1
 L10757:
-	lda	<L1160+i_1
-	cmp	<L1160+n_fat_1
-	bcs	L1292
+	lda	<L1158+i_1
+	cmp	<L1158+n_fat_1
+	bcs	L1290
 	brl	L10756
-L1292:
+L1290:
 L10755:
 ;
 ;		/* Initialize root directory (fill with zero) */
 ;		nsect = (fsty == FS_FAT32) ? pau : sz_dir; /* Number of root directory sectors */
-	.line	7113
+	.line	7133
 	sep	#$20
 	longa	off
-	lda	<L1160+fsty_1
+	lda	<L1158+fsty_1
 	cmp	#<$3
 	rep	#$20
 	longa	on
-	beq	L1294
-	brl	L1293
-L1294:
-	ldx	<L1160+pau_1+2
-	lda	<L1160+pau_1
-	bra	L1295
+	beq	L1292
+	brl	L1291
+L1292:
+	ldx	<L1158+pau_1+2
+	lda	<L1158+pau_1
+	bra	L1293
+L1291:
+	ldx	<L1158+sz_dir_1+2
+	lda	<L1158+sz_dir_1
 L1293:
-	ldx	<L1160+sz_dir_1+2
-	lda	<L1160+sz_dir_1
-L1295:
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
-	sta	<L1160+nsect_1
+	sta	<L1158+nsect_1
 	lda	<R0+2
-	sta	<L1160+nsect_1+2
+	sta	<L1158+nsect_1+2
 ;		do
-	.line	7114
+	.line	7134
 L10767:
 ;		{
-	.line	7115
+	.line	7135
 ;			n = (nsect > sz_buf) ? sz_buf : nsect;
-	.line	7116
-	lda	<L1160+sz_buf_1
-	cmp	<L1160+nsect_1
-	lda	<L1160+sz_buf_1+2
-	sbc	<L1160+nsect_1+2
-	bcc	L1297
-	brl	L1296
-L1297:
-	ldx	<L1160+sz_buf_1+2
-	lda	<L1160+sz_buf_1
-	bra	L1298
+	.line	7136
+	lda	<L1158+sz_buf_1
+	cmp	<L1158+nsect_1
+	lda	<L1158+sz_buf_1+2
+	sbc	<L1158+nsect_1+2
+	bcc	L1295
+	brl	L1294
+L1295:
+	ldx	<L1158+sz_buf_1+2
+	lda	<L1158+sz_buf_1
+	bra	L1296
+L1294:
+	ldx	<L1158+nsect_1+2
+	lda	<L1158+nsect_1
 L1296:
-	ldx	<L1160+nsect_1+2
-	lda	<L1160+nsect_1
-L1298:
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
-	sta	<L1160+n_1
+	sta	<L1158+n_1
 	lda	<R0+2
-	sta	<L1160+n_1+2
+	sta	<L1158+n_1+2
 ;			if (disk_write(pdrv, buf, sect, (UINT)n) != RES_OK) LEAVE_MKFS(FR_DISK_ERR);
-	.line	7117
-	pei	<L1160+n_1
-	pei	<L1160+sect_1+2
-	pei	<L1160+sect_1
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
-	pei	<L1160+pdrv_1
+	.line	7137
+	pei	<L1158+n_1
+	pei	<L1158+sect_1+2
+	pei	<L1158+sect_1
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
+	pei	<L1158+pdrv_1
 	jsl	~~disk_write
 	tax
-	bne	L1299
+	bne	L1297
 	brl	L10768
-L1299:
-	.line	7117
-	.line	7117
-	lda	<L1159+work_0
-	ora	<L1159+work_0+2
-	beq	L1300
+L1297:
+	.line	7137
+	.line	7137
+	lda	<L1157+work_0
+	ora	<L1157+work_0+2
+	beq	L1298
 	brl	L10769
-L1300:
-	.line	7117
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+L1298:
+	.line	7137
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~ff_memfree
 L10769:
-	.line	7117
+	.line	7137
 	lda	#$1
-	brl	L1166
-	.line	7117
+	brl	L1164
+	.line	7137
 L10768:
-	.line	7117
+	.line	7137
 ;			sect += n; nsect -= n;
-	.line	7118
+	.line	7138
 	clc
-	lda	<L1160+sect_1
-	adc	<L1160+n_1
-	sta	<L1160+sect_1
-	lda	<L1160+sect_1+2
-	adc	<L1160+n_1+2
-	sta	<L1160+sect_1+2
-	.line	7118
+	lda	<L1158+sect_1
+	adc	<L1158+n_1
+	sta	<L1158+sect_1
+	lda	<L1158+sect_1+2
+	adc	<L1158+n_1+2
+	sta	<L1158+sect_1+2
+	.line	7138
 	sec
-	lda	<L1160+nsect_1
-	sbc	<L1160+n_1
-	sta	<L1160+nsect_1
-	lda	<L1160+nsect_1+2
-	sbc	<L1160+n_1+2
-	sta	<L1160+nsect_1+2
+	lda	<L1158+nsect_1
+	sbc	<L1158+n_1
+	sta	<L1158+nsect_1
+	lda	<L1158+nsect_1+2
+	sbc	<L1158+n_1+2
+	sta	<L1158+nsect_1+2
 ;		}while (nsect);
-	.line	7119
+	.line	7139
 L10765:
-	lda	<L1160+nsect_1
-	ora	<L1160+nsect_1+2
-	beq	L1301
+	lda	<L1158+nsect_1
+	ora	<L1158+nsect_1+2
+	beq	L1299
 	brl	L10767
-L1301:
+L1299:
 L10766:
 ;	}
-	.line	7120
+	.line	7140
 ;
 ;	/* A FAT volume has been created here */
 ;
 ;	/* Determine system ID in the MBR partition table */
 ;	if (FF_FS_EXFAT && fsty == FS_EXFAT)
-	.line	7125
+	.line	7145
 ;	{
 	brl	L10770
 	sep	#$20
 	longa	off
-	lda	<L1160+fsty_1
+	lda	<L1158+fsty_1
 	cmp	#<$4
 	rep	#$20
 	longa	on
-	beq	L1302
+	beq	L1300
 	brl	L10770
-L1302:
-	.line	7126
+L1300:
+	.line	7146
 ;		sys = 0x07; /* exFAT */
-	.line	7127
+	.line	7147
 	sep	#$20
 	longa	off
 	lda	#$7
-	sta	<L1160+sys_1
+	sta	<L1158+sys_1
 	rep	#$20
 	longa	on
 ;	}
-	.line	7128
+	.line	7148
 ;	else
 	brl	L10771
 L10770:
 ;	{
-	.line	7130
+	.line	7150
 ;		if (fsty == FS_FAT32)
-	.line	7131
+	.line	7151
 ;		{
 	sep	#$20
 	longa	off
-	lda	<L1160+fsty_1
+	lda	<L1158+fsty_1
 	cmp	#<$3
 	rep	#$20
 	longa	on
-	beq	L1303
+	beq	L1301
 	brl	L10772
-L1303:
-	.line	7132
+L1301:
+	.line	7152
 ;			sys = 0x0C; /* FAT32X */
-	.line	7133
+	.line	7153
 	sep	#$20
 	longa	off
 	lda	#$c
-	sta	<L1160+sys_1
+	sta	<L1158+sys_1
 	rep	#$20
 	longa	on
 ;		}
-	.line	7134
+	.line	7154
 ;		else
 	brl	L10773
 L10772:
 ;		{
-	.line	7136
+	.line	7156
 ;			if (sz_vol >= 0x10000)
-	.line	7137
+	.line	7157
 ;			{
-	lda	<L1160+sz_vol_1
+	lda	<L1158+sz_vol_1
 	cmp	#<$10000
-	lda	<L1160+sz_vol_1+2
+	lda	<L1158+sz_vol_1+2
 	sbc	#^$10000
-	bcs	L1304
+	bcs	L1302
 	brl	L10774
-L1304:
-	.line	7138
+L1302:
+	.line	7158
 ;				sys = 0x06; /* FAT12/16 (large) */
-	.line	7139
+	.line	7159
 	sep	#$20
 	longa	off
 	lda	#$6
-	sta	<L1160+sys_1
+	sta	<L1158+sys_1
 	rep	#$20
 	longa	on
 ;			}
-	.line	7140
+	.line	7160
 ;			else
 	brl	L10775
 L10774:
 ;			{
-	.line	7142
+	.line	7162
 ;				sys = (fsty == FS_FAT16) ? 0x04 : 0x01; /* FAT16 : FAT12 */
-	.line	7143
+	.line	7163
 	sep	#$20
 	longa	off
-	lda	<L1160+fsty_1
+	lda	<L1158+fsty_1
 	cmp	#<$2
 	rep	#$20
 	longa	on
-	beq	L1306
-	brl	L1305
-L1306:
+	beq	L1304
+	brl	L1303
+L1304:
 	lda	#$4
-	bra	L1307
-L1305:
+	bra	L1305
+L1303:
 	lda	#$1
-L1307:
+L1305:
 	sta	<R0
 	sep	#$20
 	longa	off
 	lda	<R0
-	sta	<L1160+sys_1
+	sta	<L1158+sys_1
 	rep	#$20
 	longa	on
 ;			}
-	.line	7144
+	.line	7164
 L10775:
 ;		}
-	.line	7145
+	.line	7165
 L10773:
 ;	}
-	.line	7146
+	.line	7166
 L10771:
 ;
 ;	/* Update partition information */
 ;	if (FF_MULTI_PARTITION && ipart != 0)
-	.line	7149
+	.line	7169
 ;	{ /* Volume is in the existing partition */
 	brl	L10776
-	lda	<L1160+ipart_1
+	lda	<L1158+ipart_1
 	and	#$ff
-	bne	L1308
+	bne	L1306
 	brl	L10776
-L1308:
-	.line	7150
+L1306:
+	.line	7170
 ;		if (!FF_LBA64 || !(fsopt & 0x80))
-	.line	7151
+	.line	7171
 ;		{
-	brl	L1309
+	brl	L1307
 	sep	#$20
 	longa	off
-	lda	<L1160+fsopt_1
+	lda	<L1158+fsopt_1
 	and	#<$80
 	rep	#$20
 	longa	on
-	beq	L1310
+	beq	L1308
 	brl	L10777
-L1310:
-L1309:
-	.line	7152
+L1308:
+L1307:
+	.line	7172
 ;			/* Update system ID in the partition table */
 ;			if (disk_read(pdrv, buf, 0, 1) != RES_OK) LEAVE_MKFS(FR_DISK_ERR); /* Read the MBR */
-	.line	7154
+	.line	7174
 	pea	#<$1
 	pea	#^$0
 	pea	#<$0
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
-	pei	<L1160+pdrv_1
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
+	pei	<L1158+pdrv_1
 	jsl	~~disk_read
 	tax
-	bne	L1311
+	bne	L1309
 	brl	L10778
-L1311:
-	.line	7154
-	.line	7154
-	lda	<L1159+work_0
-	ora	<L1159+work_0+2
-	beq	L1312
+L1309:
+	.line	7174
+	.line	7174
+	lda	<L1157+work_0
+	ora	<L1157+work_0+2
+	beq	L1310
 	brl	L10779
-L1312:
-	.line	7154
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+L1310:
+	.line	7174
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~ff_memfree
 L10779:
-	.line	7154
+	.line	7174
 	lda	#$1
-	brl	L1166
-	.line	7154
+	brl	L1164
+	.line	7174
 L10778:
-	.line	7154
+	.line	7174
 ;			buf[MBR_Table + (ipart - 1) * SZ_PTE + PTE_System] = sys; /* Set system ID */
-	.line	7155
-	lda	<L1160+ipart_1
+	.line	7175
+	lda	<L1158+ipart_1
 	and	#$ff
 	sta	<R1
 	lda	<R1
@@ -31629,178 +31612,178 @@ L10778:
 	sta	<R1
 	sep	#$20
 	longa	off
-	lda	<L1160+sys_1
+	lda	<L1158+sys_1
 	ldy	<R1
-	sta	[<L1160+buf_1],Y
+	sta	[<L1158+buf_1],Y
 	rep	#$20
 	longa	on
 ;			if (disk_write(pdrv, buf, 0, 1) != RES_OK) LEAVE_MKFS(FR_DISK_ERR); /* Write it back to the MBR */
-	.line	7156
+	.line	7176
 	pea	#<$1
 	pea	#^$0
 	pea	#<$0
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
-	pei	<L1160+pdrv_1
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
+	pei	<L1158+pdrv_1
 	jsl	~~disk_write
 	tax
-	bne	L1313
+	bne	L1311
 	brl	L10780
-L1313:
-	.line	7156
-	.line	7156
-	lda	<L1159+work_0
-	ora	<L1159+work_0+2
-	beq	L1314
+L1311:
+	.line	7176
+	.line	7176
+	lda	<L1157+work_0
+	ora	<L1157+work_0+2
+	beq	L1312
 	brl	L10781
-L1314:
-	.line	7156
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+L1312:
+	.line	7176
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~ff_memfree
 L10781:
-	.line	7156
+	.line	7176
 	lda	#$1
-	brl	L1166
-	.line	7156
+	brl	L1164
+	.line	7176
 L10780:
-	.line	7156
+	.line	7176
 ;		}
-	.line	7157
+	.line	7177
 ;	}
 L10777:
-	.line	7158
+	.line	7178
 ;	else
 	brl	L10782
 L10776:
 ;	{ /* Volume as a new single partition */
-	.line	7160
+	.line	7180
 ;		if (!(fsopt & FM_SFD))
-	.line	7161
+	.line	7181
 ;		{ /* Create partition table if not in SFD */
 	sep	#$20
 	longa	off
-	lda	<L1160+fsopt_1
+	lda	<L1158+fsopt_1
 	and	#<$8
 	rep	#$20
 	longa	on
-	beq	L1315
+	beq	L1313
 	brl	L10783
-L1315:
-	.line	7162
+L1313:
+	.line	7182
 ;			lba[0] = sz_vol, lba[1] = 0;
-	.line	7163
-	lda	<L1160+sz_vol_1
-	sta	<L1160+lba_1
-	lda	<L1160+sz_vol_1+2
-	sta	<L1160+lba_1+2
-	stz	<L1160+lba_1+4
-	stz	<L1160+lba_1+6
+	.line	7183
+	lda	<L1158+sz_vol_1
+	sta	<L1158+lba_1
+	lda	<L1158+sz_vol_1+2
+	sta	<L1158+lba_1+2
+	stz	<L1158+lba_1+4
+	stz	<L1158+lba_1+6
 ;			fr = create_partition(pdrv, lba, sys, buf);
-	.line	7164
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
-	lda	<L1160+sys_1
+	.line	7184
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
+	lda	<L1158+sys_1
 	and	#$ff
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L1160+lba_1
+	adc	#<L1158+lba_1
 	pha
-	pei	<L1160+pdrv_1
+	pei	<L1158+pdrv_1
 	jsl	~~create_partition
-	sta	<L1160+fr_1
+	sta	<L1158+fr_1
 ;			if (fr != FR_OK) LEAVE_MKFS(fr);
-	.line	7165
-	lda	<L1160+fr_1
-	bne	L1316
+	.line	7185
+	lda	<L1158+fr_1
+	bne	L1314
 	brl	L10784
-L1316:
-	.line	7165
-	.line	7165
-	lda	<L1159+work_0
-	ora	<L1159+work_0+2
-	beq	L1317
+L1314:
+	.line	7185
+	.line	7185
+	lda	<L1157+work_0
+	ora	<L1157+work_0+2
+	beq	L1315
 	brl	L10785
-L1317:
-	.line	7165
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+L1315:
+	.line	7185
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~ff_memfree
 L10785:
-	.line	7165
-	lda	<L1160+fr_1
-	brl	L1166
-	.line	7165
+	.line	7185
+	lda	<L1158+fr_1
+	brl	L1164
+	.line	7185
 L10784:
-	.line	7165
+	.line	7185
 ;		}
-	.line	7166
+	.line	7186
 ;	}
 L10783:
-	.line	7167
+	.line	7187
 L10782:
 ;
 ;	if (disk_ioctl(pdrv, CTRL_SYNC, 0) != RES_OK) LEAVE_MKFS(FR_DISK_ERR);
-	.line	7169
+	.line	7189
 	pea	#^$0
 	pea	#<$0
 	pea	#<$0
-	pei	<L1160+pdrv_1
+	pei	<L1158+pdrv_1
 	jsl	~~disk_ioctl
 	tax
-	bne	L1318
+	bne	L1316
 	brl	L10786
-L1318:
-	.line	7169
-	.line	7169
-	lda	<L1159+work_0
-	ora	<L1159+work_0+2
-	beq	L1319
+L1316:
+	.line	7189
+	.line	7189
+	lda	<L1157+work_0
+	ora	<L1157+work_0+2
+	beq	L1317
 	brl	L10787
-L1319:
-	.line	7169
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+L1317:
+	.line	7189
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~ff_memfree
 L10787:
-	.line	7169
+	.line	7189
 	lda	#$1
-	brl	L1166
-	.line	7169
+	brl	L1164
+	.line	7189
 L10786:
-	.line	7169
+	.line	7189
 ;
 ;	LEAVE_MKFS(FR_OK);
-	.line	7171
-	.line	7171
-	lda	<L1159+work_0
-	ora	<L1159+work_0+2
-	beq	L1320
+	.line	7191
+	.line	7191
+	lda	<L1157+work_0
+	ora	<L1157+work_0+2
+	beq	L1318
 	brl	L10788
-L1320:
-	.line	7171
-	pei	<L1160+buf_1+2
-	pei	<L1160+buf_1
+L1318:
+	.line	7191
+	pei	<L1158+buf_1+2
+	pei	<L1158+buf_1
 	jsl	~~ff_memfree
 L10788:
-	.line	7171
+	.line	7191
 	lda	#$0
-	brl	L1166
-	.line	7171
-	.line	7171
+	brl	L1164
+	.line	7191
+	.line	7191
 ;}
-	.line	7172
-	.endblock	7172
-L1159	equ	110
-L1160	equ	17
+	.line	7192
+	.endblock	7192
+L1157	equ	110
+L1158	equ	17
 	ends
 	efunc
-	.endfunc	7172,17,110
-	.line	7172
+	.endfunc	7192,17,110
+	.line	7192
 	data
-L1059:
+L670:
 	db	$EB,$FFFFFFFE,$FFFFFF90,$4D,$53,$44,$4F,$53,$35,$2E,$30,$00,$4E,$4F,$20
 	db	$4E,$41,$4D,$45,$20,$20,$20,$20,$46,$41,$54,$33,$32,$20,$20
 	db	$20,$00,$4E,$4F,$20,$4E,$41,$4D,$45,$20,$20,$20,$20,$46,$41
@@ -31848,25 +31831,25 @@ L1059:
 ;FIL* fp /* Pointer to the file object */
 ;)
 ;{
-	.line	7210
-	.line	7214
+	.line	7230
+	.line	7234
 	FFDOS
 	xdef	~~f_gets
 	func
-	.function	7214
+	.function	7234
 ~~f_gets:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1322
+	sbc	#L1320
 	tcs
 	phd
 	tcd
 buff_0	set	4
 len_0	set	8
 fp_0	set	10
-	.block	7214
+	.block	7234
 ;	int nc = 0;
 ;	TCHAR *p = buff;
 ;	BYTE s[4];
@@ -31896,46 +31879,46 @@ ct_1	set	16
 	.sym	ct,16,16,1,16
 	.sym	buff,4,142,6,32
 	.sym	len,8,5,6,16
-	.sym	fp,10,138,6,32,74
-	stz	<L1323+nc_1
-	lda	<L1322+buff_0
-	sta	<L1323+p_1
-	lda	<L1322+buff_0+2
-	sta	<L1323+p_1+2
-	.line	7229
+	.sym	fp,10,138,6,32,77
+	stz	<L1321+nc_1
+	lda	<L1320+buff_0
+	sta	<L1321+p_1
+	lda	<L1320+buff_0+2
+	sta	<L1321+p_1+2
+	.line	7249
 	brl	L10789
-	.line	7229
-	dec	<L1322+len_0
-	dec	<L1322+len_0
+	.line	7249
+	dec	<L1320+len_0
+	dec	<L1320+len_0
 ;	if (FF_LFN_UNICODE == 2) len -= (FF_STRF_ENCODE == 0) ? 3 : 4;
 L10789:
-	.line	7230
-	.line	7230
+	.line	7250
+	.line	7250
 	clc
 	lda	#$fffc
-	adc	<L1322+len_0
-	sta	<L1322+len_0
+	adc	<L1320+len_0
+	sta	<L1320+len_0
 ;	if (FF_LFN_UNICODE == 3) len -= 1;
 L10790:
-	.line	7231
+	.line	7251
 	brl	L10791
-	.line	7231
-	dec	<L1322+len_0
+	.line	7251
+	dec	<L1320+len_0
 ;	while (nc < len)
 L10791:
-	.line	7232
+	.line	7252
 L10792:
 	sec
-	lda	<L1323+nc_1
-	sbc	<L1322+len_0
-	bvs	L1325
+	lda	<L1321+nc_1
+	sbc	<L1320+len_0
+	bvs	L1323
 	eor	#$8000
-L1325:
-	bpl	L1326
+L1323:
+	bpl	L1324
 	brl	L10793
-L1326:
+L1324:
 ;	{
-	.line	7233
+	.line	7253
 ;#if FF_STRF_ENCODE == 0				/* Read a character in ANSI/OEM */
 ;		f_read(fp, s, 1, &rc); /* Get a code unit */
 ;		if (rc != 1) break; /* EOF? */
@@ -31963,268 +31946,268 @@ L1326:
 ;		}
 ;#else	/* Read a character in UTF-8 */
 ;		f_read(fp, s, 1, &rc); /* Get a code unit */
-	.line	7260
+	.line	7280
 	pea	#0
 	clc
 	tdc
-	adc	#<L1323+rc_1
+	adc	#<L1321+rc_1
 	pha
 	pea	#<$1
 	pea	#0
 	clc
 	tdc
-	adc	#<L1323+s_1
+	adc	#<L1321+s_1
 	pha
-	pei	<L1322+fp_0+2
-	pei	<L1322+fp_0
+	pei	<L1320+fp_0+2
+	pei	<L1320+fp_0
 	jsl	~~f_read
 ;		if (rc != 1) break; /* EOF? */
-	.line	7261
-	lda	<L1323+rc_1
+	.line	7281
+	lda	<L1321+rc_1
 	cmp	#<$1
-	beq	L1327
+	beq	L1325
 	brl	L10793
-L1327:
+L1325:
 ;		dc = s[0];
-	.line	7262
-	lda	<L1323+s_1
+	.line	7282
+	lda	<L1321+s_1
 	and	#$ff
-	sta	<L1323+dc_1
-	stz	<L1323+dc_1+2
+	sta	<L1321+dc_1
+	stz	<L1321+dc_1+2
 ;		if (dc >= 0x80)
-	.line	7263
+	.line	7283
 ;		{ /* Multi-byte sequence? */
-	lda	<L1323+dc_1
+	lda	<L1321+dc_1
 	cmp	#<$80
-	lda	<L1323+dc_1+2
+	lda	<L1321+dc_1+2
 	sbc	#^$80
-	bcs	L1328
+	bcs	L1326
 	brl	L10794
-L1328:
-	.line	7264
+L1326:
+	.line	7284
 ;			ct = 0;
-	.line	7265
-	stz	<L1323+ct_1
+	.line	7285
+	stz	<L1321+ct_1
 ;			if ((dc & 0xE0) == 0xC0)
-	.line	7266
+	.line	7286
 ;			{	dc &= 0x1F; ct = 1;} /* 2-byte sequence? */
-	lda	<L1323+dc_1
+	lda	<L1321+dc_1
 	and	#<$e0
 	sta	<R0
 	stz	<R0+2
 	lda	<R0
 	cmp	#<$c0
-	bne	L1329
+	bne	L1327
 	lda	<R0+2
 	cmp	#^$c0
-L1329:
-	beq	L1330
+L1327:
+	beq	L1328
 	brl	L10795
-L1330:
-	.line	7267
-	.line	7267
-	lda	<L1323+dc_1
+L1328:
+	.line	7287
+	.line	7287
+	lda	<L1321+dc_1
 	and	#<$1f
-	sta	<L1323+dc_1
-	stz	<L1323+dc_1+2
-	.line	7267
+	sta	<L1321+dc_1
+	stz	<L1321+dc_1+2
+	.line	7287
 	lda	#$1
-	sta	<L1323+ct_1
-	.line	7267
+	sta	<L1321+ct_1
+	.line	7287
 ;			if ((dc & 0xF0) == 0xE0)
 L10795:
-	.line	7268
+	.line	7288
 ;			{	dc &= 0x0F; ct = 2;} /* 3-byte sequence? */
-	lda	<L1323+dc_1
+	lda	<L1321+dc_1
 	and	#<$f0
 	sta	<R0
 	stz	<R0+2
 	lda	<R0
 	cmp	#<$e0
-	bne	L1331
+	bne	L1329
 	lda	<R0+2
 	cmp	#^$e0
-L1331:
-	beq	L1332
+L1329:
+	beq	L1330
 	brl	L10796
-L1332:
-	.line	7269
-	.line	7269
-	lda	<L1323+dc_1
+L1330:
+	.line	7289
+	.line	7289
+	lda	<L1321+dc_1
 	and	#<$f
-	sta	<L1323+dc_1
-	stz	<L1323+dc_1+2
-	.line	7269
+	sta	<L1321+dc_1
+	stz	<L1321+dc_1+2
+	.line	7289
 	lda	#$2
-	sta	<L1323+ct_1
-	.line	7269
+	sta	<L1321+ct_1
+	.line	7289
 ;			if ((dc & 0xF8) == 0xF0)
 L10796:
-	.line	7270
+	.line	7290
 ;			{	dc &= 0x07; ct = 3;} /* 4-byte sequence? */
-	lda	<L1323+dc_1
+	lda	<L1321+dc_1
 	and	#<$f8
 	sta	<R0
 	stz	<R0+2
 	lda	<R0
 	cmp	#<$f0
-	bne	L1333
+	bne	L1331
 	lda	<R0+2
 	cmp	#^$f0
-L1333:
-	beq	L1334
+L1331:
+	beq	L1332
 	brl	L10797
-L1334:
-	.line	7271
-	.line	7271
-	lda	<L1323+dc_1
+L1332:
+	.line	7291
+	.line	7291
+	lda	<L1321+dc_1
 	and	#<$7
-	sta	<L1323+dc_1
-	stz	<L1323+dc_1+2
-	.line	7271
+	sta	<L1321+dc_1
+	stz	<L1321+dc_1+2
+	.line	7291
 	lda	#$3
-	sta	<L1323+ct_1
-	.line	7271
+	sta	<L1321+ct_1
+	.line	7291
 ;			if (ct == 0) continue;
 L10797:
-	.line	7272
-	lda	<L1323+ct_1
-	bne	L1335
+	.line	7292
+	lda	<L1321+ct_1
+	bne	L1333
 	brl	L10792
-L1335:
+L1333:
 ;			f_read(fp, s, ct, &rc); /* Get trailing bytes */
-	.line	7273
+	.line	7293
 	pea	#0
 	clc
 	tdc
-	adc	#<L1323+rc_1
+	adc	#<L1321+rc_1
 	pha
-	pei	<L1323+ct_1
+	pei	<L1321+ct_1
 	pea	#0
 	clc
 	tdc
-	adc	#<L1323+s_1
+	adc	#<L1321+s_1
 	pha
-	pei	<L1322+fp_0+2
-	pei	<L1322+fp_0
+	pei	<L1320+fp_0+2
+	pei	<L1320+fp_0
 	jsl	~~f_read
 ;			if (rc != ct) break;
-	.line	7274
-	lda	<L1323+rc_1
-	cmp	<L1323+ct_1
-	beq	L1336
+	.line	7294
+	lda	<L1321+rc_1
+	cmp	<L1321+ct_1
+	beq	L1334
 	brl	L10793
-L1336:
+L1334:
 ;			rc = 0;
-	.line	7275
-	stz	<L1323+rc_1
+	.line	7295
+	stz	<L1321+rc_1
 ;			do
-	.line	7276
+	.line	7296
 L10800:
 ;			{ /* Merge the byte sequence */
-	.line	7277
+	.line	7297
 ;				if ((s[rc] & 0xC0) != 0x80) break;
-	.line	7278
-	ldx	<L1323+rc_1
-	lda	<L1323+s_1,X
+	.line	7298
+	ldx	<L1321+rc_1
+	lda	<L1321+s_1,X
 	and	#<$c0
 	sta	<R0
 	lda	<R0
 	cmp	#<$80
-	beq	L1337
+	beq	L1335
 	brl	L10799
-L1337:
+L1335:
 ;				dc = dc << 6 | (s[rc] & 0x3F);
-	.line	7279
-	pei	<L1323+dc_1+2
-	pei	<L1323+dc_1
+	.line	7299
+	pei	<L1321+dc_1+2
+	pei	<L1321+dc_1
 	lda	#$6
 	xref	~~~lasl
 	jsl	~~~lasl
 	sta	<R0
 	stx	<R0+2
-	ldx	<L1323+rc_1
-	lda	<L1323+s_1,X
+	ldx	<L1321+rc_1
+	lda	<L1321+s_1,X
 	and	#<$3f
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L1338
+	bpl	L1336
 	dey
-L1338:
+L1336:
 	sta	<R1
 	sty	<R1+2
 	lda	<R1
 	ora	<R0
-	sta	<L1323+dc_1
+	sta	<L1321+dc_1
 	lda	<R1+2
 	ora	<R0+2
-	sta	<L1323+dc_1+2
+	sta	<L1321+dc_1+2
 ;			}while (++rc < ct);
-	.line	7280
+	.line	7300
 L10798:
-	inc	<L1323+rc_1
-	lda	<L1323+rc_1
-	cmp	<L1323+ct_1
-	bcs	L1339
+	inc	<L1321+rc_1
+	lda	<L1321+rc_1
+	cmp	<L1321+ct_1
+	bcs	L1337
 	brl	L10800
-L1339:
+L1337:
 L10799:
 ;			if (rc != ct || dc < 0x80 || IsSurrogate(dc) || dc >= 0x110000) continue; /* Wrong encoding? */
-	.line	7281
-	lda	<L1323+rc_1
-	cmp	<L1323+ct_1
-	beq	L1340
+	.line	7301
+	lda	<L1321+rc_1
+	cmp	<L1321+ct_1
+	beq	L1338
 	brl	L10792
-L1340:
-	lda	<L1323+dc_1
+L1338:
+	lda	<L1321+dc_1
 	cmp	#<$80
-	lda	<L1323+dc_1+2
+	lda	<L1321+dc_1+2
 	sbc	#^$80
-	bcs	L1341
+	bcs	L1339
 	brl	L10792
-L1341:
-	lda	<L1323+dc_1
+L1339:
+	lda	<L1321+dc_1
 	cmp	#<$d800
-	lda	<L1323+dc_1+2
+	lda	<L1321+dc_1+2
 	sbc	#^$d800
-	bcs	L1343
-	brl	L1342
-L1343:
+	bcs	L1341
+	brl	L1340
+L1341:
 	lda	#$dfff
-	cmp	<L1323+dc_1
+	cmp	<L1321+dc_1
 	lda	#$0
-	sbc	<L1323+dc_1+2
-	bcc	L1344
+	sbc	<L1321+dc_1+2
+	bcc	L1342
 	brl	L10792
-L1344:
 L1342:
-	lda	<L1323+dc_1
+L1340:
+	lda	<L1321+dc_1
 	cmp	#<$110000
-	lda	<L1323+dc_1+2
+	lda	<L1321+dc_1+2
 	sbc	#^$110000
-	bcc	L1345
+	bcc	L1343
 	brl	L10792
-L1345:
+L1343:
 ;		}
-	.line	7282
+	.line	7302
 ;#endif
 ;		/* A code point is avaialble in dc to be output */
 ;
 ;		if (FF_USE_STRFUNC == 2 && dc == '\r') continue; /* Strip \r off if needed */
 L10794:
-	.line	7286
-	brl	L1346
-	lda	<L1323+dc_1
+	.line	7306
+	brl	L1344
+	lda	<L1321+dc_1
 	cmp	#<$d
-	bne	L1347
-	lda	<L1323+dc_1+2
+	bne	L1345
+	lda	<L1321+dc_1+2
 	cmp	#^$d
-L1347:
-	bne	L1348
+L1345:
+	bne	L1346
 	brl	L10792
-L1348:
 L1346:
+L1344:
 ;#if FF_LFN_UNICODE == 1	|| FF_LFN_UNICODE == 3	/* Output it in UTF-16/32 encoding */
 ;		if (FF_LFN_UNICODE == 1 && dc >= 0x10000)
 ;		{ /* Out of BMP at UTF-16? */
@@ -32235,64 +32218,64 @@ L1346:
 ;		if (dc == '\n') break; /* End of line? */
 ;#elif FF_LFN_UNICODE == 2		/* Output it in UTF-8 encoding */
 ;		if (dc < 0x80)
-	.line	7296
+	.line	7316
 ;		{ /* Single byte? */
-	lda	<L1323+dc_1
+	lda	<L1321+dc_1
 	cmp	#<$80
-	lda	<L1323+dc_1+2
+	lda	<L1321+dc_1+2
 	sbc	#^$80
-	bcc	L1349
+	bcc	L1347
 	brl	L10801
-L1349:
-	.line	7297
+L1347:
+	.line	7317
 ;			*p++ = (TCHAR)dc;
-	.line	7298
+	.line	7318
 	sep	#$20
 	longa	off
-	lda	<L1323+dc_1
-	sta	[<L1323+p_1]
+	lda	<L1321+dc_1
+	sta	[<L1321+p_1]
 	rep	#$20
 	longa	on
-	inc	<L1323+p_1
-	bne	L1350
-	inc	<L1323+p_1+2
-L1350:
+	inc	<L1321+p_1
+	bne	L1348
+	inc	<L1321+p_1+2
+L1348:
 ;			nc++;
-	.line	7299
-	inc	<L1323+nc_1
+	.line	7319
+	inc	<L1321+nc_1
 ;			if (dc == '\n') break; /* End of line? */
-	.line	7300
-	lda	<L1323+dc_1
+	.line	7320
+	lda	<L1321+dc_1
 	cmp	#<$a
-	bne	L1351
-	lda	<L1323+dc_1+2
+	bne	L1349
+	lda	<L1321+dc_1+2
 	cmp	#^$a
-L1351:
-	bne	L1352
+L1349:
+	bne	L1350
 	brl	L10793
-L1352:
+L1350:
 ;		}
-	.line	7301
+	.line	7321
 ;		else
 	brl	L10802
 L10801:
 ;		{
-	.line	7303
+	.line	7323
 ;			if (dc < 0x800)
-	.line	7304
+	.line	7324
 ;			{ /* 2-byte sequence? */
-	lda	<L1323+dc_1
+	lda	<L1321+dc_1
 	cmp	#<$800
-	lda	<L1323+dc_1+2
+	lda	<L1321+dc_1+2
 	sbc	#^$800
-	bcc	L1353
+	bcc	L1351
 	brl	L10803
-L1353:
-	.line	7305
+L1351:
+	.line	7325
 ;				*p++ = (TCHAR)(0xC0 | (dc >> 6 & 0x1F));
-	.line	7306
-	pei	<L1323+dc_1+2
-	pei	<L1323+dc_1
+	.line	7326
+	pei	<L1321+dc_1+2
+	pei	<L1321+dc_1
 	lda	#$6
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -32310,16 +32293,16 @@ L1353:
 	sep	#$20
 	longa	off
 	lda	<R0
-	sta	[<L1323+p_1]
+	sta	[<L1321+p_1]
 	rep	#$20
 	longa	on
-	inc	<L1323+p_1
-	bne	L1354
-	inc	<L1323+p_1+2
-L1354:
+	inc	<L1321+p_1
+	bne	L1352
+	inc	<L1321+p_1+2
+L1352:
 ;				*p++ = (TCHAR)(0x80 | (dc >> 0 & 0x3F));
-	.line	7307
-	lda	<L1323+dc_1
+	.line	7327
+	lda	<L1321+dc_1
 	and	#<$3f
 	sta	<R0
 	stz	<R0+2
@@ -32331,39 +32314,39 @@ L1354:
 	sep	#$20
 	longa	off
 	lda	<R1
-	sta	[<L1323+p_1]
+	sta	[<L1321+p_1]
 	rep	#$20
 	longa	on
-	inc	<L1323+p_1
-	bne	L1355
-	inc	<L1323+p_1+2
-L1355:
+	inc	<L1321+p_1
+	bne	L1353
+	inc	<L1321+p_1+2
+L1353:
 ;				nc += 2;
-	.line	7308
-	inc	<L1323+nc_1
-	inc	<L1323+nc_1
+	.line	7328
+	inc	<L1321+nc_1
+	inc	<L1321+nc_1
 ;			}
-	.line	7309
+	.line	7329
 ;			else
 	brl	L10804
 L10803:
 ;			{
-	.line	7311
+	.line	7331
 ;				if (dc < 0x10000)
-	.line	7312
+	.line	7332
 ;				{ /* 3-byte sequence? */
-	lda	<L1323+dc_1
+	lda	<L1321+dc_1
 	cmp	#<$10000
-	lda	<L1323+dc_1+2
+	lda	<L1321+dc_1+2
 	sbc	#^$10000
-	bcc	L1356
+	bcc	L1354
 	brl	L10805
-L1356:
-	.line	7313
+L1354:
+	.line	7333
 ;					*p++ = (TCHAR)(0xE0 | (dc >> 12 & 0x0F));
-	.line	7314
-	pei	<L1323+dc_1+2
-	pei	<L1323+dc_1
+	.line	7334
+	pei	<L1321+dc_1+2
+	pei	<L1321+dc_1
 	lda	#$c
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -32381,17 +32364,17 @@ L1356:
 	sep	#$20
 	longa	off
 	lda	<R0
-	sta	[<L1323+p_1]
+	sta	[<L1321+p_1]
 	rep	#$20
 	longa	on
-	inc	<L1323+p_1
-	bne	L1357
-	inc	<L1323+p_1+2
-L1357:
+	inc	<L1321+p_1
+	bne	L1355
+	inc	<L1321+p_1+2
+L1355:
 ;					*p++ = (TCHAR)(0x80 | (dc >> 6 & 0x3F));
-	.line	7315
-	pei	<L1323+dc_1+2
-	pei	<L1323+dc_1
+	.line	7335
+	pei	<L1321+dc_1+2
+	pei	<L1321+dc_1
 	lda	#$6
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -32409,16 +32392,16 @@ L1357:
 	sep	#$20
 	longa	off
 	lda	<R0
-	sta	[<L1323+p_1]
+	sta	[<L1321+p_1]
 	rep	#$20
 	longa	on
-	inc	<L1323+p_1
-	bne	L1358
-	inc	<L1323+p_1+2
-L1358:
+	inc	<L1321+p_1
+	bne	L1356
+	inc	<L1321+p_1+2
+L1356:
 ;					*p++ = (TCHAR)(0x80 | (dc >> 0 & 0x3F));
-	.line	7316
-	lda	<L1323+dc_1
+	.line	7336
+	lda	<L1321+dc_1
 	and	#<$3f
 	sta	<R0
 	stz	<R0+2
@@ -32430,29 +32413,29 @@ L1358:
 	sep	#$20
 	longa	off
 	lda	<R1
-	sta	[<L1323+p_1]
+	sta	[<L1321+p_1]
 	rep	#$20
 	longa	on
-	inc	<L1323+p_1
-	bne	L1359
-	inc	<L1323+p_1+2
-L1359:
+	inc	<L1321+p_1
+	bne	L1357
+	inc	<L1321+p_1+2
+L1357:
 ;					nc += 3;
-	.line	7317
-	inc	<L1323+nc_1
-	inc	<L1323+nc_1
-	inc	<L1323+nc_1
+	.line	7337
+	inc	<L1321+nc_1
+	inc	<L1321+nc_1
+	inc	<L1321+nc_1
 ;				}
-	.line	7318
+	.line	7338
 ;				else
 	brl	L10806
 L10805:
 ;				{ /* 4-byte sequence? */
-	.line	7320
+	.line	7340
 ;					*p++ = (TCHAR)(0xF0 | (dc >> 18 & 0x07));
-	.line	7321
-	pei	<L1323+dc_1+2
-	pei	<L1323+dc_1
+	.line	7341
+	pei	<L1321+dc_1+2
+	pei	<L1321+dc_1
 	lda	#$12
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -32470,17 +32453,17 @@ L10805:
 	sep	#$20
 	longa	off
 	lda	<R0
-	sta	[<L1323+p_1]
+	sta	[<L1321+p_1]
 	rep	#$20
 	longa	on
-	inc	<L1323+p_1
-	bne	L1360
-	inc	<L1323+p_1+2
-L1360:
+	inc	<L1321+p_1
+	bne	L1358
+	inc	<L1321+p_1+2
+L1358:
 ;					*p++ = (TCHAR)(0x80 | (dc >> 12 & 0x3F));
-	.line	7322
-	pei	<L1323+dc_1+2
-	pei	<L1323+dc_1
+	.line	7342
+	pei	<L1321+dc_1+2
+	pei	<L1321+dc_1
 	lda	#$c
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -32498,17 +32481,17 @@ L1360:
 	sep	#$20
 	longa	off
 	lda	<R0
-	sta	[<L1323+p_1]
+	sta	[<L1321+p_1]
 	rep	#$20
 	longa	on
-	inc	<L1323+p_1
-	bne	L1361
-	inc	<L1323+p_1+2
-L1361:
+	inc	<L1321+p_1
+	bne	L1359
+	inc	<L1321+p_1+2
+L1359:
 ;					*p++ = (TCHAR)(0x80 | (dc >> 6 & 0x3F));
-	.line	7323
-	pei	<L1323+dc_1+2
-	pei	<L1323+dc_1
+	.line	7343
+	pei	<L1321+dc_1+2
+	pei	<L1321+dc_1
 	lda	#$6
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -32526,16 +32509,16 @@ L1361:
 	sep	#$20
 	longa	off
 	lda	<R0
-	sta	[<L1323+p_1]
+	sta	[<L1321+p_1]
 	rep	#$20
 	longa	on
-	inc	<L1323+p_1
-	bne	L1362
-	inc	<L1323+p_1+2
-L1362:
+	inc	<L1321+p_1
+	bne	L1360
+	inc	<L1321+p_1+2
+L1360:
 ;					*p++ = (TCHAR)(0x80 | (dc >> 0 & 0x3F));
-	.line	7324
-	lda	<L1323+dc_1
+	.line	7344
+	lda	<L1321+dc_1
 	and	#<$3f
 	sta	<R0
 	stz	<R0+2
@@ -32547,31 +32530,31 @@ L1362:
 	sep	#$20
 	longa	off
 	lda	<R1
-	sta	[<L1323+p_1]
+	sta	[<L1321+p_1]
 	rep	#$20
 	longa	on
-	inc	<L1323+p_1
-	bne	L1363
-	inc	<L1323+p_1+2
-L1363:
+	inc	<L1321+p_1
+	bne	L1361
+	inc	<L1321+p_1+2
+L1361:
 ;					nc += 4;
-	.line	7325
+	.line	7345
 	clc
 	lda	#$4
-	adc	<L1323+nc_1
-	sta	<L1323+nc_1
+	adc	<L1321+nc_1
+	sta	<L1321+nc_1
 ;				}
-	.line	7326
+	.line	7346
 L10806:
 ;			}
-	.line	7327
+	.line	7347
 L10804:
 ;		}
-	.line	7328
+	.line	7348
 L10802:
 ;#endif
 ;	}
-	.line	7330
+	.line	7350
 	brl	L10792
 L10793:
 ;
@@ -32593,59 +32576,59 @@ L10793:
 ;#endif
 ;
 ;	*p = 0; /* Terminate the string */
-	.line	7349
+	.line	7369
 	sep	#$20
 	longa	off
 	lda	#$0
-	sta	[<L1323+p_1]
+	sta	[<L1321+p_1]
 	rep	#$20
 	longa	on
 ;	return nc ? buff : 0; /* When no data read due to EOF or error, return with error. */
-	.line	7350
-	lda	<L1323+nc_1
-	bne	L1365
-	brl	L1364
-L1365:
-	ldx	<L1322+buff_0+2
-	lda	<L1322+buff_0
-	bra	L1366
-L1364:
+	.line	7370
+	lda	<L1321+nc_1
+	bne	L1363
+	brl	L1362
+L1363:
+	ldx	<L1320+buff_0+2
+	lda	<L1320+buff_0
+	bra	L1364
+L1362:
 	lda	#$0
 	tax
 	lda	#$0
-L1366:
+L1364:
 	sta	<R0
 	stx	<R0+2
 	ldx	<R0+2
 	lda	<R0
-L1367:
+L1365:
 	tay
-	lda	<L1322+2
-	sta	<L1322+2+10
-	lda	<L1322+1
-	sta	<L1322+1+10
+	lda	<L1320+2
+	sta	<L1320+2+10
+	lda	<L1320+1
+	sta	<L1320+1+10
 	pld
 	tsc
 	clc
-	adc	#L1322+10
+	adc	#L1320+10
 	tcs
 	tya
 	rtl
 ;}
-	.line	7351
-	.endblock	7351
-L1322	equ	26
-L1323	equ	9
+	.line	7371
+	.endblock	7371
+L1320	equ	26
+L1321	equ	9
 	ends
 	efunc
-	.endfunc	7351,9,26
-	.line	7351
+	.endfunc	7371,9,26
+	.line	7371
 ;
 ;#if !FF_FS_READONLY
 ;#include <stdarg.h>
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdarg.h",0
 	.line	51
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.c",7354
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.c",7374
 ;/*-----------------------------------------------------------------------*/
 ;/* Put a Character to the File (sub-functions)                           */
 ;/*-----------------------------------------------------------------------*/
@@ -32664,8 +32647,8 @@ L1323	equ	9
 ;#endif
 ;	BYTE buf[64]; /* Write buffer */
 ;} putbuff;
-	.stag	fake125_,640,125
-	.member	fp,0,138,8,32,74
+	.stag	fake131_,640,131
+	.member	fp,0,138,8,32,77
 	.member	idx,32,5,8,16
 	.member	nchr,48,5,8,16
 	.member	bs,64,110,8,0,4
@@ -32678,23 +32661,23 @@ L1323	equ	9
 ;
 ;static void putc_bfd(putbuff* pb, TCHAR c)
 ;{
-	.line	7376
-	.line	7377
+	.line	7396
+	.line	7397
 	FFDOS
 	func
-	.function	7377
+	.function	7397
 ~~putc_bfd:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1368
+	sbc	#L1366
 	tcs
 	phd
 	tcd
 pb_0	set	4
 c_0	set	8
-	.block	7377
+	.block	7397
 ;	UINT n;
 ;	int i, nc;
 ;#if FF_USE_LFN && FF_LFN_UNICODE
@@ -32720,61 +32703,61 @@ tp_1	set	14
 	.sym	wc,8,16,1,16
 	.sym	dc,10,18,1,32
 	.sym	tp,14,142,1,32
-	.sym	pb,4,138,6,32,125
+	.sym	pb,4,138,6,32,131
 	.sym	c,8,14,6,8
-	.line	7388
+	.line	7408
 ;	{ /* LF -> CRLF conversion */
 	brl	L10807
 	sep	#$20
 	longa	off
-	lda	<L1368+c_0
+	lda	<L1366+c_0
 	cmp	#<$a
 	rep	#$20
 	longa	on
-	beq	L1371
+	beq	L1369
 	brl	L10807
-L1371:
-	.line	7389
+L1369:
+	.line	7409
 ;		putc_bfd(pb, '\r');
-	.line	7390
+	.line	7410
 	pea	#<$d
-	pei	<L1368+pb_0+2
-	pei	<L1368+pb_0
+	pei	<L1366+pb_0+2
+	pei	<L1366+pb_0
 	jsl	~~putc_bfd
 ;	}
-	.line	7391
+	.line	7411
 ;
 ;	i = pb->idx; /* Write index of pb->buf[] */
 L10807:
-	.line	7393
+	.line	7413
 	ldy	#$4
-	lda	[<L1368+pb_0],Y
-	sta	<L1369+i_1
+	lda	[<L1366+pb_0],Y
+	sta	<L1367+i_1
 ;	if (i < 0)
-	.line	7394
+	.line	7414
 ;		return;
-	lda	<L1369+i_1
-	bmi	L1372
+	lda	<L1367+i_1
+	bmi	L1370
 	brl	L10808
-L1372:
-	.line	7395
-L1373:
-	lda	<L1368+2
-	sta	<L1368+2+6
-	lda	<L1368+1
-	sta	<L1368+1+6
+L1370:
+	.line	7415
+L1371:
+	lda	<L1366+2
+	sta	<L1366+2+6
+	lda	<L1366+1
+	sta	<L1366+1+6
 	pld
 	tsc
 	clc
-	adc	#L1368+6
+	adc	#L1366+6
 	tcs
 	rtl
 ;	nc = pb->nchr; /* Write unit counter */
 L10808:
-	.line	7396
+	.line	7416
 	ldy	#$6
-	lda	[<L1368+pb_0],Y
-	sta	<L1369+nc_1
+	lda	[<L1366+pb_0],Y
+	sta	<L1367+nc_1
 ;
 ;#if FF_USE_LFN && FF_LFN_UNICODE
 ;#if FF_LFN_UNICODE == 1		/* UTF-16 input */
@@ -32794,131 +32777,131 @@ L10808:
 ;	wc = c;
 ;#elif FF_LFN_UNICODE == 2	/* UTF-8 input */
 ;	for (;;)
-	.line	7415
+	.line	7435
 L10811:
 ;	{
-	.line	7416
+	.line	7436
 ;		if (pb->ct == 0)
-	.line	7417
+	.line	7437
 ;		{ /* Out of multi-byte sequence? */
 	ldy	#$e
-	lda	[<L1368+pb_0],Y
-	beq	L1374
+	lda	[<L1366+pb_0],Y
+	beq	L1372
 	brl	L10812
-L1374:
-	.line	7418
+L1372:
+	.line	7438
 ;			pb->bs[pb->wi = 0] = (BYTE)c; /* Save 1st byte */
-	.line	7419
+	.line	7439
 	lda	#$0
 	ldy	#$c
-	sta	[<L1368+pb_0],Y
+	sta	[<L1366+pb_0],Y
 	clc
 	lda	#$8
 	adc	#<$0
 	sta	<R0
 	sep	#$20
 	longa	off
-	lda	<L1368+c_0
+	lda	<L1366+c_0
 	ldy	<R0
-	sta	[<L1368+pb_0],Y
+	sta	[<L1366+pb_0],Y
 	rep	#$20
 	longa	on
 ;			if ((BYTE)c < 0x80) break; /* Single byte? */
-	.line	7420
+	.line	7440
 	sep	#$20
 	longa	off
-	lda	<L1368+c_0
+	lda	<L1366+c_0
 	cmp	#<$80
 	rep	#$20
 	longa	on
-	bcs	L1375
+	bcs	L1373
 	brl	L10810
-L1375:
+L1373:
 ;			if (((BYTE)c & 0xE0) == 0xC0) pb->ct = 1; /* 2-byte sequence? */
-	.line	7421
-	lda	<L1368+c_0
+	.line	7441
+	lda	<L1366+c_0
 	and	#<$e0
 	sta	<R0
 	lda	<R0
 	cmp	#<$c0
-	beq	L1376
+	beq	L1374
 	brl	L10813
-L1376:
-	.line	7421
+L1374:
+	.line	7441
 	lda	#$1
 	ldy	#$e
-	sta	[<L1368+pb_0],Y
+	sta	[<L1366+pb_0],Y
 ;			if (((BYTE)c & 0xF0) == 0xE0) pb->ct = 2; /* 3-byte sequence? */
 L10813:
-	.line	7422
-	lda	<L1368+c_0
+	.line	7442
+	lda	<L1366+c_0
 	and	#<$f0
 	sta	<R0
 	lda	<R0
 	cmp	#<$e0
-	beq	L1377
+	beq	L1375
 	brl	L10814
-L1377:
-	.line	7422
+L1375:
+	.line	7442
 	lda	#$2
 	ldy	#$e
-	sta	[<L1368+pb_0],Y
+	sta	[<L1366+pb_0],Y
 ;			if (((BYTE)c & 0xF1) == 0xF0) pb->ct = 3; /* 4-byte sequence? */
 L10814:
-	.line	7423
-	lda	<L1368+c_0
+	.line	7443
+	lda	<L1366+c_0
 	and	#<$f1
 	sta	<R0
 	lda	<R0
 	cmp	#<$f0
-	beq	L1378
+	beq	L1376
 	brl	L10815
-L1378:
-	.line	7423
+L1376:
+	.line	7443
 	lda	#$3
 	ldy	#$e
-	sta	[<L1368+pb_0],Y
+	sta	[<L1366+pb_0],Y
 ;			return;
 L10815:
-	.line	7424
-	brl	L1373
+	.line	7444
+	brl	L1371
 ;		}
-	.line	7425
+	.line	7445
 ;		else
 L10812:
 ;		{ /* In the multi-byte sequence */
-	.line	7427
+	.line	7447
 ;			if (((BYTE)c & 0xC0) != 0x80)
-	.line	7428
+	.line	7448
 ;			{ /* Broken sequence? */
-	lda	<L1368+c_0
+	lda	<L1366+c_0
 	and	#<$c0
 	sta	<R0
 	lda	<R0
 	cmp	#<$80
-	bne	L1379
+	bne	L1377
 	brl	L10816
-L1379:
-	.line	7429
+L1377:
+	.line	7449
 ;				pb->ct = 0; continue;
-	.line	7430
+	.line	7450
 	lda	#$0
 	ldy	#$e
-	sta	[<L1368+pb_0],Y
-	.line	7430
+	sta	[<L1366+pb_0],Y
+	.line	7450
 	brl	L10809
 ;			}
-	.line	7431
+	.line	7451
 ;			pb->bs[++pb->wi] = (BYTE)c; /* Save the trailing byte */
 L10816:
-	.line	7432
+	.line	7452
 	ldy	#$c
-	lda	[<L1368+pb_0],Y
+	lda	[<L1366+pb_0],Y
 	ina
 	ldy	#$c
-	sta	[<L1368+pb_0],Y
+	sta	[<L1366+pb_0],Y
 	ldy	#$c
-	lda	[<L1368+pb_0],Y
+	lda	[<L1366+pb_0],Y
 	sta	<R0
 	clc
 	lda	#$8
@@ -32926,82 +32909,82 @@ L10816:
 	sta	<R1
 	sep	#$20
 	longa	off
-	lda	<L1368+c_0
+	lda	<L1366+c_0
 	ldy	<R1
-	sta	[<L1368+pb_0],Y
+	sta	[<L1366+pb_0],Y
 	rep	#$20
 	longa	on
 ;			if (--pb->ct == 0) break; /* End of multi-byte sequence? */
-	.line	7433
+	.line	7453
 	clc
 	lda	#$ffff
 	ldy	#$e
-	adc	[<L1368+pb_0],Y
+	adc	[<L1366+pb_0],Y
 	ldy	#$e
-	sta	[<L1368+pb_0],Y
+	sta	[<L1366+pb_0],Y
 	ldy	#$e
-	lda	[<L1368+pb_0],Y
-	bne	L1380
+	lda	[<L1366+pb_0],Y
+	bne	L1378
 	brl	L10810
-L1380:
+L1378:
 ;			return;
-	.line	7434
-	brl	L1373
+	.line	7454
+	brl	L1371
 ;		}
-	.line	7435
+	.line	7455
 ;	}
-	.line	7436
+	.line	7456
 L10809:
 	brl	L10811
 L10810:
 ;	tp = (TCHAR*)pb->bs;
-	.line	7437
+	.line	7457
 	clc
 	lda	#$8
-	adc	<L1368+pb_0
-	sta	<L1369+tp_1
+	adc	<L1366+pb_0
+	sta	<L1367+tp_1
 	lda	#$0
-	adc	<L1368+pb_0+2
-	sta	<L1369+tp_1+2
+	adc	<L1366+pb_0+2
+	sta	<L1367+tp_1+2
 ;	dc = tchar2uni(&tp); /* UTF-8 ==> UTF-16 */
-	.line	7438
+	.line	7458
 	pea	#0
 	clc
 	tdc
-	adc	#<L1369+tp_1
+	adc	#<L1367+tp_1
 	pha
 	jsl	~~tchar2uni
-	sta	<L1369+dc_1
-	stx	<L1369+dc_1+2
+	sta	<L1367+dc_1
+	stx	<L1367+dc_1+2
 ;	if (dc == 0xFFFFFFFF) return; /* Wrong code? */
-	.line	7439
-	lda	<L1369+dc_1
+	.line	7459
+	lda	<L1367+dc_1
 	cmp	#<$ffffffff
-	bne	L1381
-	lda	<L1369+dc_1+2
+	bne	L1379
+	lda	<L1367+dc_1+2
 	cmp	#^$ffffffff
-L1381:
-	beq	L1382
+L1379:
+	beq	L1380
 	brl	L10817
-L1382:
-	.line	7439
-	brl	L1373
+L1380:
+	.line	7459
+	brl	L1371
 ;	wc = (WCHAR)dc;
 L10817:
-	.line	7440
-	lda	<L1369+dc_1
-	sta	<L1369+wc_1
+	.line	7460
+	lda	<L1367+dc_1
+	sta	<L1367+wc_1
 ;	hs = (WCHAR)(dc >> 16);
-	.line	7441
-	pei	<L1369+dc_1+2
-	pei	<L1369+dc_1
+	.line	7461
+	pei	<L1367+dc_1+2
+	pei	<L1367+dc_1
 	lda	#$10
 	xref	~~~llsr
 	jsl	~~~llsr
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
-	sta	<L1369+hs_1
+	sta	<L1367+hs_1
 ;#elif FF_LFN_UNICODE == 3	/* UTF-32 input */
 ;	if (IsSurrogate(c) || c >= 0x110000) return; /* Discard invalid code */
 ;	if (c >= 0x10000)
@@ -33037,51 +33020,51 @@ L10817:
 ;	pb->buf[i++] = (BYTE)wc;
 ;#elif FF_STRF_ENCODE == 3	/* Write a code point in UTF-8 */
 ;	if (hs != 0)
-	.line	7476
+	.line	7496
 ;	{ /* 4-byte sequence? */
-	lda	<L1369+hs_1
-	bne	L1383
+	lda	<L1367+hs_1
+	bne	L1381
 	brl	L10818
-L1383:
-	.line	7477
+L1381:
+	.line	7497
 ;		nc += 3;
-	.line	7478
-	inc	<L1369+nc_1
-	inc	<L1369+nc_1
-	inc	<L1369+nc_1
+	.line	7498
+	inc	<L1367+nc_1
+	inc	<L1367+nc_1
+	inc	<L1367+nc_1
 ;		hs = (hs & 0x3FF) + 0x40;
-	.line	7479
-	lda	<L1369+hs_1
+	.line	7499
+	lda	<L1367+hs_1
 	and	#<$3ff
 	sta	<R0
 	clc
 	lda	#$40
 	adc	<R0
-	sta	<L1369+hs_1
+	sta	<L1367+hs_1
 ;		pb->buf[i++] = (BYTE)(0xF0 | hs >> 8);
-	.line	7480
+	.line	7500
 	clc
 	lda	#$10
-	adc	<L1369+i_1
+	adc	<L1367+i_1
 	sta	<R0
-	lda	<L1369+hs_1
+	lda	<L1367+hs_1
 	xba
 	and	#$00ff
 	ora	#<$f0
 	sep	#$20
 	longa	off
 	ldy	<R0
-	sta	[<L1368+pb_0],Y
+	sta	[<L1366+pb_0],Y
 	rep	#$20
 	longa	on
-	inc	<L1369+i_1
+	inc	<L1367+i_1
 ;		pb->buf[i++] = (BYTE)(0x80 | (hs >> 2 & 0x3F));
-	.line	7481
+	.line	7501
 	clc
 	lda	#$10
-	adc	<L1369+i_1
+	adc	<L1367+i_1
 	sta	<R0
-	lda	<L1369+hs_1
+	lda	<L1367+hs_1
 	lsr	A
 	lsr	A
 	and	#<$3f
@@ -33089,17 +33072,17 @@ L1383:
 	sep	#$20
 	longa	off
 	ldy	<R0
-	sta	[<L1368+pb_0],Y
+	sta	[<L1366+pb_0],Y
 	rep	#$20
 	longa	on
-	inc	<L1369+i_1
+	inc	<L1367+i_1
 ;		pb->buf[i++] = (BYTE)(0x80 | (hs & 3) << 4 | (wc >> 6 & 0x0F));
-	.line	7482
+	.line	7502
 	clc
 	lda	#$10
-	adc	<L1369+i_1
+	adc	<L1367+i_1
 	sta	<R0
-	lda	<L1369+hs_1
+	lda	<L1367+hs_1
 	and	#<$3
 	sta	<R2
 	lda	<R2
@@ -33108,7 +33091,7 @@ L1383:
 	asl	A
 	asl	A
 	sta	<R1
-	lda	<L1369+wc_1
+	lda	<L1367+wc_1
 	ldx	#<$6
 	xref	~~~lsr
 	jsl	~~~lsr
@@ -33120,82 +33103,82 @@ L1383:
 	sep	#$20
 	longa	off
 	ldy	<R0
-	sta	[<L1368+pb_0],Y
+	sta	[<L1366+pb_0],Y
 	rep	#$20
 	longa	on
-	inc	<L1369+i_1
+	inc	<L1367+i_1
 ;		pb->buf[i++] = (BYTE)(0x80 | (wc & 0x3F));
-	.line	7483
+	.line	7503
 	clc
 	lda	#$10
-	adc	<L1369+i_1
+	adc	<L1367+i_1
 	sta	<R0
-	lda	<L1369+wc_1
+	lda	<L1367+wc_1
 	and	#<$3f
 	ora	#<$80
 	sep	#$20
 	longa	off
 	ldy	<R0
-	sta	[<L1368+pb_0],Y
+	sta	[<L1366+pb_0],Y
 	rep	#$20
 	longa	on
-	inc	<L1369+i_1
+	inc	<L1367+i_1
 ;	}
-	.line	7484
+	.line	7504
 ;	else
 	brl	L10819
 L10818:
 ;	{
-	.line	7486
+	.line	7506
 ;		if (wc < 0x80)
-	.line	7487
+	.line	7507
 ;		{ /* Single byte? */
-	lda	<L1369+wc_1
+	lda	<L1367+wc_1
 	cmp	#<$80
-	bcc	L1384
+	bcc	L1382
 	brl	L10820
-L1384:
-	.line	7488
+L1382:
+	.line	7508
 ;			pb->buf[i++] = (BYTE)wc;
-	.line	7489
+	.line	7509
 	clc
 	lda	#$10
-	adc	<L1369+i_1
+	adc	<L1367+i_1
 	sta	<R0
 	sep	#$20
 	longa	off
-	lda	<L1369+wc_1
+	lda	<L1367+wc_1
 	ldy	<R0
-	sta	[<L1368+pb_0],Y
+	sta	[<L1366+pb_0],Y
 	rep	#$20
 	longa	on
-	inc	<L1369+i_1
+	inc	<L1367+i_1
 ;		}
-	.line	7490
+	.line	7510
 ;		else
 	brl	L10821
 L10820:
 ;		{
-	.line	7492
+	.line	7512
 ;			if (wc < 0x800)
-	.line	7493
+	.line	7513
 ;			{ /* 2-byte sequence? */
-	lda	<L1369+wc_1
+	lda	<L1367+wc_1
 	cmp	#<$800
-	bcc	L1385
+	bcc	L1383
 	brl	L10822
-L1385:
-	.line	7494
+L1383:
+	.line	7514
 ;				nc += 1;
-	.line	7495
-	inc	<L1369+nc_1
+	.line	7515
+	inc	<L1367+nc_1
 ;				pb->buf[i++] = (BYTE)(0xC0 | wc >> 6);
-	.line	7496
+	.line	7516
 	clc
 	lda	#$10
-	adc	<L1369+i_1
+	adc	<L1367+i_1
 	sta	<R0
-	lda	<L1369+wc_1
+	lda	<L1367+wc_1
 	ldx	#<$6
 	xref	~~~lsr
 	jsl	~~~lsr
@@ -33203,28 +33186,28 @@ L1385:
 	sep	#$20
 	longa	off
 	ldy	<R0
-	sta	[<L1368+pb_0],Y
+	sta	[<L1366+pb_0],Y
 	rep	#$20
 	longa	on
-	inc	<L1369+i_1
+	inc	<L1367+i_1
 ;			}
-	.line	7497
+	.line	7517
 ;			else
 	brl	L10823
 L10822:
 ;			{ /* 3-byte sequence */
-	.line	7499
+	.line	7519
 ;				nc += 2;
-	.line	7500
-	inc	<L1369+nc_1
-	inc	<L1369+nc_1
+	.line	7520
+	inc	<L1367+nc_1
+	inc	<L1367+nc_1
 ;				pb->buf[i++] = (BYTE)(0xE0 | wc >> 12);
-	.line	7501
+	.line	7521
 	clc
 	lda	#$10
-	adc	<L1369+i_1
+	adc	<L1367+i_1
 	sta	<R0
-	lda	<L1369+wc_1
+	lda	<L1367+wc_1
 	ldx	#<$c
 	xref	~~~lsr
 	jsl	~~~lsr
@@ -33232,17 +33215,17 @@ L10822:
 	sep	#$20
 	longa	off
 	ldy	<R0
-	sta	[<L1368+pb_0],Y
+	sta	[<L1366+pb_0],Y
 	rep	#$20
 	longa	on
-	inc	<L1369+i_1
+	inc	<L1367+i_1
 ;				pb->buf[i++] = (BYTE)(0x80 | (wc >> 6 & 0x3F));
-	.line	7502
+	.line	7522
 	clc
 	lda	#$10
-	adc	<L1369+i_1
+	adc	<L1367+i_1
 	sta	<R0
-	lda	<L1369+wc_1
+	lda	<L1367+wc_1
 	ldx	#<$6
 	xref	~~~lsr
 	jsl	~~~lsr
@@ -33251,34 +33234,34 @@ L10822:
 	sep	#$20
 	longa	off
 	ldy	<R0
-	sta	[<L1368+pb_0],Y
+	sta	[<L1366+pb_0],Y
 	rep	#$20
 	longa	on
-	inc	<L1369+i_1
+	inc	<L1367+i_1
 ;			}
-	.line	7503
+	.line	7523
 L10823:
 ;			pb->buf[i++] = (BYTE)(0x80 | (wc & 0x3F));
-	.line	7504
+	.line	7524
 	clc
 	lda	#$10
-	adc	<L1369+i_1
+	adc	<L1367+i_1
 	sta	<R0
-	lda	<L1369+wc_1
+	lda	<L1367+wc_1
 	and	#<$3f
 	ora	#<$80
 	sep	#$20
 	longa	off
 	ldy	<R0
-	sta	[<L1368+pb_0],Y
+	sta	[<L1366+pb_0],Y
 	rep	#$20
 	longa	on
-	inc	<L1369+i_1
+	inc	<L1367+i_1
 ;		}
-	.line	7505
+	.line	7525
 L10821:
 ;	}
-	.line	7506
+	.line	7526
 L10819:
 ;#else						/* Write a code point in ANSI/OEM */
 ;	if (hs != 0) return;
@@ -33296,313 +33279,313 @@ L10819:
 ;#endif
 ;
 ;	if (i >= (int) (sizeof pb->buf) - 4)
-	.line	7522
+	.line	7542
 ;	{ /* Write buffered characters to the file */
 	sec
-	lda	<L1369+i_1
+	lda	<L1367+i_1
 	sbc	#<$3c
-	bvs	L1386
+	bvs	L1384
 	eor	#$8000
-L1386:
-	bmi	L1387
+L1384:
+	bmi	L1385
 	brl	L10824
-L1387:
-	.line	7523
+L1385:
+	.line	7543
 ;		f_write(pb->fp, pb->buf, (UINT) i, &n);
-	.line	7524
+	.line	7544
 	pea	#0
 	clc
 	tdc
-	adc	#<L1369+n_1
+	adc	#<L1367+n_1
 	pha
-	pei	<L1369+i_1
+	pei	<L1367+i_1
 	clc
 	lda	#$10
-	adc	<L1368+pb_0
+	adc	<L1366+pb_0
 	sta	<R0
 	lda	#$0
-	adc	<L1368+pb_0+2
+	adc	<L1366+pb_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$2
-	lda	[<L1368+pb_0],Y
+	lda	[<L1366+pb_0],Y
 	pha
-	lda	[<L1368+pb_0]
+	lda	[<L1366+pb_0]
 	pha
 	jsl	~~f_write
 ;		i = (n == (UINT) i) ? 0 : -1;
-	.line	7525
-	lda	<L1369+n_1
-	cmp	<L1369+i_1
-	beq	L1389
-	brl	L1388
-L1389:
+	.line	7545
+	lda	<L1367+n_1
+	cmp	<L1367+i_1
+	beq	L1387
+	brl	L1386
+L1387:
 	lda	#$0
-	bra	L1390
-L1388:
+	bra	L1388
+L1386:
 	lda	#$ffff
-L1390:
-	sta	<L1369+i_1
+L1388:
+	sta	<L1367+i_1
 ;	}
-	.line	7526
+	.line	7546
 ;	pb->idx = i;
 L10824:
-	.line	7527
-	lda	<L1369+i_1
+	.line	7547
+	lda	<L1367+i_1
 	ldy	#$4
-	sta	[<L1368+pb_0],Y
+	sta	[<L1366+pb_0],Y
 ;	pb->nchr = nc + 1;
-	.line	7528
-	lda	<L1369+nc_1
+	.line	7548
+	lda	<L1367+nc_1
 	ina
 	ldy	#$6
-	sta	[<L1368+pb_0],Y
+	sta	[<L1366+pb_0],Y
 ;}
-	.line	7529
-	brl	L1373
-	.endblock	7529
-L1368	equ	30
-L1369	equ	13
+	.line	7549
+	brl	L1371
+	.endblock	7549
+L1366	equ	30
+L1367	equ	13
 	ends
 	efunc
-	.endfunc	7529,13,30
-	.line	7529
+	.endfunc	7549,13,30
+	.line	7549
 ;
 ;/* Flush remaining characters in the buffer */
 ;
 ;static int putc_flush(putbuff* pb)
 ;{
-	.line	7533
-	.line	7534
+	.line	7553
+	.line	7554
 	FFDOS
 	func
-	.function	7534
+	.function	7554
 ~~putc_flush:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1391
+	sbc	#L1389
 	tcs
 	phd
 	tcd
 pb_0	set	4
-	.block	7534
+	.block	7554
 ;	UINT nw;
 ;
 ;	if (pb->idx >= 0 /* Flush buffered characters to the file */
 nw_1	set	0
 	.sym	nw,0,16,1,16
-	.sym	pb,4,138,6,32,125
-	.line	7537
+	.sym	pb,4,138,6,32,131
+	.line	7557
 ;	&& f_write(pb->fp, pb->buf, (UINT) pb->idx, &nw) == FR_OK
 ;			&& (UINT) pb->idx == nw)
 ;		return pb->nchr;
 	ldy	#$4
-	lda	[<L1391+pb_0],Y
-	bpl	L1394
+	lda	[<L1389+pb_0],Y
+	bpl	L1392
 	brl	L10825
-L1394:
+L1392:
 	pea	#0
 	clc
 	tdc
-	adc	#<L1392+nw_1
+	adc	#<L1390+nw_1
 	pha
 	ldy	#$4
-	lda	[<L1391+pb_0],Y
+	lda	[<L1389+pb_0],Y
 	pha
 	clc
 	lda	#$10
-	adc	<L1391+pb_0
+	adc	<L1389+pb_0
 	sta	<R0
 	lda	#$0
-	adc	<L1391+pb_0+2
+	adc	<L1389+pb_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$2
-	lda	[<L1391+pb_0],Y
+	lda	[<L1389+pb_0],Y
 	pha
-	lda	[<L1391+pb_0]
+	lda	[<L1389+pb_0]
 	pha
 	jsl	~~f_write
 	tax
-	beq	L1395
+	beq	L1393
 	brl	L10825
-L1395:
+L1393:
 	ldy	#$4
-	lda	[<L1391+pb_0],Y
-	cmp	<L1392+nw_1
-	beq	L1396
+	lda	[<L1389+pb_0],Y
+	cmp	<L1390+nw_1
+	beq	L1394
 	brl	L10825
-L1396:
-	.line	7540
+L1394:
+	.line	7560
 	ldy	#$6
-	lda	[<L1391+pb_0],Y
-L1397:
+	lda	[<L1389+pb_0],Y
+L1395:
 	tay
-	lda	<L1391+2
-	sta	<L1391+2+4
-	lda	<L1391+1
-	sta	<L1391+1+4
+	lda	<L1389+2
+	sta	<L1389+2+4
+	lda	<L1389+1
+	sta	<L1389+1+4
 	pld
 	tsc
 	clc
-	adc	#L1391+4
+	adc	#L1389+4
 	tcs
 	tya
 	rtl
 ;	return EOF;
 L10825:
-	.line	7541
+	.line	7561
 	lda	#$ffff
-	brl	L1397
+	brl	L1395
 ;}
-	.line	7542
-	.endblock	7542
-L1391	equ	6
-L1392	equ	5
+	.line	7562
+	.endblock	7562
+L1389	equ	6
+L1390	equ	5
 	ends
 	efunc
-	.endfunc	7542,5,6
-	.line	7542
+	.endfunc	7562,5,6
+	.line	7562
 ;
 ;/* Initialize write buffer */
 ;
 ;static void putc_init(putbuff* pb, FIL* fp)
 ;{
-	.line	7546
-	.line	7547
+	.line	7566
+	.line	7567
 	FFDOS
 	func
-	.function	7547
+	.function	7567
 ~~putc_init:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1398
+	sbc	#L1396
 	tcs
 	phd
 	tcd
 pb_0	set	4
 fp_0	set	8
-	.block	7547
+	.block	7567
 ;	mem_set(pb, 0, sizeof(putbuff));
-	.sym	pb,4,138,6,32,125
-	.sym	fp,8,138,6,32,74
-	.line	7548
+	.sym	pb,4,138,6,32,131
+	.sym	fp,8,138,6,32,77
+	.line	7568
 	pea	#<$50
 	pea	#<$0
-	pei	<L1398+pb_0+2
-	pei	<L1398+pb_0
+	pei	<L1396+pb_0+2
+	pei	<L1396+pb_0
 	jsl	~~mem_set
 ;	pb->fp = fp;
-	.line	7549
-	lda	<L1398+fp_0
-	sta	[<L1398+pb_0]
-	lda	<L1398+fp_0+2
+	.line	7569
+	lda	<L1396+fp_0
+	sta	[<L1396+pb_0]
+	lda	<L1396+fp_0+2
 	ldy	#$2
-	sta	[<L1398+pb_0],Y
+	sta	[<L1396+pb_0],Y
 ;}
-	.line	7550
-L1401:
-	lda	<L1398+2
-	sta	<L1398+2+8
-	lda	<L1398+1
-	sta	<L1398+1+8
+	.line	7570
+L1399:
+	lda	<L1396+2
+	sta	<L1396+2+8
+	lda	<L1396+1
+	sta	<L1396+1+8
 	pld
 	tsc
 	clc
-	adc	#L1398+8
+	adc	#L1396+8
 	tcs
 	rtl
-	.endblock	7550
-L1398	equ	0
-L1399	equ	1
+	.endblock	7570
+L1396	equ	0
+L1397	equ	1
 	ends
 	efunc
-	.endfunc	7550,1,0
-	.line	7550
+	.endfunc	7570,1,0
+	.line	7570
 ;
 ;int f_putc(TCHAR c, /* A character to be output */
 ;FIL* fp /* Pointer to the file object */
 ;)
 ;{
-	.line	7552
-	.line	7555
+	.line	7572
+	.line	7575
 	FFDOS
 	xdef	~~f_putc
 	func
-	.function	7555
+	.function	7575
 ~~f_putc:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1402
+	sbc	#L1400
 	tcs
 	phd
 	tcd
 c_0	set	4
 fp_0	set	6
-	.block	7555
+	.block	7575
 ;	putbuff pb;
 ;
 ;	putc_init(&pb, fp);
 pb_1	set	0
-	.sym	pb,0,10,1,640,125
+	.sym	pb,0,10,1,640,131
 	.sym	c,4,14,6,8
-	.sym	fp,6,138,6,32,74
-	.line	7558
-	pei	<L1402+fp_0+2
-	pei	<L1402+fp_0
+	.sym	fp,6,138,6,32,77
+	.line	7578
+	pei	<L1400+fp_0+2
+	pei	<L1400+fp_0
 	pea	#0
 	clc
 	tdc
-	adc	#<L1403+pb_1
+	adc	#<L1401+pb_1
 	pha
 	jsl	~~putc_init
 ;	putc_bfd(&pb, c); /* Put the character */
-	.line	7559
-	pei	<L1402+c_0
+	.line	7579
+	pei	<L1400+c_0
 	pea	#0
 	clc
 	tdc
-	adc	#<L1403+pb_1
+	adc	#<L1401+pb_1
 	pha
 	jsl	~~putc_bfd
 ;	return putc_flush(&pb);
-	.line	7560
+	.line	7580
 	pea	#0
 	clc
 	tdc
-	adc	#<L1403+pb_1
+	adc	#<L1401+pb_1
 	pha
 	jsl	~~putc_flush
-L1405:
+L1403:
 	tay
-	lda	<L1402+2
-	sta	<L1402+2+6
-	lda	<L1402+1
-	sta	<L1402+1+6
+	lda	<L1400+2
+	sta	<L1400+2+6
+	lda	<L1400+1
+	sta	<L1400+1+6
 	pld
 	tsc
 	clc
-	adc	#L1402+6
+	adc	#L1400+6
 	tcs
 	tya
 	rtl
 ;}
-	.line	7561
-	.endblock	7561
-L1402	equ	80
-L1403	equ	1
+	.line	7581
+	.endblock	7581
+L1400	equ	80
+L1401	equ	1
 	ends
 	efunc
-	.endfunc	7561,1,80
-	.line	7561
+	.endfunc	7581,1,80
+	.line	7581
 ;
 ;/*-----------------------------------------------------------------------*/
 ;/* Put a String to the File                                              */
@@ -33612,98 +33595,98 @@ L1403	equ	1
 ;FIL* fp /* Pointer to the file object */
 ;)
 ;{
-	.line	7567
-	.line	7570
+	.line	7587
+	.line	7590
 	FFDOS
 	xdef	~~f_puts
 	func
-	.function	7570
+	.function	7590
 ~~f_puts:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1406
+	sbc	#L1404
 	tcs
 	phd
 	tcd
 str_0	set	4
 fp_0	set	8
-	.block	7570
+	.block	7590
 ;	putbuff pb;
 ;
 ;	putc_init(&pb, fp);
 pb_1	set	0
-	.sym	pb,0,10,1,640,125
+	.sym	pb,0,10,1,640,131
 	.sym	str,4,142,6,32
-	.sym	fp,8,138,6,32,74
-	.line	7573
-	pei	<L1406+fp_0+2
-	pei	<L1406+fp_0
+	.sym	fp,8,138,6,32,77
+	.line	7593
+	pei	<L1404+fp_0+2
+	pei	<L1404+fp_0
 	pea	#0
 	clc
 	tdc
-	adc	#<L1407+pb_1
+	adc	#<L1405+pb_1
 	pha
 	jsl	~~putc_init
 ;	while (*str)
-	.line	7574
+	.line	7594
 L10826:
-	lda	[<L1406+str_0]
+	lda	[<L1404+str_0]
 	and	#$ff
-	bne	L1409
+	bne	L1407
 	brl	L10827
-L1409:
+L1407:
 ;		putc_bfd(&pb, *str++); /* Put the string */
-	.line	7575
-	lda	<L1406+str_0
+	.line	7595
+	lda	<L1404+str_0
 	sta	<R0
-	lda	<L1406+str_0+2
+	lda	<L1404+str_0+2
 	sta	<R0+2
-	inc	<L1406+str_0
-	bne	L1410
-	inc	<L1406+str_0+2
-L1410:
+	inc	<L1404+str_0
+	bne	L1408
+	inc	<L1404+str_0+2
+L1408:
 	lda	[<R0]
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L1407+pb_1
+	adc	#<L1405+pb_1
 	pha
 	jsl	~~putc_bfd
 	brl	L10826
 L10827:
 ;	return putc_flush(&pb);
-	.line	7576
+	.line	7596
 	pea	#0
 	clc
 	tdc
-	adc	#<L1407+pb_1
+	adc	#<L1405+pb_1
 	pha
 	jsl	~~putc_flush
-L1411:
+L1409:
 	tay
-	lda	<L1406+2
-	sta	<L1406+2+8
-	lda	<L1406+1
-	sta	<L1406+1+8
+	lda	<L1404+2
+	sta	<L1404+2+8
+	lda	<L1404+1
+	sta	<L1404+1+8
 	pld
 	tsc
 	clc
-	adc	#L1406+8
+	adc	#L1404+8
 	tcs
 	tya
 	rtl
 ;}
-	.line	7577
-	.endblock	7577
-L1406	equ	84
-L1407	equ	5
+	.line	7597
+	.endblock	7597
+L1404	equ	84
+L1405	equ	5
 	ends
 	efunc
-	.endfunc	7577,5,84
-	.line	7577
+	.endfunc	7597,5,84
+	.line	7597
 ;
 ;/*-----------------------------------------------------------------------*/
 ;/* Put a Formatted String to the File                                    */
@@ -33714,24 +33697,24 @@ L1407	equ	5
 ;... /* Optional arguments... */
 ;)
 ;{
-	.line	7583
-	.line	7587
+	.line	7603
+	.line	7607
 	FFDOS
 	xdef	~~f_printf
 	func
-	.function	7587
+	.function	7607
 ~~f_printf:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1412
+	sbc	#L1410
 	tcs
 	phd
 	tcd
 fp_0	set	6
 fmt_0	set	10
-	.block	7587
+	.block	7607
 ;	va_list arp;
 ;	putbuff pb;
 ;	BYTE f, r;
@@ -33753,7 +33736,7 @@ d_1	set	97
 str_1	set	98
 p_1	set	130
 	.sym	arp,0,142,1,32
-	.sym	pb,4,10,1,640,125
+	.sym	pb,4,10,1,640,131
 	.sym	f,84,14,1,8
 	.sym	r,85,14,1,8
 	.sym	i,86,16,1,16
@@ -33764,263 +33747,263 @@ p_1	set	130
 	.sym	d,97,14,1,8
 	.sym	str,98,110,1,0,32
 	.sym	p,130,142,1,32
-	.sym	fp,6,138,6,32,74
+	.sym	fp,6,138,6,32,77
 	.sym	fmt,10,142,6,32
-	.line	7595
-	pei	<L1412+fp_0+2
-	pei	<L1412+fp_0
+	.line	7615
+	pei	<L1410+fp_0+2
+	pei	<L1410+fp_0
 	pea	#0
 	clc
 	tdc
-	adc	#<L1413+pb_1
+	adc	#<L1411+pb_1
 	pha
 	jsl	~~putc_init
 ;
 ;	va_start(arp, fmt);
-	.line	7597
+	.line	7617
 	clc
 	tdc
-	adc	#<L1412+fmt_0+4
-	sta	<L1413+arp_1
+	adc	#<L1410+fmt_0+4
+	sta	<L1411+arp_1
 	lda	#$0
-	sta	<L1413+arp_1+2
+	sta	<L1411+arp_1+2
 ;
 ;	for (;;)
-	.line	7599
+	.line	7619
 L10830:
 ;	{
-	.line	7600
+	.line	7620
 ;		c = *fmt++;
-	.line	7601
+	.line	7621
 	sep	#$20
 	longa	off
-	lda	[<L1412+fmt_0]
-	sta	<L1413+c_1
+	lda	[<L1410+fmt_0]
+	sta	<L1411+c_1
 	rep	#$20
 	longa	on
-	inc	<L1412+fmt_0
-	bne	L1415
-	inc	<L1412+fmt_0+2
-L1415:
+	inc	<L1410+fmt_0
+	bne	L1413
+	inc	<L1410+fmt_0+2
+L1413:
 ;		if (c == 0)
-	.line	7602
+	.line	7622
 ;			break; /* End of string */
-	lda	<L1413+c_1
+	lda	<L1411+c_1
 	and	#$ff
-	bne	L1416
+	bne	L1414
 	brl	L10829
-L1416:
+L1414:
 ;		if (c != '%')
-	.line	7604
+	.line	7624
 ;		{ /* Non escape character */
 	sep	#$20
 	longa	off
-	lda	<L1413+c_1
+	lda	<L1411+c_1
 	cmp	#<$25
 	rep	#$20
 	longa	on
-	bne	L1417
+	bne	L1415
 	brl	L10831
-L1417:
-	.line	7605
+L1415:
+	.line	7625
 ;			putc_bfd(&pb, c);
-	.line	7606
-	pei	<L1413+c_1
+	.line	7626
+	pei	<L1411+c_1
 	pea	#0
 	clc
 	tdc
-	adc	#<L1413+pb_1
+	adc	#<L1411+pb_1
 	pha
 	jsl	~~putc_bfd
 ;			continue;
-	.line	7607
+	.line	7627
 	brl	L10828
 ;		}
-	.line	7608
+	.line	7628
 ;		w = f = 0;
 L10831:
-	.line	7609
+	.line	7629
 	sep	#$20
 	longa	off
-	stz	<L1413+f_1
+	stz	<L1411+f_1
 	rep	#$20
 	longa	on
 	lda	#$0
 	and	#$ff
-	sta	<L1413+w_1
+	sta	<L1411+w_1
 ;		c = *fmt++;
-	.line	7610
+	.line	7630
 	sep	#$20
 	longa	off
-	lda	[<L1412+fmt_0]
-	sta	<L1413+c_1
+	lda	[<L1410+fmt_0]
+	sta	<L1411+c_1
 	rep	#$20
 	longa	on
-	inc	<L1412+fmt_0
-	bne	L1418
-	inc	<L1412+fmt_0+2
-L1418:
+	inc	<L1410+fmt_0
+	bne	L1416
+	inc	<L1410+fmt_0+2
+L1416:
 ;		if (c == '0')
-	.line	7611
+	.line	7631
 ;		{ /* Flag: '0' padding */
 	sep	#$20
 	longa	off
-	lda	<L1413+c_1
+	lda	<L1411+c_1
 	cmp	#<$30
 	rep	#$20
 	longa	on
-	beq	L1419
+	beq	L1417
 	brl	L10832
-L1419:
-	.line	7612
+L1417:
+	.line	7632
 ;			f = 1;
-	.line	7613
+	.line	7633
 	sep	#$20
 	longa	off
 	lda	#$1
-	sta	<L1413+f_1
+	sta	<L1411+f_1
 	rep	#$20
 	longa	on
 ;			c = *fmt++;
-	.line	7614
+	.line	7634
 	sep	#$20
 	longa	off
-	lda	[<L1412+fmt_0]
-	sta	<L1413+c_1
+	lda	[<L1410+fmt_0]
+	sta	<L1411+c_1
 	rep	#$20
 	longa	on
-	inc	<L1412+fmt_0
-	bne	L1420
-	inc	<L1412+fmt_0+2
-L1420:
+	inc	<L1410+fmt_0
+	bne	L1418
+	inc	<L1410+fmt_0+2
+L1418:
 ;		}
-	.line	7615
+	.line	7635
 ;		else
 	brl	L10833
 L10832:
 ;		{
-	.line	7617
+	.line	7637
 ;			if (c == '-')
-	.line	7618
+	.line	7638
 ;			{ /* Flag: left justified */
 	sep	#$20
 	longa	off
-	lda	<L1413+c_1
+	lda	<L1411+c_1
 	cmp	#<$2d
 	rep	#$20
 	longa	on
-	beq	L1421
+	beq	L1419
 	brl	L10834
-L1421:
-	.line	7619
+L1419:
+	.line	7639
 ;				f = 2;
-	.line	7620
+	.line	7640
 	sep	#$20
 	longa	off
 	lda	#$2
-	sta	<L1413+f_1
+	sta	<L1411+f_1
 	rep	#$20
 	longa	on
 ;				c = *fmt++;
-	.line	7621
+	.line	7641
 	sep	#$20
 	longa	off
-	lda	[<L1412+fmt_0]
-	sta	<L1413+c_1
+	lda	[<L1410+fmt_0]
+	sta	<L1411+c_1
 	rep	#$20
 	longa	on
-	inc	<L1412+fmt_0
-	bne	L1422
-	inc	<L1412+fmt_0+2
-L1422:
+	inc	<L1410+fmt_0
+	bne	L1420
+	inc	<L1410+fmt_0+2
+L1420:
 ;			}
-	.line	7622
+	.line	7642
 ;		}
 L10834:
-	.line	7623
+	.line	7643
 L10833:
 ;		if (c == '*')
-	.line	7624
+	.line	7644
 ;		{ /* Minimum width by argument */
 	sep	#$20
 	longa	off
-	lda	<L1413+c_1
+	lda	<L1411+c_1
 	cmp	#<$2a
 	rep	#$20
 	longa	on
-	beq	L1423
+	beq	L1421
 	brl	L10835
-L1423:
-	.line	7625
+L1421:
+	.line	7645
 ;			w = va_arg(arp, int);
-	.line	7626
+	.line	7646
 	clc
 	lda	#$2
-	adc	<L1413+arp_1
-	sta	<L1413+arp_1
-	bcc	L1424
-	inc	<L1413+arp_1+2
-L1424:
+	adc	<L1411+arp_1
+	sta	<L1411+arp_1
+	bcc	L1422
+	inc	<L1411+arp_1+2
+L1422:
 	clc
 	lda	#$fffe
-	adc	<L1413+arp_1
+	adc	<L1411+arp_1
 	sta	<R0
 	lda	#$ffff
-	adc	<L1413+arp_1+2
+	adc	<L1411+arp_1+2
 	sta	<R0+2
 	lda	[<R0]
-	sta	<L1413+w_1
+	sta	<L1411+w_1
 ;			c = *fmt++;
-	.line	7627
+	.line	7647
 	sep	#$20
 	longa	off
-	lda	[<L1412+fmt_0]
-	sta	<L1413+c_1
+	lda	[<L1410+fmt_0]
+	sta	<L1411+c_1
 	rep	#$20
 	longa	on
-	inc	<L1412+fmt_0
-	bne	L1425
-	inc	<L1412+fmt_0+2
-L1425:
+	inc	<L1410+fmt_0
+	bne	L1423
+	inc	<L1410+fmt_0+2
+L1423:
 ;		}
-	.line	7628
+	.line	7648
 ;		else
 	brl	L10836
 L10835:
 ;		{
-	.line	7630
+	.line	7650
 ;			while (IsDigit(c))
-	.line	7631
+	.line	7651
 L10837:
 	sep	#$20
 	longa	off
-	lda	<L1413+c_1
+	lda	<L1411+c_1
 	cmp	#<$30
 	rep	#$20
 	longa	on
-	bcs	L1426
+	bcs	L1424
 	brl	L10838
-L1426:
+L1424:
 	sep	#$20
 	longa	off
 	lda	#$39
-	cmp	<L1413+c_1
+	cmp	<L1411+c_1
 	rep	#$20
 	longa	on
-	bcs	L1427
+	bcs	L1425
 	brl	L10838
-L1427:
+L1425:
 ;			{ /* Minimum width */
-	.line	7632
+	.line	7652
 ;				w = w * 10 + c - '0';
-	.line	7633
-	lda	<L1413+c_1
+	.line	7653
+	lda	<L1411+c_1
 	and	#$ff
 	sta	<R0
-	lda	<L1413+w_1
+	lda	<L1411+w_1
 	asl	A
 	asl	A
-	adc	<L1413+w_1
+	adc	<L1411+w_1
 	asl	A
 	sta	<R1
 	clc
@@ -34030,111 +34013,111 @@ L1427:
 	clc
 	lda	#$ffd0
 	adc	<R2
-	sta	<L1413+w_1
+	sta	<L1411+w_1
 ;				c = *fmt++;
-	.line	7634
+	.line	7654
 	sep	#$20
 	longa	off
-	lda	[<L1412+fmt_0]
-	sta	<L1413+c_1
+	lda	[<L1410+fmt_0]
+	sta	<L1411+c_1
 	rep	#$20
 	longa	on
-	inc	<L1412+fmt_0
-	bne	L1428
-	inc	<L1412+fmt_0+2
-L1428:
+	inc	<L1410+fmt_0
+	bne	L1426
+	inc	<L1410+fmt_0+2
+L1426:
 ;			}
-	.line	7635
+	.line	7655
 	brl	L10837
 L10838:
 ;		}
-	.line	7636
+	.line	7656
 L10836:
 ;		if (c == 'l' || c == 'L')
-	.line	7637
+	.line	7657
 ;		{ /* Type prefix: Size is long int */
 	sep	#$20
 	longa	off
-	lda	<L1413+c_1
+	lda	<L1411+c_1
 	cmp	#<$6c
 	rep	#$20
 	longa	on
-	bne	L1430
-	brl	L1429
-L1430:
+	bne	L1428
+	brl	L1427
+L1428:
 	sep	#$20
 	longa	off
-	lda	<L1413+c_1
+	lda	<L1411+c_1
 	cmp	#<$4c
 	rep	#$20
 	longa	on
-	beq	L1431
+	beq	L1429
 	brl	L10839
-L1431:
 L1429:
-	.line	7638
+L1427:
+	.line	7658
 ;			f |= 4;
-	.line	7639
+	.line	7659
 	sep	#$20
 	longa	off
 	lda	#$4
-	tsb	<L1413+f_1
+	tsb	<L1411+f_1
 	rep	#$20
 	longa	on
 ;			c = *fmt++;
-	.line	7640
+	.line	7660
 	sep	#$20
 	longa	off
-	lda	[<L1412+fmt_0]
-	sta	<L1413+c_1
+	lda	[<L1410+fmt_0]
+	sta	<L1411+c_1
 	rep	#$20
 	longa	on
-	inc	<L1412+fmt_0
-	bne	L1432
-	inc	<L1412+fmt_0+2
-L1432:
+	inc	<L1410+fmt_0
+	bne	L1430
+	inc	<L1410+fmt_0+2
+L1430:
 ;		}
-	.line	7641
+	.line	7661
 ;		if (c == 0)
 L10839:
-	.line	7642
+	.line	7662
 ;			break;
-	lda	<L1413+c_1
+	lda	<L1411+c_1
 	and	#$ff
-	bne	L1433
+	bne	L1431
 	brl	L10829
-L1433:
+L1431:
 ;		d = c;
-	.line	7644
+	.line	7664
 	sep	#$20
 	longa	off
-	lda	<L1413+c_1
-	sta	<L1413+d_1
+	lda	<L1411+c_1
+	sta	<L1411+d_1
 	rep	#$20
 	longa	on
 ;		if (IsLower(d))
-	.line	7645
+	.line	7665
 ;			d -= 0x20;
 	sep	#$20
 	longa	off
-	lda	<L1413+d_1
+	lda	<L1411+d_1
 	cmp	#<$61
 	rep	#$20
 	longa	on
-	bcs	L1434
+	bcs	L1432
 	brl	L10840
-L1434:
+L1432:
 	sep	#$20
 	longa	off
 	lda	#$7a
-	cmp	<L1413+d_1
+	cmp	<L1411+d_1
 	rep	#$20
 	longa	on
-	bcs	L1435
+	bcs	L1433
 	brl	L10840
-L1435:
-	.line	7646
-	lda	<L1413+d_1
+L1433:
+	.line	7666
+	lda	<L1411+d_1
 	and	#$ff
 	sta	<R0
 	clc
@@ -34144,261 +34127,261 @@ L1435:
 	sep	#$20
 	longa	off
 	lda	<R1
-	sta	<L1413+d_1
+	sta	<L1411+d_1
 	rep	#$20
 	longa	on
 ;		switch (d)
 L10840:
-	.line	7647
-	lda	<L1413+d_1
+	.line	7667
+	lda	<L1411+d_1
 	and	#$ff
 	brl	L10841
 ;		{ /* Atgument type is... */
-	.line	7648
+	.line	7668
 ;		case 'S': /* String */
-	.line	7649
+	.line	7669
 L10843:
 ;			p = va_arg(arp, TCHAR*);
-	.line	7650
+	.line	7670
 	clc
 	lda	#$4
-	adc	<L1413+arp_1
-	sta	<L1413+arp_1
-	bcc	L1436
-	inc	<L1413+arp_1+2
-L1436:
+	adc	<L1411+arp_1
+	sta	<L1411+arp_1
+	bcc	L1434
+	inc	<L1411+arp_1+2
+L1434:
 	clc
 	lda	#$fffc
-	adc	<L1413+arp_1
+	adc	<L1411+arp_1
 	sta	<R0
 	lda	#$ffff
-	adc	<L1413+arp_1+2
+	adc	<L1411+arp_1+2
 	sta	<R0+2
 	lda	[<R0]
-	sta	<L1413+p_1
+	sta	<L1411+p_1
 	ldy	#$2
 	lda	[<R0],Y
-	sta	<L1413+p_1+2
+	sta	<L1411+p_1+2
 ;			for (j = 0; p[j]; j++)
-	.line	7651
-	stz	<L1413+j_1
+	.line	7671
+	stz	<L1411+j_1
 	brl	L10847
 L10846:
 ;				;
-	.line	7652
+	.line	7672
 L10844:
-	inc	<L1413+j_1
+	inc	<L1411+j_1
 L10847:
-	ldy	<L1413+j_1
-	lda	[<L1413+p_1],Y
+	ldy	<L1411+j_1
+	lda	[<L1411+p_1],Y
 	and	#$ff
-	beq	L1437
+	beq	L1435
 	brl	L10846
-L1437:
+L1435:
 L10845:
 ;			if (!(f & 2))
-	.line	7653
+	.line	7673
 ;			{ /* Right padded */
 	sep	#$20
 	longa	off
-	lda	<L1413+f_1
+	lda	<L1411+f_1
 	and	#<$2
 	rep	#$20
 	longa	on
-	beq	L1438
+	beq	L1436
 	brl	L10848
-L1438:
-	.line	7654
+L1436:
+	.line	7674
 ;				while (j++ < w)
-	.line	7655
+	.line	7675
 L10849:
-	lda	<L1413+j_1
+	lda	<L1411+j_1
 	sta	<R0
-	inc	<L1413+j_1
+	inc	<L1411+j_1
 	lda	<R0
-	cmp	<L1413+w_1
-	bcc	L1439
+	cmp	<L1411+w_1
+	bcc	L1437
 	brl	L10850
-L1439:
+L1437:
 ;					putc_bfd(&pb, ' ');
-	.line	7656
+	.line	7676
 	pea	#<$20
 	pea	#0
 	clc
 	tdc
-	adc	#<L1413+pb_1
+	adc	#<L1411+pb_1
 	pha
 	jsl	~~putc_bfd
 	brl	L10849
 L10850:
 ;			}
-	.line	7657
+	.line	7677
 ;			while (*p)
 L10848:
-	.line	7658
+	.line	7678
 L10851:
-	lda	[<L1413+p_1]
+	lda	[<L1411+p_1]
 	and	#$ff
-	bne	L1440
+	bne	L1438
 	brl	L10852
-L1440:
+L1438:
 ;				putc_bfd(&pb, *p++); /* String body */
-	.line	7659
-	lda	<L1413+p_1
+	.line	7679
+	lda	<L1411+p_1
 	sta	<R0
-	lda	<L1413+p_1+2
+	lda	<L1411+p_1+2
 	sta	<R0+2
-	inc	<L1413+p_1
-	bne	L1441
-	inc	<L1413+p_1+2
-L1441:
+	inc	<L1411+p_1
+	bne	L1439
+	inc	<L1411+p_1+2
+L1439:
 	lda	[<R0]
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L1413+pb_1
+	adc	#<L1411+pb_1
 	pha
 	jsl	~~putc_bfd
 	brl	L10851
 L10852:
 ;			while (j++ < w)
-	.line	7660
+	.line	7680
 L10853:
-	lda	<L1413+j_1
+	lda	<L1411+j_1
 	sta	<R0
-	inc	<L1413+j_1
+	inc	<L1411+j_1
 	lda	<R0
-	cmp	<L1413+w_1
-	bcc	L1442
+	cmp	<L1411+w_1
+	bcc	L1440
 	brl	L10854
-L1442:
+L1440:
 ;				putc_bfd(&pb, ' '); /* Left padded */
-	.line	7661
+	.line	7681
 	pea	#<$20
 	pea	#0
 	clc
 	tdc
-	adc	#<L1413+pb_1
+	adc	#<L1411+pb_1
 	pha
 	jsl	~~putc_bfd
 	brl	L10853
 L10854:
 ;			continue;
-	.line	7662
+	.line	7682
 	brl	L10828
 ;
 ;		case 'C': /* Character */
-	.line	7664
+	.line	7684
 L10855:
 ;			putc_bfd(&pb, (TCHAR) va_arg(arp, int));
-	.line	7665
+	.line	7685
 	clc
 	lda	#$2
-	adc	<L1413+arp_1
-	sta	<L1413+arp_1
-	bcc	L1443
-	inc	<L1413+arp_1+2
-L1443:
+	adc	<L1411+arp_1
+	sta	<L1411+arp_1
+	bcc	L1441
+	inc	<L1411+arp_1+2
+L1441:
 	clc
 	lda	#$fffe
-	adc	<L1413+arp_1
+	adc	<L1411+arp_1
 	sta	<R0
 	lda	#$ffff
-	adc	<L1413+arp_1+2
+	adc	<L1411+arp_1+2
 	sta	<R0+2
 	lda	[<R0]
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L1413+pb_1
+	adc	#<L1411+pb_1
 	pha
 	jsl	~~putc_bfd
 ;			continue;
-	.line	7666
+	.line	7686
 	brl	L10828
 ;
 ;		case 'B': /* Unsigned binary */
-	.line	7668
+	.line	7688
 L10856:
 ;			r = 2;
-	.line	7669
+	.line	7689
 	sep	#$20
 	longa	off
 	lda	#$2
-	sta	<L1413+r_1
+	sta	<L1411+r_1
 	rep	#$20
 	longa	on
 ;			break;
-	.line	7670
+	.line	7690
 	brl	L10842
 ;
 ;		case 'O': /* Unsigned octal */
-	.line	7672
+	.line	7692
 L10857:
 ;			r = 8;
-	.line	7673
+	.line	7693
 	sep	#$20
 	longa	off
 	lda	#$8
-	sta	<L1413+r_1
+	sta	<L1411+r_1
 	rep	#$20
 	longa	on
 ;			break;
-	.line	7674
+	.line	7694
 	brl	L10842
 ;
 ;		case 'D': /* Signed decimal */
-	.line	7676
+	.line	7696
 L10858:
 ;		case 'U': /* Unsigned decimal */
-	.line	7677
+	.line	7697
 L10859:
 ;			r = 10;
-	.line	7678
+	.line	7698
 	sep	#$20
 	longa	off
 	lda	#$a
-	sta	<L1413+r_1
+	sta	<L1411+r_1
 	rep	#$20
 	longa	on
 ;			break;
-	.line	7679
+	.line	7699
 	brl	L10842
 ;
 ;		case 'X': /* Unsigned hexdecimal */
-	.line	7681
+	.line	7701
 L10860:
 ;			r = 16;
-	.line	7682
+	.line	7702
 	sep	#$20
 	longa	off
 	lda	#$10
-	sta	<L1413+r_1
+	sta	<L1411+r_1
 	rep	#$20
 	longa	on
 ;			break;
-	.line	7683
+	.line	7703
 	brl	L10842
 ;
 ;		default: /* Unknown type (pass-through) */
-	.line	7685
+	.line	7705
 L10861:
 ;			putc_bfd(&pb, c);
-	.line	7686
-	pei	<L1413+c_1
+	.line	7706
+	pei	<L1411+c_1
 	pea	#0
 	clc
 	tdc
-	adc	#<L1413+pb_1
+	adc	#<L1411+pb_1
 	pha
 	jsl	~~putc_bfd
 ;			continue;
-	.line	7687
+	.line	7707
 	brl	L10828
 ;		}
-	.line	7688
+	.line	7708
 L10841:
 	xref	~~~swt
 	jsl	~~~swt
@@ -34422,161 +34405,161 @@ L10842:
 ;
 ;		/* Get an argument and put it in numeral */
 ;		v = (f & 4) ?
-	.line	7691
+	.line	7711
 ;				(DWORD) va_arg(arp, long) :
 ;				((d == 'D') ?
 ;						(DWORD) (long) va_arg(arp, int) :
 ;						(DWORD) va_arg(arp, unsigned int));
 	sep	#$20
 	longa	off
-	lda	<L1413+f_1
+	lda	<L1411+f_1
 	and	#<$4
 	rep	#$20
 	longa	on
-	bne	L1445
-	brl	L1444
-L1445:
+	bne	L1443
+	brl	L1442
+L1443:
 	clc
 	lda	#$4
-	adc	<L1413+arp_1
-	sta	<L1413+arp_1
-	bcc	L1446
-	inc	<L1413+arp_1+2
-L1446:
+	adc	<L1411+arp_1
+	sta	<L1411+arp_1
+	bcc	L1444
+	inc	<L1411+arp_1+2
+L1444:
 	clc
 	lda	#$fffc
-	adc	<L1413+arp_1
+	adc	<L1411+arp_1
 	sta	<R0
 	lda	#$ffff
-	adc	<L1413+arp_1+2
+	adc	<L1411+arp_1+2
 	sta	<R0+2
 	ldy	#$2
 	lda	[<R0],Y
 	tax
 	lda	[<R0]
-	bra	L1447
-L1444:
+	bra	L1445
+L1442:
 	sep	#$20
 	longa	off
-	lda	<L1413+d_1
+	lda	<L1411+d_1
 	cmp	#<$44
 	rep	#$20
 	longa	on
-	beq	L1449
-	brl	L1448
-L1449:
+	beq	L1447
+	brl	L1446
+L1447:
 	clc
 	lda	#$2
-	adc	<L1413+arp_1
-	sta	<L1413+arp_1
-	bcc	L1450
-	inc	<L1413+arp_1+2
-L1450:
+	adc	<L1411+arp_1
+	sta	<L1411+arp_1
+	bcc	L1448
+	inc	<L1411+arp_1+2
+L1448:
 	clc
 	lda	#$fffe
-	adc	<L1413+arp_1
+	adc	<L1411+arp_1
 	sta	<R0
 	lda	#$ffff
-	adc	<L1413+arp_1+2
+	adc	<L1411+arp_1+2
 	sta	<R0+2
 	ldy	#$0
 	lda	[<R0]
-	bpl	L1451
+	bpl	L1449
 	dey
-L1451:
+L1449:
 	sta	<R0
 	sty	<R0+2
 	ldx	<R0+2
 	lda	<R0
-	bra	L1452
-L1448:
+	bra	L1450
+L1446:
 	clc
 	lda	#$2
-	adc	<L1413+arp_1
-	sta	<L1413+arp_1
-	bcc	L1453
-	inc	<L1413+arp_1+2
-L1453:
+	adc	<L1411+arp_1
+	sta	<L1411+arp_1
+	bcc	L1451
+	inc	<L1411+arp_1+2
+L1451:
 	clc
 	lda	#$fffe
-	adc	<L1413+arp_1
+	adc	<L1411+arp_1
 	sta	<R0
 	lda	#$ffff
-	adc	<L1413+arp_1+2
+	adc	<L1411+arp_1+2
 	sta	<R0+2
 	lda	[<R0]
 	sta	<R0
 	stz	<R0+2
 	ldx	<R0+2
 	lda	<R0
-L1452:
+L1450:
 	sta	<R0
 	stx	<R0+2
 	ldx	<R0+2
 	lda	<R0
-L1447:
+L1445:
 	sta	<R0
 	stx	<R0+2
 	lda	<R0
-	sta	<L1413+v_1
+	sta	<L1411+v_1
 	lda	<R0+2
-	sta	<L1413+v_1+2
+	sta	<L1411+v_1+2
 ;		if (d == 'D' && (v & 0x80000000))
-	.line	7696
+	.line	7716
 ;		{
 	sep	#$20
 	longa	off
-	lda	<L1413+d_1
+	lda	<L1411+d_1
 	cmp	#<$44
 	rep	#$20
 	longa	on
-	beq	L1454
+	beq	L1452
 	brl	L10862
-L1454:
-	lda	<L1413+v_1+2
+L1452:
+	lda	<L1411+v_1+2
 	and	#^$80000000
-	bne	L1455
+	bne	L1453
 	brl	L10862
-L1455:
-	.line	7697
+L1453:
+	.line	7717
 ;			v = 0 - v;
-	.line	7698
+	.line	7718
 	sec
 	lda	#$0
-	sbc	<L1413+v_1
-	sta	<L1413+v_1
+	sbc	<L1411+v_1
+	sta	<L1411+v_1
 	lda	#$0
-	sbc	<L1413+v_1+2
-	sta	<L1413+v_1+2
+	sbc	<L1411+v_1+2
+	sta	<L1411+v_1+2
 ;			f |= 8;
-	.line	7699
+	.line	7719
 	sep	#$20
 	longa	off
 	lda	#$8
-	tsb	<L1413+f_1
+	tsb	<L1411+f_1
 	rep	#$20
 	longa	on
 ;		}
-	.line	7700
+	.line	7720
 ;		i = 0;
 L10862:
-	.line	7701
-	stz	<L1413+i_1
+	.line	7721
+	stz	<L1411+i_1
 ;		do
-	.line	7702
+	.line	7722
 L10865:
 ;		{
-	.line	7703
+	.line	7723
 ;			d = (TCHAR) (v % r);
-	.line	7704
-	lda	<L1413+r_1
+	.line	7724
+	lda	<L1411+r_1
 	and	#$ff
 	sta	<R0
 	stz	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pei	<L1413+v_1+2
-	pei	<L1413+v_1
+	pei	<L1411+v_1+2
+	pei	<L1411+v_1
 	xref	~~~lumd
 	jsl	~~~lumd
 	sta	<R0
@@ -34584,53 +34567,53 @@ L10865:
 	sep	#$20
 	longa	off
 	lda	<R0
-	sta	<L1413+d_1
+	sta	<L1411+d_1
 	rep	#$20
 	longa	on
 ;			v /= r;
-	.line	7705
-	lda	<L1413+r_1
+	.line	7725
+	lda	<L1411+r_1
 	and	#$ff
 	sta	<R0
 	stz	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pei	<L1413+v_1+2
-	pei	<L1413+v_1
+	pei	<L1411+v_1+2
+	pei	<L1411+v_1
 	xref	~~~ludv
 	jsl	~~~ludv
-	sta	<L1413+v_1
-	stx	<L1413+v_1+2
+	sta	<L1411+v_1
+	stx	<L1411+v_1+2
 ;			if (d > 9)
-	.line	7706
+	.line	7726
 ;				d += (c == 'x') ? 0x27 : 0x07;
 	sep	#$20
 	longa	off
 	lda	#$9
-	cmp	<L1413+d_1
+	cmp	<L1411+d_1
 	rep	#$20
 	longa	on
-	bcc	L1456
+	bcc	L1454
 	brl	L10866
-L1456:
-	.line	7707
-	lda	<L1413+d_1
+L1454:
+	.line	7727
+	lda	<L1411+d_1
 	and	#$ff
 	sta	<R0
 	sep	#$20
 	longa	off
-	lda	<L1413+c_1
+	lda	<L1411+c_1
 	cmp	#<$78
 	rep	#$20
 	longa	on
-	beq	L1458
-	brl	L1457
-L1458:
+	beq	L1456
+	brl	L1455
+L1456:
 	lda	#$27
-	bra	L1459
-L1457:
+	bra	L1457
+L1455:
 	lda	#$7
-L1459:
+L1457:
 	sta	<R1
 	clc
 	lda	<R1
@@ -34639,220 +34622,220 @@ L1459:
 	sep	#$20
 	longa	off
 	lda	<R2
-	sta	<L1413+d_1
+	sta	<L1411+d_1
 	rep	#$20
 	longa	on
 ;			str[i++] = d + '0';
 L10866:
-	.line	7708
+	.line	7728
 	sep	#$20
 	longa	off
 	clc
 	lda	#$30
-	adc	<L1413+d_1
+	adc	<L1411+d_1
 	rep	#$20
 	longa	on
 	sep	#$20
 	longa	off
-	ldx	<L1413+i_1
-	sta	<L1413+str_1,X
+	ldx	<L1411+i_1
+	sta	<L1411+str_1,X
 	rep	#$20
 	longa	on
-	inc	<L1413+i_1
+	inc	<L1411+i_1
 ;		} while (v && i < sizeof str / sizeof *str);
-	.line	7709
+	.line	7729
 L10863:
-	lda	<L1413+v_1
-	ora	<L1413+v_1+2
-	bne	L1461
-	brl	L1460
-L1461:
-	lda	<L1413+i_1
+	lda	<L1411+v_1
+	ora	<L1411+v_1+2
+	bne	L1459
+	brl	L1458
+L1459:
+	lda	<L1411+i_1
 	cmp	#<$20
-	bcs	L1462
+	bcs	L1460
 	brl	L10865
-L1462:
 L1460:
+L1458:
 L10864:
 ;		if (f & 8)
-	.line	7710
+	.line	7730
 ;			str[i++] = '-';
 	sep	#$20
 	longa	off
-	lda	<L1413+f_1
+	lda	<L1411+f_1
 	and	#<$8
 	rep	#$20
 	longa	on
-	bne	L1463
+	bne	L1461
 	brl	L10867
-L1463:
-	.line	7711
+L1461:
+	.line	7731
 	sep	#$20
 	longa	off
 	lda	#$2d
-	ldx	<L1413+i_1
-	sta	<L1413+str_1,X
+	ldx	<L1411+i_1
+	sta	<L1411+str_1,X
 	rep	#$20
 	longa	on
-	inc	<L1413+i_1
+	inc	<L1411+i_1
 ;		j = i;
 L10867:
-	.line	7712
-	lda	<L1413+i_1
-	sta	<L1413+j_1
+	.line	7732
+	lda	<L1411+i_1
+	sta	<L1411+j_1
 ;		d = (f & 1) ? '0' : ' ';
-	.line	7713
+	.line	7733
 	sep	#$20
 	longa	off
-	lda	<L1413+f_1
+	lda	<L1411+f_1
 	and	#<$1
 	rep	#$20
 	longa	on
-	bne	L1465
-	brl	L1464
-L1465:
+	bne	L1463
+	brl	L1462
+L1463:
 	lda	#$30
-	bra	L1466
-L1464:
+	bra	L1464
+L1462:
 	lda	#$20
-L1466:
+L1464:
 	sta	<R0
 	sep	#$20
 	longa	off
 	lda	<R0
-	sta	<L1413+d_1
+	sta	<L1411+d_1
 	rep	#$20
 	longa	on
 ;		if (!(f & 2))
-	.line	7714
+	.line	7734
 ;		{
 	sep	#$20
 	longa	off
-	lda	<L1413+f_1
+	lda	<L1411+f_1
 	and	#<$2
 	rep	#$20
 	longa	on
-	beq	L1467
+	beq	L1465
 	brl	L10868
-L1467:
-	.line	7715
+L1465:
+	.line	7735
 ;			while (j++ < w)
-	.line	7716
+	.line	7736
 L10869:
-	lda	<L1413+j_1
+	lda	<L1411+j_1
 	sta	<R0
-	inc	<L1413+j_1
+	inc	<L1411+j_1
 	lda	<R0
-	cmp	<L1413+w_1
-	bcc	L1468
+	cmp	<L1411+w_1
+	bcc	L1466
 	brl	L10870
-L1468:
+L1466:
 ;				putc_bfd(&pb, d); /* Right pad */
-	.line	7717
-	pei	<L1413+d_1
+	.line	7737
+	pei	<L1411+d_1
 	pea	#0
 	clc
 	tdc
-	adc	#<L1413+pb_1
+	adc	#<L1411+pb_1
 	pha
 	jsl	~~putc_bfd
 	brl	L10869
 L10870:
 ;		}
-	.line	7718
+	.line	7738
 ;		do
 L10868:
-	.line	7719
+	.line	7739
 L10873:
 ;		{
-	.line	7720
+	.line	7740
 ;			putc_bfd(&pb, str[--i]); /* Number body */
-	.line	7721
-	dec	<L1413+i_1
-	ldx	<L1413+i_1
-	lda	<L1413+str_1,X
+	.line	7741
+	dec	<L1411+i_1
+	ldx	<L1411+i_1
+	lda	<L1411+str_1,X
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L1413+pb_1
+	adc	#<L1411+pb_1
 	pha
 	jsl	~~putc_bfd
 ;		} while (i);
-	.line	7722
+	.line	7742
 L10871:
-	lda	<L1413+i_1
-	beq	L1469
+	lda	<L1411+i_1
+	beq	L1467
 	brl	L10873
-L1469:
+L1467:
 L10872:
 ;		while (j++ < w)
-	.line	7723
+	.line	7743
 L10874:
-	lda	<L1413+j_1
+	lda	<L1411+j_1
 	sta	<R0
-	inc	<L1413+j_1
+	inc	<L1411+j_1
 	lda	<R0
-	cmp	<L1413+w_1
-	bcc	L1470
+	cmp	<L1411+w_1
+	bcc	L1468
 	brl	L10875
-L1470:
+L1468:
 ;			putc_bfd(&pb, d); /* Left pad */
-	.line	7724
-	pei	<L1413+d_1
+	.line	7744
+	pei	<L1411+d_1
 	pea	#0
 	clc
 	tdc
-	adc	#<L1413+pb_1
+	adc	#<L1411+pb_1
 	pha
 	jsl	~~putc_bfd
 	brl	L10874
 L10875:
 ;	}
-	.line	7725
+	.line	7745
 L10828:
 	brl	L10830
 L10829:
 ;
 ;	va_end(arp);
-	.line	7727
+	.line	7747
 ;
 ;	return putc_flush(&pb);
-	.line	7729
+	.line	7749
 	pea	#0
 	clc
 	tdc
-	adc	#<L1413+pb_1
+	adc	#<L1411+pb_1
 	pha
 	jsl	~~putc_flush
-L1471:
+L1469:
 	tay
 	phx
-	ldx	<L1412+4
-	lda	<L1412+2
-	sta	<L1412+2,X
-	lda	<L1412+1
-	sta	<L1412+1,X
+	ldx	<L1410+4
+	lda	<L1410+2
+	sta	<L1410+2,X
+	lda	<L1410+1
+	sta	<L1410+1,X
 	txa
 	plx
 	pld
 	pha
 	tsc
 	clc
-	adc	#L1412+2
+	adc	#L1410+2
 	adc	<1,s
 	tcs
 	tya
 	rtl
 ;}
-	.line	7730
-	.endblock	7730
-L1412	equ	146
-L1413	equ	13
+	.line	7750
+	.endblock	7750
+L1410	equ	146
+L1411	equ	13
 	ends
 	efunc
-	.endfunc	7730,13,146
-	.line	7730
+	.endfunc	7750,13,146
+	.line	7750
 ;
 ;#endif /* !FF_FS_READONLY */
 ;#endif /* FF_USE_STRFUNC */
@@ -34893,273 +34876,272 @@ L1413	equ	13
 ;#if FF_USE_LFN >= 1						/* Code conversion (defined in unicode.c) */
 ;WCHAR ff_oem2uni (WCHAR oem, WORD cp)
 ;{
-	.line	7769
-	.line	7770
+	.line	7789
+	.line	7790
 	FFDOS
 	xdef	~~ff_oem2uni
 	func
-	.function	7770
+	.function	7790
 ~~ff_oem2uni:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1472
+	sbc	#L1470
 	tcs
 	phd
 	tcd
 oem_0	set	4
 cp_0	set	6
-	.block	7770
+	.block	7790
 ;	return oem;
 	.sym	oem,4,16,6,16
 	.sym	cp,6,5,6,16
-	.line	7771
-	lda	<L1472+oem_0
-L1475:
+	.line	7791
+	lda	<L1470+oem_0
+L1473:
 	tay
-	lda	<L1472+2
-	sta	<L1472+2+4
-	lda	<L1472+1
-	sta	<L1472+1+4
+	lda	<L1470+2
+	sta	<L1470+2+4
+	lda	<L1470+1
+	sta	<L1470+1+4
 	pld
 	tsc
 	clc
-	adc	#L1472+4
+	adc	#L1470+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	7772
-	.endblock	7772
-L1472	equ	0
-L1473	equ	1
+	.line	7792
+	.endblock	7792
+L1470	equ	0
+L1471	equ	1
 	ends
 	efunc
-	.endfunc	7772,1,0
-	.line	7772
+	.endfunc	7792,1,0
+	.line	7792
 ;
 ;WCHAR ff_uni2oem (DWORD uni, WORD cp)
 ;{
-	.line	7774
-	.line	7775
+	.line	7794
+	.line	7795
 	FFDOS
 	xdef	~~ff_uni2oem
 	func
-	.function	7775
+	.function	7795
 ~~ff_uni2oem:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1476
+	sbc	#L1474
 	tcs
 	phd
 	tcd
 uni_0	set	4
 cp_0	set	8
-	.block	7775
+	.block	7795
 ;	return uni;
 	.sym	uni,4,18,6,32
 	.sym	cp,8,5,6,16
-	.line	7776
-	lda	<L1476+uni_0
-L1479:
+	.line	7796
+	lda	<L1474+uni_0
+L1477:
 	tay
-	lda	<L1476+2
-	sta	<L1476+2+6
-	lda	<L1476+1
-	sta	<L1476+1+6
+	lda	<L1474+2
+	sta	<L1474+2+6
+	lda	<L1474+1
+	sta	<L1474+1+6
 	pld
 	tsc
 	clc
-	adc	#L1476+6
+	adc	#L1474+6
 	tcs
 	tya
 	rtl
 ;}
-	.line	7777
-	.endblock	7777
-L1476	equ	0
-L1477	equ	1
+	.line	7797
+	.endblock	7797
+L1474	equ	0
+L1475	equ	1
 	ends
 	efunc
-	.endfunc	7777,1,0
-	.line	7777
+	.endfunc	7797,1,0
+	.line	7797
 ;
 ;DWORD ff_wtoupper (DWORD uni)
 ;{
-	.line	7779
-	.line	7780
+	.line	7799
+	.line	7800
 	FFDOS
 	xdef	~~ff_wtoupper
 	func
-	.function	7780
+	.function	7800
 ~~ff_wtoupper:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1480
+	sbc	#L1478
 	tcs
 	phd
 	tcd
 uni_0	set	4
-	.block	7780
+	.block	7800
 ;	return uni;
 	.sym	uni,4,18,6,32
-	.line	7781
-	ldx	<L1480+uni_0+2
-	lda	<L1480+uni_0
-L1483:
+	.line	7801
+	ldx	<L1478+uni_0+2
+	lda	<L1478+uni_0
+L1481:
 	tay
-	lda	<L1480+2
-	sta	<L1480+2+4
-	lda	<L1480+1
-	sta	<L1480+1+4
+	lda	<L1478+2
+	sta	<L1478+2+4
+	lda	<L1478+1
+	sta	<L1478+1+4
 	pld
 	tsc
 	clc
-	adc	#L1480+4
+	adc	#L1478+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	7782
-	.endblock	7782
-L1480	equ	0
-L1481	equ	1
+	.line	7802
+	.endblock	7802
+L1478	equ	0
+L1479	equ	1
 	ends
 	efunc
-	.endfunc	7782,1,0
-	.line	7782
+	.endfunc	7802,1,0
+	.line	7802
 ;#endif
 ;
 ;#if FF_USE_LFN == 3						/* Dynamic memory allocation */
 ;void* ff_memalloc (UINT msize)
 ;{
-	.line	7786
-	.line	7787
+	.line	7806
+	.line	7807
 	FFDOS
 	xdef	~~ff_memalloc
 	func
-	.function	7787
+	.function	7807
 ~~ff_memalloc:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1484
+	sbc	#L1482
 	tcs
 	phd
 	tcd
 msize_0	set	4
-	.block	7787
+	.block	7807
+;	//k_debug_integer("ff_memalloc:",msize);
 ;	return k_mem_allocate_heap(msize);
 	.sym	msize,4,16,6,16
-	.line	7788
-	pei	<L1484+msize_0
-	jsl	~~k_mem_allocate_heap
+	.line	7809
+	lda	<L1482+msize_0
 	sta	<R0
-	stx	<R0+2
-	ldx	<R0+2
-	lda	<R0
-L1487:
+	stz	<R0+2
+	pei	<R0+2
+	pei	<R0
+	jsl	~~k_mem_allocate_heap
+	sta	<R1
+	stx	<R1+2
+	ldx	<R1+2
+	lda	<R1
+L1485:
 	tay
-	lda	<L1484+2
-	sta	<L1484+2+2
-	lda	<L1484+1
-	sta	<L1484+1+2
+	lda	<L1482+2
+	sta	<L1482+2+2
+	lda	<L1482+1
+	sta	<L1482+1+2
 	pld
 	tsc
 	clc
-	adc	#L1484+2
+	adc	#L1482+2
 	tcs
 	tya
 	rtl
 ;}
-	.line	7789
-	.endblock	7789
-L1484	equ	4
-L1485	equ	5
+	.line	7810
+	.endblock	7810
+L1482	equ	8
+L1483	equ	9
 	ends
 	efunc
-	.endfunc	7789,5,4
-	.line	7789
+	.endfunc	7810,9,8
+	.line	7810
 ;
 ;void ff_memfree (void* mblock)
 ;{
-	.line	7791
-	.line	7792
+	.line	7812
+	.line	7813
 	FFDOS
 	xdef	~~ff_memfree
 	func
-	.function	7792
+	.function	7813
 ~~ff_memfree:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1488
+	sbc	#L1486
 	tcs
 	phd
 	tcd
 mblock_0	set	4
-	.block	7792
+	.block	7813
+;	//k_debug_pointer("ff_memalloc:",mblock);
 ;	k_mem_deallocate_heap(mblock);
 	.sym	mblock,4,129,6,32
-	.line	7793
-	pei	<L1488+mblock_0+2
-	pei	<L1488+mblock_0
+	.line	7815
+	pei	<L1486+mblock_0+2
+	pei	<L1486+mblock_0
 	jsl	~~k_mem_deallocate_heap
 ;}
-	.line	7794
-L1491:
-	lda	<L1488+2
-	sta	<L1488+2+4
-	lda	<L1488+1
-	sta	<L1488+1+4
+	.line	7816
+L1489:
+	lda	<L1486+2
+	sta	<L1486+2+4
+	lda	<L1486+1
+	sta	<L1486+1+4
 	pld
 	tsc
 	clc
-	adc	#L1488+4
+	adc	#L1486+4
 	tcs
 	rtl
-	.endblock	7794
-L1488	equ	0
-L1489	equ	1
+	.endblock	7816
+L1486	equ	0
+L1487	equ	1
 	ends
 	efunc
-	.endfunc	7794,1,0
-	.line	7794
+	.endfunc	7816,1,0
+	.line	7816
 ;
 ;#endif
 ;
 ;
-	.line	7797
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.c",7791
+	.line	7819
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.c",7812
 	xref	~~disk_ioctl
 	xref	~~disk_write
 	xref	~~disk_read
 	xref	~~disk_status
 	xref	~~disk_initialize
-	xref	~~k_debug_long
-	xref	~~k_debug_integer
-	xref	~~k_debug_string
 	xref	~~k_mem_deallocate_heap
 	xref	~~k_mem_allocate_heap
 	udata
 ~~Fsid
 	ds	2
 	ends
-	udata
-~~FatFs
-	ds	32
-	ends
 	.sym	~~putc_init,~~putc_init,65,3,0
 	.sym	~~putc_flush,~~putc_flush,69,3,0
 	.sym	~~putc_bfd,~~putc_bfd,65,3,0
-	.sym	putbuff,0,10,14,640,125
+	.sym	putbuff,0,10,14,640,131
 	.sym	~~create_partition,~~create_partition,69,3,0
 	.sym	~~validate,~~validate,69,3,0
 	.sym	~~mount_volume,~~mount_volume,69,3,0
@@ -35210,42 +35192,44 @@ L1489	equ	1
 	.sym	~~LfnOfs,~~LfnOfs,110,3,0,13
 	.sym	~~VolumeStr,~~VolumeStr,1134,3,32,8
 	.sym	~~Fsid,~~Fsid,5,3,16
-	.sym	~~FatFs,~~FatFs,1130,3,32,72,8
+	.sym	~~FatFs,~~FatFs,1130,3,32,75,8
 	.sym	va_list,0,142,14,32
-	.sym	PDOSHANDLE,0,138,14,32,124
-	.sym	DOSHANDLE,0,10,14,80,124
-	.sym	PFXDOSDEVICE,0,138,14,32,122
-	.sym	FXDOSDEVICE,0,10,14,5744,122
+	.sym	FILE,0,138,14,32,130
+	.sym	FILE_POINTER,0,10,14,112,130
+	.sym	PDOSHANDLE,0,138,14,32,129
+	.sym	DOSHANDLE,0,10,14,80,129
+	.sym	PFXDOSDEVICE,0,138,14,32,127
+	.sym	FXDOSDEVICE,0,10,14,5744,127
 	.sym	DOSINITDEVICE,0,641,14,32
 	.sym	DOSSECTORWRITER,0,654,14,32
 	.sym	DOSSECTORREADER,0,654,14,32
-	.sym	PIDENTIFY_DEVICE_DATA,0,138,14,32,121
-	.sym	IDENTIFY_DEVICE_DATA,0,10,14,4096,121
-	.sym	PIDSECTOR,0,138,14,32,98
-	.sym	IDSECTOR,0,10,14,2048,98
-	.sym	PLFN,0,138,14,32,97
-	.sym	LFN,0,10,14,256,97
-	.sym	PFAT16ENTRYLONG,0,138,14,32,96
-	.sym	FAT16ENTRYLONG,0,10,14,288,96
-	.sym	PFAT16ENTRY,0,138,14,32,95
-	.sym	FAT16ENTRY,0,10,14,256,95
-	.sym	Fat16BootSector,0,10,14,4096,94
-	.sym	PPARTITIONTABLE,0,138,14,32,93
-	.sym	PARTITIONTABLE,0,10,14,128,93
-	.sym	PFATBOOTSECTOR,0,138,14,32,92
-	.sym	FATBOOTSECTOR,0,10,14,928,92
-	.sym	fat_BS_t,0,10,14,688,91
-	.sym	fat_extBS_16_t,0,10,14,192,90
-	.sym	PFAT32EXT,0,138,14,32,89
-	.sym	fat_extBS_32_t,0,10,14,416,89
-	.sym	P_FX_FAT_DIR_INFO,0,138,14,32,88
-	.sym	FX_FAT_DIR_INFO,0,10,14,256,88
-	.sym	PFILEINFO,0,138,14,32,87
-	.sym	FILEINFO,0,10,14,136,87
-	.sym	PDISKINFO,0,138,14,32,86
-	.sym	DISKINFO,0,10,14,416,86
-	.sym	PDIRENTRY,0,138,14,32,85
-	.sym	DIRENTRY,0,10,14,256,85
+	.sym	PIDENTIFY_DEVICE_DATA,0,138,14,32,126
+	.sym	IDENTIFY_DEVICE_DATA,0,10,14,4096,126
+	.sym	PIDSECTOR,0,138,14,32,103
+	.sym	IDSECTOR,0,10,14,2048,103
+	.sym	PLFN,0,138,14,32,102
+	.sym	LFN,0,10,14,256,102
+	.sym	PFAT16ENTRYLONG,0,138,14,32,101
+	.sym	FAT16ENTRYLONG,0,10,14,288,101
+	.sym	PFAT16ENTRY,0,138,14,32,100
+	.sym	FAT16ENTRY,0,10,14,256,100
+	.sym	Fat16BootSector,0,10,14,4096,99
+	.sym	PPARTITIONTABLE,0,138,14,32,98
+	.sym	PARTITIONTABLE,0,10,14,128,98
+	.sym	PFATBOOTSECTOR,0,138,14,32,97
+	.sym	FATBOOTSECTOR,0,10,14,928,97
+	.sym	fat_BS_t,0,10,14,688,96
+	.sym	fat_extBS_16_t,0,10,14,192,95
+	.sym	PFAT32EXT,0,138,14,32,94
+	.sym	fat_extBS_32_t,0,10,14,416,94
+	.sym	P_FX_FAT_DIR_INFO,0,138,14,32,93
+	.sym	FX_FAT_DIR_INFO,0,10,14,256,93
+	.sym	PFILEINFO,0,138,14,32,92
+	.sym	FILEINFO,0,10,14,136,92
+	.sym	PDISKINFO,0,138,14,32,91
+	.sym	DISKINFO,0,10,14,416,91
+	.sym	PDIRENTRY,0,138,14,32,90
+	.sym	DIRENTRY,0,10,14,256,90
 	.sym	~~disk_ioctl,~~disk_ioctl,69,18,0
 	.sym	~~disk_write,~~disk_write,69,18,0
 	.sym	~~disk_read,~~disk_read,69,18,0
@@ -35253,31 +35237,31 @@ L1489	equ	1
 	.sym	~~disk_initialize,~~disk_initialize,78,18,0
 	.sym	DRESULT,0,5,14,16
 	.sym	DSTATUS,0,14,14,8
-	.sym	DEVICEDRIVER_COMMAND,0,656,14,32
+	.sym	PIRQCHAIN,0,138,14,32,89
+	.sym	IRQCHAIN,0,10,14,128,89
+	.sym	DEVICEDRIVER_COMMAND,0,654,14,32
 	.sym	DEVICEDRIVER_UNLOAD,0,654,14,32
-	.sym	DEVICEDRIVER_WRITE,0,656,14,32
-	.sym	DEVICEDRIVER_READ,0,656,14,32
+	.sym	DEVICEDRIVER_WRITE,0,654,14,32
+	.sym	DEVICEDRIVER_READ,0,654,14,32
 	.sym	DEVICEDRIVER_LOAD,0,654,14,32
-	.sym	DEVICEDRIVER_IRQ,0,654,14,32
-	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,84
-	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,84
-	.sym	GETDRIVERDEF,0,8842,14,32,83
-	.sym	PFX_DEVICE_DRIVER,0,138,14,32,83
-	.sym	FX_DEVICE_DRIVER,0,10,14,776,83
-	.sym	~~k_debug_long,~~k_debug_long,65,18,0
-	.sym	~~k_debug_integer,~~k_debug_integer,65,18,0
-	.sym	~~k_debug_string,~~k_debug_string,65,18,0
-	.sym	PSEGMENTHEADER,0,138,14,32,82
-	.sym	SEGMENTHEADER,0,10,14,160,82
-	.sym	PDEBUGBYTEBITS,0,138,14,32,81
-	.sym	DEBUGBYTEBITS,0,10,14,8,81
-	.sym	PFXENVIRONMENT,0,138,14,32,80
-	.sym	FXENVIRONMENT,0,10,14,96,80
-	.sym	PFXZEROPAGE,0,138,14,32,79
-	.sym	FXZEROPAGE,0,10,14,824,79
+	.sym	DEVICEDRIVER_IRQ,0,641,14,32
+	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,88
+	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,88
+	.sym	GETDRIVERDEF,0,8842,14,32,87
+	.sym	PFX_DEVICE_DRIVER,0,138,14,32,87
+	.sym	FX_DEVICE_DRIVER,0,10,14,776,87
+	.sym	PSEGMENTHEADER,0,138,14,32,86
+	.sym	SEGMENTHEADER,0,10,14,160,86
+	.sym	PDEBUGBYTEBITS,0,138,14,32,85
+	.sym	DEBUGBYTEBITS,0,10,14,8,85
+	.sym	PFXENVIRONMENT,0,138,14,32,84
+	.sym	FXENVIRONMENT,0,10,14,96,84
+	.sym	PFXZEROPAGE,0,138,14,32,83
+	.sym	FXZEROPAGE,0,10,14,720,83
+	.sym	IRQBUFFER,0,10,14,32,82
 	.sym	KERNELTRAPCALL,0,641,14,32
-	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,78
-	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,78
+	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,81
+	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,81
 	.sym	~~ff_memfree,~~ff_memfree,65,2,0
 	.sym	~~ff_memalloc,~~ff_memalloc,1089,2,32
 	.sym	~~ff_wtoupper,~~ff_wtoupper,82,2,0
@@ -35309,94 +35293,101 @@ L1489	equ	1
 	.sym	~~f_close,~~f_close,69,2,0
 	.sym	~~f_open,~~f_open,69,2,0
 	.sym	FRESULT,0,5,14,16
-	.sym	MKFS_PARM,0,10,14,80,77
-	.sym	FILINFO,0,10,14,2224,76
-	.sym	DIR,0,10,14,416,75
-	.sym	FIL,0,10,14,4400,74
-	.sym	FFOBJID,0,10,14,128,73
-	.sym	FATFS,0,10,14,4504,72
+	.sym	MKFS_PARM,0,10,14,80,80
+	.sym	FILINFO,0,10,14,2224,79
+	.sym	DIR,0,10,14,416,78
+	.sym	FIL,0,10,14,4400,77
+	.sym	FFOBJID,0,10,14,128,76
+	.sym	FATFS,0,10,14,4504,75
 	.sym	LBA_t,0,18,14,32
 	.sym	FSIZE_t,0,18,14,32
 	.sym	TCHAR,0,14,14,8
-	.sym	PCOMMANDARGS,0,138,14,32,71
-	.sym	COMMANDARGS,0,10,14,64,71
+	.sym	PCOMMANDARGS,0,138,14,32,74
+	.sym	COMMANDARGS,0,10,14,64,74
 	.sym	PTOKENIZESTATE,0,133,14,32
 	.sym	TOKENIZESTATE,0,5,14,16
-	.sym	PTOKEN,0,138,14,32,70
-	.sym	TOKEN,0,10,14,64,70
+	.sym	PTOKEN,0,138,14,32,73
+	.sym	TOKEN,0,10,14,64,73
 	.sym	PTOKENTYPE,0,133,14,32
 	.sym	TOKENTYPE,0,5,14,16
 	.sym	FXCommandHandler,0,656,14,32
-	.sym	PCONSOLECTX,0,138,14,32,69
-	.sym	CONSOLECTX,0,10,14,1144,69
-	.sym	PSPINNERCTX,0,138,14,32,68
-	.sym	SPINNERCTX,0,10,14,48,68
-	.sym	HCLIP,0,138,14,32,67
-	.sym	PCLIPBOARD_DATA,0,138,14,32,67
-	.sym	CLIPBOARD_DATA,0,10,14,168,67
-	.sym	PEVENTMANAGER,0,138,14,32,66
-	.sym	EVENTMANAGER,0,10,14,192,66
+	.sym	PCONSOLECTX,0,138,14,32,72
+	.sym	CONSOLECTX,0,10,14,1144,72
+	.sym	PSPINNERCTX,0,138,14,32,71
+	.sym	SPINNERCTX,0,10,14,48,71
+	.sym	HCLIP,0,138,14,32,70
+	.sym	PCLIPBOARD_DATA,0,138,14,32,70
+	.sym	CLIPBOARD_DATA,0,10,14,168,70
+	.sym	PEVENTMANAGER,0,138,14,32,69
+	.sym	EVENTMANAGER,0,10,14,192,69
 	.sym	EV_RUN,0,656,14,32
 	.sym	EV_QUERY_METRIC,0,656,14,32
 	.sym	EV_CONFIGURE,0,656,14,32
 	.sym	EV_UNINIT,0,641,14,32
 	.sym	EV_INIT,0,8833,14,32
-	.sym	PMOUSE_MSG_STATE,0,138,14,32,65
-	.sym	MOUSE_MSG_STATE,0,10,14,184,65
-	.sym	PFXEVENTPROCESS,0,138,14,32,64
-	.sym	FXEVENTPROCESS,0,10,14,64,64
-	.sym	PMARSHALDATA,0,139,14,32,63
-	.sym	MARSHALDATA,0,11,14,32,63
+	.sym	PMOUSE_MSG_STATE,0,138,14,32,68
+	.sym	MOUSE_MSG_STATE,0,10,14,184,68
+	.sym	PFXEVENTPROCESS,0,138,14,32,67
+	.sym	FXEVENTPROCESS,0,10,14,64,67
+	.sym	FXASYNCPROCESS,0,641,14,32
+	.sym	PMARSHALDATA,0,139,14,32,66
+	.sym	MARSHALDATA,0,11,14,32,66
 	.sym	FXIDLEPROCESS,0,641,14,32
 	.sym	FXEventProc,0,641,14,32
-	.sym	PMOUSEMSGDATA,0,138,14,32,62
-	.sym	MOUSEMSGDATA,0,10,14,64,62
+	.sym	PMOUSEMSGDATA,0,138,14,32,65
+	.sym	MOUSEMSGDATA,0,10,14,64,65
 	.sym	MSGIRQ,0,5,14,16
-	.sym	MAINLOOPARGS,0,10,14,16,61
-	.sym	PEACHCHILD_MSG,0,138,14,32,60
-	.sym	EACHCHILD_MSG,0,10,14,64,60
-	.sym	PMSGBOX_DATA,0,138,14,32,59
-	.sym	MSGBOX_DATA,0,10,14,96,59
-	.sym	PDESKTOP_DATA,0,138,14,32,58
-	.sym	DESKTOP_DATA,0,10,14,64,58
-	.sym	PWINDOWMANAGER,0,138,14,32,57
-	.sym	WINDOWMANAGER,0,10,14,160,57
+	.sym	MAINLOOPARGS,0,10,14,16,64
+	.sym	PEACHCHILD_MSG,0,138,14,32,63
+	.sym	EACHCHILD_MSG,0,10,14,64,63
+	.sym	PMSGBOX_DATA,0,138,14,32,62
+	.sym	MSGBOX_DATA,0,10,14,96,62
+	.sym	PDESKTOP_DATA,0,138,14,32,61
+	.sym	DESKTOP_DATA,0,10,14,64,61
+	.sym	PWINDOWMANAGER,0,138,14,32,60
+	.sym	WINDOWMANAGER,0,10,14,160,60
 	.sym	WM_DOPROCS,0,641,14,32
 	.sym	WM_QUERY_METRIC,0,656,14,32
 	.sym	WM_CONFIGURE,0,656,14,32
 	.sym	WM_HANDLE_EVENT,0,8833,14,32
 	.sym	WM_EVENTS,0,641,14,32
-	.sym	PCUR_PALETTE_MAP,0,138,14,32,56
-	.sym	CUR_PALETTE_MAP,0,10,14,400,56
-	.sym	PCLICKDETECTED,0,138,14,32,55
-	.sym	CLICKDETECTED,0,10,14,64,55
+	.sym	PCUR_PALETTE_MAP,0,138,14,32,59
+	.sym	CUR_PALETTE_MAP,0,10,14,400,59
+	.sym	PCLICKDETECTED,0,138,14,32,58
+	.sym	CLICKDETECTED,0,10,14,64,58
 	.sym	OBJECTCLICKED,0,641,14,32
-	.sym	PIPCPORT,0,138,14,32,54
-	.sym	IPCPORT,0,10,14,144,54
+	.sym	PALLOCATIONHEADER,0,138,14,32,57
+	.sym	ALLOCATIONHEADER,0,10,14,80,57
+	.sym	PIPCPORT,0,138,14,32,56
+	.sym	IPCPORT,0,10,14,144,56
 	.sym	~~k_mem_deallocate_heap,~~k_mem_deallocate_heap,65,18,0
 	.sym	~~k_mem_allocate_heap,~~k_mem_allocate_heap,1089,18,32
 	.sym	MemoryCallback,0,641,14,32
-	.sym	PFXMEMORYMAP,0,138,14,32,53
-	.sym	FXMEMORYMAP,0,10,14,2072,53
-	.sym	UMM_HEAP_INFO,0,10,14,256,52
+	.sym	PFXMEMORYMAP,0,138,14,32,55
+	.sym	FXMEMORYMAP,0,10,14,2072,55
+	.sym	UMM_HEAP_INFO,0,10,14,256,54
 	.sym	FOREACHNODEUNTIL,0,654,14,32
 	.sym	FOREACHNODE,0,641,14,32
-	.sym	PEXECUTIVE,0,138,14,32,51
-	.sym	EXECUTIVE,0,10,14,128,51
+	.sym	PEXECUTIVE,0,138,14,32,53
+	.sym	EXECUTIVE,0,10,14,128,53
 	.sym	EX_QUERY_METRIC,0,656,14,32
 	.sym	EX_CONFIGURE,0,656,14,32
 	.sym	EX_UNINIT,0,641,14,32
 	.sym	EX_INIT,0,8833,14,32
-	.sym	PFXSTRING,0,138,14,32,50
-	.sym	FXSTRING,0,10,14,64,50
+	.sym	PFXSTRING,0,138,14,32,52
+	.sym	FXSTRING,0,10,14,64,52
 	.sym	Boolean_T,0,5,14,16
-	.sym	ldiv_t,0,10,14,64,48
-	.sym	div_t,0,10,14,32,47
+	.sym	ldiv_t,0,10,14,64,50
+	.sym	div_t,0,10,14,32,49
 	.sym	wctype_t,0,16,14,16
 	.sym	wint_t,0,16,14,16
 	.sym	wchar_t,0,14,14,8
 	.sym	ptrdiff_t,0,7,14,32
 	.sym	size_t,0,16,14,16
+	.sym	PFXRFHEADER_STRING_ENTRY,0,138,14,32,48
+	.sym	FXRFHEADER_STRING_ENTRY,0,10,14,40,48
+	.sym	PFXRFHEADER_STRING,0,138,14,32,47
+	.sym	FXRFHEADER_STRING,0,10,14,32,47
 	.sym	PFXRFHEADER_FONT,0,138,14,32,46
 	.sym	FXRFHEADER_FONT,0,10,14,144,46
 	.sym	PFXRFHEADER,0,138,14,32,45
@@ -35474,9 +35465,9 @@ L1489	equ	1
 	.sym	CONSOLE_CONTROL,0,10,14,448,15
 	.sym	FXProcessProc,0,641,14,32
 	.sym	PFXCMDMESSAGE,0,138,14,32,14
-	.sym	FXCMDMESSAGE,0,10,14,304,14
+	.sym	FXCMDMESSAGE,0,10,14,312,14
 	.sym	PFXOSMESSAGE,0,138,14,32,13
-	.sym	FXOSMESSAGE,0,10,14,304,13
+	.sym	FXOSMESSAGE,0,10,14,312,13
 	.sym	PINT_REGS,0,138,14,32,12
 	.sym	INT_REGS,0,10,14,104,12
 	.sym	TASK_STACK,0,10,14,32,11
@@ -35523,6 +35514,7 @@ L1489	equ	1
 	.sym	HRESULT,0,18,14,32
 	.sym	LPWCHAR,0,144,14,32
 	.sym	WCHAR,0,16,14,16
+	.sym	HSTRINGTABLE,0,129,14,32
 	.sym	HCOLOR,0,129,14,32
 	.sym	HFONT,0,129,14,32
 	.sym	HDC,0,129,14,32
@@ -35550,6 +35542,12 @@ L1489	equ	1
 	.sym	LPSTR,0,142,14,32
 	.sym	LPCHAR,0,142,14,32
 	.sym	CHAR,0,14,14,8
+	.sym	PUINT_32,0,146,14,32
+	.sym	UINT_32,0,18,14,32
+	.sym	PUINT_16,0,144,14,32
+	.sym	UINT_16,0,16,14,16
+	.sym	PUINT_8,0,142,14,32
+	.sym	UINT_8,0,14,14,8
 	.sym	LPVOID,0,129,14,32
 	.sym	VOID,0,1,14,32
 	end

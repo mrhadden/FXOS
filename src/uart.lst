@@ -1,4 +1,4 @@
-  Sat Jul 10 2021  1:15                                                                                                Page 1
+  Mon Aug  9 2021 16:52                                                                                                Page 1
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -58,7 +58,7 @@
     18             0000014D   INT_MASK_REG1    EQU $00014D ;
     19             0000014E   INT_MASK_REG2    EQU $00014E ;
     20             0000014F   INT_MASK_REG3    EQU $00014F ; FMX Model
-  Sat Jul 10 2021  1:15                                                                                                Page 2
+  Mon Aug  9 2021 16:52                                                                                                Page 2
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -118,7 +118,7 @@
     16                        setas           .macro
     17                                        SEP #$20        ; set A short 
     18                                        LONGA OFF
-  Sat Jul 10 2021  1:15                                                                                                Page 3
+  Mon Aug  9 2021 16:52                                                                                                Page 3
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -178,7 +178,7 @@
      8             00AF1108   PME_STS5_REG		 EQU  $AF1108
      9             00AF110A   PME_EN1_REG      EQU  $AF110A
     10             00AF110B   PME_EN2_REG      EQU  $AF110B
-  Sat Jul 10 2021  1:15                                                                                                Page 4
+  Mon Aug  9 2021 16:52                                                                                                Page 4
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -238,7 +238,7 @@
     64             00AF1146   GP57_REG		 EQU  $AF1146
     65             00AF1147   GP60_REG		 EQU  $AF1147
     66             00AF1148   GP61_REG		 EQU  $AF1148
-  Sat Jul 10 2021  1:15                                                                                                Page 5
+  Mon Aug  9 2021 16:52                                                                                                Page 5
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -298,7 +298,7 @@
     33             00AF0011   VKY_TXT_RESERVED         EQU  $AF0011   ;Not in Use
     34             00AF0012   VKY_TXT_CURSOR_CHAR_REG  EQU  $AF0012
     35                        
-  Sat Jul 10 2021  1:15                                                                                                Page 6
+  Mon Aug  9 2021 16:52                                                                                                Page 6
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -358,7 +358,7 @@
     87                        ;TL1_RESERVED_6           EQU  $AF011E
     88                        ;TL1_RESERVED_7           EQU  $AF011F
     89                        ;Tile MAP Layer 2 Registers
-  Sat Jul 10 2021  1:15                                                                                                Page 7
+  Mon Aug  9 2021 16:52                                                                                                Page 7
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -418,7 +418,7 @@
    141                        ; Bit Field Definition for the Control Register
    142             00000001   SPRITE_Enable              EQU  $01
    143             00000002   SPRITE_LUT0                EQU  $02 ; This is the LUT that the Sprite will use
-  Sat Jul 10 2021  1:15                                                                                                Page 8
+  Mon Aug  9 2021 16:52                                                                                                Page 8
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -478,7 +478,7 @@
    197             00AF0229   SP05_ADDY_PTR_L          EQU  $AF0229
    198             00AF022A   SP05_ADDY_PTR_M          EQU  $AF022A
    199             00AF022B   SP05_ADDY_PTR_H          EQU  $AF022B
-  Sat Jul 10 2021  1:15                                                                                                Page 9
+  Mon Aug  9 2021 16:52                                                                                                Page 9
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -538,7 +538,7 @@
    253             00AF025B   SP11_ADDY_PTR_H          EQU  $AF025B
    254             00AF025C   SP11_X_POS_L             EQU  $AF025C
    255             00AF025D   SP11_X_POS_H             EQU  $AF025D
-  Sat Jul 10 2021  1:15                                                                                                Page 10
+  Mon Aug  9 2021 16:52                                                                                                Page 10
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -598,7 +598,7 @@
    309             00AF028D   SP17_X_POS_H             EQU  $AF028D
    310             00AF028E   SP17_Y_POS_L             EQU  $AF028E
    311             00AF028F   SP17_Y_POS_H             EQU  $AF028F
-  Sat Jul 10 2021  1:15                                                                                                Page 11
+  Mon Aug  9 2021 16:52                                                                                                Page 11
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -658,7 +658,7 @@
    360             00AF2400   GRPH_LUT1_PTR		         EQU  $AF2400
    361             00AF2800   GRPH_LUT2_PTR		         EQU  $AF2800
    362             00AF2C00   GRPH_LUT3_PTR		         EQU  $AF2C00
-  Sat Jul 10 2021  1:15                                                                                                Page 12
+  Mon Aug  9 2021 16:52                                                                                                Page 12
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -718,7 +718,7 @@
     23             00AF1803   KBD_INPT_BUF	EQU $AF1803
     24             00AF1803   KBD_DATA_BUF	EQU $AF1803
     25             00AF180A   PORT_A		    EQU $AF180A   ;This is a Timing Register, the value is hard coded, so there 
-  Sat Jul 10 2021  1:15                                                                                                Page 13
+  Mon Aug  9 2021 16:52                                                                                                Page 13
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -778,7 +778,7 @@
     12             00000011   COLS_PER_LINE     EQU  $000011 ;2 Bytes Columns in memory per screen line. A virtual line can be t
                     his long. Default EQU 128
     13             00000013   LINES_VISIBLE     EQU  $000013 ;2 Bytes The number of rows visible on the screen. Default EQU 25
-  Sat Jul 10 2021  1:15                                                                                                Page 14
+  Mon Aug  9 2021 16:52                                                                                                Page 14
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -838,7 +838,7 @@
     59             00000040   BM_CLEAR_SCRN_X   EQU  $000040
     60             00000042   BM_CLEAR_SCRN_Y   EQU  $000042
     61                        ; RAD File Player
-  Sat Jul 10 2021  1:15                                                                                                Page 15
+  Mon Aug  9 2021 16:52                                                                                                Page 15
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -898,7 +898,7 @@
    115                        
    116             00000108   DIVIDER_0         EQU  $000108 ;0 Byte  Unsigned divider
    117             00000108   D0_OPERAND_A      EQU  $000108 ;2 Bytes Divider 0 Dividend ex: A in  A/B
-  Sat Jul 10 2021  1:15                                                                                                Page 16
+  Mon Aug  9 2021 16:52                                                                                                Page 16
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -958,7 +958,7 @@
                     on command. Data is 32-bit number. Address is 24-bit address and 8-bit length.
    164             00000275   MARG7             EQU  $000275 ;4 Bytes First command argument. May be data or address, depending 
                     on command. Data is 32-bit number. Address is 24-bit address and 8-bit length.
-  Sat Jul 10 2021  1:15                                                                                                Page 17
+  Mon Aug  9 2021 16:52                                                                                                Page 17
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -1018,7 +1018,7 @@
    215                        
    216             00008000   STACK_BEGIN       EQU  $008000 ;32512 Bytes The default beginning of stack space
    217             0000FEFF   STACK_END         EQU  $00FEFF ;0 Byte  End of stack space. Everything below this is I/O space
-  Sat Jul 10 2021  1:15                                                                                                Page 18
+  Mon Aug  9 2021 16:52                                                                                                Page 18
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -1078,7 +1078,7 @@
     52                        
     53                        ; UARTs
     54             00AF13F8   UART1_BASE EQU $AF13F8        ; Base address for UART 1 (COM1)
-  Sat Jul 10 2021  1:15                                                                                                Page 19
+  Mon Aug  9 2021 16:52                                                                                                Page 19
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -1138,7 +1138,7 @@
    108             00000080   LSR_ERR_RECIEVE EQU $80       ; Error in Received FIFO
    109             00000040   LSR_XMIT_DONE EQU $40         ; All data has been transmitted
    110             00000020   LSR_XMIT_EMPTY EQU $20        ; Empty transmit holding register
-  Sat Jul 10 2021  1:15                                                                                                Page 20
+  Mon Aug  9 2021 16:52                                                                                                Page 20
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -1198,7 +1198,7 @@
    156 00:001C: 8F F2 07 00              STA >CURRUART+2
    157                        
    158 00:0020: 28                       PLP
-  Sat Jul 10 2021  1:15                                                                                                Page 21
+  Mon Aug  9 2021 16:52                                                                                                Page 21
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -1258,7 +1258,7 @@
    203 00:0048: 08                       PHP
    204 00:0049: 0B                       PHD
    205                        
-  Sat Jul 10 2021  1:15                                                                                                Page 22
+  Mon Aug  9 2021 16:52                                                                                                Page 22
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -1318,7 +1318,7 @@
 +  245                                        LONGA OFF
    246 00:0082: A0 03 00                 LDY #UART_LCR       ; Enable divisor latch
    247 00:0085: AF FB 12 AF              LDA >UART2_BASE+UART_LCR  
-  Sat Jul 10 2021  1:15                                                                                                Page 23
+  Mon Aug  9 2021 16:52                                                                                                Page 23
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -1378,7 +1378,7 @@
    293                        ; Set the line control register
    294                        ;
    295                        ; Input:
-  Sat Jul 10 2021  1:15                                                                                                Page 24
+  Mon Aug  9 2021 16:52                                                                                                Page 24
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -1438,7 +1438,7 @@
    341                        ;
    342                        	xdef ~~k_uart_init	
    343                        ~~k_uart_init
-  Sat Jul 10 2021  1:15                                                                                                Page 25
+  Mon Aug  9 2021 16:52                                                                                                Page 25
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -1498,7 +1498,7 @@
 +  388 00:0104: E2 20                        SEP #$20        ; set A short 
 +  388                                        LONGA OFF
    389 00:0106: A9 00                    LDA #LCR_PARITY_NONE | LCR_STOPBIT_1 | LCR_DATABITS_8
-  Sat Jul 10 2021  1:15                                                                                                Page 26
+  Mon Aug  9 2021 16:52                                                                                                Page 26
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -1558,7 +1558,7 @@
    438                                    ;STA >UART2_BASE+UART_FCR
    439                        
    440 00:0134: 2B                       PLD
-  Sat Jul 10 2021  1:15                                                                                                Page 27
+  Mon Aug  9 2021 16:52                                                                                                Page 27
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -1618,7 +1618,7 @@
    489                        
    490                                    setaxl
 +  490 00:0150: C2 30                        REP #$30        ; set A&X long 
-  Sat Jul 10 2021  1:15                                                                                                Page 28
+  Mon Aug  9 2021 16:52                                                                                                Page 28
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -1678,7 +1678,7 @@
    535 00:017B: 2B                       PLD
    536 00:017C: 28                       PLP
    537 00:017D: 6B                       RTL
-  Sat Jul 10 2021  1:15                                                                                                Page 29
+  Mon Aug  9 2021 16:52                                                                                                Page 29
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -1738,7 +1738,7 @@
    584                                    ;STA [CURRUART],Y
    585                        
    586                        
-  Sat Jul 10 2021  1:15                                                                                                Page 30
+  Mon Aug  9 2021 16:52                                                                                                Page 30
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -1798,7 +1798,7 @@
    630 00:01D8: A0 03 00                 LDY #UART_LCR       ; Enable divisor latch
    631 00:01DB: AF FB 13 AF              LDA >UART1_BASE+UART_LCR  
    632 00:01DF: 29 7F                    AND #%01111111
-  Sat Jul 10 2021  1:15                                                                                                Page 31
+  Mon Aug  9 2021 16:52                                                                                                Page 31
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 
@@ -1858,7 +1858,7 @@
    681                        ~~k_uart_poll
    682                        
    683                        UART_POLLIR 
-  Sat Jul 10 2021  1:15                                                                                                Page 32
+  Mon Aug  9 2021 16:52                                                                                                Page 32
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
 

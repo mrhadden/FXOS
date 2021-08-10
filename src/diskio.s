@@ -3,7 +3,7 @@ R0	equ	1
 R1	equ	5
 R2	equ	9
 R3	equ	13
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\diskio.c",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\diskio.c",0
 ;/*-----------------------------------------------------------------------*/
 ;/* Low level disk I/O module skeleton for FatFs     (C)ChaN, 2019        */
 ;/*-----------------------------------------------------------------------*/
@@ -13,8 +13,8 @@ R3	equ	13
 ;/* storage control modules to the FatFs module with a defined API.       */
 ;/*-----------------------------------------------------------------------*/
 ;#include 	"fxkernel.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stddef.h",0
 	.line	88
@@ -32,14 +32,14 @@ R3	equ	13
 	.member	frac,16,16,8,16
 	.eos
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",4
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",4
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\ctype.h",0
 	.line	103
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
 	.stag	_fx_bytebits,8,4
 	.member	b7,0,14,17,1
 	.member	b6,1,14,17,1
@@ -113,7 +113,7 @@ R3	equ	13
 	.member	YH,88,14,8,8
 	.member	YL,96,14,8,8
 	.eos
-	.stag	_fx_eventMessage,304,16
+	.stag	_fx_eventMessage,312,16
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -121,8 +121,9 @@ R3	equ	13
 	.member	pheap,112,129,8,32
 	.member	msgTime,144,18,8,32
 	.member	data,176,110,8,0,16
+	.member	attr,304,14,8,8
 	.eos
-	.stag	_fx_cmdMessage,304,17
+	.stag	_fx_cmdMessage,312,17
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -134,6 +135,7 @@ R3	equ	13
 	.member	parameter1,208,18,8,32
 	.member	parameter2,240,18,8,32
 	.member	parameter3,272,18,8,32
+	.member	attr,304,14,8,8
 	.eos
 	.stag	_fx_console_ctl,448,18
 	.member	maxCols,0,5,8,16
@@ -476,94 +478,103 @@ R3	equ	13
 	.member	height,128,14,8,8
 	.member	width,136,14,8,8
 	.eos
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",8
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstringtable.h",0
-	.line	89
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",9
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fmx_vicky.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fmx_vicky.h",11
+	.stag	_fx_resource_string,32,50
+	.member	locale,0,110,8,0,2
+	.member	entries,16,16,8,16
+	.eos
+	.stag	_fx_resource_string_entry,40,51
+	.member	index,0,16,8,16
+	.member	length,16,16,8,16
+	.member	data,32,14,8,8
+	.eos
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",8
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstringtable.h",0
+	.line	90
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",9
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",11
 	.line	72
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",6
 	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",16
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",0
-	.line	400
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",22
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",16
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
+	.line	490
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",22
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
 	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",12
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",12
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",7
-	.stag	_fx_string,64,50
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",7
+	.stag	_fx_string,64,52
 	.member	size,0,16,8,16
 	.member	pos,16,5,8,16
 	.member	buffer,32,142,8,32
 	.eos
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",17
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",17
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",5
-	.stag	_fxos_executive_vtable,128,51
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",5
+	.stag	_fxos_executive_vtable,128,53
 	.member	Init,0,8833,8,32
 	.member	Configure,32,656,8,32
 	.member	Query,64,656,8,32
 	.member	Uninit,96,641,8,32
 	.eos
 	.line	86
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",11
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",11
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.line	208
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",8
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",8
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos_build_parameters.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_build_parameters.h",0
 	.line	35
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",8
-	.stag	UMM_HEAP_INFO_t,256,52
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",8
+	.stag	UMM_HEAP_INFO_t,256,54
 	.member	totalEntries,0,18,8,32
 	.member	usedEntries,32,18,8,32
 	.member	freeEntries,64,18,8,32
@@ -574,42 +585,48 @@ R3	equ	13
 	.member	blockSize,224,18,8,32
 	.eos
 	.line	199
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",11
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",11
 	.line	24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",7
-	.stag	_fx_memory_map,2072,53
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",7
+	.stag	_fx_memory_map,2072,55
 	.member	availableMemory,0,18,8,32
 	.member	valid_segments,32,110,8,0,255
 	.eos
-	.stag	_fx_ipc_port,144,54
+	.stag	_fx_ipc_port,144,56
 	.member	id,0,18,8,32
 	.member	type,32,14,8,8
-	.member	name,40,138,8,32,50
+	.member	name,40,138,8,32,52
 	.member	time,72,18,8,32
 	.member	queue,104,138,8,32,7
 	.member	reserved_1,136,14,8,8
 	.eos
-	.line	105
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",6
+	.stag	_k_mem_alloc_header,80,57
+	.member	user,0,14,8,8
+	.member	attr,8,14,8,8
+	.member	size,16,18,8,32
+	.member	virtual,48,129,8,32
+	.eos
+	.line	129
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",6
 	.line	74
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",5
-	.stag	_click_detected,64,55
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",5
+	.stag	_click_detected,64,58
 	.member	window,0,138,8,32,33
 	.member	handler,32,641,8,32
 	.eos
-	.stag	_current_palette_map,400,56
+	.stag	_current_palette_map,400,59
 	.member	CUR_DESKTOP,0,5,8,16
 	.member	CUR_BACKGROUND,16,5,8,16
 	.member	CUR_FONT,32,5,8,16
@@ -623,37 +640,37 @@ R3	equ	13
 	.member	CUR_COLOR,160,101,8,0,15
 	.eos
 	.line	359
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",8
-	.stag	_fxos_winman_vtable,160,57
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",8
+	.stag	_fxos_winman_vtable,160,60
 	.member	Events,0,641,8,32
 	.member	ConfigureWindowManager,32,656,8,32
 	.member	ProcessWindowEvent,64,8833,8,32
 	.member	QueryWindowManager,96,656,8,32
 	.member	DoWndProcs,128,641,8,32
 	.eos
-	.stag	fake58_,64,58
+	.stag	fake61_,64,61
 	.member	type,0,16,8,16
 	.member	size,16,16,8,16
 	.member	desktopAction,32,129,8,32
 	.eos
-	.stag	fake59_,96,59
+	.stag	fake62_,96,62
 	.member	type,0,16,8,16
-	.member	caption,16,138,8,32,50
+	.member	caption,16,138,8,32,52
 	.member	buttonType,48,16,8,16
 	.member	x,64,5,8,16
 	.member	y,80,5,8,16
 	.eos
-	.stag	_childMessage_t,64,60
+	.stag	_childMessage_t,64,63
 	.member	msgType,0,16,8,16
 	.member	msgData,16,129,8,32
 	.member	dataSize,48,16,8,16
 	.eos
-	.line	581
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",9
-	.stag	_fx_main_loopvars,16,61
+	.line	594
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",9
+	.stag	_fx_main_loopvars,16,64
 	.member	dummy,0,5,8,16
 	.eos
-	.stag	_fxMouseMessageData,64,62
+	.stag	_fxMouseMessageData,64,65
 	.member	button1,0,14,8,8
 	.member	button2,8,14,8,8
 	.member	button3,16,14,8,8
@@ -661,18 +678,18 @@ R3	equ	13
 	.member	x,32,16,8,16
 	.member	y,48,16,8,16
 	.eos
-	.utag	marshalled_data,32,63
+	.utag	marshalled_data,32,66
 	.member	byteValue,0,14,11,8
 	.member	verbValue,0,110,11,0,2
 	.member	intValue,0,16,11,16
 	.member	longValue,0,18,11,32
 	.member	pointerValue,0,129,11,32
 	.eos
-	.stag	_fx_eventProcess,64,64
+	.stag	_fx_eventProcess,64,67
 	.member	process,0,138,8,32,20
 	.member	eventProc,32,641,8,32
 	.eos
-	.stag	_mouse_msg_state,184,65
+	.stag	_mouse_msg_state,184,68
 	.member	lastEvent,0,18,8,32
 	.member	buttonLeftDown,32,14,8,8
 	.member	lastLeftDown,40,18,8,32
@@ -683,7 +700,7 @@ R3	equ	13
 	.member	lastX,152,16,8,16
 	.member	lastY,168,16,8,16
 	.eos
-	.stag	_fxos_eventmanager_vtable,192,66
+	.stag	_fxos_eventmanager_vtable,192,69
 	.member	EventQueue,0,138,8,32,7
 	.member	Init,32,8833,8,32
 	.member	Run,64,656,8,32
@@ -691,18 +708,18 @@ R3	equ	13
 	.member	Query,128,656,8,32
 	.member	Uninit,160,641,8,32
 	.eos
-	.stag	_k_clipboard_data,168,67
+	.stag	_k_clipboard_data,168,70
 	.member	type,0,14,8,8
 	.member	readable,8,110,8,0,16
 	.member	data,136,129,8,32
 	.eos
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",18
-	.stag	_fx_spinner_ctx,48,68
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",18
+	.stag	_fx_spinner_ctx,48,71
 	.member	index,0,5,8,16
 	.member	spinner,16,142,8,32
 	.eos
-	.stag	_fx_console_ctx,1144,69
+	.stag	_fx_console_ctx,1144,72
 	.member	lineBufferIndex,0,5,8,16
 	.member	lineBuffer,16,110,8,0,128
 	.member	isShifted,1040,14,8,8
@@ -710,31 +727,31 @@ R3	equ	13
 	.member	screenBuffer,1080,129,8,32
 	.member	Reserved1,1112,129,8,32
 	.eos
-	.stag	_token,64,70
+	.stag	_token,64,73
 	.member	type,0,5,8,16
 	.member	depth,16,16,8,16
 	.member	text,32,142,8,32
 	.eos
-	.stag	_command_args,64,71
+	.stag	_command_args,64,74
 	.member	proc,0,656,8,32
 	.member	tokens,32,138,8,32,5
 	.eos
 	.line	208
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",23
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",25
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ffconf.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",23
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",24
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",25
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ffconf.h",0
 	.line	298
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",29
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",30
-	.stag	fake72_,4504,72
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",29
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",30
+	.stag	fake75_,4504,75
 	.member	fs_type,0,14,8,8
 	.member	pdrv,8,14,8,8
 	.member	n_fats,16,14,8,8
@@ -755,16 +772,16 @@ R3	equ	13
 	.member	winsect,376,18,8,32
 	.member	win,408,110,8,0,512
 	.eos
-	.stag	fake73_,128,73
-	.member	fs,0,138,8,32,72
+	.stag	fake76_,128,76
+	.member	fs,0,138,8,32,75
 	.member	id,32,5,8,16
 	.member	attr,48,14,8,8
 	.member	stat,56,14,8,8
 	.member	sclust,64,18,8,32
 	.member	objsize,96,18,8,32
 	.eos
-	.stag	fake74_,4400,74
-	.member	obj,0,10,8,128,73
+	.stag	fake77_,4400,77
+	.member	obj,0,10,8,128,76
 	.member	flag,128,14,8,8
 	.member	err,136,14,8,8
 	.member	fptr,144,18,8,32
@@ -774,8 +791,8 @@ R3	equ	13
 	.member	dir_ptr,272,142,8,32
 	.member	buf,304,110,8,0,512
 	.eos
-	.stag	fake75_,416,75
-	.member	obj,0,10,8,128,73
+	.stag	fake78_,416,78
+	.member	obj,0,10,8,128,76
 	.member	dptr,128,18,8,32
 	.member	clust,160,18,8,32
 	.member	sect,192,18,8,32
@@ -784,7 +801,7 @@ R3	equ	13
 	.member	blk_ofs,352,18,8,32
 	.member	pat,384,142,8,32
 	.eos
-	.stag	fake76_,2224,76
+	.stag	fake79_,2224,79
 	.member	fsize,0,18,8,32
 	.member	fdate,32,5,8,16
 	.member	ftime,48,5,8,16
@@ -792,7 +809,7 @@ R3	equ	13
 	.member	altname,72,110,8,0,13
 	.member	fname,176,110,8,0,256
 	.eos
-	.stag	fake77_,80,77
+	.stag	fake80_,80,80
 	.member	fmt,0,14,8,8
 	.member	n_fat,8,14,8,8
 	.member	align,16,16,8,16
@@ -800,16 +817,19 @@ R3	equ	13
 	.member	au_size,48,18,8,32
 	.eos
 	.line	429
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",26
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",26
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",6
-	.stag	_fx_api_call_table,8192,78
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",6
+	.stag	_fx_api_call_table,8192,81
 	.member	call_table,0,1121,8,32,256
 	.eos
-	.stag	_fx_zero_page,824,79
+	.stag	_fx_zero_page_irq_data,32,82
+	.member	data,0,110,8,0,4
+	.eos
+	.stag	_fx_zero_page,720,83
 	.member	fxos_mouse_byte_0,0,14,8,8
 	.member	fxos_mouse_byte_1,8,14,8,8
 	.member	fxos_mouse_byte_2,16,14,8,8
@@ -824,42 +844,37 @@ R3	equ	13
 	.member	fxos_mouse_ctl,88,14,8,8
 	.member	fxos_mouse_index,96,14,8,8
 	.member	fxos_mouse_status,104,14,8,8
-	.member	fxos_mouse_dbg_1,112,18,8,32
-	.member	fxos_mouse_dbg_2,144,18,8,32
-	.member	fxos_mouse_dbg_3,176,18,8,32
-	.member	fxos_vicky_byte_0,208,14,8,8
-	.member	fxos_vicky_byte_1,216,14,8,8
-	.member	fxos_vicky_byte_2,224,14,8,8
-	.member	VersionMajor,232,16,8,16
-	.member	VersionMinor,248,16,8,16
-	.member	VersionRelease,264,16,8,16
-	.member	topMemory,280,18,8,32
-	.member	bottomMemory,312,18,8,32
-	.member	availableMemory,344,18,8,32
-	.member	availableMemoryK,376,18,8,32
-	.member	availableHeapMemory,408,18,8,32
-	.member	availableHeapMemoryK,440,18,8,32
-	.member	fxos_console_row,472,16,8,16
-	.member	fxos_console_col,488,16,8,16
-	.member	executive,504,129,8,32
-	.member	eventmanager,536,129,8,32
-	.member	devicemanager,568,129,8,32
-	.member	windowmanager,600,129,8,32
-	.member	fxos_kernel_api,632,138,8,32,78
-	.member	fxos_dos_api,664,138,8,32,78
-	.member	fxos_gfx_api,696,138,8,32,78
-	.member	fxos_gui_api,728,138,8,32,78
-	.member	fxos_con_api,760,138,8,32,78
-	.member	fxos_reserved_2_api,792,138,8,32,78
+	.member	Endianness,112,16,8,16
+	.member	VersionMajor,128,16,8,16
+	.member	VersionMinor,144,16,8,16
+	.member	VersionRelease,160,16,8,16
+	.member	topMemory,176,18,8,32
+	.member	bottomMemory,208,18,8,32
+	.member	availableMemory,240,18,8,32
+	.member	availableMemoryK,272,18,8,32
+	.member	availableHeapMemory,304,18,8,32
+	.member	availableHeapMemoryK,336,18,8,32
+	.member	fxos_console_row,368,16,8,16
+	.member	fxos_console_col,384,16,8,16
+	.member	executive,400,129,8,32
+	.member	eventmanager,432,129,8,32
+	.member	devicemanager,464,129,8,32
+	.member	windowmanager,496,129,8,32
+	.member	fxos_kernel_api,528,138,8,32,81
+	.member	fxos_dos_api,560,138,8,32,81
+	.member	fxos_gfx_api,592,138,8,32,81
+	.member	fxos_gui_api,624,138,8,32,81
+	.member	fxos_con_api,656,138,8,32,81
+	.member	fxos_reserved_2_api,688,138,8,32,81
 	.eos
-	.stag	_fx_environment,96,80
+	.stag	_fx_environment,96,84
 	.member	variables,0,142,8,32
 	.member	reserved1,32,5,8,16
 	.member	reserved2,48,5,8,16
 	.member	reserved3,64,5,8,16
 	.member	reserved4,80,5,8,16
 	.eos
-	.stag	_debug_byte_bits,8,81
+	.stag	_debug_byte_bits,8,85
 	.member	bit7,0,14,17,1
 	.member	bit6,1,14,17,1
 	.member	bit5,2,14,17,1
@@ -869,7 +884,7 @@ R3	equ	13
 	.member	bit1,6,14,17,1
 	.member	bit0,7,14,17,1
 	.eos
-	.stag	_k_segmentheader,160,82
+	.stag	_k_segmentheader,160,86
 	.member	version_major,0,14,8,8
 	.member	version_minor,8,14,8,8
 	.member	length,16,5,8,16
@@ -878,14 +893,14 @@ R3	equ	13
 	.member	segment_size,96,7,8,32
 	.member	main_entry_addr,128,7,8,32
 	.eos
-	.stag	_fx_device_driver,776,83
+	.stag	_fx_device_driver,776,87
 	.member	name,0,110,8,0,32
 	.member	version,256,110,8,0,16
 	.member	hmajor,384,110,8,0,8
 	.member	hminor,448,110,8,0,8
 	.member	type,512,14,8,8
 	.member	designation,520,110,8,0,6
-	.member	reserved_1,568,16,8,16
+	.member	irq_ctl,568,16,8,16
 	.member	f_driver_irq,584,129,8,32
 	.member	driver_context,616,129,8,32
 	.member	f_driver_load,648,129,8,32
@@ -893,14 +908,14 @@ R3	equ	13
 	.member	f_driver_write,712,129,8,32
 	.member	f_driver_unload,744,129,8,32
 	.eos
-	.stag	_fx_block_device_driver,808,84
+	.stag	_fx_block_device_driver,808,88
 	.member	name,0,110,8,0,32
 	.member	version,256,110,8,0,16
 	.member	hmajor,384,110,8,0,8
 	.member	hminor,448,110,8,0,8
 	.member	type,512,14,8,8
 	.member	designation,520,110,8,0,6
-	.member	reserved_1,568,16,8,16
+	.member	irq_ctl,568,16,8,16
 	.member	f_driver_irq,584,129,8,32
 	.member	driver_context,616,129,8,32
 	.member	f_driver_load,648,129,8,32
@@ -909,51 +924,54 @@ R3	equ	13
 	.member	f_driver_unload,744,129,8,32
 	.member	f_driver_command,776,129,8,32
 	.eos
-	.line	400
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\diskio.c",9
+	.stag	_k_irq_chain,128,89
+	.member	handlers,0,5217,8,32,4
+	.eos
+	.line	490
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\diskio.c",9
 ;
 ;#if defined(USE_FX256_FMX) || defined(USE_FX256_U)
 ;
 ;
-;#include "ff.h"			/* Obtains integer types */
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",0
+;#include "ff/ff.h"			/* Obtains integer types */
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",0
 	.line	429
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\diskio.c",14
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\diskio.c",14
 ;#include "diskio.h"		/* Declarations of disk functions */
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\diskio.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\diskio.h",0
 	.line	85
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\diskio.c",15
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\diskio.c",15
 ;#include "fxdos.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",0
 	.line	429
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\diskio.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\diskio.h",0
 	.line	85
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.h",7
-	.stag	_fx_sd_direntry,256,85
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",7
+	.stag	_fx_sd_direntry,256,90
 	.member	filename,0,110,8,0,11
 	.member	type,88,14,8,8
 	.member	attrs,96,110,8,0,20
 	.eos
-	.stag	_fx_info,416,86
+	.stag	_fx_info,416,91
 	.member	stgName,0,110,8,0,32
 	.member	Reserved1,256,14,8,8
 	.member	stgType,264,16,8,16
 	.member	Reserved2,280,14,8,8
 	.member	stgReserved,288,110,8,0,16
 	.eos
-	.stag	_fx_fileinfo,136,87
+	.stag	_fx_fileinfo,136,92
 	.member	type,0,14,8,8
 	.member	pFilename,8,142,8,32
 	.member	lSize,40,18,8,32
 	.member	lcreateDate,72,18,8,32
 	.member	lchangeDate,104,18,8,32
 	.eos
-	.stag	_FX_FAT_DIR_INFO,256,88
+	.stag	_FX_FAT_DIR_INFO,256,93
 	.member	DIR_Name,0,110,8,0,11
 	.member	DIR_Attr,88,14,8,8
 	.member	DIR_NTRes,96,14,8,8
@@ -967,7 +985,7 @@ R3	equ	13
 	.member	DIR_FstClusLO,208,16,8,16
 	.member	DIR_FileSize,224,18,8,32
 	.eos
-	.stag	fat_extBS_32,416,89
+	.stag	fat_extBS_32,416,94
 	.member	table_size_32,0,18,8,32
 	.member	extended_flags,32,16,8,16
 	.member	fat_version,48,16,8,16
@@ -982,7 +1000,7 @@ R3	equ	13
 	.member	volume_label,264,110,8,0,11
 	.member	fat_type_label,352,110,8,0,8
 	.eos
-	.stag	fat_extBS_16,192,90
+	.stag	fat_extBS_16,192,95
 	.member	bios_drive_num,0,14,8,8
 	.member	reserved1,8,14,8,8
 	.member	boot_signature,16,14,8,8
@@ -990,7 +1008,7 @@ R3	equ	13
 	.member	volume_label,40,110,8,0,11
 	.member	fat_type_label,128,110,8,0,8
 	.eos
-	.stag	fat_BS,688,91
+	.stag	fat_BS,688,96
 	.member	bootjmp,0,110,8,0,3
 	.member	oem_name,24,110,8,0,8
 	.member	bytes_per_sector,88,16,8,16
@@ -1007,7 +1025,7 @@ R3	equ	13
 	.member	total_sectors_32,240,16,8,16
 	.member	extended_section,256,110,8,0,54
 	.eos
-	.stag	__FATBootSector,928,92
+	.stag	__FATBootSector,928,97
 	.member	bootjmp,0,110,8,0,3
 	.member	oem_name,24,110,8,0,8
 	.member	bytes_per_sector,88,16,8,16
@@ -1030,7 +1048,7 @@ R3	equ	13
 	.member	file_system_type,432,110,8,0,8
 	.member	extended_section,496,110,8,0,54
 	.eos
-	.stag	__PARTITIONTABLE,128,93
+	.stag	__PARTITIONTABLE,128,98
 	.member	first_byte,0,14,8,8
 	.member	start_chs,8,110,8,0,3
 	.member	partition_type,32,14,8,8
@@ -1038,7 +1056,7 @@ R3	equ	13
 	.member	start_sector,64,18,8,32
 	.member	length_sectors,96,18,8,32
 	.eos
-	.stag	fake94_,4096,94
+	.stag	fake99_,4096,99
 	.member	jmp,0,110,8,0,3
 	.member	oem,24,110,8,0,8
 	.member	sector_size,88,15,8,16
@@ -1062,7 +1080,7 @@ R3	equ	13
 	.member	boot_code,496,110,8,0,448
 	.member	boot_sector_signature,4080,15,8,16
 	.eos
-	.stag	__FAT16ENTRY,256,95
+	.stag	__FAT16ENTRY,256,100
 	.member	filename,0,110,8,0,8
 	.member	ext,64,110,8,0,3
 	.member	attributes,88,14,8,8
@@ -1072,7 +1090,7 @@ R3	equ	13
 	.member	starting_cluster,208,16,8,16
 	.member	file_size,224,18,8,32
 	.eos
-	.stag	__FAT16ENTRYLONG,288,96
+	.stag	__FAT16ENTRYLONG,288,101
 	.member	filename,0,110,8,0,8
 	.member	ext,64,110,8,0,3
 	.member	attributes,88,14,8,8
@@ -1083,7 +1101,7 @@ R3	equ	13
 	.member	file_size,224,18,8,32
 	.member	plongfileName,256,142,8,32
 	.eos
-	.stag	_LongFileName,256,97
+	.stag	_LongFileName,256,102
 	.member	sequenceNo,0,14,8,8
 	.member	fileName_Part1,8,110,8,0,10
 	.member	fileattribute,88,14,8,8
@@ -1093,7 +1111,7 @@ R3	equ	13
 	.member	fstclusLO,208,5,8,16
 	.member	fileName_Part3,224,110,8,0,4
 	.eos
-	.stag	_IDSECTOR,2048,98
+	.stag	_IDSECTOR,2048,103
 	.member	wGenConfig,0,16,8,16
 	.member	wNumCyls,16,16,8,16
 	.member	wReserved,32,16,8,16
@@ -1125,7 +1143,7 @@ R3	equ	13
 	.member	wMultiWordDMA,1008,16,8,16
 	.member	bReserved,1024,110,8,0,128
 	.eos
-	.stag	fake99_,16,99
+	.stag	fake104_,16,104
 	.member	Reserved1,0,16,17,1
 	.member	Retired3,1,16,17,1
 	.member	ResponseIncomplete,2,16,17,1
@@ -1135,11 +1153,11 @@ R3	equ	13
 	.member	Retired1,8,16,17,7
 	.member	DeviceType,15,16,17,1
 	.eos
-	.stag	fake100_,16,100
+	.stag	fake105_,16,105
 	.member	FeatureSupported,0,16,17,1
 	.member	Reserved,1,16,17,15
 	.eos
-	.stag	fake101_,32,101
+	.stag	fake106_,32,106
 	.member	CurrentLongPhysicalSectorAlignment,0,14,17,2
 	.member	ReservedByte49,2,14,17,6
 	.member	DmaSupported,8,14,17,1
@@ -1151,7 +1169,7 @@ R3	equ	13
 	.member	Reserved2,14,14,17,2
 	.member	ReservedWord50,16,16,8,16
 	.eos
-	.stag	fake102_,16,102
+	.stag	fake107_,16,107
 	.member	ZonedCapabilities,0,16,17,2
 	.member	NonVolatileWriteCache,2,16,17,1
 	.member	ExtendedUserAddressableSectorsSupported,3,16,17,1
@@ -1168,7 +1186,7 @@ R3	equ	13
 	.member	DeterministicReadAfterTrimSupported,14,16,17,1
 	.member	CFastSpecSupported,15,16,17,1
 	.eos
-	.stag	fake103_,32,103
+	.stag	fake108_,32,108
 	.member	Reserved0,0,16,17,1
 	.member	SataGen1,1,16,17,1
 	.member	SataGen2,2,16,17,1
@@ -1190,7 +1208,7 @@ R3	equ	13
 	.member	DEVSLPtoReducedPwrState,23,16,17,1
 	.member	Reserved3,24,16,17,8
 	.eos
-	.stag	fake104_,16,104
+	.stag	fake109_,16,109
 	.member	Reserved0,0,16,17,1
 	.member	NonZeroOffsets,1,16,17,1
 	.member	DmaSetupAutoActivate,2,16,17,1
@@ -1203,7 +1221,7 @@ R3	equ	13
 	.member	HybridInformation,9,16,17,1
 	.member	Reserved1,10,16,17,6
 	.eos
-	.stag	fake105_,16,105
+	.stag	fake110_,16,110
 	.member	Reserved0,0,16,17,1
 	.member	NonZeroOffsets,1,16,17,1
 	.member	DmaSetupAutoActivate,2,16,17,1
@@ -1216,7 +1234,7 @@ R3	equ	13
 	.member	HybridInformation,9,16,17,1
 	.member	Reserved1,10,16,17,6
 	.eos
-	.stag	fake106_,48,106
+	.stag	fake111_,48,111
 	.member	SmartCommands,0,16,17,1
 	.member	SecurityMode,1,16,17,1
 	.member	RemovableMediaFeature,2,16,17,1
@@ -1263,7 +1281,7 @@ R3	equ	13
 	.member	IdleWithUnloadFeature,45,16,17,1
 	.member	WordValid,46,16,17,2
 	.eos
-	.stag	fake107_,48,107
+	.stag	fake112_,48,112
 	.member	SmartCommands,0,16,17,1
 	.member	SecurityMode,1,16,17,1
 	.member	RemovableMediaFeature,2,16,17,1
@@ -1311,22 +1329,22 @@ R3	equ	13
 	.member	IdleWithUnloadFeature,45,16,17,1
 	.member	Reserved4,46,16,17,2
 	.eos
-	.stag	fake108_,16,108
+	.stag	fake113_,16,113
 	.member	TimeRequired,0,16,17,15
 	.member	ExtendedTimeReported,15,16,17,1
 	.eos
-	.stag	fake109_,16,109
+	.stag	fake114_,16,114
 	.member	TimeRequired,0,16,17,15
 	.member	ExtendedTimeReported,15,16,17,1
 	.eos
-	.stag	fake110_,16,110
+	.stag	fake115_,16,115
 	.member	LogicalSectorsPerPhysicalSector,0,16,17,4
 	.member	Reserved0,4,16,17,8
 	.member	LogicalSectorLongerThan256Words,12,16,17,1
 	.member	MultipleLogicalSectorsPerPhysicalSector,13,16,17,1
 	.member	Reserved1,14,16,17,2
 	.eos
-	.stag	fake111_,16,111
+	.stag	fake116_,16,116
 	.member	ReservedForDrqTechnicalReport,0,16,17,1
 	.member	WriteReadVerify,1,16,17,1
 	.member	WriteUncorrectableExt,2,16,17,1
@@ -1338,7 +1356,7 @@ R3	equ	13
 	.member	Reserved0,8,16,17,6
 	.member	WordValid,14,16,17,2
 	.eos
-	.stag	fake112_,16,112
+	.stag	fake117_,16,117
 	.member	ReservedForDrqTechnicalReport,0,16,17,1
 	.member	WriteReadVerify,1,16,17,1
 	.member	WriteUncorrectableExt,2,16,17,1
@@ -1350,7 +1368,7 @@ R3	equ	13
 	.member	Reserved0,8,16,17,6
 	.member	Reserved1,14,16,17,2
 	.eos
-	.stag	fake113_,16,113
+	.stag	fake118_,16,118
 	.member	SecuritySupported,0,16,17,1
 	.member	SecurityEnabled,1,16,17,1
 	.member	SecurityLocked,2,16,17,1
@@ -1361,18 +1379,18 @@ R3	equ	13
 	.member	SecurityLevel,8,16,17,1
 	.member	Reserved1,9,16,17,7
 	.eos
-	.stag	fake114_,16,114
+	.stag	fake119_,16,119
 	.member	MaximumCurrentInMA,0,16,17,12
 	.member	CfaPowerMode1Disabled,12,16,17,1
 	.member	CfaPowerMode1Required,13,16,17,1
 	.member	Reserved0,14,16,17,1
 	.member	Word160Supported,15,16,17,1
 	.eos
-	.stag	fake115_,16,115
+	.stag	fake120_,16,120
 	.member	SupportsTrim,0,16,17,1
 	.member	Reserved0,1,16,17,15
 	.eos
-	.stag	fake116_,16,116
+	.stag	fake121_,16,121
 	.member	Supported,0,16,17,1
 	.member	Reserved0,1,16,17,1
 	.member	WriteSameSuported,2,16,17,1
@@ -1382,12 +1400,12 @@ R3	equ	13
 	.member	Reserved1,6,16,17,6
 	.member	VendorSpecific,12,16,17,4
 	.eos
-	.stag	fake117_,16,117
+	.stag	fake122_,16,122
 	.member	AlignmentOfLogicalWithinPhysical,0,16,17,14
 	.member	Word209Supported,14,16,17,1
 	.member	Reserved0,15,16,17,1
 	.eos
-	.stag	fake118_,16,118
+	.stag	fake123_,16,123
 	.member	NVCachePowerModeEnabled,0,16,17,1
 	.member	Reserved0,1,16,17,3
 	.member	NVCacheFeatureSetEnabled,4,16,17,1
@@ -1395,16 +1413,16 @@ R3	equ	13
 	.member	NVCachePowerModeVersion,8,16,17,4
 	.member	NVCacheFeatureSetVersion,12,16,17,4
 	.eos
-	.stag	fake119_,16,119
+	.stag	fake124_,16,124
 	.member	NVCacheEstimatedTimeToSpinUpInSeconds,0,14,8,8
 	.member	Reserved,8,14,8,8
 	.eos
-	.stag	fake120_,16,120
+	.stag	fake125_,16,125
 	.member	MajorVersion,0,16,17,12
 	.member	TransportType,12,16,17,4
 	.eos
-	.stag	_IDENTIFY_DEVICE_DATA,4096,121
-	.member	GeneralConfiguration,0,10,8,16,99
+	.stag	_IDENTIFY_DEVICE_DATA,4096,126
+	.member	GeneralConfiguration,0,10,8,16,104
 	.member	NumCylinders,16,16,8,16
 	.member	SpecificConfiguration,32,16,8,16
 	.member	NumHeads,48,16,8,16
@@ -1418,8 +1436,8 @@ R3	equ	13
 	.member	ModelNumber,432,110,8,0,40
 	.member	MaximumBlockTransfer,752,14,8,8
 	.member	VendorUnique2,760,14,8,8
-	.member	TrustedComputing,768,10,8,16,100
-	.member	Capabilities,784,10,8,32,101
+	.member	TrustedComputing,768,10,8,16,105
+	.member	Capabilities,784,10,8,32,106
 	.member	ObsoleteWords51,816,112,8,0,2
 	.member	TranslationFieldsValid,848,16,17,3
 	.member	Reserved3,851,16,17,5
@@ -1445,21 +1463,21 @@ R3	equ	13
 	.member	RecommendedMWXferCycleTime,1056,16,8,16
 	.member	MinimumPIOCycleTime,1072,16,8,16
 	.member	MinimumPIOCycleTimeIORDY,1088,16,8,16
-	.member	AdditionalSupported,1104,10,8,16,102
+	.member	AdditionalSupported,1104,10,8,16,107
 	.member	ReservedWords70,1120,112,8,0,5
 	.member	QueueDepth,1200,16,17,5
 	.member	ReservedWord75,1205,16,17,11
-	.member	SerialAtaCapabilities,1216,10,8,32,103
-	.member	SerialAtaFeaturesSupported,1248,10,8,16,104
-	.member	SerialAtaFeaturesEnabled,1264,10,8,16,105
+	.member	SerialAtaCapabilities,1216,10,8,32,108
+	.member	SerialAtaFeaturesSupported,1248,10,8,16,109
+	.member	SerialAtaFeaturesEnabled,1264,10,8,16,110
 	.member	MajorRevision,1280,16,8,16
 	.member	MinorRevision,1296,16,8,16
-	.member	CommandSetSupport,1312,10,8,48,106
-	.member	CommandSetActive,1360,10,8,48,107
+	.member	CommandSetSupport,1312,10,8,48,111
+	.member	CommandSetActive,1360,10,8,48,112
 	.member	UltraDMASupport,1408,16,17,8
 	.member	UltraDMAActive,1416,16,17,8
-	.member	NormalSecurityEraseUnit,1424,10,8,16,108
-	.member	EnhancedSecurityEraseUnit,1440,10,8,16,109
+	.member	NormalSecurityEraseUnit,1424,10,8,16,113
+	.member	EnhancedSecurityEraseUnit,1440,10,8,16,114
 	.member	CurrentAPMLevel,1456,16,17,8
 	.member	ReservedWord91,1464,16,17,8
 	.member	MasterPasswordID,1472,16,8,16
@@ -1473,42 +1491,42 @@ R3	equ	13
 	.member	Max48BitLBA,1600,114,8,0,2
 	.member	StreamingTransferTime,1664,16,8,16
 	.member	DsmCap,1680,16,8,16
-	.member	PhysicalLogicalSectorSize,1696,10,8,16,110
+	.member	PhysicalLogicalSectorSize,1696,10,8,16,115
 	.member	InterSeekDelay,1712,16,8,16
 	.member	WorldWideName,1728,112,8,0,4
 	.member	ReservedForWorldWideName128,1792,112,8,0,4
 	.member	ReservedForTlcTechnicalReport,1856,16,8,16
 	.member	WordsPerLogicalSector,1872,112,8,0,2
-	.member	CommandSetSupportExt,1904,10,8,16,111
-	.member	CommandSetActiveExt,1920,10,8,16,112
+	.member	CommandSetSupportExt,1904,10,8,16,116
+	.member	CommandSetActiveExt,1920,10,8,16,117
 	.member	ReservedForExpandedSupportandActive,1936,112,8,0,6
 	.member	MsnSupport,2032,16,17,2
 	.member	ReservedWord127,2034,16,17,14
-	.member	SecurityStatus,2048,10,8,16,113
+	.member	SecurityStatus,2048,10,8,16,118
 	.member	ReservedWord129,2064,112,8,0,31
-	.member	CfaPowerMode1,2560,10,8,16,114
+	.member	CfaPowerMode1,2560,10,8,16,119
 	.member	ReservedForCfaWord161,2576,112,8,0,7
 	.member	NominalFormFactor,2688,16,17,4
 	.member	ReservedWord168,2692,16,17,12
-	.member	DataSetManagementFeature,2704,10,8,16,115
+	.member	DataSetManagementFeature,2704,10,8,16,120
 	.member	AdditionalProductID,2720,112,8,0,4
 	.member	ReservedForCfaWord174,2784,112,8,0,2
 	.member	CurrentMediaSerialNumber,2816,112,8,0,30
-	.member	SCTCommandTransport,3296,10,8,16,116
+	.member	SCTCommandTransport,3296,10,8,16,121
 	.member	ReservedWord207,3312,112,8,0,2
-	.member	BlockAlignment,3344,10,8,16,117
+	.member	BlockAlignment,3344,10,8,16,122
 	.member	WriteReadVerifySectorCountMode3Only,3360,112,8,0,2
 	.member	WriteReadVerifySectorCountMode2Only,3392,112,8,0,2
-	.member	NVCacheCapabilities,3424,10,8,16,118
+	.member	NVCacheCapabilities,3424,10,8,16,123
 	.member	NVCacheSizeLSW,3440,16,8,16
 	.member	NVCacheSizeMSW,3456,16,8,16
 	.member	NominalMediaRotationRate,3472,16,8,16
 	.member	ReservedWord218,3488,16,8,16
-	.member	NVCacheOptions,3504,10,8,16,119
+	.member	NVCacheOptions,3504,10,8,16,124
 	.member	WriteReadVerifySectorCountMode,3520,16,17,8
 	.member	ReservedWord220,3528,16,17,8
 	.member	ReservedWord221,3536,16,8,16
-	.member	TransportMajorVersion,3552,10,8,16,120
+	.member	TransportMajorVersion,3552,10,8,16,125
 	.member	TransportMinorVersion,3568,16,8,16
 	.member	ReservedWord224,3584,112,8,0,6
 	.member	ExtendedNumberOfUserAddressableSectors,3680,114,8,0,2
@@ -1518,13 +1536,13 @@ R3	equ	13
 	.member	Signature,4080,16,17,8
 	.member	CheckSum,4088,16,17,8
 	.eos
-	.stag	_FXDosDevice,5744,122
+	.stag	_FXDosDevice,5744,127
 	.member	type,0,14,8,8
 	.member	initialized,8,14,8,8
 	.member	devdata,16,129,8,32
 	.member	devstatus,48,14,8,8
-	.member	bootSector,56,10,8,928,92
-	.member	partitionTable,984,10,8,128,93
+	.member	bootSector,56,10,8,928,97
+	.member	partitionTable,984,10,8,128,98
 	.member	fileAllocationTable,1112,110,8,0,512
 	.member	bsOffset,5208,18,8,32
 	.member	rootDirSectors,5240,18,8,32
@@ -1542,18 +1560,24 @@ R3	equ	13
 	.member	pfReader,5680,654,8,32
 	.member	pfWriter,5712,654,8,32
 	.eos
-	.utag	item,32,123
-	.member	dir,0,138,11,32,75
-	.member	file,0,138,11,32,74
-	.member	fileInfo,0,138,11,32,76
+	.utag	item,32,128
+	.member	dir,0,138,11,32,78
+	.member	file,0,138,11,32,77
+	.member	fileInfo,0,138,11,32,79
 	.eos
-	.stag	_dos_handle,80,124
-	.member	fs,0,138,8,32,72
+	.stag	_dos_handle,80,129
+	.member	fs,0,138,8,32,75
 	.member	fr,32,5,8,16
 	.member	path,48,142,8,32
 	.eos
-	.line	800
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\diskio.c",16
+	.stag	fx_file,112,130
+	.member	fs,0,138,8,32,75
+	.member	fileInfo,32,138,8,32,79
+	.member	f,64,138,8,32,77
+	.member	fr,96,5,8,16
+	.eos
+	.line	812
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\diskio.c",16
 ;
 ;
 ;static PFXDOSDEVICE diskioDevices[] = {NULL,NULL,NULL,NULL,NULL,NULL};
@@ -1562,14 +1586,283 @@ R3	equ	13
 	dl	$0,$0,$0,$0,$0,$0
 	ends
 ;
+;
+;static CHAR fake_device_mbr[] = {0xEB,0x58,0x90,0x57,0x49,0x4E,0x49,0x4D,0x41,0x47,0x45,0x00,0x02,0x02,0x01,0x00,
+	data
+~~fake_device_mbr:
+	db	$EB,$58,$90,$57,$49,$4E,$49,$4D,$41,$47
+	db	$45,$0,$2,$2,$1,$0
+;		                     0x02,0x70,0x00,0x40,0x01,0xFD,0x01,0x00,0x08,0x00,0x01,0x00,0x00,0x00,0x00,0x00,
+	db	$2,$70,$0,$40,$1,$FD,$1,$0,$8,$0
+	db	$1,$0,$0,$0,$0,$0
+;							 0x00,0x00,0x00,0x00,0x00,0x00,0x29,0x26,0x3D,0x98,0x54,0x20,0x20,0x20,0x20,0x20,
+	db	$0,$0,$0,$0,$0,$0,$29,$26,$3D,$98
+	db	$54,$20,$20,$20,$20,$20
+;							 0x20,0x20,0x20,0x20,0x20,0x20,0x46,0x41,0x54,0x31,0x32,0x20,0x20,0x20,0x00,0x00,
+	db	$20,$20,$20,$20,$20,$20,$46,$41,$54,$31
+	db	$32,$20,$20,$20,$0,$0
+;							 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$0,$0,$0,$0,$0,$0,$0,$0,$0,$0
+	db	$0,$0,$0,$0,$0,$0
+;							 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xFA,0x33,0xC0,0x8E,0xD0,0xBC,
+	db	$0,$0,$0,$0,$0,$0,$0,$0,$0,$0
+	db	$FA,$33,$C0,$8E,$D0,$BC
+;							 0x00,0x7C,0xB8,0xB0,0x07,0x8E,0xD8,0x8E,0xC0,0xB9,0x00,0x01,0x8B,0xF1,0xBF,0x00,
+	db	$0,$7C,$B8,$B0,$7,$8E,$D8,$8E,$C0,$B9
+	db	$0,$1,$8B,$F1,$BF,$0
+;							 0x03,0xF3,0xA5,0xB8,0xD0,0x07,0x50,0x8E,0xD8,0x8E,0xC0,0xB8,0x80,0x01,0x50,0xCB,
+	db	$3,$F3,$A5,$B8,$D0,$7,$50,$8E,$D8,$8E
+	db	$C0,$B8,$80,$1,$50,$CB
+;							 0xFB,0xBE,0x13,0x02,0xE8,0x3A,0x00,0xB8,0x01,0x02,0xB9,0x01,0x00,0xBA,0x80,0x00,
+	db	$FB,$BE,$13,$2,$E8,$3A,$0,$B8,$1,$2
+	db	$B9,$1,$0,$BA,$80,$0
+;							 0x33,0xDB,0x8E,0xC3,0xBB,0x00,0x7C,0x06,0x53,0xCD,0x13,0x72,0x0A,0x26,0x81,0x3E,
+	db	$33,$DB,$8E,$C3,$BB,$0,$7C,$6,$53,$CD
+	db	$13,$72,$A,$26,$81,$3E
+;							 0xFE,0x7D,0x55,0xAA,0x75,0x01,0xCB,0xBE,0xD0,0x01,0xE8,0x14,0x00,0xB4,0x01,0xCD,
+	db	$FE,$7D,$55,$AA,$75,$1,$CB,$BE,$D0,$1
+	db	$E8,$14,$0,$B4,$1,$CD
+;							 0x16,0x74,0x06,0x32,0xE4,0xCD,0x16,0xEB,0xF4,0x32,0xE4,0xCD,0x16,0x33,0xD2,0xCD,
+	db	$16,$74,$6,$32,$E4,$CD,$16,$EB,$F4,$32
+	db	$E4,$CD,$16,$33,$D2,$CD
+;							 0x19,0xFC,0xAC,0x0A,0xC0,0x74,0x08,0x56,0xB4,0x0E,0xCD,0x10,0x5E,0xEB,0xF3,0xC3,
+	db	$19,$FC,$AC,$A,$C0,$74,$8,$56,$B4,$E
+	db	$CD,$10,$5E,$EB,$F3,$C3
+;							 0x43,0x61,0x6E,0x6E,0x6F,0x74,0x20,0x6C,0x6F,0x61,0x64,0x20,0x66,0x72,0x6F,0x6D,
+	db	$43,$61,$6E,$6E,$6F,$74,$20,$6C,$6F,$61
+	db	$64,$20,$66,$72,$6F,$6D
+;							 0x20,0x68,0x61,0x72,0x64,0x64,0x69,0x73,0x6B,0x2E,0x0D,0x0A,0x49,0x6E,0x73,0x65,
+	db	$20,$68,$61,$72,$64,$64,$69,$73,$6B,$2E
+	db	$D,$A,$49,$6E,$73,$65
+;							 0x72,0x74,0x20,0x53,0x79,0x73,0x74,0x65,0x6D,0x64,0x69,0x73,0x6B,0x20,0x61,0x6E,
+	db	$72,$74,$20,$53,$79,$73,$74,$65,$6D,$64
+	db	$69,$73,$6B,$20,$61,$6E
+;							 0x64,0x20,0x70,0x72,0x65,0x73,0x73,0x20,0x61,0x6E,0x79,0x20,0x6B,0x65,0x79,0x2E,
+	db	$64,$20,$70,$72,$65,$73,$73,$20,$61,$6E
+	db	$79,$20,$6B,$65,$79,$2E
+;							 0x0D,0x0A,0x00,0x44,0x69,0x73,0x6B,0x20,0x66,0x6F,0x72,0x6D,0x61,0x74,0x74,0x65,
+	db	$D,$A,$0,$44,$69,$73,$6B,$20,$66,$6F
+	db	$72,$6D,$61,$74,$74,$65
+;							 0x64,0x20,0x77,0x69,0x74,0x68,0x20,0x57,0x69,0x6E,0x49,0x6D,0x61,0x67,0x65,0x20,
+	db	$64,$20,$77,$69,$74,$68,$20,$57,$69,$6E
+	db	$49,$6D,$61,$67,$65,$20
+;							 0x36,0x2E,0x35,0x30,0x20,0x28,0x63,0x29,0x20,0x31,0x39,0x39,0x33,0x2D,0x32,0x30,
+	db	$36,$2E,$35,$30,$20,$28,$63,$29,$20,$31
+	db	$39,$39,$33,$2D,$32,$30
+;							 0x30,0x34,0x20,0x47,0x69,0x6C,0x6C,0x65,0x73,0x20,0x56,0x6F,0x6C,0x6C,0x61,0x6E,
+	db	$30,$34,$20,$47,$69,$6C,$6C,$65,$73,$20
+	db	$56,$6F,$6C,$6C,$61,$6E
+;							 0x74,0x0D,0x0A,0x73,0x65,0x65,0x20,0x68,0x74,0x74,0x70,0x3A,0x2F,0x2F,0x77,0x77,
+	db	$74,$D,$A,$73,$65,$65,$20,$68,$74,$74
+	db	$70,$3A,$2F,$2F,$77,$77
+;							 0x77,0x2E,0x77,0x69,0x6E,0x69,0x6D,0x61,0x67,0x65,0x2E,0x63,0x6F,0x6D,0x0D,0x0A,
+	db	$77,$2E,$77,$69,$6E,$69,$6D,$61,$67,$65
+	db	$2E,$63,$6F,$6D,$D,$A
+;							 0x42,0x6F,0x6F,0x74,0x73,0x65,0x63,0x74,0x6F,0x72,0x20,0x66,0x72,0x6F,0x6D,0x20,
+	db	$42,$6F,$6F,$74,$73,$65,$63,$74,$6F,$72
+	db	$20,$66,$72,$6F,$6D,$20
+;							 0x43,0x2E,0x48,0x2E,0x20,0x48,0x6F,0x63,0x68,0x73,0x74,0x61,0x74,0x74,0x65,0x72,
+	db	$43,$2E,$48,$2E,$20,$48,$6F,$63,$68,$73
+	db	$74,$61,$74,$74,$65,$72
+;							 0x0D,0x0A,0x0D,0x0A,0x4E,0x6F,0x20,0x53,0x79,0x73,0x74,0x65,0x6D,0x64,0x69,0x73,
+	db	$D,$A,$D,$A,$4E,$6F,$20,$53,$79,$73
+	db	$74,$65,$6D,$64,$69,$73
+;							 0x6B,0x2E,0x20,0x42,0x6F,0x6F,0x74,0x69,0x6E,0x67,0x20,0x66,0x72,0x6F,0x6D,0x20,
+	db	$6B,$2E,$20,$42,$6F,$6F,$74,$69,$6E,$67
+	db	$20,$66,$72,$6F,$6D,$20
+;							 0x68,0x61,0x72,0x64,0x64,0x69,0x73,0x6B,0x2E,0x0D,0x0A,0x00,0x00,0x00,0x00,0x00,
+	db	$68,$61,$72,$64,$64,$69,$73,$6B,$2E,$D
+	db	$A,$0,$0,$0,$0,$0
+;							 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$0,$0,$0,$0,$0,$0,$0,$0,$0,$0
+	db	$0,$0,$0,$0,$0,$0
+;							 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$0,$0,$0,$0,$0,$0,$0,$0,$0,$0
+	db	$0,$0,$0,$0,$0,$0
+;							 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$0,$0,$0,$0,$0,$0,$0,$0,$0,$0
+	db	$0,$0,$0,$0,$0,$0
+;							 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x55,0xAA};
+	db	$0,$0,$0,$0,$0,$0,$0,$0,$0,$0
+	db	$0,$0,$0,$0,$55,$AA
+	ends
+;
+;static CHAR fake_device_0200[] = {0xFD,0xFF,0xFF,0xFF,0x0F};
+	data
+~~fake_device_0200:
+	db	$FD,$FF,$FF,$FF,$F
+	ends
+;static CHAR fake_device_0400[] = {0xFD,0xFF,0xFF,0xFF,0x0F};
+	data
+~~fake_device_0400:
+	db	$FD,$FF,$FF,$FF,$F
+	ends
+;
+;
+;static CHAR fake_device_0600[] =
+	data
+~~fake_device_0600:
+;                            {0x46,0x58,0x44,0x45,0x56,0x49,0x43,0x45,0x20,0x20,0x20,0x08,0x00,0x00,0x00,0x00,
+	db	$46,$58,$44,$45,$56,$49,$43,$45,$20,$20
+	db	$20,$8,$0,$0,$0,$0
+;       						 0x00,0x00,0x00,0x00,0x00,0x00,0x1C,0xBF,0xEB,0x52,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$0,$0,$0,$0,$0,$0,$1C,$BF,$EB,$52
+	db	$0,$0,$0,$0,$0,$0
+;       						 0x46,0x58,0x44,0x45,0x56,0x20,0x20,0x20,0x44,0x54,0x41,0x00,0x00,0x06,0x70,0xBF,
+	db	$46,$58,$44,$45,$56,$20,$20,$20,$44,$54
+	db	$41,$0,$0,$6,$70,$BF
+;       						 0xEB,0x52,0x00,0x00,0x00,0x00,0x71,0xBF,0xEB,0x52,0x02,0x00,0x08,0x00,0x00,0x00,
+	db	$EB,$52,$0,$0,$0,$0,$71,$BF,$EB,$52
+	db	$2,$0,$8,$0,$0,$0
+;       						 0x44,0x45,0x56,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x10,0x00,0x00,0x00,0x00,
+	db	$44,$45,$56,$20,$20,$20,$20,$20,$20,$20
+	db	$20,$10,$0,$0,$0,$0
+;       						 0x00,0x00,0x00,0x00,0x00,0x00,0x62,0x4F,0xEC,0x52,0x03,0x00,0x00,0x00,0x00,0x00};
+	db	$0,$0,$0,$0,$0,$0,$62,$4F,$EC,$52
+	db	$3,$0,$0,$0,$0,$0
+	ends
+;
+;
+;
+;
+;static CHAR fake_device_1400[] = {0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
+	data
+~~fake_device_1400:
+	db	$30,$30,$30,$30,$30,$30,$30,$30,$0,$0
+	db	$0,$0,$0,$0,$0,$0
+	ends
+;
+;static CHAR fake_device_1800[] = {0x2E,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x10,0x00,0x00,0x00,0x00,
+	data
+~~fake_device_1800:
+	db	$2E,$20,$20,$20,$20,$20,$20,$20,$20,$20
+	db	$20,$10,$0,$0,$0,$0
+;								  0x00,0x00,0x00,0x00,0x00,0x00,0x62,0x4F,0xEC,0x52,0x03,0x00,0x00,0x00,0x00,0x00,
+	db	$0,$0,$0,$0,$0,$0,$62,$4F,$EC,$52
+	db	$3,$0,$0,$0,$0,$0
+;								  0x2E,0x2E,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x10,0x00,0x00,0x00,0x00,
+	db	$2E,$2E,$20,$20,$20,$20,$20,$20,$20,$20
+	db	$20,$10,$0,$0,$0,$0
+;								  0x00,0x00,0x00,0x00,0x00,0x00,0x62,0x4F,0xEC,0x52,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$0,$0,$0,$0,$0,$0,$62,$4F,$EC,$52
+	db	$0,$0,$0,$0,$0,$0
+;								  0x44,0x45,0x56,0x31,0x33,0x20,0x20,0x20,0x20,0x20,0x20,0x00,0x08,0xBE,0x6A,0x47,
+	db	$44,$45,$56,$31,$33,$20,$20,$20,$20,$20
+	db	$20,$0,$8,$BE,$6A,$47
+;								  0xEC,0x52,0x00,0x00,0x00,0x00,0xF2,0x3E,0xEC,0x52,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$EC,$52,$0,$0,$0,$0,$F2,$3E,$EC,$52
+	db	$0,$0,$0,$0,$0,$0
+;								  0x44,0x45,0x56,0x31,0x34,0x20,0x20,0x20,0x20,0x20,0x20,0x00,0x08,0x81,0x6E,0x47,
+	db	$44,$45,$56,$31,$34,$20,$20,$20,$20,$20
+	db	$20,$0,$8,$81,$6E,$47
+;								  0xEC,0x52,0x00,0x00,0x00,0x00,0xF2,0x3E,0xEC,0x52,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$EC,$52,$0,$0,$0,$0,$F2,$3E,$EC,$52
+	db	$0,$0,$0,$0,$0,$0
+;								  0x44,0x45,0x56,0x31,0x35,0x20,0x20,0x20,0x20,0x20,0x20,0x00,0x08,0x30,0x74,0x47,
+	db	$44,$45,$56,$31,$35,$20,$20,$20,$20,$20
+	db	$20,$0,$8,$30,$74,$47
+;								  0xEC,0x52,0x00,0x00,0x00,0x00,0xF2,0x3E,0xEC,0x52,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$EC,$52,$0,$0,$0,$0,$F2,$3E,$EC,$52
+	db	$0,$0,$0,$0,$0,$0
+;								  0x44,0x45,0x56,0x31,0x36,0x20,0x20,0x20,0x20,0x20,0x20,0x00,0x08,0x94,0x7B,0x47,
+	db	$44,$45,$56,$31,$36,$20,$20,$20,$20,$20
+	db	$20,$0,$8,$94,$7B,$47
+;								  0xEC,0x52,0x00,0x00,0x00,0x00,0xF2,0x3E,0xEC,0x52,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$EC,$52,$0,$0,$0,$0,$F2,$3E,$EC,$52
+	db	$0,$0,$0,$0,$0,$0
+;								  0x44,0x45,0x56,0x30,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x00,0x08,0x9E,0xF1,0x3E,
+	db	$44,$45,$56,$30,$20,$20,$20,$20,$20,$20
+	db	$20,$0,$8,$9E,$F1,$3E
+;								  0xEC,0x52,0x00,0x00,0x00,0x00,0xF2,0x3E,0xEC,0x52,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$EC,$52,$0,$0,$0,$0,$F2,$3E,$EC,$52
+	db	$0,$0,$0,$0,$0,$0
+;								  0x44,0x45,0x56,0x31,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x00,0x08,0x7C,0x04,0x3F,
+	db	$44,$45,$56,$31,$20,$20,$20,$20,$20,$20
+	db	$20,$0,$8,$7C,$4,$3F
+;								  0xEC,0x52,0x00,0x00,0x00,0x00,0xF2,0x3E,0xEC,0x52,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$EC,$52,$0,$0,$0,$0,$F2,$3E,$EC,$52
+	db	$0,$0,$0,$0,$0,$0
+;								  0x44,0x45,0x56,0x32,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x00,0x08,0x93,0x0C,0x3F,
+	db	$44,$45,$56,$32,$20,$20,$20,$20,$20,$20
+	db	$20,$0,$8,$93,$C,$3F
+;								  0xEC,0x52,0x00,0x00,0x00,0x00,0xF2,0x3E,0xEC,0x52,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$EC,$52,$0,$0,$0,$0,$F2,$3E,$EC,$52
+	db	$0,$0,$0,$0,$0,$0
+;								  0x44,0x45,0x56,0x33,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x00,0x08,0x2A,0x12,0x3F,
+	db	$44,$45,$56,$33,$20,$20,$20,$20,$20,$20
+	db	$20,$0,$8,$2A,$12,$3F
+;								  0xEC,0x52,0x00,0x00,0x00,0x00,0xF2,0x3E,0xEC,0x52,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$EC,$52,$0,$0,$0,$0,$F2,$3E,$EC,$52
+	db	$0,$0,$0,$0,$0,$0
+;								  0x44,0x45,0x56,0x34,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x00,0x08,0xAD,0x15,0x3F,
+	db	$44,$45,$56,$34,$20,$20,$20,$20,$20,$20
+	db	$20,$0,$8,$AD,$15,$3F
+;								  0xEC,0x52,0x00,0x00,0x00,0x00,0xF2,0x3E,0xEC,0x52,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$EC,$52,$0,$0,$0,$0,$F2,$3E,$EC,$52
+	db	$0,$0,$0,$0,$0,$0
+;								  0x44,0x45,0x56,0x35,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x00,0x08,0xC7,0x19,0x3F,
+	db	$44,$45,$56,$35,$20,$20,$20,$20,$20,$20
+	db	$20,$0,$8,$C7,$19,$3F
+;								  0xEC,0x52,0x00,0x00,0x00,0x00,0xF2,0x3E,0xEC,0x52,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$EC,$52,$0,$0,$0,$0,$F2,$3E,$EC,$52
+	db	$0,$0,$0,$0,$0,$0
+;								  0x44,0x45,0x56,0x36,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x00,0x08,0x12,0x63,0x3F,
+	db	$44,$45,$56,$36,$20,$20,$20,$20,$20,$20
+	db	$20,$0,$8,$12,$63,$3F
+;								  0xEC,0x52,0x00,0x00,0x00,0x00,0xF2,0x3E,0xEC,0x52,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$EC,$52,$0,$0,$0,$0,$F2,$3E,$EC,$52
+	db	$0,$0,$0,$0,$0,$0
+;								  0x44,0x45,0x56,0x37,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x00,0x08,0x2E,0x6C,0x3F,
+	db	$44,$45,$56,$37,$20,$20,$20,$20,$20,$20
+	db	$20,$0,$8,$2E,$6C,$3F
+;								  0xEC,0x52,0x00,0x00,0x00,0x00,0xF2,0x3E,0xEC,0x52,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$EC,$52,$0,$0,$0,$0,$F2,$3E,$EC,$52
+	db	$0,$0,$0,$0,$0,$0
+;								  0x44,0x45,0x56,0x38,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x00,0x08,0x39,0x53,0x47,
+	db	$44,$45,$56,$38,$20,$20,$20,$20,$20,$20
+	db	$20,$0,$8,$39,$53,$47
+;								  0xEC,0x52,0x00,0x00,0x00,0x00,0xF2,0x3E,0xEC,0x52,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$EC,$52,$0,$0,$0,$0,$F2,$3E,$EC,$52
+	db	$0,$0,$0,$0,$0,$0
+;								  0x44,0x45,0x56,0x39,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x00,0x08,0x87,0x56,0x47,
+	db	$44,$45,$56,$39,$20,$20,$20,$20,$20,$20
+	db	$20,$0,$8,$87,$56,$47
+;								  0xEC,0x52,0x00,0x00,0x00,0x00,0xF2,0x3E,0xEC,0x52,0x00,0x00,0x00,0x00,0x00,0x00};
+	db	$EC,$52,$0,$0,$0,$0,$F2,$3E,$EC,$52
+	db	$0,$0,$0,$0,$0,$0
+	ends
+;
+;static CHAR fake_device_1A00[] = {0x44,0x45,0x56,0x31,0x30,0x20,0x20,0x20,0x20,0x20,0x20,0x00,0x08,0xB8,0x5B,0x47,
+	data
+~~fake_device_1A00:
+	db	$44,$45,$56,$31,$30,$20,$20,$20,$20,$20
+	db	$20,$0,$8,$B8,$5B,$47
+;								  0xEC,0x52,0x00,0x00,0x00,0x00,0xF2,0x3E,0xEC,0x52,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$EC,$52,$0,$0,$0,$0,$F2,$3E,$EC,$52
+	db	$0,$0,$0,$0,$0,$0
+;								  0x44,0x45,0x56,0x31,0x31,0x20,0x20,0x20,0x20,0x20,0x20,0x00,0x08,0x55,0x62,0x47,
+	db	$44,$45,$56,$31,$31,$20,$20,$20,$20,$20
+	db	$20,$0,$8,$55,$62,$47
+;								  0xEC,0x52,0x00,0x00,0x00,0x00,0xF2,0x3E,0xEC,0x52,0x00,0x00,0x00,0x00,0x00,0x00,
+	db	$EC,$52,$0,$0,$0,$0,$F2,$3E,$EC,$52
+	db	$0,$0,$0,$0,$0,$0
+;								  0x44,0x45,0x56,0x31,0x32,0x20,0x20,0x20,0x20,0x20,0x20,0x00,0x08,0xBA,0x66,0x47,
+	db	$44,$45,$56,$31,$32,$20,$20,$20,$20,$20
+	db	$20,$0,$8,$BA,$66,$47
+;								  0xEC,0x52,0x00,0x00,0x00,0x00,0xF2,0x3E,0xEC,0x52,0x00,0x00,0x00,0x00,0x00,0x00};
+	db	$EC,$52,$0,$0,$0,$0,$F2,$3E,$EC,$52
+	db	$0,$0,$0,$0,$0,$0
+	ends
+;
+;
 ;PFXDOSDEVICE FAR * k_dos_get_devices(VOID)
 ;{
-	.line	21
-	.line	22
+	.line	113
+	.line	114
 	code
 	xdef	~~k_dos_get_devices
 	func
-	.function	22
+	.function	114
 ~~k_dos_get_devices:
 	longa	on
 	longi	on
@@ -1579,9 +1872,9 @@ R3	equ	13
 	tcs
 	phd
 	tcd
-	.block	22
+	.block	114
 ;	return diskioDevices;
-	.line	23
+	.line	115
 	lda	#<~~diskioDevices
 	sta	<R0
 	xref	_BEG_DATA
@@ -1599,23 +1892,23 @@ L5:
 	tya
 	rtl
 ;}
-	.line	24
-	.endblock	24
+	.line	116
+	.endblock	116
 L2	equ	4
 L3	equ	5
 	ends
 	efunc
-	.endfunc	24,5,4
-	.line	24
+	.endfunc	116,5,4
+	.line	116
 ;
 ;PFXDOSDEVICE k_dos_get_device(UINT index)
 ;{
-	.line	26
-	.line	27
+	.line	118
+	.line	119
 	code
 	xdef	~~k_dos_get_device
 	func
-	.function	27
+	.function	119
 ~~k_dos_get_device:
 	longa	on
 	longi	on
@@ -1626,10 +1919,10 @@ L3	equ	5
 	phd
 	tcd
 index_0	set	4
-	.block	27
+	.block	119
 ;	return diskioDevices[index];
 	.sym	index,4,16,6,16
-	.line	28
+	.line	120
 	lda	<L6+index_0
 	asl	A
 	asl	A
@@ -1656,23 +1949,23 @@ L9:
 	tya
 	rtl
 ;}
-	.line	29
-	.endblock	29
+	.line	121
+	.endblock	121
 L6	equ	8
 L7	equ	9
 	ends
 	efunc
-	.endfunc	29,9,8
-	.line	29
+	.endfunc	121,9,8
+	.line	121
 ;
 ;UINT k_dos_get_device_status(UINT index)
 ;{
-	.line	31
-	.line	32
+	.line	123
+	.line	124
 	code
 	xdef	~~k_dos_get_device_status
 	func
-	.function	32
+	.function	124
 ~~k_dos_get_device_status:
 	longa	on
 	longi	on
@@ -1683,10 +1976,10 @@ L7	equ	9
 	phd
 	tcd
 index_0	set	4
-	.block	32
+	.block	124
 ;	return diskioDevices[index]->initialized;
 	.sym	index,4,16,6,16
-	.line	33
+	.line	125
 	lda	<L10+index_0
 	asl	A
 	asl	A
@@ -1717,14 +2010,14 @@ L13:
 	tya
 	rtl
 ;}
-	.line	34
-	.endblock	34
+	.line	126
+	.endblock	126
 L10	equ	8
 L11	equ	9
 	ends
 	efunc
-	.endfunc	34,9,8
-	.line	34
+	.endfunc	126,9,8
+	.line	126
 ;
 ;/*-----------------------------------------------------------------------*/
 ;/* Get Drive Status                                                      */
@@ -1734,12 +2027,12 @@ L11	equ	9
 ;	BYTE pdrv		/* Physical drive nmuber to identify the drive */
 ;)
 ;{
-	.line	40
-	.line	43
+	.line	132
+	.line	135
 	code
 	xdef	~~disk_status
 	func
-	.function	43
+	.function	135
 ~~disk_status:
 	longa	on
 	longi	on
@@ -1750,7 +2043,7 @@ L11	equ	9
 	phd
 	tcd
 pdrv_0	set	4
-	.block	43
+	.block	135
 ;	DSTATUS stat = STA_NOINIT;
 ;	int result;
 ;
@@ -1768,19 +2061,41 @@ result_1	set	1
 	sta	<L15+stat_1
 	rep	#$20
 	longa	on
-	.line	49
+	.line	141
 	lda	<L14+pdrv_0
 	and	#$ff
 	brl	L10001
 ;	{
-	.line	50
-;	case 0x03 :
-	.line	51
+	.line	142
+;	case 0x00:
+	.line	143
 L10003:
+;
+;		return RES_OK;
+	.line	145
+	lda	#$0
+L17:
+	tay
+	lda	<L14+2
+	sta	<L14+2+2
+	lda	<L14+1
+	sta	<L14+1+2
+	pld
+	tsc
+	clc
+	adc	#L14+2
+	tcs
+	tya
+	rtl
+;		break;
+	.line	146
+;	case 0x03 :
+	.line	147
+L10004:
 ;
 ;
 ;		if(diskioDevices[pdrv] != NULL)
-	.line	54
+	.line	150
 ;		{
 	lda	<L14+pdrv_0
 	and	#$ff
@@ -1796,12 +2111,12 @@ L10003:
 	lda	(<R1)
 	ldy	#$2
 	ora	(<R1),Y
-	bne	L17
-	brl	L10004
-L17:
-	.line	55
+	bne	L18
+	brl	L10005
+L18:
+	.line	151
 ;			if(diskioDevices[pdrv]->initialized)
-	.line	56
+	.line	152
 ;			{
 	lda	<L14+pdrv_0
 	and	#$ff
@@ -1822,46 +2137,34 @@ L17:
 	ldy	#$1
 	lda	[<R0],Y
 	and	#$ff
-	bne	L18
-	brl	L10005
-L18:
-	.line	57
-;				return RES_OK;
-	.line	58
-	lda	#$0
+	bne	L19
+	brl	L10006
 L19:
-	tay
-	lda	<L14+2
-	sta	<L14+2+2
-	lda	<L14+1
-	sta	<L14+1+2
-	pld
-	tsc
-	clc
-	adc	#L14+2
-	tcs
-	tya
-	rtl
+	.line	153
+;				return RES_OK;
+	.line	154
+	lda	#$0
+	brl	L17
 ;			}
-	.line	59
+	.line	155
 ;		}
-L10005:
-	.line	60
+L10006:
+	.line	156
 ;
 ;		return RES_OK;
-L10004:
-	.line	62
+L10005:
+	.line	158
 	lda	#$0
-	brl	L19
+	brl	L17
 ;		break;
-	.line	63
+	.line	159
 ;	case 0x04 :
-	.line	64
-L10006:
+	.line	160
+L10007:
 ;
 ;
 ;		if(diskioDevices[pdrv] != NULL)
-	.line	67
+	.line	163
 ;		{
 	lda	<L14+pdrv_0
 	and	#$ff
@@ -1878,11 +2181,11 @@ L10006:
 	ldy	#$2
 	ora	(<R1),Y
 	bne	L20
-	brl	L10007
+	brl	L10008
 L20:
-	.line	68
+	.line	164
 ;			if(diskioDevices[pdrv]->initialized)
-	.line	69
+	.line	165
 ;			{
 	lda	<L14+pdrv_0
 	and	#$ff
@@ -1904,97 +2207,98 @@ L20:
 	lda	[<R0],Y
 	and	#$ff
 	bne	L21
-	brl	L10008
+	brl	L10009
 L21:
-	.line	70
+	.line	166
 ;				return RES_OK;
-	.line	71
+	.line	167
 	lda	#$0
-	brl	L19
+	brl	L17
 ;			}
-	.line	72
+	.line	168
 ;		}
-L10008:
-	.line	73
+L10009:
+	.line	169
 ;
 ;		return RES_OK;
-L10007:
-	.line	75
+L10008:
+	.line	171
 	lda	#$0
-	brl	L19
+	brl	L17
 ;
 ;		break;
-	.line	77
+	.line	173
 ;	case DEV_MMC :
-	.line	78
-L10009:
+	.line	174
+L10010:
 ;		//result = MMC_disk_status();
 ;
 ;		// translate the reslut code here
 ;
 ;		return stat;
-	.line	83
+	.line	179
 	lda	<L15+stat_1
 	and	#$ff
-	brl	L19
+	brl	L17
 ;
 ;		break;
-	.line	85
+	.line	181
 ;	case DEV_USB :
-	.line	86
-L10010:
+	.line	182
+L10011:
 ;		//result = USB_disk_status();
 ;
 ;		// translate the reslut code here
 ;
 ;		return stat;
-	.line	91
+	.line	187
 	lda	<L15+stat_1
 	and	#$ff
-	brl	L19
+	brl	L17
 ;	}
-	.line	92
+	.line	188
 L10001:
 	xref	~~~fsw
 	jsl	~~~fsw
-	dw	1
-	dw	4
+	dw	0
+	dw	5
 	dw	L10002-1
-	dw	L10009-1
-	dw	L10010-1
 	dw	L10003-1
-	dw	L10006-1
+	dw	L10010-1
+	dw	L10011-1
+	dw	L10004-1
+	dw	L10007-1
 L10002:
 ;	return STA_NOINIT;
-	.line	93
+	.line	189
 	lda	#$1
-	brl	L19
+	brl	L17
 ;}
-	.line	94
-	.endblock	94
+	.line	190
+	.endblock	190
 L14	equ	11
 L15	equ	9
 	ends
 	efunc
-	.endfunc	94,9,11
-	.line	94
+	.endfunc	190,9,11
+	.line	190
 ;
 ;
 ;
 ;/*-----------------------------------------------------------------------*/
-;/* Inidialize a Drive                                                    */
+;/* Initialize a Drive                                                    */
 ;/*-----------------------------------------------------------------------*/
 ;
 ;DSTATUS disk_initialize (
 ;	BYTE pdrv				/* Physical drive nmuber to identify the drive */
 ;)
 ;{
-	.line	102
-	.line	105
+	.line	198
+	.line	201
 	code
 	xdef	~~disk_initialize
 	func
-	.function	105
+	.function	201
 ~~disk_initialize:
 	longa	on
 	longi	on
@@ -2005,7 +2309,7 @@ L15	equ	9
 	phd
 	tcd
 pdrv_0	set	4
-	.block	105
+	.block	201
 ;	DSTATUS stat = STA_NOINIT;
 ;	int result = 0;
 ;
@@ -2026,17 +2330,40 @@ result_1	set	1
 	rep	#$20
 	longa	on
 	stz	<L23+result_1
-	.line	113
+	.line	209
 	lda	<L22+pdrv_0
 	and	#$ff
-	brl	L10011
+	brl	L10012
 ;	{
-	.line	114
+	.line	210
+;	case 0x00:
+	.line	211
+L10014:
+;
+;		return RES_OK;
+	.line	213
+	lda	#$0
+L25:
+	tay
+	lda	<L22+2
+	sta	<L22+2+2
+	lda	<L22+1
+	sta	<L22+1+2
+	pld
+	tsc
+	clc
+	adc	#L22+2
+	tcs
+	tya
+	rtl
+;		break;
+	.line	214
+;
 ;	case 0x03 :
-	.line	115
-L10013:
+	.line	216
+L10015:
 ;		if(diskioDevices[pdrv] == NULL)
-	.line	116
+	.line	217
 ;		{
 	lda	<L22+pdrv_0
 	and	#$ff
@@ -2052,13 +2379,13 @@ L10013:
 	lda	(<R1)
 	ldy	#$2
 	ora	(<R1),Y
-	beq	L25
-	brl	L10014
-L25:
-	.line	117
+	beq	L26
+	brl	L10016
+L26:
+	.line	218
 ;			//k_debug_hex("FIRST disk_initialize:",pdrv);
 ;			diskioDevices[pdrv] =  k_create_dos_device(FXDOS_SDC);
-	.line	119
+	.line	220
 	lda	<L22+pdrv_0
 	and	#$ff
 	sta	<R1
@@ -2080,14 +2407,14 @@ L25:
 	ldy	#$2
 	sta	(<R1),Y
 ;		}
-	.line	120
+	.line	221
 ;		else
-	brl	L10015
-L10014:
+	brl	L10017
+L10016:
 ;		{
-	.line	122
+	.line	223
 ;			if(diskioDevices[pdrv]->initialized != TRUE)
-	.line	123
+	.line	224
 ;			{
 	lda	<L22+pdrv_0
 	and	#$ff
@@ -2112,13 +2439,13 @@ L10014:
 	cmp	#<$1
 	rep	#$20
 	longa	on
-	bne	L26
-	brl	L10016
-L26:
-	.line	124
+	bne	L27
+	brl	L10018
+L27:
+	.line	225
 ;				//k_debug_hex("RESTART disk_initialize:",pdrv);
 ;				k_mem_deallocate_heap(diskioDevices[pdrv]);
-	.line	126
+	.line	227
 	lda	<L22+pdrv_0
 	and	#$ff
 	sta	<R1
@@ -2137,7 +2464,7 @@ L26:
 	pha
 	jsl	~~k_mem_deallocate_heap
 ;				diskioDevices[pdrv] =  k_create_dos_device(FXDOS_SDC);
-	.line	127
+	.line	228
 	lda	<L22+pdrv_0
 	and	#$ff
 	sta	<R1
@@ -2159,14 +2486,14 @@ L26:
 	ldy	#$2
 	sta	(<R1),Y
 ;			}
-	.line	128
+	.line	229
 ;		}
-L10016:
-	.line	129
-L10015:
+L10018:
+	.line	230
+L10017:
 ;
 ;		if(diskioDevices[pdrv] && diskioDevices[pdrv]->initialized)
-	.line	131
+	.line	232
 ;			stat = 0x00;
 	lda	<L22+pdrv_0
 	and	#$ff
@@ -2182,9 +2509,9 @@ L10015:
 	lda	(<R1)
 	ldy	#$2
 	ora	(<R1),Y
-	bne	L27
-	brl	L10017
-L27:
+	bne	L28
+	brl	L10019
+L28:
 	lda	<L22+pdrv_0
 	and	#$ff
 	sta	<R1
@@ -2204,37 +2531,37 @@ L27:
 	ldy	#$1
 	lda	[<R0],Y
 	and	#$ff
-	bne	L28
-	brl	L10017
-L28:
-	.line	132
+	bne	L29
+	brl	L10019
+L29:
+	.line	233
 	sep	#$20
 	longa	off
 	stz	<L23+stat_1
 	rep	#$20
 	longa	on
 ;		else
-	brl	L10018
-L10017:
+	brl	L10020
+L10019:
 ;			stat = STA_NOINIT;
-	.line	134
+	.line	235
 	sep	#$20
 	longa	off
 	lda	#$1
 	sta	<L23+stat_1
 	rep	#$20
 	longa	on
-L10018:
+L10020:
 ;
 ;		break;
-	.line	136
-	brl	L10012
+	.line	237
+	brl	L10013
 ;	case 0x04:
-	.line	137
-L10019:
+	.line	238
+L10021:
 ;
 ;		if(diskioDevices[pdrv] == NULL)
-	.line	139
+	.line	240
 ;		{
 	lda	<L22+pdrv_0
 	and	#$ff
@@ -2250,13 +2577,13 @@ L10019:
 	lda	(<R1)
 	ldy	#$2
 	ora	(<R1),Y
-	beq	L29
-	brl	L10020
-L29:
-	.line	140
+	beq	L30
+	brl	L10022
+L30:
+	.line	241
 ;			//k_debug_hex("FIRST HD disk_initialize:",pdrv);
 ;			diskioDevices[pdrv] =  k_create_dos_device(FXDOS_HDD);
-	.line	142
+	.line	243
 	lda	<L22+pdrv_0
 	and	#$ff
 	sta	<R1
@@ -2278,14 +2605,14 @@ L29:
 	ldy	#$2
 	sta	(<R1),Y
 ;		}
-	.line	143
+	.line	244
 ;		else
-	brl	L10021
-L10020:
+	brl	L10023
+L10022:
 ;		{
-	.line	145
+	.line	246
 ;			if(diskioDevices[pdrv]->initialized != TRUE)
-	.line	146
+	.line	247
 ;			{
 	lda	<L22+pdrv_0
 	and	#$ff
@@ -2310,13 +2637,13 @@ L10020:
 	cmp	#<$1
 	rep	#$20
 	longa	on
-	bne	L30
-	brl	L10022
-L30:
-	.line	147
+	bne	L31
+	brl	L10024
+L31:
+	.line	248
 ;				//k_debug_hex("RESTART HD disk_initialize:",pdrv);
 ;				k_mem_deallocate_heap(diskioDevices[pdrv]);
-	.line	149
+	.line	250
 	lda	<L22+pdrv_0
 	and	#$ff
 	sta	<R1
@@ -2335,7 +2662,7 @@ L30:
 	pha
 	jsl	~~k_mem_deallocate_heap
 ;				diskioDevices[pdrv] =  k_create_dos_device(FXDOS_HDD);
-	.line	150
+	.line	251
 	lda	<L22+pdrv_0
 	and	#$ff
 	sta	<R1
@@ -2357,14 +2684,14 @@ L30:
 	ldy	#$2
 	sta	(<R1),Y
 ;			}
-	.line	151
+	.line	252
 ;		}
-L10022:
-	.line	152
-L10021:
+L10024:
+	.line	253
+L10023:
 ;
 ;		if(diskioDevices[pdrv] && diskioDevices[pdrv]->initialized)
-	.line	154
+	.line	255
 ;			stat = 0x00;
 	lda	<L22+pdrv_0
 	and	#$ff
@@ -2380,9 +2707,9 @@ L10021:
 	lda	(<R1)
 	ldy	#$2
 	ora	(<R1),Y
-	bne	L31
-	brl	L10023
-L31:
+	bne	L32
+	brl	L10025
+L32:
 	lda	<L22+pdrv_0
 	and	#$ff
 	sta	<R1
@@ -2402,96 +2729,85 @@ L31:
 	ldy	#$1
 	lda	[<R0],Y
 	and	#$ff
-	bne	L32
-	brl	L10023
-L32:
-	.line	155
+	bne	L33
+	brl	L10025
+L33:
+	.line	256
 	sep	#$20
 	longa	off
 	stz	<L23+stat_1
 	rep	#$20
 	longa	on
 ;		else
-	brl	L10024
-L10023:
+	brl	L10026
+L10025:
 ;			stat = STA_NOINIT;
-	.line	157
+	.line	258
 	sep	#$20
 	longa	off
 	lda	#$1
 	sta	<L23+stat_1
 	rep	#$20
 	longa	on
-L10024:
+L10026:
 ;
 ;
 ;		break;
-	.line	160
-	brl	L10012
+	.line	261
+	brl	L10013
 ;	case DEV_MMC :
-	.line	161
-L10025:
+	.line	262
+L10027:
 ;		//result = MMC_disk_initialize();
 ;
 ;		// translate the reslut code here
 ;
 ;		//return stat;
 ;		break;
-	.line	167
-	brl	L10012
+	.line	268
+	brl	L10013
 ;	case DEV_USB :
-	.line	168
-L10026:
+	.line	269
+L10028:
 ;		//result = USB_disk_initialize();
 ;
 ;		// translate the reslut code here
 ;
 ;		//return stat;
 ;		break;
-	.line	174
-	brl	L10012
+	.line	275
+	brl	L10013
 ;	}
-	.line	175
-L10011:
+	.line	276
+L10012:
 	xref	~~~fsw
 	jsl	~~~fsw
-	dw	1
-	dw	4
-	dw	L10012-1
-	dw	L10025-1
-	dw	L10026-1
+	dw	0
+	dw	5
 	dw	L10013-1
-	dw	L10019-1
-L10012:
+	dw	L10014-1
+	dw	L10027-1
+	dw	L10028-1
+	dw	L10015-1
+	dw	L10021-1
+L10013:
 ;
 ;	//k_debugstring("------- disk_initialize exit\r\n");
 ;
 ;	return stat;
-	.line	179
+	.line	280
 	lda	<L23+stat_1
 	and	#$ff
-L33:
-	tay
-	lda	<L22+2
-	sta	<L22+2+2
-	lda	<L22+1
-	sta	<L22+1+2
-	pld
-	tsc
-	clc
-	adc	#L22+2
-	tcs
-	tya
-	rtl
+	brl	L25
 ;}
-	.line	180
-	.endblock	180
+	.line	281
+	.endblock	281
 L22	equ	11
 L23	equ	9
 	ends
 	efunc
-	.endfunc	180,9,11
-	.line	180
+	.endfunc	281,9,11
+	.line	281
 ;
 ;
 ;
@@ -2506,12 +2822,12 @@ L23	equ	9
 ;	UINT count		/* Number of sectors to read */
 ;)
 ;{
-	.line	188
-	.line	194
+	.line	289
+	.line	295
 	code
 	xdef	~~disk_read
 	func
-	.function	194
+	.function	295
 ~~disk_read:
 	longa	on
 	longi	on
@@ -2525,18 +2841,18 @@ pdrv_0	set	4
 buff_0	set	6
 sector_0	set	10
 count_0	set	14
-	.block	194
+	.block	295
 ;	DRESULT res;
 ;	int result = RES_PARERR;
 ;	int i;
 ;
-;	//k_debuginteger( "------- disk_read:dev:",pdrv);
-;	//k_debuglong("------- disk_read:sector:",sector);
+;	//k_debug_integer( "------- disk_read:dev:",pdrv);
+;	//k_debug_long("------- disk_read:sector:",sector);
 ;	//k_debug_integer("------- disk_read:count:",count);
 ;
 ;	//k_debug_hex("disk_read:",pdrv);
 ;
-;	switch (pdrv) {
+;	switch (pdrv)
 res_1	set	0
 result_1	set	2
 i_1	set	4
@@ -2549,20 +2865,223 @@ i_1	set	4
 	.sym	count,14,16,6,16
 	lda	#$4
 	sta	<L35+result_1
-	.line	205
+	.line	306
 	lda	<L34+pdrv_0
 	and	#$ff
-	brl	L10027
-	.line	205
+	brl	L10029
+;	{
+	.line	307
+;	case 0x00:
+	.line	308
+L10031:
+;
+;		k_debug_long("------- disk_read:RAM:sector:",sector);
+	.line	310
+	pei	<L34+sector_0+2
+	pei	<L34+sector_0
+	pea	#^L1
+	pea	#<L1
+	jsl	~~k_debug_long
+;		k_debug_integer("------- disk_read:RAM:count:",count);
+	.line	311
+	pei	<L34+count_0
+	pea	#^L1+30
+	pea	#<L1+30
+	jsl	~~k_debug_integer
+;
+;		if(sector == 0)
+	.line	313
+;		{
+	lda	<L34+sector_0
+	ora	<L34+sector_0+2
+	beq	L37
+	brl	L10032
+L37:
+	.line	314
+;			memcpy(buff,fake_device_mbr,512);
+	.line	315
+	pea	#<$200
+	lda	#<~~fake_device_mbr
+	sta	<R0
+	xref	_BEG_DATA
+	lda	#_BEG_DATA>>16
+	sta	<R0+2
+	pei	<R0+2
+	pei	<R0
+	pei	<L34+buff_0+2
+	pei	<L34+buff_0
+	jsl	~~memcpy
+;		}
+	.line	316
+;		else if(sector == 3)
+	brl	L10033
+L10032:
+	.line	317
+;		{
+	lda	<L34+sector_0
+	cmp	#<$3
+	bne	L38
+	lda	<L34+sector_0+2
+	cmp	#^$3
+L38:
+	beq	L39
+	brl	L10034
+L39:
+	.line	318
+;			memset(buff,0,512);
+	.line	319
+	pea	#<$200
+	pea	#<$0
+	pei	<L34+buff_0+2
+	pei	<L34+buff_0
+	jsl	~~memset
+;			memcpy(buff,fake_device_0600,sizeof(fake_device_0600));
+	.line	320
+	pea	#<$60
+	lda	#<~~fake_device_0600
+	sta	<R0
+	xref	_BEG_DATA
+	lda	#_BEG_DATA>>16
+	sta	<R0+2
+	pei	<R0+2
+	pei	<R0
+	pei	<L34+buff_0+2
+	pei	<L34+buff_0
+	jsl	~~memcpy
+;		}
+	.line	321
+;		else if(sector == 10)
+	brl	L10035
+L10034:
+	.line	322
+;		{
+	lda	<L34+sector_0
+	cmp	#<$a
+	bne	L40
+	lda	<L34+sector_0+2
+	cmp	#^$a
+L40:
+	beq	L41
+	brl	L10036
+L41:
+	.line	323
+;			memset(buff,0,512);
+	.line	324
+	pea	#<$200
+	pea	#<$0
+	pei	<L34+buff_0+2
+	pei	<L34+buff_0
+	jsl	~~memset
+;			memcpy(buff,fake_device_1400,sizeof(fake_device_1400));
+	.line	325
+	pea	#<$10
+	lda	#<~~fake_device_1400
+	sta	<R0
+	xref	_BEG_DATA
+	lda	#_BEG_DATA>>16
+	sta	<R0+2
+	pei	<R0+2
+	pei	<R0
+	pei	<L34+buff_0+2
+	pei	<L34+buff_0
+	jsl	~~memcpy
+;		}
+	.line	326
+;		else if(sector == 12)
+	brl	L10037
+L10036:
+	.line	327
+;		{
+	lda	<L34+sector_0
+	cmp	#<$c
+	bne	L42
+	lda	<L34+sector_0+2
+	cmp	#^$c
+L42:
+	beq	L43
+	brl	L10038
+L43:
+	.line	328
+;			memset(buff,0,512);
+	.line	329
+	pea	#<$200
+	pea	#<$0
+	pei	<L34+buff_0+2
+	pei	<L34+buff_0
+	jsl	~~memset
+;			memcpy(buff,fake_device_1800,sizeof(fake_device_1800));
+	.line	330
+	pea	#<$200
+	lda	#<~~fake_device_1800
+	sta	<R0
+	xref	_BEG_DATA
+	lda	#_BEG_DATA>>16
+	sta	<R0+2
+	pei	<R0+2
+	pei	<R0
+	pei	<L34+buff_0+2
+	pei	<L34+buff_0
+	jsl	~~memcpy
+;		}
+	.line	331
+;		else if(sector == 13)
+	brl	L10039
+L10038:
+	.line	332
+;		{
+	lda	<L34+sector_0
+	cmp	#<$d
+	bne	L44
+	lda	<L34+sector_0+2
+	cmp	#^$d
+L44:
+	beq	L45
+	brl	L10040
+L45:
+	.line	333
+;			memset(buff,0,512);
+	.line	334
+	pea	#<$200
+	pea	#<$0
+	pei	<L34+buff_0+2
+	pei	<L34+buff_0
+	jsl	~~memset
+;			memcpy(buff,fake_device_1A00,sizeof(fake_device_1A00));
+	.line	335
+	pea	#<$60
+	lda	#<~~fake_device_1A00
+	sta	<R0
+	xref	_BEG_DATA
+	lda	#_BEG_DATA>>16
+	sta	<R0+2
+	pei	<R0+2
+	pei	<R0
+	pei	<L34+buff_0+2
+	pei	<L34+buff_0
+	jsl	~~memcpy
+;		}
+	.line	336
+;		res = RES_OK;
+L10040:
+L10039:
+L10037:
+L10035:
+L10033:
+	.line	337
+	stz	<L35+res_1
+;		break;
+	.line	338
+	brl	L10030
+;
 ;	case 0x03 :
-	.line	206
-L10029:
+	.line	340
+L10041:
 ;		// translate the arguments here
 ;
 ;		//k_debugpointer( "------- disk_read:diskioDevices[pdrv]:",diskioDevices[pdrv]);
 ;
 ;		if(diskioDevices[pdrv]!=NULL)
-	.line	211
+	.line	345
 ;		{
 	lda	<L34+pdrv_0
 	and	#$ff
@@ -2578,32 +3097,32 @@ L10029:
 	lda	(<R1)
 	ldy	#$2
 	ora	(<R1),Y
-	bne	L37
-	brl	L10030
-L37:
-	.line	212
+	bne	L46
+	brl	L10042
+L46:
+	.line	346
 ;			//k_debugpointer( "------- disk_read:buff:",buff);
 ;
 ;			for(i=0;i<count;i++)
-	.line	215
+	.line	349
 	stz	<L35+i_1
-	brl	L10034
-L10033:
+	brl	L10046
+L10045:
 ;			{
-	.line	216
+	.line	350
 ;				//if(count > 1)
 ;				//{
 ;				//	k_debug_integer( "------- disk_read:dev:count:",i);
 ;				//}
 ;				diskioDevices[pdrv]->pfReader((sector + i) * 512,buff);
-	.line	221
+	.line	355
 	pei	<L34+buff_0+2
 	pei	<L34+buff_0
 	ldy	#$0
 	lda	<L35+i_1
-	bpl	L38
+	bpl	L47
 	dey
-L38:
+L47:
 	sta	<R1
 	sty	<R1+2
 	clc
@@ -2646,25 +3165,25 @@ L38:
 	xref	~~~lcal
 	jsl	~~~lcal
 ;				buff+=512;
-	.line	222
+	.line	356
 	clc
 	lda	#$200
 	adc	<L34+buff_0
 	sta	<L34+buff_0
-	bcc	L39
+	bcc	L48
 	inc	<L34+buff_0+2
-L39:
+L48:
 ;			}
-	.line	223
-L10031:
+	.line	357
+L10043:
 	inc	<L35+i_1
-L10034:
+L10046:
 	lda	<L35+i_1
 	cmp	<L34+count_0
-	bcs	L40
-	brl	L10033
-L40:
-L10032:
+	bcs	L49
+	brl	L10045
+L49:
+L10044:
 ;			//k_debugbyte_array("------- disk_read:buff:data:\r\n",buff,512);
 ;
 ;			//result = RAM_disk_read(buff, sector, count);
@@ -2672,24 +3191,24 @@ L10032:
 ;			// translate the reslut code here
 ;
 ;			res = RES_OK;
-	.line	230
+	.line	364
 	stz	<L35+res_1
 ;		}
-	.line	231
+	.line	365
 ;		break;
-L10030:
-	.line	232
-	brl	L10028
+L10042:
+	.line	366
+	brl	L10030
 ;
 ;	case 0x04 :
-	.line	234
-L10035:
+	.line	368
+L10047:
 ;		// translate the arguments here
 ;
 ;		//k_debugpointer( "------- disk_read:diskioDevices[pdrv]:",diskioDevices[pdrv]);
 ;
 ;		if(diskioDevices[pdrv]!=NULL)
-	.line	239
+	.line	373
 ;		{
 	lda	<L34+pdrv_0
 	and	#$ff
@@ -2705,32 +3224,32 @@ L10035:
 	lda	(<R1)
 	ldy	#$2
 	ora	(<R1),Y
-	bne	L41
-	brl	L10036
-L41:
-	.line	240
+	bne	L50
+	brl	L10048
+L50:
+	.line	374
 ;			//k_debugpointer( "------- disk_read:buff:",buff);
 ;
 ;			for(i=0;i<count;i++)
-	.line	243
+	.line	377
 	stz	<L35+i_1
-	brl	L10040
-L10039:
+	brl	L10052
+L10051:
 ;			{
-	.line	244
+	.line	378
 ;				//if(count > 1)
 ;				//{
 ;				//	k_debug_integer( "------- disk_read:dev:count:",i);
 ;				//}
 ;				diskioDevices[pdrv]->pfReader((sector + i),buff);
-	.line	249
+	.line	383
 	pei	<L34+buff_0+2
 	pei	<L34+buff_0
 	ldy	#$0
 	lda	<L35+i_1
-	bpl	L42
+	bpl	L51
 	dey
-L42:
+L51:
 	sta	<R0
 	sty	<R0+2
 	clc
@@ -2766,25 +3285,25 @@ L42:
 	xref	~~~lcal
 	jsl	~~~lcal
 ;				buff+=512;
-	.line	250
+	.line	384
 	clc
 	lda	#$200
 	adc	<L34+buff_0
 	sta	<L34+buff_0
-	bcc	L43
+	bcc	L52
 	inc	<L34+buff_0+2
-L43:
+L52:
 ;			}
-	.line	251
-L10037:
+	.line	385
+L10049:
 	inc	<L35+i_1
-L10040:
+L10052:
 	lda	<L35+i_1
 	cmp	<L34+count_0
-	bcs	L44
-	brl	L10039
-L44:
-L10038:
+	bcs	L53
+	brl	L10051
+L53:
+L10050:
 ;			//k_debugbyte_array("------- disk_read:buff:data:\r\n",buff,512);
 ;
 ;			//result = RAM_disk_read(buff, sector, count);
@@ -2792,18 +3311,18 @@ L10038:
 ;			// translate the reslut code here
 ;
 ;			res = RES_OK;
-	.line	258
+	.line	392
 	stz	<L35+res_1
 ;		}
-	.line	259
+	.line	393
 ;		break;
-L10036:
-	.line	260
-	brl	L10028
+L10048:
+	.line	394
+	brl	L10030
 ;
 ;	case DEV_MMC :
-	.line	262
-L10041:
+	.line	396
+L10053:
 ;		// translate the arguments here
 ;
 ;		//result = MMC_disk_read(buff, sector, count);
@@ -2812,11 +3331,11 @@ L10041:
 ;
 ;		//return res;
 ;		break;
-	.line	270
-	brl	L10028
+	.line	404
+	brl	L10030
 ;	case DEV_USB :
-	.line	271
-L10042:
+	.line	405
+L10054:
 ;		// translate the arguments here
 ;
 ;		//result = USB_disk_read(buff, sector, count);
@@ -2825,28 +3344,29 @@ L10042:
 ;
 ;		//return res;
 ;		break;
-	.line	279
-	brl	L10028
+	.line	413
+	brl	L10030
 ;	}
-	.line	280
-L10027:
+	.line	414
+L10029:
 	xref	~~~fsw
 	jsl	~~~fsw
-	dw	1
-	dw	4
-	dw	L10028-1
+	dw	0
+	dw	5
+	dw	L10030-1
+	dw	L10031-1
+	dw	L10053-1
+	dw	L10054-1
 	dw	L10041-1
-	dw	L10042-1
-	dw	L10029-1
-	dw	L10035-1
-L10028:
+	dw	L10047-1
+L10030:
 ;
 ;	//k_debugstring("------- disk_read exit\r\n");
 ;
 ;	return res;
-	.line	284
+	.line	418
 	lda	<L35+res_1
-L45:
+L54:
 	tay
 	lda	<L34+2
 	sta	<L34+2+12
@@ -2860,14 +3380,21 @@ L45:
 	tya
 	rtl
 ;}
-	.line	285
-	.endblock	285
+	.line	419
+	.endblock	419
 L34	equ	22
 L35	equ	17
 	ends
 	efunc
-	.endfunc	285,17,22
-	.line	285
+	.endfunc	419,17,22
+	.line	419
+	data
+L1:
+	db	$2D,$2D,$2D,$2D,$2D,$2D,$2D,$20,$64,$69,$73,$6B,$5F,$72,$65
+	db	$61,$64,$3A,$52,$41,$4D,$3A,$73,$65,$63,$74,$6F,$72,$3A,$00
+	db	$2D,$2D,$2D,$2D,$2D,$2D,$2D,$20,$64,$69,$73,$6B,$5F,$72,$65
+	db	$61,$64,$3A,$52,$41,$4D,$3A,$63,$6F,$75,$6E,$74,$3A,$00
+	ends
 ;
 ;
 ;
@@ -2884,18 +3411,18 @@ L35	equ	17
 ;	UINT count			/* Number of sectors to write */
 ;)
 ;{
-	.line	295
-	.line	301
+	.line	429
+	.line	435
 	code
 	xdef	~~disk_write
 	func
-	.function	301
+	.function	435
 ~~disk_write:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L46
+	sbc	#L56
 	tcs
 	phd
 	tcd
@@ -2903,12 +3430,15 @@ pdrv_0	set	4
 buff_0	set	6
 sector_0	set	10
 count_0	set	14
-	.block	301
+	.block	435
 ;	int i = 0;
 ;	DRESULT res = RES_PARERR;
 ;	int result;
 ;
-;	k_debug_integer("------- disk_write:dev:",pdrv);
+;	//k_debug_integer("------- disk_write:dev:",pdrv);
+;	//k_debug_integer("------- disk_write::count:",count);
+;
+;	switch (pdrv)
 i_1	set	0
 res_1	set	2
 result_1	set	4
@@ -2919,37 +3449,80 @@ result_1	set	4
 	.sym	buff,6,142,6,32
 	.sym	sector,10,18,6,32
 	.sym	count,14,16,6,16
-	stz	<L47+i_1
+	stz	<L57+i_1
 	lda	#$4
-	sta	<L47+res_1
-	.line	306
-	lda	<L46+pdrv_0
+	sta	<L57+res_1
+	.line	443
+	lda	<L56+pdrv_0
 	and	#$ff
-	pha
-	pea	#^L1
-	pea	#<L1
-	jsl	~~k_debug_integer
-;	k_debug_integer("------- disk_write::count:",count);
-	.line	307
-	pei	<L46+count_0
-	pea	#^L1+24
-	pea	#<L1+24
+	brl	L10055
+;	{
+	.line	444
+;	case 0x00:
+	.line	445
+L10057:
+;
+;		k_debug_long("------- disk_write:RAM:sector:",sector);
+	.line	447
+	pei	<L56+sector_0+2
+	pei	<L56+sector_0
+	pea	#^L55
+	pea	#<L55
+	jsl	~~k_debug_long
+;		k_debug_integer("------- disk_write:RAM:count:",count);
+	.line	448
+	pei	<L56+count_0
+	pea	#^L55+31
+	pea	#<L55+31
 	jsl	~~k_debug_integer
 ;
-;	switch (pdrv) {
-	.line	309
-	lda	<L46+pdrv_0
-	and	#$ff
-	brl	L10043
-	.line	309
+;
+;		k_debug_byte_array("------- disk_write:DATA:",(PBYTE)buff,512);
+	.line	451
+	pea	#^$200
+	pea	#<$200
+	pei	<L56+buff_0+2
+	pei	<L56+buff_0
+	pea	#^L55+61
+	pea	#<L55+61
+	jsl	~~k_debug_byte_array
+;		/*
+;		if(sector == 0)
+;		{
+;			memcpy(buff,fake_device_mbr,512);
+;		}
+;		else if(sector == 3)
+;		{
+;			memset(buff,0,512);
+;			memcpy(buff,fake_device_0600,sizeof(fake_device_0600));
+;		}
+;		else if(sector == 10)
+;		{
+;			memset(buff,0,512);
+;			memcpy(buff,fake_device_1400,sizeof(fake_device_1400));
+;		}
+;		*/
+;
+;		res = RES_OK;
+	.line	469
+	stz	<L57+res_1
+;
+;
+;		res = RES_OK;
+	.line	472
+	stz	<L57+res_1
+;		break;
+	.line	473
+	brl	L10056
+;
 ;	case 0x03 :
-	.line	310
-L10045:
+	.line	475
+L10058:
 ;
 ;		if(diskioDevices[pdrv] && diskioDevices[pdrv]->pfWriter)
-	.line	312
+	.line	477
 ;		{
-	lda	<L46+pdrv_0
+	lda	<L56+pdrv_0
 	and	#$ff
 	sta	<R1
 	lda	<R1
@@ -2963,10 +3536,10 @@ L10045:
 	lda	(<R1)
 	ldy	#$2
 	ora	(<R1),Y
-	bne	L49
-	brl	L10046
-L49:
-	lda	<L46+pdrv_0
+	bne	L59
+	brl	L10059
+L59:
+	lda	<L56+pdrv_0
 	and	#$ff
 	sta	<R1
 	lda	<R1
@@ -2986,35 +3559,35 @@ L49:
 	lda	[<R0],Y
 	ldy	#$2cc
 	ora	[<R0],Y
-	bne	L50
-	brl	L10046
-L50:
-	.line	313
+	bne	L60
+	brl	L10059
+L60:
+	.line	478
 ;			// translate the arguments here
 ;			for(i=0;i<count;i++)
-	.line	315
-	stz	<L47+i_1
-	brl	L10050
-L10049:
+	.line	480
+	stz	<L57+i_1
+	brl	L10063
+L10062:
 ;			{
-	.line	316
+	.line	481
 ;				result = diskioDevices[pdrv]->pfWriter((sector+(ULONG)i)*512L,(BYTE*)buff);
-	.line	317
-	pei	<L46+buff_0+2
-	pei	<L46+buff_0
+	.line	482
+	pei	<L56+buff_0+2
+	pei	<L56+buff_0
 	ldy	#$0
-	lda	<L47+i_1
-	bpl	L51
+	lda	<L57+i_1
+	bpl	L61
 	dey
-L51:
+L61:
 	sta	<R1
 	sty	<R1+2
 	clc
 	lda	<R1
-	adc	<L46+sector_0
+	adc	<L56+sector_0
 	sta	<R2
 	lda	<R1+2
-	adc	<L46+sector_0+2
+	adc	<L56+sector_0+2
 	sta	<R2+2
 	pei	<R2+2
 	pei	<R2
@@ -3025,7 +3598,7 @@ L51:
 	stx	<R0+2
 	pei	<R0+2
 	pei	<R0
-	lda	<L46+pdrv_0
+	lda	<L56+pdrv_0
 	and	#$ff
 	sta	<R3
 	lda	<R3
@@ -3055,73 +3628,73 @@ L51:
 	longa	on
 	lda	<R1
 	and	#$ff
-	sta	<L47+result_1
+	sta	<L57+result_1
 ;				if(result)
-	.line	318
+	.line	483
 ;				{
-	lda	<L47+result_1
-	bne	L52
-	brl	L10051
-L52:
-	.line	319
+	lda	<L57+result_1
+	bne	L62
+	brl	L10064
+L62:
+	.line	484
 ;					return RES_PARERR;
-	.line	320
+	.line	485
 	lda	#$4
-L53:
+L63:
 	tay
-	lda	<L46+2
-	sta	<L46+2+12
-	lda	<L46+1
-	sta	<L46+1+12
+	lda	<L56+2
+	sta	<L56+2+12
+	lda	<L56+1
+	sta	<L56+1+12
 	pld
 	tsc
 	clc
-	adc	#L46+12
+	adc	#L56+12
 	tcs
 	tya
 	rtl
 ;				}
-	.line	321
+	.line	486
 ;				buff+=512L;
-L10051:
-	.line	322
+L10064:
+	.line	487
 	clc
 	lda	#$200
-	adc	<L46+buff_0
-	sta	<L46+buff_0
-	bcc	L54
-	inc	<L46+buff_0+2
-L54:
+	adc	<L56+buff_0
+	sta	<L56+buff_0
+	bcc	L64
+	inc	<L56+buff_0+2
+L64:
 ;			}
-	.line	323
-L10047:
-	inc	<L47+i_1
-L10050:
-	lda	<L47+i_1
-	cmp	<L46+count_0
-	bcs	L55
-	brl	L10049
-L55:
-L10048:
+	.line	488
+L10060:
+	inc	<L57+i_1
+L10063:
+	lda	<L57+i_1
+	cmp	<L56+count_0
+	bcs	L65
+	brl	L10062
+L65:
+L10061:
 ;			// translate the result code here
 ;		}
-	.line	325
+	.line	490
 ;		res = 0;
-L10046:
-	.line	326
-	stz	<L47+res_1
+L10059:
+	.line	491
+	stz	<L57+res_1
 ;
 ;		break;
-	.line	328
-	brl	L10044
+	.line	493
+	brl	L10056
 ;	case 0x04 :
-	.line	329
-L10052:
+	.line	494
+L10065:
 ;
 ;		if(diskioDevices[pdrv] && diskioDevices[pdrv]->pfWriter)
-	.line	331
+	.line	496
 ;		{
-	lda	<L46+pdrv_0
+	lda	<L56+pdrv_0
 	and	#$ff
 	sta	<R1
 	lda	<R1
@@ -3135,10 +3708,10 @@ L10052:
 	lda	(<R1)
 	ldy	#$2
 	ora	(<R1),Y
-	bne	L56
-	brl	L10053
-L56:
-	lda	<L46+pdrv_0
+	bne	L66
+	brl	L10066
+L66:
+	lda	<L56+pdrv_0
 	and	#$ff
 	sta	<R1
 	lda	<R1
@@ -3158,39 +3731,39 @@ L56:
 	lda	[<R0],Y
 	ldy	#$2cc
 	ora	[<R0],Y
-	bne	L57
-	brl	L10053
-L57:
-	.line	332
+	bne	L67
+	brl	L10066
+L67:
+	.line	497
 ;			// translate the arguments here
 ;			for(i=0;i<count;i++)
-	.line	334
-	stz	<L47+i_1
-	brl	L10057
-L10056:
+	.line	499
+	stz	<L57+i_1
+	brl	L10070
+L10069:
 ;			{
-	.line	335
+	.line	500
 ;				result = diskioDevices[pdrv]->pfWriter(sector+((ULONG)i),(BYTE*)buff);
-	.line	336
-	pei	<L46+buff_0+2
-	pei	<L46+buff_0
+	.line	501
+	pei	<L56+buff_0+2
+	pei	<L56+buff_0
 	ldy	#$0
-	lda	<L47+i_1
-	bpl	L58
+	lda	<L57+i_1
+	bpl	L68
 	dey
-L58:
+L68:
 	sta	<R0
 	sty	<R0+2
 	clc
 	lda	<R0
-	adc	<L46+sector_0
+	adc	<L56+sector_0
 	sta	<R1
 	lda	<R0+2
-	adc	<L46+sector_0+2
+	adc	<L56+sector_0+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
-	lda	<L46+pdrv_0
+	lda	<L56+pdrv_0
 	and	#$ff
 	sta	<R2
 	lda	<R2
@@ -3220,56 +3793,56 @@ L58:
 	longa	on
 	lda	<R0
 	and	#$ff
-	sta	<L47+result_1
+	sta	<L57+result_1
 ;				if(result)
-	.line	337
+	.line	502
 ;				{
-	lda	<L47+result_1
-	bne	L59
-	brl	L10058
-L59:
-	.line	338
+	lda	<L57+result_1
+	bne	L69
+	brl	L10071
+L69:
+	.line	503
 ;					return RES_PARERR;
-	.line	339
+	.line	504
 	lda	#$4
-	brl	L53
+	brl	L63
 ;				}
-	.line	340
+	.line	505
 ;				buff+=512;
-L10058:
-	.line	341
+L10071:
+	.line	506
 	clc
 	lda	#$200
-	adc	<L46+buff_0
-	sta	<L46+buff_0
-	bcc	L60
-	inc	<L46+buff_0+2
-L60:
+	adc	<L56+buff_0
+	sta	<L56+buff_0
+	bcc	L70
+	inc	<L56+buff_0+2
+L70:
 ;			}
-	.line	342
-L10054:
-	inc	<L47+i_1
-L10057:
-	lda	<L47+i_1
-	cmp	<L46+count_0
-	bcs	L61
-	brl	L10056
-L61:
-L10055:
+	.line	507
+L10067:
+	inc	<L57+i_1
+L10070:
+	lda	<L57+i_1
+	cmp	<L56+count_0
+	bcs	L71
+	brl	L10069
+L71:
+L10068:
 ;			// translate the reslut code here
 ;		}
-	.line	344
+	.line	509
 ;		res = 0;
-L10053:
-	.line	345
-	stz	<L47+res_1
+L10066:
+	.line	510
+	stz	<L57+res_1
 ;
 ;		break;
-	.line	347
-	brl	L10044
+	.line	512
+	brl	L10056
 ;	case DEV_MMC :
-	.line	348
-L10059:
+	.line	513
+L10072:
 ;		// translate the arguments here
 ;
 ;		//result = MMC_disk_write(buff, sector, count);
@@ -3277,13 +3850,13 @@ L10059:
 ;		// translate the reslut code here
 ;
 ;		return res;
-	.line	355
-	lda	<L47+res_1
-	brl	L53
+	.line	520
+	lda	<L57+res_1
+	brl	L63
 ;
 ;	case DEV_USB :
-	.line	357
-L10060:
+	.line	522
+L10073:
 ;		// translate the arguments here
 ;
 ;		//result = USB_disk_write(buff, sector, count);
@@ -3291,44 +3864,47 @@ L10060:
 ;		// translate the reslut code here
 ;
 ;		return res;
-	.line	364
-	lda	<L47+res_1
-	brl	L53
+	.line	529
+	lda	<L57+res_1
+	brl	L63
 ;	}
-	.line	365
-L10043:
+	.line	530
+L10055:
 	xref	~~~fsw
 	jsl	~~~fsw
-	dw	1
-	dw	4
-	dw	L10044-1
-	dw	L10059-1
-	dw	L10060-1
-	dw	L10045-1
-	dw	L10052-1
-L10044:
+	dw	0
+	dw	5
+	dw	L10056-1
+	dw	L10057-1
+	dw	L10072-1
+	dw	L10073-1
+	dw	L10058-1
+	dw	L10065-1
+L10056:
 ;
 ;	//k_debugstring("------- disk_write exit\r\n");
 ;
 ;	return res;
-	.line	369
-	lda	<L47+res_1
-	brl	L53
+	.line	534
+	lda	<L57+res_1
+	brl	L63
 ;}
-	.line	370
-	.endblock	370
-L46	equ	22
-L47	equ	17
+	.line	535
+	.endblock	535
+L56	equ	22
+L57	equ	17
 	ends
 	efunc
-	.endfunc	370,17,22
-	.line	370
+	.endfunc	535,17,22
+	.line	535
 	data
-L1:
+L55:
 	db	$2D,$2D,$2D,$2D,$2D,$2D,$2D,$20,$64,$69,$73,$6B,$5F,$77,$72
-	db	$69,$74,$65,$3A,$64,$65,$76,$3A,$00,$2D,$2D,$2D,$2D,$2D,$2D
-	db	$2D,$20,$64,$69,$73,$6B,$5F,$77,$72,$69,$74,$65,$3A,$3A,$63
-	db	$6F,$75,$6E,$74,$3A,$00
+	db	$69,$74,$65,$3A,$52,$41,$4D,$3A,$73,$65,$63,$74,$6F,$72,$3A
+	db	$00,$2D,$2D,$2D,$2D,$2D,$2D,$2D,$20,$64,$69,$73,$6B,$5F,$77
+	db	$72,$69,$74,$65,$3A,$52,$41,$4D,$3A,$63,$6F,$75,$6E,$74,$3A
+	db	$00,$2D,$2D,$2D,$2D,$2D,$2D,$2D,$20,$64,$69,$73,$6B,$5F,$77
+	db	$72,$69,$74,$65,$3A,$44,$41,$54,$41,$3A,$00
 	ends
 ;
 ;#endif
@@ -3344,29 +3920,32 @@ L1:
 ;	void *buff		/* Buffer to send/receive control data */
 ;)
 ;{
-	.line	379
-	.line	384
+	.line	544
+	.line	549
 	code
 	xdef	~~disk_ioctl
 	func
-	.function	384
+	.function	549
 ~~disk_ioctl:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L63
+	sbc	#L73
 	tcs
 	phd
 	tcd
 pdrv_0	set	4
 cmd_0	set	6
 buff_0	set	8
-	.block	384
+	.block	549
 ;	DRESULT res;
 ;	int result;
 ;
-;	k_debug_hex("disk_ioctl::pdrv:",pdrv);
+;	//k_debug_hex("disk_ioctl::pdrv:",pdrv);
+;	//k_debug_hex("disk_ioctl::cmd:",cmd);
+;
+;	switch (pdrv)
 res_1	set	0
 result_1	set	2
 	.sym	res,0,5,1,16
@@ -3374,111 +3953,105 @@ result_1	set	2
 	.sym	pdrv,4,14,6,8
 	.sym	cmd,6,14,6,8
 	.sym	buff,8,129,6,32
-	.line	388
-	pei	<L63+pdrv_0
-	pea	#^L62
-	pea	#<L62
-	jsl	~~k_debug_hex
-;	k_debug_hex("disk_ioctl::cmd:",cmd);
-	.line	389
-	pei	<L63+cmd_0
-	pea	#^L62+18
-	pea	#<L62+18
-	jsl	~~k_debug_hex
-;
-;	switch (pdrv) {
-	.line	391
-	lda	<L63+pdrv_0
+	.line	556
+	lda	<L73+pdrv_0
 	and	#$ff
-	brl	L10061
-	.line	391
+	brl	L10074
+;	{
+	.line	557
+;	case 0x00:
+	.line	558
+L10076:
+;
+;		res = RES_OK;
+	.line	560
+	stz	<L74+res_1
+;		break;
+	.line	561
+	brl	L10075
+;
 ;	case 0x03 :
-	.line	392
-L10063:
+	.line	563
+L10077:
 ;
 ;		//diskioDevices[pdrv]->pfWriter(sector,(BYTE*)buff);
 ;
 ;		return RES_OK;
-	.line	396
+	.line	567
 	lda	#$0
-L66:
+L76:
 	tay
-	lda	<L63+2
-	sta	<L63+2+8
-	lda	<L63+1
-	sta	<L63+1+8
+	lda	<L73+2
+	sta	<L73+2+8
+	lda	<L73+1
+	sta	<L73+1+8
 	pld
 	tsc
 	clc
-	adc	#L63+8
+	adc	#L73+8
 	tcs
 	tya
 	rtl
 ;
 ;	case 0x04 :
-	.line	398
-L10064:
+	.line	569
+L10078:
 ;
 ;		//diskioDevices[pdrv]->pfWriter(sector,(BYTE*)buff);
 ;
 ;		return RES_OK;
-	.line	402
+	.line	573
 	lda	#$0
-	brl	L66
+	brl	L76
 ;	case DEV_MMC :
-	.line	403
-L10065:
+	.line	574
+L10079:
 ;
 ;		// Process of the command for the MMC/SD card
 ;
 ;		return res;
-	.line	407
-	lda	<L64+res_1
-	brl	L66
+	.line	578
+	lda	<L74+res_1
+	brl	L76
 ;
 ;	case DEV_USB :
-	.line	409
-L10066:
+	.line	580
+L10080:
 ;
 ;		// Process of the command the USB drive
 ;
 ;		return res;
-	.line	413
-	lda	<L64+res_1
-	brl	L66
+	.line	584
+	lda	<L74+res_1
+	brl	L76
 ;	}
-	.line	414
-L10061:
+	.line	585
+L10074:
 	xref	~~~fsw
 	jsl	~~~fsw
-	dw	1
-	dw	4
-	dw	L10062-1
-	dw	L10065-1
-	dw	L10066-1
-	dw	L10063-1
-	dw	L10064-1
-L10062:
+	dw	0
+	dw	5
+	dw	L10075-1
+	dw	L10076-1
+	dw	L10079-1
+	dw	L10080-1
+	dw	L10077-1
+	dw	L10078-1
+L10075:
 ;
 ;	return RES_PARERR;
-	.line	416
+	.line	587
 	lda	#$4
-	brl	L66
+	brl	L76
 ;}
-	.line	417
-	.endblock	417
-L63	equ	4
-L64	equ	1
+	.line	588
+	.endblock	588
+L73	equ	4
+L74	equ	1
 	ends
 	efunc
-	.endfunc	417,1,4
-	.line	417
-	data
-L62:
-	db	$64,$69,$73,$6B,$5F,$69,$6F,$63,$74,$6C,$3A,$3A,$70,$64,$72
-	db	$76,$3A,$00,$64,$69,$73,$6B,$5F,$69,$6F,$63,$74,$6C,$3A,$3A
-	db	$63,$6D,$64,$3A,$00
-	ends
+	.endfunc	588,1,4
+	.line	588
 ;#else
 ;
 ;
@@ -3565,51 +4138,63 @@ L62:
 ;
 ;#endif
 ;
-	.line	502
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\diskio.c",379
+	.line	673
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\diskio.c",544
 	xref	~~k_create_dos_device
-	xref	~~k_debug_hex
+	xref	~~k_debug_byte_array
+	xref	~~k_debug_long
 	xref	~~k_debug_integer
 	xref	~~k_mem_deallocate_heap
+	xref	~~memset
+	xref	~~memcpy
 	.sym	~~k_dos_get_device_status,~~k_dos_get_device_status,80,2,0
-	.sym	~~k_dos_get_device,~~k_dos_get_device,1098,2,32,122
-	.sym	~~k_dos_get_devices,~~k_dos_get_devices,9290,2,32,122
-	.sym	~~diskioDevices,~~diskioDevices,1130,3,32,122,6
-	.sym	~~k_create_dos_device,~~k_create_dos_device,1098,18,32,122
-	.sym	PDOSHANDLE,0,138,14,32,124
-	.sym	DOSHANDLE,0,10,14,80,124
-	.sym	PFXDOSDEVICE,0,138,14,32,122
-	.sym	FXDOSDEVICE,0,10,14,5744,122
+	.sym	~~k_dos_get_device,~~k_dos_get_device,1098,2,32,127
+	.sym	~~k_dos_get_devices,~~k_dos_get_devices,9290,2,32,127
+	.sym	~~fake_device_1A00,~~fake_device_1A00,110,3,0,96
+	.sym	~~fake_device_1800,~~fake_device_1800,110,3,0,512
+	.sym	~~fake_device_1400,~~fake_device_1400,110,3,0,16
+	.sym	~~fake_device_0600,~~fake_device_0600,110,3,0,96
+	.sym	~~fake_device_0400,~~fake_device_0400,110,3,0,5
+	.sym	~~fake_device_0200,~~fake_device_0200,110,3,0,5
+	.sym	~~fake_device_mbr,~~fake_device_mbr,110,3,0,512
+	.sym	~~diskioDevices,~~diskioDevices,1130,3,32,127,6
+	.sym	FILE,0,138,14,32,130
+	.sym	FILE_POINTER,0,10,14,112,130
+	.sym	~~k_create_dos_device,~~k_create_dos_device,1098,18,32,127
+	.sym	PDOSHANDLE,0,138,14,32,129
+	.sym	DOSHANDLE,0,10,14,80,129
+	.sym	PFXDOSDEVICE,0,138,14,32,127
+	.sym	FXDOSDEVICE,0,10,14,5744,127
 	.sym	DOSINITDEVICE,0,641,14,32
 	.sym	DOSSECTORWRITER,0,654,14,32
 	.sym	DOSSECTORREADER,0,654,14,32
-	.sym	PIDENTIFY_DEVICE_DATA,0,138,14,32,121
-	.sym	IDENTIFY_DEVICE_DATA,0,10,14,4096,121
-	.sym	PIDSECTOR,0,138,14,32,98
-	.sym	IDSECTOR,0,10,14,2048,98
-	.sym	PLFN,0,138,14,32,97
-	.sym	LFN,0,10,14,256,97
-	.sym	PFAT16ENTRYLONG,0,138,14,32,96
-	.sym	FAT16ENTRYLONG,0,10,14,288,96
-	.sym	PFAT16ENTRY,0,138,14,32,95
-	.sym	FAT16ENTRY,0,10,14,256,95
-	.sym	Fat16BootSector,0,10,14,4096,94
-	.sym	PPARTITIONTABLE,0,138,14,32,93
-	.sym	PARTITIONTABLE,0,10,14,128,93
-	.sym	PFATBOOTSECTOR,0,138,14,32,92
-	.sym	FATBOOTSECTOR,0,10,14,928,92
-	.sym	fat_BS_t,0,10,14,688,91
-	.sym	fat_extBS_16_t,0,10,14,192,90
-	.sym	PFAT32EXT,0,138,14,32,89
-	.sym	fat_extBS_32_t,0,10,14,416,89
-	.sym	P_FX_FAT_DIR_INFO,0,138,14,32,88
-	.sym	FX_FAT_DIR_INFO,0,10,14,256,88
-	.sym	PFILEINFO,0,138,14,32,87
-	.sym	FILEINFO,0,10,14,136,87
-	.sym	PDISKINFO,0,138,14,32,86
-	.sym	DISKINFO,0,10,14,416,86
-	.sym	PDIRENTRY,0,138,14,32,85
-	.sym	DIRENTRY,0,10,14,256,85
+	.sym	PIDENTIFY_DEVICE_DATA,0,138,14,32,126
+	.sym	IDENTIFY_DEVICE_DATA,0,10,14,4096,126
+	.sym	PIDSECTOR,0,138,14,32,103
+	.sym	IDSECTOR,0,10,14,2048,103
+	.sym	PLFN,0,138,14,32,102
+	.sym	LFN,0,10,14,256,102
+	.sym	PFAT16ENTRYLONG,0,138,14,32,101
+	.sym	FAT16ENTRYLONG,0,10,14,288,101
+	.sym	PFAT16ENTRY,0,138,14,32,100
+	.sym	FAT16ENTRY,0,10,14,256,100
+	.sym	Fat16BootSector,0,10,14,4096,99
+	.sym	PPARTITIONTABLE,0,138,14,32,98
+	.sym	PARTITIONTABLE,0,10,14,128,98
+	.sym	PFATBOOTSECTOR,0,138,14,32,97
+	.sym	FATBOOTSECTOR,0,10,14,928,97
+	.sym	fat_BS_t,0,10,14,688,96
+	.sym	fat_extBS_16_t,0,10,14,192,95
+	.sym	PFAT32EXT,0,138,14,32,94
+	.sym	fat_extBS_32_t,0,10,14,416,94
+	.sym	P_FX_FAT_DIR_INFO,0,138,14,32,93
+	.sym	FX_FAT_DIR_INFO,0,10,14,256,93
+	.sym	PFILEINFO,0,138,14,32,92
+	.sym	FILEINFO,0,10,14,136,92
+	.sym	PDISKINFO,0,138,14,32,91
+	.sym	DISKINFO,0,10,14,416,91
+	.sym	PDIRENTRY,0,138,14,32,90
+	.sym	DIRENTRY,0,10,14,256,90
 	.sym	~~disk_ioctl,~~disk_ioctl,69,2,0
 	.sym	~~disk_write,~~disk_write,69,2,0
 	.sym	~~disk_read,~~disk_read,69,2,0
@@ -3617,110 +4202,121 @@ L62:
 	.sym	~~disk_initialize,~~disk_initialize,78,2,0
 	.sym	DRESULT,0,5,14,16
 	.sym	DSTATUS,0,14,14,8
-	.sym	DEVICEDRIVER_COMMAND,0,656,14,32
+	.sym	PIRQCHAIN,0,138,14,32,89
+	.sym	IRQCHAIN,0,10,14,128,89
+	.sym	DEVICEDRIVER_COMMAND,0,654,14,32
 	.sym	DEVICEDRIVER_UNLOAD,0,654,14,32
-	.sym	DEVICEDRIVER_WRITE,0,656,14,32
-	.sym	DEVICEDRIVER_READ,0,656,14,32
+	.sym	DEVICEDRIVER_WRITE,0,654,14,32
+	.sym	DEVICEDRIVER_READ,0,654,14,32
 	.sym	DEVICEDRIVER_LOAD,0,654,14,32
-	.sym	DEVICEDRIVER_IRQ,0,654,14,32
-	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,84
-	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,84
-	.sym	GETDRIVERDEF,0,8842,14,32,83
-	.sym	PFX_DEVICE_DRIVER,0,138,14,32,83
-	.sym	FX_DEVICE_DRIVER,0,10,14,776,83
-	.sym	~~k_debug_hex,~~k_debug_hex,65,18,0
+	.sym	DEVICEDRIVER_IRQ,0,641,14,32
+	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,88
+	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,88
+	.sym	GETDRIVERDEF,0,8842,14,32,87
+	.sym	PFX_DEVICE_DRIVER,0,138,14,32,87
+	.sym	FX_DEVICE_DRIVER,0,10,14,776,87
+	.sym	~~k_debug_byte_array,~~k_debug_byte_array,65,18,0
+	.sym	~~k_debug_long,~~k_debug_long,65,18,0
 	.sym	~~k_debug_integer,~~k_debug_integer,65,18,0
-	.sym	PSEGMENTHEADER,0,138,14,32,82
-	.sym	SEGMENTHEADER,0,10,14,160,82
-	.sym	PDEBUGBYTEBITS,0,138,14,32,81
-	.sym	DEBUGBYTEBITS,0,10,14,8,81
-	.sym	PFXENVIRONMENT,0,138,14,32,80
-	.sym	FXENVIRONMENT,0,10,14,96,80
-	.sym	PFXZEROPAGE,0,138,14,32,79
-	.sym	FXZEROPAGE,0,10,14,824,79
+	.sym	PSEGMENTHEADER,0,138,14,32,86
+	.sym	SEGMENTHEADER,0,10,14,160,86
+	.sym	PDEBUGBYTEBITS,0,138,14,32,85
+	.sym	DEBUGBYTEBITS,0,10,14,8,85
+	.sym	PFXENVIRONMENT,0,138,14,32,84
+	.sym	FXENVIRONMENT,0,10,14,96,84
+	.sym	PFXZEROPAGE,0,138,14,32,83
+	.sym	FXZEROPAGE,0,10,14,720,83
+	.sym	IRQBUFFER,0,10,14,32,82
 	.sym	KERNELTRAPCALL,0,641,14,32
-	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,78
-	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,78
+	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,81
+	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,81
 	.sym	FRESULT,0,5,14,16
-	.sym	MKFS_PARM,0,10,14,80,77
-	.sym	FILINFO,0,10,14,2224,76
-	.sym	DIR,0,10,14,416,75
-	.sym	FIL,0,10,14,4400,74
-	.sym	FFOBJID,0,10,14,128,73
-	.sym	FATFS,0,10,14,4504,72
+	.sym	MKFS_PARM,0,10,14,80,80
+	.sym	FILINFO,0,10,14,2224,79
+	.sym	DIR,0,10,14,416,78
+	.sym	FIL,0,10,14,4400,77
+	.sym	FFOBJID,0,10,14,128,76
+	.sym	FATFS,0,10,14,4504,75
 	.sym	LBA_t,0,18,14,32
 	.sym	FSIZE_t,0,18,14,32
 	.sym	TCHAR,0,14,14,8
-	.sym	PCOMMANDARGS,0,138,14,32,71
-	.sym	COMMANDARGS,0,10,14,64,71
+	.sym	PCOMMANDARGS,0,138,14,32,74
+	.sym	COMMANDARGS,0,10,14,64,74
 	.sym	PTOKENIZESTATE,0,133,14,32
 	.sym	TOKENIZESTATE,0,5,14,16
-	.sym	PTOKEN,0,138,14,32,70
-	.sym	TOKEN,0,10,14,64,70
+	.sym	PTOKEN,0,138,14,32,73
+	.sym	TOKEN,0,10,14,64,73
 	.sym	PTOKENTYPE,0,133,14,32
 	.sym	TOKENTYPE,0,5,14,16
 	.sym	FXCommandHandler,0,656,14,32
-	.sym	PCONSOLECTX,0,138,14,32,69
-	.sym	CONSOLECTX,0,10,14,1144,69
-	.sym	PSPINNERCTX,0,138,14,32,68
-	.sym	SPINNERCTX,0,10,14,48,68
-	.sym	HCLIP,0,138,14,32,67
-	.sym	PCLIPBOARD_DATA,0,138,14,32,67
-	.sym	CLIPBOARD_DATA,0,10,14,168,67
-	.sym	PEVENTMANAGER,0,138,14,32,66
-	.sym	EVENTMANAGER,0,10,14,192,66
+	.sym	PCONSOLECTX,0,138,14,32,72
+	.sym	CONSOLECTX,0,10,14,1144,72
+	.sym	PSPINNERCTX,0,138,14,32,71
+	.sym	SPINNERCTX,0,10,14,48,71
+	.sym	HCLIP,0,138,14,32,70
+	.sym	PCLIPBOARD_DATA,0,138,14,32,70
+	.sym	CLIPBOARD_DATA,0,10,14,168,70
+	.sym	PEVENTMANAGER,0,138,14,32,69
+	.sym	EVENTMANAGER,0,10,14,192,69
 	.sym	EV_RUN,0,656,14,32
 	.sym	EV_QUERY_METRIC,0,656,14,32
 	.sym	EV_CONFIGURE,0,656,14,32
 	.sym	EV_UNINIT,0,641,14,32
 	.sym	EV_INIT,0,8833,14,32
-	.sym	PMOUSE_MSG_STATE,0,138,14,32,65
-	.sym	MOUSE_MSG_STATE,0,10,14,184,65
-	.sym	PFXEVENTPROCESS,0,138,14,32,64
-	.sym	FXEVENTPROCESS,0,10,14,64,64
-	.sym	PMARSHALDATA,0,139,14,32,63
-	.sym	MARSHALDATA,0,11,14,32,63
+	.sym	PMOUSE_MSG_STATE,0,138,14,32,68
+	.sym	MOUSE_MSG_STATE,0,10,14,184,68
+	.sym	PFXEVENTPROCESS,0,138,14,32,67
+	.sym	FXEVENTPROCESS,0,10,14,64,67
+	.sym	FXASYNCPROCESS,0,641,14,32
+	.sym	PMARSHALDATA,0,139,14,32,66
+	.sym	MARSHALDATA,0,11,14,32,66
 	.sym	FXIDLEPROCESS,0,641,14,32
 	.sym	FXEventProc,0,641,14,32
-	.sym	PMOUSEMSGDATA,0,138,14,32,62
-	.sym	MOUSEMSGDATA,0,10,14,64,62
+	.sym	PMOUSEMSGDATA,0,138,14,32,65
+	.sym	MOUSEMSGDATA,0,10,14,64,65
 	.sym	MSGIRQ,0,5,14,16
-	.sym	MAINLOOPARGS,0,10,14,16,61
-	.sym	PEACHCHILD_MSG,0,138,14,32,60
-	.sym	EACHCHILD_MSG,0,10,14,64,60
-	.sym	PMSGBOX_DATA,0,138,14,32,59
-	.sym	MSGBOX_DATA,0,10,14,96,59
-	.sym	PDESKTOP_DATA,0,138,14,32,58
-	.sym	DESKTOP_DATA,0,10,14,64,58
-	.sym	PWINDOWMANAGER,0,138,14,32,57
-	.sym	WINDOWMANAGER,0,10,14,160,57
+	.sym	MAINLOOPARGS,0,10,14,16,64
+	.sym	PEACHCHILD_MSG,0,138,14,32,63
+	.sym	EACHCHILD_MSG,0,10,14,64,63
+	.sym	PMSGBOX_DATA,0,138,14,32,62
+	.sym	MSGBOX_DATA,0,10,14,96,62
+	.sym	PDESKTOP_DATA,0,138,14,32,61
+	.sym	DESKTOP_DATA,0,10,14,64,61
+	.sym	PWINDOWMANAGER,0,138,14,32,60
+	.sym	WINDOWMANAGER,0,10,14,160,60
 	.sym	WM_DOPROCS,0,641,14,32
 	.sym	WM_QUERY_METRIC,0,656,14,32
 	.sym	WM_CONFIGURE,0,656,14,32
 	.sym	WM_HANDLE_EVENT,0,8833,14,32
 	.sym	WM_EVENTS,0,641,14,32
-	.sym	PCUR_PALETTE_MAP,0,138,14,32,56
-	.sym	CUR_PALETTE_MAP,0,10,14,400,56
-	.sym	PCLICKDETECTED,0,138,14,32,55
-	.sym	CLICKDETECTED,0,10,14,64,55
+	.sym	PCUR_PALETTE_MAP,0,138,14,32,59
+	.sym	CUR_PALETTE_MAP,0,10,14,400,59
+	.sym	PCLICKDETECTED,0,138,14,32,58
+	.sym	CLICKDETECTED,0,10,14,64,58
 	.sym	OBJECTCLICKED,0,641,14,32
-	.sym	PIPCPORT,0,138,14,32,54
-	.sym	IPCPORT,0,10,14,144,54
+	.sym	PALLOCATIONHEADER,0,138,14,32,57
+	.sym	ALLOCATIONHEADER,0,10,14,80,57
+	.sym	PIPCPORT,0,138,14,32,56
+	.sym	IPCPORT,0,10,14,144,56
 	.sym	~~k_mem_deallocate_heap,~~k_mem_deallocate_heap,65,18,0
 	.sym	MemoryCallback,0,641,14,32
-	.sym	PFXMEMORYMAP,0,138,14,32,53
-	.sym	FXMEMORYMAP,0,10,14,2072,53
-	.sym	UMM_HEAP_INFO,0,10,14,256,52
+	.sym	PFXMEMORYMAP,0,138,14,32,55
+	.sym	FXMEMORYMAP,0,10,14,2072,55
+	.sym	UMM_HEAP_INFO,0,10,14,256,54
 	.sym	FOREACHNODEUNTIL,0,654,14,32
 	.sym	FOREACHNODE,0,641,14,32
-	.sym	PEXECUTIVE,0,138,14,32,51
-	.sym	EXECUTIVE,0,10,14,128,51
+	.sym	PEXECUTIVE,0,138,14,32,53
+	.sym	EXECUTIVE,0,10,14,128,53
 	.sym	EX_QUERY_METRIC,0,656,14,32
 	.sym	EX_CONFIGURE,0,656,14,32
 	.sym	EX_UNINIT,0,641,14,32
 	.sym	EX_INIT,0,8833,14,32
-	.sym	PFXSTRING,0,138,14,32,50
-	.sym	FXSTRING,0,10,14,64,50
+	.sym	PFXSTRING,0,138,14,32,52
+	.sym	FXSTRING,0,10,14,64,52
+	.sym	PFXRFHEADER_STRING_ENTRY,0,138,14,32,51
+	.sym	FXRFHEADER_STRING_ENTRY,0,10,14,40,51
+	.sym	PFXRFHEADER_STRING,0,138,14,32,50
+	.sym	FXRFHEADER_STRING,0,10,14,32,50
 	.sym	PFXRFHEADER_FONT,0,138,14,32,49
 	.sym	FXRFHEADER_FONT,0,10,14,144,49
 	.sym	PFXRFHEADER,0,138,14,32,48
@@ -3798,9 +4394,9 @@ L62:
 	.sym	CONSOLE_CONTROL,0,10,14,448,18
 	.sym	FXProcessProc,0,641,14,32
 	.sym	PFXCMDMESSAGE,0,138,14,32,17
-	.sym	FXCMDMESSAGE,0,10,14,304,17
+	.sym	FXCMDMESSAGE,0,10,14,312,17
 	.sym	PFXOSMESSAGE,0,138,14,32,16
-	.sym	FXOSMESSAGE,0,10,14,304,16
+	.sym	FXOSMESSAGE,0,10,14,312,16
 	.sym	PINT_REGS,0,138,14,32,15
 	.sym	INT_REGS,0,10,14,104,15
 	.sym	TASK_STACK,0,10,14,32,14
@@ -3847,6 +4443,7 @@ L62:
 	.sym	HRESULT,0,18,14,32
 	.sym	LPWCHAR,0,144,14,32
 	.sym	WCHAR,0,16,14,16
+	.sym	HSTRINGTABLE,0,129,14,32
 	.sym	HCOLOR,0,129,14,32
 	.sym	HFONT,0,129,14,32
 	.sym	HDC,0,129,14,32
@@ -3874,8 +4471,16 @@ L62:
 	.sym	LPSTR,0,142,14,32
 	.sym	LPCHAR,0,142,14,32
 	.sym	CHAR,0,14,14,8
+	.sym	PUINT_32,0,146,14,32
+	.sym	UINT_32,0,18,14,32
+	.sym	PUINT_16,0,144,14,32
+	.sym	UINT_16,0,16,14,16
+	.sym	PUINT_8,0,142,14,32
+	.sym	UINT_8,0,14,14,8
 	.sym	LPVOID,0,129,14,32
 	.sym	VOID,0,1,14,32
+	.sym	~~memset,~~memset,1089,18,32
+	.sym	~~memcpy,~~memcpy,1089,18,32
 	.sym	Boolean_T,0,5,14,16
 	.sym	ldiv_t,0,10,14,64,2
 	.sym	div_t,0,10,14,32,1

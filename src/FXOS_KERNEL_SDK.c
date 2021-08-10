@@ -1,6 +1,6 @@
 /*
  * FXOS_KERNEL_SDK.c
- * Jul 7, 2021 9:34:32 PM
+ * Jul 29, 2021 10:56:51 PM
  */
 
 #include "fxos.h"
@@ -79,7 +79,7 @@ BOOL UnregisterIdleProc(HANDLE hIdleProc)
 * Subsystem:KERNEL
 *
 */
-VOID RaiseException(ULONG ctxId,ULONG errorId,LPVOID exceptionMessage,UINT exMsgSize)
+VOID RaiseException(LPVOID ctxId,ULONG errorId,LPVOID exceptionMessage,UINT exMsgSize)
 {
     ((RAISEEXCEPTION)CALL_KERNEL_API(EXPORT_KERNEL_RAISEEXCEPTION))(ctxId,errorId,exceptionMessage,exMsgSize);
 }
@@ -273,13 +273,13 @@ void DebugHexInteger(char* debugString,UINT n)
 
 /*
 *
-* Name:GetMouseClientPoint
+* Name:DebugIntegerArray
 * Subsystem:KERNEL
 *
 */
-void GetMouseClientPoint(char* debugString,UINT* n,UINT size)
+void DebugIntegerArray(char* debugString,UINT* n,UINT size)
 {
-    ((GETMOUSECLIENTPOINT)CALL_KERNEL_API(EXPORT_KERNEL_GETMOUSECLIENTPOINT))(debugString,n,size);
+    ((DEBUGINTEGERARRAY)CALL_KERNEL_API(EXPORT_KERNEL_DEBUGINTEGERARRAY))(debugString,n,size);
 }
 
 /*
@@ -482,6 +482,17 @@ VOID DebugOff(VOID)
 
 /*
 *
+* Name:GetMilliseconds
+* Subsystem:KERNEL
+*
+*/
+ULONG GetMilliseconds(VOID)
+{
+    return ((GETMILLISECONDS)CALL_KERNEL_API(EXPORT_KERNEL_GETMILLISECONDS))();
+}
+
+/*
+*
 * Name:GetRTCHour
 * Subsystem:KERNEL
 *
@@ -610,6 +621,17 @@ void GetHardwareVersionMajor(char* buffer)
 void GetHardwareVersionMinor(char* buffer)
 {
     ((GETHARDWAREVERSIONMINOR)CALL_KERNEL_API(EXPORT_KERNEL_GETHARDWAREVERSIONMINOR))(buffer);
+}
+
+/*
+*
+* Name:GetHardwareRelease
+* Subsystem:KERNEL
+*
+*/
+void GetHardwareRelease(char* buffer)
+{
+    ((GETHARDWARERELEASE)CALL_KERNEL_API(EXPORT_KERNEL_GETHARDWARERELEASE))(buffer);
 }
 
 /*
@@ -852,6 +874,28 @@ VOID IPCWriteIntegerPort(PIPCPORT port,UINT data)
 VOID IPCWriteLongPort(PIPCPORT port,ULONG data)
 {
     ((IPCWRITELONGPORT)CALL_KERNEL_API(EXPORT_KERNEL_IPCWRITELONGPORT))(port,data);
+}
+
+/*
+*
+* Name:SetMemoryBlockVirtual
+* Subsystem:KERNEL
+*
+*/
+HANDLE SetMemoryBlockVirtual(LPVOID memBlock,UINT attr)
+{
+    return ((SETMEMORYBLOCKVIRTUAL)CALL_KERNEL_API(EXPORT_KERNEL_SETMEMORYBLOCKVIRTUAL))(memBlock,attr);
+}
+
+/*
+*
+* Name:SetMemoryBlockUser
+* Subsystem:KERNEL
+*
+*/
+BOOL SetMemoryBlockUser(LPVOID memBlock,UINT userId)
+{
+    return ((SETMEMORYBLOCKUSER)CALL_KERNEL_API(EXPORT_KERNEL_SETMEMORYBLOCKUSER))(memBlock,userId);
 }
 
 /*
@@ -1171,6 +1215,17 @@ PFXNODELIST NodeListClear(PFXNODELIST nodelist)
 PFXNODE NodeListFindByName(PFXNODELIST list,LPCSTR name)
 {
     return ((NODELISTFINDBYNAME)CALL_KERNEL_API(EXPORT_KERNEL_NODELISTFINDBYNAME))(list,name);
+}
+
+/*
+*
+* Name:NodeListFindById
+* Subsystem:KERNEL
+*
+*/
+PFXNODE NodeListFindById(PFXNODELIST list,ULONG objId)
+{
+    return ((NODELISTFINDBYID)CALL_KERNEL_API(EXPORT_KERNEL_NODELISTFINDBYID))(list,objId);
 }
 
 /*

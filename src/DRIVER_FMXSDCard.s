@@ -3,9 +3,9 @@ R0	equ	1
 R1	equ	5
 R2	equ	9
 R3	equ	13
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\drivers\DRIVER_FMXSDCard.c",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers\DRIVER_FMXSDCard.c",0
 ;#include "fxos.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stddef.h",0
 	.line	88
@@ -23,14 +23,14 @@ R3	equ	13
 	.member	frac,16,16,8,16
 	.eos
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",4
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",4
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\ctype.h",0
 	.line	103
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
 	.stag	_fx_bytebits,8,4
 	.member	b7,0,14,17,1
 	.member	b6,1,14,17,1
@@ -104,7 +104,7 @@ R3	equ	13
 	.member	YH,88,14,8,8
 	.member	YL,96,14,8,8
 	.eos
-	.stag	_fx_eventMessage,304,16
+	.stag	_fx_eventMessage,312,16
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -112,8 +112,9 @@ R3	equ	13
 	.member	pheap,112,129,8,32
 	.member	msgTime,144,18,8,32
 	.member	data,176,110,8,0,16
+	.member	attr,304,14,8,8
 	.eos
-	.stag	_fx_cmdMessage,304,17
+	.stag	_fx_cmdMessage,312,17
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -125,6 +126,7 @@ R3	equ	13
 	.member	parameter1,208,18,8,32
 	.member	parameter2,240,18,8,32
 	.member	parameter3,272,18,8,32
+	.member	attr,304,14,8,8
 	.eos
 	.stag	_fx_console_ctl,448,18
 	.member	maxCols,0,5,8,16
@@ -467,37 +469,49 @@ R3	equ	13
 	.member	height,128,14,8,8
 	.member	width,136,14,8,8
 	.eos
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",8
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstringtable.h",0
-	.line	89
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",9
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fmx_vicky.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fmx_vicky.h",11
+	.stag	_fx_resource_string,32,50
+	.member	locale,0,110,8,0,2
+	.member	entries,16,16,8,16
+	.eos
+	.stag	_fx_resource_string_entry,40,51
+	.member	index,0,16,8,16
+	.member	length,16,16,8,16
+	.member	data,32,14,8,8
+	.eos
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",8
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstringtable.h",0
+	.line	90
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",9
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",11
 	.line	72
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",6
 	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",16
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",16
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",11
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",6
-	.stag	_fx_api_call_table,8192,50
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",11
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",6
+	.stag	_fx_api_call_table,8192,52
 	.member	call_table,0,1121,8,32,256
 	.eos
-	.stag	_fx_zero_page,824,51
+	.stag	_fx_zero_page_irq_data,32,53
+	.member	data,0,110,8,0,4
+	.eos
+	.stag	_fx_zero_page,720,54
 	.member	fxos_mouse_byte_0,0,14,8,8
 	.member	fxos_mouse_byte_1,8,14,8,8
 	.member	fxos_mouse_byte_2,16,14,8,8
@@ -512,42 +526,37 @@ R3	equ	13
 	.member	fxos_mouse_ctl,88,14,8,8
 	.member	fxos_mouse_index,96,14,8,8
 	.member	fxos_mouse_status,104,14,8,8
-	.member	fxos_mouse_dbg_1,112,18,8,32
-	.member	fxos_mouse_dbg_2,144,18,8,32
-	.member	fxos_mouse_dbg_3,176,18,8,32
-	.member	fxos_vicky_byte_0,208,14,8,8
-	.member	fxos_vicky_byte_1,216,14,8,8
-	.member	fxos_vicky_byte_2,224,14,8,8
-	.member	VersionMajor,232,16,8,16
-	.member	VersionMinor,248,16,8,16
-	.member	VersionRelease,264,16,8,16
-	.member	topMemory,280,18,8,32
-	.member	bottomMemory,312,18,8,32
-	.member	availableMemory,344,18,8,32
-	.member	availableMemoryK,376,18,8,32
-	.member	availableHeapMemory,408,18,8,32
-	.member	availableHeapMemoryK,440,18,8,32
-	.member	fxos_console_row,472,16,8,16
-	.member	fxos_console_col,488,16,8,16
-	.member	executive,504,129,8,32
-	.member	eventmanager,536,129,8,32
-	.member	devicemanager,568,129,8,32
-	.member	windowmanager,600,129,8,32
-	.member	fxos_kernel_api,632,138,8,32,50
-	.member	fxos_dos_api,664,138,8,32,50
-	.member	fxos_gfx_api,696,138,8,32,50
-	.member	fxos_gui_api,728,138,8,32,50
-	.member	fxos_con_api,760,138,8,32,50
-	.member	fxos_reserved_2_api,792,138,8,32,50
+	.member	Endianness,112,16,8,16
+	.member	VersionMajor,128,16,8,16
+	.member	VersionMinor,144,16,8,16
+	.member	VersionRelease,160,16,8,16
+	.member	topMemory,176,18,8,32
+	.member	bottomMemory,208,18,8,32
+	.member	availableMemory,240,18,8,32
+	.member	availableMemoryK,272,18,8,32
+	.member	availableHeapMemory,304,18,8,32
+	.member	availableHeapMemoryK,336,18,8,32
+	.member	fxos_console_row,368,16,8,16
+	.member	fxos_console_col,384,16,8,16
+	.member	executive,400,129,8,32
+	.member	eventmanager,432,129,8,32
+	.member	devicemanager,464,129,8,32
+	.member	windowmanager,496,129,8,32
+	.member	fxos_kernel_api,528,138,8,32,52
+	.member	fxos_dos_api,560,138,8,32,52
+	.member	fxos_gfx_api,592,138,8,32,52
+	.member	fxos_gui_api,624,138,8,32,52
+	.member	fxos_con_api,656,138,8,32,52
+	.member	fxos_reserved_2_api,688,138,8,32,52
 	.eos
-	.stag	_fx_environment,96,52
+	.stag	_fx_environment,96,55
 	.member	variables,0,142,8,32
 	.member	reserved1,32,5,8,16
 	.member	reserved2,48,5,8,16
 	.member	reserved3,64,5,8,16
 	.member	reserved4,80,5,8,16
 	.eos
-	.stag	_debug_byte_bits,8,53
+	.stag	_debug_byte_bits,8,56
 	.member	bit7,0,14,17,1
 	.member	bit6,1,14,17,1
 	.member	bit5,2,14,17,1
@@ -557,7 +566,7 @@ R3	equ	13
 	.member	bit1,6,14,17,1
 	.member	bit0,7,14,17,1
 	.eos
-	.stag	_k_segmentheader,160,54
+	.stag	_k_segmentheader,160,57
 	.member	version_major,0,14,8,8
 	.member	version_minor,8,14,8,8
 	.member	length,16,5,8,16
@@ -566,14 +575,14 @@ R3	equ	13
 	.member	segment_size,96,7,8,32
 	.member	main_entry_addr,128,7,8,32
 	.eos
-	.stag	_fx_device_driver,776,55
+	.stag	_fx_device_driver,776,58
 	.member	name,0,110,8,0,32
 	.member	version,256,110,8,0,16
 	.member	hmajor,384,110,8,0,8
 	.member	hminor,448,110,8,0,8
 	.member	type,512,14,8,8
 	.member	designation,520,110,8,0,6
-	.member	reserved_1,568,16,8,16
+	.member	irq_ctl,568,16,8,16
 	.member	f_driver_irq,584,129,8,32
 	.member	driver_context,616,129,8,32
 	.member	f_driver_load,648,129,8,32
@@ -581,14 +590,14 @@ R3	equ	13
 	.member	f_driver_write,712,129,8,32
 	.member	f_driver_unload,744,129,8,32
 	.eos
-	.stag	_fx_block_device_driver,808,56
+	.stag	_fx_block_device_driver,808,59
 	.member	name,0,110,8,0,32
 	.member	version,256,110,8,0,16
 	.member	hmajor,384,110,8,0,8
 	.member	hminor,448,110,8,0,8
 	.member	type,512,14,8,8
 	.member	designation,520,110,8,0,6
-	.member	reserved_1,568,16,8,16
+	.member	irq_ctl,568,16,8,16
 	.member	f_driver_irq,584,129,8,32
 	.member	driver_context,616,129,8,32
 	.member	f_driver_load,648,129,8,32
@@ -597,73 +606,76 @@ R3	equ	13
 	.member	f_driver_unload,744,129,8,32
 	.member	f_driver_command,776,129,8,32
 	.eos
-	.line	400
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",22
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",0
+	.stag	_k_irq_chain,128,60
+	.member	handlers,0,5217,8,32,4
+	.eos
+	.line	490
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",22
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
 	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",12
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",12
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",7
-	.stag	_fx_string,64,57
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",7
+	.stag	_fx_string,64,61
 	.member	size,0,16,8,16
 	.member	pos,16,5,8,16
 	.member	buffer,32,142,8,32
 	.eos
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",17
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",17
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",5
-	.stag	_fxos_executive_vtable,128,58
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",5
+	.stag	_fxos_executive_vtable,128,62
 	.member	Init,0,8833,8,32
 	.member	Configure,32,656,8,32
 	.member	Query,64,656,8,32
 	.member	Uninit,96,641,8,32
 	.eos
 	.line	86
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.line	208
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",8
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",8
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos_build_parameters.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_build_parameters.h",0
 	.line	35
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",8
-	.stag	UMM_HEAP_INFO_t,256,59
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",8
+	.stag	UMM_HEAP_INFO_t,256,63
 	.member	totalEntries,0,18,8,32
 	.member	usedEntries,32,18,8,32
 	.member	freeEntries,64,18,8,32
@@ -674,42 +686,48 @@ R3	equ	13
 	.member	blockSize,224,18,8,32
 	.eos
 	.line	199
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",11
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",11
 	.line	24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",7
-	.stag	_fx_memory_map,2072,60
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",7
+	.stag	_fx_memory_map,2072,64
 	.member	availableMemory,0,18,8,32
 	.member	valid_segments,32,110,8,0,255
 	.eos
-	.stag	_fx_ipc_port,144,61
+	.stag	_fx_ipc_port,144,65
 	.member	id,0,18,8,32
 	.member	type,32,14,8,8
-	.member	name,40,138,8,32,57
+	.member	name,40,138,8,32,61
 	.member	time,72,18,8,32
 	.member	queue,104,138,8,32,7
 	.member	reserved_1,136,14,8,8
 	.eos
-	.line	105
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",6
+	.stag	_k_mem_alloc_header,80,66
+	.member	user,0,14,8,8
+	.member	attr,8,14,8,8
+	.member	size,16,18,8,32
+	.member	virtual,48,129,8,32
+	.eos
+	.line	129
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",6
 	.line	74
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",5
-	.stag	_click_detected,64,62
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",5
+	.stag	_click_detected,64,67
 	.member	window,0,138,8,32,33
 	.member	handler,32,641,8,32
 	.eos
-	.stag	_current_palette_map,400,63
+	.stag	_current_palette_map,400,68
 	.member	CUR_DESKTOP,0,5,8,16
 	.member	CUR_BACKGROUND,16,5,8,16
 	.member	CUR_FONT,32,5,8,16
@@ -723,37 +741,37 @@ R3	equ	13
 	.member	CUR_COLOR,160,101,8,0,15
 	.eos
 	.line	359
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",8
-	.stag	_fxos_winman_vtable,160,64
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",8
+	.stag	_fxos_winman_vtable,160,69
 	.member	Events,0,641,8,32
 	.member	ConfigureWindowManager,32,656,8,32
 	.member	ProcessWindowEvent,64,8833,8,32
 	.member	QueryWindowManager,96,656,8,32
 	.member	DoWndProcs,128,641,8,32
 	.eos
-	.stag	fake65_,64,65
+	.stag	fake70_,64,70
 	.member	type,0,16,8,16
 	.member	size,16,16,8,16
 	.member	desktopAction,32,129,8,32
 	.eos
-	.stag	fake66_,96,66
+	.stag	fake71_,96,71
 	.member	type,0,16,8,16
-	.member	caption,16,138,8,32,57
+	.member	caption,16,138,8,32,61
 	.member	buttonType,48,16,8,16
 	.member	x,64,5,8,16
 	.member	y,80,5,8,16
 	.eos
-	.stag	_childMessage_t,64,67
+	.stag	_childMessage_t,64,72
 	.member	msgType,0,16,8,16
 	.member	msgData,16,129,8,32
 	.member	dataSize,48,16,8,16
 	.eos
-	.line	581
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",9
-	.stag	_fx_main_loopvars,16,68
+	.line	594
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",9
+	.stag	_fx_main_loopvars,16,73
 	.member	dummy,0,5,8,16
 	.eos
-	.stag	_fxMouseMessageData,64,69
+	.stag	_fxMouseMessageData,64,74
 	.member	button1,0,14,8,8
 	.member	button2,8,14,8,8
 	.member	button3,16,14,8,8
@@ -761,18 +779,18 @@ R3	equ	13
 	.member	x,32,16,8,16
 	.member	y,48,16,8,16
 	.eos
-	.utag	marshalled_data,32,70
+	.utag	marshalled_data,32,75
 	.member	byteValue,0,14,11,8
 	.member	verbValue,0,110,11,0,2
 	.member	intValue,0,16,11,16
 	.member	longValue,0,18,11,32
 	.member	pointerValue,0,129,11,32
 	.eos
-	.stag	_fx_eventProcess,64,71
+	.stag	_fx_eventProcess,64,76
 	.member	process,0,138,8,32,20
 	.member	eventProc,32,641,8,32
 	.eos
-	.stag	_mouse_msg_state,184,72
+	.stag	_mouse_msg_state,184,77
 	.member	lastEvent,0,18,8,32
 	.member	buttonLeftDown,32,14,8,8
 	.member	lastLeftDown,40,18,8,32
@@ -783,7 +801,7 @@ R3	equ	13
 	.member	lastX,152,16,8,16
 	.member	lastY,168,16,8,16
 	.eos
-	.stag	_fxos_eventmanager_vtable,192,73
+	.stag	_fxos_eventmanager_vtable,192,78
 	.member	EventQueue,0,138,8,32,7
 	.member	Init,32,8833,8,32
 	.member	Run,64,656,8,32
@@ -791,18 +809,18 @@ R3	equ	13
 	.member	Query,128,656,8,32
 	.member	Uninit,160,641,8,32
 	.eos
-	.stag	_k_clipboard_data,168,74
+	.stag	_k_clipboard_data,168,79
 	.member	type,0,14,8,8
 	.member	readable,8,110,8,0,16
 	.member	data,136,129,8,32
 	.eos
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",18
-	.stag	_fx_spinner_ctx,48,75
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",18
+	.stag	_fx_spinner_ctx,48,80
 	.member	index,0,5,8,16
 	.member	spinner,16,142,8,32
 	.eos
-	.stag	_fx_console_ctx,1144,76
+	.stag	_fx_console_ctx,1144,81
 	.member	lineBufferIndex,0,5,8,16
 	.member	lineBuffer,16,110,8,0,128
 	.member	isShifted,1040,14,8,8
@@ -810,31 +828,31 @@ R3	equ	13
 	.member	screenBuffer,1080,129,8,32
 	.member	Reserved1,1112,129,8,32
 	.eos
-	.stag	_token,64,77
+	.stag	_token,64,82
 	.member	type,0,5,8,16
 	.member	depth,16,16,8,16
 	.member	text,32,142,8,32
 	.eos
-	.stag	_command_args,64,78
+	.stag	_command_args,64,83
 	.member	proc,0,656,8,32
 	.member	tokens,32,138,8,32,5
 	.eos
 	.line	208
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",23
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",25
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ffconf.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",23
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",24
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",25
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ffconf.h",0
 	.line	298
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",29
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",30
-	.stag	fake79_,4504,79
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",29
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",30
+	.stag	fake84_,4504,84
 	.member	fs_type,0,14,8,8
 	.member	pdrv,8,14,8,8
 	.member	n_fats,16,14,8,8
@@ -855,16 +873,16 @@ R3	equ	13
 	.member	winsect,376,18,8,32
 	.member	win,408,110,8,0,512
 	.eos
-	.stag	fake80_,128,80
-	.member	fs,0,138,8,32,79
+	.stag	fake85_,128,85
+	.member	fs,0,138,8,32,84
 	.member	id,32,5,8,16
 	.member	attr,48,14,8,8
 	.member	stat,56,14,8,8
 	.member	sclust,64,18,8,32
 	.member	objsize,96,18,8,32
 	.eos
-	.stag	fake81_,4400,81
-	.member	obj,0,10,8,128,80
+	.stag	fake86_,4400,86
+	.member	obj,0,10,8,128,85
 	.member	flag,128,14,8,8
 	.member	err,136,14,8,8
 	.member	fptr,144,18,8,32
@@ -874,8 +892,8 @@ R3	equ	13
 	.member	dir_ptr,272,142,8,32
 	.member	buf,304,110,8,0,512
 	.eos
-	.stag	fake82_,416,82
-	.member	obj,0,10,8,128,80
+	.stag	fake87_,416,87
+	.member	obj,0,10,8,128,85
 	.member	dptr,128,18,8,32
 	.member	clust,160,18,8,32
 	.member	sect,192,18,8,32
@@ -884,7 +902,7 @@ R3	equ	13
 	.member	blk_ofs,352,18,8,32
 	.member	pat,384,142,8,32
 	.eos
-	.stag	fake83_,2224,83
+	.stag	fake88_,2224,88
 	.member	fsize,0,18,8,32
 	.member	fdate,32,5,8,16
 	.member	ftime,48,5,8,16
@@ -892,7 +910,7 @@ R3	equ	13
 	.member	altname,72,110,8,0,13
 	.member	fname,176,110,8,0,256
 	.eos
-	.stag	fake84_,80,84
+	.stag	fake89_,80,89
 	.member	fmt,0,14,8,8
 	.member	n_fat,8,14,8,8
 	.member	align,16,16,8,16
@@ -900,40 +918,40 @@ R3	equ	13
 	.member	au_size,48,18,8,32
 	.eos
 	.line	429
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",26
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",26
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\drivers\DRIVER_FMXSDCard.c",1
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers\DRIVER_FMXSDCard.c",1
 ;#include "fxdos.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",0
 	.line	429
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\diskio.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\diskio.h",0
 	.line	85
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.h",7
-	.stag	_fx_sd_direntry,256,85
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",7
+	.stag	_fx_sd_direntry,256,90
 	.member	filename,0,110,8,0,11
 	.member	type,88,14,8,8
 	.member	attrs,96,110,8,0,20
 	.eos
-	.stag	_fx_info,416,86
+	.stag	_fx_info,416,91
 	.member	stgName,0,110,8,0,32
 	.member	Reserved1,256,14,8,8
 	.member	stgType,264,16,8,16
 	.member	Reserved2,280,14,8,8
 	.member	stgReserved,288,110,8,0,16
 	.eos
-	.stag	_fx_fileinfo,136,87
+	.stag	_fx_fileinfo,136,92
 	.member	type,0,14,8,8
 	.member	pFilename,8,142,8,32
 	.member	lSize,40,18,8,32
 	.member	lcreateDate,72,18,8,32
 	.member	lchangeDate,104,18,8,32
 	.eos
-	.stag	_FX_FAT_DIR_INFO,256,88
+	.stag	_FX_FAT_DIR_INFO,256,93
 	.member	DIR_Name,0,110,8,0,11
 	.member	DIR_Attr,88,14,8,8
 	.member	DIR_NTRes,96,14,8,8
@@ -947,7 +965,7 @@ R3	equ	13
 	.member	DIR_FstClusLO,208,16,8,16
 	.member	DIR_FileSize,224,18,8,32
 	.eos
-	.stag	fat_extBS_32,416,89
+	.stag	fat_extBS_32,416,94
 	.member	table_size_32,0,18,8,32
 	.member	extended_flags,32,16,8,16
 	.member	fat_version,48,16,8,16
@@ -962,7 +980,7 @@ R3	equ	13
 	.member	volume_label,264,110,8,0,11
 	.member	fat_type_label,352,110,8,0,8
 	.eos
-	.stag	fat_extBS_16,192,90
+	.stag	fat_extBS_16,192,95
 	.member	bios_drive_num,0,14,8,8
 	.member	reserved1,8,14,8,8
 	.member	boot_signature,16,14,8,8
@@ -970,7 +988,7 @@ R3	equ	13
 	.member	volume_label,40,110,8,0,11
 	.member	fat_type_label,128,110,8,0,8
 	.eos
-	.stag	fat_BS,688,91
+	.stag	fat_BS,688,96
 	.member	bootjmp,0,110,8,0,3
 	.member	oem_name,24,110,8,0,8
 	.member	bytes_per_sector,88,16,8,16
@@ -987,7 +1005,7 @@ R3	equ	13
 	.member	total_sectors_32,240,16,8,16
 	.member	extended_section,256,110,8,0,54
 	.eos
-	.stag	__FATBootSector,928,92
+	.stag	__FATBootSector,928,97
 	.member	bootjmp,0,110,8,0,3
 	.member	oem_name,24,110,8,0,8
 	.member	bytes_per_sector,88,16,8,16
@@ -1010,7 +1028,7 @@ R3	equ	13
 	.member	file_system_type,432,110,8,0,8
 	.member	extended_section,496,110,8,0,54
 	.eos
-	.stag	__PARTITIONTABLE,128,93
+	.stag	__PARTITIONTABLE,128,98
 	.member	first_byte,0,14,8,8
 	.member	start_chs,8,110,8,0,3
 	.member	partition_type,32,14,8,8
@@ -1018,7 +1036,7 @@ R3	equ	13
 	.member	start_sector,64,18,8,32
 	.member	length_sectors,96,18,8,32
 	.eos
-	.stag	fake94_,4096,94
+	.stag	fake99_,4096,99
 	.member	jmp,0,110,8,0,3
 	.member	oem,24,110,8,0,8
 	.member	sector_size,88,15,8,16
@@ -1042,7 +1060,7 @@ R3	equ	13
 	.member	boot_code,496,110,8,0,448
 	.member	boot_sector_signature,4080,15,8,16
 	.eos
-	.stag	__FAT16ENTRY,256,95
+	.stag	__FAT16ENTRY,256,100
 	.member	filename,0,110,8,0,8
 	.member	ext,64,110,8,0,3
 	.member	attributes,88,14,8,8
@@ -1052,7 +1070,7 @@ R3	equ	13
 	.member	starting_cluster,208,16,8,16
 	.member	file_size,224,18,8,32
 	.eos
-	.stag	__FAT16ENTRYLONG,288,96
+	.stag	__FAT16ENTRYLONG,288,101
 	.member	filename,0,110,8,0,8
 	.member	ext,64,110,8,0,3
 	.member	attributes,88,14,8,8
@@ -1063,7 +1081,7 @@ R3	equ	13
 	.member	file_size,224,18,8,32
 	.member	plongfileName,256,142,8,32
 	.eos
-	.stag	_LongFileName,256,97
+	.stag	_LongFileName,256,102
 	.member	sequenceNo,0,14,8,8
 	.member	fileName_Part1,8,110,8,0,10
 	.member	fileattribute,88,14,8,8
@@ -1073,7 +1091,7 @@ R3	equ	13
 	.member	fstclusLO,208,5,8,16
 	.member	fileName_Part3,224,110,8,0,4
 	.eos
-	.stag	_IDSECTOR,2048,98
+	.stag	_IDSECTOR,2048,103
 	.member	wGenConfig,0,16,8,16
 	.member	wNumCyls,16,16,8,16
 	.member	wReserved,32,16,8,16
@@ -1105,7 +1123,7 @@ R3	equ	13
 	.member	wMultiWordDMA,1008,16,8,16
 	.member	bReserved,1024,110,8,0,128
 	.eos
-	.stag	fake99_,16,99
+	.stag	fake104_,16,104
 	.member	Reserved1,0,16,17,1
 	.member	Retired3,1,16,17,1
 	.member	ResponseIncomplete,2,16,17,1
@@ -1115,11 +1133,11 @@ R3	equ	13
 	.member	Retired1,8,16,17,7
 	.member	DeviceType,15,16,17,1
 	.eos
-	.stag	fake100_,16,100
+	.stag	fake105_,16,105
 	.member	FeatureSupported,0,16,17,1
 	.member	Reserved,1,16,17,15
 	.eos
-	.stag	fake101_,32,101
+	.stag	fake106_,32,106
 	.member	CurrentLongPhysicalSectorAlignment,0,14,17,2
 	.member	ReservedByte49,2,14,17,6
 	.member	DmaSupported,8,14,17,1
@@ -1131,7 +1149,7 @@ R3	equ	13
 	.member	Reserved2,14,14,17,2
 	.member	ReservedWord50,16,16,8,16
 	.eos
-	.stag	fake102_,16,102
+	.stag	fake107_,16,107
 	.member	ZonedCapabilities,0,16,17,2
 	.member	NonVolatileWriteCache,2,16,17,1
 	.member	ExtendedUserAddressableSectorsSupported,3,16,17,1
@@ -1148,7 +1166,7 @@ R3	equ	13
 	.member	DeterministicReadAfterTrimSupported,14,16,17,1
 	.member	CFastSpecSupported,15,16,17,1
 	.eos
-	.stag	fake103_,32,103
+	.stag	fake108_,32,108
 	.member	Reserved0,0,16,17,1
 	.member	SataGen1,1,16,17,1
 	.member	SataGen2,2,16,17,1
@@ -1170,7 +1188,7 @@ R3	equ	13
 	.member	DEVSLPtoReducedPwrState,23,16,17,1
 	.member	Reserved3,24,16,17,8
 	.eos
-	.stag	fake104_,16,104
+	.stag	fake109_,16,109
 	.member	Reserved0,0,16,17,1
 	.member	NonZeroOffsets,1,16,17,1
 	.member	DmaSetupAutoActivate,2,16,17,1
@@ -1183,7 +1201,7 @@ R3	equ	13
 	.member	HybridInformation,9,16,17,1
 	.member	Reserved1,10,16,17,6
 	.eos
-	.stag	fake105_,16,105
+	.stag	fake110_,16,110
 	.member	Reserved0,0,16,17,1
 	.member	NonZeroOffsets,1,16,17,1
 	.member	DmaSetupAutoActivate,2,16,17,1
@@ -1196,7 +1214,7 @@ R3	equ	13
 	.member	HybridInformation,9,16,17,1
 	.member	Reserved1,10,16,17,6
 	.eos
-	.stag	fake106_,48,106
+	.stag	fake111_,48,111
 	.member	SmartCommands,0,16,17,1
 	.member	SecurityMode,1,16,17,1
 	.member	RemovableMediaFeature,2,16,17,1
@@ -1243,7 +1261,7 @@ R3	equ	13
 	.member	IdleWithUnloadFeature,45,16,17,1
 	.member	WordValid,46,16,17,2
 	.eos
-	.stag	fake107_,48,107
+	.stag	fake112_,48,112
 	.member	SmartCommands,0,16,17,1
 	.member	SecurityMode,1,16,17,1
 	.member	RemovableMediaFeature,2,16,17,1
@@ -1291,22 +1309,22 @@ R3	equ	13
 	.member	IdleWithUnloadFeature,45,16,17,1
 	.member	Reserved4,46,16,17,2
 	.eos
-	.stag	fake108_,16,108
+	.stag	fake113_,16,113
 	.member	TimeRequired,0,16,17,15
 	.member	ExtendedTimeReported,15,16,17,1
 	.eos
-	.stag	fake109_,16,109
+	.stag	fake114_,16,114
 	.member	TimeRequired,0,16,17,15
 	.member	ExtendedTimeReported,15,16,17,1
 	.eos
-	.stag	fake110_,16,110
+	.stag	fake115_,16,115
 	.member	LogicalSectorsPerPhysicalSector,0,16,17,4
 	.member	Reserved0,4,16,17,8
 	.member	LogicalSectorLongerThan256Words,12,16,17,1
 	.member	MultipleLogicalSectorsPerPhysicalSector,13,16,17,1
 	.member	Reserved1,14,16,17,2
 	.eos
-	.stag	fake111_,16,111
+	.stag	fake116_,16,116
 	.member	ReservedForDrqTechnicalReport,0,16,17,1
 	.member	WriteReadVerify,1,16,17,1
 	.member	WriteUncorrectableExt,2,16,17,1
@@ -1318,7 +1336,7 @@ R3	equ	13
 	.member	Reserved0,8,16,17,6
 	.member	WordValid,14,16,17,2
 	.eos
-	.stag	fake112_,16,112
+	.stag	fake117_,16,117
 	.member	ReservedForDrqTechnicalReport,0,16,17,1
 	.member	WriteReadVerify,1,16,17,1
 	.member	WriteUncorrectableExt,2,16,17,1
@@ -1330,7 +1348,7 @@ R3	equ	13
 	.member	Reserved0,8,16,17,6
 	.member	Reserved1,14,16,17,2
 	.eos
-	.stag	fake113_,16,113
+	.stag	fake118_,16,118
 	.member	SecuritySupported,0,16,17,1
 	.member	SecurityEnabled,1,16,17,1
 	.member	SecurityLocked,2,16,17,1
@@ -1341,18 +1359,18 @@ R3	equ	13
 	.member	SecurityLevel,8,16,17,1
 	.member	Reserved1,9,16,17,7
 	.eos
-	.stag	fake114_,16,114
+	.stag	fake119_,16,119
 	.member	MaximumCurrentInMA,0,16,17,12
 	.member	CfaPowerMode1Disabled,12,16,17,1
 	.member	CfaPowerMode1Required,13,16,17,1
 	.member	Reserved0,14,16,17,1
 	.member	Word160Supported,15,16,17,1
 	.eos
-	.stag	fake115_,16,115
+	.stag	fake120_,16,120
 	.member	SupportsTrim,0,16,17,1
 	.member	Reserved0,1,16,17,15
 	.eos
-	.stag	fake116_,16,116
+	.stag	fake121_,16,121
 	.member	Supported,0,16,17,1
 	.member	Reserved0,1,16,17,1
 	.member	WriteSameSuported,2,16,17,1
@@ -1362,12 +1380,12 @@ R3	equ	13
 	.member	Reserved1,6,16,17,6
 	.member	VendorSpecific,12,16,17,4
 	.eos
-	.stag	fake117_,16,117
+	.stag	fake122_,16,122
 	.member	AlignmentOfLogicalWithinPhysical,0,16,17,14
 	.member	Word209Supported,14,16,17,1
 	.member	Reserved0,15,16,17,1
 	.eos
-	.stag	fake118_,16,118
+	.stag	fake123_,16,123
 	.member	NVCachePowerModeEnabled,0,16,17,1
 	.member	Reserved0,1,16,17,3
 	.member	NVCacheFeatureSetEnabled,4,16,17,1
@@ -1375,16 +1393,16 @@ R3	equ	13
 	.member	NVCachePowerModeVersion,8,16,17,4
 	.member	NVCacheFeatureSetVersion,12,16,17,4
 	.eos
-	.stag	fake119_,16,119
+	.stag	fake124_,16,124
 	.member	NVCacheEstimatedTimeToSpinUpInSeconds,0,14,8,8
 	.member	Reserved,8,14,8,8
 	.eos
-	.stag	fake120_,16,120
+	.stag	fake125_,16,125
 	.member	MajorVersion,0,16,17,12
 	.member	TransportType,12,16,17,4
 	.eos
-	.stag	_IDENTIFY_DEVICE_DATA,4096,121
-	.member	GeneralConfiguration,0,10,8,16,99
+	.stag	_IDENTIFY_DEVICE_DATA,4096,126
+	.member	GeneralConfiguration,0,10,8,16,104
 	.member	NumCylinders,16,16,8,16
 	.member	SpecificConfiguration,32,16,8,16
 	.member	NumHeads,48,16,8,16
@@ -1398,8 +1416,8 @@ R3	equ	13
 	.member	ModelNumber,432,110,8,0,40
 	.member	MaximumBlockTransfer,752,14,8,8
 	.member	VendorUnique2,760,14,8,8
-	.member	TrustedComputing,768,10,8,16,100
-	.member	Capabilities,784,10,8,32,101
+	.member	TrustedComputing,768,10,8,16,105
+	.member	Capabilities,784,10,8,32,106
 	.member	ObsoleteWords51,816,112,8,0,2
 	.member	TranslationFieldsValid,848,16,17,3
 	.member	Reserved3,851,16,17,5
@@ -1425,21 +1443,21 @@ R3	equ	13
 	.member	RecommendedMWXferCycleTime,1056,16,8,16
 	.member	MinimumPIOCycleTime,1072,16,8,16
 	.member	MinimumPIOCycleTimeIORDY,1088,16,8,16
-	.member	AdditionalSupported,1104,10,8,16,102
+	.member	AdditionalSupported,1104,10,8,16,107
 	.member	ReservedWords70,1120,112,8,0,5
 	.member	QueueDepth,1200,16,17,5
 	.member	ReservedWord75,1205,16,17,11
-	.member	SerialAtaCapabilities,1216,10,8,32,103
-	.member	SerialAtaFeaturesSupported,1248,10,8,16,104
-	.member	SerialAtaFeaturesEnabled,1264,10,8,16,105
+	.member	SerialAtaCapabilities,1216,10,8,32,108
+	.member	SerialAtaFeaturesSupported,1248,10,8,16,109
+	.member	SerialAtaFeaturesEnabled,1264,10,8,16,110
 	.member	MajorRevision,1280,16,8,16
 	.member	MinorRevision,1296,16,8,16
-	.member	CommandSetSupport,1312,10,8,48,106
-	.member	CommandSetActive,1360,10,8,48,107
+	.member	CommandSetSupport,1312,10,8,48,111
+	.member	CommandSetActive,1360,10,8,48,112
 	.member	UltraDMASupport,1408,16,17,8
 	.member	UltraDMAActive,1416,16,17,8
-	.member	NormalSecurityEraseUnit,1424,10,8,16,108
-	.member	EnhancedSecurityEraseUnit,1440,10,8,16,109
+	.member	NormalSecurityEraseUnit,1424,10,8,16,113
+	.member	EnhancedSecurityEraseUnit,1440,10,8,16,114
 	.member	CurrentAPMLevel,1456,16,17,8
 	.member	ReservedWord91,1464,16,17,8
 	.member	MasterPasswordID,1472,16,8,16
@@ -1453,42 +1471,42 @@ R3	equ	13
 	.member	Max48BitLBA,1600,114,8,0,2
 	.member	StreamingTransferTime,1664,16,8,16
 	.member	DsmCap,1680,16,8,16
-	.member	PhysicalLogicalSectorSize,1696,10,8,16,110
+	.member	PhysicalLogicalSectorSize,1696,10,8,16,115
 	.member	InterSeekDelay,1712,16,8,16
 	.member	WorldWideName,1728,112,8,0,4
 	.member	ReservedForWorldWideName128,1792,112,8,0,4
 	.member	ReservedForTlcTechnicalReport,1856,16,8,16
 	.member	WordsPerLogicalSector,1872,112,8,0,2
-	.member	CommandSetSupportExt,1904,10,8,16,111
-	.member	CommandSetActiveExt,1920,10,8,16,112
+	.member	CommandSetSupportExt,1904,10,8,16,116
+	.member	CommandSetActiveExt,1920,10,8,16,117
 	.member	ReservedForExpandedSupportandActive,1936,112,8,0,6
 	.member	MsnSupport,2032,16,17,2
 	.member	ReservedWord127,2034,16,17,14
-	.member	SecurityStatus,2048,10,8,16,113
+	.member	SecurityStatus,2048,10,8,16,118
 	.member	ReservedWord129,2064,112,8,0,31
-	.member	CfaPowerMode1,2560,10,8,16,114
+	.member	CfaPowerMode1,2560,10,8,16,119
 	.member	ReservedForCfaWord161,2576,112,8,0,7
 	.member	NominalFormFactor,2688,16,17,4
 	.member	ReservedWord168,2692,16,17,12
-	.member	DataSetManagementFeature,2704,10,8,16,115
+	.member	DataSetManagementFeature,2704,10,8,16,120
 	.member	AdditionalProductID,2720,112,8,0,4
 	.member	ReservedForCfaWord174,2784,112,8,0,2
 	.member	CurrentMediaSerialNumber,2816,112,8,0,30
-	.member	SCTCommandTransport,3296,10,8,16,116
+	.member	SCTCommandTransport,3296,10,8,16,121
 	.member	ReservedWord207,3312,112,8,0,2
-	.member	BlockAlignment,3344,10,8,16,117
+	.member	BlockAlignment,3344,10,8,16,122
 	.member	WriteReadVerifySectorCountMode3Only,3360,112,8,0,2
 	.member	WriteReadVerifySectorCountMode2Only,3392,112,8,0,2
-	.member	NVCacheCapabilities,3424,10,8,16,118
+	.member	NVCacheCapabilities,3424,10,8,16,123
 	.member	NVCacheSizeLSW,3440,16,8,16
 	.member	NVCacheSizeMSW,3456,16,8,16
 	.member	NominalMediaRotationRate,3472,16,8,16
 	.member	ReservedWord218,3488,16,8,16
-	.member	NVCacheOptions,3504,10,8,16,119
+	.member	NVCacheOptions,3504,10,8,16,124
 	.member	WriteReadVerifySectorCountMode,3520,16,17,8
 	.member	ReservedWord220,3528,16,17,8
 	.member	ReservedWord221,3536,16,8,16
-	.member	TransportMajorVersion,3552,10,8,16,120
+	.member	TransportMajorVersion,3552,10,8,16,125
 	.member	TransportMinorVersion,3568,16,8,16
 	.member	ReservedWord224,3584,112,8,0,6
 	.member	ExtendedNumberOfUserAddressableSectors,3680,114,8,0,2
@@ -1498,13 +1516,13 @@ R3	equ	13
 	.member	Signature,4080,16,17,8
 	.member	CheckSum,4088,16,17,8
 	.eos
-	.stag	_FXDosDevice,5744,122
+	.stag	_FXDosDevice,5744,127
 	.member	type,0,14,8,8
 	.member	initialized,8,14,8,8
 	.member	devdata,16,129,8,32
 	.member	devstatus,48,14,8,8
-	.member	bootSector,56,10,8,928,92
-	.member	partitionTable,984,10,8,128,93
+	.member	bootSector,56,10,8,928,97
+	.member	partitionTable,984,10,8,128,98
 	.member	fileAllocationTable,1112,110,8,0,512
 	.member	bsOffset,5208,18,8,32
 	.member	rootDirSectors,5240,18,8,32
@@ -1522,26 +1540,44 @@ R3	equ	13
 	.member	pfReader,5680,654,8,32
 	.member	pfWriter,5712,654,8,32
 	.eos
-	.utag	item,32,123
-	.member	dir,0,138,11,32,82
-	.member	file,0,138,11,32,81
-	.member	fileInfo,0,138,11,32,83
+	.utag	item,32,128
+	.member	dir,0,138,11,32,87
+	.member	file,0,138,11,32,86
+	.member	fileInfo,0,138,11,32,88
 	.eos
-	.stag	_dos_handle,80,124
-	.member	fs,0,138,8,32,79
+	.stag	_dos_handle,80,129
+	.member	fs,0,138,8,32,84
 	.member	fr,32,5,8,16
 	.member	path,48,142,8,32
 	.eos
-	.line	800
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\drivers\DRIVER_FMXSDCard.c",2
+	.stag	fx_file,112,130
+	.member	fs,0,138,8,32,84
+	.member	fileInfo,32,138,8,32,88
+	.member	f,64,138,8,32,86
+	.member	fr,96,5,8,16
+	.eos
+	.line	812
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers\DRIVER_FMXSDCard.c",2
 ;#include "fxmemorymanager.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",0
-	.line	105
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\drivers\DRIVER_FMXSDCard.c",3
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",0
+	.line	129
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers\DRIVER_FMXSDCard.c",3
 ;
-;
+;#include "drivers/DRIVER.h"
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
+	.line	30
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",0
+	.line	129
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
+	.line	1960
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",104
+	.line	113
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers\DRIVER_FMXSDCard.c",5
 ;#include "drivers/DRIVER_SDC.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\drivers/DRIVER_SDC.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER_SDC.h",0
 SDCS05	section	offset $04:1DB0
 	ends
 	data
@@ -1549,14 +1585,21 @@ SDCS05	section	offset $04:1DB0
 	dl	$41DB0
 	ends
 	.line	7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\drivers\DRIVER_FMXSDCard.c",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers\DRIVER_FMXSDCard.c",6
 ;//#pragma section CODE=FMXSDCard,offset $08:A500
 ;
-;UCHAR k_sd_initialize(void);
-;BOOL  k_pc_initialize(void);
-;UCHAR k_read_sd_sector(unsigned long offset,LPCHAR receiveBuffer);
-;UCHAR k_write_sd_sector(unsigned long offset,LPCHAR receiveBuffer);
-;UCHAR k_read_sd_command(UINT command,LPVOID buffer);
+;extern ULONG _pseudo_timer;
+;static ULONG default_arg = 0;
+	data
+~~default_arg:
+	dl	$0
+	ends
+;
+;static VOID f_driver_irq(void);
+;static UCHAR k_sd_initialize(void);
+;static UCHAR k_read_sd_sector(unsigned long offset,LPCHAR receiveBuffer);
+;static UCHAR k_write_sd_sector(unsigned long offset,LPCHAR receiveBuffer);
+;static UCHAR k_read_sd_command(UINT command,LPVOID buffer);
 ;
 ;static FX_BLOCK_DEVICE_DRIVER DRIVER_FMXSDCard = {
 	data
@@ -1579,10 +1622,10 @@ SDCS05	section	offset $04:1DB0
 ;											"SD:\0",
 	db	$53,$44,$3A,$0,$0
 	ds	1
-;											0,
-	dw	$0
-;											NULL,
-	dl	$0
+;											MAKEIRQ(2,7),
+	dw	$207
+;											f_driver_irq,
+	dl	~~f_driver_irq
 ;											NULL,
 	dl	$0
 ;											k_sd_initialize,
@@ -1607,11 +1650,11 @@ SDCS05	section	offset $04:1DB0
 ;
 ;static PFX_DEVICE_DRIVER f_get_driver(LPCSTR major,LPCSTR minor)
 ;{
-	.line	34
-	.line	35
+	.line	37
+	.line	38
 	SDCS05
 	func
-	.function	35
+	.function	38
 ~~f_get_driver:
 	longa	on
 	longi	on
@@ -1623,11 +1666,11 @@ SDCS05	section	offset $04:1DB0
 	tcd
 major_0	set	4
 minor_0	set	8
-	.block	35
+	.block	38
 ;	return &DRIVER_FMXSDCard;
 	.sym	major,4,142,6,32
 	.sym	minor,8,142,6,32
-	.line	36
+	.line	39
 	lda	#<~~DRIVER_FMXSDCard
 	sta	<R0
 	xref	_BEG_DATA
@@ -1649,26 +1692,24 @@ L5:
 	tya
 	rtl
 ;}
-	.line	37
-	.endblock	37
+	.line	40
+	.endblock	40
 L2	equ	4
 L3	equ	5
 	ends
 	efunc
-	.endfunc	37,5,4
-	.line	37
+	.endfunc	40,5,4
+	.line	40
 ;
-;#if defined(USE_FX256_FMX) || defined(USE_FX256_U)
 ;
-;VOID k_sd_reset(VOID)
+;static VOID f_driver_irq(void)
 ;{
-	.line	41
-	.line	42
+	.line	43
+	.line	44
 	SDCS05
-	xdef	~~k_sd_reset
 	func
-	.function	42
-~~k_sd_reset:
+	.function	44
+~~f_driver_irq:
 	longa	on
 	longi	on
 	tsc
@@ -1677,7 +1718,62 @@ L3	equ	5
 	tcs
 	phd
 	tcd
-	.block	42
+	.block	44
+;	k_irq_device_event(IRQE_SDCARD_INS,_pseudo_timer,&default_arg);
+	.line	45
+	lda	#<~~default_arg
+	sta	<R0
+	xref	_BEG_DATA
+	lda	#_BEG_DATA>>16
+	sta	<R0+2
+	pei	<R0+2
+	pei	<R0
+	lda	|~~_pseudo_timer+2
+	pha
+	lda	|~~_pseudo_timer
+	pha
+	pea	#<$8
+	jsl	~~k_irq_device_event
+;	return;
+	.line	46
+L9:
+	pld
+	tsc
+	clc
+	adc	#L6
+	tcs
+	rtl
+;}
+	.line	47
+	.endblock	47
+L6	equ	4
+L7	equ	5
+	ends
+	efunc
+	.endfunc	47,5,4
+	.line	47
+;
+;
+;#if defined(USE_FX256_FMX) || defined(USE_FX256_U)
+;
+;VOID k_sd_reset(VOID)
+;{
+	.line	52
+	.line	53
+	SDCS05
+	xdef	~~k_sd_reset
+	func
+	.function	53
+~~k_sd_reset:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L10
+	tcs
+	phd
+	tcd
+	.block	53
 ;	BYTE s = 0;
 ;
 ;	SDC_CONTROL_REG[0] = 1;
@@ -1685,10 +1781,10 @@ s_1	set	0
 	.sym	s,0,14,1,8
 	sep	#$20
 	longa	off
-	stz	<L7+s_1
+	stz	<L11+s_1
 	rep	#$20
 	longa	on
-	.line	45
+	.line	56
 	sep	#$20
 	longa	off
 	lda	#$1
@@ -1697,113 +1793,65 @@ s_1	set	0
 	longa	on
 ;
 ;	s = SDC_TRANS_BUSY;
-	.line	47
+	.line	58
 	sep	#$20
 	longa	off
 	lda	#$1
-	sta	<L7+s_1
+	sta	<L11+s_1
 	rep	#$20
 	longa	on
 ;	while(s & SDC_TRANS_BUSY)
-	.line	48
+	.line	59
 L10001:
 	sep	#$20
 	longa	off
-	lda	<L7+s_1
+	lda	<L11+s_1
 	and	#<$1
 	rep	#$20
 	longa	on
-	bne	L9
+	bne	L13
 	brl	L10002
-L9:
+L13:
 ;	{
-	.line	49
+	.line	60
 ;		s = SDC_TRANS_STATUS_REG[0];
-	.line	50
+	.line	61
 	sep	#$20
 	longa	off
 	lda	>11528708
-	sta	<L7+s_1
+	sta	<L11+s_1
 	rep	#$20
 	longa	on
 ;	}
-	.line	51
+	.line	62
 	brl	L10001
 L10002:
 ;}
-	.line	52
-L10:
+	.line	63
+L14:
 	pld
 	tsc
 	clc
-	adc	#L6
+	adc	#L10
 	tcs
 	rtl
-	.endblock	52
-L6	equ	1
-L7	equ	1
+	.endblock	63
+L10	equ	1
+L11	equ	1
 	ends
 	efunc
-	.endfunc	52,1,1
-	.line	52
+	.endfunc	63,1,1
+	.line	63
 ;
 ;UCHAR k_read_sd_command(UINT command,LPVOID buffer)
 ;{
-	.line	54
-	.line	55
+	.line	65
+	.line	66
 	SDCS05
 	xdef	~~k_read_sd_command
 	func
-	.function	55
+	.function	66
 ~~k_read_sd_command:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L11
-	tcs
-	phd
-	tcd
-command_0	set	4
-buffer_0	set	6
-	.block	55
-;	return 0;
-	.sym	command,4,16,6,16
-	.sym	buffer,6,129,6,32
-	.line	56
-	lda	#$0
-L14:
-	tay
-	lda	<L11+2
-	sta	<L11+2+6
-	lda	<L11+1
-	sta	<L11+1+6
-	pld
-	tsc
-	clc
-	adc	#L11+6
-	tcs
-	tya
-	rtl
-;}
-	.line	57
-	.endblock	57
-L11	equ	0
-L12	equ	1
-	ends
-	efunc
-	.endfunc	57,1,0
-	.line	57
-;
-;UCHAR k_read_sd_sector(unsigned long offset,LPCHAR receiveBuffer)
-;{
-	.line	59
-	.line	60
-	SDCS05
-	xdef	~~k_read_sd_sector
-	func
-	.function	60
-~~k_read_sd_sector:
 	longa	on
 	longi	on
 	tsc
@@ -1812,9 +1860,57 @@ L12	equ	1
 	tcs
 	phd
 	tcd
+command_0	set	4
+buffer_0	set	6
+	.block	66
+;	return 0;
+	.sym	command,4,16,6,16
+	.sym	buffer,6,129,6,32
+	.line	67
+	lda	#$0
+L18:
+	tay
+	lda	<L15+2
+	sta	<L15+2+6
+	lda	<L15+1
+	sta	<L15+1+6
+	pld
+	tsc
+	clc
+	adc	#L15+6
+	tcs
+	tya
+	rtl
+;}
+	.line	68
+	.endblock	68
+L15	equ	0
+L16	equ	1
+	ends
+	efunc
+	.endfunc	68,1,0
+	.line	68
+;
+;UCHAR k_read_sd_sector(unsigned long offset,LPCHAR receiveBuffer)
+;{
+	.line	70
+	.line	71
+	SDCS05
+	xdef	~~k_read_sd_sector
+	func
+	.function	71
+~~k_read_sd_sector:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L19
+	tcs
+	phd
+	tcd
 offset_0	set	4
 receiveBuffer_0	set	8
-	.block	60
+	.block	71
 ;	UCHAR	errorCode = 0;
 ;	UCHAR	s;
 ;	UCHAR	fifoLO;
@@ -1842,17 +1938,17 @@ x_1	set	6
 	.sym	receiveBuffer,8,142,6,32
 	sep	#$20
 	longa	off
-	stz	<L16+errorCode_1
+	stz	<L20+errorCode_1
 	rep	#$20
 	longa	on
-	.line	71
-	lda	<L15+offset_0
+	.line	82
+	lda	<L19+offset_0
 	sta	>11528711
-	lda	<L15+offset_0+2
+	lda	<L19+offset_0+2
 	sta	>11528711+2
 ;
 ;	SDC_TRANS_TYPE_REG[0]    = SDC_TRANS_READ_BLK;
-	.line	73
+	.line	84
 	sep	#$20
 	longa	off
 	lda	#$2
@@ -1860,7 +1956,7 @@ x_1	set	6
 	rep	#$20
 	longa	on
 ;	SDC_TRANS_CONTROL_REG[0] = SDC_TRANS_START;
-	.line	74
+	.line	85
 	sep	#$20
 	longa	off
 	lda	#$1
@@ -1869,131 +1965,131 @@ x_1	set	6
 	longa	on
 ;
 ;	s = SDC_TRANS_BUSY;
-	.line	76
+	.line	87
 	sep	#$20
 	longa	off
 	lda	#$1
-	sta	<L16+s_1
+	sta	<L20+s_1
 	rep	#$20
 	longa	on
 ;	while(s & SDC_TRANS_BUSY)
-	.line	77
+	.line	88
 L10003:
 	sep	#$20
 	longa	off
-	lda	<L16+s_1
+	lda	<L20+s_1
 	and	#<$1
 	rep	#$20
 	longa	on
-	bne	L18
+	bne	L22
 	brl	L10004
-L18:
+L22:
 ;	{
-	.line	78
+	.line	89
 ;		s = SDC_TRANS_STATUS_REG[0];
-	.line	79
+	.line	90
 	sep	#$20
 	longa	off
 	lda	>11528708
-	sta	<L16+s_1
+	sta	<L20+s_1
 	rep	#$20
 	longa	on
 ;	}
-	.line	80
+	.line	91
 	brl	L10003
 L10004:
 ;
 ;	fifoLO = SDC_RX_FIFO_DATA_CNT_LO[0];
-	.line	82
+	.line	93
 	sep	#$20
 	longa	off
 	lda	>11528723
-	sta	<L16+fifoLO_1
+	sta	<L20+fifoLO_1
 	rep	#$20
 	longa	on
 ;	fifoHI = SDC_RX_FIFO_DATA_CNT_HI[0];
-	.line	83
+	.line	94
 	sep	#$20
 	longa	off
 	lda	>11528722
-	sta	<L16+fifoHI_1
+	sta	<L20+fifoHI_1
 	rep	#$20
 	longa	on
 ;
 ;	size = MAKEWORD(fifoLO,fifoHI);
-	.line	85
-	lda	<L16+fifoHI_1
+	.line	96
+	lda	<L20+fifoHI_1
 	and	#$ff
 	sta	<R1
 	lda	<R1
 	xba
 	and	#$ff00
 	sta	<R0
-	lda	<L16+fifoLO_1
+	lda	<L20+fifoLO_1
 	and	#$ff
 	sta	<R1
 	lda	<R1
 	ora	<R0
-	sta	<L16+size_1
+	sta	<L20+size_1
 ;
 ;	//k_debug_integer("readSDSector size:",size);
 ;
 ;	for(x=0;x<SDC_BUFFER_SIZE;x++)
-	.line	89
-	stz	<L16+x_1
+	.line	100
+	stz	<L20+x_1
 L10007:
 ;	{
-	.line	90
+	.line	101
 ;		receiveBuffer[x] = SDC_RX_FIFO_DATA_REG[0];
-	.line	91
+	.line	102
 	sep	#$20
 	longa	off
 	lda	>11528720
-	ldy	<L16+x_1
-	sta	[<L15+receiveBuffer_0],Y
+	ldy	<L20+x_1
+	sta	[<L19+receiveBuffer_0],Y
 	rep	#$20
 	longa	on
 ;	}
-	.line	92
+	.line	103
 L10005:
-	inc	<L16+x_1
-	lda	<L16+x_1
+	inc	<L20+x_1
+	lda	<L20+x_1
 	cmp	#<$200
-	bcs	L19
+	bcs	L23
 	brl	L10007
-L19:
+L23:
 L10006:
 ;	//k_debug_byte_array("k_read_sd_sector:",receiveBuffer,512);
 ;
 ;	errorCode = SDC_TRANS_ERROR_REG[0] & 0x0C;
-	.line	95
+	.line	106
 	sep	#$20
 	longa	off
 	lda	>11528709
 	and	#<$c
-	sta	<L16+errorCode_1
+	sta	<L20+errorCode_1
 	rep	#$20
 	longa	on
 ;
 ;	if(errorCode)
-	.line	97
+	.line	108
 ;	{
-	lda	<L16+errorCode_1
+	lda	<L20+errorCode_1
 	and	#$ff
-	bne	L20
+	bne	L24
 	brl	L10008
-L20:
-	.line	98
+L24:
+	.line	109
 ;		k_debug_integer("k_read_sd_sector errorCode:",errorCode);
-	.line	99
-	lda	<L16+errorCode_1
+	.line	110
+	lda	<L20+errorCode_1
 	and	#$ff
 	pha
 	pea	#^L1
 	pea	#<L1
 	jsl	~~k_debug_integer
 ;	}
-	.line	100
+	.line	111
 ;	//if(k_user_IsOSDebug())
 ;	//k_debug_integer("k_read_sd_sector errorCode:",errorCode);
 ;
@@ -2001,31 +2097,31 @@ L20:
 ;
 ;	return errorCode;
 L10008:
-	.line	106
-	lda	<L16+errorCode_1
+	.line	117
+	lda	<L20+errorCode_1
 	and	#$ff
-L21:
+L25:
 	tay
-	lda	<L15+2
-	sta	<L15+2+8
-	lda	<L15+1
-	sta	<L15+1+8
+	lda	<L19+2
+	sta	<L19+2+8
+	lda	<L19+1
+	sta	<L19+1+8
 	pld
 	tsc
 	clc
-	adc	#L15+8
+	adc	#L19+8
 	tcs
 	tya
 	rtl
 ;}
-	.line	107
-	.endblock	107
-L15	equ	16
-L16	equ	9
+	.line	118
+	.endblock	118
+L19	equ	16
+L20	equ	9
 	ends
 	efunc
-	.endfunc	107,9,16
-	.line	107
+	.endfunc	118,9,16
+	.line	118
 	data
 L1:
 	db	$6B,$5F,$72,$65,$61,$64,$5F,$73,$64,$5F,$73,$65,$63,$74,$6F
@@ -2034,24 +2130,24 @@ L1:
 ;
 ;UCHAR k_write_sd_sector(unsigned long offset,LPCHAR sendBuffer)
 ;{
-	.line	109
-	.line	110
+	.line	120
+	.line	121
 	SDCS05
 	xdef	~~k_write_sd_sector
 	func
-	.function	110
+	.function	121
 ~~k_write_sd_sector:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L23
+	sbc	#L27
 	tcs
 	phd
 	tcd
 offset_0	set	4
 sendBuffer_0	set	8
-	.block	110
+	.block	121
 ;	UCHAR	errorCode;
 ;	UCHAR	s;
 ;	UINT	x;
@@ -2070,41 +2166,41 @@ x_1	set	2
 	.sym	x,2,16,1,16
 	.sym	offset,4,18,6,32
 	.sym	sendBuffer,8,142,6,32
-	.line	120
-	stz	<L24+x_1
+	.line	131
+	stz	<L28+x_1
 L10011:
 ;	{
-	.line	121
+	.line	132
 ;		SDC_TX_FIFO_DATA_REG[0] = sendBuffer[x];
-	.line	122
+	.line	133
 	sep	#$20
 	longa	off
-	ldy	<L24+x_1
-	lda	[<L23+sendBuffer_0],Y
+	ldy	<L28+x_1
+	lda	[<L27+sendBuffer_0],Y
 	sta	>11528736
 	rep	#$20
 	longa	on
 ;	}
-	.line	123
+	.line	134
 L10009:
-	inc	<L24+x_1
-	lda	<L24+x_1
+	inc	<L28+x_1
+	lda	<L28+x_1
 	cmp	#<$200
-	bcs	L26
+	bcs	L30
 	brl	L10011
-L26:
+L30:
 L10010:
 ;
 ;	*((unsigned long*)(&SDC_SD_ADDR_7_0_REG[0])) = offset;
-	.line	125
-	lda	<L23+offset_0
+	.line	136
+	lda	<L27+offset_0
 	sta	>11528711
-	lda	<L23+offset_0+2
+	lda	<L27+offset_0+2
 	sta	>11528711+2
 ;
 ;
 ;	SDC_TRANS_TYPE_REG[0]    = SDC_TRANS_WRITE_BLK;
-	.line	128
+	.line	139
 	sep	#$20
 	longa	off
 	lda	#$3
@@ -2112,7 +2208,7 @@ L10010:
 	rep	#$20
 	longa	on
 ;	SDC_TRANS_CONTROL_REG[0] = SDC_TRANS_START;
-	.line	129
+	.line	140
 	sep	#$20
 	longa	off
 	lda	#$1
@@ -2121,94 +2217,94 @@ L10010:
 	longa	on
 ;
 ;	s = SDC_TRANS_BUSY;
-	.line	131
+	.line	142
 	sep	#$20
 	longa	off
 	lda	#$1
-	sta	<L24+s_1
+	sta	<L28+s_1
 	rep	#$20
 	longa	on
 ;	while(s & SDC_TRANS_BUSY)
-	.line	132
+	.line	143
 L10012:
 	sep	#$20
 	longa	off
-	lda	<L24+s_1
+	lda	<L28+s_1
 	and	#<$1
 	rep	#$20
 	longa	on
-	bne	L27
+	bne	L31
 	brl	L10013
-L27:
+L31:
 ;	{
-	.line	133
+	.line	144
 ;		s = SDC_TRANS_STATUS_REG[0];
-	.line	134
+	.line	145
 	sep	#$20
 	longa	off
 	lda	>11528708
-	sta	<L24+s_1
+	sta	<L28+s_1
 	rep	#$20
 	longa	on
 ;	}
-	.line	135
+	.line	146
 	brl	L10012
 L10013:
 ;
 ;	errorCode = SDC_TRANS_ERROR_REG[0] & 0x33;
-	.line	137
+	.line	148
 	sep	#$20
 	longa	off
 	lda	>11528709
 	and	#<$33
-	sta	<L24+errorCode_1
+	sta	<L28+errorCode_1
 	rep	#$20
 	longa	on
 ;
 ;	//k_debug_long("writeSDSector::errorCode:",errorCode);
 ;
 ;	return errorCode;
-	.line	141
-	lda	<L24+errorCode_1
+	.line	152
+	lda	<L28+errorCode_1
 	and	#$ff
-L28:
+L32:
 	tay
-	lda	<L23+2
-	sta	<L23+2+8
-	lda	<L23+1
-	sta	<L23+1+8
+	lda	<L27+2
+	sta	<L27+2+8
+	lda	<L27+1
+	sta	<L27+1+8
 	pld
 	tsc
 	clc
-	adc	#L23+8
+	adc	#L27+8
 	tcs
 	tya
 	rtl
 ;}
-	.line	142
-	.endblock	142
-L23	equ	4
-L24	equ	1
+	.line	153
+	.endblock	153
+L27	equ	4
+L28	equ	1
 	ends
 	efunc
-	.endfunc	142,1,4
-	.line	142
+	.endfunc	153,1,4
+	.line	153
 ;
 ;
-;UINT readCluster(unsigned long offset,UINT sectorsPerCluster,LPCHAR receiveBuffer,ULONG file_size)
+;UCHAR readCluster(unsigned long offset,UINT sectorsPerCluster,LPCHAR receiveBuffer,ULONG file_size)
 ;{
-	.line	145
-	.line	146
+	.line	156
+	.line	157
 	SDCS05
 	xdef	~~readCluster
 	func
-	.function	146
+	.function	157
 ~~readCluster:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L29
+	sbc	#L33
 	tcs
 	phd
 	tcd
@@ -2216,7 +2312,7 @@ offset_0	set	4
 sectorsPerCluster_0	set	8
 receiveBuffer_0	set	10
 file_size_0	set	14
-	.block	146
+	.block	157
 ;	UINT c = 0;
 ;	ULONG read = 0;
 ;
@@ -2230,28 +2326,28 @@ read_1	set	2
 	.sym	sectorsPerCluster,8,16,6,16
 	.sym	receiveBuffer,10,142,6,32
 	.sym	file_size,14,18,6,32
-	stz	<L30+c_1
-	stz	<L30+read_1
-	stz	<L30+read_1+2
-	.line	151
-	pei	<L29+offset_0+2
-	pei	<L29+offset_0
-	pea	#^L22
-	pea	#<L22
+	stz	<L34+c_1
+	stz	<L34+read_1
+	stz	<L34+read_1+2
+	.line	162
+	pei	<L33+offset_0+2
+	pei	<L33+offset_0
+	pea	#^L26
+	pea	#<L26
 	jsl	~~k_debug_long
 ;	for(c=0;c<sectorsPerCluster;c++)
-	.line	152
-	stz	<L30+c_1
+	.line	163
+	stz	<L34+c_1
 	brl	L10017
 L10016:
 ;	{
-	.line	153
+	.line	164
 ;		k_read_sd_sector(offset + (sectorsPerCluster * c),receiveBuffer);
-	.line	154
-	pei	<L29+receiveBuffer_0+2
-	pei	<L29+receiveBuffer_0
-	lda	<L29+sectorsPerCluster_0
-	ldx	<L30+c_1
+	.line	165
+	pei	<L33+receiveBuffer_0+2
+	pei	<L33+receiveBuffer_0
+	lda	<L33+sectorsPerCluster_0
+	ldx	<L34+c_1
 	xref	~~~mul
 	jsl	~~~mul
 	sta	<R0
@@ -2260,113 +2356,113 @@ L10016:
 	stz	<R0+2
 	clc
 	lda	<R0
-	adc	<L29+offset_0
+	adc	<L33+offset_0
 	sta	<R1
 	lda	<R0+2
-	adc	<L29+offset_0+2
+	adc	<L33+offset_0+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_read_sd_sector
 ;		read+=512;
-	.line	155
+	.line	166
 	clc
 	lda	#$200
-	adc	<L30+read_1
-	sta	<L30+read_1
-	bcc	L32
-	inc	<L30+read_1+2
-L32:
+	adc	<L34+read_1
+	sta	<L34+read_1
+	bcc	L36
+	inc	<L34+read_1+2
+L36:
 ;		//k_debug_long("file_size:",file_size);
 ;		//k_debug_long("read:",read);
 ;		if(read > file_size)
-	.line	158
+	.line	169
 ;			k_debug_byte_array("SECTOR:",receiveBuffer,file_size);
-	lda	<L29+file_size_0
-	cmp	<L30+read_1
-	lda	<L29+file_size_0+2
-	sbc	<L30+read_1+2
-	bcc	L33
+	lda	<L33+file_size_0
+	cmp	<L34+read_1
+	lda	<L33+file_size_0+2
+	sbc	<L34+read_1+2
+	bcc	L37
 	brl	L10018
-L33:
-	.line	159
-	pei	<L29+file_size_0+2
-	pei	<L29+file_size_0
-	pei	<L29+receiveBuffer_0+2
-	pei	<L29+receiveBuffer_0
-	pea	#^L22+21
-	pea	#<L22+21
+L37:
+	.line	170
+	pei	<L33+file_size_0+2
+	pei	<L33+file_size_0
+	pei	<L33+receiveBuffer_0+2
+	pei	<L33+receiveBuffer_0
+	pea	#^L26+21
+	pea	#<L26+21
 	jsl	~~k_debug_byte_array
 ;		else
 	brl	L10019
 L10018:
 ;			k_debug_byte_array("SECTOR:",receiveBuffer,512);
-	.line	161
+	.line	172
 	pea	#^$200
 	pea	#<$200
-	pei	<L29+receiveBuffer_0+2
-	pei	<L29+receiveBuffer_0
-	pea	#^L22+29
-	pea	#<L22+29
+	pei	<L33+receiveBuffer_0+2
+	pei	<L33+receiveBuffer_0
+	pea	#^L26+29
+	pea	#<L26+29
 	jsl	~~k_debug_byte_array
 L10019:
 ;
 ;		if(read > file_size)
-	.line	163
+	.line	174
 ;		{
-	lda	<L29+file_size_0
-	cmp	<L30+read_1
-	lda	<L29+file_size_0+2
-	sbc	<L30+read_1+2
-	bcc	L34
+	lda	<L33+file_size_0
+	cmp	<L34+read_1
+	lda	<L33+file_size_0+2
+	sbc	<L34+read_1+2
+	bcc	L38
 	brl	L10020
-L34:
-	.line	164
+L38:
+	.line	175
 ;			break;
-	.line	165
+	.line	176
 	brl	L10015
 ;		}
-	.line	166
+	.line	177
 ;	}
 L10020:
-	.line	167
+	.line	178
 L10014:
-	inc	<L30+c_1
+	inc	<L34+c_1
 L10017:
-	lda	<L30+c_1
-	cmp	<L29+sectorsPerCluster_0
-	bcs	L35
+	lda	<L34+c_1
+	cmp	<L33+sectorsPerCluster_0
+	bcs	L39
 	brl	L10016
-L35:
+L39:
 L10015:
 ;
 ;	return 0;
-	.line	169
+	.line	180
 	lda	#$0
-L36:
+L40:
 	tay
-	lda	<L29+2
-	sta	<L29+2+14
-	lda	<L29+1
-	sta	<L29+1+14
+	lda	<L33+2
+	sta	<L33+2+14
+	lda	<L33+1
+	sta	<L33+1+14
 	pld
 	tsc
 	clc
-	adc	#L29+14
+	adc	#L33+14
 	tcs
 	tya
 	rtl
 ;}
-	.line	170
-	.endblock	170
-L29	equ	14
-L30	equ	9
+	.line	181
+	.endblock	181
+L33	equ	14
+L34	equ	9
 	ends
 	efunc
-	.endfunc	170,9,14
-	.line	170
+	.endfunc	181,9,14
+	.line	181
 	data
-L22:
+L26:
 	db	$72,$65,$61,$64,$43,$6C,$75,$73,$74,$65,$72,$3A,$3A,$6F,$66
 	db	$66,$73,$65,$74,$3A,$00,$53,$45,$43,$54,$4F,$52,$3A,$00,$53
 	db	$45,$43,$54,$4F,$52,$3A,$00
@@ -2461,178 +2557,178 @@ L22:
 ;
 ;BOOL k_read_volume_name(PFAT16ENTRY entry,PFXDOSDEVICE pdev)
 ;{
-	.line	259
-	.line	260
+	.line	270
+	.line	271
 	SDCS05
 	xdef	~~k_read_volume_name
 	func
-	.function	260
+	.function	271
 ~~k_read_volume_name:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L38
+	sbc	#L42
 	tcs
 	phd
 	tcd
 entry_0	set	4
 pdev_0	set	8
-	.block	260
+	.block	271
 ;	BOOL bRet = FALSE;
 ;
 ;	if(entry && pdev)
 bRet_1	set	0
 	.sym	bRet,0,14,1,8
-	.sym	entry,4,138,6,32,95
-	.sym	pdev,8,138,6,32,122
+	.sym	entry,4,138,6,32,100
+	.sym	pdev,8,138,6,32,127
 	sep	#$20
 	longa	off
-	stz	<L39+bRet_1
+	stz	<L43+bRet_1
 	rep	#$20
 	longa	on
-	.line	263
+	.line	274
 ;	{
-	lda	<L38+entry_0
-	ora	<L38+entry_0+2
-	bne	L41
+	lda	<L42+entry_0
+	ora	<L42+entry_0+2
+	bne	L45
 	brl	L10021
-L41:
-	lda	<L38+pdev_0
-	ora	<L38+pdev_0+2
-	bne	L42
+L45:
+	lda	<L42+pdev_0
+	ora	<L42+pdev_0+2
+	bne	L46
 	brl	L10021
-L42:
-	.line	264
+L46:
+	.line	275
 ;    	if(entry->attributes == 0x08)
-	.line	265
+	.line	276
 ;		{
 	sep	#$20
 	longa	off
 	ldy	#$b
-	lda	[<L38+entry_0],Y
+	lda	[<L42+entry_0],Y
 	cmp	#<$8
 	rep	#$20
 	longa	on
-	beq	L43
+	beq	L47
 	brl	L10022
-L43:
-	.line	266
+L47:
+	.line	277
 ;    		memset(pdev->root_volume_name,0,12);
-	.line	267
+	.line	278
 	pea	#<$c
 	pea	#<$0
 	clc
 	lda	#$2ad
-	adc	<L38+pdev_0
+	adc	<L42+pdev_0
 	sta	<R0
 	lda	#$0
-	adc	<L38+pdev_0+2
+	adc	<L42+pdev_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~memset
 ;
 ;    		strncpy(pdev->root_volume_name,entry->filename,8);
-	.line	269
+	.line	280
 	pea	#<$8
-	pei	<L38+entry_0+2
-	pei	<L38+entry_0
+	pei	<L42+entry_0+2
+	pei	<L42+entry_0
 	clc
 	lda	#$2ad
-	adc	<L38+pdev_0
+	adc	<L42+pdev_0
 	sta	<R0
 	lda	#$0
-	adc	<L38+pdev_0+2
+	adc	<L42+pdev_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~strncpy
 ;    		strncpy(&pdev->root_volume_name[8],entry->ext,3);
-	.line	270
+	.line	281
 	pea	#<$3
 	clc
 	lda	#$8
-	adc	<L38+entry_0
+	adc	<L42+entry_0
 	sta	<R0
 	lda	#$0
-	adc	<L38+entry_0+2
+	adc	<L42+entry_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
 	lda	#$2b5
-	adc	<L38+pdev_0
+	adc	<L42+pdev_0
 	sta	<R1
 	lda	#$0
-	adc	<L38+pdev_0+2
+	adc	<L42+pdev_0+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~strncpy
 ;
 ;    		bRet = TRUE;
-	.line	272
+	.line	283
 	sep	#$20
 	longa	off
 	lda	#$1
-	sta	<L39+bRet_1
+	sta	<L43+bRet_1
 	rep	#$20
 	longa	on
 ;		}
-	.line	273
+	.line	284
 ;	}
 L10022:
-	.line	274
+	.line	285
 ;
 ;	return bRet;
 L10021:
-	.line	276
-	lda	<L39+bRet_1
+	.line	287
+	lda	<L43+bRet_1
 	and	#$ff
-L44:
+L48:
 	tay
-	lda	<L38+2
-	sta	<L38+2+8
-	lda	<L38+1
-	sta	<L38+1+8
+	lda	<L42+2
+	sta	<L42+2+8
+	lda	<L42+1
+	sta	<L42+1+8
 	pld
 	tsc
 	clc
-	adc	#L38+8
+	adc	#L42+8
 	tcs
 	tya
 	rtl
 ;}
-	.line	277
-	.endblock	277
-L38	equ	9
-L39	equ	9
+	.line	288
+	.endblock	288
+L42	equ	9
+L43	equ	9
 	ends
 	efunc
-	.endfunc	277,9,9
-	.line	277
+	.endfunc	288,9,9
+	.line	288
 ;
 ;
 ;
 ;UCHAR k_sd_initialize(void)
 ;{
-	.line	281
-	.line	282
+	.line	292
+	.line	293
 	SDCS05
 	xdef	~~k_sd_initialize
 	func
-	.function	282
+	.function	293
 ~~k_sd_initialize:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L45
+	sbc	#L49
 	tcs
 	phd
 	tcd
-	.block	282
+	.block	293
 ;	UCHAR s;
 ;	UCHAR errorCode;
 ;
@@ -2641,13 +2737,13 @@ s_1	set	0
 errorCode_1	set	1
 	.sym	s,0,14,1,8
 	.sym	errorCode,1,14,1,8
-	.line	286
-	pea	#^L37
-	pea	#<L37
+	.line	297
+	pea	#^L41
+	pea	#<L41
 	jsl	~~k_debug_string
 ;
 ;	SDC_TRANS_TYPE_REG[0]    = SDC_TRANS_INIT_SD;
-	.line	288
+	.line	299
 	sep	#$20
 	longa	off
 	lda	#$1
@@ -2655,7 +2751,7 @@ errorCode_1	set	1
 	rep	#$20
 	longa	on
 ;    SDC_TRANS_CONTROL_REG[0] = SDC_TRANS_START;
-	.line	289
+	.line	300
 	sep	#$20
 	longa	off
 	lda	#$1
@@ -2664,72 +2760,72 @@ errorCode_1	set	1
 	longa	on
 ;
 ;    s = SDC_TRANS_BUSY;
-	.line	291
+	.line	302
 	sep	#$20
 	longa	off
 	lda	#$1
-	sta	<L46+s_1
+	sta	<L50+s_1
 	rep	#$20
 	longa	on
 ;    while(s & SDC_TRANS_BUSY)
-	.line	292
+	.line	303
 L10023:
 	sep	#$20
 	longa	off
-	lda	<L46+s_1
+	lda	<L50+s_1
 	and	#<$1
 	rep	#$20
 	longa	on
-	bne	L48
+	bne	L52
 	brl	L10024
-L48:
+L52:
 ;    {
-	.line	293
+	.line	304
 ;    	s = SDC_TRANS_STATUS_REG[0];
-	.line	294
+	.line	305
 	sep	#$20
 	longa	off
 	lda	>11528708
-	sta	<L46+s_1
+	sta	<L50+s_1
 	rep	#$20
 	longa	on
 ;   	}
-	.line	295
+	.line	306
 	brl	L10023
 L10024:
 ;
 ;    k_debug_integer("***k_sd_initialize errorCode:",errorCode);
-	.line	297
-	lda	<L46+errorCode_1
+	.line	308
+	lda	<L50+errorCode_1
 	and	#$ff
 	pha
-	pea	#^L37+23
-	pea	#<L37+23
+	pea	#^L41+23
+	pea	#<L41+23
 	jsl	~~k_debug_integer
 ;
 ;    return TRUE;
-	.line	299
+	.line	310
 	lda	#$1
-L49:
+L53:
 	tay
 	pld
 	tsc
 	clc
-	adc	#L45
+	adc	#L49
 	tcs
 	tya
 	rtl
 ;}
-	.line	300
-	.endblock	300
-L45	equ	2
-L46	equ	1
+	.line	311
+	.endblock	311
+L49	equ	2
+L50	equ	1
 	ends
 	efunc
-	.endfunc	300,1,2
-	.line	300
+	.endfunc	311,1,2
+	.line	311
 	data
-L37:
+L41:
 	db	$2A,$2A,$2A,$6B,$5F,$73,$64,$5F,$69,$6E,$69,$74,$69,$61,$6C
 	db	$69,$7A,$65,$20,$31,$0D,$0A,$00,$2A,$2A,$2A,$6B,$5F,$73,$64
 	db	$5F,$69,$6E,$69,$74,$69,$61,$6C,$69,$7A,$65,$20,$65,$72,$72
@@ -3948,166 +4044,184 @@ L37:
 ;#endif
 ;
 ;
-	.line	1512
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\drivers\DRIVER_FMXSDCard.c",281
+	.line	1523
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers\DRIVER_FMXSDCard.c",292
+	xref	~~k_irq_device_event
 	xref	~~k_debug_byte_array
 	xref	~~k_debug_long
 	xref	~~k_debug_integer
 	xref	~~k_debug_string
 	xref	~~strncpy
 	xref	~~memset
-	.sym	~~readCluster,~~readCluster,80,2,0
+	xref	~~_pseudo_timer
+	.sym	~~readCluster,~~readCluster,78,2,0
 	.sym	~~k_sd_reset,~~k_sd_reset,65,2,0
-	.sym	~~f_get_driver,~~f_get_driver,1098,3,32,55
-	.sym	~~DEVICE_SD,~~DEVICE_SD,138,2,32,55
-	.sym	~~DRIVER_FMXSDCard,~~DRIVER_FMXSDCard,10,3,808,56
+	.sym	~~f_get_driver,~~f_get_driver,1098,3,32,58
+	.sym	~~DEVICE_SD,~~DEVICE_SD,138,2,32,58
+	.sym	~~DRIVER_FMXSDCard,~~DRIVER_FMXSDCard,10,3,808,59
 	.sym	~~k_read_sd_command,~~k_read_sd_command,78,2,0
 	.sym	~~k_write_sd_sector,~~k_write_sd_sector,78,2,0
 	.sym	~~k_read_sd_sector,~~k_read_sd_sector,78,2,0
 	.sym	~~k_sd_initialize,~~k_sd_initialize,78,2,0
+	.sym	~~f_driver_irq,~~f_driver_irq,65,3,0
+	.sym	~~default_arg,~~default_arg,18,3,32
+	.sym	~~_pseudo_timer,~~_pseudo_timer,18,18,32
 	.sym	~~_k_driver_base,~~_k_driver_base,129,3,32
+	.sym	FILE,0,138,14,32,130
+	.sym	FILE_POINTER,0,10,14,112,130
 	.sym	~~k_read_volume_name,~~k_read_volume_name,78,2,0
-	.sym	PDOSHANDLE,0,138,14,32,124
-	.sym	DOSHANDLE,0,10,14,80,124
-	.sym	PFXDOSDEVICE,0,138,14,32,122
-	.sym	FXDOSDEVICE,0,10,14,5744,122
+	.sym	PDOSHANDLE,0,138,14,32,129
+	.sym	DOSHANDLE,0,10,14,80,129
+	.sym	PFXDOSDEVICE,0,138,14,32,127
+	.sym	FXDOSDEVICE,0,10,14,5744,127
 	.sym	DOSINITDEVICE,0,641,14,32
 	.sym	DOSSECTORWRITER,0,654,14,32
 	.sym	DOSSECTORREADER,0,654,14,32
-	.sym	PIDENTIFY_DEVICE_DATA,0,138,14,32,121
-	.sym	IDENTIFY_DEVICE_DATA,0,10,14,4096,121
-	.sym	PIDSECTOR,0,138,14,32,98
-	.sym	IDSECTOR,0,10,14,2048,98
-	.sym	PLFN,0,138,14,32,97
-	.sym	LFN,0,10,14,256,97
-	.sym	PFAT16ENTRYLONG,0,138,14,32,96
-	.sym	FAT16ENTRYLONG,0,10,14,288,96
-	.sym	PFAT16ENTRY,0,138,14,32,95
-	.sym	FAT16ENTRY,0,10,14,256,95
-	.sym	Fat16BootSector,0,10,14,4096,94
-	.sym	PPARTITIONTABLE,0,138,14,32,93
-	.sym	PARTITIONTABLE,0,10,14,128,93
-	.sym	PFATBOOTSECTOR,0,138,14,32,92
-	.sym	FATBOOTSECTOR,0,10,14,928,92
-	.sym	fat_BS_t,0,10,14,688,91
-	.sym	fat_extBS_16_t,0,10,14,192,90
-	.sym	PFAT32EXT,0,138,14,32,89
-	.sym	fat_extBS_32_t,0,10,14,416,89
-	.sym	P_FX_FAT_DIR_INFO,0,138,14,32,88
-	.sym	FX_FAT_DIR_INFO,0,10,14,256,88
-	.sym	PFILEINFO,0,138,14,32,87
-	.sym	FILEINFO,0,10,14,136,87
-	.sym	PDISKINFO,0,138,14,32,86
-	.sym	DISKINFO,0,10,14,416,86
-	.sym	PDIRENTRY,0,138,14,32,85
-	.sym	DIRENTRY,0,10,14,256,85
+	.sym	PIDENTIFY_DEVICE_DATA,0,138,14,32,126
+	.sym	IDENTIFY_DEVICE_DATA,0,10,14,4096,126
+	.sym	PIDSECTOR,0,138,14,32,103
+	.sym	IDSECTOR,0,10,14,2048,103
+	.sym	PLFN,0,138,14,32,102
+	.sym	LFN,0,10,14,256,102
+	.sym	PFAT16ENTRYLONG,0,138,14,32,101
+	.sym	FAT16ENTRYLONG,0,10,14,288,101
+	.sym	PFAT16ENTRY,0,138,14,32,100
+	.sym	FAT16ENTRY,0,10,14,256,100
+	.sym	Fat16BootSector,0,10,14,4096,99
+	.sym	PPARTITIONTABLE,0,138,14,32,98
+	.sym	PARTITIONTABLE,0,10,14,128,98
+	.sym	PFATBOOTSECTOR,0,138,14,32,97
+	.sym	FATBOOTSECTOR,0,10,14,928,97
+	.sym	fat_BS_t,0,10,14,688,96
+	.sym	fat_extBS_16_t,0,10,14,192,95
+	.sym	PFAT32EXT,0,138,14,32,94
+	.sym	fat_extBS_32_t,0,10,14,416,94
+	.sym	P_FX_FAT_DIR_INFO,0,138,14,32,93
+	.sym	FX_FAT_DIR_INFO,0,10,14,256,93
+	.sym	PFILEINFO,0,138,14,32,92
+	.sym	FILEINFO,0,10,14,136,92
+	.sym	PDISKINFO,0,138,14,32,91
+	.sym	DISKINFO,0,10,14,416,91
+	.sym	PDIRENTRY,0,138,14,32,90
+	.sym	DIRENTRY,0,10,14,256,90
 	.sym	DRESULT,0,5,14,16
 	.sym	DSTATUS,0,14,14,8
 	.sym	FRESULT,0,5,14,16
-	.sym	MKFS_PARM,0,10,14,80,84
-	.sym	FILINFO,0,10,14,2224,83
-	.sym	DIR,0,10,14,416,82
-	.sym	FIL,0,10,14,4400,81
-	.sym	FFOBJID,0,10,14,128,80
-	.sym	FATFS,0,10,14,4504,79
+	.sym	MKFS_PARM,0,10,14,80,89
+	.sym	FILINFO,0,10,14,2224,88
+	.sym	DIR,0,10,14,416,87
+	.sym	FIL,0,10,14,4400,86
+	.sym	FFOBJID,0,10,14,128,85
+	.sym	FATFS,0,10,14,4504,84
 	.sym	LBA_t,0,18,14,32
 	.sym	FSIZE_t,0,18,14,32
 	.sym	TCHAR,0,14,14,8
-	.sym	PCOMMANDARGS,0,138,14,32,78
-	.sym	COMMANDARGS,0,10,14,64,78
+	.sym	PCOMMANDARGS,0,138,14,32,83
+	.sym	COMMANDARGS,0,10,14,64,83
 	.sym	PTOKENIZESTATE,0,133,14,32
 	.sym	TOKENIZESTATE,0,5,14,16
-	.sym	PTOKEN,0,138,14,32,77
-	.sym	TOKEN,0,10,14,64,77
+	.sym	PTOKEN,0,138,14,32,82
+	.sym	TOKEN,0,10,14,64,82
 	.sym	PTOKENTYPE,0,133,14,32
 	.sym	TOKENTYPE,0,5,14,16
 	.sym	FXCommandHandler,0,656,14,32
-	.sym	PCONSOLECTX,0,138,14,32,76
-	.sym	CONSOLECTX,0,10,14,1144,76
-	.sym	PSPINNERCTX,0,138,14,32,75
-	.sym	SPINNERCTX,0,10,14,48,75
-	.sym	HCLIP,0,138,14,32,74
-	.sym	PCLIPBOARD_DATA,0,138,14,32,74
-	.sym	CLIPBOARD_DATA,0,10,14,168,74
-	.sym	PEVENTMANAGER,0,138,14,32,73
-	.sym	EVENTMANAGER,0,10,14,192,73
+	.sym	PCONSOLECTX,0,138,14,32,81
+	.sym	CONSOLECTX,0,10,14,1144,81
+	.sym	PSPINNERCTX,0,138,14,32,80
+	.sym	SPINNERCTX,0,10,14,48,80
+	.sym	HCLIP,0,138,14,32,79
+	.sym	PCLIPBOARD_DATA,0,138,14,32,79
+	.sym	CLIPBOARD_DATA,0,10,14,168,79
+	.sym	~~k_irq_device_event,~~k_irq_device_event,65,18,0
+	.sym	PEVENTMANAGER,0,138,14,32,78
+	.sym	EVENTMANAGER,0,10,14,192,78
 	.sym	EV_RUN,0,656,14,32
 	.sym	EV_QUERY_METRIC,0,656,14,32
 	.sym	EV_CONFIGURE,0,656,14,32
 	.sym	EV_UNINIT,0,641,14,32
 	.sym	EV_INIT,0,8833,14,32
-	.sym	PMOUSE_MSG_STATE,0,138,14,32,72
-	.sym	MOUSE_MSG_STATE,0,10,14,184,72
-	.sym	PFXEVENTPROCESS,0,138,14,32,71
-	.sym	FXEVENTPROCESS,0,10,14,64,71
-	.sym	PMARSHALDATA,0,139,14,32,70
-	.sym	MARSHALDATA,0,11,14,32,70
+	.sym	PMOUSE_MSG_STATE,0,138,14,32,77
+	.sym	MOUSE_MSG_STATE,0,10,14,184,77
+	.sym	PFXEVENTPROCESS,0,138,14,32,76
+	.sym	FXEVENTPROCESS,0,10,14,64,76
+	.sym	FXASYNCPROCESS,0,641,14,32
+	.sym	PMARSHALDATA,0,139,14,32,75
+	.sym	MARSHALDATA,0,11,14,32,75
 	.sym	FXIDLEPROCESS,0,641,14,32
 	.sym	FXEventProc,0,641,14,32
-	.sym	PMOUSEMSGDATA,0,138,14,32,69
-	.sym	MOUSEMSGDATA,0,10,14,64,69
+	.sym	PMOUSEMSGDATA,0,138,14,32,74
+	.sym	MOUSEMSGDATA,0,10,14,64,74
 	.sym	MSGIRQ,0,5,14,16
-	.sym	MAINLOOPARGS,0,10,14,16,68
-	.sym	PEACHCHILD_MSG,0,138,14,32,67
-	.sym	EACHCHILD_MSG,0,10,14,64,67
-	.sym	PMSGBOX_DATA,0,138,14,32,66
-	.sym	MSGBOX_DATA,0,10,14,96,66
-	.sym	PDESKTOP_DATA,0,138,14,32,65
-	.sym	DESKTOP_DATA,0,10,14,64,65
-	.sym	PWINDOWMANAGER,0,138,14,32,64
-	.sym	WINDOWMANAGER,0,10,14,160,64
+	.sym	MAINLOOPARGS,0,10,14,16,73
+	.sym	PEACHCHILD_MSG,0,138,14,32,72
+	.sym	EACHCHILD_MSG,0,10,14,64,72
+	.sym	PMSGBOX_DATA,0,138,14,32,71
+	.sym	MSGBOX_DATA,0,10,14,96,71
+	.sym	PDESKTOP_DATA,0,138,14,32,70
+	.sym	DESKTOP_DATA,0,10,14,64,70
+	.sym	PWINDOWMANAGER,0,138,14,32,69
+	.sym	WINDOWMANAGER,0,10,14,160,69
 	.sym	WM_DOPROCS,0,641,14,32
 	.sym	WM_QUERY_METRIC,0,656,14,32
 	.sym	WM_CONFIGURE,0,656,14,32
 	.sym	WM_HANDLE_EVENT,0,8833,14,32
 	.sym	WM_EVENTS,0,641,14,32
-	.sym	PCUR_PALETTE_MAP,0,138,14,32,63
-	.sym	CUR_PALETTE_MAP,0,10,14,400,63
-	.sym	PCLICKDETECTED,0,138,14,32,62
-	.sym	CLICKDETECTED,0,10,14,64,62
+	.sym	PCUR_PALETTE_MAP,0,138,14,32,68
+	.sym	CUR_PALETTE_MAP,0,10,14,400,68
+	.sym	PCLICKDETECTED,0,138,14,32,67
+	.sym	CLICKDETECTED,0,10,14,64,67
 	.sym	OBJECTCLICKED,0,641,14,32
-	.sym	PIPCPORT,0,138,14,32,61
-	.sym	IPCPORT,0,10,14,144,61
+	.sym	PALLOCATIONHEADER,0,138,14,32,66
+	.sym	ALLOCATIONHEADER,0,10,14,80,66
+	.sym	PIPCPORT,0,138,14,32,65
+	.sym	IPCPORT,0,10,14,144,65
 	.sym	MemoryCallback,0,641,14,32
-	.sym	PFXMEMORYMAP,0,138,14,32,60
-	.sym	FXMEMORYMAP,0,10,14,2072,60
-	.sym	UMM_HEAP_INFO,0,10,14,256,59
-	.sym	PEXECUTIVE,0,138,14,32,58
-	.sym	EXECUTIVE,0,10,14,128,58
+	.sym	PFXMEMORYMAP,0,138,14,32,64
+	.sym	FXMEMORYMAP,0,10,14,2072,64
+	.sym	UMM_HEAP_INFO,0,10,14,256,63
+	.sym	PEXECUTIVE,0,138,14,32,62
+	.sym	EXECUTIVE,0,10,14,128,62
 	.sym	EX_QUERY_METRIC,0,656,14,32
 	.sym	EX_CONFIGURE,0,656,14,32
 	.sym	EX_UNINIT,0,641,14,32
 	.sym	EX_INIT,0,8833,14,32
-	.sym	PFXSTRING,0,138,14,32,57
-	.sym	FXSTRING,0,10,14,64,57
-	.sym	DEVICEDRIVER_COMMAND,0,656,14,32
+	.sym	PFXSTRING,0,138,14,32,61
+	.sym	FXSTRING,0,10,14,64,61
+	.sym	PIRQCHAIN,0,138,14,32,60
+	.sym	IRQCHAIN,0,10,14,128,60
+	.sym	DEVICEDRIVER_COMMAND,0,654,14,32
 	.sym	DEVICEDRIVER_UNLOAD,0,654,14,32
-	.sym	DEVICEDRIVER_WRITE,0,656,14,32
-	.sym	DEVICEDRIVER_READ,0,656,14,32
+	.sym	DEVICEDRIVER_WRITE,0,654,14,32
+	.sym	DEVICEDRIVER_READ,0,654,14,32
 	.sym	DEVICEDRIVER_LOAD,0,654,14,32
-	.sym	DEVICEDRIVER_IRQ,0,654,14,32
-	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,56
-	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,56
-	.sym	GETDRIVERDEF,0,8842,14,32,55
-	.sym	PFX_DEVICE_DRIVER,0,138,14,32,55
-	.sym	FX_DEVICE_DRIVER,0,10,14,776,55
+	.sym	DEVICEDRIVER_IRQ,0,641,14,32
+	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,59
+	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,59
+	.sym	GETDRIVERDEF,0,8842,14,32,58
+	.sym	PFX_DEVICE_DRIVER,0,138,14,32,58
+	.sym	FX_DEVICE_DRIVER,0,10,14,776,58
 	.sym	~~k_debug_byte_array,~~k_debug_byte_array,65,18,0
 	.sym	~~k_debug_long,~~k_debug_long,65,18,0
 	.sym	~~k_debug_integer,~~k_debug_integer,65,18,0
 	.sym	~~k_debug_string,~~k_debug_string,65,18,0
-	.sym	PSEGMENTHEADER,0,138,14,32,54
-	.sym	SEGMENTHEADER,0,10,14,160,54
-	.sym	PDEBUGBYTEBITS,0,138,14,32,53
-	.sym	DEBUGBYTEBITS,0,10,14,8,53
-	.sym	PFXENVIRONMENT,0,138,14,32,52
-	.sym	FXENVIRONMENT,0,10,14,96,52
-	.sym	PFXZEROPAGE,0,138,14,32,51
-	.sym	FXZEROPAGE,0,10,14,824,51
+	.sym	PSEGMENTHEADER,0,138,14,32,57
+	.sym	SEGMENTHEADER,0,10,14,160,57
+	.sym	PDEBUGBYTEBITS,0,138,14,32,56
+	.sym	DEBUGBYTEBITS,0,10,14,8,56
+	.sym	PFXENVIRONMENT,0,138,14,32,55
+	.sym	FXENVIRONMENT,0,10,14,96,55
+	.sym	PFXZEROPAGE,0,138,14,32,54
+	.sym	FXZEROPAGE,0,10,14,720,54
+	.sym	IRQBUFFER,0,10,14,32,53
 	.sym	KERNELTRAPCALL,0,641,14,32
-	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,50
-	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,50
+	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,52
+	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,52
 	.sym	FOREACHNODEUNTIL,0,654,14,32
 	.sym	FOREACHNODE,0,641,14,32
+	.sym	PFXRFHEADER_STRING_ENTRY,0,138,14,32,51
+	.sym	FXRFHEADER_STRING_ENTRY,0,10,14,40,51
+	.sym	PFXRFHEADER_STRING,0,138,14,32,50
+	.sym	FXRFHEADER_STRING,0,10,14,32,50
 	.sym	PFXRFHEADER_FONT,0,138,14,32,49
 	.sym	FXRFHEADER_FONT,0,10,14,144,49
 	.sym	PFXRFHEADER,0,138,14,32,48
@@ -4185,9 +4299,9 @@ L37:
 	.sym	CONSOLE_CONTROL,0,10,14,448,18
 	.sym	FXProcessProc,0,641,14,32
 	.sym	PFXCMDMESSAGE,0,138,14,32,17
-	.sym	FXCMDMESSAGE,0,10,14,304,17
+	.sym	FXCMDMESSAGE,0,10,14,312,17
 	.sym	PFXOSMESSAGE,0,138,14,32,16
-	.sym	FXOSMESSAGE,0,10,14,304,16
+	.sym	FXOSMESSAGE,0,10,14,312,16
 	.sym	PINT_REGS,0,138,14,32,15
 	.sym	INT_REGS,0,10,14,104,15
 	.sym	TASK_STACK,0,10,14,32,14
@@ -4234,6 +4348,7 @@ L37:
 	.sym	HRESULT,0,18,14,32
 	.sym	LPWCHAR,0,144,14,32
 	.sym	WCHAR,0,16,14,16
+	.sym	HSTRINGTABLE,0,129,14,32
 	.sym	HCOLOR,0,129,14,32
 	.sym	HFONT,0,129,14,32
 	.sym	HDC,0,129,14,32
@@ -4261,6 +4376,12 @@ L37:
 	.sym	LPSTR,0,142,14,32
 	.sym	LPCHAR,0,142,14,32
 	.sym	CHAR,0,14,14,8
+	.sym	PUINT_32,0,146,14,32
+	.sym	UINT_32,0,18,14,32
+	.sym	PUINT_16,0,144,14,32
+	.sym	UINT_16,0,16,14,16
+	.sym	PUINT_8,0,142,14,32
+	.sym	UINT_8,0,14,14,8
 	.sym	LPVOID,0,129,14,32
 	.sym	VOID,0,1,14,32
 	.sym	~~strncpy,~~strncpy,1102,18,32

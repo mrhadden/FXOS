@@ -3,9 +3,9 @@ R0	equ	1
 R1	equ	5
 R2	equ	9
 R3	equ	13
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.c",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.c",0
 ;#include "fxos.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stddef.h",0
 	.line	88
@@ -23,14 +23,14 @@ R3	equ	13
 	.member	frac,16,16,8,16
 	.eos
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",4
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",4
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\ctype.h",0
 	.line	103
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
 	.stag	_fx_bytebits,8,4
 	.member	b7,0,14,17,1
 	.member	b6,1,14,17,1
@@ -104,7 +104,7 @@ R3	equ	13
 	.member	YH,88,14,8,8
 	.member	YL,96,14,8,8
 	.eos
-	.stag	_fx_eventMessage,304,16
+	.stag	_fx_eventMessage,312,16
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -112,8 +112,9 @@ R3	equ	13
 	.member	pheap,112,129,8,32
 	.member	msgTime,144,18,8,32
 	.member	data,176,110,8,0,16
+	.member	attr,304,14,8,8
 	.eos
-	.stag	_fx_cmdMessage,304,17
+	.stag	_fx_cmdMessage,312,17
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -125,6 +126,7 @@ R3	equ	13
 	.member	parameter1,208,18,8,32
 	.member	parameter2,240,18,8,32
 	.member	parameter3,272,18,8,32
+	.member	attr,304,14,8,8
 	.eos
 	.stag	_fx_console_ctl,448,18
 	.member	maxCols,0,5,8,16
@@ -467,37 +469,49 @@ R3	equ	13
 	.member	height,128,14,8,8
 	.member	width,136,14,8,8
 	.eos
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",8
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstringtable.h",0
-	.line	89
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",9
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fmx_vicky.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fmx_vicky.h",11
+	.stag	_fx_resource_string,32,50
+	.member	locale,0,110,8,0,2
+	.member	entries,16,16,8,16
+	.eos
+	.stag	_fx_resource_string_entry,40,51
+	.member	index,0,16,8,16
+	.member	length,16,16,8,16
+	.member	data,32,14,8,8
+	.eos
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",8
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstringtable.h",0
+	.line	90
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",9
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",11
 	.line	72
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",6
 	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",16
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",16
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",11
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",6
-	.stag	_fx_api_call_table,8192,50
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",11
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",6
+	.stag	_fx_api_call_table,8192,52
 	.member	call_table,0,1121,8,32,256
 	.eos
-	.stag	_fx_zero_page,824,51
+	.stag	_fx_zero_page_irq_data,32,53
+	.member	data,0,110,8,0,4
+	.eos
+	.stag	_fx_zero_page,720,54
 	.member	fxos_mouse_byte_0,0,14,8,8
 	.member	fxos_mouse_byte_1,8,14,8,8
 	.member	fxos_mouse_byte_2,16,14,8,8
@@ -512,42 +526,37 @@ R3	equ	13
 	.member	fxos_mouse_ctl,88,14,8,8
 	.member	fxos_mouse_index,96,14,8,8
 	.member	fxos_mouse_status,104,14,8,8
-	.member	fxos_mouse_dbg_1,112,18,8,32
-	.member	fxos_mouse_dbg_2,144,18,8,32
-	.member	fxos_mouse_dbg_3,176,18,8,32
-	.member	fxos_vicky_byte_0,208,14,8,8
-	.member	fxos_vicky_byte_1,216,14,8,8
-	.member	fxos_vicky_byte_2,224,14,8,8
-	.member	VersionMajor,232,16,8,16
-	.member	VersionMinor,248,16,8,16
-	.member	VersionRelease,264,16,8,16
-	.member	topMemory,280,18,8,32
-	.member	bottomMemory,312,18,8,32
-	.member	availableMemory,344,18,8,32
-	.member	availableMemoryK,376,18,8,32
-	.member	availableHeapMemory,408,18,8,32
-	.member	availableHeapMemoryK,440,18,8,32
-	.member	fxos_console_row,472,16,8,16
-	.member	fxos_console_col,488,16,8,16
-	.member	executive,504,129,8,32
-	.member	eventmanager,536,129,8,32
-	.member	devicemanager,568,129,8,32
-	.member	windowmanager,600,129,8,32
-	.member	fxos_kernel_api,632,138,8,32,50
-	.member	fxos_dos_api,664,138,8,32,50
-	.member	fxos_gfx_api,696,138,8,32,50
-	.member	fxos_gui_api,728,138,8,32,50
-	.member	fxos_con_api,760,138,8,32,50
-	.member	fxos_reserved_2_api,792,138,8,32,50
+	.member	Endianness,112,16,8,16
+	.member	VersionMajor,128,16,8,16
+	.member	VersionMinor,144,16,8,16
+	.member	VersionRelease,160,16,8,16
+	.member	topMemory,176,18,8,32
+	.member	bottomMemory,208,18,8,32
+	.member	availableMemory,240,18,8,32
+	.member	availableMemoryK,272,18,8,32
+	.member	availableHeapMemory,304,18,8,32
+	.member	availableHeapMemoryK,336,18,8,32
+	.member	fxos_console_row,368,16,8,16
+	.member	fxos_console_col,384,16,8,16
+	.member	executive,400,129,8,32
+	.member	eventmanager,432,129,8,32
+	.member	devicemanager,464,129,8,32
+	.member	windowmanager,496,129,8,32
+	.member	fxos_kernel_api,528,138,8,32,52
+	.member	fxos_dos_api,560,138,8,32,52
+	.member	fxos_gfx_api,592,138,8,32,52
+	.member	fxos_gui_api,624,138,8,32,52
+	.member	fxos_con_api,656,138,8,32,52
+	.member	fxos_reserved_2_api,688,138,8,32,52
 	.eos
-	.stag	_fx_environment,96,52
+	.stag	_fx_environment,96,55
 	.member	variables,0,142,8,32
 	.member	reserved1,32,5,8,16
 	.member	reserved2,48,5,8,16
 	.member	reserved3,64,5,8,16
 	.member	reserved4,80,5,8,16
 	.eos
-	.stag	_debug_byte_bits,8,53
+	.stag	_debug_byte_bits,8,56
 	.member	bit7,0,14,17,1
 	.member	bit6,1,14,17,1
 	.member	bit5,2,14,17,1
@@ -557,7 +566,7 @@ R3	equ	13
 	.member	bit1,6,14,17,1
 	.member	bit0,7,14,17,1
 	.eos
-	.stag	_k_segmentheader,160,54
+	.stag	_k_segmentheader,160,57
 	.member	version_major,0,14,8,8
 	.member	version_minor,8,14,8,8
 	.member	length,16,5,8,16
@@ -566,14 +575,14 @@ R3	equ	13
 	.member	segment_size,96,7,8,32
 	.member	main_entry_addr,128,7,8,32
 	.eos
-	.stag	_fx_device_driver,776,55
+	.stag	_fx_device_driver,776,58
 	.member	name,0,110,8,0,32
 	.member	version,256,110,8,0,16
 	.member	hmajor,384,110,8,0,8
 	.member	hminor,448,110,8,0,8
 	.member	type,512,14,8,8
 	.member	designation,520,110,8,0,6
-	.member	reserved_1,568,16,8,16
+	.member	irq_ctl,568,16,8,16
 	.member	f_driver_irq,584,129,8,32
 	.member	driver_context,616,129,8,32
 	.member	f_driver_load,648,129,8,32
@@ -581,14 +590,14 @@ R3	equ	13
 	.member	f_driver_write,712,129,8,32
 	.member	f_driver_unload,744,129,8,32
 	.eos
-	.stag	_fx_block_device_driver,808,56
+	.stag	_fx_block_device_driver,808,59
 	.member	name,0,110,8,0,32
 	.member	version,256,110,8,0,16
 	.member	hmajor,384,110,8,0,8
 	.member	hminor,448,110,8,0,8
 	.member	type,512,14,8,8
 	.member	designation,520,110,8,0,6
-	.member	reserved_1,568,16,8,16
+	.member	irq_ctl,568,16,8,16
 	.member	f_driver_irq,584,129,8,32
 	.member	driver_context,616,129,8,32
 	.member	f_driver_load,648,129,8,32
@@ -597,73 +606,76 @@ R3	equ	13
 	.member	f_driver_unload,744,129,8,32
 	.member	f_driver_command,776,129,8,32
 	.eos
-	.line	400
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",22
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",0
+	.stag	_k_irq_chain,128,60
+	.member	handlers,0,5217,8,32,4
+	.eos
+	.line	490
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",22
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
 	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",12
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",12
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",7
-	.stag	_fx_string,64,57
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",7
+	.stag	_fx_string,64,61
 	.member	size,0,16,8,16
 	.member	pos,16,5,8,16
 	.member	buffer,32,142,8,32
 	.eos
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",17
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",17
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",5
-	.stag	_fxos_executive_vtable,128,58
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",5
+	.stag	_fxos_executive_vtable,128,62
 	.member	Init,0,8833,8,32
 	.member	Configure,32,656,8,32
 	.member	Query,64,656,8,32
 	.member	Uninit,96,641,8,32
 	.eos
 	.line	86
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.line	208
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",8
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",8
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos_build_parameters.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_build_parameters.h",0
 	.line	35
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",8
-	.stag	UMM_HEAP_INFO_t,256,59
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",8
+	.stag	UMM_HEAP_INFO_t,256,63
 	.member	totalEntries,0,18,8,32
 	.member	usedEntries,32,18,8,32
 	.member	freeEntries,64,18,8,32
@@ -674,42 +686,48 @@ R3	equ	13
 	.member	blockSize,224,18,8,32
 	.eos
 	.line	199
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",11
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",11
 	.line	24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",7
-	.stag	_fx_memory_map,2072,60
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",7
+	.stag	_fx_memory_map,2072,64
 	.member	availableMemory,0,18,8,32
 	.member	valid_segments,32,110,8,0,255
 	.eos
-	.stag	_fx_ipc_port,144,61
+	.stag	_fx_ipc_port,144,65
 	.member	id,0,18,8,32
 	.member	type,32,14,8,8
-	.member	name,40,138,8,32,57
+	.member	name,40,138,8,32,61
 	.member	time,72,18,8,32
 	.member	queue,104,138,8,32,7
 	.member	reserved_1,136,14,8,8
 	.eos
-	.line	105
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",6
+	.stag	_k_mem_alloc_header,80,66
+	.member	user,0,14,8,8
+	.member	attr,8,14,8,8
+	.member	size,16,18,8,32
+	.member	virtual,48,129,8,32
+	.eos
+	.line	129
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",6
 	.line	74
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",5
-	.stag	_click_detected,64,62
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",5
+	.stag	_click_detected,64,67
 	.member	window,0,138,8,32,33
 	.member	handler,32,641,8,32
 	.eos
-	.stag	_current_palette_map,400,63
+	.stag	_current_palette_map,400,68
 	.member	CUR_DESKTOP,0,5,8,16
 	.member	CUR_BACKGROUND,16,5,8,16
 	.member	CUR_FONT,32,5,8,16
@@ -723,37 +741,37 @@ R3	equ	13
 	.member	CUR_COLOR,160,101,8,0,15
 	.eos
 	.line	359
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",8
-	.stag	_fxos_winman_vtable,160,64
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",8
+	.stag	_fxos_winman_vtable,160,69
 	.member	Events,0,641,8,32
 	.member	ConfigureWindowManager,32,656,8,32
 	.member	ProcessWindowEvent,64,8833,8,32
 	.member	QueryWindowManager,96,656,8,32
 	.member	DoWndProcs,128,641,8,32
 	.eos
-	.stag	fake65_,64,65
+	.stag	fake70_,64,70
 	.member	type,0,16,8,16
 	.member	size,16,16,8,16
 	.member	desktopAction,32,129,8,32
 	.eos
-	.stag	fake66_,96,66
+	.stag	fake71_,96,71
 	.member	type,0,16,8,16
-	.member	caption,16,138,8,32,57
+	.member	caption,16,138,8,32,61
 	.member	buttonType,48,16,8,16
 	.member	x,64,5,8,16
 	.member	y,80,5,8,16
 	.eos
-	.stag	_childMessage_t,64,67
+	.stag	_childMessage_t,64,72
 	.member	msgType,0,16,8,16
 	.member	msgData,16,129,8,32
 	.member	dataSize,48,16,8,16
 	.eos
-	.line	581
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",9
-	.stag	_fx_main_loopvars,16,68
+	.line	594
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",9
+	.stag	_fx_main_loopvars,16,73
 	.member	dummy,0,5,8,16
 	.eos
-	.stag	_fxMouseMessageData,64,69
+	.stag	_fxMouseMessageData,64,74
 	.member	button1,0,14,8,8
 	.member	button2,8,14,8,8
 	.member	button3,16,14,8,8
@@ -761,18 +779,18 @@ R3	equ	13
 	.member	x,32,16,8,16
 	.member	y,48,16,8,16
 	.eos
-	.utag	marshalled_data,32,70
+	.utag	marshalled_data,32,75
 	.member	byteValue,0,14,11,8
 	.member	verbValue,0,110,11,0,2
 	.member	intValue,0,16,11,16
 	.member	longValue,0,18,11,32
 	.member	pointerValue,0,129,11,32
 	.eos
-	.stag	_fx_eventProcess,64,71
+	.stag	_fx_eventProcess,64,76
 	.member	process,0,138,8,32,20
 	.member	eventProc,32,641,8,32
 	.eos
-	.stag	_mouse_msg_state,184,72
+	.stag	_mouse_msg_state,184,77
 	.member	lastEvent,0,18,8,32
 	.member	buttonLeftDown,32,14,8,8
 	.member	lastLeftDown,40,18,8,32
@@ -783,7 +801,7 @@ R3	equ	13
 	.member	lastX,152,16,8,16
 	.member	lastY,168,16,8,16
 	.eos
-	.stag	_fxos_eventmanager_vtable,192,73
+	.stag	_fxos_eventmanager_vtable,192,78
 	.member	EventQueue,0,138,8,32,7
 	.member	Init,32,8833,8,32
 	.member	Run,64,656,8,32
@@ -791,18 +809,18 @@ R3	equ	13
 	.member	Query,128,656,8,32
 	.member	Uninit,160,641,8,32
 	.eos
-	.stag	_k_clipboard_data,168,74
+	.stag	_k_clipboard_data,168,79
 	.member	type,0,14,8,8
 	.member	readable,8,110,8,0,16
 	.member	data,136,129,8,32
 	.eos
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",18
-	.stag	_fx_spinner_ctx,48,75
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",18
+	.stag	_fx_spinner_ctx,48,80
 	.member	index,0,5,8,16
 	.member	spinner,16,142,8,32
 	.eos
-	.stag	_fx_console_ctx,1144,76
+	.stag	_fx_console_ctx,1144,81
 	.member	lineBufferIndex,0,5,8,16
 	.member	lineBuffer,16,110,8,0,128
 	.member	isShifted,1040,14,8,8
@@ -810,31 +828,31 @@ R3	equ	13
 	.member	screenBuffer,1080,129,8,32
 	.member	Reserved1,1112,129,8,32
 	.eos
-	.stag	_token,64,77
+	.stag	_token,64,82
 	.member	type,0,5,8,16
 	.member	depth,16,16,8,16
 	.member	text,32,142,8,32
 	.eos
-	.stag	_command_args,64,78
+	.stag	_command_args,64,83
 	.member	proc,0,656,8,32
 	.member	tokens,32,138,8,32,5
 	.eos
 	.line	208
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",23
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",25
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ffconf.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",23
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",24
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",25
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ffconf.h",0
 	.line	298
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",29
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",30
-	.stag	fake79_,4504,79
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",29
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",30
+	.stag	fake84_,4504,84
 	.member	fs_type,0,14,8,8
 	.member	pdrv,8,14,8,8
 	.member	n_fats,16,14,8,8
@@ -855,16 +873,16 @@ R3	equ	13
 	.member	winsect,376,18,8,32
 	.member	win,408,110,8,0,512
 	.eos
-	.stag	fake80_,128,80
-	.member	fs,0,138,8,32,79
+	.stag	fake85_,128,85
+	.member	fs,0,138,8,32,84
 	.member	id,32,5,8,16
 	.member	attr,48,14,8,8
 	.member	stat,56,14,8,8
 	.member	sclust,64,18,8,32
 	.member	objsize,96,18,8,32
 	.eos
-	.stag	fake81_,4400,81
-	.member	obj,0,10,8,128,80
+	.stag	fake86_,4400,86
+	.member	obj,0,10,8,128,85
 	.member	flag,128,14,8,8
 	.member	err,136,14,8,8
 	.member	fptr,144,18,8,32
@@ -874,8 +892,8 @@ R3	equ	13
 	.member	dir_ptr,272,142,8,32
 	.member	buf,304,110,8,0,512
 	.eos
-	.stag	fake82_,416,82
-	.member	obj,0,10,8,128,80
+	.stag	fake87_,416,87
+	.member	obj,0,10,8,128,85
 	.member	dptr,128,18,8,32
 	.member	clust,160,18,8,32
 	.member	sect,192,18,8,32
@@ -884,7 +902,7 @@ R3	equ	13
 	.member	blk_ofs,352,18,8,32
 	.member	pat,384,142,8,32
 	.eos
-	.stag	fake83_,2224,83
+	.stag	fake88_,2224,88
 	.member	fsize,0,18,8,32
 	.member	fdate,32,5,8,16
 	.member	ftime,48,5,8,16
@@ -892,7 +910,7 @@ R3	equ	13
 	.member	altname,72,110,8,0,13
 	.member	fname,176,110,8,0,256
 	.eos
-	.stag	fake84_,80,84
+	.stag	fake89_,80,89
 	.member	fmt,0,14,8,8
 	.member	n_fat,8,14,8,8
 	.member	align,16,16,8,16
@@ -900,40 +918,40 @@ R3	equ	13
 	.member	au_size,48,18,8,32
 	.eos
 	.line	429
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",26
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",26
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.c",1
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.c",1
 ;#include "fxdos.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",0
 	.line	429
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\diskio.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\diskio.h",0
 	.line	85
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.h",7
-	.stag	_fx_sd_direntry,256,85
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",7
+	.stag	_fx_sd_direntry,256,90
 	.member	filename,0,110,8,0,11
 	.member	type,88,14,8,8
 	.member	attrs,96,110,8,0,20
 	.eos
-	.stag	_fx_info,416,86
+	.stag	_fx_info,416,91
 	.member	stgName,0,110,8,0,32
 	.member	Reserved1,256,14,8,8
 	.member	stgType,264,16,8,16
 	.member	Reserved2,280,14,8,8
 	.member	stgReserved,288,110,8,0,16
 	.eos
-	.stag	_fx_fileinfo,136,87
+	.stag	_fx_fileinfo,136,92
 	.member	type,0,14,8,8
 	.member	pFilename,8,142,8,32
 	.member	lSize,40,18,8,32
 	.member	lcreateDate,72,18,8,32
 	.member	lchangeDate,104,18,8,32
 	.eos
-	.stag	_FX_FAT_DIR_INFO,256,88
+	.stag	_FX_FAT_DIR_INFO,256,93
 	.member	DIR_Name,0,110,8,0,11
 	.member	DIR_Attr,88,14,8,8
 	.member	DIR_NTRes,96,14,8,8
@@ -947,7 +965,7 @@ R3	equ	13
 	.member	DIR_FstClusLO,208,16,8,16
 	.member	DIR_FileSize,224,18,8,32
 	.eos
-	.stag	fat_extBS_32,416,89
+	.stag	fat_extBS_32,416,94
 	.member	table_size_32,0,18,8,32
 	.member	extended_flags,32,16,8,16
 	.member	fat_version,48,16,8,16
@@ -962,7 +980,7 @@ R3	equ	13
 	.member	volume_label,264,110,8,0,11
 	.member	fat_type_label,352,110,8,0,8
 	.eos
-	.stag	fat_extBS_16,192,90
+	.stag	fat_extBS_16,192,95
 	.member	bios_drive_num,0,14,8,8
 	.member	reserved1,8,14,8,8
 	.member	boot_signature,16,14,8,8
@@ -970,7 +988,7 @@ R3	equ	13
 	.member	volume_label,40,110,8,0,11
 	.member	fat_type_label,128,110,8,0,8
 	.eos
-	.stag	fat_BS,688,91
+	.stag	fat_BS,688,96
 	.member	bootjmp,0,110,8,0,3
 	.member	oem_name,24,110,8,0,8
 	.member	bytes_per_sector,88,16,8,16
@@ -987,7 +1005,7 @@ R3	equ	13
 	.member	total_sectors_32,240,16,8,16
 	.member	extended_section,256,110,8,0,54
 	.eos
-	.stag	__FATBootSector,928,92
+	.stag	__FATBootSector,928,97
 	.member	bootjmp,0,110,8,0,3
 	.member	oem_name,24,110,8,0,8
 	.member	bytes_per_sector,88,16,8,16
@@ -1010,7 +1028,7 @@ R3	equ	13
 	.member	file_system_type,432,110,8,0,8
 	.member	extended_section,496,110,8,0,54
 	.eos
-	.stag	__PARTITIONTABLE,128,93
+	.stag	__PARTITIONTABLE,128,98
 	.member	first_byte,0,14,8,8
 	.member	start_chs,8,110,8,0,3
 	.member	partition_type,32,14,8,8
@@ -1018,7 +1036,7 @@ R3	equ	13
 	.member	start_sector,64,18,8,32
 	.member	length_sectors,96,18,8,32
 	.eos
-	.stag	fake94_,4096,94
+	.stag	fake99_,4096,99
 	.member	jmp,0,110,8,0,3
 	.member	oem,24,110,8,0,8
 	.member	sector_size,88,15,8,16
@@ -1042,7 +1060,7 @@ R3	equ	13
 	.member	boot_code,496,110,8,0,448
 	.member	boot_sector_signature,4080,15,8,16
 	.eos
-	.stag	__FAT16ENTRY,256,95
+	.stag	__FAT16ENTRY,256,100
 	.member	filename,0,110,8,0,8
 	.member	ext,64,110,8,0,3
 	.member	attributes,88,14,8,8
@@ -1052,7 +1070,7 @@ R3	equ	13
 	.member	starting_cluster,208,16,8,16
 	.member	file_size,224,18,8,32
 	.eos
-	.stag	__FAT16ENTRYLONG,288,96
+	.stag	__FAT16ENTRYLONG,288,101
 	.member	filename,0,110,8,0,8
 	.member	ext,64,110,8,0,3
 	.member	attributes,88,14,8,8
@@ -1063,7 +1081,7 @@ R3	equ	13
 	.member	file_size,224,18,8,32
 	.member	plongfileName,256,142,8,32
 	.eos
-	.stag	_LongFileName,256,97
+	.stag	_LongFileName,256,102
 	.member	sequenceNo,0,14,8,8
 	.member	fileName_Part1,8,110,8,0,10
 	.member	fileattribute,88,14,8,8
@@ -1073,7 +1091,7 @@ R3	equ	13
 	.member	fstclusLO,208,5,8,16
 	.member	fileName_Part3,224,110,8,0,4
 	.eos
-	.stag	_IDSECTOR,2048,98
+	.stag	_IDSECTOR,2048,103
 	.member	wGenConfig,0,16,8,16
 	.member	wNumCyls,16,16,8,16
 	.member	wReserved,32,16,8,16
@@ -1105,7 +1123,7 @@ R3	equ	13
 	.member	wMultiWordDMA,1008,16,8,16
 	.member	bReserved,1024,110,8,0,128
 	.eos
-	.stag	fake99_,16,99
+	.stag	fake104_,16,104
 	.member	Reserved1,0,16,17,1
 	.member	Retired3,1,16,17,1
 	.member	ResponseIncomplete,2,16,17,1
@@ -1115,11 +1133,11 @@ R3	equ	13
 	.member	Retired1,8,16,17,7
 	.member	DeviceType,15,16,17,1
 	.eos
-	.stag	fake100_,16,100
+	.stag	fake105_,16,105
 	.member	FeatureSupported,0,16,17,1
 	.member	Reserved,1,16,17,15
 	.eos
-	.stag	fake101_,32,101
+	.stag	fake106_,32,106
 	.member	CurrentLongPhysicalSectorAlignment,0,14,17,2
 	.member	ReservedByte49,2,14,17,6
 	.member	DmaSupported,8,14,17,1
@@ -1131,7 +1149,7 @@ R3	equ	13
 	.member	Reserved2,14,14,17,2
 	.member	ReservedWord50,16,16,8,16
 	.eos
-	.stag	fake102_,16,102
+	.stag	fake107_,16,107
 	.member	ZonedCapabilities,0,16,17,2
 	.member	NonVolatileWriteCache,2,16,17,1
 	.member	ExtendedUserAddressableSectorsSupported,3,16,17,1
@@ -1148,7 +1166,7 @@ R3	equ	13
 	.member	DeterministicReadAfterTrimSupported,14,16,17,1
 	.member	CFastSpecSupported,15,16,17,1
 	.eos
-	.stag	fake103_,32,103
+	.stag	fake108_,32,108
 	.member	Reserved0,0,16,17,1
 	.member	SataGen1,1,16,17,1
 	.member	SataGen2,2,16,17,1
@@ -1170,7 +1188,7 @@ R3	equ	13
 	.member	DEVSLPtoReducedPwrState,23,16,17,1
 	.member	Reserved3,24,16,17,8
 	.eos
-	.stag	fake104_,16,104
+	.stag	fake109_,16,109
 	.member	Reserved0,0,16,17,1
 	.member	NonZeroOffsets,1,16,17,1
 	.member	DmaSetupAutoActivate,2,16,17,1
@@ -1183,7 +1201,7 @@ R3	equ	13
 	.member	HybridInformation,9,16,17,1
 	.member	Reserved1,10,16,17,6
 	.eos
-	.stag	fake105_,16,105
+	.stag	fake110_,16,110
 	.member	Reserved0,0,16,17,1
 	.member	NonZeroOffsets,1,16,17,1
 	.member	DmaSetupAutoActivate,2,16,17,1
@@ -1196,7 +1214,7 @@ R3	equ	13
 	.member	HybridInformation,9,16,17,1
 	.member	Reserved1,10,16,17,6
 	.eos
-	.stag	fake106_,48,106
+	.stag	fake111_,48,111
 	.member	SmartCommands,0,16,17,1
 	.member	SecurityMode,1,16,17,1
 	.member	RemovableMediaFeature,2,16,17,1
@@ -1243,7 +1261,7 @@ R3	equ	13
 	.member	IdleWithUnloadFeature,45,16,17,1
 	.member	WordValid,46,16,17,2
 	.eos
-	.stag	fake107_,48,107
+	.stag	fake112_,48,112
 	.member	SmartCommands,0,16,17,1
 	.member	SecurityMode,1,16,17,1
 	.member	RemovableMediaFeature,2,16,17,1
@@ -1291,22 +1309,22 @@ R3	equ	13
 	.member	IdleWithUnloadFeature,45,16,17,1
 	.member	Reserved4,46,16,17,2
 	.eos
-	.stag	fake108_,16,108
+	.stag	fake113_,16,113
 	.member	TimeRequired,0,16,17,15
 	.member	ExtendedTimeReported,15,16,17,1
 	.eos
-	.stag	fake109_,16,109
+	.stag	fake114_,16,114
 	.member	TimeRequired,0,16,17,15
 	.member	ExtendedTimeReported,15,16,17,1
 	.eos
-	.stag	fake110_,16,110
+	.stag	fake115_,16,115
 	.member	LogicalSectorsPerPhysicalSector,0,16,17,4
 	.member	Reserved0,4,16,17,8
 	.member	LogicalSectorLongerThan256Words,12,16,17,1
 	.member	MultipleLogicalSectorsPerPhysicalSector,13,16,17,1
 	.member	Reserved1,14,16,17,2
 	.eos
-	.stag	fake111_,16,111
+	.stag	fake116_,16,116
 	.member	ReservedForDrqTechnicalReport,0,16,17,1
 	.member	WriteReadVerify,1,16,17,1
 	.member	WriteUncorrectableExt,2,16,17,1
@@ -1318,7 +1336,7 @@ R3	equ	13
 	.member	Reserved0,8,16,17,6
 	.member	WordValid,14,16,17,2
 	.eos
-	.stag	fake112_,16,112
+	.stag	fake117_,16,117
 	.member	ReservedForDrqTechnicalReport,0,16,17,1
 	.member	WriteReadVerify,1,16,17,1
 	.member	WriteUncorrectableExt,2,16,17,1
@@ -1330,7 +1348,7 @@ R3	equ	13
 	.member	Reserved0,8,16,17,6
 	.member	Reserved1,14,16,17,2
 	.eos
-	.stag	fake113_,16,113
+	.stag	fake118_,16,118
 	.member	SecuritySupported,0,16,17,1
 	.member	SecurityEnabled,1,16,17,1
 	.member	SecurityLocked,2,16,17,1
@@ -1341,18 +1359,18 @@ R3	equ	13
 	.member	SecurityLevel,8,16,17,1
 	.member	Reserved1,9,16,17,7
 	.eos
-	.stag	fake114_,16,114
+	.stag	fake119_,16,119
 	.member	MaximumCurrentInMA,0,16,17,12
 	.member	CfaPowerMode1Disabled,12,16,17,1
 	.member	CfaPowerMode1Required,13,16,17,1
 	.member	Reserved0,14,16,17,1
 	.member	Word160Supported,15,16,17,1
 	.eos
-	.stag	fake115_,16,115
+	.stag	fake120_,16,120
 	.member	SupportsTrim,0,16,17,1
 	.member	Reserved0,1,16,17,15
 	.eos
-	.stag	fake116_,16,116
+	.stag	fake121_,16,121
 	.member	Supported,0,16,17,1
 	.member	Reserved0,1,16,17,1
 	.member	WriteSameSuported,2,16,17,1
@@ -1362,12 +1380,12 @@ R3	equ	13
 	.member	Reserved1,6,16,17,6
 	.member	VendorSpecific,12,16,17,4
 	.eos
-	.stag	fake117_,16,117
+	.stag	fake122_,16,122
 	.member	AlignmentOfLogicalWithinPhysical,0,16,17,14
 	.member	Word209Supported,14,16,17,1
 	.member	Reserved0,15,16,17,1
 	.eos
-	.stag	fake118_,16,118
+	.stag	fake123_,16,123
 	.member	NVCachePowerModeEnabled,0,16,17,1
 	.member	Reserved0,1,16,17,3
 	.member	NVCacheFeatureSetEnabled,4,16,17,1
@@ -1375,16 +1393,16 @@ R3	equ	13
 	.member	NVCachePowerModeVersion,8,16,17,4
 	.member	NVCacheFeatureSetVersion,12,16,17,4
 	.eos
-	.stag	fake119_,16,119
+	.stag	fake124_,16,124
 	.member	NVCacheEstimatedTimeToSpinUpInSeconds,0,14,8,8
 	.member	Reserved,8,14,8,8
 	.eos
-	.stag	fake120_,16,120
+	.stag	fake125_,16,125
 	.member	MajorVersion,0,16,17,12
 	.member	TransportType,12,16,17,4
 	.eos
-	.stag	_IDENTIFY_DEVICE_DATA,4096,121
-	.member	GeneralConfiguration,0,10,8,16,99
+	.stag	_IDENTIFY_DEVICE_DATA,4096,126
+	.member	GeneralConfiguration,0,10,8,16,104
 	.member	NumCylinders,16,16,8,16
 	.member	SpecificConfiguration,32,16,8,16
 	.member	NumHeads,48,16,8,16
@@ -1398,8 +1416,8 @@ R3	equ	13
 	.member	ModelNumber,432,110,8,0,40
 	.member	MaximumBlockTransfer,752,14,8,8
 	.member	VendorUnique2,760,14,8,8
-	.member	TrustedComputing,768,10,8,16,100
-	.member	Capabilities,784,10,8,32,101
+	.member	TrustedComputing,768,10,8,16,105
+	.member	Capabilities,784,10,8,32,106
 	.member	ObsoleteWords51,816,112,8,0,2
 	.member	TranslationFieldsValid,848,16,17,3
 	.member	Reserved3,851,16,17,5
@@ -1425,21 +1443,21 @@ R3	equ	13
 	.member	RecommendedMWXferCycleTime,1056,16,8,16
 	.member	MinimumPIOCycleTime,1072,16,8,16
 	.member	MinimumPIOCycleTimeIORDY,1088,16,8,16
-	.member	AdditionalSupported,1104,10,8,16,102
+	.member	AdditionalSupported,1104,10,8,16,107
 	.member	ReservedWords70,1120,112,8,0,5
 	.member	QueueDepth,1200,16,17,5
 	.member	ReservedWord75,1205,16,17,11
-	.member	SerialAtaCapabilities,1216,10,8,32,103
-	.member	SerialAtaFeaturesSupported,1248,10,8,16,104
-	.member	SerialAtaFeaturesEnabled,1264,10,8,16,105
+	.member	SerialAtaCapabilities,1216,10,8,32,108
+	.member	SerialAtaFeaturesSupported,1248,10,8,16,109
+	.member	SerialAtaFeaturesEnabled,1264,10,8,16,110
 	.member	MajorRevision,1280,16,8,16
 	.member	MinorRevision,1296,16,8,16
-	.member	CommandSetSupport,1312,10,8,48,106
-	.member	CommandSetActive,1360,10,8,48,107
+	.member	CommandSetSupport,1312,10,8,48,111
+	.member	CommandSetActive,1360,10,8,48,112
 	.member	UltraDMASupport,1408,16,17,8
 	.member	UltraDMAActive,1416,16,17,8
-	.member	NormalSecurityEraseUnit,1424,10,8,16,108
-	.member	EnhancedSecurityEraseUnit,1440,10,8,16,109
+	.member	NormalSecurityEraseUnit,1424,10,8,16,113
+	.member	EnhancedSecurityEraseUnit,1440,10,8,16,114
 	.member	CurrentAPMLevel,1456,16,17,8
 	.member	ReservedWord91,1464,16,17,8
 	.member	MasterPasswordID,1472,16,8,16
@@ -1453,42 +1471,42 @@ R3	equ	13
 	.member	Max48BitLBA,1600,114,8,0,2
 	.member	StreamingTransferTime,1664,16,8,16
 	.member	DsmCap,1680,16,8,16
-	.member	PhysicalLogicalSectorSize,1696,10,8,16,110
+	.member	PhysicalLogicalSectorSize,1696,10,8,16,115
 	.member	InterSeekDelay,1712,16,8,16
 	.member	WorldWideName,1728,112,8,0,4
 	.member	ReservedForWorldWideName128,1792,112,8,0,4
 	.member	ReservedForTlcTechnicalReport,1856,16,8,16
 	.member	WordsPerLogicalSector,1872,112,8,0,2
-	.member	CommandSetSupportExt,1904,10,8,16,111
-	.member	CommandSetActiveExt,1920,10,8,16,112
+	.member	CommandSetSupportExt,1904,10,8,16,116
+	.member	CommandSetActiveExt,1920,10,8,16,117
 	.member	ReservedForExpandedSupportandActive,1936,112,8,0,6
 	.member	MsnSupport,2032,16,17,2
 	.member	ReservedWord127,2034,16,17,14
-	.member	SecurityStatus,2048,10,8,16,113
+	.member	SecurityStatus,2048,10,8,16,118
 	.member	ReservedWord129,2064,112,8,0,31
-	.member	CfaPowerMode1,2560,10,8,16,114
+	.member	CfaPowerMode1,2560,10,8,16,119
 	.member	ReservedForCfaWord161,2576,112,8,0,7
 	.member	NominalFormFactor,2688,16,17,4
 	.member	ReservedWord168,2692,16,17,12
-	.member	DataSetManagementFeature,2704,10,8,16,115
+	.member	DataSetManagementFeature,2704,10,8,16,120
 	.member	AdditionalProductID,2720,112,8,0,4
 	.member	ReservedForCfaWord174,2784,112,8,0,2
 	.member	CurrentMediaSerialNumber,2816,112,8,0,30
-	.member	SCTCommandTransport,3296,10,8,16,116
+	.member	SCTCommandTransport,3296,10,8,16,121
 	.member	ReservedWord207,3312,112,8,0,2
-	.member	BlockAlignment,3344,10,8,16,117
+	.member	BlockAlignment,3344,10,8,16,122
 	.member	WriteReadVerifySectorCountMode3Only,3360,112,8,0,2
 	.member	WriteReadVerifySectorCountMode2Only,3392,112,8,0,2
-	.member	NVCacheCapabilities,3424,10,8,16,118
+	.member	NVCacheCapabilities,3424,10,8,16,123
 	.member	NVCacheSizeLSW,3440,16,8,16
 	.member	NVCacheSizeMSW,3456,16,8,16
 	.member	NominalMediaRotationRate,3472,16,8,16
 	.member	ReservedWord218,3488,16,8,16
-	.member	NVCacheOptions,3504,10,8,16,119
+	.member	NVCacheOptions,3504,10,8,16,124
 	.member	WriteReadVerifySectorCountMode,3520,16,17,8
 	.member	ReservedWord220,3528,16,17,8
 	.member	ReservedWord221,3536,16,8,16
-	.member	TransportMajorVersion,3552,10,8,16,120
+	.member	TransportMajorVersion,3552,10,8,16,125
 	.member	TransportMinorVersion,3568,16,8,16
 	.member	ReservedWord224,3584,112,8,0,6
 	.member	ExtendedNumberOfUserAddressableSectors,3680,114,8,0,2
@@ -1498,13 +1516,13 @@ R3	equ	13
 	.member	Signature,4080,16,17,8
 	.member	CheckSum,4088,16,17,8
 	.eos
-	.stag	_FXDosDevice,5744,122
+	.stag	_FXDosDevice,5744,127
 	.member	type,0,14,8,8
 	.member	initialized,8,14,8,8
 	.member	devdata,16,129,8,32
 	.member	devstatus,48,14,8,8
-	.member	bootSector,56,10,8,928,92
-	.member	partitionTable,984,10,8,128,93
+	.member	bootSector,56,10,8,928,97
+	.member	partitionTable,984,10,8,128,98
 	.member	fileAllocationTable,1112,110,8,0,512
 	.member	bsOffset,5208,18,8,32
 	.member	rootDirSectors,5240,18,8,32
@@ -1522,23 +1540,41 @@ R3	equ	13
 	.member	pfReader,5680,654,8,32
 	.member	pfWriter,5712,654,8,32
 	.eos
-	.utag	item,32,123
-	.member	dir,0,138,11,32,82
-	.member	file,0,138,11,32,81
-	.member	fileInfo,0,138,11,32,83
+	.utag	item,32,128
+	.member	dir,0,138,11,32,87
+	.member	file,0,138,11,32,86
+	.member	fileInfo,0,138,11,32,88
 	.eos
-	.stag	_dos_handle,80,124
-	.member	fs,0,138,8,32,79
+	.stag	_dos_handle,80,129
+	.member	fs,0,138,8,32,84
 	.member	fr,32,5,8,16
 	.member	path,48,142,8,32
 	.eos
-	.line	800
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.c",2
+	.stag	fx_file,112,130
+	.member	fs,0,138,8,32,84
+	.member	fileInfo,32,138,8,32,88
+	.member	f,64,138,8,32,86
+	.member	fr,96,5,8,16
+	.eos
+	.line	812
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.c",2
 ;#include "fxmemorymanager.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",0
-	.line	105
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.c",3
-;
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",0
+	.line	129
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.c",3
+;#include "drivers/DRIVER.h"
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
+	.line	30
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",0
+	.line	129
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
+	.line	1960
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",104
+	.line	113
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.c",4
 ;
 ;#pragma section CODE=FXDOS,offset $08:92F5
 FXDOS	section	offset $08:92F5
@@ -1575,26 +1611,40 @@ FXDOS	section	offset $08:92F5
 	dl	$0
 	ends
 ;
+;//#define MAX_IRQ_BLOCKS          4
+;//#define MAX_IRQ_INTERRUPTS      8
+;
+;/*
+;DEVICEDRIVER_IRQ g_irq_handlers[][8]  = {   {0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00},//REG0
+;											{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00},//REG1
+;											{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00},//REG2
+;											{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00} //REG3
+;							 	 	 	 };
+;*/
+;
+;
+;extern IRQCHAIN g_irq_handlers[4][8];
+;
 ;//extern FX_DEVICE_DRIVER DRIVER_B2Console;
 ;//extern FX_DEVICE_DRIVER DRIVER_B2SDCard;
 ;//extern FX_DEVICE_DRIVER DRIVER_FMXConsole;
 ;//extern FX_DEVICE_DRIVER DRIVER_FMXSDCard;
 ;
 ;
-;extern PFX_DEVICE_DRIVER DEVICE_COM;
-;extern PFX_DEVICE_DRIVER DEVICE_HD;
-;extern PFX_DEVICE_DRIVER DEVICE_SD;
-;extern PFX_DEVICE_DRIVER DEVICE_CON;
+;//extern PFX_DEVICE_DRIVER DEVICE_COM;
+;//extern PFX_DEVICE_DRIVER DEVICE_HD;
+;//extern PFX_DEVICE_DRIVER DEVICE_SD;
+;//extern PFX_DEVICE_DRIVER DEVICE_CON;
 ;
-;LPCSTR k_dos_load_drivers(void)
+;LPVOID k_dos_ext_load_driver(LPCSTR driverPath)
 ;{
-	.line	38
-	.line	39
+	.line	52
+	.line	53
 	FXDOS
-	xdef	~~k_dos_load_drivers
+	xdef	~~k_dos_ext_load_driver
 	func
-	.function	39
-~~k_dos_load_drivers:
+	.function	53
+~~k_dos_ext_load_driver:
 	longa	on
 	longi	on
 	tsc
@@ -1603,118 +1653,254 @@ FXDOS	section	offset $08:92F5
 	tcs
 	phd
 	tcd
-	.block	39
+driverPath_0	set	4
+	.block	53
+;	UINT dsize = 0;
+;	HANDLE hdriver = NULL;
+;	PFX_DEVICE_DRIVER pstrHead = NULL;
+;	ULONG idx = 0L;
+;	LPVOID driver = NULL;
+;
+;	hdriver = k_user_LoadResource(driverPath);
+dsize_1	set	0
+hdriver_1	set	2
+pstrHead_1	set	6
+idx_1	set	10
+driver_1	set	14
+	.sym	dsize,0,16,1,16
+	.sym	hdriver,2,129,1,32
+	.sym	pstrHead,6,138,1,32,58
+	.sym	idx,10,18,1,32
+	.sym	driver,14,129,1,32
+	.sym	driverPath,4,142,6,32
+	stz	<L3+dsize_1
+	stz	<L3+hdriver_1
+	stz	<L3+hdriver_1+2
+	stz	<L3+pstrHead_1
+	stz	<L3+pstrHead_1+2
+	stz	<L3+idx_1
+	stz	<L3+idx_1+2
+	stz	<L3+driver_1
+	stz	<L3+driver_1+2
+	.line	60
+	pei	<L2+driverPath_0+2
+	pei	<L2+driverPath_0
+	jsl	~~k_user_LoadResource
+	sta	<L3+hdriver_1
+	stx	<L3+hdriver_1+2
+;	if(hdriver!=NULL)
+	.line	61
+;	{
+	lda	<L3+hdriver_1
+	ora	<L3+hdriver_1+2
+	bne	L5
+	brl	L10001
+L5:
+	.line	62
+;		pstrHead =  (PFX_DEVICE_DRIVER)(&((LPSTR)hdriver)[sizeof(FXRFHEADER)]);
+	.line	63
+	clc
+	lda	#$9
+	adc	<L3+hdriver_1
+	sta	<L3+pstrHead_1
+	lda	#$0
+	adc	<L3+hdriver_1+2
+	sta	<L3+pstrHead_1+2
+;
+;		idx = (((ULONG)pstrHead->driver_context) - ((ULONG)FX_DRV_IRQ_SLOT_0))/((ULONG)FX_DRV_SIZE);
+	.line	65
+	clc
+	lda	#$0
+	ldy	#$4d
+	adc	[<L3+pstrHead_1],Y
+	sta	<R0
+	lda	#$fffc
+	ldy	#$4f
+	adc	[<L3+pstrHead_1],Y
+	sta	<R0+2
+	pea	#^$5f0
+	pea	#<$5f0
+	pei	<R0+2
+	pei	<R0
+	xref	~~~ludv
+	jsl	~~~ludv
+	sta	<L3+idx_1
+	stx	<L3+idx_1+2
+;		dsize = *((ULONG*)((PFXRFHEADER)hdriver)->magic) - sizeof(FXRFHEADER) - sizeof(FX_DEVICE_DRIVER);
+	.line	66
+	clc
+	lda	#$ff96
+	adc	[<L3+hdriver_1]
+	sta	<R0
+	lda	#$ffff
+	ldy	#$2
+	adc	[<L3+hdriver_1],Y
+	sta	<R0+2
+	lda	<R0
+	sta	<L3+dsize_1
+;
+;		/*
+;		k_debug_nstrings("DRIVER NAME:",pstrHead->name,32);
+;		k_debug_pointer ("DRIVER ADDR:",pstrHead->driver_context);
+;		k_debug_long    ("DRIVER RES SIZE:", *((ULONG*)((PFXRFHEADER)hdriver)->magic) );
+;		k_debug_long    ("DRIVER SIZE:", dsize );
+;		k_debug_long    ("DRIVER IDX:", idx );
+;		*/
+;
+;		memset(pstrHead->driver_context,0,FX_DRV_SIZE);
+	.line	76
+	pea	#<$5f0
+	pea	#<$0
+	ldy	#$4f
+	lda	[<L3+pstrHead_1],Y
+	pha
+	ldy	#$4d
+	lda	[<L3+pstrHead_1],Y
+	pha
+	jsl	~~memset
+;		memcpy(pstrHead->driver_context,(LPVOID)(&((LPSTR)hdriver)[sizeof(FXRFHEADER) + sizeof(FX_DEVICE_DRIVER)]),dsize);
+	.line	77
+	pei	<L3+dsize_1
+	clc
+	lda	#$6a
+	adc	<L3+hdriver_1
+	sta	<R0
+	lda	#$0
+	adc	<L3+hdriver_1+2
+	sta	<R0+2
+	pei	<R0+2
+	pei	<R0
+	ldy	#$4f
+	lda	[<L3+pstrHead_1],Y
+	pha
+	ldy	#$4d
+	lda	[<L3+pstrHead_1],Y
+	pha
+	jsl	~~memcpy
+;
+;		free(hdriver);
+	.line	79
+	pei	<L3+hdriver_1+2
+	pei	<L3+hdriver_1
+	jsl	~~free
+;
+;		driver = k_dos_load_driver(idx);
+	.line	81
+	pei	<L3+idx_1+2
+	pei	<L3+idx_1
+	jsl	~~k_dos_load_driver
+	sta	<L3+driver_1
+	stx	<L3+driver_1+2
+;	}
+	.line	82
+;
+;	return driver;
+L10001:
+	.line	84
+	ldx	<L3+driver_1+2
+	lda	<L3+driver_1
+L6:
+	tay
+	lda	<L2+2
+	sta	<L2+2+4
+	lda	<L2+1
+	sta	<L2+1+4
+	pld
+	tsc
+	clc
+	adc	#L2+4
+	tcs
+	tya
+	rtl
+;}
+	.line	85
+	.endblock	85
+L2	equ	22
+L3	equ	5
+	ends
+	efunc
+	.endfunc	85,5,22
+	.line	85
+;
+;LPVOID k_dos_load_driver(ULONG driver_idx)
+;{
+	.line	87
+	.line	88
+	FXDOS
+	xdef	~~k_dos_load_driver
+	func
+	.function	88
+~~k_dos_load_driver:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L7
+	tcs
+	phd
+	tcd
+driver_idx_0	set	4
+	.block	88
 ;	CHAR major[16];
 ;	CHAR minor[16];
+;	CHAR k16buffer[16];
 ;
 ;	LPSTR log = NULL;
 ;
-;	ULONG driver_idx = 0;
 ;	PFX_DEVICE_DRIVER driver = NULL;
 ;
 ;	GETDRIVERDEF _k_get_driver_def = NULL;
 ;
-;	log = (LPSTR)k_mem_allocate_heap(1024);
+;	sectorBuffer = (LPSTR)k_mem_allocate_heap(512);
 major_1	set	0
 minor_1	set	16
-log_1	set	32
-driver_idx_1	set	36
-driver_1	set	40
-_k_get_driver_def_1	set	44
+k16buffer_1	set	32
+log_1	set	48
+driver_1	set	52
+_k_get_driver_def_1	set	56
 	.sym	major,0,110,1,0,16
 	.sym	minor,16,110,1,0,16
-	.sym	log,32,142,1,32
-	.sym	driver_idx,36,18,1,32
-	.sym	driver,40,138,1,32,55
-	.sym	_k_get_driver_def,44,8842,1,32,55
-	stz	<L3+log_1
-	stz	<L3+log_1+2
-	stz	<L3+driver_idx_1
-	stz	<L3+driver_idx_1+2
-	stz	<L3+driver_1
-	stz	<L3+driver_1+2
-	stz	<L3+_k_get_driver_def_1
-	stz	<L3+_k_get_driver_def_1+2
-	.line	50
-	pea	#<$400
-	jsl	~~k_mem_allocate_heap
-	sta	<L3+log_1
-	stx	<L3+log_1+2
-;	sectorBuffer = (LPSTR)k_mem_allocate_heap(512);
-	.line	51
+	.sym	k16buffer,32,110,1,0,16
+	.sym	log,48,142,1,32
+	.sym	driver,52,138,1,32,58
+	.sym	_k_get_driver_def,56,8842,1,32,58
+	.sym	driver_idx,4,18,6,32
+	stz	<L8+log_1
+	stz	<L8+log_1+2
+	stz	<L8+driver_1
+	stz	<L8+driver_1+2
+	stz	<L8+_k_get_driver_def_1
+	stz	<L8+_k_get_driver_def_1+2
+	.line	99
+	pea	#^$200
 	pea	#<$200
 	jsl	~~k_mem_allocate_heap
 	sta	|~~sectorBuffer
 	stx	|~~sectorBuffer+2
 ;
 ;	k_get_c256_major_version(major);
-	.line	53
+	.line	101
 	pea	#0
 	clc
 	tdc
-	adc	#<L3+major_1
+	adc	#<L8+major_1
 	pha
 	jsl	~~k_get_c256_major_version
 ;	k_get_c256_minor_version(minor);
-	.line	54
+	.line	102
 	pea	#0
 	clc
 	tdc
-	adc	#<L3+minor_1
+	adc	#<L8+minor_1
 	pha
 	jsl	~~k_get_c256_minor_version
 ;
-;	//k_debug_strings("System Major:",major);
-;	//k_debug_strings("System Minor:",minor);
-;
-;	_k_dos_devicedrivers 	= k_nodelist_allocate_list("_k_dos_devicedrivers" ,NULL);
-	.line	59
-	pea	#^$0
-	pea	#<$0
-	pea	#^L1
-	pea	#<L1
-	jsl	~~k_nodelist_allocate_list
-	sta	|~~_k_dos_devicedrivers
-	stx	|~~_k_dos_devicedrivers+2
-;	_k_dos_deviceinstance   = k_nodelist_allocate_list("_k_dos_deviceinstance" ,NULL);
-	.line	60
-	pea	#^$0
-	pea	#<$0
-	pea	#^L1+21
-	pea	#<L1+21
-	jsl	~~k_nodelist_allocate_list
-	sta	|~~_k_dos_deviceinstance
-	stx	|~~_k_dos_deviceinstance+2
-;
-;	//k_debug_string("Scanning for Drivers...\r\n");
-;
-;	strcpy(log,"");
-	.line	64
-	pea	#^L1+43
-	pea	#<L1+43
-	pei	<L3+log_1+2
-	pei	<L3+log_1
-	jsl	~~strcpy
-;	strcat(log,"Scanning for Drivers...\r\n");
-	.line	65
-	pea	#^L1+44
-	pea	#<L1+44
-	pei	<L3+log_1+2
-	pei	<L3+log_1
-	jsl	~~strcat
-;	for(driver_idx = 0;driver_idx<DRIVER_MAX;driver_idx++)
-	.line	66
-	stz	<L3+driver_idx_1
-	stz	<L3+driver_idx_1+2
-L10003:
-;	{
-	.line	67
-;		_k_get_driver_def = ((GETDRIVERDEF)((LPVOID)((ULONG)DRIVER_BASE + (driver_idx * (ULONG)DRIVER_SIZE))));
-	.line	68
+;	_k_get_driver_def = ((GETDRIVERDEF)((LPVOID)((ULONG)DRIVER_BASE + (driver_idx * (ULONG)DRIVER_SIZE))));
+	.line	104
 	pea	#^$5f0
 	pea	#<$5f0
-	pei	<L3+driver_idx_1+2
-	pei	<L3+driver_idx_1
+	pei	<L7+driver_idx_0+2
+	pei	<L7+driver_idx_0
 	xref	~~~lmul
 	jsl	~~~lmul
 	sta	<R0
@@ -1727,84 +1913,843 @@ L10003:
 	adc	<R0+2
 	sta	<R1+2
 	lda	<R1
-	sta	<L3+_k_get_driver_def_1
+	sta	<L8+_k_get_driver_def_1
 	lda	<R1+2
-	sta	<L3+_k_get_driver_def_1+2
+	sta	<L8+_k_get_driver_def_1+2
+;
+;	//k_debug_integer("Scan slot:",(UINT)driver_idx);
+;	//k_debug_pointer("k_dos_load_drivers::scanning @",_k_get_driver_def);
+;
+;
+;	if(*((LONG*)_k_get_driver_def) == 0x4E9383B) // sig bytes of driver
+	.line	110
+;	{
+	lda	[<L8+_k_get_driver_def_1]
+	cmp	#<$4e9383b
+	bne	L10
+	ldy	#$2
+	lda	[<L8+_k_get_driver_def_1],Y
+	cmp	#^$4e9383b
+L10:
+	beq	L11
+	brl	L10002
+L11:
+	.line	111
+;		//k_debug_pointer("k_dos_load_drivers::driver located@",_k_get_driver_def);
+;		//k_debug_string("Driver Detected:\r\n");
+;		driver = _k_get_driver_def(major,minor);
+	.line	114
+	pea	#0
+	clc
+	tdc
+	adc	#<L8+minor_1
+	pha
+	pea	#0
+	clc
+	tdc
+	adc	#<L8+major_1
+	pha
+	ldx	<L8+_k_get_driver_def_1+2
+	lda	<L8+_k_get_driver_def_1
+	xref	~~~lcal
+	jsl	~~~lcal
+	sta	<L8+driver_1
+	stx	<L8+driver_1+2
+;		if(driver)
+	.line	115
+;		{
+	lda	<L8+driver_1
+	ora	<L8+driver_1+2
+	bne	L12
+	brl	L10003
+L12:
+	.line	116
+;			//k_debug_pointer("k_dos_load_drivers::driver data pre@",driver);
+;
+;			if( ((ULONG)driver) < 0x010000L ) // handle short addressing for linear segment driver
+	.line	119
+;				driver = (PFX_DEVICE_DRIVER)(((ULONG)driver) + (((ULONG)_k_get_driver_def) & 0xFF0000L));
+	lda	<L8+driver_1
+	cmp	#<$10000
+	lda	<L8+driver_1+2
+	sbc	#^$10000
+	bcc	L13
+	brl	L10004
+L13:
+	.line	120
+	stz	<R0
+	lda	<L8+_k_get_driver_def_1+2
+	and	#^$ff0000
+	sta	<R0+2
+	clc
+	lda	<L8+driver_1
+	adc	<R0
+	sta	<R1
+	lda	<L8+driver_1+2
+	adc	<R0+2
+	sta	<R1+2
+	lda	<R1
+	sta	<L8+driver_1
+	lda	<R1+2
+	sta	<L8+driver_1+2
+;
+;			//k_debug_pointer("k_dos_load_drivers::driver data post@",driver);
+;
+;			//k_debug_strings("  Name:",driver->name);
+;			//k_debug_strings("    Major:",driver->hmajor);
+;			//k_debug_strings("    Minor:",driver->hminor);
+;
+;			//k_debug_pointer("k_dos_load_drivers::f_driver_load:",driver->f_driver_load);
+;			//k_debug_pointer("k_dos_load_drivers::f_driver_irq:",driver->f_driver_irq);
+;
+;
+;			if((strcmp(driver->hmajor,major) == 0) && (strcmp(driver->hminor,minor) == 0))
+L10004:
+	.line	132
+;			{
+	pea	#0
+	clc
+	tdc
+	adc	#<L8+major_1
+	pha
+	clc
+	lda	#$30
+	adc	<L8+driver_1
+	sta	<R0
+	lda	#$0
+	adc	<L8+driver_1+2
+	sta	<R0+2
+	pei	<R0+2
+	pei	<R0
+	jsl	~~strcmp
+	tax
+	beq	L14
+	brl	L10005
+L14:
+	pea	#0
+	clc
+	tdc
+	adc	#<L8+minor_1
+	pha
+	clc
+	lda	#$38
+	adc	<L8+driver_1
+	sta	<R1
+	lda	#$0
+	adc	<L8+driver_1+2
+	sta	<R1+2
+	pei	<R1+2
+	pei	<R1
+	jsl	~~strcmp
+	tax
+	beq	L15
+	brl	L10005
+L15:
+	.line	133
+;				if(driver->type != DRIVER_TYPE_UNIMPL)
+	.line	134
+;				{
+	sep	#$20
+	longa	off
+	ldy	#$40
+	lda	[<L8+driver_1],Y
+	cmp	#<$ff
+	rep	#$20
+	longa	on
+	bne	L16
+	brl	L10006
+L16:
+	.line	135
+;					k_nodelist_addtolist(_k_dos_devicedrivers,driver->type,driver->name,driver);
+	.line	136
+	pei	<L8+driver_1+2
+	pei	<L8+driver_1
+	pei	<L8+driver_1+2
+	pei	<L8+driver_1
+	ldy	#$40
+	lda	[<L8+driver_1],Y
+	pha
+	lda	|~~_k_dos_devicedrivers+2
+	pha
+	lda	|~~_k_dos_devicedrivers
+	pha
+	jsl	~~k_nodelist_addtolist
+;					//k_debug_string("    Hardware Compatible: YES\r\n");
+;					if(driver->f_driver_load)
+	.line	138
+;						((DEVICEDRIVER_LOAD)driver->f_driver_load)();
+	ldy	#$51
+	lda	[<L8+driver_1],Y
+	ldy	#$53
+	ora	[<L8+driver_1],Y
+	bne	L17
+	brl	L10007
+L17:
+	.line	139
+	ldy	#$53
+	lda	[<L8+driver_1],Y
+	tax
+	ldy	#$51
+	lda	[<L8+driver_1],Y
+	xref	~~~lcal
+	jsl	~~~lcal
+;
+;					if(driver->f_driver_irq!=NULL) // temp hook up the mouse
+L10007:
+	.line	141
+;					{
+	ldy	#$49
+	lda	[<L8+driver_1],Y
+	ldy	#$4b
+	ora	[<L8+driver_1],Y
+	bne	L18
+	brl	L10008
+L18:
+	.line	142
+;						//k_debug_string("    Hardware Compatible as IRQ\r\n");
+;						if(IRQREG(driver->irq_ctl)!=0xFF)
+	.line	144
+;						{
+	ldy	#$47
+	lda	[<L8+driver_1],Y
+	xba
+	and	#$00ff
+	and	#<$ff
+	sta	<R0
+	lda	<R0
+	cmp	#<$ff
+	bne	L19
+	brl	L10009
+L19:
+	.line	145
+;							k_lock_irq();
+	.line	146
+	jsl	~~k_lock_irq
+;							if(g_irq_handlers[IRQREG(driver->irq_ctl)][IRQNUM(driver->irq_ctl)].handlers[0]!=NULL)
+	.line	147
+;							{
+	ldy	#$47
+	lda	[<L8+driver_1],Y
+	and	#<$ff
+	sta	<R1
+	lda	<R1
+	asl	A
+	asl	A
+	asl	A
+	asl	A
+	sta	<R0
+	ldy	#$47
+	lda	[<L8+driver_1],Y
+	xba
+	and	#$00ff
+	and	#<$ff
+	ldx	#<$7
+	xref	~~~asl
+	jsl	~~~asl
+	sta	<R1
+	clc
+	lda	<R1
+	adc	<R0
+	sta	<R2
+	clc
+	lda	#<~~g_irq_handlers
+	adc	<R2
+	sta	<R0
+	lda	(<R0)
+	ldy	#$2
+	ora	(<R0),Y
+	bne	L20
+	brl	L10010
+L20:
+	.line	148
+;								g_irq_handlers[IRQREG(driver->irq_ctl)][IRQNUM(driver->irq_ctl)].handlers[0] = (DEVICEDRIVER_IRQ)driver->f_driver_irq;
+	.line	149
+	ldy	#$47
+	lda	[<L8+driver_1],Y
+	and	#<$ff
+	sta	<R1
+	lda	<R1
+	asl	A
+	asl	A
+	asl	A
+	asl	A
+	sta	<R0
+	ldy	#$47
+	lda	[<L8+driver_1],Y
+	xba
+	and	#$00ff
+	and	#<$ff
+	ldx	#<$7
+	xref	~~~asl
+	jsl	~~~asl
+	sta	<R1
+	clc
+	lda	<R1
+	adc	<R0
+	sta	<R2
+	clc
+	lda	#<~~g_irq_handlers
+	adc	<R2
+	sta	<R0
+	ldy	#$49
+	lda	[<L8+driver_1],Y
+	sta	(<R0)
+	ldy	#$4b
+	lda	[<L8+driver_1],Y
+	ldy	#$2
+	sta	(<R0),Y
+;							}
+	.line	150
+;							else
+	brl	L10011
+L10010:
+;							{
+	.line	152
+;								k_debug_string("    IRQ CONFLICT DETECTED\r\n");
+	.line	153
+	pea	#^L1
+	pea	#<L1
+	jsl	~~k_debug_string
+;							}
+	.line	154
+L10011:
+;							k_unlock_irq();
+	.line	155
+	jsl	~~k_unlock_irq
+;						}
+	.line	156
+;					}
+L10009:
+	.line	157
+;				}
+L10008:
+	.line	158
+;				else
+	brl	L10012
+L10006:
+;				{
+	.line	160
+;					//k_debug_string("    UNIMPLEMENTED\r\n");
+;				}
+	.line	162
+L10012:
+;			}
+	.line	163
+;			else
+	brl	L10013
+L10005:
+;			{
+	.line	165
+;				//k_debug_string("    Hardware Compatible: NO\r\n");
+;			}
+	.line	167
+L10013:
+;
+;			//k_debug_string("\r\n");
+;		}
+	.line	170
+;	}
+L10003:
+	.line	171
+;	else
+	brl	L10014
+L10002:
+;	{
+	.line	173
+;		//k_debug_pointer("k_dos_load_drivers::driver not detected@",_k_get_driver_def);
+;	}
+	.line	175
+L10014:
+;
+;	return _k_get_driver_def;
+	.line	177
+	ldx	<L8+_k_get_driver_def_1+2
+	lda	<L8+_k_get_driver_def_1
+L21:
+	tay
+	lda	<L7+2
+	sta	<L7+2+4
+	lda	<L7+1
+	sta	<L7+1+4
+	pld
+	tsc
+	clc
+	adc	#L7+4
+	tcs
+	tya
+	rtl
+;}
+	.line	178
+	.endblock	178
+L7	equ	72
+L8	equ	13
+	ends
+	efunc
+	.endfunc	178,13,72
+	.line	178
+	data
+L1:
+	db	$20,$20,$20,$20,$49,$52,$51,$20,$43,$4F,$4E,$46,$4C,$49,$43
+	db	$54,$20,$44,$45,$54,$45,$43,$54,$45,$44,$0D,$0A,$00
+	ends
+;
+;LPCSTR k_dos_load_drivers(void)
+;{
+	.line	180
+	.line	181
+	FXDOS
+	xdef	~~k_dos_load_drivers
+	func
+	.function	181
+~~k_dos_load_drivers:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L23
+	tcs
+	phd
+	tcd
+	.block	181
+;	CHAR major[16];
+;	CHAR minor[16];
+;	CHAR k16buffer[16];
+;
+;	LPSTR log = NULL;
+;
+;	ULONG driver_idx = 0;
+;	PFX_DEVICE_DRIVER driver = NULL;
+;
+;	GETDRIVERDEF _k_get_driver_def = NULL;
+;
+;	log = (LPSTR)k_mem_allocate_heap(4096);
+major_1	set	0
+minor_1	set	16
+k16buffer_1	set	32
+log_1	set	48
+driver_idx_1	set	52
+driver_1	set	56
+_k_get_driver_def_1	set	60
+	.sym	major,0,110,1,0,16
+	.sym	minor,16,110,1,0,16
+	.sym	k16buffer,32,110,1,0,16
+	.sym	log,48,142,1,32
+	.sym	driver_idx,52,18,1,32
+	.sym	driver,56,138,1,32,58
+	.sym	_k_get_driver_def,60,8842,1,32,58
+	stz	<L24+log_1
+	stz	<L24+log_1+2
+	stz	<L24+driver_idx_1
+	stz	<L24+driver_idx_1+2
+	stz	<L24+driver_1
+	stz	<L24+driver_1+2
+	stz	<L24+_k_get_driver_def_1
+	stz	<L24+_k_get_driver_def_1+2
+	.line	193
+	pea	#^$1000
+	pea	#<$1000
+	jsl	~~k_mem_allocate_heap
+	sta	<L24+log_1
+	stx	<L24+log_1+2
+;	sectorBuffer = (LPSTR)k_mem_allocate_heap(512);
+	.line	194
+	pea	#^$200
+	pea	#<$200
+	jsl	~~k_mem_allocate_heap
+	sta	|~~sectorBuffer
+	stx	|~~sectorBuffer+2
+;
+;	k_get_c256_major_version(major);
+	.line	196
+	pea	#0
+	clc
+	tdc
+	adc	#<L24+major_1
+	pha
+	jsl	~~k_get_c256_major_version
+;	k_get_c256_minor_version(minor);
+	.line	197
+	pea	#0
+	clc
+	tdc
+	adc	#<L24+minor_1
+	pha
+	jsl	~~k_get_c256_minor_version
+;
+;	//k_debug_strings("System Major:",major);
+;	//k_debug_strings("System Minor:",minor);
+;
+;
+;	memset(g_irq_handlers,0,sizeof(g_irq_handlers[0][0]));
+	.line	203
+	pea	#<$10
+	pea	#<$0
+	lda	#<~~g_irq_handlers
+	sta	<R0
+	xref	_BEG_DATA
+	lda	#_BEG_DATA>>16
+	sta	<R0+2
+	pei	<R0+2
+	pei	<R0
+	jsl	~~memset
+;
+;	_k_dos_devicedrivers 	= k_nodelist_allocate_list("_k_dos_devicedrivers" ,NULL);
+	.line	205
+	pea	#^$0
+	pea	#<$0
+	pea	#^L22
+	pea	#<L22
+	jsl	~~k_nodelist_allocate_list
+	sta	|~~_k_dos_devicedrivers
+	stx	|~~_k_dos_devicedrivers+2
+;	_k_dos_deviceinstance   = k_nodelist_allocate_list("_k_dos_deviceinstance" ,NULL);
+	.line	206
+	pea	#^$0
+	pea	#<$0
+	pea	#^L22+21
+	pea	#<L22+21
+	jsl	~~k_nodelist_allocate_list
+	sta	|~~_k_dos_deviceinstance
+	stx	|~~_k_dos_deviceinstance+2
+;
+;	//k_debug_string("Scanning for Drivers...\r\n");
+;
+;	strcpy(log,"");
+	.line	210
+	pea	#^L22+43
+	pea	#<L22+43
+	pei	<L24+log_1+2
+	pei	<L24+log_1
+	jsl	~~strcpy
+;	strcat(log,"Scanning for Drivers...\r\n");
+	.line	211
+	pea	#^L22+44
+	pea	#<L22+44
+	pei	<L24+log_1+2
+	pei	<L24+log_1
+	jsl	~~strcat
+;	for(driver_idx = 0;driver_idx<25;driver_idx++)
+	.line	212
+	stz	<L24+driver_idx_1
+	stz	<L24+driver_idx_1+2
+L10017:
+;	{
+	.line	213
+;		_k_get_driver_def = ((GETDRIVERDEF)((LPVOID)((ULONG)DRIVER_BASE + (driver_idx * (ULONG)DRIVER_SIZE))));
+	.line	214
+	pea	#^$5f0
+	pea	#<$5f0
+	pei	<L24+driver_idx_1+2
+	pei	<L24+driver_idx_1
+	xref	~~~lmul
+	jsl	~~~lmul
+	sta	<R0
+	stx	<R0+2
+	clc
+	lda	#$0
+	adc	<R0
+	sta	<R1
+	lda	#$4
+	adc	<R0+2
+	sta	<R1+2
+	lda	<R1
+	sta	<L24+_k_get_driver_def_1
+	lda	<R1+2
+	sta	<L24+_k_get_driver_def_1+2
+;
 ;
 ;		//k_debug_integer("Scan slot:",(UINT)driver_idx);
 ;		//k_debug_pointer("k_dos_load_drivers::scanning @",_k_get_driver_def);
 ;		//k_debug_byte_array("k_dos_load_drivers::scan detected value:",((PBYTE)_k_get_driver_def),8);
 ;		//k_debug_long("k_dos_load_drivers::scan detected long:",*((LONG*)_k_get_driver_def));
-;		if(*((LONG*)_k_get_driver_def) == 0x4E9383B)
-	.line	74
+;		if(*((ULONG*)_k_get_driver_def) == 0x4E9383B) // sig bytes of driver
+	.line	221
 ;		{
-	lda	[<L3+_k_get_driver_def_1]
+	lda	[<L24+_k_get_driver_def_1]
 	cmp	#<$4e9383b
-	bne	L5
+	bne	L26
 	ldy	#$2
-	lda	[<L3+_k_get_driver_def_1],Y
+	lda	[<L24+_k_get_driver_def_1],Y
 	cmp	#^$4e9383b
-L5:
-	beq	L6
-	brl	L10004
-L6:
-	.line	75
+L26:
+	beq	L27
+	brl	L10018
+L27:
+	.line	222
 ;			//k_debug_pointer("k_dos_load_drivers::driver located@",_k_get_driver_def);
 ;			//k_debug_string("Driver Detected:\r\n");
-;			strcat(log,"Driver Detected:\r\n");
-	.line	78
-	pea	#^L1+70
-	pea	#<L1+70
-	pei	<L3+log_1+2
-	pei	<L3+log_1
+;			strcat(log,"Driver Detected ");
+	.line	225
+	pea	#^L22+70
+	pea	#<L22+70
+	pei	<L24+log_1+2
+	pei	<L24+log_1
 	jsl	~~strcat
+;			strcat(log," @0x");
+	.line	226
+	pea	#^L22+87
+	pea	#<L22+87
+	pei	<L24+log_1+2
+	pei	<L24+log_1
+	jsl	~~strcat
+;
+;			strcat(log,k_bytetohex(H24BYTE(_k_get_driver_def),k16buffer));
+	.line	228
+	pea	#0
+	clc
+	tdc
+	adc	#<L24+k16buffer_1
+	pha
+	pei	<L24+_k_get_driver_def_1+2
+	pei	<L24+_k_get_driver_def_1
+	lda	#$10
+	xref	~~~llsr
+	jsl	~~~llsr
+	sta	<R0
+	stx	<R0+2
+	lda	<R0
+	and	#<$ff
+	sta	<R1
+	stz	<R1+2
+	pei	<R1
+	jsl	~~k_bytetohex
+	sta	<R0
+	stx	<R0+2
+	phx
+	pha
+	pei	<L24+log_1+2
+	pei	<L24+log_1
+	jsl	~~strcat
+;			strcat(log,k_bytetohex(M24BYTE(_k_get_driver_def),k16buffer));
+	.line	229
+	pea	#0
+	clc
+	tdc
+	adc	#<L24+k16buffer_1
+	pha
+	pei	<L24+_k_get_driver_def_1+2
+	pei	<L24+_k_get_driver_def_1
+	lda	#$8
+	xref	~~~llsr
+	jsl	~~~llsr
+	sta	<R0
+	stx	<R0+2
+	lda	<R0
+	and	#<$ff
+	sta	<R1
+	stz	<R1+2
+	pei	<R1
+	jsl	~~k_bytetohex
+	sta	<R0
+	stx	<R0+2
+	phx
+	pha
+	pei	<L24+log_1+2
+	pei	<L24+log_1
+	jsl	~~strcat
+;			strcat(log,k_bytetohex(L24BYTE(_k_get_driver_def),k16buffer));
+	.line	230
+	pea	#0
+	clc
+	tdc
+	adc	#<L24+k16buffer_1
+	pha
+	pei	<L24+_k_get_driver_def_1
+	jsl	~~k_bytetohex
+	sta	<R0
+	stx	<R0+2
+	phx
+	pha
+	pei	<L24+log_1+2
+	pei	<L24+log_1
+	jsl	~~strcat
+;			strcat(log,":\r\n");
+	.line	231
+	pea	#^L22+92
+	pea	#<L22+92
+	pei	<L24+log_1+2
+	pei	<L24+log_1
+	jsl	~~strcat
+;
 ;			driver = _k_get_driver_def(major,minor);
-	.line	79
+	.line	233
 	pea	#0
 	clc
 	tdc
-	adc	#<L3+minor_1
+	adc	#<L24+minor_1
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L3+major_1
+	adc	#<L24+major_1
 	pha
-	ldx	<L3+_k_get_driver_def_1+2
-	lda	<L3+_k_get_driver_def_1
+	ldx	<L24+_k_get_driver_def_1+2
+	lda	<L24+_k_get_driver_def_1
 	xref	~~~lcal
 	jsl	~~~lcal
-	sta	<L3+driver_1
-	stx	<L3+driver_1+2
+	sta	<L24+driver_1
+	stx	<L24+driver_1+2
 ;			if(driver)
-	.line	80
+	.line	234
 ;			{
-	lda	<L3+driver_1
-	ora	<L3+driver_1+2
-	bne	L7
-	brl	L10005
-L7:
-	.line	81
+	lda	<L24+driver_1
+	ora	<L24+driver_1+2
+	bne	L28
+	brl	L10019
+L28:
+	.line	235
+;				/*
+;				strcat(log,"Driver PRE ");
+;							strcat(log," @0x");
+;				strcat(log,k_bytetohex(H24BYTE(driver),k16buffer));
+;				strcat(log,k_bytetohex(M24BYTE(driver),k16buffer));
+;				strcat(log,k_bytetohex(L24BYTE(driver),k16buffer));
+;				strcat(log,":\r\n");
+;				*/
+;
+;
+;				if( ((ULONG)driver) < 0x010000L ) // handle short addressing for linear segment driver
+	.line	246
+;					driver = (PFX_DEVICE_DRIVER)(((ULONG)driver) + (((ULONG)_k_get_driver_def) & 0xFF0000L));
+	lda	<L24+driver_1
+	cmp	#<$10000
+	lda	<L24+driver_1+2
+	sbc	#^$10000
+	bcc	L29
+	brl	L10020
+L29:
+	.line	247
+	stz	<R0
+	lda	<L24+_k_get_driver_def_1+2
+	and	#^$ff0000
+	sta	<R0+2
+	clc
+	lda	<L24+driver_1
+	adc	<R0
+	sta	<R1
+	lda	<L24+driver_1+2
+	adc	<R0+2
+	sta	<R1+2
+	lda	<R1
+	sta	<L24+driver_1
+	lda	<R1+2
+	sta	<L24+driver_1+2
+;
+;
+;				strcat(log,"Driver Definition ");
+L10020:
+	.line	250
+	pea	#^L22+96
+	pea	#<L22+96
+	pei	<L24+log_1+2
+	pei	<L24+log_1
+	jsl	~~strcat
+;							strcat(log," @0x");
+	.line	251
+	pea	#^L22+115
+	pea	#<L22+115
+	pei	<L24+log_1+2
+	pei	<L24+log_1
+	jsl	~~strcat
+;				strcat(log,k_bytetohex(H24BYTE(driver),k16buffer));
+	.line	252
+	pea	#0
+	clc
+	tdc
+	adc	#<L24+k16buffer_1
+	pha
+	pei	<L24+driver_1+2
+	pei	<L24+driver_1
+	lda	#$10
+	xref	~~~llsr
+	jsl	~~~llsr
+	sta	<R0
+	stx	<R0+2
+	lda	<R0
+	and	#<$ff
+	sta	<R1
+	stz	<R1+2
+	pei	<R1
+	jsl	~~k_bytetohex
+	sta	<R0
+	stx	<R0+2
+	phx
+	pha
+	pei	<L24+log_1+2
+	pei	<L24+log_1
+	jsl	~~strcat
+;				strcat(log,k_bytetohex(M24BYTE(driver),k16buffer));
+	.line	253
+	pea	#0
+	clc
+	tdc
+	adc	#<L24+k16buffer_1
+	pha
+	pei	<L24+driver_1+2
+	pei	<L24+driver_1
+	lda	#$8
+	xref	~~~llsr
+	jsl	~~~llsr
+	sta	<R0
+	stx	<R0+2
+	lda	<R0
+	and	#<$ff
+	sta	<R1
+	stz	<R1+2
+	pei	<R1
+	jsl	~~k_bytetohex
+	sta	<R0
+	stx	<R0+2
+	phx
+	pha
+	pei	<L24+log_1+2
+	pei	<L24+log_1
+	jsl	~~strcat
+;				strcat(log,k_bytetohex(L24BYTE(driver),k16buffer));
+	.line	254
+	pea	#0
+	clc
+	tdc
+	adc	#<L24+k16buffer_1
+	pha
+	pei	<L24+driver_1
+	jsl	~~k_bytetohex
+	sta	<R0
+	stx	<R0+2
+	phx
+	pha
+	pei	<L24+log_1+2
+	pei	<L24+log_1
+	jsl	~~strcat
+;				strcat(log,":\r\n");
+	.line	255
+	pea	#^L22+120
+	pea	#<L22+120
+	pei	<L24+log_1+2
+	pei	<L24+log_1
+	jsl	~~strcat
+;
+;
 ;				strcat(log,"  Name:");
-	.line	82
-	pea	#^L1+89
-	pea	#<L1+89
-	pei	<L3+log_1+2
-	pei	<L3+log_1
+	.line	258
+	pea	#^L22+124
+	pea	#<L22+124
+	pei	<L24+log_1+2
+	pei	<L24+log_1
 	jsl	~~strcat
 ;				strcat(log,driver->name);
-	.line	83
-	pei	<L3+driver_1+2
-	pei	<L3+driver_1
-	pei	<L3+log_1+2
-	pei	<L3+log_1
+	.line	259
+	pei	<L24+driver_1+2
+	pei	<L24+driver_1
+	pei	<L24+log_1+2
+	pei	<L24+log_1
 	jsl	~~strcat
 ;				strcat(log," : ");
-	.line	84
-	pea	#^L1+97
-	pea	#<L1+97
-	pei	<L3+log_1+2
-	pei	<L3+log_1
+	.line	260
+	pea	#^L22+132
+	pea	#<L22+132
+	pei	<L24+log_1+2
+	pei	<L24+log_1
 	jsl	~~strcat
 ;
 ;				//k_debug_strings("  Name:",driver->name);
@@ -1812,69 +2757,69 @@ L7:
 ;				//k_debug_strings("    Minor:",driver->hminor);
 ;
 ;				if((strcmp(driver->hmajor,major) == 0) && (strcmp(driver->hminor,minor) == 0))
-	.line	90
+	.line	266
 ;				{
 	pea	#0
 	clc
 	tdc
-	adc	#<L3+major_1
+	adc	#<L24+major_1
 	pha
 	clc
 	lda	#$30
-	adc	<L3+driver_1
+	adc	<L24+driver_1
 	sta	<R0
 	lda	#$0
-	adc	<L3+driver_1+2
+	adc	<L24+driver_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~strcmp
 	tax
-	beq	L8
-	brl	L10006
-L8:
+	beq	L30
+	brl	L10021
+L30:
 	pea	#0
 	clc
 	tdc
-	adc	#<L3+minor_1
+	adc	#<L24+minor_1
 	pha
 	clc
 	lda	#$38
-	adc	<L3+driver_1
+	adc	<L24+driver_1
 	sta	<R1
 	lda	#$0
-	adc	<L3+driver_1+2
+	adc	<L24+driver_1+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~strcmp
 	tax
-	beq	L9
-	brl	L10006
-L9:
-	.line	91
+	beq	L31
+	brl	L10021
+L31:
+	.line	267
 ;					if(driver->type != DRIVER_TYPE_UNIMPL)
-	.line	92
+	.line	268
 ;					{
 	sep	#$20
 	longa	off
 	ldy	#$40
-	lda	[<L3+driver_1],Y
+	lda	[<L24+driver_1],Y
 	cmp	#<$ff
 	rep	#$20
 	longa	on
-	bne	L10
-	brl	L10007
-L10:
-	.line	93
+	bne	L32
+	brl	L10022
+L32:
+	.line	269
 ;						k_nodelist_addtolist(_k_dos_devicedrivers,driver->type,driver->name,driver);
-	.line	94
-	pei	<L3+driver_1+2
-	pei	<L3+driver_1
-	pei	<L3+driver_1+2
-	pei	<L3+driver_1
+	.line	270
+	pei	<L24+driver_1+2
+	pei	<L24+driver_1
+	pei	<L24+driver_1+2
+	pei	<L24+driver_1
 	ldy	#$40
-	lda	[<L3+driver_1],Y
+	lda	[<L24+driver_1],Y
 	pha
 	lda	|~~_k_dos_devicedrivers+2
 	pha
@@ -1883,140 +2828,271 @@ L10:
 	jsl	~~k_nodelist_addtolist
 ;						//k_debug_string("    Hardware Compatible: YES\r\n");
 ;						if(driver->f_driver_load)
-	.line	96
+	.line	272
 ;							((DEVICEDRIVER_LOAD)driver->f_driver_load)();
 	ldy	#$51
-	lda	[<L3+driver_1],Y
+	lda	[<L24+driver_1],Y
 	ldy	#$53
-	ora	[<L3+driver_1],Y
-	bne	L11
-	brl	L10008
-L11:
-	.line	97
+	ora	[<L24+driver_1],Y
+	bne	L33
+	brl	L10023
+L33:
+	.line	273
 	ldy	#$53
-	lda	[<L3+driver_1],Y
+	lda	[<L24+driver_1],Y
 	tax
 	ldy	#$51
-	lda	[<L3+driver_1],Y
+	lda	[<L24+driver_1],Y
 	xref	~~~lcal
 	jsl	~~~lcal
 ;
+;
 ;						strcat(log,"LOADED");
-L10008:
-	.line	99
-	pea	#^L1+101
-	pea	#<L1+101
-	pei	<L3+log_1+2
-	pei	<L3+log_1
+L10023:
+	.line	276
+	pea	#^L22+136
+	pea	#<L22+136
+	pei	<L24+log_1+2
+	pei	<L24+log_1
 	jsl	~~strcat
+;
+;						if(driver->f_driver_irq!=NULL) // temp hook up the mouse
+	.line	278
+;						{
+	ldy	#$49
+	lda	[<L24+driver_1],Y
+	ldy	#$4b
+	ora	[<L24+driver_1],Y
+	bne	L34
+	brl	L10024
+L34:
+	.line	279
+;							strcat(log,"\r\n USING IRQ: ");
+	.line	280
+	pea	#^L22+143
+	pea	#<L22+143
+	pei	<L24+log_1+2
+	pei	<L24+log_1
+	jsl	~~strcat
+;							strcat(log,k_bytetohex(IRQREG(driver->irq_ctl),k16buffer));
+	.line	281
+	pea	#0
+	clc
+	tdc
+	adc	#<L24+k16buffer_1
+	pha
+	ldy	#$47
+	lda	[<L24+driver_1],Y
+	xba
+	and	#$00ff
+	and	#<$ff
+	pha
+	jsl	~~k_bytetohex
+	sta	<R0
+	stx	<R0+2
+	phx
+	pha
+	pei	<L24+log_1+2
+	pei	<L24+log_1
+	jsl	~~strcat
+;							strcat(log,",");
+	.line	282
+	pea	#^L22+158
+	pea	#<L22+158
+	pei	<L24+log_1+2
+	pei	<L24+log_1
+	jsl	~~strcat
+;							strcat(log,k_bytetohex(IRQNUM(driver->irq_ctl),k16buffer));
+	.line	283
+	pea	#0
+	clc
+	tdc
+	adc	#<L24+k16buffer_1
+	pha
+	ldy	#$47
+	lda	[<L24+driver_1],Y
+	and	#<$ff
+	pha
+	jsl	~~k_bytetohex
+	sta	<R0
+	stx	<R0+2
+	phx
+	pha
+	pei	<L24+log_1+2
+	pei	<L24+log_1
+	jsl	~~strcat
+;							if(IRQREG(driver->irq_ctl)!=0xFF)
+	.line	284
+;							{
+	ldy	#$47
+	lda	[<L24+driver_1],Y
+	xba
+	and	#$00ff
+	and	#<$ff
+	sta	<R0
+	lda	<R0
+	cmp	#<$ff
+	bne	L35
+	brl	L10025
+L35:
+	.line	285
+;								//g_irq_handlers[IRQREG(driver->irq_ctl)][IRQNUM(driver->irq_ctl)] = (DEVICEDRIVER_IRQ)driver->f_driver_irq;
+;
+;								g_irq_handlers[IRQREG(driver->irq_ctl)][IRQNUM(driver->irq_ctl)].handlers[0] = (DEVICEDRIVER_IRQ)driver->f_driver_irq;
+	.line	288
+	ldy	#$47
+	lda	[<L24+driver_1],Y
+	and	#<$ff
+	sta	<R1
+	lda	<R1
+	asl	A
+	asl	A
+	asl	A
+	asl	A
+	sta	<R0
+	ldy	#$47
+	lda	[<L24+driver_1],Y
+	xba
+	and	#$00ff
+	and	#<$ff
+	ldx	#<$7
+	xref	~~~asl
+	jsl	~~~asl
+	sta	<R1
+	clc
+	lda	<R1
+	adc	<R0
+	sta	<R2
+	clc
+	lda	#<~~g_irq_handlers
+	adc	<R2
+	sta	<R0
+	ldy	#$49
+	lda	[<L24+driver_1],Y
+	sta	(<R0)
+	ldy	#$4b
+	lda	[<L24+driver_1],Y
+	ldy	#$2
+	sta	(<R0),Y
+;							}
+	.line	289
+;						}
+L10025:
+	.line	290
+;
+;
 ;					}
-	.line	100
+L10024:
+	.line	293
 ;					else
-	brl	L10009
-L10007:
+	brl	L10026
+L10022:
 ;					{
-	.line	102
+	.line	295
 ;						strcat(log,"UNIMPLEMENTED");
-	.line	103
-	pea	#^L1+108
-	pea	#<L1+108
-	pei	<L3+log_1+2
-	pei	<L3+log_1
+	.line	296
+	pea	#^L22+160
+	pea	#<L22+160
+	pei	<L24+log_1+2
+	pei	<L24+log_1
 	jsl	~~strcat
 ;					}
-	.line	104
-L10009:
+	.line	297
+L10026:
 ;				}
-	.line	105
+	.line	298
 ;				else
-	brl	L10010
-L10006:
+	brl	L10027
+L10021:
 ;				{
-	.line	107
+	.line	300
 ;					//k_debug_string("    Hardware Compatible: NO\r\n");
 ;					strcat(log,"INCOMPATIBLE");
-	.line	109
-	pea	#^L1+122
-	pea	#<L1+122
-	pei	<L3+log_1+2
-	pei	<L3+log_1
+	.line	302
+	pea	#^L22+174
+	pea	#<L22+174
+	pei	<L24+log_1+2
+	pei	<L24+log_1
 	jsl	~~strcat
 ;				}
-	.line	110
-L10010:
+	.line	303
+L10027:
 ;
 ;				strcat(log,"\r\n");
-	.line	112
-	pea	#^L1+135
-	pea	#<L1+135
-	pei	<L3+log_1+2
-	pei	<L3+log_1
+	.line	305
+	pea	#^L22+187
+	pea	#<L22+187
+	pei	<L24+log_1+2
+	pei	<L24+log_1
 	jsl	~~strcat
 ;			}
-	.line	113
+	.line	306
 ;		}
-L10005:
-	.line	114
+L10019:
+	.line	307
 ;		else
-	brl	L10011
-L10004:
+	brl	L10028
+L10018:
 ;		{
-	.line	116
+	.line	309
 ;			//k_debug_pointer("k_dos_load_drivers::driver not detected@",_k_get_driver_def);
 ;		}
-	.line	118
-L10011:
+	.line	311
+L10028:
 ;	}
-	.line	119
-L10001:
-	inc	<L3+driver_idx_1
-	bne	L12
-	inc	<L3+driver_idx_1+2
-L12:
-	lda	<L3+driver_idx_1
+	.line	312
+L10015:
+	inc	<L24+driver_idx_1
+	bne	L36
+	inc	<L24+driver_idx_1+2
+L36:
+	lda	<L24+driver_idx_1
 	cmp	#<$19
-	lda	<L3+driver_idx_1+2
+	lda	<L24+driver_idx_1+2
 	sbc	#^$19
-	bcs	L13
-	brl	L10003
-L13:
-L10002:
+	bcs	L37
+	brl	L10017
+L37:
+L10016:
 ;
 ;
 ;	return (LPCSTR)log;
-	.line	122
-	ldx	<L3+log_1+2
-	lda	<L3+log_1
-L14:
+	.line	315
+	ldx	<L24+log_1+2
+	lda	<L24+log_1
+L38:
 	tay
 	pld
 	tsc
 	clc
-	adc	#L2
+	adc	#L23
 	tcs
 	tya
 	rtl
 ;}
-	.line	123
-	.endblock	123
-L2	equ	56
-L3	equ	9
+	.line	316
+	.endblock	316
+L23	equ	76
+L24	equ	13
 	ends
 	efunc
-	.endfunc	123,9,56
-	.line	123
+	.endfunc	316,13,76
+	.line	316
 	data
-L1:
+L22:
 	db	$5F,$6B,$5F,$64,$6F,$73,$5F,$64,$65,$76,$69,$63,$65,$64,$72
 	db	$69,$76,$65,$72,$73,$00,$5F,$6B,$5F,$64,$6F,$73,$5F,$64,$65
 	db	$76,$69,$63,$65,$69,$6E,$73,$74,$61,$6E,$63,$65,$00,$00,$53
 	db	$63,$61,$6E,$6E,$69,$6E,$67,$20,$66,$6F,$72,$20,$44,$72,$69
 	db	$76,$65,$72,$73,$2E,$2E,$2E,$0D,$0A,$00,$44,$72,$69,$76,$65
-	db	$72,$20,$44,$65,$74,$65,$63,$74,$65,$64,$3A,$0D,$0A,$00,$20
-	db	$20,$4E,$61,$6D,$65,$3A,$00,$20,$3A,$20,$00,$4C,$4F,$41,$44
-	db	$45,$44,$00,$55,$4E,$49,$4D,$50,$4C,$45,$4D,$45,$4E,$54,$45
-	db	$44,$00,$49,$4E,$43,$4F,$4D,$50,$41,$54,$49,$42,$4C,$45,$00
-	db	$0D,$0A,$00
+	db	$72,$20,$44,$65,$74,$65,$63,$74,$65,$64,$20,$00,$20,$40,$30
+	db	$78,$00,$3A,$0D,$0A,$00,$44,$72,$69,$76,$65,$72,$20,$44,$65
+	db	$66,$69,$6E,$69,$74,$69,$6F,$6E,$20,$00,$20,$40,$30,$78,$00
+	db	$3A,$0D,$0A,$00,$20,$20,$4E,$61,$6D,$65,$3A,$00,$20,$3A,$20
+	db	$00,$4C,$4F,$41,$44,$45,$44,$00,$0D,$0A,$20,$55,$53,$49,$4E
+	db	$47,$20,$49,$52,$51,$3A,$20,$00,$2C,$00,$55,$4E,$49,$4D,$50
+	db	$4C,$45,$4D,$45,$4E,$54,$45,$44,$00,$49,$4E,$43,$4F,$4D,$50
+	db	$41,$54,$49,$42,$4C,$45,$00,$0D,$0A,$00
 	ends
 ;/*
 ;void k_dos_load_drivers_old(void)
@@ -2112,23 +3188,23 @@ L1:
 ;
 ;PFX_DEVICE_DRIVER k_get_device_driver(UINT type)
 ;{
-	.line	216
-	.line	217
+	.line	409
+	.line	410
 	FXDOS
 	xdef	~~k_get_device_driver
 	func
-	.function	217
+	.function	410
 ~~k_get_device_driver:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L16
+	sbc	#L40
 	tcs
 	phd
 	tcd
 type_0	set	4
-	.block	217
+	.block	410
 ;	PFXNODE deviceNode = NULL;
 ;	PFX_DEVICE_DRIVER device = NULL;
 ;
@@ -2136,88 +3212,88 @@ type_0	set	4
 deviceNode_1	set	0
 device_1	set	4
 	.sym	deviceNode,0,138,1,32,5
-	.sym	device,4,138,1,32,55
+	.sym	device,4,138,1,32,58
 	.sym	type,4,16,6,16
-	stz	<L17+deviceNode_1
-	stz	<L17+deviceNode_1+2
-	stz	<L17+device_1
-	stz	<L17+device_1+2
-	.line	221
-	pei	<L16+type_0
+	stz	<L41+deviceNode_1
+	stz	<L41+deviceNode_1+2
+	stz	<L41+device_1
+	stz	<L41+device_1+2
+	.line	414
+	pei	<L40+type_0
 	lda	|~~_k_dos_devicedrivers+2
 	pha
 	lda	|~~_k_dos_devicedrivers
 	pha
 	jsl	~~k_nodelist_searchByType
-	sta	<L17+deviceNode_1
-	stx	<L17+deviceNode_1+2
+	sta	<L41+deviceNode_1
+	stx	<L41+deviceNode_1+2
 ;	if(deviceNode)
-	.line	222
+	.line	415
 ;	{
-	lda	<L17+deviceNode_1
-	ora	<L17+deviceNode_1+2
-	bne	L19
-	brl	L10012
-L19:
-	.line	223
+	lda	<L41+deviceNode_1
+	ora	<L41+deviceNode_1+2
+	bne	L43
+	brl	L10029
+L43:
+	.line	416
 ;		device = ((PFX_DEVICE_DRIVER)(deviceNode->data));
-	.line	224
+	.line	417
 	ldy	#$2
-	lda	[<L17+deviceNode_1],Y
-	sta	<L17+device_1
+	lda	[<L41+deviceNode_1],Y
+	sta	<L41+device_1
 	ldy	#$4
-	lda	[<L17+deviceNode_1],Y
-	sta	<L17+device_1+2
+	lda	[<L41+deviceNode_1],Y
+	sta	<L41+device_1+2
 ;	}
-	.line	225
+	.line	418
 ;
 ;	return device;
-L10012:
-	.line	227
-	ldx	<L17+device_1+2
-	lda	<L17+device_1
-L20:
+L10029:
+	.line	420
+	ldx	<L41+device_1+2
+	lda	<L41+device_1
+L44:
 	tay
-	lda	<L16+2
-	sta	<L16+2+2
-	lda	<L16+1
-	sta	<L16+1+2
+	lda	<L40+2
+	sta	<L40+2+2
+	lda	<L40+1
+	sta	<L40+1+2
 	pld
 	tsc
 	clc
-	adc	#L16+2
+	adc	#L40+2
 	tcs
 	tya
 	rtl
 ;}
-	.line	228
-	.endblock	228
-L16	equ	8
-L17	equ	1
+	.line	421
+	.endblock	421
+L40	equ	8
+L41	equ	1
 	ends
 	efunc
-	.endfunc	228,1,8
-	.line	228
+	.endfunc	421,1,8
+	.line	421
 ;
 ;PFXDOSDEVICE k_get_dos_device(UINT type)
 ;{
-	.line	230
-	.line	231
+	.line	423
+	.line	424
 	FXDOS
 	xdef	~~k_get_dos_device
 	func
-	.function	231
+	.function	424
 ~~k_get_dos_device:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L21
+	sbc	#L45
 	tcs
 	phd
 	tcd
 type_0	set	4
-	.block	231
+	.block	424
 ;	PFXNODE deviceNode = NULL;
 ;	PFXDOSDEVICE device = NULL;
 ;
@@ -2225,88 +3301,88 @@ type_0	set	4
 deviceNode_1	set	0
 device_1	set	4
 	.sym	deviceNode,0,138,1,32,5
-	.sym	device,4,138,1,32,122
+	.sym	device,4,138,1,32,127
 	.sym	type,4,16,6,16
-	stz	<L22+deviceNode_1
-	stz	<L22+deviceNode_1+2
-	stz	<L22+device_1
-	stz	<L22+device_1+2
-	.line	235
-	pei	<L21+type_0
+	stz	<L46+deviceNode_1
+	stz	<L46+deviceNode_1+2
+	stz	<L46+device_1
+	stz	<L46+device_1+2
+	.line	428
+	pei	<L45+type_0
 	lda	|~~_k_dos_deviceinstance+2
 	pha
 	lda	|~~_k_dos_deviceinstance
 	pha
 	jsl	~~k_nodelist_searchByType
-	sta	<L22+deviceNode_1
-	stx	<L22+deviceNode_1+2
+	sta	<L46+deviceNode_1
+	stx	<L46+deviceNode_1+2
 ;	if(deviceNode)
-	.line	236
+	.line	429
 ;	{
-	lda	<L22+deviceNode_1
-	ora	<L22+deviceNode_1+2
-	bne	L24
-	brl	L10013
-L24:
-	.line	237
+	lda	<L46+deviceNode_1
+	ora	<L46+deviceNode_1+2
+	bne	L48
+	brl	L10030
+L48:
+	.line	430
 ;		device = ((PFXDOSDEVICE)(deviceNode->data));
-	.line	238
+	.line	431
 	ldy	#$2
-	lda	[<L22+deviceNode_1],Y
-	sta	<L22+device_1
+	lda	[<L46+deviceNode_1],Y
+	sta	<L46+device_1
 	ldy	#$4
-	lda	[<L22+deviceNode_1],Y
-	sta	<L22+device_1+2
+	lda	[<L46+deviceNode_1],Y
+	sta	<L46+device_1+2
 ;	}
-	.line	239
+	.line	432
 ;
 ;	return device;
-L10013:
-	.line	241
-	ldx	<L22+device_1+2
-	lda	<L22+device_1
-L25:
+L10030:
+	.line	434
+	ldx	<L46+device_1+2
+	lda	<L46+device_1
+L49:
 	tay
-	lda	<L21+2
-	sta	<L21+2+2
-	lda	<L21+1
-	sta	<L21+1+2
+	lda	<L45+2
+	sta	<L45+2+2
+	lda	<L45+1
+	sta	<L45+1+2
 	pld
 	tsc
 	clc
-	adc	#L21+2
+	adc	#L45+2
 	tcs
 	tya
 	rtl
 ;}
-	.line	242
-	.endblock	242
-L21	equ	8
-L22	equ	1
+	.line	435
+	.endblock	435
+L45	equ	8
+L46	equ	1
 	ends
 	efunc
-	.endfunc	242,1,8
-	.line	242
+	.endfunc	435,1,8
+	.line	435
 ;
 ;BOOL k_close_dos_device(UINT type)
 ;{
-	.line	244
-	.line	245
+	.line	437
+	.line	438
 	FXDOS
 	xdef	~~k_close_dos_device
 	func
-	.function	245
+	.function	438
 ~~k_close_dos_device:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L26
+	sbc	#L50
 	tcs
 	phd
 	tcd
 type_0	set	4
-	.block	245
+	.block	438
 ;	BOOL bRet = FALSE;
 ;	PFXNODE deviceNode = NULL;
 ;	PFXDOSDEVICE device = NULL;
@@ -2317,122 +3393,122 @@ deviceNode_1	set	1
 device_1	set	5
 	.sym	bRet,0,14,1,8
 	.sym	deviceNode,1,138,1,32,5
-	.sym	device,5,138,1,32,122
+	.sym	device,5,138,1,32,127
 	.sym	type,4,16,6,16
 	sep	#$20
 	longa	off
-	stz	<L27+bRet_1
+	stz	<L51+bRet_1
 	rep	#$20
 	longa	on
-	stz	<L27+deviceNode_1
-	stz	<L27+deviceNode_1+2
-	stz	<L27+device_1
-	stz	<L27+device_1+2
-	.line	250
-	pei	<L26+type_0
+	stz	<L51+deviceNode_1
+	stz	<L51+deviceNode_1+2
+	stz	<L51+device_1
+	stz	<L51+device_1+2
+	.line	443
+	pei	<L50+type_0
 	lda	|~~_k_dos_deviceinstance+2
 	pha
 	lda	|~~_k_dos_deviceinstance
 	pha
 	jsl	~~k_nodelist_searchByType
-	sta	<L27+deviceNode_1
-	stx	<L27+deviceNode_1+2
+	sta	<L51+deviceNode_1
+	stx	<L51+deviceNode_1+2
 ;	if(deviceNode)
-	.line	251
+	.line	444
 ;	{
-	lda	<L27+deviceNode_1
-	ora	<L27+deviceNode_1+2
-	bne	L29
-	brl	L10014
-L29:
-	.line	252
+	lda	<L51+deviceNode_1
+	ora	<L51+deviceNode_1+2
+	bne	L53
+	brl	L10031
+L53:
+	.line	445
 ;		device = ((PFXDOSDEVICE)(deviceNode->data));
-	.line	253
+	.line	446
 	ldy	#$2
-	lda	[<L27+deviceNode_1],Y
-	sta	<L27+device_1
+	lda	[<L51+deviceNode_1],Y
+	sta	<L51+device_1
 	ldy	#$4
-	lda	[<L27+deviceNode_1],Y
-	sta	<L27+device_1+2
+	lda	[<L51+deviceNode_1],Y
+	sta	<L51+device_1+2
 ;		if(device)
-	.line	254
+	.line	447
 ;		{
-	lda	<L27+device_1
-	ora	<L27+device_1+2
-	bne	L30
-	brl	L10015
-L30:
-	.line	255
+	lda	<L51+device_1
+	ora	<L51+device_1+2
+	bne	L54
+	brl	L10032
+L54:
+	.line	448
 ;			k_nodelist_removefromlist(_k_dos_deviceinstance,deviceNode);
-	.line	256
-	pei	<L27+deviceNode_1+2
-	pei	<L27+deviceNode_1
+	.line	449
+	pei	<L51+deviceNode_1+2
+	pei	<L51+deviceNode_1
 	lda	|~~_k_dos_deviceinstance+2
 	pha
 	lda	|~~_k_dos_deviceinstance
 	pha
 	jsl	~~k_nodelist_removefromlist
 ;			bRet = TRUE;
-	.line	257
+	.line	450
 	sep	#$20
 	longa	off
 	lda	#$1
-	sta	<L27+bRet_1
+	sta	<L51+bRet_1
 	rep	#$20
 	longa	on
 ;		}
-	.line	258
+	.line	451
 ;	}
-L10015:
-	.line	259
+L10032:
+	.line	452
 ;
 ;    return bRet;
-L10014:
-	.line	261
-	lda	<L27+bRet_1
+L10031:
+	.line	454
+	lda	<L51+bRet_1
 	and	#$ff
-L31:
+L55:
 	tay
-	lda	<L26+2
-	sta	<L26+2+2
-	lda	<L26+1
-	sta	<L26+1+2
+	lda	<L50+2
+	sta	<L50+2+2
+	lda	<L50+1
+	sta	<L50+1+2
 	pld
 	tsc
 	clc
-	adc	#L26+2
+	adc	#L50+2
 	tcs
 	tya
 	rtl
 ;}
-	.line	262
-	.endblock	262
-L26	equ	9
-L27	equ	1
+	.line	455
+	.endblock	455
+L50	equ	9
+L51	equ	1
 	ends
 	efunc
-	.endfunc	262,1,9
-	.line	262
+	.endfunc	455,1,9
+	.line	455
 ;
 ;PFXDOSDEVICE k_create_dos_device(UINT type)
 ;{
-	.line	264
-	.line	265
+	.line	457
+	.line	458
 	FXDOS
 	xdef	~~k_create_dos_device
 	func
-	.function	265
+	.function	458
 ~~k_create_dos_device:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L32
+	sbc	#L56
 	tcs
 	phd
 	tcd
 type_0	set	4
-	.block	265
+	.block	458
 ;	INT x = 0;
 ;
 ;	BYTE	errorCode;
@@ -2471,521 +3547,522 @@ partitionId_1	set	34
 	.sym	byte,3,14,1,8
 	.sym	s,4,14,1,8
 	.sym	isFAT12,5,14,1,8
-	.sym	pBoot,6,138,1,32,92
-	.sym	pPartTable,10,138,1,32,93
-	.sym	pfxdosDevice,14,138,1,32,122
-	.sym	pfat32,18,138,1,32,89
-	.sym	pdriver,22,138,1,32,56
+	.sym	pBoot,6,138,1,32,97
+	.sym	pPartTable,10,138,1,32,98
+	.sym	pfxdosDevice,14,138,1,32,127
+	.sym	pfat32,18,138,1,32,94
+	.sym	pdriver,22,138,1,32,59
 	.sym	deviceNode,26,138,1,32,5
 	.sym	lba,30,18,1,32
 	.sym	partitionId,34,5,1,16
 	.sym	type,4,16,6,16
-	stz	<L33+x_1
+	stz	<L57+x_1
 	sep	#$20
 	longa	off
-	stz	<L33+isFAT12_1
+	stz	<L57+isFAT12_1
 	rep	#$20
 	longa	on
-	stz	<L33+pBoot_1
-	stz	<L33+pBoot_1+2
-	stz	<L33+pPartTable_1
-	stz	<L33+pPartTable_1+2
-	stz	<L33+pfxdosDevice_1
-	stz	<L33+pfxdosDevice_1+2
-	stz	<L33+pfat32_1
-	stz	<L33+pfat32_1+2
-	stz	<L33+pdriver_1
-	stz	<L33+pdriver_1+2
-	stz	<L33+deviceNode_1
-	stz	<L33+deviceNode_1+2
-	stz	<L33+lba_1
-	stz	<L33+lba_1+2
-	stz	<L33+partitionId_1
-	.line	285
-	pei	<L32+type_0
-	pea	#^L15
-	pea	#<L15
+	stz	<L57+pBoot_1
+	stz	<L57+pBoot_1+2
+	stz	<L57+pPartTable_1
+	stz	<L57+pPartTable_1+2
+	stz	<L57+pfxdosDevice_1
+	stz	<L57+pfxdosDevice_1+2
+	stz	<L57+pfat32_1
+	stz	<L57+pfat32_1+2
+	stz	<L57+pdriver_1
+	stz	<L57+pdriver_1+2
+	stz	<L57+deviceNode_1
+	stz	<L57+deviceNode_1+2
+	stz	<L57+lba_1
+	stz	<L57+lba_1+2
+	stz	<L57+partitionId_1
+	.line	478
+	pei	<L56+type_0
+	pea	#^L39
+	pea	#<L39
 	jsl	~~k_debug_integer
 ;
 ;
 ;    pfxdosDevice = k_get_dos_device(type);
-	.line	288
-	pei	<L32+type_0
+	.line	481
+	pei	<L56+type_0
 	jsl	~~k_get_dos_device
-	sta	<L33+pfxdosDevice_1
-	stx	<L33+pfxdosDevice_1+2
+	sta	<L57+pfxdosDevice_1
+	stx	<L57+pfxdosDevice_1+2
 ;    if(pfxdosDevice)
-	.line	289
+	.line	482
 ;    {
-	lda	<L33+pfxdosDevice_1
-	ora	<L33+pfxdosDevice_1+2
-	bne	L35
-	brl	L10016
-L35:
-	.line	290
+	lda	<L57+pfxdosDevice_1
+	ora	<L57+pfxdosDevice_1+2
+	bne	L59
+	brl	L10033
+L59:
+	.line	483
 ;    	k_debug_integer("k_create_dos_device:FOUND EXISTING:",type);
-	.line	291
-	pei	<L32+type_0
-	pea	#^L15+21
-	pea	#<L15+21
+	.line	484
+	pei	<L56+type_0
+	pea	#^L39+21
+	pea	#<L39+21
 	jsl	~~k_debug_integer
 ;    	return pfxdosDevice;
-	.line	292
-	ldx	<L33+pfxdosDevice_1+2
-	lda	<L33+pfxdosDevice_1
-L36:
+	.line	485
+	ldx	<L57+pfxdosDevice_1+2
+	lda	<L57+pfxdosDevice_1
+L60:
 	tay
-	lda	<L32+2
-	sta	<L32+2+2
-	lda	<L32+1
-	sta	<L32+1+2
+	lda	<L56+2
+	sta	<L56+2+2
+	lda	<L56+1
+	sta	<L56+1+2
 	pld
 	tsc
 	clc
-	adc	#L32+2
+	adc	#L56+2
 	tcs
 	tya
 	rtl
 ;    }
-	.line	293
+	.line	486
 ;
 ;    pfxdosDevice = k_mem_allocate_heap(sizeof(FXDOSDEVICE));
-L10016:
-	.line	295
+L10033:
+	.line	488
+	pea	#^$2ce
 	pea	#<$2ce
 	jsl	~~k_mem_allocate_heap
-	sta	<L33+pfxdosDevice_1
-	stx	<L33+pfxdosDevice_1+2
+	sta	<L57+pfxdosDevice_1
+	stx	<L57+pfxdosDevice_1+2
 ;    if(pfxdosDevice)
-	.line	296
+	.line	489
 ;    {
-	lda	<L33+pfxdosDevice_1
-	ora	<L33+pfxdosDevice_1+2
-	bne	L37
-	brl	L10017
-L37:
-	.line	297
+	lda	<L57+pfxdosDevice_1
+	ora	<L57+pfxdosDevice_1+2
+	bne	L61
+	brl	L10034
+L61:
+	.line	490
 ;    	memset(pfxdosDevice,0,sizeof(FXDOSDEVICE));
-	.line	298
+	.line	491
 	pea	#<$2ce
 	pea	#<$0
-	pei	<L33+pfxdosDevice_1+2
-	pei	<L33+pfxdosDevice_1
+	pei	<L57+pfxdosDevice_1+2
+	pei	<L57+pfxdosDevice_1
 	jsl	~~memset
 ;
 ;    	switch(type)
-	.line	300
-	lda	<L32+type_0
-	brl	L10018
+	.line	493
+	lda	<L56+type_0
+	brl	L10035
 ;		{
-	.line	301
+	.line	494
 ;    	case FXDOS_SDC:
-	.line	302
-L10020:
+	.line	495
+L10037:
 ;
 ;    		deviceNode = k_nodelist_searchByType(_k_dos_devicedrivers,DRIVER_TYPE_SDCARD);
-	.line	304
+	.line	497
 	pea	#<$6
 	lda	|~~_k_dos_devicedrivers+2
 	pha
 	lda	|~~_k_dos_devicedrivers
 	pha
 	jsl	~~k_nodelist_searchByType
-	sta	<L33+deviceNode_1
-	stx	<L33+deviceNode_1+2
+	sta	<L57+deviceNode_1
+	stx	<L57+deviceNode_1+2
 ;    		if(deviceNode)
-	.line	305
+	.line	498
 ;    		{
-	lda	<L33+deviceNode_1
-	ora	<L33+deviceNode_1+2
-	bne	L38
-	brl	L10021
-L38:
-	.line	306
+	lda	<L57+deviceNode_1
+	ora	<L57+deviceNode_1+2
+	bne	L62
+	brl	L10038
+L62:
+	.line	499
 ;    			 k_debug_pointer("k_create_dos_device:found:deviceNode:",deviceNode);
-	.line	307
-	pei	<L33+deviceNode_1+2
-	pei	<L33+deviceNode_1
-	pea	#^L15+57
-	pea	#<L15+57
+	.line	500
+	pei	<L57+deviceNode_1+2
+	pei	<L57+deviceNode_1
+	pea	#^L39+57
+	pea	#<L39+57
 	jsl	~~k_debug_pointer
 ;
 ;    			pdriver = ((PFX_BLOCK_DEVICE_DRIVER)(deviceNode->data));
-	.line	309
+	.line	502
 	ldy	#$2
-	lda	[<L33+deviceNode_1],Y
-	sta	<L33+pdriver_1
+	lda	[<L57+deviceNode_1],Y
+	sta	<L57+pdriver_1
 	ldy	#$4
-	lda	[<L33+deviceNode_1],Y
-	sta	<L33+pdriver_1+2
+	lda	[<L57+deviceNode_1],Y
+	sta	<L57+pdriver_1+2
 ;    			if(pdriver)
-	.line	310
+	.line	503
 ;    			{
-	lda	<L33+pdriver_1
-	ora	<L33+pdriver_1+2
-	bne	L39
-	brl	L10022
-L39:
-	.line	311
+	lda	<L57+pdriver_1
+	ora	<L57+pdriver_1+2
+	bne	L63
+	brl	L10039
+L63:
+	.line	504
 ;    				k_debug_pointer("k_create_dos_device:found:pdriver:",pdriver);
-	.line	312
-	pei	<L33+pdriver_1+2
-	pei	<L33+pdriver_1
-	pea	#^L15+95
-	pea	#<L15+95
+	.line	505
+	pei	<L57+pdriver_1+2
+	pei	<L57+pdriver_1
+	pea	#^L39+95
+	pea	#<L39+95
 	jsl	~~k_debug_pointer
 ;
 ;    				if(pdriver->f_driver_load)
-	.line	314
+	.line	507
 ;    				{
 	ldy	#$51
-	lda	[<L33+pdriver_1],Y
+	lda	[<L57+pdriver_1],Y
 	ldy	#$53
-	ora	[<L33+pdriver_1],Y
-	bne	L40
-	brl	L10023
-L40:
-	.line	315
+	ora	[<L57+pdriver_1],Y
+	bne	L64
+	brl	L10040
+L64:
+	.line	508
 ;    					pfxdosDevice->devdata = pdriver->driver_context;
-	.line	316
+	.line	509
 	ldy	#$4d
-	lda	[<L33+pdriver_1],Y
+	lda	[<L57+pdriver_1],Y
 	ldy	#$2
-	sta	[<L33+pfxdosDevice_1],Y
+	sta	[<L57+pfxdosDevice_1],Y
 	ldy	#$4f
-	lda	[<L33+pdriver_1],Y
+	lda	[<L57+pdriver_1],Y
 	ldy	#$4
-	sta	[<L33+pfxdosDevice_1],Y
+	sta	[<L57+pfxdosDevice_1],Y
 ;
 ;    					pfxdosDevice->initialized = ((DEVICEDRIVER_LOAD)pdriver->f_driver_load)();
-	.line	318
+	.line	511
 	ldy	#$53
-	lda	[<L33+pdriver_1],Y
+	lda	[<L57+pdriver_1],Y
 	tax
 	ldy	#$51
-	lda	[<L33+pdriver_1],Y
+	lda	[<L57+pdriver_1],Y
 	xref	~~~lcal
 	jsl	~~~lcal
 	sep	#$20
 	longa	off
 	ldy	#$1
-	sta	[<L33+pfxdosDevice_1],Y
+	sta	[<L57+pfxdosDevice_1],Y
 	rep	#$20
 	longa	on
 ;    					if(pfxdosDevice->initialized)
-	.line	319
+	.line	512
 ;    					{
 	ldy	#$1
-	lda	[<L33+pfxdosDevice_1],Y
+	lda	[<L57+pfxdosDevice_1],Y
 	and	#$ff
-	bne	L41
-	brl	L10024
-L41:
-	.line	320
+	bne	L65
+	brl	L10041
+L65:
+	.line	513
 ;							pfxdosDevice->pfInit   = NULL;
-	.line	321
+	.line	514
 	lda	#$0
 	ldy	#$2ba
-	sta	[<L33+pfxdosDevice_1],Y
+	sta	[<L57+pfxdosDevice_1],Y
 	lda	#$0
 	ldy	#$2bc
-	sta	[<L33+pfxdosDevice_1],Y
+	sta	[<L57+pfxdosDevice_1],Y
 ;							pfxdosDevice->pfReader = (DOSSECTORREADER)pdriver->f_driver_read;
-	.line	322
+	.line	515
 	ldy	#$55
-	lda	[<L33+pdriver_1],Y
+	lda	[<L57+pdriver_1],Y
 	ldy	#$2c6
-	sta	[<L33+pfxdosDevice_1],Y
+	sta	[<L57+pfxdosDevice_1],Y
 	ldy	#$57
-	lda	[<L33+pdriver_1],Y
+	lda	[<L57+pdriver_1],Y
 	ldy	#$2c8
-	sta	[<L33+pfxdosDevice_1],Y
+	sta	[<L57+pfxdosDevice_1],Y
 ;							pfxdosDevice->pfWriter = (DOSSECTORWRITER)pdriver->f_driver_write;
-	.line	323
+	.line	516
 	ldy	#$59
-	lda	[<L33+pdriver_1],Y
+	lda	[<L57+pdriver_1],Y
 	ldy	#$2ca
-	sta	[<L33+pfxdosDevice_1],Y
+	sta	[<L57+pfxdosDevice_1],Y
 	ldy	#$5b
-	lda	[<L33+pdriver_1],Y
+	lda	[<L57+pdriver_1],Y
 	ldy	#$2cc
-	sta	[<L33+pfxdosDevice_1],Y
+	sta	[<L57+pfxdosDevice_1],Y
 ;    					}
-	.line	324
+	.line	517
 ;
 ;    					k_debug_integer("k_create_dos_device:found:pfxdosDevice->initialized:",pfxdosDevice->initialized);
-L10024:
-	.line	326
+L10041:
+	.line	519
 	ldy	#$1
-	lda	[<L33+pfxdosDevice_1],Y
+	lda	[<L57+pfxdosDevice_1],Y
 	and	#$ff
 	pha
-	pea	#^L15+130
-	pea	#<L15+130
+	pea	#^L39+130
+	pea	#<L39+130
 	jsl	~~k_debug_integer
 ;    				}
-	.line	327
+	.line	520
 ;    				//pfxdosDevice->pfInit(NULL);
 ;    			}
-L10023:
-	.line	329
+L10040:
+	.line	522
 ;
 ;    		}
-L10022:
-	.line	331
+L10039:
+	.line	524
 ;    		//pfxdosDevice->pfInit   = (DOSINITDEVICE)k_sd_dos_init;
 ;    		//pfxdosDevice->pfReader = (DOSSECTORREADER)k_read_sd_sector;
 ;    		break;
-L10021:
-	.line	334
-	brl	L10019
+L10038:
+	.line	527
+	brl	L10036
 ;
 ;    	case FXDOS_HDD:
-	.line	336
-L10025:
+	.line	529
+L10042:
 ;    		deviceNode = k_nodelist_searchByType(_k_dos_devicedrivers,DRIVER_TYPE_IDE);
-	.line	337
+	.line	530
 	pea	#<$8
 	lda	|~~_k_dos_devicedrivers+2
 	pha
 	lda	|~~_k_dos_devicedrivers
 	pha
 	jsl	~~k_nodelist_searchByType
-	sta	<L33+deviceNode_1
-	stx	<L33+deviceNode_1+2
+	sta	<L57+deviceNode_1
+	stx	<L57+deviceNode_1+2
 ;    		if(deviceNode)
-	.line	338
+	.line	531
 ;    		{
-	lda	<L33+deviceNode_1
-	ora	<L33+deviceNode_1+2
-	bne	L42
-	brl	L10026
-L42:
-	.line	339
+	lda	<L57+deviceNode_1
+	ora	<L57+deviceNode_1+2
+	bne	L66
+	brl	L10043
+L66:
+	.line	532
 ;    			 k_debug_pointer("k_create_dos_device:found:deviceNode:",deviceNode);
-	.line	340
-	pei	<L33+deviceNode_1+2
-	pei	<L33+deviceNode_1
-	pea	#^L15+183
-	pea	#<L15+183
+	.line	533
+	pei	<L57+deviceNode_1+2
+	pei	<L57+deviceNode_1
+	pea	#^L39+183
+	pea	#<L39+183
 	jsl	~~k_debug_pointer
 ;
 ;    			pdriver = ((PFX_BLOCK_DEVICE_DRIVER)(deviceNode->data));
-	.line	342
+	.line	535
 	ldy	#$2
-	lda	[<L33+deviceNode_1],Y
-	sta	<L33+pdriver_1
+	lda	[<L57+deviceNode_1],Y
+	sta	<L57+pdriver_1
 	ldy	#$4
-	lda	[<L33+deviceNode_1],Y
-	sta	<L33+pdriver_1+2
+	lda	[<L57+deviceNode_1],Y
+	sta	<L57+pdriver_1+2
 ;    			if(pdriver)
-	.line	343
+	.line	536
 ;    			{
-	lda	<L33+pdriver_1
-	ora	<L33+pdriver_1+2
-	bne	L43
-	brl	L10027
-L43:
-	.line	344
+	lda	<L57+pdriver_1
+	ora	<L57+pdriver_1+2
+	bne	L67
+	brl	L10044
+L67:
+	.line	537
 ;    				k_debug_pointer("k_create_dos_device:found:pdriver:",pdriver);
-	.line	345
-	pei	<L33+pdriver_1+2
-	pei	<L33+pdriver_1
-	pea	#^L15+221
-	pea	#<L15+221
+	.line	538
+	pei	<L57+pdriver_1+2
+	pei	<L57+pdriver_1
+	pea	#^L39+221
+	pea	#<L39+221
 	jsl	~~k_debug_pointer
 ;
 ;    				if(pdriver->f_driver_load)
-	.line	347
+	.line	540
 ;    				{
 	ldy	#$51
-	lda	[<L33+pdriver_1],Y
+	lda	[<L57+pdriver_1],Y
 	ldy	#$53
-	ora	[<L33+pdriver_1],Y
-	bne	L44
-	brl	L10028
-L44:
-	.line	348
+	ora	[<L57+pdriver_1],Y
+	bne	L68
+	brl	L10045
+L68:
+	.line	541
 ;    					pfxdosDevice->devdata = pdriver->driver_context;
-	.line	349
+	.line	542
 	ldy	#$4d
-	lda	[<L33+pdriver_1],Y
+	lda	[<L57+pdriver_1],Y
 	ldy	#$2
-	sta	[<L33+pfxdosDevice_1],Y
+	sta	[<L57+pfxdosDevice_1],Y
 	ldy	#$4f
-	lda	[<L33+pdriver_1],Y
+	lda	[<L57+pdriver_1],Y
 	ldy	#$4
-	sta	[<L33+pfxdosDevice_1],Y
+	sta	[<L57+pfxdosDevice_1],Y
 ;
 ;    					pfxdosDevice->initialized = ((DEVICEDRIVER_LOAD)pdriver->f_driver_load)();
-	.line	351
+	.line	544
 	ldy	#$53
-	lda	[<L33+pdriver_1],Y
+	lda	[<L57+pdriver_1],Y
 	tax
 	ldy	#$51
-	lda	[<L33+pdriver_1],Y
+	lda	[<L57+pdriver_1],Y
 	xref	~~~lcal
 	jsl	~~~lcal
 	sep	#$20
 	longa	off
 	ldy	#$1
-	sta	[<L33+pfxdosDevice_1],Y
+	sta	[<L57+pfxdosDevice_1],Y
 	rep	#$20
 	longa	on
 ;    					if(pfxdosDevice->initialized)
-	.line	352
+	.line	545
 ;    					{
 	ldy	#$1
-	lda	[<L33+pfxdosDevice_1],Y
+	lda	[<L57+pfxdosDevice_1],Y
 	and	#$ff
-	bne	L45
-	brl	L10029
-L45:
-	.line	353
+	bne	L69
+	brl	L10046
+L69:
+	.line	546
 ;							pfxdosDevice->pfInit   = NULL;
-	.line	354
+	.line	547
 	lda	#$0
 	ldy	#$2ba
-	sta	[<L33+pfxdosDevice_1],Y
+	sta	[<L57+pfxdosDevice_1],Y
 	lda	#$0
 	ldy	#$2bc
-	sta	[<L33+pfxdosDevice_1],Y
+	sta	[<L57+pfxdosDevice_1],Y
 ;							pfxdosDevice->pfReader = (DOSSECTORREADER)pdriver->f_driver_read;
-	.line	355
+	.line	548
 	ldy	#$55
-	lda	[<L33+pdriver_1],Y
+	lda	[<L57+pdriver_1],Y
 	ldy	#$2c6
-	sta	[<L33+pfxdosDevice_1],Y
+	sta	[<L57+pfxdosDevice_1],Y
 	ldy	#$57
-	lda	[<L33+pdriver_1],Y
+	lda	[<L57+pdriver_1],Y
 	ldy	#$2c8
-	sta	[<L33+pfxdosDevice_1],Y
+	sta	[<L57+pfxdosDevice_1],Y
 ;							pfxdosDevice->pfWriter = (DOSSECTORWRITER)pdriver->f_driver_write;
-	.line	356
+	.line	549
 	ldy	#$59
-	lda	[<L33+pdriver_1],Y
+	lda	[<L57+pdriver_1],Y
 	ldy	#$2ca
-	sta	[<L33+pfxdosDevice_1],Y
+	sta	[<L57+pfxdosDevice_1],Y
 	ldy	#$5b
-	lda	[<L33+pdriver_1],Y
+	lda	[<L57+pdriver_1],Y
 	ldy	#$2cc
-	sta	[<L33+pfxdosDevice_1],Y
+	sta	[<L57+pfxdosDevice_1],Y
 ;    					}
-	.line	357
+	.line	550
 ;
 ;    					k_debug_integer("k_create_dos_device:found:pfxdosDevice->initialized:",pfxdosDevice->initialized);
-L10029:
-	.line	359
+L10046:
+	.line	552
 	ldy	#$1
-	lda	[<L33+pfxdosDevice_1],Y
+	lda	[<L57+pfxdosDevice_1],Y
 	and	#$ff
 	pha
-	pea	#^L15+256
-	pea	#<L15+256
+	pea	#^L39+256
+	pea	#<L39+256
 	jsl	~~k_debug_integer
 ;    				}
-	.line	360
+	.line	553
 ;    				//pfxdosDevice->pfInit(NULL);
 ;    			}
-L10028:
-	.line	362
+L10045:
+	.line	555
 ;
 ;    		}
-L10027:
-	.line	364
+L10044:
+	.line	557
 ;
 ;    		break;
-L10026:
-	.line	366
-	brl	L10019
+L10043:
+	.line	559
+	brl	L10036
 ;
 ;    	case FXDOS_FDD:
-	.line	368
-L10030:
+	.line	561
+L10047:
 ;
 ;    		//pfxdosDevice->pfInit   = (DOSINITDEVICE)floppy_init;//k_fd_dos_init;
 ;    		//pfxdosDevice->pfReader = (DOSSECTORREADER)k_read_fd_sector;
 ;    		lba = 0L;
-	.line	372
-	stz	<L33+lba_1
-	stz	<L33+lba_1+2
+	.line	565
+	stz	<L57+lba_1
+	stz	<L57+lba_1+2
 ;
 ;    		break;
-	.line	374
-	brl	L10019
+	.line	567
+	brl	L10036
 ;
 ;		}
-	.line	376
-L10018:
+	.line	569
+L10035:
 	xref	~~~swt
 	jsl	~~~swt
 	dw	3
 	dw	5
-	dw	L10020-1
+	dw	L10037-1
 	dw	6
-	dw	L10025-1
+	dw	L10042-1
 	dw	7
-	dw	L10030-1
-	dw	L10019-1
-L10019:
+	dw	L10047-1
+	dw	L10036-1
+L10036:
 ;
 ;    	k_debug_integer("k_create_dos_device size:",sizeof(FXDOSDEVICE));
-	.line	378
+	.line	571
 	pea	#<$2ce
-	pea	#^L15+309
-	pea	#<L15+309
+	pea	#^L39+309
+	pea	#<L39+309
 	jsl	~~k_debug_integer
 ;
 ;    	if(!pfxdosDevice->initialized && pfxdosDevice->pfInit)
-	.line	380
+	.line	573
 ;    		pfxdosDevice->pfInit();
 	ldy	#$1
-	lda	[<L33+pfxdosDevice_1],Y
+	lda	[<L57+pfxdosDevice_1],Y
 	and	#$ff
-	beq	L46
-	brl	L10031
-L46:
+	beq	L70
+	brl	L10048
+L70:
 	ldy	#$2ba
-	lda	[<L33+pfxdosDevice_1],Y
+	lda	[<L57+pfxdosDevice_1],Y
 	ldy	#$2bc
-	ora	[<L33+pfxdosDevice_1],Y
-	bne	L47
-	brl	L10031
-L47:
-	.line	381
+	ora	[<L57+pfxdosDevice_1],Y
+	bne	L71
+	brl	L10048
+L71:
+	.line	574
 	ldy	#$2bc
-	lda	[<L33+pfxdosDevice_1],Y
+	lda	[<L57+pfxdosDevice_1],Y
 	tax
 	ldy	#$2ba
-	lda	[<L33+pfxdosDevice_1],Y
+	lda	[<L57+pfxdosDevice_1],Y
 	xref	~~~lcal
 	jsl	~~~lcal
 ;
 ;
 ;    	if(!pfxdosDevice->initialized)
-L10031:
-	.line	384
+L10048:
+	.line	577
 ;    	{
 	ldy	#$1
-	lda	[<L33+pfxdosDevice_1],Y
+	lda	[<L57+pfxdosDevice_1],Y
 	and	#$ff
-	beq	L48
-	brl	L10032
-L48:
-	.line	385
+	beq	L72
+	brl	L10049
+L72:
+	.line	578
 ;    		k_mem_deallocate_heap(pfxdosDevice);
-	.line	386
-	pei	<L33+pfxdosDevice_1+2
-	pei	<L33+pfxdosDevice_1
+	.line	579
+	pei	<L57+pfxdosDevice_1+2
+	pei	<L57+pfxdosDevice_1
 	jsl	~~k_mem_deallocate_heap
 ;    		return NULL;
-	.line	387
+	.line	580
 	lda	#$0
 	tax
 	lda	#$0
-	brl	L36
+	brl	L60
 ;    	}
-	.line	388
+	.line	581
 ;
 ;		//_MSTR_CTRL[0] |= GABE_CTRL_SDC_LED;
 ;
@@ -3110,39 +4187,39 @@ L48:
 ;		}
 ;		*/
 ;    }
-L10032:
-	.line	512
+L10049:
+	.line	705
 ;
 ;    k_debug_nstrings("***fxdosDevice ADD DEVICE:",pdriver->designation,3);
-L10017:
-	.line	514
+L10034:
+	.line	707
 	pea	#<$3
 	clc
 	lda	#$41
-	adc	<L33+pdriver_1
+	adc	<L57+pdriver_1
 	sta	<R0
 	lda	#$0
-	adc	<L33+pdriver_1+2
+	adc	<L57+pdriver_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pea	#^L15+335
-	pea	#<L15+335
+	pea	#^L39+335
+	pea	#<L39+335
 	jsl	~~k_debug_nstrings
 ;    k_nodelist_addtolist(_k_dos_deviceinstance,type,pdriver->designation,pfxdosDevice);
-	.line	515
-	pei	<L33+pfxdosDevice_1+2
-	pei	<L33+pfxdosDevice_1
+	.line	708
+	pei	<L57+pfxdosDevice_1+2
+	pei	<L57+pfxdosDevice_1
 	clc
 	lda	#$41
-	adc	<L33+pdriver_1
+	adc	<L57+pdriver_1
 	sta	<R0
 	lda	#$0
-	adc	<L33+pdriver_1+2
+	adc	<L57+pdriver_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pei	<L32+type_0
+	pei	<L56+type_0
 	lda	|~~_k_dos_deviceinstance+2
 	pha
 	lda	|~~_k_dos_deviceinstance
@@ -3152,21 +4229,21 @@ L10017:
 ;    //GABE_MSTR_CTRL[0] = GABE_MSTR_CTRL[0] & (~GABE_CTRL_SDC_LED);
 ;
 ;	return pfxdosDevice;
-	.line	519
-	ldx	<L33+pfxdosDevice_1+2
-	lda	<L33+pfxdosDevice_1
-	brl	L36
+	.line	712
+	ldx	<L57+pfxdosDevice_1+2
+	lda	<L57+pfxdosDevice_1
+	brl	L60
 ;}
-	.line	520
-	.endblock	520
-L32	equ	40
-L33	equ	5
+	.line	713
+	.endblock	713
+L56	equ	40
+L57	equ	5
 	ends
 	efunc
-	.endfunc	520,5,40
-	.line	520
+	.endfunc	713,5,40
+	.line	713
 	data
-L15:
+L39:
 	db	$6B,$5F,$63,$72,$65,$61,$74,$65,$5F,$64,$6F,$73,$5F,$64,$65
 	db	$76,$69,$63,$65,$3A,$00,$6B,$5F,$63,$72,$65,$61,$74,$65,$5F
 	db	$64,$6F,$73,$5F,$64,$65,$76,$69,$63,$65,$3A,$46,$4F,$55,$4E
@@ -3196,51 +4273,51 @@ L15:
 ;
 ;PFXNODELIST k_read_dos_directory(PFXDOSDEVICE pfxdosDevice)
 ;{
-	.line	522
-	.line	523
+	.line	715
+	.line	716
 	FXDOS
 	xdef	~~k_read_dos_directory
 	func
-	.function	523
+	.function	716
 ~~k_read_dos_directory:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L50
+	sbc	#L74
 	tcs
 	phd
 	tcd
 pfxdosDevice_0	set	4
-	.block	523
+	.block	716
 ;	return NULL;
-	.sym	pfxdosDevice,4,138,6,32,122
-	.line	524
+	.sym	pfxdosDevice,4,138,6,32,127
+	.line	717
 	lda	#$0
 	tax
 	lda	#$0
-L53:
+L77:
 	tay
-	lda	<L50+2
-	sta	<L50+2+4
-	lda	<L50+1
-	sta	<L50+1+4
+	lda	<L74+2
+	sta	<L74+2+4
+	lda	<L74+1
+	sta	<L74+1+4
 	pld
 	tsc
 	clc
-	adc	#L50+4
+	adc	#L74+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	525
-	.endblock	525
-L50	equ	0
-L51	equ	1
+	.line	718
+	.endblock	718
+L74	equ	0
+L75	equ	1
 	ends
 	efunc
-	.endfunc	525,1,0
-	.line	525
+	.endfunc	718,1,0
+	.line	718
 ;/*
 ;LPCHAR _k_dos_alloc_filename(LPCHAR filename11)
 ;{
@@ -3745,67 +4822,67 @@ L51	equ	1
 ;
 ;VOID k_dos_deallocate_fileinfo(LPCSTR name,LPVOID pdata)
 ;{
-	.line	1028
-	.line	1029
+	.line	1221
+	.line	1222
 	FXDOS
 	xdef	~~k_dos_deallocate_fileinfo
 	func
-	.function	1029
+	.function	1222
 ~~k_dos_deallocate_fileinfo:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L54
+	sbc	#L78
 	tcs
 	phd
 	tcd
 name_0	set	4
 pdata_0	set	8
-	.block	1029
+	.block	1222
 ;
 ;}
 	.sym	name,4,142,6,32
 	.sym	pdata,8,129,6,32
-	.line	1031
-L57:
-	lda	<L54+2
-	sta	<L54+2+8
-	lda	<L54+1
-	sta	<L54+1+8
+	.line	1224
+L81:
+	lda	<L78+2
+	sta	<L78+2+8
+	lda	<L78+1
+	sta	<L78+1+8
 	pld
 	tsc
 	clc
-	adc	#L54+8
+	adc	#L78+8
 	tcs
 	rtl
-	.endblock	1031
-L54	equ	0
-L55	equ	1
+	.endblock	1224
+L78	equ	0
+L79	equ	1
 	ends
 	efunc
-	.endfunc	1031,1,0
-	.line	1031
+	.endfunc	1224,1,0
+	.line	1224
 ;
 ;PFXNODELIST k_dos_findfiles_to_nodes(LPCSTR path)
 ;{
-	.line	1033
-	.line	1034
+	.line	1226
+	.line	1227
 	FXDOS
 	xdef	~~k_dos_findfiles_to_nodes
 	func
-	.function	1034
+	.function	1227
 ~~k_dos_findfiles_to_nodes:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L58
+	sbc	#L82
 	tcs
 	phd
 	tcd
 path_0	set	4
-	.block	1034
+	.block	1227
 ;	DIR *dir;
 ;	FATFS *fs = NULL;
 ;	FIL *f = NULL;
@@ -3825,598 +4902,328 @@ fileInfo_1	set	12
 fr_1	set	16
 drive_1	set	18
 pcurrentDirectory_1	set	22
-	.sym	dir,0,138,1,32,82
-	.sym	fs,4,138,1,32,79
-	.sym	f,8,138,1,32,81
-	.sym	fileInfo,12,138,1,32,83
+	.sym	dir,0,138,1,32,87
+	.sym	fs,4,138,1,32,84
+	.sym	f,8,138,1,32,86
+	.sym	fileInfo,12,138,1,32,88
 	.sym	fr,16,5,1,16
 	.sym	drive,18,142,1,32
 	.sym	pcurrentDirectory,22,138,1,32,6
 	.sym	path,4,142,6,32
-	stz	<L59+fs_1
-	stz	<L59+fs_1+2
-	stz	<L59+f_1
-	stz	<L59+f_1+2
-	stz	<L59+fr_1
-	stz	<L59+drive_1
-	stz	<L59+drive_1+2
-	stz	<L59+pcurrentDirectory_1
-	stz	<L59+pcurrentDirectory_1+2
-	.line	1046
+	stz	<L83+fs_1
+	stz	<L83+fs_1+2
+	stz	<L83+f_1
+	stz	<L83+f_1+2
+	stz	<L83+fr_1
+	stz	<L83+drive_1
+	stz	<L83+drive_1+2
+	stz	<L83+pcurrentDirectory_1
+	stz	<L83+pcurrentDirectory_1+2
+	.line	1239
 	pea	#<$3a
-	pei	<L58+path_0+2
-	pei	<L58+path_0
+	pei	<L82+path_0+2
+	pei	<L82+path_0
 	jsl	~~k_string_copy_to_delimiter
-	sta	<L59+drive_1
-	stx	<L59+drive_1+2
+	sta	<L83+drive_1
+	stx	<L83+drive_1+2
 ;
 ;	pcurrentDirectory = k_nodelist_allocate_list("currentDirectory",k_dos_deallocate_fileinfo);
-	.line	1048
+	.line	1241
 	pea	#^~~k_dos_deallocate_fileinfo
 	pea	#<~~k_dos_deallocate_fileinfo
-	pea	#^L49
-	pea	#<L49
+	pea	#^L73
+	pea	#<L73
 	jsl	~~k_nodelist_allocate_list
-	sta	<L59+pcurrentDirectory_1
-	stx	<L59+pcurrentDirectory_1+2
+	sta	<L83+pcurrentDirectory_1
+	stx	<L83+pcurrentDirectory_1+2
 ;	if(pcurrentDirectory)
-	.line	1049
+	.line	1242
 ;	{
-	lda	<L59+pcurrentDirectory_1
-	ora	<L59+pcurrentDirectory_1+2
-	bne	L61
-	brl	L10033
-L61:
-	.line	1050
+	lda	<L83+pcurrentDirectory_1
+	ora	<L83+pcurrentDirectory_1+2
+	bne	L85
+	brl	L10050
+L85:
+	.line	1243
 ;		dir = k_mem_allocate_heap(sizeof(DIR));
-	.line	1051
+	.line	1244
+	pea	#^$34
 	pea	#<$34
 	jsl	~~k_mem_allocate_heap
-	sta	<L59+dir_1
-	stx	<L59+dir_1+2
+	sta	<L83+dir_1
+	stx	<L83+dir_1+2
 ;		fs = k_mem_allocate_heap(sizeof(FATFS));
-	.line	1052
+	.line	1245
+	pea	#^$233
 	pea	#<$233
 	jsl	~~k_mem_allocate_heap
-	sta	<L59+fs_1
-	stx	<L59+fs_1+2
+	sta	<L83+fs_1
+	stx	<L83+fs_1+2
 ;
-;
-;		f_mount(fs, drive,1);
-	.line	1055
+;		f_mount(NULL, drive,1); // unmount for safety
+	.line	1247
 	pea	#<$1
-	pei	<L59+drive_1+2
-	pei	<L59+drive_1
-	pei	<L59+fs_1+2
-	pei	<L59+fs_1
+	pei	<L83+drive_1+2
+	pei	<L83+drive_1
+	pea	#^$0
+	pea	#<$0
+	jsl	~~f_mount
+;		f_mount(fs, drive,1);
+	.line	1248
+	pea	#<$1
+	pei	<L83+drive_1+2
+	pei	<L83+drive_1
+	pei	<L83+fs_1+2
+	pei	<L83+fs_1
 	jsl	~~f_mount
 ;
 ;		fr = f_opendir (dir,path);
-	.line	1057
-	pei	<L58+path_0+2
-	pei	<L58+path_0
-	pei	<L59+dir_1+2
-	pei	<L59+dir_1
+	.line	1250
+	pei	<L82+path_0+2
+	pei	<L82+path_0
+	pei	<L83+dir_1+2
+	pei	<L83+dir_1
 	jsl	~~f_opendir
-	sta	<L59+fr_1
+	sta	<L83+fr_1
 ;		if(fr == FR_OK)
-	.line	1058
+	.line	1251
 ;		{
-	lda	<L59+fr_1
-	beq	L62
-	brl	L10034
-L62:
-	.line	1059
+	lda	<L83+fr_1
+	beq	L86
+	brl	L10051
+L86:
+	.line	1252
 ;			fileInfo = k_mem_allocate_heap(sizeof(FILINFO));
-	.line	1060
+	.line	1253
+	pea	#^$116
 	pea	#<$116
 	jsl	~~k_mem_allocate_heap
-	sta	<L59+fileInfo_1
-	stx	<L59+fileInfo_1+2
+	sta	<L83+fileInfo_1
+	stx	<L83+fileInfo_1+2
 ;			if(fileInfo)
-	.line	1061
+	.line	1254
 ;			{
-	lda	<L59+fileInfo_1
-	ora	<L59+fileInfo_1+2
-	bne	L63
-	brl	L10035
-L63:
-	.line	1062
+	lda	<L83+fileInfo_1
+	ora	<L83+fileInfo_1+2
+	bne	L87
+	brl	L10052
+L87:
+	.line	1255
 ;				fr = f_findfirst(dir,fileInfo,path, "*");
-	.line	1063
-	pea	#^L49+17
-	pea	#<L49+17
-	pei	<L58+path_0+2
-	pei	<L58+path_0
-	pei	<L59+fileInfo_1+2
-	pei	<L59+fileInfo_1
-	pei	<L59+dir_1+2
-	pei	<L59+dir_1
+	.line	1256
+	pea	#^L73+17
+	pea	#<L73+17
+	pei	<L82+path_0+2
+	pei	<L82+path_0
+	pei	<L83+fileInfo_1+2
+	pei	<L83+fileInfo_1
+	pei	<L83+dir_1+2
+	pei	<L83+dir_1
 	jsl	~~f_findfirst
-	sta	<L59+fr_1
+	sta	<L83+fr_1
 ;				if(fr == FR_OK)
-	.line	1064
+	.line	1257
 ;				{
-	lda	<L59+fr_1
-	beq	L64
-	brl	L10036
-L64:
-	.line	1065
+	lda	<L83+fr_1
+	beq	L88
+	brl	L10053
+L88:
+	.line	1258
 ;					k_nodelist_addtolist(pcurrentDirectory,PFXNODE_FILE_PATH_TYPE,(LPCSTR)fileInfo->fname,fileInfo);
-	.line	1066
-	pei	<L59+fileInfo_1+2
-	pei	<L59+fileInfo_1
+	.line	1259
+	pei	<L83+fileInfo_1+2
+	pei	<L83+fileInfo_1
 	clc
 	lda	#$16
-	adc	<L59+fileInfo_1
+	adc	<L83+fileInfo_1
 	sta	<R0
 	lda	#$0
-	adc	<L59+fileInfo_1+2
+	adc	<L83+fileInfo_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	pea	#<$a1
-	pei	<L59+pcurrentDirectory_1+2
-	pei	<L59+pcurrentDirectory_1
+	pei	<L83+pcurrentDirectory_1+2
+	pei	<L83+pcurrentDirectory_1
 	jsl	~~k_nodelist_addtolist
 ;					do
-	.line	1067
-L10039:
+	.line	1260
+L10056:
 ;					{
-	.line	1068
+	.line	1261
 ;						fileInfo = k_mem_allocate_heap(sizeof(FILINFO));
-	.line	1069
+	.line	1262
+	pea	#^$116
 	pea	#<$116
 	jsl	~~k_mem_allocate_heap
-	sta	<L59+fileInfo_1
-	stx	<L59+fileInfo_1+2
+	sta	<L83+fileInfo_1
+	stx	<L83+fileInfo_1+2
 ;						if(fileInfo!=NULL)
-	.line	1070
+	.line	1263
 ;						{
-	lda	<L59+fileInfo_1
-	ora	<L59+fileInfo_1+2
-	bne	L65
-	brl	L10040
-L65:
-	.line	1071
+	lda	<L83+fileInfo_1
+	ora	<L83+fileInfo_1+2
+	bne	L89
+	brl	L10057
+L89:
+	.line	1264
 ;							fr = f_findnext(dir,fileInfo);
-	.line	1072
-	pei	<L59+fileInfo_1+2
-	pei	<L59+fileInfo_1
-	pei	<L59+dir_1+2
-	pei	<L59+dir_1
+	.line	1265
+	pei	<L83+fileInfo_1+2
+	pei	<L83+fileInfo_1
+	pei	<L83+dir_1+2
+	pei	<L83+dir_1
 	jsl	~~f_findnext
-	sta	<L59+fr_1
+	sta	<L83+fr_1
 ;							if(fr != FR_OK)
-	.line	1073
+	.line	1266
 ;							{
-	lda	<L59+fr_1
-	bne	L66
-	brl	L10041
-L66:
-	.line	1074
+	lda	<L83+fr_1
+	bne	L90
+	brl	L10058
+L90:
+	.line	1267
 ;								k_mem_deallocate_heap(fileInfo);
-	.line	1075
-	pei	<L59+fileInfo_1+2
-	pei	<L59+fileInfo_1
+	.line	1268
+	pei	<L83+fileInfo_1+2
+	pei	<L83+fileInfo_1
 	jsl	~~k_mem_deallocate_heap
 ;							}
-	.line	1076
+	.line	1269
 ;							else
-	brl	L10042
-L10041:
+	brl	L10059
+L10058:
 ;							{
-	.line	1078
+	.line	1271
 ;								if(fileInfo->fname[0]!=0)
-	.line	1079
+	.line	1272
 ;									k_nodelist_addtolist(pcurrentDirectory,PFXNODE_FILE_PATH_TYPE,(LPCSTR)fileInfo->fname,fileInfo);
 	ldy	#$16
-	lda	[<L59+fileInfo_1],Y
+	lda	[<L83+fileInfo_1],Y
 	and	#$ff
-	bne	L67
-	brl	L10043
-L67:
-	.line	1080
-	pei	<L59+fileInfo_1+2
-	pei	<L59+fileInfo_1
+	bne	L91
+	brl	L10060
+L91:
+	.line	1273
+	pei	<L83+fileInfo_1+2
+	pei	<L83+fileInfo_1
 	clc
 	lda	#$16
-	adc	<L59+fileInfo_1
+	adc	<L83+fileInfo_1
 	sta	<R0
 	lda	#$0
-	adc	<L59+fileInfo_1+2
+	adc	<L83+fileInfo_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	pea	#<$a1
-	pei	<L59+pcurrentDirectory_1+2
-	pei	<L59+pcurrentDirectory_1
+	pei	<L83+pcurrentDirectory_1+2
+	pei	<L83+pcurrentDirectory_1
 	jsl	~~k_nodelist_addtolist
 ;								else
-	brl	L10044
-L10043:
+	brl	L10061
+L10060:
 ;									k_mem_deallocate_heap(fileInfo);
-	.line	1082
-	pei	<L59+fileInfo_1+2
-	pei	<L59+fileInfo_1
+	.line	1275
+	pei	<L83+fileInfo_1+2
+	pei	<L83+fileInfo_1
 	jsl	~~k_mem_deallocate_heap
-L10044:
+L10061:
 ;							}
-	.line	1083
-L10042:
+	.line	1276
+L10059:
 ;						}
-	.line	1084
+	.line	1277
 ;					}
-L10040:
-	.line	1085
+L10057:
+	.line	1278
 ;					while((fr == FR_OK) && (fileInfo->fname[0]));
-L10037:
-	lda	<L59+fr_1
-	beq	L69
-	brl	L68
-L69:
+L10054:
+	lda	<L83+fr_1
+	beq	L93
+	brl	L92
+L93:
 	ldy	#$16
-	lda	[<L59+fileInfo_1],Y
+	lda	[<L83+fileInfo_1],Y
 	and	#$ff
-	beq	L70
-	brl	L10039
-L70:
-L68:
-L10038:
+	beq	L94
+	brl	L10056
+L94:
+L92:
+L10055:
 ;				}
-	.line	1087
+	.line	1280
 ;			}
-L10036:
-	.line	1088
+L10053:
+	.line	1281
 ;			f_closedir(dir);
-L10035:
-	.line	1089
-	pei	<L59+dir_1+2
-	pei	<L59+dir_1
+L10052:
+	.line	1282
+	pei	<L83+dir_1+2
+	pei	<L83+dir_1
 	jsl	~~f_closedir
 ;		}
-	.line	1090
+	.line	1283
 ;
 ;
 ;		k_mem_deallocate_heap(fs);
-L10034:
-	.line	1093
-	pei	<L59+fs_1+2
-	pei	<L59+fs_1
+L10051:
+	.line	1286
+	pei	<L83+fs_1+2
+	pei	<L83+fs_1
 	jsl	~~k_mem_deallocate_heap
 ;		k_mem_deallocate_heap(dir);
-	.line	1094
-	pei	<L59+dir_1+2
-	pei	<L59+dir_1
+	.line	1287
+	pei	<L83+dir_1+2
+	pei	<L83+dir_1
 	jsl	~~k_mem_deallocate_heap
 ;
 ;	}
-	.line	1096
+	.line	1289
 ;
 ;	return pcurrentDirectory;
-L10033:
-	.line	1098
-	ldx	<L59+pcurrentDirectory_1+2
-	lda	<L59+pcurrentDirectory_1
-L71:
+L10050:
+	.line	1291
+	ldx	<L83+pcurrentDirectory_1+2
+	lda	<L83+pcurrentDirectory_1
+L95:
 	tay
-	lda	<L58+2
-	sta	<L58+2+4
-	lda	<L58+1
-	sta	<L58+1+4
+	lda	<L82+2
+	sta	<L82+2+4
+	lda	<L82+1
+	sta	<L82+1+4
 	pld
 	tsc
 	clc
-	adc	#L58+4
+	adc	#L82+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	1099
-	.endblock	1099
-L58	equ	30
-L59	equ	5
+	.line	1292
+	.endblock	1292
+L82	equ	30
+L83	equ	5
 	ends
 	efunc
-	.endfunc	1099,5,30
-	.line	1099
+	.endfunc	1292,5,30
+	.line	1292
 	data
-L49:
+L73:
 	db	$63,$75,$72,$72,$65,$6E,$74,$44,$69,$72,$65,$63,$74,$6F,$72
 	db	$79,$00,$2A,$00
 	ends
 ;
 ;
-;HRESULT k_dos_open (FIL* fp, const TCHAR* path, BYTE mode){return 0;}
-	.line	1102
-	.line	1102
+;FILE k_dos_open(const TCHAR* path, BYTE mode)
+;{
+	.line	1295
+	.line	1296
 	FXDOS
 	xdef	~~k_dos_open
 	func
-	.function	1102
+	.function	1296
 ~~k_dos_open:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L73
-	tcs
-	phd
-	tcd
-fp_0	set	4
-path_0	set	8
-mode_0	set	12
-	.block	1102
-	.sym	fp,4,138,6,32,81
-	.sym	path,8,142,6,32
-	.sym	mode,12,14,6,8
-	.line	1102
-	lda	#$0
-	tax
-	lda	#$0
-L76:
-	tay
-	lda	<L73+2
-	sta	<L73+2+10
-	lda	<L73+1
-	sta	<L73+1+10
-	pld
-	tsc
-	clc
-	adc	#L73+10
-	tcs
-	tya
-	rtl
-	.line	1102
-	.endblock	1102
-L73	equ	0
-L74	equ	1
-	ends
-	efunc
-	.endfunc	1102,1,0
-	.line	1102
-;HRESULT k_dos_close (FIL* fp){return 0;}
-	.line	1103
-	.line	1103
-	FXDOS
-	xdef	~~k_dos_close
-	func
-	.function	1103
-~~k_dos_close:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L77
-	tcs
-	phd
-	tcd
-fp_0	set	4
-	.block	1103
-	.sym	fp,4,138,6,32,81
-	.line	1103
-	lda	#$0
-	tax
-	lda	#$0
-L80:
-	tay
-	lda	<L77+2
-	sta	<L77+2+4
-	lda	<L77+1
-	sta	<L77+1+4
-	pld
-	tsc
-	clc
-	adc	#L77+4
-	tcs
-	tya
-	rtl
-	.line	1103
-	.endblock	1103
-L77	equ	0
-L78	equ	1
-	ends
-	efunc
-	.endfunc	1103,1,0
-	.line	1103
-;HRESULT k_dos_read (FIL* fp, void* buff, UINT btr, UINT* br){return 0;}
-	.line	1104
-	.line	1104
-	FXDOS
-	xdef	~~k_dos_read
-	func
-	.function	1104
-~~k_dos_read:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L81
-	tcs
-	phd
-	tcd
-fp_0	set	4
-buff_0	set	8
-btr_0	set	12
-br_0	set	14
-	.block	1104
-	.sym	fp,4,138,6,32,81
-	.sym	buff,8,129,6,32
-	.sym	btr,12,16,6,16
-	.sym	br,14,144,6,32
-	.line	1104
-	lda	#$0
-	tax
-	lda	#$0
-L84:
-	tay
-	lda	<L81+2
-	sta	<L81+2+14
-	lda	<L81+1
-	sta	<L81+1+14
-	pld
-	tsc
-	clc
-	adc	#L81+14
-	tcs
-	tya
-	rtl
-	.line	1104
-	.endblock	1104
-L81	equ	0
-L82	equ	1
-	ends
-	efunc
-	.endfunc	1104,1,0
-	.line	1104
-;HRESULT k_dos_write (FIL* fp, const void* buff, UINT btw, UINT* bw){return 0;}
-	.line	1105
-	.line	1105
-	FXDOS
-	xdef	~~k_dos_write
-	func
-	.function	1105
-~~k_dos_write:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L85
-	tcs
-	phd
-	tcd
-fp_0	set	4
-buff_0	set	8
-btw_0	set	12
-bw_0	set	14
-	.block	1105
-	.sym	fp,4,138,6,32,81
-	.sym	buff,8,129,6,32
-	.sym	btw,12,16,6,16
-	.sym	bw,14,144,6,32
-	.line	1105
-	lda	#$0
-	tax
-	lda	#$0
-L88:
-	tay
-	lda	<L85+2
-	sta	<L85+2+14
-	lda	<L85+1
-	sta	<L85+1+14
-	pld
-	tsc
-	clc
-	adc	#L85+14
-	tcs
-	tya
-	rtl
-	.line	1105
-	.endblock	1105
-L85	equ	0
-L86	equ	1
-	ends
-	efunc
-	.endfunc	1105,1,0
-	.line	1105
-;HRESULT k_dos_lseek (FIL* fp, FSIZE_t ofs){return 0;}
-	.line	1106
-	.line	1106
-	FXDOS
-	xdef	~~k_dos_lseek
-	func
-	.function	1106
-~~k_dos_lseek:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L89
-	tcs
-	phd
-	tcd
-fp_0	set	4
-ofs_0	set	8
-	.block	1106
-	.sym	fp,4,138,6,32,81
-	.sym	ofs,8,18,6,32
-	.line	1106
-	lda	#$0
-	tax
-	lda	#$0
-L92:
-	tay
-	lda	<L89+2
-	sta	<L89+2+8
-	lda	<L89+1
-	sta	<L89+1+8
-	pld
-	tsc
-	clc
-	adc	#L89+8
-	tcs
-	tya
-	rtl
-	.line	1106
-	.endblock	1106
-L89	equ	0
-L90	equ	1
-	ends
-	efunc
-	.endfunc	1106,1,0
-	.line	1106
-;HRESULT k_dos_truncate (FIL* fp){return 0;}										/* Truncate the file */
-	.line	1107
-	.line	1107
-	FXDOS
-	xdef	~~k_dos_truncate
-	func
-	.function	1107
-~~k_dos_truncate:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L93
-	tcs
-	phd
-	tcd
-fp_0	set	4
-	.block	1107
-	.sym	fp,4,138,6,32,81
-	.line	1107
-	lda	#$0
-	tax
-	lda	#$0
-L96:
-	tay
-	lda	<L93+2
-	sta	<L93+2+4
-	lda	<L93+1
-	sta	<L93+1+4
-	pld
-	tsc
-	clc
-	adc	#L93+4
-	tcs
-	tya
-	rtl
-	.line	1107
-	.endblock	1107
-L93	equ	0
-L94	equ	1
-	ends
-	efunc
-	.endfunc	1107,1,0
-	.line	1107
-;HRESULT k_dos_sync (FIL* fp){return 0;}											/* Flush cached data of the writing file */
-	.line	1108
-	.line	1108
-	FXDOS
-	xdef	~~k_dos_sync
-	func
-	.function	1108
-~~k_dos_sync:
 	longa	on
 	longi	on
 	tsc
@@ -4425,183 +5232,698 @@ L94	equ	1
 	tcs
 	phd
 	tcd
-fp_0	set	4
-	.block	1108
-	.sym	fp,4,138,6,32,81
-	.line	1108
-	lda	#$0
-	tax
-	lda	#$0
+path_0	set	4
+mode_0	set	8
+	.block	1296
+;	LPCSTR drive = NULL;
+;
+;	FILE file = NULL;
+;
+;	file = k_mem_allocate_heap(sizeof(FILE_POINTER));
+drive_1	set	0
+file_1	set	4
+	.sym	drive,0,142,1,32
+	.sym	file,4,138,1,32,130
+	.sym	path,4,142,6,32
+	.sym	mode,8,14,6,8
+	stz	<L98+drive_1
+	stz	<L98+drive_1+2
+	stz	<L98+file_1
+	stz	<L98+file_1+2
+	.line	1301
+	pea	#^$e
+	pea	#<$e
+	jsl	~~k_mem_allocate_heap
+	sta	<L98+file_1
+	stx	<L98+file_1+2
+;
+;	if(file)
+	.line	1303
+;	{
+	lda	<L98+file_1
+	ora	<L98+file_1+2
+	bne	L100
+	brl	L10062
 L100:
+	.line	1304
+;		drive = k_string_copy_to_delimiter(path,':');
+	.line	1305
+	pea	#<$3a
+	pei	<L97+path_0+2
+	pei	<L97+path_0
+	jsl	~~k_string_copy_to_delimiter
+	sta	<L98+drive_1
+	stx	<L98+drive_1+2
+;		if(drive)
+	.line	1306
+;		{
+	lda	<L98+drive_1
+	ora	<L98+drive_1+2
+	bne	L101
+	brl	L10063
+L101:
+	.line	1307
+;			file->fs  = k_mem_allocate_heap(sizeof(FATFS));
+	.line	1308
+	pea	#^$233
+	pea	#<$233
+	jsl	~~k_mem_allocate_heap
+	sta	<R0
+	stx	<R0+2
+	lda	<R0
+	sta	[<L98+file_1]
+	lda	<R0+2
+	ldy	#$2
+	sta	[<L98+file_1],Y
+;			file->f   = k_mem_allocate_heap(sizeof(FIL));
+	.line	1309
+	pea	#^$226
+	pea	#<$226
+	jsl	~~k_mem_allocate_heap
+	sta	<R0
+	stx	<R0+2
+	lda	<R0
+	ldy	#$8
+	sta	[<L98+file_1],Y
+	lda	<R0+2
+	ldy	#$a
+	sta	[<L98+file_1],Y
+;			file->fileInfo = NULL;
+	.line	1310
+	lda	#$0
+	ldy	#$4
+	sta	[<L98+file_1],Y
+	lda	#$0
+	ldy	#$6
+	sta	[<L98+file_1],Y
+;
+;
+;			f_mount(NULL, drive,1); // unmount for safety
+	.line	1313
+	pea	#<$1
+	pei	<L98+drive_1+2
+	pei	<L98+drive_1
+	pea	#^$0
+	pea	#<$0
+	jsl	~~f_mount
+;			file->fr = f_mount(file->fs , drive,1);
+	.line	1314
+	pea	#<$1
+	pei	<L98+drive_1+2
+	pei	<L98+drive_1
+	ldy	#$2
+	lda	[<L98+file_1],Y
+	pha
+	lda	[<L98+file_1]
+	pha
+	jsl	~~f_mount
+	ldy	#$c
+	sta	[<L98+file_1],Y
+;			if(file->fr == FR_OK)
+	.line	1315
+;			{
+	ldy	#$c
+	lda	[<L98+file_1],Y
+	beq	L102
+	brl	L10064
+L102:
+	.line	1316
+;				file->fr = f_open(file->f,path,mode);
+	.line	1317
+	pei	<L97+mode_0
+	pei	<L97+path_0+2
+	pei	<L97+path_0
+	ldy	#$a
+	lda	[<L98+file_1],Y
+	pha
+	ldy	#$8
+	lda	[<L98+file_1],Y
+	pha
+	jsl	~~f_open
+	ldy	#$c
+	sta	[<L98+file_1],Y
+;			}
+	.line	1318
+;
+;			k_mem_deallocate_heap((LPVOID)drive);
+L10064:
+	.line	1320
+	pei	<L98+drive_1+2
+	pei	<L98+drive_1
+	jsl	~~k_mem_deallocate_heap
+;		}
+	.line	1321
+;	}
+L10063:
+	.line	1322
+;
+;	return file;
+L10062:
+	.line	1324
+	ldx	<L98+file_1+2
+	lda	<L98+file_1
+L103:
 	tay
 	lda	<L97+2
-	sta	<L97+2+4
+	sta	<L97+2+6
 	lda	<L97+1
-	sta	<L97+1+4
+	sta	<L97+1+6
 	pld
 	tsc
 	clc
-	adc	#L97+4
+	adc	#L97+6
 	tcs
 	tya
 	rtl
-	.line	1108
-	.endblock	1108
-L97	equ	0
-L98	equ	1
+;}
+	.line	1325
+	.endblock	1325
+L97	equ	12
+L98	equ	5
 	ends
 	efunc
-	.endfunc	1108,1,0
-	.line	1108
+	.endfunc	1325,5,12
+	.line	1325
+;
+;HRESULT k_dos_close (FILE file)
+;{
+	.line	1327
+	.line	1328
+	FXDOS
+	xdef	~~k_dos_close
+	func
+	.function	1328
+~~k_dos_close:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L104
+	tcs
+	phd
+	tcd
+file_0	set	4
+	.block	1328
+;	if(file!=NULL)
+	.sym	file,4,138,6,32,130
+	.line	1329
+;	{
+	lda	<L104+file_0
+	ora	<L104+file_0+2
+	bne	L107
+	brl	L10065
+L107:
+	.line	1330
+;		if(file->f)
+	.line	1331
+;		{
+	ldy	#$8
+	lda	[<L104+file_0],Y
+	ldy	#$a
+	ora	[<L104+file_0],Y
+	bne	L108
+	brl	L10066
+L108:
+	.line	1332
+;			f_close(file->f);
+	.line	1333
+	ldy	#$a
+	lda	[<L104+file_0],Y
+	pha
+	ldy	#$8
+	lda	[<L104+file_0],Y
+	pha
+	jsl	~~f_close
+;			k_mem_deallocate_heap(file->f);
+	.line	1334
+	ldy	#$a
+	lda	[<L104+file_0],Y
+	pha
+	ldy	#$8
+	lda	[<L104+file_0],Y
+	pha
+	jsl	~~k_mem_deallocate_heap
+;		}
+	.line	1335
+;
+;		if(file->fileInfo)
+L10066:
+	.line	1337
+;			k_mem_deallocate_heap(file->fileInfo);
+	ldy	#$4
+	lda	[<L104+file_0],Y
+	ldy	#$6
+	ora	[<L104+file_0],Y
+	bne	L109
+	brl	L10067
+L109:
+	.line	1338
+	ldy	#$6
+	lda	[<L104+file_0],Y
+	pha
+	ldy	#$4
+	lda	[<L104+file_0],Y
+	pha
+	jsl	~~k_mem_deallocate_heap
+;
+;		if(file->fs)
+L10067:
+	.line	1340
+;			k_mem_deallocate_heap(file->fs);
+	lda	[<L104+file_0]
+	ldy	#$2
+	ora	[<L104+file_0],Y
+	bne	L110
+	brl	L10068
+L110:
+	.line	1341
+	ldy	#$2
+	lda	[<L104+file_0],Y
+	pha
+	lda	[<L104+file_0]
+	pha
+	jsl	~~k_mem_deallocate_heap
+;
+;		k_mem_deallocate_heap(file);
+L10068:
+	.line	1343
+	pei	<L104+file_0+2
+	pei	<L104+file_0
+	jsl	~~k_mem_deallocate_heap
+;	}
+	.line	1344
+;	return 0;
+L10065:
+	.line	1345
+	lda	#$0
+	tax
+	lda	#$0
+L111:
+	tay
+	lda	<L104+2
+	sta	<L104+2+4
+	lda	<L104+1
+	sta	<L104+1+4
+	pld
+	tsc
+	clc
+	adc	#L104+4
+	tcs
+	tya
+	rtl
+;}
+	.line	1346
+	.endblock	1346
+L104	equ	0
+L105	equ	1
+	ends
+	efunc
+	.endfunc	1346,1,0
+	.line	1346
+;
+;HRESULT k_dos_read (FIL* fp, void* buff, UINT btr, UINT* br){return 0;}
+	.line	1348
+	.line	1348
+	FXDOS
+	xdef	~~k_dos_read
+	func
+	.function	1348
+~~k_dos_read:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L112
+	tcs
+	phd
+	tcd
+fp_0	set	4
+buff_0	set	8
+btr_0	set	12
+br_0	set	14
+	.block	1348
+	.sym	fp,4,138,6,32,86
+	.sym	buff,8,129,6,32
+	.sym	btr,12,16,6,16
+	.sym	br,14,144,6,32
+	.line	1348
+	lda	#$0
+	tax
+	lda	#$0
+L115:
+	tay
+	lda	<L112+2
+	sta	<L112+2+14
+	lda	<L112+1
+	sta	<L112+1+14
+	pld
+	tsc
+	clc
+	adc	#L112+14
+	tcs
+	tya
+	rtl
+	.line	1348
+	.endblock	1348
+L112	equ	0
+L113	equ	1
+	ends
+	efunc
+	.endfunc	1348,1,0
+	.line	1348
+;HRESULT k_dos_write (FIL* fp, const void* buff, UINT btw, UINT* bw){return 0;}
+	.line	1349
+	.line	1349
+	FXDOS
+	xdef	~~k_dos_write
+	func
+	.function	1349
+~~k_dos_write:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L116
+	tcs
+	phd
+	tcd
+fp_0	set	4
+buff_0	set	8
+btw_0	set	12
+bw_0	set	14
+	.block	1349
+	.sym	fp,4,138,6,32,86
+	.sym	buff,8,129,6,32
+	.sym	btw,12,16,6,16
+	.sym	bw,14,144,6,32
+	.line	1349
+	lda	#$0
+	tax
+	lda	#$0
+L119:
+	tay
+	lda	<L116+2
+	sta	<L116+2+14
+	lda	<L116+1
+	sta	<L116+1+14
+	pld
+	tsc
+	clc
+	adc	#L116+14
+	tcs
+	tya
+	rtl
+	.line	1349
+	.endblock	1349
+L116	equ	0
+L117	equ	1
+	ends
+	efunc
+	.endfunc	1349,1,0
+	.line	1349
+;HRESULT k_dos_lseek (FIL* fp, FSIZE_t ofs){return 0;}
+	.line	1350
+	.line	1350
+	FXDOS
+	xdef	~~k_dos_lseek
+	func
+	.function	1350
+~~k_dos_lseek:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L120
+	tcs
+	phd
+	tcd
+fp_0	set	4
+ofs_0	set	8
+	.block	1350
+	.sym	fp,4,138,6,32,86
+	.sym	ofs,8,18,6,32
+	.line	1350
+	lda	#$0
+	tax
+	lda	#$0
+L123:
+	tay
+	lda	<L120+2
+	sta	<L120+2+8
+	lda	<L120+1
+	sta	<L120+1+8
+	pld
+	tsc
+	clc
+	adc	#L120+8
+	tcs
+	tya
+	rtl
+	.line	1350
+	.endblock	1350
+L120	equ	0
+L121	equ	1
+	ends
+	efunc
+	.endfunc	1350,1,0
+	.line	1350
+;HRESULT k_dos_truncate (FIL* fp){return 0;}										/* Truncate the file */
+	.line	1351
+	.line	1351
+	FXDOS
+	xdef	~~k_dos_truncate
+	func
+	.function	1351
+~~k_dos_truncate:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L124
+	tcs
+	phd
+	tcd
+fp_0	set	4
+	.block	1351
+	.sym	fp,4,138,6,32,86
+	.line	1351
+	lda	#$0
+	tax
+	lda	#$0
+L127:
+	tay
+	lda	<L124+2
+	sta	<L124+2+4
+	lda	<L124+1
+	sta	<L124+1+4
+	pld
+	tsc
+	clc
+	adc	#L124+4
+	tcs
+	tya
+	rtl
+	.line	1351
+	.endblock	1351
+L124	equ	0
+L125	equ	1
+	ends
+	efunc
+	.endfunc	1351,1,0
+	.line	1351
+;HRESULT k_dos_sync (FIL* fp){return 0;}											/* Flush cached data of the writing file */
+	.line	1352
+	.line	1352
+	FXDOS
+	xdef	~~k_dos_sync
+	func
+	.function	1352
+~~k_dos_sync:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L128
+	tcs
+	phd
+	tcd
+fp_0	set	4
+	.block	1352
+	.sym	fp,4,138,6,32,86
+	.line	1352
+	lda	#$0
+	tax
+	lda	#$0
+L131:
+	tay
+	lda	<L128+2
+	sta	<L128+2+4
+	lda	<L128+1
+	sta	<L128+1+4
+	pld
+	tsc
+	clc
+	adc	#L128+4
+	tcs
+	tya
+	rtl
+	.line	1352
+	.endblock	1352
+L128	equ	0
+L129	equ	1
+	ends
+	efunc
+	.endfunc	1352,1,0
+	.line	1352
 ;HRESULT k_dos_opendir (DIR* dp, const TCHAR* path){return 0;}						/* Open a directory */
-	.line	1109
-	.line	1109
+	.line	1353
+	.line	1353
 	FXDOS
 	xdef	~~k_dos_opendir
 	func
-	.function	1109
+	.function	1353
 ~~k_dos_opendir:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L101
+	sbc	#L132
 	tcs
 	phd
 	tcd
 dp_0	set	4
 path_0	set	8
-	.block	1109
-	.sym	dp,4,138,6,32,82
+	.block	1353
+	.sym	dp,4,138,6,32,87
 	.sym	path,8,142,6,32
-	.line	1109
+	.line	1353
 	lda	#$0
 	tax
 	lda	#$0
-L104:
+L135:
 	tay
-	lda	<L101+2
-	sta	<L101+2+8
-	lda	<L101+1
-	sta	<L101+1+8
+	lda	<L132+2
+	sta	<L132+2+8
+	lda	<L132+1
+	sta	<L132+1+8
 	pld
 	tsc
 	clc
-	adc	#L101+8
+	adc	#L132+8
 	tcs
 	tya
 	rtl
-	.line	1109
-	.endblock	1109
-L101	equ	0
-L102	equ	1
+	.line	1353
+	.endblock	1353
+L132	equ	0
+L133	equ	1
 	ends
 	efunc
-	.endfunc	1109,1,0
-	.line	1109
+	.endfunc	1353,1,0
+	.line	1353
 ;HRESULT k_dos_closedir (DIR* dp){return 0;}										/* Close an open directory */
-	.line	1110
-	.line	1110
+	.line	1354
+	.line	1354
 	FXDOS
 	xdef	~~k_dos_closedir
 	func
-	.function	1110
+	.function	1354
 ~~k_dos_closedir:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L105
+	sbc	#L136
 	tcs
 	phd
 	tcd
 dp_0	set	4
-	.block	1110
-	.sym	dp,4,138,6,32,82
-	.line	1110
+	.block	1354
+	.sym	dp,4,138,6,32,87
+	.line	1354
 	lda	#$0
 	tax
 	lda	#$0
-L108:
+L139:
 	tay
-	lda	<L105+2
-	sta	<L105+2+4
-	lda	<L105+1
-	sta	<L105+1+4
+	lda	<L136+2
+	sta	<L136+2+4
+	lda	<L136+1
+	sta	<L136+1+4
 	pld
 	tsc
 	clc
-	adc	#L105+4
+	adc	#L136+4
 	tcs
 	tya
 	rtl
-	.line	1110
-	.endblock	1110
-L105	equ	0
-L106	equ	1
+	.line	1354
+	.endblock	1354
+L136	equ	0
+L137	equ	1
 	ends
 	efunc
-	.endfunc	1110,1,0
-	.line	1110
+	.endfunc	1354,1,0
+	.line	1354
 ;HRESULT k_dos_readdir (DIR* dp, FILINFO* fno){return 0;}							/* Read a directory item */
-	.line	1111
-	.line	1111
+	.line	1355
+	.line	1355
 	FXDOS
 	xdef	~~k_dos_readdir
 	func
-	.function	1111
+	.function	1355
 ~~k_dos_readdir:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L109
+	sbc	#L140
 	tcs
 	phd
 	tcd
 dp_0	set	4
 fno_0	set	8
-	.block	1111
-	.sym	dp,4,138,6,32,82
-	.sym	fno,8,138,6,32,83
-	.line	1111
+	.block	1355
+	.sym	dp,4,138,6,32,87
+	.sym	fno,8,138,6,32,88
+	.line	1355
 	lda	#$0
 	tax
 	lda	#$0
-L112:
+L143:
 	tay
-	lda	<L109+2
-	sta	<L109+2+8
-	lda	<L109+1
-	sta	<L109+1+8
+	lda	<L140+2
+	sta	<L140+2+8
+	lda	<L140+1
+	sta	<L140+1+8
 	pld
 	tsc
 	clc
-	adc	#L109+8
+	adc	#L140+8
 	tcs
 	tya
 	rtl
-	.line	1111
-	.endblock	1111
-L109	equ	0
-L110	equ	1
+	.line	1355
+	.endblock	1355
+L140	equ	0
+L141	equ	1
 	ends
 	efunc
-	.endfunc	1111,1,0
-	.line	1111
+	.endfunc	1355,1,0
+	.line	1355
 ;HRESULT k_dos_findfirst (DIR* dp, FILINFO* fno, const TCHAR* path, const TCHAR* pattern){return 0;}	/* Find first file */
-	.line	1112
-	.line	1112
+	.line	1356
+	.line	1356
 	FXDOS
 	xdef	~~k_dos_findfirst
 	func
-	.function	1112
+	.function	1356
 ~~k_dos_findfirst:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L113
+	sbc	#L144
 	tcs
 	phd
 	tcd
@@ -4609,643 +5931,643 @@ dp_0	set	4
 fno_0	set	8
 path_0	set	12
 pattern_0	set	16
-	.block	1112
-	.sym	dp,4,138,6,32,82
-	.sym	fno,8,138,6,32,83
+	.block	1356
+	.sym	dp,4,138,6,32,87
+	.sym	fno,8,138,6,32,88
 	.sym	path,12,142,6,32
 	.sym	pattern,16,142,6,32
-	.line	1112
+	.line	1356
 	lda	#$0
 	tax
 	lda	#$0
-L116:
+L147:
 	tay
-	lda	<L113+2
-	sta	<L113+2+16
-	lda	<L113+1
-	sta	<L113+1+16
+	lda	<L144+2
+	sta	<L144+2+16
+	lda	<L144+1
+	sta	<L144+1+16
 	pld
 	tsc
 	clc
-	adc	#L113+16
+	adc	#L144+16
 	tcs
 	tya
 	rtl
-	.line	1112
-	.endblock	1112
-L113	equ	0
-L114	equ	1
+	.line	1356
+	.endblock	1356
+L144	equ	0
+L145	equ	1
 	ends
 	efunc
-	.endfunc	1112,1,0
-	.line	1112
+	.endfunc	1356,1,0
+	.line	1356
 ;HRESULT k_dos_findnext (DIR* dp, FILINFO* fno){return 0;}	/* Find next file */
-	.line	1113
-	.line	1113
+	.line	1357
+	.line	1357
 	FXDOS
 	xdef	~~k_dos_findnext
 	func
-	.function	1113
+	.function	1357
 ~~k_dos_findnext:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L117
+	sbc	#L148
 	tcs
 	phd
 	tcd
 dp_0	set	4
 fno_0	set	8
-	.block	1113
-	.sym	dp,4,138,6,32,82
-	.sym	fno,8,138,6,32,83
-	.line	1113
+	.block	1357
+	.sym	dp,4,138,6,32,87
+	.sym	fno,8,138,6,32,88
+	.line	1357
 	lda	#$0
 	tax
 	lda	#$0
-L120:
+L151:
 	tay
-	lda	<L117+2
-	sta	<L117+2+8
-	lda	<L117+1
-	sta	<L117+1+8
+	lda	<L148+2
+	sta	<L148+2+8
+	lda	<L148+1
+	sta	<L148+1+8
 	pld
 	tsc
 	clc
-	adc	#L117+8
+	adc	#L148+8
 	tcs
 	tya
 	rtl
-	.line	1113
-	.endblock	1113
-L117	equ	0
-L118	equ	1
+	.line	1357
+	.endblock	1357
+L148	equ	0
+L149	equ	1
 	ends
 	efunc
-	.endfunc	1113,1,0
-	.line	1113
+	.endfunc	1357,1,0
+	.line	1357
 ;HRESULT k_dos_mkdir (const TCHAR* path){return 0;}								/* Create a sub directory */
-	.line	1114
-	.line	1114
+	.line	1358
+	.line	1358
 	FXDOS
 	xdef	~~k_dos_mkdir
 	func
-	.function	1114
+	.function	1358
 ~~k_dos_mkdir:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L121
+	sbc	#L152
 	tcs
 	phd
 	tcd
 path_0	set	4
-	.block	1114
+	.block	1358
 	.sym	path,4,142,6,32
-	.line	1114
+	.line	1358
 	lda	#$0
 	tax
 	lda	#$0
-L124:
+L155:
 	tay
-	lda	<L121+2
-	sta	<L121+2+4
-	lda	<L121+1
-	sta	<L121+1+4
+	lda	<L152+2
+	sta	<L152+2+4
+	lda	<L152+1
+	sta	<L152+1+4
 	pld
 	tsc
 	clc
-	adc	#L121+4
+	adc	#L152+4
 	tcs
 	tya
 	rtl
-	.line	1114
-	.endblock	1114
-L121	equ	0
-L122	equ	1
+	.line	1358
+	.endblock	1358
+L152	equ	0
+L153	equ	1
 	ends
 	efunc
-	.endfunc	1114,1,0
-	.line	1114
+	.endfunc	1358,1,0
+	.line	1358
 ;HRESULT k_dos_unlink (const TCHAR* path){return 0;}								/* Delete an existing file or directory */
-	.line	1115
-	.line	1115
+	.line	1359
+	.line	1359
 	FXDOS
 	xdef	~~k_dos_unlink
 	func
-	.function	1115
+	.function	1359
 ~~k_dos_unlink:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L125
+	sbc	#L156
 	tcs
 	phd
 	tcd
 path_0	set	4
-	.block	1115
+	.block	1359
 	.sym	path,4,142,6,32
-	.line	1115
+	.line	1359
 	lda	#$0
 	tax
 	lda	#$0
-L128:
+L159:
 	tay
-	lda	<L125+2
-	sta	<L125+2+4
-	lda	<L125+1
-	sta	<L125+1+4
+	lda	<L156+2
+	sta	<L156+2+4
+	lda	<L156+1
+	sta	<L156+1+4
 	pld
 	tsc
 	clc
-	adc	#L125+4
+	adc	#L156+4
 	tcs
 	tya
 	rtl
-	.line	1115
-	.endblock	1115
-L125	equ	0
-L126	equ	1
+	.line	1359
+	.endblock	1359
+L156	equ	0
+L157	equ	1
 	ends
 	efunc
-	.endfunc	1115,1,0
-	.line	1115
+	.endfunc	1359,1,0
+	.line	1359
 ;HRESULT k_dos_rename (const TCHAR* path_old, const TCHAR* path_new){return 0;}	/* Rename/Move a file or directory */
-	.line	1116
-	.line	1116
+	.line	1360
+	.line	1360
 	FXDOS
 	xdef	~~k_dos_rename
 	func
-	.function	1116
+	.function	1360
 ~~k_dos_rename:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L129
+	sbc	#L160
 	tcs
 	phd
 	tcd
 path_old_0	set	4
 path_new_0	set	8
-	.block	1116
+	.block	1360
 	.sym	path_old,4,142,6,32
 	.sym	path_new,8,142,6,32
-	.line	1116
+	.line	1360
 	lda	#$0
 	tax
 	lda	#$0
-L132:
+L163:
 	tay
-	lda	<L129+2
-	sta	<L129+2+8
-	lda	<L129+1
-	sta	<L129+1+8
+	lda	<L160+2
+	sta	<L160+2+8
+	lda	<L160+1
+	sta	<L160+1+8
 	pld
 	tsc
 	clc
-	adc	#L129+8
+	adc	#L160+8
 	tcs
 	tya
 	rtl
-	.line	1116
-	.endblock	1116
-L129	equ	0
-L130	equ	1
+	.line	1360
+	.endblock	1360
+L160	equ	0
+L161	equ	1
 	ends
 	efunc
-	.endfunc	1116,1,0
-	.line	1116
+	.endfunc	1360,1,0
+	.line	1360
 ;HRESULT k_dos_stat (const TCHAR* path, FILINFO* fno){return 0;}					/* Get file status */
-	.line	1117
-	.line	1117
+	.line	1361
+	.line	1361
 	FXDOS
 	xdef	~~k_dos_stat
 	func
-	.function	1117
+	.function	1361
 ~~k_dos_stat:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L133
+	sbc	#L164
 	tcs
 	phd
 	tcd
 path_0	set	4
 fno_0	set	8
-	.block	1117
+	.block	1361
 	.sym	path,4,142,6,32
-	.sym	fno,8,138,6,32,83
-	.line	1117
+	.sym	fno,8,138,6,32,88
+	.line	1361
 	lda	#$0
 	tax
 	lda	#$0
-L136:
+L167:
 	tay
-	lda	<L133+2
-	sta	<L133+2+8
-	lda	<L133+1
-	sta	<L133+1+8
+	lda	<L164+2
+	sta	<L164+2+8
+	lda	<L164+1
+	sta	<L164+1+8
 	pld
 	tsc
 	clc
-	adc	#L133+8
+	adc	#L164+8
 	tcs
 	tya
 	rtl
-	.line	1117
-	.endblock	1117
-L133	equ	0
-L134	equ	1
+	.line	1361
+	.endblock	1361
+L164	equ	0
+L165	equ	1
 	ends
 	efunc
-	.endfunc	1117,1,0
-	.line	1117
+	.endfunc	1361,1,0
+	.line	1361
 ;HRESULT k_dos_chmod (const TCHAR* path, BYTE attr, BYTE mask){return 0;}			/* Change attribute of a file/dir */
-	.line	1118
-	.line	1118
+	.line	1362
+	.line	1362
 	FXDOS
 	xdef	~~k_dos_chmod
 	func
-	.function	1118
+	.function	1362
 ~~k_dos_chmod:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L137
+	sbc	#L168
 	tcs
 	phd
 	tcd
 path_0	set	4
 attr_0	set	8
 mask_0	set	10
-	.block	1118
+	.block	1362
 	.sym	path,4,142,6,32
 	.sym	attr,8,14,6,8
 	.sym	mask,10,14,6,8
-	.line	1118
+	.line	1362
 	lda	#$0
 	tax
 	lda	#$0
-L140:
+L171:
 	tay
-	lda	<L137+2
-	sta	<L137+2+8
-	lda	<L137+1
-	sta	<L137+1+8
+	lda	<L168+2
+	sta	<L168+2+8
+	lda	<L168+1
+	sta	<L168+1+8
 	pld
 	tsc
 	clc
-	adc	#L137+8
+	adc	#L168+8
 	tcs
 	tya
 	rtl
-	.line	1118
-	.endblock	1118
-L137	equ	0
-L138	equ	1
+	.line	1362
+	.endblock	1362
+L168	equ	0
+L169	equ	1
 	ends
 	efunc
-	.endfunc	1118,1,0
-	.line	1118
+	.endfunc	1362,1,0
+	.line	1362
 ;HRESULT k_dos_utime (const TCHAR* path, const FILINFO* fno){return 0;}			/* Change timestamp of a file/dir */
-	.line	1119
-	.line	1119
+	.line	1363
+	.line	1363
 	FXDOS
 	xdef	~~k_dos_utime
 	func
-	.function	1119
+	.function	1363
 ~~k_dos_utime:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L141
+	sbc	#L172
 	tcs
 	phd
 	tcd
 path_0	set	4
 fno_0	set	8
-	.block	1119
+	.block	1363
 	.sym	path,4,142,6,32
-	.sym	fno,8,138,6,32,83
-	.line	1119
+	.sym	fno,8,138,6,32,88
+	.line	1363
 	lda	#$0
 	tax
 	lda	#$0
-L144:
+L175:
 	tay
-	lda	<L141+2
-	sta	<L141+2+8
-	lda	<L141+1
-	sta	<L141+1+8
+	lda	<L172+2
+	sta	<L172+2+8
+	lda	<L172+1
+	sta	<L172+1+8
 	pld
 	tsc
 	clc
-	adc	#L141+8
+	adc	#L172+8
 	tcs
 	tya
 	rtl
-	.line	1119
-	.endblock	1119
-L141	equ	0
-L142	equ	1
+	.line	1363
+	.endblock	1363
+L172	equ	0
+L173	equ	1
 	ends
 	efunc
-	.endfunc	1119,1,0
-	.line	1119
+	.endfunc	1363,1,0
+	.line	1363
 ;HRESULT k_dos_chdir (const TCHAR* path){return 0;}								/* Change current directory */
-	.line	1120
-	.line	1120
+	.line	1364
+	.line	1364
 	FXDOS
 	xdef	~~k_dos_chdir
 	func
-	.function	1120
+	.function	1364
 ~~k_dos_chdir:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L145
+	sbc	#L176
 	tcs
 	phd
 	tcd
 path_0	set	4
-	.block	1120
+	.block	1364
 	.sym	path,4,142,6,32
-	.line	1120
+	.line	1364
 	lda	#$0
 	tax
 	lda	#$0
-L148:
+L179:
 	tay
-	lda	<L145+2
-	sta	<L145+2+4
-	lda	<L145+1
-	sta	<L145+1+4
+	lda	<L176+2
+	sta	<L176+2+4
+	lda	<L176+1
+	sta	<L176+1+4
 	pld
 	tsc
 	clc
-	adc	#L145+4
+	adc	#L176+4
 	tcs
 	tya
 	rtl
-	.line	1120
-	.endblock	1120
-L145	equ	0
-L146	equ	1
+	.line	1364
+	.endblock	1364
+L176	equ	0
+L177	equ	1
 	ends
 	efunc
-	.endfunc	1120,1,0
-	.line	1120
+	.endfunc	1364,1,0
+	.line	1364
 ;HRESULT k_dos_chdrive (const TCHAR* path){return 0;}								/* Change current drive */
-	.line	1121
-	.line	1121
+	.line	1365
+	.line	1365
 	FXDOS
 	xdef	~~k_dos_chdrive
 	func
-	.function	1121
+	.function	1365
 ~~k_dos_chdrive:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L149
+	sbc	#L180
 	tcs
 	phd
 	tcd
 path_0	set	4
-	.block	1121
+	.block	1365
 	.sym	path,4,142,6,32
-	.line	1121
+	.line	1365
 	lda	#$0
 	tax
 	lda	#$0
-L152:
+L183:
 	tay
-	lda	<L149+2
-	sta	<L149+2+4
-	lda	<L149+1
-	sta	<L149+1+4
+	lda	<L180+2
+	sta	<L180+2+4
+	lda	<L180+1
+	sta	<L180+1+4
 	pld
 	tsc
 	clc
-	adc	#L149+4
+	adc	#L180+4
 	tcs
 	tya
 	rtl
-	.line	1121
-	.endblock	1121
-L149	equ	0
-L150	equ	1
+	.line	1365
+	.endblock	1365
+L180	equ	0
+L181	equ	1
 	ends
 	efunc
-	.endfunc	1121,1,0
-	.line	1121
+	.endfunc	1365,1,0
+	.line	1365
 ;HRESULT k_dos_getcwd (TCHAR* buff, UINT len){return 0;}							/* Get current directory */
-	.line	1122
-	.line	1122
+	.line	1366
+	.line	1366
 	FXDOS
 	xdef	~~k_dos_getcwd
 	func
-	.function	1122
+	.function	1366
 ~~k_dos_getcwd:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L153
+	sbc	#L184
 	tcs
 	phd
 	tcd
 buff_0	set	4
 len_0	set	8
-	.block	1122
+	.block	1366
 	.sym	buff,4,142,6,32
 	.sym	len,8,16,6,16
-	.line	1122
+	.line	1366
 	lda	#$0
 	tax
 	lda	#$0
-L156:
+L187:
 	tay
-	lda	<L153+2
-	sta	<L153+2+6
-	lda	<L153+1
-	sta	<L153+1+6
+	lda	<L184+2
+	sta	<L184+2+6
+	lda	<L184+1
+	sta	<L184+1+6
 	pld
 	tsc
 	clc
-	adc	#L153+6
+	adc	#L184+6
 	tcs
 	tya
 	rtl
-	.line	1122
-	.endblock	1122
-L153	equ	0
-L154	equ	1
+	.line	1366
+	.endblock	1366
+L184	equ	0
+L185	equ	1
 	ends
 	efunc
-	.endfunc	1122,1,0
-	.line	1122
+	.endfunc	1366,1,0
+	.line	1366
 ;HRESULT k_dos_getfree (const TCHAR* path, DWORD* nclst, FATFS** fatfs){return 0;}	/* Get number of free clusters on the drive */
-	.line	1123
-	.line	1123
+	.line	1367
+	.line	1367
 	FXDOS
 	xdef	~~k_dos_getfree
 	func
-	.function	1123
+	.function	1367
 ~~k_dos_getfree:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L157
+	sbc	#L188
 	tcs
 	phd
 	tcd
 path_0	set	4
 nclst_0	set	8
 fatfs_0	set	12
-	.block	1123
+	.block	1367
 	.sym	path,4,142,6,32
 	.sym	nclst,8,146,6,32
-	.sym	fatfs,12,1162,6,32,79
-	.line	1123
+	.sym	fatfs,12,1162,6,32,84
+	.line	1367
 	lda	#$0
 	tax
 	lda	#$0
-L160:
+L191:
 	tay
-	lda	<L157+2
-	sta	<L157+2+12
-	lda	<L157+1
-	sta	<L157+1+12
+	lda	<L188+2
+	sta	<L188+2+12
+	lda	<L188+1
+	sta	<L188+1+12
 	pld
 	tsc
 	clc
-	adc	#L157+12
+	adc	#L188+12
 	tcs
 	tya
 	rtl
-	.line	1123
-	.endblock	1123
-L157	equ	0
-L158	equ	1
+	.line	1367
+	.endblock	1367
+L188	equ	0
+L189	equ	1
 	ends
 	efunc
-	.endfunc	1123,1,0
-	.line	1123
+	.endfunc	1367,1,0
+	.line	1367
 ;HRESULT k_dos_getlabel (const TCHAR* path, TCHAR* label, DWORD* vsn){return 0;}	/* Get volume label */
-	.line	1124
-	.line	1124
+	.line	1368
+	.line	1368
 	FXDOS
 	xdef	~~k_dos_getlabel
 	func
-	.function	1124
+	.function	1368
 ~~k_dos_getlabel:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L161
+	sbc	#L192
 	tcs
 	phd
 	tcd
 path_0	set	4
 label_0	set	8
 vsn_0	set	12
-	.block	1124
+	.block	1368
 	.sym	path,4,142,6,32
 	.sym	label,8,142,6,32
 	.sym	vsn,12,146,6,32
-	.line	1124
+	.line	1368
 	lda	#$0
 	tax
 	lda	#$0
-L164:
+L195:
 	tay
-	lda	<L161+2
-	sta	<L161+2+12
-	lda	<L161+1
-	sta	<L161+1+12
+	lda	<L192+2
+	sta	<L192+2+12
+	lda	<L192+1
+	sta	<L192+1+12
 	pld
 	tsc
 	clc
-	adc	#L161+12
+	adc	#L192+12
 	tcs
 	tya
 	rtl
-	.line	1124
-	.endblock	1124
-L161	equ	0
-L162	equ	1
+	.line	1368
+	.endblock	1368
+L192	equ	0
+L193	equ	1
 	ends
 	efunc
-	.endfunc	1124,1,0
-	.line	1124
+	.endfunc	1368,1,0
+	.line	1368
 ;HRESULT k_dos_setlabel (const TCHAR* label){return 0;}							/* Set volume label */
-	.line	1125
-	.line	1125
+	.line	1369
+	.line	1369
 	FXDOS
 	xdef	~~k_dos_setlabel
 	func
-	.function	1125
+	.function	1369
 ~~k_dos_setlabel:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L165
+	sbc	#L196
 	tcs
 	phd
 	tcd
 label_0	set	4
-	.block	1125
+	.block	1369
 	.sym	label,4,142,6,32
-	.line	1125
+	.line	1369
 	lda	#$0
 	tax
 	lda	#$0
-L168:
+L199:
 	tay
-	lda	<L165+2
-	sta	<L165+2+4
-	lda	<L165+1
-	sta	<L165+1+4
+	lda	<L196+2
+	sta	<L196+2+4
+	lda	<L196+1
+	sta	<L196+1+4
 	pld
 	tsc
 	clc
-	adc	#L165+4
+	adc	#L196+4
 	tcs
 	tya
 	rtl
-	.line	1125
-	.endblock	1125
-L165	equ	0
-L166	equ	1
+	.line	1369
+	.endblock	1369
+L196	equ	0
+L197	equ	1
 	ends
 	efunc
-	.endfunc	1125,1,0
-	.line	1125
+	.endfunc	1369,1,0
+	.line	1369
 ;HRESULT k_dos_forward (FIL* fp, UINT(*func)(const BYTE*,UINT), UINT btf, UINT* bf){return 0;}	/* Forward data to the stream */
-	.line	1126
-	.line	1126
+	.line	1370
+	.line	1370
 	FXDOS
 	xdef	~~k_dos_forward
 	func
-	.function	1126
+	.function	1370
 ~~k_dos_forward:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L169
+	sbc	#L200
 	tcs
 	phd
 	tcd
@@ -5253,145 +6575,145 @@ fp_0	set	4
 func_0	set	8
 btf_0	set	12
 bf_0	set	14
-	.block	1126
-	.sym	fp,4,138,6,32,81
+	.block	1370
+	.sym	fp,4,138,6,32,86
 	.sym	func,8,656,6,32
 	.sym	btf,12,16,6,16
 	.sym	bf,14,144,6,32
-	.line	1126
+	.line	1370
 	lda	#$0
 	tax
 	lda	#$0
-L172:
+L203:
 	tay
-	lda	<L169+2
-	sta	<L169+2+14
-	lda	<L169+1
-	sta	<L169+1+14
+	lda	<L200+2
+	sta	<L200+2+14
+	lda	<L200+1
+	sta	<L200+1+14
 	pld
 	tsc
 	clc
-	adc	#L169+14
+	adc	#L200+14
 	tcs
 	tya
 	rtl
-	.line	1126
-	.endblock	1126
-L169	equ	0
-L170	equ	1
+	.line	1370
+	.endblock	1370
+L200	equ	0
+L201	equ	1
 	ends
 	efunc
-	.endfunc	1126,1,0
-	.line	1126
+	.endfunc	1370,1,0
+	.line	1370
 ;HRESULT k_dos_expand (FIL* fp, FSIZE_t fsz, BYTE opt){return 0;}					/* Allocate a contiguous block to the file */
-	.line	1127
-	.line	1127
+	.line	1371
+	.line	1371
 	FXDOS
 	xdef	~~k_dos_expand
 	func
-	.function	1127
+	.function	1371
 ~~k_dos_expand:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L173
+	sbc	#L204
 	tcs
 	phd
 	tcd
 fp_0	set	4
 fsz_0	set	8
 opt_0	set	12
-	.block	1127
-	.sym	fp,4,138,6,32,81
+	.block	1371
+	.sym	fp,4,138,6,32,86
 	.sym	fsz,8,18,6,32
 	.sym	opt,12,14,6,8
-	.line	1127
+	.line	1371
 	lda	#$0
 	tax
 	lda	#$0
-L176:
+L207:
 	tay
-	lda	<L173+2
-	sta	<L173+2+10
-	lda	<L173+1
-	sta	<L173+1+10
+	lda	<L204+2
+	sta	<L204+2+10
+	lda	<L204+1
+	sta	<L204+1+10
 	pld
 	tsc
 	clc
-	adc	#L173+10
+	adc	#L204+10
 	tcs
 	tya
 	rtl
-	.line	1127
-	.endblock	1127
-L173	equ	0
-L174	equ	1
+	.line	1371
+	.endblock	1371
+L204	equ	0
+L205	equ	1
 	ends
 	efunc
-	.endfunc	1127,1,0
-	.line	1127
+	.endfunc	1371,1,0
+	.line	1371
 ;HRESULT k_dos_mount (FATFS* fs, const TCHAR* path, BYTE opt){return 0;}			/* Mount/Unmount a logical drive */
-	.line	1128
-	.line	1128
+	.line	1372
+	.line	1372
 	FXDOS
 	xdef	~~k_dos_mount
 	func
-	.function	1128
+	.function	1372
 ~~k_dos_mount:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L177
+	sbc	#L208
 	tcs
 	phd
 	tcd
 fs_0	set	4
 path_0	set	8
 opt_0	set	12
-	.block	1128
-	.sym	fs,4,138,6,32,79
+	.block	1372
+	.sym	fs,4,138,6,32,84
 	.sym	path,8,142,6,32
 	.sym	opt,12,14,6,8
-	.line	1128
+	.line	1372
 	lda	#$0
 	tax
 	lda	#$0
-L180:
+L211:
 	tay
-	lda	<L177+2
-	sta	<L177+2+10
-	lda	<L177+1
-	sta	<L177+1+10
+	lda	<L208+2
+	sta	<L208+2+10
+	lda	<L208+1
+	sta	<L208+1+10
 	pld
 	tsc
 	clc
-	adc	#L177+10
+	adc	#L208+10
 	tcs
 	tya
 	rtl
-	.line	1128
-	.endblock	1128
-L177	equ	0
-L178	equ	1
+	.line	1372
+	.endblock	1372
+L208	equ	0
+L209	equ	1
 	ends
 	efunc
-	.endfunc	1128,1,0
-	.line	1128
+	.endfunc	1372,1,0
+	.line	1372
 ;HRESULT k_dos_mkfs (const TCHAR* path, const MKFS_PARM* opt, void* work, UINT len){return 0;}	/* Create a FAT volume */
-	.line	1129
-	.line	1129
+	.line	1373
+	.line	1373
 	FXDOS
 	xdef	~~k_dos_mkfs
 	func
-	.function	1129
+	.function	1373
 ~~k_dos_mkfs:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L181
+	sbc	#L212
 	tcs
 	phd
 	tcd
@@ -5399,147 +6721,154 @@ path_0	set	4
 opt_0	set	8
 work_0	set	12
 len_0	set	16
-	.block	1129
+	.block	1373
 	.sym	path,4,142,6,32
-	.sym	opt,8,138,6,32,84
+	.sym	opt,8,138,6,32,89
 	.sym	work,12,129,6,32
 	.sym	len,16,16,6,16
-	.line	1129
+	.line	1373
 	lda	#$0
 	tax
 	lda	#$0
-L184:
+L215:
 	tay
-	lda	<L181+2
-	sta	<L181+2+14
-	lda	<L181+1
-	sta	<L181+1+14
+	lda	<L212+2
+	sta	<L212+2+14
+	lda	<L212+1
+	sta	<L212+1+14
 	pld
 	tsc
 	clc
-	adc	#L181+14
+	adc	#L212+14
 	tcs
 	tya
 	rtl
-	.line	1129
-	.endblock	1129
-L181	equ	0
-L182	equ	1
+	.line	1373
+	.endblock	1373
+L212	equ	0
+L213	equ	1
 	ends
 	efunc
-	.endfunc	1129,1,0
-	.line	1129
+	.endfunc	1373,1,0
+	.line	1373
 ;HRESULT k_dos_fdisk (BYTE pdrv, const LBA_t ptbl[], void* work){return 0;}		/* Divide a physical drive into some partitions */
-	.line	1130
-	.line	1130
+	.line	1374
+	.line	1374
 	FXDOS
 	xdef	~~k_dos_fdisk
 	func
-	.function	1130
+	.function	1374
 ~~k_dos_fdisk:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L185
+	sbc	#L216
 	tcs
 	phd
 	tcd
 pdrv_0	set	4
 ptbl_0	set	6
 work_0	set	10
-	.block	1130
+	.block	1374
 	.sym	pdrv,4,14,6,8
 	.sym	ptbl,6,146,6,32
 	.sym	work,10,129,6,32
-	.line	1130
+	.line	1374
 	lda	#$0
 	tax
 	lda	#$0
-L188:
+L219:
 	tay
-	lda	<L185+2
-	sta	<L185+2+10
-	lda	<L185+1
-	sta	<L185+1+10
+	lda	<L216+2
+	sta	<L216+2+10
+	lda	<L216+1
+	sta	<L216+1+10
 	pld
 	tsc
 	clc
-	adc	#L185+10
+	adc	#L216+10
 	tcs
 	tya
 	rtl
-	.line	1130
-	.endblock	1130
-L185	equ	0
-L186	equ	1
+	.line	1374
+	.endblock	1374
+L216	equ	0
+L217	equ	1
 	ends
 	efunc
-	.endfunc	1130,1,0
-	.line	1130
+	.endfunc	1374,1,0
+	.line	1374
 ;HRESULT k_dos_setcp (WORD cp){return 0;}
-	.line	1131
-	.line	1131
+	.line	1375
+	.line	1375
 	FXDOS
 	xdef	~~k_dos_setcp
 	func
-	.function	1131
+	.function	1375
 ~~k_dos_setcp:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L189
+	sbc	#L220
 	tcs
 	phd
 	tcd
 cp_0	set	4
-	.block	1131
+	.block	1375
 	.sym	cp,4,5,6,16
-	.line	1131
+	.line	1375
 	lda	#$0
 	tax
 	lda	#$0
-L192:
+L223:
 	tay
-	lda	<L189+2
-	sta	<L189+2+2
-	lda	<L189+1
-	sta	<L189+1+2
+	lda	<L220+2
+	sta	<L220+2+2
+	lda	<L220+1
+	sta	<L220+1+2
 	pld
 	tsc
 	clc
-	adc	#L189+2
+	adc	#L220+2
 	tcs
 	tya
 	rtl
-	.line	1131
-	.endblock	1131
-L189	equ	0
-L190	equ	1
+	.line	1375
+	.endblock	1375
+L220	equ	0
+L221	equ	1
 	ends
 	efunc
-	.endfunc	1131,1,0
-	.line	1131
+	.endfunc	1375,1,0
+	.line	1375
 ;
 ;
 ;
 ;
-	.line	1134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxdos.c",1131
+	.line	1378
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.c",1375
 	xref	~~f_mount
 	xref	~~f_findnext
 	xref	~~f_findfirst
 	xref	~~f_closedir
 	xref	~~f_opendir
+	xref	~~f_close
+	xref	~~f_open
+	xref	~~k_user_LoadResource
 	xref	~~k_mem_deallocate_heap
 	xref	~~k_mem_allocate_heap
 	xref	~~k_string_copy_to_delimiter
+	xref	~~k_bytetohex
 	xref	~~k_get_c256_minor_version
 	xref	~~k_get_c256_major_version
 	xref	~~k_debug_nstrings
 	xref	~~k_debug_integer
 	xref	~~k_debug_pointer
+	xref	~~k_debug_string
+	xref	~~k_unlock_irq
+	xref	~~k_lock_irq
 	xref	~~k_nodelist_removefromlist
 	xref	~~k_nodelist_searchByType
 	xref	~~k_nodelist_addtolist
@@ -5548,16 +6877,19 @@ L190	equ	1
 	xref	~~strcmp
 	xref	~~strcat
 	xref	~~memset
+	xref	~~memcpy
+	xref	~~free
+	xref	~~g_irq_handlers
 	udata
 	xdef	~~fxdosDevice
 ~~fxdosDevice
 	ds	718
 	ends
 	.sym	~~k_dos_deallocate_fileinfo,~~k_dos_deallocate_fileinfo,65,2,0
-	.sym	~~k_get_dos_device,~~k_get_dos_device,1098,2,32,122
+	.sym	~~g_irq_handlers,~~g_irq_handlers,874,18,0,60,4,8
 	.sym	~~_k_dos_deviceinstance,~~_k_dos_deviceinstance,138,3,32,6
 	.sym	~~_k_dos_devicedrivers,~~_k_dos_devicedrivers,138,3,32,6
-	.sym	~~fxdosDevice,~~fxdosDevice,10,2,5744,122
+	.sym	~~fxdosDevice,~~fxdosDevice,10,2,5744,127
 	.sym	~~sectorBuffer,~~sectorBuffer,142,3,32
 	.sym	~~k_dos_setcp,~~k_dos_setcp,82,2,0
 	.sym	~~k_dos_fdisk,~~k_dos_fdisk,82,2,0
@@ -5588,47 +6920,52 @@ L190	equ	1
 	.sym	~~k_dos_write,~~k_dos_write,82,2,0
 	.sym	~~k_dos_read,~~k_dos_read,82,2,0
 	.sym	~~k_dos_close,~~k_dos_close,82,2,0
-	.sym	~~k_dos_open,~~k_dos_open,82,2,0
+	.sym	~~k_dos_open,~~k_dos_open,1098,2,32,130
 	.sym	~~k_dos_findfiles_to_nodes,~~k_dos_findfiles_to_nodes,1098,2,32,6
-	.sym	~~k_get_device_driver,~~k_get_device_driver,1098,2,32,55
+	.sym	~~k_get_dos_device,~~k_get_dos_device,1098,2,32,127
+	.sym	~~k_get_device_driver,~~k_get_device_driver,1098,2,32,58
+	.sym	FILE,0,138,14,32,130
+	.sym	FILE_POINTER,0,10,14,112,130
 	.sym	~~k_dos_load_drivers,~~k_dos_load_drivers,1102,2,32
+	.sym	~~k_dos_load_driver,~~k_dos_load_driver,1089,2,32
+	.sym	~~k_dos_ext_load_driver,~~k_dos_ext_load_driver,1089,2,32
 	.sym	~~k_read_dos_directory,~~k_read_dos_directory,1098,2,32,6
 	.sym	~~k_close_dos_device,~~k_close_dos_device,78,2,0
-	.sym	~~k_create_dos_device,~~k_create_dos_device,1098,2,32,122
-	.sym	PDOSHANDLE,0,138,14,32,124
-	.sym	DOSHANDLE,0,10,14,80,124
-	.sym	PFXDOSDEVICE,0,138,14,32,122
-	.sym	FXDOSDEVICE,0,10,14,5744,122
+	.sym	~~k_create_dos_device,~~k_create_dos_device,1098,2,32,127
+	.sym	PDOSHANDLE,0,138,14,32,129
+	.sym	DOSHANDLE,0,10,14,80,129
+	.sym	PFXDOSDEVICE,0,138,14,32,127
+	.sym	FXDOSDEVICE,0,10,14,5744,127
 	.sym	DOSINITDEVICE,0,641,14,32
 	.sym	DOSSECTORWRITER,0,654,14,32
 	.sym	DOSSECTORREADER,0,654,14,32
-	.sym	PIDENTIFY_DEVICE_DATA,0,138,14,32,121
-	.sym	IDENTIFY_DEVICE_DATA,0,10,14,4096,121
-	.sym	PIDSECTOR,0,138,14,32,98
-	.sym	IDSECTOR,0,10,14,2048,98
-	.sym	PLFN,0,138,14,32,97
-	.sym	LFN,0,10,14,256,97
-	.sym	PFAT16ENTRYLONG,0,138,14,32,96
-	.sym	FAT16ENTRYLONG,0,10,14,288,96
-	.sym	PFAT16ENTRY,0,138,14,32,95
-	.sym	FAT16ENTRY,0,10,14,256,95
-	.sym	Fat16BootSector,0,10,14,4096,94
-	.sym	PPARTITIONTABLE,0,138,14,32,93
-	.sym	PARTITIONTABLE,0,10,14,128,93
-	.sym	PFATBOOTSECTOR,0,138,14,32,92
-	.sym	FATBOOTSECTOR,0,10,14,928,92
-	.sym	fat_BS_t,0,10,14,688,91
-	.sym	fat_extBS_16_t,0,10,14,192,90
-	.sym	PFAT32EXT,0,138,14,32,89
-	.sym	fat_extBS_32_t,0,10,14,416,89
-	.sym	P_FX_FAT_DIR_INFO,0,138,14,32,88
-	.sym	FX_FAT_DIR_INFO,0,10,14,256,88
-	.sym	PFILEINFO,0,138,14,32,87
-	.sym	FILEINFO,0,10,14,136,87
-	.sym	PDISKINFO,0,138,14,32,86
-	.sym	DISKINFO,0,10,14,416,86
-	.sym	PDIRENTRY,0,138,14,32,85
-	.sym	DIRENTRY,0,10,14,256,85
+	.sym	PIDENTIFY_DEVICE_DATA,0,138,14,32,126
+	.sym	IDENTIFY_DEVICE_DATA,0,10,14,4096,126
+	.sym	PIDSECTOR,0,138,14,32,103
+	.sym	IDSECTOR,0,10,14,2048,103
+	.sym	PLFN,0,138,14,32,102
+	.sym	LFN,0,10,14,256,102
+	.sym	PFAT16ENTRYLONG,0,138,14,32,101
+	.sym	FAT16ENTRYLONG,0,10,14,288,101
+	.sym	PFAT16ENTRY,0,138,14,32,100
+	.sym	FAT16ENTRY,0,10,14,256,100
+	.sym	Fat16BootSector,0,10,14,4096,99
+	.sym	PPARTITIONTABLE,0,138,14,32,98
+	.sym	PARTITIONTABLE,0,10,14,128,98
+	.sym	PFATBOOTSECTOR,0,138,14,32,97
+	.sym	FATBOOTSECTOR,0,10,14,928,97
+	.sym	fat_BS_t,0,10,14,688,96
+	.sym	fat_extBS_16_t,0,10,14,192,95
+	.sym	PFAT32EXT,0,138,14,32,94
+	.sym	fat_extBS_32_t,0,10,14,416,94
+	.sym	P_FX_FAT_DIR_INFO,0,138,14,32,93
+	.sym	FX_FAT_DIR_INFO,0,10,14,256,93
+	.sym	PFILEINFO,0,138,14,32,92
+	.sym	FILEINFO,0,10,14,136,92
+	.sym	PDISKINFO,0,138,14,32,91
+	.sym	DISKINFO,0,10,14,416,91
+	.sym	PDIRENTRY,0,138,14,32,90
+	.sym	DIRENTRY,0,10,14,256,90
 	.sym	DRESULT,0,5,14,16
 	.sym	DSTATUS,0,14,14,8
 	.sym	~~f_mount,~~f_mount,69,18,0
@@ -5636,119 +6973,136 @@ L190	equ	1
 	.sym	~~f_findfirst,~~f_findfirst,69,18,0
 	.sym	~~f_closedir,~~f_closedir,69,18,0
 	.sym	~~f_opendir,~~f_opendir,69,18,0
+	.sym	~~f_close,~~f_close,69,18,0
+	.sym	~~f_open,~~f_open,69,18,0
 	.sym	FRESULT,0,5,14,16
-	.sym	MKFS_PARM,0,10,14,80,84
-	.sym	FILINFO,0,10,14,2224,83
-	.sym	DIR,0,10,14,416,82
-	.sym	FIL,0,10,14,4400,81
-	.sym	FFOBJID,0,10,14,128,80
-	.sym	FATFS,0,10,14,4504,79
+	.sym	MKFS_PARM,0,10,14,80,89
+	.sym	FILINFO,0,10,14,2224,88
+	.sym	DIR,0,10,14,416,87
+	.sym	FIL,0,10,14,4400,86
+	.sym	FFOBJID,0,10,14,128,85
+	.sym	FATFS,0,10,14,4504,84
 	.sym	LBA_t,0,18,14,32
 	.sym	FSIZE_t,0,18,14,32
 	.sym	TCHAR,0,14,14,8
-	.sym	PCOMMANDARGS,0,138,14,32,78
-	.sym	COMMANDARGS,0,10,14,64,78
+	.sym	PCOMMANDARGS,0,138,14,32,83
+	.sym	COMMANDARGS,0,10,14,64,83
 	.sym	PTOKENIZESTATE,0,133,14,32
 	.sym	TOKENIZESTATE,0,5,14,16
-	.sym	PTOKEN,0,138,14,32,77
-	.sym	TOKEN,0,10,14,64,77
+	.sym	PTOKEN,0,138,14,32,82
+	.sym	TOKEN,0,10,14,64,82
 	.sym	PTOKENTYPE,0,133,14,32
 	.sym	TOKENTYPE,0,5,14,16
 	.sym	FXCommandHandler,0,656,14,32
-	.sym	PCONSOLECTX,0,138,14,32,76
-	.sym	CONSOLECTX,0,10,14,1144,76
-	.sym	PSPINNERCTX,0,138,14,32,75
-	.sym	SPINNERCTX,0,10,14,48,75
-	.sym	HCLIP,0,138,14,32,74
-	.sym	PCLIPBOARD_DATA,0,138,14,32,74
-	.sym	CLIPBOARD_DATA,0,10,14,168,74
-	.sym	PEVENTMANAGER,0,138,14,32,73
-	.sym	EVENTMANAGER,0,10,14,192,73
+	.sym	PCONSOLECTX,0,138,14,32,81
+	.sym	CONSOLECTX,0,10,14,1144,81
+	.sym	PSPINNERCTX,0,138,14,32,80
+	.sym	SPINNERCTX,0,10,14,48,80
+	.sym	HCLIP,0,138,14,32,79
+	.sym	PCLIPBOARD_DATA,0,138,14,32,79
+	.sym	CLIPBOARD_DATA,0,10,14,168,79
+	.sym	PEVENTMANAGER,0,138,14,32,78
+	.sym	EVENTMANAGER,0,10,14,192,78
 	.sym	EV_RUN,0,656,14,32
 	.sym	EV_QUERY_METRIC,0,656,14,32
 	.sym	EV_CONFIGURE,0,656,14,32
 	.sym	EV_UNINIT,0,641,14,32
 	.sym	EV_INIT,0,8833,14,32
-	.sym	PMOUSE_MSG_STATE,0,138,14,32,72
-	.sym	MOUSE_MSG_STATE,0,10,14,184,72
-	.sym	PFXEVENTPROCESS,0,138,14,32,71
-	.sym	FXEVENTPROCESS,0,10,14,64,71
-	.sym	PMARSHALDATA,0,139,14,32,70
-	.sym	MARSHALDATA,0,11,14,32,70
+	.sym	PMOUSE_MSG_STATE,0,138,14,32,77
+	.sym	MOUSE_MSG_STATE,0,10,14,184,77
+	.sym	PFXEVENTPROCESS,0,138,14,32,76
+	.sym	FXEVENTPROCESS,0,10,14,64,76
+	.sym	FXASYNCPROCESS,0,641,14,32
+	.sym	PMARSHALDATA,0,139,14,32,75
+	.sym	MARSHALDATA,0,11,14,32,75
 	.sym	FXIDLEPROCESS,0,641,14,32
 	.sym	FXEventProc,0,641,14,32
-	.sym	PMOUSEMSGDATA,0,138,14,32,69
-	.sym	MOUSEMSGDATA,0,10,14,64,69
+	.sym	PMOUSEMSGDATA,0,138,14,32,74
+	.sym	MOUSEMSGDATA,0,10,14,64,74
 	.sym	MSGIRQ,0,5,14,16
-	.sym	MAINLOOPARGS,0,10,14,16,68
-	.sym	PEACHCHILD_MSG,0,138,14,32,67
-	.sym	EACHCHILD_MSG,0,10,14,64,67
-	.sym	PMSGBOX_DATA,0,138,14,32,66
-	.sym	MSGBOX_DATA,0,10,14,96,66
-	.sym	PDESKTOP_DATA,0,138,14,32,65
-	.sym	DESKTOP_DATA,0,10,14,64,65
-	.sym	PWINDOWMANAGER,0,138,14,32,64
-	.sym	WINDOWMANAGER,0,10,14,160,64
+	.sym	MAINLOOPARGS,0,10,14,16,73
+	.sym	PEACHCHILD_MSG,0,138,14,32,72
+	.sym	EACHCHILD_MSG,0,10,14,64,72
+	.sym	PMSGBOX_DATA,0,138,14,32,71
+	.sym	MSGBOX_DATA,0,10,14,96,71
+	.sym	PDESKTOP_DATA,0,138,14,32,70
+	.sym	DESKTOP_DATA,0,10,14,64,70
+	.sym	~~k_user_LoadResource,~~k_user_LoadResource,1089,18,32
+	.sym	PWINDOWMANAGER,0,138,14,32,69
+	.sym	WINDOWMANAGER,0,10,14,160,69
 	.sym	WM_DOPROCS,0,641,14,32
 	.sym	WM_QUERY_METRIC,0,656,14,32
 	.sym	WM_CONFIGURE,0,656,14,32
 	.sym	WM_HANDLE_EVENT,0,8833,14,32
 	.sym	WM_EVENTS,0,641,14,32
-	.sym	PCUR_PALETTE_MAP,0,138,14,32,63
-	.sym	CUR_PALETTE_MAP,0,10,14,400,63
-	.sym	PCLICKDETECTED,0,138,14,32,62
-	.sym	CLICKDETECTED,0,10,14,64,62
+	.sym	PCUR_PALETTE_MAP,0,138,14,32,68
+	.sym	CUR_PALETTE_MAP,0,10,14,400,68
+	.sym	PCLICKDETECTED,0,138,14,32,67
+	.sym	CLICKDETECTED,0,10,14,64,67
 	.sym	OBJECTCLICKED,0,641,14,32
-	.sym	PIPCPORT,0,138,14,32,61
-	.sym	IPCPORT,0,10,14,144,61
+	.sym	PALLOCATIONHEADER,0,138,14,32,66
+	.sym	ALLOCATIONHEADER,0,10,14,80,66
+	.sym	PIPCPORT,0,138,14,32,65
+	.sym	IPCPORT,0,10,14,144,65
 	.sym	~~k_mem_deallocate_heap,~~k_mem_deallocate_heap,65,18,0
 	.sym	~~k_mem_allocate_heap,~~k_mem_allocate_heap,1089,18,32
 	.sym	MemoryCallback,0,641,14,32
-	.sym	PFXMEMORYMAP,0,138,14,32,60
-	.sym	FXMEMORYMAP,0,10,14,2072,60
-	.sym	UMM_HEAP_INFO,0,10,14,256,59
-	.sym	PEXECUTIVE,0,138,14,32,58
-	.sym	EXECUTIVE,0,10,14,128,58
+	.sym	PFXMEMORYMAP,0,138,14,32,64
+	.sym	FXMEMORYMAP,0,10,14,2072,64
+	.sym	UMM_HEAP_INFO,0,10,14,256,63
+	.sym	PEXECUTIVE,0,138,14,32,62
+	.sym	EXECUTIVE,0,10,14,128,62
 	.sym	EX_QUERY_METRIC,0,656,14,32
 	.sym	EX_CONFIGURE,0,656,14,32
 	.sym	EX_UNINIT,0,641,14,32
 	.sym	EX_INIT,0,8833,14,32
 	.sym	~~k_string_copy_to_delimiter,~~k_string_copy_to_delimiter,1102,18,32
-	.sym	PFXSTRING,0,138,14,32,57
-	.sym	FXSTRING,0,10,14,64,57
-	.sym	DEVICEDRIVER_COMMAND,0,656,14,32
+	.sym	~~k_bytetohex,~~k_bytetohex,1102,18,32
+	.sym	PFXSTRING,0,138,14,32,61
+	.sym	FXSTRING,0,10,14,64,61
+	.sym	PIRQCHAIN,0,138,14,32,60
+	.sym	IRQCHAIN,0,10,14,128,60
+	.sym	DEVICEDRIVER_COMMAND,0,654,14,32
 	.sym	DEVICEDRIVER_UNLOAD,0,654,14,32
-	.sym	DEVICEDRIVER_WRITE,0,656,14,32
-	.sym	DEVICEDRIVER_READ,0,656,14,32
+	.sym	DEVICEDRIVER_WRITE,0,654,14,32
+	.sym	DEVICEDRIVER_READ,0,654,14,32
 	.sym	DEVICEDRIVER_LOAD,0,654,14,32
-	.sym	DEVICEDRIVER_IRQ,0,654,14,32
-	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,56
-	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,56
-	.sym	GETDRIVERDEF,0,8842,14,32,55
-	.sym	PFX_DEVICE_DRIVER,0,138,14,32,55
-	.sym	FX_DEVICE_DRIVER,0,10,14,776,55
+	.sym	DEVICEDRIVER_IRQ,0,641,14,32
+	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,59
+	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,59
+	.sym	GETDRIVERDEF,0,8842,14,32,58
+	.sym	PFX_DEVICE_DRIVER,0,138,14,32,58
+	.sym	FX_DEVICE_DRIVER,0,10,14,776,58
 	.sym	~~k_get_c256_minor_version,~~k_get_c256_minor_version,65,18,0
 	.sym	~~k_get_c256_major_version,~~k_get_c256_major_version,65,18,0
 	.sym	~~k_debug_nstrings,~~k_debug_nstrings,65,18,0
 	.sym	~~k_debug_integer,~~k_debug_integer,65,18,0
 	.sym	~~k_debug_pointer,~~k_debug_pointer,65,18,0
-	.sym	PSEGMENTHEADER,0,138,14,32,54
-	.sym	SEGMENTHEADER,0,10,14,160,54
-	.sym	PDEBUGBYTEBITS,0,138,14,32,53
-	.sym	DEBUGBYTEBITS,0,10,14,8,53
-	.sym	PFXENVIRONMENT,0,138,14,32,52
-	.sym	FXENVIRONMENT,0,10,14,96,52
-	.sym	PFXZEROPAGE,0,138,14,32,51
-	.sym	FXZEROPAGE,0,10,14,824,51
+	.sym	~~k_debug_string,~~k_debug_string,65,18,0
+	.sym	~~k_unlock_irq,~~k_unlock_irq,80,18,0
+	.sym	~~k_lock_irq,~~k_lock_irq,80,18,0
+	.sym	PSEGMENTHEADER,0,138,14,32,57
+	.sym	SEGMENTHEADER,0,10,14,160,57
+	.sym	PDEBUGBYTEBITS,0,138,14,32,56
+	.sym	DEBUGBYTEBITS,0,10,14,8,56
+	.sym	PFXENVIRONMENT,0,138,14,32,55
+	.sym	FXENVIRONMENT,0,10,14,96,55
+	.sym	PFXZEROPAGE,0,138,14,32,54
+	.sym	FXZEROPAGE,0,10,14,720,54
+	.sym	IRQBUFFER,0,10,14,32,53
 	.sym	KERNELTRAPCALL,0,641,14,32
-	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,50
-	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,50
+	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,52
+	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,52
 	.sym	FOREACHNODEUNTIL,0,654,14,32
 	.sym	FOREACHNODE,0,641,14,32
 	.sym	~~k_nodelist_removefromlist,~~k_nodelist_removefromlist,1098,18,32,5
 	.sym	~~k_nodelist_searchByType,~~k_nodelist_searchByType,1098,18,32,5
 	.sym	~~k_nodelist_addtolist,~~k_nodelist_addtolist,1098,18,32,5
 	.sym	~~k_nodelist_allocate_list,~~k_nodelist_allocate_list,1098,18,32,6
+	.sym	PFXRFHEADER_STRING_ENTRY,0,138,14,32,51
+	.sym	FXRFHEADER_STRING_ENTRY,0,10,14,40,51
+	.sym	PFXRFHEADER_STRING,0,138,14,32,50
+	.sym	FXRFHEADER_STRING,0,10,14,32,50
 	.sym	PFXRFHEADER_FONT,0,138,14,32,49
 	.sym	FXRFHEADER_FONT,0,10,14,144,49
 	.sym	PFXRFHEADER,0,138,14,32,48
@@ -5826,9 +7180,9 @@ L190	equ	1
 	.sym	CONSOLE_CONTROL,0,10,14,448,18
 	.sym	FXProcessProc,0,641,14,32
 	.sym	PFXCMDMESSAGE,0,138,14,32,17
-	.sym	FXCMDMESSAGE,0,10,14,304,17
+	.sym	FXCMDMESSAGE,0,10,14,312,17
 	.sym	PFXOSMESSAGE,0,138,14,32,16
-	.sym	FXOSMESSAGE,0,10,14,304,16
+	.sym	FXOSMESSAGE,0,10,14,312,16
 	.sym	PINT_REGS,0,138,14,32,15
 	.sym	INT_REGS,0,10,14,104,15
 	.sym	TASK_STACK,0,10,14,32,14
@@ -5875,6 +7229,7 @@ L190	equ	1
 	.sym	HRESULT,0,18,14,32
 	.sym	LPWCHAR,0,144,14,32
 	.sym	WCHAR,0,16,14,16
+	.sym	HSTRINGTABLE,0,129,14,32
 	.sym	HCOLOR,0,129,14,32
 	.sym	HFONT,0,129,14,32
 	.sym	HDC,0,129,14,32
@@ -5902,13 +7257,21 @@ L190	equ	1
 	.sym	LPSTR,0,142,14,32
 	.sym	LPCHAR,0,142,14,32
 	.sym	CHAR,0,14,14,8
+	.sym	PUINT_32,0,146,14,32
+	.sym	UINT_32,0,18,14,32
+	.sym	PUINT_16,0,144,14,32
+	.sym	UINT_16,0,16,14,16
+	.sym	PUINT_8,0,142,14,32
+	.sym	UINT_8,0,14,14,8
 	.sym	LPVOID,0,129,14,32
 	.sym	VOID,0,1,14,32
 	.sym	~~strcpy,~~strcpy,1102,18,32
 	.sym	~~strcmp,~~strcmp,69,18,0
 	.sym	~~strcat,~~strcat,1102,18,32
 	.sym	~~memset,~~memset,1089,18,32
+	.sym	~~memcpy,~~memcpy,1089,18,32
 	.sym	Boolean_T,0,5,14,16
+	.sym	~~free,~~free,65,18,0
 	.sym	ldiv_t,0,10,14,64,2
 	.sym	div_t,0,10,14,32,1
 	.sym	wctype_t,0,16,14,16

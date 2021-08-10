@@ -28,8 +28,8 @@ typedef EXECUTIVE FAR *PEXECUTIVE;
 
 PEXECUTIVE k_initalize_executive(void);
 
-EXPORT_FUNC_KERNEL(RaiseException)
-VOID k_exec_throw_exception(ULONG ctxId,ULONG errorId,LPVOID exceptionMessage,UINT exMsgSize);
+//EXPORT_FUNC_KERNEL(RaiseException)
+//VOID k_exec_throw_exception(ULONG ctxId,ULONG errorId,LPVOID exceptionMessage,UINT exMsgSize);
 
 EXPORT_FUNC_KERNEL(GetProcess)
 PFXPROCESS k_exec_get_process(PROCESS_ID procId);

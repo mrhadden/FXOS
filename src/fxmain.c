@@ -2,18 +2,35 @@
 //#include "fxstartup.h"
 #include "fxos.h"
 #include "fxdos.h"
+#include "SN76489.h"
+#include "strings/ui-en.h"
+#include "DRIVERS/DRIVER.H"
+#include "DRIVERS/ps2ctl.H"
 
-//#include "DllMainBin.h"
-
-#pragma section CODE=entry,offset $0:7FFF //$4:0000
+#pragma section CODE=entry,offset $00:8000 //$4:0000
 
 int line = 2;
+//void BRKHandler(void);
+void init_ps2(VOID);
 
-void k_init_splash(BOOL wait);
+void k_show_image(LPCSTR imageFilePath);
+UINT k_init_splash(BOOL wait);
 
-static int  msp = 0;
-static char mainspinner[] = {'|','/','-','\\'};
+//static int  msp = 0;
+//static char mainspinner[] = {'|','/','-','\\'};
 static ULONG THIS_MODULE = 0x00000000;
+
+//extern DEVICEDRIVER_IRQ g_irq_handlers[][8];
+extern IRQCHAIN g_irq_handlers[4][8];
+
+
+
+
+/*---------------------------------------------------------------------------*/
+// INTERNAL PROTOTYPES
+/*---------------------------------------------------------------------------*/
+void poke(uint8_t);
+
 
 LPVOID	pAPGMPTR = NULL;
 typedef void (*DLLMAIN)(VOID);
@@ -30,6 +47,11 @@ void DeallocateNodeListString(LPCSTR name,LPVOID data);
 
 
 
+/*---------------------------------------------------------------------------*/
+// End of SN76489.ino
+
+
+
 void ReportMemory(UCHAR segment,ULONG block,ULONG size)
 {
 	char rmbuffer[16];
@@ -41,7 +63,7 @@ void ReportMemory(UCHAR segment,ULONG block,ULONG size)
 	pos = k_put_string(pos,line,k_strip_padding(k_longtodec(size,rmbuffer)),15,0);
 	pos = k_put_string(pos,line," Bytes    ",15,0);
 }
-
+/*
 void SpinMemory(UCHAR segment,ULONG block,ULONG size)
 {
 	int pos = 0;
@@ -49,7 +71,7 @@ void SpinMemory(UCHAR segment,ULONG block,ULONG size)
 	k_put_char(pos,line,mainspinner[msp++],15,0);
 	if(msp>3) msp = 0;
 }
-
+*/
 void DeallocateNodeListString(LPCSTR name,LPVOID data)
 {
 	if(name)
@@ -101,7 +123,7 @@ void sleep(int msec)
 }
 */
 
-
+/*
 VOID testDrive(LPSTR drive,LPSTR path)
 {
 	DIR *dir;
@@ -111,6 +133,8 @@ VOID testDrive(LPSTR drive,LPSTR path)
 	FRESULT fr = 0;
 	DWORD serial;
 	LPSTR name = NULL;
+	CHAR buffer[16];
+	UINT read = 0;
 	//MKFS_PARM opt;
 
 	k_debug_strings("testDrive:DRIVE:",drive);
@@ -158,22 +182,44 @@ VOID testDrive(LPSTR drive,LPSTR path)
 		f_closedir(dir);
 	}
 
-	//fr = f_mkdir("SD:\\temp");
-	//k_debug_integer("f_mkdir:",fr);
-	/*
-	if(strcmp("SD:",drive) == 0)
+	fr = f_open(f,"RAM:\\FXDEV.DTA",FA_READ|FA_WRITE);
+	if(fr == FR_OK)
 	{
-		opt.fmt = FM_FAT;;
-		opt.align   = 0;
-		opt.n_fat   = 2;
-		opt.n_root  = 0;
-		opt.au_size = 0 ;
+		memset(buffer,0,16);
+		fr = f_read(f,buffer,16,&read);
+		k_debug_integer("testDrive:f_read:read:",read);
+		k_debug_byte_array("testDrive:f_read:data:",buffer,16);
 
-		f_mkfs("SD",&opt,NULL,512);
-		k_debug_integer("f_mkfs:",fr);
+		buffer[0] = '1';
 
+		fr = f_write(f,buffer,read,&read);
+
+		k_debug_integer("testDrive:f_write:written:",read);
+		k_debug_byte_array("testDrive:f_write:data:",buffer,16);
+
+
+		f_close(f);
 	}
-	*/
+
+	k_debug_strings("testDrive:read:name:","RAM:\\dev\\dev0");
+	fr = f_open(f,"RAM:\\dev\\dev0",FA_READ);
+	if(fr == FR_OK)
+	{
+		memset(buffer,0,16);
+		fr = f_read(f,buffer,16,&read);
+		k_debug_integer("testDrive:f_read:read:",read);
+		k_debug_byte_array("testDrive:f_read:data:",buffer,16);
+		f_close(f);
+	}
+	k_debug_strings("testDrive:read:name:","RAM:\\dev\\dev16");
+	fr = f_open(f,"RAM:\\dev\\dev16",FA_READ);
+	if(fr == FR_OK)
+	{
+		memset(buffer,0,16);
+		fr = f_read(f,buffer,16,&read);
+		k_debug_integer("testDrive:f_read:read:",read);
+		k_debug_byte_array("testDrive:f_read:data:",buffer,16);
+		f_close(f);
 
 
 	k_mem_deallocate_heap(fileInfo);
@@ -181,7 +227,7 @@ VOID testDrive(LPSTR drive,LPSTR path)
 	k_mem_deallocate_heap(dir);
 	k_mem_deallocate_heap(f);
 }
-
+*/
 
 /*
 VOID testHD(VOID)
@@ -546,37 +592,36 @@ void main(void)
 	PFXZEROPAGE   zp = NULL;
 	PEXECUTIVE 	  pExecutive 	= NULL;
 	PEVENTMANAGER pEventManager = NULL;
-	//typedef void (*DLLMAIN)(VOID);
-	//DLLMAIN DllMain = (DLLMAIN)0x090000;
 	PFXSTRING pfxs = NULL;
 	LPCSTR driverLog = NULL;
 
-	//UMM_HEAP_INFO *pheapInfo = NULL;
 	LPVOID ptrMemTest = NULL;
-	//ULONG byteCount = 0;
 	ULONG heapSize = 0;
-	//PFXNODE tokens = NULL;
-	//PFXNODE t = NULL;
+	ULONG endianCheck = 0x12345678L;
 
-	//PFXNODELIST nodelist = NULL;
-
-	//PFXNODE nodelist = NULL;
-	//PFXNODE newnode  = NULL;
-	//FXQUEUE *q = NULL;
+	HANDLE hdriver = NULL;
+	UINT   dsize = 0L;
+	BYTE i,c,r;
 	char rmbuffer[16];
-	//int i = 0;
-	//int j = 0;
 	int pos = 0;
 	ULONG availableMem = 0;
-	KRESULT kerr = KERR_SUCCESS;
-	PIPCPORT myport = NULL;
-	PIPCPORT debugport = NULL;
-	PFXSTRING ipc_data = NULL;
+	//KRESULT kerr = KERR_SUCCESS;
+	//PIPCPORT myport = NULL;
+	//PIPCPORT debugport = NULL;
+	//PFXSTRING ipc_data = NULL;
+	UINT bootMode = 0;
+	UINT index = 0;
+	//UINT z = 0;
+	HANDLE hString = NULL;
+	//PFXRFHEADER_STRING_ENTRY pentry = NULL;
+	//PFXRFHEADER_STRING pstrHead = NULL;
 
+	PFX_DEVICE_DRIVER pstrHead = NULL;
 
 	CHAR releaseMajor[2];
 	CHAR releaseMinor[2];
 
+	((LPSTR)0xAFA003)[0] = '3';
 
 	//
 	// Get board version as LPCSTR
@@ -619,44 +664,63 @@ void main(void)
 	// Turn on debugging (if needed)
 	//
 	k_user_EnableOSDebug();
-	//
-	// Output device load log
-	//
-	if(driverLog)
-	{
-		k_debug_string("Device Load Log Follows:\r\n");
-		k_debug_string((LPSTR)driverLog);
-		k_mem_deallocate_heap((LPVOID)driverLog);
-	}
 	// FIX FOR U and FMX
 	//k_init_keyboard();
+
+
+
+
+
+
+	/*
+	k_debug_string("initSN76489\r\n");
+
+	//psg_init();
+
+	psg_set_atten(0, 7);
+
+	psg_tone(0, G_notes[26] );
+	sleep(7000);
+	psg_tone(0, G_notes[31] );
+	sleep(5000);
+	psg_tone(0, G_notes[27] );
+	sleep(10000);
+
+	psg_set_atten(0, 0xF);
+
+
+
+	psg_tone(0,0);
+	psg_tone(1,0);
+	*/
+
+	//k_debug_string("MUTEALL\r\n");
+	//psg_set_atten(0, 0xF);
+	//psg_set_atten(1, 0xF);
+	//psg_set_atten(2, 0xF);
+	//psg_set_atten(3, 0xF);
+
+	//((LPSTR)(0xAFF100))[0] = 0xBF;
+	//((LPSTR)(0xAFF100))[0] = 0xDF;
+	//((LPSTR)(0xAFF100))[0] = 0xFF;
+	/*
+	initSN76489();
+
+	setVolume(1,VOL_MED);
+	for(pos=3;pos<20;pos++)
+	{
+		k_debug_hex("PLAY:",pos);
+		play(1, pos );
+		sleep(15000);
+		play(1, 0 );
+	}
+	k_debug_string("MUTEALL\r\n");
+	muteAll();
+	*/
 
 	//k_uart_enableirq_ports();
 	// REPLACES ORIGINAL ABOVE CALL
 	//k_init_com_ports(releaseMajor,releaseMinor);
-
-	for(availableMem=0;availableMem<0xff;availableMem++)
-	{
-		((LPSTR)0xAFA000)[200] = '/';
-		asm nop;
-		asm nop;
-		asm nop;
-
-		((LPSTR)0xAFA000)[200] = '-';
-		asm nop;
-		asm nop;
-		asm nop;
-
-		((LPSTR)0xAFA000)[200] = '\\';
-		asm nop;
-		asm nop;
-		asm nop;
-
-		((LPSTR)0xAFA000)[200] = '-';
-		asm nop;
-		asm nop;
-		asm nop;
-	}
 
 	availableMem=0;
 
@@ -668,6 +732,17 @@ void main(void)
 	k_debug_string("******  Welcome to FX/OS   *******\r\n");
 	k_debug_string("******       Booting       *******\r\n");
 	k_debug_string("**********************************\r\n");
+
+
+	//
+	// Output device load log
+	//
+	if(driverLog)
+	{
+		k_debug_string("Device Load Log Follows:\r\n");
+		k_debug_string((LPSTR)driverLog);
+		k_mem_deallocate_heap((LPVOID)driverLog);
+	}
 
 	//k_debug_string_com1("%OSBOOTING COM1%\r\n");
 	//k_debug_string_com2("%OSBOOTING COM2%\r\n");
@@ -685,33 +760,11 @@ void main(void)
 	k_set_border_color(0x00,0x00,0x00);
 	k_enable_border();
 
-	k_debug_string("k_clear_screen\r\n");
+	//k_debug_string("k_clear_screen\r\n");
 
 	k_clear_screen(0);
 	k_clear_console();
 
-
-	/*
-	for(i=3200;i>0;i--)
-	{
-		for(j=0;j<256;j++)
-		{
-			asm NOP;
-		}
-	}
-	*/
-	/*
-	k_debug_string("waiting...\r\n");
-	for(i=16000;i>0;i--)
-	{
-		for(j=0;j<256;j++)
-		{
-			asm NOP;
-		}
-	}
-	*/
-	//*BORDER_X_SIZE = 5;
-	//*BORDER_Y_SIZE = 5;
 
 	k_debug_string("k_text_mode_dialog\r\n");
 	k_text_mode_dialog(1,0,73,15,NULL);
@@ -730,6 +783,10 @@ void main(void)
 	k_pos_console(line,4);
 	//k_run_loop();
 
+	if(zp->Endianness == ENDIAN_BIG)
+		k_debug_string("System reports BIG ENDIAN\r\n");
+	else
+		k_debug_string("System reports LITTLE ENDIAN\r\n");
 
 	k_debug_hex("L24BYTE:",L24BYTE(0x12345678));
 	k_debug_hex("M24BYTE:",M24BYTE(0x12345678));
@@ -746,6 +803,14 @@ void main(void)
 	heapSize = k_heap_integrity_check();
 	k_debug_long("k_heap_integrity_check::heapsize:",heapSize);
 	//pheapInfo = umm_info(NULL,0);
+	//RTC_YEAR[0]  = 0x21;
+	//RTC_MONTH[0] = 0x07;
+	//RTC_DAY[0]   = 0x28;
+
+
+	k_debug_integer("MONTH:",k_get_rtc_month());
+	k_debug_integer("DAY:",k_get_rtc_day());
+	k_debug_integer("YEAR:",k_get_rtc_year());
 
 
 	k_debug_strings("DATE:",(LPSTR)k_get_date_string(rmbuffer));
@@ -759,12 +824,26 @@ void main(void)
 	k_debug_integer("sizeof(long):",sizeof(long));
 	k_debug_integer("sizeof(LPVOID):",sizeof(LPVOID));
 	k_debug_integer("sizeof(size_t):",sizeof(size_t));
+	k_debug_pointer("FXZEROPAGE @",ZEROPAGE);
 	k_debug_integer("sizeof(FXZEROPAGE):",sizeof(FXZEROPAGE));
 	k_debug_integer("sizeof(FXOSMESSAGE):",sizeof(FXOSMESSAGE));
 	k_debug_integer("sizeof(FXCMDMESSAGE):",sizeof(FXCMDMESSAGE));
 
 
-	//k_dos_findfiles_to_nodes("HD:\\");
+	k_debug_integer("sizeof(FXKERNEL_API_CALLTABLE):",sizeof(FXKERNEL_API_CALLTABLE));
+
+
+	k_debug_integer("sizeof(FX_DEVICE_DRIVER):",sizeof(FX_DEVICE_DRIVER));
+	k_debug_integer("sizeof(g_irq_handlers):",sizeof(g_irq_handlers));
+	k_debug_integer("sizeof(g_irq_handlers[0]):",sizeof(g_irq_handlers[0]));
+	k_debug_integer("sizeof(g_irq_handlers[0][0]):",sizeof(g_irq_handlers[0][0]));
+	k_debug_integer("sizeof(IRQCHAIN):",sizeof(IRQCHAIN));
+
+	k_debug_integer("IRQBUSIDX(g_irq_handlers):",IRQBUSIDX(g_irq_handlers));
+	k_debug_integer("IRQNUMIDX(g_irq_handlers):",IRQNUMIDX(g_irq_handlers));
+
+
+	k_debug_pointer("fxos_kernel_api:",k_getZeroPage()->fxos_kernel_api);
 
 
 	//ptrMemTest = HeapAlloc(64);
@@ -795,13 +874,26 @@ void main(void)
 	k_write_console(k_strip_padding(k_longtodec(heapSize/1024 ,rmbuffer)));
 	k_write_console("K HEAP RAM Available");
 
-	sleep(5000);
 
-	k_init_splash(TRUE);
+	//sleep(5000);
+
+	//init_ps2();
+
+	//k_dos_ext_load_driver("HD:\\system\\drivers\\DRIVER_S13.DRV");
+
+
+	//k_show_image("HD:\\system\\images\\mand01.bmp");
+
+	//k_show_image("HD:\\system\\images\\mand02.bmp");
+
+	//k_show_image("HD:\\system\\images\\mand03.bmp");
+
+
+	bootMode = k_init_splash(TRUE);
 
 
 	if(sizeof(FXOSMESSAGE)!=sizeof(FXCMDMESSAGE))
-		k_exec_throw_exception(THIS_MODULE,0x10000001,"VERSION ERROR: FXOSMESSAGE size mismatch",-1);
+		k_exec_throw_exception(main,0x10000001," VERSION ERROR: FXOSMESSAGE size mismatch",-1);
 
 	k_debug_integer("k_get_cols_visible:",k_get_cols_visible());
 	k_debug_integer("k_get_cols_per_line:",k_get_cols_per_line());
@@ -809,6 +901,7 @@ void main(void)
 	k_debug_integer("k_get_lines_max:",k_get_lines_max());
 
 
+	//testDrive("RAM:","RAM:\\");
 
 
 	//testDrive("HD:","HD:\\");
@@ -844,23 +937,23 @@ void main(void)
 
 	// lets wait here for now
 	//while(1);
-
+	//k_user_DisableOSDebug();
 
 	k_debug_string("k_initalize_executive\r\n");
 	pExecutive = k_initalize_executive();
 	if(!pExecutive)
 	{
-		k_exec_throw_exception(THIS_MODULE,0x00110011,"Executive Failed to Initialize.",-1);
+		k_exec_throw_exception(main,0x00110011,"Executive Failed to Initialize.",-1);
 	}
 	k_heap_integrity_check();
 
 	pExecutive->Init();
 
 	k_debug_string("k_initalize_event_manager\r\n");
-	pEventManager = k_initalize_event_manager();
+	pEventManager = k_initalize_event_manager(bootMode);
 	if(!pEventManager)
 	{
-		k_exec_throw_exception(THIS_MODULE,0x00110011,"Event Manager Failed to Initialize.",-1);
+		k_exec_throw_exception(main,0x00110011,"Event Manager Failed to Initialize.",-1);
 	}
 	k_heap_integrity_check();
 
@@ -868,7 +961,7 @@ void main(void)
 	pEventManager->Init();
 	pEventManager->Run(pExecutive);
 
-	k_exec_throw_exception(THIS_MODULE,0x10000001,"System Failure.  Event Manager Exited.",-1);
+	k_exec_throw_exception(main,0x10000001,"System Failure.  Event Manager Exited.",-1);
 
 	return;
 }

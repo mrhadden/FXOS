@@ -1,0 +1,499 @@
+  Thu Jul 29 2021 13:23                                                Page 1
+
+
+                     ***************************************
+                     **      WDC 65C816 Macro Assembler   **
+                     **                                   **
+                     **     Version 3.49.1- Feb  6 2006    **
+                     ***************************************
+
+     1                        ;:ts=8
+     2             00000001   R0	equ	1
+     3             00000005   R1	equ	5
+     4             00000009   R2	equ	9
+     5             0000000D   R3	equ	13
+     6                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\.\ddk\DRIVER_S13.c",0
+     7                        ;
+     8                        ;#include "fxtypes.h"
+     9                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\fxtypes.h",0
+    10                        	.stag	_fx_bytebits,8,1
+    11                        	.member	b7,0,14,17,1
+    12                        	.member	b6,1,14,17,1
+    13                        	.member	b5,2,14,17,1
+    14                        	.member	b4,3,14,17,1
+    15                        	.member	b3,4,14,17,1
+    16                        	.member	b2,5,14,17,1
+    17                        	.member	b1,6,14,17,1
+    18                        	.member	b0,7,14,17,1
+    19                        	.eos
+    20                        	.stag	_fx_node,384,2
+    21                        	.member	type,0,14,8,8
+    22                        	.member	Reserved0,8,14,8,8
+    23                        	.member	data,16,129,8,32
+    24                        	.member	last,48,138,8,32,2
+    25                        	.member	next,80,138,8,32,2
+    26                        	.member	name,112,110,8,0,32
+    27                        	.member	Reserved1,368,16,8,16
+    28                        	.eos
+    29                        	.stag	_fx_nodelist,96,3
+    30                        	.member	listhead,0,138,8,32,2
+    31                        	.member	listData,32,129,8,32
+    32                        	.member	deallocator,64,641,8,32
+    33                        	.eos
+    34                        	.stag	_fx_queue,80,4
+    35                        	.member	count,0,5,8,16
+    36                        	.member	front,16,138,8,32,2
+    37                        	.member	rear,48,138,8,32,2
+    38                        	.eos
+    39                        	.stag	fake5_,32,5
+    40                        	.member	subsystem,0,14,8,8
+    41                        	.member	level,8,14,8,8
+    42                        	.member	error,16,16,8,16
+    43                        	.eos
+    44                        	.stag	_fx_process_signal,16,6
+    45                        	.member	cbSize,0,16,8,16
+    46                        	.eos
+    47                        	.stag	_fx_semaphore,16,7
+    48                        	.member	reserved,0,5,8,16
+    49                        	.eos
+    50                        	.stag	_fx_fileBlock,552,8
+  Thu Jul 29 2021 13:23                                                Page 2
+
+
+    51                        	.member	openCount,0,16,8,16
+    52                        	.member	lockCount,16,16,8,16
+    53                        	.member	dirty,32,14,8,8
+    54                        	.member	fileBuffer,40,110,8,0,64
+    55                        	.eos
+    56                        	.stag	_fx_irq_data,48,9
+    57                        	.member	line,0,5,8,16
+    58                        	.member	keycode,16,142,8,32
+    59                        	.eos
+    60                        	.stag	_task,48,10
+    61                        	.member	SPL,0,14,8,8
+    62                        	.member	SPH,8,14,8,8
+    63                        	.member	pstack,16,142,8,32
+    64                        	.eos
+    65                        	.stag	_task_stack,32,11
+    66                        	.member	SS,0,142,8,32
+    67                        	.eos
+    68                        	.stag	int_regs,104,12
+    69                        	.member	PB,0,14,8,8
+    70                        	.member	PH,8,14,8,8
+    71                        	.member	PL,16,14,8,8
+    72                        	.member	PP,24,14,8,8
+    73                        	.member	DB,32,14,8,8
+    74                        	.member	DH,40,14,8,8
+    75                        	.member	DL,48,14,8,8
+    76                        	.member	AH,56,14,8,8
+    77                        	.member	AL,64,14,8,8
+    78                        	.member	XH,72,14,8,8
+    79                        	.member	XL,80,14,8,8
+    80                        	.member	YH,88,14,8,8
+    81                        	.member	YL,96,14,8,8
+    82                        	.eos
+    83                        	.stag	_fx_eventMessage,312,13
+    84                        	.member	src,0,18,8,32
+    85                        	.member	dest,32,18,8,32
+    86                        	.member	type,64,16,8,16
+    87                        	.member	hwnd,80,129,8,32
+    88                        	.member	pheap,112,129,8,32
+    89                        	.member	msgTime,144,18,8,32
+    90                        	.member	data,176,110,8,0,16
+    91                        	.member	attr,304,14,8,8
+    92                        	.eos
+    93                        	.stag	_fx_cmdMessage,312,14
+    94                        	.member	src,0,18,8,32
+    95                        	.member	dest,32,18,8,32
+    96                        	.member	type,64,16,8,16
+    97                        	.member	hwnd,80,129,8,32
+    98                        	.member	pheap,112,129,8,32
+    99                        	.member	msgTime,144,18,8,32
+   100                        	.member	cmdCId,176,16,8,16
+   101                        	.member	cmdMId,192,16,8,16
+   102                        	.member	parameter1,208,18,8,32
+   103                        	.member	parameter2,240,18,8,32
+   104                        	.member	parameter3,272,18,8,32
+   105                        	.member	attr,304,14,8,8
+   106                        	.eos
+   107                        	.stag	_fx_console_ctl,448,15
+   108                        	.member	maxCols,0,5,8,16
+  Thu Jul 29 2021 13:23                                                Page 3
+
+
+   109                        	.member	maxRows,16,5,8,16
+   110                        	.member	curX,32,5,8,16
+   111                        	.member	curY,48,5,8,16
+   112                        	.member	fgColor,64,5,8,16
+   113                        	.member	bgColor,80,5,8,16
+   114                        	.member	mode,96,14,8,8
+   115                        	.member	kbBuffer,104,101,8,0,16
+   116                        	.member	screenBuffer,360,142,8,32
+   117                        	.member	desktopMode,392,14,8,8
+   118                        	.member	lastMouseButton,400,5,8,16
+   119                        	.member	lastMouseX,416,5,8,16
+   120                        	.member	lastMouseY,432,5,8,16
+   121                        	.eos
+   122                        	.stag	_fx_desktop_ctl,392,16
+   123                        	.member	desktopMode,0,14,8,8
+   124                        	.member	cursorCtl,8,5,8,16
+   125                        	.member	cursorState,24,5,8,16
+   126                        	.member	backgroundColor,40,5,8,16
+   127                        	.member	foregroundColor,56,5,8,16
+   128                        	.member	menuMode,72,5,8,16
+   129                        	.member	lastMouseButton,88,5,8,16
+   130                        	.member	lastMouseX,104,5,8,16
+   131                        	.member	lastMouseY,120,5,8,16
+   132                        	.member	currentDiskName,136,142,8,32
+   133                        	.member	diskNodes,168,129,8,32
+   134                        	.member	titleNodes,200,129,8,32
+   135                        	.member	menuNodes,232,129,8,32
+   136                        	.member	iconNodes,264,129,8,32
+   137                        	.member	windowNodes,296,129,8,32
+   138                        	.member	fontNodes,328,129,8,32
+   139                        	.member	wndProc,360,138,8,32,3
+   140                        	.eos
+   141                        	.stag	_fx_process,800,17
+   142                        	.member	cbSize,0,5,8,16
+   143                        	.member	procId,16,18,8,32
+   144                        	.member	parentId,48,18,8,32
+   145                        	.member	ctx,80,129,8,32
+   146                        	.member	userId,112,16,8,16
+   147                        	.member	status,128,16,8,16
+   148                        	.member	foregroundActive,144,14,8,8
+   149                        	.member	tls,152,1121,8,32,8
+   150                        	.member	commandLine,408,142,8,32
+   151                        	.member	semaphores,440,138,8,32,3
+   152                        	.member	fileHandles,472,138,8,32,3
+   153                        	.member	pathList,504,138,8,32,3
+   154                        	.member	resources,536,138,8,32,3
+   155                        	.member	timerAware,568,14,8,8
+   156                        	.member	timerTicks,576,112,8,0,2
+   157                        	.member	timerTickCount,608,112,8,0,2
+   158                        	.member	kernelError,640,10,8,32,5
+   159                        	.member	consoleCtl,672,138,8,32,15
+   160                        	.member	desktopCtl,704,138,8,32,16
+   161                        	.member	execProc,736,641,8,32
+   162                        	.member	startupArgs,768,129,8,32
+   163                        	.eos
+   164                        	.stag	_fxProcessMessage,112,18
+   165                        	.member	src,0,18,8,32
+   166                        	.member	dest,32,18,8,32
+  Thu Jul 29 2021 13:23                                                Page 4
+
+
+   167                        	.member	type,64,16,8,16
+   168                        	.member	processInfo,80,138,8,32,17
+   169                        	.eos
+   170                        	.stag	_k_key_state,112,19
+   171                        	.member	scanCode,0,14,8,8
+   172                        	.member	isShifted,8,14,8,8
+   173                        	.member	isAlt,16,14,8,8
+   174                        	.member	isExtended,24,14,8,8
+   175                        	.member	isCapsLock,32,14,8,8
+   176                        	.member	isNumLock,40,14,8,8
+   177                        	.member	isScrollLock,48,14,8,8
+   178                        	.member	keyChar,56,16,8,16
+   179                        	.member	scanTime,72,18,8,32
+   180                        	.member	ledStatus,104,14,8,8
+   181                        	.eos
+   182                        	.stag	_fx_property,384,20
+   183                        	.member	name,0,110,8,0,16
+   184                        	.member	value,128,110,8,0,32
+   185                        	.eos
+   186                        	.utag	_24bitPointer,32,21
+   187                        	.member	address,0,142,11,32
+   188                        	.member	bytes,0,110,11,0,4
+   189                        	.eos
+   190                        	.stag	_PointStruct,32,22
+   191                        	.member	x,0,5,8,16
+   192                        	.member	y,16,5,8,16
+   193                        	.eos
+   194                        	.stag	_RectStruct,112,23
+   195                        	.member	x,0,5,8,16
+   196                        	.member	y,16,5,8,16
+   197                        	.member	z,32,18,8,32
+   198                        	.member	width,64,5,8,16
+   199                        	.member	height,80,5,8,16
+   200                        	.member	attr,96,5,8,16
+   201                        	.eos
+   202                        	.stag	fake24_,96,24
+   203                        	.member	name,0,142,8,32
+   204                        	.member	topLeft,32,10,8,32,22
+   205                        	.member	bottomRight,64,10,8,32,22
+   206                        	.eos
+   207                        	.stag	fake25_,112,25
+   208                        	.member	x,0,5,8,16
+   209                        	.member	y,16,5,8,16
+   210                        	.member	z,32,5,8,16
+   211                        	.member	width,48,5,8,16
+   212                        	.member	height,64,5,8,16
+   213                        	.member	data,80,18,8,32
+   214                        	.eos
+   215                        	.stag	_k_WindowClass,272,26
+   216                        	.member	cbSize,0,16,8,16
+   217                        	.member	style,16,16,8,16
+   218                        	.member	styleEx,32,16,8,16
+   219                        	.member	pWndProc,48,654,8,32
+   220                        	.member	hInstance,80,129,8,32
+   221                        	.member	hIcon,112,129,8,32
+   222                        	.member	hCursor,144,129,8,32
+   223                        	.member	hbrBackground,176,129,8,32
+   224                        	.member	lpszMenuName,208,142,8,32
+  Thu Jul 29 2021 13:23                                                Page 5
+
+
+   225                        	.member	lpszClassName,240,142,8,32
+   226                        	.eos
+   227                        	.stag	_ClickableRect,152,27
+   228                        	.member	area,0,10,8,112,23
+   229                        	.member	z,112,18,8,32
+   230                        	.member	enabled,144,14,8,8
+   231                        	.eos
+   232                        	.stag	_NCClickableRect,136,28
+   233                        	.member	area,0,10,8,112,23
+   234                        	.member	msgType,112,16,8,16
+   235                        	.member	enabled,128,14,8,8
+   236                        	.eos
+   237                        	.stag	_DragData,216,29
+   238                        	.member	area,0,10,8,112,23
+   239                        	.member	xoffset,112,5,8,16
+   240                        	.member	yoffset,128,5,8,16
+   241                        	.member	msgType,144,16,8,16
+   242                        	.member	ncAction,160,16,8,16
+   243                        	.member	isDrag,176,14,8,8
+   244                        	.member	isResize,184,14,8,8
+   245                        	.member	canDrag,192,14,8,8
+   246                        	.member	canDrop,200,14,8,8
+   247                        	.member	didDrag,208,14,8,8
+   248                        	.eos
+   249                        	.stag	_k_WindowStruct,3904,30
+   250                        	.member	cbSize,0,16,8,16
+   251                        	.member	style,16,18,8,32
+   252                        	.member	styleEx,48,18,8,32
+   253                        	.member	win_id,80,5,8,16
+   254                        	.member	win_x,96,5,8,16
+   255                        	.member	win_y,112,5,8,16
+   256                        	.member	win_width,128,5,8,16
+   257                        	.member	win_height,144,5,8,16
+   258                        	.member	win_xoffset,160,5,8,16
+   259                        	.member	win_yoffset,176,5,8,16
+   260                        	.member	win_cxoffset,192,5,8,16
+   261                        	.member	win_cyoffset,208,5,8,16
+   262                        	.member	wndRect,224,10,8,112,23
+   263                        	.member	clientRect,336,10,8,112,23
+   264                        	.member	nonclientGadgets,448,106,8,0,28,16
+   265                        	.member	clickable,2624,129,8,32
+   266                        	.member	win_title,2656,110,8,0,32
+   267                        	.member	Reserved0,2912,16,8,16
+   268                        	.member	win_class,2928,110,8,0,16
+   269                        	.member	win_class_name,3056,110,8,0,32
+   270                        	.member	nBitmapLayer,3312,16,8,16
+   271                        	.member	bgRegion,3328,129,8,32
+   272                        	.member	procid,3360,18,8,32
+   273                        	.member	pWndClass,3392,138,8,32,26
+   274                        	.member	pParentWindow,3424,129,8,32
+   275                        	.member	hMenu,3456,129,8,32
+   276                        	.member	hPointer,3488,129,8,32
+   277                        	.member	hBackground,3520,129,8,32
+   278                        	.member	pChildWindows,3552,138,8,32,3
+   279                        	.member	pChildHitList,3584,138,8,32,3
+   280                        	.member	isVisible,3616,14,8,8
+   281                        	.member	windowData,3624,129,8,32
+   282                        	.member	clientData,3656,1121,8,32,6
+  Thu Jul 29 2021 13:23                                                Page 6
+
+
+   283                        	.member	isClosed,3848,14,8,8
+   284                        	.member	isClosing,3856,14,8,8
+   285                        	.member	isDesktop,3864,14,8,8
+   286                        	.member	clickableNode,3872,138,8,32,2
+   287                        	.eos
+   288                        	.stag	_k_WindowStructEx,3880,31
+   289                        	.member	cbSize,0,16,8,16
+   290                        	.member	style,16,18,8,32
+   291                        	.member	styleEx,48,18,8,32
+   292                        	.member	win_id,80,5,8,16
+   293                        	.member	win_x,96,5,8,16
+   294                        	.member	win_y,112,5,8,16
+   295                        	.member	win_width,128,5,8,16
+   296                        	.member	win_height,144,5,8,16
+   297                        	.member	win_xoffset,160,5,8,16
+   298                        	.member	win_yoffset,176,5,8,16
+   299                        	.member	win_cxoffset,192,5,8,16
+   300                        	.member	win_cyoffset,208,5,8,16
+   301                        	.member	wndRect,224,10,8,112,23
+   302                        	.member	clientRect,336,10,8,112,23
+   303                        	.member	nonclientGadgets,448,106,8,0,28,16
+   304                        	.member	clickable,2624,129,8,32
+   305                        	.member	win_title,2656,110,8,0,32
+   306                        	.member	Reserved0,2912,16,8,16
+   307                        	.member	win_class,2928,110,8,0,16
+   308                        	.member	nBitmapLayer,3056,16,8,16
+   309                        	.member	procid,3072,18,8,32
+   310                        	.member	pWndClass,3104,138,8,32,26
+   311                        	.member	pParentWindow,3136,129,8,32
+   312                        	.member	hMenu,3168,129,8,32
+   313                        	.member	hPointer,3200,129,8,32
+   314                        	.member	hBackground,3232,129,8,32
+   315                        	.member	pChildWindows,3264,138,8,32,3
+   316                        	.member	pChildHitList,3296,138,8,32,3
+   317                        	.member	isVisible,3328,14,8,8
+   318                        	.member	windowData,3336,129,8,32
+   319                        	.member	clientData,3368,1121,8,32,4
+   320                        	.member	isClosed,3496,14,8,8
+   321                        	.member	hWnd,3504,129,8,32
+   322                        	.member	localRect,3536,10,8,112,23
+   323                        	.member	globalRect,3648,10,8,112,23
+   324                        	.member	clientOffsetRect,3760,10,8,112,23
+   325                        	.member	isDesktop,3872,14,8,8
+   326                        	.eos
+   327                        	.stag	_FontMetric,32,32
+   328                        	.member	width,0,5,8,16
+   329                        	.member	height,16,5,8,16
+   330                        	.eos
+   331                        	.stag	_MenuStruct,280,33
+   332                        	.member	cx,0,5,8,16
+   333                        	.member	cy,16,5,8,16
+   334                        	.member	width,32,5,8,16
+   335                        	.member	height,48,5,8,16
+   336                        	.member	fcolor,64,14,8,8
+   337                        	.member	bcolor,72,14,8,8
+   338                        	.member	chromeLeft,80,14,8,8
+   339                        	.member	chromeRight1,88,14,8,8
+   340                        	.member	chromeRight2,96,14,8,8
+  Thu Jul 29 2021 13:23                                                Page 7
+
+
+   341                        	.member	hFont,104,129,8,32
+   342                        	.member	itemId,136,16,8,16
+   343                        	.member	pCaption,152,142,8,32
+   344                        	.member	subMenus,184,138,8,32,3
+   345                        	.member	pBackground,216,129,8,32
+   346                        	.member	hWndOwner,248,129,8,32
+   347                        	.eos
+   348                        	.stag	fake34_,160,34
+   349                        	.member	menuId,0,16,8,16
+   350                        	.member	caption,16,142,8,32
+   351                        	.member	rect,48,10,8,112,23
+   352                        	.eos
+   353                        	.stag	fake35_,5152,35
+   354                        	.member	pParent,0,138,8,32,30
+   355                        	.member	rect,32,10,8,112,23
+   356                        	.member	captions,144,1134,8,32,24
+   357                        	.member	chrome,912,110,8,0,24
+   358                        	.member	ids,1104,112,8,0,24
+   359                        	.member	clickable,1488,106,8,0,27,24
+   360                        	.member	selected,5136,16,8,16
+   361                        	.eos
+   362                        	.stag	_fx_button_t,96,36
+   363                        	.member	pCaption,0,142,8,32
+   364                        	.member	cCaption,32,16,8,16
+   365                        	.member	data,48,129,8,32
+   366                        	.member	captionPixelWidth,80,16,8,16
+   367                        	.eos
+   368                        	.stag	_fx_scrollbar_t,240,37
+   369                        	.member	min,0,16,8,16
+   370                        	.member	max,16,16,8,16
+   371                        	.member	increment,32,16,8,16
+   372                        	.member	stopsize,48,16,8,16
+   373                        	.member	location,64,5,8,16
+   374                        	.member	state,80,5,8,16
+   375                        	.member	rectThumb,96,10,8,112,23
+   376                        	.member	data,208,129,8,32
+   377                        	.eos
+   378                        	.stag	_fx_listbox_t,240,38
+   379                        	.member	pos,0,5,8,16
+   380                        	.member	selected,16,16,8,16
+   381                        	.member	offsetX,32,5,8,16
+   382                        	.member	offsetY,48,5,8,16
+   383                        	.member	inc,64,5,8,16
+   384                        	.member	direction,80,5,8,16
+   385                        	.member	top,96,5,8,16
+   386                        	.member	bottom,112,5,8,16
+   387                        	.member	indexTop,128,5,8,16
+   388                        	.member	indexBottom,144,5,8,16
+   389                        	.member	maxItems,160,16,8,16
+   390                        	.member	fontSet,176,142,8,32
+   391                        	.member	data,208,129,8,32
+   392                        	.eos
+   393                        	.stag	_fx_textbox_t,144,39
+   394                        	.member	pos,0,5,8,16
+   395                        	.member	selected,16,16,8,16
+   396                        	.member	offsetX,32,5,8,16
+   397                        	.member	offsetY,48,5,8,16
+   398                        	.member	isShifted,64,14,8,8
+  Thu Jul 29 2021 13:23                                                Page 8
+
+
+   399                        	.member	cursorState,72,14,8,8
+   400                        	.member	fontSet,80,142,8,32
+   401                        	.member	data,112,129,8,32
+   402                        	.eos
+   403                        	.stag	_fx_msgbox_t,144,40
+   404                        	.member	pos,0,5,8,16
+   405                        	.member	selected,16,16,8,16
+   406                        	.member	offsetX,32,5,8,16
+   407                        	.member	offsetY,48,5,8,16
+   408                        	.member	isShifted,64,14,8,8
+   409                        	.member	cursorState,72,14,8,8
+   410                        	.member	fontSet,80,142,8,32
+   411                        	.member	data,112,129,8,32
+   412                        	.eos
+   413                        	.stag	_fx_menuAnchor_t,272,41
+   414                        	.member	pCaption,0,142,8,32
+   415                        	.member	renderLayoutX,32,16,8,16
+   416                        	.member	renderLayoutY,48,16,8,16
+   417                        	.member	captionPixelWidth,64,16,8,16
+   418                        	.member	data,80,129,8,32
+   419                        	.member	droppedWindow,112,138,8,32,30
+   420                        	.member	bytes,144,110,8,0,16
+   421                        	.eos
+   422                        	.stag	_SubMenuStruct,64,42
+   423                        	.member	caption,0,142,8,32
+   424                        	.member	action,32,641,8,32
+   425                        	.eos
+   426                        	.stag	_SubMenuListStruct,40,43
+   427                        	.member	cMenus,0,14,8,8
+   428                        	.member	psubmenus,8,9354,8,32,42
+   429                        	.eos
+   430                        	.stag	_fx_ComBuffer,2080,44
+   431                        	.member	cbSize,0,16,8,16
+   432                        	.member	cbBuffer,16,16,8,16
+   433                        	.member	buffer,32,110,8,0,256
+   434                        	.eos
+   435                        	.stag	_fx_resource_header,72,45
+   436                        	.member	magic,0,110,8,0,4
+   437                        	.member	major,32,14,8,8
+   438                        	.member	minor,40,14,8,8
+   439                        	.member	type,48,14,8,8
+   440                        	.member	reserved,56,14,8,8
+   441                        	.member	resheaderSize,64,14,8,8
+   442                        	.eos
+   443                        	.stag	_fx_resource_header_font,144,46
+   444                        	.member	title,0,110,8,0,16
+   445                        	.member	height,128,14,8,8
+   446                        	.member	width,136,14,8,8
+   447                        	.eos
+   448                        	.stag	_fx_resource_string,32,47
+   449                        	.member	locale,0,110,8,0,2
+   450                        	.member	entries,16,16,8,16
+   451                        	.eos
+   452                        	.stag	_fx_resource_string_entry,40,48
+   453                        	.member	index,0,16,8,16
+   454                        	.member	length,16,16,8,16
+   455                        	.member	data,32,14,8,8
+   456                        	.eos
+  Thu Jul 29 2021 13:23                                                Page 9
+
+
+   457                        	.line	1064
+   458                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\.\ddk\DRIVER_S13.c",2
+   459                        ;#include "DRIVER\DRIVER_S13.h"
+
+
+      Lines assembled: 459
+      Errors: 0

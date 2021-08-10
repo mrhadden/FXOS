@@ -1,6 +1,6 @@
 /*
  * FXOS_GFX_SDK.h
- * Created Jul 7, 2021 9:34:32 PM
+ * Created Jul 29, 2021 10:56:51 PM
  *
  */
 
@@ -573,14 +573,14 @@ VOID MousePointerInit(BOOL enable);
 
 /*
 *
-* Name:SetMousePointer
+* Name:SetMousePointerData
 * Subsystem:GFX
 * Description: 
 * Arguments: 
 *
 */
-typedef VOID (*SETMOUSEPOINTER)(UINT,LPVOID);
-VOID SetMousePointer(UINT index,LPVOID pointerData);
+typedef VOID (*SETMOUSEPOINTERDATA)(UINT,LPVOID);
+VOID SetMousePointerData(UINT index,LPVOID pointerData);
 
 
 #endif

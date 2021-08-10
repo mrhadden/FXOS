@@ -350,7 +350,7 @@ ENABLE_IRQS
 		AND #FNX3_INT02_IDE
 		STA >INT_PENDING_REG3  ; Writing it back will clear the Active Bit
 		LDA >INT_MASK_REG3
-		AND #$FB ;~FNX2_INT07_SDCARD
+		AND #$FB ;~FNX3_INT02_IDE
 		STA >INT_MASK_REG3
 
 
@@ -919,6 +919,8 @@ Poll_Outbuf	    setas
                 BNE Poll_Outbuf
                 RTS
 
+	xdef ~~k_init_mouse
+~~k_init_mouse:
 INIT_MOUSE      setas
 
                 LDA #$00          ; Tests second PS2 Channel
@@ -992,19 +994,19 @@ DO_CMD_A9_AGAIN
 ;                JSR MOUSE_READ
 
 
-				LDA #'M'
-				STA >$AFA00A
-
-				setal
-
-				XREF  ~~mouse_driver_init
-				JSL   ~~mouse_driver_init
-
+				;LDA #'M'
+				;STA >$AFA00A
+;
+;				setal
+;
+;				XREF  ~~mouse_driver_init
+;				JSL   ~~mouse_driver_init
+;
 				setas
-
-				LDA #'N'
-				STA >$AFA00C
-
+;
+;				LDA #'N'
+;				STA >$AFA00C
+;
                 LDA #$F4        ; Enable the Mouse
                 JSR MOUSE_WRITE
                 JSR MOUSE_READ
@@ -1090,8 +1092,8 @@ MOUSE_READ      setas
 		dw	Undefined_IRQ	; $FFE8 - ABORT(816)
 		dw	NMI				; $FFEA - NMI(816)
 		dw	Undefined_IRQ	; $FFEC - IRQRVD(816)
-		dw	IRQ		; $FFEE - IRQ(816)
-					;Status bit E = 1 (Emulation mode)
+		dw	IRQ				; $FFEE - IRQ(816)
+							;Status bit E = 1 (Emulation mode)
 		dw	Undefined_IRQ	; $FFF0 - IRQRVD(816)
 		dw	Undefined_IRQ	; $FFF2 - IRQRVD(816)
 		dw	Undefined_IRQ	; $FFF4 - COP(816Emulation)
@@ -1100,7 +1102,7 @@ MOUSE_READ      setas
 
 					; Common Vectors for all CPUs
 		dw	Undefined_IRQ	; $FFFA -  NMIRQ (ALL)
-		dw	START		; $FFFC -  RESET (ALL)
+		dw	START			; $FFFC -  RESET (ALL)
 		dw	Undefined_IRQ	; $FFFE -  IRQBRK (ALL)
 
 		ends

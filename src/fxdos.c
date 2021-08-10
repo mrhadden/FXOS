@@ -1,7 +1,7 @@
 #include "fxos.h"
 #include "fxdos.h"
 #include "fxmemorymanager.h"
-
+#include "drivers/DRIVER.h"
 
 #pragma section CODE=FXDOS,offset $08:92F5
 
@@ -24,21 +24,164 @@ static PFXNODELIST _k_dos_devicedrivers	    = NULL;
 //
 static PFXNODELIST _k_dos_deviceinstance	= NULL;
 
+//#define MAX_IRQ_BLOCKS          4
+//#define MAX_IRQ_INTERRUPTS      8
+
+/*
+DEVICEDRIVER_IRQ g_irq_handlers[][8]  = {   {0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00},//REG0
+											{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00},//REG1
+											{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00},//REG2
+											{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00} //REG3
+							 	 	 	 };
+*/
+
+
+extern IRQCHAIN g_irq_handlers[4][8];
+
 //extern FX_DEVICE_DRIVER DRIVER_B2Console;
 //extern FX_DEVICE_DRIVER DRIVER_B2SDCard;
 //extern FX_DEVICE_DRIVER DRIVER_FMXConsole;
 //extern FX_DEVICE_DRIVER DRIVER_FMXSDCard;
 
 
-extern PFX_DEVICE_DRIVER DEVICE_COM;
-extern PFX_DEVICE_DRIVER DEVICE_HD;
-extern PFX_DEVICE_DRIVER DEVICE_SD;
-extern PFX_DEVICE_DRIVER DEVICE_CON;
+//extern PFX_DEVICE_DRIVER DEVICE_COM;
+//extern PFX_DEVICE_DRIVER DEVICE_HD;
+//extern PFX_DEVICE_DRIVER DEVICE_SD;
+//extern PFX_DEVICE_DRIVER DEVICE_CON;
+
+LPVOID k_dos_ext_load_driver(LPCSTR driverPath)
+{
+	UINT dsize = 0;
+	HANDLE hdriver = NULL;
+	PFX_DEVICE_DRIVER pstrHead = NULL;
+	ULONG idx = 0L;
+	LPVOID driver = NULL;
+
+	hdriver = k_user_LoadResource(driverPath);
+	if(hdriver!=NULL)
+	{
+		pstrHead =  (PFX_DEVICE_DRIVER)(&((LPSTR)hdriver)[sizeof(FXRFHEADER)]);
+
+		idx = (((ULONG)pstrHead->driver_context) - ((ULONG)FX_DRV_IRQ_SLOT_0))/((ULONG)FX_DRV_SIZE);
+		dsize = *((ULONG*)((PFXRFHEADER)hdriver)->magic) - sizeof(FXRFHEADER) - sizeof(FX_DEVICE_DRIVER);
+
+		/*
+		k_debug_nstrings("DRIVER NAME:",pstrHead->name,32);
+		k_debug_pointer ("DRIVER ADDR:",pstrHead->driver_context);
+		k_debug_long    ("DRIVER RES SIZE:", *((ULONG*)((PFXRFHEADER)hdriver)->magic) );
+		k_debug_long    ("DRIVER SIZE:", dsize );
+		k_debug_long    ("DRIVER IDX:", idx );
+		*/
+
+		memset(pstrHead->driver_context,0,FX_DRV_SIZE);
+		memcpy(pstrHead->driver_context,(LPVOID)(&((LPSTR)hdriver)[sizeof(FXRFHEADER) + sizeof(FX_DEVICE_DRIVER)]),dsize);
+
+		free(hdriver);
+
+		driver = k_dos_load_driver(idx);
+	}
+
+	return driver;
+}
+
+LPVOID k_dos_load_driver(ULONG driver_idx)
+{
+	CHAR major[16];
+	CHAR minor[16];
+	CHAR k16buffer[16];
+
+	LPSTR log = NULL;
+
+	PFX_DEVICE_DRIVER driver = NULL;
+
+	GETDRIVERDEF _k_get_driver_def = NULL;
+
+	sectorBuffer = (LPSTR)k_mem_allocate_heap(512);
+
+	k_get_c256_major_version(major);
+	k_get_c256_minor_version(minor);
+
+	_k_get_driver_def = ((GETDRIVERDEF)((LPVOID)((ULONG)DRIVER_BASE + (driver_idx * (ULONG)DRIVER_SIZE))));
+
+	//k_debug_integer("Scan slot:",(UINT)driver_idx);
+	//k_debug_pointer("k_dos_load_drivers::scanning @",_k_get_driver_def);
+
+
+	if(*((LONG*)_k_get_driver_def) == 0x4E9383B) // sig bytes of driver
+	{
+		//k_debug_pointer("k_dos_load_drivers::driver located@",_k_get_driver_def);
+		//k_debug_string("Driver Detected:\r\n");
+		driver = _k_get_driver_def(major,minor);
+		if(driver)
+		{
+			//k_debug_pointer("k_dos_load_drivers::driver data pre@",driver);
+
+			if( ((ULONG)driver) < 0x010000L ) // handle short addressing for linear segment driver
+				driver = (PFX_DEVICE_DRIVER)(((ULONG)driver) + (((ULONG)_k_get_driver_def) & 0xFF0000L));
+
+			//k_debug_pointer("k_dos_load_drivers::driver data post@",driver);
+
+			//k_debug_strings("  Name:",driver->name);
+			//k_debug_strings("    Major:",driver->hmajor);
+			//k_debug_strings("    Minor:",driver->hminor);
+
+			//k_debug_pointer("k_dos_load_drivers::f_driver_load:",driver->f_driver_load);
+			//k_debug_pointer("k_dos_load_drivers::f_driver_irq:",driver->f_driver_irq);
+
+
+			if((strcmp(driver->hmajor,major) == 0) && (strcmp(driver->hminor,minor) == 0))
+			{
+				if(driver->type != DRIVER_TYPE_UNIMPL)
+				{
+					k_nodelist_addtolist(_k_dos_devicedrivers,driver->type,driver->name,driver);
+					//k_debug_string("    Hardware Compatible: YES\r\n");
+					if(driver->f_driver_load)
+						((DEVICEDRIVER_LOAD)driver->f_driver_load)();
+
+					if(driver->f_driver_irq!=NULL) // temp hook up the mouse
+					{
+						//k_debug_string("    Hardware Compatible as IRQ\r\n");
+						if(IRQREG(driver->irq_ctl)!=0xFF)
+						{
+							k_lock_irq();
+							if(g_irq_handlers[IRQREG(driver->irq_ctl)][IRQNUM(driver->irq_ctl)].handlers[0]!=NULL)
+							{
+								g_irq_handlers[IRQREG(driver->irq_ctl)][IRQNUM(driver->irq_ctl)].handlers[0] = (DEVICEDRIVER_IRQ)driver->f_driver_irq;
+							}
+							else
+							{
+								k_debug_string("    IRQ CONFLICT DETECTED\r\n");
+							}
+							k_unlock_irq();
+						}
+					}
+				}
+				else
+				{
+					//k_debug_string("    UNIMPLEMENTED\r\n");
+				}
+			}
+			else
+			{
+				//k_debug_string("    Hardware Compatible: NO\r\n");
+			}
+
+			//k_debug_string("\r\n");
+		}
+	}
+	else
+	{
+		//k_debug_pointer("k_dos_load_drivers::driver not detected@",_k_get_driver_def);
+	}
+
+	return _k_get_driver_def;
+}
 
 LPCSTR k_dos_load_drivers(void)
 {
 	CHAR major[16];
 	CHAR minor[16];
+	CHAR k16buffer[16];
 
 	LPSTR log = NULL;
 
@@ -47,7 +190,7 @@ LPCSTR k_dos_load_drivers(void)
 
 	GETDRIVERDEF _k_get_driver_def = NULL;
 
-	log = (LPSTR)k_mem_allocate_heap(1024);
+	log = (LPSTR)k_mem_allocate_heap(4096);
 	sectorBuffer = (LPSTR)k_mem_allocate_heap(512);
 
 	k_get_c256_major_version(major);
@@ -56,6 +199,9 @@ LPCSTR k_dos_load_drivers(void)
 	//k_debug_strings("System Major:",major);
 	//k_debug_strings("System Minor:",minor);
 
+
+	memset(g_irq_handlers,0,sizeof(g_irq_handlers[0][0]));
+
 	_k_dos_devicedrivers 	= k_nodelist_allocate_list("_k_dos_devicedrivers" ,NULL);
 	_k_dos_deviceinstance   = k_nodelist_allocate_list("_k_dos_deviceinstance" ,NULL);
 
@@ -63,22 +209,52 @@ LPCSTR k_dos_load_drivers(void)
 
 	strcpy(log,"");
 	strcat(log,"Scanning for Drivers...\r\n");
-	for(driver_idx = 0;driver_idx<DRIVER_MAX;driver_idx++)
+	for(driver_idx = 0;driver_idx<25;driver_idx++)
 	{
 		_k_get_driver_def = ((GETDRIVERDEF)((LPVOID)((ULONG)DRIVER_BASE + (driver_idx * (ULONG)DRIVER_SIZE))));
+
 
 		//k_debug_integer("Scan slot:",(UINT)driver_idx);
 		//k_debug_pointer("k_dos_load_drivers::scanning @",_k_get_driver_def);
 		//k_debug_byte_array("k_dos_load_drivers::scan detected value:",((PBYTE)_k_get_driver_def),8);
 		//k_debug_long("k_dos_load_drivers::scan detected long:",*((LONG*)_k_get_driver_def));
-		if(*((LONG*)_k_get_driver_def) == 0x4E9383B)
+		if(*((ULONG*)_k_get_driver_def) == 0x4E9383B) // sig bytes of driver
 		{
 			//k_debug_pointer("k_dos_load_drivers::driver located@",_k_get_driver_def);
 			//k_debug_string("Driver Detected:\r\n");
-			strcat(log,"Driver Detected:\r\n");
+			strcat(log,"Driver Detected ");
+			strcat(log," @0x");
+
+			strcat(log,k_bytetohex(H24BYTE(_k_get_driver_def),k16buffer));
+			strcat(log,k_bytetohex(M24BYTE(_k_get_driver_def),k16buffer));
+			strcat(log,k_bytetohex(L24BYTE(_k_get_driver_def),k16buffer));
+			strcat(log,":\r\n");
+
 			driver = _k_get_driver_def(major,minor);
 			if(driver)
 			{
+				/*
+				strcat(log,"Driver PRE ");
+							strcat(log," @0x");
+				strcat(log,k_bytetohex(H24BYTE(driver),k16buffer));
+				strcat(log,k_bytetohex(M24BYTE(driver),k16buffer));
+				strcat(log,k_bytetohex(L24BYTE(driver),k16buffer));
+				strcat(log,":\r\n");
+				*/
+
+
+				if( ((ULONG)driver) < 0x010000L ) // handle short addressing for linear segment driver
+					driver = (PFX_DEVICE_DRIVER)(((ULONG)driver) + (((ULONG)_k_get_driver_def) & 0xFF0000L));
+
+
+				strcat(log,"Driver Definition ");
+							strcat(log," @0x");
+				strcat(log,k_bytetohex(H24BYTE(driver),k16buffer));
+				strcat(log,k_bytetohex(M24BYTE(driver),k16buffer));
+				strcat(log,k_bytetohex(L24BYTE(driver),k16buffer));
+				strcat(log,":\r\n");
+
+
 				strcat(log,"  Name:");
 				strcat(log,driver->name);
 				strcat(log," : ");
@@ -96,7 +272,24 @@ LPCSTR k_dos_load_drivers(void)
 						if(driver->f_driver_load)
 							((DEVICEDRIVER_LOAD)driver->f_driver_load)();
 
+
 						strcat(log,"LOADED");
+
+						if(driver->f_driver_irq!=NULL) // temp hook up the mouse
+						{
+							strcat(log,"\r\n USING IRQ: ");
+							strcat(log,k_bytetohex(IRQREG(driver->irq_ctl),k16buffer));
+							strcat(log,",");
+							strcat(log,k_bytetohex(IRQNUM(driver->irq_ctl),k16buffer));
+							if(IRQREG(driver->irq_ctl)!=0xFF)
+							{
+								//g_irq_handlers[IRQREG(driver->irq_ctl)][IRQNUM(driver->irq_ctl)] = (DEVICEDRIVER_IRQ)driver->f_driver_irq;
+
+								g_irq_handlers[IRQREG(driver->irq_ctl)][IRQNUM(driver->irq_ctl)].handlers[0] = (DEVICEDRIVER_IRQ)driver->f_driver_irq;
+							}
+						}
+
+
 					}
 					else
 					{
@@ -1051,7 +1244,7 @@ PFXNODELIST k_dos_findfiles_to_nodes(LPCSTR path)
 		dir = k_mem_allocate_heap(sizeof(DIR));
 		fs = k_mem_allocate_heap(sizeof(FATFS));
 
-
+		f_mount(NULL, drive,1); // unmount for safety
 		f_mount(fs, drive,1);
 
 		fr = f_opendir (dir,path);
@@ -1099,8 +1292,59 @@ PFXNODELIST k_dos_findfiles_to_nodes(LPCSTR path)
 }
 
 
-HRESULT k_dos_open (FIL* fp, const TCHAR* path, BYTE mode){return 0;}
-HRESULT k_dos_close (FIL* fp){return 0;}
+FILE k_dos_open(const TCHAR* path, BYTE mode)
+{
+	LPCSTR drive = NULL;
+
+	FILE file = NULL;
+
+	file = k_mem_allocate_heap(sizeof(FILE_POINTER));
+
+	if(file)
+	{
+		drive = k_string_copy_to_delimiter(path,':');
+		if(drive)
+		{
+			file->fs  = k_mem_allocate_heap(sizeof(FATFS));
+			file->f   = k_mem_allocate_heap(sizeof(FIL));
+			file->fileInfo = NULL;
+
+
+			f_mount(NULL, drive,1); // unmount for safety
+			file->fr = f_mount(file->fs , drive,1);
+			if(file->fr == FR_OK)
+			{
+				file->fr = f_open(file->f,path,mode);
+			}
+
+			k_mem_deallocate_heap((LPVOID)drive);
+		}
+	}
+
+	return file;
+}
+
+HRESULT k_dos_close (FILE file)
+{
+	if(file!=NULL)
+	{
+		if(file->f)
+		{
+			f_close(file->f);
+			k_mem_deallocate_heap(file->f);
+		}
+
+		if(file->fileInfo)
+			k_mem_deallocate_heap(file->fileInfo);
+
+		if(file->fs)
+			k_mem_deallocate_heap(file->fs);
+
+		k_mem_deallocate_heap(file);
+	}
+	return 0;
+}
+
 HRESULT k_dos_read (FIL* fp, void* buff, UINT btr, UINT* br){return 0;}
 HRESULT k_dos_write (FIL* fp, const void* buff, UINT btw, UINT* bw){return 0;}
 HRESULT k_dos_lseek (FIL* fp, FSIZE_t ofs){return 0;}

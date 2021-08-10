@@ -4,7 +4,9 @@
 
 //void *heap_start=(void FAR *)0x030000,*heap_end=(void FAR *)(0x04FFFF);
 
-static ULONG FXOSVERSION = 0x010000;
+
+
+static ULONG FXOSVERSION	   = 0x010000;
 static LPSTR FXOSVERSIONSTRING = "FX/OS Version 1.0.0 Beta";
 
 static BOOL _k_isOSDebug = FALSE;
@@ -13,11 +15,140 @@ static char k16buffer[16];
 
 static KERNELTRAPCALL *KERNEL_FUNCTION_TABLE;
 
-static FXKERNEL_API_CALLTABLE fx_kernel_api_table;
-static FXKERNEL_API_CALLTABLE fx_dos_api_table;
-static FXKERNEL_API_CALLTABLE fx_gfx_api_table;
-static FXKERNEL_API_CALLTABLE fx_gui_api_table;
-static FXKERNEL_API_CALLTABLE fx_con_api_table;
+//static FXKERNEL_API_CALLTABLE fx_kernel_api_table;
+//static FXKERNEL_API_CALLTABLE fx_dos_api_table;
+//static FXKERNEL_API_CALLTABLE fx_gfx_api_table;
+//static FXKERNEL_API_CALLTABLE fx_gui_api_table;
+//static FXKERNEL_API_CALLTABLE fx_con_api_table;
+
+IRQCHAIN g_irq_handlers[4][8];
+
+ULONG _system_timer 	= 0L;
+ULONG _k_exec_context 	= 0L;
+ULONG _k_exec_error		= 0L;
+UCHAR _k_exec_message[64];
+
+
+BOOL _k_in_irq_enabled = FALSE;
+BYTE _k_lock_enabled = FALSE;
+INT  _k_lock_depth = 0;
+//ULONG _k_irq_handler_calls = 0L;
+
+
+VOID k_enable_locking(VOID)
+{
+	_k_lock_enabled = TRUE;
+}
+
+UINT k_lock_depth(VOID)
+{
+	return _k_lock_depth;
+}
+
+UINT k_lock_irq(VOID)
+{
+	//k_debug_string("lock\r\n");
+	//return 0;
+
+	if(_k_in_irq_enabled)
+	{
+		//k_debug_char_com1('*');
+		return 0;
+	}
+
+	if(!_k_lock_enabled)
+	{
+		//k_debug_char_com1('&');
+		return 0;
+	}
+
+	asm SEI;
+
+	_k_lock_depth++;
+
+	/*
+	if(_k_lock_depth == 1)
+		k_debug_char_com1('<');
+	else
+	{
+		k_debug_char_com1('0' + _k_lock_depth );
+	}
+	*/
+	//if(_k_lock_depth > 1)
+	//	k_debug_integer("k_lock_irq::locked:",_k_lock_depth);
+
+
+
+	return _k_lock_depth;
+}
+
+
+UINT k_unlock_irq(VOID)
+{
+	//return 0;
+
+	//k_debug_string("unlock\r\n");
+
+	if(_k_in_irq_enabled)
+	{
+		//k_debug_char_com1('!');
+		return 0;
+	}
+	if(!_k_lock_enabled)
+	{
+		//k_debug_char_com1('?');
+		return 0;
+	}
+
+	if(_k_lock_depth < 1)
+	{
+		//k_debug_char_com1('N');
+		return 0;
+	}
+
+	_k_lock_depth--;
+
+	if(_k_lock_depth == 0)
+	{
+		//k_debug_char_com1('>');
+		asm CLI;
+	}
+	else if(_k_lock_depth < 0)
+	{
+		k_debug_string("k_unlock_irq::ERROR!r\b");
+		k_exec_throw_exception(k_unlock_irq,0x00010111,"Kernel Locking Mismatch",-1);
+	}
+	/*
+	else
+	{
+		k_debug_char_com1('1' + _k_lock_depth );
+	}
+	*/
+	//if(_k_lock_depth > 0)
+	//	k_debug_integer("k_unlock_irq::unlocked:",_k_lock_depth);
+
+	return _k_lock_depth;
+}
+
+
+BOOL k_enter_critical_section(VOID)
+{
+	UINT lock = k_lock_irq();
+	return (lock > 0);
+}
+
+
+VOID k_exit_critical_section(VOID)
+{
+	k_unlock_irq();
+}
+
+
+
+ULONG k_millis(VOID)
+{
+	return _system_timer;
+}
 
 void k_delay_nop(void)
 {
@@ -81,10 +212,17 @@ KERNELTRAPCALL FAR *k_getKernelTrapTable(VOID)
 PFXZEROPAGE k_initializeZeroPage(VOID)
 {
 	PFXZEROPAGE zp =  k_getZeroPage();
+	ULONG		endianCheck = 0x12345678;
 
 	memset(zp,0,sizeof(FXZEROPAGE));
 
 	//k_get_c256_release(zp->boardRelease);
+
+
+	if( (H24BYTE(endianCheck) == ((LPSTR)(&endianCheck))[0]))
+	{
+		zp->Endianness = ENDIAN_BIG;
+	}
 
 	zp->VersionMajor    = 0;
 	zp->VersionMinor    = 5;
@@ -94,11 +232,12 @@ PFXZEROPAGE k_initializeZeroPage(VOID)
 	zp->bottomMemory = MEM_USER_FLOOR;
 
 
-	zp->fxos_kernel_api = &fx_kernel_api_table;
-	zp->fxos_dos_api    = &fx_dos_api_table;
-	zp->fxos_gfx_api    = &fx_gfx_api_table;
-	zp->fxos_gui_api    = &fx_gui_api_table;
-	zp->fxos_con_api    = &fx_con_api_table;
+	zp->fxos_kernel_api = malloc(sizeof(FXKERNEL_API_CALLTABLE));//&fx_kernel_api_table;
+	zp->fxos_dos_api    = malloc(sizeof(FXKERNEL_API_CALLTABLE));//&fx_dos_api_table;
+	zp->fxos_gfx_api    = malloc(sizeof(FXKERNEL_API_CALLTABLE));//&fx_gfx_api_table;
+	zp->fxos_gui_api    = malloc(sizeof(FXKERNEL_API_CALLTABLE));//&fx_gui_api_table;
+	zp->fxos_con_api    = malloc(sizeof(FXKERNEL_API_CALLTABLE));//&fx_con_api_table;
+
 
 	_k_initialize_call_table(zp,API_CALLTABLE_KERNEL_IDX);
 	_k_initialize_call_table(zp,API_CALLTABLE_DOS_IDX);
@@ -106,47 +245,7 @@ PFXZEROPAGE k_initializeZeroPage(VOID)
 	_k_initialize_call_table(zp,API_CALLTABLE_GUI_IDX);
 	_k_initialize_call_table(zp,API_CALLTABLE_CON_IDX);
 
-	/*
-	EXPORT_KERNEL(EXPORT_DEBUGOUT,			k_debug_string);
-	EXPORT_KERNEL(EXPORT_DEBUGINTEGER,		k_debug_integer);
-	EXPORT_KERNEL(EXPORT_DEBUGLONG,		    k_debug_long);
-
-	EXPORT_KERNEL( EXPORT_DEBUGSTRINGN		,k_debug_nstring);
-	EXPORT_KERNEL( EXPORT_DEBUGCHAR			,k_debug_char);
-	EXPORT_KERNEL( EXPORT_DEBUGPOINTER		,k_debug_pointer);
-    EXPORT_KERNEL( EXPORT_DEBUGINTEGERARRAY	,k_debug_integer_array);
-    EXPORT_KERNEL( EXPORT_DEBUGHEX			,k_debug_hex);
-	EXPORT_KERNEL( EXPORT_DEBUGHEXCHAR		,k_debug_hexchar);
-	EXPORT_KERNEL( EXPORT_DEBUGBITS			,k_debug_bits);
-	EXPORT_KERNEL( EXPORT_DEBUGMODE			,k_debug_on);
-	EXPORT_KERNEL( EXPORT_DEBUGBYTEARRAY	,k_debug_byte_array);
-	EXPORT_KERNEL( EXPORT_DEBUGMESSAGE		,k_debug_message);
-	EXPORT_KERNEL( EXPORT_DEBUGSTRING		,k_debug_strings);
-	EXPORT_KERNEL( EXPORT_DEBUGMESSAGEN		,k_debug_nmessage);
-
-
-	EXPORT_KERNEL(EXPORT_EXE_GETCURPROC,k_exec_get_current_process);
-	EXPORT_KERNEL(EXPORT_EXE_TERMPROC,	k_exec_signal_terminate);
-
-	EXPORT_KERNEL(EXPORT_MEM_ALLOC,	 	k_mem_allocate_heap);
-	EXPORT_KERNEL(EXPORT_MEM_DEALLOC,	k_mem_deallocate_heap);
-
-	EXPORT_KERNEL(EXPORT_RTC_HOUR,		k_get_rtc_hour);
-	EXPORT_KERNEL(EXPORT_RTC_MIN,		k_get_rtc_minute);
-	EXPORT_KERNEL(EXPORT_RTC_SEC,		k_get_rtc_second);
-	EXPORT_KERNEL(EXPORT_RTC_MONTH,		k_get_rtc_month);
-	EXPORT_KERNEL(EXPORT_RTC_DAY,		k_get_rtc_day);
-	EXPORT_KERNEL(EXPORT_RTC_YEAR,		k_get_rtc_year);
-	EXPORT_KERNEL(EXPORT_RTC_CENTURY,	k_get_rtc_century);
-	//
-	//
-	//
-	EXPORT_GUI(EXPORT_GUI_CREATEWINCLASSEX,	k_user_CreateWindowClassEx);
-	EXPORT_GUI(EXPORT_GUI_CREATEWIN,		k_user_CreateWindow);
-	EXPORT_GUI(EXPORT_GUI_CREATEWINEX,		k_user_CreateWindowEx);
-	EXPORT_GUI(EXPORT_GUI_GETDESKTOP,		k_user_getDesktopWindow);
-	EXPORT_GUI(EXPORT_GUI_DEFWNDPROC,		DefWindowProc);
-	*/
+	//zp->kernel_call_tables = malloc(sizeof(FXKERNEL_API_CALLTABLE) * FXOS_CALLTABLES);
 
 	return zp;
 }
@@ -157,6 +256,8 @@ PFXZEROPAGE k_initializeZeroPage(VOID)
  *
  *
  */
+
+
 int k_report_configuration(int offset,int line)
 {
 	char krcBuffer[16];
@@ -204,6 +305,7 @@ int k_report_configuration(int offset,int line)
 
 	return line;
 }
+
 /*
  *
  *
@@ -280,6 +382,7 @@ void k_debug_string_com1(char FAR* debugString)
 	if(!k_user_IsOSDebug())
 		return;
 
+	k_lock_irq();
 	while(*ptr)
 	{
 		while(!(UART1_BASE[5] & 0x20))
@@ -288,6 +391,7 @@ void k_debug_string_com1(char FAR* debugString)
 		UART1_BASE[0] = *ptr;
 		ptr++;
 	}
+	k_unlock_irq();
 	return;
 }
 /*
@@ -304,6 +408,7 @@ void k_debug_string_com2(char FAR* debugString)
 	if(!k_user_IsOSDebug())
 		return;
 
+	k_lock_irq();
 	while(*ptr)
 	{
 		while(!(UART2_BASE[5] & 0x20))
@@ -312,6 +417,7 @@ void k_debug_string_com2(char FAR* debugString)
 		UART2_BASE[0] = *ptr;
 		ptr++;
 	}
+	k_unlock_irq();
 	return;
 }
 
@@ -360,6 +466,34 @@ void k_debug_nstring_com2(char FAR* debugString,int nsize)
  *
  *
  */
+
+
+void k_debug_char_com1(char c)
+{
+	//if(!k_user_IsOSDebug())
+	//	return;
+
+	while(!(UART1_BASE[5] & 0x20))
+	{
+	}
+	UART1_BASE[0] = c;
+
+	return;
+}
+
+void k_debug_char_com2(char c)
+{
+	//if(!k_user_IsOSDebug())
+	//	return;
+
+	while(!(UART2_BASE[5] & 0x20))
+	{
+	}
+	UART2_BASE[0] = c;
+
+	return;
+}
+
 
 void k_debug_pointer(char FAR* debugString, void FAR* p)
 {
@@ -695,7 +829,7 @@ void k_debug_crlf(void)
 {
 	k_debug_string("\r\n");
 }
-
+/*
 void k_debug_uart_status_com1(int lc)
 {
 	char uartbuffer[3];
@@ -755,7 +889,7 @@ void k_debug_uart_status_com2(int lc)
 
 	lcp = k_put_string(lcp,lc,k_bytetohex(UART2_BASE[UART_MSR],uartbuffer),15,0);
 }
-
+*/
 void k_debug_rect(LPCSTR message,PRECT prect)
 {
 	char buffer[16];
@@ -850,4 +984,91 @@ VOID k_user_EnableOSDebug(VOID)
 VOID k_user_DisableOSDebug(VOID)
 {
 	_k_isOSDebug = FALSE;
+}
+
+VOID k_exec_throw_exception(LPVOID ctxId,ULONG errorId,LPVOID exceptionMessage,UINT exMsgSize)
+{
+	UINT len = 0;
+
+	//k_enable_text_mode();
+
+	if(exceptionMessage)
+		k_debug_strings("k_exec_throw_exception:",(LPSTR)exceptionMessage);
+
+	_k_exec_context 	= (ULONG)ctxId;
+	_k_exec_error		= errorId;
+
+	if(exMsgSize == -1)
+	{
+		len = strlen(exceptionMessage);
+		if(len < 64)
+			exMsgSize = len;
+		else
+			exMsgSize = 63;
+	}
+
+	memcpy(_k_exec_message,exceptionMessage,exMsgSize);
+
+	asm BRK;
+}
+
+
+UINT k_irq_register_handler(BYTE bus,BYTE irq,DEVICEDRIVER_IRQ handler)
+{
+	int index = 0;
+	int i = 0;
+	if(handler)
+	{
+		k_lock_irq();
+		for(i=1;i<4;i++)
+		{
+			if(g_irq_handlers[bus][irq].handlers[i] == NULL)
+			{
+				g_irq_handlers[bus][irq].handlers[i] = handler;
+				index = i;
+				break;
+			}
+		}
+		k_unlock_irq();
+	}
+
+	return index;
+}
+
+DEVICEDRIVER_IRQ k_irq_replace_handler(BYTE id,BYTE bus,BYTE irq,DEVICEDRIVER_IRQ handler)
+{
+	int i = 0;
+	DEVICEDRIVER_IRQ prev = NULL;
+
+	if(handler && (id > 0 && id < 4))
+	{
+		k_lock_irq();
+		prev = g_irq_handlers[bus][irq].handlers[id];
+		g_irq_handlers[bus][irq].handlers[id] = handler;
+		k_unlock_irq();
+	}
+
+	return prev;
+}
+
+
+
+VOID k_irq_unregister_handler(BYTE bus,BYTE irq,DEVICEDRIVER_IRQ handler)
+{
+	int i = 0;
+	if(handler)
+	{
+		k_lock_irq();
+		for(i=1;i<4;i++)
+		{
+			if(g_irq_handlers[bus][irq].handlers[i] == handler)
+			{
+				g_irq_handlers[bus][irq].handlers[i] = NULL;
+				break;
+			}
+		}
+		k_unlock_irq();
+	}
+
+	return;
 }

@@ -1,5 +1,6 @@
 
 #include "fxkernel.h"
+#include "drivers/DRIVER.h"
 #include "drivers/DRIVER_COM1.h"
 
 //#pragma section CODE=FMXCon,offset $08:A000
@@ -42,6 +43,8 @@
 #define LSR_ERR_OVERRUN   (0x02)
 #define LSR_DATA_AVAIL   (0x01)
 
+
+static VOID f_driver_irq(void);
 static BOOL f_driver_load(void);
 static UINT f_driver_read(LPVOID buffer);
 static UINT f_driver_write(UINT size,LPVOID buffer);
@@ -51,9 +54,13 @@ static BOOL f_driver_load_u(void);
 static UINT f_driver_read_u(LPVOID buffer);
 static UINT f_driver_write_u(UINT size,LPVOID buffer);
 static BOOL f_driver_unload_u(void);
+static VOID poll_handler(VOID);
 
+static BYTE  _com_data = 0;
 static LPSTR UARTBASE = ((LPSTR)0xAF13F8);
 static LPCSTR version = NULL;
+
+extern ULONG _pseudo_timer;
 
 static FX_DEVICE_DRIVER DRIVER_FMXCOM1 = {
 										"DRIVER_FMXCOM1D\0",
@@ -62,8 +69,8 @@ static FX_DEVICE_DRIVER DRIVER_FMXCOM1 = {
 										"4\0",
 										DRIVER_TYPE_COM1,
 										"COM1:\0",
-										0,
-										NULL,
+										NOIRQ,//MAKEIRQ(1,4),
+										f_driver_irq,
 										NULL,
 										f_driver_load,
 										f_driver_read,
@@ -78,8 +85,8 @@ static FX_DEVICE_DRIVER DRIVER_FMXUCOM1 = {
 										"1\0",
 										DRIVER_TYPE_COM1,
 										"COM1:\0",
-										0,
-										NULL,
+										NOIRQ,//MAKEIRQ(1,4),
+										f_driver_irq,
 										NULL,
 										f_driver_load_u,
 										f_driver_read_u,
@@ -97,11 +104,15 @@ static PFX_DEVICE_DRIVER f_get_driver(LPCSTR major,LPCSTR minor)
 	return &DRIVER_FMXCOM1;
 }
 
+static VOID f_driver_irq(void)
+{
+}
+
 static BOOL f_driver_load(void)
 {
 	version = "Using FMX Serial\r\n";
 
-	return FALSE;
+	return TRUE;
 }
 
 static UINT f_driver_read(LPVOID buffer)
@@ -119,7 +130,6 @@ static BOOL f_driver_unload(void)
 
 	return FALSE;
 }
-
 
 static BOOL f_driver_load_u(void)
 {
@@ -143,7 +153,9 @@ static BOOL f_driver_load_u(void)
 		version++;
 	}
 
-	return FALSE;
+	k_irq_register_handler(0,0,poll_handler);
+
+	return TRUE;
 }
 
 static UINT f_driver_read_u(LPVOID buffer)
@@ -160,5 +172,19 @@ static BOOL f_driver_unload_u(void)
 {
 
 	return FALSE;
+}
+
+static VOID poll_handler(VOID)
+{
+	if(UART2_BASE[UART_LSR] & 0x01)
+	{
+		_com_data = UART2_BASE[0];
+	}
+
+	if(_com_data!=0)
+	{
+		k_irq_device_event(IRQE_COM1,_pseudo_timer,&_com_data);
+		_com_data = 0;
+	}
 }
 

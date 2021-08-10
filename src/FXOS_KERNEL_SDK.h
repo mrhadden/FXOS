@@ -1,6 +1,6 @@
 /*
  * FXOS_KERNEL_SDK.h
- * Created Jul 7, 2021 9:34:32 PM
+ * Created Jul 29, 2021 10:56:51 PM
  *
  */
 
@@ -84,8 +84,8 @@ BOOL UnregisterIdleProc(HANDLE hIdleProc);
 * Arguments: 
 *
 */
-typedef VOID (*RAISEEXCEPTION)(ULONG,ULONG,LPVOID,UINT);
-VOID RaiseException(ULONG ctxId,ULONG errorId,LPVOID exceptionMessage,UINT exMsgSize);
+typedef VOID (*RAISEEXCEPTION)(LPVOID,ULONG,LPVOID,UINT);
+VOID RaiseException(LPVOID ctxId,ULONG errorId,LPVOID exceptionMessage,UINT exMsgSize);
 
 /*
 *
@@ -276,14 +276,14 @@ void DebugHexInteger(char* debugString,UINT n);
 
 /*
 *
-* Name:GetMouseClientPoint
+* Name:DebugIntegerArray
 * Subsystem:KERNEL
 * Description: 
 * Arguments: 
 *
 */
-typedef void (*GETMOUSECLIENTPOINT)(char*,UINT*,UINT);
-void GetMouseClientPoint(char* debugString,UINT* n,UINT size);
+typedef void (*DEBUGINTEGERARRAY)(char*,UINT*,UINT);
+void DebugIntegerArray(char* debugString,UINT* n,UINT size);
 
 /*
 *
@@ -485,6 +485,17 @@ VOID DebugOff(VOID);
 
 /*
 *
+* Name:GetMilliseconds
+* Subsystem:KERNEL
+* Description: 
+* Arguments: 
+*
+*/
+typedef ULONG (*GETMILLISECONDS)(VOID);
+ULONG GetMilliseconds(VOID);
+
+/*
+*
 * Name:GetRTCHour
 * Subsystem:KERNEL
 * Description: 
@@ -614,6 +625,17 @@ void GetHardwareVersionMajor(char* buffer);
 */
 typedef void (*GETHARDWAREVERSIONMINOR)(char*);
 void GetHardwareVersionMinor(char* buffer);
+
+/*
+*
+* Name:GetHardwareRelease
+* Subsystem:KERNEL
+* Description: 
+* Arguments: 
+*
+*/
+typedef void (*GETHARDWARERELEASE)(char*);
+void GetHardwareRelease(char* buffer);
 
 /*
 *
@@ -856,6 +878,28 @@ VOID IPCWriteIntegerPort(PIPCPORT port,UINT data);
 */
 typedef VOID (*IPCWRITELONGPORT)(PIPCPORT,ULONG);
 VOID IPCWriteLongPort(PIPCPORT port,ULONG data);
+
+/*
+*
+* Name:SetMemoryBlockVirtual
+* Subsystem:KERNEL
+* Description: 
+* Arguments: 
+*
+*/
+typedef HANDLE (*SETMEMORYBLOCKVIRTUAL)(LPVOID,UINT);
+HANDLE SetMemoryBlockVirtual(LPVOID memBlock,UINT attr);
+
+/*
+*
+* Name:SetMemoryBlockUser
+* Subsystem:KERNEL
+* Description: 
+* Arguments: 
+*
+*/
+typedef BOOL (*SETMEMORYBLOCKUSER)(LPVOID,UINT);
+BOOL SetMemoryBlockUser(LPVOID memBlock,UINT userId);
 
 /*
 *
@@ -1175,6 +1219,17 @@ PFXNODELIST NodeListClear(PFXNODELIST nodelist);
 */
 typedef PFXNODE (*NODELISTFINDBYNAME)(PFXNODELIST,LPCSTR);
 PFXNODE NodeListFindByName(PFXNODELIST list,LPCSTR name);
+
+/*
+*
+* Name:NodeListFindById
+* Subsystem:KERNEL
+* Description: 
+* Arguments: 
+*
+*/
+typedef PFXNODE (*NODELISTFINDBYID)(PFXNODELIST,ULONG);
+PFXNODE NodeListFindById(PFXNODELIST list,ULONG objId);
 
 /*
 *

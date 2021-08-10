@@ -3,11 +3,11 @@ R0	equ	1
 R1	equ	5
 R2	equ	9
 R3	equ	13
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\drivers/DRIVER_FMXCOM1.c",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER_FMXCOM1.c",0
 ;
 ;#include "fxkernel.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stddef.h",0
 	.line	88
@@ -25,14 +25,14 @@ R3	equ	13
 	.member	frac,16,16,8,16
 	.eos
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",4
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",4
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\ctype.h",0
 	.line	103
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
 	.stag	_fx_bytebits,8,4
 	.member	b7,0,14,17,1
 	.member	b6,1,14,17,1
@@ -106,7 +106,7 @@ R3	equ	13
 	.member	YH,88,14,8,8
 	.member	YL,96,14,8,8
 	.eos
-	.stag	_fx_eventMessage,304,16
+	.stag	_fx_eventMessage,312,16
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -114,8 +114,9 @@ R3	equ	13
 	.member	pheap,112,129,8,32
 	.member	msgTime,144,18,8,32
 	.member	data,176,110,8,0,16
+	.member	attr,304,14,8,8
 	.eos
-	.stag	_fx_cmdMessage,304,17
+	.stag	_fx_cmdMessage,312,17
 	.member	src,0,18,8,32
 	.member	dest,32,18,8,32
 	.member	type,64,16,8,16
@@ -127,6 +128,7 @@ R3	equ	13
 	.member	parameter1,208,18,8,32
 	.member	parameter2,240,18,8,32
 	.member	parameter3,272,18,8,32
+	.member	attr,304,14,8,8
 	.eos
 	.stag	_fx_console_ctl,448,18
 	.member	maxCols,0,5,8,16
@@ -469,94 +471,103 @@ R3	equ	13
 	.member	height,128,14,8,8
 	.member	width,136,14,8,8
 	.eos
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",8
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstringtable.h",0
-	.line	89
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",9
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fmx_vicky.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fmx_vicky.h",11
+	.stag	_fx_resource_string,32,50
+	.member	locale,0,110,8,0,2
+	.member	entries,16,16,8,16
+	.eos
+	.stag	_fx_resource_string_entry,40,51
+	.member	index,0,16,8,16
+	.member	length,16,16,8,16
+	.member	data,32,14,8,8
+	.eos
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",8
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstringtable.h",0
+	.line	90
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",9
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",11
 	.line	72
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",6
 	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",16
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",0
-	.line	400
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",22
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",16
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
+	.line	490
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",22
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxc256u.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
 	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",12
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",12
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
 	.line	205
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",5
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
 	.line	134
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",7
-	.stag	_fx_string,64,50
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",7
+	.stag	_fx_string,64,52
 	.member	size,0,16,8,16
 	.member	pos,16,5,8,16
 	.member	buffer,32,142,8,32
 	.eos
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",17
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",17
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxexec.h",5
-	.stag	_fxos_executive_vtable,128,51
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxexec.h",5
+	.stag	_fxos_executive_vtable,128,53
 	.member	Init,0,8833,8,32
 	.member	Configure,32,656,8,32
 	.member	Query,64,656,8,32
 	.member	Uninit,96,641,8,32
 	.eos
 	.line	86
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",11
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",11
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.line	208
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",8
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",8
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos_build_parameters.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_build_parameters.h",0
 	.line	35
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc_cfg.h",8
-	.stag	UMM_HEAP_INFO_t,256,52
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc_cfg.h",8
+	.stag	UMM_HEAP_INFO_t,256,54
 	.member	totalEntries,0,18,8,32
 	.member	usedEntries,32,18,8,32
 	.member	freeEntries,64,18,8,32
@@ -567,42 +578,48 @@ R3	equ	13
 	.member	blockSize,224,18,8,32
 	.eos
 	.line	199
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\umm_malloc.h",11
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\umm_malloc.h",11
 	.line	24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxmemorymanager.h",7
-	.stag	_fx_memory_map,2072,53
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",7
+	.stag	_fx_memory_map,2072,55
 	.member	availableMemory,0,18,8,32
 	.member	valid_segments,32,110,8,0,255
 	.eos
-	.stag	_fx_ipc_port,144,54
+	.stag	_fx_ipc_port,144,56
 	.member	id,0,18,8,32
 	.member	type,32,14,8,8
-	.member	name,40,138,8,32,50
+	.member	name,40,138,8,32,52
 	.member	time,72,18,8,32
 	.member	queue,104,138,8,32,7
 	.member	reserved_1,136,14,8,8
 	.eos
-	.line	105
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",6
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",0
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxfont.h",6
+	.stag	_k_mem_alloc_header,80,57
+	.member	user,0,14,8,8
+	.member	attr,8,14,8,8
+	.member	size,16,18,8,32
+	.member	virtual,48,129,8,32
+	.eos
+	.line	129
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",7
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",6
 	.line	74
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxgui.h",5
-	.stag	_click_detected,64,55
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",5
+	.stag	_click_detected,64,58
 	.member	window,0,138,8,32,33
 	.member	handler,32,641,8,32
 	.eos
-	.stag	_current_palette_map,400,56
+	.stag	_current_palette_map,400,59
 	.member	CUR_DESKTOP,0,5,8,16
 	.member	CUR_BACKGROUND,16,5,8,16
 	.member	CUR_FONT,32,5,8,16
@@ -616,37 +633,37 @@ R3	equ	13
 	.member	CUR_COLOR,160,101,8,0,15
 	.eos
 	.line	359
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxwindowmanager.h",8
-	.stag	_fxos_winman_vtable,160,57
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",8
+	.stag	_fxos_winman_vtable,160,60
 	.member	Events,0,641,8,32
 	.member	ConfigureWindowManager,32,656,8,32
 	.member	ProcessWindowEvent,64,8833,8,32
 	.member	QueryWindowManager,96,656,8,32
 	.member	DoWndProcs,128,641,8,32
 	.eos
-	.stag	fake58_,64,58
+	.stag	fake61_,64,61
 	.member	type,0,16,8,16
 	.member	size,16,16,8,16
 	.member	desktopAction,32,129,8,32
 	.eos
-	.stag	fake59_,96,59
+	.stag	fake62_,96,62
 	.member	type,0,16,8,16
-	.member	caption,16,138,8,32,50
+	.member	caption,16,138,8,32,52
 	.member	buttonType,48,16,8,16
 	.member	x,64,5,8,16
 	.member	y,80,5,8,16
 	.eos
-	.stag	_childMessage_t,64,60
+	.stag	_childMessage_t,64,63
 	.member	msgType,0,16,8,16
 	.member	msgData,16,129,8,32
 	.member	dataSize,48,16,8,16
 	.eos
-	.line	581
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxeventmanager.h",9
-	.stag	_fx_main_loopvars,16,61
+	.line	594
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",9
+	.stag	_fx_main_loopvars,16,64
 	.member	dummy,0,5,8,16
 	.eos
-	.stag	_fxMouseMessageData,64,62
+	.stag	_fxMouseMessageData,64,65
 	.member	button1,0,14,8,8
 	.member	button2,8,14,8,8
 	.member	button3,16,14,8,8
@@ -654,18 +671,18 @@ R3	equ	13
 	.member	x,32,16,8,16
 	.member	y,48,16,8,16
 	.eos
-	.utag	marshalled_data,32,63
+	.utag	marshalled_data,32,66
 	.member	byteValue,0,14,11,8
 	.member	verbValue,0,110,11,0,2
 	.member	intValue,0,16,11,16
 	.member	longValue,0,18,11,32
 	.member	pointerValue,0,129,11,32
 	.eos
-	.stag	_fx_eventProcess,64,64
+	.stag	_fx_eventProcess,64,67
 	.member	process,0,138,8,32,20
 	.member	eventProc,32,641,8,32
 	.eos
-	.stag	_mouse_msg_state,184,65
+	.stag	_mouse_msg_state,184,68
 	.member	lastEvent,0,18,8,32
 	.member	buttonLeftDown,32,14,8,8
 	.member	lastLeftDown,40,18,8,32
@@ -676,7 +693,7 @@ R3	equ	13
 	.member	lastX,152,16,8,16
 	.member	lastY,168,16,8,16
 	.eos
-	.stag	_fxos_eventmanager_vtable,192,66
+	.stag	_fxos_eventmanager_vtable,192,69
 	.member	EventQueue,0,138,8,32,7
 	.member	Init,32,8833,8,32
 	.member	Run,64,656,8,32
@@ -684,18 +701,18 @@ R3	equ	13
 	.member	Query,128,656,8,32
 	.member	Uninit,160,641,8,32
 	.eos
-	.stag	_k_clipboard_data,168,67
+	.stag	_k_clipboard_data,168,70
 	.member	type,0,14,8,8
 	.member	readable,8,110,8,0,16
 	.member	data,136,129,8,32
 	.eos
-	.line	564
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxconsole.h",18
-	.stag	_fx_spinner_ctx,48,68
+	.line	568
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",18
+	.stag	_fx_spinner_ctx,48,71
 	.member	index,0,5,8,16
 	.member	spinner,16,142,8,32
 	.eos
-	.stag	_fx_console_ctx,1144,69
+	.stag	_fx_console_ctx,1144,72
 	.member	lineBufferIndex,0,5,8,16
 	.member	lineBuffer,16,110,8,0,128
 	.member	isShifted,1040,14,8,8
@@ -703,31 +720,31 @@ R3	equ	13
 	.member	screenBuffer,1080,129,8,32
 	.member	Reserved1,1112,129,8,32
 	.eos
-	.stag	_token,64,70
+	.stag	_token,64,73
 	.member	type,0,5,8,16
 	.member	depth,16,16,8,16
 	.member	text,32,142,8,32
 	.eos
-	.stag	_command_args,64,71
+	.stag	_command_args,64,74
 	.member	proc,0,656,8,32
 	.member	tokens,32,138,8,32,5
 	.eos
 	.line	208
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",23
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxstring.h",0
-	.line	139
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",24
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",25
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",0
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ffconf.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",23
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
+	.line	141
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",24
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",25
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ffconf.h",0
 	.line	298
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",29
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxtypes.h",0
-	.line	1010
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\ff.h",30
-	.stag	fake72_,4504,72
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",29
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
+	.line	1064
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\ff/ff.h",30
+	.stag	fake75_,4504,75
 	.member	fs_type,0,14,8,8
 	.member	pdrv,8,14,8,8
 	.member	n_fats,16,14,8,8
@@ -748,16 +765,16 @@ R3	equ	13
 	.member	winsect,376,18,8,32
 	.member	win,408,110,8,0,512
 	.eos
-	.stag	fake73_,128,73
-	.member	fs,0,138,8,32,72
+	.stag	fake76_,128,76
+	.member	fs,0,138,8,32,75
 	.member	id,32,5,8,16
 	.member	attr,48,14,8,8
 	.member	stat,56,14,8,8
 	.member	sclust,64,18,8,32
 	.member	objsize,96,18,8,32
 	.eos
-	.stag	fake74_,4400,74
-	.member	obj,0,10,8,128,73
+	.stag	fake77_,4400,77
+	.member	obj,0,10,8,128,76
 	.member	flag,128,14,8,8
 	.member	err,136,14,8,8
 	.member	fptr,144,18,8,32
@@ -767,8 +784,8 @@ R3	equ	13
 	.member	dir_ptr,272,142,8,32
 	.member	buf,304,110,8,0,512
 	.eos
-	.stag	fake75_,416,75
-	.member	obj,0,10,8,128,73
+	.stag	fake78_,416,78
+	.member	obj,0,10,8,128,76
 	.member	dptr,128,18,8,32
 	.member	clust,160,18,8,32
 	.member	sect,192,18,8,32
@@ -777,7 +794,7 @@ R3	equ	13
 	.member	blk_ofs,352,18,8,32
 	.member	pat,384,142,8,32
 	.eos
-	.stag	fake76_,2224,76
+	.stag	fake79_,2224,79
 	.member	fsize,0,18,8,32
 	.member	fdate,32,5,8,16
 	.member	ftime,48,5,8,16
@@ -785,7 +802,7 @@ R3	equ	13
 	.member	altname,72,110,8,0,13
 	.member	fname,176,110,8,0,256
 	.eos
-	.stag	fake77_,80,77
+	.stag	fake80_,80,80
 	.member	fmt,0,14,8,8
 	.member	n_fat,8,14,8,8
 	.member	align,16,16,8,16
@@ -793,16 +810,19 @@ R3	equ	13
 	.member	au_size,48,18,8,32
 	.eos
 	.line	429
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxos.h",26
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",26
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",5
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxnode.h",0
-	.line	114
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\fxkernel.h",6
-	.stag	_fx_api_call_table,8192,78
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxnode.h",0
+	.line	118
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",6
+	.stag	_fx_api_call_table,8192,81
 	.member	call_table,0,1121,8,32,256
 	.eos
-	.stag	_fx_zero_page,824,79
+	.stag	_fx_zero_page_irq_data,32,82
+	.member	data,0,110,8,0,4
+	.eos
+	.stag	_fx_zero_page,720,83
 	.member	fxos_mouse_byte_0,0,14,8,8
 	.member	fxos_mouse_byte_1,8,14,8,8
 	.member	fxos_mouse_byte_2,16,14,8,8
@@ -817,42 +837,37 @@ R3	equ	13
 	.member	fxos_mouse_ctl,88,14,8,8
 	.member	fxos_mouse_index,96,14,8,8
 	.member	fxos_mouse_status,104,14,8,8
-	.member	fxos_mouse_dbg_1,112,18,8,32
-	.member	fxos_mouse_dbg_2,144,18,8,32
-	.member	fxos_mouse_dbg_3,176,18,8,32
-	.member	fxos_vicky_byte_0,208,14,8,8
-	.member	fxos_vicky_byte_1,216,14,8,8
-	.member	fxos_vicky_byte_2,224,14,8,8
-	.member	VersionMajor,232,16,8,16
-	.member	VersionMinor,248,16,8,16
-	.member	VersionRelease,264,16,8,16
-	.member	topMemory,280,18,8,32
-	.member	bottomMemory,312,18,8,32
-	.member	availableMemory,344,18,8,32
-	.member	availableMemoryK,376,18,8,32
-	.member	availableHeapMemory,408,18,8,32
-	.member	availableHeapMemoryK,440,18,8,32
-	.member	fxos_console_row,472,16,8,16
-	.member	fxos_console_col,488,16,8,16
-	.member	executive,504,129,8,32
-	.member	eventmanager,536,129,8,32
-	.member	devicemanager,568,129,8,32
-	.member	windowmanager,600,129,8,32
-	.member	fxos_kernel_api,632,138,8,32,78
-	.member	fxos_dos_api,664,138,8,32,78
-	.member	fxos_gfx_api,696,138,8,32,78
-	.member	fxos_gui_api,728,138,8,32,78
-	.member	fxos_con_api,760,138,8,32,78
-	.member	fxos_reserved_2_api,792,138,8,32,78
+	.member	Endianness,112,16,8,16
+	.member	VersionMajor,128,16,8,16
+	.member	VersionMinor,144,16,8,16
+	.member	VersionRelease,160,16,8,16
+	.member	topMemory,176,18,8,32
+	.member	bottomMemory,208,18,8,32
+	.member	availableMemory,240,18,8,32
+	.member	availableMemoryK,272,18,8,32
+	.member	availableHeapMemory,304,18,8,32
+	.member	availableHeapMemoryK,336,18,8,32
+	.member	fxos_console_row,368,16,8,16
+	.member	fxos_console_col,384,16,8,16
+	.member	executive,400,129,8,32
+	.member	eventmanager,432,129,8,32
+	.member	devicemanager,464,129,8,32
+	.member	windowmanager,496,129,8,32
+	.member	fxos_kernel_api,528,138,8,32,81
+	.member	fxos_dos_api,560,138,8,32,81
+	.member	fxos_gfx_api,592,138,8,32,81
+	.member	fxos_gui_api,624,138,8,32,81
+	.member	fxos_con_api,656,138,8,32,81
+	.member	fxos_reserved_2_api,688,138,8,32,81
 	.eos
-	.stag	_fx_environment,96,80
+	.stag	_fx_environment,96,84
 	.member	variables,0,142,8,32
 	.member	reserved1,32,5,8,16
 	.member	reserved2,48,5,8,16
 	.member	reserved3,64,5,8,16
 	.member	reserved4,80,5,8,16
 	.eos
-	.stag	_debug_byte_bits,8,81
+	.stag	_debug_byte_bits,8,85
 	.member	bit7,0,14,17,1
 	.member	bit6,1,14,17,1
 	.member	bit5,2,14,17,1
@@ -862,7 +877,7 @@ R3	equ	13
 	.member	bit1,6,14,17,1
 	.member	bit0,7,14,17,1
 	.eos
-	.stag	_k_segmentheader,160,82
+	.stag	_k_segmentheader,160,86
 	.member	version_major,0,14,8,8
 	.member	version_minor,8,14,8,8
 	.member	length,16,5,8,16
@@ -871,14 +886,14 @@ R3	equ	13
 	.member	segment_size,96,7,8,32
 	.member	main_entry_addr,128,7,8,32
 	.eos
-	.stag	_fx_device_driver,776,83
+	.stag	_fx_device_driver,776,87
 	.member	name,0,110,8,0,32
 	.member	version,256,110,8,0,16
 	.member	hmajor,384,110,8,0,8
 	.member	hminor,448,110,8,0,8
 	.member	type,512,14,8,8
 	.member	designation,520,110,8,0,6
-	.member	reserved_1,568,16,8,16
+	.member	irq_ctl,568,16,8,16
 	.member	f_driver_irq,584,129,8,32
 	.member	driver_context,616,129,8,32
 	.member	f_driver_load,648,129,8,32
@@ -886,14 +901,14 @@ R3	equ	13
 	.member	f_driver_write,712,129,8,32
 	.member	f_driver_unload,744,129,8,32
 	.eos
-	.stag	_fx_block_device_driver,808,84
+	.stag	_fx_block_device_driver,808,88
 	.member	name,0,110,8,0,32
 	.member	version,256,110,8,0,16
 	.member	hmajor,384,110,8,0,8
 	.member	hminor,448,110,8,0,8
 	.member	type,512,14,8,8
 	.member	designation,520,110,8,0,6
-	.member	reserved_1,568,16,8,16
+	.member	irq_ctl,568,16,8,16
 	.member	f_driver_irq,584,129,8,32
 	.member	driver_context,616,129,8,32
 	.member	f_driver_load,648,129,8,32
@@ -902,18 +917,34 @@ R3	equ	13
 	.member	f_driver_unload,744,129,8,32
 	.member	f_driver_command,776,129,8,32
 	.eos
-	.line	400
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\drivers/DRIVER_FMXCOM1.c",2
+	.stag	_k_irq_chain,128,89
+	.member	handlers,0,5217,8,32,4
+	.eos
+	.line	490
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER_FMXCOM1.c",2
+;#include "drivers/DRIVER.h"
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
+	.line	30
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",5
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",0
+	.line	129
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
+	.line	1960
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",104
+	.line	113
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER_FMXCOM1.c",3
 ;#include "drivers/DRIVER_COM1.h"
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\drivers/DRIVER_COM1.h",0
-COM1S02	section	offset $04:0BE0
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER_COM1.h",0
+COM1S02	section	offset $04:0000
 	ends
 	data
 ~~_k_driver_base:
-	dl	$40BE0
+	dl	$40000
 	ends
-	.line	7
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\drivers/DRIVER_FMXCOM1.c",3
+	.line	11
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER_FMXCOM1.c",4
 ;
 ;//#pragma section CODE=FMXCon,offset $08:A000
 ;/*
@@ -955,6 +986,8 @@ COM1S02	section	offset $04:0BE0
 ;#define LSR_ERR_OVERRUN   (0x02)
 ;#define LSR_DATA_AVAIL   (0x01)
 ;
+;
+;static VOID f_driver_irq(void);
 ;static BOOL f_driver_load(void);
 ;static UINT f_driver_read(LPVOID buffer);
 ;static UINT f_driver_write(UINT size,LPVOID buffer);
@@ -964,7 +997,13 @@ COM1S02	section	offset $04:0BE0
 ;static UINT f_driver_read_u(LPVOID buffer);
 ;static UINT f_driver_write_u(UINT size,LPVOID buffer);
 ;static BOOL f_driver_unload_u(void);
+;static VOID poll_handler(VOID);
 ;
+;static BYTE  _com_data = 0;
+	data
+~~_com_data:
+	db	$0
+	ends
 ;static LPSTR UARTBASE = ((LPSTR)0xAF13F8);
 	data
 ~~UARTBASE:
@@ -975,6 +1014,8 @@ COM1S02	section	offset $04:0BE0
 ~~version:
 	dl	$0
 	ends
+;
+;extern ULONG _pseudo_timer;
 ;
 ;static FX_DEVICE_DRIVER DRIVER_FMXCOM1 = {
 	data
@@ -996,10 +1037,10 @@ COM1S02	section	offset $04:0BE0
 	db	$2
 ;										"COM1:\0",
 	db	$43,$4F,$4D,$31,$3A,$0
-;										0,
-	dw	$0
-;										NULL,
-	dl	$0
+;										NOIRQ,//MAKEIRQ(1,4),
+	dw	$FFFF
+;										f_driver_irq,
+	dl	~~f_driver_irq
 ;										NULL,
 	dl	$0
 ;										f_driver_load,
@@ -1037,10 +1078,10 @@ L1:
 	db	$2
 ;										"COM1:\0",
 	db	$43,$4F,$4D,$31,$3A,$0
-;										0,
-	dw	$0
-;										NULL,
-	dl	$0
+;										NOIRQ,//MAKEIRQ(1,4),
+	dw	$FFFF
+;										f_driver_irq,
+	dl	~~f_driver_irq
 ;										NULL,
 	dl	$0
 ;										f_driver_load_u,
@@ -1060,11 +1101,11 @@ L2:
 ;
 ;static PFX_DEVICE_DRIVER f_get_driver(LPCSTR major,LPCSTR minor)
 ;{
-	.line	90
-	.line	91
+	.line	97
+	.line	98
 	COM1S02
 	func
-	.function	91
+	.function	98
 ~~f_get_driver:
 	longa	on
 	longi	on
@@ -1076,11 +1117,11 @@ L2:
 	tcd
 major_0	set	4
 minor_0	set	8
-	.block	91
+	.block	98
 ;	if(major[0] == DRIVER_FMXUCOM1.hmajor[0])
 	.sym	major,4,142,6,32
 	.sym	minor,8,142,6,32
-	.line	92
+	.line	99
 ;	{
 	sep	#$20
 	longa	off
@@ -1091,15 +1132,15 @@ minor_0	set	8
 	beq	L7
 	brl	L10001
 L7:
-	.line	93
+	.line	100
 ;		UARTBASE = ((LPSTR)(0xAF18F8));
-	.line	94
+	.line	101
 	lda	#$18f8
 	sta	|~~UARTBASE
 	lda	#$af
 	sta	|~~UARTBASE+2
 ;		return &DRIVER_FMXUCOM1;
-	.line	95
+	.line	102
 	lda	#<~~DRIVER_FMXUCOM1
 	sta	<R0
 	xref	_BEG_DATA
@@ -1121,10 +1162,10 @@ L8:
 	tya
 	rtl
 ;	}
-	.line	96
+	.line	103
 ;	return &DRIVER_FMXCOM1;
 L10001:
-	.line	97
+	.line	104
 	lda	#<~~DRIVER_FMXCOM1
 	sta	<R0
 	xref	_BEG_DATA
@@ -1134,23 +1175,23 @@ L10001:
 	lda	<R0
 	brl	L8
 ;}
-	.line	98
-	.endblock	98
+	.line	105
+	.endblock	105
 L4	equ	4
 L5	equ	5
 	ends
 	efunc
-	.endfunc	98,5,4
-	.line	98
+	.endfunc	105,5,4
+	.line	105
 ;
-;static BOOL f_driver_load(void)
+;static VOID f_driver_irq(void)
 ;{
-	.line	100
-	.line	101
+	.line	107
+	.line	108
 	COM1S02
 	func
-	.function	101
-~~f_driver_load:
+	.function	108
+~~f_driver_irq:
 	longa	on
 	longi	on
 	tsc
@@ -1159,35 +1200,69 @@ L5	equ	5
 	tcs
 	phd
 	tcd
-	.block	101
-;	version = "Using FMX Serial\r\n";
-	.line	102
-	lda	#<L3
-	sta	|~~version
-	lda	#^L3
-	sta	|~~version+2
-;
-;	return FALSE;
-	.line	104
-	lda	#$0
+	.block	108
+;}
+	.line	109
 L12:
-	tay
 	pld
 	tsc
 	clc
 	adc	#L9
 	tcs
-	tya
 	rtl
-;}
-	.line	105
-	.endblock	105
+	.endblock	109
 L9	equ	0
 L10	equ	1
 	ends
 	efunc
-	.endfunc	105,1,0
-	.line	105
+	.endfunc	109,1,0
+	.line	109
+;
+;static BOOL f_driver_load(void)
+;{
+	.line	111
+	.line	112
+	COM1S02
+	func
+	.function	112
+~~f_driver_load:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L13
+	tcs
+	phd
+	tcd
+	.block	112
+;	version = "Using FMX Serial\r\n";
+	.line	113
+	lda	#<L3
+	sta	|~~version
+	lda	#^L3
+	sta	|~~version+2
+;
+;	return TRUE;
+	.line	115
+	lda	#$1
+L16:
+	tay
+	pld
+	tsc
+	clc
+	adc	#L13
+	tcs
+	tya
+	rtl
+;}
+	.line	116
+	.endblock	116
+L13	equ	0
+L14	equ	1
+	ends
+	efunc
+	.endfunc	116,1,0
+	.line	116
 	data
 L3:
 	db	$55,$73,$69,$6E,$67,$20,$46,$4D,$58,$20,$53,$65,$72,$69,$61
@@ -1196,57 +1271,12 @@ L3:
 ;
 ;static UINT f_driver_read(LPVOID buffer)
 ;{
-	.line	107
-	.line	108
+	.line	118
+	.line	119
 	COM1S02
 	func
-	.function	108
+	.function	119
 ~~f_driver_read:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L14
-	tcs
-	phd
-	tcd
-buffer_0	set	4
-	.block	108
-;	return 0;
-	.sym	buffer,4,129,6,32
-	.line	109
-	lda	#$0
-L17:
-	tay
-	lda	<L14+2
-	sta	<L14+2+4
-	lda	<L14+1
-	sta	<L14+1+4
-	pld
-	tsc
-	clc
-	adc	#L14+4
-	tcs
-	tya
-	rtl
-;}
-	.line	110
-	.endblock	110
-L14	equ	0
-L15	equ	1
-	ends
-	efunc
-	.endfunc	110,1,0
-	.line	110
-;
-;static UINT f_driver_write(UINT size,LPVOID buffer)
-;{
-	.line	112
-	.line	113
-	COM1S02
-	func
-	.function	113
-~~f_driver_write:
 	longa	on
 	longi	on
 	tsc
@@ -1255,45 +1285,43 @@ L15	equ	1
 	tcs
 	phd
 	tcd
-size_0	set	4
-buffer_0	set	6
-	.block	113
+buffer_0	set	4
+	.block	119
 ;	return 0;
-	.sym	size,4,16,6,16
-	.sym	buffer,6,129,6,32
-	.line	114
+	.sym	buffer,4,129,6,32
+	.line	120
 	lda	#$0
 L21:
 	tay
 	lda	<L18+2
-	sta	<L18+2+6
+	sta	<L18+2+4
 	lda	<L18+1
-	sta	<L18+1+6
+	sta	<L18+1+4
 	pld
 	tsc
 	clc
-	adc	#L18+6
+	adc	#L18+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	115
-	.endblock	115
+	.line	121
+	.endblock	121
 L18	equ	0
 L19	equ	1
 	ends
 	efunc
-	.endfunc	115,1,0
-	.line	115
+	.endfunc	121,1,0
+	.line	121
 ;
-;static BOOL f_driver_unload(void)
+;static UINT f_driver_write(UINT size,LPVOID buffer)
 ;{
-	.line	117
-	.line	118
+	.line	123
+	.line	124
 	COM1S02
 	func
-	.function	118
-~~f_driver_unload:
+	.function	124
+~~f_driver_write:
 	longa	on
 	longi	on
 	tsc
@@ -1302,39 +1330,45 @@ L19	equ	1
 	tcs
 	phd
 	tcd
-	.block	118
-;
-;	return FALSE;
-	.line	120
+size_0	set	4
+buffer_0	set	6
+	.block	124
+;	return 0;
+	.sym	size,4,16,6,16
+	.sym	buffer,6,129,6,32
+	.line	125
 	lda	#$0
 L25:
 	tay
+	lda	<L22+2
+	sta	<L22+2+6
+	lda	<L22+1
+	sta	<L22+1+6
 	pld
 	tsc
 	clc
-	adc	#L22
+	adc	#L22+6
 	tcs
 	tya
 	rtl
 ;}
-	.line	121
-	.endblock	121
+	.line	126
+	.endblock	126
 L22	equ	0
 L23	equ	1
 	ends
 	efunc
-	.endfunc	121,1,0
-	.line	121
+	.endfunc	126,1,0
+	.line	126
 ;
-;
-;static BOOL f_driver_load_u(void)
+;static BOOL f_driver_unload(void)
 ;{
-	.line	124
-	.line	125
+	.line	128
+	.line	129
 	COM1S02
 	func
-	.function	125
-~~f_driver_load_u:
+	.function	129
+~~f_driver_unload:
 	longa	on
 	longi	on
 	tsc
@@ -1343,16 +1377,56 @@ L23	equ	1
 	tcs
 	phd
 	tcd
-	.block	125
+	.block	129
+;
+;	return FALSE;
+	.line	131
+	lda	#$0
+L29:
+	tay
+	pld
+	tsc
+	clc
+	adc	#L26
+	tcs
+	tya
+	rtl
+;}
+	.line	132
+	.endblock	132
+L26	equ	0
+L27	equ	1
+	ends
+	efunc
+	.endfunc	132,1,0
+	.line	132
+;
+;static BOOL f_driver_load_u(void)
+;{
+	.line	134
+	.line	135
+	COM1S02
+	func
+	.function	135
+~~f_driver_load_u:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L30
+	tcs
+	phd
+	tcd
+	.block	135
 ;	version = "Using FMXU+ Serial\r\n";
-	.line	126
-	lda	#<L13
+	.line	136
+	lda	#<L17
 	sta	|~~version
-	lda	#^L13
+	lda	#^L17
 	sta	|~~version+2
 ;
 ;	UARTBASE[UART_LCR] = (UARTBASE[UART_LCR] | LCR_DLB);
-	.line	128
+	.line	138
 	lda	|~~UARTBASE
 	sta	<R0
 	lda	|~~UARTBASE+2
@@ -1376,7 +1450,7 @@ L23	equ	1
 	longa	on
 ;
 ;	UARTBASE[UART_DLH] = 0x00;
-	.line	130
+	.line	140
 	lda	|~~UARTBASE
 	sta	<R0
 	lda	|~~UARTBASE+2
@@ -1389,7 +1463,7 @@ L23	equ	1
 	rep	#$20
 	longa	on
 ;	UARTBASE[UART_DLL] = 0x08;
-	.line	131
+	.line	141
 	lda	|~~UARTBASE
 	sta	<R0
 	lda	|~~UARTBASE+2
@@ -1401,7 +1475,7 @@ L23	equ	1
 	rep	#$20
 	longa	on
 ;	UARTBASE[UART_LCR] = (UARTBASE[UART_LCR] ^ LCR_DLB);
-	.line	132
+	.line	142
 	lda	|~~UARTBASE
 	sta	<R0
 	lda	|~~UARTBASE+2
@@ -1425,7 +1499,7 @@ L23	equ	1
 	longa	on
 ;
 ;	UARTBASE[UART_LCR] = (LCR_PARITY_NONE | LCR_STOPBIT_1 | LCR_DATABITS_8) & 0x7F;
-	.line	134
+	.line	144
 	lda	|~~UARTBASE
 	sta	<R0
 	lda	|~~UARTBASE+2
@@ -1439,7 +1513,7 @@ L23	equ	1
 	longa	on
 ;
 ;	UARTBASE[UART_FCR] = 0xC1;
-	.line	136
+	.line	146
 	lda	|~~UARTBASE
 	sta	<R0
 	lda	|~~UARTBASE+2
@@ -1453,7 +1527,7 @@ L23	equ	1
 	longa	on
 ;
 ;	while(*version)
-	.line	138
+	.line	148
 L10002:
 	lda	|~~version
 	sta	<R0
@@ -1461,13 +1535,13 @@ L10002:
 	sta	<R0+2
 	lda	[<R0]
 	and	#$ff
-	bne	L29
+	bne	L33
 	brl	L10003
-L29:
+L33:
 ;	{
-	.line	139
+	.line	149
 ;		while((UARTBASE[UART_LSR] & LSR_XMIT_EMPTY) != LSR_XMIT_EMPTY);
-	.line	140
+	.line	150
 L10004:
 	lda	|~~UARTBASE
 	sta	<R0
@@ -1479,14 +1553,14 @@ L10004:
 	sta	<R1
 	lda	<R1
 	cmp	#<$20
-	bne	L30
+	bne	L34
 	brl	L10005
-L30:
-	.line	140
+L34:
+	.line	150
 	brl	L10004
 L10005:
 ;		UARTBASE[UART_TRHB] = (CHAR)(version[0]);
-	.line	141
+	.line	151
 	lda	|~~UARTBASE
 	sta	<R0
 	lda	|~~UARTBASE+2
@@ -1503,96 +1577,59 @@ L10005:
 	longa	on
 ;
 ;		version++;
-	.line	143
+	.line	153
 	inc	|~~version
-	bne	L31
+	bne	L35
 	inc	|~~version+2
-L31:
+L35:
 ;	}
-	.line	144
+	.line	154
 	brl	L10002
 L10003:
 ;
-;	return FALSE;
-	.line	146
-	lda	#$0
-L32:
+;	k_irq_register_handler(0,0,poll_handler);
+	.line	156
+	pea	#^~~poll_handler
+	pea	#<~~poll_handler
+	pea	#<$0
+	pea	#<$0
+	jsl	~~k_irq_register_handler
+;
+;	return TRUE;
+	.line	158
+	lda	#$1
+L36:
 	tay
 	pld
 	tsc
 	clc
-	adc	#L26
+	adc	#L30
 	tcs
 	tya
 	rtl
 ;}
-	.line	147
-	.endblock	147
-L26	equ	8
-L27	equ	9
+	.line	159
+	.endblock	159
+L30	equ	8
+L31	equ	9
 	ends
 	efunc
-	.endfunc	147,9,8
-	.line	147
+	.endfunc	159,9,8
+	.line	159
 	data
-L13:
+L17:
 	db	$55,$73,$69,$6E,$67,$20,$46,$4D,$58,$55,$2B,$20,$53,$65,$72
 	db	$69,$61,$6C,$0D,$0A,$00
 	ends
 ;
 ;static UINT f_driver_read_u(LPVOID buffer)
 ;{
-	.line	149
-	.line	150
+	.line	161
+	.line	162
 	COM1S02
 	func
-	.function	150
+	.function	162
 ~~f_driver_read_u:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L34
-	tcs
-	phd
-	tcd
-buffer_0	set	4
-	.block	150
-;	return 0;
-	.sym	buffer,4,129,6,32
-	.line	151
-	lda	#$0
-L37:
-	tay
-	lda	<L34+2
-	sta	<L34+2+4
-	lda	<L34+1
-	sta	<L34+1+4
-	pld
-	tsc
-	clc
-	adc	#L34+4
-	tcs
-	tya
-	rtl
-;}
-	.line	152
-	.endblock	152
-L34	equ	0
-L35	equ	1
-	ends
-	efunc
-	.endfunc	152,1,0
-	.line	152
-;
-;static UINT f_driver_write_u(UINT size,LPVOID buffer)
-;{
-	.line	154
-	.line	155
-	COM1S02
-	func
-	.function	155
-~~f_driver_write_u:
 	longa	on
 	longi	on
 	tsc
@@ -1601,45 +1638,43 @@ L35	equ	1
 	tcs
 	phd
 	tcd
-size_0	set	4
-buffer_0	set	6
-	.block	155
+buffer_0	set	4
+	.block	162
 ;	return 0;
-	.sym	size,4,16,6,16
-	.sym	buffer,6,129,6,32
-	.line	156
+	.sym	buffer,4,129,6,32
+	.line	163
 	lda	#$0
 L41:
 	tay
 	lda	<L38+2
-	sta	<L38+2+6
+	sta	<L38+2+4
 	lda	<L38+1
-	sta	<L38+1+6
+	sta	<L38+1+4
 	pld
 	tsc
 	clc
-	adc	#L38+6
+	adc	#L38+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	157
-	.endblock	157
+	.line	164
+	.endblock	164
 L38	equ	0
 L39	equ	1
 	ends
 	efunc
-	.endfunc	157,1,0
-	.line	157
+	.endfunc	164,1,0
+	.line	164
 ;
-;static BOOL f_driver_unload_u(void)
+;static UINT f_driver_write_u(UINT size,LPVOID buffer)
 ;{
-	.line	159
-	.line	160
+	.line	166
+	.line	167
 	COM1S02
 	func
-	.function	160
-~~f_driver_unload_u:
+	.function	167
+~~f_driver_write_u:
 	longa	on
 	longi	on
 	tsc
@@ -1648,38 +1683,184 @@ L39	equ	1
 	tcs
 	phd
 	tcd
-	.block	160
-;
-;	return FALSE;
-	.line	162
+size_0	set	4
+buffer_0	set	6
+	.block	167
+;	return 0;
+	.sym	size,4,16,6,16
+	.sym	buffer,6,129,6,32
+	.line	168
 	lda	#$0
 L45:
 	tay
+	lda	<L42+2
+	sta	<L42+2+6
+	lda	<L42+1
+	sta	<L42+1+6
 	pld
 	tsc
 	clc
-	adc	#L42
+	adc	#L42+6
 	tcs
 	tya
 	rtl
 ;}
-	.line	163
-	.endblock	163
+	.line	169
+	.endblock	169
 L42	equ	0
 L43	equ	1
 	ends
 	efunc
-	.endfunc	163,1,0
-	.line	163
+	.endfunc	169,1,0
+	.line	169
+;
+;static BOOL f_driver_unload_u(void)
+;{
+	.line	171
+	.line	172
+	COM1S02
+	func
+	.function	172
+~~f_driver_unload_u:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L46
+	tcs
+	phd
+	tcd
+	.block	172
+;
+;	return FALSE;
+	.line	174
+	lda	#$0
+L49:
+	tay
+	pld
+	tsc
+	clc
+	adc	#L46
+	tcs
+	tya
+	rtl
+;}
+	.line	175
+	.endblock	175
+L46	equ	0
+L47	equ	1
+	ends
+	efunc
+	.endfunc	175,1,0
+	.line	175
+;
+;static VOID poll_handler(VOID)
+;{
+	.line	177
+	.line	178
+	COM1S02
+	func
+	.function	178
+~~poll_handler:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L50
+	tcs
+	phd
+	tcd
+	.block	178
+;	if(UART2_BASE[UART_LSR] & 0x01)
+	.line	179
+;	{
+	sep	#$20
+	longa	off
+	lda	>11475197	; volatile
+	and	#<$1
+	rep	#$20
+	longa	on
+	bne	L53
+	brl	L10006
+L53:
+	.line	180
+;		_com_data = UART2_BASE[0];
+	.line	181
+	sep	#$20
+	longa	off
+	lda	>11475192	; volatile
+	sta	|~~_com_data
+	rep	#$20
+	longa	on
+;	}
+	.line	182
+;
+;	if(_com_data!=0)
+L10006:
+	.line	184
+;	{
+	lda	|~~_com_data
+	and	#$ff
+	bne	L54
+	brl	L10007
+L54:
+	.line	185
+;		k_irq_device_event(IRQE_COM1,_pseudo_timer,&_com_data);
+	.line	186
+	lda	#<~~_com_data
+	sta	<R0
+	xref	_BEG_DATA
+	lda	#_BEG_DATA>>16
+	sta	<R0+2
+	pei	<R0+2
+	pei	<R0
+	lda	|~~_pseudo_timer+2
+	pha
+	lda	|~~_pseudo_timer
+	pha
+	pea	#<$3
+	jsl	~~k_irq_device_event
+;		_com_data = 0;
+	.line	187
+	sep	#$20
+	longa	off
+	stz	|~~_com_data
+	rep	#$20
+	longa	on
+;	}
+	.line	188
+;}
+L10007:
+	.line	189
+L55:
+	pld
+	tsc
+	clc
+	adc	#L50
+	tcs
+	rtl
+	.endblock	189
+L50	equ	4
+L51	equ	5
+	ends
+	efunc
+	.endfunc	189,5,4
+	.line	189
 ;
 ;
-	.line	164
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOSv1\src\drivers/DRIVER_FMXCOM1.c",159
-	.sym	~~f_get_driver,~~f_get_driver,1098,3,32,83
-	.sym	~~DRIVER_FMXUCOM1,~~DRIVER_FMXUCOM1,10,3,776,83
-	.sym	~~DRIVER_FMXCOM1,~~DRIVER_FMXCOM1,10,3,776,83
+	.line	190
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER_FMXCOM1.c",177
+	xref	~~k_irq_register_handler
+	xref	~~k_irq_device_event
+	xref	~~_pseudo_timer
+	.sym	~~f_get_driver,~~f_get_driver,1098,3,32,87
+	.sym	~~DRIVER_FMXUCOM1,~~DRIVER_FMXUCOM1,10,3,776,87
+	.sym	~~DRIVER_FMXCOM1,~~DRIVER_FMXCOM1,10,3,776,87
+	.sym	~~_pseudo_timer,~~_pseudo_timer,18,18,32
 	.sym	~~version,~~version,142,3,32
 	.sym	~~UARTBASE,~~UARTBASE,142,3,32
+	.sym	~~_com_data,~~_com_data,14,3,8
+	.sym	~~poll_handler,~~poll_handler,65,3,0
 	.sym	~~f_driver_unload_u,~~f_driver_unload_u,78,3,0
 	.sym	~~f_driver_write_u,~~f_driver_write_u,80,3,0
 	.sym	~~f_driver_read_u,~~f_driver_read_u,80,3,0
@@ -1688,108 +1869,121 @@ L43	equ	1
 	.sym	~~f_driver_write,~~f_driver_write,80,3,0
 	.sym	~~f_driver_read,~~f_driver_read,80,3,0
 	.sym	~~f_driver_load,~~f_driver_load,78,3,0
+	.sym	~~f_driver_irq,~~f_driver_irq,65,3,0
 	.sym	~~_k_driver_base,~~_k_driver_base,129,3,32
-	.sym	DEVICEDRIVER_COMMAND,0,656,14,32
+	.sym	~~k_irq_register_handler,~~k_irq_register_handler,80,18,0
+	.sym	PIRQCHAIN,0,138,14,32,89
+	.sym	IRQCHAIN,0,10,14,128,89
+	.sym	DEVICEDRIVER_COMMAND,0,654,14,32
 	.sym	DEVICEDRIVER_UNLOAD,0,654,14,32
-	.sym	DEVICEDRIVER_WRITE,0,656,14,32
-	.sym	DEVICEDRIVER_READ,0,656,14,32
+	.sym	DEVICEDRIVER_WRITE,0,654,14,32
+	.sym	DEVICEDRIVER_READ,0,654,14,32
 	.sym	DEVICEDRIVER_LOAD,0,654,14,32
-	.sym	DEVICEDRIVER_IRQ,0,654,14,32
-	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,84
-	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,84
-	.sym	GETDRIVERDEF,0,8842,14,32,83
-	.sym	PFX_DEVICE_DRIVER,0,138,14,32,83
-	.sym	FX_DEVICE_DRIVER,0,10,14,776,83
-	.sym	PSEGMENTHEADER,0,138,14,32,82
-	.sym	SEGMENTHEADER,0,10,14,160,82
-	.sym	PDEBUGBYTEBITS,0,138,14,32,81
-	.sym	DEBUGBYTEBITS,0,10,14,8,81
-	.sym	PFXENVIRONMENT,0,138,14,32,80
-	.sym	FXENVIRONMENT,0,10,14,96,80
-	.sym	PFXZEROPAGE,0,138,14,32,79
-	.sym	FXZEROPAGE,0,10,14,824,79
+	.sym	DEVICEDRIVER_IRQ,0,641,14,32
+	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,88
+	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,88
+	.sym	GETDRIVERDEF,0,8842,14,32,87
+	.sym	PFX_DEVICE_DRIVER,0,138,14,32,87
+	.sym	FX_DEVICE_DRIVER,0,10,14,776,87
+	.sym	PSEGMENTHEADER,0,138,14,32,86
+	.sym	SEGMENTHEADER,0,10,14,160,86
+	.sym	PDEBUGBYTEBITS,0,138,14,32,85
+	.sym	DEBUGBYTEBITS,0,10,14,8,85
+	.sym	PFXENVIRONMENT,0,138,14,32,84
+	.sym	FXENVIRONMENT,0,10,14,96,84
+	.sym	PFXZEROPAGE,0,138,14,32,83
+	.sym	FXZEROPAGE,0,10,14,720,83
+	.sym	IRQBUFFER,0,10,14,32,82
 	.sym	KERNELTRAPCALL,0,641,14,32
-	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,78
-	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,78
+	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,81
+	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,81
 	.sym	FRESULT,0,5,14,16
-	.sym	MKFS_PARM,0,10,14,80,77
-	.sym	FILINFO,0,10,14,2224,76
-	.sym	DIR,0,10,14,416,75
-	.sym	FIL,0,10,14,4400,74
-	.sym	FFOBJID,0,10,14,128,73
-	.sym	FATFS,0,10,14,4504,72
+	.sym	MKFS_PARM,0,10,14,80,80
+	.sym	FILINFO,0,10,14,2224,79
+	.sym	DIR,0,10,14,416,78
+	.sym	FIL,0,10,14,4400,77
+	.sym	FFOBJID,0,10,14,128,76
+	.sym	FATFS,0,10,14,4504,75
 	.sym	LBA_t,0,18,14,32
 	.sym	FSIZE_t,0,18,14,32
 	.sym	TCHAR,0,14,14,8
-	.sym	PCOMMANDARGS,0,138,14,32,71
-	.sym	COMMANDARGS,0,10,14,64,71
+	.sym	PCOMMANDARGS,0,138,14,32,74
+	.sym	COMMANDARGS,0,10,14,64,74
 	.sym	PTOKENIZESTATE,0,133,14,32
 	.sym	TOKENIZESTATE,0,5,14,16
-	.sym	PTOKEN,0,138,14,32,70
-	.sym	TOKEN,0,10,14,64,70
+	.sym	PTOKEN,0,138,14,32,73
+	.sym	TOKEN,0,10,14,64,73
 	.sym	PTOKENTYPE,0,133,14,32
 	.sym	TOKENTYPE,0,5,14,16
 	.sym	FXCommandHandler,0,656,14,32
-	.sym	PCONSOLECTX,0,138,14,32,69
-	.sym	CONSOLECTX,0,10,14,1144,69
-	.sym	PSPINNERCTX,0,138,14,32,68
-	.sym	SPINNERCTX,0,10,14,48,68
-	.sym	HCLIP,0,138,14,32,67
-	.sym	PCLIPBOARD_DATA,0,138,14,32,67
-	.sym	CLIPBOARD_DATA,0,10,14,168,67
-	.sym	PEVENTMANAGER,0,138,14,32,66
-	.sym	EVENTMANAGER,0,10,14,192,66
+	.sym	PCONSOLECTX,0,138,14,32,72
+	.sym	CONSOLECTX,0,10,14,1144,72
+	.sym	PSPINNERCTX,0,138,14,32,71
+	.sym	SPINNERCTX,0,10,14,48,71
+	.sym	HCLIP,0,138,14,32,70
+	.sym	PCLIPBOARD_DATA,0,138,14,32,70
+	.sym	CLIPBOARD_DATA,0,10,14,168,70
+	.sym	~~k_irq_device_event,~~k_irq_device_event,65,18,0
+	.sym	PEVENTMANAGER,0,138,14,32,69
+	.sym	EVENTMANAGER,0,10,14,192,69
 	.sym	EV_RUN,0,656,14,32
 	.sym	EV_QUERY_METRIC,0,656,14,32
 	.sym	EV_CONFIGURE,0,656,14,32
 	.sym	EV_UNINIT,0,641,14,32
 	.sym	EV_INIT,0,8833,14,32
-	.sym	PMOUSE_MSG_STATE,0,138,14,32,65
-	.sym	MOUSE_MSG_STATE,0,10,14,184,65
-	.sym	PFXEVENTPROCESS,0,138,14,32,64
-	.sym	FXEVENTPROCESS,0,10,14,64,64
-	.sym	PMARSHALDATA,0,139,14,32,63
-	.sym	MARSHALDATA,0,11,14,32,63
+	.sym	PMOUSE_MSG_STATE,0,138,14,32,68
+	.sym	MOUSE_MSG_STATE,0,10,14,184,68
+	.sym	PFXEVENTPROCESS,0,138,14,32,67
+	.sym	FXEVENTPROCESS,0,10,14,64,67
+	.sym	FXASYNCPROCESS,0,641,14,32
+	.sym	PMARSHALDATA,0,139,14,32,66
+	.sym	MARSHALDATA,0,11,14,32,66
 	.sym	FXIDLEPROCESS,0,641,14,32
 	.sym	FXEventProc,0,641,14,32
-	.sym	PMOUSEMSGDATA,0,138,14,32,62
-	.sym	MOUSEMSGDATA,0,10,14,64,62
+	.sym	PMOUSEMSGDATA,0,138,14,32,65
+	.sym	MOUSEMSGDATA,0,10,14,64,65
 	.sym	MSGIRQ,0,5,14,16
-	.sym	MAINLOOPARGS,0,10,14,16,61
-	.sym	PEACHCHILD_MSG,0,138,14,32,60
-	.sym	EACHCHILD_MSG,0,10,14,64,60
-	.sym	PMSGBOX_DATA,0,138,14,32,59
-	.sym	MSGBOX_DATA,0,10,14,96,59
-	.sym	PDESKTOP_DATA,0,138,14,32,58
-	.sym	DESKTOP_DATA,0,10,14,64,58
-	.sym	PWINDOWMANAGER,0,138,14,32,57
-	.sym	WINDOWMANAGER,0,10,14,160,57
+	.sym	MAINLOOPARGS,0,10,14,16,64
+	.sym	PEACHCHILD_MSG,0,138,14,32,63
+	.sym	EACHCHILD_MSG,0,10,14,64,63
+	.sym	PMSGBOX_DATA,0,138,14,32,62
+	.sym	MSGBOX_DATA,0,10,14,96,62
+	.sym	PDESKTOP_DATA,0,138,14,32,61
+	.sym	DESKTOP_DATA,0,10,14,64,61
+	.sym	PWINDOWMANAGER,0,138,14,32,60
+	.sym	WINDOWMANAGER,0,10,14,160,60
 	.sym	WM_DOPROCS,0,641,14,32
 	.sym	WM_QUERY_METRIC,0,656,14,32
 	.sym	WM_CONFIGURE,0,656,14,32
 	.sym	WM_HANDLE_EVENT,0,8833,14,32
 	.sym	WM_EVENTS,0,641,14,32
-	.sym	PCUR_PALETTE_MAP,0,138,14,32,56
-	.sym	CUR_PALETTE_MAP,0,10,14,400,56
-	.sym	PCLICKDETECTED,0,138,14,32,55
-	.sym	CLICKDETECTED,0,10,14,64,55
+	.sym	PCUR_PALETTE_MAP,0,138,14,32,59
+	.sym	CUR_PALETTE_MAP,0,10,14,400,59
+	.sym	PCLICKDETECTED,0,138,14,32,58
+	.sym	CLICKDETECTED,0,10,14,64,58
 	.sym	OBJECTCLICKED,0,641,14,32
-	.sym	PIPCPORT,0,138,14,32,54
-	.sym	IPCPORT,0,10,14,144,54
+	.sym	PALLOCATIONHEADER,0,138,14,32,57
+	.sym	ALLOCATIONHEADER,0,10,14,80,57
+	.sym	PIPCPORT,0,138,14,32,56
+	.sym	IPCPORT,0,10,14,144,56
 	.sym	MemoryCallback,0,641,14,32
-	.sym	PFXMEMORYMAP,0,138,14,32,53
-	.sym	FXMEMORYMAP,0,10,14,2072,53
-	.sym	UMM_HEAP_INFO,0,10,14,256,52
+	.sym	PFXMEMORYMAP,0,138,14,32,55
+	.sym	FXMEMORYMAP,0,10,14,2072,55
+	.sym	UMM_HEAP_INFO,0,10,14,256,54
 	.sym	FOREACHNODEUNTIL,0,654,14,32
 	.sym	FOREACHNODE,0,641,14,32
-	.sym	PEXECUTIVE,0,138,14,32,51
-	.sym	EXECUTIVE,0,10,14,128,51
+	.sym	PEXECUTIVE,0,138,14,32,53
+	.sym	EXECUTIVE,0,10,14,128,53
 	.sym	EX_QUERY_METRIC,0,656,14,32
 	.sym	EX_CONFIGURE,0,656,14,32
 	.sym	EX_UNINIT,0,641,14,32
 	.sym	EX_INIT,0,8833,14,32
-	.sym	PFXSTRING,0,138,14,32,50
-	.sym	FXSTRING,0,10,14,64,50
+	.sym	PFXSTRING,0,138,14,32,52
+	.sym	FXSTRING,0,10,14,64,52
+	.sym	PFXRFHEADER_STRING_ENTRY,0,138,14,32,51
+	.sym	FXRFHEADER_STRING_ENTRY,0,10,14,40,51
+	.sym	PFXRFHEADER_STRING,0,138,14,32,50
+	.sym	FXRFHEADER_STRING,0,10,14,32,50
 	.sym	PFXRFHEADER_FONT,0,138,14,32,49
 	.sym	FXRFHEADER_FONT,0,10,14,144,49
 	.sym	PFXRFHEADER,0,138,14,32,48
@@ -1867,9 +2061,9 @@ L43	equ	1
 	.sym	CONSOLE_CONTROL,0,10,14,448,18
 	.sym	FXProcessProc,0,641,14,32
 	.sym	PFXCMDMESSAGE,0,138,14,32,17
-	.sym	FXCMDMESSAGE,0,10,14,304,17
+	.sym	FXCMDMESSAGE,0,10,14,312,17
 	.sym	PFXOSMESSAGE,0,138,14,32,16
-	.sym	FXOSMESSAGE,0,10,14,304,16
+	.sym	FXOSMESSAGE,0,10,14,312,16
 	.sym	PINT_REGS,0,138,14,32,15
 	.sym	INT_REGS,0,10,14,104,15
 	.sym	TASK_STACK,0,10,14,32,14
@@ -1916,6 +2110,7 @@ L43	equ	1
 	.sym	HRESULT,0,18,14,32
 	.sym	LPWCHAR,0,144,14,32
 	.sym	WCHAR,0,16,14,16
+	.sym	HSTRINGTABLE,0,129,14,32
 	.sym	HCOLOR,0,129,14,32
 	.sym	HFONT,0,129,14,32
 	.sym	HDC,0,129,14,32
@@ -1943,6 +2138,12 @@ L43	equ	1
 	.sym	LPSTR,0,142,14,32
 	.sym	LPCHAR,0,142,14,32
 	.sym	CHAR,0,14,14,8
+	.sym	PUINT_32,0,146,14,32
+	.sym	UINT_32,0,18,14,32
+	.sym	PUINT_16,0,144,14,32
+	.sym	UINT_16,0,16,14,16
+	.sym	PUINT_8,0,142,14,32
+	.sym	UINT_8,0,14,14,8
 	.sym	LPVOID,0,129,14,32
 	.sym	VOID,0,1,14,32
 	.sym	Boolean_T,0,5,14,16

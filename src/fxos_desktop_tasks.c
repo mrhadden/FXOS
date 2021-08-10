@@ -394,6 +394,7 @@ BOOL desktopVolsWindowProc(PFXOSMESSAGE pMsg)
 
 					((PVOLCONTENT)pWin->windowData)->fs.fs_type = 0;
 
+					fr = f_mount(NULL, "SD:",1);
 					f_mount(&((PVOLCONTENT)pWin->windowData)->fs, "SD:",1);
 
 					//k_debug_integer("desktopVolsWindowProc:f_open:",1);

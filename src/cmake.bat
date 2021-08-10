@@ -108,7 +108,7 @@ REM -WU   Warns about unused local variables.
 
 
 SET ASM_OPT=-G -V -L -W
-SET LINK_OPT=-C010000,010000 -D020000 -T -G -B -Q
+SET LINK_OPT=-C010000,010000 -D030000 -T -G -B -Q
 
 SET LIBS=-L%WDC_BASE_DIR%\lib
 
@@ -156,7 +156,7 @@ IF [%BUILD%] == [Y] (
 del /Q *.s
 
 %ASSEMBLER% %ASM_OPTIONS% uart.asm -o uart.obj
-%ASSEMBLER% %ASM_OPTIONS% fxsdcard.asm -o fxsdcard.obj
+REM %ASSEMBLER% %ASM_OPTIONS% fxsdcard.asm -o fxsdcard.obj
 
 %ASSEMBLER% %ASM_OPTIONS% fxloader.asm -o fxloader.obj
 REM %ASSEMBLER% %ASM_OPTIONS% Interrupt_Handler.asm -o Interrupt_Handler.obj
@@ -170,25 +170,25 @@ echo Compling fxheapfar.c
 %ASSEMBLER% %ASM_OPTIONS% fxheapfar.s -o fxheapfar.obj
 
 
-echo Compling MINDRVR.C
-%COMPILER% %INCLUDES% %OPTIONS% -O MINDRVR.s MINDRVR.C
-%ASSEMBLER% %ASM_OPTIONS% MINDRVR.s -o MINDRVR.obj
+REM echo Compling MINDRVR.C
+REM %COMPILER% %INCLUDES% %OPTIONS% -O MINDRVR.s MINDRVR.C
+REM %ASSEMBLER% %ASM_OPTIONS% MINDRVR.s -o MINDRVR.obj
 
 echo Compile umm_malloc.c
 %COMPILER% %INCLUDES% %OPTIONS% -O umm_malloc.s umm_malloc.c
 %ASSEMBLER% %ASM_OPTIONS% umm_malloc.s -o umm_malloc.obj
 
-echo Compile filesys
-%COMPILER% %INCLUDES% %OPTIONS% -O filesys.s FILE_SYS.C
-%ASSEMBLER% %ASM_OPTIONS% filesys.s -o filesys.obj
+REM echo Compile filesys
+REM %COMPILER% %INCLUDES% %OPTIONS% -O filesys.s FILE_SYS.C
+REM %ASSEMBLER% %ASM_OPTIONS% filesys.s -o filesys.obj
 
-echo Compile halbase
-%COMPILER% %INCLUDES% %OPTIONS% -O halbase.s HAL_BASE.C
-%ASSEMBLER% %ASM_OPTIONS% halbase.s -o halbase.obj
+REM echo Compile halbase
+REM %COMPILER% %INCLUDES% %OPTIONS% -O halbase.s HAL_BASE.C
+REM %ASSEMBLER% %ASM_OPTIONS% halbase.s -o halbase.obj
 
-echo Compile halbase
-%COMPILER% %INCLUDES% %OPTIONS% -O parahw.s PARA_HW.C
-%ASSEMBLER% %ASM_OPTIONS% parahw.s -o parahw.obj
+REM echo Compile halbase
+REM %COMPILER% %INCLUDES% %OPTIONS% -O parahw.s PARA_HW.C
+REM %ASSEMBLER% %ASM_OPTIONS% parahw.s -o parahw.obj
 
 echo Compile fxdos
 %COMPILER% %INCLUDES% %OPTIONS% -O fxdos.s fxdos.c
@@ -218,9 +218,9 @@ echo Compile fxmain
 %COMPILER% %INCLUDES% %OPTIONS% -Ofxmain.s fxmain.c
 %ASSEMBLER% %ASM_OPTIONS% fxmain.s -o fxmain.obj
 
-echo Compile fxmouse
-%COMPILER% %INCLUDES% %OPTIONS% -Ofxmouse.s fxmouse.c
-%ASSEMBLER% %ASM_OPTIONS% fxmouse.s -o fxmouse.obj
+REM echo Compile fxmouse
+REM %COMPILER% %INCLUDES% %OPTIONS% -Ofxmouse.s fxmouse.c
+REM %ASSEMBLER% %ASM_OPTIONS% fxmouse.s -o 
 
 echo Compile fxstartup
 REM %COMPILER% %INCLUDES% %OPTIONS% -Ofxstartup.s fxstartup.c
@@ -231,7 +231,7 @@ echo Compile fxmemorymanager
 %ASSEMBLER% %ASM_OPTIONS% fxmemorymanager.s -o fxmemorymanager.obj
 
 echo Compile fxeventmanager
-%COMPILER% %INCLUDES% %OPTIONS% -O fxeventmanager.s fxeventmanagerV5.c
+%COMPILER% %INCLUDES% %OPTIONS% -O fxeventmanager.s fxeventmanager.c
 %ASSEMBLER% %ASM_OPTIONS% fxeventmanager.s -o fxeventmanager.obj
 
 echo Compile fxdesktop
@@ -239,24 +239,24 @@ REM COMPILER% %INCLUDES% %OPTIONS% -O fxdesktop.s fxdesktop.c
 REM %ASSEMBLER% %ASM_OPTIONS% fxdesktop.s -o fxdesktop.obj
 
 echo Compile fxirq
-%COMPILER% %INCLUDES% %OPTIONS% -Ofxirq.s fxirqV3.c
-%ASSEMBLER% %ASM_OPTIONS% fxirq.s -o fxirq.obj
+%COMPILER% %INCLUDES% %OPTIONS% -O fxhalmanager.s fxhalmanager.c
+%ASSEMBLER% %ASM_OPTIONS% fxhalmanager.s -o fxhalmanager.obj
 
 echo Compile fxfont
-%COMPILER% %INCLUDES% %OPTIONS% -Ofxfont.s fxfont.c
+%COMPILER% %INCLUDES% %OPTIONS% -O fxfont.s fxfont.c
 %ASSEMBLER% -V -l fxfont.s -o fxfont.obj
 
 echo Compile fxwindowmanager.c
-%COMPILER% %INCLUDES% %OPTIONS% -O fxwindowmanager.s fxwindowmanagerV5.c
+%COMPILER% %INCLUDES% %OPTIONS% -O fxwindowmanager.s fxwindowmanager.c
 %ASSEMBLER% %ASM_OPTIONS% fxwindowmanager.s -o fxwindowmanager.obj
 
 echo Compile fxmenumanager.c
 %COMPILER% %INCLUDES% %OPTIONS% -O fxmenumanager.s fxmenumanager.c
 %ASSEMBLER% %ASM_OPTIONS% fxmenumanager.s -o fxmenumanager.obj
 
-echo Compile fxguiV4
-%COMPILER% %INCLUDES% %OPTIONS% -O fxgui.s fxguiV4.c
-%ASSEMBLER% %ASM_OPTIONS% fxgui.s -o fxgui.obj
+echo Compile fxgfx
+%COMPILER% %INCLUDES% %OPTIONS% -O fxgfx.s fxgfx.c
+%ASSEMBLER% %ASM_OPTIONS% fxgfx.s -o fxgfx.obj
 
 echo Compile fx_ctl_listbox
 %COMPILER% %INCLUDES% %OPTIONS% -O fx_ctl_listbox.s fx_ctl_listbox.c
@@ -266,24 +266,24 @@ echo Compile fxos_desktop_proc
 %COMPILER% %INCLUDES% %OPTIONS% -O fxos_desktop_proc.s fxos_desktop_proc.c
 %ASSEMBLER% -V -l fxos_desktop_proc.s -o fxos_desktop_proc.obj
 
-echo Compile fxos_desktop_proc
+echo Compile fxcon_cmd
 %COMPILER% %INCLUDES% %OPTIONS% -O fxcon_cmd.s fxcon_cmd.c
 %ASSEMBLER% -V -l fxcon_cmd.s -o fxcon_cmd.obj
 
-echo Compile fxos_desktop_proc
-%COMPILER% %INCLUDES% %OPTIONS% -O flpydsk.s flpydsk.c
-%ASSEMBLER% -V -l flpydsk.s -o flpydsk.obj
+REM echo Compile fxos_desktop_proc
+REM %COMPILER% %INCLUDES% %OPTIONS% -O flpydsk.s flpydsk.c
+REM %ASSEMBLER% -V -l flpydsk.s -o flpydsk.obj
 
-echo Compile fxfloppy
-%COMPILER% %INCLUDES% %OPTIONS% -O fxfloppy.s fxfloppy.c
-%ASSEMBLER% -V -l fxfloppy.s -o fxfloppy.obj
+REM echo Compile fxfloppy
+REM %COMPILER% %INCLUDES% %OPTIONS% -O fxfloppy.s fxfloppy.c
+REM %ASSEMBLER% -V -l fxfloppy.s -o fxfloppy.obj
 
-echo Compile fxuser
-%COMPILER% %INCLUDES% %OPTIONS% -O fxuser.s fxuser.c
-%ASSEMBLER% -V -l fxuser.s -o fxuser.obj
+REM echo Compile fxuser
+REM %COMPILER% %INCLUDES% %OPTIONS% -O fxuser.s fxuser.c
+REM %ASSEMBLER% -V -l fxuser.s -o fxuser.obj
 
 echo Compile ff
-%COMPILER% %INCLUDES% %OPTIONS% -O ff.s ff.c
+%COMPILER% %INCLUDES% %OPTIONS% -O ff.s ff/ff.c
 %ASSEMBLER% -V -l ff.s -o ff.obj
 
 echo Compile ff
@@ -291,27 +291,27 @@ echo Compile ff
 %ASSEMBLER% -V -l diskio.s -o diskio.obj
 
 echo Compile OMF_Dc_Memory
-%COMPILER% %INCLUDES% %OPTIONS% -O omf_mem.s OMF_Dc_Memory.c
+%COMPILER% %INCLUDES% %OPTIONS% -O omf_mem.s omf/OMF_Dc_Memory.c
 %ASSEMBLER% -V -l omf_mem.s -o omf_mem.obj
 
 echo Compile OMF_Dc_shared
-%COMPILER% %INCLUDES% %OPTIONS% -O omf_shared.s OMF_Dc_shared.c
+%COMPILER% %INCLUDES% %OPTIONS% -O omf_shared.s omf/OMF_Dc_shared.c
 %ASSEMBLER% -V -l omf_shared.s -o omf_shared.obj
 
 echo Compile OMF_Load
-%COMPILER% %INCLUDES% %OPTIONS% -O omf_load.s OMF_Load.c
+%COMPILER% %INCLUDES% %OPTIONS% -O omf_load.s omf/OMF_Load.c
 %ASSEMBLER% -V -l omf_load.s -o omf_load.obj
 
 echo Compile OMF_Record
-%COMPILER% %INCLUDES% %OPTIONS% -O omf_record.s OMF_Record.c
+%COMPILER% %INCLUDES% %OPTIONS% -O omf_record.s omf/OMF_Record.c
 %ASSEMBLER% -V -l omf_record.s -o omf_record.obj
 
 echo Compile OMF_Extract
-%COMPILER% %INCLUDES% %OPTIONS% -O omf_extract.s OMF_Extract.c
+%COMPILER% %INCLUDES% %OPTIONS% -O omf_extract.s omf/OMF_Extract.c
 %ASSEMBLER% -V -l omf_extract.s -o omf_extract.obj
 
 echo Compile OMF_Dump
-%COMPILER% %INCLUDES% %OPTIONS% -O omf_dump.s OMF_Dump.c
+%COMPILER% %INCLUDES% %OPTIONS% -O omf_dump.s omf/OMF_Dump.c
 %ASSEMBLER% -V -l omf_dump.s -o omf_dump.obj
 
 echo Compiling DRIVER_B2Console.c
@@ -363,30 +363,61 @@ echo Compiling DRIVER_FMXCOM1.c
 %COMPILER% %INCLUDES% %OPTIONS% -O DRIVER_FMXCOM1.s drivers/DRIVER_FMXCOM1.c
 %ASSEMBLER% -V -l DRIVER_FMXCOM1.s -o DRIVER_FMXCOM1.obj
 
+echo Compiling DRIVER_TIM0.c
+%COMPILER% %INCLUDES% %OPTIONS% -O DRIVER_TIM0.s drivers/DRIVER_TIM0.c
+%ASSEMBLER% -V -l DRIVER_TIM0.s -o DRIVER_TIM0.obj
+
+echo Compiling DRIVER_TIM1.c
+%COMPILER% %INCLUDES% %OPTIONS% -O DRIVER_TIM1.s drivers/DRIVER_TIM1.c
+%ASSEMBLER% -V -l DRIVER_TIM1.s -o DRIVER_TIM1.obj
+
+echo Compiling DRIVER_TIM2.c
+%COMPILER% %INCLUDES% %OPTIONS% -O DRIVER_TIM2.s drivers/DRIVER_TIM2.c
+%ASSEMBLER% -V -l DRIVER_TIM2.s -o DRIVER_TIM2.obj
+
+echo Compiling DRIVER_SOL.c
+%COMPILER% %INCLUDES% %OPTIONS% -O DRIVER_SOL.s drivers/DRIVER_SOL.c
+%ASSEMBLER% -V -l DRIVER_SOL.s -o DRIVER_SOL.obj
+
+echo Compiling DRIVER_RTC.c
+%COMPILER% %INCLUDES% %OPTIONS% -O DRIVER_RTC.s drivers/DRIVER_RTC.c
+%ASSEMBLER% -V -l DRIVER_RTC.s -o DRIVER_RTC.obj
+
+REM echo Compiling ps2ctl.c
+REM %COMPILER% %INCLUDES% %OPTIONS% -O ps2ctl.s drivers/ps2ctl.c
+REM %ASSEMBLER% -V -l ps2ctl.s -o ps2ctl.obj
+
+echo Compiling driver_ps2.c
+%COMPILER% %INCLUDES% %OPTIONS% -O driver_fmups2.s drivers/driver_fmups2.c
+%ASSEMBLER% -V -l driver_fmups2.s -o driver_fmups2.obj
+
+echo Compiling DRIVER_SN76489.c
+%COMPILER% %INCLUDES% %OPTIONS% -O DRIVER_SN76489.s drivers/DRIVER_SN76489.c
+%ASSEMBLER% -V -l DRIVER_SN76489.s -o DRIVER_SN76489.obj
+
 REM echo Compiling cbmp.c
 REM %COMPILER% %INCLUDES% %OPTIONS% -O cbmp.s bmp/cbmp.c
 REM %ASSEMBLER% -V -l cbmp.s -o cbmp.obj
 
 
-
 IF [%FMX%] == [Y] (
 echo Compile FMX LINK
-%LINKER% %LINK_OPT% -HB    fx_export_calltable.obj fxos_accessories.obj DRIVER_FMXConsole.obj DRIVER_FMXSDCard.obj DRIVER_FMXIDE.obj DRIVER_B2SDCard.obj diskio.obj ff.obj fxuser.obj fxheapfar.obj fxheapnear.obj MINDRVR.obj fxfloppy.obj fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj parahw.obj filesys.obj halbase.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgui.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxsdcard.obj fxirq.obj fxmouse.obj fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -LFXOS_DISPATCH_SDK -O %KERNELNAME%_%MODEL_EXT%.bin
-%LINKER% %LINK_OPT% -HM28  fx_export_calltable.obj fxos_accessories.obj DRIVER_FMXConsole.obj DRIVER_FMXSDCard.obj DRIVER_FMXIDE.obj DRIVER_B2SDCard.obj diskio.obj ff.obj fxuser.obj fxheapfar.obj fxheapnear.obj MINDRVR.obj fxfloppy.obj fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj parahw.obj filesys.obj halbase.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgui.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxsdcard.obj fxirq.obj fxmouse.obj fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -LFXOS_DISPATCH_SDK -O %KERNELNAME%_%MODEL_EXT%.s28.hex
+%LINKER% %LINK_OPT% -HB    fx_export_calltable.obj fxos_accessories.obj DRIVER_FMXConsole.obj DRIVER_FMXSDCard.obj DRIVER_FMXIDE.obj DRIVER_B2SDCard.obj diskio.obj ff.obj fxuser.obj fxheapfar.obj fxheapnear.obj MINDRVR.obj fxfloppy.obj fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj parahw.obj halbase.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgfx.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxsdcard.obj fxhalmanager.obj  fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -LFXOS_DISPATCH_SDK -O %KERNELNAME%_%MODEL_EXT%.bin
+%LINKER% %LINK_OPT% -HM28  fx_export_calltable.obj fxos_accessories.obj DRIVER_FMXConsole.obj DRIVER_FMXSDCard.obj DRIVER_FMXIDE.obj DRIVER_B2SDCard.obj diskio.obj ff.obj fxuser.obj fxheapfar.obj fxheapnear.obj MINDRVR.obj fxfloppy.obj fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj parahw.obj halbase.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgfx.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxsdcard.obj fxhalmanager.obj  fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -LFXOS_DISPATCH_SDK -O %KERNELNAME%_%MODEL_EXT%.s28.hex
 ) ELSE (
 	IF [%FMU%] == [Y] (
 	echo Compile FMU LINK
-	REM %LINKER% %LINK_OPT% -HB    fxos_accessories.obj DRIVER_FMXConsole.obj DRIVER_FMXSDCard.obj DRIVER_B2SDCard.obj  diskio.obj ff.obj fxuser.obj fxheapfar.obj fxheapnear.obj MINDRVR.obj fxfloppy.obj fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj parahw.obj filesys.obj halbase.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgui.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxsdcard.obj fxirq.obj fxmouse.obj fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -LFXOS_DISPATCH_SDK -O %KERNELNAME%_%MODEL_EXT%.bin
-	REM %LINKER% %LINK_OPT% -HM28  fxos_accessories.obj DRIVER_FMXConsole.obj DRIVER_FMXSDCard.obj DRIVER_B2SDCard.obj  diskio.obj ff.obj fxuser.obj fxheapfar.obj fxheapnear.obj MINDRVR.obj fxfloppy.obj fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj parahw.obj filesys.obj halbase.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgui.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxsdcard.obj fxirq.obj fxmouse.obj fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -LFXOS_DISPATCH_SDK -O %KERNELNAME%_%MODEL_EXT%.s28.hex
+	REM %LINKER% %LINK_OPT% -HB    DRIVER_SN76489.obj driver_fmups2.obj ps2ctl.obj fxos_accessories.obj DRIVER_FMXConsole.obj DRIVER_FMXSDCard.obj DRIVER_B2SDCard.obj  diskio.obj ff.obj fxheapfar.obj fxheapnear.obj MINDRVR.obj fxfloppy.obj fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj parahw.obj halbase.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgfx.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxsdcard.obj fxhalmanager.obj  fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -LFXOS_DISPATCH_SDK -O %KERNELNAME%_%MODEL_EXT%.bin
+	REM %LINKER% %LINK_OPT% -HM28  DRIVER_SN76489.obj driver_fmups2.obj ps2ctl.obj fxos_accessories.obj DRIVER_FMXConsole.obj DRIVER_FMXSDCard.obj DRIVER_B2SDCard.obj  diskio.obj ff.obj fxheapfar.obj fxheapnear.obj MINDRVR.obj fxfloppy.obj fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj parahw.obj halbase.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgfx.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxsdcard.obj fxhalmanager.obj  fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -LFXOS_DISPATCH_SDK -O %KERNELNAME%_%MODEL_EXT%.s28.hex
 	
-	%LINKER% %LINK_OPT% -HB    DRIVER_FMXCOM1.obj DRIVER_BLOCK.obj DRIVER_FMXKEYB.obj DRIVER_FMXMOUSE.obj fx_export_calltable.obj fxos_accessories.obj DRIVER_FMXConsole.obj DRIVER_FMXSDCard.obj DRIVER_FMXIDE.obj diskio.obj ff.obj fxheapfar.obj fxheapnear.obj  fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgui.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxirq.obj fxmouse.obj fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -LFXOS_DISPATCH_SDK -O %KERNELNAME%_%MODEL_EXT%.bin
-	%LINKER% %LINK_OPT% -HM28  DRIVER_FMXCOM1.obj DRIVER_BLOCK.obj DRIVER_FMXKEYB.obj DRIVER_FMXMOUSE.obj fx_export_calltable.obj fxos_accessories.obj DRIVER_FMXConsole.obj DRIVER_FMXSDCard.obj DRIVER_FMXIDE.obj diskio.obj ff.obj fxheapfar.obj fxheapnear.obj  fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgui.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxirq.obj fxmouse.obj fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -LFXOS_DISPATCH_SDK -O %KERNELNAME%_%MODEL_EXT%.s28.hex
+	%LINKER% %LINK_OPT% -HB    DRIVER_SN76489.obj driver_fmups2.obj DRIVER_RTC.obj DRIVER_TIM0.obj DRIVER_TIM1.obj DRIVER_TIM2.obj DRIVER_SOL.obj DRIVER_FMXCOM1.obj DRIVER_BLOCK.obj DRIVER_FMXKEYB.obj DRIVER_FMXMOUSE.obj fx_export_calltable.obj fxos_accessories.obj DRIVER_FMXConsole.obj DRIVER_FMXSDCard.obj DRIVER_FMXIDE.obj diskio.obj ff.obj fxheapfar.obj fxheapnear.obj  fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgfx.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxhalmanager.obj  fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -LFXOS_DISPATCH_SDK -O %KERNELNAME%_%MODEL_EXT%.bin
+	%LINKER% %LINK_OPT% -HM28  DRIVER_SN76489.obj driver_fmups2.obj DRIVER_RTC.obj DRIVER_TIM0.obj DRIVER_TIM1.obj DRIVER_TIM2.obj DRIVER_SOL.obj DRIVER_FMXCOM1.obj DRIVER_BLOCK.obj DRIVER_FMXKEYB.obj DRIVER_FMXMOUSE.obj fx_export_calltable.obj fxos_accessories.obj DRIVER_FMXConsole.obj DRIVER_FMXSDCard.obj DRIVER_FMXIDE.obj diskio.obj ff.obj fxheapfar.obj fxheapnear.obj  fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgfx.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxhalmanager.obj  fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -LFXOS_DISPATCH_SDK -O %KERNELNAME%_%MODEL_EXT%.s28.hex
 
 
 	) ELSE (
 	echo Compile B2 LINK
-	%LINKER% %LINK_OPT% -HB   DRIVER_B2Console.obj DRIVER_B2SDCard.obj fxuser.obj fxheapfar.obj fxheapnear.obj MINDRVR.obj fxfloppy.obj fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj parahw.obj filesys.obj halbase.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgui.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxsdcard.obj fxirq.obj fxmouse.obj fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -O %KERNELNAME%_%MODEL_EXT%.bin
-	%LINKER% %LINK_OPT% -HM28 DRIVER_B2Console.obj DRIVER_B2SDCard.obj fxuser.obj fxheapfar.obj fxheapnear.obj MINDRVR.obj fxfloppy.obj fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj parahw.obj filesys.obj halbase.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgui.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxsdcard.obj fxirq.obj fxmouse.obj fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -O %KERNELNAME%_%MODEL_EXT%.s28.hex
+	%LINKER% %LINK_OPT% -HB   DRIVER_B2Console.obj DRIVER_B2SDCard.obj fxuser.obj fxheapfar.obj fxheapnear.obj MINDRVR.obj fxfloppy.obj fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj parahw.obj halbase.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgfx.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxsdcard.obj fxhalmanager.obj  fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -O %KERNELNAME%_%MODEL_EXT%.bin
+	%LINKER% %LINK_OPT% -HM28 DRIVER_B2Console.obj DRIVER_B2SDCard.obj fxuser.obj fxheapfar.obj fxheapnear.obj MINDRVR.obj fxfloppy.obj fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj parahw.obj halbase.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgfx.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxsdcard.obj fxhalmanager.obj  fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -O %KERNELNAME%_%MODEL_EXT%.s28.hex
 	)
 )
 

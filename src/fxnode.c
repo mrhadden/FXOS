@@ -28,7 +28,7 @@ void k_initialize(PFXQUEUE q)
 int k_isempty(PFXQUEUE q)
 {
 	if(q == NULL)
-		k_exec_throw_exception(THIS_MODULE,0x00010001,"Kernel node list is NULL.",-1);
+		k_exec_throw_exception(k_isempty,0x00010001,"Kernel node list is NULL.",-1);
 
     return (q->rear == NULL);
 }
@@ -70,6 +70,7 @@ BOOL k_enqueue(PFXQUEUE q, LPVOID value)
 	PFXNODE tmp = NULL;
 
 
+
     //k_debug_pointer("k_enqueue::enter:",q);
     //k_debug_integer("k_enqueue::malloc:",sizeof(FXNODE));
 
@@ -79,12 +80,11 @@ BOOL k_enqueue(PFXQUEUE q, LPVOID value)
     	{
     		if(value)
     		{
-    			//k_debug_integer("k_enqueue::k_mem_deallocate_heap:",q->count);
+    			k_debug_integer("k_enqueue::MSG_MAX:",q->count);
     			//((PFXOSMESSAGE)value)->hwnd;
 
     			//k_debug_pointer("k_enqueue::((PFXOSMESSAGE)value)->hwnd:",((PFXOSMESSAGE)value)->hwnd);
     			//k_debug_integer("k_enqueue::((PFXOSMESSAGE)value)->type:",((PFXOSMESSAGE)value)->type);
-
     			k_mem_deallocate_heap(value);
     		}
     		return FALSE;
@@ -98,6 +98,8 @@ BOOL k_enqueue(PFXQUEUE q, LPVOID value)
 			tmp->data = value;
 			tmp->next = NULL;
 
+			k_lock_irq();
+
 			if(!k_isempty(q))
 			{
 				//k_debug_string("k_enqueue::not empty\r\n");
@@ -110,17 +112,20 @@ BOOL k_enqueue(PFXQUEUE q, LPVOID value)
 				q->front = q->rear = tmp;
 			}
 			q->count++;
+
+			k_unlock_irq();
+
 			//k_debug_integer("k_enqueue::count:",q->count);
 		}
 		else
 		{
 			k_debug_integer("k_enqueue::size:",q->count);
-			k_exec_throw_exception(THIS_MODULE,0x00010000,"Cannot allocate a kernel node.",-1);
+			k_exec_throw_exception(k_enqueue,0x00010000,"Cannot allocate a kernel node.",-1);
 		}
     }
     else
     {
-    	k_exec_throw_exception(THIS_MODULE,0x00010001,"Kernel node list is NULL.",-1);
+    	k_exec_throw_exception(k_enqueue,0x00010001,"Kernel node list is NULL.",-1);
     }
 
 
@@ -135,12 +140,17 @@ LPVOID k_dequeue(PFXQUEUE q)
 	FXNODE *tmp = NULL;
 	LPVOID n = NULL;
 
-	//k_debug_pointer("k_dequeue::q->front:",q->front);
 
 	if(q)
 	{
+		//k_debug_string("k_dequeue:enter...\r\n");
+
 		if(q->front == NULL)
+		{
+			//k_debug_string("k_dequeue:exit NULL...\r\n");
 			return NULL;
+		}
+		k_lock_irq();
 
 		tmp = q->front;
 		if(tmp)
@@ -162,19 +172,26 @@ LPVOID k_dequeue(PFXQUEUE q)
 
 			q->count--;
 
+
+
 			k_mem_deallocate_heap(tmp);
 
 			//k_debug_integer("k_dequeue:",((PFXOSMESSAGE)n)->type);
 		}
 		else
 		{
-			k_exec_throw_exception(THIS_MODULE,0x00010002,"Kernel node is NULL.",-1);
+			k_exec_throw_exception(k_dequeue,0x00010002,"Kernel node is NULL.",-1);
 		}
+
+		k_unlock_irq();
 	}
     else
     {
-    	k_exec_throw_exception(THIS_MODULE,0x00010001,"Kernel node list is NULL.",-1);
+    	k_exec_throw_exception(k_dequeue,0x00010001,"Kernel node list is NULL.",-1);
     }
+
+	//k_debug_string("k_dequeue:exit...\r\n");
+
 	return(n);
 }
 
@@ -515,7 +532,7 @@ PFXNODE	k_nodelist_last(PFXNODE head)
 		ptr = ptr->next;
 		abort++;
 		if(abort == -1)
-			k_exec_throw_exception(THIS_MODULE,0x00020001,"Infinite Node List Detected",-1);
+			k_exec_throw_exception(k_nodelist_last,0x00020001,"Infinite Node List Detected",-1);
 	}
 	return ptr;
 }
@@ -630,11 +647,16 @@ VOID k_nodelist_foreach_type(PFXNODELIST list,BYTE type,LPVOID context,FOREACHNO
 	PFXNODE ptr = NULL;
 	if(list && list->listhead)
 	{
-		ptr = list->listhead->next;
+		ptr = list->listhead;
 		while(ptr!=NULL)
 		{
+			//k_debug_hex("k_nodelist_foreach_type:type:",type);
+			//k_debug_hex("k_nodelist_foreach_type:ptr->type:",ptr->type);
+			//k_debug_nstrings("k_nodelist_foreach_type:name:",ptr->name,32);
 			if(ptr->type == type)
+			{
 				each(context,ptr->data);
+			}
 			ptr = ptr->next;
 		}
 	}
@@ -791,9 +813,9 @@ PFXNODE k_nodelist_addtolist_tohead(PFXNODELIST list,BYTE type,LPCSTR name,LPVOI
 		else
 		{
 			if(name!=NULL)
-				k_exec_throw_exception(THIS_MODULE,0x00020002,k_string_replace("Attempt to add node with duplicate name: %s1","%s1",name),-1);
+				k_exec_throw_exception(k_nodelist_addtolist_tohead,0x00020002,k_string_replace("Attempt to add node with duplicate name: %s1","%s1",name),-1);
 			else
-				k_exec_throw_exception(THIS_MODULE,0x00020002,"Attempt to add node with duplicate name.",-1);
+				k_exec_throw_exception(k_nodelist_addtolist_tohead,0x00020002,"Attempt to add node with duplicate name.",-1);
 		}
 	}
 	//k_debug_string("check k_nodelist_addtolist\r\n");
@@ -837,9 +859,9 @@ PFXNODE k_nodelist_addtolist(PFXNODELIST list,BYTE type,LPCSTR name,LPVOID data)
 			//k_exec_throw_exception(THIS_MODULE,0x00020002,k_string_replace("Attempt to add node with duplicate name: %s1","%s1",name),-1);
 
 			if(name!=NULL)
-				k_exec_throw_exception(THIS_MODULE,0x00020002,k_string_replace("Attempt to add node with duplicate name: %s1","%s1",name),-1);
+				k_exec_throw_exception(k_nodelist_addtolist,(ULONG)list,k_string_replace("Attempt to add node with duplicate name: %s1","%s1",name),-1);
 			else
-				k_exec_throw_exception(THIS_MODULE,0x00020002,"Attempt to add node with duplicate name.",-1);
+				k_exec_throw_exception(k_nodelist_addtolist,(ULONG)list,"Attempt to add node with duplicate name.",-1);
 
 		}
 	}
@@ -863,7 +885,7 @@ PFXNODE k_nodelist_addnodetolist(PFXNODELIST list,PFXNODE new)
 		}
 		else
 		{
-			k_exec_throw_exception(THIS_MODULE,0x00020003,k_string_replace("Attempt to add node with duplicate name: %s1","%s1",new->name),-1);
+			k_exec_throw_exception(k_nodelist_addnodetolist,0x00020003,k_string_replace("Attempt to add node with duplicate name: %s1","%s1",new->name),-1);
 		}
 	}
 	return node;
@@ -880,6 +902,19 @@ PFXNODE	k_nodelist_searchByName(PFXNODELIST list,LPCSTR name)
 
 	return node;
 }
+
+
+PFXNODE	k_nodelist_searchById(PFXNODELIST list,ULONG objId)
+{
+	PFXNODE node = NULL;
+	UCHAR buffer[16];
+
+	if(list && list->listhead)
+		node = k_nodelist_getname(list->listhead->next,(LPCSTR)k_longtodec(objId,buffer));
+
+	return node;
+}
+
 
 
 PFXNODE	k_nodelist_searchByType(PFXNODELIST list,BYTE type)

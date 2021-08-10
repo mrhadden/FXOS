@@ -1,0 +1,149 @@
+date/time         : 2019-10-02, 17:33:15, 373ms
+computer name     : MAC-WIN7
+wts client name   : Mikes-MacBook-P
+user name         : mtbush <admin>
+registered owner  : mtbush
+operating system  : Windows 7 x64 Service Pack 1 build 7601
+system language   : English
+system up time    : 6 days 20 hours
+program up time   : 6 days 18 hours
+processors        : 6x Intel(R) Core(TM) i7-7800X CPU @ 3.50GHz
+physical memory   : 12759/24367 MB (free/total)
+free disk space   : (C:) 406.42 GB (G:) 20.41 GB
+display mode      : 1920x1200, 16 bit
+process id        : $1d90
+allocated memory  : 67.88 MB
+executable        : Fony.exe
+exec. date/time   : 2013-07-26 14:53
+version           : 1.4.4.0
+compiled with     : Delphi 2010
+Fony.exe.mad      : $00027f1c, $5ec042fa, $52ce3375
+madExcept version : 3.0l
+callstack crc     : $e89734ef, $c58a8a98, $c58a8a98
+exception number  : 1
+exception message : The application seems to be frozen.
+
+main thread ($1974):
+750b96bf +047 USER32.dll              SendMessageW
+00512c5e +06a Fony.exe     segment%63 public%6213
+004cd8eb +097 Fony.exe     segment%51 public%4592
+00512ed0 +030 Fony.exe     segment%63 public%6216
+00512d85 +055 Fony.exe     segment%63 public%6215
+00513504 +048 Fony.exe     segment%63 public%6220
+00513689 +1cd Fony.exe     segment%63 public%6220
+0050e480 +2d4 Fony.exe     segment%63 public%6057
+00512bcc +568 Fony.exe     segment%63 public%6212
+0051226c +02c Fony.exe     segment%63 public%6207
+00498a80 +014 Fony.exe     segment%32 public%3772
+77400137 +02b ntdll.dll               KiUserCallbackDispatcher
+753a343b +010 kernel32.dll            BaseThreadInitThunk
+
+thread $1db0:
+7740fe36 +0e ntdll.dll       NtFsControlFile
+74eb7ad8 +57 KERNELBASE.dll  ConnectNamedPipe
+753a343b +10 kernel32.dll    BaseThreadInitThunk
+
+thread $1d8c:
+750b7908 +26 USER32.dll              GetMessageW
+0045f435 +0d Fony.exe     segment%23 public%2294
+0045f49f +37 Fony.exe     segment%23 public%2295
+753a343b +10 kernel32.dll            BaseThreadInitThunk
+>> created by thread $1f14 at:
+76d6450f +00 SHLWAPI.dll
+
+thread $1628:
+77410186 +0e ntdll.dll     NtWaitForMultipleObjects
+753a343b +10 kernel32.dll  BaseThreadInitThunk
+
+thread $1d94:
+77411f6f +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+753a343b +10 kernel32.dll  BaseThreadInitThunk
+
+thread $184c:
+77410186 +0e ntdll.dll       NtWaitForMultipleObjects
+74ec176f +fa KERNELBASE.dll  WaitForMultipleObjectsEx
+753a19f7 +89 kernel32.dll    WaitForMultipleObjectsEx
+750c088c +00 USER32.dll      MsgWaitForMultipleObjectsEx
+750c0b8c +1a USER32.dll      MsgWaitForMultipleObjects
+753a343b +10 kernel32.dll    BaseThreadInitThunk
+
+thread $2420:
+77411f6f +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+753a343b +10 kernel32.dll  BaseThreadInitThunk
+
+date/time         : 2019-10-03, 07:48:46, 240ms
+computer name     : MAC-WIN7
+user name         : mtbush <admin>
+registered owner  : mtbush
+operating system  : Windows 7 x64 Service Pack 1 build 7601
+system language   : English
+system up time    : 7 days 10 hours
+program up time   : 7 days 8 hours
+processors        : 6x Intel(R) Core(TM) i7-7800X CPU @ 3.50GHz
+physical memory   : 11547/24367 MB (free/total)
+free disk space   : (C:) 406.39 GB (G:) 20.39 GB
+display mode      : 3840x2160, 32 bit
+process id        : $1d90
+allocated memory  : 136.83 MB
+executable        : Fony.exe
+exec. date/time   : 2013-07-26 14:53
+version           : 1.4.4.0
+compiled with     : Delphi 2010
+madExcept version : 3.0l
+Fony.exe.mad      : $00027f1c, $5ec042fa, $52ce3375
+callstack crc     : $7849bd28, $bde9e560, $bde9e560
+exception number  : 2
+exception message : The application seems to be frozen.
+
+main thread ($1974):
+750c0d70 +016 USER32.dll               CallWindowProcW
+00512ccc +0d8 Fony.exe     segment%63  public%6213
+00534f66 +05a Fony.exe     segment%67  public%6978
+00513a4c +044 Fony.exe     segment%63  public%6236
+00536523 +0c7 Fony.exe     segment%67  public%7026
+0050e480 +2d4 Fony.exe     segment%63  public%6057
+00512bcc +568 Fony.exe     segment%63  public%6212
+00532cf4 +594 Fony.exe     segment%67  public%6926
+0051226c +02c Fony.exe     segment%63  public%6207
+00498a80 +014 Fony.exe     segment%32  public%3772
+77400137 +02b ntdll.dll                KiUserCallbackDispatcher
+750c0774 +192 USER32.dll               PeekMessageW
+0053b75c +01c Fony.exe     segment%67  public%7204
+0053b8a2 +00a Fony.exe     segment%67  public%7206
+0053bbcd +0c9 Fony.exe     segment%67  public%7211
+006a9d16 +136 Fony.exe     segment%349 public%14518
+753a343b +010 kernel32.dll             BaseThreadInitThunk
+
+thread $1db0:
+7740fe36 +0e ntdll.dll       NtFsControlFile
+74eb7ad8 +57 KERNELBASE.dll  ConnectNamedPipe
+753a343b +10 kernel32.dll    BaseThreadInitThunk
+
+thread $1d8c:
+750b7908 +26 USER32.dll              GetMessageW
+0045f435 +0d Fony.exe     segment%23 public%2294
+0045f49f +37 Fony.exe     segment%23 public%2295
+753a343b +10 kernel32.dll            BaseThreadInitThunk
+>> created by thread $1f14 at:
+76d6450f +00 SHLWAPI.dll
+
+thread $1628:
+77410186 +0e ntdll.dll     NtWaitForMultipleObjects
+753a343b +10 kernel32.dll  BaseThreadInitThunk
+
+thread $1d94:
+77411f6f +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+753a343b +10 kernel32.dll  BaseThreadInitThunk
+
+thread $184c:
+77410186 +0e ntdll.dll       NtWaitForMultipleObjects
+74ec176f +fa KERNELBASE.dll  WaitForMultipleObjectsEx
+753a19f7 +89 kernel32.dll    WaitForMultipleObjectsEx
+750c088c +00 USER32.dll      MsgWaitForMultipleObjectsEx
+750c0b8c +1a USER32.dll      MsgWaitForMultipleObjects
+753a343b +10 kernel32.dll    BaseThreadInitThunk
+
+thread $2a5c:
+77411f6f +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+753a343b +10 kernel32.dll  BaseThreadInitThunk
+

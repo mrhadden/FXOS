@@ -12,10 +12,10 @@
 
 #define CHK_KEYMOUSE_CTL  (0x02)
 
-#define INT_PENDING_REG0  ((char FAR*)0x000140)
-#define INT_PENDING_REG1  ((char FAR*)0x000141)
-#define INT_PENDING_REG2  ((char FAR*)0x000142)
-#define INT_PENDING_REG3  ((char FAR*)0x000143)
+#define INT_PENDING_REG0  ((volatile char FAR*)0x000140)
+#define INT_PENDING_REG1  ((volatile char FAR*)0x000141)
+#define INT_PENDING_REG2  ((volatile char FAR*)0x000142)
+#define INT_PENDING_REG3  ((volatile char FAR*)0x000143)
 #define INT_POL_REG0      ((char FAR*)0x000144)
 #define INT_POL_REG1      ((char FAR*)0x000145)
 #define INT_POL_REG2      ((char FAR*)0x000146)

@@ -5,7 +5,7 @@
 #include "fxos.h"
 #include "fxmemorymanager.h"
 #include "fxeventmanager.h"
-#include "fxgui.h"
+#include "fxgfx.h"
 
 
 /////////////////////////////////////////////////////
@@ -251,6 +251,8 @@ PWINDOW		 k_getWindowFromHandle(HWND hWnd);
 HWND 		 k_getHandleFromWindow(PWINDOW pWin);
 UINT 		 k_getWindowRect(HWND hWnd,PRECT prect);
 VOID 		 k_user_SetWindowTitle(HWND hWnd,LPCSTR title);
+
+EXPORT_FUNC_GUI(GetDesktopWindow)
 HWND 		 k_user_getDesktopWindow(void);
 HWND 		 k_user_findWindow(LPCSTR winTitle);
 BOOL		 k_isNonClient(PWINDOW pWin,PFXOSMESSAGE pmsg,INT x,INT y);
@@ -324,6 +326,16 @@ HFONT    	k_user_RegisterFontClass(LPCSTR pFontName,LPCSTR pFontData);
 
 EXPORT_FUNC_GUI(GetFontClass)
 HFONT    	k_user_getFontClass(LPCSTR pFontName);
+
+EXPORT_FUNC_GUI(LoadResource)
+HANDLE k_user_LoadResource(LPCSTR resourceFile);
+
+EXPORT_FUNC_GUI(GetStringTableEntry)
+PFXSTRING k_user_GetStringTableEntry(UINT objId);
+
+EXPORT_FUNC_GUI(RegisterStringTable)
+BOOL k_user_RegisterStringTable(HANDLE hStringTable,BOOL bRelease);
+
 
 EXPORT_FUNC_GUI(GetMousePointerClass)
 HPOINTER 	k_user_getMousePointerClass(LPCSTR pPointerName);
@@ -510,6 +522,7 @@ VOID k_clean_closed_windows(void);
 //
 //  Standard Control Procesures
 //
+EXPORT_FUNC_GUI(DefaultWindowProc)
 BOOL DefWindowProc(PFXOSMESSAGE pMsg);
 BOOL DlgWindowProc(PFXOSMESSAGE pMsg);
 BOOL DlgAboutWindowProc(PFXOSMESSAGE pMsg);

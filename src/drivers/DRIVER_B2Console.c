@@ -1,5 +1,6 @@
 
 #include "DRIVER_B2Console.h"
+#include "drivers/DRIVER.h"
 
 
 #pragma section CODE=B2Console,offset $08:A000
@@ -16,7 +17,7 @@ FX_DEVICE_DRIVER DRIVER_B2Console = {
 										"2\0",
 										DRIVER_TYPE_CONSOLE,
 										"CON:",
-										0,
+										NOIRQ,
 										NULL,
 										NULL,
 										f_driver_load,

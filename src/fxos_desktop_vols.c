@@ -33,7 +33,9 @@ SEGMENTHEADER _k_loadmodule;
 
 typedef void (*DLLMAIN)(VOID);
 
-void selectRow(HWND hWnd,PWINDOW pWin,UINT row);
+void highlightRow(HWND hWnd,PWINDOW pWin,INT row);
+void selectRow(PWINDOW pWin,INT row);
+BOOL handleFileType(LPCSTR fileName);
 
 
 VOID k_user_DisplayVolWindow(HWND hDesktop)
@@ -54,14 +56,16 @@ typedef struct
 	INT  cx;
 	INT  cy;
 	INT  length;
-	CHAR volumeName[32];
-	DWORD serialNumber;
-	PFXNODELIST volContent;
-	PFXNODE pCurrentTop;
-	PFXDOSDEVICE pdd;
-	FIL			f;
-	FATFS 		fs;
-	LPVOID fbuffer;
+	INT				currentRow;
+	INT				renderCount;
+	LPSTR 			volumeName;
+	DWORD 			serialNumber;
+	PFXNODELIST 	volContent;
+	PFXNODE 		pCurrentTop;
+	//PFXDOSDEVICE 	pdd;
+	FIL				*f;
+	FATFS 			*fs;
+	LPVOID		 	fbuffer;
 }
 VOLCONTENT;
 typedef VOLCONTENT FAR *PVOLCONTENT;
@@ -81,6 +85,8 @@ VOID foreach_file(LPVOID ctx,LPVOID data)
 		pCon = ((PVOLCONTENT)pWin->windowData);
 		if(pCon)
 		{
+			((PVOLCONTENT)pWin->windowData)->renderCount++;
+
 			pinfo = ((FILINFO*)data);
 
 			c = strlen(pinfo->fname);
@@ -126,6 +132,7 @@ VOID foreach_render_file(LPVOID ctx,LPVOID data)
 	if(pWin)
 	{
 		pCon = ((PVOLCONTENT)pWin->windowData);
+
 		row = k_user_GetWindowData((HWND)pWin,4);
 		//k_debug_strings("desktopVolsWindowProc::foreach_file:",  ((PFAT16ENTRYLONG)data)->plongfileName );
 
@@ -255,7 +262,7 @@ BOOL desktopVolsWindowProc(PFXOSMESSAGE pMsg)
 	//FIL			f;
 	//PVOLCONTENT pVolContent;
 	UINT br;
-	INT row;
+	INT row = 0;
 	PFXSTRING path = NULL;
 	FRESULT fr;
 
@@ -299,15 +306,18 @@ BOOL desktopVolsWindowProc(PFXOSMESSAGE pMsg)
 
 						((PVOLCONTENT)pWin->windowData)->volContent = NULL;
 
-
 						dp = (DIR*)k_mem_allocate_heap(sizeof(DIR));
 						finfo = (FILINFO*)k_mem_allocate_heap(sizeof(FILINFO));
 
-						memset(((PVOLCONTENT)pWin->windowData)->volumeName,0,32);
+						//memset(((PVOLCONTENT)pWin->windowData)->volumeName,0,32);
 
-						//((PVOLCONTENT)pWin->windowData)->fs = k_mem_allocate_heap(sizeof(FATFS));
+						((PVOLCONTENT)pWin->windowData)->volumeName = k_mem_allocate_heap(256);
+						memset(((PVOLCONTENT)pWin->windowData)->volumeName,0,256);
 
-						f_mount(&((PVOLCONTENT)pWin->windowData)->fs,"HD:",1);
+						((PVOLCONTENT)pWin->windowData)->fs = k_mem_allocate_heap(sizeof(FATFS));
+
+						f_mount(NULL, "HD:",1); // unmount for safety
+						f_mount(((PVOLCONTENT)pWin->windowData)->fs,"HD:",1);
 
 						f_getlabel("HD:",((PVOLCONTENT)pWin->windowData)->volumeName,&(((PVOLCONTENT)pWin->windowData)->serialNumber));
 						k_debug_nstrings("f_getlabel:name:",((PVOLCONTENT)pWin->windowData)->volumeName,32);
@@ -317,6 +327,7 @@ BOOL desktopVolsWindowProc(PFXOSMESSAGE pMsg)
 							strcpy(pWin->win_title,((PVOLCONTENT)pWin->windowData)->volumeName);
 						}
 
+						((PVOLCONTENT)pWin->windowData)->renderCount = 0;
 						((PVOLCONTENT)pWin->windowData)->volContent = k_dos_findfiles_to_nodes("HD:\\");
 
 						if(((PVOLCONTENT)pWin->windowData)->volContent)
@@ -367,6 +378,13 @@ BOOL desktopVolsWindowProc(PFXOSMESSAGE pMsg)
 							return FALSE;
 						}
 						*/
+
+
+						((PVOLCONTENT)pWin->windowData)->currentRow = 1;
+						k_debug_integer("desktopVolsWindowProc::FX_CREATE_WINDOW:row:", ((PVOLCONTENT)pWin->windowData)->currentRow );
+
+						highlightRow(pMsg->hwnd,pWin,((PVOLCONTENT)pWin->windowData)->currentRow);
+
 					}
 
 					k_debug_long("desktopVolsWindowProc::FX_CREATE_WINDOW:Exit:",p->procId);
@@ -432,25 +450,39 @@ BOOL desktopVolsWindowProc(PFXOSMESSAGE pMsg)
 			{
 				if(pWin)
 				{
-					if((((PKEYSTATE)pMsg->data)->scanCode == 0x048))
+					if((((PKEYSTATE)pMsg->data)->scanCode == 0x048) || (((PKEYSTATE)pMsg->data)->scanCode == 0xD5) )
 					{
 						k_debug_strings("desktopVolsWindowProc::Calling k_user_HighlightMenu:","UP");
 
-						selectRow(pMsg->hwnd,pWin,row);
+						((PVOLCONTENT)pWin->windowData)->currentRow = ((PVOLCONTENT)pWin->windowData)->currentRow - 1;
+
+						if(((PVOLCONTENT)pWin->windowData)->currentRow < 1)
+							((PVOLCONTENT)pWin->windowData)->currentRow = 1;
+
+						k_debug_integer("desktopVolsWindowProc::FX_KEY_DOWN:row:", ((PVOLCONTENT)pWin->windowData)->currentRow );
+						highlightRow(pMsg->hwnd,pWin,((PVOLCONTENT)pWin->windowData)->currentRow);
 
 					}
-					else if((((PKEYSTATE)pMsg->data)->scanCode == 0x50))
+					else if((((PKEYSTATE)pMsg->data)->scanCode == 0x50) || (((PKEYSTATE)pMsg->data)->scanCode == 0xC9) )
 					{
 						k_debug_strings("desktopVolsWindowProc::Calling k_user_HighlightMenu:","DOWN");
+						k_debug_integer("desktopVolsWindowProc::Calling renderCount:",((PVOLCONTENT)pWin->windowData)->renderCount);
 
-						selectRow(pMsg->hwnd,pWin,row);
+						((PVOLCONTENT)pWin->windowData)->currentRow = ((PVOLCONTENT)pWin->windowData)->currentRow + 1;
+
+						if(((PVOLCONTENT)pWin->windowData)->currentRow > ((PVOLCONTENT)pWin->windowData)->renderCount)
+							((PVOLCONTENT)pWin->windowData)->currentRow = (((PVOLCONTENT)pWin->windowData)->renderCount);
+
+
+						k_debug_integer("desktopVolsWindowProc::FX_KEY_DOWN:row:", ((PVOLCONTENT)pWin->windowData)->currentRow );
+						highlightRow(pMsg->hwnd,pWin,((PVOLCONTENT)pWin->windowData)->currentRow);
 					}
 					else if((((PKEYSTATE)pMsg->data)->scanCode == 0x1C))
 					{
 						k_debug_strings("desktopVolsWindowProc::Calling k_user_SelectMenu:","ENTER");
 
 
-
+						selectRow(pWin,((PVOLCONTENT)pWin->windowData)->currentRow);
 					}
 
 				}
@@ -492,9 +524,9 @@ BOOL desktopVolsWindowProc(PFXOSMESSAGE pMsg)
 
 					//k_dos_read_file(((PVOLCONTENT)pWin->windowData)->pdd,((PFAT16ENTRYLONG)pnode->data)->plongfileName);
 
-					((PVOLCONTENT)pWin->windowData)->fs.fs_type = 0;
+					((PVOLCONTENT)pWin->windowData)->fs->fs_type = 0;
 
-					f_mount(&((PVOLCONTENT)pWin->windowData)->fs, "HD:",1);
+					f_mount(((PVOLCONTENT)pWin->windowData)->fs, "HD:",1);
 
 					//k_debug_integer("desktopVolsWindowProc:f_open:",1);
 
@@ -504,7 +536,7 @@ BOOL desktopVolsWindowProc(PFXOSMESSAGE pMsg)
 
 					k_debug_strings("desktopVolsWindowProc:path:",path->buffer);
 
-					if(f_open(&((PVOLCONTENT)pWin->windowData)->f,path->buffer,FA_READ) == FR_OK)
+					if(f_open(((PVOLCONTENT)pWin->windowData)->f,path->buffer,FA_READ) == FR_OK)
 					{
 
 						//k_debug_integer("desktopVolsWindowProc:f_open:",2);
@@ -512,7 +544,7 @@ BOOL desktopVolsWindowProc(PFXOSMESSAGE pMsg)
 						{
 							k_debug_string("desktopVolsWindowProc::DETECTED EXE\r\n");
 
-							fr = f_read(&((PVOLCONTENT)pWin->windowData)->f,(LPVOID)0x090000,2048,&br);
+							fr = f_read(((PVOLCONTENT)pWin->windowData)->f,(LPVOID)0x090000,2048,&br);
 							k_debug_integer("desktopVolsWindowProc:f_read:fr:",fr);
 							k_debug_integer("desktopVolsWindowProc::READ EXE Size:",br);
 							if(br)
@@ -532,7 +564,7 @@ BOOL desktopVolsWindowProc(PFXOSMESSAGE pMsg)
 						{
 							k_debug_string("desktopVolsWindowProc::DETECTED HDR\r\n");
 
-							fr = f_read(&((PVOLCONTENT)pWin->windowData)->f,&_k_loadmodule,sizeof(_k_loadmodule),&br);
+							fr = f_read(((PVOLCONTENT)pWin->windowData)->f,&_k_loadmodule,sizeof(_k_loadmodule),&br);
 							k_debug_integer("desktopVolsWindowProc:f_read:fr:",fr);
 							k_debug_integer("desktopVolsWindowProc::READ HDR Size:\r\n",br);
 							if(br)
@@ -547,10 +579,10 @@ BOOL desktopVolsWindowProc(PFXOSMESSAGE pMsg)
 
 							}
 
-							fr = f_lseek(&((PVOLCONTENT)pWin->windowData)->f,_k_loadmodule.length + 1);
+							fr = f_lseek(((PVOLCONTENT)pWin->windowData)->f,_k_loadmodule.length + 1);
 							k_debug_integer("desktopVolsWindowProc:f_lseek(0):fr:",fr);
 
-							fr = f_read(&((PVOLCONTENT)pWin->windowData)->f,&pdata,sizeof(LPVOID),&br);
+							fr = f_read(((PVOLCONTENT)pWin->windowData)->f,&pdata,sizeof(LPVOID),&br);
 							k_debug_integer("desktopVolsWindowProc:f_read:fr:",fr);
 							k_debug_integer("desktopVolsWindowProc::RE-READ HDR Size:\r\n",br);
 							if(br)
@@ -609,7 +641,7 @@ BOOL desktopVolsWindowProc(PFXOSMESSAGE pMsg)
 						else
 						{
 							((PVOLCONTENT)pWin->windowData)->fbuffer = k_mem_allocate_heap(2 * 1024);
-							fr = f_read(&((PVOLCONTENT)pWin->windowData)->f,((PVOLCONTENT)pWin->windowData)->fbuffer,2 * 1024,&br);
+							fr = f_read(((PVOLCONTENT)pWin->windowData)->f,((PVOLCONTENT)pWin->windowData)->fbuffer,2 * 1024,&br);
 
 							//k_debug_integer("desktopVolsWindowProc:f_read:fr:",fr);
 
@@ -641,7 +673,7 @@ BOOL desktopVolsWindowProc(PFXOSMESSAGE pMsg)
 							k_mem_deallocate_heap( ((PVOLCONTENT)pWin->windowData)->fbuffer );
 						}
 
-						f_close(&((PVOLCONTENT)pWin->windowData)->f);
+						f_close(((PVOLCONTENT)pWin->windowData)->f);
 					}
 
 					k_fxstring_free(path);
@@ -665,8 +697,9 @@ BOOL desktopVolsWindowProc(PFXOSMESSAGE pMsg)
 				k_user_GetMouseClientPoint(pMsg,&point);
 				row = ((point.y) / (FONTH + 2)) + 1;
 				//k_debug_integer("desktopVolsWindowProc::FX_LBUTTON_DOWN:row:",row);
+				((PVOLCONTENT)pWin->windowData)->currentRow = row;
 
-				selectRow(pMsg->hwnd,pWin,row);
+				highlightRow(pMsg->hwnd,pWin,((PVOLCONTENT)pWin->windowData)->currentRow);
 				/*
 				pnode = k_nodelist_get( k_nodelist_getfirstnode(((PVOLCONTENT)pWin->windowData)->volContent), row );
 				if(pnode)
@@ -719,16 +752,43 @@ BOOL desktopVolsWindowProc(PFXOSMESSAGE pMsg)
 	return DefWindowProc(pMsg);
 }
 
-
-void selectRow(HWND hWnd,PWINDOW pWin,UINT row)
+void selectRow(PWINDOW pWin,INT row)
 {
 	PFXNODE pnode = NULL;
+	FILINFO *pinfo;
+
+	k_debug_integer("desktopVolsWindowProc::selectRow:row:", row );
 
 	pnode = k_nodelist_get( k_nodelist_getfirstnode(((PVOLCONTENT)pWin->windowData)->volContent), row );
 	if(pnode)
 	{
-		//k_debug_strings("desktopVolsWindowProc::FX_LBUTTON_DOWN:file:", ((PFAT16ENTRYLONG)pnode->data)->plongfileName );
+		if(pnode->data)
+		{
+			pinfo = ((FILINFO*)pnode->data);
 
+			k_debug_strings("desktopVolsWindowProc::selectRow:file:", pinfo->fname );
+
+			if(!handleFileType(pinfo->fname))
+			{
+
+
+
+			}
+
+		}
+	}
+
+}
+
+void highlightRow(HWND hWnd,PWINDOW pWin,INT row)
+{
+	PFXNODE pnode = NULL;
+
+	k_debug_integer("desktopVolsWindowProc::highlightRow:row:", row );
+
+	pnode = k_nodelist_get( k_nodelist_getfirstnode(((PVOLCONTENT)pWin->windowData)->volContent), row );
+	if(pnode)
+	{
 		if(pnode->data!=k_user_GetWindowData(hWnd,4))
 		{
 			k_user_SetWindowData(hWnd,4,pnode->data);
@@ -754,4 +814,30 @@ void selectRow(HWND hWnd,PWINDOW pWin,UINT row)
 
 	}
 
+}
+
+BOOL handleFileType(LPCSTR fileName)
+{
+	PFXSTRING fxs = NULL;
+	BOOL bRet = FALSE;
+
+	bRet = k_string_ends_with(fileName,"FXA");
+	k_debug_integer("IS FXA:",bRet);
+	if(bRet)
+	{
+		fxs = k_fxstring_new("HD:\\",256);
+
+		k_fxstring_add(fxs,(LPSTR)fileName);
+
+		k_debug_strings("handleFileType::DETECTED FXA:", (LPSTR)fxs->buffer);
+
+		k_user_CreateProcess((LPSTR)fxs->buffer);
+
+		k_fxstring_free(fxs);
+	}
+	else
+	{
+		k_user_CreateMsgBox(ICON_WARNING,"Cannot open unknown file type.",0,100,100);
+	}
+	return FALSE;
 }
