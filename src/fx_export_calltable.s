@@ -495,10 +495,10 @@ R3	equ	13
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",11
 	.line	72
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",6
-	.line	1960
+	.line	1963
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",16
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
-	.line	490
+	.line	475
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",22
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
@@ -511,7 +511,7 @@ R3	equ	13
 	.line	1064
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",7
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
-	.line	1960
+	.line	1963
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",12
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
@@ -606,7 +606,7 @@ R3	equ	13
 	.line	129
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",6
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
-	.line	568
+	.line	572
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",7
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",0
@@ -632,7 +632,7 @@ R3	equ	13
 	.member	CUR_GADGET,144,5,8,16
 	.member	CUR_COLOR,160,101,8,0,15
 	.eos
-	.line	359
+	.line	370
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",8
 	.stag	_fxos_winman_vtable,160,60
 	.member	Events,0,641,8,32
@@ -706,7 +706,7 @@ R3	equ	13
 	.member	readable,8,110,8,0,16
 	.member	data,136,129,8,32
 	.eos
-	.line	568
+	.line	572
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",18
 	.stag	_fx_spinner_ctx,48,71
 	.member	index,0,5,8,16
@@ -920,7 +920,7 @@ R3	equ	13
 	.stag	_k_irq_chain,128,89
 	.member	handlers,0,5217,8,32,4
 	.eos
-	.line	490
+	.line	475
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fx_export_calltable.c",2
 ;#include "fxkernel_exports.h"
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel_exports.h",0

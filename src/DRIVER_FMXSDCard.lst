@@ -1,10 +1,10 @@
-  Mon Aug  9 2021 16:52                                                Page 1
+  Mon Sep 27 2021  9:39                                                Page 1
 
 
                      ***************************************
                      **      WDC 65C816 Macro Assembler   **
                      **                                   **
-                     **     Version 3.49.1- Feb  6 2006    **
+                     **     Version 1.00- Aug 10 2021    **
                      ***************************************
 
      1                        ;:ts=8
@@ -59,7 +59,7 @@
     39                        	.member	b3,4,14,17,1
     40                        	.member	b2,5,14,17,1
     41                        	.member	b1,6,14,17,1
-  Mon Aug  9 2021 16:52                                                Page 2
+  Mon Sep 27 2021  9:39                                                Page 2
 
 
     42                        	.member	b0,7,14,17,1
@@ -120,7 +120,7 @@
     97                        	.member	DB,32,14,8,8
     98                        	.member	DH,40,14,8,8
     99                        	.member	DL,48,14,8,8
-  Mon Aug  9 2021 16:52                                                Page 3
+  Mon Sep 27 2021  9:39                                                Page 3
 
 
    100                        	.member	AH,56,14,8,8
@@ -181,7 +181,7 @@
    155                        	.member	lastMouseY,120,5,8,16
    156                        	.member	currentDiskName,136,142,8,32
    157                        	.member	diskNodes,168,129,8,32
-  Mon Aug  9 2021 16:52                                                Page 4
+  Mon Sep 27 2021  9:39                                                Page 4
 
 
    158                        	.member	titleNodes,200,129,8,32
@@ -242,7 +242,7 @@
    213                        	.eos
    214                        	.stag	_PointStruct,32,25
    215                        	.member	x,0,5,8,16
-  Mon Aug  9 2021 16:52                                                Page 5
+  Mon Sep 27 2021  9:39                                                Page 5
 
 
    216                        	.member	y,16,5,8,16
@@ -303,7 +303,7 @@
    271                        	.member	didDrag,208,14,8,8
    272                        	.eos
    273                        	.stag	_k_WindowStruct,3904,33
-  Mon Aug  9 2021 16:52                                                Page 6
+  Mon Sep 27 2021  9:39                                                Page 6
 
 
    274                        	.member	cbSize,0,16,8,16
@@ -364,7 +364,7 @@
    329                        	.member	win_title,2656,110,8,0,32
    330                        	.member	Reserved0,2912,16,8,16
    331                        	.member	win_class,2928,110,8,0,16
-  Mon Aug  9 2021 16:52                                                Page 7
+  Mon Sep 27 2021  9:39                                                Page 7
 
 
    332                        	.member	nBitmapLayer,3056,16,8,16
@@ -425,7 +425,7 @@
    387                        	.member	pCaption,0,142,8,32
    388                        	.member	cCaption,32,16,8,16
    389                        	.member	data,48,129,8,32
-  Mon Aug  9 2021 16:52                                                Page 8
+  Mon Sep 27 2021  9:39                                                Page 8
 
 
    390                        	.member	captionPixelWidth,80,16,8,16
@@ -486,7 +486,7 @@
    445                        	.eos
    446                        	.stag	_SubMenuStruct,64,45
    447                        	.member	caption,0,142,8,32
-  Mon Aug  9 2021 16:52                                                Page 9
+  Mon Sep 27 2021  9:39                                                Page 9
 
 
    448                        	.member	action,32,641,8,32
@@ -547,10 +547,10 @@
    494                        	.line	72
    495                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxc256u.h",6
-  Mon Aug  9 2021 16:52                                                Page 10
+  Mon Sep 27 2021  9:39                                                Page 10
 
 
-   496                        	.line	1960
+   496                        	.line	1963
    497                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxos.h",16
    498                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -608,7 +608,7 @@
    543                        	.member	devicemanager,464,129,8,32
    544                        	.member	windowmanager,496,129,8,32
    545                        	.member	fxos_kernel_api,528,138,8,32,52
-  Mon Aug  9 2021 16:52                                                Page 11
+  Mon Sep 27 2021  9:39                                                Page 11
 
 
    546                        	.member	fxos_dos_api,560,138,8,32,52
@@ -669,7 +669,7 @@
    601                        	.member	f_driver_irq,584,129,8,32
    602                        	.member	driver_context,616,129,8,32
    603                        	.member	f_driver_load,648,129,8,32
-  Mon Aug  9 2021 16:52                                                Page 12
+  Mon Sep 27 2021  9:39                                                Page 12
 
 
    604                        	.member	f_driver_read,680,129,8,32
@@ -680,7 +680,7 @@
    609                        	.stag	_k_irq_chain,128,60
    610                        	.member	handlers,0,5217,8,32,4
    611                        	.eos
-   612                        	.line	490
+   612                        	.line	475
    613                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxos.h",22
    614                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -702,7 +702,7 @@
                     space\FXOS-Beta\src\fxconsole.h",7
    624                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxc256u.h",0
-   625                        	.line	1960
+   625                        	.line	1963
    626                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxconsole.h",12
    627                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -730,7 +730,7 @@
    642                        	.line	141
    643                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxconsole.h",17
-  Mon Aug  9 2021 16:52                                                Page 13
+  Mon Sep 27 2021  9:39                                                Page 13
 
 
    644                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -791,7 +791,7 @@
    679                        	.member	totalEntries,0,18,8,32
    680                        	.member	usedEntries,32,18,8,32
    681                        	.member	freeEntries,64,18,8,32
-  Mon Aug  9 2021 16:52                                                Page 14
+  Mon Sep 27 2021  9:39                                                Page 14
 
 
    682                        	.member	totalBlocks,96,18,8,32
@@ -836,7 +836,7 @@
                     space\FXOS-Beta\src\fxwindowmanager.h",6
    716                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxeventmanager.h",0
-   717                        	.line	568
+   717                        	.line	572
    718                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxwindowmanager.h",7
    719                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -852,7 +852,7 @@
    725                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxgfx.h",5
    726                        	.stag	_click_detected,64,67
-  Mon Aug  9 2021 16:52                                                Page 15
+  Mon Sep 27 2021  9:39                                                Page 15
 
 
    727                        	.member	window,0,138,8,32,33
@@ -871,7 +871,7 @@
    740                        	.member	CUR_GADGET,144,5,8,16
    741                        	.member	CUR_COLOR,160,101,8,0,15
    742                        	.eos
-   743                        	.line	359
+   743                        	.line	370
    744                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxwindowmanager.h",8
    745                        	.stag	_fxos_winman_vtable,160,69
@@ -913,7 +913,7 @@
    780                        	.member	y,48,16,8,16
    781                        	.eos
    782                        	.utag	marshalled_data,32,75
-  Mon Aug  9 2021 16:52                                                Page 16
+  Mon Sep 27 2021  9:39                                                Page 16
 
 
    783                        	.member	byteValue,0,14,11,8
@@ -950,7 +950,7 @@
    814                        	.member	readable,8,110,8,0,16
    815                        	.member	data,136,129,8,32
    816                        	.eos
-   817                        	.line	568
+   817                        	.line	572
    818                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxconsole.h",18
    819                        	.stag	_fx_spinner_ctx,48,80
@@ -974,7 +974,7 @@
    837                        	.member	proc,0,656,8,32
    838                        	.member	tokens,32,138,8,32,5
    839                        	.eos
-  Mon Aug  9 2021 16:52                                                Page 17
+  Mon Sep 27 2021  9:39                                                Page 17
 
 
    840                        	.line	208
@@ -1035,7 +1035,7 @@
    885                        	.member	obj,0,10,8,128,85
    886                        	.member	flag,128,14,8,8
    887                        	.member	err,136,14,8,8
-  Mon Aug  9 2021 16:52                                                Page 18
+  Mon Sep 27 2021  9:39                                                Page 18
 
 
    888                        	.member	fptr,144,18,8,32
@@ -1096,7 +1096,7 @@
                     space\FXOS-Beta\src\fxdos.h",7
    935                        	.stag	_fx_sd_direntry,256,90
    936                        	.member	filename,0,110,8,0,11
-  Mon Aug  9 2021 16:52                                                Page 19
+  Mon Sep 27 2021  9:39                                                Page 19
 
 
    937                        	.member	type,88,14,8,8
@@ -1157,7 +1157,7 @@
    992                        	.member	bootjmp,0,110,8,0,3
    993                        	.member	oem_name,24,110,8,0,8
    994                        	.member	bytes_per_sector,88,16,8,16
-  Mon Aug  9 2021 16:52                                                Page 20
+  Mon Sep 27 2021  9:39                                                Page 20
 
 
    995                        	.member	sectors_per_cluster,104,14,8,8
@@ -1218,7 +1218,7 @@
   1050                        	.member	sectors_per_track,192,15,8,16
   1051                        	.member	number_ok_dos_heads,208,15,8,16
   1052                        	.member	hidden_sectors,224,18,8,32
-  Mon Aug  9 2021 16:52                                                Page 21
+  Mon Sep 27 2021  9:39                                                Page 21
 
 
   1053                        	.member	total_sectors_long,256,18,8,32
@@ -1279,7 +1279,7 @@
   1108                        	.member	sModelNumber,432,110,8,0,40
   1109                        	.member	wMoreVendorUnique,752,16,8,16
   1110                        	.member	wDoubleWordIO,768,16,8,16
-  Mon Aug  9 2021 16:52                                                Page 22
+  Mon Sep 27 2021  9:39                                                Page 22
 
 
   1111                        	.member	wCapabilities,784,16,8,16
@@ -1340,7 +1340,7 @@
   1163                        	.member	ReadBufferDmaSupported,11,16,17,1
   1164                        	.member	DeviceConfigIdentifySetDmaSupported,12,1
                     6,17,1
-  Mon Aug  9 2021 16:52                                                Page 23
+  Mon Sep 27 2021  9:39                                                Page 23
 
 
   1165                        	.member	LPSAERCSupported,13,16,17,1
@@ -1401,7 +1401,7 @@
   1219                        	.member	SecurityMode,1,16,17,1
   1220                        	.member	RemovableMediaFeature,2,16,17,1
   1221                        	.member	PowerManagement,3,16,17,1
-  Mon Aug  9 2021 16:52                                                Page 24
+  Mon Sep 27 2021  9:39                                                Page 24
 
 
   1222                        	.member	Reserved1,4,16,17,1
@@ -1462,7 +1462,7 @@
   1277                        	.member	WriteBuffer,12,16,17,1
   1278                        	.member	ReadBuffer,13,16,17,1
   1279                        	.member	Nop,14,16,17,1
-  Mon Aug  9 2021 16:52                                                Page 25
+  Mon Sep 27 2021  9:39                                                Page 25
 
 
   1280                        	.member	Obsolete2,15,16,17,1
@@ -1523,7 +1523,7 @@
   1332                        	.member	DownloadMicrocodeMode3,4,16,17,1
   1333                        	.member	FreefallControl,5,16,17,1
   1334                        	.member	SenseDataReporting,6,16,17,1
-  Mon Aug  9 2021 16:52                                                Page 26
+  Mon Sep 27 2021  9:39                                                Page 26
 
 
   1335                        	.member	ExtendedPowerConditions,7,16,17,1
@@ -1584,7 +1584,7 @@
   1389                        	.member	NVCachePowerModeEnabled,0,16,17,1
   1390                        	.member	Reserved0,1,16,17,3
   1391                        	.member	NVCacheFeatureSetEnabled,4,16,17,1
-  Mon Aug  9 2021 16:52                                                Page 27
+  Mon Sep 27 2021  9:39                                                Page 27
 
 
   1392                        	.member	Reserved1,5,16,17,3
@@ -1645,7 +1645,7 @@
   1444                        	.member	MinimumPIOCycleTime,1072,16,8,16
   1445                        	.member	MinimumPIOCycleTimeIORDY,1088,16,8,16
   1446                        	.member	AdditionalSupported,1104,10,8,16,107
-  Mon Aug  9 2021 16:52                                                Page 28
+  Mon Sep 27 2021  9:39                                                Page 28
 
 
   1447                        	.member	ReservedWords70,1120,112,8,0,5
@@ -1706,7 +1706,7 @@
   1493                        	.member	ReservedForCfaWord174,2784,112,8,0,2
   1494                        	.member	CurrentMediaSerialNumber,2816,112,8,0,30
   1495                        	.member	SCTCommandTransport,3296,10,8,16,121
-  Mon Aug  9 2021 16:52                                                Page 29
+  Mon Sep 27 2021  9:39                                                Page 29
 
 
   1496                        	.member	ReservedWord207,3312,112,8,0,2
@@ -1767,7 +1767,7 @@
   1545                        	.member	file,0,138,11,32,86
   1546                        	.member	fileInfo,0,138,11,32,88
   1547                        	.eos
-  Mon Aug  9 2021 16:52                                                Page 30
+  Mon Sep 27 2021  9:39                                                Page 30
 
 
   1548                        	.stag	_dos_handle,80,129
@@ -1806,10 +1806,10 @@
                     space\FXOS-Beta\src\drivers/DRIVER.h",6
   1574                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxc256u.h",0
-  1575                        	.line	1960
+  1575                        	.line	1963
   1576                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
-                    space\FXOS-Beta\src\drivers/DRIVER.h",104
-  1577                        	.line	113
+                    space\FXOS-Beta\src\drivers/DRIVER.h",106
+  1577                        	.line	115
   1578                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\drivers\DRIVER_FMXSDCard.c",5
   1579                        ;#include "drivers/DRIVER_SDC.h"
@@ -1828,7 +1828,7 @@
   1590                        ;
   1591                        ;extern ULONG _pseudo_timer;
   1592                        ;static ULONG default_arg = 0;
-  Mon Aug  9 2021 16:52                                                Page 31
+  Mon Sep 27 2021  9:39                                                Page 31
 
 
   1593                        	data
@@ -1889,7 +1889,7 @@
   1630 00:0055: 00 00 00 00  	dl	$0
   1631                        ;							
                     				k_sd_initialize,
-  Mon Aug  9 2021 16:52                                                Page 32
+  Mon Sep 27 2021  9:39                                                Page 32
 
 
   1632 00:0059: 35 21 04 00  	dl	~~k_sd_initialize
@@ -1950,7 +1950,7 @@
   1681                        L5:
   1682 04:1DC6: A8           	tay
   1683 04:1DC7: A5 06        	lda	<L2+2
-  Mon Aug  9 2021 16:52                                                Page 33
+  Mon Sep 27 2021  9:39                                                Page 33
 
 
   1684 04:1DC9: 85 0E        	sta	<L2+2+8
@@ -2011,7 +2011,7 @@
   1738                        	.line	46
   1739                        L9:
   1740 04:1DFD: 2B           	pld
-  Mon Aug  9 2021 16:52                                                Page 34
+  Mon Sep 27 2021  9:39                                                Page 34
 
 
   1741 04:1DFE: 3B           	tsc
@@ -2072,7 +2072,7 @@
   1795                        ;	s = SDC_TRANS_BUSY;
   1796                        	.line	58
   1797 04:1E1D: E2 20        	sep	#$20
-  Mon Aug  9 2021 16:52                                                Page 35
+  Mon Sep 27 2021  9:39                                                Page 35
 
 
   1798                        	longa	off
@@ -2133,7 +2133,7 @@
   1852                        	func
   1853                        	.function	66
   1854                        ~~k_read_sd_command:
-  Mon Aug  9 2021 16:52                                                Page 36
+  Mon Sep 27 2021  9:39                                                Page 36
 
 
   1855                        	longa	on
@@ -2194,7 +2194,7 @@
   1909 04:1E6A: 0B           	phd
   1910 04:1E6B: 5B           	tcd
   1911             00000004   offset_0	set	4
-  Mon Aug  9 2021 16:52                                                Page 37
+  Mon Sep 27 2021  9:39                                                Page 37
 
 
   1912             00000008   receiveBuffer_0	set	8
@@ -2255,7 +2255,7 @@
   1965                        	longa	on
   1966                        ;
   1967                        ;	s = SDC_TRANS_BUSY;
-  Mon Aug  9 2021 16:52                                                Page 38
+  Mon Sep 27 2021  9:39                                                Page 38
 
 
   1968                        	.line	87
@@ -2316,7 +2316,7 @@
   2023 04:1ECD: 85 05        	sta	<R1
   2024 04:1ECF: A5 05        	lda	<R1
   2025 04:1ED1: EB           	xba
-  Mon Aug  9 2021 16:52                                                Page 39
+  Mon Sep 27 2021  9:39                                                Page 39
 
 
   2026 04:1ED2: 29 00 FF     	and	#$ff00
@@ -2377,7 +2377,7 @@
   2079 04:1F0F: D0 03        	bne	L24
   2080 04:1F11: 82 10 00     	brl	L10008
   2081                        L24:
-  Mon Aug  9 2021 16:52                                                Page 40
+  Mon Sep 27 2021  9:39                                                Page 40
 
 
   2082                        	.line	109
@@ -2438,7 +2438,7 @@
        00:0084: 72 6F 72 43 
        00:0088: 6F 64 65 3A 
        00:008C: 00 
-  Mon Aug  9 2021 16:52                                                Page 41
+  Mon Sep 27 2021  9:39                                                Page 41
 
 
   2129 00:008D:              	ends
@@ -2499,7 +2499,7 @@
   2181 04:1F4F: C2 20        	rep	#$20
   2182                        	longa	on
   2183                        ;	}
-  Mon Aug  9 2021 16:52                                                Page 42
+  Mon Sep 27 2021  9:39                                                Page 42
 
 
   2184                        	.line	134
@@ -2560,7 +2560,7 @@
   2238                        L31:
   2239                        ;	{
   2240                        	.line	144
-  Mon Aug  9 2021 16:52                                                Page 43
+  Mon Sep 27 2021  9:39                                                Page 43
 
 
   2241                        ;		s = SDC_TRANS_STATUS_REG[0];
@@ -2621,7 +2621,7 @@
                     rsPerCluster,LPCHAR receiveBuffer,ULONG file_size)
   2295                        ;{
   2296                        	.line	156
-  Mon Aug  9 2021 16:52                                                Page 44
+  Mon Sep 27 2021  9:39                                                Page 44
 
 
   2297                        	.line	157
@@ -2682,7 +2682,7 @@
   2351                        	xref	~~~mul
   2352 04:1FEB: 22 xx xx xx  	jsl	~~~mul
   2353 04:1FEF: 85 01        	sta	<R0
-  Mon Aug  9 2021 16:52                                                Page 45
+  Mon Sep 27 2021  9:39                                                Page 45
 
 
   2354 04:1FF1: A5 01        	lda	<R0
@@ -2743,7 +2743,7 @@
   2407 04:204A: 22 xx xx xx  	jsl	~~k_debug_byte_array
   2408                        L10019:
   2409                        ;
-  Mon Aug  9 2021 16:52                                                Page 46
+  Mon Sep 27 2021  9:39                                                Page 46
 
 
   2410                        ;		if(read > file_size)
@@ -2804,7 +2804,7 @@
   2465                        L26:
   2466 00:008D: 72 65 61 64  	db	$72,$65,$61,$64,$43,$6C,$75,$73,$74,$65,
                     $72,$3A,$3A,$6F,$66
-  Mon Aug  9 2021 16:52                                                Page 47
+  Mon Sep 27 2021  9:39                                                Page 47
 
 
        00:0091: 43 6C 75 73 
@@ -2865,7 +2865,7 @@
   2502                        ;			k_debug_long("biCompression:",pi
                     nfo->biCompression);//spcifies the type of compression
   2503                        ;			k_debug_long("biSizeImage:",pinf
-  Mon Aug  9 2021 16:52                                                Page 48
+  Mon Sep 27 2021  9:39                                                Page 48
 
 
                     o->biSizeImage);  //size of image in bytes
@@ -2926,7 +2926,7 @@
   2545                        ;		k_debug_integer("biBitCount:",pinfo->biB
                     itCount); //specifies the number of bit per pixel
   2546                        ;		k_debug_long("biCompression:",pinfo->biC
-  Mon Aug  9 2021 16:52                                                Page 49
+  Mon Sep 27 2021  9:39                                                Page 49
 
 
                     ompression);//spcifies the type of compression
@@ -2987,7 +2987,7 @@
   2596                        L45:
   2597 04:2095: A5 11        	lda	<L42+pdev_0
   2598 04:2097: 05 13        	ora	<L42+pdev_0+2
-  Mon Aug  9 2021 16:52                                                Page 50
+  Mon Sep 27 2021  9:39                                                Page 50
 
 
   2599 04:2099: D0 03        	bne	L46
@@ -3048,7 +3048,7 @@
   2651 04:20ED: A9 08 00     	lda	#$8
   2652 04:20F0: 65 0D        	adc	<L42+entry_0
   2653 04:20F2: 85 01        	sta	<R0
-  Mon Aug  9 2021 16:52                                                Page 51
+  Mon Sep 27 2021  9:39                                                Page 51
 
 
   2654 04:20F4: A9 00 00     	lda	#$0
@@ -3109,7 +3109,7 @@
   2709                        	.endfunc	288,9,9
   2710                        	.line	288
   2711                        ;
-  Mon Aug  9 2021 16:52                                                Page 52
+  Mon Sep 27 2021  9:39                                                Page 52
 
 
   2712                        ;
@@ -3170,7 +3170,7 @@
   2767 04:215F: 85 01        	sta	<L50+s_1
   2768 04:2161: C2 20        	rep	#$20
   2769                        	longa	on
-  Mon Aug  9 2021 16:52                                                Page 53
+  Mon Sep 27 2021  9:39                                                Page 53
 
 
   2770                        ;    while(s & SDC_TRANS_BUSY)
@@ -3231,7 +3231,7 @@
   2824                        	efunc
   2825                        	.endfunc	311,1,2
   2826                        	.line	311
-  Mon Aug  9 2021 16:52                                                Page 54
+  Mon Sep 27 2021  9:39                                                Page 54
 
 
   2827                        	data
@@ -3292,7 +3292,7 @@
   2868                        ;	k_debug_string("***k_sd_full_test 1\r\n");
   2869                        ;
   2870                        ;	SDC_TRANS_TYPE_REG[0]    = SDC_TRANS_INIT_SD;
-  Mon Aug  9 2021 16:52                                                Page 55
+  Mon Sep 27 2021  9:39                                                Page 55
 
 
   2871                        ;    SDC_TRANS_CONTROL_REG[0] = SDC_TRANS_START;
@@ -3353,7 +3353,7 @@
   2909                        ;				break;
   2910                        ;			}
   2911                        ;		}
-  Mon Aug  9 2021 16:52                                                Page 56
+  Mon Sep 27 2021  9:39                                                Page 56
 
 
   2912                        ;
@@ -3414,7 +3414,7 @@
                     edia_type:",(INT)pFATBS->media_type);
   2944                        ;			k_debug_integer("***k_sd_reset s
                     ectors_per_fat:",(INT)pFATBS->sectors_per_fat);
-  Mon Aug  9 2021 16:52                                                Page 57
+  Mon Sep 27 2021  9:39                                                Page 57
 
 
   2945                        ;			k_debug_integer("***k_sd_reset s
@@ -3475,7 +3475,7 @@
   2971                        ;
   2972                        ;			strncpy(fxdosDevice.volume_name,
                     pFATBS->vol_name,11);
-  Mon Aug  9 2021 16:52                                                Page 58
+  Mon Sep 27 2021  9:39                                                Page 58
 
 
   2973                        ;			fxdosDevice.volume_name[11] = 0;
@@ -3536,7 +3536,7 @@
   3006                        ;				*/
   3007                        ;			}
   3008                        ;
-  Mon Aug  9 2021 16:52                                                Page 59
+  Mon Sep 27 2021  9:39                                                Page 59
 
 
   3009                        ;
@@ -3597,7 +3597,7 @@
                     2) * BPB_SecPerClus) + FirstDataSector;
   3042                        ;
   3043                        ;						firstDat
-  Mon Aug  9 2021 16:52                                                Page 60
+  Mon Sep 27 2021  9:39                                                Page 60
 
 
                     aSector = (INT)fxdosDevice.bootSector.reserved_sector_count 
@@ -3658,7 +3658,7 @@
                     ntriesPerPage; x++)
   3080                        ;					{
   3081                        ;						pentry =
-  Mon Aug  9 2021 16:52                                                Page 61
+  Mon Sep 27 2021  9:39                                                Page 61
 
 
                      (PFAT16ENTRY)&sectorBuffer[x * sizeof(FAT16ENTRY)];
@@ -3719,7 +3719,7 @@
   3111                        ;							
                     if(videoMem)
   3112                        ;							
-  Mon Aug  9 2021 16:52                                                Page 62
+  Mon Sep 27 2021  9:39                                                Page 62
 
 
                     {
@@ -3780,7 +3780,7 @@
   3150                        ;    GABE_MSTR_CTRL[0] = GABE_MSTR_CTRL[0] & (~GAB
                     E_CTRL_SDC_LED);
   3151                        ;
-  Mon Aug  9 2021 16:52                                                Page 63
+  Mon Sep 27 2021  9:39                                                Page 63
 
 
   3152                        ;	return 0;
@@ -3841,7 +3841,7 @@
   3205                        ;    if(!errorCode)
   3206                        ;    {
   3207                        ;		GABE_MSTR_CTRL[0] |= GABE_CTRL_SDC_LED;
-  Mon Aug  9 2021 16:52                                                Page 64
+  Mon Sep 27 2021  9:39                                                Page 64
 
 
   3208                        ;
@@ -3902,7 +3902,7 @@
                     ype:",(INT)fxdosDevice.partitionTable.partition_type);
   3241                        ;		k_debug_hex ("***fxdosDevice end_chs0:",
                     fxdosDevice.partitionTable.end_chs[0]);
-  Mon Aug  9 2021 16:52                                                Page 65
+  Mon Sep 27 2021  9:39                                                Page 65
 
 
   3242                        ;		k_debug_hex ("***fxdosDevice end_chs1:",
@@ -3963,7 +3963,7 @@
   3275                        ;			k_debug_integer("***fxdosDevice 
                     bytes_per_sector:",(INT)fxdosDevice.bootSector.bytes_per_sec
                     tor);
-  Mon Aug  9 2021 16:52                                                Page 66
+  Mon Sep 27 2021  9:39                                                Page 66
 
 
   3276                        ;			k_debug_integer("***fxdosDevice 
@@ -4024,7 +4024,7 @@
                     _per_fat * (ULONG)pFATBS->fat_table_count)) * (ULONG)pFATBS-
                     >bytes_per_sector);
   3303                        ;			sectors_per_cluster = (INT)pFATB
-  Mon Aug  9 2021 16:52                                                Page 67
+  Mon Sep 27 2021  9:39                                                Page 67
 
 
                     S->sectors_per_cluster;
@@ -4085,7 +4085,7 @@
                      root_entry_count/sizeof(FAT16ENTRY):",root_entry_count/size
                     of(FAT16ENTRY));
   3338                        ;
-  Mon Aug  9 2021 16:52                                                Page 68
+  Mon Sep 27 2021  9:39                                                Page 68
 
 
   3339                        ;			k_debug_long("***fxdosDevice roo
@@ -4146,7 +4146,7 @@
   3372                        ;
   3373                        ;						if(readS
                     DSector(data + bsOffset,fatfileBuffer) == 0)
-  Mon Aug  9 2021 16:52                                                Page 69
+  Mon Sep 27 2021  9:39                                                Page 69
 
 
   3374                        ;						{
@@ -4207,7 +4207,7 @@
                     ++)
   3411                        ;			{
   3412                        ;				if(readSDSector(rootDirS
-  Mon Aug  9 2021 16:52                                                Page 70
+  Mon Sep 27 2021  9:39                                                Page 70
 
 
                     ectors,sectorBuffer) == 0)
@@ -4268,7 +4268,7 @@
                     		next = pFAT1[next];
   3443                        ;							
                     	}
-  Mon Aug  9 2021 16:52                                                Page 71
+  Mon Sep 27 2021  9:39                                                Page 71
 
 
   3444                        ;							
@@ -4329,7 +4329,7 @@
   3479                        ;
   3480                        ;
   3481                        ;		}
-  Mon Aug  9 2021 16:52                                                Page 72
+  Mon Sep 27 2021  9:39                                                Page 72
 
 
   3482                        ;
@@ -4390,7 +4390,7 @@
   3536                        ;    k_debug_integer("***k_sd_reset errorCode:",er
                     rorCode);
   3537                        ;
-  Mon Aug  9 2021 16:52                                                Page 73
+  Mon Sep 27 2021  9:39                                                Page 73
 
 
   3538                        ;    if(!errorCode)
@@ -4451,7 +4451,7 @@
   3574                        ;
   3575                        ;			k_debug_integer("***k_sd_reset b
                     ytes_per_sector:",(INT)pFATBS->bytes_per_sector);
-  Mon Aug  9 2021 16:52                                                Page 74
+  Mon Sep 27 2021  9:39                                                Page 74
 
 
   3576                        ;			k_debug_integer("***k_sd_reset s
@@ -4512,7 +4512,7 @@
   3608                        ;				x = 0xFFFF;
   3609                        ;				while(x)
   3610                        ;				{
-  Mon Aug  9 2021 16:52                                                Page 75
+  Mon Sep 27 2021  9:39                                                Page 75
 
 
   3611                        ;					x = ((INT*)fileA
@@ -4573,7 +4573,7 @@
   3647                        ;						if( memc
                     mp(pentry->filename,"TEST1",5) == 0 )
   3648                        ;						{
-  Mon Aug  9 2021 16:52                                                Page 76
+  Mon Sep 27 2021  9:39                                                Page 76
 
 
   3649                        ;							
@@ -4634,7 +4634,7 @@
   3685                        ;							
                     	if(next!=65528L && next!=0L && next!=65535L)
   3686                        ;							
-  Mon Aug  9 2021 16:52                                                Page 77
+  Mon Sep 27 2021  9:39                                                Page 77
 
 
                     	{
@@ -4695,7 +4695,7 @@
   3716                        ;							
                     	//k_debug_string("** Found TEST1\r\n");
   3717                        ;							
-  Mon Aug  9 2021 16:52                                                Page 78
+  Mon Sep 27 2021  9:39                                                Page 78
 
 
                     	//k_debug_long("** Found TEST1 size:",pentry->file_size)
@@ -4756,7 +4756,7 @@
   3764                        ;    if(!pfxdosDevice->devstatus)
   3765                        ;    	pfxdosDevice->initialized = TRUE;
   3766                        ;
-  Mon Aug  9 2021 16:52                                                Page 79
+  Mon Sep 27 2021  9:39                                                Page 79
 
 
   3767                        ;    k_debug_bits("k_sd_dos_init:",pfxdosDevice->d
@@ -4817,7 +4817,7 @@
   3817                        ;
   3818                        ;UCHAR k_sd_status(VOID)
   3819                        ;{
-  Mon Aug  9 2021 16:52                                                Page 80
+  Mon Sep 27 2021  9:39                                                Page 80
 
 
   3820                        ;	return 0;
@@ -4878,7 +4878,7 @@
   3875                        ;	return NULL;
   3876                        ;}
   3877                        ;
-  Mon Aug  9 2021 16:52                                                Page 81
+  Mon Sep 27 2021  9:39                                                Page 81
 
 
   3878                        ;void k_sd_search_dir(LPCHAR searchString)
@@ -4939,7 +4939,7 @@
   3930                        ;}
   3931                        ;
   3932                        ;BOOL k_sd_close(UCHAR update)
-  Mon Aug  9 2021 16:52                                                Page 82
+  Mon Sep 27 2021  9:39                                                Page 82
 
 
   3933                        ;{
@@ -5000,7 +5000,7 @@
   3985                        ;
   3986                        ;	return 0;
   3987                        ;}
-  Mon Aug  9 2021 16:52                                                Page 83
+  Mon Sep 27 2021  9:39                                                Page 83
 
 
   3988                        ;
@@ -5061,7 +5061,7 @@
   4035                        ;		}
   4036                        ;	}
   4037                        ;	else
-  Mon Aug  9 2021 16:52                                                Page 84
+  Mon Sep 27 2021  9:39                                                Page 84
 
 
   4038                        ;	{
@@ -5122,7 +5122,7 @@
   4083                        	.sym	IDSECTOR,0,10,14,2048,103
   4084                        	.sym	PLFN,0,138,14,32,102
   4085                        	.sym	LFN,0,10,14,256,102
-  Mon Aug  9 2021 16:52                                                Page 85
+  Mon Sep 27 2021  9:39                                                Page 85
 
 
   4086                        	.sym	PFAT16ENTRYLONG,0,138,14,32,101
@@ -5183,7 +5183,7 @@
   4140                        	.sym	EV_CONFIGURE,0,656,14,32
   4141                        	.sym	EV_UNINIT,0,641,14,32
   4142                        	.sym	EV_INIT,0,8833,14,32
-  Mon Aug  9 2021 16:52                                                Page 86
+  Mon Sep 27 2021  9:39                                                Page 86
 
 
   4143                        	.sym	PMOUSE_MSG_STATE,0,138,14,32,77
@@ -5244,7 +5244,7 @@
   4198                        	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,59
   4199                        	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,59
   4200                        	.sym	GETDRIVERDEF,0,8842,14,32,58
-  Mon Aug  9 2021 16:52                                                Page 87
+  Mon Sep 27 2021  9:39                                                Page 87
 
 
   4201                        	.sym	PFX_DEVICE_DRIVER,0,138,14,32,58
@@ -5305,7 +5305,7 @@
   4253                        	.sym	PMENU,0,138,14,32,36
   4254                        	.sym	MENU,0,10,14,280,36
   4255                        	.sym	HMENURESOURCE,0,129,14,32
-  Mon Aug  9 2021 16:52                                                Page 88
+  Mon Sep 27 2021  9:39                                                Page 88
 
 
   4256                        	.sym	FONTMETRIC,0,10,14,32,35
@@ -5366,7 +5366,7 @@
   4311                        	.sym	HMENU,0,129,14,32
   4312                        	.sym	HWND,0,129,14,32
   4313                        	.sym	MSGDATA,0,14,14,8
-  Mon Aug  9 2021 16:52                                                Page 89
+  Mon Sep 27 2021  9:39                                                Page 89
 
 
   4314                        	.sym	MSGDEST,0,18,14,32
@@ -5427,7 +5427,7 @@
   4369                        	.sym	PBYTE,0,142,14,32
   4370                        	.sym	BYTE,0,14,14,8
   4371                        	.sym	IOPORT,0,142,14,32
-  Mon Aug  9 2021 16:52                                                Page 90
+  Mon Sep 27 2021  9:39                                                Page 90
 
 
   4372                        	.sym	PUCHAR,0,142,14,32

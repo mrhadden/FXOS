@@ -494,7 +494,7 @@ R3	equ	13
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",11
 	.line	72
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",6
-	.line	1960
+	.line	1963
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",16
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
@@ -610,7 +610,7 @@ R3	equ	13
 	.stag	_k_irq_chain,128,60
 	.member	handlers,0,5217,8,32,4
 	.eos
-	.line	490
+	.line	475
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",22
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
@@ -623,7 +623,7 @@ R3	equ	13
 	.line	1064
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",7
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
-	.line	1960
+	.line	1963
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",12
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
@@ -715,7 +715,7 @@ R3	equ	13
 	.line	129
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",6
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
-	.line	568
+	.line	572
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",7
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",0
@@ -741,7 +741,7 @@ R3	equ	13
 	.member	CUR_GADGET,144,5,8,16
 	.member	CUR_COLOR,160,101,8,0,15
 	.eos
-	.line	359
+	.line	370
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",8
 	.stag	_fxos_winman_vtable,160,69
 	.member	Events,0,641,8,32
@@ -815,7 +815,7 @@ R3	equ	13
 	.member	readable,8,110,8,0,16
 	.member	data,136,129,8,32
 	.eos
-	.line	568
+	.line	572
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",18
 	.stag	_fx_spinner_ctx,48,80
 	.member	index,0,5,8,16
@@ -1569,7 +1569,7 @@ R3	equ	13
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.c",5
 ;#include "fxeventmanager.h"
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
-	.line	568
+	.line	572
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.c",6
 ;#include "fxos_desktop_proc.h"
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_desktop_proc.h",0
@@ -1577,16 +1577,16 @@ R3	equ	13
 	.line	1064
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_desktop_proc.h",5
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
-	.line	1960
+	.line	1963
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_desktop_proc.h",10
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
 	.line	141
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_desktop_proc.h",15
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
-	.line	568
+	.line	572
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_desktop_proc.h",16
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
-	.line	359
+	.line	370
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_desktop_proc.h",17
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",0
 	.line	594
@@ -1663,7 +1663,7 @@ R3	equ	13
 ;static UINT _k_bootMode = BOOTMODE_DEFAULT;
 	data
 ~~_k_bootMode:
-	dw	$1
+	dw	$2
 	ends
 ;
 ;static ULONG _k_system_timer = 0;
@@ -8892,7 +8892,7 @@ L281:
 	rep	#$20
 	longa	on
 ;
-;			if((timer - _k_mouseState.lastLeftDown) < 5)
+;			if((timer - _k_mouseState.lastLeftDown) < 15) // CHANGED from 5
 	.line	1825
 ;			{
 	sec
@@ -8903,9 +8903,9 @@ L281:
 	sbc	|~~_k_mouseState+5+2
 	sta	<R0+2
 	lda	<R0
-	cmp	#<$5
+	cmp	#<$f
 	lda	<R0+2
-	sbc	#^$5
+	sbc	#^$f
 	bcc	L282
 	brl	L10163
 L282:

@@ -1,4 +1,4 @@
-  Mon Aug  9 2021 16:52                                                                                                Page 1
+  Mon Sep 27 2021  9:39                                                                                                Page 1
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -6,7 +6,7 @@
                                              ***************************************
                                              **      WDC 65C816 Macro Assembler   **
                                              **                                   **
-                                             **     Version 3.49.1- Feb  6 2006    **
+                                             **     Version 1.00- Aug 10 2021    **
                                              ***************************************
 
      1                        ; File: WDC_CStartup_816.asm
@@ -58,7 +58,7 @@
     14             0000014A   INT_EDGE_REG2    EQU $00014A ;
     15             0000014B   INT_EDGE_REG3    EQU $00014B ; FMX Model
     16                        ; Mask
-  Mon Aug  9 2021 16:52                                                                                                Page 2
+  Mon Sep 27 2021  9:39                                                                                                Page 2
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -118,7 +118,7 @@
     11                                        LONGA ON
     12                                        LONGI ON
     13                                        .endm
-  Mon Aug  9 2021 16:52                                                                                                Page 3
+  Mon Sep 27 2021  9:39                                                                                                Page 3
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -178,7 +178,7 @@
      2             00AF1100   PME_STS_REG      EQU  $AF1100
      3             00AF1102   PME_EN_REG		   EQU  $AF1102
      4             00AF1104   PME_STS1_REG		 EQU  $AF1104
-  Mon Aug  9 2021 16:52                                                                                                Page 4
+  Mon Sep 27 2021  9:39                                                                                                Page 4
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -238,7 +238,7 @@
     57             00AF113F   GP50_REG		 EQU  $AF113F
     58             00AF1140   GP51_REG		 EQU  $AF1140
     59             00AF1141   GP52_REG		 EQU  $AF1141
-  Mon Aug  9 2021 16:52                                                                                                Page 5
+  Mon Sep 27 2021  9:39                                                                                                Page 5
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -298,7 +298,7 @@
     25             00AF000A   BACKGROUND_COLOR_R       EQU  $AF000A ;
     26                        
     27             00AF0010   VKY_TXT_CURSOR_CTRL_REG  EQU  $AF0010   ;[0]  Enable Text Mode
-  Mon Aug  9 2021 16:52                                                                                                Page 6
+  Mon Sep 27 2021  9:39                                                                                                Page 6
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -358,7 +358,7 @@
     78             00AF010D   TL1_MAP_X_STRIDE_H       EQU  $AF010D
     79             00AF010E   TL1_MAP_Y_STRIDE_L       EQU  $AF010E       ; The Stride of the Map
     80             00AF010F   TL1_MAP_Y_STRIDE_H       EQU  $AF010F
-  Mon Aug  9 2021 16:52                                                                                                Page 7
+  Mon Sep 27 2021  9:39                                                                                                Page 7
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -418,7 +418,7 @@
    131             00AF0147   BM_Y_SIZE_H              EQU  $AF0147
    132             00AF0148   BM_RESERVED_0            EQU  $AF0148
    133             00AF0149   BM_RESERVED_1            EQU  $AF0149
-  Mon Aug  9 2021 16:52                                                                                                Page 8
+  Mon Sep 27 2021  9:39                                                                                                Page 8
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -478,7 +478,7 @@
    186                        ; Sprite 4
    187             00AF0220   SP04_CONTROL_REG         EQU  $AF0220
    188             00AF0221   SP04_ADDY_PTR_L          EQU  $AF0221
-  Mon Aug  9 2021 16:52                                                                                                Page 9
+  Mon Sep 27 2021  9:39                                                                                                Page 9
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -538,7 +538,7 @@
    241             00AF0250   SP10_CONTROL_REG         EQU  $AF0250
    242             00AF0251   SP10_ADDY_PTR_L          EQU  $AF0251
    243             00AF0252   SP10_ADDY_PTR_M          EQU  $AF0252
-  Mon Aug  9 2021 16:52                                                                                                Page 10
+  Mon Sep 27 2021  9:39                                                                                                Page 10
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -598,7 +598,7 @@
    296             00AF0281   SP16_ADDY_PTR_L          EQU  $AF0281
    297             00AF0282   SP16_ADDY_PTR_M          EQU  $AF0282
    298             00AF0283   SP16_ADDY_PTR_H          EQU  $AF0283
-  Mon Aug  9 2021 16:52                                                                                                Page 11
+  Mon Sep 27 2021  9:39                                                                                                Page 11
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -658,7 +658,7 @@
    346             00AF070B   C256F_MODEL_MAJOR        EQU  $AF070B ;
    347             00AF070C   C256F_MODEL_MINOR        EQU  $AF070C ;
    348             00AF070D   FPGA_DOR                 EQU  $AF070D ;
-  Mon Aug  9 2021 16:52                                                                                                Page 12
+  Mon Sep 27 2021  9:39                                                                                                Page 12
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -718,7 +718,7 @@
      8                        STATUS_PORT 	EQU $AF1064
      9                        KBD_STATUS      EQU $AF1064
     10                        KBD_CMD_BUF		EQU $AF1064
-  Mon Aug  9 2021 16:52                                                                                                Page 13
+  Mon Sep 27 2021  9:39                                                                                                Page 13
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -778,7 +778,7 @@
     37                        	INCLUDE timer_def.asm
      1                        ; Pending Interrupt (Read and Write Back to Clear)
      2                        ; TIMER0
-  Mon Aug  9 2021 16:52                                                                                                Page 14
+  Mon Sep 27 2021  9:39                                                                                                Page 14
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -838,7 +838,7 @@
                     his long. Default EQU 128
     13             00000013   LINES_VISIBLE     EQU  $000013 ;2 Bytes The number of rows visible on the screen. Default EQU 25
     14             00000015   LINES_MAX         EQU  $000015 ;2 Bytes The number of rows in memory for the screen. Default EQU 6
-  Mon Aug  9 2021 16:52                                                                                                Page 15
+  Mon Sep 27 2021  9:39                                                                                                Page 15
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -898,7 +898,7 @@
     59             00000040   BM_CLEAR_SCRN_X   EQU  $000040
     60             00000042   BM_CLEAR_SCRN_Y   EQU  $000042
     61                        ; RAD File Player
-  Mon Aug  9 2021 16:52                                                                                                Page 16
+  Mon Sep 27 2021  9:39                                                                                                Page 16
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -958,7 +958,7 @@
    114             0000010C   M1_RESULT         EQU  $00010C ;4 Bytes Result of A x B
    115                        
    116             00000108   DIVIDER_0         EQU  $000108 ;0 Byte  Unsigned divider
-  Mon Aug  9 2021 16:52                                                                                                Page 17
+  Mon Sep 27 2021  9:39                                                                                                Page 17
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -1018,7 +1018,7 @@
                     on command. Data is 32-bit number. Address is 24-bit address and 8-bit length.
    163             00000271   MARG6             EQU  $000271 ;4 Bytes First command argument. May be data or address, depending 
                     on command. Data is 32-bit number. Address is 24-bit address and 8-bit length.
-  Mon Aug  9 2021 16:52                                                                                                Page 18
+  Mon Sep 27 2021  9:39                                                                                                Page 18
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -1078,7 +1078,7 @@
    212                        
    213             00001000   TEST_BEGIN        EQU  $001000 ;28672 Bytes Test/diagnostic code for prototype.
    214             00007FFF   TEST_END          EQU  $007FFF ;0 Byte
-  Mon Aug  9 2021 16:52                                                                                                Page 19
+  Mon Sep 27 2021  9:39                                                                                                Page 19
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -1138,7 +1138,7 @@
     55                        ;               meets with your specifications.  No representation or
     56                        ;               warranty is given and no liability is assumed by 
     57                        ;               Western Design Center, Inc. with respect to the accuracy
-  Mon Aug  9 2021 16:52                                                                                                Page 20
+  Mon Sep 27 2021  9:39                                                                                                Page 20
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -1198,7 +1198,7 @@
    110                        ;    Change the lines for each version - current version is 1.01
    111                        ;    See - 
    112                        ;         title  "WDC 'C' Startup Program V 1.01 for Large Model W65C816 - WDC_CStartup_816.asm"
-  Mon Aug  9 2021 16:52                                                                                                Page 21
+  Mon Sep 27 2021  9:39                                                                                                Page 21
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -1249,7 +1249,7 @@
    156                                sttl "WDC_CStartup_816 Code"
    157                        	.page
    158                        
-  Mon Aug  9 2021 16:52                                                                                                Page 22
+  Mon Sep 27 2021  9:39                                                                                                Page 22
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -1309,7 +1309,7 @@
    211                        
    212 00:7D11: A9 xx xx             LDA   #_END_DATA-_BEG_DATA ;number of bytes to copy
    213 00:7D14: F0 0A                BEQ   SKIP         ;if none, just skip
-  Mon Aug  9 2021 16:52                                                                                                Page 23
+  Mon Sep 27 2021  9:39                                                                                                Page 23
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -1369,7 +1369,7 @@
    263                        		;; Mask all Interrupt @ This Point
    264 00:7D52: 8F 4C 01 00  		STA >INT_MASK_REG0		
    265 00:7D56: 8F 4D 01 00  		STA >INT_MASK_REG1
-  Mon Aug  9 2021 16:52                                                                                                Page 24
+  Mon Sep 27 2021  9:39                                                                                                Page 24
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -1429,7 +1429,7 @@
    314 00:7DB2: 29 08        		AND #FNX1_INT03_COM2
    315 00:7DB4: 8F 41 01 00  		STA >INT_PENDING_REG1  ; Writing it back will clear the Active Bit
    316 00:7DB8: AF 4D 01 00  		LDA >INT_MASK_REG1
-  Mon Aug  9 2021 16:52                                                                                                Page 25
+  Mon Sep 27 2021  9:39                                                                                                Page 25
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -1489,7 +1489,7 @@
    369 00:7E34: 29 00        		AND #%00000000
    370 00:7E36: 8F 4D 01 00  		STA >INT_MASK_REG1
    371                        
-  Mon Aug  9 2021 16:52                                                                                                Page 26
+  Mon Sep 27 2021  9:39                                                                                                Page 26
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -1549,7 +1549,7 @@
    422                        		;AND #FNX0_INT01_SOL
    423 00:7E84: 8F 40 01 00  		STA >INT_PENDING_REG0  ; Writing it back will clear the Active Bit
    424 00:7E88: AF 4C 01 00  		LDA >INT_MASK_REG0
-  Mon Aug  9 2021 16:52                                                                                                Page 27
+  Mon Sep 27 2021  9:39                                                                                                Page 27
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -1609,7 +1609,7 @@
    473 00:7EC6: A9 32        		LDA #'2'
    474 00:7EC8: 8F 02 A0 AF  		STA >$AFA002
    475                        		
-  Mon Aug  9 2021 16:52                                                                                                Page 28
+  Mon Sep 27 2021  9:39                                                                                                Page 28
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Code"
@@ -1633,7 +1633,7 @@
    490                                sttl "WDC_CStartup_816 IRQ - Interrupt Handler Code"
    491                        	.page
    492                        
-  Mon Aug  9 2021 16:52                                                                                                Page 29
+  Mon Sep 27 2021  9:39                                                                                                Page 29
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 IRQ - Interrupt Handler Code"
@@ -1693,7 +1693,7 @@
    537                        
    538                        		
    539 00:7EEA: 40           		RTI
-  Mon Aug  9 2021 16:52                                                                                                Page 30
+  Mon Sep 27 2021  9:39                                                                                                Page 30
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 IRQ - Interrupt Handler Code"
@@ -1753,7 +1753,7 @@
    582                        
    583 00:7F06: 0B           		phd		; save Direct Page Register
    584 00:7F07: 48           		pha
-  Mon Aug  9 2021 16:52                                                                                                Page 31
+  Mon Sep 27 2021  9:39                                                                                                Page 31
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 IRQ - Interrupt Handler Code"
@@ -1813,7 +1813,7 @@
    630                        
    631                        ;        DATA
    632                        ;        XDEF  ~~heap_start,~~heap_end
-  Mon Aug  9 2021 16:52                                                                                                Page 32
+  Mon Sep 27 2021  9:39                                                                                                Page 32
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 IRQ - Interrupt Handler Code"
@@ -1829,7 +1829,7 @@
    641                                sttl "IINITSUPERIO"
    642                        	.page
    643                        	
-  Mon Aug  9 2021 16:52                                                                                                Page 33
+  Mon Sep 27 2021  9:39                                                                                                Page 33
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "IINITSUPERIO"
@@ -1889,7 +1889,7 @@
                      as GPIO Input for now
    688 00:0054: 8F 33 11 AF  				STA >GP30_REG
    689 00:0058: A9 01        				LDA #$01		;Default Value - (C256 - JP1 Fanout Pin 4) Setup
-  Mon Aug  9 2021 16:52                                                                                                Page 34
+  Mon Sep 27 2021  9:39                                                                                                Page 34
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "IINITSUPERIO"
@@ -1949,7 +1949,7 @@
    725 00:00B4: 8F 45 11 AF  				STA >GP56_REG
    726 00:00B8: A9 04        				LDA #$04		;(C256 - UART2 - DTR2) - Output - Set Secondary 
                     Function
-  Mon Aug  9 2021 16:52                                                                                                Page 35
+  Mon Sep 27 2021  9:39                                                                                                Page 35
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "IINITSUPERIO"
@@ -2009,7 +2009,7 @@
    771 00:0104: 48           				        PHA
    772 00:0105: DA           				        PHX
    773                        
-  Mon Aug  9 2021 16:52                                                                                                Page 36
+  Mon Sep 27 2021  9:39                                                                                                Page 36
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "IINITSUPERIO"
@@ -2069,7 +2069,7 @@
    821 00:0138: 8F 07 18 AF                  STA >KBD_CMD_BUF
    822 00:013C: 20 xx xx                     JSR Poll_Inbuf ;
    823 00:013F: A9 69                        LDA #%01101001      ; Enable Interrupt
-  Mon Aug  9 2021 16:52                                                                                                Page 37
+  Mon Sep 27 2021  9:39                                                                                                Page 37
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "IINITSUPERIO"
@@ -2129,7 +2129,7 @@
    876                                        ;LDA >INT_PENDING_REG1  ; Read the Pending Register &
    877                                        ;AND #FNX1_INT00_KBD
    878                                        ;STA >INT_PENDING_REG1  ; Writing it back will clear the Active Bit
-  Mon Aug  9 2021 16:52                                                                                                Page 38
+  Mon Sep 27 2021  9:39                                                                                                Page 38
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "IINITSUPERIO"
@@ -2189,7 +2189,7 @@
    923                        ~~k_init_mouse:
    924                        INIT_MOUSE      setas
 +  924 00:01A3: E2 20                        SEP #$20        ; set A short 
-  Mon Aug  9 2021 16:52                                                                                                Page 39
+  Mon Sep 27 2021  9:39                                                                                                Page 39
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "IINITSUPERIO"
@@ -2249,7 +2249,7 @@
    975 00:020B: 20 xx xx                     JSR MOUSE_READ
    976 00:020E: A9 02                        LDA #$02 ;  0x00 1 count /mm, 0x012 count /mm,0x02 4 count /mm,0x03	8 count 
                     /mm
-  Mon Aug  9 2021 16:52                                                                                                Page 40
+  Mon Sep 27 2021  9:39                                                                                                Page 40
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "IINITSUPERIO"
@@ -2309,7 +2309,7 @@
   1024 00:023F: 8F 07 18 AF                  STA >KBD_CMD_BUF
   1025 00:0243: 20 xx xx                     JSR Poll_Inbuf
   1026 00:0246: 68                           PLA
-  Mon Aug  9 2021 16:52                                                                                                Page 41
+  Mon Sep 27 2021  9:39                                                                                                Page 41
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "IINITSUPERIO"
@@ -2327,7 +2327,7 @@
   1035                                sttl "WDC_CStartup_816 Shadow Vector Defines"
   1036                        	.page
   1037                        
-  Mon Aug  9 2021 16:52                                                                                                Page 42
+  Mon Sep 27 2021  9:39                                                                                                Page 42
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Shadow Vector Defines"
@@ -2387,7 +2387,7 @@
   1090 00:FFE4: 03 7F        		dw	COP				; $FFE4 - COP(816)
   1091 00:FFE6: EC 7E        		dw	BRK		     	; $FFE6 - BRK(816)
   1092 00:FFE8: 1A 7F        		dw	Undefined_IRQ	; $FFE8 - ABORT(816)
-  Mon Aug  9 2021 16:52                                                                                                Page 43
+  Mon Sep 27 2021  9:39                                                                                                Page 43
 
     "FXOS 'C' Startup Program V 1.00 for Large Model W65C816 - fxstartup.asm"
     "WDC_CStartup_816 Shadow Vector Defines"

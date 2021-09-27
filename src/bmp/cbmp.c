@@ -30,6 +30,108 @@ void showBmpInfoHead(BITMAPINFOHEADER pBmpinfoHead)
    k_debug_long("Number of important colors: " ,infoHeader.biClrImportant);
 }
 */
+
+VOID readBMPPalette(LPCSTR path)
+{
+	DIR *dir;
+	FATFS *fs = NULL;
+	FIL *f = NULL;
+	FILINFO *fileInfo;
+	FRESULT fr = 0;
+	//LPCSTR path = "HD:\\test.bmp";
+	LPCSTR drive = NULL;
+	UINT read;
+	LPSTR data = NULL;
+	UINT num_colors = 0;
+	ULONG x,y,i;
+	CHAR c;
+
+	ULONG dx = 0L;
+	ULONG dy = 0L;
+
+	ULONG bitmap_offset;
+	unsigned short  fileType;
+
+	PBYTE	pPalette = NULL;
+
+
+
+	//k_debug_string("readBMP...\r\n");
+
+	drive = k_string_copy_to_delimiter(path,':');
+
+	dir = k_mem_allocate_heap(sizeof(DIR));
+	fs = k_mem_allocate_heap(sizeof(FATFS));
+	f = k_mem_allocate_heap(sizeof(FIL));
+
+	//k_debug_string("readBMP:after alloc...\r\n");
+
+	pPalette  = GRPH_LUT0_PTR;//k_mem_allocate_heap(sizeof(BYTE) * 3 * 256);
+
+	fr = f_mount(NULL, drive,1); // unmount for safety
+	fr = f_mount(fs, drive,1);
+    if(fr == FR_OK)
+    {
+    	fr = f_open(f,path,FA_READ);//Read the image.bmp file in the same directory.
+        if(fr == FR_OK)
+        {
+            fr = f_read(f,&fileType,sizeof (unsigned short),&read);
+            if(fr == FR_OK && fileType == 0x4d42)
+            {
+                //k_debug_string("The file type identification is correct!\r\n" );
+                //k_debug_long("\nFile identifier: ", fileType);
+                //fread(&fileHeader, 1, sizeof(BITMAPFILEHEADER), fp);
+                fr = f_read(f,&fileHeader,sizeof (BITMAPFILEHEADER),&read);
+               // showBmpHead(fileHeader);
+
+                //fread(&infoHeader, 1, sizeof(BITMAPINFOHEADER), fp);
+                fr = f_read(f,&infoHeader,sizeof (BITMAPINFOHEADER),&read);
+                //showBmpInfoHead(infoHeader);
+
+
+                if(infoHeader.biWidth < 640)
+                {
+					dx = 320 - (infoHeader.biWidth/2) - 25;
+                }
+                if(infoHeader.biHeight < 640)
+                {
+					dy = 240 - (infoHeader.biHeight/2);
+                }
+
+                if (infoHeader.biClrUsed==0)
+                	num_colors=256;
+
+                //k_debug_long("num_colors: ", num_colors);
+                for (i = 0; i < num_colors; i++)
+        		{
+                	//k_debug_long("INDEX: ", i);
+                	f_read(f,&c,1,&read);
+                	//k_debug_integer("   B: ", c);
+        			pPalette[(int) (i * 4 + 0)] = c;// (c >> 2);//B
+        			f_read(f,&c,1,&read);
+        			//k_debug_integer("   G: ", c);
+        			pPalette[(int) (i * 4 + 1)] = c;//(c >> 2);//G
+        			f_read(f,&c,1,&read);
+        			//k_debug_integer("   R: ", c);
+        			pPalette[(int) (i * 4 + 2)] = c;//(c >> 2);//R
+        			f_read(f,&c,1,&read);// alpha
+        			pPalette[(int) (i * 4 + 3)] = 0x00; //0x80;
+        			//k_debug_string(" ================== \r\n");
+        			//k_debug_hex("c3: ", c);
+        		}
+
+                f_close(f);
+            }
+        }
+    }
+
+
+    k_mem_deallocate_heap(f);
+    k_mem_deallocate_heap(fs);
+	k_mem_deallocate_heap(dir);
+}
+
+
 VOID readBMP(LPCSTR path)
 {
 	DIR *dir;
@@ -159,7 +261,7 @@ VOID readBMP(LPCSTR path)
     k_mem_deallocate_heap(fs);
 	k_mem_deallocate_heap(dir);
 }
-
+/*
 VOID k_read_bitmap(LPCSTR path,LPVOID buffer)
 {
 	DIR *dir;
@@ -246,12 +348,12 @@ VOID k_read_bitmap(LPCSTR path,LPVOID buffer)
         			//k_debug_hex("c3: ", c);
         		}
 
-                /* try to allocate memory */
+
                // if ((data = k_mem_allocate_heap((UINT)(infoHeader.biWidth*infoHeader.biHeight))) != NULL)
                 {
                 	//k_debug_long("File seek: ", fileHeader.bfOffBits);
                 	f_lseek(f,fileHeader.bfOffBits);
-                    /* read the bitmap */
+
                 	//k_debug_string("The file read...\r\n" );
 
                 	if((((UINT)(infoHeader.biWidth/4))*4) != (UINT)(infoHeader.biWidth) )
@@ -286,4 +388,4 @@ VOID k_read_bitmap(LPCSTR path,LPVOID buffer)
     k_mem_deallocate_heap(fs);
 	k_mem_deallocate_heap(dir);
 }
-
+*/

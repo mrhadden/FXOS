@@ -608,6 +608,7 @@ BOOL DesktopWindowProc(PFXOSMESSAGE pMsg)
 
 						k_user_CreateWindowClassEx("fxPaletteAboutClass",NULL,0,FXWSX_ALWAYS_BACKPLANE,NULL,NULL,NULL,AboutPaletteWindowProc);
 						//dlgWnd = k_user_CreateWindow(FXWS_THICKFRAME | FXWS_CAPTION | FXWS_VISIBLE | FXWS_SYSMENU | FXWS_POPUP,
+
 						dlgWnd = k_user_CreateWindow(FXWS_THICKFRAME | FXWS_VISIBLE | FXWS_POPUP,
 															"fxPaletteAboutClass",
 															"About FX/OS",
@@ -618,6 +619,7 @@ BOOL DesktopWindowProc(PFXOSMESSAGE pMsg)
 															k_user_getDesktopWindow(),
 															NULL,
 															NULL);
+
 						/*
 
 						dlgWnd = k_user_CreateWindow(FXWS_THICKFRAME | FXWS_CAPTION | FXWS_VISIBLE | FXWS_SYSMENU | FXWS_POPUP,

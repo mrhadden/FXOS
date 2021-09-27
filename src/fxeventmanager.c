@@ -1822,7 +1822,7 @@ PFXOSMESSAGE k_updateMouseState(PFXOSMESSAGE pmsg,ULONG timer,void FAR *data)
 		{
 			_k_mouseState.buttonLeftDown = 1;
 
-			if((timer - _k_mouseState.lastLeftDown) < 5)
+			if((timer - _k_mouseState.lastLeftDown) < 15) // CHANGED from 5
 			{
 				//k_debug_integer("k_updateMouseState:LeftMouseDblClick:",timer - _k_mouseState.lastLeftDown);
 				pmsg->type = FX_LBUTTON_DBLCLICK;

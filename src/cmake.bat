@@ -215,7 +215,7 @@ echo Compile fxkernel
 %ASSEMBLER% %ASM_OPTIONS% fxkernel.s -o fxkernel.obj
 
 echo Compile fxmain
-%COMPILER% %INCLUDES% %OPTIONS% -Ofxmain.s fxmain.c
+%COMPILER% %INCLUDES% %OPTIONS% -O fxmain.s fxmain.c
 %ASSEMBLER% %ASM_OPTIONS% fxmain.s -o fxmain.obj
 
 REM echo Compile fxmouse
@@ -395,6 +395,10 @@ echo Compiling DRIVER_SN76489.c
 %COMPILER% %INCLUDES% %OPTIONS% -O DRIVER_SN76489.s drivers/DRIVER_SN76489.c
 %ASSEMBLER% -V -l DRIVER_SN76489.s -o DRIVER_SN76489.obj
 
+echo Compiling DRIVER_FMXJOYPORT.c
+%COMPILER% %INCLUDES% %OPTIONS% -O DRIVER_FMXJOYPORT.s drivers/DRIVER_FMXJOYPORT.c
+%ASSEMBLER% -V -l DRIVER_FMXJOYPORT.s -o DRIVER_FMXJOYPORT.obj
+
 REM echo Compiling cbmp.c
 REM %COMPILER% %INCLUDES% %OPTIONS% -O cbmp.s bmp/cbmp.c
 REM %ASSEMBLER% -V -l cbmp.s -o cbmp.obj
@@ -409,9 +413,10 @@ echo Compile FMX LINK
 	echo Compile FMU LINK
 	REM %LINKER% %LINK_OPT% -HB    DRIVER_SN76489.obj driver_fmups2.obj ps2ctl.obj fxos_accessories.obj DRIVER_FMXConsole.obj DRIVER_FMXSDCard.obj DRIVER_B2SDCard.obj  diskio.obj ff.obj fxheapfar.obj fxheapnear.obj MINDRVR.obj fxfloppy.obj fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj parahw.obj halbase.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgfx.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxsdcard.obj fxhalmanager.obj  fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -LFXOS_DISPATCH_SDK -O %KERNELNAME%_%MODEL_EXT%.bin
 	REM %LINKER% %LINK_OPT% -HM28  DRIVER_SN76489.obj driver_fmups2.obj ps2ctl.obj fxos_accessories.obj DRIVER_FMXConsole.obj DRIVER_FMXSDCard.obj DRIVER_B2SDCard.obj  diskio.obj ff.obj fxheapfar.obj fxheapnear.obj MINDRVR.obj fxfloppy.obj fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj parahw.obj halbase.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgfx.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxsdcard.obj fxhalmanager.obj  fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -LFXOS_DISPATCH_SDK -O %KERNELNAME%_%MODEL_EXT%.s28.hex
-	
-	%LINKER% %LINK_OPT% -HB    DRIVER_SN76489.obj driver_fmups2.obj DRIVER_RTC.obj DRIVER_TIM0.obj DRIVER_TIM1.obj DRIVER_TIM2.obj DRIVER_SOL.obj DRIVER_FMXCOM1.obj DRIVER_BLOCK.obj DRIVER_FMXKEYB.obj DRIVER_FMXMOUSE.obj fx_export_calltable.obj fxos_accessories.obj DRIVER_FMXConsole.obj DRIVER_FMXSDCard.obj DRIVER_FMXIDE.obj diskio.obj ff.obj fxheapfar.obj fxheapnear.obj  fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgfx.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxhalmanager.obj  fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -LFXOS_DISPATCH_SDK -O %KERNELNAME%_%MODEL_EXT%.bin
-	%LINKER% %LINK_OPT% -HM28  DRIVER_SN76489.obj driver_fmups2.obj DRIVER_RTC.obj DRIVER_TIM0.obj DRIVER_TIM1.obj DRIVER_TIM2.obj DRIVER_SOL.obj DRIVER_FMXCOM1.obj DRIVER_BLOCK.obj DRIVER_FMXKEYB.obj DRIVER_FMXMOUSE.obj fx_export_calltable.obj fxos_accessories.obj DRIVER_FMXConsole.obj DRIVER_FMXSDCard.obj DRIVER_FMXIDE.obj diskio.obj ff.obj fxheapfar.obj fxheapnear.obj  fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgfx.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxhalmanager.obj  fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -LFXOS_DISPATCH_SDK -O %KERNELNAME%_%MODEL_EXT%.s28.hex
+
+	echo %LINKER% %LINK_OPT% -HB    DRIVER_FMXJOYPORT.obj DRIVER_SN76489.obj driver_fmups2.obj DRIVER_RTC.obj DRIVER_TIM0.obj DRIVER_TIM1.obj DRIVER_TIM2.obj DRIVER_SOL.obj DRIVER_FMXCOM1.obj DRIVER_BLOCK.obj DRIVER_FMXKEYB.obj DRIVER_FMXMOUSE.obj fx_export_calltable.obj fxos_accessories.obj DRIVER_FMXConsole.obj DRIVER_FMXSDCard.obj DRIVER_FMXIDE.obj diskio.obj ff.obj fxheapfar.obj fxheapnear.obj  fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgfx.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxhalmanager.obj  fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -LFXOS_DISPATCH_SDK -O %KERNELNAME%_%MODEL_EXT%.bin	
+	%LINKER% %LINK_OPT% -HB         DRIVER_FMXJOYPORT.obj DRIVER_SN76489.obj driver_fmups2.obj DRIVER_RTC.obj DRIVER_TIM0.obj DRIVER_TIM1.obj DRIVER_TIM2.obj DRIVER_SOL.obj DRIVER_FMXCOM1.obj DRIVER_BLOCK.obj DRIVER_FMXKEYB.obj DRIVER_FMXMOUSE.obj fx_export_calltable.obj fxos_accessories.obj DRIVER_FMXConsole.obj DRIVER_FMXSDCard.obj DRIVER_FMXIDE.obj diskio.obj ff.obj fxheapfar.obj fxheapnear.obj  fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgfx.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxhalmanager.obj  fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -LFXOS_DISPATCH_SDK -O %KERNELNAME%_%MODEL_EXT%.bin
+	%LINKER% %LINK_OPT% -HM28   DRIVER_FMXJOYPORT.obj DRIVER_SN76489.obj driver_fmups2.obj DRIVER_RTC.obj DRIVER_TIM0.obj DRIVER_TIM1.obj DRIVER_TIM2.obj DRIVER_SOL.obj DRIVER_FMXCOM1.obj DRIVER_BLOCK.obj DRIVER_FMXKEYB.obj DRIVER_FMXMOUSE.obj fx_export_calltable.obj fxos_accessories.obj DRIVER_FMXConsole.obj DRIVER_FMXSDCard.obj DRIVER_FMXIDE.obj diskio.obj ff.obj fxheapfar.obj fxheapnear.obj  fxos_desktop_proc.obj fxwindowmanager.obj fx_ctl_listbox.obj fxmenumanager.obj fxmemorymanager.obj umm_malloc.obj fxdos.obj fxexec.obj fxkernel.obj fxconsole.obj fxgfx.obj fxstring.obj fxmain.obj  fxeventmanager.obj uart.obj fxloader.obj fxfont.obj fxhalmanager.obj  fxnode.obj fxcon_cmd.obj %FLOATLIB% -L%MODELLIB% -LFXOS_DISPATCH_SDK -O %KERNELNAME%_%MODEL_EXT%.s28.hex
 
 
 	) ELSE (

@@ -106,7 +106,6 @@ LPVOID k_dos_load_driver(ULONG driver_idx)
 	//k_debug_integer("Scan slot:",(UINT)driver_idx);
 	//k_debug_pointer("k_dos_load_drivers::scanning @",_k_get_driver_def);
 
-
 	if(*((LONG*)_k_get_driver_def) == 0x4E9383B) // sig bytes of driver
 	{
 		//k_debug_pointer("k_dos_load_drivers::driver located@",_k_get_driver_def);
@@ -209,7 +208,7 @@ LPCSTR k_dos_load_drivers(void)
 
 	strcpy(log,"");
 	strcat(log,"Scanning for Drivers...\r\n");
-	for(driver_idx = 0;driver_idx<25;driver_idx++)
+	for(driver_idx = 0;driver_idx<30;driver_idx++)
 	{
 		_k_get_driver_def = ((GETDRIVERDEF)((LPVOID)((ULONG)DRIVER_BASE + (driver_idx * (ULONG)DRIVER_SIZE))));
 

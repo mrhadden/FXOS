@@ -366,24 +366,9 @@ VOID k_exit_critical_section(VOID);
 #define BOOTMODE_DESKTOP	(2)
 #define BOOTMODE_EXTERN		(3)
 #define BOOTMODE_DEBUG		(16)
-#define BOOTMODE_DEFAULT	(BOOTMODE_CONSOLE)
+#define BOOTMODE_DEFAULT	(BOOTMODE_DESKTOP)
 
-//////////////////////////
-// KERNEL/USER INTERFACE
-//////////////////////////
 
-enum KERNALTRAPINDEX
-{
-	KT_DOS_GETDIRECTORY = 1,
-
-	KT_DBG_STRING 		= 50,
-
-	KT_OS_CALL_END	    = 511
-};
-
-VOID k_DebugOutString(VOID);
-
-//VOID k_GetDirectory(VOID);
 
 #define DRIVER_TYPE_CONSOLE  (0x00)
 #define DRIVER_TYPE_MOUSE    (0x01)
@@ -403,7 +388,7 @@ VOID k_DebugOutString(VOID);
 #define DRIVER_TYPE_PS2		 (0x0E)
 
 #define DRIVER_TYPE_SOUND	 (0xA0)
-
+#define DRIVER_TYPE_JOYPORT	 (0xA1)
 
 
 #define DRIVER_TYPE_EXT_0    (0xE0)

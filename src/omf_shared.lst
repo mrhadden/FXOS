@@ -1,10 +1,10 @@
-  Mon Aug  9 2021 16:52                                                Page 1
+  Mon Sep 27 2021  9:39                                                Page 1
 
 
                      ***************************************
                      **      WDC 65C816 Macro Assembler   **
                      **                                   **
-                     **     Version 3.49.1- Feb  6 2006    **
+                     **     Version 1.00- Aug 10 2021    **
                      ***************************************
 
      1                        ;:ts=8
@@ -59,7 +59,7 @@
     41                        	.stag	_fx_queue,80,4
     42                        	.member	count,0,5,8,16
     43                        	.member	front,16,138,8,32,2
-  Mon Aug  9 2021 16:52                                                Page 2
+  Mon Sep 27 2021  9:39                                                Page 2
 
 
     44                        	.member	rear,48,138,8,32,2
@@ -120,7 +120,7 @@
     99                        	.eos
    100                        	.stag	_fx_cmdMessage,312,14
    101                        	.member	src,0,18,8,32
-  Mon Aug  9 2021 16:52                                                Page 3
+  Mon Sep 27 2021  9:39                                                Page 3
 
 
    102                        	.member	dest,32,18,8,32
@@ -181,7 +181,7 @@
    157                        	.member	commandLine,408,142,8,32
    158                        	.member	semaphores,440,138,8,32,3
    159                        	.member	fileHandles,472,138,8,32,3
-  Mon Aug  9 2021 16:52                                                Page 4
+  Mon Sep 27 2021  9:39                                                Page 4
 
 
    160                        	.member	pathList,504,138,8,32,3
@@ -242,7 +242,7 @@
    215                        	.member	x,0,5,8,16
    216                        	.member	y,16,5,8,16
    217                        	.member	z,32,5,8,16
-  Mon Aug  9 2021 16:52                                                Page 5
+  Mon Sep 27 2021  9:39                                                Page 5
 
 
    218                        	.member	width,48,5,8,16
@@ -303,7 +303,7 @@
    273                        	.member	win_title,2656,110,8,0,32
    274                        	.member	Reserved0,2912,16,8,16
    275                        	.member	win_class,2928,110,8,0,16
-  Mon Aug  9 2021 16:52                                                Page 6
+  Mon Sep 27 2021  9:39                                                Page 6
 
 
    276                        	.member	win_class_name,3056,110,8,0,32
@@ -364,7 +364,7 @@
    331                        	.member	clientOffsetRect,3760,10,8,112,23
    332                        	.member	isDesktop,3872,14,8,8
    333                        	.eos
-  Mon Aug  9 2021 16:52                                                Page 7
+  Mon Sep 27 2021  9:39                                                Page 7
 
 
    334                        	.stag	_FontMetric,32,32
@@ -425,7 +425,7 @@
    389                        	.member	offsetY,48,5,8,16
    390                        	.member	inc,64,5,8,16
    391                        	.member	direction,80,5,8,16
-  Mon Aug  9 2021 16:52                                                Page 8
+  Mon Sep 27 2021  9:39                                                Page 8
 
 
    392                        	.member	top,96,5,8,16
@@ -486,7 +486,7 @@
    447                        	.member	reserved,56,14,8,8
    448                        	.member	resheaderSize,64,14,8,8
    449                        	.eos
-  Mon Aug  9 2021 16:52                                                Page 9
+  Mon Sep 27 2021  9:39                                                Page 9
 
 
    450                        	.stag	_fx_resource_header_font,144,46
@@ -547,7 +547,7 @@
                     space\FXOS-Beta\src\fxtypes.h",0
    494                        	.line	1064
    495                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
-  Mon Aug  9 2021 16:52                                                Page 10
+  Mon Sep 27 2021  9:39                                                Page 10
 
 
                     space\FXOS-Beta\src\fxos.h",8
@@ -573,7 +573,7 @@
    507                        	.line	72
    508                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxc256u.h",6
-   509                        	.line	1960
+   509                        	.line	1963
    510                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxos.h",16
    511                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -608,7 +608,7 @@
    533                        	.member	fxos_mouse_byte_x_h,40,14,8,8
    534                        	.member	fxos_mouse_byte_y_l,48,14,8,8
    535                        	.member	fxos_mouse_byte_y_h,56,14,8,8
-  Mon Aug  9 2021 16:52                                                Page 11
+  Mon Sep 27 2021  9:39                                                Page 11
 
 
    536                        	.member	fxos_key_byte_0,64,14,8,8
@@ -669,7 +669,7 @@
    591                        	.stag	_fx_device_driver,776,58
    592                        	.member	name,0,110,8,0,32
    593                        	.member	version,256,110,8,0,16
-  Mon Aug  9 2021 16:52                                                Page 12
+  Mon Sep 27 2021  9:39                                                Page 12
 
 
    594                        	.member	hmajor,384,110,8,0,8
@@ -703,7 +703,7 @@
    622                        	.stag	_k_irq_chain,128,60
    623                        	.member	handlers,0,5217,8,32,4
    624                        	.eos
-   625                        	.line	490
+   625                        	.line	475
    626                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxos.h",22
    627                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -725,12 +725,12 @@
                     space\FXOS-Beta\src\fxconsole.h",7
    637                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxc256u.h",0
-   638                        	.line	1960
+   638                        	.line	1963
    639                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxconsole.h",12
    640                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxstring.h",0
-  Mon Aug  9 2021 16:52                                                Page 13
+  Mon Sep 27 2021  9:39                                                Page 13
 
 
    641                        	.file	"G:\devtools\WDCTools\wdc\Tools\include\
@@ -791,7 +791,7 @@
                     space\FXOS-Beta\src\fxeventmanager.h",8
    679                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxwindowmanager.h",0
-  Mon Aug  9 2021 16:52                                                Page 14
+  Mon Sep 27 2021  9:39                                                Page 14
 
 
    680                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -806,7 +806,7 @@
                     space\FXOS-Beta\src\fxwindowmanager.h",6
    686                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxeventmanager.h",0
-   687                        	.line	568
+   687                        	.line	572
    688                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxwindowmanager.h",7
    689                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -838,7 +838,7 @@
    710                        	.member	CUR_GADGET,144,5,8,16
    711                        	.member	CUR_COLOR,160,101,8,0,15
    712                        	.eos
-   713                        	.line	359
+   713                        	.line	370
    714                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxwindowmanager.h",8
    715                        	.stag	_fxos_winman_vtable,160,65
@@ -852,7 +852,7 @@
    723                        	.member	type,0,16,8,16
    724                        	.member	size,16,16,8,16
    725                        	.member	desktopAction,32,129,8,32
-  Mon Aug  9 2021 16:52                                                Page 15
+  Mon Sep 27 2021  9:39                                                Page 15
 
 
    726                        	.eos
@@ -913,14 +913,14 @@
    780                        	.member	Uninit,160,641,8,32
    781                        	.eos
    782                        	.stag	_k_clipboard_data,168,75
-  Mon Aug  9 2021 16:52                                                Page 16
+  Mon Sep 27 2021  9:39                                                Page 16
 
 
    783                        	.member	type,0,14,8,8
    784                        	.member	readable,8,110,8,0,16
    785                        	.member	data,136,129,8,32
    786                        	.eos
-   787                        	.line	568
+   787                        	.line	572
    788                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxconsole.h",18
    789                        	.stag	_fx_spinner_ctx,48,76
@@ -974,7 +974,7 @@
    827                        	.member	pdrv,8,14,8,8
    828                        	.member	n_fats,16,14,8,8
    829                        	.member	wflag,24,14,8,8
-  Mon Aug  9 2021 16:52                                                Page 17
+  Mon Sep 27 2021  9:39                                                Page 17
 
 
    830                        	.member	fsi_flag,32,14,8,8
@@ -1035,7 +1035,7 @@
    885                        	.member	n_fat,8,14,8,8
    886                        	.member	align,16,16,8,16
    887                        	.member	n_root,32,16,8,16
-  Mon Aug  9 2021 16:52                                                Page 18
+  Mon Sep 27 2021  9:39                                                Page 18
 
 
    888                        	.member	au_size,48,18,8,32
@@ -1096,7 +1096,7 @@
    933                        	.eos
    934                        	.line	129
    935                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
-  Mon Aug  9 2021 16:52                                                Page 19
+  Mon Sep 27 2021  9:39                                                Page 19
 
 
                     space\FXOS-Beta\src\omf/OMF_Dc_shared.c",10
@@ -1157,7 +1157,7 @@
    985                        	.sym	data_length_rtn,8,133,6,32
    986 09:0F08: 64 01        	stz	<L3+file_size_1
    987 09:0F0A: 64 03        	stz	<L3+data_1
-  Mon Aug  9 2021 16:52                                                Page 20
+  Mon Sep 27 2021  9:39                                                Page 20
 
 
    988 09:0F0C: 64 05        	stz	<L3+data_1+2
@@ -1218,7 +1218,7 @@
   1042 09:0F65: 3B           	tsc
   1043 09:0F66: 18           	clc
   1044 09:0F67: 69 14 00     	adc	#L2+8
-  Mon Aug  9 2021 16:52                                                Page 21
+  Mon Sep 27 2021  9:39                                                Page 21
 
 
   1045 09:0F6A: 1B           	tcs
@@ -1279,7 +1279,7 @@
   1100 09:0FAE: 97 03        	sta	[<L3+data_1],Y
   1101 09:0FB0: C2 20        	rep	#$20
   1102                        	longa	on
-  Mon Aug  9 2021 16:52                                                Page 22
+  Mon Sep 27 2021  9:39                                                Page 22
 
 
   1103                        ;
@@ -1340,7 +1340,7 @@
   1154 09:0FD3: 0B           	phd
   1155 09:0FD4: 5B           	tcd
   1156             00000004   file_path_0	set	4
-  Mon Aug  9 2021 16:52                                                Page 23
+  Mon Sep 27 2021  9:39                                                Page 23
 
 
   1157             00000008   data_length_0	set	8
@@ -1401,7 +1401,7 @@
   1212 09:1015: D4 03        	pei	<L9+fd_1
   1213 09:1017: 22 xx xx xx  	jsl	~~k_free
   1214                        ;
-  Mon Aug  9 2021 16:52                                                Page 24
+  Mon Sep 27 2021  9:39                                                Page 24
 
 
   1215                        ;
@@ -1462,7 +1462,7 @@
   1267                        	longa	on
   1268                        	longi	on
   1269 09:103F: 3B           	tsc
-  Mon Aug  9 2021 16:52                                                Page 25
+  Mon Sep 27 2021  9:39                                                Page 25
 
 
   1270 09:1040: 38           	sec
@@ -1523,7 +1523,7 @@
   1325                        	longa	off
   1326 09:1073: A5 0D        	lda	<L14+a_1
   1327 09:1075: C5 0E        	cmp	<L14+b_1
-  Mon Aug  9 2021 16:52                                                Page 26
+  Mon Sep 27 2021  9:39                                                Page 26
 
 
   1328 09:1077: C2 20        	rep	#$20
@@ -1584,7 +1584,7 @@
   1383 09:10BB: A5 05        	lda	<R1
   1384 09:10BD: E5 01        	sbc	<R0
   1385 09:10BF: 85 09        	sta	<R2
-  Mon Aug  9 2021 16:52                                                Page 27
+  Mon Sep 27 2021  9:39                                                Page 27
 
 
   1386 09:10C1: 38           	sec
@@ -1645,7 +1645,7 @@
   1438                        	.sym	~~f_close,~~f_close,69,18,0
   1439                        	.sym	~~f_open,~~f_open,69,18,0
   1440                        	.sym	FRESULT,0,5,14,16
-  Mon Aug  9 2021 16:52                                                Page 28
+  Mon Sep 27 2021  9:39                                                Page 28
 
 
   1441                        	.sym	MKFS_PARM,0,10,14,80,85
@@ -1706,7 +1706,7 @@
   1496                        	.sym	WM_CONFIGURE,0,656,14,32
   1497                        	.sym	WM_HANDLE_EVENT,0,8833,14,32
   1498                        	.sym	WM_EVENTS,0,641,14,32
-  Mon Aug  9 2021 16:52                                                Page 29
+  Mon Sep 27 2021  9:39                                                Page 29
 
 
   1499                        	.sym	PCUR_PALETTE_MAP,0,138,14,32,64
@@ -1767,7 +1767,7 @@
   1554                        	.sym	PFXRFHEADER,0,138,14,32,45
   1555                        	.sym	FXRFHEADER,0,10,14,72,45
   1556                        	.sym	PFXCOMBUFFER,0,138,14,32,44
-  Mon Aug  9 2021 16:52                                                Page 30
+  Mon Sep 27 2021  9:39                                                Page 30
 
 
   1557                        	.sym	FXCOMBUFFER,0,10,14,2080,44
@@ -1828,7 +1828,7 @@
   1612                        	.sym	POINT,0,10,14,32,22
   1613                        	.sym	PFXPROPERTY,0,138,14,32,20
   1614                        	.sym	FXPROPERTY,0,10,14,384,20
-  Mon Aug  9 2021 16:52                                                Page 31
+  Mon Sep 27 2021  9:39                                                Page 31
 
 
   1615                        	.sym	PKEYSTATE,0,138,14,32,19
@@ -1889,7 +1889,7 @@
   1670                        	.sym	NodeListDeallocator,0,641,14,32
   1671                        	.sym	PFXNODE,0,138,14,32,2
   1672                        	.sym	FXNODE,0,10,14,384,2
-  Mon Aug  9 2021 16:52                                                Page 32
+  Mon Sep 27 2021  9:39                                                Page 32
 
 
   1673                        	.sym	PBYTEBITS,0,138,14,32,1

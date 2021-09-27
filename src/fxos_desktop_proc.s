@@ -467,7 +467,7 @@ R3	equ	13
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",11
 	.line	72
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",6
-	.line	1960
+	.line	1963
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_desktop_proc.h",10
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
@@ -519,7 +519,7 @@ R3	equ	13
 	.line	90
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",9
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
-	.line	1960
+	.line	1963
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",16
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
@@ -635,7 +635,7 @@ R3	equ	13
 	.stag	_k_irq_chain,128,61
 	.member	handlers,0,5217,8,32,4
 	.eos
-	.line	490
+	.line	475
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",22
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
@@ -648,13 +648,13 @@ R3	equ	13
 	.line	1064
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",7
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
-	.line	1960
+	.line	1963
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",12
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
 	.line	141
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",17
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
-	.line	568
+	.line	572
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",18
 	.stag	_fx_spinner_ctx,48,62
 	.member	index,0,5,8,16
@@ -830,7 +830,7 @@ R3	equ	13
 	.line	129
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",6
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
-	.line	568
+	.line	572
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",7
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",0
@@ -856,7 +856,7 @@ R3	equ	13
 	.member	CUR_GADGET,144,5,8,16
 	.member	CUR_COLOR,160,101,8,0,15
 	.eos
-	.line	359
+	.line	370
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",8
 	.stag	_fxos_winman_vtable,160,79
 	.member	Events,0,641,8,32
@@ -930,10 +930,10 @@ R3	equ	13
 	.member	readable,8,110,8,0,16
 	.member	data,136,129,8,32
 	.eos
-	.line	568
+	.line	572
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_desktop_proc.h",16
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
-	.line	359
+	.line	370
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_desktop_proc.h",17
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",0
 	.line	594
@@ -1590,7 +1590,7 @@ R3	equ	13
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_desktop_proc.c",5
 ;#include "fxgfx.h"
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
-	.line	359
+	.line	370
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_desktop_proc.c",6
 ;#include "fxmenumanager.h"
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmenumanager.h",0
@@ -4142,8 +4142,9 @@ L64:
 	pea	#<L41+855
 	jsl	~~k_user_CreateWindowClassEx
 ;						//dlgWnd = k_user_CreateWindow(FXWS_THICKFRAME | FXWS_CAPTION | FXWS_VISIBLE | FXWS_SYSMENU | FXWS_POPUP,
+;
 ;						dlgWnd = k_user_CreateWindow(FXWS_THICKFRAME | FXWS_VISIBLE | FXWS_POPUP,
-	.line	611
+	.line	612
 ;															"fxPaletteAboutClass",
 ;															"About FX/OS",
 ;															k_user_getSystemMetric(SM_CXFULLSCREEN)/2 - 155,
@@ -4197,6 +4198,7 @@ L64:
 	jsl	~~k_user_CreateWindow
 	sta	<L43+dlgWnd_1
 	stx	<L43+dlgWnd_1+2
+;
 ;						/*
 ;
 ;						dlgWnd = k_user_CreateWindow(FXWS_THICKFRAME | FXWS_CAPTION | FXWS_VISIBLE | FXWS_SYSMENU | FXWS_POPUP,
@@ -4221,30 +4223,30 @@ L64:
 ;											*/
 ;
 ;					}
-	.line	644
+	.line	646
 ;					else
 	brl	L10052
 L10051:
 ;					{
-	.line	646
+	.line	648
 ;						k_debug_string("Dialog Already Open\r\n");
-	.line	647
+	.line	649
 	pea	#^L41+907
 	pea	#<L41+907
 	jsl	~~k_debug_string
 ;					}
-	.line	648
+	.line	650
 L10052:
 ;					break;
-	.line	649
+	.line	651
 	brl	L10031
 ;
 ;				case DESK_MENU_PREFS:
-	.line	651
+	.line	653
 L10053:
 ;
 ;					dlgWnd = k_getWindowFromHandle(k_user_findWindow("Preferences"));
-	.line	653
+	.line	655
 	pea	#^L41+929
 	pea	#<L41+929
 	jsl	~~k_user_findWindow
@@ -4256,7 +4258,7 @@ L10053:
 	sta	<L43+dlgWnd_1
 	stx	<L43+dlgWnd_1+2
 ;					if(!dlgWnd || (dlgWnd && dlgWnd->isClosed))
-	.line	654
+	.line	656
 ;					{
 	lda	<L43+dlgWnd_1
 	ora	<L43+dlgWnd_1+2
@@ -4275,9 +4277,9 @@ L70:
 	brl	L10054
 L71:
 L68:
-	.line	655
+	.line	657
 ;						dlgWnd = k_user_CreateWindow(FXWS_THICKFRAME | FXWS_CAPTION | FXWS_VISIBLE | FXWS_SYSMENU,
-	.line	656
+	.line	658
 ;											"preferencesWindowClass",
 ;											"Preferences",
 ;											150,150,
@@ -4310,7 +4312,7 @@ L68:
 	stx	<L43+dlgWnd_1+2
 ;
 ;						dlgWnd = k_user_CreateWindow(FXWS_THICKFRAME | FXWS_CAPTION | FXWS_VISIBLE | FXWS_SYSMENU,
-	.line	665
+	.line	667
 ;											"preferencesWindowClass",
 ;											"Child1",
 ;											20,20,
@@ -4344,7 +4346,7 @@ L68:
 	stx	<L43+dlgWnd_1+2
 ;
 ;						dlgWnd = k_user_CreateWindow(FXWS_THICKFRAME | FXWS_CAPTION | FXWS_VISIBLE | FXWS_SYSMENU,
-	.line	674
+	.line	676
 ;											"preferencesWindowClass",
 ;											"C2",
 ;											20,20,
@@ -4377,56 +4379,56 @@ L68:
 	sta	<L43+dlgWnd_1
 	stx	<L43+dlgWnd_1+2
 ;					}
-	.line	682
+	.line	684
 ;					else
 	brl	L10055
 L10054:
 ;					{
-	.line	684
+	.line	686
 ;						k_debug_string("Dialog Already Open\r\n");
-	.line	685
+	.line	687
 	pea	#^L41+1032
 	pea	#<L41+1032
 	jsl	~~k_debug_string
 ;					}
-	.line	686
+	.line	688
 L10055:
 ;
 ;					break;
-	.line	688
+	.line	690
 	brl	L10031
 ;				case DESK_MENU_DBG_FONTS:
-	.line	689
+	.line	691
 L10056:
 ;					//k_debug_string("DESK_MENU_DBG_FONTS\r\n");
 ;					if(k_user_IsOSDebug())
-	.line	691
+	.line	693
 ;					{
 	jsl	~~k_user_IsOSDebug
 	and	#$ff
 	bne	L72
 	brl	L10057
 L72:
-	.line	692
+	.line	694
 ;						k_user_DisableOSDebug();
-	.line	693
+	.line	695
 	jsl	~~k_user_DisableOSDebug
 ;					}
-	.line	694
+	.line	696
 ;					else
 	brl	L10058
 L10057:
 ;					{
-	.line	696
+	.line	698
 ;						k_user_EnableOSDebug();
-	.line	697
+	.line	699
 	jsl	~~k_user_EnableOSDebug
 ;					}
-	.line	698
+	.line	700
 L10058:
 ;
 ;					k_user_SetMenuState((HMENU)((PFXCMDMESSAGE)pMsg)->parameter2,
-	.line	700
+	.line	702
 ;							            ((PFXCMDMESSAGE)pMsg)->cmdMId,
 ;										k_user_IsOSDebug());
 	jsl	~~k_user_IsOSDebug
@@ -4450,19 +4452,19 @@ L10058:
 	jsl	~~k_user_SetMenuState
 ;
 ;					break;
-	.line	704
+	.line	706
 	brl	L10031
 ;				case DESK_MENU_DBG_WINDOW:
-	.line	705
+	.line	707
 L10059:
 ;					k_debug_string("DESK_MENU_DBG_WINDOW\r\n");
-	.line	706
+	.line	708
 	pea	#^L41+1054
 	pea	#<L41+1054
 	jsl	~~k_debug_string
 ;
 ;					dlgWnd = k_getWindowFromHandle(k_user_findWindow("Debug Window"));
-	.line	708
+	.line	710
 	pea	#^L41+1077
 	pea	#<L41+1077
 	jsl	~~k_user_findWindow
@@ -4474,16 +4476,16 @@ L10059:
 	sta	<L43+dlgWnd_1
 	stx	<L43+dlgWnd_1+2
 ;					if(dlgWnd == NULL)
-	.line	709
+	.line	711
 ;					{
 	lda	<L43+dlgWnd_1
 	ora	<L43+dlgWnd_1+2
 	beq	L73
 	brl	L10060
 L73:
-	.line	710
+	.line	712
 ;						k_user_CreateWindow(FXWS_THICKFRAME | FXWS_CAPTION | FXWS_VISIBLE | FXWS_SYSMENU | FXWS_MINIMIZEBOX | FXWS_MAXIMIZEBOX | FXWS_POPUP | FXWS_SIZEBOX,
-	.line	711
+	.line	713
 ;											"textWindowClass",
 ;											"Text Window",
 ;											100,100,
@@ -4513,42 +4515,42 @@ L73:
 	pea	#<$22013d
 	jsl	~~k_user_CreateWindow
 ;					}
-	.line	719
+	.line	721
 ;					else
 	brl	L10061
 L10060:
 ;					{
-	.line	721
+	.line	723
 ;						k_debug_string("Debug Window Already Open\r\n");
-	.line	722
+	.line	724
 	pea	#^L41+1118
 	pea	#<L41+1118
 	jsl	~~k_debug_string
 ;					}
-	.line	723
+	.line	725
 L10061:
 ;
 ;					break;
-	.line	725
+	.line	727
 	brl	L10031
 ;				case DESK_MENU_DBG_SELECT:
-	.line	726
+	.line	728
 L10062:
 ;					k_debug_string("DESK_MENU_DBG_SELECT\r\n");
-	.line	727
+	.line	729
 	pea	#^L41+1146
 	pea	#<L41+1146
 	jsl	~~k_debug_string
 ;					break;
-	.line	728
+	.line	730
 	brl	L10031
 ;				case DESK_MENU_DBG_DRAG:
-	.line	729
+	.line	731
 L10063:
 ;					//pctx->Reserved1 = (LPVOID)(!((LONG)pctx->Reserved1));
 ;
 ;					((INT*)pctx->userData)[DEBUG_MOUSE_ENABLE] = !((INT*)pctx->userData)[DEBUG_MOUSE_ENABLE];
-	.line	732
+	.line	734
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -4572,7 +4574,7 @@ L74:
 	sta	[<R0]
 ;
 ;					if(!((INT*)pctx->userData)[DEBUG_MOUSE_ENABLE])
-	.line	734
+	.line	736
 ;					{
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
@@ -4584,9 +4586,9 @@ L74:
 	beq	L76
 	brl	L10064
 L76:
-	.line	735
+	.line	737
 ;						px = ((INT*)pctx->userData)[1];
-	.line	736
+	.line	738
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -4597,7 +4599,7 @@ L76:
 	lda	[<R0],Y
 	sta	<L43+px_1
 ;						py = ((INT*)pctx->userData)[2];
-	.line	737
+	.line	739
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -4609,7 +4611,7 @@ L76:
 	sta	<L43+py_1
 ;
 ;						if(px > -1)
-	.line	739
+	.line	741
 ;						{
 	sec
 	lda	#$ffff
@@ -4620,10 +4622,10 @@ L77:
 	bpl	L78
 	brl	L10065
 L78:
-	.line	740
+	.line	742
 ;							//k_draw_rect_slow(px,py, px+100, py+100, 0);
 ;							k_vdma_fill_rect_ex(px,py, 200, 200, FILLCOLOR_TRANSPARENT,BITMAP_FRONT);
-	.line	742
+	.line	744
 	pea	#<$0
 	pea	#<$0
 	pea	#<$c8
@@ -4648,10 +4650,10 @@ L80:
 	pei	<R1
 	jsl	~~k_vdma_fill_rect_ex
 ;						}
-	.line	743
+	.line	745
 ;					}
 L10065:
-	.line	744
+	.line	746
 ;
 ;
 ;					//k_debug_integer("DesktopWindowProc::DEBUG MENU DRAG:",((INT*)pctx->userData)[DEBUG_MOUSE_ENABLE]);
@@ -4661,7 +4663,7 @@ L10065:
 ;
 ;					k_user_SetMenuState((HMENU)((PFXCMDMESSAGE)pMsg)->parameter2,((PFXCMDMESSAGE)pMsg)->cmdMId,((INT*)pctx->userData)[DEBUG_MOUSE_ENABLE]);
 L10064:
-	.line	752
+	.line	754
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -4686,15 +4688,15 @@ L10064:
 ;
 ;
 ;					break;
-	.line	758
+	.line	760
 	brl	L10031
 ;				case DESK_MENU_DBG_RUBBERBAND:
-	.line	759
+	.line	761
 L10066:
 ;
 ;
 ;					((INT*)pctx->userData)[DEBUG_MOUSE_BOX_ENABLE] = !((INT*)pctx->userData)[DEBUG_MOUSE_BOX_ENABLE];
-	.line	762
+	.line	764
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -4720,7 +4722,7 @@ L81:
 	sta	[<R0],Y
 ;
 ;					if(!((INT*)pctx->userData)[DEBUG_MOUSE_BOX_ENABLE])
-	.line	764
+	.line	766
 ;					{
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
@@ -4733,10 +4735,10 @@ L81:
 	beq	L83
 	brl	L10067
 L83:
-	.line	765
+	.line	767
 ;
 ;						((INT*)pctx->userData)[DEBUG_MOUSE_BOXING] = FALSE;
-	.line	767
+	.line	769
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -4747,7 +4749,7 @@ L83:
 	ldy	#$6
 	sta	[<R0],Y
 ;						((INT*)pctx->userData)[DEBUG_MOUSE_BOX_TOP] = -1;
-	.line	768
+	.line	770
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -4758,7 +4760,7 @@ L83:
 	ldy	#$8
 	sta	[<R0],Y
 ;						((INT*)pctx->userData)[DEBUG_MOUSE_BOX_LEFT] = -1;
-	.line	769
+	.line	771
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -4770,7 +4772,7 @@ L83:
 	sta	[<R0],Y
 ;
 ;					}
-	.line	771
+	.line	773
 ;
 ;
 ;					//k_debug_integer("DesktopWindowProc::DEBUG MENU RUBBERBAND:",((INT*)pctx->userData)[DEBUG_MOUSE_BOX_ENABLE]);
@@ -4781,7 +4783,7 @@ L83:
 ;
 ;					k_user_SetMenuState((HMENU)((PFXCMDMESSAGE)pMsg)->parameter2,((PFXCMDMESSAGE)pMsg)->cmdMId,((INT*)pctx->userData)[DEBUG_MOUSE_BOX_ENABLE]);
 L10067:
-	.line	780
+	.line	782
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -4804,58 +4806,58 @@ L10067:
 ;					//k_send_command_message((HWND)((PFXCMDMESSAGE)pMsg)->parameter2,FX_MENU_COMMAND,CTL_MENU_CHECKED,((PFXCMDMESSAGE)pMsg)->cmdMId,((INT*)pctx->userData)[0],0);
 ;
 ;					break;
-	.line	783
+	.line	785
 	brl	L10031
 ;
 ;				case DESK_MENU_DBG_HOURGLASS:
-	.line	785
+	.line	787
 L10068:
 ;					k_user_setMousePointer("HOURGLASS");
-	.line	786
+	.line	788
 	pea	#^L41+1169
 	pea	#<L41+1169
 	jsl	~~k_user_setMousePointer
 ;					break;
-	.line	787
+	.line	789
 	brl	L10031
 ;				case DESK_MENU_DBG_HELP:
-	.line	788
+	.line	790
 L10069:
 ;					k_user_setMousePointer("HELP");
-	.line	789
+	.line	791
 	pea	#^L41+1179
 	pea	#<L41+1179
 	jsl	~~k_user_setMousePointer
 ;					break;
-	.line	790
+	.line	792
 	brl	L10031
 ;				case DESK_MENU_DBG_ARROW:
-	.line	791
+	.line	793
 L10070:
 ;					k_user_setMousePointer("ARROW");
-	.line	792
+	.line	794
 	pea	#^L41+1184
 	pea	#<L41+1184
 	jsl	~~k_user_setMousePointer
 ;					break;
-	.line	793
+	.line	795
 	brl	L10031
 ;				case DESK_MENU_DBG_RESIZE:
-	.line	794
+	.line	796
 L10071:
 ;					k_user_setMousePointer("RESIZE");
-	.line	795
+	.line	797
 	pea	#^L41+1190
 	pea	#<L41+1190
 	jsl	~~k_user_setMousePointer
 ;					break;
-	.line	796
+	.line	798
 	brl	L10031
 ;				case DESK_MENU_WINDOWS_REDRAW:
-	.line	797
+	.line	799
 L10072:
 ;					k_send_window_message(BROADCAST_HWND,FX_DRAW_NONCLIENT,NULL,0);
-	.line	798
+	.line	800
 	pea	#<$0
 	pea	#^$0
 	pea	#<$0
@@ -4864,13 +4866,13 @@ L10072:
 	pea	#<$fffafffa
 	jsl	~~k_send_window_message
 ;					break;
-	.line	799
+	.line	801
 	brl	L10031
 ;				case DESK_MENU_WINDOWS_MSG6:
-	.line	800
+	.line	802
 L10073:
 ;					k_user_CreateMsgBox(0x06,"Warn About Something",0,100,100);
-	.line	801
+	.line	803
 	pea	#<$64
 	pea	#<$64
 	pea	#<$0
@@ -4879,13 +4881,13 @@ L10073:
 	pea	#<$6
 	jsl	~~k_user_CreateMsgBox
 ;					break;
-	.line	802
+	.line	804
 	brl	L10031
 ;				case DESK_MENU_WINDOWS_MSG7:
-	.line	803
+	.line	805
 L10074:
 ;					k_user_CreateMsgBox(0x07,"Stop, Don't do it!",0,100,100);
-	.line	804
+	.line	806
 	pea	#<$64
 	pea	#<$64
 	pea	#<$0
@@ -4894,32 +4896,32 @@ L10074:
 	pea	#<$7
 	jsl	~~k_user_CreateMsgBox
 ;					break;
-	.line	805
+	.line	807
 	brl	L10031
 ;				case DESK_MENU_WINDOWS_B0:
-	.line	806
+	.line	808
 L10075:
 ;					setColors();
-	.line	807
+	.line	809
 	jsl	~~setColors
 ;					break;
-	.line	808
+	.line	810
 	brl	L10031
 ;				case DESK_MENU_WINDOWS_C0:
-	.line	809
+	.line	811
 L10076:
 ;					defineGrayPalette();
-	.line	810
+	.line	812
 	jsl	~~defineGrayPalette
 ;					break;
-	.line	811
+	.line	813
 	brl	L10031
 ;				case DESK_MENU_WINDOWS_D0:
-	.line	812
+	.line	814
 L10077:
 ;
 ;					k_debug_long("k_gui_get_pixel_offset:",k_gui_get_pixel_offset(10,150));
-	.line	814
+	.line	816
 	pea	#<$96
 	pea	#<$a
 	jsl	~~k_gui_get_pixel_offset
@@ -4932,7 +4934,7 @@ L10077:
 	jsl	~~k_debug_long
 ;
 ;					k_vdma_fill_rect_ex(0,0,640,480,15,0x20);
-	.line	816
+	.line	818
 	pea	#<$20
 	pea	#<$f
 	pea	#<$1e0
@@ -4943,7 +4945,7 @@ L10077:
 	pea	#<$0
 	jsl	~~k_vdma_fill_rect_ex
 ;					k_draw_rect(10,150,100,100,15,0,0x20);
-	.line	817
+	.line	819
 	pea	#<$20
 	pea	#<$0
 	pea	#<$f
@@ -4953,7 +4955,7 @@ L10077:
 	pea	#<$a
 	jsl	~~k_draw_rect
 ;					k_vdma_copy_address_ex(
-	.line	818
+	.line	820
 ;							                (LPSTR)(((LONG)0x100000) + k_gui_get_pixel_offset(10,150)),
 ;											(LPSTR)(((LONG)0x200000) + k_gui_get_pixel_offset(10,150)),
 ;											100,100);
@@ -4989,16 +4991,16 @@ L10077:
 	pei	<R2
 	jsl	~~k_vdma_copy_address_ex
 ;					break;
-	.line	822
-	brl	L10031
-;				default:
-	.line	823
-L10078:
-;					break;
 	.line	824
 	brl	L10031
-;				}
+;				default:
 	.line	825
+L10078:
+;					break;
+	.line	826
+	brl	L10031
+;				}
+	.line	827
 L10030:
 	xref	~~~swt
 	jsl	~~~swt
@@ -5062,17 +5064,17 @@ L10030:
 	dw	L10078-1
 L10031:
 ;			}
-	.line	826
+	.line	828
 ;
 ;			break;
 L10029:
-	.line	828
+	.line	830
 	brl	L10019
 ;		case FX_KEY_SCANCODE:
-	.line	829
+	.line	831
 L10079:
 ;			k_debug_hex("DesktopWindowProc::FX_KEY_SCANCODE:",pMsg->data[0]);
-	.line	830
+	.line	832
 	ldy	#$16
 	lda	[<L42+pMsg_0],Y
 	pha
@@ -5080,7 +5082,7 @@ L10079:
 	pea	#<L41+1261
 	jsl	~~k_debug_hex
 ;			k_debug_hex("DesktopWindowProc::FX_KEY_SCANCODE EXT:",pMsg->data[3]);
-	.line	831
+	.line	833
 	ldy	#$19
 	lda	[<L42+pMsg_0],Y
 	pha
@@ -5094,17 +5096,17 @@ L10079:
 ;
 ;
 ;			break;
-	.line	838
+	.line	840
 	brl	L10019
 ;		case FX_KEY_UP:
-	.line	839
+	.line	841
 L10080:
 ;			//k_debug_hex("DesktopWindowProc::FX_KEY_UP:",pMsg->data[0]);
 ;			//k_debug_hex("DesktopWindowProc::FX_KEY_UP EXT:",pMsg->data[3]);
 ;			//k_debug_hex("DesktopWindowProc::FX_KEY_UP SHIFTED:",pMsg->data[1]);
 ;			//k_debug_hex("DesktopWindowProc::FX_KEY_UP ALT:",pMsg->data[2]);
 ;			k_debug_hex("DesktopWindowProc::FX_KEY_UP SCANCODE:",((PKEYSTATE)pMsg->data)->scanCode);
-	.line	844
+	.line	846
 	ldy	#$16
 	lda	[<L42+pMsg_0],Y
 	pha
@@ -5112,7 +5114,7 @@ L10080:
 	pea	#<L41+1337
 	jsl	~~k_debug_hex
 ;			k_debug_char("DesktopWindowProc::FX_KEY_UP CHAR:",(CHAR)((PKEYSTATE)pMsg->data)->keyChar);
-	.line	845
+	.line	847
 	ldy	#$1d
 	lda	[<L42+pMsg_0],Y
 	pha
@@ -5123,13 +5125,13 @@ L10080:
 ;
 ;
 ;			break;
-	.line	849
+	.line	851
 	brl	L10019
 ;		case FX_KEY_DOWN:
-	.line	850
+	.line	852
 L10081:
 ;			k_debug_hex("DesktopWindowProc::FX_KEY_DOWN SCANCODE:",((PKEYSTATE)pMsg->data)->scanCode);
-	.line	851
+	.line	853
 	ldy	#$16
 	lda	[<L42+pMsg_0],Y
 	pha
@@ -5140,7 +5142,7 @@ L10081:
 ;			//k_debug_hex("DesktopWindowProc::FX_KEY_DOWN SHIFTED:",pMsg->data[1]);
 ;			//k_debug_hex("DesktopWindowProc::FX_KEY_DOWN ALT:",pMsg->data[2]);
 ;			k_debug_char("DesktopWindowProc::FX_KEY_DOWN CHAR:",(CHAR)((PKEYSTATE)pMsg->data)->keyChar);
-	.line	855
+	.line	857
 	ldy	#$1d
 	lda	[<L42+pMsg_0],Y
 	pha
@@ -5150,14 +5152,14 @@ L10081:
 ;			//k_debug_hex_integer("DesktopWindowProc::FX_KEY_DOWN CHAR:",*((PUINT)(&pMsg->data[0])));
 ;
 ;			temp1 = ((PKEYSTATE)pMsg->data)->scanCode & 0x00FF;
-	.line	858
+	.line	860
 	ldy	#$16
 	lda	[<L42+pMsg_0],Y
 	and	#<$ff
 	sta	<L43+temp1_1
 ;
 ;			if((CHAR)((PKEYSTATE)pMsg->data)->scanCode == 0x01)
-	.line	860
+	.line	862
 ;			{
 	sep	#$20
 	longa	off
@@ -5169,49 +5171,49 @@ L10081:
 	beq	L84
 	brl	L10082
 L84:
-	.line	861
+	.line	863
 ;				k_debug_hex("DesktopWindowProc::_k_desktopMenuState.visible(CLOSE):",_k_desktopMenuState.visible);
-	.line	862
+	.line	864
 	lda	|~~_k_desktopMenuState
 	pha
 	pea	#^L41+1489
 	pea	#<L41+1489
 	jsl	~~k_debug_hex
 ;				if(_k_desktopMenuState.pMenu)
-	.line	863
+	.line	865
 ;				{
 	lda	|~~_k_desktopMenuState+10
 	ora	|~~_k_desktopMenuState+10+2
 	bne	L85
 	brl	L10083
 L85:
-	.line	864
+	.line	866
 ;					 k_user_CloseMenu((HWND)_k_desktopMenuState.pMenu);
-	.line	865
+	.line	867
 	lda	|~~_k_desktopMenuState+10+2
 	pha
 	lda	|~~_k_desktopMenuState+10
 	pha
 	jsl	~~k_user_CloseMenu
 ;					_k_desktopMenuState.visible = FALSE;
-	.line	866
+	.line	868
 	sep	#$20
 	longa	off
 	stz	|~~_k_desktopMenuState
 	rep	#$20
 	longa	on
 ;					_k_desktopMenuState.pMenu = NULL;
-	.line	867
+	.line	869
 	stz	|~~_k_desktopMenuState+10
 	stz	|~~_k_desktopMenuState+10+2
 ;					_k_desktopMenuState.selectedIndex = -1;
-	.line	868
+	.line	870
 	lda	#$ffff
 	sta	|~~_k_desktopMenuState+14
 ;
 ;
 ;					k_send_window_message(pWin,FX_FOCUS_WINDOW,NULL,0);
-	.line	871
+	.line	873
 	pea	#<$0
 	pea	#^$0
 	pea	#<$0
@@ -5221,33 +5223,33 @@ L85:
 	jsl	~~k_send_window_message
 ;
 ;				}
-	.line	873
+	.line	875
 ;			}
 L10083:
-	.line	874
+	.line	876
 ;			else
 	brl	L10084
 L10082:
 ;			{
-	.line	876
+	.line	878
 ;				k_debug_hex("DesktopWindowProc::_k_desktopMenuState.visible(OPEN):",_k_desktopMenuState.visible);
-	.line	877
+	.line	879
 	lda	|~~_k_desktopMenuState
 	pha
 	pea	#^L41+1544
 	pea	#<L41+1544
 	jsl	~~k_debug_hex
 ;				if(!_k_desktopMenuState.visible)
-	.line	878
+	.line	880
 ;				{
 	lda	|~~_k_desktopMenuState
 	and	#$ff
 	beq	L86
 	brl	L10085
 L86:
-	.line	879
+	.line	881
 ;					k_debug_hex("DesktopWindowProc::FX_KEY_DOWN:",(CHAR)((PKEYSTATE)pMsg->data)->isAlt);
-	.line	880
+	.line	882
 	ldy	#$18
 	lda	[<L42+pMsg_0],Y
 	pha
@@ -5256,7 +5258,7 @@ L86:
 	jsl	~~k_debug_hex
 ;
 ;					if((temp1!=0x38) && ((((PKEYSTATE)pMsg->data)->isAlt) == 1)) // ALT
-	.line	882
+	.line	884
 ;					{
 	lda	<L43+temp1_1
 	cmp	#<$38
@@ -5273,9 +5275,9 @@ L87:
 	beq	L88
 	brl	L10086
 L88:
-	.line	883
+	.line	885
 ;						_k_desktopMenuState.visible = TRUE;
-	.line	884
+	.line	886
 	sep	#$20
 	longa	off
 	lda	#$1
@@ -5283,7 +5285,7 @@ L88:
 	rep	#$20
 	longa	on
 ;						 k_debug_char("DesktopWindowProc::Calling k_user_SendMenuAccelerator:",(CHAR)((PKEYSTATE)pMsg->data)->keyChar);
-	.line	885
+	.line	887
 	ldy	#$1d
 	lda	[<L42+pMsg_0],Y
 	pha
@@ -5291,7 +5293,7 @@ L88:
 	pea	#<L41+1630
 	jsl	~~k_debug_char
 ;						_k_desktopMenuState.pMenu = k_user_SendMenuAccelerator((CHAR)((PKEYSTATE)pMsg->data)->keyChar);
-	.line	886
+	.line	888
 	ldy	#$1d
 	lda	[<L42+pMsg_0],Y
 	pha
@@ -5301,19 +5303,19 @@ L88:
 ;
 ;
 ;						if(_k_desktopMenuState.selectedIndex == -1)
-	.line	889
+	.line	891
 ;						{
 	lda	|~~_k_desktopMenuState+14
 	cmp	#<$ffffffff
 	beq	L89
 	brl	L10087
 L89:
-	.line	890
+	.line	892
 ;							_k_desktopMenuState.selectedIndex+=1;
-	.line	891
+	.line	893
 	inc	|~~_k_desktopMenuState+14
 ;							k_user_HighlightMenu(_k_desktopMenuState.pMenu,_k_desktopMenuState.selectedIndex,TRUE);
-	.line	892
+	.line	894
 	pea	#<$1
 	lda	|~~_k_desktopMenuState+14
 	pha
@@ -5323,20 +5325,20 @@ L89:
 	pha
 	jsl	~~k_user_HighlightMenu
 ;						}
-	.line	893
+	.line	895
 ;					}
 L10087:
-	.line	894
+	.line	896
 ;				}
 L10086:
-	.line	895
+	.line	897
 ;				else
 	brl	L10088
 L10085:
 ;				{
-	.line	897
+	.line	899
 ;					if(((((PKEYSTATE)pMsg->data)->isExtended) == 1))
-	.line	898
+	.line	900
 ;					{
 	sep	#$20
 	longa	off
@@ -5348,9 +5350,9 @@ L10085:
 	beq	L90
 	brl	L10089
 L90:
-	.line	899
+	.line	901
 ;						if((temp1 == 0x50) || (temp1 == 0xD5))
-	.line	900
+	.line	902
 ;						{
 	lda	<L43+temp1_1
 	cmp	#<$50
@@ -5363,18 +5365,18 @@ L92:
 	brl	L10090
 L93:
 L91:
-	.line	901
+	.line	903
 ;							if(_k_desktopMenuState.pMenu)
-	.line	902
+	.line	904
 ;							{
 	lda	|~~_k_desktopMenuState+10
 	ora	|~~_k_desktopMenuState+10+2
 	bne	L94
 	brl	L10091
 L94:
-	.line	903
+	.line	905
 ;								k_debug_strings("DesktopWindowProc::Calling k_user_HighlightMenu:","UP");
-	.line	904
+	.line	906
 	pea	#^L41+1734
 	pea	#<L41+1734
 	pea	#^L41+1685
@@ -5382,7 +5384,7 @@ L94:
 	jsl	~~k_debug_strings
 ;
 ;								if(_k_desktopMenuState.selectedIndex > 0)
-	.line	906
+	.line	908
 ;								{
 	sec
 	lda	#$0
@@ -5393,12 +5395,12 @@ L95:
 	bpl	L96
 	brl	L10092
 L96:
-	.line	907
+	.line	909
 ;									_k_desktopMenuState.selectedIndex-=1;
-	.line	908
+	.line	910
 	dec	|~~_k_desktopMenuState+14
 ;									k_user_HighlightMenu(_k_desktopMenuState.pMenu,_k_desktopMenuState.selectedIndex,TRUE);
-	.line	909
+	.line	911
 	pea	#<$1
 	lda	|~~_k_desktopMenuState+14
 	pha
@@ -5408,17 +5410,17 @@ L96:
 	pha
 	jsl	~~k_user_HighlightMenu
 ;								}
-	.line	910
+	.line	912
 ;							}
 L10092:
-	.line	911
+	.line	913
 ;						}
 L10091:
-	.line	912
+	.line	914
 ;						else if((temp1 == 0x50) || (temp1 == 0xC9))
 	brl	L10093
 L10090:
-	.line	913
+	.line	915
 ;						{
 	lda	<L43+temp1_1
 	cmp	#<$50
@@ -5431,25 +5433,25 @@ L98:
 	brl	L10094
 L99:
 L97:
-	.line	914
+	.line	916
 ;							if(_k_desktopMenuState.pMenu)
-	.line	915
+	.line	917
 ;							{
 	lda	|~~_k_desktopMenuState+10
 	ora	|~~_k_desktopMenuState+10+2
 	bne	L100
 	brl	L10095
 L100:
-	.line	916
+	.line	918
 ;								k_debug_strings("DesktopWindowProc::Calling k_user_HighlightMenu:","DOWN");
-	.line	917
+	.line	919
 	pea	#^L41+1786
 	pea	#<L41+1786
 	pea	#^L41+1737
 	pea	#<L41+1737
 	jsl	~~k_debug_strings
 ;								if(_k_desktopMenuState.selectedIndex < 100)  // fix the max
-	.line	918
+	.line	920
 ;								{
 	sec
 	lda	|~~_k_desktopMenuState+14
@@ -5460,12 +5462,12 @@ L101:
 	bpl	L102
 	brl	L10096
 L102:
-	.line	919
+	.line	921
 ;									_k_desktopMenuState.selectedIndex+=1;
-	.line	920
+	.line	922
 	inc	|~~_k_desktopMenuState+14
 ;									k_user_HighlightMenu(_k_desktopMenuState.pMenu,_k_desktopMenuState.selectedIndex,TRUE);
-	.line	921
+	.line	923
 	pea	#<$1
 	lda	|~~_k_desktopMenuState+14
 	pha
@@ -5475,26 +5477,26 @@ L102:
 	pha
 	jsl	~~k_user_HighlightMenu
 ;								}
-	.line	922
+	.line	924
 ;							}
 L10096:
-	.line	923
+	.line	925
 ;						}
 L10095:
-	.line	924
+	.line	926
 ;						else if(temp1 == 0x1C)
 	brl	L10097
 L10094:
-	.line	925
+	.line	927
 ;						{
 	lda	<L43+temp1_1
 	cmp	#<$1c
 	beq	L103
 	brl	L10098
 L103:
-	.line	926
+	.line	928
 ;							k_debug_pointer("DesktopWindowProc::_k_desktopMenuState.pMenu:",_k_desktopMenuState.pMenu);
-	.line	927
+	.line	929
 	lda	|~~_k_desktopMenuState+10+2
 	pha
 	lda	|~~_k_desktopMenuState+10
@@ -5503,23 +5505,23 @@ L103:
 	pea	#<L41+1791
 	jsl	~~k_debug_pointer
 ;							if(_k_desktopMenuState.pMenu)
-	.line	928
+	.line	930
 ;							{
 	lda	|~~_k_desktopMenuState+10
 	ora	|~~_k_desktopMenuState+10+2
 	bne	L104
 	brl	L10099
 L104:
-	.line	929
+	.line	931
 ;								k_debug_strings("DesktopWindowProc::Calling k_user_SelectMenu:","ENTER");
-	.line	930
+	.line	932
 	pea	#^L41+1883
 	pea	#<L41+1883
 	pea	#^L41+1837
 	pea	#<L41+1837
 	jsl	~~k_debug_strings
 ;								k_user_SelectMenu(_k_desktopMenuState.pMenu,_k_desktopMenuState.selectedIndex);
-	.line	931
+	.line	933
 	lda	|~~_k_desktopMenuState+14
 	pha
 	lda	|~~_k_desktopMenuState+10+2
@@ -5529,47 +5531,47 @@ L104:
 	jsl	~~k_user_SelectMenu
 ;
 ;								_k_desktopMenuState.visible = FALSE;
-	.line	933
+	.line	935
 	sep	#$20
 	longa	off
 	stz	|~~_k_desktopMenuState
 	rep	#$20
 	longa	on
 ;								_k_desktopMenuState.pMenu = NULL;
-	.line	934
+	.line	936
 	stz	|~~_k_desktopMenuState+10
 	stz	|~~_k_desktopMenuState+10+2
 ;								_k_desktopMenuState.selectedIndex = -1;
-	.line	935
+	.line	937
 	lda	#$ffff
 	sta	|~~_k_desktopMenuState+14
 ;							}
-	.line	936
+	.line	938
 ;						}
 L10099:
-	.line	937
+	.line	939
 ;
 ;					}
 L10098:
 L10097:
 L10093:
-	.line	939
+	.line	941
 ;					else
 	brl	L10100
 L10089:
 ;					{
-	.line	941
+	.line	943
 ;						if(temp1!=0x1C)
-	.line	942
+	.line	944
 ;						{
 	lda	<L43+temp1_1
 	cmp	#<$1c
 	bne	L105
 	brl	L10101
 L105:
-	.line	943
+	.line	945
 ;							k_debug_pointer("DesktopWindowProc::_k_desktopMenuState.pMenu:",_k_desktopMenuState.pMenu);
-	.line	944
+	.line	946
 	lda	|~~_k_desktopMenuState+10+2
 	pha
 	lda	|~~_k_desktopMenuState+10
@@ -5578,23 +5580,23 @@ L105:
 	pea	#<L41+1889
 	jsl	~~k_debug_pointer
 ;							if(_k_desktopMenuState.pMenu)
-	.line	945
+	.line	947
 ;							{
 	lda	|~~_k_desktopMenuState+10
 	ora	|~~_k_desktopMenuState+10+2
 	bne	L106
 	brl	L10102
 L106:
-	.line	946
+	.line	948
 ;								k_debug_strings("DesktopWindowProc::Calling k_user_SelectMenu:","ENTER");
-	.line	947
+	.line	949
 	pea	#^L41+1981
 	pea	#<L41+1981
 	pea	#^L41+1935
 	pea	#<L41+1935
 	jsl	~~k_debug_strings
 ;								k_user_SelectMenu(_k_desktopMenuState.pMenu,_k_desktopMenuState.selectedIndex);
-	.line	948
+	.line	950
 	lda	|~~_k_desktopMenuState+14
 	pha
 	lda	|~~_k_desktopMenuState+10+2
@@ -5604,52 +5606,52 @@ L106:
 	jsl	~~k_user_SelectMenu
 ;
 ;								_k_desktopMenuState.visible = FALSE;
-	.line	950
+	.line	952
 	sep	#$20
 	longa	off
 	stz	|~~_k_desktopMenuState
 	rep	#$20
 	longa	on
 ;								_k_desktopMenuState.pMenu = NULL;
-	.line	951
+	.line	953
 	stz	|~~_k_desktopMenuState+10
 	stz	|~~_k_desktopMenuState+10+2
 ;								_k_desktopMenuState.selectedIndex = -1;
-	.line	952
+	.line	954
 	lda	#$ffff
 	sta	|~~_k_desktopMenuState+14
 ;
 ;							}
-	.line	954
+	.line	956
 ;						}
 L10102:
-	.line	955
+	.line	957
 ;					}
 L10101:
-	.line	956
+	.line	958
 L10100:
 ;
 ;				}
-	.line	958
+	.line	960
 L10088:
 ;			}
-	.line	959
+	.line	961
 L10084:
 ;
 ;			break;
-	.line	961
+	.line	963
 	brl	L10019
 ;		case FX_DISK_INSERT:
-	.line	962
+	.line	964
 L10103:
 ;
 ;			k_debug_string("DesktopWindowProc::DISK-INSERT:");
-	.line	964
+	.line	966
 	pea	#^L41+1987
 	pea	#<L41+1987
 	jsl	~~k_debug_string
 ;			if(((PDISKINFO)pMsg->pheap)->stgName)
-	.line	965
+	.line	967
 ;			{
 	ldy	#$e
 	lda	[<L42+pMsg_0],Y
@@ -5658,9 +5660,9 @@ L10103:
 	bne	L107
 	brl	L10104
 L107:
-	.line	966
+	.line	968
 ;				k_debug_string(((PDISKINFO)pMsg->pheap)->stgName);
-	.line	967
+	.line	969
 	ldy	#$10
 	lda	[<L42+pMsg_0],Y
 	pha
@@ -5669,28 +5671,28 @@ L107:
 	pha
 	jsl	~~k_debug_string
 ;			}
-	.line	968
+	.line	970
 ;			else
 	brl	L10105
 L10104:
 ;			{
-	.line	970
+	.line	972
 ;				k_debug_string("NULL");
-	.line	971
+	.line	973
 	pea	#^L41+2019
 	pea	#<L41+2019
 	jsl	~~k_debug_string
 ;			}
-	.line	972
+	.line	974
 L10105:
 ;			k_debug_string("\r\n");
-	.line	973
+	.line	975
 	pea	#^L41+2024
 	pea	#<L41+2024
 	jsl	~~k_debug_string
 ;
 ;			((PDISKINFO)pMsg->pheap)->stgName[31] = 0;
-	.line	975
+	.line	977
 	ldy	#$e
 	lda	[<L42+pMsg_0],Y
 	sta	<R0
@@ -5706,7 +5708,7 @@ L10105:
 	longa	on
 ;
 ;			if(p->desktopCtl->currentDiskName && strcmp( k_to_uppercase(  ((PDISKINFO)pMsg->pheap)->stgName),p->desktopCtl->currentDiskName) == 0)
-	.line	977
+	.line	979
 ;			{
 	ldy	#$58
 	lda	[<L43+p_1],Y
@@ -5749,21 +5751,21 @@ L108:
 	beq	L109
 	brl	L10106
 L109:
-	.line	978
+	.line	980
 ;				k_debug_string("DesktopWindowProc::DISK-INSERT:NO-CHANGE\r\n");
-	.line	979
+	.line	981
 	pea	#^L41+2027
 	pea	#<L41+2027
 	jsl	~~k_debug_string
 ;			}
-	.line	980
+	.line	982
 ;			else
 	brl	L10107
 L10106:
 ;			{
-	.line	982
+	.line	984
 ;				if(p->desktopCtl->currentDiskName)
-	.line	983
+	.line	985
 ;				{
 	ldy	#$58
 	lda	[<L43+p_1],Y
@@ -5778,9 +5780,9 @@ L10106:
 	bne	L110
 	brl	L10108
 L110:
-	.line	984
+	.line	986
 ;					temp1 = strlen(p->desktopCtl->currentDiskName);
-	.line	985
+	.line	987
 	ldy	#$58
 	lda	[<L43+p_1],Y
 	sta	<R0
@@ -5796,13 +5798,13 @@ L110:
 	jsl	~~strlen
 	sta	<L43+temp1_1
 ;					temp2 = (temp1*4);
-	.line	986
+	.line	988
 	lda	<L43+temp1_1
 	asl	A
 	asl	A
 	sta	<L43+temp2_1
 ;					k_put_winicon_point(ICON_DISK,640 - (40 + temp2/2),20,p->desktopCtl->backgroundColor,PAINTMODE_BACKGROUND);
-	.line	987
+	.line	989
 	pea	#<$f0
 	ldy	#$58
 	lda	[<L43+p_1],Y
@@ -5830,7 +5832,7 @@ L110:
 	pea	#<$3
 	jsl	~~k_put_winicon_point
 ;					k_draw_text_point(p->desktopCtl->currentDiskName,640 - (35 + temp2/2) - (temp2),40,p->desktopCtl->backgroundColor);
-	.line	988
+	.line	990
 	ldy	#$58
 	lda	[<L43+p_1],Y
 	sta	<R0
@@ -5872,11 +5874,11 @@ L110:
 	pha
 	jsl	~~k_draw_text_point
 ;				}
-	.line	989
+	.line	991
 ;
 ;				temp1 = strlen(((PDISKINFO)pMsg->pheap)->stgName);
 L10108:
-	.line	991
+	.line	993
 	ldy	#$10
 	lda	[<L42+pMsg_0],Y
 	pha
@@ -5886,14 +5888,14 @@ L10108:
 	jsl	~~strlen
 	sta	<L43+temp1_1
 ;				temp2 = (temp1*4);
-	.line	992
+	.line	994
 	lda	<L43+temp1_1
 	asl	A
 	asl	A
 	sta	<L43+temp2_1
 ;
 ;				k_put_winicon_point(ICON_DISK,640 - (40 + temp2/2),20,0,PAINTMODE_DEFAULT);
-	.line	994
+	.line	996
 	pea	#<$0
 	pea	#<$0
 	pea	#<$14
@@ -5913,7 +5915,7 @@ L10108:
 	pea	#<$3
 	jsl	~~k_put_winicon_point
 ;				k_draw_text_point(k_to_uppercase(((PDISKINFO)pMsg->pheap)->stgName),640 - (35 + temp2/2) - (temp2),40,0);
-	.line	995
+	.line	997
 	pea	#<$0
 	pea	#<$28
 	lda	<L43+temp2_1
@@ -5947,7 +5949,7 @@ L10108:
 	jsl	~~k_draw_text_point
 ;
 ;				if(p->desktopCtl->currentDiskName!=NULL)
-	.line	997
+	.line	999
 ;					k_mem_deallocate_heap(p->desktopCtl->currentDiskName);
 	ldy	#$58
 	lda	[<L43+p_1],Y
@@ -5962,7 +5964,7 @@ L10108:
 	bne	L111
 	brl	L10109
 L111:
-	.line	998
+	.line	1000
 	ldy	#$58
 	lda	[<L43+p_1],Y
 	sta	<R0
@@ -5979,7 +5981,7 @@ L111:
 ;
 ;				p->desktopCtl->currentDiskName = k_string_copy_string(((PDISKINFO)pMsg->pheap)->stgName);
 L10109:
-	.line	1000
+	.line	1002
 	ldy	#$58
 	lda	[<L43+p_1],Y
 	sta	<R0
@@ -6003,23 +6005,23 @@ L10109:
 	sta	[<R0],Y
 ;
 ;				pcd = k_mem_allocate_heap(sizeof(CLICKDETECTED));
-	.line	1002
+	.line	1004
 	pea	#^$8
 	pea	#<$8
 	jsl	~~k_mem_allocate_heap
 	sta	<L43+pcd_1
 	stx	<L43+pcd_1+2
 ;				if(pcd)
-	.line	1003
+	.line	1005
 ;				{
 	lda	<L43+pcd_1
 	ora	<L43+pcd_1+2
 	bne	L112
 	brl	L10110
 L112:
-	.line	1004
+	.line	1006
 ;					pcd->window  = k_create_ui_window_class(640 - (40 + temp2/2),20,ICONH,ICONW,"disk","icon",NULL);
-	.line	1005
+	.line	1007
 	pea	#^$0
 	pea	#<$0
 	pea	#^L41+2075
@@ -6051,7 +6053,7 @@ L112:
 	ldy	#$2
 	sta	[<L43+pcd_1],Y
 ;					pcd->handler = ObjectClicked;
-	.line	1006
+	.line	1008
 	lda	#<~~ObjectClicked
 	ldy	#$4
 	sta	[<L43+pcd_1],Y
@@ -6060,11 +6062,11 @@ L112:
 	sta	[<L43+pcd_1],Y
 ;					//k_add_window_hit_node(pcd);
 ;				}
-	.line	1008
+	.line	1010
 ;
 ;				k_debug_message("DesktopWindowProc::DISK-INSERT:DISK:",p->desktopCtl->currentDiskName);
 L10110:
-	.line	1010
+	.line	1012
 	ldy	#$58
 	lda	[<L43+p_1],Y
 	sta	<R0
@@ -6081,23 +6083,23 @@ L10110:
 	pea	#<L41+2080
 	jsl	~~k_debug_message
 ;			}
-	.line	1011
+	.line	1013
 L10107:
 ;			break;
-	.line	1012
+	.line	1014
 	brl	L10019
 ;		case FX_DISK_REMOVE:
-	.line	1013
+	.line	1015
 L10111:
 ;
 ;			k_debug_string("DesktopWindowProc::DISK-REMOVE\r\n");
-	.line	1015
+	.line	1017
 	pea	#^L41+2117
 	pea	#<L41+2117
 	jsl	~~k_debug_string
 ;
 ;			if(p->desktopCtl->currentDiskName)
-	.line	1017
+	.line	1019
 ;			{
 	ldy	#$58
 	lda	[<L43+p_1],Y
@@ -6112,9 +6114,9 @@ L10111:
 	bne	L113
 	brl	L10112
 L113:
-	.line	1018
+	.line	1020
 ;				k_debug_message("DesktopWindowProc::DISK-REMOVE:DISK:",p->desktopCtl->currentDiskName);
-	.line	1019
+	.line	1021
 	ldy	#$58
 	lda	[<L43+p_1],Y
 	sta	<R0
@@ -6131,7 +6133,7 @@ L113:
 	pea	#<L41+2150
 	jsl	~~k_debug_message
 ;				k_debug_integer("DesktopWindowProc::DISK-REMOVE:backgroundColor:",p->desktopCtl->backgroundColor);
-	.line	1020
+	.line	1022
 	ldy	#$58
 	lda	[<L43+p_1],Y
 	sta	<R0
@@ -6146,7 +6148,7 @@ L113:
 	jsl	~~k_debug_integer
 ;
 ;				temp1 = strlen(p->desktopCtl->currentDiskName);
-	.line	1022
+	.line	1024
 	ldy	#$58
 	lda	[<L43+p_1],Y
 	sta	<R0
@@ -6162,14 +6164,14 @@ L113:
 	jsl	~~strlen
 	sta	<L43+temp1_1
 ;				temp2 = (temp1*4);
-	.line	1023
+	.line	1025
 	lda	<L43+temp1_1
 	asl	A
 	asl	A
 	sta	<L43+temp2_1
 ;
 ;				k_put_winicon_point(ICON_DISK,640 - (40 + temp2/2),20,p->desktopCtl->backgroundColor,PAINTMODE_BACKGROUND);
-	.line	1025
+	.line	1027
 	pea	#<$f0
 	ldy	#$58
 	lda	[<L43+p_1],Y
@@ -6197,7 +6199,7 @@ L113:
 	pea	#<$3
 	jsl	~~k_put_winicon_point
 ;				k_draw_text_point(p->desktopCtl->currentDiskName,640 - (35 + temp2/2) - (temp2),40,p->desktopCtl->backgroundColor);
-	.line	1026
+	.line	1028
 	ldy	#$58
 	lda	[<L43+p_1],Y
 	sta	<R0
@@ -6240,7 +6242,7 @@ L113:
 	jsl	~~k_draw_text_point
 ;
 ;				if(p->desktopCtl->currentDiskName!=NULL)
-	.line	1028
+	.line	1030
 ;					k_mem_deallocate_heap(p->desktopCtl->currentDiskName);
 	ldy	#$58
 	lda	[<L43+p_1],Y
@@ -6255,7 +6257,7 @@ L113:
 	bne	L114
 	brl	L10113
 L114:
-	.line	1029
+	.line	1031
 	ldy	#$58
 	lda	[<L43+p_1],Y
 	sta	<R0
@@ -6272,7 +6274,7 @@ L114:
 ;
 ;				p->desktopCtl->currentDiskName = NULL;
 L10113:
-	.line	1031
+	.line	1033
 	ldy	#$58
 	lda	[<L43+p_1],Y
 	sta	<R0
@@ -6286,23 +6288,23 @@ L10113:
 	ldy	#$13
 	sta	[<R0],Y
 ;			}
-	.line	1032
+	.line	1034
 ;
 ;			break;
 L10112:
-	.line	1034
+	.line	1036
 	brl	L10019
 ;		case FX_APP_MESSAGE:
-	.line	1035
+	.line	1037
 L10114:
 ;			k_debug_string("DesktopWindowProc::FX_APP_MESSAGE\r\n");
-	.line	1036
+	.line	1038
 	pea	#^L41+2235
 	pea	#<L41+2235
 	jsl	~~k_debug_string
 ;
 ;			if(pMsg->pheap)
-	.line	1038
+	.line	1040
 ;			{
 	ldy	#$e
 	lda	[<L42+pMsg_0],Y
@@ -6311,9 +6313,9 @@ L10114:
 	bne	L115
 	brl	L10115
 L115:
-	.line	1039
+	.line	1041
 ;				pdtd = (PDESKTOP_DATA)pMsg->pheap;
-	.line	1040
+	.line	1042
 	ldy	#$e
 	lda	[<L42+pMsg_0],Y
 	sta	<L43+pdtd_1
@@ -6322,7 +6324,7 @@ L115:
 	sta	<L43+pdtd_1+2
 ;
 ;				k_debug_integer("DesktopWindowProc::FX_APP_MESSAGE:type:",pdtd->type);
-	.line	1042
+	.line	1044
 	lda	[<L43+pdtd_1]
 	pha
 	pea	#^L41+2271
@@ -6330,17 +6332,17 @@ L115:
 	jsl	~~k_debug_integer
 ;
 ;				switch(pdtd->type)
-	.line	1044
+	.line	1046
 	lda	[<L43+pdtd_1]
 	brl	L10116
 ;				{
-	.line	1045
+	.line	1047
 ;				case FX_DTD_MSGBOX:
-	.line	1046
+	.line	1048
 L10118:
 ;
 ;					if(pdtd->desktopAction)
-	.line	1048
+	.line	1050
 ;					{
 	ldy	#$4
 	lda	[<L43+pdtd_1],Y
@@ -6349,9 +6351,9 @@ L10118:
 	bne	L116
 	brl	L10119
 L116:
-	.line	1049
+	.line	1051
 ;						pWin = k_user_CreateWindow(FXWS_POPUP | FXWS_BORDER | FXWS_VISIBLE,
-	.line	1050
+	.line	1052
 ;												   "msgboxWindowClass",
 ;												   k_fxstring_as(((PMSGBOX_DATA)pdtd->desktopAction)->caption) ,
 ;												   ((PMSGBOX_DATA)pdtd->desktopAction)->x,
@@ -6424,7 +6426,7 @@ L116:
 	stx	<L43+pWin_1+2
 ;
 ;						k_fxstring_free(((PMSGBOX_DATA)pdtd->desktopAction)->caption);
-	.line	1060
+	.line	1062
 	ldy	#$4
 	lda	[<L43+pdtd_1],Y
 	sta	<R0
@@ -6439,7 +6441,7 @@ L116:
 	pha
 	jsl	~~k_fxstring_free
 ;						k_mem_deallocate_heap(pdtd->desktopAction);
-	.line	1061
+	.line	1063
 	ldy	#$6
 	lda	[<L43+pdtd_1],Y
 	pha
@@ -6448,20 +6450,20 @@ L116:
 	pha
 	jsl	~~k_mem_deallocate_heap
 ;					}
-	.line	1062
+	.line	1064
 ;
 ;					break;
 L10119:
-	.line	1064
-	brl	L10117
-;				default:
-	.line	1065
-L10120:
-;					break;
 	.line	1066
 	brl	L10117
-;				}
+;				default:
 	.line	1067
+L10120:
+;					break;
+	.line	1068
+	brl	L10117
+;				}
+	.line	1069
 L10116:
 	xref	~~~swt
 	jsl	~~~swt
@@ -6471,19 +6473,19 @@ L10116:
 	dw	L10120-1
 L10117:
 ;			}
-	.line	1068
+	.line	1070
 ;			break;
 L10115:
-	.line	1069
+	.line	1071
 	brl	L10019
 ;		case FX_MOUSE_MOVE:
-	.line	1070
+	.line	1072
 L10121:
 ;
 ;
 ;
 ;			cx = *((INT*)&pMsg->data[1]) - pWin->win_x;
-	.line	1074
+	.line	1076
 	sec
 	ldy	#$17
 	lda	[<L42+pMsg_0],Y
@@ -6491,7 +6493,7 @@ L10121:
 	sbc	[<L43+pWin_1],Y
 	sta	<L43+cx_1
 ;			cy = *((INT*)&pMsg->data[3]) - pWin->win_y;
-	.line	1075
+	.line	1077
 	sec
 	ldy	#$19
 	lda	[<L42+pMsg_0],Y
@@ -6500,7 +6502,7 @@ L10121:
 	sta	<L43+cy_1
 ;
 ;			px = ((INT*)pctx->userData)[DEBUG_MOUSE_CX];
-	.line	1077
+	.line	1079
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -6511,7 +6513,7 @@ L10121:
 	lda	[<R0],Y
 	sta	<L43+px_1
 ;			py = ((INT*)pctx->userData)[DEBUG_MOUSE_CY];
-	.line	1078
+	.line	1080
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -6523,7 +6525,7 @@ L10121:
 	sta	<L43+py_1
 ;
 ;			if(((INT*)pctx->userData)[DEBUG_MOUSE_ENABLE] && !((INT*)pctx->userData)[DEBUG_MOUSE_BOXING])
-	.line	1080
+	.line	1082
 ;			{
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
@@ -6546,10 +6548,10 @@ L117:
 	beq	L118
 	brl	L10122
 L118:
-	.line	1081
+	.line	1083
 ;
 ;				cx = *((INT*)&pMsg->data[1]) - pWin->win_x;
-	.line	1083
+	.line	1085
 	sec
 	ldy	#$17
 	lda	[<L42+pMsg_0],Y
@@ -6557,7 +6559,7 @@ L118:
 	sbc	[<L43+pWin_1],Y
 	sta	<L43+cx_1
 ;				cy = *((INT*)&pMsg->data[3]) - pWin->win_y;
-	.line	1084
+	.line	1086
 	sec
 	ldy	#$19
 	lda	[<L42+pMsg_0],Y
@@ -6567,7 +6569,7 @@ L118:
 ;
 ;
 ;				px = ((INT*)pctx->userData)[DEBUG_MOUSE_CX];
-	.line	1087
+	.line	1089
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -6578,7 +6580,7 @@ L118:
 	lda	[<R0],Y
 	sta	<L43+px_1
 ;				py = ((INT*)pctx->userData)[DEBUG_MOUSE_CY];
-	.line	1088
+	.line	1090
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -6590,7 +6592,7 @@ L118:
 	sta	<L43+py_1
 ;
 ;				if(px > -1)
-	.line	1090
+	.line	1092
 ;				{
 	sec
 	lda	#$ffff
@@ -6601,10 +6603,10 @@ L119:
 	bpl	L120
 	brl	L10123
 L120:
-	.line	1091
+	.line	1093
 ;					//k_draw_rect_slow(px,py, px+100, py+100, 0);
 ;					k_vdma_fill_rect_ex(px,py, 200, 200, FILLCOLOR_TRANSPARENT,BITMAP_FRONT);
-	.line	1093
+	.line	1095
 	pea	#<$0
 	pea	#<$0
 	pea	#<$c8
@@ -6629,12 +6631,12 @@ L122:
 	pei	<R1
 	jsl	~~k_vdma_fill_rect_ex
 ;				}
-	.line	1094
+	.line	1096
 ;
 ;				//k_draw_rect_slow(cx,cy, cx+100, cy+100, 15);
 ;				k_vdma_fill_rect_ex(cx,cy, 200, 100, 15,BITMAP_FRONT);
 L10123:
-	.line	1097
+	.line	1099
 	pea	#<$0
 	pea	#<$f
 	pea	#<$64
@@ -6660,7 +6662,7 @@ L124:
 	jsl	~~k_vdma_fill_rect_ex
 ;
 ;				((INT*)pctx->userData)[DEBUG_MOUSE_CX] = cx;
-	.line	1099
+	.line	1101
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -6671,7 +6673,7 @@ L124:
 	ldy	#$2
 	sta	[<R0],Y
 ;				((INT*)pctx->userData)[DEBUG_MOUSE_CY] = cy;
-	.line	1100
+	.line	1102
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -6683,7 +6685,7 @@ L124:
 	sta	[<R0],Y
 ;
 ;			}
-	.line	1102
+	.line	1104
 ;
 ;			/*
 ;			pzero = k_getZeroPage();
@@ -6696,14 +6698,14 @@ L124:
 ;			*/
 ;			break;
 L10122:
-	.line	1113
+	.line	1115
 	brl	L10019
 ;
 ;		case FX_MOUSE_ENTER:
-	.line	1115
+	.line	1117
 L10124:
 ;			k_debug_strings("DesktopWindowProc::FX_MOUSE_ENTER:",pWin->win_title);
-	.line	1116
+	.line	1118
 	clc
 	lda	#$14c
 	adc	<L43+pWin_1
@@ -6717,13 +6719,13 @@ L10124:
 	pea	#<L41+2329
 	jsl	~~k_debug_strings
 ;			break;
-	.line	1117
+	.line	1119
 	brl	L10019
 ;		case FX_MOUSE_EXIT:
-	.line	1118
+	.line	1120
 L10125:
 ;			k_debug_strings("DesktopWindowProc::FX_MOUSE_EXIT:",pWin->win_title);
-	.line	1119
+	.line	1121
 	clc
 	lda	#$14c
 	adc	<L43+pWin_1
@@ -6737,14 +6739,14 @@ L10125:
 	pea	#<L41+2364
 	jsl	~~k_debug_strings
 ;			break;
-	.line	1120
+	.line	1122
 	brl	L10019
 ;
 ;		case FX_RBUTTON_DOWN:
-	.line	1122
+	.line	1124
 L10126:
 ;			k_debug_string("DesktopWindowProc::FX_RBUTTON_DOWN\r\n");
-	.line	1123
+	.line	1125
 	pea	#^L41+2398
 	pea	#<L41+2398
 	jsl	~~k_debug_string
@@ -6752,14 +6754,14 @@ L10126:
 ;			//drawMandelbrot();
 ;
 ;			break;
-	.line	1127
+	.line	1129
 	brl	L10019
 ;
 ;		case FX_LBUTTON_DOWN:
-	.line	1129
+	.line	1131
 L10127:
 ;			k_debug_string("DesktopWindowProc::FX_LBUTTON_DOWN\r\n");
-	.line	1130
+	.line	1132
 	pea	#^L41+2435
 	pea	#<L41+2435
 	jsl	~~k_debug_string
@@ -6767,7 +6769,7 @@ L10127:
 ;			//k_debug_integer("DesktopWindowProc::DEBUG_MOUSE_BOXING:",((INT*)pctx->userData)[DEBUG_MOUSE_BOXING]);
 ;
 ;			if(((INT*)pctx->userData)[DEBUG_MOUSE_BOX_ENABLE] && !((INT*)pctx->userData)[DEBUG_MOUSE_BOXING])
-	.line	1134
+	.line	1136
 ;			{
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
@@ -6791,10 +6793,10 @@ L125:
 	beq	L126
 	brl	L10128
 L126:
-	.line	1135
+	.line	1137
 ;
 ;				((INT*)pctx->userData)[DEBUG_MOUSE_BOXING] = TRUE;
-	.line	1137
+	.line	1139
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -6806,7 +6808,7 @@ L126:
 	sta	[<R0],Y
 ;
 ;				cy = *((INT*)&pMsg->data[3]) - pWin->win_y;
-	.line	1139
+	.line	1141
 	sec
 	ldy	#$19
 	lda	[<L42+pMsg_0],Y
@@ -6814,7 +6816,7 @@ L126:
 	sbc	[<L43+pWin_1],Y
 	sta	<L43+cy_1
 ;				cx = *((INT*)&pMsg->data[1]) - pWin->win_x;
-	.line	1140
+	.line	1142
 	sec
 	ldy	#$17
 	lda	[<L42+pMsg_0],Y
@@ -6823,7 +6825,7 @@ L126:
 	sta	<L43+cx_1
 ;
 ;				((INT*)pctx->userData)[DEBUG_MOUSE_BOX_LEFT] = cx;
-	.line	1142
+	.line	1144
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -6834,7 +6836,7 @@ L126:
 	ldy	#$a
 	sta	[<R0],Y
 ;				((INT*)pctx->userData)[DEBUG_MOUSE_BOX_TOP]  = cy;
-	.line	1143
+	.line	1145
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -6846,7 +6848,7 @@ L126:
 	sta	[<R0],Y
 ;
 ;				((INT*)pctx->userData)[DEBUG_MOUSE_CX] = cx;
-	.line	1145
+	.line	1147
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -6857,7 +6859,7 @@ L126:
 	ldy	#$2
 	sta	[<R0],Y
 ;				((INT*)pctx->userData)[DEBUG_MOUSE_CY] = cy;
-	.line	1146
+	.line	1148
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -6868,18 +6870,18 @@ L126:
 	ldy	#$4
 	sta	[<R0],Y
 ;			}
-	.line	1147
+	.line	1149
 ;
 ;
 ;			break;
 L10128:
-	.line	1150
+	.line	1152
 	brl	L10019
 ;		case FX_LBUTTON_UP:
-	.line	1151
+	.line	1153
 L10129:
 ;			k_debug_string("DesktopWindowProc::FX_LBUTTON_UP\r\n");
-	.line	1152
+	.line	1154
 	pea	#^L41+2472
 	pea	#<L41+2472
 	jsl	~~k_debug_string
@@ -6927,7 +6929,7 @@ L10129:
 ;			*/
 ;
 ;			if(pctx->userData && ((INT*)pctx->userData)[DEBUG_MOUSE_BOXING])
-	.line	1196
+	.line	1198
 ;			{
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
@@ -6947,9 +6949,9 @@ L127:
 	bne	L128
 	brl	L10130
 L128:
-	.line	1197
+	.line	1199
 ;				px = ((INT*)pctx->userData)[DEBUG_MOUSE_CX];
-	.line	1198
+	.line	1200
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -6960,7 +6962,7 @@ L128:
 	lda	[<R0],Y
 	sta	<L43+px_1
 ;				py = ((INT*)pctx->userData)[DEBUG_MOUSE_CY];
-	.line	1199
+	.line	1201
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -6972,7 +6974,7 @@ L128:
 	sta	<L43+py_1
 ;
 ;				if(px > -1)
-	.line	1201
+	.line	1203
 ;				{
 	sec
 	lda	#$ffff
@@ -6983,9 +6985,9 @@ L129:
 	bpl	L130
 	brl	L10131
 L130:
-	.line	1202
+	.line	1204
 ;					k_draw_rect_slow(((INT*)pctx->userData)[DEBUG_MOUSE_BOX_LEFT],
-	.line	1203
+	.line	1205
 ;							         ((INT*)pctx->userData)[DEBUG_MOUSE_BOX_TOP],
 ;									 px, py,
 ;									 FILLCOLOR_TRANSPARENT);
@@ -7012,11 +7014,11 @@ L130:
 	pha
 	jsl	~~k_draw_rect_slow
 ;				}
-	.line	1207
+	.line	1209
 ;
 ;				((INT*)pctx->userData)[DEBUG_MOUSE_CX] 		= -1;
 L10131:
-	.line	1209
+	.line	1211
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -7027,7 +7029,7 @@ L10131:
 	ldy	#$2
 	sta	[<R0],Y
 ;				((INT*)pctx->userData)[DEBUG_MOUSE_CY] 		= -1;
-	.line	1210
+	.line	1212
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -7038,7 +7040,7 @@ L10131:
 	ldy	#$4
 	sta	[<R0],Y
 ;				((INT*)pctx->userData)[DEBUG_MOUSE_BOXING] 	= FALSE;
-	.line	1211
+	.line	1213
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -7049,7 +7051,7 @@ L10131:
 	ldy	#$6
 	sta	[<R0],Y
 ;				((INT*)pctx->userData)[DEBUG_MOUSE_BOX_TOP] = -1;
-	.line	1212
+	.line	1214
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -7060,7 +7062,7 @@ L10131:
 	ldy	#$8
 	sta	[<R0],Y
 ;				((INT*)pctx->userData)[DEBUG_MOUSE_BOX_LEFT]= -1;
-	.line	1213
+	.line	1215
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -7072,7 +7074,7 @@ L10131:
 	sta	[<R0],Y
 ;
 ;				k_debug_integer("DesktopWindowProc::DEBUG_MOUSE_BOXING:",((INT*)pctx->userData)[DEBUG_MOUSE_BOXING]);
-	.line	1215
+	.line	1217
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -7086,26 +7088,26 @@ L10131:
 	pea	#<L41+2507
 	jsl	~~k_debug_integer
 ;			}
-	.line	1216
+	.line	1218
 ;
 ;
 ;
 ;			break;
 L10130:
-	.line	1220
+	.line	1222
 	brl	L10019
 ;		case FX_LBUTTON_DRAG:
-	.line	1221
+	.line	1223
 L10132:
 ;			k_debug_string("DesktopWindowProc::FX_LBUTTON_DRAG\r\n");
-	.line	1222
+	.line	1224
 	pea	#^L41+2546
 	pea	#<L41+2546
 	jsl	~~k_debug_string
 ;
 ;
 ;			if(((INT*)pctx->userData)[DEBUG_MOUSE_BOX_ENABLE] && ((INT*)pctx->userData)[DEBUG_MOUSE_BOXING])
-	.line	1225
+	.line	1227
 ;			{
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
@@ -7129,10 +7131,10 @@ L131:
 	bne	L132
 	brl	L10133
 L132:
-	.line	1226
+	.line	1228
 ;
 ;				cy = *((INT*)&pMsg->data[3]) - pWin->win_y;
-	.line	1228
+	.line	1230
 	sec
 	ldy	#$19
 	lda	[<L42+pMsg_0],Y
@@ -7140,7 +7142,7 @@ L132:
 	sbc	[<L43+pWin_1],Y
 	sta	<L43+cy_1
 ;				cx = *((INT*)&pMsg->data[1]) - pWin->win_x;
-	.line	1229
+	.line	1231
 	sec
 	ldy	#$17
 	lda	[<L42+pMsg_0],Y
@@ -7149,7 +7151,7 @@ L132:
 	sta	<L43+cx_1
 ;
 ;				px = ((INT*)pctx->userData)[DEBUG_MOUSE_CX];
-	.line	1231
+	.line	1233
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -7160,7 +7162,7 @@ L132:
 	lda	[<R0],Y
 	sta	<L43+px_1
 ;				py = ((INT*)pctx->userData)[DEBUG_MOUSE_CY];
-	.line	1232
+	.line	1234
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -7172,7 +7174,7 @@ L132:
 	sta	<L43+py_1
 ;
 ;				if(px > -1)
-	.line	1234
+	.line	1236
 ;				{
 	sec
 	lda	#$ffff
@@ -7183,9 +7185,9 @@ L133:
 	bpl	L134
 	brl	L10134
 L134:
-	.line	1235
+	.line	1237
 ;					k_draw_rect_slow(((INT*)pctx->userData)[DEBUG_MOUSE_BOX_LEFT],
-	.line	1236
+	.line	1238
 ;							         ((INT*)pctx->userData)[DEBUG_MOUSE_BOX_TOP],
 ;									 px, py,
 ;									 FILLCOLOR_TRANSPARENT);
@@ -7212,11 +7214,11 @@ L134:
 	pha
 	jsl	~~k_draw_rect_slow
 ;				}
-	.line	1240
+	.line	1242
 ;
 ;				k_draw_rect_slow(((INT*)pctx->userData)[DEBUG_MOUSE_BOX_LEFT],
 L10134:
-	.line	1242
+	.line	1244
 ;								 ((INT*)pctx->userData)[DEBUG_MOUSE_BOX_TOP],
 ;								 cx,cy,
 ;								 15);
@@ -7244,7 +7246,7 @@ L10134:
 	jsl	~~k_draw_rect_slow
 ;
 ;				((INT*)pctx->userData)[DEBUG_MOUSE_CX] = cx;
-	.line	1247
+	.line	1249
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -7255,7 +7257,7 @@ L10134:
 	ldy	#$2
 	sta	[<R0],Y
 ;				((INT*)pctx->userData)[DEBUG_MOUSE_CY] = cy;
-	.line	1248
+	.line	1250
 	ldy	#$83
 	lda	[<L43+pctx_1],Y
 	sta	<R0
@@ -7266,17 +7268,17 @@ L10134:
 	ldy	#$4
 	sta	[<R0],Y
 ;			}
-	.line	1249
+	.line	1251
 ;
 ;			break;
 L10133:
-	.line	1251
+	.line	1253
 	brl	L10019
 ;		case FX_LBUTTON_DBLCLICK:
-	.line	1252
+	.line	1254
 L10135:
 ;			k_debug_string("DesktopWindowProc::FX_LBUTTON_DBLCLICK\r\n");
-	.line	1253
+	.line	1255
 	pea	#^L41+2583
 	pea	#<L41+2583
 	jsl	~~k_debug_string
@@ -7284,7 +7286,7 @@ L10135:
 ;
 ;
 ;			if(k_user_getDesktopWindow())
-	.line	1257
+	.line	1259
 ;			{
 	jsl	~~k_user_getDesktopWindow
 	sta	<R0
@@ -7294,14 +7296,14 @@ L10135:
 	bne	L135
 	brl	L10136
 L135:
-	.line	1258
+	.line	1260
 ;				k_debug_string("*********************************\r\nDesktopWindowProc::DESKTOP HITLISTK\r\n*********************************\r\n");
-	.line	1259
+	.line	1261
 	pea	#^L41+2624
 	pea	#<L41+2624
 	jsl	~~k_debug_string
 ;				k_debug_nodelist_with_data( k_getWindowFromHandle(k_user_getDesktopWindow())->pChildHitList->listhead->next, debug_clickable_node );
-	.line	1260
+	.line	1262
 	pea	#^~~debug_clickable_node
 	pea	#<~~debug_clickable_node
 	jsl	~~k_user_getDesktopWindow
@@ -7331,12 +7333,12 @@ L135:
 	pha
 	jsl	~~k_debug_nodelist_with_data
 ;				k_debug_string("*********************************\r\nDesktopWindowProc::GLOBAL HITLISTK\r\n*********************************\r\n");
-	.line	1261
+	.line	1263
 	pea	#^L41+2732
 	pea	#<L41+2732
 	jsl	~~k_debug_string
 ;				k_debug_nodelist_with_data( k_getWindowHitList(), debug_clickable_node );
-	.line	1262
+	.line	1264
 	pea	#^~~debug_clickable_node
 	pea	#<~~debug_clickable_node
 	jsl	~~k_getWindowHitList
@@ -7346,26 +7348,26 @@ L135:
 	pha
 	jsl	~~k_debug_nodelist_with_data
 ;			}
-	.line	1263
+	.line	1265
 ;
 ;
 ;			break;
 L10136:
-	.line	1266
+	.line	1268
 	brl	L10019
 ;
 ;		case FX_RBUTTON_DBLCLICK:
-	.line	1268
+	.line	1270
 L10137:
 ;
 ;
 ;			k_debug_string("*********************************\r\nDesktopWindowProc::DESKTOP WINDOW LIST\r\n*********************************\r\n");
-	.line	1271
+	.line	1273
 	pea	#^L41+2839
 	pea	#<L41+2839
 	jsl	~~k_debug_string
 ;			k_debug_nodelist_with_data( k_getWindowList(), debug_window_node );
-	.line	1272
+	.line	1274
 	pea	#^~~debug_window_node
 	pea	#<~~debug_window_node
 	jsl	~~k_getWindowList
@@ -7377,13 +7379,13 @@ L10137:
 ;
 ;
 ;			break;
-	.line	1275
+	.line	1277
 	brl	L10019
 ;		case FX_WINDOW_TOFRONT:
-	.line	1276
+	.line	1278
 L10138:
 ;			k_debug_string("DesktopWindowProc::FX_WINDOW_TOFRONT\r\n");
-	.line	1277
+	.line	1279
 	pea	#^L41+2950
 	pea	#<L41+2950
 	jsl	~~k_debug_string
@@ -7391,13 +7393,13 @@ L10138:
 ;			//k_vdraw_ui_window(25,25,200,300,"Clicked FRONT",15,3);
 ;
 ;			break;
-	.line	1281
+	.line	1283
 	brl	L10019
 ;		case FX_WINDOW_TOBACK:
-	.line	1282
+	.line	1284
 L10139:
 ;			k_debug_string("DesktopWindowProc::FX_WINDOW_TOBACK\r\n");
-	.line	1283
+	.line	1285
 	pea	#^L41+2989
 	pea	#<L41+2989
 	jsl	~~k_debug_string
@@ -7405,33 +7407,33 @@ L10139:
 ;			//k_vdraw_ui_window(250,250,150,200,"Clicked BACK",15,3);
 ;
 ;			break;
-	.line	1287
+	.line	1289
 	brl	L10019
 ;		case FX_COM1_DATA:
-	.line	1288
+	.line	1290
 L10140:
 ;			//k_debug_string("DesktopWindowProc::FX_COM1_DATA\r\n");
 ;			break;
-	.line	1290
+	.line	1292
 	brl	L10019
 ;		case FX_COM2_DATA:
-	.line	1291
+	.line	1293
 L10141:
 ;			//k_debug_string("DesktopWindowProc::FX_COM2_DATA\r\n");
 ;			break;
-	.line	1293
+	.line	1295
 	brl	L10019
 ;
 ;		default:
-	.line	1295
+	.line	1297
 L10142:
 ;			//k_updatespinner(2,40,&consolespinctx);
 ;			//return DefWindowProc(pMsg);
 ;			break;
-	.line	1298
+	.line	1300
 	brl	L10019
 ;		}
-	.line	1299
+	.line	1301
 L10018:
 	xref	~~~swt
 	jsl	~~~swt
@@ -7489,12 +7491,12 @@ L10018:
 	dw	L10142-1
 L10019:
 ;	}
-	.line	1300
+	.line	1302
 ;	//k_debug_string("DesktopWindowProc exit\r\n");
 ;
 ;	return TRUE;
 L10016:
-	.line	1303
+	.line	1305
 	lda	#$1
 L136:
 	tay
@@ -7510,14 +7512,14 @@ L136:
 	tya
 	rtl
 ;}
-	.line	1304
-	.endblock	1304
+	.line	1306
+	.endblock	1306
 L42	equ	78
 L43	equ	13
 	ends
 	efunc
-	.endfunc	1304,13,78
-	.line	1304
+	.endfunc	1306,13,78
+	.line	1306
 	data
 L41:
 	db	$44,$65,$73,$6B,$74,$6F,$70,$57,$69,$6E,$64,$6F,$77,$50,$72
@@ -7726,12 +7728,12 @@ L41:
 ;
 ;BOOL ConsoleWindowProc(PFXOSMESSAGE pMsg)
 ;{
-	.line	1306
-	.line	1307
+	.line	1308
+	.line	1309
 	DTOP
 	xdef	~~ConsoleWindowProc
 	func
-	.function	1307
+	.function	1309
 ~~ConsoleWindowProc:
 	longa	on
 	longi	on
@@ -7742,7 +7744,7 @@ L41:
 	phd
 	tcd
 pMsg_0	set	4
-	.block	1307
+	.block	1309
 ;	PFXPROCESS p = NULL;
 ;	PWINDOW pWin = NULL;
 ;	PFXSTRING strTitle = NULL;
@@ -7775,21 +7777,21 @@ buffer_1	set	42
 	stz	<L139+strTitle_1
 	stz	<L139+strTitle_1+2
 	stz	<L139+index_1
-	.line	1317
+	.line	1319
 ;	{
 	lda	<L138+pMsg_0
 	ora	<L138+pMsg_0+2
 	bne	L141
 	brl	L10143
 L141:
-	.line	1318
+	.line	1320
 ;		p = k_exec_get_current_process();
-	.line	1319
+	.line	1321
 	jsl	~~k_exec_get_current_process
 	sta	<L139+p_1
 	stx	<L139+p_1+2
 ;		pWin = (PWINDOW)pMsg->hwnd;
-	.line	1320
+	.line	1322
 	ldy	#$a
 	lda	[<L138+pMsg_0],Y
 	sta	<L139+pWin_1
@@ -7799,26 +7801,26 @@ L141:
 ;		//k_debug_long("consoleWindowProc::ProcessId:",p->procId);
 ;
 ;		switch(pMsg->type)
-	.line	1323
+	.line	1325
 	ldy	#$8
 	lda	[<L138+pMsg_0],Y
 	brl	L10144
 ;		{
-	.line	1324
+	.line	1326
 ;		case FX_CREATE_WINDOW:
-	.line	1325
+	.line	1327
 L10146:
 ;			if(p)
-	.line	1326
+	.line	1328
 ;			{
 	lda	<L139+p_1
 	ora	<L139+p_1+2
 	bne	L142
 	brl	L10147
 L142:
-	.line	1327
+	.line	1329
 ;				k_debug_long("testWindowProc::FX_CREATE_WINDOW:",p->procId);
-	.line	1328
+	.line	1330
 	ldy	#$4
 	lda	[<L139+p_1],Y
 	pha
@@ -7831,7 +7833,7 @@ L142:
 ;				//k_debug_integer("testWindowProc::MessageId:",pMsg->type);
 ;
 ;				pWin->hBackground = COLORBRUSH(86);
-	.line	1331
+	.line	1333
 	lda	#$56
 	ldy	#$1b8
 	sta	[<L139+pWin_1],Y
@@ -7842,7 +7844,7 @@ L142:
 ;				//k_user_SetWindowData(pMsg->hwnd,4,k_mem_allocate_heap(sizeof(TEXTVIEWDATA)));
 ;
 ;				k_user_SetWindowData(pMsg->hwnd,4,NULL);
-	.line	1335
+	.line	1337
 	pea	#^$0
 	pea	#<$0
 	pea	#<$4
@@ -7869,17 +7871,17 @@ L142:
 ;				}
 ;				*/
 ;			}
-	.line	1351
+	.line	1353
 ;			break;
 L10147:
-	.line	1352
+	.line	1354
 	brl	L10145
 ;		case FX_DRAW_WINDOW:
-	.line	1353
+	.line	1355
 L10148:
 ;			//k_debug_rect("testWindowProc::FX_DRAW_WINDOW:",&pWin->clientRect);
 ;			k_debug_pointer("testWindowProc::FX_DRAW_WINDOW:",k_user_GetWindowData(pMsg->hwnd,4));
-	.line	1355
+	.line	1357
 	pea	#<$4
 	ldy	#$c
 	lda	[<L138+pMsg_0],Y
@@ -7900,7 +7902,7 @@ L10148:
 ;			//k_debug_integer("testWindowProc::FX_DRAW_WINDOW:index:",index);
 ;
 ;			k_vdma_fill_rect_ex(pWin->clientRect.x,
-	.line	1360
+	.line	1362
 ;					            pWin->clientRect.y,
 ;					            pWin->clientRect.width ,
 ;								pWin->clientRect.height,
@@ -7967,7 +7969,7 @@ L144:
 ;			*/
 ;
 ;			if(k_user_GetWindowData(pMsg->hwnd,4) && ((PTEXTVIEWDATA)k_user_GetWindowData(pMsg->hwnd,4))->contents)
-	.line	1385
+	.line	1387
 ;			{
 	pea	#<$4
 	ldy	#$c
@@ -8000,30 +8002,30 @@ L145:
 	bne	L146
 	brl	L10149
 L146:
-	.line	1386
+	.line	1388
 ;				r.x = pWin->clientRect.x + 10;
-	.line	1387
+	.line	1389
 	clc
 	lda	#$a
 	ldy	#$2a
 	adc	[<L139+pWin_1],Y
 	sta	<L139+r_1
 ;				r.y = pWin->clientRect.y + 10;
-	.line	1388
+	.line	1390
 	clc
 	lda	#$a
 	ldy	#$2c
 	adc	[<L139+pWin_1],Y
 	sta	<L139+r_1+2
 ;				r.width = pWin->clientRect.width - 20;
-	.line	1389
+	.line	1391
 	clc
 	lda	#$ffec
 	ldy	#$32
 	adc	[<L139+pWin_1],Y
 	sta	<L139+r_1+8
 ;				r.height = pWin->clientRect.height - 42;
-	.line	1390
+	.line	1392
 	clc
 	lda	#$ffd6
 	ldy	#$34
@@ -8032,7 +8034,7 @@ L146:
 ;
 ;
 ;				k_gui_DrawText ((HWND)pWin,
-	.line	1393
+	.line	1395
 ;								((PTEXTVIEWDATA)k_user_GetWindowData(pMsg->hwnd,4))->contents->buffer,
 ;								k_user_getFontClass("ToshibaLCD8x8"),
 ;								DTS_LEFTJUSTIFY,// | DTS_NOCLIP,
@@ -8089,36 +8091,36 @@ L146:
 ;									 pWin->nBitmapLayer);*/
 ;
 ;			}
-	.line	1408
+	.line	1410
 ;			else
 	brl	L10150
 L10149:
 ;			{
-	.line	1410
+	.line	1412
 ;
 ;				r.x = pWin->clientRect.x + 10;
-	.line	1412
+	.line	1414
 	clc
 	lda	#$a
 	ldy	#$2a
 	adc	[<L139+pWin_1],Y
 	sta	<L139+r_1
 ;				r.y = pWin->clientRect.y + 10;
-	.line	1413
+	.line	1415
 	clc
 	lda	#$a
 	ldy	#$2c
 	adc	[<L139+pWin_1],Y
 	sta	<L139+r_1+2
 ;				r.width = pWin->clientRect.width - 20;
-	.line	1414
+	.line	1416
 	clc
 	lda	#$ffec
 	ldy	#$32
 	adc	[<L139+pWin_1],Y
 	sta	<L139+r_1+8
 ;				r.height = pWin->clientRect.height - 38;
-	.line	1415
+	.line	1417
 	clc
 	lda	#$ffda
 	ldy	#$34
@@ -8126,7 +8128,7 @@ L10149:
 	sta	<L139+r_1+10
 ;
 ;				k_debug_pointer("testWindowProc::FX_DRAW_WINDOW:NO-CONTENT:",&r);
-	.line	1417
+	.line	1419
 	pea	#0
 	clc
 	tdc
@@ -8138,7 +8140,7 @@ L10149:
 ;
 ;
 ;				k_gui_DrawText ((HWND)pWin,
-	.line	1420
+	.line	1422
 ;								"No Content",
 ;								k_user_getFontClass("ToshibaLCD8x8"),
 ;								DTS_LEFTJUSTIFY,// | DTS_NOCLIP,
@@ -8177,39 +8179,39 @@ L10149:
 ;									 pWin->nBitmapLayer);
 ;				*/
 ;			}
-	.line	1436
+	.line	1438
 L10150:
 ;
 ;
 ;			break;
-	.line	1439
+	.line	1441
 	brl	L10145
 ;		case FX_MOUSE_MOVE:
-	.line	1440
+	.line	1442
 L10151:
 ;			//k_debug_string("testWindowProc::FX_MOUSE_MOVE\r\n");
 ;			break;
-	.line	1442
+	.line	1444
 	brl	L10145
 ;		//case FX_NC_MOUSE_MOVE:
 ;		//	k_debug_string("testWindowProc::FX_NC_MOUSE_MOVE\r\n");
 ;		//	break;
 ;
 ;		case FX_LBUTTON_DRAG:
-	.line	1447
+	.line	1449
 L10152:
 ;			k_debug_string("testWindowProc::FX_LBUTTON_DRAG\r\n");
-	.line	1448
+	.line	1450
 	pea	#^L137+148
 	pea	#<L137+148
 	jsl	~~k_debug_string
 ;			break;
-	.line	1449
+	.line	1451
 	brl	L10145
 ;
 ;
 ;		case FX_LBUTTON_DBLCLICK:
-	.line	1452
+	.line	1454
 L10153:
 ;
 ;			//k_getWindowRect(pMsg->hwnd,&winRect);
@@ -8219,7 +8221,7 @@ L10153:
 ;			//k_switch_window_page(pMsg->hwnd,BITMAP_BACK,BITMAP_FRONT,FALSE);
 ;
 ;			pWin = k_getWindowFromHandle(pMsg->hwnd);
-	.line	1460
+	.line	1462
 	ldy	#$c
 	lda	[<L138+pMsg_0],Y
 	pha
@@ -8231,13 +8233,13 @@ L10153:
 	stx	<L139+pWin_1+2
 ;
 ;			for(index = 0;index<8;index++)
-	.line	1462
+	.line	1464
 	stz	<L139+index_1
 L10156:
 ;			{
-	.line	1463
+	.line	1465
 ;				k_debug_rect("testWindowProc::nonclientGadgets:rect:",&pWin->nonclientGadgets[index].area);
-	.line	1464
+	.line	1466
 	ldy	#$0
 	lda	<L139+index_1
 	bpl	L147
@@ -8273,7 +8275,7 @@ L147:
 	pea	#<L137+182
 	jsl	~~k_debug_rect
 ;			}
-	.line	1465
+	.line	1467
 L10154:
 	inc	<L139+index_1
 	sec
@@ -8289,13 +8291,13 @@ L10155:
 ;
 ;
 ;			break;
-	.line	1468
+	.line	1470
 	brl	L10145
 ;		case FX_MBUTTON_DOWN:
-	.line	1469
+	.line	1471
 L10157:
 ;			if(pMsg->type!=FX_PROCESS)
-	.line	1470
+	.line	1472
 ;			{
 	ldy	#$8
 	lda	[<L138+pMsg_0],Y
@@ -8303,25 +8305,25 @@ L10157:
 	bne	L150
 	brl	L10158
 L150:
-	.line	1471
+	.line	1473
 ;				//k_debug_integer("consoleWindowProc::ProcessId:",p->procId);
 ;				k_debug_string("testWindowProc::FX_MBUTTON_DOWN\r\n");
-	.line	1473
+	.line	1475
 	pea	#^L137+221
 	pea	#<L137+221
 	jsl	~~k_debug_string
 ;			}
-	.line	1474
+	.line	1476
 ;
 ;			break;
 L10158:
-	.line	1476
+	.line	1478
 	brl	L10145
 ;		case FX_LBUTTON_DOWN:
-	.line	1477
+	.line	1479
 L10159:
 ;			k_debug_string("testWindowProc::FX_LBUTTON_DOWN\r\n");
-	.line	1478
+	.line	1480
 	pea	#^L137+255
 	pea	#<L137+255
 	jsl	~~k_debug_string
@@ -8330,19 +8332,19 @@ L10159:
 ;			//k_user_SetWindowData(pMsg->hwnd,4,(LPVOID)(index - 1));
 ;
 ;			break;
-	.line	1483
+	.line	1485
 	brl	L10145
 ;
 ;		case FX_LBUTTON_UP:
-	.line	1485
+	.line	1487
 L10160:
 ;			k_debug_string("testWindowProc::FX_LBUTTON_UP\r\n");
-	.line	1486
+	.line	1488
 	pea	#^L137+289
 	pea	#<L137+289
 	jsl	~~k_debug_string
 ;			k_send_window_message(pMsg->hwnd,FX_DRAW_WINDOW,NULL,0);
-	.line	1487
+	.line	1489
 	pea	#<$0
 	pea	#^$0
 	pea	#<$0
@@ -8355,7 +8357,7 @@ L10160:
 	pha
 	jsl	~~k_send_window_message
 ;			break;
-	.line	1488
+	.line	1490
 	brl	L10145
 ;			//case FX_NC_LBUTTON_DOWN:
 ;		//	k_debug_string("testWindowProc::FX_NC_LBUTTON_DOWN\r\n");
@@ -8367,10 +8369,10 @@ L10160:
 ;		//	k_event_unlock_focus();
 ;		//	break;
 ;		case FX_MIN_WINDOW:
-	.line	1498
+	.line	1500
 L10161:
 ;			k_switch_window_page(pMsg->hwnd,BITMAP_BACK,BITMAP_FRONT,TRUE);
-	.line	1499
+	.line	1501
 	pea	#<$1
 	pea	#<$0
 	pea	#<$8
@@ -8382,13 +8384,13 @@ L10161:
 	pha
 	jsl	~~k_switch_window_page
 ;			break;
-	.line	1500
+	.line	1502
 	brl	L10145
 ;		case FX_MAX_WINDOW:
-	.line	1501
+	.line	1503
 L10162:
 ;			k_switch_window_page(pMsg->hwnd,BITMAP_FRONT,BITMAP_BACK,FALSE);
-	.line	1502
+	.line	1504
 	pea	#<$0
 	pea	#<$8
 	pea	#<$0
@@ -8400,7 +8402,7 @@ L10162:
 	pha
 	jsl	~~k_switch_window_page
 ;			break;
-	.line	1503
+	.line	1505
 	brl	L10145
 ;			/*
 ;		case FX_WINDOW_CLOSE:
@@ -8412,20 +8414,20 @@ L10162:
 ;			return FALSE;
 ;			*/
 ;		case FX_PROCESS_TIMER:
-	.line	1513
+	.line	1515
 L10163:
 ;			//k_send_window_message(pMsg->hwnd,FX_DRAW_WINDOW,NULL,0);
 ;			break;
-	.line	1515
-	brl	L10145
-;		default:
-	.line	1516
-L10164:
-;			break;
 	.line	1517
 	brl	L10145
-;		}
+;		default:
 	.line	1518
+L10164:
+;			break;
+	.line	1519
+	brl	L10145
+;		}
+	.line	1520
 L10144:
 	xref	~~~swt
 	jsl	~~~swt
@@ -8455,11 +8457,11 @@ L10144:
 	dw	L10164-1
 L10145:
 ;	}
-	.line	1519
+	.line	1521
 ;
 ;	return DefWindowProc(pMsg);
 L10143:
-	.line	1521
+	.line	1523
 	pei	<L138+pMsg_0+2
 	pei	<L138+pMsg_0
 	jsl	~~DefWindowProc
@@ -8484,14 +8486,14 @@ L151:
 	tya
 	rtl
 ;}
-	.line	1522
-	.endblock	1522
+	.line	1524
+	.endblock	1524
 L138	equ	70
 L139	equ	13
 	ends
 	efunc
-	.endfunc	1522,13,70
-	.line	1522
+	.endfunc	1524,13,70
+	.line	1524
 	data
 L137:
 	db	$74,$65,$73,$74,$57,$69,$6E,$64,$6F,$77,$50,$72,$6F,$63,$3A
@@ -8521,12 +8523,12 @@ L137:
 ;
 ;BOOL TextWindowProc(PFXOSMESSAGE pMsg)
 ;{
-	.line	1525
-	.line	1526
+	.line	1527
+	.line	1528
 	DTOP
 	xdef	~~TextWindowProc
 	func
-	.function	1526
+	.function	1528
 ~~TextWindowProc:
 	longa	on
 	longi	on
@@ -8537,7 +8539,7 @@ L137:
 	phd
 	tcd
 pMsg_0	set	4
-	.block	1526
+	.block	1528
 ;	PFXPROCESS p = NULL;
 ;	PWINDOW pWin = NULL;
 ;	PFXSTRING strTitle = NULL;
@@ -8570,21 +8572,21 @@ buffer_1	set	42
 	stz	<L154+strTitle_1
 	stz	<L154+strTitle_1+2
 	stz	<L154+index_1
-	.line	1536
+	.line	1538
 ;	{
 	lda	<L153+pMsg_0
 	ora	<L153+pMsg_0+2
 	bne	L156
 	brl	L10165
 L156:
-	.line	1537
+	.line	1539
 ;		p = k_exec_get_current_process();
-	.line	1538
+	.line	1540
 	jsl	~~k_exec_get_current_process
 	sta	<L154+p_1
 	stx	<L154+p_1+2
 ;		pWin = (PWINDOW)pMsg->hwnd;
-	.line	1539
+	.line	1541
 	ldy	#$a
 	lda	[<L153+pMsg_0],Y
 	sta	<L154+pWin_1
@@ -8594,26 +8596,26 @@ L156:
 ;		//k_debug_long("consoleWindowProc::ProcessId:",p->procId);
 ;
 ;		switch(pMsg->type)
-	.line	1542
+	.line	1544
 	ldy	#$8
 	lda	[<L153+pMsg_0],Y
 	brl	L10166
 ;		{
-	.line	1543
+	.line	1545
 ;		case FX_CREATE_WINDOW:
-	.line	1544
+	.line	1546
 L10168:
 ;			if(p)
-	.line	1545
+	.line	1547
 ;			{
 	lda	<L154+p_1
 	ora	<L154+p_1+2
 	bne	L157
 	brl	L10169
 L157:
-	.line	1546
+	.line	1548
 ;				k_debug_long("testWindowProc::FX_CREATE_WINDOW:",p->procId);
-	.line	1547
+	.line	1549
 	ldy	#$4
 	lda	[<L154+p_1],Y
 	pha
@@ -8626,7 +8628,7 @@ L157:
 ;				//k_debug_integer("testWindowProc::MessageId:",pMsg->type);
 ;
 ;				pWin->hBackground = COLORBRUSH(86);
-	.line	1550
+	.line	1552
 	lda	#$56
 	ldy	#$1b8
 	sta	[<L154+pWin_1],Y
@@ -8637,7 +8639,7 @@ L157:
 ;				//k_user_SetWindowData(pMsg->hwnd,4,k_mem_allocate_heap(sizeof(TEXTVIEWDATA)));
 ;
 ;				k_user_SetWindowData(pMsg->hwnd,4,NULL);
-	.line	1554
+	.line	1556
 	pea	#^$0
 	pea	#<$0
 	pea	#<$4
@@ -8664,17 +8666,17 @@ L157:
 ;				}
 ;				*/
 ;			}
-	.line	1570
+	.line	1572
 ;			break;
 L10169:
-	.line	1571
+	.line	1573
 	brl	L10167
 ;		case FX_DRAW_WINDOW:
-	.line	1572
+	.line	1574
 L10170:
 ;			//k_debug_rect("testWindowProc::FX_DRAW_WINDOW:",&pWin->clientRect);
 ;			k_debug_pointer("testWindowProc::FX_DRAW_WINDOW:",k_user_GetWindowData(pMsg->hwnd,4));
-	.line	1574
+	.line	1576
 	pea	#<$4
 	ldy	#$c
 	lda	[<L153+pMsg_0],Y
@@ -8695,7 +8697,7 @@ L10170:
 ;			//k_debug_integer("testWindowProc::FX_DRAW_WINDOW:index:",index);
 ;
 ;			k_vdma_fill_rect_ex(pWin->clientRect.x,
-	.line	1579
+	.line	1581
 ;					            pWin->clientRect.y,
 ;					            pWin->clientRect.width ,
 ;								pWin->clientRect.height,
@@ -8762,7 +8764,7 @@ L159:
 ;			*/
 ;
 ;			if(k_user_GetWindowData(pMsg->hwnd,4) && ((PTEXTVIEWDATA)k_user_GetWindowData(pMsg->hwnd,4))->contents)
-	.line	1604
+	.line	1606
 ;			{
 	pea	#<$4
 	ldy	#$c
@@ -8795,30 +8797,30 @@ L160:
 	bne	L161
 	brl	L10171
 L161:
-	.line	1605
+	.line	1607
 ;				r.x = pWin->clientRect.x + 10;
-	.line	1606
+	.line	1608
 	clc
 	lda	#$a
 	ldy	#$2a
 	adc	[<L154+pWin_1],Y
 	sta	<L154+r_1
 ;				r.y = pWin->clientRect.y + 10;
-	.line	1607
+	.line	1609
 	clc
 	lda	#$a
 	ldy	#$2c
 	adc	[<L154+pWin_1],Y
 	sta	<L154+r_1+2
 ;				r.width = pWin->clientRect.width - 20;
-	.line	1608
+	.line	1610
 	clc
 	lda	#$ffec
 	ldy	#$32
 	adc	[<L154+pWin_1],Y
 	sta	<L154+r_1+8
 ;				r.height = pWin->clientRect.height - 42;
-	.line	1609
+	.line	1611
 	clc
 	lda	#$ffd6
 	ldy	#$34
@@ -8827,7 +8829,7 @@ L161:
 ;
 ;
 ;				k_gui_DrawText ((HWND)pWin,
-	.line	1612
+	.line	1614
 ;								((PTEXTVIEWDATA)k_user_GetWindowData(pMsg->hwnd,4))->contents->buffer,
 ;								k_user_getFontClass("ToshibaLCD8x8"),
 ;								DTS_LEFTJUSTIFY,// | DTS_NOCLIP,
@@ -8884,36 +8886,36 @@ L161:
 ;									 pWin->nBitmapLayer);*/
 ;
 ;			}
-	.line	1627
+	.line	1629
 ;			else
 	brl	L10172
 L10171:
 ;			{
-	.line	1629
+	.line	1631
 ;
 ;				r.x = pWin->clientRect.x + 10;
-	.line	1631
+	.line	1633
 	clc
 	lda	#$a
 	ldy	#$2a
 	adc	[<L154+pWin_1],Y
 	sta	<L154+r_1
 ;				r.y = pWin->clientRect.y + 10;
-	.line	1632
+	.line	1634
 	clc
 	lda	#$a
 	ldy	#$2c
 	adc	[<L154+pWin_1],Y
 	sta	<L154+r_1+2
 ;				r.width = pWin->clientRect.width - 20;
-	.line	1633
+	.line	1635
 	clc
 	lda	#$ffec
 	ldy	#$32
 	adc	[<L154+pWin_1],Y
 	sta	<L154+r_1+8
 ;				r.height = pWin->clientRect.height - 38;
-	.line	1634
+	.line	1636
 	clc
 	lda	#$ffda
 	ldy	#$34
@@ -8921,7 +8923,7 @@ L10171:
 	sta	<L154+r_1+10
 ;
 ;				k_debug_pointer("testWindowProc::FX_DRAW_WINDOW:NO-CONTENT:",&r);
-	.line	1636
+	.line	1638
 	pea	#0
 	clc
 	tdc
@@ -8933,7 +8935,7 @@ L10171:
 ;
 ;
 ;				k_gui_DrawText ((HWND)pWin,
-	.line	1639
+	.line	1641
 ;								"No Content",
 ;								k_user_getFontClass("ToshibaLCD8x8"),
 ;								DTS_LEFTJUSTIFY,// | DTS_NOCLIP,
@@ -8972,39 +8974,39 @@ L10171:
 ;									 pWin->nBitmapLayer);
 ;				*/
 ;			}
-	.line	1655
+	.line	1657
 L10172:
 ;
 ;
 ;			break;
-	.line	1658
+	.line	1660
 	brl	L10167
 ;		case FX_MOUSE_MOVE:
-	.line	1659
+	.line	1661
 L10173:
 ;			//k_debug_string("testWindowProc::FX_MOUSE_MOVE\r\n");
 ;			break;
-	.line	1661
+	.line	1663
 	brl	L10167
 ;		//case FX_NC_MOUSE_MOVE:
 ;		//	k_debug_string("testWindowProc::FX_NC_MOUSE_MOVE\r\n");
 ;		//	break;
 ;
 ;		case FX_LBUTTON_DRAG:
-	.line	1666
+	.line	1668
 L10174:
 ;			k_debug_string("testWindowProc::FX_LBUTTON_DRAG\r\n");
-	.line	1667
+	.line	1669
 	pea	#^L152+148
 	pea	#<L152+148
 	jsl	~~k_debug_string
 ;			break;
-	.line	1668
+	.line	1670
 	brl	L10167
 ;
 ;
 ;		case FX_LBUTTON_DBLCLICK:
-	.line	1671
+	.line	1673
 L10175:
 ;
 ;			//k_getWindowRect(pMsg->hwnd,&winRect);
@@ -9014,7 +9016,7 @@ L10175:
 ;			//k_switch_window_page(pMsg->hwnd,BITMAP_BACK,BITMAP_FRONT,FALSE);
 ;
 ;			pWin = k_getWindowFromHandle(pMsg->hwnd);
-	.line	1679
+	.line	1681
 	ldy	#$c
 	lda	[<L153+pMsg_0],Y
 	pha
@@ -9026,13 +9028,13 @@ L10175:
 	stx	<L154+pWin_1+2
 ;
 ;			for(index = 0;index<8;index++)
-	.line	1681
+	.line	1683
 	stz	<L154+index_1
 L10178:
 ;			{
-	.line	1682
+	.line	1684
 ;				k_debug_rect("testWindowProc::nonclientGadgets:rect:",&pWin->nonclientGadgets[index].area);
-	.line	1683
+	.line	1685
 	ldy	#$0
 	lda	<L154+index_1
 	bpl	L162
@@ -9068,7 +9070,7 @@ L162:
 	pea	#<L152+182
 	jsl	~~k_debug_rect
 ;			}
-	.line	1684
+	.line	1686
 L10176:
 	inc	<L154+index_1
 	sec
@@ -9084,13 +9086,13 @@ L10177:
 ;
 ;
 ;			break;
-	.line	1687
+	.line	1689
 	brl	L10167
 ;		case FX_MBUTTON_DOWN:
-	.line	1688
+	.line	1690
 L10179:
 ;			if(pMsg->type!=FX_PROCESS)
-	.line	1689
+	.line	1691
 ;			{
 	ldy	#$8
 	lda	[<L153+pMsg_0],Y
@@ -9098,25 +9100,25 @@ L10179:
 	bne	L165
 	brl	L10180
 L165:
-	.line	1690
+	.line	1692
 ;				//k_debug_integer("consoleWindowProc::ProcessId:",p->procId);
 ;				k_debug_string("testWindowProc::FX_MBUTTON_DOWN\r\n");
-	.line	1692
+	.line	1694
 	pea	#^L152+221
 	pea	#<L152+221
 	jsl	~~k_debug_string
 ;			}
-	.line	1693
+	.line	1695
 ;
 ;			break;
 L10180:
-	.line	1695
+	.line	1697
 	brl	L10167
 ;		case FX_LBUTTON_DOWN:
-	.line	1696
+	.line	1698
 L10181:
 ;			k_debug_string("testWindowProc::FX_LBUTTON_DOWN\r\n");
-	.line	1697
+	.line	1699
 	pea	#^L152+255
 	pea	#<L152+255
 	jsl	~~k_debug_string
@@ -9125,19 +9127,19 @@ L10181:
 ;			//k_user_SetWindowData(pMsg->hwnd,4,(LPVOID)(index - 1));
 ;
 ;			break;
-	.line	1702
+	.line	1704
 	brl	L10167
 ;
 ;		case FX_LBUTTON_UP:
-	.line	1704
+	.line	1706
 L10182:
 ;			k_debug_string("testWindowProc::FX_LBUTTON_UP\r\n");
-	.line	1705
+	.line	1707
 	pea	#^L152+289
 	pea	#<L152+289
 	jsl	~~k_debug_string
 ;			k_send_window_message(pMsg->hwnd,FX_DRAW_WINDOW,NULL,0);
-	.line	1706
+	.line	1708
 	pea	#<$0
 	pea	#^$0
 	pea	#<$0
@@ -9150,7 +9152,7 @@ L10182:
 	pha
 	jsl	~~k_send_window_message
 ;			break;
-	.line	1707
+	.line	1709
 	brl	L10167
 ;			//case FX_NC_LBUTTON_DOWN:
 ;		//	k_debug_string("testWindowProc::FX_NC_LBUTTON_DOWN\r\n");
@@ -9162,10 +9164,10 @@ L10182:
 ;		//	k_event_unlock_focus();
 ;		//	break;
 ;		case FX_MIN_WINDOW:
-	.line	1717
+	.line	1719
 L10183:
 ;			k_switch_window_page(pMsg->hwnd,BITMAP_BACK,BITMAP_FRONT,TRUE);
-	.line	1718
+	.line	1720
 	pea	#<$1
 	pea	#<$0
 	pea	#<$8
@@ -9177,13 +9179,13 @@ L10183:
 	pha
 	jsl	~~k_switch_window_page
 ;			break;
-	.line	1719
+	.line	1721
 	brl	L10167
 ;		case FX_MAX_WINDOW:
-	.line	1720
+	.line	1722
 L10184:
 ;			k_switch_window_page(pMsg->hwnd,BITMAP_FRONT,BITMAP_BACK,FALSE);
-	.line	1721
+	.line	1723
 	pea	#<$0
 	pea	#<$8
 	pea	#<$0
@@ -9195,7 +9197,7 @@ L10184:
 	pha
 	jsl	~~k_switch_window_page
 ;			break;
-	.line	1722
+	.line	1724
 	brl	L10167
 ;			/*
 ;		case FX_WINDOW_CLOSE:
@@ -9207,20 +9209,20 @@ L10184:
 ;			return FALSE;
 ;			*/
 ;		case FX_PROCESS_TIMER:
-	.line	1732
+	.line	1734
 L10185:
 ;			//k_send_window_message(pMsg->hwnd,FX_DRAW_WINDOW,NULL,0);
 ;			break;
-	.line	1734
-	brl	L10167
-;		default:
-	.line	1735
-L10186:
-;			break;
 	.line	1736
 	brl	L10167
-;		}
+;		default:
 	.line	1737
+L10186:
+;			break;
+	.line	1738
+	brl	L10167
+;		}
+	.line	1739
 L10166:
 	xref	~~~swt
 	jsl	~~~swt
@@ -9250,11 +9252,11 @@ L10166:
 	dw	L10186-1
 L10167:
 ;	}
-	.line	1738
+	.line	1740
 ;
 ;	return DefWindowProc(pMsg);
 L10165:
-	.line	1740
+	.line	1742
 	pei	<L153+pMsg_0+2
 	pei	<L153+pMsg_0
 	jsl	~~DefWindowProc
@@ -9279,14 +9281,14 @@ L166:
 	tya
 	rtl
 ;}
-	.line	1741
-	.endblock	1741
+	.line	1743
+	.endblock	1743
 L153	equ	70
 L154	equ	13
 	ends
 	efunc
-	.endfunc	1741,13,70
-	.line	1741
+	.endfunc	1743,13,70
+	.line	1743
 	data
 L152:
 	db	$74,$65,$73,$74,$57,$69,$6E,$64,$6F,$77,$50,$72,$6F,$63,$3A
@@ -9320,12 +9322,12 @@ L152:
 ;
 ;BOOL preferencesWindowProc(PFXOSMESSAGE pMsg)
 ;{
-	.line	1748
-	.line	1749
+	.line	1750
+	.line	1751
 	DTOP
 	xdef	~~preferencesWindowProc
 	func
-	.function	1749
+	.function	1751
 ~~preferencesWindowProc:
 	longa	on
 	longi	on
@@ -9336,7 +9338,7 @@ L152:
 	phd
 	tcd
 pMsg_0	set	4
-	.block	1749
+	.block	1751
 ;	PFXPROCESS p = NULL;
 ;	PPOINT ppoint;
 ;	PWINDOW pWin = NULL;
@@ -9359,21 +9361,21 @@ buffer_1	set	26
 	stz	<L169+p_1+2
 	stz	<L169+pWin_1
 	stz	<L169+pWin_1+2
-	.line	1756
+	.line	1758
 ;	{
 	lda	<L168+pMsg_0
 	ora	<L168+pMsg_0+2
 	bne	L171
 	brl	L10187
 L171:
-	.line	1757
+	.line	1759
 ;		p = k_exec_get_current_process();
-	.line	1758
+	.line	1760
 	jsl	~~k_exec_get_current_process
 	sta	<L169+p_1
 	stx	<L169+p_1+2
 ;		pWin =  k_getWindowFromHandle(pMsg->hwnd);
-	.line	1759
+	.line	1761
 	ldy	#$c
 	lda	[<L168+pMsg_0],Y
 	pha
@@ -9386,26 +9388,26 @@ L171:
 ;		//k_debug_long("consoleWindowProc::ProcessId:",p->procId);
 ;
 ;		switch(pMsg->type)
-	.line	1762
+	.line	1764
 	ldy	#$8
 	lda	[<L168+pMsg_0],Y
 	brl	L10188
 ;		{
-	.line	1763
+	.line	1765
 ;		case FX_CREATE_WINDOW:
-	.line	1764
+	.line	1766
 L10190:
 ;			if(p)
-	.line	1765
+	.line	1767
 ;			{
 	lda	<L169+p_1
 	ora	<L169+p_1+2
 	bne	L172
 	brl	L10191
 L172:
-	.line	1766
+	.line	1768
 ;				k_debug_long("preferencesWindowProc::FX_CREATE_WINDOW:",p->procId);
-	.line	1767
+	.line	1769
 	ldy	#$4
 	lda	[<L169+p_1],Y
 	pha
@@ -9421,7 +9423,7 @@ L172:
 ;
 ;				//k_user_CreateHorizontalScrollbar(pWin,"",1);
 ;				k_user_CreateVerticalScrollBar(pWin,"",1);
-	.line	1773
+	.line	1775
 	pea	#<$1
 	pea	#^L167+41
 	pea	#<L167+41
@@ -9430,14 +9432,14 @@ L172:
 	jsl	~~k_user_CreateVerticalScrollBar
 ;
 ;			}
-	.line	1775
+	.line	1777
 ;			break;
 L10191:
-	.line	1776
+	.line	1778
 	brl	L10189
 ;
 ;		case FX_PROCESS_TIMER:
-	.line	1778
+	.line	1780
 L10192:
 ;			//k_debug_string("preferencesWindowProc::FX_PROCESS_TIMER\r\n");
 ;
@@ -9456,19 +9458,19 @@ L10192:
 ;
 ;
 ;			break;
-	.line	1795
+	.line	1797
 	brl	L10189
 ;		case FX_DRAW_WINDOW:
-	.line	1796
+	.line	1798
 L10193:
 ;			k_debug_string("preferencesWindowProc::FX_DRAW_WINDOW\r\n");
-	.line	1797
+	.line	1799
 	pea	#^L167+42
 	pea	#<L167+42
 	jsl	~~k_debug_string
 ;
 ;			ppoint = ((PEACHCHILD_MSG)pMsg)->msgData;
-	.line	1799
+	.line	1801
 	ldy	#$2
 	lda	[<L168+pMsg_0],Y
 	sta	<L169+ppoint_1
@@ -9485,21 +9487,21 @@ L10193:
 ;			//k_user_FillClientRect(pMsg->hwnd,128);
 ;
 ;			ppoint = (PPOINT)k_mem_allocate_heap(sizeof(POINT));
-	.line	1809
+	.line	1811
 	pea	#^$4
 	pea	#<$4
 	jsl	~~k_mem_allocate_heap
 	sta	<L169+ppoint_1
 	stx	<L169+ppoint_1+2
 ;			ppoint->x = pWin->win_x + ppoint->x;
-	.line	1810
+	.line	1812
 	clc
 	ldy	#$c
 	lda	[<L169+pWin_1],Y
 	adc	[<L169+ppoint_1]
 	sta	[<L169+ppoint_1]
 ;			ppoint->y = pWin->win_y + ppoint->y;
-	.line	1811
+	.line	1813
 	clc
 	ldy	#$e
 	lda	[<L169+pWin_1],Y
@@ -9510,7 +9512,7 @@ L10193:
 ;
 ;
 ;			_k_user_send_child_message(pMsg->hwnd,FX_DRAW_WINDOW,ppoint,sizeof(POINT));
-	.line	1814
+	.line	1816
 	pea	#<$4
 	pei	<L169+ppoint_1+2
 	pei	<L169+ppoint_1
@@ -9523,13 +9525,13 @@ L10193:
 	pha
 	jsl	~~_k_user_send_child_message
 ;			break;
-	.line	1815
+	.line	1817
 	brl	L10189
 ;		case FX_MBUTTON_DOWN:
-	.line	1816
+	.line	1818
 L10194:
 ;			if(pMsg->type!=FX_PROCESS)
-	.line	1817
+	.line	1819
 ;			{
 	ldy	#$8
 	lda	[<L168+pMsg_0],Y
@@ -9537,24 +9539,24 @@ L10194:
 	bne	L173
 	brl	L10195
 L173:
-	.line	1818
+	.line	1820
 ;				//k_debug_integer("consoleWindowProc::ProcessId:",p->procId);
 ;				k_debug_string("preferencesWindowProc::FX_MBUTTON_DOWN\r\n");
-	.line	1820
+	.line	1822
 	pea	#^L167+82
 	pea	#<L167+82
 	jsl	~~k_debug_string
 ;			}
-	.line	1821
+	.line	1823
 ;			break;
 L10195:
-	.line	1822
+	.line	1824
 	brl	L10189
 ;		case FX_LBUTTON_DOWN:
-	.line	1823
+	.line	1825
 L10196:
 ;			if(pMsg->type!=FX_PROCESS)
-	.line	1824
+	.line	1826
 ;			{
 	ldy	#$8
 	lda	[<L168+pMsg_0],Y
@@ -9562,25 +9564,25 @@ L10196:
 	bne	L174
 	brl	L10197
 L174:
-	.line	1825
+	.line	1827
 ;				//k_debug_integer("consoleWindowProc::ProcessId:",p->procId);
 ;				k_debug_string("preferencesWindowProc::FX_LBUTTON_DOWN\r\n");
-	.line	1827
+	.line	1829
 	pea	#^L167+123
 	pea	#<L167+123
 	jsl	~~k_debug_string
 ;			}
-	.line	1828
+	.line	1830
 ;
 ;			break;
 L10197:
-	.line	1830
+	.line	1832
 	brl	L10189
 ;		case FX_MOUSE_ENTER:
-	.line	1831
+	.line	1833
 L10198:
 ;			k_debug_strings("preferencesWindowProc::FX_MOUSE_ENTER:",pWin->win_title);
-	.line	1832
+	.line	1834
 	clc
 	lda	#$14c
 	adc	<L169+pWin_1
@@ -9594,13 +9596,13 @@ L10198:
 	pea	#<L167+164
 	jsl	~~k_debug_strings
 ;			break;
-	.line	1833
+	.line	1835
 	brl	L10189
 ;		case FX_MOUSE_EXIT:
-	.line	1834
+	.line	1836
 L10199:
 ;			k_debug_strings("preferencesWindowProc::FX_MOUSE_EXIT:",pWin->win_title);
-	.line	1835
+	.line	1837
 	clc
 	lda	#$14c
 	adc	<L169+pWin_1
@@ -9614,13 +9616,13 @@ L10199:
 	pea	#<L167+203
 	jsl	~~k_debug_strings
 ;			break;
-	.line	1836
+	.line	1838
 	brl	L10189
 ;		case FX_SCROLLBAR_COMMAND:
-	.line	1837
+	.line	1839
 L10200:
 ;			k_debug_integer("preferencesWindowProc::FX_SCROLLBAR_COMMAND:", ((PFXCMDMESSAGE)pMsg)->cmdCId );
-	.line	1838
+	.line	1840
 	ldy	#$16
 	lda	[<L168+pMsg_0],Y
 	pha
@@ -9628,7 +9630,7 @@ L10200:
 	pea	#<L167+241
 	jsl	~~k_debug_integer
 ;			if(((PFXCMDMESSAGE)pMsg)->cmdCId == CTL_HORZ_SCROLL )
-	.line	1839
+	.line	1841
 ;			{
 	ldy	#$16
 	lda	[<L168+pMsg_0],Y
@@ -9636,9 +9638,9 @@ L10200:
 	beq	L175
 	brl	L10201
 L175:
-	.line	1840
+	.line	1842
 ;				k_debug_integer("preferencesWindowProc::FX_SCROLLBAR_COMMAND:LOCATION:", ((PFXCMDMESSAGE)pMsg)->cmdMId );
-	.line	1841
+	.line	1843
 	ldy	#$18
 	lda	[<L168+pMsg_0],Y
 	pha
@@ -9646,7 +9648,7 @@ L175:
 	pea	#<L167+286
 	jsl	~~k_debug_integer
 ;				k_debug_integer("preferencesWindowProc::FX_SCROLLBAR_COMMAND:VALUE:", ((PFXCMDMESSAGE)pMsg)->parameter1);
-	.line	1842
+	.line	1844
 	ldy	#$1a
 	lda	[<L168+pMsg_0],Y
 	pha
@@ -9655,14 +9657,14 @@ L175:
 	jsl	~~k_debug_integer
 ;
 ;				r.x = 0;
-	.line	1844
+	.line	1846
 	stz	<L169+r_1
 ;				r.y = 0;
-	.line	1845
+	.line	1847
 	stz	<L169+r_1+2
 ;
 ;				k_user_DrawWindowTextToPointWithFont(k_getHandleFromWindow(pWin),
-	.line	1847
+	.line	1849
 ;													 "\xDB\xDB\xDB\xDB\xDB\xDB\xDB\xDB\xDB\xDB",
 ;						                             k_getUIBackgroundColor(),
 ;													 &r,
@@ -9693,7 +9695,7 @@ L175:
 	jsl	~~k_user_DrawWindowTextToPointWithFont
 ;
 ;				k_user_DrawWindowTextToPointWithFont(k_getHandleFromWindow(pWin),
-	.line	1853
+	.line	1855
 ;													 k_longtodec(((PFXCMDMESSAGE)pMsg)->parameter1,buffer),
 ;						                             k_getUIMenuColor(),
 ;													 &r,
@@ -9738,17 +9740,17 @@ L175:
 	jsl	~~k_user_DrawWindowTextToPointWithFont
 ;
 ;			}
-	.line	1859
+	.line	1861
 ;			break;
 L10201:
-	.line	1860
+	.line	1862
 	brl	L10189
 ;
 ;		default:
-	.line	1862
+	.line	1864
 L10202:
 ;			return DefWindowProc(pMsg);
-	.line	1863
+	.line	1865
 	pei	<L168+pMsg_0+2
 	pei	<L168+pMsg_0
 	jsl	~~DefWindowProc
@@ -9773,9 +9775,9 @@ L176:
 	tya
 	rtl
 ;			break;
-	.line	1864
+	.line	1866
 ;		}
-	.line	1865
+	.line	1867
 L10188:
 	xref	~~~swt
 	jsl	~~~swt
@@ -9799,22 +9801,22 @@ L10188:
 	dw	L10202-1
 L10189:
 ;	}
-	.line	1866
+	.line	1868
 ;
 ;	return TRUE;
 L10187:
-	.line	1868
+	.line	1870
 	lda	#$1
 	brl	L176
 ;}
-	.line	1869
-	.endblock	1869
+	.line	1871
+	.endblock	1871
 L168	equ	54
 L169	equ	13
 	ends
 	efunc
-	.endfunc	1869,13,54
-	.line	1869
+	.endfunc	1871,13,54
+	.line	1871
 	data
 L167:
 	db	$70,$72,$65,$66,$65,$72,$65,$6E,$63,$65,$73,$57,$69,$6E,$64
@@ -11896,7 +11898,7 @@ L10249:
 	pea	#^L209+748
 	pea	#<L209+748
 	jsl	~~k_debug_string
-	.line	512
+	.line	513
 	ldy	#$c
 	lda	[<L210+pMsg_0],Y
 	pha
@@ -11906,14 +11908,55 @@ L10249:
 	jsl	~~k_getWindowFromHandle
 	sta	<L211+pWin_1
 	stx	<L211+pWin_1+2
-	.line	513
+	.line	514
 	lda	<L211+pWin_1
 	ora	<L211+pWin_1+2
 	bne	L242
 	brl	L10250
 L242:
-	.line	514
 	.line	515
+	.line	516
+	ldy	#$1c5
+	lda	[<L211+pWin_1],Y
+	sta	<R0
+	ldy	#$1c7
+	lda	[<L211+pWin_1],Y
+	sta	<R0+2
+	ldy	#$8
+	lda	[<R0],Y
+	pha
+	pei	<L211+pWin_1+2
+	pei	<L211+pWin_1
+	jsl	~~selectRow
+	.line	517
+L10250:
+	.line	519
+	ldy	#$c
+	lda	[<L210+pMsg_0],Y
+	pha
+	ldy	#$a
+	lda	[<L210+pMsg_0],Y
+	pha
+	jsl	~~k_getWindowFromHandle
+	sta	<L211+pWin_1
+	stx	<L211+pWin_1+2
+	.line	521
+	brl	L10251
+	.line	522
+	.line	523
+	ldy	#$1c5
+	lda	[<L211+pWin_1],Y
+	sta	<R0
+	ldy	#$1c7
+	lda	[<L211+pWin_1],Y
+	sta	<R0+2
+	ldy	#$8
+	lda	[<R0],Y
+	pha
+	pei	<L211+pWin_1+2
+	pei	<L211+pWin_1
+	jsl	~~selectRow
+	.line	526
 	pea	#0
 	clc
 	tdc
@@ -11922,7 +11965,7 @@ L242:
 	pei	<L210+pMsg_0+2
 	pei	<L210+pMsg_0
 	jsl	~~k_user_GetMouseClientPoint
-	.line	516
+	.line	527
 	jsl	~~k_font_getFontHeight
 	sta	<R0
 	clc
@@ -11937,7 +11980,7 @@ L242:
 	lda	<R0
 	ina
 	sta	<L211+row_1
-	.line	520
+	.line	531
 	pei	<L211+row_1
 	ldy	#$1c5
 	lda	[<L211+pWin_1],Y
@@ -11959,14 +12002,14 @@ L242:
 	jsl	~~k_nodelist_get
 	sta	<L211+pnode_1
 	stx	<L211+pnode_1+2
-	.line	521
+	.line	532
 	lda	<L211+pnode_1
 	ora	<L211+pnode_1+2
 	bne	L243
-	brl	L10251
+	brl	L10252
 L243:
-	.line	522
-	.line	527
+	.line	533
+	.line	538
 	ldy	#$1c5
 	lda	[<L211+pWin_1],Y
 	sta	<R0
@@ -11985,7 +12028,7 @@ L243:
 	sta	[<R1]
 	rep	#$20
 	longa	on
-	.line	529
+	.line	540
 	pea	#<$1
 	pea	#^L209+793
 	pea	#<L209+793
@@ -12002,14 +12045,14 @@ L243:
 	lda	[<R0],Y
 	pha
 	jsl	~~f_mount
-	.line	533
+	.line	544
 	pea	#<$40
 	pea	#^L209+797
 	pea	#<L209+797
 	jsl	~~k_fxstring_new
 	sta	<L211+path_1
 	stx	<L211+path_1+2
-	.line	535
+	.line	546
 	ldy	#$2
 	lda	[<L211+pnode_1],Y
 	sta	<R0
@@ -12025,7 +12068,7 @@ L243:
 	pei	<L211+path_1+2
 	pei	<L211+path_1
 	jsl	~~k_fxstring_add
-	.line	537
+	.line	548
 	ldy	#$6
 	lda	[<L211+path_1],Y
 	pha
@@ -12035,7 +12078,7 @@ L243:
 	pea	#^L209+802
 	pea	#<L209+802
 	jsl	~~k_debug_strings
-	.line	539
+	.line	550
 	pea	#<$1
 	ldy	#$6
 	lda	[<L211+path_1],Y
@@ -12058,10 +12101,10 @@ L243:
 	jsl	~~f_open
 	tax
 	beq	L244
-	brl	L10252
+	brl	L10253
 L244:
-	.line	540
-	.line	543
+	.line	551
+	.line	554
 	pea	#^L209+830
 	pea	#<L209+830
 	pei	<L211+path_1+2
@@ -12069,14 +12112,14 @@ L244:
 	jsl	~~k_fxstring_ends_with
 	and	#$ff
 	bne	L245
-	brl	L10253
+	brl	L10254
 L245:
-	.line	544
-	.line	545
+	.line	555
+	.line	556
 	pea	#^L209+834
 	pea	#<L209+834
 	jsl	~~k_debug_string
-	.line	547
+	.line	558
 	pea	#0
 	clc
 	tdc
@@ -12099,46 +12142,46 @@ L245:
 	pha
 	jsl	~~f_read
 	sta	<L211+fr_1
-	.line	548
+	.line	559
 	pei	<L211+fr_1
 	pea	#^L209+872
 	pea	#<L209+872
 	jsl	~~k_debug_integer
-	.line	549
+	.line	560
 	pei	<L211+br_1
 	pea	#^L209+905
 	pea	#<L209+905
 	jsl	~~k_debug_integer
-	.line	550
+	.line	561
 	lda	<L211+br_1
 	bne	L246
-	brl	L10254
+	brl	L10255
 L246:
-	.line	551
-	.line	553
+	.line	562
+	.line	564
 	pea	#^L209+943
 	pea	#<L209+943
 	jsl	~~k_debug_string
-	.line	554
+	.line	565
 	lda	>589824
 	pha
 	pea	#^L209+981
 	pea	#<L209+981
 	jsl	~~k_debug_hex
-	.line	556
+	.line	567
 	pea	#^L209+995
 	pea	#<L209+995
 	jsl	~~k_debug_string
-	.line	559
+	.line	570
 	pea	#^L209+1046
 	pea	#<L209+1046
 	jsl	~~k_user_CreateProcess
-	.line	561
+	.line	572
+L10255:
+	.line	573
+	brl	L10256
 L10254:
-	.line	562
-	brl	L10255
-L10253:
-	.line	563
+	.line	574
 	pea	#^L209+1048
 	pea	#<L209+1048
 	pei	<L211+path_1+2
@@ -12146,14 +12189,14 @@ L10253:
 	jsl	~~k_fxstring_ends_with
 	and	#$ff
 	bne	L247
-	brl	L10256
+	brl	L10257
 L247:
-	.line	564
-	.line	565
+	.line	575
+	.line	576
 	pea	#^L209+1052
 	pea	#<L209+1052
 	jsl	~~k_debug_string
-	.line	567
+	.line	578
 	pea	#0
 	clc
 	tdc
@@ -12181,43 +12224,43 @@ L247:
 	pha
 	jsl	~~f_read
 	sta	<L211+fr_1
-	.line	568
+	.line	579
 	pei	<L211+fr_1
 	pea	#^L209+1090
 	pea	#<L209+1090
 	jsl	~~k_debug_integer
-	.line	569
+	.line	580
 	pei	<L211+br_1
 	pea	#^L209+1123
 	pea	#<L209+1123
 	jsl	~~k_debug_integer
-	.line	570
+	.line	581
 	lda	<L211+br_1
 	bne	L248
-	brl	L10257
+	brl	L10258
 L248:
-	.line	571
-	.line	572
+	.line	582
+	.line	583
 	lda	|~~_k_loadmodule
 	and	#$ff
 	pha
 	pea	#^L209+1163
 	pea	#<L209+1163
 	jsl	~~k_debug_integer
-	.line	573
+	.line	584
 	lda	|~~_k_loadmodule+1
 	and	#$ff
 	pha
 	pea	#^L209+1186
 	pea	#<L209+1186
 	jsl	~~k_debug_integer
-	.line	574
+	.line	585
 	lda	|~~_k_loadmodule+2
 	pha
 	pea	#^L209+1209
 	pea	#<L209+1209
 	jsl	~~k_debug_integer
-	.line	575
+	.line	586
 	lda	|~~_k_loadmodule+4+2
 	pha
 	lda	|~~_k_loadmodule+4
@@ -12225,7 +12268,7 @@ L248:
 	pea	#^L209+1232
 	pea	#<L209+1232
 	jsl	~~k_debug_pointer
-	.line	576
+	.line	587
 	lda	|~~_k_loadmodule+8+2
 	pha
 	lda	|~~_k_loadmodule+8
@@ -12233,13 +12276,13 @@ L248:
 	pea	#^L209+1255
 	pea	#<L209+1255
 	jsl	~~k_debug_pointer
-	.line	577
+	.line	588
 	lda	|~~_k_loadmodule+12
 	pha
 	pea	#^L209+1278
 	pea	#<L209+1278
 	jsl	~~k_debug_integer
-	.line	578
+	.line	589
 	lda	|~~_k_loadmodule+16+2
 	pha
 	lda	|~~_k_loadmodule+16
@@ -12247,9 +12290,9 @@ L248:
 	pea	#^L209+1301
 	pea	#<L209+1301
 	jsl	~~k_debug_pointer
-	.line	580
-L10257:
-	.line	582
+	.line	591
+L10258:
+	.line	593
 	lda	|~~_k_loadmodule+2
 	ina
 	sta	<R0
@@ -12276,12 +12319,12 @@ L249:
 	pha
 	jsl	~~f_lseek
 	sta	<L211+fr_1
-	.line	583
+	.line	594
 	pei	<L211+fr_1
 	pea	#^L209+1324
 	pea	#<L209+1324
 	jsl	~~k_debug_integer
-	.line	585
+	.line	596
 	pea	#0
 	clc
 	tdc
@@ -12307,34 +12350,34 @@ L249:
 	pha
 	jsl	~~f_read
 	sta	<L211+fr_1
-	.line	586
+	.line	597
 	pei	<L211+fr_1
 	pea	#^L209+1361
 	pea	#<L209+1361
 	jsl	~~k_debug_integer
-	.line	587
+	.line	598
 	pei	<L211+br_1
 	pea	#^L209+1394
 	pea	#<L209+1394
 	jsl	~~k_debug_integer
-	.line	588
+	.line	599
 	lda	<L211+br_1
 	bne	L250
-	brl	L10258
+	brl	L10259
 L250:
-	.line	589
-	.line	590
+	.line	600
+	.line	601
 	pei	<L211+pdata_1+2
 	pei	<L211+pdata_1
 	pea	#^L209+1437
 	pea	#<L209+1437
 	jsl	~~k_debug_pointer
-	.line	591
-L10258:
-	.line	593
-	brl	L10259
-L10256:
-	.line	594
+	.line	602
+L10259:
+	.line	604
+	brl	L10260
+L10257:
+	.line	605
 	pea	#^L209+1456
 	pea	#<L209+1456
 	pei	<L211+path_1+2
@@ -12342,14 +12385,14 @@ L10256:
 	jsl	~~k_fxstring_ends_with
 	and	#$ff
 	bne	L251
-	brl	L10260
+	brl	L10261
 L251:
-	.line	595
-	.line	596
+	.line	606
+	.line	607
 	pea	#^L209+1460
 	pea	#<L209+1460
 	jsl	~~k_debug_string
-	.line	599
+	.line	610
 	ldy	#$6
 	lda	[<L211+path_1],Y
 	pha
@@ -12357,11 +12400,11 @@ L251:
 	lda	[<L211+path_1],Y
 	pha
 	jsl	~~k_user_CreateProcess
-	.line	640
-	brl	L10261
-L10260:
-	.line	642
-	.line	643
+	.line	651
+	brl	L10262
+L10261:
+	.line	653
+	.line	654
 	ldy	#$1c5
 	lda	[<L211+pWin_1],Y
 	sta	<R0
@@ -12379,7 +12422,7 @@ L10260:
 	lda	<R1+2
 	ldy	#$26
 	sta	[<R0],Y
-	.line	644
+	.line	655
 	pea	#0
 	clc
 	tdc
@@ -12412,13 +12455,13 @@ L10260:
 	pha
 	jsl	~~f_read
 	sta	<L211+fr_1
-	.line	649
+	.line	660
 	lda	<L211+br_1
 	bne	L252
-	brl	L10262
+	brl	L10263
 L252:
-	.line	650
-	.line	654
+	.line	661
+	.line	665
 	pea	#^$0
 	pea	#<$0
 	pea	#^$0
@@ -12451,14 +12494,14 @@ L252:
 	jsl	~~k_user_CreateWindow
 	sta	<L211+pWinTemp_1
 	stx	<L211+pWinTemp_1+2
-	.line	663
+	.line	674
 	lda	<L211+pWinTemp_1
 	ora	<L211+pWinTemp_1+2
 	bne	L253
-	brl	L10263
+	brl	L10264
 L253:
-	.line	664
-	.line	665
+	.line	675
+	.line	676
 	pea	#^$4
 	pea	#<$4
 	jsl	~~k_mem_allocate_heap
@@ -12470,7 +12513,7 @@ L253:
 	pei	<L211+pWinTemp_1+2
 	pei	<L211+pWinTemp_1
 	jsl	~~k_user_SetWindowData
-	.line	667
+	.line	678
 	pea	#<$4
 	pei	<L211+pWinTemp_1+2
 	pei	<L211+pWinTemp_1
@@ -12498,11 +12541,11 @@ L253:
 	lda	<R1+2
 	ldy	#$2
 	sta	[<R0],Y
-	.line	671
+	.line	682
+L10264:
+	.line	683
 L10263:
-	.line	672
-L10262:
-	.line	673
+	.line	684
 	ldy	#$1c5
 	lda	[<L211+pWin_1],Y
 	sta	<R0
@@ -12516,11 +12559,11 @@ L10262:
 	lda	[<R0],Y
 	pha
 	jsl	~~k_mem_deallocate_heap
-	.line	674
-L10261:
-L10259:
-L10255:
-	.line	676
+	.line	685
+L10262:
+L10260:
+L10256:
+	.line	687
 	ldy	#$1c5
 	lda	[<L211+pWin_1],Y
 	sta	<R0
@@ -12534,13 +12577,13 @@ L10255:
 	lda	[<R0],Y
 	pha
 	jsl	~~f_close
-	.line	677
-L10252:
-	.line	679
+	.line	688
+L10253:
+	.line	690
 	pei	<L211+path_1+2
 	pei	<L211+path_1
 	jsl	~~k_fxstring_free
-	.line	682
+	.line	693
 	ldy	#$4
 	lda	[<L211+pnode_1],Y
 	pha
@@ -12555,15 +12598,15 @@ L10252:
 	lda	[<L210+pMsg_0],Y
 	pha
 	jsl	~~k_user_SetWindowData
-	.line	688
+	.line	699
+L10252:
+	.line	700
 L10251:
-	.line	689
-L10250:
-	.line	691
+	.line	702
 	brl	L10219
-	.line	692
-L10264:
-	.line	694
+	.line	703
+L10265:
+	.line	704
 	ldy	#$c
 	lda	[<L210+pMsg_0],Y
 	pha
@@ -12573,14 +12616,14 @@ L10264:
 	jsl	~~k_getWindowFromHandle
 	sta	<L211+pWin_1
 	stx	<L211+pWin_1+2
-	.line	695
+	.line	705
 	lda	<L211+pWin_1
 	ora	<L211+pWin_1+2
 	bne	L254
-	brl	L10265
+	brl	L10266
 L254:
-	.line	696
-	.line	697
+	.line	706
+	.line	707
 	pea	#0
 	clc
 	tdc
@@ -12589,7 +12632,7 @@ L254:
 	pei	<L210+pMsg_0+2
 	pei	<L210+pMsg_0
 	jsl	~~k_user_GetMouseClientPoint
-	.line	698
+	.line	709
 	jsl	~~k_font_getFontHeight
 	sta	<R0
 	clc
@@ -12600,11 +12643,8 @@ L254:
 	ldx	<R1
 	xref	~~~udv
 	jsl	~~~udv
-	sta	<R0
-	lda	<R0
-	ina
 	sta	<L211+row_1
-	.line	700
+	.line	711
 	ldy	#$1c5
 	lda	[<L211+pWin_1],Y
 	sta	<R0
@@ -12614,7 +12654,7 @@ L254:
 	lda	<L211+row_1
 	ldy	#$8
 	sta	[<R0],Y
-	.line	702
+	.line	713
 	ldy	#$1c5
 	lda	[<L211+pWin_1],Y
 	sta	<R0
@@ -12633,27 +12673,27 @@ L254:
 	lda	[<L210+pMsg_0],Y
 	pha
 	jsl	~~highlightRow
-	.line	734
-L10265:
-	.line	736
+	.line	745
+L10266:
+	.line	747
 	lda	#$1
 	brl	L221
-	.line	738
-L10266:
-	.line	740
+	.line	749
+L10267:
+	.line	751
 	lda	|~~selectionChanged
 	and	#$ff
 	bne	L255
-	brl	L10267
+	brl	L10268
 L255:
-	.line	741
-	.line	742
+	.line	752
+	.line	753
 	sep	#$20
 	longa	off
 	stz	|~~selectionChanged
 	rep	#$20
 	longa	on
-	.line	743
+	.line	754
 	pea	#<$0
 	pea	#^$0
 	pea	#<$0
@@ -12665,15 +12705,15 @@ L255:
 	lda	[<L210+pMsg_0],Y
 	pha
 	jsl	~~k_send_window_message
-	.line	744
-L10267:
-	.line	746
-	brl	L10219
-	.line	747
+	.line	755
 L10268:
-	.line	748
+	.line	757
 	brl	L10219
-	.line	749
+	.line	758
+L10269:
+	.line	759
+	brl	L10219
+	.line	760
 L10218:
 	xref	~~~swt
 	jsl	~~~swt
@@ -12681,7 +12721,7 @@ L10218:
 	dw	3843
 	dw	L10247-1
 	dw	3844
-	dw	L10264-1
+	dw	L10265-1
 	dw	3847
 	dw	L10249-1
 	dw	3856
@@ -12695,12 +12735,12 @@ L10218:
 	dw	65283
 	dw	L10223-1
 	dw	65521
-	dw	L10266-1
-	dw	L10268-1
+	dw	L10267-1
+	dw	L10269-1
 L10219:
-	.line	750
+	.line	761
 L10217:
-	.line	752
+	.line	763
 	pei	<L210+pMsg_0+2
 	pei	<L210+pMsg_0
 	jsl	~~DefWindowProc
@@ -12712,14 +12752,14 @@ L10217:
 	lda	<R0
 	and	#$ff
 	brl	L221
-	.line	753
-	.endblock	753
+	.line	764
+	.endblock	764
 L210	equ	93
 L211	equ	9
 	ends
 	efunc
-	.endfunc	753,9,93
-	.line	753
+	.endfunc	764,9,93
+	.line	764
 	data
 L209:
 	db	$64,$65,$73,$6B,$74,$6F,$70,$56,$6F,$6C,$73,$57,$69,$6E,$64
@@ -12824,12 +12864,12 @@ L209:
 	db	$54,$45,$43,$54,$45,$44,$20,$46,$58,$41,$0D,$0A,$00,$74,$65
 	db	$78,$74,$57,$69,$6E,$64,$6F,$77,$43,$6C,$61,$73,$73,$00
 	ends
-	.line	755
-	.line	756
+	.line	766
+	.line	767
 	DTOP
 	xdef	~~selectRow
 	func
-	.function	756
+	.function	767
 ~~selectRow:
 	longa	on
 	longi	on
@@ -12841,7 +12881,7 @@ L209:
 	tcd
 pWin_0	set	4
 row_0	set	8
-	.block	756
+	.block	767
 pnode_1	set	0
 pinfo_1	set	4
 	.sym	pnode,0,138,1,32,2
@@ -12850,12 +12890,12 @@ pinfo_1	set	4
 	.sym	row,8,5,6,16
 	stz	<L258+pnode_1
 	stz	<L258+pnode_1+2
-	.line	760
+	.line	771
 	pei	<L257+row_0
 	pea	#^L256
 	pea	#<L256
 	jsl	~~k_debug_integer
-	.line	762
+	.line	773
 	pei	<L257+row_0
 	ldy	#$1c5
 	lda	[<L257+pWin_0],Y
@@ -12877,30 +12917,30 @@ pinfo_1	set	4
 	jsl	~~k_nodelist_get
 	sta	<L258+pnode_1
 	stx	<L258+pnode_1+2
-	.line	763
+	.line	774
 	lda	<L258+pnode_1
 	ora	<L258+pnode_1+2
 	bne	L260
-	brl	L10269
+	brl	L10270
 L260:
-	.line	764
-	.line	765
+	.line	775
+	.line	776
 	ldy	#$2
 	lda	[<L258+pnode_1],Y
 	ldy	#$4
 	ora	[<L258+pnode_1],Y
 	bne	L261
-	brl	L10270
+	brl	L10271
 L261:
-	.line	766
-	.line	767
+	.line	777
+	.line	778
 	ldy	#$2
 	lda	[<L258+pnode_1],Y
 	sta	<L258+pinfo_1
 	ldy	#$4
 	lda	[<L258+pnode_1],Y
 	sta	<L258+pinfo_1+2
-	.line	769
+	.line	780
 	clc
 	lda	#$16
 	adc	<L258+pinfo_1
@@ -12913,7 +12953,7 @@ L261:
 	pea	#^L256+38
 	pea	#<L256+38
 	jsl	~~k_debug_strings
-	.line	771
+	.line	782
 	clc
 	lda	#$16
 	adc	<L258+pinfo_1
@@ -12926,16 +12966,16 @@ L261:
 	jsl	~~handleFileType
 	and	#$ff
 	beq	L262
-	brl	L10271
+	brl	L10272
 L262:
-	.line	772
-	.line	776
+	.line	783
+	.line	787
+L10272:
+	.line	789
 L10271:
-	.line	778
+	.line	790
 L10270:
-	.line	779
-L10269:
-	.line	781
+	.line	792
 L263:
 	lda	<L257+2
 	sta	<L257+2+6
@@ -12947,13 +12987,13 @@ L263:
 	adc	#L257+6
 	tcs
 	rtl
-	.endblock	781
+	.endblock	792
 L257	equ	12
 L258	equ	5
 	ends
 	efunc
-	.endfunc	781,5,12
-	.line	781
+	.endfunc	792,5,12
+	.line	792
 	data
 L256:
 	db	$64,$65,$73,$6B,$74,$6F,$70,$56,$6F,$6C,$73,$57,$69,$6E,$64
@@ -12963,12 +13003,12 @@ L256:
 	db	$3A,$73,$65,$6C,$65,$63,$74,$52,$6F,$77,$3A,$66,$69,$6C,$65
 	db	$3A,$00
 	ends
-	.line	783
-	.line	784
+	.line	794
+	.line	795
 	DTOP
 	xdef	~~highlightRow
 	func
-	.function	784
+	.function	795
 ~~highlightRow:
 	longa	on
 	longi	on
@@ -12981,7 +13021,7 @@ L256:
 hWnd_0	set	4
 pWin_0	set	8
 row_0	set	12
-	.block	784
+	.block	795
 pnode_1	set	0
 	.sym	pnode,0,138,1,32,2
 	.sym	hWnd,4,129,6,32
@@ -12989,12 +13029,12 @@ pnode_1	set	0
 	.sym	row,12,5,6,16
 	stz	<L266+pnode_1
 	stz	<L266+pnode_1+2
-	.line	787
+	.line	798
 	pei	<L265+row_0
 	pea	#^L264
 	pea	#<L264
 	jsl	~~k_debug_integer
-	.line	789
+	.line	800
 	pei	<L265+row_0
 	ldy	#$1c5
 	lda	[<L265+pWin_0],Y
@@ -13016,14 +13056,14 @@ pnode_1	set	0
 	jsl	~~k_nodelist_get
 	sta	<L266+pnode_1
 	stx	<L266+pnode_1+2
-	.line	790
+	.line	801
 	lda	<L266+pnode_1
 	ora	<L266+pnode_1+2
 	bne	L268
-	brl	L10272
+	brl	L10273
 L268:
-	.line	791
-	.line	792
+	.line	802
+	.line	803
 	pea	#<$4
 	pei	<L265+hWnd_0+2
 	pei	<L265+hWnd_0
@@ -13039,10 +13079,10 @@ L268:
 	cmp	[<L266+pnode_1],Y
 L269:
 	bne	L270
-	brl	L10273
+	brl	L10274
 L270:
-	.line	793
-	.line	794
+	.line	804
+	.line	805
 	ldy	#$4
 	lda	[<L266+pnode_1],Y
 	pha
@@ -13053,7 +13093,7 @@ L270:
 	pei	<L265+hWnd_0+2
 	pei	<L265+hWnd_0
 	jsl	~~k_user_SetWindowData
-	.line	799
+	.line	810
 	ldy	#$19e
 	lda	[<L265+pWin_0],Y
 	pha
@@ -13095,7 +13135,7 @@ L272:
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_vdma_fill_rect_ex
-	.line	807
+	.line	818
 	ldy	#$1c5
 	lda	[<L265+pWin_0],Y
 	sta	<R0
@@ -13105,7 +13145,7 @@ L272:
 	jsl	~~k_font_getFontWidth
 	ldy	#$2
 	sta	[<R0],Y
-	.line	808
+	.line	819
 	ldy	#$1c5
 	lda	[<L265+pWin_0],Y
 	sta	<R0
@@ -13115,7 +13155,7 @@ L272:
 	jsl	~~k_font_getFontHeight
 	ldy	#$4
 	sta	[<R0],Y
-	.line	812
+	.line	823
 	pea	#^~~foreach_render_file
 	pea	#<~~foreach_render_file
 	pei	<L265+pWin_0+2
@@ -13133,11 +13173,11 @@ L272:
 	lda	[<R0],Y
 	pha
 	jsl	~~k_nodelist_foreach_listdata
-	.line	813
+	.line	824
+L10274:
+	.line	826
 L10273:
-	.line	815
-L10272:
-	.line	817
+	.line	828
 L273:
 	lda	<L265+2
 	sta	<L265+2+10
@@ -13149,25 +13189,25 @@ L273:
 	adc	#L265+10
 	tcs
 	rtl
-	.endblock	817
+	.endblock	828
 L265	equ	12
 L266	equ	9
 	ends
 	efunc
-	.endfunc	817,9,12
-	.line	817
+	.endfunc	828,9,12
+	.line	828
 	data
 L264:
 	db	$64,$65,$73,$6B,$74,$6F,$70,$56,$6F,$6C,$73,$57,$69,$6E,$64
 	db	$6F,$77,$50,$72,$6F,$63,$3A,$3A,$68,$69,$67,$68,$6C,$69,$67
 	db	$68,$74,$52,$6F,$77,$3A,$72,$6F,$77,$3A,$00
 	ends
-	.line	819
-	.line	820
+	.line	830
+	.line	831
 	DTOP
 	xdef	~~handleFileType
 	func
-	.function	820
+	.function	831
 ~~handleFileType:
 	longa	on
 	longi	on
@@ -13178,7 +13218,7 @@ L264:
 	phd
 	tcd
 fileName_0	set	4
-	.block	820
+	.block	831
 fxs_1	set	0
 bRet_1	set	4
 	.sym	fxs,0,138,1,32,52
@@ -13191,7 +13231,7 @@ bRet_1	set	4
 	stz	<L276+bRet_1
 	rep	#$20
 	longa	on
-	.line	824
+	.line	835
 	pea	#^L274
 	pea	#<L274
 	pei	<L275+fileName_0+2
@@ -13202,34 +13242,34 @@ bRet_1	set	4
 	sta	<L276+bRet_1
 	rep	#$20
 	longa	on
-	.line	825
+	.line	836
 	lda	<L276+bRet_1
 	and	#$ff
 	pha
 	pea	#^L274+4
 	pea	#<L274+4
 	jsl	~~k_debug_integer
-	.line	826
+	.line	837
 	lda	<L276+bRet_1
 	and	#$ff
 	bne	L278
-	brl	L10274
+	brl	L10275
 L278:
-	.line	827
-	.line	828
+	.line	838
+	.line	839
 	pea	#<$100
 	pea	#^L274+12
 	pea	#<L274+12
 	jsl	~~k_fxstring_new
 	sta	<L276+fxs_1
 	stx	<L276+fxs_1+2
-	.line	830
+	.line	841
 	pei	<L275+fileName_0+2
 	pei	<L275+fileName_0
 	pei	<L276+fxs_1+2
 	pei	<L276+fxs_1
 	jsl	~~k_fxstring_add
-	.line	832
+	.line	843
 	ldy	#$6
 	lda	[<L276+fxs_1],Y
 	pha
@@ -13239,7 +13279,7 @@ L278:
 	pea	#^L274+17
 	pea	#<L274+17
 	jsl	~~k_debug_strings
-	.line	834
+	.line	845
 	ldy	#$6
 	lda	[<L276+fxs_1],Y
 	pha
@@ -13247,15 +13287,15 @@ L278:
 	lda	[<L276+fxs_1],Y
 	pha
 	jsl	~~k_user_CreateProcess
-	.line	836
+	.line	847
 	pei	<L276+fxs_1+2
 	pei	<L276+fxs_1
 	jsl	~~k_fxstring_free
-	.line	837
-	brl	L10275
-L10274:
-	.line	839
-	.line	840
+	.line	848
+	brl	L10276
+L10275:
+	.line	850
+	.line	851
 	pea	#<$64
 	pea	#<$64
 	pea	#<$0
@@ -13263,9 +13303,9 @@ L10274:
 	pea	#<L274+47
 	pea	#<$6
 	jsl	~~k_user_CreateMsgBox
-	.line	841
-L10275:
-	.line	842
+	.line	852
+L10276:
+	.line	853
 	lda	#$0
 L279:
 	tay
@@ -13280,14 +13320,14 @@ L279:
 	tcs
 	tya
 	rtl
-	.line	843
-	.endblock	843
+	.line	854
+	.endblock	854
 L275	equ	5
 L276	equ	1
 	ends
 	efunc
-	.endfunc	843,1,5
-	.line	843
+	.endfunc	854,1,5
+	.line	854
 	data
 L274:
 	db	$46,$58,$41,$00,$49,$53,$20,$46,$58,$41,$3A,$00,$48,$44,$3A
@@ -13297,10 +13337,10 @@ L274:
 	db	$6E,$6B,$6E,$6F,$77,$6E,$20,$66,$69,$6C,$65,$20,$74,$79,$70
 	db	$65,$2E,$00
 	ends
-	.line	843
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_desktop_proc.c",1944
+	.line	854
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos_desktop_proc.c",1946
 ;
-	.line	1944
+	.line	1946
 	xref	~~AboutPaletteWindowProc
 	xref	~~k_dos_findfiles_to_nodes
 	xref	~~k_close_dos_device

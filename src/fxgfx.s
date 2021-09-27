@@ -4,6 +4,7 @@ R1	equ	5
 R2	equ	9
 R3	equ	13
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.c",0
+;
 ;#include "fxos.h"
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
@@ -493,7 +494,7 @@ R3	equ	13
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",11
 	.line	72
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",6
-	.line	1960
+	.line	1963
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",16
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
@@ -609,7 +610,7 @@ R3	equ	13
 	.stag	_k_irq_chain,128,60
 	.member	handlers,0,5217,8,32,4
 	.eos
-	.line	490
+	.line	475
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",22
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
@@ -622,7 +623,7 @@ R3	equ	13
 	.line	1064
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",7
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
-	.line	1960
+	.line	1963
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",12
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
@@ -714,7 +715,7 @@ R3	equ	13
 	.line	129
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",6
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
-	.line	568
+	.line	572
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",7
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",0
@@ -740,7 +741,7 @@ R3	equ	13
 	.member	CUR_GADGET,144,5,8,16
 	.member	CUR_COLOR,160,101,8,0,15
 	.eos
-	.line	359
+	.line	370
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",8
 	.stag	_fxos_winman_vtable,160,69
 	.member	Events,0,641,8,32
@@ -814,7 +815,7 @@ R3	equ	13
 	.member	readable,8,110,8,0,16
 	.member	data,136,129,8,32
 	.eos
-	.line	568
+	.line	572
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",18
 	.stag	_fx_spinner_ctx,48,80
 	.member	index,0,5,8,16
@@ -920,23 +921,23 @@ R3	equ	13
 	.line	429
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",26
 	.line	30
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.c",1
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.c",2
 ;#include "fxmemorymanager.h"
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmemorymanager.h",0
 	.line	129
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.c",2
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.c",3
 ;#include "fxwindowmanager.h"
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",0
 	.line	594
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.c",3
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.c",4
 ;#include "fxfont.h"
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",0
 	.line	74
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.c",4
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.c",5
 ;#include "fxgfx.h"
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
-	.line	359
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.c",5
+	.line	370
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.c",6
 ;#include "fxdos.h"
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.h",0
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxtypes.h",0
@@ -1573,9 +1574,8 @@ R3	equ	13
 	.member	fr,96,5,8,16
 	.eos
 	.line	812
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.c",6
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.c",7
 ;
-;VOID readBMP(LPCSTR path);
 ;
 ;#define BITMAP_SEG0   ((char FAR*)0xB00000)
 ;#define BITMAP_SEG1   ((char FAR*)0xB10000)
@@ -1594,12 +1594,15 @@ R3	equ	13
 ;#define BITMAP1_SEG3   ((char FAR*)0xB30000)
 ;#define BITMAP1_SEG4   ((char FAR*)0xB40000)
 ;
-;
 ;#define GUI_POINT_LIMIT_X_LO  	(0)
 ;#define GUI_POINT_LIMIT_Y_LO  	(0)
 ;
 ;#define GUI_POINT_LIMIT_X_HI  	(640)
 ;#define GUI_POINT_LIMIT_Y_HI  	(480)
+;
+;#define GUI_POINT_LIMIT_X_HIX  	(800)
+;#define GUI_POINT_LIMIT_Y_HIX  	(600)
+;
 ;//#define GUI_POINT_LIMIT_X_HI  	(639)
 ;//#define GUI_POINT_LIMIT_Y_HI  	(479)
 ;
@@ -2079,18 +2082,21 @@ R3	equ	13
 ;
 ;static BYTE _k_guiCacheSlots[GUI_CACHE_SIZE];
 ;
+;VOID readBMP(LPCSTR path);
+;VOID readBMPPalette(LPCSTR path);
+;
 ;#pragma section CODE=GFX,offset $06:0000
 GFX	section	offset $06:0000
 	ends
 ;
 ;PRECT k_new_RECT(LPCSTR name, int x,int y,int width,int height, int z, int scaler)
 ;{
-	.line	257
-	.line	258
+	.line	263
+	.line	264
 	GFX
 	xdef	~~k_new_RECT
 	func
-	.function	258
+	.function	264
 ~~k_new_RECT:
 	longa	on
 	longi	on
@@ -2107,7 +2113,7 @@ width_0	set	12
 height_0	set	14
 z_0	set	16
 scaler_0	set	18
-	.block	258
+	.block	264
 ;	PRECT r = k_mem_allocate_heap(sizeof(RECT));
 ;	if(r)
 r_1	set	0
@@ -2124,16 +2130,16 @@ r_1	set	0
 	jsl	~~k_mem_allocate_heap
 	sta	<L3+r_1
 	stx	<L3+r_1+2
-	.line	260
+	.line	266
 ;	{
 	lda	<L3+r_1
 	ora	<L3+r_1+2
 	bne	L5
 	brl	L10001
 L5:
-	.line	261
+	.line	267
 ;		r->z = z;
-	.line	262
+	.line	268
 	ldy	#$0
 	lda	<L2+z_0
 	bpl	L6
@@ -2149,13 +2155,13 @@ L6:
 	sta	[<L3+r_1],Y
 ;		//r->scaler = scaler;
 ;		r->x;
-	.line	264
+	.line	270
 ;		r->y;
-	.line	265
+	.line	271
 ;		r->width;
-	.line	266
+	.line	272
 ;		r->height;
-	.line	267
+	.line	273
 ;		/*
 ;		r->z = z;
 ;		r->scaler = scaler;
@@ -2165,10 +2171,10 @@ L6:
 ;		r->height/scaler - ((l + j)));
 ;		*/
 ;	}
-	.line	276
+	.line	282
 ;	return r;
 L10001:
-	.line	277
+	.line	283
 	ldx	<L3+r_1+2
 	lda	<L3+r_1
 L7:
@@ -2185,23 +2191,23 @@ L7:
 	tya
 	rtl
 ;}
-	.line	278
-	.endblock	278
+	.line	284
+	.endblock	284
 L2	equ	8
 L3	equ	5
 	ends
 	efunc
-	.endfunc	278,5,8
-	.line	278
+	.endfunc	284,5,8
+	.line	284
 ;
 ;PRECTP k_new_RECTP(LPCSTR name, int x,int y,int width,int height)
 ;{
-	.line	280
-	.line	281
+	.line	286
+	.line	287
 	GFX
 	xdef	~~k_new_RECTP
 	func
-	.function	281
+	.function	287
 ~~k_new_RECTP:
 	longa	on
 	longi	on
@@ -2216,7 +2222,7 @@ x_0	set	8
 y_0	set	10
 width_0	set	12
 height_0	set	14
-	.block	281
+	.block	287
 ;	PRECTP r = k_mem_allocate_heap(sizeof(PRECTP));
 ;	if(r)
 r_1	set	0
@@ -2231,44 +2237,44 @@ r_1	set	0
 	jsl	~~k_mem_allocate_heap
 	sta	<L9+r_1
 	stx	<L9+r_1+2
-	.line	283
+	.line	289
 ;	{
 	lda	<L9+r_1
 	ora	<L9+r_1+2
 	bne	L11
 	brl	L10002
 L11:
-	.line	284
+	.line	290
 ;		r->topLeft.x = x;
-	.line	285
+	.line	291
 	lda	<L8+x_0
 	ldy	#$4
 	sta	[<L9+r_1],Y
 ;		r->topLeft.y = y;
-	.line	286
+	.line	292
 	lda	<L8+y_0
 	ldy	#$6
 	sta	[<L9+r_1],Y
 ;
 ;		r->bottomRight.x = x + width;
-	.line	288
+	.line	294
 	clc
 	lda	<L8+x_0
 	adc	<L8+width_0
 	ldy	#$8
 	sta	[<L9+r_1],Y
 ;		r->bottomRight.y = y + height;
-	.line	289
+	.line	295
 	clc
 	lda	<L8+y_0
 	adc	<L8+height_0
 	ldy	#$a
 	sta	[<L9+r_1],Y
 ;	}
-	.line	290
+	.line	296
 ;	return r;
 L10002:
-	.line	291
+	.line	297
 	ldx	<L9+r_1+2
 	lda	<L9+r_1
 L12:
@@ -2285,14 +2291,14 @@ L12:
 	tya
 	rtl
 ;}
-	.line	292
-	.endblock	292
+	.line	298
+	.endblock	298
 L8	equ	4
 L9	equ	1
 	ends
 	efunc
-	.endfunc	292,1,4
-	.line	292
+	.endfunc	298,1,4
+	.line	298
 ;
 ;/*
 ;RECT(r.name + "-child",
@@ -2303,12 +2309,12 @@ L9	equ	1
 ;*/
 ;VOID k_ToRECT(PRECTP prectp,PRECT prect,LPCSTR name)
 ;{
-	.line	301
-	.line	302
+	.line	307
+	.line	308
 	GFX
 	xdef	~~k_ToRECT
 	func
-	.function	302
+	.function	308
 ~~k_ToRECT:
 	longa	on
 	longi	on
@@ -2321,12 +2327,12 @@ L9	equ	1
 prectp_0	set	4
 prect_0	set	8
 name_0	set	12
-	.block	302
+	.block	308
 ;	if(prect && prectp)
 	.sym	prectp,4,138,6,32,27
 	.sym	prect,8,138,6,32,26
 	.sym	name,12,142,6,32
-	.line	303
+	.line	309
 ;	{
 	lda	<L13+prect_0
 	ora	<L13+prect_0+2
@@ -2338,22 +2344,22 @@ L16:
 	bne	L17
 	brl	L10003
 L17:
-	.line	304
+	.line	310
 ;
 ;		prect->x = prectp->topLeft.x;
-	.line	306
+	.line	312
 	ldy	#$4
 	lda	[<L13+prectp_0],Y
 	sta	[<L13+prect_0]
 ;		prect->y = prectp->topLeft.y;
-	.line	307
+	.line	313
 	ldy	#$6
 	lda	[<L13+prectp_0],Y
 	ldy	#$2
 	sta	[<L13+prect_0],Y
 ;
 ;		prect->width  = prectp->bottomRight.x - prectp->topLeft.x;
-	.line	309
+	.line	315
 	sec
 	ldy	#$8
 	lda	[<L13+prectp_0],Y
@@ -2362,7 +2368,7 @@ L17:
 	ldy	#$8
 	sta	[<L13+prect_0],Y
 ;		prect->height = prectp->bottomRight.y - prectp->topLeft.y;
-	.line	310
+	.line	316
 	sec
 	ldy	#$a
 	lda	[<L13+prectp_0],Y
@@ -2372,10 +2378,10 @@ L17:
 	sta	[<L13+prect_0],Y
 ;
 ;	}
-	.line	312
+	.line	318
 ;}
 L10003:
-	.line	313
+	.line	319
 L18:
 	lda	<L13+2
 	sta	<L13+2+12
@@ -2387,22 +2393,22 @@ L18:
 	adc	#L13+12
 	tcs
 	rtl
-	.endblock	313
+	.endblock	319
 L13	equ	0
 L14	equ	1
 	ends
 	efunc
-	.endfunc	313,1,0
-	.line	313
+	.endfunc	319,1,0
+	.line	319
 ;
 ;VOID k_ToRECTP(PRECT pr,PRECTP prectp)
 ;{
-	.line	315
-	.line	316
+	.line	321
+	.line	322
 	GFX
 	xdef	~~k_ToRECTP
 	func
-	.function	316
+	.function	322
 ~~k_ToRECTP:
 	longa	on
 	longi	on
@@ -2414,11 +2420,11 @@ L14	equ	1
 	tcd
 pr_0	set	4
 prectp_0	set	8
-	.block	316
+	.block	322
 ;	if(pr && prectp)
 	.sym	pr,4,138,6,32,26
 	.sym	prectp,8,138,6,32,27
-	.line	317
+	.line	323
 ;	{
 	lda	<L19+pr_0
 	ora	<L19+pr_0+2
@@ -2430,21 +2436,21 @@ L22:
 	bne	L23
 	brl	L10004
 L23:
-	.line	318
+	.line	324
 ;		prectp->topLeft.x = pr->x;
-	.line	319
+	.line	325
 	lda	[<L19+pr_0]
 	ldy	#$4
 	sta	[<L19+prectp_0],Y
 ;		prectp->topLeft.y = pr->y;
-	.line	320
+	.line	326
 	ldy	#$2
 	lda	[<L19+pr_0],Y
 	ldy	#$6
 	sta	[<L19+prectp_0],Y
 ;
 ;		prectp->bottomRight.x = pr->x + pr->width;
-	.line	322
+	.line	328
 	clc
 	lda	[<L19+pr_0]
 	ldy	#$8
@@ -2452,7 +2458,7 @@ L23:
 	ldy	#$8
 	sta	[<L19+prectp_0],Y
 ;		prectp->bottomRight.y = pr->y + pr->height;
-	.line	323
+	.line	329
 	clc
 	ldy	#$2
 	lda	[<L19+pr_0],Y
@@ -2461,10 +2467,10 @@ L23:
 	ldy	#$a
 	sta	[<L19+prectp_0],Y
 ;	}
-	.line	324
+	.line	330
 ;}
 L10004:
-	.line	325
+	.line	331
 L24:
 	lda	<L19+2
 	sta	<L19+2+8
@@ -2476,23 +2482,23 @@ L24:
 	adc	#L19+8
 	tcs
 	rtl
-	.endblock	325
+	.endblock	331
 L19	equ	0
 L20	equ	1
 	ends
 	efunc
-	.endfunc	325,1,0
-	.line	325
+	.endfunc	331,1,0
+	.line	331
 ;
 ;
 ;VOID k_gui_init_image_cache_slot()
 ;{
-	.line	328
-	.line	329
+	.line	334
+	.line	335
 	GFX
 	xdef	~~k_gui_init_image_cache_slot
 	func
-	.function	329
+	.function	335
 ~~k_gui_init_image_cache_slot:
 	longa	on
 	longi	on
@@ -2502,18 +2508,18 @@ L20	equ	1
 	tcs
 	phd
 	tcd
-	.block	329
+	.block	335
 ;	int i = 0;
 ;
 ;	for(i=0;i<GUI_CACHE_SIZE;i++)
 i_1	set	0
 	.sym	i,0,5,1,16
 	stz	<L26+i_1
-	.line	332
+	.line	338
 	stz	<L26+i_1
 L10007:
 ;		_k_guiCacheSlots[i] = FALSE;
-	.line	333
+	.line	339
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -2534,7 +2540,7 @@ L28:
 L29:
 L10006:
 ;}
-	.line	334
+	.line	340
 L30:
 	pld
 	tsc
@@ -2542,22 +2548,22 @@ L30:
 	adc	#L25
 	tcs
 	rtl
-	.endblock	334
+	.endblock	340
 L25	equ	2
 L26	equ	1
 	ends
 	efunc
-	.endfunc	334,1,2
-	.line	334
+	.endfunc	340,1,2
+	.line	340
 ;
 ;UINT k_gui_alloc_image_cache_slot()
 ;{
-	.line	336
-	.line	337
+	.line	342
+	.line	343
 	GFX
 	xdef	~~k_gui_alloc_image_cache_slot
 	func
-	.function	337
+	.function	343
 ~~k_gui_alloc_image_cache_slot:
 	longa	on
 	longi	on
@@ -2567,7 +2573,7 @@ L26	equ	1
 	tcs
 	phd
 	tcd
-	.block	337
+	.block	343
 ;	UINT index = -1;
 ;	int i = 0;
 ;
@@ -2579,14 +2585,14 @@ i_1	set	2
 	lda	#$ffff
 	sta	<L32+index_1
 	stz	<L32+i_1
-	.line	341
+	.line	347
 	lda	#$4
 	sta	<L32+i_1
 L10010:
 ;	{
-	.line	342
+	.line	348
 ;		if(!_k_guiCacheSlots[i])
-	.line	343
+	.line	349
 ;		{
 	ldx	<L32+i_1
 	lda	|~~_k_guiCacheSlots,X
@@ -2594,9 +2600,9 @@ L10010:
 	beq	L34
 	brl	L10011
 L34:
-	.line	344
+	.line	350
 ;			_k_guiCacheSlots[i] = TRUE;
-	.line	345
+	.line	351
 	sep	#$20
 	longa	off
 	lda	#$1
@@ -2605,17 +2611,17 @@ L34:
 	rep	#$20
 	longa	on
 ;			index = i;
-	.line	346
+	.line	352
 	lda	<L32+i_1
 	sta	<L32+index_1
 ;			break;
-	.line	347
+	.line	353
 	brl	L10009
 ;		}
-	.line	348
+	.line	354
 ;	}
 L10011:
-	.line	349
+	.line	355
 L10008:
 	inc	<L32+i_1
 	sec
@@ -2632,7 +2638,7 @@ L10009:
 ;	//k_debug_integer("k_gui_alloc_image_cache_slot:index:",index);
 ;
 ;	return index;
-	.line	353
+	.line	359
 	lda	<L32+index_1
 L37:
 	tay
@@ -2644,23 +2650,23 @@ L37:
 	tya
 	rtl
 ;}
-	.line	354
-	.endblock	354
+	.line	360
+	.endblock	360
 L31	equ	4
 L32	equ	1
 	ends
 	efunc
-	.endfunc	354,1,4
-	.line	354
+	.endfunc	360,1,4
+	.line	360
 ;
 ;VOID k_gui_free_image_cache_slot(UINT slotIndex)
 ;{
-	.line	356
-	.line	357
+	.line	362
+	.line	363
 	GFX
 	xdef	~~k_gui_free_image_cache_slot
 	func
-	.function	357
+	.function	363
 ~~k_gui_free_image_cache_slot:
 	longa	on
 	longi	on
@@ -2671,17 +2677,17 @@ L32	equ	1
 	phd
 	tcd
 slotIndex_0	set	4
-	.block	357
+	.block	363
 ;	if(slotIndex >= GUI_CACHE_START)
 	.sym	slotIndex,4,16,6,16
-	.line	358
+	.line	364
 ;		_k_guiCacheSlots[slotIndex] = FALSE;
 	lda	<L38+slotIndex_0
 	cmp	#<$4
 	bcs	L41
 	brl	L10012
 L41:
-	.line	359
+	.line	365
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -2691,7 +2697,7 @@ L41:
 	longa	on
 ;}
 L10012:
-	.line	360
+	.line	366
 L42:
 	lda	<L38+2
 	sta	<L38+2+2
@@ -2703,23 +2709,23 @@ L42:
 	adc	#L38+2
 	tcs
 	rtl
-	.endblock	360
+	.endblock	366
 L38	equ	0
 L39	equ	1
 	ends
 	efunc
-	.endfunc	360,1,0
-	.line	360
+	.endfunc	366,1,0
+	.line	366
 ;
 ;
 ;UINT k_gui_set_image_cache(ULONG srcVMARelPage,PRECT prect)
 ;{
-	.line	363
-	.line	364
+	.line	369
+	.line	370
 	GFX
 	xdef	~~k_gui_set_image_cache
 	func
-	.function	364
+	.function	370
 ~~k_gui_set_image_cache:
 	longa	on
 	longi	on
@@ -2731,7 +2737,7 @@ L39	equ	1
 	tcd
 srcVMARelPage_0	set	4
 prect_0	set	8
-	.block	364
+	.block	370
 ;	UINT slot;
 ;
 ;	int cw = prect->width < GUI_CACHE_WIDTH  ? prect->width  : GUI_CACHE_WIDTH;
@@ -2782,20 +2788,20 @@ L50:
 	lda	#$10
 L53:
 	sta	<L44+ch_1
-	.line	372
+	.line	378
 	jsl	~~k_gui_alloc_image_cache_slot
 	sta	<L44+slot_1
 ;	if(slot!=-1)
-	.line	373
+	.line	379
 ;	{
 	lda	<L44+slot_1
 	cmp	#<$ffffffff
 	bne	L54
 	brl	L10013
 L54:
-	.line	374
+	.line	380
 ;		k_vdma_copy_address_ex((LPSTR)(GUI_CACHE_PAGE + GUI_CACHE_PAGE_OFFSET(slot)),
-	.line	375
+	.line	381
 ;							   (LPSTR)(srcVMARelPage  + k_gui_get_pixel_offset(prect->x,prect->y)),
 ;							   cw,ch);
 	pei	<L44+ch_1
@@ -2873,18 +2879,18 @@ L54:
 	pei	<R0
 	jsl	~~k_vdma_copy_address_ex
 ;	}
-	.line	378
+	.line	384
 ;
 ;	k_debug_integer("k_gui_set_image_cache:slot:",slot);
 L10013:
-	.line	380
+	.line	386
 	pei	<L44+slot_1
 	pea	#^L1
 	pea	#<L1
 	jsl	~~k_debug_integer
 ;
 ;	return slot;
-	.line	382
+	.line	388
 	lda	<L44+slot_1
 L55:
 	tay
@@ -2900,14 +2906,14 @@ L55:
 	tya
 	rtl
 ;}
-	.line	383
-	.endblock	383
+	.line	389
+	.endblock	389
 L43	equ	22
 L44	equ	17
 	ends
 	efunc
-	.endfunc	383,17,22
-	.line	383
+	.endfunc	389,17,22
+	.line	389
 	data
 L1:
 	db	$6B,$5F,$67,$75,$69,$5F,$73,$65,$74,$5F,$69,$6D,$61,$67,$65
@@ -2916,12 +2922,12 @@ L1:
 ;
 ;BOOL k_gui_get_image_cache(UINT slot,ULONG destVMARelPage,PRECT prect)
 ;{
-	.line	385
-	.line	386
+	.line	391
+	.line	392
 	GFX
 	xdef	~~k_gui_get_image_cache
 	func
-	.function	386
+	.function	392
 ~~k_gui_get_image_cache:
 	longa	on
 	longi	on
@@ -2934,7 +2940,7 @@ L1:
 slot_0	set	4
 destVMARelPage_0	set	6
 prect_0	set	10
-	.block	386
+	.block	392
 ;	LPSTR pDst = NULL;
 ;	int cw;
 ;	int ch;
@@ -2955,22 +2961,22 @@ clippingOffset_1	set	8
 	stz	<L58+pDst_1
 	stz	<L58+pDst_1+2
 	stz	<L58+clippingOffset_1
-	.line	392
+	.line	398
 ;	{
 	lda	[<L57+prect_0]
 	bmi	L60
 	brl	L10014
 L60:
-	.line	393
+	.line	399
 ;		k_debug_integer("k_gui_get_image_cache::x-over:-x:",(int)prect->x);
-	.line	394
+	.line	400
 	lda	[<L57+prect_0]
 	pha
 	pea	#^L56
 	pea	#<L56
 	jsl	~~k_debug_integer
 ;		k_debug_integer("k_gui_get_image_cache::x-over:-width:",(int)prect->width);
-	.line	395
+	.line	401
 	ldy	#$8
 	lda	[<L57+prect_0],Y
 	pha
@@ -2978,7 +2984,7 @@ L60:
 	pea	#<L56+34
 	jsl	~~k_debug_integer
 ;		prect->width = (prect->width + prect->x);
-	.line	396
+	.line	402
 	clc
 	ldy	#$8
 	lda	[<L57+prect_0],Y
@@ -2987,14 +2993,14 @@ L60:
 	sta	[<L57+prect_0],Y
 ;
 ;		if(prect->width < 0)
-	.line	398
+	.line	404
 ;			return FALSE;
 	ldy	#$8
 	lda	[<L57+prect_0],Y
 	bmi	L61
 	brl	L10015
 L61:
-	.line	399
+	.line	405
 	lda	#$0
 L62:
 	tay
@@ -3012,24 +3018,24 @@ L62:
 ;
 ;		clippingOffset = (prect->x * (-1));
 L10015:
-	.line	401
+	.line	407
 	sec
 	lda	#$0
 	sbc	[<L57+prect_0]
 	sta	<L58+clippingOffset_1
 ;
 ;		prect->x =  GUI_POINT_LIMIT_X_LO;
-	.line	403
+	.line	409
 	lda	#$0
 	sta	[<L57+prect_0]
 ;		k_debug_integer("k_gui_get_image_cache::x-over:clippingOffset:",clippingOffset);
-	.line	404
+	.line	410
 	pei	<L58+clippingOffset_1
 	pea	#^L56+72
 	pea	#<L56+72
 	jsl	~~k_debug_integer
 ;		k_debug_integer("k_gui_get_image_cache::x-over:width:",(int)prect->width);
-	.line	405
+	.line	411
 	ldy	#$8
 	lda	[<L57+prect_0],Y
 	pha
@@ -3037,20 +3043,20 @@ L10015:
 	pea	#<L56+118
 	jsl	~~k_debug_integer
 ;	}
-	.line	406
+	.line	412
 ;
 ;	if(prect->y < GUI_POINT_LIMIT_Y_LO)
 L10014:
-	.line	408
+	.line	414
 ;	{
 	ldy	#$2
 	lda	[<L57+prect_0],Y
 	bmi	L63
 	brl	L10016
 L63:
-	.line	409
+	.line	415
 ;		prect->height = (prect->height + prect->y);
-	.line	410
+	.line	416
 	clc
 	ldy	#$a
 	lda	[<L57+prect_0],Y
@@ -3059,16 +3065,16 @@ L63:
 	ldy	#$a
 	sta	[<L57+prect_0],Y
 ;		prect->y = GUI_POINT_LIMIT_Y_LO;
-	.line	411
+	.line	417
 	lda	#$0
 	ldy	#$2
 	sta	[<L57+prect_0],Y
 ;	}
-	.line	412
+	.line	418
 ;
 ;	if(prect->x > GUI_POINT_LIMIT_X_HI)
 L10016:
-	.line	414
+	.line	420
 ;		prect->x = GUI_POINT_LIMIT_X_HI - 1;
 	sec
 	lda	#$280
@@ -3079,13 +3085,13 @@ L64:
 	bpl	L65
 	brl	L10017
 L65:
-	.line	415
+	.line	421
 	lda	#$27f
 	sta	[<L57+prect_0]
 ;
 ;	if(prect->y > GUI_POINT_LIMIT_Y_HI)
 L10017:
-	.line	417
+	.line	423
 ;		prect->y = GUI_POINT_LIMIT_Y_HI - 1;
 	sec
 	lda	#$1e0
@@ -3097,14 +3103,14 @@ L66:
 	bpl	L67
 	brl	L10018
 L67:
-	.line	418
+	.line	424
 	lda	#$1df
 	ldy	#$2
 	sta	[<L57+prect_0],Y
 ;
 ;	if(prect->x + prect->width > GUI_POINT_LIMIT_X_HI)
 L10018:
-	.line	420
+	.line	426
 ;	{
 	clc
 	lda	[<L57+prect_0]
@@ -3120,16 +3126,16 @@ L68:
 	bpl	L69
 	brl	L10019
 L69:
-	.line	421
+	.line	427
 ;		k_debug_integer("k_gui_get_image_cache::x-over:x:",prect->x);
-	.line	422
+	.line	428
 	lda	[<L57+prect_0]
 	pha
 	pea	#^L56+155
 	pea	#<L56+155
 	jsl	~~k_debug_integer
 ;		k_debug_integer("k_gui_get_image_cache::x-over:width:",prect->width);
-	.line	423
+	.line	429
 	ldy	#$8
 	lda	[<L57+prect_0],Y
 	pha
@@ -3138,7 +3144,7 @@ L69:
 	jsl	~~k_debug_integer
 ;
 ;		prect->width = GUI_POINT_LIMIT_X_HI - prect->x;
-	.line	425
+	.line	431
 	sec
 	lda	#$280
 	sbc	[<L57+prect_0]
@@ -3146,7 +3152,7 @@ L69:
 	sta	[<L57+prect_0],Y
 ;
 ;		k_debug_integer("k_gui_get_image_cache::x-over:width:adjusted:",prect->width);
-	.line	427
+	.line	433
 	ldy	#$8
 	lda	[<L57+prect_0],Y
 	pha
@@ -3154,11 +3160,11 @@ L69:
 	pea	#<L56+225
 	jsl	~~k_debug_integer
 ;	}
-	.line	428
+	.line	434
 ;
 ;	if(prect->y + prect->height > GUI_POINT_LIMIT_Y_HI)
 L10019:
-	.line	430
+	.line	436
 ;	{
 	clc
 	ldy	#$2
@@ -3175,9 +3181,9 @@ L70:
 	bpl	L71
 	brl	L10020
 L71:
-	.line	431
+	.line	437
 ;		k_debug_integer("k_gui_get_image_cache::y-over:y:",prect->y);
-	.line	432
+	.line	438
 	ldy	#$2
 	lda	[<L57+prect_0],Y
 	pha
@@ -3185,7 +3191,7 @@ L71:
 	pea	#<L56+271
 	jsl	~~k_debug_integer
 ;		k_debug_integer("k_gui_get_image_cache::y-over:height:",prect->height);
-	.line	433
+	.line	439
 	ldy	#$a
 	lda	[<L57+prect_0],Y
 	pha
@@ -3194,7 +3200,7 @@ L71:
 	jsl	~~k_debug_integer
 ;
 ;		prect->height = GUI_POINT_LIMIT_Y_HI - prect->y;
-	.line	435
+	.line	441
 	sec
 	lda	#$1e0
 	ldy	#$2
@@ -3203,7 +3209,7 @@ L71:
 	sta	[<L57+prect_0],Y
 ;
 ;		k_debug_integer("k_gui_get_image_cache::y-over:height:adjusted:",prect->height);
-	.line	437
+	.line	443
 	ldy	#$a
 	lda	[<L57+prect_0],Y
 	pha
@@ -3211,12 +3217,12 @@ L71:
 	pea	#<L56+342
 	jsl	~~k_debug_integer
 ;	}
-	.line	438
+	.line	444
 ;
 ;
 ;	cw = (prect->width < GUI_CACHE_WIDTH ) ? prect->width  : GUI_CACHE_WIDTH;
 L10020:
-	.line	441
+	.line	447
 	sec
 	ldy	#$8
 	lda	[<L57+prect_0],Y
@@ -3235,7 +3241,7 @@ L72:
 L75:
 	sta	<L58+cw_1
 ;	ch = (prect->height< GUI_CACHE_HEIGHT) ? prect->height : GUI_CACHE_HEIGHT;
-	.line	442
+	.line	448
 	sec
 	ldy	#$a
 	lda	[<L57+prect_0],Y
@@ -3256,37 +3262,37 @@ L79:
 ;
 ;
 ;	if(slot < GUI_CACHE_SIZE)
-	.line	445
+	.line	451
 ;	{
 	lda	<L57+slot_0
 	cmp	#<$3c
 	bcc	L80
 	brl	L10021
 L80:
-	.line	446
+	.line	452
 ;		if(slot < GUI_CACHE_START)
-	.line	447
+	.line	453
 ;		{
 	lda	<L57+slot_0
 	cmp	#<$4
 	bcc	L81
 	brl	L10022
 L81:
-	.line	448
+	.line	454
 ;			cw = prect->width;
-	.line	449
+	.line	455
 	ldy	#$8
 	lda	[<L57+prect_0],Y
 	sta	<L58+cw_1
 ;		}
-	.line	450
+	.line	456
 ;		//k_debug_integer("k_gui_get_image_cache::slot:",slot);
 ;		//k_debug_integer("k_gui_get_image_cache::cw:",cw);
 ;		//k_debug_integer("k_gui_get_image_cache::ch:",ch);
 ;
 ;		pDst = (LPSTR)(destVMARelPage + k_gui_get_pixel_offset(prect->x,prect->y));
 L10022:
-	.line	455
+	.line	461
 	ldy	#$2
 	lda	[<L57+prect_0],Y
 	pha
@@ -3310,7 +3316,7 @@ L10022:
 ;		//k_debug_pointer("k_gui_get_image_cache::pDst:",pDst);
 ;
 ;		k_vdma_copy_address_ex(pDst,
-	.line	459
+	.line	465
 ;							   (LPSTR)(GUI_CACHE_PAGE + (GUI_CACHE_PAGE_OFFSET(slot) + clippingOffset)),
 ;							   cw,ch);
 	pei	<L58+ch_1
@@ -3387,22 +3393,22 @@ L82:
 	pei	<L58+pDst_1
 	jsl	~~k_vdma_copy_address_ex
 ;	}
-	.line	462
+	.line	468
 ;
 ;	return TRUE;
 L10021:
-	.line	464
+	.line	470
 	lda	#$1
 	brl	L62
 ;}
-	.line	465
-	.endblock	465
+	.line	471
+	.endblock	471
 L57	equ	26
 L58	equ	17
 	ends
 	efunc
-	.endfunc	465,17,26
-	.line	465
+	.endfunc	471,17,26
+	.line	471
 	data
 L56:
 	db	$6B,$5F,$67,$75,$69,$5F,$67,$65,$74,$5F,$69,$6D,$61,$67,$65
@@ -3435,12 +3441,12 @@ L56:
 ;
 ;void k_copy_rect(PRECT psrc,PRECT pdst)
 ;{
-	.line	467
-	.line	468
+	.line	473
+	.line	474
 	GFX
 	xdef	~~k_copy_rect
 	func
-	.function	468
+	.function	474
 ~~k_copy_rect:
 	longa	on
 	longi	on
@@ -3452,11 +3458,11 @@ L56:
 	tcd
 psrc_0	set	4
 pdst_0	set	8
-	.block	468
+	.block	474
 ;	if(psrc && pdst)
 	.sym	psrc,4,138,6,32,26
 	.sym	pdst,8,138,6,32,26
-	.line	469
+	.line	475
 ;	{
 	lda	<L84+psrc_0
 	ora	<L84+psrc_0+2
@@ -3468,34 +3474,34 @@ L87:
 	bne	L88
 	brl	L10023
 L88:
-	.line	470
+	.line	476
 ;		pdst->x  	  = psrc->x;
-	.line	471
+	.line	477
 	lda	[<L84+psrc_0]
 	sta	[<L84+pdst_0]
 ;		pdst->y 	  = psrc->y;
-	.line	472
+	.line	478
 	ldy	#$2
 	lda	[<L84+psrc_0],Y
 	ldy	#$2
 	sta	[<L84+pdst_0],Y
 ;		pdst->width  =	psrc->width;
-	.line	473
+	.line	479
 	ldy	#$8
 	lda	[<L84+psrc_0],Y
 	ldy	#$8
 	sta	[<L84+pdst_0],Y
 ;		pdst->height =	psrc->height;
-	.line	474
+	.line	480
 	ldy	#$a
 	lda	[<L84+psrc_0],Y
 	ldy	#$a
 	sta	[<L84+pdst_0],Y
 ;	}
-	.line	475
+	.line	481
 ;}
 L10023:
-	.line	476
+	.line	482
 L89:
 	lda	<L84+2
 	sta	<L84+2+8
@@ -3507,22 +3513,22 @@ L89:
 	adc	#L84+8
 	tcs
 	rtl
-	.endblock	476
+	.endblock	482
 L84	equ	0
 L85	equ	1
 	ends
 	efunc
-	.endfunc	476,1,0
-	.line	476
+	.endfunc	482,1,0
+	.line	482
 ;
 ;void k_set_rect(PRECT prect,int x,int y, int width,int height)
 ;{
-	.line	478
-	.line	479
+	.line	484
+	.line	485
 	GFX
 	xdef	~~k_set_rect
 	func
-	.function	479
+	.function	485
 ~~k_set_rect:
 	longa	on
 	longi	on
@@ -3537,45 +3543,45 @@ x_0	set	8
 y_0	set	10
 width_0	set	12
 height_0	set	14
-	.block	479
+	.block	485
 ;	if(prect)
 	.sym	prect,4,138,6,32,26
 	.sym	x,8,5,6,16
 	.sym	y,10,5,6,16
 	.sym	width,12,5,6,16
 	.sym	height,14,5,6,16
-	.line	480
+	.line	486
 ;	{
 	lda	<L90+prect_0
 	ora	<L90+prect_0+2
 	bne	L93
 	brl	L10024
 L93:
-	.line	481
+	.line	487
 ;		prect->x = x;
-	.line	482
+	.line	488
 	lda	<L90+x_0
 	sta	[<L90+prect_0]
 ;		prect->y = y;
-	.line	483
+	.line	489
 	lda	<L90+y_0
 	ldy	#$2
 	sta	[<L90+prect_0],Y
 ;		prect->width = width;
-	.line	484
+	.line	490
 	lda	<L90+width_0
 	ldy	#$8
 	sta	[<L90+prect_0],Y
 ;		prect->height = height;
-	.line	485
+	.line	491
 	lda	<L90+height_0
 	ldy	#$a
 	sta	[<L90+prect_0],Y
 ;	}
-	.line	486
+	.line	492
 ;}
 L10024:
-	.line	487
+	.line	493
 L94:
 	lda	<L90+2
 	sta	<L90+2+12
@@ -3587,23 +3593,23 @@ L94:
 	adc	#L90+12
 	tcs
 	rtl
-	.endblock	487
+	.endblock	493
 L90	equ	0
 L91	equ	1
 	ends
 	efunc
-	.endfunc	487,1,0
-	.line	487
+	.endfunc	493,1,0
+	.line	493
 ;
 ;
 ;INT k_is_overlapped_rect(PRECT r1,PRECT r2)
 ;{
-	.line	490
-	.line	491
+	.line	496
+	.line	497
 	GFX
 	xdef	~~k_is_overlapped_rect
 	func
-	.function	491
+	.function	497
 ~~k_is_overlapped_rect:
 	longa	on
 	longi	on
@@ -3615,7 +3621,7 @@ L91	equ	1
 	tcd
 r1_0	set	4
 r2_0	set	8
-	.block	491
+	.block	497
 ;	POINT rLeft1;
 ;	POINT rRight1;
 ;	POINT rLeft2;
@@ -3632,23 +3638,23 @@ rRight2_1	set	12
 	.sym	rRight2,12,10,1,32,25
 	.sym	r1,4,138,6,32,26
 	.sym	r2,8,138,6,32,26
-	.line	497
+	.line	503
 	lda	[<L95+r1_0]
 	sta	<L96+rLeft1_1
 ;	rLeft1.y = r1->y;
-	.line	498
+	.line	504
 	ldy	#$2
 	lda	[<L95+r1_0],Y
 	sta	<L96+rLeft1_1+2
 ;	rRight1.x = r1->x + r1->width;
-	.line	499
+	.line	505
 	clc
 	lda	[<L95+r1_0]
 	ldy	#$8
 	adc	[<L95+r1_0],Y
 	sta	<L96+rRight1_1
 ;	rRight1.y = r1->y + r1->height;
-	.line	500
+	.line	506
 	clc
 	ldy	#$2
 	lda	[<L95+r1_0],Y
@@ -3657,23 +3663,23 @@ rRight2_1	set	12
 	sta	<L96+rRight1_1+2
 ;
 ;	rLeft2.x = r2->x;
-	.line	502
+	.line	508
 	lda	[<L95+r2_0]
 	sta	<L96+rLeft2_1
 ;	rLeft2.y = r2->y;
-	.line	503
+	.line	509
 	ldy	#$2
 	lda	[<L95+r2_0],Y
 	sta	<L96+rLeft2_1+2
 ;	rRight2.x = r2->x + r2->width;
-	.line	504
+	.line	510
 	clc
 	lda	[<L95+r2_0]
 	ldy	#$8
 	adc	[<L95+r2_0],Y
 	sta	<L96+rRight2_1
 ;	rRight2.y = r2->y + r2->height;
-	.line	505
+	.line	511
 	clc
 	ldy	#$2
 	lda	[<L95+r2_0],Y
@@ -3688,7 +3694,7 @@ rRight2_1	set	12
 ;	//k_debug_integer("B:",k_is_overlapped_rect_points(&rLeft2,&rRight2,&rLeft1,&rRight1));
 ;
 ;	return k_is_overlapped_rect_points(&rLeft1,&rRight1,&rLeft2,&rRight2);
-	.line	513
+	.line	519
 	pea	#0
 	clc
 	tdc
@@ -3724,24 +3730,24 @@ L98:
 	tya
 	rtl
 ;}
-	.line	514
-	.endblock	514
+	.line	520
+	.endblock	520
 L95	equ	16
 L96	equ	1
 	ends
 	efunc
-	.endfunc	514,1,16
-	.line	514
+	.endfunc	520,1,16
+	.line	520
 ;
 ;// Returns true if two rectangles (l1, r1) and (l2, r2) overlap
 ;INT k_is_overlapped_rect_points(PPOINT left1, PPOINT right1, PPOINT left2, PPOINT right2)
 ;{
-	.line	517
-	.line	518
+	.line	523
+	.line	524
 	GFX
 	xdef	~~k_is_overlapped_rect_points
 	func
-	.function	518
+	.function	524
 ~~k_is_overlapped_rect_points:
 	longa	on
 	longi	on
@@ -3755,7 +3761,7 @@ left1_0	set	4
 right1_0	set	8
 left2_0	set	12
 right2_0	set	16
-	.block	518
+	.block	524
 ;	// If one rectangle is on left side of other
 ;	// (l1.x > r2.x) this happens when the first rectangle(l1,r1) is totally on the right of the second rectangle(l2,r2).
 ;	// (l2.x > r1.x) this happens when the second rectangle(l2,r2) is totally on the right of the first rectangle(l1,r1).
@@ -3768,7 +3774,7 @@ right2_0	set	16
 	.sym	right1,8,138,6,32,25
 	.sym	left2,12,138,6,32,25
 	.sym	right2,16,138,6,32,25
-	.line	526
+	.line	532
 ;	{
 	sec
 	lda	[<L99+left1_0]
@@ -3789,10 +3795,10 @@ L105:
 	brl	L10025
 L106:
 L102:
-	.line	527
+	.line	533
 ;		//k_debug_integer("k_is_overlapped_rect_points::condition1:",1);
 ;		return FALSE;
-	.line	529
+	.line	535
 	lda	#$0
 L107:
 	tay
@@ -3808,13 +3814,13 @@ L107:
 	tya
 	rtl
 ;	}
-	.line	530
+	.line	536
 ;	// If one rectangle is above other
 ;	// (l1.y < r2.y) happens when the first rectangle(l1,r1) is totally below the second rectangle(l2,r2).
 ;	// (l2.y < r1.y) happens when the second rectangle(l2,r2) is totally below the first rectangle(l1,r1).
 ;	if (left1->y > right2->y || left2->y > right1->y)
 L10025:
-	.line	534
+	.line	540
 ;	{
 	sec
 	ldy	#$2
@@ -3839,7 +3845,7 @@ L111:
 	brl	L10026
 L112:
 L108:
-	.line	535
+	.line	541
 ;		//k_debug_integer("k_is_overlapped_rect_points::condition2:L1Y:",left1->y);
 ;		//k_debug_integer("k_is_overlapped_rect_points::condition2:R2Y:",right2->y);
 ;		//k_debug_integer("k_is_overlapped_rect_points::condition2:l1->y <= r2->y:",left1->y <= right2->y);
@@ -3848,34 +3854,34 @@ L108:
 ;		//k_debug_integer("k_is_overlapped_rect_points::condition2:R1Y:",right1->y);
 ;		//k_debug_integer("k_is_overlapped_rect_points::condition2:l2->y <= r1->y:",left2->y <= right1->y);
 ;		return FALSE;
-	.line	543
+	.line	549
 	lda	#$0
 	brl	L107
 ;	}
-	.line	544
+	.line	550
 ;	return TRUE;
 L10026:
-	.line	545
+	.line	551
 	lda	#$1
 	brl	L107
 ;}
-	.line	546
-	.endblock	546
+	.line	552
+	.endblock	552
 L99	equ	0
 L100	equ	1
 	ends
 	efunc
-	.endfunc	546,1,0
-	.line	546
+	.endfunc	552,1,0
+	.line	552
 ;
 ;BOOL k_is_inside_rect(PRECT prect, int dx, int dy)
 ;{
-	.line	548
-	.line	549
+	.line	554
+	.line	555
 	GFX
 	xdef	~~k_is_inside_rect
 	func
-	.function	549
+	.function	555
 ~~k_is_inside_rect:
 	longa	on
 	longi	on
@@ -3888,7 +3894,7 @@ L100	equ	1
 prect_0	set	4
 dx_0	set	8
 dy_0	set	10
-	.block	549
+	.block	555
 ;	BOOL bRet = FALSE;
 ;
 ;	if ((dx > prect->x) && (dx < (prect->x + prect->width)))
@@ -3902,7 +3908,7 @@ bRet_1	set	0
 	stz	<L114+bRet_1
 	rep	#$20
 	longa	on
-	.line	552
+	.line	558
 ;	{
 	sec
 	lda	[<L113+prect_0]
@@ -3927,9 +3933,9 @@ L118:
 	bpl	L119
 	brl	L10027
 L119:
-	.line	553
+	.line	559
 ;		if ((dy > prect->y) && (dy < (prect->y + prect->height)))
-	.line	554
+	.line	560
 ;		{
 	sec
 	ldy	#$2
@@ -3956,9 +3962,9 @@ L122:
 	bpl	L123
 	brl	L10028
 L123:
-	.line	555
+	.line	561
 ;			bRet = TRUE;
-	.line	556
+	.line	562
 	sep	#$20
 	longa	off
 	lda	#$1
@@ -3966,14 +3972,14 @@ L123:
 	rep	#$20
 	longa	on
 ;		}
-	.line	557
+	.line	563
 ;	}
 L10028:
-	.line	558
+	.line	564
 ;
 ;	return bRet;
 L10027:
-	.line	560
+	.line	566
 	lda	<L114+bRet_1
 	and	#$ff
 L124:
@@ -3990,23 +3996,23 @@ L124:
 	tya
 	rtl
 ;}
-	.line	561
-	.endblock	561
+	.line	567
+	.endblock	567
 L113	equ	5
 L114	equ	5
 	ends
 	efunc
-	.endfunc	561,5,5
-	.line	561
+	.endfunc	567,5,5
+	.line	567
 ;
 ;LONG k_gui_get_pixel_offset(int x,int y)
 ;{
-	.line	563
-	.line	564
+	.line	569
+	.line	570
 	GFX
 	xdef	~~k_gui_get_pixel_offset
 	func
-	.function	564
+	.function	570
 ~~k_gui_get_pixel_offset:
 	longa	on
 	longi	on
@@ -4018,12 +4024,12 @@ L114	equ	5
 	tcd
 x_0	set	4
 y_0	set	6
-	.block	564
+	.block	570
 ;	//return (LPVOID)(( ((long)y) * (640L)) + ((long)x) );
 ;	return k_gui_get_pixel_offset_width(x,y,640);
 	.sym	x,4,5,6,16
 	.sym	y,6,5,6,16
-	.line	566
+	.line	572
 	pea	#<$280
 	pei	<L125+y_0
 	pei	<L125+x_0
@@ -4046,23 +4052,23 @@ L128:
 	tya
 	rtl
 ;}
-	.line	567
-	.endblock	567
+	.line	573
+	.endblock	573
 L125	equ	4
 L126	equ	5
 	ends
 	efunc
-	.endfunc	567,5,4
-	.line	567
+	.endfunc	573,5,4
+	.line	573
 ;
 ;LONG k_gui_get_pixel_offset_width(int x,int y,int width)
 ;{
-	.line	569
-	.line	570
+	.line	575
+	.line	576
 	GFX
 	xdef	~~k_gui_get_pixel_offset_width
 	func
-	.function	570
+	.function	576
 ~~k_gui_get_pixel_offset_width:
 	longa	on
 	longi	on
@@ -4075,12 +4081,12 @@ L126	equ	5
 x_0	set	4
 y_0	set	6
 width_0	set	8
-	.block	570
+	.block	576
 ;	return (LONG)(( ((long)y) * ((long)width)) + ((long)x) );
 	.sym	x,4,5,6,16
 	.sym	y,6,5,6,16
 	.sym	width,8,5,6,16
-	.line	571
+	.line	577
 	ldy	#$0
 	lda	<L129+x_0
 	bpl	L132
@@ -4133,23 +4139,23 @@ L135:
 	tya
 	rtl
 ;}
-	.line	572
-	.endblock	572
+	.line	578
+	.endblock	578
 L129	equ	12
 L130	equ	13
 	ends
 	efunc
-	.endfunc	572,13,12
-	.line	572
+	.endfunc	578,13,12
+	.line	578
 ;
 ;void k_set_foreground_palette(char paletteId)
 ;{
-	.line	574
-	.line	575
+	.line	580
+	.line	581
 	GFX
 	xdef	~~k_set_foreground_palette
 	func
-	.function	575
+	.function	581
 ~~k_set_foreground_palette:
 	longa	on
 	longi	on
@@ -4160,10 +4166,10 @@ L130	equ	13
 	phd
 	tcd
 paletteId_0	set	4
-	.block	575
+	.block	581
 ;	FG_CHAR_LUT_PTR[0] = paletteId;
 	.sym	paletteId,4,14,6,8
-	.line	576
+	.line	582
 	sep	#$20
 	longa	off
 	lda	<L136+paletteId_0
@@ -4171,7 +4177,7 @@ paletteId_0	set	4
 	rep	#$20
 	longa	on
 ;}
-	.line	577
+	.line	583
 L139:
 	lda	<L136+2
 	sta	<L136+2+2
@@ -4183,22 +4189,22 @@ L139:
 	adc	#L136+2
 	tcs
 	rtl
-	.endblock	577
+	.endblock	583
 L136	equ	0
 L137	equ	1
 	ends
 	efunc
-	.endfunc	577,1,0
-	.line	577
+	.endfunc	583,1,0
+	.line	583
 ;
 ;void k_set_text_gamma(char c)
 ;{
-	.line	579
-	.line	580
+	.line	585
+	.line	586
 	GFX
 	xdef	~~k_set_text_gamma
 	func
-	.function	580
+	.function	586
 ~~k_set_text_gamma:
 	longa	on
 	longi	on
@@ -4209,10 +4215,10 @@ L137	equ	1
 	phd
 	tcd
 c_0	set	4
-	.block	580
+	.block	586
 ;	GAMMA_B_LUT_PTR[0] = c;
 	.sym	c,4,14,6,8
-	.line	581
+	.line	587
 	sep	#$20
 	longa	off
 	lda	<L140+c_0
@@ -4220,7 +4226,7 @@ c_0	set	4
 	rep	#$20
 	longa	on
 ;	GAMMA_G_LUT_PTR[0] = c;
-	.line	582
+	.line	588
 	sep	#$20
 	longa	off
 	lda	<L140+c_0
@@ -4228,7 +4234,7 @@ c_0	set	4
 	rep	#$20
 	longa	on
 ;	GAMMA_R_LUT_PTR[0] = c;
-	.line	583
+	.line	589
 	sep	#$20
 	longa	off
 	lda	<L140+c_0
@@ -4236,7 +4242,7 @@ c_0	set	4
 	rep	#$20
 	longa	on
 ;}
-	.line	584
+	.line	590
 L143:
 	lda	<L140+2
 	sta	<L140+2+2
@@ -4248,22 +4254,22 @@ L143:
 	adc	#L140+2
 	tcs
 	rtl
-	.endblock	584
+	.endblock	590
 L140	equ	0
 L141	equ	1
 	ends
 	efunc
-	.endfunc	584,1,0
-	.line	584
+	.endfunc	590,1,0
+	.line	590
 ;
 ;void k_set_text_color(char c)
 ;{
-	.line	586
-	.line	587
+	.line	592
+	.line	593
 	GFX
 	xdef	~~k_set_text_color
 	func
-	.function	587
+	.function	593
 ~~k_set_text_color:
 	longa	on
 	longi	on
@@ -4274,10 +4280,10 @@ L141	equ	1
 	phd
 	tcd
 c_0	set	4
-	.block	587
+	.block	593
 ;	CURCOLOR_L[0] = c;
 	.sym	c,4,14,6,8
-	.line	588
+	.line	594
 	sep	#$20
 	longa	off
 	lda	<L144+c_0
@@ -4285,7 +4291,7 @@ c_0	set	4
 	rep	#$20
 	longa	on
 ;	CURCOLOR_H[0] = c;
-	.line	589
+	.line	595
 	sep	#$20
 	longa	off
 	lda	<L144+c_0
@@ -4293,7 +4299,7 @@ c_0	set	4
 	rep	#$20
 	longa	on
 ;}
-	.line	590
+	.line	596
 L147:
 	lda	<L144+2
 	sta	<L144+2+2
@@ -4305,22 +4311,22 @@ L147:
 	adc	#L144+2
 	tcs
 	rtl
-	.endblock	590
+	.endblock	596
 L144	equ	0
 L145	equ	1
 	ends
 	efunc
-	.endfunc	590,1,0
-	.line	590
+	.endfunc	596,1,0
+	.line	596
 ;
 ;VOID k_set_text_colors(VOID)
 ;{
-	.line	592
-	.line	593
+	.line	598
+	.line	599
 	GFX
 	xdef	~~k_set_text_colors
 	func
-	.function	593
+	.function	599
 ~~k_set_text_colors:
 	longa	on
 	longi	on
@@ -4330,12 +4336,12 @@ L145	equ	1
 	tcs
 	phd
 	tcd
-	.block	593
+	.block	599
 ;	//k_debug_integer("k_set_text_colors::TEXT_FG_COLORS:",sizeof(TEXT_FG_COLORS));
 ;	//k_debug_integer("k_set_text_colors::TEXT_BG_COLORS:",sizeof(TEXT_BG_COLORS));
 ;
 ;	memcpy(FG_CHAR_LUT_PTR,TEXT_FG_COLORS,sizeof(TEXT_FG_COLORS));
-	.line	597
+	.line	603
 	pea	#<$40
 	pea	#^~~TEXT_FG_COLORS
 	pea	#<~~TEXT_FG_COLORS
@@ -4343,7 +4349,7 @@ L145	equ	1
 	pea	#<$af1f40
 	jsl	~~memcpy
 ;	memcpy(BG_CHAR_LUT_PTR,TEXT_BG_COLORS,sizeof(TEXT_BG_COLORS));
-	.line	598
+	.line	604
 	pea	#<$40
 	pea	#^~~TEXT_BG_COLORS
 	pea	#<~~TEXT_BG_COLORS
@@ -4351,7 +4357,7 @@ L145	equ	1
 	pea	#<$af1f80
 	jsl	~~memcpy
 ;}
-	.line	599
+	.line	605
 L151:
 	pld
 	tsc
@@ -4359,23 +4365,23 @@ L151:
 	adc	#L148
 	tcs
 	rtl
-	.endblock	599
+	.endblock	605
 L148	equ	0
 L149	equ	1
 	ends
 	efunc
-	.endfunc	599,1,0
-	.line	599
+	.endfunc	605,1,0
+	.line	605
 ;
 ;
 ;void setColors(void)
 ;{
-	.line	602
-	.line	603
+	.line	608
+	.line	609
 	GFX
 	xdef	~~setColors
 	func
-	.function	603
+	.function	609
 ~~setColors:
 	longa	on
 	longi	on
@@ -4385,7 +4391,7 @@ L149	equ	1
 	tcs
 	phd
 	tcd
-	.block	603
+	.block	609
 ;	unsigned long colorIndex = 0;
 ;
 ;	//colorIndex = 0;
@@ -4394,7 +4400,7 @@ colorIndex_1	set	0
 	.sym	colorIndex,0,18,1,32
 	stz	<L153+colorIndex_1
 	stz	<L153+colorIndex_1+2
-	.line	607
+	.line	613
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4413,7 +4419,7 @@ colorIndex_1	set	0
 	inc	<L153+colorIndex_1+2
 L155:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	608
+	.line	614
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4432,7 +4438,7 @@ L155:
 	inc	<L153+colorIndex_1+2
 L156:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	609
+	.line	615
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4451,7 +4457,7 @@ L156:
 	inc	<L153+colorIndex_1+2
 L157:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0xFF;
-	.line	610
+	.line	616
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4472,7 +4478,7 @@ L158:
 ;
 ;	//colorIndex = 1 * 4;
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	613
+	.line	619
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4491,7 +4497,7 @@ L158:
 	inc	<L153+colorIndex_1+2
 L159:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	614
+	.line	620
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4510,7 +4516,7 @@ L159:
 	inc	<L153+colorIndex_1+2
 L160:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x80;
-	.line	615
+	.line	621
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4529,7 +4535,7 @@ L160:
 	inc	<L153+colorIndex_1+2
 L161:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0xFF;
-	.line	616
+	.line	622
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4550,7 +4556,7 @@ L162:
 ;
 ;	//colorIndex = 2 * 4;
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	619
+	.line	625
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4569,7 +4575,7 @@ L162:
 	inc	<L153+colorIndex_1+2
 L163:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x80;
-	.line	620
+	.line	626
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4588,7 +4594,7 @@ L163:
 	inc	<L153+colorIndex_1+2
 L164:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	621
+	.line	627
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4607,7 +4613,7 @@ L164:
 	inc	<L153+colorIndex_1+2
 L165:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0xFF;
-	.line	622
+	.line	628
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4629,7 +4635,7 @@ L166:
 ;
 ;	//colorIndex = 3 * 4;
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x80;
-	.line	626
+	.line	632
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4648,7 +4654,7 @@ L166:
 	inc	<L153+colorIndex_1+2
 L167:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	627
+	.line	633
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4667,7 +4673,7 @@ L167:
 	inc	<L153+colorIndex_1+2
 L168:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	628
+	.line	634
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4686,7 +4692,7 @@ L168:
 	inc	<L153+colorIndex_1+2
 L169:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0xFF;
-	.line	629
+	.line	635
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4707,7 +4713,7 @@ L170:
 ;
 ;	//colorIndex = 4 * 4;
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	632
+	.line	638
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4726,7 +4732,7 @@ L170:
 	inc	<L153+colorIndex_1+2
 L171:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x80;
-	.line	633
+	.line	639
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4745,7 +4751,7 @@ L171:
 	inc	<L153+colorIndex_1+2
 L172:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x80;
-	.line	634
+	.line	640
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4764,7 +4770,7 @@ L172:
 	inc	<L153+colorIndex_1+2
 L173:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0xFF;
-	.line	635
+	.line	641
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4785,7 +4791,7 @@ L174:
 ;
 ;	//colorIndex = 5 * 4;
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x80;
-	.line	638
+	.line	644
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4804,7 +4810,7 @@ L174:
 	inc	<L153+colorIndex_1+2
 L175:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x80;
-	.line	639
+	.line	645
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4823,7 +4829,7 @@ L175:
 	inc	<L153+colorIndex_1+2
 L176:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	640
+	.line	646
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4842,7 +4848,7 @@ L176:
 	inc	<L153+colorIndex_1+2
 L177:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0xFF;
-	.line	641
+	.line	647
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4863,7 +4869,7 @@ L178:
 ;
 ;	//colorIndex = 6 * 4;
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x80;
-	.line	644
+	.line	650
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4882,7 +4888,7 @@ L178:
 	inc	<L153+colorIndex_1+2
 L179:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	645
+	.line	651
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4901,7 +4907,7 @@ L179:
 	inc	<L153+colorIndex_1+2
 L180:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x80;
-	.line	646
+	.line	652
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4920,7 +4926,7 @@ L180:
 	inc	<L153+colorIndex_1+2
 L181:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0xFF;
-	.line	647
+	.line	653
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4941,7 +4947,7 @@ L182:
 ;
 ;	//colorIndex = 7 * 4;
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	650
+	.line	656
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4960,7 +4966,7 @@ L182:
 	inc	<L153+colorIndex_1+2
 L183:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x45;
-	.line	651
+	.line	657
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4979,7 +4985,7 @@ L183:
 	inc	<L153+colorIndex_1+2
 L184:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0xFF;
-	.line	652
+	.line	658
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -4998,7 +5004,7 @@ L184:
 	inc	<L153+colorIndex_1+2
 L185:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0xFF;
-	.line	653
+	.line	659
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5019,7 +5025,7 @@ L186:
 ;
 ;	//colorIndex = 8 * 4;
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x13;
-	.line	656
+	.line	662
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5038,7 +5044,7 @@ L186:
 	inc	<L153+colorIndex_1+2
 L187:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x45;
-	.line	657
+	.line	663
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5057,7 +5063,7 @@ L187:
 	inc	<L153+colorIndex_1+2
 L188:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x8B;
-	.line	658
+	.line	664
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5076,7 +5082,7 @@ L188:
 	inc	<L153+colorIndex_1+2
 L189:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0xFF;
-	.line	659
+	.line	665
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5097,7 +5103,7 @@ L190:
 ;
 ;	//colorIndex = 9 * 4;
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	662
+	.line	668
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5116,7 +5122,7 @@ L190:
 	inc	<L153+colorIndex_1+2
 L191:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	663
+	.line	669
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5135,7 +5141,7 @@ L191:
 	inc	<L153+colorIndex_1+2
 L192:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x20;
-	.line	664
+	.line	670
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5154,7 +5160,7 @@ L192:
 	inc	<L153+colorIndex_1+2
 L193:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0xFF;
-	.line	665
+	.line	671
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5175,7 +5181,7 @@ L194:
 ;
 ;	//colorIndex = 10 * 4;
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	668
+	.line	674
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5194,7 +5200,7 @@ L194:
 	inc	<L153+colorIndex_1+2
 L195:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x20;
-	.line	669
+	.line	675
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5213,7 +5219,7 @@ L195:
 	inc	<L153+colorIndex_1+2
 L196:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	670
+	.line	676
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5232,7 +5238,7 @@ L196:
 	inc	<L153+colorIndex_1+2
 L197:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0xFF;
-	.line	671
+	.line	677
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5253,7 +5259,7 @@ L198:
 ;
 ;	//colorIndex = 11 * 4;
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x20;
-	.line	674
+	.line	680
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5272,7 +5278,7 @@ L198:
 	inc	<L153+colorIndex_1+2
 L199:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	675
+	.line	681
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5291,7 +5297,7 @@ L199:
 	inc	<L153+colorIndex_1+2
 L200:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	676
+	.line	682
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5310,7 +5316,7 @@ L200:
 	inc	<L153+colorIndex_1+2
 L201:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0xFF;
-	.line	677
+	.line	683
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5331,7 +5337,7 @@ L202:
 ;
 ;	//colorIndex = 12 * 4;
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	680
+	.line	686
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5350,7 +5356,7 @@ L202:
 	inc	<L153+colorIndex_1+2
 L203:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	681
+	.line	687
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5369,7 +5375,7 @@ L203:
 	inc	<L153+colorIndex_1+2
 L204:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x00;
-	.line	682
+	.line	688
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5388,7 +5394,7 @@ L204:
 	inc	<L153+colorIndex_1+2
 L205:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0xFF;
-	.line	683
+	.line	689
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5409,7 +5415,7 @@ L206:
 ;
 ;	//colorIndex = 13 * 4;
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x50;
-	.line	686
+	.line	692
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5428,7 +5434,7 @@ L206:
 	inc	<L153+colorIndex_1+2
 L207:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x50;
-	.line	687
+	.line	693
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5447,7 +5453,7 @@ L207:
 	inc	<L153+colorIndex_1+2
 L208:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x50;
-	.line	688
+	.line	694
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5466,7 +5472,7 @@ L208:
 	inc	<L153+colorIndex_1+2
 L209:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0xFF;
-	.line	689
+	.line	695
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5487,7 +5493,7 @@ L210:
 ;
 ;	//colorIndex = 14 * 4;
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x40;
-	.line	692
+	.line	698
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5506,7 +5512,7 @@ L210:
 	inc	<L153+colorIndex_1+2
 L211:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x40;
-	.line	693
+	.line	699
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5525,7 +5531,7 @@ L211:
 	inc	<L153+colorIndex_1+2
 L212:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0x40;
-	.line	694
+	.line	700
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5544,7 +5550,7 @@ L212:
 	inc	<L153+colorIndex_1+2
 L213:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0xFF;
-	.line	695
+	.line	701
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5565,7 +5571,7 @@ L214:
 ;
 ;	//colorIndex = 15 * 4;
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0xFF;
-	.line	698
+	.line	704
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5584,7 +5590,7 @@ L214:
 	inc	<L153+colorIndex_1+2
 L215:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0xFF;
-	.line	699
+	.line	705
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5603,7 +5609,7 @@ L215:
 	inc	<L153+colorIndex_1+2
 L216:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0xFF;
-	.line	700
+	.line	706
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5622,7 +5628,7 @@ L216:
 	inc	<L153+colorIndex_1+2
 L217:
 ;	GRP_LUT_BASE_ADDR[colorIndex++] = 0xFF;
-	.line	701
+	.line	707
 	clc
 	lda	#$2000
 	adc	<L153+colorIndex_1
@@ -5643,7 +5649,7 @@ L218:
 ;
 ;
 ;	memset(&_k_currentPalatte,0,sizeof(CUR_PALETTE_MAP));
-	.line	704
+	.line	710
 	pea	#<$32
 	pea	#<$0
 	lda	#<~~_k_currentPalatte
@@ -5656,50 +5662,50 @@ L218:
 	jsl	~~memset
 ;
 ;	_k_currentPalatte.CUR_WINDOWFRAME = 0;
-	.line	706
+	.line	712
 	stz	|~~_k_currentPalatte+10
 ;	_k_currentPalatte.CUR_DESKTOP = 14;
-	.line	707
+	.line	713
 	lda	#$e
 	sta	|~~_k_currentPalatte
 ;	_k_currentPalatte.CUR_HIGHLIGHT_COLOR = 8;
-	.line	708
+	.line	714
 	lda	#$8
 	sta	|~~_k_currentPalatte+8
 ;	_k_currentPalatte.CUR_SELECTED_FONT = 11;
-	.line	709
+	.line	715
 	lda	#$b
 	sta	|~~_k_currentPalatte+6
 ;	_k_currentPalatte.CUR_GADGET = _k_currentPalatte.CUR_WINDOWSHADOW = 12;
-	.line	710
+	.line	716
 	lda	#$c
 	sta	|~~_k_currentPalatte+14
 	lda	#$c
 	sta	|~~_k_currentPalatte+18
 ;	_k_currentPalatte.CUR_BACKGROUND = 13;
-	.line	711
+	.line	717
 	lda	#$d
 	sta	|~~_k_currentPalatte+2
 ;	_k_currentPalatte.CUR_FONT = 14;
-	.line	712
+	.line	718
 	lda	#$e
 	sta	|~~_k_currentPalatte+4
 ;	_k_currentPalatte.CUR_WINDOWBORDER = _k_currentPalatte.CUR_MENU = 15;
-	.line	713
+	.line	719
 	lda	#$f
 	sta	|~~_k_currentPalatte+16
 	lda	#$f
 	sta	|~~_k_currentPalatte+12
 ;
 ;	for(colorIndex=0;colorIndex<15;colorIndex++)
-	.line	715
+	.line	721
 	stz	<L153+colorIndex_1
 	stz	<L153+colorIndex_1+2
 L10031:
 ;	{
-	.line	716
+	.line	722
 ;		_k_currentPalatte.CUR_COLOR[colorIndex] = colorIndex;
-	.line	717
+	.line	723
 	lda	<L153+colorIndex_1
 	asl	A
 	sta	<R0
@@ -5707,7 +5713,7 @@ L10031:
 	ldx	<R0
 	sta	|~~_k_currentPalatte+20,X
 ;	}
-	.line	718
+	.line	724
 L10029:
 	inc	<L153+colorIndex_1
 	bne	L219
@@ -5724,7 +5730,7 @@ L10030:
 ;
 ;
 ;}
-	.line	721
+	.line	727
 L221:
 	pld
 	tsc
@@ -5732,22 +5738,22 @@ L221:
 	adc	#L152
 	tcs
 	rtl
-	.endblock	721
+	.endblock	727
 L152	equ	8
 L153	equ	5
 	ends
 	efunc
-	.endfunc	721,5,8
-	.line	721
+	.endfunc	727,5,8
+	.line	727
 ;
 ;void defineGrayPalette(void)
 ;{
-	.line	723
-	.line	724
+	.line	729
+	.line	730
 	GFX
 	xdef	~~defineGrayPalette
 	func
-	.function	724
+	.function	730
 ~~defineGrayPalette:
 	longa	on
 	longi	on
@@ -5757,7 +5763,7 @@ L153	equ	5
 	tcs
 	phd
 	tcd
-	.block	724
+	.block	730
 ;	unsigned long colorIndex = 0;
 ;	int colorShade = 0;
 ;	char color[] = {0x00,0x00,0x22,0x33,0x44,0x55,0x66,0x77,0x88,0x99,0xAA,0xBB,0xCC,0xDD,0xFF,0xFF};
@@ -5790,14 +5796,14 @@ color_1	set	6
 	lda	#$10
 	xref	~~~fmov
 	jsl	~~~fmov
-	.line	729
+	.line	735
 	stz	<L223+colorIndex_1
 	stz	<L223+colorIndex_1+2
 L10034:
 ;	{
-	.line	730
+	.line	736
 ;		GRP_LUT_BASE_ADDR[colorIndex+0] = color[colorShade];
-	.line	731
+	.line	737
 	clc
 	lda	#$2000
 	adc	<L223+colorIndex_1
@@ -5813,7 +5819,7 @@ L10034:
 	rep	#$20
 	longa	on
 ;		GRP_LUT_BASE_ADDR[colorIndex+1] = color[colorShade];
-	.line	732
+	.line	738
 	clc
 	lda	#$1
 	adc	#<$af2000
@@ -5836,7 +5842,7 @@ L10034:
 	rep	#$20
 	longa	on
 ;		GRP_LUT_BASE_ADDR[colorIndex+2] = color[colorShade];
-	.line	733
+	.line	739
 	clc
 	lda	#$2
 	adc	#<$af2000
@@ -5859,7 +5865,7 @@ L10034:
 	rep	#$20
 	longa	on
 ;		GRP_LUT_BASE_ADDR[colorIndex+3] = 0xFF;
-	.line	734
+	.line	740
 	clc
 	lda	#$3
 	adc	#<$af2000
@@ -5882,10 +5888,10 @@ L10034:
 	longa	on
 ;
 ;		colorShade++;
-	.line	736
+	.line	742
 	inc	<L223+colorShade_1
 ;	}
-	.line	737
+	.line	743
 L10032:
 	clc
 	lda	#$4
@@ -5904,7 +5910,7 @@ L227:
 L10033:
 ;
 ;	memset(&_k_currentPalatte,0,sizeof(CUR_PALETTE_MAP));
-	.line	739
+	.line	745
 	pea	#<$32
 	pea	#<$0
 	lda	#<~~_k_currentPalatte
@@ -5917,50 +5923,50 @@ L10033:
 	jsl	~~memset
 ;
 ;	_k_currentPalatte.CUR_WINDOWFRAME = 15;
-	.line	741
+	.line	747
 	lda	#$f
 	sta	|~~_k_currentPalatte+10
 ;	_k_currentPalatte.CUR_DESKTOP = 3;
-	.line	742
+	.line	748
 	lda	#$3
 	sta	|~~_k_currentPalatte
 ;	_k_currentPalatte.CUR_HIGHLIGHT_COLOR = 8;
-	.line	743
+	.line	749
 	lda	#$8
 	sta	|~~_k_currentPalatte+8
 ;	_k_currentPalatte.CUR_SELECTED_FONT = 11;
-	.line	744
+	.line	750
 	lda	#$b
 	sta	|~~_k_currentPalatte+6
 ;	_k_currentPalatte.CUR_GADGET = _k_currentPalatte.CUR_WINDOWSHADOW = 1;
-	.line	745
+	.line	751
 	lda	#$1
 	sta	|~~_k_currentPalatte+14
 	lda	#$1
 	sta	|~~_k_currentPalatte+18
 ;	_k_currentPalatte.CUR_BACKGROUND = 4;
-	.line	746
+	.line	752
 	lda	#$4
 	sta	|~~_k_currentPalatte+2
 ;	_k_currentPalatte.CUR_FONT = 1;
-	.line	747
+	.line	753
 	lda	#$1
 	sta	|~~_k_currentPalatte+4
 ;	_k_currentPalatte.CUR_WINDOWBORDER = _k_currentPalatte.CUR_MENU = 15;
-	.line	748
+	.line	754
 	lda	#$f
 	sta	|~~_k_currentPalatte+16
 	lda	#$f
 	sta	|~~_k_currentPalatte+12
 ;
 ;	for(colorShade=0;colorShade<16;colorShade++)
-	.line	750
+	.line	756
 	stz	<L223+colorShade_1
 L10037:
 ;	{
-	.line	751
+	.line	757
 ;		_k_currentPalatte.CUR_COLOR[colorShade] = colorShade;
-	.line	752
+	.line	758
 	lda	<L223+colorShade_1
 	asl	A
 	sta	<R0
@@ -5968,7 +5974,7 @@ L10037:
 	ldx	<R0
 	sta	|~~_k_currentPalatte+20,X
 ;	}
-	.line	753
+	.line	759
 L10035:
 	inc	<L223+colorShade_1
 	sec
@@ -5982,7 +5988,7 @@ L228:
 L229:
 L10036:
 ;}
-	.line	754
+	.line	760
 L230:
 	pld
 	tsc
@@ -5990,22 +5996,22 @@ L230:
 	adc	#L222
 	tcs
 	rtl
-	.endblock	754
+	.endblock	760
 L222	equ	30
 L223	equ	9
 	ends
 	efunc
-	.endfunc	754,9,30
-	.line	754
+	.endfunc	760,9,30
+	.line	760
 ;
 ;int k_getUIBackgroundColor()
 ;{
-	.line	756
-	.line	757
+	.line	762
+	.line	763
 	GFX
 	xdef	~~k_getUIBackgroundColor
 	func
-	.function	757
+	.function	763
 ~~k_getUIBackgroundColor:
 	longa	on
 	longi	on
@@ -6015,9 +6021,9 @@ L223	equ	9
 	tcs
 	phd
 	tcd
-	.block	757
+	.block	763
 ;	return 	_k_currentPalatte.CUR_BACKGROUND;
-	.line	758
+	.line	764
 	lda	|~~_k_currentPalatte+2
 L234:
 	tay
@@ -6029,23 +6035,23 @@ L234:
 	tya
 	rtl
 ;}
-	.line	759
-	.endblock	759
+	.line	765
+	.endblock	765
 L231	equ	0
 L232	equ	1
 	ends
 	efunc
-	.endfunc	759,1,0
-	.line	759
+	.endfunc	765,1,0
+	.line	765
 ;
 ;int k_getUIDesktopColor()
 ;{
-	.line	761
-	.line	762
+	.line	767
+	.line	768
 	GFX
 	xdef	~~k_getUIDesktopColor
 	func
-	.function	762
+	.function	768
 ~~k_getUIDesktopColor:
 	longa	on
 	longi	on
@@ -6055,9 +6061,9 @@ L232	equ	1
 	tcs
 	phd
 	tcd
-	.block	762
+	.block	768
 ;	return 	_k_currentPalatte.CUR_DESKTOP;
-	.line	763
+	.line	769
 	lda	|~~_k_currentPalatte
 L238:
 	tay
@@ -6069,24 +6075,24 @@ L238:
 	tya
 	rtl
 ;}
-	.line	764
-	.endblock	764
+	.line	770
+	.endblock	770
 L235	equ	0
 L236	equ	1
 	ends
 	efunc
-	.endfunc	764,1,0
-	.line	764
+	.endfunc	770,1,0
+	.line	770
 ;
 ;
 ;int k_getUIFontColor()
 ;{
-	.line	767
-	.line	768
+	.line	773
+	.line	774
 	GFX
 	xdef	~~k_getUIFontColor
 	func
-	.function	768
+	.function	774
 ~~k_getUIFontColor:
 	longa	on
 	longi	on
@@ -6096,9 +6102,9 @@ L236	equ	1
 	tcs
 	phd
 	tcd
-	.block	768
+	.block	774
 ;	return 	_k_currentPalatte.CUR_FONT;
-	.line	769
+	.line	775
 	lda	|~~_k_currentPalatte+4
 L242:
 	tay
@@ -6110,24 +6116,24 @@ L242:
 	tya
 	rtl
 ;}
-	.line	770
-	.endblock	770
+	.line	776
+	.endblock	776
 L239	equ	0
 L240	equ	1
 	ends
 	efunc
-	.endfunc	770,1,0
-	.line	770
+	.endfunc	776,1,0
+	.line	776
 ;
 ;
 ;int k_getUIFontSelectedColor()
 ;{
-	.line	773
-	.line	774
+	.line	779
+	.line	780
 	GFX
 	xdef	~~k_getUIFontSelectedColor
 	func
-	.function	774
+	.function	780
 ~~k_getUIFontSelectedColor:
 	longa	on
 	longi	on
@@ -6137,9 +6143,9 @@ L240	equ	1
 	tcs
 	phd
 	tcd
-	.block	774
+	.block	780
 ;	return 	_k_currentPalatte.CUR_SELECTED_FONT;
-	.line	775
+	.line	781
 	lda	|~~_k_currentPalatte+6
 L246:
 	tay
@@ -6151,24 +6157,24 @@ L246:
 	tya
 	rtl
 ;}
-	.line	776
-	.endblock	776
+	.line	782
+	.endblock	782
 L243	equ	0
 L244	equ	1
 	ends
 	efunc
-	.endfunc	776,1,0
-	.line	776
+	.endfunc	782,1,0
+	.line	782
 ;
 ;
 ;int k_getUIHighlightColor()
 ;{
-	.line	779
-	.line	780
+	.line	785
+	.line	786
 	GFX
 	xdef	~~k_getUIHighlightColor
 	func
-	.function	780
+	.function	786
 ~~k_getUIHighlightColor:
 	longa	on
 	longi	on
@@ -6178,9 +6184,9 @@ L244	equ	1
 	tcs
 	phd
 	tcd
-	.block	780
+	.block	786
 ;	return 	_k_currentPalatte.CUR_HIGHLIGHT_COLOR;
-	.line	781
+	.line	787
 	lda	|~~_k_currentPalatte+8
 L250:
 	tay
@@ -6192,24 +6198,24 @@ L250:
 	tya
 	rtl
 ;}
-	.line	782
-	.endblock	782
+	.line	788
+	.endblock	788
 L247	equ	0
 L248	equ	1
 	ends
 	efunc
-	.endfunc	782,1,0
-	.line	782
+	.endfunc	788,1,0
+	.line	788
 ;
 ;
 ;int k_getUIWindowFrameColor()
 ;{
-	.line	785
-	.line	786
+	.line	791
+	.line	792
 	GFX
 	xdef	~~k_getUIWindowFrameColor
 	func
-	.function	786
+	.function	792
 ~~k_getUIWindowFrameColor:
 	longa	on
 	longi	on
@@ -6219,9 +6225,9 @@ L248	equ	1
 	tcs
 	phd
 	tcd
-	.block	786
+	.block	792
 ;	return 	_k_currentPalatte.CUR_WINDOWFRAME;
-	.line	787
+	.line	793
 	lda	|~~_k_currentPalatte+10
 L254:
 	tay
@@ -6233,24 +6239,24 @@ L254:
 	tya
 	rtl
 ;}
-	.line	788
-	.endblock	788
+	.line	794
+	.endblock	794
 L251	equ	0
 L252	equ	1
 	ends
 	efunc
-	.endfunc	788,1,0
-	.line	788
+	.endfunc	794,1,0
+	.line	794
 ;
 ;
 ;int k_getUIWindowBorderColor()
 ;{
-	.line	791
-	.line	792
+	.line	797
+	.line	798
 	GFX
 	xdef	~~k_getUIWindowBorderColor
 	func
-	.function	792
+	.function	798
 ~~k_getUIWindowBorderColor:
 	longa	on
 	longi	on
@@ -6260,9 +6266,9 @@ L252	equ	1
 	tcs
 	phd
 	tcd
-	.block	792
+	.block	798
 ;	return 	_k_currentPalatte.CUR_WINDOWBORDER;
-	.line	793
+	.line	799
 	lda	|~~_k_currentPalatte+12
 L258:
 	tay
@@ -6274,24 +6280,24 @@ L258:
 	tya
 	rtl
 ;}
-	.line	794
-	.endblock	794
+	.line	800
+	.endblock	800
 L255	equ	0
 L256	equ	1
 	ends
 	efunc
-	.endfunc	794,1,0
-	.line	794
+	.endfunc	800,1,0
+	.line	800
 ;
 ;
 ;int k_getUIWindowShadowColor()
 ;{
-	.line	797
-	.line	798
+	.line	803
+	.line	804
 	GFX
 	xdef	~~k_getUIWindowShadowColor
 	func
-	.function	798
+	.function	804
 ~~k_getUIWindowShadowColor:
 	longa	on
 	longi	on
@@ -6301,9 +6307,9 @@ L256	equ	1
 	tcs
 	phd
 	tcd
-	.block	798
+	.block	804
 ;	return 	_k_currentPalatte.CUR_WINDOWSHADOW;
-	.line	799
+	.line	805
 	lda	|~~_k_currentPalatte+14
 L262:
 	tay
@@ -6315,24 +6321,24 @@ L262:
 	tya
 	rtl
 ;}
-	.line	800
-	.endblock	800
+	.line	806
+	.endblock	806
 L259	equ	0
 L260	equ	1
 	ends
 	efunc
-	.endfunc	800,1,0
-	.line	800
+	.endfunc	806,1,0
+	.line	806
 ;
 ;
 ;int k_getUIMenuColor()
 ;{
-	.line	803
-	.line	804
+	.line	809
+	.line	810
 	GFX
 	xdef	~~k_getUIMenuColor
 	func
-	.function	804
+	.function	810
 ~~k_getUIMenuColor:
 	longa	on
 	longi	on
@@ -6342,9 +6348,9 @@ L260	equ	1
 	tcs
 	phd
 	tcd
-	.block	804
+	.block	810
 ;	return 	_k_currentPalatte.CUR_MENU;
-	.line	805
+	.line	811
 	lda	|~~_k_currentPalatte+16
 L266:
 	tay
@@ -6356,24 +6362,24 @@ L266:
 	tya
 	rtl
 ;}
-	.line	806
-	.endblock	806
+	.line	812
+	.endblock	812
 L263	equ	0
 L264	equ	1
 	ends
 	efunc
-	.endfunc	806,1,0
-	.line	806
+	.endfunc	812,1,0
+	.line	812
 ;
 ;
 ;int k_getUIGadgetColor()
 ;{
-	.line	809
-	.line	810
+	.line	815
+	.line	816
 	GFX
 	xdef	~~k_getUIGadgetColor
 	func
-	.function	810
+	.function	816
 ~~k_getUIGadgetColor:
 	longa	on
 	longi	on
@@ -6383,9 +6389,9 @@ L264	equ	1
 	tcs
 	phd
 	tcd
-	.block	810
+	.block	816
 ;	return 	_k_currentPalatte.CUR_GADGET;
-	.line	811
+	.line	817
 	lda	|~~_k_currentPalatte+18
 L270:
 	tay
@@ -6397,24 +6403,24 @@ L270:
 	tya
 	rtl
 ;}
-	.line	812
-	.endblock	812
+	.line	818
+	.endblock	818
 L267	equ	0
 L268	equ	1
 	ends
 	efunc
-	.endfunc	812,1,0
-	.line	812
+	.endfunc	818,1,0
+	.line	818
 ;
 ;
 ;int k_getUIColor(int index)
 ;{
-	.line	815
-	.line	816
+	.line	821
+	.line	822
 	GFX
 	xdef	~~k_getUIColor
 	func
-	.function	816
+	.function	822
 ~~k_getUIColor:
 	longa	on
 	longi	on
@@ -6425,10 +6431,10 @@ L268	equ	1
 	phd
 	tcd
 index_0	set	4
-	.block	816
+	.block	822
 ;	if(index < 1)
 	.sym	index,4,5,6,16
-	.line	817
+	.line	823
 ;		index = 1;
 	lda	<L271+index_0
 	bmi	L274
@@ -6436,12 +6442,12 @@ index_0	set	4
 	bmi	L274
 	brl	L10038
 L274:
-	.line	818
+	.line	824
 	lda	#$1
 	sta	<L271+index_0
 ;	if(index > 15)
 L10038:
-	.line	819
+	.line	825
 ;		index = 15;
 	sec
 	lda	#$f
@@ -6452,13 +6458,13 @@ L275:
 	bpl	L276
 	brl	L10039
 L276:
-	.line	820
+	.line	826
 	lda	#$f
 	sta	<L271+index_0
 ;
 ;	return 	_k_currentPalatte.CUR_COLOR[index - 1];
 L10039:
-	.line	822
+	.line	828
 	lda	<L271+index_0
 	asl	A
 	sta	<R0
@@ -6478,26 +6484,24 @@ L277:
 	tya
 	rtl
 ;}
-	.line	823
-	.endblock	823
+	.line	829
+	.endblock	829
 L271	equ	4
 L272	equ	5
 	ends
 	efunc
-	.endfunc	823,5,4
-	.line	823
+	.endfunc	829,5,4
+	.line	829
 ;
-;
-;
-;void k_draw_pixel(long x,long y,char pcolor)
+;void k_draw_clipped_pixel(PRECT prect,long x,long y,char pcolor,char mode)
 ;{
-	.line	827
-	.line	828
+	.line	831
+	.line	832
 	GFX
-	xdef	~~k_draw_pixel
+	xdef	~~k_draw_clipped_pixel
 	func
-	.function	828
-~~k_draw_pixel:
+	.function	832
+~~k_draw_clipped_pixel:
 	longa	on
 	longi	on
 	tsc
@@ -6506,407 +6510,340 @@ L272	equ	5
 	tcs
 	phd
 	tcd
-x_0	set	4
-y_0	set	8
-pcolor_0	set	12
-	.block	828
-;	long pixelLocation = (long)(((long)y * 640L) + (long)x);
-;
-;	if(x >= GUI_POINT_LIMIT_X_LO && x <= GUI_POINT_LIMIT_X_HI && y >= GUI_POINT_LIMIT_Y_LO && y <= GUI_POINT_LIMIT_Y_HI)
-pixelLocation_1	set	0
-	.sym	pixelLocation,0,7,1,32
-	.sym	x,4,7,6,32
-	.sym	y,8,7,6,32
-	.sym	pcolor,12,14,6,8
-	pea	#^$280
-	pea	#<$280
-	pei	<L278+y_0+2
-	pei	<L278+y_0
-	xref	~~~lmul
-	jsl	~~~lmul
-	sta	<R0
-	stx	<R0+2
-	clc
-	lda	<R0
-	adc	<L278+x_0
-	sta	<L279+pixelLocation_1
-	lda	<R0+2
-	adc	<L278+x_0+2
-	sta	<L279+pixelLocation_1+2
-	.line	831
-;		((unsigned char FAR *)BITMAP_BANK_0)[pixelLocation] = (char)pcolor;
-	lda	<L278+x_0+2
-	bpl	L281
+prect_0	set	4
+x_0	set	8
+y_0	set	12
+pcolor_0	set	16
+mode_0	set	18
+	.block	832
+;	if(prect!=NULL)
+	.sym	prect,4,138,6,32,26
+	.sym	x,8,7,6,32
+	.sym	y,12,7,6,32
+	.sym	pcolor,16,14,6,8
+	.sym	mode,18,14,6,8
+	.line	833
+;	{
+	lda	<L278+prect_0
+	ora	<L278+prect_0+2
+	bne	L281
 	brl	L10040
 L281:
-	sec
-	lda	#$280
-	sbc	<L278+x_0
-	lda	#$0
-	sbc	<L278+x_0+2
-	bvs	L282
-	eor	#$8000
+	.line	834
+;		if((x >= prect->x) && (x < (prect->x + prect->width)))
+	.line	835
+;		{
+	ldy	#$0
+	lda	[<L278+prect_0]
+	bpl	L282
+	dey
 L282:
-	bmi	L283
-	brl	L10040
-L283:
-	lda	<L278+y_0+2
-	bpl	L284
-	brl	L10040
-L284:
-	sec
-	lda	#$1e0
-	sbc	<L278+y_0
-	lda	#$0
-	sbc	<L278+y_0+2
-	bvs	L285
-	eor	#$8000
-L285:
-	bmi	L286
-	brl	L10040
-L286:
-	.line	832
-	clc
-	lda	#$0
-	adc	<L279+pixelLocation_1
 	sta	<R0
-	lda	#$b0
-	adc	<L279+pixelLocation_1+2
-	sta	<R0+2
-	sep	#$20
-	longa	off
-	lda	<L278+pcolor_0
-	sta	[<R0]
-	rep	#$20
-	longa	on
-;	//((unsigned char FAR *)SHADOW_BANK_0)[pixelLocation] = (char)pcolor;
-;
-;
-;	//((unsigned char FAR *)BITMAP_BANK_0)[(long)(( ((long)y) * 640L) + ((long)x) )] = (char)pcolor;
-;}
-L10040:
-	.line	837
-L287:
-	lda	<L278+2
-	sta	<L278+2+10
-	lda	<L278+1
-	sta	<L278+1+10
-	pld
-	tsc
-	clc
-	adc	#L278+10
-	tcs
-	rtl
-	.endblock	837
-L278	equ	8
-L279	equ	5
-	ends
-	efunc
-	.endfunc	837,5,8
-	.line	837
-;
-;void k_draw_pixel_front(long x,long y,char pcolor)
-;{
-	.line	839
-	.line	840
-	GFX
-	xdef	~~k_draw_pixel_front
-	func
-	.function	840
-~~k_draw_pixel_front:
-	longa	on
-	longi	on
-	tsc
+	sty	<R0+2
 	sec
-	sbc	#L288
-	tcs
-	phd
-	tcd
-x_0	set	4
-y_0	set	8
-pcolor_0	set	12
-	.block	840
-;	if(x >= GUI_POINT_LIMIT_X_LO && x <= GUI_POINT_LIMIT_X_HI && y >= GUI_POINT_LIMIT_Y_LO && y <= GUI_POINT_LIMIT_Y_HI)
-	.sym	x,4,7,6,32
-	.sym	y,8,7,6,32
-	.sym	pcolor,12,14,6,8
-	.line	841
-;		BITMAP_BANK_0[(long)(((long)y * 640L) + (long)x)] = (char)pcolor;
-	lda	<L288+x_0+2
-	bpl	L291
+	lda	<L278+x_0
+	sbc	<R0
+	lda	<L278+x_0+2
+	sbc	<R0+2
+	bvs	L283
+	eor	#$8000
+L283:
+	bmi	L284
 	brl	L10041
-L291:
+L284:
+	clc
+	lda	[<L278+prect_0]
+	ldy	#$8
+	adc	[<L278+prect_0],Y
+	sta	<R0
+	ldy	#$0
+	lda	<R0
+	bpl	L285
+	dey
+L285:
+	sta	<R0
+	sty	<R0+2
 	sec
-	lda	#$280
-	sbc	<L288+x_0
-	lda	#$0
-	sbc	<L288+x_0+2
+	lda	<L278+x_0
+	sbc	<R0
+	lda	<L278+x_0+2
+	sbc	<R0+2
+	bvs	L286
+	eor	#$8000
+L286:
+	bpl	L287
+	brl	L10041
+L287:
+	.line	836
+;			if((y >= prect->y) && (y < (prect->y + prect->height)))
+	.line	837
+;			{
+	ldy	#$0
+	phy
+	ldy	#$2
+	lda	[<L278+prect_0],Y
+	ply
+	rol	A
+	ror	A
+	bpl	L288
+	dey
+L288:
+	sta	<R0
+	sty	<R0+2
+	sec
+	lda	<L278+y_0
+	sbc	<R0
+	lda	<L278+y_0+2
+	sbc	<R0+2
+	bvs	L289
+	eor	#$8000
+L289:
+	bmi	L290
+	brl	L10042
+L290:
+	clc
+	ldy	#$2
+	lda	[<L278+prect_0],Y
+	ldy	#$a
+	adc	[<L278+prect_0],Y
+	sta	<R0
+	ldy	#$0
+	lda	<R0
+	bpl	L291
+	dey
+L291:
+	sta	<R0
+	sty	<R0+2
+	sec
+	lda	<L278+y_0
+	sbc	<R0
+	lda	<L278+y_0+2
+	sbc	<R0+2
 	bvs	L292
 	eor	#$8000
 L292:
-	bmi	L293
-	brl	L10041
+	bpl	L293
+	brl	L10042
 L293:
-	lda	<L288+y_0+2
-	bpl	L294
-	brl	L10041
-L294:
-	sec
-	lda	#$1e0
-	sbc	<L288+y_0
-	lda	#$0
-	sbc	<L288+y_0+2
-	bvs	L295
-	eor	#$8000
-L295:
-	bmi	L296
-	brl	L10041
-L296:
-	.line	842
-	pea	#^$280
-	pea	#<$280
-	pei	<L288+y_0+2
-	pei	<L288+y_0
-	xref	~~~lmul
-	jsl	~~~lmul
-	sta	<R0
-	stx	<R0+2
-	clc
-	lda	<R0
-	adc	<L288+x_0
-	sta	<R1
-	lda	<R0+2
-	adc	<L288+x_0+2
-	sta	<R1+2
-	clc
-	lda	#$0
-	adc	<R1
-	sta	<R0
-	lda	#$b0
-	adc	<R1+2
-	sta	<R0+2
-	sep	#$20
-	longa	off
-	lda	<L288+pcolor_0
-	sta	[<R0]
-	rep	#$20
-	longa	on
-;}
+	.line	838
+;				k_draw_pixel_front(x,y,pcolor);
+	.line	839
+	pei	<L278+pcolor_0
+	pei	<L278+y_0+2
+	pei	<L278+y_0
+	pei	<L278+x_0+2
+	pei	<L278+x_0
+	jsl	~~k_draw_pixel_front
+;			}
+	.line	840
+;		}
+L10042:
+	.line	841
+;	}
 L10041:
+	.line	842
+;}
+L10040:
 	.line	843
-L297:
-	lda	<L288+2
-	sta	<L288+2+10
-	lda	<L288+1
-	sta	<L288+1+10
+L294:
+	lda	<L278+2
+	sta	<L278+2+16
+	lda	<L278+1
+	sta	<L278+1+16
 	pld
 	tsc
 	clc
-	adc	#L288+10
+	adc	#L278+16
 	tcs
 	rtl
 	.endblock	843
-L288	equ	8
-L289	equ	9
+L278	equ	4
+L279	equ	5
 	ends
 	efunc
-	.endfunc	843,9,8
+	.endfunc	843,5,4
 	.line	843
 ;
-;void k_draw_pixel_back(long x,long y,char pcolor)
+;void k_draw_clipped_pixel_ex(PRECT prect,long x,long y,char pcolor,char mode)
 ;{
 	.line	845
 	.line	846
 	GFX
-	xdef	~~k_draw_pixel_back
+	xdef	~~k_draw_clipped_pixel_ex
 	func
 	.function	846
-~~k_draw_pixel_back:
+~~k_draw_clipped_pixel_ex:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L298
+	sbc	#L295
 	tcs
 	phd
 	tcd
-x_0	set	4
-y_0	set	8
-pcolor_0	set	12
+prect_0	set	4
+x_0	set	8
+y_0	set	12
+pcolor_0	set	16
+mode_0	set	18
 	.block	846
-;	if(x >= GUI_POINT_LIMIT_X_LO && x <= GUI_POINT_LIMIT_X_HI && y >= GUI_POINT_LIMIT_Y_LO && y <= GUI_POINT_LIMIT_Y_HI)
-	.sym	x,4,7,6,32
-	.sym	y,8,7,6,32
-	.sym	pcolor,12,14,6,8
+;	if(prect!=NULL)
+	.sym	prect,4,138,6,32,26
+	.sym	x,8,7,6,32
+	.sym	y,12,7,6,32
+	.sym	pcolor,16,14,6,8
+	.sym	mode,18,14,6,8
 	.line	847
-;		BITMAP_BANK_0_PAGE0[(long)(((long)y * 640L) + (long)x)] = (char)pcolor;
-	lda	<L298+x_0+2
-	bpl	L301
-	brl	L10042
-L301:
-	sec
-	lda	#$280
-	sbc	<L298+x_0
-	lda	#$0
-	sbc	<L298+x_0+2
-	bvs	L302
-	eor	#$8000
-L302:
-	bmi	L303
-	brl	L10042
-L303:
-	lda	<L298+y_0+2
-	bpl	L304
-	brl	L10042
-L304:
-	sec
-	lda	#$1e0
-	sbc	<L298+y_0
-	lda	#$0
-	sbc	<L298+y_0+2
-	bvs	L305
-	eor	#$8000
-L305:
-	bmi	L306
-	brl	L10042
-L306:
+;	{
+	lda	<L295+prect_0
+	ora	<L295+prect_0+2
+	bne	L298
+	brl	L10043
+L298:
 	.line	848
-	pea	#^$280
-	pea	#<$280
-	pei	<L298+y_0+2
-	pei	<L298+y_0
-	xref	~~~lmul
-	jsl	~~~lmul
-	sta	<R0
-	stx	<R0+2
-	clc
-	lda	<R0
-	adc	<L298+x_0
-	sta	<R1
-	lda	<R0+2
-	adc	<L298+x_0+2
-	sta	<R1+2
-	clc
-	lda	#$0
-	adc	<R1
-	sta	<R0
-	lda	#$b8
-	adc	<R1+2
-	sta	<R0+2
-	sep	#$20
-	longa	off
-	lda	<L298+pcolor_0
-	sta	[<R0]
-	rep	#$20
-	longa	on
-;}
-L10042:
+;		if((x >= prect->x) && (x < (prect->x + prect->width)))
 	.line	849
-L307:
-	lda	<L298+2
-	sta	<L298+2+10
-	lda	<L298+1
-	sta	<L298+1+10
-	pld
-	tsc
-	clc
-	adc	#L298+10
-	tcs
-	rtl
-	.endblock	849
-L298	equ	8
-L299	equ	9
-	ends
-	efunc
-	.endfunc	849,9,8
-	.line	849
-;
-;
-;void k_draw_pixel_D0(long x,long y,char pcolor)
-;{
-	.line	852
-	.line	853
-	GFX
-	xdef	~~k_draw_pixel_D0
-	func
-	.function	853
-~~k_draw_pixel_D0:
-	longa	on
-	longi	on
-	tsc
+;		{
+	ldy	#$0
+	lda	[<L295+prect_0]
+	bpl	L299
+	dey
+L299:
+	sta	<R0
+	sty	<R0+2
 	sec
-	sbc	#L308
-	tcs
-	phd
-	tcd
-x_0	set	4
-y_0	set	8
-pcolor_0	set	12
-	.block	853
-;	BITMAP_BANK_0_PAGE2[(long)(((long)y * 640L) + (long)x)] = (char)pcolor;
-	.sym	x,4,7,6,32
-	.sym	y,8,7,6,32
-	.sym	pcolor,12,14,6,8
-	.line	854
-	pea	#^$280
-	pea	#<$280
-	pei	<L308+y_0+2
-	pei	<L308+y_0
-	xref	~~~lmul
-	jsl	~~~lmul
-	sta	<R0
-	stx	<R0+2
+	lda	<L295+x_0
+	sbc	<R0
+	lda	<L295+x_0+2
+	sbc	<R0+2
+	bvs	L300
+	eor	#$8000
+L300:
+	bmi	L301
+	brl	L10044
+L301:
 	clc
+	lda	[<L295+prect_0]
+	ldy	#$8
+	adc	[<L295+prect_0],Y
+	sta	<R0
+	ldy	#$0
 	lda	<R0
-	adc	<L308+x_0
-	sta	<R1
-	lda	<R0+2
-	adc	<L308+x_0+2
-	sta	<R1+2
-	clc
-	lda	#$0
-	adc	<R1
+	bpl	L302
+	dey
+L302:
 	sta	<R0
-	lda	#$d0
-	adc	<R1+2
-	sta	<R0+2
-	sep	#$20
-	longa	off
-	lda	<L308+pcolor_0
-	sta	[<R0]
-	rep	#$20
-	longa	on
-;}
+	sty	<R0+2
+	sec
+	lda	<L295+x_0
+	sbc	<R0
+	lda	<L295+x_0+2
+	sbc	<R0+2
+	bvs	L303
+	eor	#$8000
+L303:
+	bpl	L304
+	brl	L10044
+L304:
+	.line	850
+;			if((y >= prect->y) && (y < (prect->y + prect->height)))
+	.line	851
+;			{
+	ldy	#$0
+	phy
+	ldy	#$2
+	lda	[<L295+prect_0],Y
+	ply
+	rol	A
+	ror	A
+	bpl	L305
+	dey
+L305:
+	sta	<R0
+	sty	<R0+2
+	sec
+	lda	<L295+y_0
+	sbc	<R0
+	lda	<L295+y_0+2
+	sbc	<R0+2
+	bvs	L306
+	eor	#$8000
+L306:
+	bmi	L307
+	brl	L10045
+L307:
+	clc
+	ldy	#$2
+	lda	[<L295+prect_0],Y
+	ldy	#$a
+	adc	[<L295+prect_0],Y
+	sta	<R0
+	ldy	#$0
+	lda	<R0
+	bpl	L308
+	dey
+L308:
+	sta	<R0
+	sty	<R0+2
+	sec
+	lda	<L295+y_0
+	sbc	<R0
+	lda	<L295+y_0+2
+	sbc	<R0+2
+	bvs	L309
+	eor	#$8000
+L309:
+	bpl	L310
+	brl	L10045
+L310:
+	.line	852
+;				k_draw_pixel_front_ex(x,y,pcolor);
+	.line	853
+	pei	<L295+pcolor_0
+	pei	<L295+y_0+2
+	pei	<L295+y_0
+	pei	<L295+x_0+2
+	pei	<L295+x_0
+	jsl	~~k_draw_pixel_front_ex
+;			}
+	.line	854
+;		}
+L10045:
 	.line	855
+;	}
+L10044:
+	.line	856
+;}
+L10043:
+	.line	857
 L311:
-	lda	<L308+2
-	sta	<L308+2+10
-	lda	<L308+1
-	sta	<L308+1+10
+	lda	<L295+2
+	sta	<L295+2+16
+	lda	<L295+1
+	sta	<L295+1+16
 	pld
 	tsc
 	clc
-	adc	#L308+10
+	adc	#L295+16
 	tcs
 	rtl
-	.endblock	855
-L308	equ	8
-L309	equ	9
+	.endblock	857
+L295	equ	4
+L296	equ	5
 	ends
 	efunc
-	.endfunc	855,9,8
-	.line	855
+	.endfunc	857,5,4
+	.line	857
 ;
-;
-;void k_draw_pixel_ex(long x,long y,char pcolor,UINT toPage)
+;void k_draw_pixel(long x,long y,char pcolor)
 ;{
-	.line	858
 	.line	859
+	.line	860
 	GFX
-	xdef	~~k_draw_pixel_ex
+	xdef	~~k_draw_pixel
 	func
-	.function	859
-~~k_draw_pixel_ex:
+	.function	860
+~~k_draw_pixel:
 	longa	on
 	longi	on
 	tsc
@@ -6918,8 +6855,633 @@ L309	equ	9
 x_0	set	4
 y_0	set	8
 pcolor_0	set	12
+	.block	860
+;	long pixelLocation = (long)(((long)y * 640L) + (long)x);
+;
+;	if(x >= GUI_POINT_LIMIT_X_LO && x <= GUI_POINT_LIMIT_X_HI && y >= GUI_POINT_LIMIT_Y_LO && y <= GUI_POINT_LIMIT_Y_HI)
+pixelLocation_1	set	0
+	.sym	pixelLocation,0,7,1,32
+	.sym	x,4,7,6,32
+	.sym	y,8,7,6,32
+	.sym	pcolor,12,14,6,8
+	pea	#^$280
+	pea	#<$280
+	pei	<L312+y_0+2
+	pei	<L312+y_0
+	xref	~~~lmul
+	jsl	~~~lmul
+	sta	<R0
+	stx	<R0+2
+	clc
+	lda	<R0
+	adc	<L312+x_0
+	sta	<L313+pixelLocation_1
+	lda	<R0+2
+	adc	<L312+x_0+2
+	sta	<L313+pixelLocation_1+2
+	.line	863
+;		((unsigned char FAR *)BITMAP_BANK_0)[pixelLocation] = (char)pcolor;
+	lda	<L312+x_0+2
+	bpl	L315
+	brl	L10046
+L315:
+	sec
+	lda	#$280
+	sbc	<L312+x_0
+	lda	#$0
+	sbc	<L312+x_0+2
+	bvs	L316
+	eor	#$8000
+L316:
+	bmi	L317
+	brl	L10046
+L317:
+	lda	<L312+y_0+2
+	bpl	L318
+	brl	L10046
+L318:
+	sec
+	lda	#$1e0
+	sbc	<L312+y_0
+	lda	#$0
+	sbc	<L312+y_0+2
+	bvs	L319
+	eor	#$8000
+L319:
+	bmi	L320
+	brl	L10046
+L320:
+	.line	864
+	clc
+	lda	#$0
+	adc	<L313+pixelLocation_1
+	sta	<R0
+	lda	#$b0
+	adc	<L313+pixelLocation_1+2
+	sta	<R0+2
+	sep	#$20
+	longa	off
+	lda	<L312+pcolor_0
+	sta	[<R0]
+	rep	#$20
+	longa	on
+;	//((unsigned char FAR *)SHADOW_BANK_0)[pixelLocation] = (char)pcolor;
+;	//((unsigned char FAR *)BITMAP_BANK_0)[(long)(( ((long)y) * 640L) + ((long)x) )] = (char)pcolor;
+;}
+L10046:
+	.line	867
+L321:
+	lda	<L312+2
+	sta	<L312+2+10
+	lda	<L312+1
+	sta	<L312+1+10
+	pld
+	tsc
+	clc
+	adc	#L312+10
+	tcs
+	rtl
+	.endblock	867
+L312	equ	8
+L313	equ	5
+	ends
+	efunc
+	.endfunc	867,5,8
+	.line	867
+;
+;void k_draw_pixel_front(long x,long y,char pcolor)
+;{
+	.line	869
+	.line	870
+	GFX
+	xdef	~~k_draw_pixel_front
+	func
+	.function	870
+~~k_draw_pixel_front:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L322
+	tcs
+	phd
+	tcd
+x_0	set	4
+y_0	set	8
+pcolor_0	set	12
+	.block	870
+;	if(x >= GUI_POINT_LIMIT_X_LO && x <= GUI_POINT_LIMIT_X_HI && y >= GUI_POINT_LIMIT_Y_LO && y <= GUI_POINT_LIMIT_Y_HI)
+	.sym	x,4,7,6,32
+	.sym	y,8,7,6,32
+	.sym	pcolor,12,14,6,8
+	.line	871
+;		BITMAP_BANK_0[(long)(((long)y * 640L) + (long)x)] = (char)pcolor;
+	lda	<L322+x_0+2
+	bpl	L325
+	brl	L10047
+L325:
+	sec
+	lda	#$280
+	sbc	<L322+x_0
+	lda	#$0
+	sbc	<L322+x_0+2
+	bvs	L326
+	eor	#$8000
+L326:
+	bmi	L327
+	brl	L10047
+L327:
+	lda	<L322+y_0+2
+	bpl	L328
+	brl	L10047
+L328:
+	sec
+	lda	#$1e0
+	sbc	<L322+y_0
+	lda	#$0
+	sbc	<L322+y_0+2
+	bvs	L329
+	eor	#$8000
+L329:
+	bmi	L330
+	brl	L10047
+L330:
+	.line	872
+	pea	#^$280
+	pea	#<$280
+	pei	<L322+y_0+2
+	pei	<L322+y_0
+	xref	~~~lmul
+	jsl	~~~lmul
+	sta	<R0
+	stx	<R0+2
+	clc
+	lda	<R0
+	adc	<L322+x_0
+	sta	<R1
+	lda	<R0+2
+	adc	<L322+x_0+2
+	sta	<R1+2
+	clc
+	lda	#$0
+	adc	<R1
+	sta	<R0
+	lda	#$b0
+	adc	<R1+2
+	sta	<R0+2
+	sep	#$20
+	longa	off
+	lda	<L322+pcolor_0
+	sta	[<R0]
+	rep	#$20
+	longa	on
+;}
+L10047:
+	.line	873
+L331:
+	lda	<L322+2
+	sta	<L322+2+10
+	lda	<L322+1
+	sta	<L322+1+10
+	pld
+	tsc
+	clc
+	adc	#L322+10
+	tcs
+	rtl
+	.endblock	873
+L322	equ	8
+L323	equ	9
+	ends
+	efunc
+	.endfunc	873,9,8
+	.line	873
+;
+;void k_draw_pixel_front_ex(long x,long y,char pcolor)
+;{
+	.line	875
+	.line	876
+	GFX
+	xdef	~~k_draw_pixel_front_ex
+	func
+	.function	876
+~~k_draw_pixel_front_ex:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L332
+	tcs
+	phd
+	tcd
+x_0	set	4
+y_0	set	8
+pcolor_0	set	12
+	.block	876
+;	if(x >= GUI_POINT_LIMIT_X_LO && x <= GUI_POINT_LIMIT_X_HIX && y >= GUI_POINT_LIMIT_Y_LO && y <= GUI_POINT_LIMIT_Y_HIX)
+	.sym	x,4,7,6,32
+	.sym	y,8,7,6,32
+	.sym	pcolor,12,14,6,8
+	.line	877
+;		BITMAP_BANK_0[(long)(((long)y * 800L) + (long)x)] = (char)pcolor;
+	lda	<L332+x_0+2
+	bpl	L335
+	brl	L10048
+L335:
+	sec
+	lda	#$320
+	sbc	<L332+x_0
+	lda	#$0
+	sbc	<L332+x_0+2
+	bvs	L336
+	eor	#$8000
+L336:
+	bmi	L337
+	brl	L10048
+L337:
+	lda	<L332+y_0+2
+	bpl	L338
+	brl	L10048
+L338:
+	sec
+	lda	#$258
+	sbc	<L332+y_0
+	lda	#$0
+	sbc	<L332+y_0+2
+	bvs	L339
+	eor	#$8000
+L339:
+	bmi	L340
+	brl	L10048
+L340:
+	.line	878
+	pea	#^$320
+	pea	#<$320
+	pei	<L332+y_0+2
+	pei	<L332+y_0
+	xref	~~~lmul
+	jsl	~~~lmul
+	sta	<R0
+	stx	<R0+2
+	clc
+	lda	<R0
+	adc	<L332+x_0
+	sta	<R1
+	lda	<R0+2
+	adc	<L332+x_0+2
+	sta	<R1+2
+	clc
+	lda	#$0
+	adc	<R1
+	sta	<R0
+	lda	#$b0
+	adc	<R1+2
+	sta	<R0+2
+	sep	#$20
+	longa	off
+	lda	<L332+pcolor_0
+	sta	[<R0]
+	rep	#$20
+	longa	on
+;}
+L10048:
+	.line	879
+L341:
+	lda	<L332+2
+	sta	<L332+2+10
+	lda	<L332+1
+	sta	<L332+1+10
+	pld
+	tsc
+	clc
+	adc	#L332+10
+	tcs
+	rtl
+	.endblock	879
+L332	equ	8
+L333	equ	9
+	ends
+	efunc
+	.endfunc	879,9,8
+	.line	879
+;
+;
+;void k_draw_pixel_back(long x,long y,char pcolor)
+;{
+	.line	882
+	.line	883
+	GFX
+	xdef	~~k_draw_pixel_back
+	func
+	.function	883
+~~k_draw_pixel_back:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L342
+	tcs
+	phd
+	tcd
+x_0	set	4
+y_0	set	8
+pcolor_0	set	12
+	.block	883
+;	if(x >= GUI_POINT_LIMIT_X_LO && x <= GUI_POINT_LIMIT_X_HI && y >= GUI_POINT_LIMIT_Y_LO && y <= GUI_POINT_LIMIT_Y_HI)
+	.sym	x,4,7,6,32
+	.sym	y,8,7,6,32
+	.sym	pcolor,12,14,6,8
+	.line	884
+;		BITMAP_BANK_0_PAGE0[(long)(((long)y * 640L) + (long)x)] = (char)pcolor;
+	lda	<L342+x_0+2
+	bpl	L345
+	brl	L10049
+L345:
+	sec
+	lda	#$280
+	sbc	<L342+x_0
+	lda	#$0
+	sbc	<L342+x_0+2
+	bvs	L346
+	eor	#$8000
+L346:
+	bmi	L347
+	brl	L10049
+L347:
+	lda	<L342+y_0+2
+	bpl	L348
+	brl	L10049
+L348:
+	sec
+	lda	#$1e0
+	sbc	<L342+y_0
+	lda	#$0
+	sbc	<L342+y_0+2
+	bvs	L349
+	eor	#$8000
+L349:
+	bmi	L350
+	brl	L10049
+L350:
+	.line	885
+	pea	#^$280
+	pea	#<$280
+	pei	<L342+y_0+2
+	pei	<L342+y_0
+	xref	~~~lmul
+	jsl	~~~lmul
+	sta	<R0
+	stx	<R0+2
+	clc
+	lda	<R0
+	adc	<L342+x_0
+	sta	<R1
+	lda	<R0+2
+	adc	<L342+x_0+2
+	sta	<R1+2
+	clc
+	lda	#$0
+	adc	<R1
+	sta	<R0
+	lda	#$b8
+	adc	<R1+2
+	sta	<R0+2
+	sep	#$20
+	longa	off
+	lda	<L342+pcolor_0
+	sta	[<R0]
+	rep	#$20
+	longa	on
+;}
+L10049:
+	.line	886
+L351:
+	lda	<L342+2
+	sta	<L342+2+10
+	lda	<L342+1
+	sta	<L342+1+10
+	pld
+	tsc
+	clc
+	adc	#L342+10
+	tcs
+	rtl
+	.endblock	886
+L342	equ	8
+L343	equ	9
+	ends
+	efunc
+	.endfunc	886,9,8
+	.line	886
+;
+;void k_draw_pixel_back_ex(long x,long y,char pcolor)
+;{
+	.line	888
+	.line	889
+	GFX
+	xdef	~~k_draw_pixel_back_ex
+	func
+	.function	889
+~~k_draw_pixel_back_ex:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L352
+	tcs
+	phd
+	tcd
+x_0	set	4
+y_0	set	8
+pcolor_0	set	12
+	.block	889
+;	if(x >= GUI_POINT_LIMIT_X_LO && x <= GUI_POINT_LIMIT_X_HIX && y >= GUI_POINT_LIMIT_Y_LO && y <= GUI_POINT_LIMIT_Y_HIX)
+	.sym	x,4,7,6,32
+	.sym	y,8,7,6,32
+	.sym	pcolor,12,14,6,8
+	.line	890
+;		BITMAP_BANK_0_PAGE0[(long)(((long)y * 800L) + (long)x)] = (char)pcolor;
+	lda	<L352+x_0+2
+	bpl	L355
+	brl	L10050
+L355:
+	sec
+	lda	#$320
+	sbc	<L352+x_0
+	lda	#$0
+	sbc	<L352+x_0+2
+	bvs	L356
+	eor	#$8000
+L356:
+	bmi	L357
+	brl	L10050
+L357:
+	lda	<L352+y_0+2
+	bpl	L358
+	brl	L10050
+L358:
+	sec
+	lda	#$258
+	sbc	<L352+y_0
+	lda	#$0
+	sbc	<L352+y_0+2
+	bvs	L359
+	eor	#$8000
+L359:
+	bmi	L360
+	brl	L10050
+L360:
+	.line	891
+	pea	#^$320
+	pea	#<$320
+	pei	<L352+y_0+2
+	pei	<L352+y_0
+	xref	~~~lmul
+	jsl	~~~lmul
+	sta	<R0
+	stx	<R0+2
+	clc
+	lda	<R0
+	adc	<L352+x_0
+	sta	<R1
+	lda	<R0+2
+	adc	<L352+x_0+2
+	sta	<R1+2
+	clc
+	lda	#$0
+	adc	<R1
+	sta	<R0
+	lda	#$b8
+	adc	<R1+2
+	sta	<R0+2
+	sep	#$20
+	longa	off
+	lda	<L352+pcolor_0
+	sta	[<R0]
+	rep	#$20
+	longa	on
+;}
+L10050:
+	.line	892
+L361:
+	lda	<L352+2
+	sta	<L352+2+10
+	lda	<L352+1
+	sta	<L352+1+10
+	pld
+	tsc
+	clc
+	adc	#L352+10
+	tcs
+	rtl
+	.endblock	892
+L352	equ	8
+L353	equ	9
+	ends
+	efunc
+	.endfunc	892,9,8
+	.line	892
+;
+;
+;
+;void k_draw_pixel_D0(long x,long y,char pcolor)
+;{
+	.line	896
+	.line	897
+	GFX
+	xdef	~~k_draw_pixel_D0
+	func
+	.function	897
+~~k_draw_pixel_D0:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L362
+	tcs
+	phd
+	tcd
+x_0	set	4
+y_0	set	8
+pcolor_0	set	12
+	.block	897
+;	BITMAP_BANK_0_PAGE2[(long)(((long)y * 640L) + (long)x)] = (char)pcolor;
+	.sym	x,4,7,6,32
+	.sym	y,8,7,6,32
+	.sym	pcolor,12,14,6,8
+	.line	898
+	pea	#^$280
+	pea	#<$280
+	pei	<L362+y_0+2
+	pei	<L362+y_0
+	xref	~~~lmul
+	jsl	~~~lmul
+	sta	<R0
+	stx	<R0+2
+	clc
+	lda	<R0
+	adc	<L362+x_0
+	sta	<R1
+	lda	<R0+2
+	adc	<L362+x_0+2
+	sta	<R1+2
+	clc
+	lda	#$0
+	adc	<R1
+	sta	<R0
+	lda	#$d0
+	adc	<R1+2
+	sta	<R0+2
+	sep	#$20
+	longa	off
+	lda	<L362+pcolor_0
+	sta	[<R0]
+	rep	#$20
+	longa	on
+;}
+	.line	899
+L365:
+	lda	<L362+2
+	sta	<L362+2+10
+	lda	<L362+1
+	sta	<L362+1+10
+	pld
+	tsc
+	clc
+	adc	#L362+10
+	tcs
+	rtl
+	.endblock	899
+L362	equ	8
+L363	equ	9
+	ends
+	efunc
+	.endfunc	899,9,8
+	.line	899
+;
+;
+;void k_draw_pixel_ex(long x,long y,char pcolor,UINT toPage)
+;{
+	.line	902
+	.line	903
+	GFX
+	xdef	~~k_draw_pixel_ex
+	func
+	.function	903
+~~k_draw_pixel_ex:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L366
+	tcs
+	phd
+	tcd
+x_0	set	4
+y_0	set	8
+pcolor_0	set	12
 toPage_0	set	14
-	.block	859
+	.block	903
 ;	//LPSTR pDest = NULL;
 ;	//ULONG addr;
 ;	//long pixelLocation = (long)(((long)y * 640L) + (long)x);
@@ -6940,53 +7502,53 @@ toPage_0	set	14
 	.sym	y,8,7,6,32
 	.sym	pcolor,12,14,6,8
 	.sym	toPage,14,16,6,16
-	.line	875
+	.line	919
 ;		((unsigned char FAR *)BITMAP_BANK_0)[(long)(((long)y * 640L) + (long)x)] = (char)pcolor;
-	lda	<L312+x_0+2
-	bpl	L315
-	brl	L10043
-L315:
+	lda	<L366+x_0+2
+	bpl	L369
+	brl	L10051
+L369:
 	sec
 	lda	#$280
-	sbc	<L312+x_0
+	sbc	<L366+x_0
 	lda	#$0
-	sbc	<L312+x_0+2
-	bvs	L316
+	sbc	<L366+x_0+2
+	bvs	L370
 	eor	#$8000
-L316:
-	bmi	L317
-	brl	L10043
-L317:
-	lda	<L312+y_0+2
-	bpl	L318
-	brl	L10043
-L318:
+L370:
+	bmi	L371
+	brl	L10051
+L371:
+	lda	<L366+y_0+2
+	bpl	L372
+	brl	L10051
+L372:
 	sec
 	lda	#$1e0
-	sbc	<L312+y_0
+	sbc	<L366+y_0
 	lda	#$0
-	sbc	<L312+y_0+2
-	bvs	L319
+	sbc	<L366+y_0+2
+	bvs	L373
 	eor	#$8000
-L319:
-	bmi	L320
-	brl	L10043
-L320:
-	.line	876
+L373:
+	bmi	L374
+	brl	L10051
+L374:
+	.line	920
 	pea	#^$280
 	pea	#<$280
-	pei	<L312+y_0+2
-	pei	<L312+y_0
+	pei	<L366+y_0+2
+	pei	<L366+y_0
 	xref	~~~lmul
 	jsl	~~~lmul
 	sta	<R0
 	stx	<R0+2
 	clc
 	lda	<R0
-	adc	<L312+x_0
+	adc	<L366+x_0
 	sta	<R1
 	lda	<R0+2
-	adc	<L312+x_0+2
+	adc	<L366+x_0+2
 	sta	<R1+2
 	clc
 	lda	#$0
@@ -6997,47 +7559,47 @@ L320:
 	sta	<R0+2
 	sep	#$20
 	longa	off
-	lda	<L312+pcolor_0
+	lda	<L366+pcolor_0
 	sta	[<R0]
 	rep	#$20
 	longa	on
 ;}
-L10043:
-	.line	877
-L321:
-	lda	<L312+2
-	sta	<L312+2+12
-	lda	<L312+1
-	sta	<L312+1+12
+L10051:
+	.line	921
+L375:
+	lda	<L366+2
+	sta	<L366+2+12
+	lda	<L366+1
+	sta	<L366+1+12
 	pld
 	tsc
 	clc
-	adc	#L312+12
+	adc	#L366+12
 	tcs
 	rtl
-	.endblock	877
-L312	equ	8
-L313	equ	9
+	.endblock	921
+L366	equ	8
+L367	equ	9
 	ends
 	efunc
-	.endfunc	877,9,8
-	.line	877
+	.endfunc	921,9,8
+	.line	921
 ;
 ;
 ;void k_draw_segments(int xc, int yc, int x, int y,int color) 
 ;{ 
-	.line	880
-	.line	881
+	.line	924
+	.line	925
 	GFX
 	xdef	~~k_draw_segments
 	func
-	.function	881
+	.function	925
 ~~k_draw_segments:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L322
+	sbc	#L376
 	tcs
 	phd
 	tcd
@@ -7046,287 +7608,287 @@ yc_0	set	6
 x_0	set	8
 y_0	set	10
 color_0	set	12
-	.block	881
+	.block	925
 ;    k_draw_pixel(xc+x, yc+y, color); 
 	.sym	xc,4,5,6,16
 	.sym	yc,6,5,6,16
 	.sym	x,8,5,6,16
 	.sym	y,10,5,6,16
 	.sym	color,12,5,6,16
-	.line	882
-	pei	<L322+color_0
+	.line	926
+	pei	<L376+color_0
 	clc
-	lda	<L322+yc_0
-	adc	<L322+y_0
+	lda	<L376+yc_0
+	adc	<L376+y_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L325
+	bpl	L379
 	dey
-L325:
+L379:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L322+xc_0
-	adc	<L322+x_0
+	lda	<L376+xc_0
+	adc	<L376+x_0
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L326
+	bpl	L380
 	dey
-L326:
+L380:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;    k_draw_pixel(xc-x, yc+y, color); 
-	.line	883
-	pei	<L322+color_0
+	.line	927
+	pei	<L376+color_0
 	clc
-	lda	<L322+yc_0
-	adc	<L322+y_0
+	lda	<L376+yc_0
+	adc	<L376+y_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L327
+	bpl	L381
 	dey
-L327:
+L381:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	sec
-	lda	<L322+xc_0
-	sbc	<L322+x_0
+	lda	<L376+xc_0
+	sbc	<L376+x_0
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L328
+	bpl	L382
 	dey
-L328:
+L382:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;    k_draw_pixel(xc+x, yc-y, color); 
-	.line	884
-	pei	<L322+color_0
+	.line	928
+	pei	<L376+color_0
 	sec
-	lda	<L322+yc_0
-	sbc	<L322+y_0
+	lda	<L376+yc_0
+	sbc	<L376+y_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L329
+	bpl	L383
 	dey
-L329:
+L383:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L322+xc_0
-	adc	<L322+x_0
+	lda	<L376+xc_0
+	adc	<L376+x_0
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L330
+	bpl	L384
 	dey
-L330:
+L384:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;    k_draw_pixel(xc-x, yc-y, color); 
-	.line	885
-	pei	<L322+color_0
+	.line	929
+	pei	<L376+color_0
 	sec
-	lda	<L322+yc_0
-	sbc	<L322+y_0
+	lda	<L376+yc_0
+	sbc	<L376+y_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L331
+	bpl	L385
 	dey
-L331:
+L385:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	sec
-	lda	<L322+xc_0
-	sbc	<L322+x_0
+	lda	<L376+xc_0
+	sbc	<L376+x_0
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L332
+	bpl	L386
 	dey
-L332:
+L386:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;    k_draw_pixel(xc+y, yc+x, color); 
-	.line	886
-	pei	<L322+color_0
+	.line	930
+	pei	<L376+color_0
 	clc
-	lda	<L322+yc_0
-	adc	<L322+x_0
+	lda	<L376+yc_0
+	adc	<L376+x_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L333
+	bpl	L387
 	dey
-L333:
+L387:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L322+xc_0
-	adc	<L322+y_0
+	lda	<L376+xc_0
+	adc	<L376+y_0
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L334
+	bpl	L388
 	dey
-L334:
+L388:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;    k_draw_pixel(xc-y, yc+x, color); 
-	.line	887
-	pei	<L322+color_0
+	.line	931
+	pei	<L376+color_0
 	clc
-	lda	<L322+yc_0
-	adc	<L322+x_0
+	lda	<L376+yc_0
+	adc	<L376+x_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L335
+	bpl	L389
 	dey
-L335:
+L389:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	sec
-	lda	<L322+xc_0
-	sbc	<L322+y_0
+	lda	<L376+xc_0
+	sbc	<L376+y_0
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L336
+	bpl	L390
 	dey
-L336:
+L390:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;    k_draw_pixel(xc+y, yc-x, color); 
-	.line	888
-	pei	<L322+color_0
+	.line	932
+	pei	<L376+color_0
 	sec
-	lda	<L322+yc_0
-	sbc	<L322+x_0
+	lda	<L376+yc_0
+	sbc	<L376+x_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L337
+	bpl	L391
 	dey
-L337:
+L391:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L322+xc_0
-	adc	<L322+y_0
+	lda	<L376+xc_0
+	adc	<L376+y_0
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L338
+	bpl	L392
 	dey
-L338:
+L392:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;    k_draw_pixel(xc-y, yc-x, color); 
-	.line	889
-	pei	<L322+color_0
+	.line	933
+	pei	<L376+color_0
 	sec
-	lda	<L322+yc_0
-	sbc	<L322+x_0
+	lda	<L376+yc_0
+	sbc	<L376+x_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L339
+	bpl	L393
 	dey
-L339:
+L393:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	sec
-	lda	<L322+xc_0
-	sbc	<L322+y_0
+	lda	<L376+xc_0
+	sbc	<L376+y_0
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L340
+	bpl	L394
 	dey
-L340:
+L394:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;} 
-	.line	890
-L341:
-	lda	<L322+2
-	sta	<L322+2+10
-	lda	<L322+1
-	sta	<L322+1+10
+	.line	934
+L395:
+	lda	<L376+2
+	sta	<L376+2+10
+	lda	<L376+1
+	sta	<L376+1+10
 	pld
 	tsc
 	clc
-	adc	#L322+10
+	adc	#L376+10
 	tcs
 	rtl
-	.endblock	890
-L322	equ	8
-L323	equ	9
+	.endblock	934
+L376	equ	8
+L377	equ	9
 	ends
 	efunc
-	.endfunc	890,9,8
-	.line	890
+	.endfunc	934,9,8
+	.line	934
 ;
 ;void k_draw_filled_segments(int xc, int yc, int x, int y,int color) 
 ;{ 
-	.line	892
-	.line	893
+	.line	936
+	.line	937
 	GFX
 	xdef	~~k_draw_filled_segments
 	func
-	.function	893
+	.function	937
 ~~k_draw_filled_segments:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L342
+	sbc	#L396
 	tcs
 	phd
 	tcd
@@ -7335,374 +7897,374 @@ yc_0	set	6
 x_0	set	8
 y_0	set	10
 color_0	set	12
-	.block	893
+	.block	937
 ;    k_draw_pixel(xc+x, yc+y, color); 	    
 	.sym	xc,4,5,6,16
 	.sym	yc,6,5,6,16
 	.sym	x,8,5,6,16
 	.sym	y,10,5,6,16
 	.sym	color,12,5,6,16
-	.line	894
-	pei	<L342+color_0
+	.line	938
+	pei	<L396+color_0
 	clc
-	lda	<L342+yc_0
-	adc	<L342+y_0
+	lda	<L396+yc_0
+	adc	<L396+y_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L345
+	bpl	L399
 	dey
-L345:
+L399:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L342+xc_0
-	adc	<L342+x_0
+	lda	<L396+xc_0
+	adc	<L396+x_0
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L346
+	bpl	L400
 	dey
-L346:
+L400:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;	k_draw_pixel(xc-x, yc+y, color); 
-	.line	895
-	pei	<L342+color_0
+	.line	939
+	pei	<L396+color_0
 	clc
-	lda	<L342+yc_0
-	adc	<L342+y_0
+	lda	<L396+yc_0
+	adc	<L396+y_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L347
+	bpl	L401
 	dey
-L347:
+L401:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	sec
-	lda	<L342+xc_0
-	sbc	<L342+x_0
+	lda	<L396+xc_0
+	sbc	<L396+x_0
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L348
+	bpl	L402
 	dey
-L348:
+L402:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;    k_draw_line(xc+x, yc+y, xc-x, yc+y,color);
-	.line	896
-	pei	<L342+color_0
+	.line	940
+	pei	<L396+color_0
 	clc
-	lda	<L342+yc_0
-	adc	<L342+y_0
+	lda	<L396+yc_0
+	adc	<L396+y_0
 	pha
 	sec
-	lda	<L342+xc_0
-	sbc	<L342+x_0
+	lda	<L396+xc_0
+	sbc	<L396+x_0
 	pha
 	clc
-	lda	<L342+yc_0
-	adc	<L342+y_0
+	lda	<L396+yc_0
+	adc	<L396+y_0
 	pha
 	clc
-	lda	<L342+xc_0
-	adc	<L342+x_0
+	lda	<L396+xc_0
+	adc	<L396+x_0
 	pha
 	jsl	~~k_draw_line
 ;	
 ;	
 ;	k_draw_pixel(xc+x, yc-y, color);     	
-	.line	899
-	pei	<L342+color_0
+	.line	943
+	pei	<L396+color_0
 	sec
-	lda	<L342+yc_0
-	sbc	<L342+y_0
+	lda	<L396+yc_0
+	sbc	<L396+y_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L349
+	bpl	L403
 	dey
-L349:
+L403:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L342+xc_0
-	adc	<L342+x_0
+	lda	<L396+xc_0
+	adc	<L396+x_0
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L350
+	bpl	L404
 	dey
-L350:
+L404:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;	k_draw_pixel(xc-x, yc-y, color); 
-	.line	900
-	pei	<L342+color_0
+	.line	944
+	pei	<L396+color_0
 	sec
-	lda	<L342+yc_0
-	sbc	<L342+y_0
+	lda	<L396+yc_0
+	sbc	<L396+y_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L351
+	bpl	L405
 	dey
-L351:
+L405:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	sec
-	lda	<L342+xc_0
-	sbc	<L342+x_0
+	lda	<L396+xc_0
+	sbc	<L396+x_0
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L352
+	bpl	L406
 	dey
-L352:
+L406:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;	k_draw_line(xc+x, yc-y, xc-x, yc-y,color);
-	.line	901
-	pei	<L342+color_0
+	.line	945
+	pei	<L396+color_0
 	sec
-	lda	<L342+yc_0
-	sbc	<L342+y_0
+	lda	<L396+yc_0
+	sbc	<L396+y_0
 	pha
 	sec
-	lda	<L342+xc_0
-	sbc	<L342+x_0
+	lda	<L396+xc_0
+	sbc	<L396+x_0
 	pha
 	sec
-	lda	<L342+yc_0
-	sbc	<L342+y_0
+	lda	<L396+yc_0
+	sbc	<L396+y_0
 	pha
 	clc
-	lda	<L342+xc_0
-	adc	<L342+x_0
+	lda	<L396+xc_0
+	adc	<L396+x_0
 	pha
 	jsl	~~k_draw_line
 ;	
 ;    
 ;	k_draw_pixel(xc+y, yc+x, color);     
-	.line	904
-	pei	<L342+color_0
+	.line	948
+	pei	<L396+color_0
 	clc
-	lda	<L342+yc_0
-	adc	<L342+x_0
+	lda	<L396+yc_0
+	adc	<L396+x_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L353
+	bpl	L407
 	dey
-L353:
+L407:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L342+xc_0
-	adc	<L342+y_0
+	lda	<L396+xc_0
+	adc	<L396+y_0
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L354
+	bpl	L408
 	dey
-L354:
+L408:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;	k_draw_pixel(xc-y, yc+x, color); 
-	.line	905
-	pei	<L342+color_0
+	.line	949
+	pei	<L396+color_0
 	clc
-	lda	<L342+yc_0
-	adc	<L342+x_0
+	lda	<L396+yc_0
+	adc	<L396+x_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L355
+	bpl	L409
 	dey
-L355:
+L409:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	sec
-	lda	<L342+xc_0
-	sbc	<L342+y_0
+	lda	<L396+xc_0
+	sbc	<L396+y_0
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L356
+	bpl	L410
 	dey
-L356:
+L410:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;	k_draw_line(xc+y, yc+x, xc-y, yc+x,color);	
-	.line	906
-	pei	<L342+color_0
+	.line	950
+	pei	<L396+color_0
 	clc
-	lda	<L342+yc_0
-	adc	<L342+x_0
+	lda	<L396+yc_0
+	adc	<L396+x_0
 	pha
 	sec
-	lda	<L342+xc_0
-	sbc	<L342+y_0
+	lda	<L396+xc_0
+	sbc	<L396+y_0
 	pha
 	clc
-	lda	<L342+yc_0
-	adc	<L342+x_0
+	lda	<L396+yc_0
+	adc	<L396+x_0
 	pha
 	clc
-	lda	<L342+xc_0
-	adc	<L342+y_0
+	lda	<L396+xc_0
+	adc	<L396+y_0
 	pha
 	jsl	~~k_draw_line
 ;	
 ;	k_draw_pixel(xc+y, yc-x, color);  
-	.line	908
-	pei	<L342+color_0
+	.line	952
+	pei	<L396+color_0
 	sec
-	lda	<L342+yc_0
-	sbc	<L342+x_0
+	lda	<L396+yc_0
+	sbc	<L396+x_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L357
+	bpl	L411
 	dey
-L357:
+L411:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L342+xc_0
-	adc	<L342+y_0
+	lda	<L396+xc_0
+	adc	<L396+y_0
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L358
+	bpl	L412
 	dey
-L358:
+L412:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;	k_draw_pixel(xc-y, yc-x, color); 
-	.line	909
-	pei	<L342+color_0
+	.line	953
+	pei	<L396+color_0
 	sec
-	lda	<L342+yc_0
-	sbc	<L342+x_0
+	lda	<L396+yc_0
+	sbc	<L396+x_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L359
+	bpl	L413
 	dey
-L359:
+L413:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	sec
-	lda	<L342+xc_0
-	sbc	<L342+y_0
+	lda	<L396+xc_0
+	sbc	<L396+y_0
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L360
+	bpl	L414
 	dey
-L360:
+L414:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;	k_draw_line(xc+y, yc-x, xc-y, yc-x,color);
-	.line	910
-	pei	<L342+color_0
+	.line	954
+	pei	<L396+color_0
 	sec
-	lda	<L342+yc_0
-	sbc	<L342+x_0
+	lda	<L396+yc_0
+	sbc	<L396+x_0
 	pha
 	sec
-	lda	<L342+xc_0
-	sbc	<L342+y_0
+	lda	<L396+xc_0
+	sbc	<L396+y_0
 	pha
 	sec
-	lda	<L342+yc_0
-	sbc	<L342+x_0
+	lda	<L396+yc_0
+	sbc	<L396+x_0
 	pha
 	clc
-	lda	<L342+xc_0
-	adc	<L342+y_0
+	lda	<L396+xc_0
+	adc	<L396+y_0
 	pha
 	jsl	~~k_draw_line
 ;}
-	.line	911
-L361:
-	lda	<L342+2
-	sta	<L342+2+10
-	lda	<L342+1
-	sta	<L342+1+10
+	.line	955
+L415:
+	lda	<L396+2
+	sta	<L396+2+10
+	lda	<L396+1
+	sta	<L396+1+10
 	pld
 	tsc
 	clc
-	adc	#L342+10
+	adc	#L396+10
 	tcs
 	rtl
-	.endblock	911
-L342	equ	8
-L343	equ	9
+	.endblock	955
+L396	equ	8
+L397	equ	9
 	ends
 	efunc
-	.endfunc	911,9,8
-	.line	911
+	.endfunc	955,9,8
+	.line	955
 ;  
 ;// Function for circle-generation 
 ;// using Bresenham's algorithm 
 ;void k_draw_circle(int xc, int yc, int r, int color) 
 ;{ 
-	.line	915
-	.line	916
+	.line	959
+	.line	960
 	GFX
 	xdef	~~k_draw_circle
 	func
-	.function	916
+	.function	960
 ~~k_draw_circle:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L362
+	sbc	#L416
 	tcs
 	phd
 	tcd
@@ -7710,7 +8272,7 @@ xc_0	set	4
 yc_0	set	6
 r_0	set	8
 color_0	set	10
-	.block	916
+	.block	960
 ;    int x = 0;
 ;	int y = r; 
 ;	
@@ -7727,69 +8289,69 @@ d_1	set	4
 	.sym	yc,6,5,6,16
 	.sym	r,8,5,6,16
 	.sym	color,10,5,6,16
-	stz	<L363+x_1
-	lda	<L362+r_0
-	sta	<L363+y_1
-	lda	<L362+r_0
+	stz	<L417+x_1
+	lda	<L416+r_0
+	sta	<L417+y_1
+	lda	<L416+r_0
 	asl	A
 	sta	<R0
 	sec
 	lda	#$3
 	sbc	<R0
-	sta	<L363+d_1
-	.line	922
-	pei	<L362+color_0
-	pei	<L363+y_1
-	pei	<L363+x_1
-	pei	<L362+yc_0
-	pei	<L362+xc_0
+	sta	<L417+d_1
+	.line	966
+	pei	<L416+color_0
+	pei	<L417+y_1
+	pei	<L417+x_1
+	pei	<L416+yc_0
+	pei	<L416+xc_0
 	jsl	~~k_draw_segments
 ;	
 ;    while (y >= x) 
-	.line	924
-L10044:
+	.line	968
+L10052:
 	sec
-	lda	<L363+y_1
-	sbc	<L363+x_1
-	bvs	L365
+	lda	<L417+y_1
+	sbc	<L417+x_1
+	bvs	L419
 	eor	#$8000
-L365:
-	bmi	L366
-	brl	L10045
-L366:
+L419:
+	bmi	L420
+	brl	L10053
+L420:
 ;    { 
-	.line	925
+	.line	969
 ;        // for each pixel we will 
 ;        // draw all eight pixels 
 ;          
 ;        x++; 
-	.line	929
-	inc	<L363+x_1
+	.line	973
+	inc	<L417+x_1
 ;  
 ;        // check for decision parameter 
 ;        // and correspondingly  
 ;        // update d, x, y 
 ;        if (d > 0) 
-	.line	934
+	.line	978
 ;        { 
 	sec
 	lda	#$0
-	sbc	<L363+d_1
-	bvs	L367
+	sbc	<L417+d_1
+	bvs	L421
 	eor	#$8000
-L367:
-	bpl	L368
-	brl	L10046
-L368:
-	.line	935
+L421:
+	bpl	L422
+	brl	L10054
+L422:
+	.line	979
 ;            y--;  
-	.line	936
-	dec	<L363+y_1
+	.line	980
+	dec	<L417+y_1
 ;            d = d + 4 * (x - y) + 10; 
-	.line	937
+	.line	981
 	sec
-	lda	<L363+x_1
-	sbc	<L363+y_1
+	lda	<L417+x_1
+	sbc	<L417+y_1
 	sta	<R1
 	lda	<R1
 	asl	A
@@ -7797,80 +8359,80 @@ L368:
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L363+d_1
+	adc	<L417+d_1
 	sta	<R1
 	clc
 	lda	#$a
 	adc	<R1
-	sta	<L363+d_1
+	sta	<L417+d_1
 ;        } 
-	.line	938
+	.line	982
 ;        else
-	brl	L10047
-L10046:
+	brl	L10055
+L10054:
 ;            d = d + 4 * x + 6; 
-	.line	940
-	lda	<L363+x_1
+	.line	984
+	lda	<L417+x_1
 	asl	A
 	asl	A
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L363+d_1
+	adc	<L417+d_1
 	sta	<R1
 	clc
 	lda	#$6
 	adc	<R1
-	sta	<L363+d_1
-L10047:
+	sta	<L417+d_1
+L10055:
 ;        k_draw_segments(xc, yc, x, y, color); 
-	.line	941
-	pei	<L362+color_0
-	pei	<L363+y_1
-	pei	<L363+x_1
-	pei	<L362+yc_0
-	pei	<L362+xc_0
+	.line	985
+	pei	<L416+color_0
+	pei	<L417+y_1
+	pei	<L417+x_1
+	pei	<L416+yc_0
+	pei	<L416+xc_0
 	jsl	~~k_draw_segments
 ;       
 ;    } 
-	.line	943
-	brl	L10044
-L10045:
+	.line	987
+	brl	L10052
+L10053:
 ;} 
-	.line	944
-L369:
-	lda	<L362+2
-	sta	<L362+2+8
-	lda	<L362+1
-	sta	<L362+1+8
+	.line	988
+L423:
+	lda	<L416+2
+	sta	<L416+2+8
+	lda	<L416+1
+	sta	<L416+1+8
 	pld
 	tsc
 	clc
-	adc	#L362+8
+	adc	#L416+8
 	tcs
 	rtl
-	.endblock	944
-L362	equ	14
-L363	equ	9
+	.endblock	988
+L416	equ	14
+L417	equ	9
 	ends
 	efunc
-	.endfunc	944,9,14
-	.line	944
+	.endfunc	988,9,14
+	.line	988
 ;
 ;void k_draw_filled_circle(int xc, int yc, int r, int color) 
 ;{ 
-	.line	946
-	.line	947
+	.line	990
+	.line	991
 	GFX
 	xdef	~~k_draw_filled_circle
 	func
-	.function	947
+	.function	991
 ~~k_draw_filled_circle:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L370
+	sbc	#L424
 	tcs
 	phd
 	tcd
@@ -7878,7 +8440,7 @@ xc_0	set	4
 yc_0	set	6
 r_0	set	8
 color_0	set	10
-	.block	947
+	.block	991
 ;    int x = 0;
 ;	int y = r; 
 ;	
@@ -7895,69 +8457,69 @@ d_1	set	4
 	.sym	yc,6,5,6,16
 	.sym	r,8,5,6,16
 	.sym	color,10,5,6,16
-	stz	<L371+x_1
-	lda	<L370+r_0
-	sta	<L371+y_1
-	lda	<L370+r_0
+	stz	<L425+x_1
+	lda	<L424+r_0
+	sta	<L425+y_1
+	lda	<L424+r_0
 	asl	A
 	sta	<R0
 	sec
 	lda	#$3
 	sbc	<R0
-	sta	<L371+d_1
-	.line	953
-	pei	<L370+color_0
-	pei	<L371+y_1
-	pei	<L371+x_1
-	pei	<L370+yc_0
-	pei	<L370+xc_0
+	sta	<L425+d_1
+	.line	997
+	pei	<L424+color_0
+	pei	<L425+y_1
+	pei	<L425+x_1
+	pei	<L424+yc_0
+	pei	<L424+xc_0
 	jsl	~~k_draw_filled_segments
 ;	
 ;    while (y >= x) 
-	.line	955
-L10048:
+	.line	999
+L10056:
 	sec
-	lda	<L371+y_1
-	sbc	<L371+x_1
-	bvs	L373
+	lda	<L425+y_1
+	sbc	<L425+x_1
+	bvs	L427
 	eor	#$8000
-L373:
-	bmi	L374
-	brl	L10049
-L374:
+L427:
+	bmi	L428
+	brl	L10057
+L428:
 ;    { 
-	.line	956
+	.line	1000
 ;        // for each pixel we will 
 ;        // draw all eight pixels 
 ;          
 ;        x++; 
-	.line	960
-	inc	<L371+x_1
+	.line	1004
+	inc	<L425+x_1
 ;  
 ;        // check for decision parameter 
 ;        // and correspondingly  
 ;        // update d, x, y 
 ;        if (d > 0) 
-	.line	965
+	.line	1009
 ;        { 
 	sec
 	lda	#$0
-	sbc	<L371+d_1
-	bvs	L375
+	sbc	<L425+d_1
+	bvs	L429
 	eor	#$8000
-L375:
-	bpl	L376
-	brl	L10050
-L376:
-	.line	966
+L429:
+	bpl	L430
+	brl	L10058
+L430:
+	.line	1010
 ;            y--;  
-	.line	967
-	dec	<L371+y_1
+	.line	1011
+	dec	<L425+y_1
 ;            d = d + 4 * (x - y) + 10; 
-	.line	968
+	.line	1012
 	sec
-	lda	<L371+x_1
-	sbc	<L371+y_1
+	lda	<L425+x_1
+	sbc	<L425+y_1
 	sta	<R1
 	lda	<R1
 	asl	A
@@ -7965,79 +8527,79 @@ L376:
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L371+d_1
+	adc	<L425+d_1
 	sta	<R1
 	clc
 	lda	#$a
 	adc	<R1
-	sta	<L371+d_1
+	sta	<L425+d_1
 ;        } 
-	.line	969
+	.line	1013
 ;        else
-	brl	L10051
-L10050:
+	brl	L10059
+L10058:
 ;            d = d + 4 * x + 6; 
-	.line	971
-	lda	<L371+x_1
+	.line	1015
+	lda	<L425+x_1
 	asl	A
 	asl	A
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L371+d_1
+	adc	<L425+d_1
 	sta	<R1
 	clc
 	lda	#$6
 	adc	<R1
-	sta	<L371+d_1
-L10051:
+	sta	<L425+d_1
+L10059:
 ;        k_draw_filled_segments(xc, yc, x, y, color); 
-	.line	972
-	pei	<L370+color_0
-	pei	<L371+y_1
-	pei	<L371+x_1
-	pei	<L370+yc_0
-	pei	<L370+xc_0
+	.line	1016
+	pei	<L424+color_0
+	pei	<L425+y_1
+	pei	<L425+x_1
+	pei	<L424+yc_0
+	pei	<L424+xc_0
 	jsl	~~k_draw_filled_segments
 ;       
 ;    } 
-	.line	974
-	brl	L10048
-L10049:
+	.line	1018
+	brl	L10056
+L10057:
 ;} 
-	.line	975
-L377:
-	lda	<L370+2
-	sta	<L370+2+8
-	lda	<L370+1
-	sta	<L370+1+8
+	.line	1019
+L431:
+	lda	<L424+2
+	sta	<L424+2+8
+	lda	<L424+1
+	sta	<L424+1+8
 	pld
 	tsc
 	clc
-	adc	#L370+8
+	adc	#L424+8
 	tcs
 	rtl
-	.endblock	975
-L370	equ	14
-L371	equ	9
+	.endblock	1019
+L424	equ	14
+L425	equ	9
 	ends
 	efunc
-	.endfunc	975,9,14
-	.line	975
+	.endfunc	1019,9,14
+	.line	1019
 ;void k_draw_line(int x0, int y0, int x1, int y1,int color)
 ;{
-	.line	976
-	.line	977
+	.line	1020
+	.line	1021
 	GFX
 	xdef	~~k_draw_line
 	func
-	.function	977
+	.function	1021
 ~~k_draw_line:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L378
+	sbc	#L432
 	tcs
 	phd
 	tcd
@@ -8046,56 +8608,56 @@ y0_0	set	6
 x1_0	set	8
 y1_0	set	10
 color_0	set	12
-	.block	977
+	.block	1021
 ;	k_draw_line_ex(x0, y0, x1, y1,color,BITMAP_FRONT);
 	.sym	x0,4,5,6,16
 	.sym	y0,6,5,6,16
 	.sym	x1,8,5,6,16
 	.sym	y1,10,5,6,16
 	.sym	color,12,5,6,16
-	.line	978
+	.line	1022
 	pea	#<$0
-	pei	<L378+color_0
-	pei	<L378+y1_0
-	pei	<L378+x1_0
-	pei	<L378+y0_0
-	pei	<L378+x0_0
+	pei	<L432+color_0
+	pei	<L432+y1_0
+	pei	<L432+x1_0
+	pei	<L432+y0_0
+	pei	<L432+x0_0
 	jsl	~~k_draw_line_ex
 ;}
-	.line	979
-L381:
-	lda	<L378+2
-	sta	<L378+2+10
-	lda	<L378+1
-	sta	<L378+1+10
+	.line	1023
+L435:
+	lda	<L432+2
+	sta	<L432+2+10
+	lda	<L432+1
+	sta	<L432+1+10
 	pld
 	tsc
 	clc
-	adc	#L378+10
+	adc	#L432+10
 	tcs
 	rtl
-	.endblock	979
-L378	equ	0
-L379	equ	1
+	.endblock	1023
+L432	equ	0
+L433	equ	1
 	ends
 	efunc
-	.endfunc	979,1,0
-	.line	979
+	.endfunc	1023,1,0
+	.line	1023
 ;
 ;void k_draw_line_ex(int x0, int y0, int x1, int y1,int color,UINT page)
 ;{
-	.line	981
-	.line	982
+	.line	1025
+	.line	1026
 	GFX
 	xdef	~~k_draw_line_ex
 	func
-	.function	982
+	.function	1026
 ~~k_draw_line_ex:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L382
+	sbc	#L436
 	tcs
 	phd
 	tcd
@@ -8105,7 +8667,7 @@ x1_0	set	8
 y1_0	set	10
 color_0	set	12
 page_0	set	14
-	.block	982
+	.block	1026
 ; 	int dx = abs(x1-x0), sx = x0<x1 ? 1 : -1;
 ;	int dy = abs(y1-y0), sy = y0<y1 ? 1 : -1; 
 ;	int err = (dx>dy ? dx : -dy)/2, e2;
@@ -8130,287 +8692,287 @@ e2_1	set	10
 	.sym	color,12,5,6,16
 	.sym	page,14,16,6,16
 	sec
-	lda	<L382+x1_0
-	sbc	<L382+x0_0
+	lda	<L436+x1_0
+	sbc	<L436+x0_0
 	pha
 	jsl	~~abs
-	sta	<L383+dx_1
+	sta	<L437+dx_1
 	sec
-	lda	<L382+x0_0
-	sbc	<L382+x1_0
-	bvs	L386
+	lda	<L436+x0_0
+	sbc	<L436+x1_0
+	bvs	L440
 	eor	#$8000
-L386:
-	bpl	L387
-	brl	L385
-L387:
+L440:
+	bpl	L441
+	brl	L439
+L441:
 	lda	#$1
-	bra	L388
-L385:
+	bra	L442
+L439:
 	lda	#$ffff
-L388:
-	sta	<L383+sx_1
+L442:
+	sta	<L437+sx_1
 	sec
-	lda	<L382+y1_0
-	sbc	<L382+y0_0
+	lda	<L436+y1_0
+	sbc	<L436+y0_0
 	pha
 	jsl	~~abs
-	sta	<L383+dy_1
+	sta	<L437+dy_1
 	sec
-	lda	<L382+y0_0
-	sbc	<L382+y1_0
-	bvs	L390
+	lda	<L436+y0_0
+	sbc	<L436+y1_0
+	bvs	L444
 	eor	#$8000
-L390:
-	bpl	L391
-	brl	L389
-L391:
+L444:
+	bpl	L445
+	brl	L443
+L445:
 	lda	#$1
-	bra	L392
-L389:
+	bra	L446
+L443:
 	lda	#$ffff
-L392:
-	sta	<L383+sy_1
+L446:
+	sta	<L437+sy_1
 	sec
-	lda	<L383+dy_1
-	sbc	<L383+dx_1
-	bvs	L394
+	lda	<L437+dy_1
+	sbc	<L437+dx_1
+	bvs	L448
 	eor	#$8000
-L394:
-	bpl	L395
-	brl	L393
-L395:
-	lda	<L383+dx_1
-	bra	L396
-L393:
+L448:
+	bpl	L449
+	brl	L447
+L449:
+	lda	<L437+dx_1
+	bra	L450
+L447:
 	sec
 	lda	#$0
-	sbc	<L383+dy_1
+	sbc	<L437+dy_1
 	sta	<R0
 	lda	<R0
-L396:
+L450:
 	sta	<R0
 	lda	<R0
 	ldx	#<$2
 	xref	~~~div
 	jsl	~~~div
-	sta	<L383+err_1
-	.line	987
-L10054:
+	sta	<L437+err_1
+	.line	1031
+L10062:
 ;	{
-	.line	988
+	.line	1032
 ;		switch(page)
-	.line	989
-	lda	<L382+page_0
-	brl	L10055
+	.line	1033
+	lda	<L436+page_0
+	brl	L10063
 ;		{
-	.line	990
+	.line	1034
 ;		case BITMAP_BACK:
-	.line	991
-L10057:
+	.line	1035
+L10065:
 ;			k_draw_pixel_back(x0,y0,color);
-	.line	992
-	pei	<L382+color_0
+	.line	1036
+	pei	<L436+color_0
 	ldy	#$0
-	lda	<L382+y0_0
-	bpl	L397
+	lda	<L436+y0_0
+	bpl	L451
 	dey
-L397:
+L451:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	<L382+x0_0
-	bpl	L398
+	lda	<L436+x0_0
+	bpl	L452
 	dey
-L398:
+L452:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel_back
 ;			break;
-	.line	993
-	brl	L10056
+	.line	1037
+	brl	L10064
 ;		case 0x20:
-	.line	994
-L10058:
+	.line	1038
+L10066:
 ;			k_draw_pixel_D0(x0,y0,color);
-	.line	995
-	pei	<L382+color_0
+	.line	1039
+	pei	<L436+color_0
 	ldy	#$0
-	lda	<L382+y0_0
-	bpl	L399
+	lda	<L436+y0_0
+	bpl	L453
 	dey
-L399:
+L453:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	<L382+x0_0
-	bpl	L400
+	lda	<L436+x0_0
+	bpl	L454
 	dey
-L400:
+L454:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel_D0
 ;			break;
-	.line	996
-	brl	L10056
+	.line	1040
+	brl	L10064
 ;		default:
-	.line	997
-L10059:
+	.line	1041
+L10067:
 ;			k_draw_pixel_front(x0,y0,color);
-	.line	998
-	pei	<L382+color_0
+	.line	1042
+	pei	<L436+color_0
 	ldy	#$0
-	lda	<L382+y0_0
-	bpl	L401
+	lda	<L436+y0_0
+	bpl	L455
 	dey
-L401:
+L455:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	<L382+x0_0
-	bpl	L402
+	lda	<L436+x0_0
+	bpl	L456
 	dey
-L402:
+L456:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel_front
 ;		}
-	.line	999
-	brl	L10056
-L10055:
+	.line	1043
+	brl	L10064
+L10063:
 	xref	~~~swt
 	jsl	~~~swt
 	dw	2
 	dw	8
-	dw	L10057-1
+	dw	L10065-1
 	dw	32
-	dw	L10058-1
-	dw	L10059-1
-L10056:
+	dw	L10066-1
+	dw	L10067-1
+L10064:
 ;
 ;		//k_draw_pixel_ex(x0,y0,color,page);
 ;
 ;		if (x0==x1 && y0==y1) break;
-	.line	1003
-	lda	<L382+x0_0
-	cmp	<L382+x1_0
-	beq	L404
-	brl	L403
-L404:
-	lda	<L382+y0_0
-	cmp	<L382+y1_0
-	bne	L405
-	brl	L10053
-L405:
-L403:
+	.line	1047
+	lda	<L436+x0_0
+	cmp	<L436+x1_0
+	beq	L458
+	brl	L457
+L458:
+	lda	<L436+y0_0
+	cmp	<L436+y1_0
+	bne	L459
+	brl	L10061
+L459:
+L457:
 ;		e2 = err;
-	.line	1004
-	lda	<L383+err_1
-	sta	<L383+e2_1
+	.line	1048
+	lda	<L437+err_1
+	sta	<L437+e2_1
 ;		if (e2 >-dx) { err -= dy; x0 += sx; }
-	.line	1005
+	.line	1049
 	sec
 	lda	#$0
-	sbc	<L383+dx_1
+	sbc	<L437+dx_1
 	sta	<R0
 	sec
 	lda	<R0
-	sbc	<L383+e2_1
-	bvs	L406
+	sbc	<L437+e2_1
+	bvs	L460
 	eor	#$8000
-L406:
-	bpl	L407
-	brl	L10060
-L407:
-	.line	1005
-	.line	1005
+L460:
+	bpl	L461
+	brl	L10068
+L461:
+	.line	1049
+	.line	1049
 	sec
-	lda	<L383+err_1
-	sbc	<L383+dy_1
-	sta	<L383+err_1
-	.line	1005
+	lda	<L437+err_1
+	sbc	<L437+dy_1
+	sta	<L437+err_1
+	.line	1049
 	clc
-	lda	<L382+x0_0
-	adc	<L383+sx_1
-	sta	<L382+x0_0
-	.line	1005
+	lda	<L436+x0_0
+	adc	<L437+sx_1
+	sta	<L436+x0_0
+	.line	1049
 ;		if (e2 < dy) { err += dx; y0 += sy; }
-L10060:
-	.line	1006
+L10068:
+	.line	1050
 	sec
-	lda	<L383+e2_1
-	sbc	<L383+dy_1
-	bvs	L408
+	lda	<L437+e2_1
+	sbc	<L437+dy_1
+	bvs	L462
 	eor	#$8000
-L408:
-	bpl	L409
-	brl	L10061
-L409:
-	.line	1006
-	.line	1006
+L462:
+	bpl	L463
+	brl	L10069
+L463:
+	.line	1050
+	.line	1050
 	clc
-	lda	<L383+err_1
-	adc	<L383+dx_1
-	sta	<L383+err_1
-	.line	1006
+	lda	<L437+err_1
+	adc	<L437+dx_1
+	sta	<L437+err_1
+	.line	1050
 	clc
-	lda	<L382+y0_0
-	adc	<L383+sy_1
-	sta	<L382+y0_0
-	.line	1006
+	lda	<L436+y0_0
+	adc	<L437+sy_1
+	sta	<L436+y0_0
+	.line	1050
 ;	}
+L10069:
+	.line	1051
+L10060:
+	brl	L10062
 L10061:
-	.line	1007
-L10052:
-	brl	L10054
-L10053:
 ;}
-	.line	1008
-L410:
-	lda	<L382+2
-	sta	<L382+2+12
-	lda	<L382+1
-	sta	<L382+1+12
+	.line	1052
+L464:
+	lda	<L436+2
+	sta	<L436+2+12
+	lda	<L436+1
+	sta	<L436+1+12
 	pld
 	tsc
 	clc
-	adc	#L382+12
+	adc	#L436+12
 	tcs
 	rtl
-	.endblock	1008
-L382	equ	20
-L383	equ	9
+	.endblock	1052
+L436	equ	20
+L437	equ	9
 	ends
 	efunc
-	.endfunc	1008,9,20
-	.line	1008
+	.endfunc	1052,9,20
+	.line	1052
 ;
 ;void k_draw_line_with_pattern(int x0, int y0, int x1, int y1,int color, UINT brush)
 ;{
-	.line	1010
-	.line	1011
+	.line	1054
+	.line	1055
 	GFX
 	xdef	~~k_draw_line_with_pattern
 	func
-	.function	1011
+	.function	1055
 ~~k_draw_line_with_pattern:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L411
+	sbc	#L465
 	tcs
 	phd
 	tcd
@@ -8420,7 +8982,7 @@ x1_0	set	8
 y1_0	set	10
 color_0	set	12
 brush_0	set	14
-	.block	1011
+	.block	1055
 ; 	int dx = abs(x1-x0), sx = x0<x1 ? 1 : -1;
 ;	int dy = abs(y1-y0), sy = y0<y1 ? 1 : -1;
 ;	int err = (dx>dy ? dx : -dy)/2, e2;
@@ -8445,207 +9007,207 @@ e2_1	set	10
 	.sym	color,12,5,6,16
 	.sym	brush,14,16,6,16
 	sec
-	lda	<L411+x1_0
-	sbc	<L411+x0_0
+	lda	<L465+x1_0
+	sbc	<L465+x0_0
 	pha
 	jsl	~~abs
-	sta	<L412+dx_1
+	sta	<L466+dx_1
 	sec
-	lda	<L411+x0_0
-	sbc	<L411+x1_0
-	bvs	L415
+	lda	<L465+x0_0
+	sbc	<L465+x1_0
+	bvs	L469
 	eor	#$8000
-L415:
-	bpl	L416
-	brl	L414
-L416:
+L469:
+	bpl	L470
+	brl	L468
+L470:
 	lda	#$1
-	bra	L417
-L414:
+	bra	L471
+L468:
 	lda	#$ffff
-L417:
-	sta	<L412+sx_1
+L471:
+	sta	<L466+sx_1
 	sec
-	lda	<L411+y1_0
-	sbc	<L411+y0_0
+	lda	<L465+y1_0
+	sbc	<L465+y0_0
 	pha
 	jsl	~~abs
-	sta	<L412+dy_1
+	sta	<L466+dy_1
 	sec
-	lda	<L411+y0_0
-	sbc	<L411+y1_0
-	bvs	L419
+	lda	<L465+y0_0
+	sbc	<L465+y1_0
+	bvs	L473
 	eor	#$8000
-L419:
-	bpl	L420
-	brl	L418
-L420:
+L473:
+	bpl	L474
+	brl	L472
+L474:
 	lda	#$1
-	bra	L421
-L418:
+	bra	L475
+L472:
 	lda	#$ffff
-L421:
-	sta	<L412+sy_1
+L475:
+	sta	<L466+sy_1
 	sec
-	lda	<L412+dy_1
-	sbc	<L412+dx_1
-	bvs	L423
+	lda	<L466+dy_1
+	sbc	<L466+dx_1
+	bvs	L477
 	eor	#$8000
-L423:
-	bpl	L424
-	brl	L422
-L424:
-	lda	<L412+dx_1
-	bra	L425
-L422:
+L477:
+	bpl	L478
+	brl	L476
+L478:
+	lda	<L466+dx_1
+	bra	L479
+L476:
 	sec
 	lda	#$0
-	sbc	<L412+dy_1
+	sbc	<L466+dy_1
 	sta	<R0
 	lda	<R0
-L425:
+L479:
 	sta	<R0
 	lda	<R0
 	ldx	#<$2
 	xref	~~~div
 	jsl	~~~div
-	sta	<L412+err_1
-	.line	1016
-L10064:
+	sta	<L466+err_1
+	.line	1060
+L10072:
 ;	{
-	.line	1017
+	.line	1061
 ;		//if()
 ;		k_draw_pixel(x0,y0,color);
-	.line	1019
-	pei	<L411+color_0
+	.line	1063
+	pei	<L465+color_0
 	ldy	#$0
-	lda	<L411+y0_0
-	bpl	L426
+	lda	<L465+y0_0
+	bpl	L480
 	dey
-L426:
+L480:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	<L411+x0_0
-	bpl	L427
+	lda	<L465+x0_0
+	bpl	L481
 	dey
-L427:
+L481:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;		if (x0==x1 && y0==y1) break;
-	.line	1020
-	lda	<L411+x0_0
-	cmp	<L411+x1_0
-	beq	L429
-	brl	L428
-L429:
-	lda	<L411+y0_0
-	cmp	<L411+y1_0
-	bne	L430
-	brl	L10063
-L430:
-L428:
+	.line	1064
+	lda	<L465+x0_0
+	cmp	<L465+x1_0
+	beq	L483
+	brl	L482
+L483:
+	lda	<L465+y0_0
+	cmp	<L465+y1_0
+	bne	L484
+	brl	L10071
+L484:
+L482:
 ;		e2 = err;
-	.line	1021
-	lda	<L412+err_1
-	sta	<L412+e2_1
+	.line	1065
+	lda	<L466+err_1
+	sta	<L466+e2_1
 ;		if (e2 >-dx) { err -= dy; x0 += sx; }
-	.line	1022
+	.line	1066
 	sec
 	lda	#$0
-	sbc	<L412+dx_1
+	sbc	<L466+dx_1
 	sta	<R0
 	sec
 	lda	<R0
-	sbc	<L412+e2_1
-	bvs	L431
+	sbc	<L466+e2_1
+	bvs	L485
 	eor	#$8000
-L431:
-	bpl	L432
-	brl	L10065
-L432:
-	.line	1022
-	.line	1022
+L485:
+	bpl	L486
+	brl	L10073
+L486:
+	.line	1066
+	.line	1066
 	sec
-	lda	<L412+err_1
-	sbc	<L412+dy_1
-	sta	<L412+err_1
-	.line	1022
+	lda	<L466+err_1
+	sbc	<L466+dy_1
+	sta	<L466+err_1
+	.line	1066
 	clc
-	lda	<L411+x0_0
-	adc	<L412+sx_1
-	sta	<L411+x0_0
-	.line	1022
+	lda	<L465+x0_0
+	adc	<L466+sx_1
+	sta	<L465+x0_0
+	.line	1066
 ;		if (e2 < dy) { err += dx; y0 += sy; }
-L10065:
-	.line	1023
+L10073:
+	.line	1067
 	sec
-	lda	<L412+e2_1
-	sbc	<L412+dy_1
-	bvs	L433
+	lda	<L466+e2_1
+	sbc	<L466+dy_1
+	bvs	L487
 	eor	#$8000
-L433:
-	bpl	L434
-	brl	L10066
-L434:
-	.line	1023
-	.line	1023
+L487:
+	bpl	L488
+	brl	L10074
+L488:
+	.line	1067
+	.line	1067
 	clc
-	lda	<L412+err_1
-	adc	<L412+dx_1
-	sta	<L412+err_1
-	.line	1023
+	lda	<L466+err_1
+	adc	<L466+dx_1
+	sta	<L466+err_1
+	.line	1067
 	clc
-	lda	<L411+y0_0
-	adc	<L412+sy_1
-	sta	<L411+y0_0
-	.line	1023
+	lda	<L465+y0_0
+	adc	<L466+sy_1
+	sta	<L465+y0_0
+	.line	1067
 ;	}
-L10066:
-	.line	1024
-L10062:
-	brl	L10064
-L10063:
+L10074:
+	.line	1068
+L10070:
+	brl	L10072
+L10071:
 ;}
-	.line	1025
-L435:
-	lda	<L411+2
-	sta	<L411+2+12
-	lda	<L411+1
-	sta	<L411+1+12
+	.line	1069
+L489:
+	lda	<L465+2
+	sta	<L465+2+12
+	lda	<L465+1
+	sta	<L465+1+12
 	pld
 	tsc
 	clc
-	adc	#L411+12
+	adc	#L465+12
 	tcs
 	rtl
-	.endblock	1025
-L411	equ	20
-L412	equ	9
+	.endblock	1069
+L465	equ	20
+L466	equ	9
 	ends
 	efunc
-	.endfunc	1025,9,20
-	.line	1025
+	.endfunc	1069,9,20
+	.line	1069
 ;
 ;void k_draw_rect_slow(int left,int top, int right, int bottom, char color)
 ;{
-	.line	1027
-	.line	1028
+	.line	1071
+	.line	1072
 	GFX
 	xdef	~~k_draw_rect_slow
 	func
-	.function	1028
+	.function	1072
 ~~k_draw_rect_slow:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L436
+	sbc	#L490
 	tcs
 	phd
 	tcd
@@ -8654,87 +9216,87 @@ top_0	set	6
 right_0	set	8
 bottom_0	set	10
 color_0	set	12
-	.block	1028
+	.block	1072
 ;	k_draw_line(left,top,right,top,color);
 	.sym	left,4,5,6,16
 	.sym	top,6,5,6,16
 	.sym	right,8,5,6,16
 	.sym	bottom,10,5,6,16
 	.sym	color,12,14,6,8
-	.line	1029
-	lda	<L436+color_0
+	.line	1073
+	lda	<L490+color_0
 	and	#$ff
 	pha
-	pei	<L436+top_0
-	pei	<L436+right_0
-	pei	<L436+top_0
-	pei	<L436+left_0
+	pei	<L490+top_0
+	pei	<L490+right_0
+	pei	<L490+top_0
+	pei	<L490+left_0
 	jsl	~~k_draw_line
 ;	k_draw_line(left,top,left,bottom,color);
-	.line	1030
-	lda	<L436+color_0
+	.line	1074
+	lda	<L490+color_0
 	and	#$ff
 	pha
-	pei	<L436+bottom_0
-	pei	<L436+left_0
-	pei	<L436+top_0
-	pei	<L436+left_0
+	pei	<L490+bottom_0
+	pei	<L490+left_0
+	pei	<L490+top_0
+	pei	<L490+left_0
 	jsl	~~k_draw_line
 ;	k_draw_line(right,top,right,bottom,color);
-	.line	1031
-	lda	<L436+color_0
+	.line	1075
+	lda	<L490+color_0
 	and	#$ff
 	pha
-	pei	<L436+bottom_0
-	pei	<L436+right_0
-	pei	<L436+top_0
-	pei	<L436+right_0
+	pei	<L490+bottom_0
+	pei	<L490+right_0
+	pei	<L490+top_0
+	pei	<L490+right_0
 	jsl	~~k_draw_line
 ;	k_draw_line(left,bottom,right,bottom,color);
-	.line	1032
-	lda	<L436+color_0
+	.line	1076
+	lda	<L490+color_0
 	and	#$ff
 	pha
-	pei	<L436+bottom_0
-	pei	<L436+right_0
-	pei	<L436+bottom_0
-	pei	<L436+left_0
+	pei	<L490+bottom_0
+	pei	<L490+right_0
+	pei	<L490+bottom_0
+	pei	<L490+left_0
 	jsl	~~k_draw_line
 ;}
-	.line	1033
-L439:
-	lda	<L436+2
-	sta	<L436+2+10
-	lda	<L436+1
-	sta	<L436+1+10
+	.line	1077
+L493:
+	lda	<L490+2
+	sta	<L490+2+10
+	lda	<L490+1
+	sta	<L490+1+10
 	pld
 	tsc
 	clc
-	adc	#L436+10
+	adc	#L490+10
 	tcs
 	rtl
-	.endblock	1033
-L436	equ	0
-L437	equ	1
+	.endblock	1077
+L490	equ	0
+L491	equ	1
 	ends
 	efunc
-	.endfunc	1033,1,0
-	.line	1033
+	.endfunc	1077,1,0
+	.line	1077
 ;
 ;void k_draw_rect(int left,int top, int right, int bottom, char color,UINT brush,UINT page)
 ;{
-	.line	1035
-	.line	1036
+	.line	1079
+	.line	1080
 	GFX
 	xdef	~~k_draw_rect
 	func
-	.function	1036
+	.function	1080
 ~~k_draw_rect:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L440
+	sbc	#L494
 	tcs
 	phd
 	tcd
@@ -8745,7 +9307,7 @@ bottom_0	set	10
 color_0	set	12
 brush_0	set	14
 page_0	set	16
-	.block	1036
+	.block	1080
 ;	k_draw_line_ex(left,top,right,top,color,page);
 	.sym	left,4,5,6,16
 	.sym	top,6,5,6,16
@@ -8754,84 +9316,84 @@ page_0	set	16
 	.sym	color,12,14,6,8
 	.sym	brush,14,16,6,16
 	.sym	page,16,16,6,16
-	.line	1037
-	pei	<L440+page_0
-	lda	<L440+color_0
+	.line	1081
+	pei	<L494+page_0
+	lda	<L494+color_0
 	and	#$ff
 	pha
-	pei	<L440+top_0
-	pei	<L440+right_0
-	pei	<L440+top_0
-	pei	<L440+left_0
+	pei	<L494+top_0
+	pei	<L494+right_0
+	pei	<L494+top_0
+	pei	<L494+left_0
 	jsl	~~k_draw_line_ex
 ;	k_draw_line_ex(left,top,left,bottom,color,page);
-	.line	1038
-	pei	<L440+page_0
-	lda	<L440+color_0
+	.line	1082
+	pei	<L494+page_0
+	lda	<L494+color_0
 	and	#$ff
 	pha
-	pei	<L440+bottom_0
-	pei	<L440+left_0
-	pei	<L440+top_0
-	pei	<L440+left_0
+	pei	<L494+bottom_0
+	pei	<L494+left_0
+	pei	<L494+top_0
+	pei	<L494+left_0
 	jsl	~~k_draw_line_ex
 ;	k_draw_line_ex(right,top,right,bottom,color,page);
-	.line	1039
-	pei	<L440+page_0
-	lda	<L440+color_0
+	.line	1083
+	pei	<L494+page_0
+	lda	<L494+color_0
 	and	#$ff
 	pha
-	pei	<L440+bottom_0
-	pei	<L440+right_0
-	pei	<L440+top_0
-	pei	<L440+right_0
+	pei	<L494+bottom_0
+	pei	<L494+right_0
+	pei	<L494+top_0
+	pei	<L494+right_0
 	jsl	~~k_draw_line_ex
 ;	k_draw_line_ex(left,bottom,right,bottom,color,page);
-	.line	1040
-	pei	<L440+page_0
-	lda	<L440+color_0
+	.line	1084
+	pei	<L494+page_0
+	lda	<L494+color_0
 	and	#$ff
 	pha
-	pei	<L440+bottom_0
-	pei	<L440+right_0
-	pei	<L440+bottom_0
-	pei	<L440+left_0
+	pei	<L494+bottom_0
+	pei	<L494+right_0
+	pei	<L494+bottom_0
+	pei	<L494+left_0
 	jsl	~~k_draw_line_ex
 ;}
-	.line	1041
-L443:
-	lda	<L440+2
-	sta	<L440+2+14
-	lda	<L440+1
-	sta	<L440+1+14
+	.line	1085
+L497:
+	lda	<L494+2
+	sta	<L494+2+14
+	lda	<L494+1
+	sta	<L494+1+14
 	pld
 	tsc
 	clc
-	adc	#L440+14
+	adc	#L494+14
 	tcs
 	rtl
-	.endblock	1041
-L440	equ	0
-L441	equ	1
+	.endblock	1085
+L494	equ	0
+L495	equ	1
 	ends
 	efunc
-	.endfunc	1041,1,0
-	.line	1041
+	.endfunc	1085,1,0
+	.line	1085
 ;
 ;void k_draw_rect_ex(PRECT prect, char color,UINT brush,UINT page)
 ;{
-	.line	1043
-	.line	1044
+	.line	1087
+	.line	1088
 	GFX
 	xdef	~~k_draw_rect_ex
 	func
-	.function	1044
+	.function	1088
 ~~k_draw_rect_ex:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L444
+	sbc	#L498
 	tcs
 	phd
 	tcd
@@ -8839,7 +9401,7 @@ prect_0	set	4
 color_0	set	8
 brush_0	set	10
 page_0	set	12
-	.block	1044
+	.block	1088
 ;
 ;	int left   = prect->x ;
 ;	int top    = prect->y;
@@ -8859,75 +9421,75 @@ bottom_1	set	6
 	.sym	color,8,14,6,8
 	.sym	brush,10,16,6,16
 	.sym	page,12,16,6,16
-	lda	[<L444+prect_0]
-	sta	<L445+left_1
+	lda	[<L498+prect_0]
+	sta	<L499+left_1
 	ldy	#$2
-	lda	[<L444+prect_0],Y
-	sta	<L445+top_1
+	lda	[<L498+prect_0],Y
+	sta	<L499+top_1
 	clc
-	lda	[<L444+prect_0]
+	lda	[<L498+prect_0]
 	ldy	#$8
-	adc	[<L444+prect_0],Y
+	adc	[<L498+prect_0],Y
 	sta	<R0
 	clc
 	lda	#$ffff
 	adc	<R0
-	sta	<L445+right_1
+	sta	<L499+right_1
 	clc
 	ldy	#$2
-	lda	[<L444+prect_0],Y
+	lda	[<L498+prect_0],Y
 	ldy	#$a
-	adc	[<L444+prect_0],Y
+	adc	[<L498+prect_0],Y
 	sta	<R0
 	clc
 	lda	#$ffff
 	adc	<R0
-	sta	<L445+bottom_1
-	.line	1051
-	pei	<L444+page_0
-	pei	<L444+brush_0
-	pei	<L444+color_0
-	pei	<L445+bottom_1
-	pei	<L445+right_1
-	pei	<L445+top_1
-	pei	<L445+left_1
+	sta	<L499+bottom_1
+	.line	1095
+	pei	<L498+page_0
+	pei	<L498+brush_0
+	pei	<L498+color_0
+	pei	<L499+bottom_1
+	pei	<L499+right_1
+	pei	<L499+top_1
+	pei	<L499+left_1
 	jsl	~~k_draw_rect
 ;}
-	.line	1052
-L447:
-	lda	<L444+2
-	sta	<L444+2+10
-	lda	<L444+1
-	sta	<L444+1+10
+	.line	1096
+L501:
+	lda	<L498+2
+	sta	<L498+2+10
+	lda	<L498+1
+	sta	<L498+1+10
 	pld
 	tsc
 	clc
-	adc	#L444+10
+	adc	#L498+10
 	tcs
 	rtl
-	.endblock	1052
-L444	equ	12
-L445	equ	5
+	.endblock	1096
+L498	equ	12
+L499	equ	5
 	ends
 	efunc
-	.endfunc	1052,5,12
-	.line	1052
+	.endfunc	1096,5,12
+	.line	1096
 ;
 ;
 ;void k_draw_filled_rect_slow(int left,int top, int right, int bottom, char color)
 ;{
-	.line	1055
-	.line	1056
+	.line	1099
+	.line	1100
 	GFX
 	xdef	~~k_draw_filled_rect_slow
 	func
-	.function	1056
+	.function	1100
 ~~k_draw_filled_rect_slow:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L448
+	sbc	#L502
 	tcs
 	phd
 	tcd
@@ -8936,7 +9498,7 @@ top_0	set	6
 right_0	set	8
 bottom_0	set	10
 color_0	set	12
-	.block	1056
+	.block	1100
 ;	
 ;}
 	.sym	left,4,5,6,16
@@ -8944,41 +9506,41 @@ color_0	set	12
 	.sym	right,8,5,6,16
 	.sym	bottom,10,5,6,16
 	.sym	color,12,14,6,8
-	.line	1058
-L451:
-	lda	<L448+2
-	sta	<L448+2+10
-	lda	<L448+1
-	sta	<L448+1+10
+	.line	1102
+L505:
+	lda	<L502+2
+	sta	<L502+2+10
+	lda	<L502+1
+	sta	<L502+1+10
 	pld
 	tsc
 	clc
-	adc	#L448+10
+	adc	#L502+10
 	tcs
 	rtl
-	.endblock	1058
-L448	equ	0
-L449	equ	1
+	.endblock	1102
+L502	equ	0
+L503	equ	1
 	ends
 	efunc
-	.endfunc	1058,1,0
-	.line	1058
+	.endfunc	1102,1,0
+	.line	1102
 ;
 ;
 ;int k_put_draw_text(int col,int row,char FAR *text,char color,char bcolor)
 ;{
-	.line	1061
-	.line	1062
+	.line	1105
+	.line	1106
 	GFX
 	xdef	~~k_put_draw_text
 	func
-	.function	1062
+	.function	1106
 ~~k_put_draw_text:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L452
+	sbc	#L506
 	tcs
 	phd
 	tcd
@@ -8987,57 +9549,57 @@ row_0	set	6
 text_0	set	8
 color_0	set	12
 bcolor_0	set	14
-	.block	1062
+	.block	1106
 ;	return k_draw_text(text, row, col, color);
 	.sym	col,4,5,6,16
 	.sym	row,6,5,6,16
 	.sym	text,8,142,6,32
 	.sym	color,12,14,6,8
 	.sym	bcolor,14,14,6,8
-	.line	1063
-	pei	<L452+color_0
-	pei	<L452+col_0
-	pei	<L452+row_0
-	pei	<L452+text_0+2
-	pei	<L452+text_0
+	.line	1107
+	pei	<L506+color_0
+	pei	<L506+col_0
+	pei	<L506+row_0
+	pei	<L506+text_0+2
+	pei	<L506+text_0
 	jsl	~~k_draw_text
-L455:
+L509:
 	tay
-	lda	<L452+2
-	sta	<L452+2+12
-	lda	<L452+1
-	sta	<L452+1+12
+	lda	<L506+2
+	sta	<L506+2+12
+	lda	<L506+1
+	sta	<L506+1+12
 	pld
 	tsc
 	clc
-	adc	#L452+12
+	adc	#L506+12
 	tcs
 	tya
 	rtl
 ;}
-	.line	1064
-	.endblock	1064
-L452	equ	0
-L453	equ	1
+	.line	1108
+	.endblock	1108
+L506	equ	0
+L507	equ	1
 	ends
 	efunc
-	.endfunc	1064,1,0
-	.line	1064
+	.endfunc	1108,1,0
+	.line	1108
 ;
 ;int k_draw_text(char FAR *text,int row,int col,char color)
 ;{
-	.line	1066
-	.line	1067
+	.line	1110
+	.line	1111
 	GFX
 	xdef	~~k_draw_text
 	func
-	.function	1067
+	.function	1111
 ~~k_draw_text:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L456
+	sbc	#L510
 	tcs
 	phd
 	tcd
@@ -9045,7 +9607,7 @@ text_0	set	4
 row_0	set	8
 col_0	set	10
 color_0	set	12
-	.block	1067
+	.block	1111
 ;	char FAR * ptr = (text);
 ;	while(*ptr)
 ptr_1	set	0
@@ -9054,81 +9616,81 @@ ptr_1	set	0
 	.sym	row,8,5,6,16
 	.sym	col,10,5,6,16
 	.sym	color,12,14,6,8
-	lda	<L456+text_0
-	sta	<L457+ptr_1
-	lda	<L456+text_0+2
-	sta	<L457+ptr_1+2
-	.line	1069
-L10067:
-	lda	[<L457+ptr_1]
+	lda	<L510+text_0
+	sta	<L511+ptr_1
+	lda	<L510+text_0+2
+	sta	<L511+ptr_1+2
+	.line	1113
+L10075:
+	lda	[<L511+ptr_1]
 	and	#$ff
-	bne	L459
-	brl	L10068
-L459:
+	bne	L513
+	brl	L10076
+L513:
 ;	{
-	.line	1070
+	.line	1114
 ;		k_put_font(*ptr,col,row,color);
-	.line	1071
-	pei	<L456+color_0
-	pei	<L456+row_0
-	pei	<L456+col_0
-	lda	[<L457+ptr_1]
+	.line	1115
+	pei	<L510+color_0
+	pei	<L510+row_0
+	pei	<L510+col_0
+	lda	[<L511+ptr_1]
 	pha
 	jsl	~~k_put_font
 ;		col++;
-	.line	1072
-	inc	<L456+col_0
+	.line	1116
+	inc	<L510+col_0
 ;		ptr++;
-	.line	1073
-	inc	<L457+ptr_1
-	bne	L460
-	inc	<L457+ptr_1+2
-L460:
+	.line	1117
+	inc	<L511+ptr_1
+	bne	L514
+	inc	<L511+ptr_1+2
+L514:
 ;	}
-	.line	1074
-	brl	L10067
-L10068:
+	.line	1118
+	brl	L10075
+L10076:
 ;	
 ;	return col;
-	.line	1076
-	lda	<L456+col_0
-L461:
+	.line	1120
+	lda	<L510+col_0
+L515:
 	tay
-	lda	<L456+2
-	sta	<L456+2+10
-	lda	<L456+1
-	sta	<L456+1+10
+	lda	<L510+2
+	sta	<L510+2+10
+	lda	<L510+1
+	sta	<L510+1+10
 	pld
 	tsc
 	clc
-	adc	#L456+10
+	adc	#L510+10
 	tcs
 	tya
 	rtl
 ;}
-	.line	1077
-	.endblock	1077
-L456	equ	4
-L457	equ	1
+	.line	1121
+	.endblock	1121
+L510	equ	4
+L511	equ	1
 	ends
 	efunc
-	.endfunc	1077,1,4
-	.line	1077
+	.endfunc	1121,1,4
+	.line	1121
 ;
 ;int k_draw_text_point_ex(LPCSTR text,int x,int y,char color,UINT page)
 ;{
-	.line	1079
-	.line	1080
+	.line	1123
+	.line	1124
 	GFX
 	xdef	~~k_draw_text_point_ex
 	func
-	.function	1080
+	.function	1124
 ~~k_draw_text_point_ex:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L462
+	sbc	#L516
 	tcs
 	phd
 	tcd
@@ -9137,7 +9699,7 @@ x_0	set	8
 y_0	set	10
 color_0	set	12
 page_0	set	14
-	.block	1080
+	.block	1124
 ;	int col = 0;
 ;	int width = 0;
 ;	int height = 0;
@@ -9164,102 +9726,102 @@ ptr_1	set	10
 	.sym	y,10,5,6,16
 	.sym	color,12,14,6,8
 	.sym	page,14,16,6,16
-	stz	<L463+col_1
-	stz	<L463+width_1
-	stz	<L463+height_1
-	lda	<L462+x_0
-	sta	<L463+dx_1
-	lda	<L462+y_0
-	sta	<L463+dy_1
-	lda	<L462+text_0
-	sta	<L463+ptr_1
-	lda	<L462+text_0+2
-	sta	<L463+ptr_1+2
-	.line	1089
+	stz	<L517+col_1
+	stz	<L517+width_1
+	stz	<L517+height_1
+	lda	<L516+x_0
+	sta	<L517+dx_1
+	lda	<L516+y_0
+	sta	<L517+dy_1
+	lda	<L516+text_0
+	sta	<L517+ptr_1
+	lda	<L516+text_0+2
+	sta	<L517+ptr_1+2
+	.line	1133
 	lda	>~~Bm437ToshibaLCD8x8
 	and	#$ff
-	sta	<L463+width_1
+	sta	<L517+width_1
 ;	height = Bm437ToshibaLCD8x8[1];
-	.line	1090
+	.line	1134
 	lda	>~~Bm437ToshibaLCD8x8+1
 	and	#$ff
-	sta	<L463+height_1
+	sta	<L517+height_1
 ;
 ;
 ;	ptr = (text);
-	.line	1093
-	lda	<L462+text_0
-	sta	<L463+ptr_1
-	lda	<L462+text_0+2
-	sta	<L463+ptr_1+2
+	.line	1137
+	lda	<L516+text_0
+	sta	<L517+ptr_1
+	lda	<L516+text_0+2
+	sta	<L517+ptr_1+2
 ;	while(*ptr)
-	.line	1094
-L10069:
-	lda	[<L463+ptr_1]
+	.line	1138
+L10077:
+	lda	[<L517+ptr_1]
 	and	#$ff
-	bne	L465
-	brl	L10070
-L465:
+	bne	L519
+	brl	L10078
+L519:
 ;	{
-	.line	1095
+	.line	1139
 ;		if(*ptr == 0x0D)
-	.line	1096
+	.line	1140
 ;		{
 	sep	#$20
 	longa	off
-	lda	[<L463+ptr_1]
+	lda	[<L517+ptr_1]
 	cmp	#<$d
 	rep	#$20
 	longa	on
-	beq	L466
-	brl	L10071
-L466:
-	.line	1097
+	beq	L520
+	brl	L10079
+L520:
+	.line	1141
 ;			dx = x;
-	.line	1098
-	lda	<L462+x_0
-	sta	<L463+dx_1
+	.line	1142
+	lda	<L516+x_0
+	sta	<L517+dx_1
 ;		}
-	.line	1099
+	.line	1143
 ;		else if(*ptr == 0x0A)
-	brl	L10072
-L10071:
-	.line	1100
+	brl	L10080
+L10079:
+	.line	1144
 ;		{
 	sep	#$20
 	longa	off
-	lda	[<L463+ptr_1]
+	lda	[<L517+ptr_1]
 	cmp	#<$a
 	rep	#$20
 	longa	on
-	beq	L467
-	brl	L10073
-L467:
-	.line	1101
+	beq	L521
+	brl	L10081
+L521:
+	.line	1145
 ;			dy+=FONTH;
-	.line	1102
+	.line	1146
 	jsl	~~k_font_getFontHeight
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L463+dy_1
-	sta	<L463+dy_1
+	adc	<L517+dy_1
+	sta	<L517+dy_1
 ;		}
-	.line	1103
+	.line	1147
 ;		else
-	brl	L10074
-L10073:
+	brl	L10082
+L10081:
 ;		{
-	.line	1105
+	.line	1149
 ;			dx+=k_put_binary_variablefont_point_ex( (LPCHAR)&Bm437ToshibaLCD8x8[2] , *ptr,dx,dy,width,height,color,page);
-	.line	1106
-	pei	<L462+page_0
-	pei	<L462+color_0
-	pei	<L463+height_1
-	pei	<L463+width_1
-	pei	<L463+dy_1
-	pei	<L463+dx_1
-	lda	[<L463+ptr_1]
+	.line	1150
+	pei	<L516+page_0
+	pei	<L516+color_0
+	pei	<L517+height_1
+	pei	<L517+width_1
+	pei	<L517+dy_1
+	pei	<L517+dx_1
+	lda	[<L517+ptr_1]
 	pha
 	pea	#^~~Bm437ToshibaLCD8x8+2
 	pea	#<~~Bm437ToshibaLCD8x8+2
@@ -9267,73 +9829,73 @@ L10073:
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L463+dx_1
-	sta	<L463+dx_1
+	adc	<L517+dx_1
+	sta	<L517+dx_1
 ;		}
-	.line	1107
-L10074:
-L10072:
+	.line	1151
+L10082:
+L10080:
 ;		ptr++;
-	.line	1108
-	inc	<L463+ptr_1
-	bne	L468
-	inc	<L463+ptr_1+2
-L468:
+	.line	1152
+	inc	<L517+ptr_1
+	bne	L522
+	inc	<L517+ptr_1+2
+L522:
 ;		col+=FONTW;
-	.line	1109
+	.line	1153
 	jsl	~~k_font_getFontWidth
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L463+col_1
-	sta	<L463+col_1
+	adc	<L517+col_1
+	sta	<L517+col_1
 ;	}
-	.line	1110
-	brl	L10069
-L10070:
+	.line	1154
+	brl	L10077
+L10078:
 ;
 ;	return col;
-	.line	1112
-	lda	<L463+col_1
-L469:
+	.line	1156
+	lda	<L517+col_1
+L523:
 	tay
-	lda	<L462+2
-	sta	<L462+2+12
-	lda	<L462+1
-	sta	<L462+1+12
+	lda	<L516+2
+	sta	<L516+2+12
+	lda	<L516+1
+	sta	<L516+1+12
 	pld
 	tsc
 	clc
-	adc	#L462+12
+	adc	#L516+12
 	tcs
 	tya
 	rtl
 ;}
-	.line	1113
-	.endblock	1113
-L462	equ	18
-L463	equ	5
+	.line	1157
+	.endblock	1157
+L516	equ	18
+L517	equ	5
 	ends
 	efunc
-	.endfunc	1113,5,18
-	.line	1113
+	.endfunc	1157,5,18
+	.line	1157
 ;
 ;
 ;
 ;int k_draw_text_point(LPCSTR text,int x,int y,char color)
 ;{
-	.line	1117
-	.line	1118
+	.line	1161
+	.line	1162
 	GFX
 	xdef	~~k_draw_text_point
 	func
-	.function	1118
+	.function	1162
 ~~k_draw_text_point:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L470
+	sbc	#L524
 	tcs
 	phd
 	tcd
@@ -9341,7 +9903,7 @@ text_0	set	4
 x_0	set	8
 y_0	set	10
 color_0	set	12
-	.block	1118
+	.block	1162
 ;	int col = 0;
 ;	int width = 0;
 ;	int height = 0;
@@ -9361,53 +9923,53 @@ ptr_1	set	6
 	.sym	x,8,5,6,16
 	.sym	y,10,5,6,16
 	.sym	color,12,14,6,8
-	stz	<L471+col_1
-	stz	<L471+width_1
-	stz	<L471+height_1
-	lda	<L470+text_0
-	sta	<L471+ptr_1
-	lda	<L470+text_0+2
-	sta	<L471+ptr_1+2
-	.line	1125
+	stz	<L525+col_1
+	stz	<L525+width_1
+	stz	<L525+height_1
+	lda	<L524+text_0
+	sta	<L525+ptr_1
+	lda	<L524+text_0+2
+	sta	<L525+ptr_1+2
+	.line	1169
 	lda	>~~Bm437ToshibaLCD8x8
 	and	#$ff
-	sta	<L471+width_1
+	sta	<L525+width_1
 ;	height = Bm437ToshibaLCD8x8[1];
-	.line	1126
+	.line	1170
 	lda	>~~Bm437ToshibaLCD8x8+1
 	and	#$ff
-	sta	<L471+height_1
+	sta	<L525+height_1
 ;
 ;
 ;	ptr = (text);
-	.line	1129
-	lda	<L470+text_0
-	sta	<L471+ptr_1
-	lda	<L470+text_0+2
-	sta	<L471+ptr_1+2
+	.line	1173
+	lda	<L524+text_0
+	sta	<L525+ptr_1
+	lda	<L524+text_0+2
+	sta	<L525+ptr_1+2
 ;	while(*ptr)
-	.line	1130
-L10075:
-	lda	[<L471+ptr_1]
+	.line	1174
+L10083:
+	lda	[<L525+ptr_1]
 	and	#$ff
-	bne	L473
-	brl	L10076
-L473:
+	bne	L527
+	brl	L10084
+L527:
 ;	{
-	.line	1131
+	.line	1175
 ;		//x+=k_put_font_point(*ptr,x,y,color);
 ;
 ;		//x+=k_put_binary_font_point( Bm437ToshibaLCD8x8 , *ptr,x,y,color);
 ;		//x+=k_put_binary_font_point( Bm437AmstradPC1512_2y , *ptr,x,y,color);
 ;
 ;		x+=k_put_binary_variablefont_point( (LPCHAR)&Bm437ToshibaLCD8x8[2] , *ptr,x,y,width,height,color);
-	.line	1137
-	pei	<L470+color_0
-	pei	<L471+height_1
-	pei	<L471+width_1
-	pei	<L470+y_0
-	pei	<L470+x_0
-	lda	[<L471+ptr_1]
+	.line	1181
+	pei	<L524+color_0
+	pei	<L525+height_1
+	pei	<L525+width_1
+	pei	<L524+y_0
+	pei	<L524+x_0
+	lda	[<L525+ptr_1]
 	pha
 	pea	#^~~Bm437ToshibaLCD8x8+2
 	pea	#<~~Bm437ToshibaLCD8x8+2
@@ -9415,68 +9977,68 @@ L473:
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L470+x_0
-	sta	<L470+x_0
+	adc	<L524+x_0
+	sta	<L524+x_0
 ;
 ;		ptr++;
-	.line	1139
-	inc	<L471+ptr_1
-	bne	L474
-	inc	<L471+ptr_1+2
-L474:
+	.line	1183
+	inc	<L525+ptr_1
+	bne	L528
+	inc	<L525+ptr_1+2
+L528:
 ;		col+=FONTW;
-	.line	1140
+	.line	1184
 	jsl	~~k_font_getFontWidth
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L471+col_1
-	sta	<L471+col_1
+	adc	<L525+col_1
+	sta	<L525+col_1
 ;	}
-	.line	1141
-	brl	L10075
-L10076:
+	.line	1185
+	brl	L10083
+L10084:
 ;	
 ;	return col;
-	.line	1143
-	lda	<L471+col_1
-L475:
+	.line	1187
+	lda	<L525+col_1
+L529:
 	tay
-	lda	<L470+2
-	sta	<L470+2+10
-	lda	<L470+1
-	sta	<L470+1+10
+	lda	<L524+2
+	sta	<L524+2+10
+	lda	<L524+1
+	sta	<L524+1+10
 	pld
 	tsc
 	clc
-	adc	#L470+10
+	adc	#L524+10
 	tcs
 	tya
 	rtl
 ;}
-	.line	1144
-	.endblock	1144
-L470	equ	14
-L471	equ	5
+	.line	1188
+	.endblock	1188
+L524	equ	14
+L525	equ	5
 	ends
 	efunc
-	.endfunc	1144,5,14
-	.line	1144
+	.endfunc	1188,5,14
+	.line	1188
 ;
 ;int k_gui_DrawText(HWND hWnd,LPCSTR text,HFONT charSet,UINT style,PRECT prect,char color,UINT page)
 ;{
-	.line	1146
-	.line	1147
+	.line	1190
+	.line	1191
 	GFX
 	xdef	~~k_gui_DrawText
 	func
-	.function	1147
+	.function	1191
 ~~k_gui_DrawText:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L476
+	sbc	#L530
 	tcs
 	phd
 	tcd
@@ -9487,7 +10049,7 @@ style_0	set	16
 prect_0	set	18
 color_0	set	22
 page_0	set	24
-	.block	1147
+	.block	1191
 ;	int col 	= 0;
 ;	int fwidth 	= 0;
 ;	int fheight = 0;
@@ -9535,79 +10097,79 @@ pWin_1	set	26
 	.sym	prect,18,138,6,32,26
 	.sym	color,22,14,6,8
 	.sym	page,24,16,6,16
-	stz	<L477+col_1
-	stz	<L477+fwidth_1
-	stz	<L477+fheight_1
-	stz	<L477+xmax_1
-	stz	<L477+ymax_1
-	stz	<L477+dx_1
-	stz	<L477+dy_1
-	stz	<L477+ptr_1
-	stz	<L477+ptr_1+2
+	stz	<L531+col_1
+	stz	<L531+fwidth_1
+	stz	<L531+fheight_1
+	stz	<L531+xmax_1
+	stz	<L531+ymax_1
+	stz	<L531+dx_1
+	stz	<L531+dy_1
+	stz	<L531+ptr_1
+	stz	<L531+ptr_1+2
 	clc
 	lda	#$2
-	adc	<L476+charSet_0
-	sta	<L477+fptr_1
+	adc	<L530+charSet_0
+	sta	<L531+fptr_1
 	lda	#$0
-	adc	<L476+charSet_0+2
-	sta	<L477+fptr_1+2
-	lda	<L476+hWnd_0
-	sta	<L477+pWin_1
-	lda	<L476+hWnd_0+2
-	sta	<L477+pWin_1+2
-	.line	1163
-	lda	[<L476+charSet_0]
+	adc	<L530+charSet_0+2
+	sta	<L531+fptr_1+2
+	lda	<L530+hWnd_0
+	sta	<L531+pWin_1
+	lda	<L530+hWnd_0+2
+	sta	<L531+pWin_1+2
+	.line	1207
+	lda	[<L530+charSet_0]
 	and	#<$ff
-	sta	<L477+fwidth_1
+	sta	<L531+fwidth_1
 ;	fheight = (INT)(((INT)((LPSTR)charSet)[1]) & 0x00FF);
-	.line	1164
+	.line	1208
 	ldy	#$1
-	lda	[<L476+charSet_0],Y
+	lda	[<L530+charSet_0],Y
 	and	#<$ff
-	sta	<L477+fheight_1
+	sta	<L531+fheight_1
 ;
 ;	e    = (style & DTS_ELLIPSES);
-	.line	1166
-	lda	<L476+style_0
+	.line	1210
+	lda	<L530+style_0
 	and	#<$1
-	sta	<L477+e_1
+	sta	<L531+e_1
 ;	dx    = prect->x;
-	.line	1167
-	lda	[<L476+prect_0]
-	sta	<L477+dx_1
+	.line	1211
+	lda	[<L530+prect_0]
+	sta	<L531+dx_1
 ;	dy    = prect->y;
-	.line	1168
+	.line	1212
 	ldy	#$2
-	lda	[<L476+prect_0],Y
-	sta	<L477+dy_1
+	lda	[<L530+prect_0],Y
+	sta	<L531+dy_1
 ;	emax = 2 * fwidth;
-	.line	1169
-	lda	<L477+fwidth_1
+	.line	1213
+	lda	<L531+fwidth_1
 	asl	A
-	sta	<L477+emax_1
+	sta	<L531+emax_1
 ;	xmax = prect->x + prect->width - 1;
-	.line	1170
+	.line	1214
 	clc
-	lda	[<L476+prect_0]
+	lda	[<L530+prect_0]
 	ldy	#$8
-	adc	[<L476+prect_0],Y
+	adc	[<L530+prect_0],Y
 	sta	<R0
 	clc
 	lda	#$ffff
 	adc	<R0
-	sta	<L477+xmax_1
+	sta	<L531+xmax_1
 ;	ymax = (pWin->clientRect.y + pWin->clientRect.height) - 1;
-	.line	1171
+	.line	1215
 	clc
 	ldy	#$2c
-	lda	[<L477+pWin_1],Y
+	lda	[<L531+pWin_1],Y
 	ldy	#$34
-	adc	[<L477+pWin_1],Y
+	adc	[<L531+pWin_1],Y
 	sta	<R0
 	clc
 	lda	#$ffff
 	adc	<R0
-	sta	<L477+ymax_1
+	sta	<L531+ymax_1
 ;
 ;	//k_debug_strings("k_draw_text_point_with_font:font text:",(LPSTR)text);
 ;	//k_debug_integer("k_draw_text_point_with_font:font x:",dx);
@@ -9619,325 +10181,325 @@ pWin_1	set	26
 ;
 ;
 ;	if(((prect->y + FONTH) >= ymax) && !(style & DTS_NOCLIP))
-	.line	1182
+	.line	1226
 ;		return -1;
 	jsl	~~k_font_getFontHeight
 	sta	<R0
 	clc
 	lda	<R0
 	ldy	#$2
-	adc	[<L476+prect_0],Y
+	adc	[<L530+prect_0],Y
 	sta	<R1
 	lda	<R1
-	cmp	<L477+ymax_1
-	bcs	L479
-	brl	L10077
-L479:
-	lda	<L476+style_0
+	cmp	<L531+ymax_1
+	bcs	L533
+	brl	L10085
+L533:
+	lda	<L530+style_0
 	and	#<$8
-	beq	L480
-	brl	L10077
-L480:
-	.line	1183
+	beq	L534
+	brl	L10085
+L534:
+	.line	1227
 	lda	#$ffff
-L481:
+L535:
 	tay
-	lda	<L476+2
-	sta	<L476+2+22
-	lda	<L476+1
-	sta	<L476+1+22
+	lda	<L530+2
+	sta	<L530+2+22
+	lda	<L530+1
+	sta	<L530+1+22
 	pld
 	tsc
 	clc
-	adc	#L476+22
+	adc	#L530+22
 	tcs
 	tya
 	rtl
 ;
 ;
 ;	if(style & DTS_RIGHTJUSTIFY)
-L10077:
-	.line	1186
+L10085:
+	.line	1230
 ;	{
-	lda	<L476+style_0
+	lda	<L530+style_0
 	and	#<$2
-	bne	L482
-	brl	L10078
-L482:
-	.line	1187
+	bne	L536
+	brl	L10086
+L536:
+	.line	1231
 ;		dx = xmax - fwidth;
-	.line	1188
+	.line	1232
 	sec
-	lda	<L477+xmax_1
-	sbc	<L477+fwidth_1
-	sta	<L477+dx_1
+	lda	<L531+xmax_1
+	sbc	<L531+fwidth_1
+	sta	<L531+dx_1
 ;
 ;		ptr = (LPSTR)&text[strlen(text)];
-	.line	1190
-	pei	<L476+text_0+2
-	pei	<L476+text_0
+	.line	1234
+	pei	<L530+text_0+2
+	pei	<L530+text_0
 	jsl	~~strlen
 	sta	<R0
 	lda	<R0
 	sta	<R0
 	stz	<R0+2
 	clc
-	lda	<L476+text_0
+	lda	<L530+text_0
 	adc	<R0
-	sta	<L477+ptr_1
-	lda	<L476+text_0+2
+	sta	<L531+ptr_1
+	lda	<L530+text_0+2
 	adc	<R0+2
-	sta	<L477+ptr_1+2
+	sta	<L531+ptr_1+2
 ;		while(ptr >= text)
-	.line	1191
-L10079:
-	lda	<L477+ptr_1
-	cmp	<L476+text_0
-	lda	<L477+ptr_1+2
-	sbc	<L476+text_0+2
-	bcs	L483
-	brl	L10080
-L483:
+	.line	1235
+L10087:
+	lda	<L531+ptr_1
+	cmp	<L530+text_0
+	lda	<L531+ptr_1+2
+	sbc	<L530+text_0+2
+	bcs	L537
+	brl	L10088
+L537:
 ;		{
-	.line	1192
+	.line	1236
 ;			dx-=k_put_binary_variablefont_point_ex( fptr,*ptr,dx,prect->y,fwidth,fheight,color,page);
-	.line	1193
-	pei	<L476+page_0
-	pei	<L476+color_0
-	pei	<L477+fheight_1
-	pei	<L477+fwidth_1
+	.line	1237
+	pei	<L530+page_0
+	pei	<L530+color_0
+	pei	<L531+fheight_1
+	pei	<L531+fwidth_1
 	ldy	#$2
-	lda	[<L476+prect_0],Y
+	lda	[<L530+prect_0],Y
 	pha
-	pei	<L477+dx_1
-	lda	[<L477+ptr_1]
+	pei	<L531+dx_1
+	lda	[<L531+ptr_1]
 	pha
-	pei	<L477+fptr_1+2
-	pei	<L477+fptr_1
+	pei	<L531+fptr_1+2
+	pei	<L531+fptr_1
 	jsl	~~k_put_binary_variablefont_point_ex
 	sta	<R0
 	sec
-	lda	<L477+dx_1
+	lda	<L531+dx_1
 	sbc	<R0
-	sta	<L477+dx_1
+	sta	<L531+dx_1
 ;			if(dx < prect->x)
-	.line	1194
+	.line	1238
 ;				break;
 	sec
-	lda	<L477+dx_1
-	sbc	[<L476+prect_0]
-	bvs	L484
+	lda	<L531+dx_1
+	sbc	[<L530+prect_0]
+	bvs	L538
 	eor	#$8000
-L484:
-	bmi	L485
-	brl	L10080
-L485:
+L538:
+	bmi	L539
+	brl	L10088
+L539:
 ;
 ;			ptr--;
-	.line	1197
-	lda	<L477+ptr_1
-	bne	L486
-	dec	<L477+ptr_1+2
-L486:
-	dec	<L477+ptr_1
+	.line	1241
+	lda	<L531+ptr_1
+	bne	L540
+	dec	<L531+ptr_1+2
+L540:
+	dec	<L531+ptr_1
 ;			col+=8;
-	.line	1198
+	.line	1242
 	clc
 	lda	#$8
-	adc	<L477+col_1
-	sta	<L477+col_1
+	adc	<L531+col_1
+	sta	<L531+col_1
 ;		}
-	.line	1199
-	brl	L10079
-L10080:
+	.line	1243
+	brl	L10087
+L10088:
 ;	}
-	.line	1200
+	.line	1244
 ;	else
-	brl	L10081
-L10078:
+	brl	L10089
+L10086:
 ;	{
-	.line	1202
+	.line	1246
 ;		ptr = (LPCHAR)(text);
-	.line	1203
-	lda	<L476+text_0
-	sta	<L477+ptr_1
-	lda	<L476+text_0+2
-	sta	<L477+ptr_1+2
+	.line	1247
+	lda	<L530+text_0
+	sta	<L531+ptr_1
+	lda	<L530+text_0+2
+	sta	<L531+ptr_1+2
 ;		while(*ptr)
-	.line	1204
-L10082:
-	lda	[<L477+ptr_1]
+	.line	1248
+L10090:
+	lda	[<L531+ptr_1]
 	and	#$ff
-	bne	L487
-	brl	L10083
-L487:
+	bne	L541
+	brl	L10091
+L541:
 ;		{
-	.line	1205
+	.line	1249
 ;			if(*ptr == 0x0D)
-	.line	1206
+	.line	1250
 ;			{
 	sep	#$20
 	longa	off
-	lda	[<L477+ptr_1]
+	lda	[<L531+ptr_1]
 	cmp	#<$d
 	rep	#$20
 	longa	on
-	beq	L488
-	brl	L10084
-L488:
-	.line	1207
+	beq	L542
+	brl	L10092
+L542:
+	.line	1251
 ;				dx = prect->x;
-	.line	1208
-	lda	[<L476+prect_0]
-	sta	<L477+dx_1
+	.line	1252
+	lda	[<L530+prect_0]
+	sta	<L531+dx_1
 ;			}
-	.line	1209
+	.line	1253
 ;			else if(*ptr == 0x0A)
-	brl	L10085
-L10084:
-	.line	1210
+	brl	L10093
+L10092:
+	.line	1254
 ;			{
 	sep	#$20
 	longa	off
-	lda	[<L477+ptr_1]
+	lda	[<L531+ptr_1]
 	cmp	#<$a
 	rep	#$20
 	longa	on
-	beq	L489
-	brl	L10086
-L489:
-	.line	1211
+	beq	L543
+	brl	L10094
+L543:
+	.line	1255
 ;				dy+=fheight;
-	.line	1212
+	.line	1256
 	clc
-	lda	<L477+dy_1
-	adc	<L477+fheight_1
-	sta	<L477+dy_1
+	lda	<L531+dy_1
+	adc	<L531+fheight_1
+	sta	<L531+dy_1
 ;				dx = prect->x;
-	.line	1213
-	lda	[<L476+prect_0]
-	sta	<L477+dx_1
+	.line	1257
+	lda	[<L530+prect_0]
+	sta	<L531+dx_1
 ;			}
-	.line	1214
+	.line	1258
 ;			else
-	brl	L10087
-L10086:
+	brl	L10095
+L10094:
 ;			{
-	.line	1216
+	.line	1260
 ;				if(dx < xmax && dy < ymax)
-	.line	1217
+	.line	1261
 ;					dx+=k_put_binary_variablefont_point_ex( fptr,*ptr,dx,dy,fwidth,fheight,color,page);
 	sec
-	lda	<L477+dx_1
-	sbc	<L477+xmax_1
-	bvs	L490
+	lda	<L531+dx_1
+	sbc	<L531+xmax_1
+	bvs	L544
 	eor	#$8000
-L490:
-	bpl	L491
-	brl	L10088
-L491:
+L544:
+	bpl	L545
+	brl	L10096
+L545:
 	sec
-	lda	<L477+dy_1
-	sbc	<L477+ymax_1
-	bvs	L492
+	lda	<L531+dy_1
+	sbc	<L531+ymax_1
+	bvs	L546
 	eor	#$8000
-L492:
-	bpl	L493
-	brl	L10088
-L493:
-	.line	1218
-	pei	<L476+page_0
-	pei	<L476+color_0
-	pei	<L477+fheight_1
-	pei	<L477+fwidth_1
-	pei	<L477+dy_1
-	pei	<L477+dx_1
-	lda	[<L477+ptr_1]
+L546:
+	bpl	L547
+	brl	L10096
+L547:
+	.line	1262
+	pei	<L530+page_0
+	pei	<L530+color_0
+	pei	<L531+fheight_1
+	pei	<L531+fwidth_1
+	pei	<L531+dy_1
+	pei	<L531+dx_1
+	lda	[<L531+ptr_1]
 	pha
-	pei	<L477+fptr_1+2
-	pei	<L477+fptr_1
+	pei	<L531+fptr_1+2
+	pei	<L531+fptr_1
 	jsl	~~k_put_binary_variablefont_point_ex
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L477+dx_1
-	sta	<L477+dx_1
+	adc	<L531+dx_1
+	sta	<L531+dx_1
 ;			}
-L10088:
-	.line	1219
-L10087:
-L10085:
+L10096:
+	.line	1263
+L10095:
+L10093:
 ;
 ;			//x+=k_put_binary_variablefont_point_ex( fptr,*ptr,x,prect->y,fwidth,fheight,color,page);
 ;			//if(dx > xmax)
 ;			//	break;
 ;
 ;			if(dy > ymax)
-	.line	1225
+	.line	1269
 ;			{
 	sec
-	lda	<L477+ymax_1
-	sbc	<L477+dy_1
-	bvs	L494
+	lda	<L531+ymax_1
+	sbc	<L531+dy_1
+	bvs	L548
 	eor	#$8000
-L494:
-	bpl	L495
-	brl	L10089
-L495:
-	.line	1226
+L548:
+	bpl	L549
+	brl	L10097
+L549:
+	.line	1270
 ;				k_debug_integer("k_draw_text_point_with_font:font ymax:",ymax);
-	.line	1227
-	pei	<L477+ymax_1
+	.line	1271
+	pei	<L531+ymax_1
 	pea	#^L83
 	pea	#<L83
 	jsl	~~k_debug_integer
 ;				k_debug_integer("k_draw_text_point_with_font:font dy@max:",dy);
-	.line	1228
-	pei	<L477+dy_1
+	.line	1272
+	pei	<L531+dy_1
 	pea	#^L83+39
 	pea	#<L83+39
 	jsl	~~k_debug_integer
 ;				break;
-	.line	1229
-	brl	L10083
+	.line	1273
+	brl	L10091
 ;			}
-	.line	1230
+	.line	1274
 ;
 ;			ptr++;
-L10089:
-	.line	1232
-	inc	<L477+ptr_1
-	bne	L496
-	inc	<L477+ptr_1+2
-L496:
+L10097:
+	.line	1276
+	inc	<L531+ptr_1
+	bne	L550
+	inc	<L531+ptr_1+2
+L550:
 ;			col+=8;
-	.line	1233
+	.line	1277
 	clc
 	lda	#$8
-	adc	<L477+col_1
-	sta	<L477+col_1
+	adc	<L531+col_1
+	sta	<L531+col_1
 ;		}
-	.line	1234
-	brl	L10082
-L10083:
+	.line	1278
+	brl	L10090
+L10091:
 ;	}
-	.line	1235
-L10081:
+	.line	1279
+L10089:
 ;
 ;
 ;	return col;
-	.line	1238
-	lda	<L477+col_1
-	brl	L481
+	.line	1282
+	lda	<L531+col_1
+	brl	L535
 ;}
-	.line	1239
-	.endblock	1239
-L476	equ	38
-L477	equ	9
+	.line	1283
+	.endblock	1283
+L530	equ	38
+L531	equ	9
 	ends
 	efunc
-	.endfunc	1239,9,38
-	.line	1239
+	.endfunc	1283,9,38
+	.line	1283
 	data
 L83:
 	db	$6B,$5F,$64,$72,$61,$77,$5F,$74,$65,$78,$74,$5F,$70,$6F,$69
@@ -9952,18 +10514,18 @@ L83:
 ;
 ;int k_draw_text_point_with_font_ex(LPCSTR text,LPCSTR charSet,int x,int y,char color,UINT page)
 ;{
-	.line	1243
-	.line	1244
+	.line	1287
+	.line	1288
 	GFX
 	xdef	~~k_draw_text_point_with_font_ex
 	func
-	.function	1244
+	.function	1288
 ~~k_draw_text_point_with_font_ex:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L498
+	sbc	#L552
 	tcs
 	phd
 	tcd
@@ -9973,7 +10535,7 @@ x_0	set	12
 y_0	set	14
 color_0	set	16
 page_0	set	18
-	.block	1244
+	.block	1288
 ;	int col = 0;
 ;	int width = 0;
 ;	int height = 0;
@@ -9997,21 +10559,21 @@ ptr_1	set	6
 	.sym	y,14,5,6,16
 	.sym	color,16,14,6,8
 	.sym	page,18,16,6,16
-	stz	<L499+col_1
-	stz	<L499+width_1
-	stz	<L499+height_1
-	stz	<L499+ptr_1
-	stz	<L499+ptr_1+2
-	.line	1253
-	lda	[<L498+charSet_0]
+	stz	<L553+col_1
+	stz	<L553+width_1
+	stz	<L553+height_1
+	stz	<L553+ptr_1
+	stz	<L553+ptr_1+2
+	.line	1297
+	lda	[<L552+charSet_0]
 	and	#<$ff
-	sta	<L499+width_1
+	sta	<L553+width_1
 ;	height = (INT)(((INT)charSet[1]) & 0x00FF);
-	.line	1254
+	.line	1298
 	ldy	#$1
-	lda	[<L498+charSet_0],Y
+	lda	[<L552+charSet_0],Y
 	and	#<$ff
-	sta	<L499+height_1
+	sta	<L553+height_1
 ;
 ;
 ;	//k_debug_integer("k_draw_text_point_with_font:font x:",x);
@@ -10021,39 +10583,39 @@ ptr_1	set	6
 ;
 ;
 ;	ptr = (LPCHAR)(text);
-	.line	1263
-	lda	<L498+text_0
-	sta	<L499+ptr_1
-	lda	<L498+text_0+2
-	sta	<L499+ptr_1+2
+	.line	1307
+	lda	<L552+text_0
+	sta	<L553+ptr_1
+	lda	<L552+text_0+2
+	sta	<L553+ptr_1+2
 ;	while(*ptr)
-	.line	1264
-L10090:
-	lda	[<L499+ptr_1]
+	.line	1308
+L10098:
+	lda	[<L553+ptr_1]
 	and	#$ff
-	bne	L501
-	brl	L10091
-L501:
+	bne	L555
+	brl	L10099
+L555:
 ;	{
-	.line	1265
+	.line	1309
 ;		//x+=k_put_font_point(*ptr,x,y,color);
 ;
 ;		x+=k_put_binary_variablefont_point_ex( (LPCHAR)&charSet[2] , *ptr,x,y,width,height,color,page);
-	.line	1268
-	pei	<L498+page_0
-	pei	<L498+color_0
-	pei	<L499+height_1
-	pei	<L499+width_1
-	pei	<L498+y_0
-	pei	<L498+x_0
-	lda	[<L499+ptr_1]
+	.line	1312
+	pei	<L552+page_0
+	pei	<L552+color_0
+	pei	<L553+height_1
+	pei	<L553+width_1
+	pei	<L552+y_0
+	pei	<L552+x_0
+	lda	[<L553+ptr_1]
 	pha
 	clc
 	lda	#$2
-	adc	<L498+charSet_0
+	adc	<L552+charSet_0
 	sta	<R0
 	lda	#$0
-	adc	<L498+charSet_0+2
+	adc	<L552+charSet_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
@@ -10061,67 +10623,67 @@ L501:
 	sta	<R1
 	clc
 	lda	<R1
-	adc	<L498+x_0
-	sta	<L498+x_0
+	adc	<L552+x_0
+	sta	<L552+x_0
 ;		//x+=k_put_binary_font_point( Bm437AmstradPC1512_2y , *ptr,x,y,color);
 ;
 ;		ptr++;
-	.line	1271
-	inc	<L499+ptr_1
-	bne	L502
-	inc	<L499+ptr_1+2
-L502:
+	.line	1315
+	inc	<L553+ptr_1
+	bne	L556
+	inc	<L553+ptr_1+2
+L556:
 ;		col+=8;
-	.line	1272
+	.line	1316
 	clc
 	lda	#$8
-	adc	<L499+col_1
-	sta	<L499+col_1
+	adc	<L553+col_1
+	sta	<L553+col_1
 ;	}
-	.line	1273
-	brl	L10090
-L10091:
+	.line	1317
+	brl	L10098
+L10099:
 ;
 ;	return col;
-	.line	1275
-	lda	<L499+col_1
-L503:
+	.line	1319
+	lda	<L553+col_1
+L557:
 	tay
-	lda	<L498+2
-	sta	<L498+2+16
-	lda	<L498+1
-	sta	<L498+1+16
+	lda	<L552+2
+	sta	<L552+2+16
+	lda	<L552+1
+	sta	<L552+1+16
 	pld
 	tsc
 	clc
-	adc	#L498+16
+	adc	#L552+16
 	tcs
 	tya
 	rtl
 ;}
-	.line	1276
-	.endblock	1276
-L498	equ	18
-L499	equ	9
+	.line	1320
+	.endblock	1320
+L552	equ	18
+L553	equ	9
 	ends
 	efunc
-	.endfunc	1276,9,18
-	.line	1276
+	.endfunc	1320,9,18
+	.line	1320
 ;
 ;int k_draw_text_point_with_font(LPCSTR text,LPCSTR charSet,int x,int y,char color)
 ;{
-	.line	1278
-	.line	1279
+	.line	1322
+	.line	1323
 	GFX
 	xdef	~~k_draw_text_point_with_font
 	func
-	.function	1279
+	.function	1323
 ~~k_draw_text_point_with_font:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L504
+	sbc	#L558
 	tcs
 	phd
 	tcd
@@ -10130,7 +10692,7 @@ charSet_0	set	8
 x_0	set	12
 y_0	set	14
 color_0	set	16
-	.block	1279
+	.block	1323
 ;	int col = 0;
 ;	int width = 0;
 ;	int height = 0;
@@ -10153,21 +10715,21 @@ ptr_1	set	6
 	.sym	x,12,5,6,16
 	.sym	y,14,5,6,16
 	.sym	color,16,14,6,8
-	stz	<L505+col_1
-	stz	<L505+width_1
-	stz	<L505+height_1
-	stz	<L505+ptr_1
-	stz	<L505+ptr_1+2
-	.line	1288
-	lda	[<L504+charSet_0]
+	stz	<L559+col_1
+	stz	<L559+width_1
+	stz	<L559+height_1
+	stz	<L559+ptr_1
+	stz	<L559+ptr_1+2
+	.line	1332
+	lda	[<L558+charSet_0]
 	and	#$ff
-	sta	<L505+width_1
+	sta	<L559+width_1
 ;	height = charSet[1];
-	.line	1289
+	.line	1333
 	ldy	#$1
-	lda	[<L504+charSet_0],Y
+	lda	[<L558+charSet_0],Y
 	and	#$ff
-	sta	<L505+height_1
+	sta	<L559+height_1
 ;
 ;
 ;	//k_debug_integer("k_draw_text_point_with_font:font width:",width);
@@ -10175,38 +10737,38 @@ ptr_1	set	6
 ;
 ;
 ;	ptr = (LPCHAR)(text);
-	.line	1296
-	lda	<L504+text_0
-	sta	<L505+ptr_1
-	lda	<L504+text_0+2
-	sta	<L505+ptr_1+2
+	.line	1340
+	lda	<L558+text_0
+	sta	<L559+ptr_1
+	lda	<L558+text_0+2
+	sta	<L559+ptr_1+2
 ;	while(*ptr)
-	.line	1297
-L10092:
-	lda	[<L505+ptr_1]
+	.line	1341
+L10100:
+	lda	[<L559+ptr_1]
 	and	#$ff
-	bne	L507
-	brl	L10093
-L507:
+	bne	L561
+	brl	L10101
+L561:
 ;	{
-	.line	1298
+	.line	1342
 ;		//x+=k_put_font_point(*ptr,x,y,color);
 ;
 ;		x+=k_put_binary_variablefont_point( (LPCHAR)&charSet[2] , *ptr,x,y,width,height,color);
-	.line	1301
-	pei	<L504+color_0
-	pei	<L505+height_1
-	pei	<L505+width_1
-	pei	<L504+y_0
-	pei	<L504+x_0
-	lda	[<L505+ptr_1]
+	.line	1345
+	pei	<L558+color_0
+	pei	<L559+height_1
+	pei	<L559+width_1
+	pei	<L558+y_0
+	pei	<L558+x_0
+	lda	[<L559+ptr_1]
 	pha
 	clc
 	lda	#$2
-	adc	<L504+charSet_0
+	adc	<L558+charSet_0
 	sta	<R0
 	lda	#$0
-	adc	<L504+charSet_0+2
+	adc	<L558+charSet_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
@@ -10214,68 +10776,68 @@ L507:
 	sta	<R1
 	clc
 	lda	<R1
-	adc	<L504+x_0
-	sta	<L504+x_0
+	adc	<L558+x_0
+	sta	<L558+x_0
 ;		//x+=k_put_binary_font_point( Bm437AmstradPC1512_2y , *ptr,x,y,color);
 ;
 ;		ptr++;
-	.line	1304
-	inc	<L505+ptr_1
-	bne	L508
-	inc	<L505+ptr_1+2
-L508:
+	.line	1348
+	inc	<L559+ptr_1
+	bne	L562
+	inc	<L559+ptr_1+2
+L562:
 ;		col+=8;
-	.line	1305
+	.line	1349
 	clc
 	lda	#$8
-	adc	<L505+col_1
-	sta	<L505+col_1
+	adc	<L559+col_1
+	sta	<L559+col_1
 ;	}
-	.line	1306
-	brl	L10092
-L10093:
+	.line	1350
+	brl	L10100
+L10101:
 ;
 ;	return col;
-	.line	1308
-	lda	<L505+col_1
-L509:
+	.line	1352
+	lda	<L559+col_1
+L563:
 	tay
-	lda	<L504+2
-	sta	<L504+2+14
-	lda	<L504+1
-	sta	<L504+1+14
+	lda	<L558+2
+	sta	<L558+2+14
+	lda	<L558+1
+	sta	<L558+1+14
 	pld
 	tsc
 	clc
-	adc	#L504+14
+	adc	#L558+14
 	tcs
 	tya
 	rtl
 ;}
-	.line	1309
-	.endblock	1309
-L504	equ	18
-L505	equ	9
+	.line	1353
+	.endblock	1353
+L558	equ	18
+L559	equ	9
 	ends
 	efunc
-	.endfunc	1309,9,18
-	.line	1309
+	.endfunc	1353,9,18
+	.line	1353
 ;
 ;
 ;int k_draw_text_scaled(char FAR *text,int row,int col,char color,int scale)
 ;{
-	.line	1312
-	.line	1313
+	.line	1356
+	.line	1357
 	GFX
 	xdef	~~k_draw_text_scaled
 	func
-	.function	1313
+	.function	1357
 ~~k_draw_text_scaled:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L510
+	sbc	#L564
 	tcs
 	phd
 	tcd
@@ -10284,7 +10846,7 @@ row_0	set	8
 col_0	set	10
 color_0	set	12
 scale_0	set	14
-	.block	1313
+	.block	1357
 ;	char FAR * ptr = (text);
 ;	while(*ptr)
 ptr_1	set	0
@@ -10294,138 +10856,138 @@ ptr_1	set	0
 	.sym	col,10,5,6,16
 	.sym	color,12,14,6,8
 	.sym	scale,14,5,6,16
-	lda	<L510+text_0
-	sta	<L511+ptr_1
-	lda	<L510+text_0+2
-	sta	<L511+ptr_1+2
-	.line	1315
-L10094:
-	lda	[<L511+ptr_1]
+	lda	<L564+text_0
+	sta	<L565+ptr_1
+	lda	<L564+text_0+2
+	sta	<L565+ptr_1+2
+	.line	1359
+L10102:
+	lda	[<L565+ptr_1]
 	and	#$ff
-	bne	L513
-	brl	L10095
-L513:
+	bne	L567
+	brl	L10103
+L567:
 ;	{
-	.line	1316
+	.line	1360
 ;		k_put_font_scaled(*ptr,col,row,color,scale);
-	.line	1317
-	pei	<L510+scale_0
-	pei	<L510+color_0
-	pei	<L510+row_0
-	pei	<L510+col_0
-	lda	[<L511+ptr_1]
+	.line	1361
+	pei	<L564+scale_0
+	pei	<L564+color_0
+	pei	<L564+row_0
+	pei	<L564+col_0
+	lda	[<L565+ptr_1]
 	pha
 	jsl	~~k_put_font_scaled
 ;		col++;
-	.line	1318
-	inc	<L510+col_0
+	.line	1362
+	inc	<L564+col_0
 ;		ptr++;
-	.line	1319
-	inc	<L511+ptr_1
-	bne	L514
-	inc	<L511+ptr_1+2
-L514:
+	.line	1363
+	inc	<L565+ptr_1
+	bne	L568
+	inc	<L565+ptr_1+2
+L568:
 ;	}
-	.line	1320
-	brl	L10094
-L10095:
+	.line	1364
+	brl	L10102
+L10103:
 ;	
 ;	return col;
-	.line	1322
-	lda	<L510+col_0
-L515:
+	.line	1366
+	lda	<L564+col_0
+L569:
 	tay
-	lda	<L510+2
-	sta	<L510+2+12
-	lda	<L510+1
-	sta	<L510+1+12
+	lda	<L564+2
+	sta	<L564+2+12
+	lda	<L564+1
+	sta	<L564+1+12
 	pld
 	tsc
 	clc
-	adc	#L510+12
+	adc	#L564+12
 	tcs
 	tya
 	rtl
 ;}
-	.line	1323
-	.endblock	1323
-L510	equ	4
-L511	equ	1
+	.line	1367
+	.endblock	1367
+L564	equ	4
+L565	equ	1
 	ends
 	efunc
-	.endfunc	1323,1,4
-	.line	1323
+	.endfunc	1367,1,4
+	.line	1367
 ;
 ;int k_get_font_metrics(FONTMETRIC FAR *metric)
 ;{
-	.line	1325
-	.line	1326
+	.line	1369
+	.line	1370
 	GFX
 	xdef	~~k_get_font_metrics
 	func
-	.function	1326
+	.function	1370
 ~~k_get_font_metrics:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L516
+	sbc	#L570
 	tcs
 	phd
 	tcd
 metric_0	set	4
-	.block	1326
+	.block	1370
 ;	metric->width  = FONTW;
 	.sym	metric,4,138,6,32,35
-	.line	1327
+	.line	1371
 	jsl	~~k_font_getFontWidth
-	sta	[<L516+metric_0]
+	sta	[<L570+metric_0]
 ;	metric->height = FONTH;
-	.line	1328
+	.line	1372
 	jsl	~~k_font_getFontHeight
 	ldy	#$2
-	sta	[<L516+metric_0],Y
+	sta	[<L570+metric_0],Y
 ;	
 ;	return sizeof(FONTMETRIC);
-	.line	1330
+	.line	1374
 	lda	#$4
-L519:
+L573:
 	tay
-	lda	<L516+2
-	sta	<L516+2+4
-	lda	<L516+1
-	sta	<L516+1+4
+	lda	<L570+2
+	sta	<L570+2+4
+	lda	<L570+1
+	sta	<L570+1+4
 	pld
 	tsc
 	clc
-	adc	#L516+4
+	adc	#L570+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	1331
-	.endblock	1331
-L516	equ	0
-L517	equ	1
+	.line	1375
+	.endblock	1375
+L570	equ	0
+L571	equ	1
 	ends
 	efunc
-	.endfunc	1331,1,0
-	.line	1331
+	.endfunc	1375,1,0
+	.line	1375
 ;
 ;int k_put_font_point(char outChar,int cx,int cy,char color)
 ;{
-	.line	1333
-	.line	1334
+	.line	1377
+	.line	1378
 	GFX
 	xdef	~~k_put_font_point
 	func
-	.function	1334
+	.function	1378
 ~~k_put_font_point:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L520
+	sbc	#L574
 	tcs
 	phd
 	tcd
@@ -10433,7 +10995,7 @@ outChar_0	set	4
 cx_0	set	6
 cy_0	set	8
 color_0	set	10
-	.block	1334
+	.block	1378
 ;	int x = 0;
 ;	int y = 0;
 ;	int textX = cx;
@@ -10456,59 +11018,59 @@ img_1	set	8
 	.sym	cx,6,5,6,16
 	.sym	cy,8,5,6,16
 	.sym	color,10,14,6,8
-	stz	<L521+x_1
-	stz	<L521+y_1
-	lda	<L520+cx_0
-	sta	<L521+textX_1
-	lda	<L520+cy_0
-	sta	<L521+textY_1
-	stz	<L521+img_1
-	stz	<L521+img_1+2
-	.line	1342
-	lda	<L520+outChar_0
+	stz	<L575+x_1
+	stz	<L575+y_1
+	lda	<L574+cx_0
+	sta	<L575+textX_1
+	lda	<L574+cy_0
+	sta	<L575+textY_1
+	stz	<L575+img_1
+	stz	<L575+img_1+2
+	.line	1386
+	lda	<L574+outChar_0
 	and	#$ff
 	pha
 	jsl	~~toupper
 	sep	#$20
 	longa	off
-	sta	<L520+outChar_0
+	sta	<L574+outChar_0
 	rep	#$20
 	longa	on
 ;
 ;    if(outChar == 32)
-	.line	1344
+	.line	1388
 ;	{
 	sep	#$20
 	longa	off
-	lda	<L520+outChar_0
+	lda	<L574+outChar_0
 	cmp	#<$20
 	rep	#$20
 	longa	on
-	beq	L523
-	brl	L10096
-L523:
-	.line	1345
+	beq	L577
+	brl	L10104
+L577:
+	.line	1389
 ;	   img = NULL;//fontSpace;
-	.line	1346
-	stz	<L521+img_1
-	stz	<L521+img_1+2
+	.line	1390
+	stz	<L575+img_1
+	stz	<L575+img_1+2
 ;    }
-	.line	1347
+	.line	1391
 ;    else
-	brl	L10097
-L10096:
+	brl	L10105
+L10104:
 ;	{
-	.line	1349
+	.line	1393
 ;	    img = fontImg[(int)characterROMMapping[(int)(outChar & 0xFF)]];
-	.line	1350
-	lda	<L520+outChar_0
+	.line	1394
+	lda	<L574+outChar_0
 	and	#<$ff
 	sta	<R2
 	ldy	#$0
 	lda	<R2
-	bpl	L524
+	bpl	L578
 	dey
-L524:
+L578:
 	sta	<R2
 	sty	<R2+2
 	pei	<R2+2
@@ -10527,9 +11089,9 @@ L524:
 	sta	<R3+2
 	ldy	#$0
 	lda	[<R3]
-	bpl	L525
+	bpl	L579
 	dey
-L525:
+L579:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -10542,189 +11104,189 @@ L525:
 	clc
 	lda	#<~~fontImg
 	adc	<R0
-	sta	<L521+img_1
+	sta	<L575+img_1
 	lda	#^~~fontImg
 	adc	<R0+2
-	sta	<L521+img_1+2
+	sta	<L575+img_1+2
 ;	}
-	.line	1351
-L10097:
+	.line	1395
+L10105:
 ;	//printf("putFont:%d\n",characterROMMapping[outChar]);
 ;
 ;	// get the font 'image'
 ;        //char *img = fontImg[ix]; 
 ;        // loop through pixel rows
 ;	if(img!=NULL)
-	.line	1357
+	.line	1401
 ;	{
-	lda	<L521+img_1
-	ora	<L521+img_1+2
-	bne	L526
-	brl	L10098
-L526:
-	.line	1358
+	lda	<L575+img_1
+	ora	<L575+img_1+2
+	bne	L580
+	brl	L10106
+L580:
+	.line	1402
 ;		for (y = 0; y < FONTH; y++) 
-	.line	1359
-	stz	<L521+y_1
-	brl	L10102
-L10101:
+	.line	1403
+	stz	<L575+y_1
+	brl	L10110
+L10109:
 ;		{
-	.line	1360
+	.line	1404
 ;			// loop through pixel columns
 ;			for (x = 0; x < FONTW; x++) 
-	.line	1362
-	stz	<L521+x_1
-	brl	L10106
-L10105:
+	.line	1406
+	stz	<L575+x_1
+	brl	L10114
+L10113:
 ;			{
-	.line	1363
+	.line	1407
 ;				// get the pixel value
 ;				char b = img[y * FONTW + x];
 ;				if (b > 0) 
-	.block	1366
+	.block	1410
 b_2	set	12
 	.sym	b,12,14,1,8
 	jsl	~~k_font_getFontWidth
 	sta	<R0
 	lda	<R0
-	ldx	<L521+y_1
+	ldx	<L575+y_1
 	xref	~~~mul
 	jsl	~~~mul
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L521+x_1
+	adc	<L575+x_1
 	sta	<R1
 	sep	#$20
 	longa	off
 	ldy	<R1
-	lda	[<L521+img_1],Y
-	sta	<L521+b_2
+	lda	[<L575+img_1],Y
+	sta	<L575+b_2
 	rep	#$20
 	longa	on
-	.line	1366
+	.line	1410
 ;				{ // plot the pixel
 	sep	#$20
 	longa	off
 	lda	#$0
-	cmp	<L521+b_2
+	cmp	<L575+b_2
 	rep	#$20
 	longa	on
-	bcc	L528
-	brl	L10107
-L528:
-	.line	1367
+	bcc	L582
+	brl	L10115
+L582:
+	.line	1411
 ;					k_draw_pixel(textX + x, textY + y, color);
-	.line	1368
-	pei	<L520+color_0
+	.line	1412
+	pei	<L574+color_0
 	clc
-	lda	<L521+textY_1
-	adc	<L521+y_1
+	lda	<L575+textY_1
+	adc	<L575+y_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L529
+	bpl	L583
 	dey
-L529:
+L583:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L521+textX_1
-	adc	<L521+x_1
+	lda	<L575+textX_1
+	adc	<L575+x_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L530
+	bpl	L584
 	dey
-L530:
+L584:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;				}
-	.line	1369
+	.line	1413
 ;				else 
-	brl	L10108
-L10107:
+	brl	L10116
+L10115:
 ;				{ 
-	.line	1371
+	.line	1415
 ;					// leave empty (or maybe plot 'text backgr color')
 ;				}
-	.line	1373
-L10108:
+	.line	1417
+L10116:
 ;			} // end "for x"
-	.endblock	1374
-	.line	1374
-L10103:
-	inc	<L521+x_1
-L10106:
+	.endblock	1418
+	.line	1418
+L10111:
+	inc	<L575+x_1
+L10114:
 	jsl	~~k_font_getFontWidth
 	sta	<R0
-	lda	<L521+x_1
+	lda	<L575+x_1
 	cmp	<R0
-	bcs	L531
-	brl	L10105
-L531:
-L10104:
+	bcs	L585
+	brl	L10113
+L585:
+L10112:
 ;		} // end "for y"
-	.line	1375
-L10099:
-	inc	<L521+y_1
-L10102:
+	.line	1419
+L10107:
+	inc	<L575+y_1
+L10110:
 	jsl	~~k_font_getFontHeight
 	sta	<R0
-	lda	<L521+y_1
+	lda	<L575+y_1
 	cmp	<R0
-	bcs	L532
-	brl	L10101
-L532:
-L10100:
+	bcs	L586
+	brl	L10109
+L586:
+L10108:
 ;	}
-	.line	1376
+	.line	1420
 ;	return FONTW;
-L10098:
-	.line	1377
+L10106:
+	.line	1421
 	jsl	~~k_font_getFontWidth
-L533:
+L587:
 	tay
-	lda	<L520+2
-	sta	<L520+2+8
-	lda	<L520+1
-	sta	<L520+1+8
+	lda	<L574+2
+	sta	<L574+2+8
+	lda	<L574+1
+	sta	<L574+1+8
 	pld
 	tsc
 	clc
-	adc	#L520+8
+	adc	#L574+8
 	tcs
 	tya
 	rtl
 ;}
-	.line	1378
-	.endblock	1378
-L520	equ	29
-L521	equ	17
+	.line	1422
+	.endblock	1422
+L574	equ	29
+L575	equ	17
 	ends
 	efunc
-	.endfunc	1378,17,29
-	.line	1378
+	.endfunc	1422,17,29
+	.line	1422
 ;
 ;int k_put_binary_font_point(LPCHAR fontSet, char outChar,int cx,int cy,char color)
 ;{
-	.line	1380
-	.line	1381
+	.line	1424
+	.line	1425
 	GFX
 	xdef	~~k_put_binary_font_point
 	func
-	.function	1381
+	.function	1425
 ~~k_put_binary_font_point:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L534
+	sbc	#L588
 	tcs
 	phd
 	tcd
@@ -10733,7 +11295,7 @@ outChar_0	set	8
 cx_0	set	10
 cy_0	set	12
 color_0	set	14
-	.block	1381
+	.block	1425
 ;	int x = 0;
 ;	int y = 0;
 ;	int textX = cx;
@@ -10757,41 +11319,41 @@ img_1	set	8
 	.sym	cx,10,5,6,16
 	.sym	cy,12,5,6,16
 	.sym	color,14,14,6,8
-	stz	<L535+x_1
-	stz	<L535+y_1
-	lda	<L534+cx_0
-	sta	<L535+textX_1
-	lda	<L534+cy_0
-	sta	<L535+textY_1
-	stz	<L535+img_1
-	stz	<L535+img_1+2
-	.line	1389
+	stz	<L589+x_1
+	stz	<L589+y_1
+	lda	<L588+cx_0
+	sta	<L589+textX_1
+	lda	<L588+cy_0
+	sta	<L589+textY_1
+	stz	<L589+img_1
+	stz	<L589+img_1+2
+	.line	1433
 ;	{
 	sep	#$20
 	longa	off
-	lda	<L534+outChar_0
+	lda	<L588+outChar_0
 	cmp	#<$20
 	rep	#$20
 	longa	on
-	beq	L537
-	brl	L10109
-L537:
-	.line	1390
+	beq	L591
+	brl	L10117
+L591:
+	.line	1434
 ;	   img = NULL;//fontSpace;
-	.line	1391
-	stz	<L535+img_1
-	stz	<L535+img_1+2
+	.line	1435
+	stz	<L589+img_1
+	stz	<L589+img_1+2
 ;    }
-	.line	1392
+	.line	1436
 ;    else
-	brl	L10110
-L10109:
+	brl	L10118
+L10117:
 ;	{
-	.line	1394
+	.line	1438
 ;	    //img = &(fontSet[characterROMMapping[outChar]]);
 ;    	img = fontSet+=(8*outChar);
-	.line	1396
-	lda	<L534+outChar_0
+	.line	1440
+	lda	<L588+outChar_0
 	and	#$ff
 	sta	<R1
 	lda	<R1
@@ -10801,72 +11363,72 @@ L10109:
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L538
+	bpl	L592
 	dey
-L538:
+L592:
 	sta	<R0
 	sty	<R0+2
 	clc
-	lda	<L534+fontSet_0
+	lda	<L588+fontSet_0
 	adc	<R0
-	sta	<L534+fontSet_0
-	lda	<L534+fontSet_0+2
+	sta	<L588+fontSet_0
+	lda	<L588+fontSet_0+2
 	adc	<R0+2
-	sta	<L534+fontSet_0+2
-	lda	<L534+fontSet_0
-	sta	<L535+img_1
-	lda	<L534+fontSet_0+2
-	sta	<L535+img_1+2
+	sta	<L588+fontSet_0+2
+	lda	<L588+fontSet_0
+	sta	<L589+img_1
+	lda	<L588+fontSet_0+2
+	sta	<L589+img_1+2
 ;    	//img = "\xc3\xc3\xc3\xc3\xc3\xc3\xc3\xc3";//&(fontSet[outChar]);
 ;	}
-	.line	1398
-L10110:
+	.line	1442
+L10118:
 ;	//printf("putFont:%d\n",characterROMMapping[outChar]);
 ;
 ;	// get the font 'image'
 ;        //char *img = fontImg[ix];
 ;        // loop through pixel rows
 ;	if(img!=NULL)
-	.line	1404
+	.line	1448
 ;	{
-	lda	<L535+img_1
-	ora	<L535+img_1+2
-	bne	L539
-	brl	L10111
-L539:
-	.line	1405
+	lda	<L589+img_1
+	ora	<L589+img_1+2
+	bne	L593
+	brl	L10119
+L593:
+	.line	1449
 ;		for (y = 0; y < FONTH; y++)
-	.line	1406
-	stz	<L535+y_1
-	brl	L10115
-L10114:
+	.line	1450
+	stz	<L589+y_1
+	brl	L10123
+L10122:
 ;		{
-	.line	1407
+	.line	1451
 ;			// get the pixel value
 ;			PBYTEBITS b = (PBYTEBITS)&(img[y]); //img[y * FONTW + x];
 ;			if (b->b7 > 0)
-	.block	1410
+	.block	1454
 b_2	set	12
 	.sym	b,12,138,1,32,4
 	ldy	#$0
-	lda	<L535+y_1
-	bpl	L541
+	lda	<L589+y_1
+	bpl	L595
 	dey
-L541:
+L595:
 	sta	<R0
 	sty	<R0+2
 	clc
-	lda	<L535+img_1
+	lda	<L589+img_1
 	adc	<R0
-	sta	<L535+b_2
-	lda	<L535+img_1+2
+	sta	<L589+b_2
+	lda	<L589+img_1+2
 	adc	<R0+2
-	sta	<L535+b_2+2
-	.line	1410
+	sta	<L589+b_2+2
+	.line	1454
 ;				k_draw_pixel(textX + 7, textY + y, color);
 	sep	#$20
 	longa	off
-	lda	[<L535+b_2]
+	lda	[<L589+b_2]
 	sta	<R0
 	rep	#$20
 	longa	on
@@ -10883,45 +11445,45 @@ L541:
 	cmp	<R0
 	rep	#$20
 	longa	on
-	bcc	L542
-	brl	L10116
-L542:
-	.line	1411
-	pei	<L534+color_0
+	bcc	L596
+	brl	L10124
+L596:
+	.line	1455
+	pei	<L588+color_0
 	clc
-	lda	<L535+textY_1
-	adc	<L535+y_1
+	lda	<L589+textY_1
+	adc	<L589+y_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L543
+	bpl	L597
 	dey
-L543:
+L597:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
 	lda	#$7
-	adc	<L535+textX_1
+	adc	<L589+textX_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L544
+	bpl	L598
 	dey
-L544:
+L598:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;			if (b->b6 > 0)
-L10116:
-	.line	1412
+L10124:
+	.line	1456
 ;				k_draw_pixel(textX + 6, textY + y, color);
 	sep	#$20
 	longa	off
-	lda	[<L535+b_2]
+	lda	[<L589+b_2]
 	sta	<R0
 	rep	#$20
 	longa	on
@@ -10943,45 +11505,45 @@ L10116:
 	cmp	<R0
 	rep	#$20
 	longa	on
-	bcc	L545
-	brl	L10117
-L545:
-	.line	1413
-	pei	<L534+color_0
+	bcc	L599
+	brl	L10125
+L599:
+	.line	1457
+	pei	<L588+color_0
 	clc
-	lda	<L535+textY_1
-	adc	<L535+y_1
+	lda	<L589+textY_1
+	adc	<L589+y_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L546
+	bpl	L600
 	dey
-L546:
+L600:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
 	lda	#$6
-	adc	<L535+textX_1
+	adc	<L589+textX_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L547
+	bpl	L601
 	dey
-L547:
+L601:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;			if (b->b5 > 0)
-L10117:
-	.line	1414
+L10125:
+	.line	1458
 ;				k_draw_pixel(textX + 5, textY + y, color);
 	sep	#$20
 	longa	off
-	lda	[<L535+b_2]
+	lda	[<L589+b_2]
 	sta	<R0
 	rep	#$20
 	longa	on
@@ -11004,45 +11566,45 @@ L10117:
 	cmp	<R0
 	rep	#$20
 	longa	on
-	bcc	L548
-	brl	L10118
-L548:
-	.line	1415
-	pei	<L534+color_0
+	bcc	L602
+	brl	L10126
+L602:
+	.line	1459
+	pei	<L588+color_0
 	clc
-	lda	<L535+textY_1
-	adc	<L535+y_1
+	lda	<L589+textY_1
+	adc	<L589+y_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L549
+	bpl	L603
 	dey
-L549:
+L603:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
 	lda	#$5
-	adc	<L535+textX_1
+	adc	<L589+textX_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L550
+	bpl	L604
 	dey
-L550:
+L604:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;			if (b->b4 > 0)
-L10118:
-	.line	1416
+L10126:
+	.line	1460
 ;				k_draw_pixel(textX + 4, textY + y, color);
 	sep	#$20
 	longa	off
-	lda	[<L535+b_2]
+	lda	[<L589+b_2]
 	sta	<R0
 	rep	#$20
 	longa	on
@@ -11066,45 +11628,45 @@ L10118:
 	cmp	<R0
 	rep	#$20
 	longa	on
-	bcc	L551
-	brl	L10119
-L551:
-	.line	1417
-	pei	<L534+color_0
+	bcc	L605
+	brl	L10127
+L605:
+	.line	1461
+	pei	<L588+color_0
 	clc
-	lda	<L535+textY_1
-	adc	<L535+y_1
+	lda	<L589+textY_1
+	adc	<L589+y_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L552
+	bpl	L606
 	dey
-L552:
+L606:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
 	lda	#$4
-	adc	<L535+textX_1
+	adc	<L589+textX_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L553
+	bpl	L607
 	dey
-L553:
+L607:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;			if (b->b3 > 0)
-L10119:
-	.line	1418
+L10127:
+	.line	1462
 ;				k_draw_pixel(textX + 3, textY + y, color);
 	sep	#$20
 	longa	off
-	lda	[<L535+b_2]
+	lda	[<L589+b_2]
 	sta	<R0
 	rep	#$20
 	longa	on
@@ -11129,45 +11691,45 @@ L10119:
 	cmp	<R0
 	rep	#$20
 	longa	on
-	bcc	L554
-	brl	L10120
-L554:
-	.line	1419
-	pei	<L534+color_0
+	bcc	L608
+	brl	L10128
+L608:
+	.line	1463
+	pei	<L588+color_0
 	clc
-	lda	<L535+textY_1
-	adc	<L535+y_1
+	lda	<L589+textY_1
+	adc	<L589+y_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L555
+	bpl	L609
 	dey
-L555:
+L609:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
 	lda	#$3
-	adc	<L535+textX_1
+	adc	<L589+textX_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L556
+	bpl	L610
 	dey
-L556:
+L610:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;			if (b->b2 > 0)
-L10120:
-	.line	1420
+L10128:
+	.line	1464
 ;				k_draw_pixel(textX + 2, textY + y, color);
 	sep	#$20
 	longa	off
-	lda	[<L535+b_2]
+	lda	[<L589+b_2]
 	sta	<R0
 	rep	#$20
 	longa	on
@@ -11193,45 +11755,45 @@ L10120:
 	cmp	<R0
 	rep	#$20
 	longa	on
-	bcc	L557
-	brl	L10121
-L557:
-	.line	1421
-	pei	<L534+color_0
+	bcc	L611
+	brl	L10129
+L611:
+	.line	1465
+	pei	<L588+color_0
 	clc
-	lda	<L535+textY_1
-	adc	<L535+y_1
+	lda	<L589+textY_1
+	adc	<L589+y_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L558
+	bpl	L612
 	dey
-L558:
+L612:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
 	lda	#$2
-	adc	<L535+textX_1
+	adc	<L589+textX_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L559
+	bpl	L613
 	dey
-L559:
+L613:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;			if (b->b1 > 0)
-L10121:
-	.line	1422
+L10129:
+	.line	1466
 ;				k_draw_pixel(textX + 1, textY + y, color);
 	sep	#$20
 	longa	off
-	lda	[<L535+b_2]
+	lda	[<L589+b_2]
 	sta	<R0
 	rep	#$20
 	longa	on
@@ -11258,44 +11820,44 @@ L10121:
 	cmp	<R0
 	rep	#$20
 	longa	on
-	bcc	L560
-	brl	L10122
-L560:
-	.line	1423
-	pei	<L534+color_0
+	bcc	L614
+	brl	L10130
+L614:
+	.line	1467
+	pei	<L588+color_0
 	clc
-	lda	<L535+textY_1
-	adc	<L535+y_1
+	lda	<L589+textY_1
+	adc	<L589+y_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L561
+	bpl	L615
 	dey
-L561:
+L615:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
-	lda	<L535+textX_1
+	lda	<L589+textX_1
 	ina
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L562
+	bpl	L616
 	dey
-L562:
+L616:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;			if (b->b0 > 0)
-L10122:
-	.line	1424
+L10130:
+	.line	1468
 ;				k_draw_pixel(textX + 0, textY + y, color);
 	sep	#$20
 	longa	off
-	lda	[<L535+b_2]
+	lda	[<L589+b_2]
 	sta	<R0
 	rep	#$20
 	longa	on
@@ -11316,29 +11878,29 @@ L10122:
 	cmp	<R0
 	rep	#$20
 	longa	on
-	bcc	L563
-	brl	L10123
-L563:
-	.line	1425
-	pei	<L534+color_0
+	bcc	L617
+	brl	L10131
+L617:
+	.line	1469
+	pei	<L588+color_0
 	clc
-	lda	<L535+textY_1
-	adc	<L535+y_1
+	lda	<L589+textY_1
+	adc	<L589+y_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L564
+	bpl	L618
 	dey
-L564:
+L618:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	<L535+textX_1
-	bpl	L565
+	lda	<L589+textX_1
+	bpl	L619
 	dey
-L565:
+L619:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -11346,48 +11908,48 @@ L565:
 	jsl	~~k_draw_pixel
 ;
 ;		} // end "for y"
+L10131:
+	.endblock	1471
+	.line	1471
+L10120:
+	inc	<L589+y_1
 L10123:
-	.endblock	1427
-	.line	1427
-L10112:
-	inc	<L535+y_1
-L10115:
 	jsl	~~k_font_getFontHeight
 	sta	<R0
-	lda	<L535+y_1
+	lda	<L589+y_1
 	cmp	<R0
-	bcs	L566
-	brl	L10114
-L566:
-L10113:
+	bcs	L620
+	brl	L10122
+L620:
+L10121:
 ;	}
-	.line	1428
+	.line	1472
 ;	return FONTW;
-L10111:
-	.line	1429
+L10119:
+	.line	1473
 	jsl	~~k_font_getFontWidth
-L567:
+L621:
 	tay
-	lda	<L534+2
-	sta	<L534+2+12
-	lda	<L534+1
-	sta	<L534+1+12
+	lda	<L588+2
+	sta	<L588+2+12
+	lda	<L588+1
+	sta	<L588+1+12
 	pld
 	tsc
 	clc
-	adc	#L534+12
+	adc	#L588+12
 	tcs
 	tya
 	rtl
 ;}
-	.line	1430
-	.endblock	1430
-L534	equ	24
-L535	equ	9
+	.line	1474
+	.endblock	1474
+L588	equ	24
+L589	equ	9
 	ends
 	efunc
-	.endfunc	1430,9,24
-	.line	1430
+	.endfunc	1474,9,24
+	.line	1474
 ;
 ;/*
 ;int k_put_binary_variablefont_point(LPCHAR fontSet, char outChar,int cx,int cy,int width,int height,char color)
@@ -11444,18 +12006,18 @@ L535	equ	9
 ;*/
 ;int k_put_binary_variablefont_point(LPCHAR fontSet, char outChar,int cx,int cy,int width,int height,char color)
 ;{
-	.line	1485
-	.line	1486
+	.line	1529
+	.line	1530
 	GFX
 	xdef	~~k_put_binary_variablefont_point
 	func
-	.function	1486
+	.function	1530
 ~~k_put_binary_variablefont_point:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L568
+	sbc	#L622
 	tcs
 	phd
 	tcd
@@ -11466,7 +12028,7 @@ cy_0	set	12
 width_0	set	14
 height_0	set	16
 color_0	set	18
-	.block	1486
+	.block	1530
 ;	int x = 0;
 ;	int y = 0;
 ;	int textX = cx;
@@ -11495,144 +12057,144 @@ img_1	set	9
 	.sym	width,14,5,6,16
 	.sym	height,16,5,6,16
 	.sym	color,18,14,6,8
-	stz	<L569+x_1
-	stz	<L569+y_1
-	lda	<L568+cx_0
-	sta	<L569+textX_1
-	lda	<L568+cy_0
-	sta	<L569+textY_1
-	stz	<L569+img_1
-	stz	<L569+img_1+2
-	.line	1495
+	stz	<L623+x_1
+	stz	<L623+y_1
+	lda	<L622+cx_0
+	sta	<L623+textX_1
+	lda	<L622+cy_0
+	sta	<L623+textY_1
+	stz	<L623+img_1
+	stz	<L623+img_1+2
+	.line	1539
 ;	{
 	sep	#$20
 	longa	off
-	lda	<L568+outChar_0
+	lda	<L622+outChar_0
 	cmp	#<$20
 	rep	#$20
 	longa	on
-	beq	L571
-	brl	L10124
-L571:
-	.line	1496
+	beq	L625
+	brl	L10132
+L625:
+	.line	1540
 ;	   img = NULL;//fontSpace;
-	.line	1497
-	stz	<L569+img_1
-	stz	<L569+img_1+2
+	.line	1541
+	stz	<L623+img_1
+	stz	<L623+img_1+2
 ;    }
-	.line	1498
+	.line	1542
 ;    else
-	brl	L10125
-L10124:
+	brl	L10133
+L10132:
 ;	{
-	.line	1500
+	.line	1544
 ;	    //img = &(fontSet[characterROMMapping[outChar]]);
 ;    	img = fontSet+=(height*outChar);
-	.line	1502
-	lda	<L568+outChar_0
+	.line	1546
+	lda	<L622+outChar_0
 	and	#$ff
 	sta	<R0
 	lda	<R0
-	ldx	<L568+height_0
+	ldx	<L622+height_0
 	xref	~~~mul
 	jsl	~~~mul
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L572
+	bpl	L626
 	dey
-L572:
+L626:
 	sta	<R0
 	sty	<R0+2
 	clc
-	lda	<L568+fontSet_0
+	lda	<L622+fontSet_0
 	adc	<R0
-	sta	<L568+fontSet_0
-	lda	<L568+fontSet_0+2
+	sta	<L622+fontSet_0
+	lda	<L622+fontSet_0+2
 	adc	<R0+2
-	sta	<L568+fontSet_0+2
-	lda	<L568+fontSet_0
-	sta	<L569+img_1
-	lda	<L568+fontSet_0+2
-	sta	<L569+img_1+2
+	sta	<L622+fontSet_0+2
+	lda	<L622+fontSet_0
+	sta	<L623+img_1
+	lda	<L622+fontSet_0+2
+	sta	<L623+img_1+2
 ;    	//img = "\xc3\xc3\xc3\xc3\xc3\xc3\xc3\xc3";//&(fontSet[outChar]);
 ;	}
-	.line	1504
-L10125:
+	.line	1548
+L10133:
 ;	//printf("putFont:%d\n",characterROMMapping[outChar]);
 ;
 ;	// get the font 'image'
 ;        //char *img = fontImg[ix];
 ;        // loop through pixel rows
 ;	if(img!=NULL)
-	.line	1510
+	.line	1554
 ;	{
-	lda	<L569+img_1
-	ora	<L569+img_1+2
-	bne	L573
-	brl	L10126
-L573:
-	.line	1511
+	lda	<L623+img_1
+	ora	<L623+img_1+2
+	bne	L627
+	brl	L10134
+L627:
+	.line	1555
 ;		for (y = 0; y < height; y++)
-	.line	1512
-	stz	<L569+y_1
-	brl	L10130
-L10129:
+	.line	1556
+	stz	<L623+y_1
+	brl	L10138
+L10137:
 ;		{
-	.line	1513
+	.line	1557
 ;			tmp = img[y];
-	.line	1514
+	.line	1558
 	sep	#$20
 	longa	off
-	ldy	<L569+y_1
-	lda	[<L569+img_1],Y
-	sta	<L569+tmp_1
+	ldy	<L623+y_1
+	lda	[<L623+img_1],Y
+	sta	<L623+tmp_1
 	rep	#$20
 	longa	on
 ;
 ;			for (x = 0; x < width; x++)
-	.line	1516
-	stz	<L569+x_1
-	brl	L10134
-L10133:
+	.line	1560
+	stz	<L623+x_1
+	brl	L10142
+L10141:
 ;			{
-	.line	1517
+	.line	1561
 ;				if(tmp & 0x80 )
-	.line	1518
+	.line	1562
 ;					k_draw_pixel(textX + x, textY + y, color);
 	sep	#$20
 	longa	off
-	lda	<L569+tmp_1
+	lda	<L623+tmp_1
 	and	#<$80
 	rep	#$20
 	longa	on
-	bne	L574
-	brl	L10135
-L574:
-	.line	1519
-	pei	<L568+color_0
+	bne	L628
+	brl	L10143
+L628:
+	.line	1563
+	pei	<L622+color_0
 	clc
-	lda	<L569+textY_1
-	adc	<L569+y_1
+	lda	<L623+textY_1
+	adc	<L623+y_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L575
+	bpl	L629
 	dey
-L575:
+L629:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L569+textX_1
-	adc	<L569+x_1
+	lda	<L623+textX_1
+	adc	<L623+x_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L576
+	bpl	L630
 	dey
-L576:
+L630:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -11640,28 +12202,28 @@ L576:
 	jsl	~~k_draw_pixel
 ;
 ;				tmp = tmp << 1;
-L10135:
-	.line	1521
+L10143:
+	.line	1565
 	sep	#$20
 	longa	off
-	asl	<L569+tmp_1
+	asl	<L623+tmp_1
 	rep	#$20
 	longa	on
 ;			}
-	.line	1522
-L10131:
-	inc	<L569+x_1
-L10134:
+	.line	1566
+L10139:
+	inc	<L623+x_1
+L10142:
 	sec
-	lda	<L569+x_1
-	sbc	<L568+width_0
-	bvs	L577
+	lda	<L623+x_1
+	sbc	<L622+width_0
+	bvs	L631
 	eor	#$8000
-L577:
-	bmi	L578
-	brl	L10133
-L578:
-L10132:
+L631:
+	bmi	L632
+	brl	L10141
+L632:
+L10140:
 ;			// get the pixel value
 ;			/*
 ;			PBYTEBITS b = (PBYTEBITS)&(img[y]); //img[y * FONTW + x];
@@ -11683,64 +12245,64 @@ L10132:
 ;				k_draw_pixel(textX + 0, textY + y, color);
 ;			*/
 ;		} // end "for y"
-	.line	1543
-L10127:
-	inc	<L569+y_1
-L10130:
+	.line	1587
+L10135:
+	inc	<L623+y_1
+L10138:
 	sec
-	lda	<L569+y_1
-	sbc	<L568+height_0
-	bvs	L579
+	lda	<L623+y_1
+	sbc	<L622+height_0
+	bvs	L633
 	eor	#$8000
-L579:
-	bmi	L580
-	brl	L10129
-L580:
-L10128:
+L633:
+	bmi	L634
+	brl	L10137
+L634:
+L10136:
 ;	}
-	.line	1544
+	.line	1588
 ;	return FONTW;
-L10126:
-	.line	1545
+L10134:
+	.line	1589
 	jsl	~~k_font_getFontWidth
-L581:
+L635:
 	tay
-	lda	<L568+2
-	sta	<L568+2+16
-	lda	<L568+1
-	sta	<L568+1+16
+	lda	<L622+2
+	sta	<L622+2+16
+	lda	<L622+1
+	sta	<L622+1+16
 	pld
 	tsc
 	clc
-	adc	#L568+16
+	adc	#L622+16
 	tcs
 	tya
 	rtl
 ;}
-	.line	1546
-	.endblock	1546
-L568	equ	21
-L569	equ	9
+	.line	1590
+	.endblock	1590
+L622	equ	21
+L623	equ	9
 	ends
 	efunc
-	.endfunc	1546,9,21
-	.line	1546
+	.endfunc	1590,9,21
+	.line	1590
 ;
 ;
 ;int k_put_binary_variablefont_point_ex(LPCHAR fontSet, char outChar,int cx,int cy,int width,int height,char color,UINT page)
 ;{
-	.line	1549
-	.line	1550
+	.line	1593
+	.line	1594
 	GFX
 	xdef	~~k_put_binary_variablefont_point_ex
 	func
-	.function	1550
+	.function	1594
 ~~k_put_binary_variablefont_point_ex:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L582
+	sbc	#L636
 	tcs
 	phd
 	tcd
@@ -11752,7 +12314,7 @@ width_0	set	14
 height_0	set	16
 color_0	set	18
 page_0	set	20
-	.block	1550
+	.block	1594
 ;	int x = 0;
 ;	int y = 0;
 ;	int textX = cx;
@@ -11782,222 +12344,222 @@ img_1	set	9
 	.sym	height,16,5,6,16
 	.sym	color,18,14,6,8
 	.sym	page,20,16,6,16
-	stz	<L583+x_1
-	stz	<L583+y_1
-	lda	<L582+cx_0
-	sta	<L583+textX_1
-	lda	<L582+cy_0
-	sta	<L583+textY_1
-	stz	<L583+img_1
-	stz	<L583+img_1+2
-	.line	1559
+	stz	<L637+x_1
+	stz	<L637+y_1
+	lda	<L636+cx_0
+	sta	<L637+textX_1
+	lda	<L636+cy_0
+	sta	<L637+textY_1
+	stz	<L637+img_1
+	stz	<L637+img_1+2
+	.line	1603
 ;	{
 	sep	#$20
 	longa	off
-	lda	<L582+outChar_0
+	lda	<L636+outChar_0
 	cmp	#<$20
 	rep	#$20
 	longa	on
-	beq	L585
-	brl	L10136
-L585:
-	.line	1560
+	beq	L639
+	brl	L10144
+L639:
+	.line	1604
 ;	   img = NULL;//fontSpace;
-	.line	1561
-	stz	<L583+img_1
-	stz	<L583+img_1+2
+	.line	1605
+	stz	<L637+img_1
+	stz	<L637+img_1+2
 ;    }
-	.line	1562
+	.line	1606
 ;    else if(outChar <= 0x0A)
-	brl	L10137
-L10136:
-	.line	1563
+	brl	L10145
+L10144:
+	.line	1607
 ;	{
 	sep	#$20
 	longa	off
 	lda	#$a
-	cmp	<L582+outChar_0
+	cmp	<L636+outChar_0
 	rep	#$20
 	longa	on
-	bcs	L586
-	brl	L10138
-L586:
-	.line	1564
+	bcs	L640
+	brl	L10146
+L640:
+	.line	1608
 ;	   img = NULL;
-	.line	1565
-	stz	<L583+img_1
-	stz	<L583+img_1+2
+	.line	1609
+	stz	<L637+img_1
+	stz	<L637+img_1+2
 ;    }
-	.line	1566
+	.line	1610
 ;
 ;    else
-	brl	L10139
-L10138:
+	brl	L10147
+L10146:
 ;	{
-	.line	1569
+	.line	1613
 ;    	//img = fontSet+=(height*outChar);
 ;    	img = &fontSet[(height*outChar)];
-	.line	1571
-	lda	<L582+outChar_0
+	.line	1615
+	lda	<L636+outChar_0
 	and	#$ff
 	sta	<R0
 	lda	<R0
-	ldx	<L582+height_0
+	ldx	<L636+height_0
 	xref	~~~mul
 	jsl	~~~mul
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L587
+	bpl	L641
 	dey
-L587:
+L641:
 	sta	<R0
 	sty	<R0+2
 	clc
-	lda	<L582+fontSet_0
+	lda	<L636+fontSet_0
 	adc	<R0
-	sta	<L583+img_1
-	lda	<L582+fontSet_0+2
+	sta	<L637+img_1
+	lda	<L636+fontSet_0+2
 	adc	<R0+2
-	sta	<L583+img_1+2
+	sta	<L637+img_1+2
 ;	}
-	.line	1572
-L10139:
-L10137:
+	.line	1616
+L10147:
+L10145:
 ;
 ;    if(img!=NULL)
-	.line	1574
+	.line	1618
 ;	{
-	lda	<L583+img_1
-	ora	<L583+img_1+2
-	bne	L588
-	brl	L10140
-L588:
-	.line	1575
+	lda	<L637+img_1
+	ora	<L637+img_1+2
+	bne	L642
+	brl	L10148
+L642:
+	.line	1619
 ;		for (y = 0; y < height; y++)
-	.line	1576
-	stz	<L583+y_1
-	brl	L10144
-L10143:
+	.line	1620
+	stz	<L637+y_1
+	brl	L10152
+L10151:
 ;		{
-	.line	1577
+	.line	1621
 ;			tmp = img[y];
-	.line	1578
+	.line	1622
 	sep	#$20
 	longa	off
-	ldy	<L583+y_1
-	lda	[<L583+img_1],Y
-	sta	<L583+tmp_1
+	ldy	<L637+y_1
+	lda	[<L637+img_1],Y
+	sta	<L637+tmp_1
 	rep	#$20
 	longa	on
 ;
 ;			for (x = 0; x < width; x++)
-	.line	1580
-	stz	<L583+x_1
-	brl	L10148
-L10147:
+	.line	1624
+	stz	<L637+x_1
+	brl	L10156
+L10155:
 ;			{
-	.line	1581
+	.line	1625
 ;				if(tmp & 0x80 )
-	.line	1582
+	.line	1626
 ;				{
 	sep	#$20
 	longa	off
-	lda	<L583+tmp_1
+	lda	<L637+tmp_1
 	and	#<$80
 	rep	#$20
 	longa	on
-	bne	L589
-	brl	L10149
-L589:
-	.line	1583
+	bne	L643
+	brl	L10157
+L643:
+	.line	1627
 ;
 ;					switch(page)
-	.line	1585
-	lda	<L582+page_0
-	brl	L10150
+	.line	1629
+	lda	<L636+page_0
+	brl	L10158
 ;					{
-	.line	1586
+	.line	1630
 ;					case BITMAP_BACK:
-	.line	1587
-L10152:
+	.line	1631
+L10160:
 ;						k_draw_pixel_back(textX + x, textY + y,color);
-	.line	1588
-	pei	<L582+color_0
+	.line	1632
+	pei	<L636+color_0
 	clc
-	lda	<L583+textY_1
-	adc	<L583+y_1
+	lda	<L637+textY_1
+	adc	<L637+y_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L590
+	bpl	L644
 	dey
-L590:
+L644:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L583+textX_1
-	adc	<L583+x_1
+	lda	<L637+textX_1
+	adc	<L637+x_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L591
+	bpl	L645
 	dey
-L591:
+L645:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel_back
 ;						break;
-	.line	1589
-	brl	L10151
+	.line	1633
+	brl	L10159
 ;					default:
-	.line	1590
-L10153:
+	.line	1634
+L10161:
 ;						k_draw_pixel_front(textX + x, textY + y,color);
-	.line	1591
-	pei	<L582+color_0
+	.line	1635
+	pei	<L636+color_0
 	clc
-	lda	<L583+textY_1
-	adc	<L583+y_1
+	lda	<L637+textY_1
+	adc	<L637+y_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L592
+	bpl	L646
 	dey
-L592:
+L646:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L583+textX_1
-	adc	<L583+x_1
+	lda	<L637+textX_1
+	adc	<L637+x_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L593
+	bpl	L647
 	dey
-L593:
+L647:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel_front
 ;					}
-	.line	1592
-	brl	L10151
-L10150:
+	.line	1636
+	brl	L10159
+L10158:
 	xref	~~~swt
 	jsl	~~~swt
 	dw	1
 	dw	8
-	dw	L10152-1
-	dw	L10153-1
-L10151:
+	dw	L10160-1
+	dw	L10161-1
+L10159:
 ;					/*
 ;					//k_draw_pixel_ex(textX + x, textY + y, color, page);
 ;					if(page)
@@ -12006,73 +12568,73 @@ L10151:
 ;						k_draw_pixel_front(textX + x, textY + y, color);
 ;						*/
 ;				}
-	.line	1600
+	.line	1644
 ;				tmp = tmp << 1;
-L10149:
-	.line	1601
+L10157:
+	.line	1645
 	sep	#$20
 	longa	off
-	asl	<L583+tmp_1
+	asl	<L637+tmp_1
 	rep	#$20
 	longa	on
 ;			}
-	.line	1602
-L10145:
-	inc	<L583+x_1
-L10148:
+	.line	1646
+L10153:
+	inc	<L637+x_1
+L10156:
 	sec
-	lda	<L583+x_1
-	sbc	<L582+width_0
-	bvs	L594
+	lda	<L637+x_1
+	sbc	<L636+width_0
+	bvs	L648
 	eor	#$8000
-L594:
-	bmi	L595
-	brl	L10147
-L595:
-L10146:
+L648:
+	bmi	L649
+	brl	L10155
+L649:
+L10154:
 ;		} // end "for y"
-	.line	1603
-L10141:
-	inc	<L583+y_1
-L10144:
+	.line	1647
+L10149:
+	inc	<L637+y_1
+L10152:
 	sec
-	lda	<L583+y_1
-	sbc	<L582+height_0
-	bvs	L596
+	lda	<L637+y_1
+	sbc	<L636+height_0
+	bvs	L650
 	eor	#$8000
-L596:
-	bmi	L597
-	brl	L10143
-L597:
-L10142:
+L650:
+	bmi	L651
+	brl	L10151
+L651:
+L10150:
 ;	}
-	.line	1604
+	.line	1648
 ;	return FONTW;
-L10140:
-	.line	1605
+L10148:
+	.line	1649
 	jsl	~~k_font_getFontWidth
-L598:
+L652:
 	tay
-	lda	<L582+2
-	sta	<L582+2+18
-	lda	<L582+1
-	sta	<L582+1+18
+	lda	<L636+2
+	sta	<L636+2+18
+	lda	<L636+1
+	sta	<L636+1+18
 	pld
 	tsc
 	clc
-	adc	#L582+18
+	adc	#L636+18
 	tcs
 	tya
 	rtl
 ;}
-	.line	1606
-	.endblock	1606
-L582	equ	21
-L583	equ	9
+	.line	1650
+	.endblock	1650
+L636	equ	21
+L637	equ	9
 	ends
 	efunc
-	.endfunc	1606,9,21
-	.line	1606
+	.endfunc	1650,9,21
+	.line	1650
 ;
 ;/*
 ;int k_render_wingadget(char gadgetCode,int cx,int cy,char color,OBJECTCLICKED callback)
@@ -12098,18 +12660,18 @@ L583	equ	9
 ;
 ;int k_put_wingadget_point(char gadgetCode,int cx,int cy,char color)
 ;{
-	.line	1630
-	.line	1631
+	.line	1674
+	.line	1675
 	GFX
 	xdef	~~k_put_wingadget_point
 	func
-	.function	1631
+	.function	1675
 ~~k_put_wingadget_point:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L599
+	sbc	#L653
 	tcs
 	phd
 	tcd
@@ -12117,338 +12679,6 @@ gadgetCode_0	set	4
 cx_0	set	6
 cy_0	set	8
 color_0	set	10
-	.block	1631
-;	int x = 0;
-;	int y = 0;
-;	int textX = cx;
-;	int textY = cy;
-;
-;	char FAR* img = NULL;//fontImg[ix];
-;
-;
-;    img = windowChromeImg[(int)(gadgetCode & 0xFF)];
-x_1	set	0
-y_1	set	2
-textX_1	set	4
-textY_1	set	6
-img_1	set	8
-	.sym	x,0,5,1,16
-	.sym	y,2,5,1,16
-	.sym	textX,4,5,1,16
-	.sym	textY,6,5,1,16
-	.sym	img,8,142,1,32
-	.sym	gadgetCode,4,14,6,8
-	.sym	cx,6,5,6,16
-	.sym	cy,8,5,6,16
-	.sym	color,10,14,6,8
-	stz	<L600+x_1
-	stz	<L600+y_1
-	lda	<L599+cx_0
-	sta	<L600+textX_1
-	lda	<L599+cy_0
-	sta	<L600+textY_1
-	stz	<L600+img_1
-	stz	<L600+img_1+2
-	.line	1640
-	lda	<L599+gadgetCode_0
-	and	#<$ff
-	sta	<R1
-	ldy	#$0
-	lda	<R1
-	bpl	L602
-	dey
-L602:
-	sta	<R1
-	sty	<R1+2
-	pei	<R1+2
-	pei	<R1
-	lda	#$6
-	xref	~~~lasl
-	jsl	~~~lasl
-	sta	<R0
-	stx	<R0+2
-	clc
-	lda	#<~~windowChromeImg
-	adc	<R0
-	sta	<L600+img_1
-	lda	#^~~windowChromeImg
-	adc	<R0+2
-	sta	<L600+img_1+2
-;	if(img!=NULL)
-	.line	1641
-;	{
-	lda	<L600+img_1
-	ora	<L600+img_1+2
-	bne	L603
-	brl	L10154
-L603:
-	.line	1642
-;		for (y = 0; y < FONTH; y++) 
-	.line	1643
-	stz	<L600+y_1
-	brl	L10158
-L10157:
-;		{
-	.line	1644
-;			// loop through pixel columns
-;			for (x = 0; x < FONTW; x++) 
-	.line	1646
-	stz	<L600+x_1
-	brl	L10162
-L10161:
-;			{
-	.line	1647
-;				// get the pixel value
-;				char b = img[y * FONTW + x];
-;				if (b > 0) 
-	.block	1650
-b_2	set	12
-	.sym	b,12,14,1,8
-	jsl	~~k_font_getFontWidth
-	sta	<R0
-	lda	<R0
-	ldx	<L600+y_1
-	xref	~~~mul
-	jsl	~~~mul
-	sta	<R0
-	clc
-	lda	<R0
-	adc	<L600+x_1
-	sta	<R1
-	sep	#$20
-	longa	off
-	ldy	<R1
-	lda	[<L600+img_1],Y
-	sta	<L600+b_2
-	rep	#$20
-	longa	on
-	.line	1650
-;				{ // plot the pixel
-	sep	#$20
-	longa	off
-	lda	#$0
-	cmp	<L600+b_2
-	rep	#$20
-	longa	on
-	bcc	L605
-	brl	L10163
-L605:
-	.line	1651
-;					k_draw_pixel(textX + x, textY + y, color);
-	.line	1652
-	pei	<L599+color_0
-	clc
-	lda	<L600+textY_1
-	adc	<L600+y_1
-	sta	<R0
-	ldy	#$0
-	lda	<R0
-	bpl	L606
-	dey
-L606:
-	sta	<R0
-	sty	<R0+2
-	pei	<R0+2
-	pei	<R0
-	clc
-	lda	<L600+textX_1
-	adc	<L600+x_1
-	sta	<R1
-	ldy	#$0
-	lda	<R1
-	bpl	L607
-	dey
-L607:
-	sta	<R1
-	sty	<R1+2
-	pei	<R1+2
-	pei	<R1
-	jsl	~~k_draw_pixel
-;				}
-	.line	1653
-;				else 
-	brl	L10164
-L10163:
-;				{ 
-	.line	1655
-;					// leave empty (or maybe plot 'text backgr color')
-;				}
-	.line	1657
-L10164:
-;			} // end "for x"
-	.endblock	1658
-	.line	1658
-L10159:
-	inc	<L600+x_1
-L10162:
-	jsl	~~k_font_getFontWidth
-	sta	<R0
-	lda	<L600+x_1
-	cmp	<R0
-	bcs	L608
-	brl	L10161
-L608:
-L10160:
-;		} // end "for y"
-	.line	1659
-L10155:
-	inc	<L600+y_1
-L10158:
-	jsl	~~k_font_getFontHeight
-	sta	<R0
-	lda	<L600+y_1
-	cmp	<R0
-	bcs	L609
-	brl	L10157
-L609:
-L10156:
-;	}
-	.line	1660
-;	return FONTW;
-L10154:
-	.line	1661
-	jsl	~~k_font_getFontWidth
-L610:
-	tay
-	lda	<L599+2
-	sta	<L599+2+8
-	lda	<L599+1
-	sta	<L599+1+8
-	pld
-	tsc
-	clc
-	adc	#L599+8
-	tcs
-	tya
-	rtl
-;}
-	.line	1662
-	.endblock	1662
-L599	equ	21
-L600	equ	9
-	ends
-	efunc
-	.endfunc	1662,9,21
-	.line	1662
-;
-;int k_gui_DrawWidget(HWND hWnd,UINT gadgetId,PRECT prect,UINT color,UINT page)
-;{
-	.line	1664
-	.line	1665
-	GFX
-	xdef	~~k_gui_DrawWidget
-	func
-	.function	1665
-~~k_gui_DrawWidget:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L611
-	tcs
-	phd
-	tcd
-hWnd_0	set	4
-gadgetId_0	set	8
-prect_0	set	10
-color_0	set	14
-page_0	set	16
-	.block	1665
-;	int ymax = ((PWINDOW)hWnd)->clientRect.y + ((PWINDOW)hWnd)->clientRect.height - 1;
-;
-;	if(((prect->y + FONTH) >= ymax))
-ymax_1	set	0
-	.sym	ymax,0,5,1,16
-	.sym	hWnd,4,129,6,32
-	.sym	gadgetId,8,16,6,16
-	.sym	prect,10,138,6,32,26
-	.sym	color,14,16,6,16
-	.sym	page,16,16,6,16
-	clc
-	ldy	#$2c
-	lda	[<L611+hWnd_0],Y
-	ldy	#$34
-	adc	[<L611+hWnd_0],Y
-	sta	<R0
-	clc
-	lda	#$ffff
-	adc	<R0
-	sta	<L612+ymax_1
-	.line	1668
-;		return -1;
-	jsl	~~k_font_getFontHeight
-	sta	<R0
-	clc
-	lda	<R0
-	ldy	#$2
-	adc	[<L611+prect_0],Y
-	sta	<R1
-	lda	<R1
-	cmp	<L612+ymax_1
-	bcs	L614
-	brl	L10165
-L614:
-	.line	1669
-	lda	#$ffff
-L615:
-	tay
-	lda	<L611+2
-	sta	<L611+2+14
-	lda	<L611+1
-	sta	<L611+1+14
-	pld
-	tsc
-	clc
-	adc	#L611+14
-	tcs
-	tya
-	rtl
-;
-;	return k_put_wingadget_point_ex(gadgetId,prect->x,prect->y,color,page);
-L10165:
-	.line	1671
-	pei	<L611+page_0
-	pei	<L611+color_0
-	ldy	#$2
-	lda	[<L611+prect_0],Y
-	pha
-	lda	[<L611+prect_0]
-	pha
-	pei	<L611+gadgetId_0
-	jsl	~~k_put_wingadget_point_ex
-	brl	L615
-;}
-	.line	1672
-	.endblock	1672
-L611	equ	10
-L612	equ	9
-	ends
-	efunc
-	.endfunc	1672,9,10
-	.line	1672
-;
-;int k_put_wingadget_point_ex(char gadgetCode,int cx,int cy,char color,UINT page)
-;{
-	.line	1674
-	.line	1675
-	GFX
-	xdef	~~k_put_wingadget_point_ex
-	func
-	.function	1675
-~~k_put_wingadget_point_ex:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L616
-	tcs
-	phd
-	tcd
-gadgetCode_0	set	4
-cx_0	set	6
-cy_0	set	8
-color_0	set	10
-page_0	set	12
 	.block	1675
 ;	int x = 0;
 ;	int y = 0;
@@ -12473,24 +12703,23 @@ img_1	set	8
 	.sym	cx,6,5,6,16
 	.sym	cy,8,5,6,16
 	.sym	color,10,14,6,8
-	.sym	page,12,16,6,16
-	stz	<L617+x_1
-	stz	<L617+y_1
-	lda	<L616+cx_0
-	sta	<L617+textX_1
-	lda	<L616+cy_0
-	sta	<L617+textY_1
-	stz	<L617+img_1
-	stz	<L617+img_1+2
+	stz	<L654+x_1
+	stz	<L654+y_1
+	lda	<L653+cx_0
+	sta	<L654+textX_1
+	lda	<L653+cy_0
+	sta	<L654+textY_1
+	stz	<L654+img_1
+	stz	<L654+img_1+2
 	.line	1684
-	lda	<L616+gadgetCode_0
+	lda	<L653+gadgetCode_0
 	and	#<$ff
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L619
+	bpl	L656
 	dey
-L619:
+L656:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -12503,56 +12732,56 @@ L619:
 	clc
 	lda	#<~~windowChromeImg
 	adc	<R0
-	sta	<L617+img_1
+	sta	<L654+img_1
 	lda	#^~~windowChromeImg
 	adc	<R0+2
-	sta	<L617+img_1+2
+	sta	<L654+img_1+2
 ;	if(img!=NULL)
 	.line	1685
 ;	{
-	lda	<L617+img_1
-	ora	<L617+img_1+2
-	bne	L620
-	brl	L10166
-L620:
+	lda	<L654+img_1
+	ora	<L654+img_1+2
+	bne	L657
+	brl	L10162
+L657:
 	.line	1686
-;		for (y = 0; y < FONTH; y++)
+;		for (y = 0; y < FONTH; y++) 
 	.line	1687
-	stz	<L617+y_1
-	brl	L10170
-L10169:
+	stz	<L654+y_1
+	brl	L10166
+L10165:
 ;		{
 	.line	1688
 ;			// loop through pixel columns
-;			for (x = 0; x < FONTW; x++)
+;			for (x = 0; x < FONTW; x++) 
 	.line	1690
-	stz	<L617+x_1
-	brl	L10174
-L10173:
+	stz	<L654+x_1
+	brl	L10170
+L10169:
 ;			{
 	.line	1691
 ;				// get the pixel value
 ;				char b = img[y * FONTW + x];
-;				if (b > 0)
+;				if (b > 0) 
 	.block	1694
 b_2	set	12
 	.sym	b,12,14,1,8
 	jsl	~~k_font_getFontWidth
 	sta	<R0
 	lda	<R0
-	ldx	<L617+y_1
+	ldx	<L654+y_1
 	xref	~~~mul
 	jsl	~~~mul
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L617+x_1
+	adc	<L654+x_1
 	sta	<R1
 	sep	#$20
 	longa	off
 	ldy	<R1
-	lda	[<L617+img_1],Y
-	sta	<L617+b_2
+	lda	[<L654+img_1],Y
+	sta	<L654+b_2
 	rep	#$20
 	longa	on
 	.line	1694
@@ -12560,181 +12789,514 @@ b_2	set	12
 	sep	#$20
 	longa	off
 	lda	#$0
-	cmp	<L617+b_2
+	cmp	<L654+b_2
 	rep	#$20
 	longa	on
-	bcc	L622
-	brl	L10175
-L622:
+	bcc	L659
+	brl	L10171
+L659:
 	.line	1695
-;					//k_draw_pixel_ex(textX + x, textY + y, color,page);
-;					switch(page)
-	.line	1697
-	lda	<L616+page_0
-	brl	L10176
-;					{
-	.line	1698
-;					case BITMAP_BACK:
-	.line	1699
-L10178:
-;						k_draw_pixel_back(textX + x, textY + y,color);
-	.line	1700
-	pei	<L616+color_0
+;					k_draw_pixel(textX + x, textY + y, color);
+	.line	1696
+	pei	<L653+color_0
 	clc
-	lda	<L617+textY_1
-	adc	<L617+y_1
+	lda	<L654+textY_1
+	adc	<L654+y_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L623
+	bpl	L660
 	dey
-L623:
+L660:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L617+textX_1
-	adc	<L617+x_1
+	lda	<L654+textX_1
+	adc	<L654+x_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L624
+	bpl	L661
 	dey
-L624:
+L661:
+	sta	<R1
+	sty	<R1+2
+	pei	<R1+2
+	pei	<R1
+	jsl	~~k_draw_pixel
+;				}
+	.line	1697
+;				else 
+	brl	L10172
+L10171:
+;				{ 
+	.line	1699
+;					// leave empty (or maybe plot 'text backgr color')
+;				}
+	.line	1701
+L10172:
+;			} // end "for x"
+	.endblock	1702
+	.line	1702
+L10167:
+	inc	<L654+x_1
+L10170:
+	jsl	~~k_font_getFontWidth
+	sta	<R0
+	lda	<L654+x_1
+	cmp	<R0
+	bcs	L662
+	brl	L10169
+L662:
+L10168:
+;		} // end "for y"
+	.line	1703
+L10163:
+	inc	<L654+y_1
+L10166:
+	jsl	~~k_font_getFontHeight
+	sta	<R0
+	lda	<L654+y_1
+	cmp	<R0
+	bcs	L663
+	brl	L10165
+L663:
+L10164:
+;	}
+	.line	1704
+;	return FONTW;
+L10162:
+	.line	1705
+	jsl	~~k_font_getFontWidth
+L664:
+	tay
+	lda	<L653+2
+	sta	<L653+2+8
+	lda	<L653+1
+	sta	<L653+1+8
+	pld
+	tsc
+	clc
+	adc	#L653+8
+	tcs
+	tya
+	rtl
+;}
+	.line	1706
+	.endblock	1706
+L653	equ	21
+L654	equ	9
+	ends
+	efunc
+	.endfunc	1706,9,21
+	.line	1706
+;
+;int k_gui_DrawWidget(HWND hWnd,UINT gadgetId,PRECT prect,UINT color,UINT page)
+;{
+	.line	1708
+	.line	1709
+	GFX
+	xdef	~~k_gui_DrawWidget
+	func
+	.function	1709
+~~k_gui_DrawWidget:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L665
+	tcs
+	phd
+	tcd
+hWnd_0	set	4
+gadgetId_0	set	8
+prect_0	set	10
+color_0	set	14
+page_0	set	16
+	.block	1709
+;	int ymax = ((PWINDOW)hWnd)->clientRect.y + ((PWINDOW)hWnd)->clientRect.height - 1;
+;
+;	if(((prect->y + FONTH) >= ymax))
+ymax_1	set	0
+	.sym	ymax,0,5,1,16
+	.sym	hWnd,4,129,6,32
+	.sym	gadgetId,8,16,6,16
+	.sym	prect,10,138,6,32,26
+	.sym	color,14,16,6,16
+	.sym	page,16,16,6,16
+	clc
+	ldy	#$2c
+	lda	[<L665+hWnd_0],Y
+	ldy	#$34
+	adc	[<L665+hWnd_0],Y
+	sta	<R0
+	clc
+	lda	#$ffff
+	adc	<R0
+	sta	<L666+ymax_1
+	.line	1712
+;		return -1;
+	jsl	~~k_font_getFontHeight
+	sta	<R0
+	clc
+	lda	<R0
+	ldy	#$2
+	adc	[<L665+prect_0],Y
+	sta	<R1
+	lda	<R1
+	cmp	<L666+ymax_1
+	bcs	L668
+	brl	L10173
+L668:
+	.line	1713
+	lda	#$ffff
+L669:
+	tay
+	lda	<L665+2
+	sta	<L665+2+14
+	lda	<L665+1
+	sta	<L665+1+14
+	pld
+	tsc
+	clc
+	adc	#L665+14
+	tcs
+	tya
+	rtl
+;
+;	return k_put_wingadget_point_ex(gadgetId,prect->x,prect->y,color,page);
+L10173:
+	.line	1715
+	pei	<L665+page_0
+	pei	<L665+color_0
+	ldy	#$2
+	lda	[<L665+prect_0],Y
+	pha
+	lda	[<L665+prect_0]
+	pha
+	pei	<L665+gadgetId_0
+	jsl	~~k_put_wingadget_point_ex
+	brl	L669
+;}
+	.line	1716
+	.endblock	1716
+L665	equ	10
+L666	equ	9
+	ends
+	efunc
+	.endfunc	1716,9,10
+	.line	1716
+;
+;int k_put_wingadget_point_ex(char gadgetCode,int cx,int cy,char color,UINT page)
+;{
+	.line	1718
+	.line	1719
+	GFX
+	xdef	~~k_put_wingadget_point_ex
+	func
+	.function	1719
+~~k_put_wingadget_point_ex:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L670
+	tcs
+	phd
+	tcd
+gadgetCode_0	set	4
+cx_0	set	6
+cy_0	set	8
+color_0	set	10
+page_0	set	12
+	.block	1719
+;	int x = 0;
+;	int y = 0;
+;	int textX = cx;
+;	int textY = cy;
+;
+;	char FAR* img = NULL;//fontImg[ix];
+;
+;
+;    img = windowChromeImg[(int)(gadgetCode & 0xFF)];
+x_1	set	0
+y_1	set	2
+textX_1	set	4
+textY_1	set	6
+img_1	set	8
+	.sym	x,0,5,1,16
+	.sym	y,2,5,1,16
+	.sym	textX,4,5,1,16
+	.sym	textY,6,5,1,16
+	.sym	img,8,142,1,32
+	.sym	gadgetCode,4,14,6,8
+	.sym	cx,6,5,6,16
+	.sym	cy,8,5,6,16
+	.sym	color,10,14,6,8
+	.sym	page,12,16,6,16
+	stz	<L671+x_1
+	stz	<L671+y_1
+	lda	<L670+cx_0
+	sta	<L671+textX_1
+	lda	<L670+cy_0
+	sta	<L671+textY_1
+	stz	<L671+img_1
+	stz	<L671+img_1+2
+	.line	1728
+	lda	<L670+gadgetCode_0
+	and	#<$ff
+	sta	<R1
+	ldy	#$0
+	lda	<R1
+	bpl	L673
+	dey
+L673:
+	sta	<R1
+	sty	<R1+2
+	pei	<R1+2
+	pei	<R1
+	lda	#$6
+	xref	~~~lasl
+	jsl	~~~lasl
+	sta	<R0
+	stx	<R0+2
+	clc
+	lda	#<~~windowChromeImg
+	adc	<R0
+	sta	<L671+img_1
+	lda	#^~~windowChromeImg
+	adc	<R0+2
+	sta	<L671+img_1+2
+;	if(img!=NULL)
+	.line	1729
+;	{
+	lda	<L671+img_1
+	ora	<L671+img_1+2
+	bne	L674
+	brl	L10174
+L674:
+	.line	1730
+;		for (y = 0; y < FONTH; y++)
+	.line	1731
+	stz	<L671+y_1
+	brl	L10178
+L10177:
+;		{
+	.line	1732
+;			// loop through pixel columns
+;			for (x = 0; x < FONTW; x++)
+	.line	1734
+	stz	<L671+x_1
+	brl	L10182
+L10181:
+;			{
+	.line	1735
+;				// get the pixel value
+;				char b = img[y * FONTW + x];
+;				if (b > 0)
+	.block	1738
+b_2	set	12
+	.sym	b,12,14,1,8
+	jsl	~~k_font_getFontWidth
+	sta	<R0
+	lda	<R0
+	ldx	<L671+y_1
+	xref	~~~mul
+	jsl	~~~mul
+	sta	<R0
+	clc
+	lda	<R0
+	adc	<L671+x_1
+	sta	<R1
+	sep	#$20
+	longa	off
+	ldy	<R1
+	lda	[<L671+img_1],Y
+	sta	<L671+b_2
+	rep	#$20
+	longa	on
+	.line	1738
+;				{ // plot the pixel
+	sep	#$20
+	longa	off
+	lda	#$0
+	cmp	<L671+b_2
+	rep	#$20
+	longa	on
+	bcc	L676
+	brl	L10183
+L676:
+	.line	1739
+;					//k_draw_pixel_ex(textX + x, textY + y, color,page);
+;					switch(page)
+	.line	1741
+	lda	<L670+page_0
+	brl	L10184
+;					{
+	.line	1742
+;					case BITMAP_BACK:
+	.line	1743
+L10186:
+;						k_draw_pixel_back(textX + x, textY + y,color);
+	.line	1744
+	pei	<L670+color_0
+	clc
+	lda	<L671+textY_1
+	adc	<L671+y_1
+	sta	<R0
+	ldy	#$0
+	lda	<R0
+	bpl	L677
+	dey
+L677:
+	sta	<R0
+	sty	<R0+2
+	pei	<R0+2
+	pei	<R0
+	clc
+	lda	<L671+textX_1
+	adc	<L671+x_1
+	sta	<R1
+	ldy	#$0
+	lda	<R1
+	bpl	L678
+	dey
+L678:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel_back
 ;						break;
-	.line	1701
-	brl	L10177
+	.line	1745
+	brl	L10185
 ;					default:
-	.line	1702
-L10179:
+	.line	1746
+L10187:
 ;						k_draw_pixel_front(textX + x, textY + y,color);
-	.line	1703
-	pei	<L616+color_0
+	.line	1747
+	pei	<L670+color_0
 	clc
-	lda	<L617+textY_1
-	adc	<L617+y_1
+	lda	<L671+textY_1
+	adc	<L671+y_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L625
+	bpl	L679
 	dey
-L625:
+L679:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L617+textX_1
-	adc	<L617+x_1
+	lda	<L671+textX_1
+	adc	<L671+x_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L626
+	bpl	L680
 	dey
-L626:
+L680:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel_front
 ;					}
-	.line	1704
-	brl	L10177
-L10176:
+	.line	1748
+	brl	L10185
+L10184:
 	xref	~~~swt
 	jsl	~~~swt
 	dw	1
 	dw	8
-	dw	L10178-1
-	dw	L10179-1
-L10177:
+	dw	L10186-1
+	dw	L10187-1
+L10185:
 ;				}
-	.line	1705
+	.line	1749
 ;				else
-	brl	L10180
-L10175:
+	brl	L10188
+L10183:
 ;				{
-	.line	1707
+	.line	1751
 ;					// leave empty (or maybe plot 'text backgr color')
 ;				}
-	.line	1709
-L10180:
+	.line	1753
+L10188:
 ;			} // end "for x"
-	.endblock	1710
-	.line	1710
-L10171:
-	inc	<L617+x_1
-L10174:
+	.endblock	1754
+	.line	1754
+L10179:
+	inc	<L671+x_1
+L10182:
 	jsl	~~k_font_getFontWidth
 	sta	<R0
-	lda	<L617+x_1
+	lda	<L671+x_1
 	cmp	<R0
-	bcs	L627
-	brl	L10173
-L627:
-L10172:
+	bcs	L681
+	brl	L10181
+L681:
+L10180:
 ;		} // end "for y"
-	.line	1711
-L10167:
-	inc	<L617+y_1
-L10170:
+	.line	1755
+L10175:
+	inc	<L671+y_1
+L10178:
 	jsl	~~k_font_getFontHeight
 	sta	<R0
-	lda	<L617+y_1
+	lda	<L671+y_1
 	cmp	<R0
-	bcs	L628
-	brl	L10169
-L628:
-L10168:
+	bcs	L682
+	brl	L10177
+L682:
+L10176:
 ;	}
-	.line	1712
+	.line	1756
 ;	return FONTW;
-L10166:
-	.line	1713
+L10174:
+	.line	1757
 	jsl	~~k_font_getFontWidth
-L629:
+L683:
 	tay
-	lda	<L616+2
-	sta	<L616+2+10
-	lda	<L616+1
-	sta	<L616+1+10
+	lda	<L670+2
+	sta	<L670+2+10
+	lda	<L670+1
+	sta	<L670+1+10
 	pld
 	tsc
 	clc
-	adc	#L616+10
+	adc	#L670+10
 	tcs
 	tya
 	rtl
 ;}
-	.line	1714
-	.endblock	1714
-L616	equ	21
-L617	equ	9
+	.line	1758
+	.endblock	1758
+L670	equ	21
+L671	equ	9
 	ends
 	efunc
-	.endfunc	1714,9,21
-	.line	1714
+	.endfunc	1758,9,21
+	.line	1758
 ;
 ;int k_put_winicon_point(char iconCode,int cx,int cy,int paletteId,int mode)
 ;{
-	.line	1716
-	.line	1717
+	.line	1760
+	.line	1761
 	GFX
 	xdef	~~k_put_winicon_point
 	func
-	.function	1717
+	.function	1761
 ~~k_put_winicon_point:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L630
+	sbc	#L684
 	tcs
 	phd
 	tcd
@@ -12743,7 +13305,7 @@ cx_0	set	6
 cy_0	set	8
 paletteId_0	set	10
 mode_0	set	12
-	.block	1717
+	.block	1761
 ;	int x = 0;
 ;	int y = 0;
 ;	int textX = cx;
@@ -12767,23 +13329,23 @@ img_1	set	8
 	.sym	cy,8,5,6,16
 	.sym	paletteId,10,5,6,16
 	.sym	mode,12,5,6,16
-	stz	<L631+x_1
-	stz	<L631+y_1
-	lda	<L630+cx_0
-	sta	<L631+textX_1
-	lda	<L630+cy_0
-	sta	<L631+textY_1
-	stz	<L631+img_1
-	stz	<L631+img_1+2
-	.line	1725
-	lda	<L630+iconCode_0
+	stz	<L685+x_1
+	stz	<L685+y_1
+	lda	<L684+cx_0
+	sta	<L685+textX_1
+	lda	<L684+cy_0
+	sta	<L685+textY_1
+	stz	<L685+img_1
+	stz	<L685+img_1+2
+	.line	1769
+	lda	<L684+iconCode_0
 	and	#<$ff
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L633
+	bpl	L687
 	dey
-L633:
+L687:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -12796,37 +13358,37 @@ L633:
 	clc
 	lda	#<~~windowIconImg
 	adc	<R0
-	sta	<L631+img_1
+	sta	<L685+img_1
 	lda	#^~~windowIconImg
 	adc	<R0+2
-	sta	<L631+img_1+2
+	sta	<L685+img_1+2
 ;	if(img!=NULL)
-	.line	1726
+	.line	1770
 ;	{
-	lda	<L631+img_1
-	ora	<L631+img_1+2
-	bne	L634
-	brl	L10181
-L634:
-	.line	1727
+	lda	<L685+img_1
+	ora	<L685+img_1+2
+	bne	L688
+	brl	L10189
+L688:
+	.line	1771
 ;		for (y = 0; y < ICONH; y++) 
-	.line	1728
-	stz	<L631+y_1
-L10184:
+	.line	1772
+	stz	<L685+y_1
+L10192:
 ;		{
-	.line	1729
+	.line	1773
 ;			for (x = 0; x < ICONW; x++) 
-	.line	1730
-	stz	<L631+x_1
-L10187:
+	.line	1774
+	stz	<L685+x_1
+L10195:
 ;			{
-	.line	1731
+	.line	1775
 ;				char b = img[y * ICONW + x];
 ;				if (b > 0) 
-	.block	1733
+	.block	1777
 b_2	set	12
 	.sym	b,12,14,1,8
-	lda	<L631+y_1
+	lda	<L685+y_1
 	asl	A
 	asl	A
 	asl	A
@@ -12834,194 +13396,194 @@ b_2	set	12
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L631+x_1
+	adc	<L685+x_1
 	sta	<R1
 	sep	#$20
 	longa	off
 	ldy	<R1
-	lda	[<L631+img_1],Y
-	sta	<L631+b_2
+	lda	[<L685+img_1],Y
+	sta	<L685+b_2
 	rep	#$20
 	longa	on
-	.line	1733
+	.line	1777
 ;				{
 	sep	#$20
 	longa	off
 	lda	#$0
-	cmp	<L631+b_2
+	cmp	<L685+b_2
 	rep	#$20
 	longa	on
-	bcc	L636
-	brl	L10188
-L636:
-	.line	1734
+	bcc	L690
+	brl	L10196
+L690:
+	.line	1778
 ;					if(mode == PAINTMODE_BACKGROUND)
-	.line	1735
+	.line	1779
 ;						b = paletteId;
-	lda	<L630+mode_0
+	lda	<L684+mode_0
 	cmp	#<$f0
-	beq	L637
-	brl	L10189
-L637:
-	.line	1736
+	beq	L691
+	brl	L10197
+L691:
+	.line	1780
 	sep	#$20
 	longa	off
-	lda	<L630+paletteId_0
-	sta	<L631+b_2
+	lda	<L684+paletteId_0
+	sta	<L685+b_2
 	rep	#$20
 	longa	on
 ;
 ;					if(mode == PAINTMODE_HIGHLIGHT && b == 15)
-L10189:
-	.line	1738
+L10197:
+	.line	1782
 ;						b = paletteId;
-	lda	<L630+mode_0
+	lda	<L684+mode_0
 	cmp	#<$f1
-	beq	L638
-	brl	L10190
-L638:
+	beq	L692
+	brl	L10198
+L692:
 	sep	#$20
 	longa	off
-	lda	<L631+b_2
+	lda	<L685+b_2
 	cmp	#<$f
 	rep	#$20
 	longa	on
-	beq	L639
-	brl	L10190
-L639:
-	.line	1739
+	beq	L693
+	brl	L10198
+L693:
+	.line	1783
 	sep	#$20
 	longa	off
-	lda	<L630+paletteId_0
-	sta	<L631+b_2
+	lda	<L684+paletteId_0
+	sta	<L685+b_2
 	rep	#$20
 	longa	on
 ;
 ;					k_draw_pixel(textX + x, textY + y, b);
-L10190:
-	.line	1741
-	pei	<L631+b_2
+L10198:
+	.line	1785
+	pei	<L685+b_2
 	clc
-	lda	<L631+textY_1
-	adc	<L631+y_1
+	lda	<L685+textY_1
+	adc	<L685+y_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L640
+	bpl	L694
 	dey
-L640:
+L694:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L631+textX_1
-	adc	<L631+x_1
+	lda	<L685+textX_1
+	adc	<L685+x_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L641
+	bpl	L695
 	dey
-L641:
+L695:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;				}
-	.line	1742
+	.line	1786
 ;				else 
-	brl	L10191
-L10188:
+	brl	L10199
+L10196:
 ;				{ 
-	.line	1744
+	.line	1788
 ;					if(mode!=PAINTMODE_DEFAULT)
-	.line	1745
+	.line	1789
 ;					{
-	lda	<L630+mode_0
-	bne	L642
-	brl	L10192
-L642:
-	.line	1746
+	lda	<L684+mode_0
+	bne	L696
+	brl	L10200
+L696:
+	.line	1790
 ;					
 ;					}
-	.line	1748
+	.line	1792
 ;				}
-L10192:
-	.line	1749
-L10191:
+L10200:
+	.line	1793
+L10199:
 ;			}
-	.endblock	1750
-	.line	1750
-L10185:
-	inc	<L631+x_1
+	.endblock	1794
+	.line	1794
+L10193:
+	inc	<L685+x_1
 	sec
-	lda	<L631+x_1
+	lda	<L685+x_1
 	sbc	#<$10
-	bvs	L643
+	bvs	L697
 	eor	#$8000
-L643:
-	bmi	L644
-	brl	L10187
-L644:
-L10186:
+L697:
+	bmi	L698
+	brl	L10195
+L698:
+L10194:
 ;		}
-	.line	1751
-L10182:
-	inc	<L631+y_1
+	.line	1795
+L10190:
+	inc	<L685+y_1
 	sec
-	lda	<L631+y_1
+	lda	<L685+y_1
 	sbc	#<$10
-	bvs	L645
+	bvs	L699
 	eor	#$8000
-L645:
-	bmi	L646
-	brl	L10184
-L646:
-L10183:
+L699:
+	bmi	L700
+	brl	L10192
+L700:
+L10191:
 ;	}
-	.line	1752
+	.line	1796
 ;	return FONTW;
-L10181:
-	.line	1753
+L10189:
+	.line	1797
 	jsl	~~k_font_getFontWidth
-L647:
+L701:
 	tay
-	lda	<L630+2
-	sta	<L630+2+10
-	lda	<L630+1
-	sta	<L630+1+10
+	lda	<L684+2
+	sta	<L684+2+10
+	lda	<L684+1
+	sta	<L684+1+10
 	pld
 	tsc
 	clc
-	adc	#L630+10
+	adc	#L684+10
 	tcs
 	tya
 	rtl
 ;}
-	.line	1754
-	.endblock	1754
-L630	equ	21
-L631	equ	9
+	.line	1798
+	.endblock	1798
+L684	equ	21
+L685	equ	9
 	ends
 	efunc
-	.endfunc	1754,9,21
-	.line	1754
+	.endfunc	1798,9,21
+	.line	1798
 ;
 ;int k_put_winicon_point_ex(char iconCode,int cx,int cy,int paletteId,int mode,UINT page)
 ;{
-	.line	1756
-	.line	1757
+	.line	1800
+	.line	1801
 	GFX
 	xdef	~~k_put_winicon_point_ex
 	func
-	.function	1757
+	.function	1801
 ~~k_put_winicon_point_ex:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L648
+	sbc	#L702
 	tcs
 	phd
 	tcd
@@ -13031,7 +13593,7 @@ cy_0	set	8
 paletteId_0	set	10
 mode_0	set	12
 page_0	set	14
-	.block	1757
+	.block	1801
 ;	int x = 0;
 ;	int y = 0;
 ;	int textX = cx;
@@ -13056,23 +13618,23 @@ img_1	set	8
 	.sym	paletteId,10,5,6,16
 	.sym	mode,12,5,6,16
 	.sym	page,14,16,6,16
-	stz	<L649+x_1
-	stz	<L649+y_1
-	lda	<L648+cx_0
-	sta	<L649+textX_1
-	lda	<L648+cy_0
-	sta	<L649+textY_1
-	stz	<L649+img_1
-	stz	<L649+img_1+2
-	.line	1765
-	lda	<L648+iconCode_0
+	stz	<L703+x_1
+	stz	<L703+y_1
+	lda	<L702+cx_0
+	sta	<L703+textX_1
+	lda	<L702+cy_0
+	sta	<L703+textY_1
+	stz	<L703+img_1
+	stz	<L703+img_1+2
+	.line	1809
+	lda	<L702+iconCode_0
 	and	#<$ff
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L651
+	bpl	L705
 	dey
-L651:
+L705:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -13085,37 +13647,37 @@ L651:
 	clc
 	lda	#<~~windowIconImg
 	adc	<R0
-	sta	<L649+img_1
+	sta	<L703+img_1
 	lda	#^~~windowIconImg
 	adc	<R0+2
-	sta	<L649+img_1+2
+	sta	<L703+img_1+2
 ;	if(img!=NULL)
-	.line	1766
+	.line	1810
 ;	{
-	lda	<L649+img_1
-	ora	<L649+img_1+2
-	bne	L652
-	brl	L10193
-L652:
-	.line	1767
+	lda	<L703+img_1
+	ora	<L703+img_1+2
+	bne	L706
+	brl	L10201
+L706:
+	.line	1811
 ;		for (y = 0; y < ICONH; y++)
-	.line	1768
-	stz	<L649+y_1
-L10196:
+	.line	1812
+	stz	<L703+y_1
+L10204:
 ;		{
-	.line	1769
+	.line	1813
 ;			for (x = 0; x < ICONW; x++)
-	.line	1770
-	stz	<L649+x_1
-L10199:
+	.line	1814
+	stz	<L703+x_1
+L10207:
 ;			{
-	.line	1771
+	.line	1815
 ;				char b = img[y * ICONW + x];
 ;				if (b > 0)
-	.block	1773
+	.block	1817
 b_2	set	12
 	.sym	b,12,14,1,8
-	lda	<L649+y_1
+	lda	<L703+y_1
 	asl	A
 	asl	A
 	asl	A
@@ -13123,96 +13685,96 @@ b_2	set	12
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L649+x_1
+	adc	<L703+x_1
 	sta	<R1
 	sep	#$20
 	longa	off
 	ldy	<R1
-	lda	[<L649+img_1],Y
-	sta	<L649+b_2
+	lda	[<L703+img_1],Y
+	sta	<L703+b_2
 	rep	#$20
 	longa	on
-	.line	1773
+	.line	1817
 ;				{
 	sep	#$20
 	longa	off
 	lda	#$0
-	cmp	<L649+b_2
+	cmp	<L703+b_2
 	rep	#$20
 	longa	on
-	bcc	L654
-	brl	L10200
-L654:
-	.line	1774
+	bcc	L708
+	brl	L10208
+L708:
+	.line	1818
 ;					if(mode == PAINTMODE_BACKGROUND)
-	.line	1775
+	.line	1819
 ;						b = paletteId;
-	lda	<L648+mode_0
+	lda	<L702+mode_0
 	cmp	#<$f0
-	beq	L655
-	brl	L10201
-L655:
-	.line	1776
+	beq	L709
+	brl	L10209
+L709:
+	.line	1820
 	sep	#$20
 	longa	off
-	lda	<L648+paletteId_0
-	sta	<L649+b_2
+	lda	<L702+paletteId_0
+	sta	<L703+b_2
 	rep	#$20
 	longa	on
 ;
 ;					if(mode == PAINTMODE_HIGHLIGHT && b == 15)
-L10201:
-	.line	1778
+L10209:
+	.line	1822
 ;						b = paletteId;
-	lda	<L648+mode_0
+	lda	<L702+mode_0
 	cmp	#<$f1
-	beq	L656
-	brl	L10202
-L656:
+	beq	L710
+	brl	L10210
+L710:
 	sep	#$20
 	longa	off
-	lda	<L649+b_2
+	lda	<L703+b_2
 	cmp	#<$f
 	rep	#$20
 	longa	on
-	beq	L657
-	brl	L10202
-L657:
-	.line	1779
+	beq	L711
+	brl	L10210
+L711:
+	.line	1823
 	sep	#$20
 	longa	off
-	lda	<L648+paletteId_0
-	sta	<L649+b_2
+	lda	<L702+paletteId_0
+	sta	<L703+b_2
 	rep	#$20
 	longa	on
 ;
 ;					k_draw_pixel_ex(textX + x, textY + y, b, page);
-L10202:
-	.line	1781
-	pei	<L648+page_0
-	pei	<L649+b_2
+L10210:
+	.line	1825
+	pei	<L702+page_0
+	pei	<L703+b_2
 	clc
-	lda	<L649+textY_1
-	adc	<L649+y_1
+	lda	<L703+textY_1
+	adc	<L703+y_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L658
+	bpl	L712
 	dey
-L658:
+L712:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L649+textX_1
-	adc	<L649+x_1
+	lda	<L703+textX_1
+	adc	<L703+x_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L659
+	bpl	L713
 	dey
-L659:
+L713:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -13221,84 +13783,84 @@ L659:
 ;
 ;
 ;				}
-	.line	1784
+	.line	1828
 ;				else
-	brl	L10203
-L10200:
+	brl	L10211
+L10208:
 ;				{
-	.line	1786
+	.line	1830
 ;					if(mode!=PAINTMODE_DEFAULT)
-	.line	1787
+	.line	1831
 ;					{
-	lda	<L648+mode_0
-	bne	L660
-	brl	L10204
-L660:
-	.line	1788
+	lda	<L702+mode_0
+	bne	L714
+	brl	L10212
+L714:
+	.line	1832
 ;
 ;					}
-	.line	1790
+	.line	1834
 ;				}
-L10204:
-	.line	1791
-L10203:
+L10212:
+	.line	1835
+L10211:
 ;			}
-	.endblock	1792
-	.line	1792
-L10197:
-	inc	<L649+x_1
+	.endblock	1836
+	.line	1836
+L10205:
+	inc	<L703+x_1
 	sec
-	lda	<L649+x_1
+	lda	<L703+x_1
 	sbc	#<$10
-	bvs	L661
+	bvs	L715
 	eor	#$8000
-L661:
-	bmi	L662
-	brl	L10199
-L662:
-L10198:
+L715:
+	bmi	L716
+	brl	L10207
+L716:
+L10206:
 ;		}
-	.line	1793
-L10194:
-	inc	<L649+y_1
+	.line	1837
+L10202:
+	inc	<L703+y_1
 	sec
-	lda	<L649+y_1
+	lda	<L703+y_1
 	sbc	#<$10
-	bvs	L663
+	bvs	L717
 	eor	#$8000
-L663:
-	bmi	L664
-	brl	L10196
-L664:
-L10195:
+L717:
+	bmi	L718
+	brl	L10204
+L718:
+L10203:
 ;	}
-	.line	1794
+	.line	1838
 ;	return FONTW;
-L10193:
-	.line	1795
+L10201:
+	.line	1839
 	jsl	~~k_font_getFontWidth
-L665:
+L719:
 	tay
-	lda	<L648+2
-	sta	<L648+2+12
-	lda	<L648+1
-	sta	<L648+1+12
+	lda	<L702+2
+	sta	<L702+2+12
+	lda	<L702+1
+	sta	<L702+1+12
 	pld
 	tsc
 	clc
-	adc	#L648+12
+	adc	#L702+12
 	tcs
 	tya
 	rtl
 ;}
-	.line	1796
-	.endblock	1796
-L648	equ	21
-L649	equ	9
+	.line	1840
+	.endblock	1840
+L702	equ	21
+L703	equ	9
 	ends
 	efunc
-	.endfunc	1796,9,21
-	.line	1796
+	.endfunc	1840,9,21
+	.line	1840
 ;
 ;
 ;
@@ -13316,18 +13878,18 @@ L649	equ	9
 ;
 ;void k_put_winicon_scaled(char iconCode,int cx,int cy,char paletteId,int mode,int scale)
 ;{
-	.line	1812
-	.line	1813
+	.line	1856
+	.line	1857
 	GFX
 	xdef	~~k_put_winicon_scaled
 	func
-	.function	1813
+	.function	1857
 ~~k_put_winicon_scaled:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L666
+	sbc	#L720
 	tcs
 	phd
 	tcd
@@ -13337,7 +13899,7 @@ cy_0	set	8
 paletteId_0	set	10
 mode_0	set	12
 scale_0	set	14
-	.block	1813
+	.block	1857
 ;	int x = 0;
 ;	int y = 0;
 ;
@@ -13393,46 +13955,46 @@ img_1	set	25
 	.sym	paletteId,10,14,6,8
 	.sym	mode,12,5,6,16
 	.sym	scale,14,5,6,16
-	stz	<L667+x_1
-	stz	<L667+y_1
-	lda	<L666+scale_0
+	stz	<L721+x_1
+	stz	<L721+y_1
+	lda	<L720+scale_0
 	asl	A
 	asl	A
 	asl	A
 	asl	A
-	sta	<L667+height_1
-	lda	<L666+scale_0
+	sta	<L721+height_1
+	lda	<L720+scale_0
 	asl	A
 	asl	A
 	asl	A
 	asl	A
-	sta	<L667+width_1
-	lda	<L666+cx_0
-	sta	<L667+textX_1
-	lda	<L666+cy_0
-	sta	<L667+textY_1
-	stz	<L667+px_1
-	stz	<L667+py_1
-	stz	<L667+offx_1
-	stz	<L667+offy_1
-	stz	<L667+sx_1
-	stz	<L667+sy_1
+	sta	<L721+width_1
+	lda	<L720+cx_0
+	sta	<L721+textX_1
+	lda	<L720+cy_0
+	sta	<L721+textY_1
+	stz	<L721+px_1
+	stz	<L721+py_1
+	stz	<L721+offx_1
+	stz	<L721+offy_1
+	stz	<L721+sx_1
+	stz	<L721+sy_1
 	sep	#$20
 	longa	off
-	stz	<L667+b_1
+	stz	<L721+b_1
 	rep	#$20
 	longa	on
-	stz	<L667+img_1
-	stz	<L667+img_1+2
-	.line	1834
-	lda	<L666+iconCode_0
+	stz	<L721+img_1
+	stz	<L721+img_1+2
+	.line	1878
+	lda	<L720+iconCode_0
 	and	#<$ff
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L669
+	bpl	L723
 	dey
-L669:
+L723:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -13445,51 +14007,51 @@ L669:
 	clc
 	lda	#<~~windowIconImg
 	adc	<R0
-	sta	<L667+img_1
+	sta	<L721+img_1
 	lda	#^~~windowIconImg
 	adc	<R0+2
-	sta	<L667+img_1+2
+	sta	<L721+img_1+2
 ;	if(img!=NULL)
-	.line	1835
+	.line	1879
 ;	{
-	lda	<L667+img_1
-	ora	<L667+img_1+2
-	bne	L670
-	brl	L10205
-L670:
-	.line	1836
-;		py = 0;
-	.line	1837
-	stz	<L667+py_1
-;		for (y = 0; y < height; y+=scale) 
-	.line	1838
-	stz	<L667+y_1
-	brl	L10209
-L10208:
-;		{
-	.line	1839
-;			offy = y;
-	.line	1840
-	lda	<L667+y_1
-	sta	<L667+offy_1
-;			px   = 0;
-	.line	1841
-	stz	<L667+px_1
-;			for (x = 0; x < width; x+=scale) 
-	.line	1842
-	stz	<L667+x_1
+	lda	<L721+img_1
+	ora	<L721+img_1+2
+	bne	L724
 	brl	L10213
-L10212:
+L724:
+	.line	1880
+;		py = 0;
+	.line	1881
+	stz	<L721+py_1
+;		for (y = 0; y < height; y+=scale) 
+	.line	1882
+	stz	<L721+y_1
+	brl	L10217
+L10216:
+;		{
+	.line	1883
+;			offy = y;
+	.line	1884
+	lda	<L721+y_1
+	sta	<L721+offy_1
+;			px   = 0;
+	.line	1885
+	stz	<L721+px_1
+;			for (x = 0; x < width; x+=scale) 
+	.line	1886
+	stz	<L721+x_1
+	brl	L10221
+L10220:
 ;			{
-	.line	1843
+	.line	1887
 ;				// get the pixel value
 ;				offx = x;
-	.line	1845
-	lda	<L667+x_1
-	sta	<L667+offx_1
+	.line	1889
+	lda	<L721+x_1
+	sta	<L721+offx_1
 ;				b = img[py * ICONW + px];
-	.line	1846
-	lda	<L667+py_1
+	.line	1890
+	lda	<L721+py_1
 	asl	A
 	asl	A
 	asl	A
@@ -13497,203 +14059,203 @@ L10212:
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L667+px_1
+	adc	<L721+px_1
 	sta	<R1
 	sep	#$20
 	longa	off
 	ldy	<R1
-	lda	[<L667+img_1],Y
-	sta	<L667+b_1
+	lda	[<L721+img_1],Y
+	sta	<L721+b_1
 	rep	#$20
 	longa	on
 ;				if (b > -1) 
-	.line	1847
+	.line	1891
 ;				{ // plot the pixel					
-	lda	<L667+b_1
+	lda	<L721+b_1
 	and	#$ff
 	sta	<R0
 	sec
 	lda	#$ffff
 	sbc	<R0
-	bvs	L671
+	bvs	L725
 	eor	#$8000
-L671:
-	bpl	L672
-	brl	L10214
-L672:
-	.line	1848
-;					offy = y;
-	.line	1849
-	lda	<L667+y_1
-	sta	<L667+offy_1
-;					for(sy=0;sy<scale;sy++)
-	.line	1850
-	stz	<L667+sy_1
-	brl	L10218
-L10217:
-;					{
-	.line	1851
-;						offx = x;
-	.line	1852
-	lda	<L667+x_1
-	sta	<L667+offx_1
-;						for(sx=0;sx<scale;sx++)
-	.line	1853
-	stz	<L667+sx_1
+L725:
+	bpl	L726
 	brl	L10222
-L10221:
+L726:
+	.line	1892
+;					offy = y;
+	.line	1893
+	lda	<L721+y_1
+	sta	<L721+offy_1
+;					for(sy=0;sy<scale;sy++)
+	.line	1894
+	stz	<L721+sy_1
+	brl	L10226
+L10225:
+;					{
+	.line	1895
+;						offx = x;
+	.line	1896
+	lda	<L721+x_1
+	sta	<L721+offx_1
+;						for(sx=0;sx<scale;sx++)
+	.line	1897
+	stz	<L721+sx_1
+	brl	L10230
+L10229:
 ;						{
-	.line	1854
+	.line	1898
 ;							k_draw_pixel(textX + offx, textY + offy, b);
-	.line	1855
-	pei	<L667+b_1
+	.line	1899
+	pei	<L721+b_1
 	clc
-	lda	<L667+textY_1
-	adc	<L667+offy_1
+	lda	<L721+textY_1
+	adc	<L721+offy_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L673
+	bpl	L727
 	dey
-L673:
+L727:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L667+textX_1
-	adc	<L667+offx_1
+	lda	<L721+textX_1
+	adc	<L721+offx_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L674
+	bpl	L728
 	dey
-L674:
+L728:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;							offx++;
-	.line	1856
-	inc	<L667+offx_1
+	.line	1900
+	inc	<L721+offx_1
 ;						}
-	.line	1857
-L10219:
-	inc	<L667+sx_1
-L10222:
+	.line	1901
+L10227:
+	inc	<L721+sx_1
+L10230:
 	sec
-	lda	<L667+sx_1
-	sbc	<L666+scale_0
-	bvs	L675
+	lda	<L721+sx_1
+	sbc	<L720+scale_0
+	bvs	L729
 	eor	#$8000
-L675:
-	bmi	L676
-	brl	L10221
-L676:
-L10220:
+L729:
+	bmi	L730
+	brl	L10229
+L730:
+L10228:
 ;						offy++;
-	.line	1858
-	inc	<L667+offy_1
+	.line	1902
+	inc	<L721+offy_1
 ;					}
-	.line	1859
-L10215:
-	inc	<L667+sy_1
-L10218:
+	.line	1903
+L10223:
+	inc	<L721+sy_1
+L10226:
 	sec
-	lda	<L667+sy_1
-	sbc	<L666+scale_0
-	bvs	L677
+	lda	<L721+sy_1
+	sbc	<L720+scale_0
+	bvs	L731
 	eor	#$8000
-L677:
-	bmi	L678
-	brl	L10217
-L678:
-L10216:
+L731:
+	bmi	L732
+	brl	L10225
+L732:
+L10224:
 ;				}
-	.line	1860
+	.line	1904
 ;				px++;
-L10214:
-	.line	1861
-	inc	<L667+px_1
+L10222:
+	.line	1905
+	inc	<L721+px_1
 ;			} // end "for x"
-	.line	1862
-L10210:
+	.line	1906
+L10218:
 	clc
-	lda	<L667+x_1
-	adc	<L666+scale_0
-	sta	<L667+x_1
-L10213:
+	lda	<L721+x_1
+	adc	<L720+scale_0
+	sta	<L721+x_1
+L10221:
 	sec
-	lda	<L667+x_1
-	sbc	<L667+width_1
-	bvs	L679
+	lda	<L721+x_1
+	sbc	<L721+width_1
+	bvs	L733
 	eor	#$8000
-L679:
-	bmi	L680
-	brl	L10212
-L680:
-L10211:
+L733:
+	bmi	L734
+	brl	L10220
+L734:
+L10219:
 ;			py++;
-	.line	1863
-	inc	<L667+py_1
+	.line	1907
+	inc	<L721+py_1
 ;		} // end "for y"
-	.line	1864
-L10206:
+	.line	1908
+L10214:
 	clc
-	lda	<L667+y_1
-	adc	<L666+scale_0
-	sta	<L667+y_1
-L10209:
+	lda	<L721+y_1
+	adc	<L720+scale_0
+	sta	<L721+y_1
+L10217:
 	sec
-	lda	<L667+y_1
-	sbc	<L667+height_1
-	bvs	L681
+	lda	<L721+y_1
+	sbc	<L721+height_1
+	bvs	L735
 	eor	#$8000
-L681:
-	bmi	L682
-	brl	L10208
-L682:
-L10207:
+L735:
+	bmi	L736
+	brl	L10216
+L736:
+L10215:
 ;	}
-	.line	1865
+	.line	1909
 ;}
-L10205:
-	.line	1866
-L683:
-	lda	<L666+2
-	sta	<L666+2+12
-	lda	<L666+1
-	sta	<L666+1+12
+L10213:
+	.line	1910
+L737:
+	lda	<L720+2
+	sta	<L720+2+12
+	lda	<L720+1
+	sta	<L720+1+12
 	pld
 	tsc
 	clc
-	adc	#L666+12
+	adc	#L720+12
 	tcs
 	rtl
-	.endblock	1866
-L666	equ	37
-L667	equ	9
+	.endblock	1910
+L720	equ	37
+L721	equ	9
 	ends
 	efunc
-	.endfunc	1866,9,37
-	.line	1866
+	.endfunc	1910,9,37
+	.line	1910
 ;
 ;
 ;void k_put_font(char outChar,int row,int column,char color)
 ;{
-	.line	1869
-	.line	1870
+	.line	1913
+	.line	1914
 	GFX
 	xdef	~~k_put_font
 	func
-	.function	1870
+	.function	1914
 ~~k_put_font:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L684
+	sbc	#L738
 	tcs
 	phd
 	tcd
@@ -13701,7 +14263,7 @@ outChar_0	set	4
 row_0	set	6
 column_0	set	8
 color_0	set	10
-	.block	1870
+	.block	1914
 ;	int x = 0;
 ;	int y = 0;
 ;	int textX = row * FONTW;
@@ -13724,57 +14286,57 @@ img_1	set	8
 	.sym	row,6,5,6,16
 	.sym	column,8,5,6,16
 	.sym	color,10,14,6,8
-	stz	<L685+x_1
-	stz	<L685+y_1
+	stz	<L739+x_1
+	stz	<L739+y_1
 	jsl	~~k_font_getFontWidth
 	sta	<R0
 	lda	<R0
-	ldx	<L684+row_0
+	ldx	<L738+row_0
 	xref	~~~mul
 	jsl	~~~mul
-	sta	<L685+textX_1
+	sta	<L739+textX_1
 	jsl	~~k_font_getFontHeight
 	sta	<R0
 	lda	<R0
-	ldx	<L684+column_0
+	ldx	<L738+column_0
 	xref	~~~mul
 	jsl	~~~mul
-	sta	<L685+textY_1
-	stz	<L685+img_1
-	stz	<L685+img_1+2
-	.line	1878
+	sta	<L739+textY_1
+	stz	<L739+img_1
+	stz	<L739+img_1+2
+	.line	1922
 ;	{
 	sep	#$20
 	longa	off
-	lda	<L684+outChar_0
+	lda	<L738+outChar_0
 	cmp	#<$20
 	rep	#$20
 	longa	on
-	beq	L687
-	brl	L10223
-L687:
-	.line	1879
+	beq	L741
+	brl	L10231
+L741:
+	.line	1923
 ;	   img = NULL;
-	.line	1880
-	stz	<L685+img_1
-	stz	<L685+img_1+2
+	.line	1924
+	stz	<L739+img_1
+	stz	<L739+img_1+2
 ;    }
-	.line	1881
+	.line	1925
 ;    else
-	brl	L10224
-L10223:
+	brl	L10232
+L10231:
 ;	{
-	.line	1883
+	.line	1927
 ;	    img = fontImg[(int)characterROMMapping[(int)(outChar & 0xFF)]];
-	.line	1884
-	lda	<L684+outChar_0
+	.line	1928
+	lda	<L738+outChar_0
 	and	#<$ff
 	sta	<R2
 	ldy	#$0
 	lda	<R2
-	bpl	L688
+	bpl	L742
 	dey
-L688:
+L742:
 	sta	<R2
 	sty	<R2+2
 	pei	<R2+2
@@ -13793,9 +14355,9 @@ L688:
 	sta	<R3+2
 	ldy	#$0
 	lda	[<R3]
-	bpl	L689
+	bpl	L743
 	dey
-L689:
+L743:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -13808,109 +14370,109 @@ L689:
 	clc
 	lda	#<~~fontImg
 	adc	<R0
-	sta	<L685+img_1
+	sta	<L739+img_1
 	lda	#^~~fontImg
 	adc	<R0+2
-	sta	<L685+img_1+2
+	sta	<L739+img_1+2
 ;		//img = fontImg[0x02];
 ;	}
-	.line	1886
-L10224:
+	.line	1930
+L10232:
 ;	//printf("putFont:%d\n",characterROMMapping[outChar]);
 ;
 ;	// get the font 'image'
 ;        //char *img = fontImg[ix]; 
 ;        // loop through pixel rows
 ;	if(img!=NULL)
-	.line	1892
+	.line	1936
 ;	{
-	lda	<L685+img_1
-	ora	<L685+img_1+2
-	bne	L690
-	brl	L10225
-L690:
-	.line	1893
+	lda	<L739+img_1
+	ora	<L739+img_1+2
+	bne	L744
+	brl	L10233
+L744:
+	.line	1937
 ;		for (y = 0; y < FONTH; y++) 
-	.line	1894
-	stz	<L685+y_1
-	brl	L10229
-L10228:
+	.line	1938
+	stz	<L739+y_1
+	brl	L10237
+L10236:
 ;		{
-	.line	1895
+	.line	1939
 ;			// loop through pixel columns
 ;			for (x = 0; x < FONTW; x++) 
-	.line	1897
-	stz	<L685+x_1
-	brl	L10233
-L10232:
+	.line	1941
+	stz	<L739+x_1
+	brl	L10241
+L10240:
 ;			{
-	.line	1898
+	.line	1942
 ;				// get the pixel value
 ;				char b = img[y * FONTW + x];
 ;				if (b > 0) 
-	.block	1901
+	.block	1945
 b_2	set	12
 	.sym	b,12,14,1,8
 	jsl	~~k_font_getFontWidth
 	sta	<R0
 	lda	<R0
-	ldx	<L685+y_1
+	ldx	<L739+y_1
 	xref	~~~mul
 	jsl	~~~mul
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L685+x_1
+	adc	<L739+x_1
 	sta	<R1
 	sep	#$20
 	longa	off
 	ldy	<R1
-	lda	[<L685+img_1],Y
-	sta	<L685+b_2
+	lda	[<L739+img_1],Y
+	sta	<L739+b_2
 	rep	#$20
 	longa	on
-	.line	1901
+	.line	1945
 ;				{ // plot the pixel
 	sep	#$20
 	longa	off
 	lda	#$0
-	cmp	<L685+b_2
+	cmp	<L739+b_2
 	rep	#$20
 	longa	on
-	bcc	L692
-	brl	L10234
-L692:
-	.line	1902
+	bcc	L746
+	brl	L10242
+L746:
+	.line	1946
 ;					//k_draw_pixel(textX + x, textY + y, color);
 ;					
 ;					((unsigned char FAR *)BITMAP_BANK_0)[(long)(( ((long)textY + y) * 640L) + ((long)textX + x) )] = (char)color;
-	.line	1905
+	.line	1949
 	ldy	#$0
-	lda	<L685+textX_1
-	bpl	L693
+	lda	<L739+textX_1
+	bpl	L747
 	dey
-L693:
+L747:
 	sta	<R0
 	sty	<R0+2
 	ldy	#$0
-	lda	<L685+x_1
-	bpl	L694
+	lda	<L739+x_1
+	bpl	L748
 	dey
-L694:
+L748:
 	sta	<R1
 	sty	<R1+2
 	ldy	#$0
-	lda	<L685+y_1
-	bpl	L695
+	lda	<L739+y_1
+	bpl	L749
 	dey
-L695:
+L749:
 	sta	<R2
 	sty	<R2+2
 	ldy	#$0
-	lda	<L685+textY_1
-	bpl	L696
+	lda	<L739+textY_1
+	bpl	L750
 	dey
-L696:
+L750:
 	sta	<R3
 	sty	<R3+2
 	clc
@@ -13951,86 +14513,86 @@ L696:
 	sta	<R0+2
 	sep	#$20
 	longa	off
-	lda	<L684+color_0
+	lda	<L738+color_0
 	sta	[<R0]
 	rep	#$20
 	longa	on
 ;				}
-	.line	1906
+	.line	1950
 ;				else 
-	brl	L10235
-L10234:
+	brl	L10243
+L10242:
 ;				{ 
-	.line	1908
+	.line	1952
 ;					// leave empty (or maybe plot 'text backgr color')
 ;				}
-	.line	1910
-L10235:
+	.line	1954
+L10243:
 ;			} // end "for x"
-	.endblock	1911
-	.line	1911
-L10230:
-	inc	<L685+x_1
-L10233:
+	.endblock	1955
+	.line	1955
+L10238:
+	inc	<L739+x_1
+L10241:
 	jsl	~~k_font_getFontWidth
 	sta	<R0
-	lda	<L685+x_1
+	lda	<L739+x_1
 	cmp	<R0
-	bcs	L697
-	brl	L10232
-L697:
-L10231:
+	bcs	L751
+	brl	L10240
+L751:
+L10239:
 ;		} // end "for y"
-	.line	1912
-L10226:
-	inc	<L685+y_1
-L10229:
+	.line	1956
+L10234:
+	inc	<L739+y_1
+L10237:
 	jsl	~~k_font_getFontHeight
 	sta	<R0
-	lda	<L685+y_1
+	lda	<L739+y_1
 	cmp	<R0
-	bcs	L698
-	brl	L10228
-L698:
-L10227:
+	bcs	L752
+	brl	L10236
+L752:
+L10235:
 ;	}
-	.line	1913
+	.line	1957
 ;}
-L10225:
-	.line	1914
-L699:
-	lda	<L684+2
-	sta	<L684+2+8
-	lda	<L684+1
-	sta	<L684+1+8
+L10233:
+	.line	1958
+L753:
+	lda	<L738+2
+	sta	<L738+2+8
+	lda	<L738+1
+	sta	<L738+1+8
 	pld
 	tsc
 	clc
-	adc	#L684+8
+	adc	#L738+8
 	tcs
 	rtl
-	.endblock	1914
-L684	equ	33
-L685	equ	21
+	.endblock	1958
+L738	equ	33
+L739	equ	21
 	ends
 	efunc
-	.endfunc	1914,21,33
-	.line	1914
+	.endfunc	1958,21,33
+	.line	1958
 ;
 ;void k_put_font_scaled(char outChar,int row,int column,char color,int scale)
 ;{
-	.line	1916
-	.line	1917
+	.line	1960
+	.line	1961
 	GFX
 	xdef	~~k_put_font_scaled
 	func
-	.function	1917
+	.function	1961
 ~~k_put_font_scaled:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L700
+	sbc	#L754
 	tcs
 	phd
 	tcd
@@ -14039,7 +14601,7 @@ row_0	set	6
 column_0	set	8
 color_0	set	10
 scale_0	set	12
-	.block	1917
+	.block	1961
 ;	int x = 0;
 ;	int y = 0;
 ;
@@ -14094,78 +14656,78 @@ img_1	set	25
 	.sym	column,8,5,6,16
 	.sym	color,10,14,6,8
 	.sym	scale,12,5,6,16
-	stz	<L701+x_1
-	stz	<L701+y_1
+	stz	<L755+x_1
+	stz	<L755+y_1
 	jsl	~~k_font_getFontHeight
 	sta	<R0
 	lda	<R0
-	ldx	<L700+scale_0
+	ldx	<L754+scale_0
 	xref	~~~mul
 	jsl	~~~mul
-	sta	<L701+height_1
+	sta	<L755+height_1
 	jsl	~~k_font_getFontWidth
 	sta	<R0
 	lda	<R0
-	ldx	<L700+scale_0
+	ldx	<L754+scale_0
 	xref	~~~mul
 	jsl	~~~mul
-	sta	<L701+width_1
-	lda	<L700+row_0
-	ldx	<L701+height_1
+	sta	<L755+width_1
+	lda	<L754+row_0
+	ldx	<L755+height_1
 	xref	~~~mul
 	jsl	~~~mul
-	sta	<L701+textX_1
-	lda	<L700+column_0
-	ldx	<L701+width_1
+	sta	<L755+textX_1
+	lda	<L754+column_0
+	ldx	<L755+width_1
 	xref	~~~mul
 	jsl	~~~mul
-	sta	<L701+textY_1
-	stz	<L701+px_1
-	stz	<L701+py_1
-	stz	<L701+offx_1
-	stz	<L701+offy_1
-	stz	<L701+sx_1
-	stz	<L701+sy_1
+	sta	<L755+textY_1
+	stz	<L755+px_1
+	stz	<L755+py_1
+	stz	<L755+offx_1
+	stz	<L755+offy_1
+	stz	<L755+sx_1
+	stz	<L755+sy_1
 	sep	#$20
 	longa	off
-	stz	<L701+b_1
+	stz	<L755+b_1
 	rep	#$20
 	longa	on
-	stz	<L701+img_1
-	stz	<L701+img_1+2
-	.line	1938
+	stz	<L755+img_1
+	stz	<L755+img_1+2
+	.line	1982
 ;	{
 	sep	#$20
 	longa	off
-	lda	<L700+outChar_0
+	lda	<L754+outChar_0
 	cmp	#<$20
 	rep	#$20
 	longa	on
-	beq	L703
-	brl	L10236
-L703:
-	.line	1939
+	beq	L757
+	brl	L10244
+L757:
+	.line	1983
 ;	   img = NULL;//fontSpace;
-	.line	1940
-	stz	<L701+img_1
-	stz	<L701+img_1+2
+	.line	1984
+	stz	<L755+img_1
+	stz	<L755+img_1+2
 ;    }
-	.line	1941
+	.line	1985
 ;    else
-	brl	L10237
-L10236:
+	brl	L10245
+L10244:
 ;	{
-	.line	1943
+	.line	1987
 ;	    img = fontImg[(int)characterROMMapping[(int)(outChar & 0xFF)]];
-	.line	1944
-	lda	<L700+outChar_0
+	.line	1988
+	lda	<L754+outChar_0
 	and	#<$ff
 	sta	<R2
 	ldy	#$0
 	lda	<R2
-	bpl	L704
+	bpl	L758
 	dey
-L704:
+L758:
 	sta	<R2
 	sty	<R2+2
 	pei	<R2+2
@@ -14184,9 +14746,9 @@ L704:
 	sta	<R3+2
 	ldy	#$0
 	lda	[<R3]
-	bpl	L705
+	bpl	L759
 	dey
-L705:
+L759:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -14199,271 +14761,271 @@ L705:
 	clc
 	lda	#<~~fontImg
 	adc	<R0
-	sta	<L701+img_1
+	sta	<L755+img_1
 	lda	#^~~fontImg
 	adc	<R0+2
-	sta	<L701+img_1+2
+	sta	<L755+img_1+2
 ;		//img = fontImg[0x01];
 ;	}
-	.line	1946
-L10237:
+	.line	1990
+L10245:
 ;	//printf("putFont:%d\n",characterROMMapping[outChar]);
 ;
 ;	// get the font 'image'
 ;        //char *img = fontImg[ix]; 
 ;        // loop through pixel rows
 ;	if(img!=NULL)
-	.line	1952
+	.line	1996
 ;	{
-	lda	<L701+img_1
-	ora	<L701+img_1+2
-	bne	L706
-	brl	L10238
-L706:
-	.line	1953
-;		py = 0;
-	.line	1954
-	stz	<L701+py_1
-;		for (y = 0; y < height; y+=scale) 
-	.line	1955
-	stz	<L701+y_1
-	brl	L10242
-L10241:
-;		{
-	.line	1956
-;			offy = y;
-	.line	1957
-	lda	<L701+y_1
-	sta	<L701+offy_1
-;			px = 0;
-	.line	1958
-	stz	<L701+px_1
-;			for (x = 0; x < width; x+=scale) 
-	.line	1959
-	stz	<L701+x_1
+	lda	<L755+img_1
+	ora	<L755+img_1+2
+	bne	L760
 	brl	L10246
-L10245:
+L760:
+	.line	1997
+;		py = 0;
+	.line	1998
+	stz	<L755+py_1
+;		for (y = 0; y < height; y+=scale) 
+	.line	1999
+	stz	<L755+y_1
+	brl	L10250
+L10249:
+;		{
+	.line	2000
+;			offy = y;
+	.line	2001
+	lda	<L755+y_1
+	sta	<L755+offy_1
+;			px = 0;
+	.line	2002
+	stz	<L755+px_1
+;			for (x = 0; x < width; x+=scale) 
+	.line	2003
+	stz	<L755+x_1
+	brl	L10254
+L10253:
 ;			{
-	.line	1960
+	.line	2004
 ;				// get the pixel value
 ;				offx = x;
-	.line	1962
-	lda	<L701+x_1
-	sta	<L701+offx_1
+	.line	2006
+	lda	<L755+x_1
+	sta	<L755+offx_1
 ;				b = img[py * FONTW + px];
-	.line	1963
+	.line	2007
 	jsl	~~k_font_getFontWidth
 	sta	<R0
 	lda	<R0
-	ldx	<L701+py_1
+	ldx	<L755+py_1
 	xref	~~~mul
 	jsl	~~~mul
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L701+px_1
+	adc	<L755+px_1
 	sta	<R1
 	sep	#$20
 	longa	off
 	ldy	<R1
-	lda	[<L701+img_1],Y
-	sta	<L701+b_1
+	lda	[<L755+img_1],Y
+	sta	<L755+b_1
 	rep	#$20
 	longa	on
 ;				if (b > 0) 
-	.line	1964
+	.line	2008
 ;				{ // plot the pixel					
 	sep	#$20
 	longa	off
 	lda	#$0
-	cmp	<L701+b_1
+	cmp	<L755+b_1
 	rep	#$20
 	longa	on
-	bcc	L707
-	brl	L10247
-L707:
-	.line	1965
-;					offy = y;
-	.line	1966
-	lda	<L701+y_1
-	sta	<L701+offy_1
-;					for(sy=0;sy<scale;sy++)
-	.line	1967
-	stz	<L701+sy_1
-	brl	L10251
-L10250:
-;					{
-	.line	1968
-;						offx = x;
-	.line	1969
-	lda	<L701+x_1
-	sta	<L701+offx_1
-;						for(sx=0;sx<scale;sx++)
-	.line	1970
-	stz	<L701+sx_1
+	bcc	L761
 	brl	L10255
-L10254:
+L761:
+	.line	2009
+;					offy = y;
+	.line	2010
+	lda	<L755+y_1
+	sta	<L755+offy_1
+;					for(sy=0;sy<scale;sy++)
+	.line	2011
+	stz	<L755+sy_1
+	brl	L10259
+L10258:
+;					{
+	.line	2012
+;						offx = x;
+	.line	2013
+	lda	<L755+x_1
+	sta	<L755+offx_1
+;						for(sx=0;sx<scale;sx++)
+	.line	2014
+	stz	<L755+sx_1
+	brl	L10263
+L10262:
 ;						{
-	.line	1971
+	.line	2015
 ;							k_draw_pixel(textX + offx, textY + offy, color);
-	.line	1972
-	pei	<L700+color_0
+	.line	2016
+	pei	<L754+color_0
 	clc
-	lda	<L701+textY_1
-	adc	<L701+offy_1
+	lda	<L755+textY_1
+	adc	<L755+offy_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L708
+	bpl	L762
 	dey
-L708:
+L762:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L701+textX_1
-	adc	<L701+offx_1
+	lda	<L755+textX_1
+	adc	<L755+offx_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L709
+	bpl	L763
 	dey
-L709:
+L763:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;							offx++;
-	.line	1973
-	inc	<L701+offx_1
+	.line	2017
+	inc	<L755+offx_1
 ;						}
-	.line	1974
-L10252:
-	inc	<L701+sx_1
-L10255:
+	.line	2018
+L10260:
+	inc	<L755+sx_1
+L10263:
 	sec
-	lda	<L701+sx_1
-	sbc	<L700+scale_0
-	bvs	L710
+	lda	<L755+sx_1
+	sbc	<L754+scale_0
+	bvs	L764
 	eor	#$8000
-L710:
-	bmi	L711
-	brl	L10254
-L711:
-L10253:
+L764:
+	bmi	L765
+	brl	L10262
+L765:
+L10261:
 ;						offy++;
-	.line	1975
-	inc	<L701+offy_1
+	.line	2019
+	inc	<L755+offy_1
 ;					}
-	.line	1976
-L10248:
-	inc	<L701+sy_1
-L10251:
+	.line	2020
+L10256:
+	inc	<L755+sy_1
+L10259:
 	sec
-	lda	<L701+sy_1
-	sbc	<L700+scale_0
-	bvs	L712
+	lda	<L755+sy_1
+	sbc	<L754+scale_0
+	bvs	L766
 	eor	#$8000
-L712:
-	bmi	L713
-	brl	L10250
-L713:
-L10249:
+L766:
+	bmi	L767
+	brl	L10258
+L767:
+L10257:
 ;					
 ;					//k_draw_pixel(textX + x, textY + y, color);
 ;				}
-	.line	1979
+	.line	2023
 ;				else 
-	brl	L10256
-L10247:
+	brl	L10264
+L10255:
 ;				{ 
-	.line	1981
+	.line	2025
 ;					// leave empty (or maybe plot 'text backgr color')
 ;				}
-	.line	1983
-L10256:
+	.line	2027
+L10264:
 ;				px++;
-	.line	1984
-	inc	<L701+px_1
+	.line	2028
+	inc	<L755+px_1
 ;			} // end "for x"
-	.line	1985
-L10243:
+	.line	2029
+L10251:
 	clc
-	lda	<L701+x_1
-	adc	<L700+scale_0
-	sta	<L701+x_1
-L10246:
+	lda	<L755+x_1
+	adc	<L754+scale_0
+	sta	<L755+x_1
+L10254:
 	sec
-	lda	<L701+x_1
-	sbc	<L701+width_1
-	bvs	L714
+	lda	<L755+x_1
+	sbc	<L755+width_1
+	bvs	L768
 	eor	#$8000
-L714:
-	bmi	L715
-	brl	L10245
-L715:
-L10244:
+L768:
+	bmi	L769
+	brl	L10253
+L769:
+L10252:
 ;			py++;
-	.line	1986
-	inc	<L701+py_1
+	.line	2030
+	inc	<L755+py_1
 ;		} // end "for y"
-	.line	1987
-L10239:
+	.line	2031
+L10247:
 	clc
-	lda	<L701+y_1
-	adc	<L700+scale_0
-	sta	<L701+y_1
-L10242:
+	lda	<L755+y_1
+	adc	<L754+scale_0
+	sta	<L755+y_1
+L10250:
 	sec
-	lda	<L701+y_1
-	sbc	<L701+height_1
-	bvs	L716
+	lda	<L755+y_1
+	sbc	<L755+height_1
+	bvs	L770
 	eor	#$8000
-L716:
-	bmi	L717
-	brl	L10241
-L717:
-L10240:
+L770:
+	bmi	L771
+	brl	L10249
+L771:
+L10248:
 ;	}
-	.line	1988
+	.line	2032
 ;}
-L10238:
-	.line	1989
-L718:
-	lda	<L700+2
-	sta	<L700+2+10
-	lda	<L700+1
-	sta	<L700+1+10
+L10246:
+	.line	2033
+L772:
+	lda	<L754+2
+	sta	<L754+2+10
+	lda	<L754+1
+	sta	<L754+1+10
 	pld
 	tsc
 	clc
-	adc	#L700+10
+	adc	#L754+10
 	tcs
 	rtl
-	.endblock	1989
-L700	equ	45
-L701	equ	17
+	.endblock	2033
+L754	equ	45
+L755	equ	17
 	ends
 	efunc
-	.endfunc	1989,17,45
-	.line	1989
+	.endfunc	2033,17,45
+	.line	2033
 ;
 ;void k_draw_char(char charCode,int row,int column,char color)
 ;{
-	.line	1991
-	.line	1992
+	.line	2035
+	.line	2036
 	GFX
 	xdef	~~k_draw_char
 	func
-	.function	1992
+	.function	2036
 ~~k_draw_char:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L719
+	sbc	#L773
 	tcs
 	phd
 	tcd
@@ -14471,7 +15033,7 @@ charCode_0	set	4
 row_0	set	6
 column_0	set	8
 color_0	set	10
-	.block	1992
+	.block	2036
 ;	int x = 0;
 ;	int y = 0;
 ;
@@ -14498,62 +15060,62 @@ img_1	set	9
 	.sym	row,6,5,6,16
 	.sym	column,8,5,6,16
 	.sym	color,10,14,6,8
-	stz	<L720+x_1
-	stz	<L720+y_1
+	stz	<L774+x_1
+	stz	<L774+y_1
 	jsl	~~k_font_getFontHeight
 	sta	<R0
 	lda	<R0
-	ldx	<L719+row_0
+	ldx	<L773+row_0
 	xref	~~~mul
 	jsl	~~~mul
-	sta	<L720+textX_1
+	sta	<L774+textX_1
 	jsl	~~k_font_getFontWidth
 	sta	<R0
 	lda	<R0
-	ldx	<L719+column_0
+	ldx	<L773+column_0
 	xref	~~~mul
 	jsl	~~~mul
-	sta	<L720+textY_1
+	sta	<L774+textY_1
 	sep	#$20
 	longa	off
-	stz	<L720+b_1
+	stz	<L774+b_1
 	rep	#$20
 	longa	on
-	stz	<L720+img_1
-	stz	<L720+img_1+2
-	.line	2002
+	stz	<L774+img_1
+	stz	<L774+img_1+2
+	.line	2046
 ;	{
 	sep	#$20
 	longa	off
-	lda	<L719+charCode_0
+	lda	<L773+charCode_0
 	cmp	#<$20
 	rep	#$20
 	longa	on
-	beq	L722
-	brl	L10257
-L722:
-	.line	2003
+	beq	L776
+	brl	L10265
+L776:
+	.line	2047
 ;	   img = NULL;//fontSpace;
-	.line	2004
-	stz	<L720+img_1
-	stz	<L720+img_1+2
+	.line	2048
+	stz	<L774+img_1
+	stz	<L774+img_1+2
 ;    }
-	.line	2005
+	.line	2049
 ;    else
-	brl	L10258
-L10257:
+	brl	L10266
+L10265:
 ;	{
-	.line	2007
+	.line	2051
 ;	    img = fontImg[charCode & 0xFF];
-	.line	2008
-	lda	<L719+charCode_0
+	.line	2052
+	lda	<L773+charCode_0
 	and	#<$ff
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L723
+	bpl	L777
 	dey
-L723:
+L777:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -14566,181 +15128,181 @@ L723:
 	clc
 	lda	#<~~fontImg
 	adc	<R0
-	sta	<L720+img_1
+	sta	<L774+img_1
 	lda	#^~~fontImg
 	adc	<R0+2
-	sta	<L720+img_1+2
+	sta	<L774+img_1+2
 ;	}
-	.line	2009
-L10258:
+	.line	2053
+L10266:
 ;	//printf("putFont:%d\n",characterROMMapping[outChar]);
 ;
 ;	// get the font 'image'
 ;        //char *img = fontImg[ix]; 
 ;        // loop through pixel rows
 ;	if(img!=NULL)
-	.line	2015
+	.line	2059
 ;	{
-	lda	<L720+img_1
-	ora	<L720+img_1+2
-	bne	L724
-	brl	L10259
-L724:
-	.line	2016
+	lda	<L774+img_1
+	ora	<L774+img_1+2
+	bne	L778
+	brl	L10267
+L778:
+	.line	2060
 ;		for (y = 0; y < FONTH; y++) 
-	.line	2017
-	stz	<L720+y_1
-	brl	L10263
-L10262:
+	.line	2061
+	stz	<L774+y_1
+	brl	L10271
+L10270:
 ;		{
-	.line	2018
+	.line	2062
 ;			// loop through pixel columns
 ;			for (x = 0; x < FONTW; x++) 
-	.line	2020
-	stz	<L720+x_1
-	brl	L10267
-L10266:
+	.line	2064
+	stz	<L774+x_1
+	brl	L10275
+L10274:
 ;			{
-	.line	2021
+	.line	2065
 ;				// get the pixel value
 ;				b = img[y * FONTW + x];
-	.line	2023
+	.line	2067
 	jsl	~~k_font_getFontWidth
 	sta	<R0
 	lda	<R0
-	ldx	<L720+y_1
+	ldx	<L774+y_1
 	xref	~~~mul
 	jsl	~~~mul
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L720+x_1
+	adc	<L774+x_1
 	sta	<R1
 	sep	#$20
 	longa	off
 	ldy	<R1
-	lda	[<L720+img_1],Y
-	sta	<L720+b_1
+	lda	[<L774+img_1],Y
+	sta	<L774+b_1
 	rep	#$20
 	longa	on
 ;				if (b > 0) 
-	.line	2024
+	.line	2068
 ;				{ // plot the pixel
 	sep	#$20
 	longa	off
 	lda	#$0
-	cmp	<L720+b_1
+	cmp	<L774+b_1
 	rep	#$20
 	longa	on
-	bcc	L725
-	brl	L10268
-L725:
-	.line	2025
+	bcc	L779
+	brl	L10276
+L779:
+	.line	2069
 ;					k_draw_pixel(textX + x, textY + y, color);
-	.line	2026
-	pei	<L719+color_0
+	.line	2070
+	pei	<L773+color_0
 	clc
-	lda	<L720+textY_1
-	adc	<L720+y_1
+	lda	<L774+textY_1
+	adc	<L774+y_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L726
+	bpl	L780
 	dey
-L726:
+L780:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L720+textX_1
-	adc	<L720+x_1
+	lda	<L774+textX_1
+	adc	<L774+x_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L727
+	bpl	L781
 	dey
-L727:
+L781:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;				}
-	.line	2027
+	.line	2071
 ;				else 
-	brl	L10269
-L10268:
+	brl	L10277
+L10276:
 ;				{ 
-	.line	2029
+	.line	2073
 ;					// leave empty (or maybe plot 'text backgr color')
 ;				}
-	.line	2031
-L10269:
+	.line	2075
+L10277:
 ;			} // end "for x"
-	.line	2032
-L10264:
-	inc	<L720+x_1
-L10267:
+	.line	2076
+L10272:
+	inc	<L774+x_1
+L10275:
 	jsl	~~k_font_getFontWidth
 	sta	<R0
-	lda	<L720+x_1
+	lda	<L774+x_1
 	cmp	<R0
-	bcs	L728
-	brl	L10266
-L728:
-L10265:
+	bcs	L782
+	brl	L10274
+L782:
+L10273:
 ;		} // end "for y"
-	.line	2033
-L10260:
-	inc	<L720+y_1
-L10263:
+	.line	2077
+L10268:
+	inc	<L774+y_1
+L10271:
 	jsl	~~k_font_getFontHeight
 	sta	<R0
-	lda	<L720+y_1
+	lda	<L774+y_1
 	cmp	<R0
-	bcs	L729
-	brl	L10262
-L729:
-L10261:
+	bcs	L783
+	brl	L10270
+L783:
+L10269:
 ;	}
-	.line	2034
+	.line	2078
 ;}
-L10259:
-	.line	2035
-L730:
-	lda	<L719+2
-	sta	<L719+2+8
-	lda	<L719+1
-	sta	<L719+1+8
+L10267:
+	.line	2079
+L784:
+	lda	<L773+2
+	sta	<L773+2+8
+	lda	<L773+1
+	sta	<L773+1+8
 	pld
 	tsc
 	clc
-	adc	#L719+8
+	adc	#L773+8
 	tcs
 	rtl
-	.endblock	2035
-L719	equ	21
-L720	equ	9
+	.endblock	2079
+L773	equ	21
+L774	equ	9
 	ends
 	efunc
-	.endfunc	2035,9,21
-	.line	2035
+	.endfunc	2079,9,21
+	.line	2079
 ;
 ;void k_draw_char_scaled(char charCode,int row,int column,char color,int scale)
 ;{
-	.line	2037
-	.line	2038
+	.line	2081
+	.line	2082
 	GFX
 	xdef	~~k_draw_char_scaled
 	func
-	.function	2038
+	.function	2082
 ~~k_draw_char_scaled:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L731
+	sbc	#L785
 	tcs
 	phd
 	tcd
@@ -14749,7 +15311,7 @@ row_0	set	6
 column_0	set	8
 color_0	set	10
 scale_0	set	12
-	.block	2038
+	.block	2082
 ;	int x = 0;
 ;	int y = 0;
 ;
@@ -14804,78 +15366,78 @@ img_1	set	25
 	.sym	column,8,5,6,16
 	.sym	color,10,14,6,8
 	.sym	scale,12,5,6,16
-	stz	<L732+x_1
-	stz	<L732+y_1
+	stz	<L786+x_1
+	stz	<L786+y_1
 	jsl	~~k_font_getFontHeight
 	sta	<R0
 	lda	<R0
-	ldx	<L731+scale_0
+	ldx	<L785+scale_0
 	xref	~~~mul
 	jsl	~~~mul
-	sta	<L732+height_1
+	sta	<L786+height_1
 	jsl	~~k_font_getFontWidth
 	sta	<R0
 	lda	<R0
-	ldx	<L731+scale_0
+	ldx	<L785+scale_0
 	xref	~~~mul
 	jsl	~~~mul
-	sta	<L732+width_1
-	lda	<L731+row_0
-	ldx	<L732+height_1
+	sta	<L786+width_1
+	lda	<L785+row_0
+	ldx	<L786+height_1
 	xref	~~~mul
 	jsl	~~~mul
-	sta	<L732+textX_1
-	lda	<L731+column_0
-	ldx	<L732+width_1
+	sta	<L786+textX_1
+	lda	<L785+column_0
+	ldx	<L786+width_1
 	xref	~~~mul
 	jsl	~~~mul
-	sta	<L732+textY_1
-	stz	<L732+px_1
-	stz	<L732+py_1
-	stz	<L732+offx_1
-	stz	<L732+offy_1
-	stz	<L732+sx_1
-	stz	<L732+sy_1
+	sta	<L786+textY_1
+	stz	<L786+px_1
+	stz	<L786+py_1
+	stz	<L786+offx_1
+	stz	<L786+offy_1
+	stz	<L786+sx_1
+	stz	<L786+sy_1
 	sep	#$20
 	longa	off
-	stz	<L732+b_1
+	stz	<L786+b_1
 	rep	#$20
 	longa	on
-	stz	<L732+img_1
-	stz	<L732+img_1+2
-	.line	2059
+	stz	<L786+img_1
+	stz	<L786+img_1+2
+	.line	2103
 ;	{
 	sep	#$20
 	longa	off
-	lda	<L731+charCode_0
+	lda	<L785+charCode_0
 	cmp	#<$20
 	rep	#$20
 	longa	on
-	beq	L734
-	brl	L10270
-L734:
-	.line	2060
+	beq	L788
+	brl	L10278
+L788:
+	.line	2104
 ;	   img = NULL;
-	.line	2061
-	stz	<L732+img_1
-	stz	<L732+img_1+2
+	.line	2105
+	stz	<L786+img_1
+	stz	<L786+img_1+2
 ;    }
-	.line	2062
+	.line	2106
 ;    else
-	brl	L10271
-L10270:
+	brl	L10279
+L10278:
 ;	{
-	.line	2064
+	.line	2108
 ;	    img = fontImg[charCode & 0xFF];
-	.line	2065
-	lda	<L731+charCode_0
+	.line	2109
+	lda	<L785+charCode_0
 	and	#<$ff
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L735
+	bpl	L789
 	dey
-L735:
+L789:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -14888,267 +15450,267 @@ L735:
 	clc
 	lda	#<~~fontImg
 	adc	<R0
-	sta	<L732+img_1
+	sta	<L786+img_1
 	lda	#^~~fontImg
 	adc	<R0+2
-	sta	<L732+img_1+2
+	sta	<L786+img_1+2
 ;	}
-	.line	2066
-L10271:
+	.line	2110
+L10279:
 ;
 ;	if(img!=NULL)
-	.line	2068
+	.line	2112
 ;	{
-	lda	<L732+img_1
-	ora	<L732+img_1+2
-	bne	L736
-	brl	L10272
-L736:
-	.line	2069
-;		py = 0;
-	.line	2070
-	stz	<L732+py_1
-;		for (y = 0; y < height; y+=scale) 
-	.line	2071
-	stz	<L732+y_1
-	brl	L10276
-L10275:
-;		{
-	.line	2072
-;			offy = y;
-	.line	2073
-	lda	<L732+y_1
-	sta	<L732+offy_1
-;			px = 0;
-	.line	2074
-	stz	<L732+px_1
-;			for (x = 0; x < width; x+=scale) 
-	.line	2075
-	stz	<L732+x_1
+	lda	<L786+img_1
+	ora	<L786+img_1+2
+	bne	L790
 	brl	L10280
-L10279:
+L790:
+	.line	2113
+;		py = 0;
+	.line	2114
+	stz	<L786+py_1
+;		for (y = 0; y < height; y+=scale) 
+	.line	2115
+	stz	<L786+y_1
+	brl	L10284
+L10283:
+;		{
+	.line	2116
+;			offy = y;
+	.line	2117
+	lda	<L786+y_1
+	sta	<L786+offy_1
+;			px = 0;
+	.line	2118
+	stz	<L786+px_1
+;			for (x = 0; x < width; x+=scale) 
+	.line	2119
+	stz	<L786+x_1
+	brl	L10288
+L10287:
 ;			{
-	.line	2076
+	.line	2120
 ;				// get the pixel value
 ;				offx = x;
-	.line	2078
-	lda	<L732+x_1
-	sta	<L732+offx_1
+	.line	2122
+	lda	<L786+x_1
+	sta	<L786+offx_1
 ;				b = img[py * FONTW + px];
-	.line	2079
+	.line	2123
 	jsl	~~k_font_getFontWidth
 	sta	<R0
 	lda	<R0
-	ldx	<L732+py_1
+	ldx	<L786+py_1
 	xref	~~~mul
 	jsl	~~~mul
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L732+px_1
+	adc	<L786+px_1
 	sta	<R1
 	sep	#$20
 	longa	off
 	ldy	<R1
-	lda	[<L732+img_1],Y
-	sta	<L732+b_1
+	lda	[<L786+img_1],Y
+	sta	<L786+b_1
 	rep	#$20
 	longa	on
 ;				if (b > 0) 
-	.line	2080
+	.line	2124
 ;				{ // plot the pixel					
 	sep	#$20
 	longa	off
 	lda	#$0
-	cmp	<L732+b_1
+	cmp	<L786+b_1
 	rep	#$20
 	longa	on
-	bcc	L737
-	brl	L10281
-L737:
-	.line	2081
-;					offy = y;
-	.line	2082
-	lda	<L732+y_1
-	sta	<L732+offy_1
-;					for(sy=0;sy<scale;sy++)
-	.line	2083
-	stz	<L732+sy_1
-	brl	L10285
-L10284:
-;					{
-	.line	2084
-;						offx = x;
-	.line	2085
-	lda	<L732+x_1
-	sta	<L732+offx_1
-;						for(sx=0;sx<scale;sx++)
-	.line	2086
-	stz	<L732+sx_1
+	bcc	L791
 	brl	L10289
-L10288:
+L791:
+	.line	2125
+;					offy = y;
+	.line	2126
+	lda	<L786+y_1
+	sta	<L786+offy_1
+;					for(sy=0;sy<scale;sy++)
+	.line	2127
+	stz	<L786+sy_1
+	brl	L10293
+L10292:
+;					{
+	.line	2128
+;						offx = x;
+	.line	2129
+	lda	<L786+x_1
+	sta	<L786+offx_1
+;						for(sx=0;sx<scale;sx++)
+	.line	2130
+	stz	<L786+sx_1
+	brl	L10297
+L10296:
 ;						{
-	.line	2087
+	.line	2131
 ;							k_draw_pixel(textX + offx, textY + offy, color);
-	.line	2088
-	pei	<L731+color_0
+	.line	2132
+	pei	<L785+color_0
 	clc
-	lda	<L732+textY_1
-	adc	<L732+offy_1
+	lda	<L786+textY_1
+	adc	<L786+offy_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L738
+	bpl	L792
 	dey
-L738:
+L792:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L732+textX_1
-	adc	<L732+offx_1
+	lda	<L786+textX_1
+	adc	<L786+offx_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L739
+	bpl	L793
 	dey
-L739:
+L793:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;							offx++;
-	.line	2089
-	inc	<L732+offx_1
+	.line	2133
+	inc	<L786+offx_1
 ;						}
-	.line	2090
-L10286:
-	inc	<L732+sx_1
-L10289:
+	.line	2134
+L10294:
+	inc	<L786+sx_1
+L10297:
 	sec
-	lda	<L732+sx_1
-	sbc	<L731+scale_0
-	bvs	L740
+	lda	<L786+sx_1
+	sbc	<L785+scale_0
+	bvs	L794
 	eor	#$8000
-L740:
-	bmi	L741
-	brl	L10288
-L741:
-L10287:
+L794:
+	bmi	L795
+	brl	L10296
+L795:
+L10295:
 ;						offy++;
-	.line	2091
-	inc	<L732+offy_1
+	.line	2135
+	inc	<L786+offy_1
 ;					}
-	.line	2092
-L10282:
-	inc	<L732+sy_1
-L10285:
+	.line	2136
+L10290:
+	inc	<L786+sy_1
+L10293:
 	sec
-	lda	<L732+sy_1
-	sbc	<L731+scale_0
-	bvs	L742
+	lda	<L786+sy_1
+	sbc	<L785+scale_0
+	bvs	L796
 	eor	#$8000
-L742:
-	bmi	L743
-	brl	L10284
-L743:
-L10283:
+L796:
+	bmi	L797
+	brl	L10292
+L797:
+L10291:
 ;					
 ;					//k_draw_pixel(textX + x, textY + y, color);
 ;				}
-	.line	2095
+	.line	2139
 ;				else 
-	brl	L10290
-L10281:
+	brl	L10298
+L10289:
 ;				{ 
-	.line	2097
+	.line	2141
 ;					// leave empty (or maybe plot 'text backgr color')
 ;				}
-	.line	2099
-L10290:
+	.line	2143
+L10298:
 ;				px++;
-	.line	2100
-	inc	<L732+px_1
+	.line	2144
+	inc	<L786+px_1
 ;			} // end "for x"
-	.line	2101
-L10277:
+	.line	2145
+L10285:
 	clc
-	lda	<L732+x_1
-	adc	<L731+scale_0
-	sta	<L732+x_1
-L10280:
+	lda	<L786+x_1
+	adc	<L785+scale_0
+	sta	<L786+x_1
+L10288:
 	sec
-	lda	<L732+x_1
-	sbc	<L732+width_1
-	bvs	L744
+	lda	<L786+x_1
+	sbc	<L786+width_1
+	bvs	L798
 	eor	#$8000
-L744:
-	bmi	L745
-	brl	L10279
-L745:
-L10278:
+L798:
+	bmi	L799
+	brl	L10287
+L799:
+L10286:
 ;			py++;
-	.line	2102
-	inc	<L732+py_1
+	.line	2146
+	inc	<L786+py_1
 ;		} // end "for y"
-	.line	2103
-L10273:
+	.line	2147
+L10281:
 	clc
-	lda	<L732+y_1
-	adc	<L731+scale_0
-	sta	<L732+y_1
-L10276:
+	lda	<L786+y_1
+	adc	<L785+scale_0
+	sta	<L786+y_1
+L10284:
 	sec
-	lda	<L732+y_1
-	sbc	<L732+height_1
-	bvs	L746
+	lda	<L786+y_1
+	sbc	<L786+height_1
+	bvs	L800
 	eor	#$8000
-L746:
-	bmi	L747
-	brl	L10275
-L747:
-L10274:
+L800:
+	bmi	L801
+	brl	L10283
+L801:
+L10282:
 ;	}
-	.line	2104
+	.line	2148
 ;}
-L10272:
-	.line	2105
-L748:
-	lda	<L731+2
-	sta	<L731+2+10
-	lda	<L731+1
-	sta	<L731+1+10
+L10280:
+	.line	2149
+L802:
+	lda	<L785+2
+	sta	<L785+2+10
+	lda	<L785+1
+	sta	<L785+1+10
 	pld
 	tsc
 	clc
-	adc	#L731+10
+	adc	#L785+10
 	tcs
 	rtl
-	.endblock	2105
-L731	equ	37
-L732	equ	9
+	.endblock	2149
+L785	equ	37
+L786	equ	9
 	ends
 	efunc
-	.endfunc	2105,9,37
-	.line	2105
+	.endfunc	2149,9,37
+	.line	2149
 ;
 ;
 ;void k_draw_char_scaled_point(char charCode,int locX,int locY,char color,int scale)
 ;{
-	.line	2108
-	.line	2109
+	.line	2152
+	.line	2153
 	GFX
 	xdef	~~k_draw_char_scaled_point
 	func
-	.function	2109
+	.function	2153
 ~~k_draw_char_scaled_point:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L749
+	sbc	#L803
 	tcs
 	phd
 	tcd
@@ -15157,7 +15719,7 @@ locX_0	set	6
 locY_0	set	8
 color_0	set	10
 scale_0	set	12
-	.block	2109
+	.block	2153
 ;	int x = 0;
 ;	int y = 0;
 ;
@@ -15212,72 +15774,72 @@ img_1	set	25
 	.sym	locY,8,5,6,16
 	.sym	color,10,14,6,8
 	.sym	scale,12,5,6,16
-	stz	<L750+x_1
-	stz	<L750+y_1
+	stz	<L804+x_1
+	stz	<L804+y_1
 	jsl	~~k_font_getFontHeight
 	sta	<R0
 	lda	<R0
-	ldx	<L749+scale_0
+	ldx	<L803+scale_0
 	xref	~~~mul
 	jsl	~~~mul
-	sta	<L750+height_1
+	sta	<L804+height_1
 	jsl	~~k_font_getFontWidth
 	sta	<R0
 	lda	<R0
-	ldx	<L749+scale_0
+	ldx	<L803+scale_0
 	xref	~~~mul
 	jsl	~~~mul
-	sta	<L750+width_1
-	lda	<L749+locX_0
-	sta	<L750+textX_1
-	lda	<L749+locY_0
-	sta	<L750+textY_1
-	stz	<L750+px_1
-	stz	<L750+py_1
-	stz	<L750+offx_1
-	stz	<L750+offy_1
-	stz	<L750+sx_1
-	stz	<L750+sy_1
+	sta	<L804+width_1
+	lda	<L803+locX_0
+	sta	<L804+textX_1
+	lda	<L803+locY_0
+	sta	<L804+textY_1
+	stz	<L804+px_1
+	stz	<L804+py_1
+	stz	<L804+offx_1
+	stz	<L804+offy_1
+	stz	<L804+sx_1
+	stz	<L804+sy_1
 	sep	#$20
 	longa	off
-	stz	<L750+b_1
+	stz	<L804+b_1
 	rep	#$20
 	longa	on
-	stz	<L750+img_1
-	stz	<L750+img_1+2
-	.line	2130
+	stz	<L804+img_1
+	stz	<L804+img_1+2
+	.line	2174
 ;	{
 	sep	#$20
 	longa	off
-	lda	<L749+charCode_0
+	lda	<L803+charCode_0
 	cmp	#<$20
 	rep	#$20
 	longa	on
-	beq	L752
-	brl	L10291
-L752:
-	.line	2131
+	beq	L806
+	brl	L10299
+L806:
+	.line	2175
 ;	   img = NULL;
-	.line	2132
-	stz	<L750+img_1
-	stz	<L750+img_1+2
+	.line	2176
+	stz	<L804+img_1
+	stz	<L804+img_1+2
 ;    }
-	.line	2133
+	.line	2177
 ;    else
-	brl	L10292
-L10291:
+	brl	L10300
+L10299:
 ;	{
-	.line	2135
+	.line	2179
 ;	    img = fontImg[charCode & 0xFF];
-	.line	2136
-	lda	<L749+charCode_0
+	.line	2180
+	lda	<L803+charCode_0
 	and	#<$ff
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L753
+	bpl	L807
 	dey
-L753:
+L807:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -15290,251 +15852,251 @@ L753:
 	clc
 	lda	#<~~fontImg
 	adc	<R0
-	sta	<L750+img_1
+	sta	<L804+img_1
 	lda	#^~~fontImg
 	adc	<R0+2
-	sta	<L750+img_1+2
+	sta	<L804+img_1+2
 ;	}
-	.line	2137
-L10292:
+	.line	2181
+L10300:
 ;
 ;	if(img!=NULL)
-	.line	2139
+	.line	2183
 ;	{
-	lda	<L750+img_1
-	ora	<L750+img_1+2
-	bne	L754
-	brl	L10293
-L754:
-	.line	2140
-;		py = 0;
-	.line	2141
-	stz	<L750+py_1
-;		for (y = 0; y < height; y+=scale) 
-	.line	2142
-	stz	<L750+y_1
-	brl	L10297
-L10296:
-;		{
-	.line	2143
-;			offy = y;
-	.line	2144
-	lda	<L750+y_1
-	sta	<L750+offy_1
-;			px = 0;
-	.line	2145
-	stz	<L750+px_1
-;			for (x = 0; x < width; x+=scale) 
-	.line	2146
-	stz	<L750+x_1
+	lda	<L804+img_1
+	ora	<L804+img_1+2
+	bne	L808
 	brl	L10301
-L10300:
+L808:
+	.line	2184
+;		py = 0;
+	.line	2185
+	stz	<L804+py_1
+;		for (y = 0; y < height; y+=scale) 
+	.line	2186
+	stz	<L804+y_1
+	brl	L10305
+L10304:
+;		{
+	.line	2187
+;			offy = y;
+	.line	2188
+	lda	<L804+y_1
+	sta	<L804+offy_1
+;			px = 0;
+	.line	2189
+	stz	<L804+px_1
+;			for (x = 0; x < width; x+=scale) 
+	.line	2190
+	stz	<L804+x_1
+	brl	L10309
+L10308:
 ;			{
-	.line	2147
+	.line	2191
 ;				// get the pixel value
 ;				offx = x;
-	.line	2149
-	lda	<L750+x_1
-	sta	<L750+offx_1
+	.line	2193
+	lda	<L804+x_1
+	sta	<L804+offx_1
 ;				b = img[py * FONTW + px];
-	.line	2150
+	.line	2194
 	jsl	~~k_font_getFontWidth
 	sta	<R0
 	lda	<R0
-	ldx	<L750+py_1
+	ldx	<L804+py_1
 	xref	~~~mul
 	jsl	~~~mul
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L750+px_1
+	adc	<L804+px_1
 	sta	<R1
 	sep	#$20
 	longa	off
 	ldy	<R1
-	lda	[<L750+img_1],Y
-	sta	<L750+b_1
+	lda	[<L804+img_1],Y
+	sta	<L804+b_1
 	rep	#$20
 	longa	on
 ;				if (b > 0) 
-	.line	2151
+	.line	2195
 ;				{ // plot the pixel					
 	sep	#$20
 	longa	off
 	lda	#$0
-	cmp	<L750+b_1
+	cmp	<L804+b_1
 	rep	#$20
 	longa	on
-	bcc	L755
-	brl	L10302
-L755:
-	.line	2152
-;					offy = y;
-	.line	2153
-	lda	<L750+y_1
-	sta	<L750+offy_1
-;					for(sy=0;sy<scale;sy++)
-	.line	2154
-	stz	<L750+sy_1
-	brl	L10306
-L10305:
-;					{
-	.line	2155
-;						offx = x;
-	.line	2156
-	lda	<L750+x_1
-	sta	<L750+offx_1
-;						for(sx=0;sx<scale;sx++)
-	.line	2157
-	stz	<L750+sx_1
+	bcc	L809
 	brl	L10310
-L10309:
+L809:
+	.line	2196
+;					offy = y;
+	.line	2197
+	lda	<L804+y_1
+	sta	<L804+offy_1
+;					for(sy=0;sy<scale;sy++)
+	.line	2198
+	stz	<L804+sy_1
+	brl	L10314
+L10313:
+;					{
+	.line	2199
+;						offx = x;
+	.line	2200
+	lda	<L804+x_1
+	sta	<L804+offx_1
+;						for(sx=0;sx<scale;sx++)
+	.line	2201
+	stz	<L804+sx_1
+	brl	L10318
+L10317:
 ;						{
-	.line	2158
+	.line	2202
 ;							k_draw_pixel(textX + offx, textY + offy, color);
-	.line	2159
-	pei	<L749+color_0
+	.line	2203
+	pei	<L803+color_0
 	clc
-	lda	<L750+textY_1
-	adc	<L750+offy_1
+	lda	<L804+textY_1
+	adc	<L804+offy_1
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L756
+	bpl	L810
 	dey
-L756:
+L810:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L750+textX_1
-	adc	<L750+offx_1
+	lda	<L804+textX_1
+	adc	<L804+offx_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L757
+	bpl	L811
 	dey
-L757:
+L811:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_draw_pixel
 ;							offx++;
-	.line	2160
-	inc	<L750+offx_1
+	.line	2204
+	inc	<L804+offx_1
 ;						}
-	.line	2161
-L10307:
-	inc	<L750+sx_1
-L10310:
+	.line	2205
+L10315:
+	inc	<L804+sx_1
+L10318:
 	sec
-	lda	<L750+sx_1
-	sbc	<L749+scale_0
-	bvs	L758
+	lda	<L804+sx_1
+	sbc	<L803+scale_0
+	bvs	L812
 	eor	#$8000
-L758:
-	bmi	L759
-	brl	L10309
-L759:
-L10308:
+L812:
+	bmi	L813
+	brl	L10317
+L813:
+L10316:
 ;						offy++;
-	.line	2162
-	inc	<L750+offy_1
+	.line	2206
+	inc	<L804+offy_1
 ;					}
-	.line	2163
-L10303:
-	inc	<L750+sy_1
-L10306:
+	.line	2207
+L10311:
+	inc	<L804+sy_1
+L10314:
 	sec
-	lda	<L750+sy_1
-	sbc	<L749+scale_0
-	bvs	L760
+	lda	<L804+sy_1
+	sbc	<L803+scale_0
+	bvs	L814
 	eor	#$8000
-L760:
-	bmi	L761
-	brl	L10305
-L761:
-L10304:
+L814:
+	bmi	L815
+	brl	L10313
+L815:
+L10312:
 ;					
 ;					//k_draw_pixel(textX + x, textY + y, color);
 ;				}
-	.line	2166
+	.line	2210
 ;				else 
-	brl	L10311
-L10302:
+	brl	L10319
+L10310:
 ;				{ 
-	.line	2168
+	.line	2212
 ;					// leave empty (or maybe plot 'text backgr color')
 ;				}
-	.line	2170
-L10311:
+	.line	2214
+L10319:
 ;				px++;
-	.line	2171
-	inc	<L750+px_1
+	.line	2215
+	inc	<L804+px_1
 ;			} // end "for x"
-	.line	2172
-L10298:
+	.line	2216
+L10306:
 	clc
-	lda	<L750+x_1
-	adc	<L749+scale_0
-	sta	<L750+x_1
-L10301:
+	lda	<L804+x_1
+	adc	<L803+scale_0
+	sta	<L804+x_1
+L10309:
 	sec
-	lda	<L750+x_1
-	sbc	<L750+width_1
-	bvs	L762
+	lda	<L804+x_1
+	sbc	<L804+width_1
+	bvs	L816
 	eor	#$8000
-L762:
-	bmi	L763
-	brl	L10300
-L763:
-L10299:
+L816:
+	bmi	L817
+	brl	L10308
+L817:
+L10307:
 ;			py++;
-	.line	2173
-	inc	<L750+py_1
+	.line	2217
+	inc	<L804+py_1
 ;		} // end "for y"
-	.line	2174
-L10294:
+	.line	2218
+L10302:
 	clc
-	lda	<L750+y_1
-	adc	<L749+scale_0
-	sta	<L750+y_1
-L10297:
+	lda	<L804+y_1
+	adc	<L803+scale_0
+	sta	<L804+y_1
+L10305:
 	sec
-	lda	<L750+y_1
-	sbc	<L750+height_1
-	bvs	L764
+	lda	<L804+y_1
+	sbc	<L804+height_1
+	bvs	L818
 	eor	#$8000
-L764:
-	bmi	L765
-	brl	L10296
-L765:
-L10295:
+L818:
+	bmi	L819
+	brl	L10304
+L819:
+L10303:
 ;	}
-	.line	2175
+	.line	2219
 ;}
-L10293:
-	.line	2176
-L766:
-	lda	<L749+2
-	sta	<L749+2+10
-	lda	<L749+1
-	sta	<L749+1+10
+L10301:
+	.line	2220
+L820:
+	lda	<L803+2
+	sta	<L803+2+10
+	lda	<L803+1
+	sta	<L803+1+10
 	pld
 	tsc
 	clc
-	adc	#L749+10
+	adc	#L803+10
 	tcs
 	rtl
-	.endblock	2176
-L749	equ	37
-L750	equ	9
+	.endblock	2220
+L803	equ	37
+L804	equ	9
 	ends
 	efunc
-	.endfunc	2176,9,37
-	.line	2176
+	.endfunc	2220,9,37
+	.line	2220
 ;
 ;/*
 ;void k_render_bitmap_info(int fcolor)
@@ -15632,22 +16194,22 @@ L750	equ	9
 ;*/
 ;void k_draw_lines(void)
 ;{
-	.line	2272
-	.line	2273
+	.line	2316
+	.line	2317
 	GFX
 	xdef	~~k_draw_lines
 	func
-	.function	2273
+	.function	2317
 ~~k_draw_lines:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L767
+	sbc	#L821
 	tcs
 	phd
 	tcd
-	.block	2273
+	.block	2317
 ;	int dx = 0;
 ;	int dy = 0;
 ;	int bc = 1;	
@@ -15665,149 +16227,149 @@ dy0_1	set	8
 	.sym	bc,4,5,1,16
 	.sym	dx0,6,5,1,16
 	.sym	dy0,8,5,1,16
-	stz	<L768+dx_1
-	stz	<L768+dy_1
+	stz	<L822+dx_1
+	stz	<L822+dy_1
 	lda	#$1
-	sta	<L768+bc_1
-	stz	<L768+dx0_1
-	stz	<L768+dy0_1
-	.line	2280
-	stz	<L768+dy_1
-L10314:
+	sta	<L822+bc_1
+	stz	<L822+dx0_1
+	stz	<L822+dy0_1
+	.line	2324
+	stz	<L822+dy_1
+L10322:
 ;	{
-	.line	2281
+	.line	2325
 ;		//if(dx0!=0 && dy0!=0)
 ;		//	k_draw_line(0,dy0,dx0,479,0);
 ;		
 ;		k_draw_line(0,dy,dx,479,bc);
-	.line	2285
-	pei	<L768+bc_1
+	.line	2329
+	pei	<L822+bc_1
 	pea	#<$1df
-	pei	<L768+dx_1
-	pei	<L768+dy_1
+	pei	<L822+dx_1
+	pei	<L822+dy_1
 	pea	#<$0
 	jsl	~~k_draw_line
 ;
 ;		dx0 = dx;
-	.line	2287
-	lda	<L768+dx_1
-	sta	<L768+dx0_1
+	.line	2331
+	lda	<L822+dx_1
+	sta	<L822+dx0_1
 ;		dy0 = dy;
-	.line	2288
-	lda	<L768+dy_1
-	sta	<L768+dy0_1
+	.line	2332
+	lda	<L822+dy_1
+	sta	<L822+dy0_1
 ;		
 ;		dx+=5;
-	.line	2290
+	.line	2334
 	clc
 	lda	#$5
-	adc	<L768+dx_1
-	sta	<L768+dx_1
+	adc	<L822+dx_1
+	sta	<L822+dx_1
 ;		bc++;
-	.line	2291
-	inc	<L768+bc_1
+	.line	2335
+	inc	<L822+bc_1
 ;		if(bc > 15)
-	.line	2292
+	.line	2336
 ;			bc = 1;
 	sec
 	lda	#$f
-	sbc	<L768+bc_1
-	bvs	L770
+	sbc	<L822+bc_1
+	bvs	L824
 	eor	#$8000
-L770:
-	bpl	L771
-	brl	L10315
-L771:
-	.line	2293
+L824:
+	bpl	L825
+	brl	L10323
+L825:
+	.line	2337
 	lda	#$1
-	sta	<L768+bc_1
+	sta	<L822+bc_1
 ;		
 ;		
 ;	}
-L10315:
-	.line	2296
-L10312:
+L10323:
+	.line	2340
+L10320:
 	clc
 	lda	#$5
-	adc	<L768+dy_1
-	sta	<L768+dy_1
+	adc	<L822+dy_1
+	sta	<L822+dy_1
 	sec
-	lda	<L768+dy_1
+	lda	<L822+dy_1
 	sbc	#<$1e0
-	bvs	L772
+	bvs	L826
 	eor	#$8000
-L772:
-	bmi	L773
-	brl	L10314
-L773:
-L10313:
+L826:
+	bmi	L827
+	brl	L10322
+L827:
+L10321:
 ;
 ;
 ;	dx=479;
-	.line	2299
+	.line	2343
 	lda	#$1df
-	sta	<L768+dx_1
+	sta	<L822+dx_1
 ;	bc = 1;
-	.line	2300
+	.line	2344
 	lda	#$1
-	sta	<L768+bc_1
+	sta	<L822+bc_1
 ;	for(dy=479;dy>=0;dy-=5)
-	.line	2301
+	.line	2345
 	lda	#$1df
-	sta	<L768+dy_1
-L10318:
+	sta	<L822+dy_1
+L10326:
 ;	{
-	.line	2302
+	.line	2346
 ;		
 ;		//if(dx!=480 && dy!=480)
 ;		//	k_draw_line(640,dy,dx,0,15);
 ;		
 ;		k_draw_line(639,dy,dx,0,bc);
-	.line	2307
-	pei	<L768+bc_1
+	.line	2351
+	pei	<L822+bc_1
 	pea	#<$0
-	pei	<L768+dx_1
-	pei	<L768+dy_1
+	pei	<L822+dx_1
+	pei	<L822+dy_1
 	pea	#<$27f
 	jsl	~~k_draw_line
 ;		
 ;		dx-=5;
-	.line	2309
+	.line	2353
 	clc
 	lda	#$fffb
-	adc	<L768+dx_1
-	sta	<L768+dx_1
+	adc	<L822+dx_1
+	sta	<L822+dx_1
 ;		bc++;
-	.line	2310
-	inc	<L768+bc_1
+	.line	2354
+	inc	<L822+bc_1
 ;		if(bc > 15)
-	.line	2311
+	.line	2355
 ;			bc = 1;
 	sec
 	lda	#$f
-	sbc	<L768+bc_1
-	bvs	L774
+	sbc	<L822+bc_1
+	bvs	L828
 	eor	#$8000
-L774:
-	bpl	L775
-	brl	L10319
-L775:
-	.line	2312
+L828:
+	bpl	L829
+	brl	L10327
+L829:
+	.line	2356
 	lda	#$1
-	sta	<L768+bc_1
+	sta	<L822+bc_1
 ;	}
-L10319:
-	.line	2313
-L10316:
+L10327:
+	.line	2357
+L10324:
 	clc
 	lda	#$fffb
-	adc	<L768+dy_1
-	sta	<L768+dy_1
-	lda	<L768+dy_1
-	bmi	L776
-	brl	L10318
-L776:
-L10317:
+	adc	<L822+dy_1
+	sta	<L822+dy_1
+	lda	<L822+dy_1
+	bmi	L830
+	brl	L10326
+L830:
+L10325:
 ;	
 ;	/*
 ;	for(x=0;x<640;x+=10)
@@ -15823,40 +16385,40 @@ L10317:
 ;	}
 ;	*/
 ;}
-	.line	2328
-L777:
+	.line	2372
+L831:
 	pld
 	tsc
 	clc
-	adc	#L767
+	adc	#L821
 	tcs
 	rtl
-	.endblock	2328
-L767	equ	10
-L768	equ	1
+	.endblock	2372
+L821	equ	10
+L822	equ	1
 	ends
 	efunc
-	.endfunc	2328,1,10
-	.line	2328
+	.endfunc	2372,1,10
+	.line	2372
 ;
 ;void k_draw_fontset(void)
 ;{
-	.line	2330
-	.line	2331
+	.line	2374
+	.line	2375
 	GFX
 	xdef	~~k_draw_fontset
 	func
-	.function	2331
+	.function	2375
 ~~k_draw_fontset:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L778
+	sbc	#L832
 	tcs
 	phd
 	tcd
-	.block	2331
+	.block	2375
 ;	int bx = 0;
 ;	int by = 29; 
 ;	int bc = 15;
@@ -15871,44 +16433,44 @@ bf_1	set	6
 	.sym	by,2,5,1,16
 	.sym	bc,4,5,1,16
 	.sym	bf,6,14,1,8
-	stz	<L779+bx_1
+	stz	<L833+bx_1
 	lda	#$1d
-	sta	<L779+by_1
+	sta	<L833+by_1
 	lda	#$f
-	sta	<L779+bc_1
+	sta	<L833+bc_1
 	sep	#$20
 	longa	off
 	lda	#$1
-	sta	<L779+bf_1
+	sta	<L833+bf_1
 	rep	#$20
 	longa	on
-	.line	2337
+	.line	2381
 	sep	#$20
 	longa	off
-	stz	<L779+bf_1
+	stz	<L833+bf_1
 	rep	#$20
 	longa	on
-	brl	L10323
-L10322:
+	brl	L10331
+L10330:
 ;	{
-	.line	2338
+	.line	2382
 ;		k_draw_char((char)bf*1,bx,by,bc);
-	.line	2339
-	pei	<L779+bc_1
-	pei	<L779+by_1
-	pei	<L779+bx_1
-	lda	<L779+bf_1
+	.line	2383
+	pei	<L833+bc_1
+	pei	<L833+by_1
+	pei	<L833+bx_1
+	lda	<L833+bf_1
 	and	#$ff
 	pha
 	jsl	~~k_draw_char
 ;		k_draw_char((char)bf+64,bx,by + 1,bc);
-	.line	2340
-	pei	<L779+bc_1
-	lda	<L779+by_1
+	.line	2384
+	pei	<L833+bc_1
+	lda	<L833+by_1
 	ina
 	pha
-	pei	<L779+bx_1
-	lda	<L779+bf_1
+	pei	<L833+bx_1
+	lda	<L833+bf_1
 	and	#$ff
 	sta	<R0
 	clc
@@ -15917,14 +16479,14 @@ L10322:
 	pha
 	jsl	~~k_draw_char
 ;		k_draw_char((char)bf+128,bx,by + 2,bc);
-	.line	2341
-	pei	<L779+bc_1
+	.line	2385
+	pei	<L833+bc_1
 	clc
 	lda	#$2
-	adc	<L779+by_1
+	adc	<L833+by_1
 	pha
-	pei	<L779+bx_1
-	lda	<L779+bf_1
+	pei	<L833+bx_1
+	lda	<L833+bf_1
 	and	#$ff
 	sta	<R0
 	clc
@@ -15933,14 +16495,14 @@ L10322:
 	pha
 	jsl	~~k_draw_char
 ;		k_draw_char((char)bf+192,bx,by + 3,bc);
-	.line	2342
-	pei	<L779+bc_1
+	.line	2386
+	pei	<L833+bc_1
 	clc
 	lda	#$3
-	adc	<L779+by_1
+	adc	<L833+by_1
 	pha
-	pei	<L779+bx_1
-	lda	<L779+bf_1
+	pei	<L833+bx_1
+	lda	<L833+bf_1
 	and	#$ff
 	sta	<R0
 	clc
@@ -15951,61 +16513,61 @@ L10322:
 ;
 ;
 ;		if(bc > 15)
-	.line	2345
+	.line	2389
 ;			bc = 1;
 	sec
 	lda	#$f
-	sbc	<L779+bc_1
-	bvs	L781
+	sbc	<L833+bc_1
+	bvs	L835
 	eor	#$8000
-L781:
-	bpl	L782
-	brl	L10324
-L782:
-	.line	2346
+L835:
+	bpl	L836
+	brl	L10332
+L836:
+	.line	2390
 	lda	#$1
-	sta	<L779+bc_1
+	sta	<L833+bc_1
 ;		
 ;		bx++;
-L10324:
-	.line	2348
-	inc	<L779+bx_1
+L10332:
+	.line	2392
+	inc	<L833+bx_1
 ;	}
-	.line	2349
-L10320:
+	.line	2393
+L10328:
 	sep	#$20
 	longa	off
-	inc	<L779+bf_1
+	inc	<L833+bf_1
 	rep	#$20
 	longa	on
-L10323:
+L10331:
 	sep	#$20
 	longa	off
-	lda	<L779+bf_1
+	lda	<L833+bf_1
 	cmp	#<$40
 	rep	#$20
 	longa	on
-	bcs	L783
-	brl	L10322
-L783:
-L10321:
+	bcs	L837
+	brl	L10330
+L837:
+L10329:
 ;
 ;}
-	.line	2351
-L784:
+	.line	2395
+L838:
 	pld
 	tsc
 	clc
-	adc	#L778
+	adc	#L832
 	tcs
 	rtl
-	.endblock	2351
-L778	equ	11
-L779	equ	5
+	.endblock	2395
+L832	equ	11
+L833	equ	5
 	ends
 	efunc
-	.endfunc	2351,5,11
-	.line	2351
+	.endfunc	2395,5,11
+	.line	2395
 ;
 ;/*
 ;void k_fill_bank(int bankId,char fcolor)
@@ -16050,18 +16612,18 @@ L779	equ	5
 ;
 ;void k_fill_line(int cx,int cy,int width,int color)
 ;{
-	.line	2394
-	.line	2395
+	.line	2438
+	.line	2439
 	GFX
 	xdef	~~k_fill_line
 	func
-	.function	2395
+	.function	2439
 ~~k_fill_line:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L785
+	sbc	#L839
 	tcs
 	phd
 	tcd
@@ -16069,7 +16631,7 @@ cx_0	set	4
 cy_0	set	6
 width_0	set	8
 color_0	set	10
-	.block	2395
+	.block	2439
 ;
 ;	long locStart = (long)(( ((long)cy) * 640L) + ((long)cx) );
 ;	memset(&(((unsigned char FAR *)BITMAP_BANK_0)[locStart]),color,width);
@@ -16080,17 +16642,17 @@ locStart_1	set	0
 	.sym	width,8,5,6,16
 	.sym	color,10,5,6,16
 	ldy	#$0
-	lda	<L785+cx_0
-	bpl	L788
+	lda	<L839+cx_0
+	bpl	L842
 	dey
-L788:
+L842:
 	sta	<R0
 	sty	<R0+2
 	ldy	#$0
-	lda	<L785+cy_0
-	bpl	L789
+	lda	<L839+cy_0
+	bpl	L843
 	dey
-L789:
+L843:
 	sta	<R1
 	sty	<R1+2
 	pea	#^$280
@@ -16104,58 +16666,58 @@ L789:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L786+locStart_1
+	sta	<L840+locStart_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L786+locStart_1+2
-	.line	2398
-	pei	<L785+width_0
-	pei	<L785+color_0
+	sta	<L840+locStart_1+2
+	.line	2442
+	pei	<L839+width_0
+	pei	<L839+color_0
 	clc
 	lda	#$0
-	adc	<L786+locStart_1
+	adc	<L840+locStart_1
 	sta	<R0
 	lda	#$b0
-	adc	<L786+locStart_1+2
+	adc	<L840+locStart_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~memset
 ;}
-	.line	2399
-L790:
-	lda	<L785+2
-	sta	<L785+2+8
-	lda	<L785+1
-	sta	<L785+1+8
+	.line	2443
+L844:
+	lda	<L839+2
+	sta	<L839+2+8
+	lda	<L839+1
+	sta	<L839+1+8
 	pld
 	tsc
 	clc
-	adc	#L785+8
+	adc	#L839+8
 	tcs
 	rtl
-	.endblock	2399
-L785	equ	12
-L786	equ	9
+	.endblock	2443
+L839	equ	12
+L840	equ	9
 	ends
 	efunc
-	.endfunc	2399,9,12
-	.line	2399
+	.endfunc	2443,9,12
+	.line	2443
 ;
 ;void k_vdraw_filled_rect(int cx,int cy,int height,int width,int color)
 ;{
-	.line	2401
-	.line	2402
+	.line	2445
+	.line	2446
 	GFX
 	xdef	~~k_vdraw_filled_rect
 	func
-	.function	2402
+	.function	2446
 ~~k_vdraw_filled_rect:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L791
+	sbc	#L845
 	tcs
 	phd
 	tcd
@@ -16164,7 +16726,7 @@ cy_0	set	6
 height_0	set	8
 width_0	set	10
 color_0	set	12
-	.block	2402
+	.block	2446
 ;	int x = 0;
 ;	int y = 0;
 ;	int dx = cx + width;
@@ -16184,74 +16746,74 @@ dy_1	set	6
 	.sym	height,8,5,6,16
 	.sym	width,10,5,6,16
 	.sym	color,12,5,6,16
-	stz	<L792+x_1
-	stz	<L792+y_1
+	stz	<L846+x_1
+	stz	<L846+y_1
 	clc
-	lda	<L791+cx_0
-	adc	<L791+width_0
-	sta	<L792+dx_1
+	lda	<L845+cx_0
+	adc	<L845+width_0
+	sta	<L846+dx_1
 	clc
-	lda	<L791+cy_0
-	adc	<L791+height_0
-	sta	<L792+dy_1
-	.line	2408
+	lda	<L845+cy_0
+	adc	<L845+height_0
+	sta	<L846+dy_1
+	.line	2452
 ;		dx = 639;
 	sec
 	lda	#$27f
-	sbc	<L792+dx_1
-	bvs	L794
+	sbc	<L846+dx_1
+	bvs	L848
 	eor	#$8000
-L794:
-	bpl	L795
-	brl	L10325
-L795:
-	.line	2409
+L848:
+	bpl	L849
+	brl	L10333
+L849:
+	.line	2453
 	lda	#$27f
-	sta	<L792+dx_1
+	sta	<L846+dx_1
 ;	if(dy > 479)
-L10325:
-	.line	2410
+L10333:
+	.line	2454
 ;		dy = 479;
 	sec
 	lda	#$1df
-	sbc	<L792+dy_1
-	bvs	L796
+	sbc	<L846+dy_1
+	bvs	L850
 	eor	#$8000
-L796:
-	bpl	L797
-	brl	L10326
-L797:
-	.line	2411
+L850:
+	bpl	L851
+	brl	L10334
+L851:
+	.line	2455
 	lda	#$1df
-	sta	<L792+dy_1
+	sta	<L846+dy_1
 ;	
 ;	for(y=cy;y<dy;y++)
-L10326:
-	.line	2413
-	lda	<L791+cy_0
-	sta	<L792+y_1
-	brl	L10330
-L10329:
+L10334:
+	.line	2457
+	lda	<L845+cy_0
+	sta	<L846+y_1
+	brl	L10338
+L10337:
 ;	{
-	.line	2414
+	.line	2458
 ;		long locStart = (long)(( ((long)y) * 640L) + ((long)cx) );
 ;		//memset(&(((unsigned char FAR *)SHADOW_BANK_0)[locStart]),color,dx - cx);
 ;	}
-	.block	2417
+	.block	2461
 locStart_2	set	8
 	.sym	locStart,8,7,1,32
 	ldy	#$0
-	lda	<L791+cx_0
-	bpl	L799
+	lda	<L845+cx_0
+	bpl	L853
 	dey
-L799:
+L853:
 	sta	<R0
 	sty	<R0+2
 	ldy	#$0
-	lda	<L792+y_1
-	bpl	L800
+	lda	<L846+y_1
+	bpl	L854
 	dey
-L800:
+L854:
 	sta	<R1
 	sty	<R1+2
 	pea	#^$280
@@ -16265,60 +16827,60 @@ L800:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L792+locStart_2
+	sta	<L846+locStart_2
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L792+locStart_2+2
-	.endblock	2417
-	.line	2417
-L10327:
-	inc	<L792+y_1
-L10330:
+	sta	<L846+locStart_2+2
+	.endblock	2461
+	.line	2461
+L10335:
+	inc	<L846+y_1
+L10338:
 	sec
-	lda	<L792+y_1
-	sbc	<L792+dy_1
-	bvs	L801
+	lda	<L846+y_1
+	sbc	<L846+dy_1
+	bvs	L855
 	eor	#$8000
-L801:
-	bmi	L802
-	brl	L10329
-L802:
-L10328:
+L855:
+	bmi	L856
+	brl	L10337
+L856:
+L10336:
 ;}
-	.line	2418
-L803:
-	lda	<L791+2
-	sta	<L791+2+10
-	lda	<L791+1
-	sta	<L791+1+10
+	.line	2462
+L857:
+	lda	<L845+2
+	sta	<L845+2+10
+	lda	<L845+1
+	sta	<L845+1+10
 	pld
 	tsc
 	clc
-	adc	#L791+10
+	adc	#L845+10
 	tcs
 	rtl
-	.endblock	2418
-L791	equ	20
-L792	equ	9
+	.endblock	2462
+L845	equ	20
+L846	equ	9
 	ends
 	efunc
-	.endfunc	2418,9,20
-	.line	2418
+	.endfunc	2462,9,20
+	.line	2462
 ;
 ;void k_draw_filled_rect(int cx,int cy,int height,int width,int color)
 ;{
-	.line	2420
-	.line	2421
+	.line	2464
+	.line	2465
 	GFX
 	xdef	~~k_draw_filled_rect
 	func
-	.function	2421
+	.function	2465
 ~~k_draw_filled_rect:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L804
+	sbc	#L858
 	tcs
 	phd
 	tcd
@@ -16327,7 +16889,7 @@ cy_0	set	6
 height_0	set	8
 width_0	set	10
 color_0	set	12
-	.block	2421
+	.block	2465
 ;	int x = 0;
 ;	int y = 0;
 ;	int dx = cx + width;
@@ -16347,74 +16909,74 @@ dy_1	set	6
 	.sym	height,8,5,6,16
 	.sym	width,10,5,6,16
 	.sym	color,12,5,6,16
-	stz	<L805+x_1
-	stz	<L805+y_1
+	stz	<L859+x_1
+	stz	<L859+y_1
 	clc
-	lda	<L804+cx_0
-	adc	<L804+width_0
-	sta	<L805+dx_1
+	lda	<L858+cx_0
+	adc	<L858+width_0
+	sta	<L859+dx_1
 	clc
-	lda	<L804+cy_0
-	adc	<L804+height_0
-	sta	<L805+dy_1
-	.line	2427
+	lda	<L858+cy_0
+	adc	<L858+height_0
+	sta	<L859+dy_1
+	.line	2471
 ;		dx = 639;
 	sec
 	lda	#$27f
-	sbc	<L805+dx_1
-	bvs	L807
+	sbc	<L859+dx_1
+	bvs	L861
 	eor	#$8000
-L807:
-	bpl	L808
-	brl	L10331
-L808:
-	.line	2428
+L861:
+	bpl	L862
+	brl	L10339
+L862:
+	.line	2472
 	lda	#$27f
-	sta	<L805+dx_1
+	sta	<L859+dx_1
 ;	if(dy > 479)
-L10331:
-	.line	2429
+L10339:
+	.line	2473
 ;		dy = 479;
 	sec
 	lda	#$1df
-	sbc	<L805+dy_1
-	bvs	L809
+	sbc	<L859+dy_1
+	bvs	L863
 	eor	#$8000
-L809:
-	bpl	L810
-	brl	L10332
-L810:
-	.line	2430
+L863:
+	bpl	L864
+	brl	L10340
+L864:
+	.line	2474
 	lda	#$1df
-	sta	<L805+dy_1
+	sta	<L859+dy_1
 ;	
 ;	for(y=cy;y<dy;y++)
-L10332:
-	.line	2432
-	lda	<L804+cy_0
-	sta	<L805+y_1
-	brl	L10336
-L10335:
+L10340:
+	.line	2476
+	lda	<L858+cy_0
+	sta	<L859+y_1
+	brl	L10344
+L10343:
 ;	{
-	.line	2433
+	.line	2477
 ;		long locStart = (long)(( ((long)y) * 640L) + ((long)cx) );
 ;		//memset(&(((unsigned char FAR *)BITMAP_BANK_0)[locStart]),color,dx - cx);
 ;	}
-	.block	2436
+	.block	2480
 locStart_2	set	8
 	.sym	locStart,8,7,1,32
 	ldy	#$0
-	lda	<L804+cx_0
-	bpl	L812
+	lda	<L858+cx_0
+	bpl	L866
 	dey
-L812:
+L866:
 	sta	<R0
 	sty	<R0+2
 	ldy	#$0
-	lda	<L805+y_1
-	bpl	L813
+	lda	<L859+y_1
+	bpl	L867
 	dey
-L813:
+L867:
 	sta	<R1
 	sty	<R1+2
 	pea	#^$280
@@ -16428,61 +16990,61 @@ L813:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L805+locStart_2
+	sta	<L859+locStart_2
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L805+locStart_2+2
-	.endblock	2436
-	.line	2436
-L10333:
-	inc	<L805+y_1
-L10336:
+	sta	<L859+locStart_2+2
+	.endblock	2480
+	.line	2480
+L10341:
+	inc	<L859+y_1
+L10344:
 	sec
-	lda	<L805+y_1
-	sbc	<L805+dy_1
-	bvs	L814
+	lda	<L859+y_1
+	sbc	<L859+dy_1
+	bvs	L868
 	eor	#$8000
-L814:
-	bmi	L815
-	brl	L10335
-L815:
-L10334:
+L868:
+	bmi	L869
+	brl	L10343
+L869:
+L10342:
 ;}
-	.line	2437
-L816:
-	lda	<L804+2
-	sta	<L804+2+10
-	lda	<L804+1
-	sta	<L804+1+10
+	.line	2481
+L870:
+	lda	<L858+2
+	sta	<L858+2+10
+	lda	<L858+1
+	sta	<L858+1+10
 	pld
 	tsc
 	clc
-	adc	#L804+10
+	adc	#L858+10
 	tcs
 	rtl
-	.endblock	2437
-L804	equ	20
-L805	equ	9
+	.endblock	2481
+L858	equ	20
+L859	equ	9
 	ends
 	efunc
-	.endfunc	2437,9,20
-	.line	2437
+	.endfunc	2481,9,20
+	.line	2481
 ;
 ;
 ;PWINDOW k_create_ui_window_class(int cx,int cy,int height,int width,LPCHAR title,LPCHAR className,FXWndProc wndProc)
 ;{
-	.line	2440
-	.line	2441
+	.line	2484
+	.line	2485
 	GFX
 	xdef	~~k_create_ui_window_class
 	func
-	.function	2441
+	.function	2485
 ~~k_create_ui_window_class:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L817
+	sbc	#L871
 	tcs
 	phd
 	tcd
@@ -16493,7 +17055,7 @@ width_0	set	10
 title_0	set	12
 className_0	set	16
 wndProc_0	set	20
-	.block	2441
+	.block	2485
 ;	PWINDOW pWin = NULL;
 ;
 ;	if(className && title)
@@ -16506,95 +17068,95 @@ pWin_1	set	0
 	.sym	title,12,142,6,32
 	.sym	className,16,142,6,32
 	.sym	wndProc,20,654,6,32
-	stz	<L818+pWin_1
-	stz	<L818+pWin_1+2
-	.line	2444
+	stz	<L872+pWin_1
+	stz	<L872+pWin_1+2
+	.line	2488
 ;	{
-	lda	<L817+className_0
-	ora	<L817+className_0+2
-	bne	L820
-	brl	L10337
-L820:
-	lda	<L817+title_0
-	ora	<L817+title_0+2
-	bne	L821
-	brl	L10337
-L821:
-	.line	2445
+	lda	<L871+className_0
+	ora	<L871+className_0+2
+	bne	L874
+	brl	L10345
+L874:
+	lda	<L871+title_0
+	ora	<L871+title_0+2
+	bne	L875
+	brl	L10345
+L875:
+	.line	2489
 ;		pWin = (PWINDOW)k_mem_allocate_heap(sizeof(WINDOW));
-	.line	2446
+	.line	2490
 	pea	#^$1e8
 	pea	#<$1e8
 	jsl	~~k_mem_allocate_heap
-	sta	<L818+pWin_1
-	stx	<L818+pWin_1+2
+	sta	<L872+pWin_1
+	stx	<L872+pWin_1+2
 ;		if(pWin)
-	.line	2447
+	.line	2491
 ;		{
-	lda	<L818+pWin_1
-	ora	<L818+pWin_1+2
-	bne	L822
-	brl	L10338
-L822:
-	.line	2448
+	lda	<L872+pWin_1
+	ora	<L872+pWin_1+2
+	bne	L876
+	brl	L10346
+L876:
+	.line	2492
 ;			memset(pWin,0,sizeof(WINDOW));
-	.line	2449
+	.line	2493
 	pea	#<$1e8
 	pea	#<$0
-	pei	<L818+pWin_1+2
-	pei	<L818+pWin_1
+	pei	<L872+pWin_1+2
+	pei	<L872+pWin_1
 	jsl	~~memset
 ;
 ;			strcpy(pWin->win_title,title);
-	.line	2451
-	pei	<L817+title_0+2
-	pei	<L817+title_0
+	.line	2495
+	pei	<L871+title_0+2
+	pei	<L871+title_0
 	clc
 	lda	#$14c
-	adc	<L818+pWin_1
+	adc	<L872+pWin_1
 	sta	<R0
 	lda	#$0
-	adc	<L818+pWin_1+2
+	adc	<L872+pWin_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~strcpy
 ;			strcpy(pWin->win_class,className);
-	.line	2452
-	pei	<L817+className_0+2
-	pei	<L817+className_0
+	.line	2496
+	pei	<L871+className_0+2
+	pei	<L871+className_0
 	clc
 	lda	#$16e
-	adc	<L818+pWin_1
+	adc	<L872+pWin_1
 	sta	<R0
 	lda	#$0
-	adc	<L818+pWin_1+2
+	adc	<L872+pWin_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~strcpy
 ;			pWin->win_x = cx;
-	.line	2453
-	lda	<L817+cx_0
+	.line	2497
+	lda	<L871+cx_0
 	ldy	#$c
-	sta	[<L818+pWin_1],Y
+	sta	[<L872+pWin_1],Y
 ;			pWin->win_y = cy;
-	.line	2454
-	lda	<L817+cy_0
+	.line	2498
+	lda	<L871+cy_0
 	ldy	#$e
-	sta	[<L818+pWin_1],Y
+	sta	[<L872+pWin_1],Y
 ;			pWin->win_width  = width;
-	.line	2455
-	lda	<L817+width_0
+	.line	2499
+	lda	<L871+width_0
 	ldy	#$10
-	sta	[<L818+pWin_1],Y
+	sta	[<L872+pWin_1],Y
 ;			pWin->win_height = height;
-	.line	2456
-	lda	<L817+height_0
+	.line	2500
+	lda	<L871+height_0
 	ldy	#$12
-	sta	[<L818+pWin_1],Y
+	sta	[<L872+pWin_1],Y
 ;			pWin->clickable = k_mem_allocate_heap(sizeof(CLICKABLE));
-	.line	2457
+	.line	2501
 	pea	#^$13
 	pea	#<$13
 	jsl	~~k_mem_allocate_heap
@@ -16602,202 +17164,202 @@ L822:
 	stx	<R0+2
 	lda	<R0
 	ldy	#$148
-	sta	[<L818+pWin_1],Y
+	sta	[<L872+pWin_1],Y
 	lda	<R0+2
 	ldy	#$14a
-	sta	[<L818+pWin_1],Y
+	sta	[<L872+pWin_1],Y
 ;			if(pWin->clickable)
-	.line	2458
+	.line	2502
 ;			{
 	ldy	#$148
-	lda	[<L818+pWin_1],Y
+	lda	[<L872+pWin_1],Y
 	ldy	#$14a
-	ora	[<L818+pWin_1],Y
-	bne	L823
-	brl	L10339
-L823:
-	.line	2459
+	ora	[<L872+pWin_1],Y
+	bne	L877
+	brl	L10347
+L877:
+	.line	2503
 ;				((PCLICKABLE)pWin->clickable)->area.x = cx;
-	.line	2460
+	.line	2504
 	ldy	#$148
-	lda	[<L818+pWin_1],Y
+	lda	[<L872+pWin_1],Y
 	sta	<R0
 	ldy	#$14a
-	lda	[<L818+pWin_1],Y
+	lda	[<L872+pWin_1],Y
 	sta	<R0+2
-	lda	<L817+cx_0
+	lda	<L871+cx_0
 	sta	[<R0]
 ;				((PCLICKABLE)pWin->clickable)->area.y = cy;
-	.line	2461
+	.line	2505
 	ldy	#$148
-	lda	[<L818+pWin_1],Y
+	lda	[<L872+pWin_1],Y
 	sta	<R0
 	ldy	#$14a
-	lda	[<L818+pWin_1],Y
+	lda	[<L872+pWin_1],Y
 	sta	<R0+2
-	lda	<L817+cy_0
+	lda	<L871+cy_0
 	ldy	#$2
 	sta	[<R0],Y
 ;				((PCLICKABLE)pWin->clickable)->area.height = height;
-	.line	2462
+	.line	2506
 	ldy	#$148
-	lda	[<L818+pWin_1],Y
+	lda	[<L872+pWin_1],Y
 	sta	<R0
 	ldy	#$14a
-	lda	[<L818+pWin_1],Y
+	lda	[<L872+pWin_1],Y
 	sta	<R0+2
-	lda	<L817+height_0
+	lda	<L871+height_0
 	ldy	#$a
 	sta	[<R0],Y
 ;				((PCLICKABLE)pWin->clickable)->area.width = width;
-	.line	2463
+	.line	2507
 	ldy	#$148
-	lda	[<L818+pWin_1],Y
+	lda	[<L872+pWin_1],Y
 	sta	<R0
 	ldy	#$14a
-	lda	[<L818+pWin_1],Y
+	lda	[<L872+pWin_1],Y
 	sta	<R0+2
-	lda	<L817+width_0
+	lda	<L871+width_0
 	ldy	#$8
 	sta	[<R0],Y
 ;			}
-	.line	2464
+	.line	2508
 ;			//pWin->WndProc = wndProc;
 ;		}
-L10339:
-	.line	2466
+L10347:
+	.line	2510
 ;	}
-L10338:
-	.line	2467
+L10346:
+	.line	2511
 ;
 ;	return pWin;
-L10337:
-	.line	2469
-	ldx	<L818+pWin_1+2
-	lda	<L818+pWin_1
-L824:
+L10345:
+	.line	2513
+	ldx	<L872+pWin_1+2
+	lda	<L872+pWin_1
+L878:
 	tay
-	lda	<L817+2
-	sta	<L817+2+20
-	lda	<L817+1
-	sta	<L817+1+20
+	lda	<L871+2
+	sta	<L871+2+20
+	lda	<L871+1
+	sta	<L871+1+20
 	pld
 	tsc
 	clc
-	adc	#L817+20
+	adc	#L871+20
 	tcs
 	tya
 	rtl
 ;}
-	.line	2470
-	.endblock	2470
-L817	equ	8
-L818	equ	5
+	.line	2514
+	.endblock	2514
+L871	equ	8
+L872	equ	5
 	ends
 	efunc
-	.endfunc	2470,5,8
-	.line	2470
+	.endfunc	2514,5,8
+	.line	2514
 ;
 ;PRECT k_HWNDToWINRECT(HWND hWnd)
 ;{
-	.line	2472
-	.line	2473
+	.line	2516
+	.line	2517
 	GFX
 	xdef	~~k_HWNDToWINRECT
 	func
-	.function	2473
+	.function	2517
 ~~k_HWNDToWINRECT:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L825
+	sbc	#L879
 	tcs
 	phd
 	tcd
 hWnd_0	set	4
-	.block	2473
+	.block	2517
 ;
 ;	((PWINDOW)hWnd)->wndRect.x 		= ((PWINDOW)hWnd)->win_x;
 	.sym	hWnd,4,129,6,32
-	.line	2475
+	.line	2519
 	ldy	#$c
-	lda	[<L825+hWnd_0],Y
+	lda	[<L879+hWnd_0],Y
 	ldy	#$1c
-	sta	[<L825+hWnd_0],Y
+	sta	[<L879+hWnd_0],Y
 ;	((PWINDOW)hWnd)->wndRect.y 		= ((PWINDOW)hWnd)->win_y;
-	.line	2476
+	.line	2520
 	ldy	#$e
-	lda	[<L825+hWnd_0],Y
+	lda	[<L879+hWnd_0],Y
 	ldy	#$1e
-	sta	[<L825+hWnd_0],Y
+	sta	[<L879+hWnd_0],Y
 ;	((PWINDOW)hWnd)->wndRect.width  = ((PWINDOW)hWnd)->win_width;
-	.line	2477
+	.line	2521
 	ldy	#$10
-	lda	[<L825+hWnd_0],Y
+	lda	[<L879+hWnd_0],Y
 	ldy	#$24
-	sta	[<L825+hWnd_0],Y
+	sta	[<L879+hWnd_0],Y
 ;	((PWINDOW)hWnd)->wndRect.height = ((PWINDOW)hWnd)->win_height;
-	.line	2478
+	.line	2522
 	ldy	#$12
-	lda	[<L825+hWnd_0],Y
+	lda	[<L879+hWnd_0],Y
 	ldy	#$26
-	sta	[<L825+hWnd_0],Y
+	sta	[<L879+hWnd_0],Y
 ;
 ;
 ;	return &(((PWINDOW)hWnd)->wndRect);
-	.line	2481
+	.line	2525
 	clc
 	lda	#$1c
-	adc	<L825+hWnd_0
+	adc	<L879+hWnd_0
 	sta	<R0
 	lda	#$0
-	adc	<L825+hWnd_0+2
+	adc	<L879+hWnd_0+2
 	sta	<R0+2
 	ldx	<R0+2
 	lda	<R0
-L828:
+L882:
 	tay
-	lda	<L825+2
-	sta	<L825+2+4
-	lda	<L825+1
-	sta	<L825+1+4
+	lda	<L879+2
+	sta	<L879+2+4
+	lda	<L879+1
+	sta	<L879+1+4
 	pld
 	tsc
 	clc
-	adc	#L825+4
+	adc	#L879+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	2482
-	.endblock	2482
-L825	equ	4
-L826	equ	5
+	.line	2526
+	.endblock	2526
+L879	equ	4
+L880	equ	5
 	ends
 	efunc
-	.endfunc	2482,5,4
-	.line	2482
+	.endfunc	2526,5,4
+	.line	2526
 ;
 ;BOOL k_gui_size_nonclient_area(HWND hWnd)
 ;{
-	.line	2484
-	.line	2485
+	.line	2528
+	.line	2529
 	GFX
 	xdef	~~k_gui_size_nonclient_area
 	func
-	.function	2485
+	.function	2529
 ~~k_gui_size_nonclient_area:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L829
+	sbc	#L883
 	tcs
 	phd
 	tcd
 hWnd_0	set	4
-	.block	2485
+	.block	2529
 ;	BOOL bRet = FALSE;
 ;
 ;	FONTMETRIC metric;
@@ -16835,222 +17397,222 @@ style_1	set	21
 	.sym	hWnd,4,129,6,32
 	sep	#$20
 	longa	off
-	stz	<L830+bRet_1
+	stz	<L884+bRet_1
 	rep	#$20
 	longa	on
-	lda	<L829+hWnd_0
-	sta	<L830+pWin_1
-	lda	<L829+hWnd_0+2
-	sta	<L830+pWin_1+2
-	stz	<L830+borderWidthL_1
-	stz	<L830+borderWidthR_1
-	stz	<L830+borderWidthT_1
-	stz	<L830+borderWidthB_1
+	lda	<L883+hWnd_0
+	sta	<L884+pWin_1
+	lda	<L883+hWnd_0+2
+	sta	<L884+pWin_1+2
+	stz	<L884+borderWidthL_1
+	stz	<L884+borderWidthR_1
+	stz	<L884+borderWidthT_1
+	stz	<L884+borderWidthB_1
 	ldy	#$2
-	lda	[<L830+pWin_1],Y
-	sta	<L830+style_1
+	lda	[<L884+pWin_1],Y
+	sta	<L884+style_1
 	ldy	#$4
-	lda	[<L830+pWin_1],Y
-	sta	<L830+style_1+2
-	.line	2501
-	pei	<L829+hWnd_0+2
-	pei	<L829+hWnd_0
+	lda	[<L884+pWin_1],Y
+	sta	<L884+style_1+2
+	.line	2545
+	pei	<L883+hWnd_0+2
+	pei	<L883+hWnd_0
 	jsl	~~k_HWNDToWINRECT
-	sta	<L830+wndRect_1
-	stx	<L830+wndRect_1+2
+	sta	<L884+wndRect_1
+	stx	<L884+wndRect_1+2
 ;
 ;	if(style & FXWS_VISIBLE != FXWS_VISIBLE)
-	.line	2503
+	.line	2547
 ;	{
-	brl	L10340
-	.line	2504
+	brl	L10348
+	.line	2548
 ;		k_debug_pointer("k_gui_size_nonclient_area::NOT RENDERING:",hWnd);
-	.line	2505
-	pei	<L829+hWnd_0+2
-	pei	<L829+hWnd_0
-	pea	#^L497
-	pea	#<L497
+	.line	2549
+	pei	<L883+hWnd_0+2
+	pei	<L883+hWnd_0
+	pea	#^L551
+	pea	#<L551
 	jsl	~~k_debug_pointer
 ;		return FALSE;
-	.line	2506
+	.line	2550
 	lda	#$0
-L832:
+L886:
 	tay
-	lda	<L829+2
-	sta	<L829+2+4
-	lda	<L829+1
-	sta	<L829+1+4
+	lda	<L883+2
+	sta	<L883+2+4
+	lda	<L883+1
+	sta	<L883+1+4
 	pld
 	tsc
 	clc
-	adc	#L829+4
+	adc	#L883+4
 	tcs
 	tya
 	rtl
 ;	}
-	.line	2507
+	.line	2551
 ;
 ;	if(style & FXWS_THICKFRAME)
-L10340:
-	.line	2509
+L10348:
+	.line	2553
 ;	{
-	lda	<L830+style_1+2
+	lda	<L884+style_1+2
 	and	#^$20000
-	bne	L833
-	brl	L10341
-L833:
-	.line	2510
+	bne	L887
+	brl	L10349
+L887:
+	.line	2554
 ;		borderWidthL = SM_CXFRAME_DEFAULT + SM_CXBORDER_DEFAULT;
-	.line	2511
+	.line	2555
 	lda	#$3
-	sta	<L830+borderWidthL_1
+	sta	<L884+borderWidthL_1
 ;		borderWidthR = SM_CXFRAME_DEFAULT + SM_CXBORDER_DEFAULT;
-	.line	2512
+	.line	2556
 	lda	#$3
-	sta	<L830+borderWidthR_1
+	sta	<L884+borderWidthR_1
 ;		borderWidthT = SM_CYFRAME_DEFAULT + SM_CYBORDER_DEFAULT;
-	.line	2513
+	.line	2557
 	lda	#$3
-	sta	<L830+borderWidthT_1
+	sta	<L884+borderWidthT_1
 ;		borderWidthB = SM_CYFRAME_DEFAULT + SM_CYBORDER_DEFAULT;
-	.line	2514
+	.line	2558
 	lda	#$3
-	sta	<L830+borderWidthB_1
+	sta	<L884+borderWidthB_1
 ;	}
-	.line	2515
+	.line	2559
 ;	else if(style & FXWS_BORDER)
-	brl	L10342
-L10341:
-	.line	2516
+	brl	L10350
+L10349:
+	.line	2560
 ;	{
-	lda	<L830+style_1+2
+	lda	<L884+style_1+2
 	and	#^$10000
-	bne	L834
-	brl	L10343
-L834:
-	.line	2517
+	bne	L888
+	brl	L10351
+L888:
+	.line	2561
 ;		borderWidthL = SM_CXBORDER_DEFAULT;
-	.line	2518
+	.line	2562
 	lda	#$1
-	sta	<L830+borderWidthL_1
+	sta	<L884+borderWidthL_1
 ;		borderWidthR = SM_CXBORDER_DEFAULT;
-	.line	2519
+	.line	2563
 	lda	#$1
-	sta	<L830+borderWidthR_1
+	sta	<L884+borderWidthR_1
 ;		borderWidthT = SM_CYBORDER_DEFAULT;
-	.line	2520
+	.line	2564
 	lda	#$1
-	sta	<L830+borderWidthT_1
+	sta	<L884+borderWidthT_1
 ;		borderWidthB = SM_CYBORDER_DEFAULT;
-	.line	2521
+	.line	2565
 	lda	#$1
-	sta	<L830+borderWidthB_1
+	sta	<L884+borderWidthB_1
 ;	}
-	.line	2522
+	.line	2566
 ;	else if(style & FXWS_DLGFRAME)
-	brl	L10344
-L10343:
-	.line	2523
+	brl	L10352
+L10351:
+	.line	2567
 ;	{
-	lda	<L830+style_1+2
+	lda	<L884+style_1+2
 	and	#^$40000
-	bne	L835
-	brl	L10345
-L835:
-	.line	2524
+	bne	L889
+	brl	L10353
+L889:
+	.line	2568
 ;		borderWidthL = SM_CXDLGFRAME_DEFAULT + SM_CXBORDER_DEFAULT;
-	.line	2525
+	.line	2569
 	lda	#$5
-	sta	<L830+borderWidthL_1
+	sta	<L884+borderWidthL_1
 ;		borderWidthR = SM_CXDLGFRAME_DEFAULT + SM_CXBORDER_DEFAULT;
-	.line	2526
+	.line	2570
 	lda	#$5
-	sta	<L830+borderWidthR_1
+	sta	<L884+borderWidthR_1
 ;		borderWidthT = SM_CYDLGFRAME_DEFAULT + SM_CYBORDER_DEFAULT;
-	.line	2527
+	.line	2571
 	lda	#$5
-	sta	<L830+borderWidthT_1
+	sta	<L884+borderWidthT_1
 ;		borderWidthB = SM_CYDLGFRAME_DEFAULT + SM_CYBORDER_DEFAULT;
-	.line	2528
+	.line	2572
 	lda	#$5
-	sta	<L830+borderWidthB_1
+	sta	<L884+borderWidthB_1
 ;	}
-	.line	2529
+	.line	2573
 ;
 ;	if( ((style & FXWS_CAPTION) == FXWS_CAPTION) || (style & FXWS_SYSMENU) || (style & FXWS_MINIMIZEBOX) || (style & FXWS_MAXIMIZEBOX))
-L10345:
-L10344:
-L10342:
-	.line	2531
+L10353:
+L10352:
+L10350:
+	.line	2575
 ;	{
-	lda	<L830+style_1
+	lda	<L884+style_1
 	and	#<$4
 	sta	<R0
 	stz	<R0+2
 	lda	<R0
 	cmp	#<$4
-	bne	L837
+	bne	L891
 	lda	<R0+2
 	cmp	#^$4
-L837:
-	bne	L838
-	brl	L836
-L838:
-	lda	<L830+style_1
+L891:
+	bne	L892
+	brl	L890
+L892:
+	lda	<L884+style_1
 	and	#<$8
-	beq	L839
-	brl	L836
-L839:
-	lda	<L830+style_1
+	beq	L893
+	brl	L890
+L893:
+	lda	<L884+style_1
 	and	#<$20
-	beq	L840
-	brl	L836
-L840:
-	lda	<L830+style_1
+	beq	L894
+	brl	L890
+L894:
+	lda	<L884+style_1
 	and	#<$10
-	bne	L841
-	brl	L10346
-L841:
-L836:
-	.line	2532
+	bne	L895
+	brl	L10354
+L895:
+L890:
+	.line	2576
 ;		borderWidthT += SM_CYCAPTION_DEFAULT;
-	.line	2533
+	.line	2577
 	clc
 	lda	#$c
-	adc	<L830+borderWidthT_1
-	sta	<L830+borderWidthT_1
+	adc	<L884+borderWidthT_1
+	sta	<L884+borderWidthT_1
 ;	}
-	.line	2534
+	.line	2578
 ;
 ;	//k_debug_rect("k_gui_size_nonclient_area::wndRect:", &pWin->wndRect);
 ;
 ;	pWin->clientRect.x      = wndRect->x + borderWidthL + SM_CLIENT_BORDER_DEFAULT;
-L10346:
-	.line	2538
+L10354:
+	.line	2582
 	clc
-	lda	[<L830+wndRect_1]
-	adc	<L830+borderWidthL_1
+	lda	[<L884+wndRect_1]
+	adc	<L884+borderWidthL_1
 	sta	<R0
 	lda	<R0
 	ina
 	ldy	#$2a
-	sta	[<L830+pWin_1],Y
+	sta	[<L884+pWin_1],Y
 ;	pWin->clientRect.y      = wndRect->y + borderWidthT + SM_CLIENT_BORDER_DEFAULT;
-	.line	2539
+	.line	2583
 	clc
 	ldy	#$2
-	lda	[<L830+wndRect_1],Y
-	adc	<L830+borderWidthT_1
+	lda	[<L884+wndRect_1],Y
+	adc	<L884+borderWidthT_1
 	sta	<R0
 	lda	<R0
 	ina
 	ldy	#$2c
-	sta	[<L830+pWin_1],Y
+	sta	[<L884+pWin_1],Y
 ;	pWin->clientRect.width  = wndRect->width  - (borderWidthL + borderWidthR + SM_CLIENT_BORDER_DEFAULT + SM_CLIENT_BORDER_DEFAULT);
-	.line	2540
+	.line	2584
 	clc
-	lda	<L830+borderWidthL_1
-	adc	<L830+borderWidthR_1
+	lda	<L884+borderWidthL_1
+	adc	<L884+borderWidthR_1
 	sta	<R0
 	clc
 	lda	#$2
@@ -17058,15 +17620,15 @@ L10346:
 	sta	<R1
 	sec
 	ldy	#$8
-	lda	[<L830+wndRect_1],Y
+	lda	[<L884+wndRect_1],Y
 	sbc	<R1
 	ldy	#$32
-	sta	[<L830+pWin_1],Y
+	sta	[<L884+pWin_1],Y
 ;	pWin->clientRect.height = wndRect->height - (borderWidthT + borderWidthB + SM_CLIENT_BORDER_DEFAULT + SM_CLIENT_BORDER_DEFAULT);
-	.line	2541
+	.line	2585
 	clc
-	lda	<L830+borderWidthT_1
-	adc	<L830+borderWidthB_1
+	lda	<L884+borderWidthT_1
+	adc	<L884+borderWidthB_1
 	sta	<R0
 	clc
 	lda	#$2
@@ -17074,29 +17636,29 @@ L10346:
 	sta	<R1
 	sec
 	ldy	#$a
-	lda	[<L830+wndRect_1],Y
+	lda	[<L884+wndRect_1],Y
 	sbc	<R1
 	ldy	#$34
-	sta	[<L830+pWin_1],Y
+	sta	[<L884+pWin_1],Y
 ;
 ;	//k_debug_rect("k_gui_size_nonclient_area::clientRect:", &pWin->clientRect);
 ;
 ;	return bRet;
-	.line	2545
-	lda	<L830+bRet_1
+	.line	2589
+	lda	<L884+bRet_1
 	and	#$ff
-	brl	L832
+	brl	L886
 ;}
-	.line	2546
-	.endblock	2546
-L829	equ	33
-L830	equ	9
+	.line	2590
+	.endblock	2590
+L883	equ	33
+L884	equ	9
 	ends
 	efunc
-	.endfunc	2546,9,33
-	.line	2546
+	.endfunc	2590,9,33
+	.line	2590
 	data
-L497:
+L551:
 	db	$6B,$5F,$67,$75,$69,$5F,$73,$69,$7A,$65,$5F,$6E,$6F,$6E,$63
 	db	$6C,$69,$65,$6E,$74,$5F,$61,$72,$65,$61,$3A,$3A,$4E,$4F,$54
 	db	$20,$52,$45,$4E,$44,$45,$52,$49,$4E,$47,$3A,$00
@@ -17105,18 +17667,18 @@ L497:
 ;
 ;void k_vdraw_ui_window(PWINDOW pWin,ULONG style,int cx,int cy,int height,int width,char FAR *title,int color, int bgcolor)
 ;{
-	.line	2549
-	.line	2550
+	.line	2593
+	.line	2594
 	GFX
 	xdef	~~k_vdraw_ui_window
 	func
-	.function	2550
+	.function	2594
 ~~k_vdraw_ui_window:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L843
+	sbc	#L897
 	tcs
 	phd
 	tcd
@@ -17129,7 +17691,7 @@ width_0	set	18
 title_0	set	20
 color_0	set	24
 bgcolor_0	set	26
-	.block	2550
+	.block	2594
 ;	k_vdraw_ui_window_ex(pWin,style,cx,cy,height,width,title,color, bgcolor,BITMAP_BACK);
 	.sym	pWin,4,138,6,32,33
 	.sym	style,8,18,6,32
@@ -17140,63 +17702,63 @@ bgcolor_0	set	26
 	.sym	title,20,142,6,32
 	.sym	color,24,5,6,16
 	.sym	bgcolor,26,5,6,16
-	.line	2551
+	.line	2595
 	pea	#<$8
-	pei	<L843+bgcolor_0
-	pei	<L843+color_0
-	pei	<L843+title_0+2
-	pei	<L843+title_0
-	pei	<L843+width_0
-	pei	<L843+height_0
-	pei	<L843+cy_0
-	pei	<L843+cx_0
-	pei	<L843+style_0+2
-	pei	<L843+style_0
-	pei	<L843+pWin_0+2
-	pei	<L843+pWin_0
+	pei	<L897+bgcolor_0
+	pei	<L897+color_0
+	pei	<L897+title_0+2
+	pei	<L897+title_0
+	pei	<L897+width_0
+	pei	<L897+height_0
+	pei	<L897+cy_0
+	pei	<L897+cx_0
+	pei	<L897+style_0+2
+	pei	<L897+style_0
+	pei	<L897+pWin_0+2
+	pei	<L897+pWin_0
 	jsl	~~k_vdraw_ui_window_ex
 ;}
-	.line	2552
-L846:
-	lda	<L843+2
-	sta	<L843+2+24
-	lda	<L843+1
-	sta	<L843+1+24
+	.line	2596
+L900:
+	lda	<L897+2
+	sta	<L897+2+24
+	lda	<L897+1
+	sta	<L897+1+24
 	pld
 	tsc
 	clc
-	adc	#L843+24
+	adc	#L897+24
 	tcs
 	rtl
-	.endblock	2552
-L843	equ	0
-L844	equ	1
+	.endblock	2596
+L897	equ	0
+L898	equ	1
 	ends
 	efunc
-	.endfunc	2552,1,0
-	.line	2552
+	.endfunc	2596,1,0
+	.line	2596
 ;
 ;void k_gui_DrawWindow(HWND hWnd,int color, int bgcolor)
 ;{
-	.line	2554
-	.line	2555
+	.line	2598
+	.line	2599
 	GFX
 	xdef	~~k_gui_DrawWindow
 	func
-	.function	2555
+	.function	2599
 ~~k_gui_DrawWindow:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L847
+	sbc	#L901
 	tcs
 	phd
 	tcd
 hWnd_0	set	4
 color_0	set	8
 bgcolor_0	set	10
-	.block	2555
+	.block	2599
 ;	FONTMETRIC metric;
 ;
 ;	PRECT pwndRect 	  = NULL;
@@ -17258,208 +17820,208 @@ pWin_1	set	54
 	.sym	hWnd,4,129,6,32
 	.sym	color,8,5,6,16
 	.sym	bgcolor,10,5,6,16
-	stz	<L848+pwndRect_1
-	stz	<L848+pwndRect_1+2
-	stz	<L848+pclientRect_1
-	stz	<L848+pclientRect_1+2
-	stz	<L848+ncc_1
-	stz	<L848+bIndex_1
-	stz	<L848+borderWidth_1
-	stz	<L848+cacheTitle_1
-	stz	<L848+style_1
-	stz	<L848+style_1+2
-	stz	<L848+titleOffsetX_1
-	stz	<L848+titleOffsetY_1
-	stz	<L848+titleScaler_1
-	stz	<L848+tx_1
-	lda	<L847+hWnd_0
-	sta	<L848+pWin_1
-	lda	<L847+hWnd_0+2
-	sta	<L848+pWin_1+2
-	.line	2577
+	stz	<L902+pwndRect_1
+	stz	<L902+pwndRect_1+2
+	stz	<L902+pclientRect_1
+	stz	<L902+pclientRect_1+2
+	stz	<L902+ncc_1
+	stz	<L902+bIndex_1
+	stz	<L902+borderWidth_1
+	stz	<L902+cacheTitle_1
+	stz	<L902+style_1
+	stz	<L902+style_1+2
+	stz	<L902+titleOffsetX_1
+	stz	<L902+titleOffsetY_1
+	stz	<L902+titleScaler_1
+	stz	<L902+tx_1
+	lda	<L901+hWnd_0
+	sta	<L902+pWin_1
+	lda	<L901+hWnd_0+2
+	sta	<L902+pWin_1+2
+	.line	2621
 ;	{
-	lda	<L848+pWin_1
-	ora	<L848+pWin_1+2
-	bne	L850
-	brl	L10347
-L850:
-	.line	2578
+	lda	<L902+pWin_1
+	ora	<L902+pWin_1+2
+	bne	L904
+	brl	L10355
+L904:
+	.line	2622
 ;
 ;		pwndRect 	= &pWin->wndRect;
-	.line	2580
+	.line	2624
 	clc
 	lda	#$1c
-	adc	<L848+pWin_1
-	sta	<L848+pwndRect_1
+	adc	<L902+pWin_1
+	sta	<L902+pwndRect_1
 	lda	#$0
-	adc	<L848+pWin_1+2
-	sta	<L848+pwndRect_1+2
+	adc	<L902+pWin_1+2
+	sta	<L902+pwndRect_1+2
 ;		pclientRect = &pWin->clientRect;
-	.line	2581
+	.line	2625
 	clc
 	lda	#$2a
-	adc	<L848+pWin_1
-	sta	<L848+pclientRect_1
+	adc	<L902+pWin_1
+	sta	<L902+pclientRect_1
 	lda	#$0
-	adc	<L848+pWin_1+2
-	sta	<L848+pclientRect_1+2
+	adc	<L902+pWin_1+2
+	sta	<L902+pclientRect_1+2
 ;
 ;		style      = pWin->style;
-	.line	2583
+	.line	2627
 	ldy	#$2
-	lda	[<L848+pWin_1],Y
-	sta	<L848+style_1
+	lda	[<L902+pWin_1],Y
+	sta	<L902+style_1
 	ldy	#$4
-	lda	[<L848+pWin_1],Y
-	sta	<L848+style_1+2
+	lda	[<L902+pWin_1],Y
+	sta	<L902+style_1+2
 ;		cacheTitle = (pWin->styleEx & FXWSX_CACHE_TITLE);
-	.line	2584
+	.line	2628
 	ldy	#$6
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	and	#<$2
 	sta	<R0
 	stz	<R0+2
 	lda	<R0
-	sta	<L848+cacheTitle_1
+	sta	<L902+cacheTitle_1
 ;
 ;		if(style & FXWS_VISIBLE != FXWS_VISIBLE)
-	.line	2586
+	.line	2630
 ;		{
-	brl	L10348
-	.line	2587
+	brl	L10356
+	.line	2631
 ;			k_debug_pointer("k_gui_DrawWindow::NOT RENDERING:",hWnd);
-	.line	2588
-	pei	<L847+hWnd_0+2
-	pei	<L847+hWnd_0
-	pea	#^L842
-	pea	#<L842
+	.line	2632
+	pei	<L901+hWnd_0+2
+	pei	<L901+hWnd_0
+	pea	#^L896
+	pea	#<L896
 	jsl	~~k_debug_pointer
 ;			return;
-	.line	2589
-L851:
-	lda	<L847+2
-	sta	<L847+2+8
-	lda	<L847+1
-	sta	<L847+1+8
+	.line	2633
+L905:
+	lda	<L901+2
+	sta	<L901+2+8
+	lda	<L901+1
+	sta	<L901+1+8
 	pld
 	tsc
 	clc
-	adc	#L847+8
+	adc	#L901+8
 	tcs
 	rtl
 ;		}
-	.line	2590
+	.line	2634
 ;
 ;
 ;		if(style & FXWS_THICKFRAME)
-L10348:
-	.line	2593
+L10356:
+	.line	2637
 ;		{
-	lda	<L848+style_1+2
+	lda	<L902+style_1+2
 	and	#^$20000
-	bne	L852
-	brl	L10349
-L852:
-	.line	2594
+	bne	L906
+	brl	L10357
+L906:
+	.line	2638
 ;			borderWidth = SM_CXFRAME_DEFAULT + SM_CXBORDER_DEFAULT;
-	.line	2595
+	.line	2639
 	lda	#$3
-	sta	<L848+borderWidth_1
+	sta	<L902+borderWidth_1
 ;		}
-	.line	2596
+	.line	2640
 ;		else if(style & FXWS_BORDER)
-	brl	L10350
-L10349:
-	.line	2597
+	brl	L10358
+L10357:
+	.line	2641
 ;		{
-	lda	<L848+style_1+2
+	lda	<L902+style_1+2
 	and	#^$10000
-	bne	L853
-	brl	L10351
-L853:
-	.line	2598
+	bne	L907
+	brl	L10359
+L907:
+	.line	2642
 ;			borderWidth = SM_CXBORDER_DEFAULT;
-	.line	2599
+	.line	2643
 	lda	#$1
-	sta	<L848+borderWidth_1
+	sta	<L902+borderWidth_1
 ;		}
-	.line	2600
+	.line	2644
 ;		else if(style & FXWS_DLGFRAME)
-	brl	L10352
-L10351:
-	.line	2601
+	brl	L10360
+L10359:
+	.line	2645
 ;		{
-	lda	<L848+style_1+2
+	lda	<L902+style_1+2
 	and	#^$40000
-	bne	L854
-	brl	L10353
-L854:
-	.line	2602
+	bne	L908
+	brl	L10361
+L908:
+	.line	2646
 ;			borderWidth = SM_CXDLGFRAME_DEFAULT + SM_CXBORDER_DEFAULT;
-	.line	2603
+	.line	2647
 	lda	#$5
-	sta	<L848+borderWidth_1
+	sta	<L902+borderWidth_1
 ;		}
-	.line	2604
+	.line	2648
 ;
 ;		if(borderWidth > 0)
-L10353:
-L10352:
-L10350:
-	.line	2606
+L10361:
+L10360:
+L10358:
+	.line	2650
 ;		{
 	lda	#$0
-	cmp	<L848+borderWidth_1
-	bcc	L855
-	brl	L10354
-L855:
-	.line	2607
+	cmp	<L902+borderWidth_1
+	bcc	L909
+	brl	L10362
+L909:
+	.line	2651
 ;			if(borderWidth > SM_CXBORDER_DEFAULT)
-	.line	2608
+	.line	2652
 ;			{
 	lda	#$1
-	cmp	<L848+borderWidth_1
-	bcc	L856
-	brl	L10355
-L856:
-	.line	2609
+	cmp	<L902+borderWidth_1
+	bcc	L910
+	brl	L10363
+L910:
+	.line	2653
 ;				k_vdma_fill_rect_ex(pwndRect->x,
-	.line	2610
+	.line	2654
 ;									pwndRect->y,
 ;									pwndRect->width,
 ;									pwndRect->height,
 ;									k_getUIWindowBorderColor(),
 ;						            pWin->nBitmapLayer);
 	ldy	#$19e
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	pha
 	jsl	~~k_getUIWindowBorderColor
 	pha
 	ldy	#$a
-	lda	[<L848+pwndRect_1],Y
+	lda	[<L902+pwndRect_1],Y
 	pha
 	ldy	#$8
-	lda	[<L848+pwndRect_1],Y
+	lda	[<L902+pwndRect_1],Y
 	pha
 	ldy	#$0
 	phy
 	ldy	#$2
-	lda	[<L848+pwndRect_1],Y
+	lda	[<L902+pwndRect_1],Y
 	ply
 	rol	A
 	ror	A
-	bpl	L857
+	bpl	L911
 	dey
-L857:
+L911:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	[<L848+pwndRect_1]
-	bpl	L858
+	lda	[<L902+pwndRect_1]
+	bpl	L912
 	dey
-L858:
+L912:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -17467,17 +18029,17 @@ L858:
 	jsl	~~k_vdma_fill_rect_ex
 ;
 ;			}
-	.line	2617
+	.line	2661
 ;
 ;			for(bIndex=0;bIndex<SM_CXBORDER_DEFAULT;bIndex++)
-L10355:
-	.line	2619
-	stz	<L848+bIndex_1
-L10358:
+L10363:
+	.line	2663
+	stz	<L902+bIndex_1
+L10366:
 ;			{
-	.line	2620
+	.line	2664
 ;				k_draw_rect(pwndRect->x + bIndex,
-	.line	2621
+	.line	2665
 ;							pwndRect->y + bIndex,
 ;							PRECTRIGHT(pwndRect)  - bIndex,
 ;							PRECTBOTTOM(pwndRect) - bIndex,
@@ -17485,15 +18047,15 @@ L10358:
 ;							0,
 ;							pWin->nBitmapLayer);
 	ldy	#$19e
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	pha
 	pea	#<$0
 	pea	#<$b
 	clc
 	ldy	#$2
-	lda	[<L848+pwndRect_1],Y
+	lda	[<L902+pwndRect_1],Y
 	ldy	#$a
-	adc	[<L848+pwndRect_1],Y
+	adc	[<L902+pwndRect_1],Y
 	sta	<R0
 	clc
 	lda	#$ffff
@@ -17501,12 +18063,12 @@ L10358:
 	sta	<R1
 	sec
 	lda	<R1
-	sbc	<L848+bIndex_1
+	sbc	<L902+bIndex_1
 	pha
 	clc
-	lda	[<L848+pwndRect_1]
+	lda	[<L902+pwndRect_1]
 	ldy	#$8
-	adc	[<L848+pwndRect_1],Y
+	adc	[<L902+pwndRect_1],Y
 	sta	<R0
 	clc
 	lda	#$ffff
@@ -17514,35 +18076,35 @@ L10358:
 	sta	<R1
 	sec
 	lda	<R1
-	sbc	<L848+bIndex_1
+	sbc	<L902+bIndex_1
 	pha
 	clc
 	ldy	#$2
-	lda	[<L848+pwndRect_1],Y
-	adc	<L848+bIndex_1
+	lda	[<L902+pwndRect_1],Y
+	adc	<L902+bIndex_1
 	pha
 	clc
-	lda	[<L848+pwndRect_1]
-	adc	<L848+bIndex_1
+	lda	[<L902+pwndRect_1]
+	adc	<L902+bIndex_1
 	pha
 	jsl	~~k_draw_rect
 ;			}
-	.line	2628
-L10356:
-	inc	<L848+bIndex_1
-	lda	<L848+bIndex_1
-	bmi	L859
+	.line	2672
+L10364:
+	inc	<L902+bIndex_1
+	lda	<L902+bIndex_1
+	bmi	L913
 	dea
-	bpl	L860
-L859:
-	brl	L10358
-L860:
-L10357:
+	bpl	L914
+L913:
+	brl	L10366
+L914:
+L10365:
 ;
 ;
 ;
 ;			k_draw_rect(pclientRect->x - SM_CLIENT_BORDER_DEFAULT,
-	.line	2632
+	.line	2676
 ;						pclientRect->y - SM_CLIENT_BORDER_DEFAULT,
 ;						PRECTRIGHT(pclientRect)  + SM_CLIENT_BORDER_DEFAULT ,
 ;						PRECTBOTTOM(pclientRect) + SM_CLIENT_BORDER_DEFAULT,
@@ -17550,68 +18112,68 @@ L10357:
 ;						0,
 ;						pWin->nBitmapLayer);
 	ldy	#$19e
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	pha
 	pea	#<$0
 	pea	#<$b
 	clc
 	ldy	#$2
-	lda	[<L848+pclientRect_1],Y
+	lda	[<L902+pclientRect_1],Y
 	ldy	#$a
-	adc	[<L848+pclientRect_1],Y
+	adc	[<L902+pclientRect_1],Y
 	pha
 	clc
-	lda	[<L848+pclientRect_1]
+	lda	[<L902+pclientRect_1]
 	ldy	#$8
-	adc	[<L848+pclientRect_1],Y
+	adc	[<L902+pclientRect_1],Y
 	pha
 	clc
 	lda	#$ffff
 	ldy	#$2
-	adc	[<L848+pclientRect_1],Y
+	adc	[<L902+pclientRect_1],Y
 	pha
 	clc
 	lda	#$ffff
-	adc	[<L848+pclientRect_1]
+	adc	[<L902+pclientRect_1]
 	pha
 	jsl	~~k_draw_rect
 ;
 ;			k_vdma_fill_rect_ex(pclientRect->x,
-	.line	2640
+	.line	2684
 ;								pclientRect->y,
 ;								pclientRect->width ,
 ;								pclientRect->height ,
 ;								bgcolor,
 ;					            pWin->nBitmapLayer);
 	ldy	#$19e
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	pha
-	pei	<L847+bgcolor_0
+	pei	<L901+bgcolor_0
 	ldy	#$a
-	lda	[<L848+pclientRect_1],Y
+	lda	[<L902+pclientRect_1],Y
 	pha
 	ldy	#$8
-	lda	[<L848+pclientRect_1],Y
+	lda	[<L902+pclientRect_1],Y
 	pha
 	ldy	#$0
 	phy
 	ldy	#$2
-	lda	[<L848+pclientRect_1],Y
+	lda	[<L902+pclientRect_1],Y
 	ply
 	rol	A
 	ror	A
-	bpl	L861
+	bpl	L915
 	dey
-L861:
+L915:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	[<L848+pclientRect_1]
-	bpl	L862
+	lda	[<L902+pclientRect_1]
+	bpl	L916
 	dey
-L862:
+L916:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -17619,74 +18181,74 @@ L862:
 	jsl	~~k_vdma_fill_rect_ex
 ;
 ;		}
-	.line	2647
+	.line	2691
 ;
 ;		k_get_font_metrics(&metric);
-L10354:
-	.line	2649
+L10362:
+	.line	2693
 	pea	#0
 	clc
 	tdc
-	adc	#<L848+metric_1
+	adc	#<L902+metric_1
 	pha
 	jsl	~~k_get_font_metrics
 ;
 ;		gx = k_user_getSystemMetric(SM_CXGADGET);
-	.line	2651
+	.line	2695
 	pea	#<$18
 	jsl	~~k_user_getSystemMetric
-	sta	<L848+gx_1
+	sta	<L902+gx_1
 ;		gy = k_user_getSystemMetric(SM_CYGADGET);
-	.line	2652
+	.line	2696
 	pea	#<$19
 	jsl	~~k_user_getSystemMetric
-	sta	<L848+gy_1
+	sta	<L902+gy_1
 ;		bx = k_user_getSystemMetric(SM_CXBORDER);
-	.line	2653
+	.line	2697
 	pea	#<$5
 	jsl	~~k_user_getSystemMetric
-	sta	<L848+bx_1
+	sta	<L902+bx_1
 ;		by = k_user_getSystemMetric(SM_CYBORDER);
-	.line	2654
+	.line	2698
 	pea	#<$6
 	jsl	~~k_user_getSystemMetric
-	sta	<L848+by_1
+	sta	<L902+by_1
 ;
 ;		titleOffsetX = pwndRect->x+SM_TITLE_XGADGETGAP_DEFAULT;
-	.line	2656
+	.line	2700
 	clc
 	lda	#$4
-	adc	[<L848+pwndRect_1]
-	sta	<L848+titleOffsetX_1
+	adc	[<L902+pwndRect_1]
+	sta	<L902+titleOffsetX_1
 ;		titleOffsetY = pwndRect->y+SM_TITLE_YGADGETGAP_DEFAULT;
-	.line	2657
+	.line	2701
 	clc
 	lda	#$5
 	ldy	#$2
-	adc	[<L848+pwndRect_1],Y
-	sta	<L848+titleOffsetY_1
+	adc	[<L902+pwndRect_1],Y
+	sta	<L902+titleOffsetY_1
 ;
 ;		if(style & FXWS_SYSMENU)
-	.line	2659
+	.line	2703
 ;		{
-	lda	<L848+style_1
+	lda	<L902+style_1
 	and	#<$8
-	bne	L863
-	brl	L10359
-L863:
-	.line	2660
+	bne	L917
+	brl	L10367
+L917:
+	.line	2704
 ;			k_set_rect(&(pWin->nonclientGadgets[ncc].area),
-	.line	2661
+	.line	2705
 ;					   titleOffsetX,titleOffsetY,gx,gx);
-	pei	<L848+gx_1
-	pei	<L848+gx_1
-	pei	<L848+titleOffsetY_1
-	pei	<L848+titleOffsetX_1
+	pei	<L902+gx_1
+	pei	<L902+gx_1
+	pei	<L902+titleOffsetY_1
+	pei	<L902+titleOffsetX_1
 	ldy	#$0
-	lda	<L848+ncc_1
-	bpl	L864
+	lda	<L902+ncc_1
+	bpl	L918
 	dey
-L864:
+L918:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -17705,22 +18267,22 @@ L864:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L848+pWin_1
+	lda	<L902+pWin_1
 	adc	<R1
 	sta	<R0
-	lda	<L848+pWin_1+2
+	lda	<L902+pWin_1+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~k_set_rect
 ;			pWin->nonclientGadgets[ncc++].msgType = FX_WINDOW_CLOSE;
-	.line	2663
+	.line	2707
 	ldy	#$0
-	lda	<L848+ncc_1
-	bpl	L865
+	lda	<L902+ncc_1
+	bpl	L919
 	dey
-L865:
+L919:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -17733,10 +18295,10 @@ L865:
 	stx	<R0+2
 	clc
 	lda	#$46
-	adc	<L848+pWin_1
+	adc	<L902+pWin_1
 	sta	<R1
 	lda	#$0
-	adc	<L848+pWin_1+2
+	adc	<L902+pWin_1+2
 	sta	<R1+2
 	clc
 	lda	<R1
@@ -17747,154 +18309,154 @@ L865:
 	sta	<R2+2
 	lda	#$fbff
 	sta	[<R2]
-	inc	<L848+ncc_1
+	inc	<L902+ncc_1
 ;
 ;			titleOffsetX+=k_put_wingadget_point_ex(WINICON_TITLE_BCLOSE,
-	.line	2665
+	.line	2709
 ;												   titleOffsetX,titleOffsetY,
 ;												   k_getUIGadgetColor(),
 ;												   pWin->nBitmapLayer);
 	ldy	#$19e
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	pha
 	jsl	~~k_getUIGadgetColor
 	pha
-	pei	<L848+titleOffsetY_1
-	pei	<L848+titleOffsetX_1
+	pei	<L902+titleOffsetY_1
+	pei	<L902+titleOffsetX_1
 	pea	#<$6
 	jsl	~~k_put_wingadget_point_ex
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L848+titleOffsetX_1
-	sta	<L848+titleOffsetX_1
+	adc	<L902+titleOffsetX_1
+	sta	<L902+titleOffsetX_1
 ;		}
-	.line	2669
+	.line	2713
 ;
 ;
 ;		if((style & FXWS_CAPTION) == FXWS_CAPTION)
-L10359:
-	.line	2672
+L10367:
+	.line	2716
 ;		{
-	lda	<L848+style_1
+	lda	<L902+style_1
 	and	#<$4
 	sta	<R0
 	stz	<R0+2
 	lda	<R0
 	cmp	#<$4
-	bne	L866
+	bne	L920
 	lda	<R0+2
 	cmp	#^$4
-L866:
-	beq	L867
-	brl	L10360
-L867:
-	.line	2673
+L920:
+	beq	L921
+	brl	L10368
+L921:
+	.line	2717
 ;			rect.x = titleOffsetX + SM_TITLE_XGADGETGAP_DEFAULT;
-	.line	2674
+	.line	2718
 	clc
 	lda	#$4
-	adc	<L848+titleOffsetX_1
-	sta	<L848+rect_1
+	adc	<L902+titleOffsetX_1
+	sta	<L902+rect_1
 ;			rect.y = titleOffsetY;
-	.line	2675
-	lda	<L848+titleOffsetY_1
-	sta	<L848+rect_1+2
+	.line	2719
+	lda	<L902+titleOffsetY_1
+	sta	<L902+rect_1+2
 ;			rect.width  = pwndRect->width - (titleOffsetX - pwndRect->x) - (SM_TITLE_XGADGETGAP_DEFAULT + SM_TITLE_XGADGETGAP_DEFAULT);
-	.line	2676
+	.line	2720
 	sec
-	lda	<L848+titleOffsetX_1
-	sbc	[<L848+pwndRect_1]
+	lda	<L902+titleOffsetX_1
+	sbc	[<L902+pwndRect_1]
 	sta	<R0
 	sec
 	ldy	#$8
-	lda	[<L848+pwndRect_1],Y
+	lda	[<L902+pwndRect_1],Y
 	sbc	<R0
 	sta	<R1
 	clc
 	lda	#$fff8
 	adc	<R1
-	sta	<L848+rect_1+8
+	sta	<L902+rect_1+8
 ;			rect.height = 8;
-	.line	2677
+	.line	2721
 	lda	#$8
-	sta	<L848+rect_1+10
+	sta	<L902+rect_1+10
 ;			k_gui_get_image_cache(0,0x080000,&rect);
-	.line	2678
+	.line	2722
 	pea	#0
 	clc
 	tdc
-	adc	#<L848+rect_1
+	adc	#<L902+rect_1
 	pha
 	pea	#^$80000
 	pea	#<$80000
 	pea	#<$0
 	jsl	~~k_gui_get_image_cache
 ;		}
-	.line	2679
+	.line	2723
 ;
 ;
 ;		if((style & FXWS_MINIMIZEBOX) && (style & FXWS_MAXIMIZEBOX))
-L10360:
-	.line	2682
+L10368:
+	.line	2726
 ;		{
-	lda	<L848+style_1
+	lda	<L902+style_1
 	and	#<$20
-	bne	L868
-	brl	L10361
-L868:
-	lda	<L848+style_1
+	bne	L922
+	brl	L10369
+L922:
+	lda	<L902+style_1
 	and	#<$10
-	bne	L869
-	brl	L10361
-L869:
-	.line	2683
+	bne	L923
+	brl	L10369
+L923:
+	.line	2727
 ;			tx = ((pwndRect->x + pwndRect->width - 0) - (SM_TITLE_XGADGETGAP_DEFAULT + gx));
-	.line	2684
+	.line	2728
 	clc
 	lda	#$4
-	adc	<L848+gx_1
+	adc	<L902+gx_1
 	sta	<R0
 	clc
-	lda	[<L848+pwndRect_1]
+	lda	[<L902+pwndRect_1]
 	ldy	#$8
-	adc	[<L848+pwndRect_1],Y
+	adc	[<L902+pwndRect_1],Y
 	sta	<R1
 	sec
 	lda	<R1
 	sbc	<R0
-	sta	<L848+tx_1
+	sta	<L902+tx_1
 ;
 ;
 ;			k_put_wingadget_point_ex(WINICON_BLOCK     ,tx,titleOffsetY,k_getUIWindowBorderColor(),pWin->nBitmapLayer);
-	.line	2687
+	.line	2731
 	ldy	#$19e
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	pha
 	jsl	~~k_getUIWindowBorderColor
 	pha
-	pei	<L848+titleOffsetY_1
-	pei	<L848+tx_1
+	pei	<L902+titleOffsetY_1
+	pei	<L902+tx_1
 	pea	#<$0
 	jsl	~~k_put_wingadget_point_ex
 ;			k_put_wingadget_point_ex(WINICON_TITLE_BACK,tx,titleOffsetY,k_getUIGadgetColor()      ,pWin->nBitmapLayer);
-	.line	2688
+	.line	2732
 	ldy	#$19e
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	pha
 	jsl	~~k_getUIGadgetColor
 	pha
-	pei	<L848+titleOffsetY_1
-	pei	<L848+tx_1
+	pei	<L902+titleOffsetY_1
+	pei	<L902+tx_1
 	pea	#<$4
 	jsl	~~k_put_wingadget_point_ex
 ;			pWin->nonclientGadgets[ncc].msgType = FX_MIN_WINDOW;
-	.line	2689
+	.line	2733
 	ldy	#$0
-	lda	<L848+ncc_1
-	bpl	L870
+	lda	<L902+ncc_1
+	bpl	L924
 	dey
-L870:
+L924:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -17907,10 +18469,10 @@ L870:
 	stx	<R0+2
 	clc
 	lda	#$46
-	adc	<L848+pWin_1
+	adc	<L902+pWin_1
 	sta	<R1
 	lda	#$0
-	adc	<L848+pWin_1+2
+	adc	<L902+pWin_1+2
 	sta	<R1+2
 	clc
 	lda	<R1
@@ -17922,16 +18484,16 @@ L870:
 	lda	#$fb09
 	sta	[<R2]
 ;			k_set_rect(&(pWin->nonclientGadgets[ncc].area),tx,titleOffsetY,gx,gx);
-	.line	2690
-	pei	<L848+gx_1
-	pei	<L848+gx_1
-	pei	<L848+titleOffsetY_1
-	pei	<L848+tx_1
+	.line	2734
+	pei	<L902+gx_1
+	pei	<L902+gx_1
+	pei	<L902+titleOffsetY_1
+	pei	<L902+tx_1
 	ldy	#$0
-	lda	<L848+ncc_1
-	bpl	L871
+	lda	<L902+ncc_1
+	bpl	L925
 	dey
-L871:
+L925:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -17950,10 +18512,10 @@ L871:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L848+pWin_1
+	lda	<L902+pWin_1
 	adc	<R1
 	sta	<R0
-	lda	<L848+pWin_1+2
+	lda	<L902+pWin_1+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
@@ -17961,23 +18523,23 @@ L871:
 	jsl	~~k_set_rect
 ;
 ;			ncc++;
-	.line	2692
-	inc	<L848+ncc_1
+	.line	2736
+	inc	<L902+ncc_1
 ;
 ;			tx = ((pwndRect->x + pwndRect->width - 0) - (SM_TITLE_XGADGETGAP_DEFAULT + gx) - (SM_TITLE_XGADGETGAP_DEFAULT + gx));
-	.line	2694
+	.line	2738
 	clc
 	lda	#$4
-	adc	<L848+gx_1
+	adc	<L902+gx_1
 	sta	<R0
 	clc
 	lda	#$4
-	adc	<L848+gx_1
+	adc	<L902+gx_1
 	sta	<R1
 	clc
-	lda	[<L848+pwndRect_1]
+	lda	[<L902+pwndRect_1]
 	ldy	#$8
-	adc	[<L848+pwndRect_1],Y
+	adc	[<L902+pwndRect_1],Y
 	sta	<R2
 	sec
 	lda	<R2
@@ -17986,37 +18548,37 @@ L871:
 	sec
 	lda	<R3
 	sbc	<R0
-	sta	<L848+tx_1
+	sta	<L902+tx_1
 ;
 ;			k_put_wingadget_point_ex(WINICON_BLOCK      ,tx,titleOffsetY,k_getUIWindowBorderColor(),pWin->nBitmapLayer);
-	.line	2696
+	.line	2740
 	ldy	#$19e
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	pha
 	jsl	~~k_getUIWindowBorderColor
 	pha
-	pei	<L848+titleOffsetY_1
-	pei	<L848+tx_1
+	pei	<L902+titleOffsetY_1
+	pei	<L902+tx_1
 	pea	#<$0
 	jsl	~~k_put_wingadget_point_ex
 ;			k_put_wingadget_point_ex(WINICON_TITLE_FRONT,tx,titleOffsetY,k_getUIGadgetColor()      ,pWin->nBitmapLayer);
-	.line	2697
+	.line	2741
 	ldy	#$19e
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	pha
 	jsl	~~k_getUIGadgetColor
 	pha
-	pei	<L848+titleOffsetY_1
-	pei	<L848+tx_1
+	pei	<L902+titleOffsetY_1
+	pei	<L902+tx_1
 	pea	#<$3
 	jsl	~~k_put_wingadget_point_ex
 ;			pWin->nonclientGadgets[ncc].msgType = FX_MAX_WINDOW;
-	.line	2698
+	.line	2742
 	ldy	#$0
-	lda	<L848+ncc_1
-	bpl	L872
+	lda	<L902+ncc_1
+	bpl	L926
 	dey
-L872:
+L926:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -18029,10 +18591,10 @@ L872:
 	stx	<R0+2
 	clc
 	lda	#$46
-	adc	<L848+pWin_1
+	adc	<L902+pWin_1
 	sta	<R1
 	lda	#$0
-	adc	<L848+pWin_1+2
+	adc	<L902+pWin_1+2
 	sta	<R1+2
 	clc
 	lda	<R1
@@ -18044,16 +18606,16 @@ L872:
 	lda	#$fb0a
 	sta	[<R2]
 ;			k_set_rect(&(pWin->nonclientGadgets[ncc].area),tx,titleOffsetY,gx,gx);
-	.line	2699
-	pei	<L848+gx_1
-	pei	<L848+gx_1
-	pei	<L848+titleOffsetY_1
-	pei	<L848+tx_1
+	.line	2743
+	pei	<L902+gx_1
+	pei	<L902+gx_1
+	pei	<L902+titleOffsetY_1
+	pei	<L902+tx_1
 	ldy	#$0
-	lda	<L848+ncc_1
-	bpl	L873
+	lda	<L902+ncc_1
+	bpl	L927
 	dey
-L873:
+L927:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -18072,10 +18634,10 @@ L873:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L848+pWin_1
+	lda	<L902+pWin_1
 	adc	<R1
 	sta	<R0
-	lda	<L848+pWin_1+2
+	lda	<L902+pWin_1+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
@@ -18083,69 +18645,69 @@ L873:
 	jsl	~~k_set_rect
 ;
 ;			ncc++;
-	.line	2701
-	inc	<L848+ncc_1
+	.line	2745
+	inc	<L902+ncc_1
 ;		}
-	.line	2702
+	.line	2746
 ;		else
-	brl	L10362
-L10361:
+	brl	L10370
+L10369:
 ;		{
-	.line	2704
+	.line	2748
 ;			tx = ((pwndRect->x + pwndRect->width - 0) - (SM_TITLE_XGADGETGAP_DEFAULT + gx));
-	.line	2705
+	.line	2749
 	clc
 	lda	#$4
-	adc	<L848+gx_1
+	adc	<L902+gx_1
 	sta	<R0
 	clc
-	lda	[<L848+pwndRect_1]
+	lda	[<L902+pwndRect_1]
 	ldy	#$8
-	adc	[<L848+pwndRect_1],Y
+	adc	[<L902+pwndRect_1],Y
 	sta	<R1
 	sec
 	lda	<R1
 	sbc	<R0
-	sta	<L848+tx_1
+	sta	<L902+tx_1
 ;
 ;			k_put_wingadget_point_ex(WINICON_BLOCK,tx,titleOffsetY,k_getUIWindowBorderColor(),pWin->nBitmapLayer);
-	.line	2707
+	.line	2751
 	ldy	#$19e
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	pha
 	jsl	~~k_getUIWindowBorderColor
 	pha
-	pei	<L848+titleOffsetY_1
-	pei	<L848+tx_1
+	pei	<L902+titleOffsetY_1
+	pei	<L902+tx_1
 	pea	#<$0
 	jsl	~~k_put_wingadget_point_ex
 ;			if(style & FXWS_MINIMIZEBOX)
-	.line	2708
+	.line	2752
 ;			{
-	lda	<L848+style_1
+	lda	<L902+style_1
 	and	#<$20
-	bne	L874
-	brl	L10363
-L874:
-	.line	2709
+	bne	L928
+	brl	L10371
+L928:
+	.line	2753
 ;				k_put_wingadget_point_ex(WINICON_TITLE_BACK,tx,titleOffsetY,k_getUIGadgetColor(),pWin->nBitmapLayer);
-	.line	2710
+	.line	2754
 	ldy	#$19e
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	pha
 	jsl	~~k_getUIGadgetColor
 	pha
-	pei	<L848+titleOffsetY_1
-	pei	<L848+tx_1
+	pei	<L902+titleOffsetY_1
+	pei	<L902+tx_1
 	pea	#<$4
 	jsl	~~k_put_wingadget_point_ex
 ;				pWin->nonclientGadgets[ncc].msgType = FX_MIN_WINDOW;
-	.line	2711
+	.line	2755
 	ldy	#$0
-	lda	<L848+ncc_1
-	bpl	L875
+	lda	<L902+ncc_1
+	bpl	L929
 	dey
-L875:
+L929:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -18158,10 +18720,10 @@ L875:
 	stx	<R0+2
 	clc
 	lda	#$46
-	adc	<L848+pWin_1
+	adc	<L902+pWin_1
 	sta	<R1
 	lda	#$0
-	adc	<L848+pWin_1+2
+	adc	<L902+pWin_1+2
 	sta	<R1+2
 	clc
 	lda	<R1
@@ -18173,36 +18735,36 @@ L875:
 	lda	#$fb09
 	sta	[<R2]
 ;			}
-	.line	2712
+	.line	2756
 ;			else if(style & FXWS_MAXIMIZEBOX)
-	brl	L10364
-L10363:
-	.line	2713
+	brl	L10372
+L10371:
+	.line	2757
 ;			{
-	lda	<L848+style_1
+	lda	<L902+style_1
 	and	#<$10
-	bne	L876
-	brl	L10365
-L876:
-	.line	2714
+	bne	L930
+	brl	L10373
+L930:
+	.line	2758
 ;				k_put_wingadget_point_ex(WINICON_TITLE_FRONT,tx,titleOffsetY,k_getUIGadgetColor(),pWin->nBitmapLayer);
-	.line	2715
+	.line	2759
 	ldy	#$19e
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	pha
 	jsl	~~k_getUIGadgetColor
 	pha
-	pei	<L848+titleOffsetY_1
-	pei	<L848+tx_1
+	pei	<L902+titleOffsetY_1
+	pei	<L902+tx_1
 	pea	#<$3
 	jsl	~~k_put_wingadget_point_ex
 ;				pWin->nonclientGadgets[ncc].msgType = FX_MAX_WINDOW;
-	.line	2716
+	.line	2760
 	ldy	#$0
-	lda	<L848+ncc_1
-	bpl	L877
+	lda	<L902+ncc_1
+	bpl	L931
 	dey
-L877:
+L931:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -18215,10 +18777,10 @@ L877:
 	stx	<R0+2
 	clc
 	lda	#$46
-	adc	<L848+pWin_1
+	adc	<L902+pWin_1
 	sta	<R1
 	lda	#$0
-	adc	<L848+pWin_1+2
+	adc	<L902+pWin_1+2
 	sta	<R1+2
 	clc
 	lda	<R1
@@ -18230,21 +18792,21 @@ L877:
 	lda	#$fb0a
 	sta	[<R2]
 ;			}
-	.line	2717
+	.line	2761
 ;
 ;			k_set_rect(&(pWin->nonclientGadgets[ncc].area),tx,titleOffsetY,gx,gx);
-L10365:
-L10364:
-	.line	2719
-	pei	<L848+gx_1
-	pei	<L848+gx_1
-	pei	<L848+titleOffsetY_1
-	pei	<L848+tx_1
+L10373:
+L10372:
+	.line	2763
+	pei	<L902+gx_1
+	pei	<L902+gx_1
+	pei	<L902+titleOffsetY_1
+	pei	<L902+tx_1
 	ldy	#$0
-	lda	<L848+ncc_1
-	bpl	L878
+	lda	<L902+ncc_1
+	bpl	L932
 	dey
-L878:
+L932:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -18263,10 +18825,10 @@ L878:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L848+pWin_1
+	lda	<L902+pWin_1
 	adc	<R1
 	sta	<R0
-	lda	<L848+pWin_1+2
+	lda	<L902+pWin_1+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
@@ -18274,51 +18836,51 @@ L878:
 	jsl	~~k_set_rect
 ;
 ;			ncc++;
-	.line	2721
-	inc	<L848+ncc_1
+	.line	2765
+	inc	<L902+ncc_1
 ;		}
-	.line	2722
-L10362:
+	.line	2766
+L10370:
 ;
 ;
 ;
 ;		if((style & FXWS_CAPTION) == FXWS_CAPTION)
-	.line	2726
+	.line	2770
 ;		{
-	lda	<L848+style_1
+	lda	<L902+style_1
 	and	#<$4
 	sta	<R0
 	stz	<R0+2
 	lda	<R0
 	cmp	#<$4
-	bne	L879
+	bne	L933
 	lda	<R0+2
 	cmp	#^$4
-L879:
-	beq	L880
-	brl	L10366
-L880:
-	.line	2727
+L933:
+	beq	L934
+	brl	L10374
+L934:
+	.line	2771
 ;			k_user_SetRect(&rect,
-	.line	2728
+	.line	2772
 ;						   titleOffsetX + SM_TITLE_XGADGETGAP_DEFAULT,
 ;						   titleOffsetY,
 ;						   (strlen(pWin->win_title)*metric.width) + SM_TITLE_XGADGETGAP_DEFAULT,
 ;						   metric.height);
-	pei	<L848+metric_1+2
+	pei	<L902+metric_1+2
 	clc
 	lda	#$14c
-	adc	<L848+pWin_1
+	adc	<L902+pWin_1
 	sta	<R0
 	lda	#$0
-	adc	<L848+pWin_1+2
+	adc	<L902+pWin_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~strlen
 	sta	<R1
 	lda	<R1
-	ldx	<L848+metric_1
+	ldx	<L902+metric_1
 	xref	~~~mul
 	jsl	~~~mul
 	sta	<R1
@@ -18326,59 +18888,59 @@ L880:
 	lda	#$4
 	adc	<R1
 	pha
-	pei	<L848+titleOffsetY_1
+	pei	<L902+titleOffsetY_1
 	clc
 	lda	#$4
-	adc	<L848+titleOffsetX_1
+	adc	<L902+titleOffsetX_1
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L848+rect_1
+	adc	#<L902+rect_1
 	pha
 	jsl	~~k_user_SetRect
 ;
 ;
 ;			if(pWin->styleEx && pWin->clientData[CLIENTDATA_TITLE])
-	.line	2735
+	.line	2779
 ;			{
 	ldy	#$6
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	ldy	#$8
-	ora	[<L848+pWin_1],Y
-	bne	L881
-	brl	L10367
-L881:
+	ora	[<L902+pWin_1],Y
+	bne	L935
+	brl	L10375
+L935:
 	ldy	#$1dd
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	ldy	#$1df
-	ora	[<L848+pWin_1],Y
-	bne	L882
-	brl	L10367
-L882:
-	.line	2736
+	ora	[<L902+pWin_1],Y
+	bne	L936
+	brl	L10375
+L936:
+	.line	2780
 ;				k_gui_get_image_cache((UINT)((ULONG)pWin->clientData[CLIENTDATA_TITLE]),GUI_CACHE_BACK,&rect);
-	.line	2737
+	.line	2781
 	pea	#0
 	clc
 	tdc
-	adc	#<L848+rect_1
+	adc	#<L902+rect_1
 	pha
 	pea	#^$80000
 	pea	#<$80000
 	ldy	#$1dd
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	pha
 	jsl	~~k_gui_get_image_cache
 ;			}
-	.line	2738
+	.line	2782
 ;			else
-	brl	L10368
-L10367:
+	brl	L10376
+L10375:
 ;			{
-	.line	2740
+	.line	2784
 ;				k_vdma_fill_rect_ex(rect.x,
-	.line	2741
+	.line	2785
 ;									rect.y,
 ;									(strlen(pWin->win_title)*metric.width) + SM_TITLE_XGADGETGAP_DEFAULT,
 ;									metric.height,
@@ -18387,20 +18949,20 @@ L10367:
 	pea	#<$8
 	jsl	~~k_getUIWindowBorderColor
 	pha
-	pei	<L848+metric_1+2
+	pei	<L902+metric_1+2
 	clc
 	lda	#$14c
-	adc	<L848+pWin_1
+	adc	<L902+pWin_1
 	sta	<R0
 	lda	#$0
-	adc	<L848+pWin_1+2
+	adc	<L902+pWin_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~strlen
 	sta	<R1
 	lda	<R1
-	ldx	<L848+metric_1
+	ldx	<L902+metric_1
 	xref	~~~mul
 	jsl	~~~mul
 	sta	<R1
@@ -18409,19 +18971,19 @@ L10367:
 	adc	<R1
 	pha
 	ldy	#$0
-	lda	<L848+rect_1+2
-	bpl	L883
+	lda	<L902+rect_1+2
+	bpl	L937
 	dey
-L883:
+L937:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	ldy	#$0
-	lda	<L848+rect_1
-	bpl	L884
+	lda	<L902+rect_1
+	bpl	L938
 	dey
-L884:
+L938:
 	sta	<R2
 	sty	<R2+2
 	pei	<R2+2
@@ -18429,46 +18991,46 @@ L884:
 	jsl	~~k_vdma_fill_rect_ex
 ;
 ;				k_draw_text_point_ex(pWin->win_title,
-	.line	2748
+	.line	2792
 ;									 rect.x,
 ;									 rect.y,
 ;									 k_getUIGadgetColor(),
 ;									 pWin->nBitmapLayer);
 	ldy	#$19e
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	pha
 	jsl	~~k_getUIGadgetColor
 	pha
-	pei	<L848+rect_1+2
-	pei	<L848+rect_1
+	pei	<L902+rect_1+2
+	pei	<L902+rect_1
 	clc
 	lda	#$14c
-	adc	<L848+pWin_1
+	adc	<L902+pWin_1
 	sta	<R0
 	lda	#$0
-	adc	<L848+pWin_1+2
+	adc	<L902+pWin_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~k_draw_text_point_ex
 ;
 ;				if(pWin->styleEx)
-	.line	2754
+	.line	2798
 ;				{
 	ldy	#$6
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	ldy	#$8
-	ora	[<L848+pWin_1],Y
-	bne	L885
-	brl	L10369
-L885:
-	.line	2755
+	ora	[<L902+pWin_1],Y
+	bne	L939
+	brl	L10377
+L939:
+	.line	2799
 ;					pWin->clientData[CLIENTDATA_TITLE] = (LPVOID)((ULONG)k_gui_set_image_cache(GUI_CACHE_BACK,&rect));
-	.line	2756
+	.line	2800
 	pea	#0
 	clc
 	tdc
-	adc	#<L848+rect_1
+	adc	#<L902+rect_1
 	pha
 	pea	#^$80000
 	pea	#<$80000
@@ -18479,41 +19041,41 @@ L885:
 	stz	<R0+2
 	lda	<R0
 	ldy	#$1dd
-	sta	[<L848+pWin_1],Y
+	sta	[<L902+pWin_1],Y
 	lda	<R0+2
 	ldy	#$1df
-	sta	[<L848+pWin_1],Y
+	sta	[<L902+pWin_1],Y
 ;				}
-	.line	2757
+	.line	2801
 ;
 ;			}
-L10369:
-	.line	2759
-L10368:
+L10377:
+	.line	2803
+L10376:
 ;
 ;
 ;
 ;			k_set_rect(&(pWin->nonclientGadgets[ncc].area),
-	.line	2763
+	.line	2807
 ;					   pWin->win_x ,
 ;					   pWin->win_y,
 ;					   pWin->win_width,
 ;					   SM_CYCAPTION_DEFAULT);
 	pea	#<$c
 	ldy	#$10
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	pha
 	ldy	#$e
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	pha
 	ldy	#$c
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	pha
 	ldy	#$0
-	lda	<L848+ncc_1
-	bpl	L886
+	lda	<L902+ncc_1
+	bpl	L940
 	dey
-L886:
+L940:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -18532,22 +19094,22 @@ L886:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L848+pWin_1
+	lda	<L902+pWin_1
 	adc	<R1
 	sta	<R0
-	lda	<L848+pWin_1+2
+	lda	<L902+pWin_1+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~k_set_rect
 ;			pWin->nonclientGadgets[ncc++].msgType = FX_DRAG_WINDOW;
-	.line	2768
+	.line	2812
 	ldy	#$0
-	lda	<L848+ncc_1
-	bpl	L887
+	lda	<L902+ncc_1
+	bpl	L941
 	dey
-L887:
+L941:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -18560,10 +19122,10 @@ L887:
 	stx	<R0+2
 	clc
 	lda	#$46
-	adc	<L848+pWin_1
+	adc	<L902+pWin_1
 	sta	<R1
 	lda	#$0
-	adc	<L848+pWin_1+2
+	adc	<L902+pWin_1+2
 	sta	<R1+2
 	clc
 	lda	<R1
@@ -18574,17 +19136,17 @@ L887:
 	sta	<R2+2
 	lda	#$fb10
 	sta	[<R2]
-	inc	<L848+ncc_1
+	inc	<L902+ncc_1
 ;
 ;		}
-	.line	2770
+	.line	2814
 ;		else
-	brl	L10370
-L10366:
+	brl	L10378
+L10374:
 ;		{
-	.line	2772
+	.line	2816
 ;			k_set_rect(&(pWin->nonclientGadgets[ncc].area),
-	.line	2773
+	.line	2817
 ;					   pWin->win_x + gx,
 ;					   pWin->win_y,
 ;					   pWin->win_width - gx,
@@ -18592,22 +19154,22 @@ L10366:
 	pea	#<$c
 	sec
 	ldy	#$10
-	lda	[<L848+pWin_1],Y
-	sbc	<L848+gx_1
+	lda	[<L902+pWin_1],Y
+	sbc	<L902+gx_1
 	pha
 	ldy	#$e
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	pha
 	clc
 	ldy	#$c
-	lda	[<L848+pWin_1],Y
-	adc	<L848+gx_1
+	lda	[<L902+pWin_1],Y
+	adc	<L902+gx_1
 	pha
 	ldy	#$0
-	lda	<L848+ncc_1
-	bpl	L888
+	lda	<L902+ncc_1
+	bpl	L942
 	dey
-L888:
+L942:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -18626,22 +19188,22 @@ L888:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L848+pWin_1
+	lda	<L902+pWin_1
 	adc	<R1
 	sta	<R0
-	lda	<L848+pWin_1+2
+	lda	<L902+pWin_1+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~k_set_rect
 ;			pWin->nonclientGadgets[ncc++].msgType = FX_DRAG_WINDOW;
-	.line	2778
+	.line	2822
 	ldy	#$0
-	lda	<L848+ncc_1
-	bpl	L889
+	lda	<L902+ncc_1
+	bpl	L943
 	dey
-L889:
+L943:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -18654,10 +19216,10 @@ L889:
 	stx	<R0+2
 	clc
 	lda	#$46
-	adc	<L848+pWin_1
+	adc	<L902+pWin_1
 	sta	<R1
 	lda	#$0
-	adc	<L848+pWin_1+2
+	adc	<L902+pWin_1+2
 	sta	<R1+2
 	clc
 	lda	<R1
@@ -18668,28 +19230,28 @@ L889:
 	sta	<R2+2
 	lda	#$fb10
 	sta	[<R2]
-	inc	<L848+ncc_1
+	inc	<L902+ncc_1
 ;		}
-	.line	2779
-L10370:
+	.line	2823
+L10378:
 ;
 ;
 ;		if((style & FXWS_THICKFRAME) && (style & FXWS_SIZEBOX))
-	.line	2782
+	.line	2826
 ;		{
-	lda	<L848+style_1+2
+	lda	<L902+style_1+2
 	and	#^$20000
-	bne	L890
-	brl	L10371
-L890:
-	lda	<L848+style_1
+	bne	L944
+	brl	L10379
+L944:
+	lda	<L902+style_1
 	and	#<$100
-	bne	L891
-	brl	L10371
-L891:
-	.line	2783
+	bne	L945
+	brl	L10379
+L945:
+	.line	2827
 ;			k_set_rect(&(pWin->nonclientGadgets[ncc].area),
-	.line	2784
+	.line	2828
 ;					   pWin->win_x + pWin->win_width  - 4,
 ;					   pWin->win_y + pWin->win_height - 4,
 ;					   4,
@@ -18698,9 +19260,9 @@ L891:
 	pea	#<$4
 	clc
 	ldy	#$e
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	ldy	#$12
-	adc	[<L848+pWin_1],Y
+	adc	[<L902+pWin_1],Y
 	sta	<R0
 	clc
 	lda	#$fffc
@@ -18708,19 +19270,19 @@ L891:
 	pha
 	clc
 	ldy	#$c
-	lda	[<L848+pWin_1],Y
+	lda	[<L902+pWin_1],Y
 	ldy	#$10
-	adc	[<L848+pWin_1],Y
+	adc	[<L902+pWin_1],Y
 	sta	<R0
 	clc
 	lda	#$fffc
 	adc	<R0
 	pha
 	ldy	#$0
-	lda	<L848+ncc_1
-	bpl	L892
+	lda	<L902+ncc_1
+	bpl	L946
 	dey
-L892:
+L946:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -18739,10 +19301,10 @@ L892:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L848+pWin_1
+	lda	<L902+pWin_1
 	adc	<R1
 	sta	<R0
-	lda	<L848+pWin_1+2
+	lda	<L902+pWin_1+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
@@ -18750,7 +19312,7 @@ L892:
 	jsl	~~k_set_rect
 ;
 ;			k_vdma_fill_rect_ex(pWin->nonclientGadgets[ncc].area.x,
-	.line	2790
+	.line	2834
 ;					            pWin->nonclientGadgets[ncc].area.y,
 ;								pWin->nonclientGadgets[ncc].area.width,
 ;								pWin->nonclientGadgets[ncc].area.height,
@@ -18760,10 +19322,10 @@ L892:
 	jsl	~~k_getUIGadgetColor
 	pha
 	ldy	#$0
-	lda	<L848+ncc_1
-	bpl	L893
+	lda	<L902+ncc_1
+	bpl	L947
 	dey
-L893:
+L947:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -18776,10 +19338,10 @@ L893:
 	stx	<R0+2
 	clc
 	lda	#$42
-	adc	<L848+pWin_1
+	adc	<L902+pWin_1
 	sta	<R1
 	lda	#$0
-	adc	<L848+pWin_1+2
+	adc	<L902+pWin_1+2
 	sta	<R1+2
 	clc
 	lda	<R1
@@ -18791,10 +19353,10 @@ L893:
 	lda	[<R2]
 	pha
 	ldy	#$0
-	lda	<L848+ncc_1
-	bpl	L894
+	lda	<L902+ncc_1
+	bpl	L948
 	dey
-L894:
+L948:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -18807,10 +19369,10 @@ L894:
 	stx	<R0+2
 	clc
 	lda	#$40
-	adc	<L848+pWin_1
+	adc	<L902+pWin_1
 	sta	<R1
 	lda	#$0
-	adc	<L848+pWin_1+2
+	adc	<L902+pWin_1+2
 	sta	<R1+2
 	clc
 	lda	<R1
@@ -18822,10 +19384,10 @@ L894:
 	lda	[<R2]
 	pha
 	ldy	#$0
-	lda	<L848+ncc_1
-	bpl	L895
+	lda	<L902+ncc_1
+	bpl	L949
 	dey
-L895:
+L949:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -18838,10 +19400,10 @@ L895:
 	stx	<R0+2
 	clc
 	lda	#$3a
-	adc	<L848+pWin_1
+	adc	<L902+pWin_1
 	sta	<R1
 	lda	#$0
-	adc	<L848+pWin_1+2
+	adc	<L902+pWin_1+2
 	sta	<R1+2
 	clc
 	lda	<R1
@@ -18852,18 +19414,18 @@ L895:
 	sta	<R2+2
 	ldy	#$0
 	lda	[<R2]
-	bpl	L896
+	bpl	L950
 	dey
-L896:
+L950:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	<L848+ncc_1
-	bpl	L897
+	lda	<L902+ncc_1
+	bpl	L951
 	dey
-L897:
+L951:
 	sta	<R1
 	sty	<R1+2
 	pea	#^$11
@@ -18876,10 +19438,10 @@ L897:
 	stx	<R1+2
 	clc
 	lda	#$38
-	adc	<L848+pWin_1
+	adc	<L902+pWin_1
 	sta	<R2
 	lda	#$0
-	adc	<L848+pWin_1+2
+	adc	<L902+pWin_1+2
 	sta	<R2+2
 	clc
 	lda	<R2
@@ -18890,9 +19452,9 @@ L897:
 	sta	<R3+2
 	ldy	#$0
 	lda	[<R3]
-	bpl	L898
+	bpl	L952
 	dey
-L898:
+L952:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -18900,12 +19462,12 @@ L898:
 	jsl	~~k_vdma_fill_rect_ex
 ;
 ;			pWin->nonclientGadgets[ncc++].msgType = FX_RESIZE_WINDOW;
-	.line	2797
+	.line	2841
 	ldy	#$0
-	lda	<L848+ncc_1
-	bpl	L899
+	lda	<L902+ncc_1
+	bpl	L953
 	dey
-L899:
+L953:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -18918,10 +19480,10 @@ L899:
 	stx	<R0+2
 	clc
 	lda	#$46
-	adc	<L848+pWin_1
+	adc	<L902+pWin_1
 	sta	<R1
 	lda	#$0
-	adc	<L848+pWin_1+2
+	adc	<L902+pWin_1+2
 	sta	<R1+2
 	clc
 	lda	<R1
@@ -18932,18 +19494,18 @@ L899:
 	sta	<R2+2
 	lda	#$fb0f
 	sta	[<R2]
-	inc	<L848+ncc_1
+	inc	<L902+ncc_1
 ;			k_set_rect(&(pWin->nonclientGadgets[ncc].area),-1,-1,-1,-1);
-	.line	2798
+	.line	2842
 	pea	#<$ffffffff
 	pea	#<$ffffffff
 	pea	#<$ffffffff
 	pea	#<$ffffffff
 	ldy	#$0
-	lda	<L848+ncc_1
-	bpl	L900
+	lda	<L902+ncc_1
+	bpl	L954
 	dey
-L900:
+L954:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -18962,439 +19524,54 @@ L900:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L848+pWin_1
+	lda	<L902+pWin_1
 	adc	<R1
 	sta	<R0
-	lda	<L848+pWin_1+2
+	lda	<L902+pWin_1+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~k_set_rect
 ;		}
-	.line	2799
+	.line	2843
 ;
 ;
 ;	}
-L10371:
-	.line	2802
+L10379:
+	.line	2846
 ;}
-L10347:
-	.line	2803
-	brl	L851
-	.endblock	2803
-L847	equ	74
-L848	equ	17
+L10355:
+	.line	2847
+	brl	L905
+	.endblock	2847
+L901	equ	74
+L902	equ	17
 	ends
 	efunc
-	.endfunc	2803,17,74
-	.line	2803
+	.endfunc	2847,17,74
+	.line	2847
 	data
-L842:
+L896:
 	db	$6B,$5F,$67,$75,$69,$5F,$44,$72,$61,$77,$57,$69,$6E,$64,$6F
 	db	$77,$3A,$3A,$4E,$4F,$54,$20,$52,$45,$4E,$44,$45,$52,$49,$4E
 	db	$47,$3A,$00
 	ends
 ;
-;#ifdef MOMMY
-;void k_vdraw_ui_window_2(PWINDOW pWin,ULONG style,int cx,int cy,int height,int width,char FAR *title,int color, int bgcolor,UINT page)
-;{
-;	FONTMETRIC metric;
-;
-;	int i = 0;
-;	int odd = 1;
-;	int borderColor = 0;
-;	int borderTitle = 0;
-;	int borderWidth = 0;
-;
-;	int titleOffsetX = 0;
-;	int titleOffsetY = 0;
-;	int titleScaler = 0;
-;
-;	int clientOffsetX = 0;
-;	int clientOffsetY = 0;
-;
-;	int currX = 0;
-;	int currY = 0;
-;
-;	int endX = 0;
-;
-;	int maxminPos = 0;
-;
-;	int ncc = 0;
-;	int gx,gy,bx,by;
-;
-;	int fillOffset = 2;  // correct the fill coordinates so the borders are the same size
-;
-;	RECT rect;
-;
-;	int extraStyle = (pWin->styleEx & FXWSX_CACHE_TITLE);
-;	//k_debug_pointer("k_vdraw_ui_window:pWin:",pWin);
-;	/*
-;	if(pWin->pParentWindow)
-;	{
-;		cx = k_getWindowFromHandle(pWin->pParentWindow)->clientRect.x + cx;
-;		cy = k_getWindowFromHandle(pWin->pParentWindow)->clientRect.y + cy;
-;		k_debug_strings("k_vdraw_ui_window::IS CHILD:",title);
-;		k_debug_integer("k_vdraw_ui_window:cx:",cx);
-;		k_debug_integer("k_vdraw_ui_window:cy:",cy);
-;		k_debug_integer("k_vdraw_ui_window:width:",width);
-;		k_debug_integer("k_vdraw_ui_window:height:",height);
-;	}
-;	*/
-;
-;	/*
-;	if(title)
-;	{
-;		title[32] = 0;
-;		k_debug_strings("k_vdraw_ui_window::IS CHILD:",title);
-;	}
-;	else
-;		k_debug_strings("k_vdraw_ui_window::IS CHILD:","NULL");
-;
-;	k_debug_integer("k_vdraw_ui_window:cx:",cx);
-;	k_debug_integer("k_vdraw_ui_window:cy:",cy);
-;	k_debug_integer("k_vdraw_ui_window:width:",width);
-;	k_debug_integer("k_vdraw_ui_window:height:",height);
-;	k_debug_integer("k_vdraw_ui_window:page:",page);
-;	k_debug_rect("k_vdraw_ui_window:client:",&pWin->clientRect);
-;	*/
-;
-;	//k_debug_rect("k_vdraw_ui_window:client:",&pWin->clientRect);
-;
-;
-;	gx = k_user_getSystemMetric(SM_CXGADGET);
-;	gy = k_user_getSystemMetric(SM_CYGADGET);
-;	bx = k_user_getSystemMetric(SM_CXBORDER);
-;	by = k_user_getSystemMetric(SM_CYBORDER);
-;
-;	titleOffsetX = cx+2;
-;	titleOffsetY = cy+1;
-;
-;	//k_debug_strings("k_vdraw_ui_window:","enter");
-;
-;	if(style & FXWS_VISIBLE != FXWS_VISIBLE)
-;	{
-;		k_debug_strings("k_vdraw_ui_window::NOT RENDERING:",title);
-;		return;
-;	}
-;
-;	//k_debug_strings("k_vdraw_ui_window::RENDERING:",title);
-;
-;	if(style & FXWS_THICKFRAME)
-;	{
-;		borderWidth = 2;
-;	}
-;	else if(style & FXWS_BORDER)
-;	{
-;		borderWidth = 1;
-;	}
-;	else if(style & FXWS_DLGFRAME)
-;	{
-;		borderWidth = 4;
-;	}
-;
-;	if( ((style & FXWS_CAPTION) == FXWS_CAPTION) || (style & FXWS_SYSMENU) || (style & FXWS_MINIMIZEBOX) || (style & FXWS_MAXIMIZEBOX))
-;	{
-;		borderTitle = 10;
-;	}
-;
-;	clientOffsetX = cx + borderWidth;
-;
-;	if(borderTitle)
-;		clientOffsetY = cy + borderTitle;
-;	else
-;		clientOffsetY = cy + borderWidth;
-;
-;	currX = clientOffsetX;
-;	currY = clientOffsetY;
-;
-;	endX = width + cx - borderWidth;
-;	maxminPos = 0;
-;
-;	k_vdma_fill_rect_ex(cx,cy,width,height,bgcolor,page);
-;
-;
-;	borderColor = color;
-;	for(i=0;i<borderWidth;i++)
-;	{
-;		if(borderWidth > 2)
-;		{
-;			borderColor = color;
-;			odd=!odd;
-;			if(odd)
-;			{
-;				borderColor = 0;
-;			}
-;		}
-;
-;		k_draw_rect(cx + i + 0,
-;					cy + i + 0,
-;					cx + width  - 1 - i,
-;					cy + height - 1 - i,
-;					borderColor,
-;					0,
-;					page);
-;
-;	}
-;
-;
-;
-;	if(borderTitle)
-;	{
-;		k_vdma_fill_rect_ex(cx,cy,width,borderTitle,color,page);
-;	}
-;
-;	k_get_font_metrics(&metric);
-;
-;
-;	//title = strupr(title);
-;
-;	//FXWS_OVERLAPPED | FXWS_CAPTION | FXWS_SYSMENU | FXWS_THICKFRAME | FXWS_MINIMIZEBOX | FXWS_MAXIMIZEBOX
-;
-;	if(style & FXWS_SYSMENU)
-;	{
-;		k_set_rect(&(pWin->nonclientGadgets[ncc].area),titleOffsetX,titleOffsetY,gx,gx);
-;		pWin->nonclientGadgets[ncc++].msgType = FX_WINDOW_CLOSE;
-;
-;		//k_debug_strings("k_vdraw_ui_window:","FXWS_SYSMENU");
-;		titleOffsetX+=k_put_wingadget_point_ex(WINICON_TITLE_BCLOSE,titleOffsetX,titleOffsetY,k_getUIGadgetColor(),page);
-;
-;	}
-;
-;	if((style & FXWS_CAPTION) == FXWS_CAPTION)
-;	{
-;
-;		//k_debug_strings("k_vdraw_ui_window:","FXWS_CAPTION");
-;		//titleScaler = (int)(width / metric.width - 3);
-;		titleScaler = (int)((width / metric.width) - 1);
-;
-;		//k_debug_integer("k_vdraw_ui_window:titleScaler1:",titleScaler * 8);
-;
-;
-;		//titleScaler = (width - (borderWidth * 2));
-;		//k_debug_integer("k_vdraw_ui_window:titleScaler2:",(width - (borderWidth * 2)));
-;
-;		/*
-;		if(!k_gui_get_title_cache(NULL))
-;		{
-;			k_gui_build_title_cache(NULL);
-;		}
-;
-;		if(k_gui_get_title_cache(NULL))
-;		{
-;			k_vdma_copy_address_ex((LPSTR)((ULONG)0x080000 + k_gui_get_pixel_offset(titleOffsetX,titleOffsetY)),TITLE_LINES_640x480,titleScaler * 8,8);
-;		}
-;		else
-;		{
-;			k_gui_build_title_cache(NULL);
-;			for(i=0;i<titleScaler;i++)
-;			{
-;				titleOffsetX+=k_put_wingadget_point_ex(WINICON_TITLE_LINES,titleOffsetX,titleOffsetY,k_getUIGadgetColor(),page);
-;			}
-;		}
-;
-;		k_gui_build_title_cache(NULL);
-;		*/
-;
-;		//
-;		// set lines in title with blt
-;		//
-;		rect.x = titleOffsetX;
-;		rect.y = titleOffsetY;
-;		rect.width  = (titleScaler * 8)  - (borderWidth * 2);
-;		rect.height = 8;
-;		k_gui_get_image_cache(0,0x080000,&rect);
-;		//
-;		//
-;		//
-;
-;
-;		/*
-;		for(i=0;i<titleScaler;i++)
-;		{
-;			titleOffsetX+=k_put_wingadget_point_ex(WINICON_TITLE_LINES,titleOffsetX,titleOffsetY,k_getUIGadgetColor(),page);
-;		}
-;		*/
-;
-;		//k_vdma_copy_address_ex((LPSTR)((ULONG)0x080000 + k_gui_get_pixel_offset(0,440)),TITLE_LINES_640x480,titleScaler * 8,8);
-;
-;
-;
-;
-;	}
-;	//titleOffsetX+=k_put_wingadget_point(WINICON_TITLE_BACK,titleOffsetX,titleOffsetY,14);
-;	//titleOffsetX+=2;
-;	//titleOffsetX+=k_put_wingadget_point(WINICON_TITLE_FRONT,titleOffsetX,titleOffsetY,14);
-;
-;	if(style & FXWS_MAXIMIZEBOX)
-;	{
-;		//k_debug_strings("k_vdraw_ui_window:","FXWS_MAXIMIZEBOX");
-;		maxminPos+=metric.width;
-;		//k_put_wingadget_point(WINICON_BLOCK,endX - (metric.width),titleOffsetY,k_getUIWindowBorderColor());
-;		//k_put_wingadget_point(WINICON_TITLE_FRONT,endX - (metric.width),titleOffsetY,k_getUIGadgetColor());
-;
-;		k_put_wingadget_point_ex(WINICON_BLOCK,endX - maxminPos,titleOffsetY,k_getUIWindowBorderColor(),page);
-;		k_put_wingadget_point_ex(WINICON_TITLE_FRONT,endX - maxminPos,titleOffsetY,k_getUIGadgetColor(),page);
-;
-;		k_set_rect(&(pWin->nonclientGadgets[ncc].area),endX - maxminPos,titleOffsetY,gx,gx);
-;		pWin->nonclientGadgets[ncc++].msgType = FX_MAX_WINDOW;
-;
-;		maxminPos+=2;
-;	}
-;
-;	if(style & FXWS_MINIMIZEBOX)
-;	{
-;		//k_debug_strings("k_vdraw_ui_window:","FXWS_MINIMIZEBOX");
-;		maxminPos+=metric.width;
-;		//k_put_wingadget_point(WINICON_BLOCK,endX - (metric.width*2 + 2),titleOffsetY,k_getUIWindowBorderColor());
-;		//k_put_wingadget_point(WINICON_TITLE_BACK,endX - (metric.width*2 + 2),titleOffsetY,k_getUIGadgetColor());
-;
-;		k_put_wingadget_point_ex(WINICON_BLOCK,endX - maxminPos,titleOffsetY,k_getUIWindowBorderColor(),page);
-;		k_put_wingadget_point_ex(WINICON_TITLE_BACK,endX - maxminPos,titleOffsetY,k_getUIGadgetColor(),page);
-;
-;
-;		k_set_rect(&(pWin->nonclientGadgets[ncc].area),endX - maxminPos,titleOffsetY,gx,gx);
-;		pWin->nonclientGadgets[ncc++].msgType = FX_MIN_WINDOW;
-;
-;		maxminPos+=2;
-;	}
-;
-;	if((style & FXWS_CAPTION) == FXWS_CAPTION)
-;	{
-;		/*
-;		if(!k_gui_get_title_cache(NULL))
-;		{
-;			k_gui_build_title_cache(NULL);
-;		}
-;		*/
-;		/*
-;		for(i=0;i<=strlen(title);i++)
-;		{
-;			k_put_wingadget_point_ex(WINICON_BLOCK,cx+borderWidth+metric.width+(metric.width*i),titleOffsetY,15,page);
-;		}
-;		*/
-;		k_user_SetRect(&rect,cx+borderWidth+metric.width,titleOffsetY,(strlen(title) + 1)*8,8);
-;
-;		if(extraStyle && pWin->clientData[CLIENTDATA_TITLE])
-;		{
-;			//k_debug_strings("k_vdraw_ui_window::CLIENTDATA_TITLE:","DRAW");
-;			k_user_SetRect(&rect,cx+borderWidth+metric.width,titleOffsetY,(strlen(title) + 1)*8,8);
-;			k_gui_get_image_cache((UINT)((ULONG)pWin->clientData[CLIENTDATA_TITLE]),GUI_CACHE_BACK,&rect);
-;		}
-;		else
-;		{
-;			k_debug_integer("k_vdraw_ui_window::CLIENTDATA_TITLE:",extraStyle);
-;			k_vdma_fill_rect_ex(cx+borderWidth+metric.width,titleOffsetY,
-;								(strlen(title) + 1)*8,8,15,BITMAP_BACK);
-;
-;			k_draw_text_point_ex(title,cx+(borderWidth + 3)+metric.width,titleOffsetY,k_getUIGadgetColor(),page);
-;			if(extraStyle)
-;			{
-;				k_user_SetRect(&rect,cx+borderWidth+metric.width,titleOffsetY,(strlen(title) + 1)*8,8);
-;				pWin->clientData[CLIENTDATA_TITLE] = (LPVOID)((ULONG)k_gui_set_image_cache(GUI_CACHE_BACK,&rect));
-;
-;				k_debug_pointer("k_vdraw_ui_window::CLIENTDATA_TITLE:",pWin->clientData[CLIENTDATA_TITLE] );
-;			}
-;		}
-;
-;
-;
-;		/*
-;		k_vdma_copy_address_ex((LPSTR)((ULONG)0x080000 + k_gui_get_pixel_offset(0,420)),TITLE_LINES_640x480,640,8);
-;
-;		k_vdma_copy_address_ex((LPSTR)((ULONG)0x200000 + k_gui_get_pixel_offset(0,460)),
-;							   (LPSTR)((ULONG)0x080000 + k_gui_get_pixel_offset(cx+(borderWidth + 3)+metric.width,titleOffsetY)),
-;							   strlen(title)*8,8);
-;
-;		k_vdma_copy_address_ex((LPSTR)((ULONG)0x080000 + k_gui_get_pixel_offset(100,460)),
-;							   (LPSTR)((ULONG)0x200000 + k_gui_get_pixel_offset(0,460)),
-;							   strlen(title)*8,8);
-;		*/
-;
-;		k_set_rect(&(pWin->nonclientGadgets[ncc].area),
-;				   pWin->win_x + gx,
-;				   pWin->win_y,
-;				   pWin->win_width - gx,
-;				   borderTitle);
-;		pWin->nonclientGadgets[ncc++].msgType = FX_DRAG_WINDOW;
-;
-;	}
-;	else
-;	{
-;		k_set_rect(&(pWin->nonclientGadgets[ncc].area),
-;				   pWin->win_x + gx,
-;				   pWin->win_y,
-;				   pWin->win_width - gx,
-;				   borderWidth);
-;		pWin->nonclientGadgets[ncc++].msgType = FX_DRAG_WINDOW;
-;	}
-;
-;	//k_debug_integer("k_vdraw_ui_window::(clientOffsetY - height):",(clientOffsetY - pWin->clientRect.y));
-;	//k_debug_integer("k_vdraw_ui_window::((clientOffsetY - height) + borderWidth):",((clientOffsetY - pWin->clientRect.y) + borderWidth));
-;
-;	pWin->clientRect.width  = (width - (2*borderWidth));
-;	pWin->clientRect.height = height - ((clientOffsetY - pWin->clientRect.y) + borderWidth);
-;
-;	k_debug_integer("k_vdraw_ui_window::clientRect.width:", pWin->clientRect.width);
-;	k_debug_integer("k_vdraw_ui_window::clientRect.height:",pWin->clientRect.height);
-;
-;
-;	pWin->clientRect.x      = clientOffsetX;
-;	pWin->clientRect.y      = clientOffsetY;
-;
-;	if(pWin->win_cxoffset == -1)
-;	{
-;		pWin->win_cxoffset 	= pWin->clientRect.x - pWin->win_x;
-;		pWin->win_cyoffset 	= pWin->clientRect.y - pWin->win_y;
-;	}
-;
-;	k_set_rect(&(pWin->nonclientGadgets[ncc].area),
-;			   pWin->win_x + pWin->win_width  - 4,
-;			   pWin->win_y + pWin->win_height - 4,
-;			   4,
-;			   4);
-;	pWin->nonclientGadgets[ncc++].msgType = FX_RESIZE_WINDOW;
-;
-;
-;	k_draw_rect(pWin->win_x - 1,
-;				pWin->win_y - 1,
-;				(pWin->win_x) + pWin->win_width  ,
-;				(pWin->win_y) + pWin->win_height ,
-;				k_getUIGadgetColor(),
-;				0,
-;				page);
-;
-;	k_draw_rect(pWin->clientRect.x - 1,
-;				pWin->clientRect.y - 1,
-;				pWin->clientRect.x + pWin->clientRect.width ,
-;				pWin->clientRect.y + pWin->clientRect.height,
-;				k_getUIGadgetColor(),
-;				0,
-;				page);
-;	//k_debug_rect("k_vdraw_ui_window:client[resized]:",&pWin->clientRect);
-;
-;	k_set_rect(&(pWin->nonclientGadgets[ncc].area),-1,-1,-1,-1);
-;
-;
-;	//k_debug_strings("k_vdraw_ui_window:","exit");
-;}
-;#endif
-;
 ;void k_vdraw_ui_window_ex(PWINDOW pWin,ULONG style,int cx,int cy,int height,int width,char FAR *title,int color, int bgcolor,UINT page)
 ;{
-	.line	3190
-	.line	3191
+	.line	2849
+	.line	2850
 	GFX
 	xdef	~~k_vdraw_ui_window_ex
 	func
-	.function	3191
+	.function	2850
 ~~k_vdraw_ui_window_ex:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L902
+	sbc	#L956
 	tcs
 	phd
 	tcd
@@ -19408,7 +19585,7 @@ title_0	set	20
 color_0	set	24
 bgcolor_0	set	26
 page_0	set	28
-	.block	3191
+	.block	2850
 ;
 ;	//TODO: FXWS_DLGFRAME is broken
 ;
@@ -19533,263 +19710,263 @@ extraStyle_1	set	58
 	.sym	color,24,5,6,16
 	.sym	bgcolor,26,5,6,16
 	.sym	page,28,16,6,16
-	stz	<L903+i_1
+	stz	<L957+i_1
 	lda	#$1
-	sta	<L903+odd_1
-	stz	<L903+borderColor_1
-	stz	<L903+borderTitle_1
-	stz	<L903+borderWidth_1
-	stz	<L903+titleOffsetX_1
-	stz	<L903+titleOffsetY_1
-	stz	<L903+titleScaler_1
-	stz	<L903+clientOffsetX_1
-	stz	<L903+clientOffsetY_1
-	stz	<L903+currX_1
-	stz	<L903+currY_1
-	stz	<L903+endX_1
-	stz	<L903+maxminPos_1
-	stz	<L903+ncc_1
+	sta	<L957+odd_1
+	stz	<L957+borderColor_1
+	stz	<L957+borderTitle_1
+	stz	<L957+borderWidth_1
+	stz	<L957+titleOffsetX_1
+	stz	<L957+titleOffsetY_1
+	stz	<L957+titleScaler_1
+	stz	<L957+clientOffsetX_1
+	stz	<L957+clientOffsetY_1
+	stz	<L957+currX_1
+	stz	<L957+currY_1
+	stz	<L957+endX_1
+	stz	<L957+maxminPos_1
+	stz	<L957+ncc_1
 	lda	#$2
-	sta	<L903+fillOffset_1
+	sta	<L957+fillOffset_1
 	ldy	#$6
-	lda	[<L902+pWin_0],Y
+	lda	[<L956+pWin_0],Y
 	and	#<$2
 	sta	<R0
 	stz	<R0+2
 	lda	<R0
-	sta	<L903+extraStyle_1
-	.line	3259
+	sta	<L957+extraStyle_1
+	.line	2918
 	pea	#<$18
 	jsl	~~k_user_getSystemMetric
-	sta	<L903+gx_1
+	sta	<L957+gx_1
 ;	gy = k_user_getSystemMetric(SM_CYGADGET);
-	.line	3260
+	.line	2919
 	pea	#<$19
 	jsl	~~k_user_getSystemMetric
-	sta	<L903+gy_1
+	sta	<L957+gy_1
 ;	bx = k_user_getSystemMetric(SM_CXBORDER);
-	.line	3261
+	.line	2920
 	pea	#<$5
 	jsl	~~k_user_getSystemMetric
-	sta	<L903+bx_1
+	sta	<L957+bx_1
 ;	by = k_user_getSystemMetric(SM_CYBORDER);
-	.line	3262
+	.line	2921
 	pea	#<$6
 	jsl	~~k_user_getSystemMetric
-	sta	<L903+by_1
+	sta	<L957+by_1
 ;
 ;	titleOffsetX = cx+2;
-	.line	3264
+	.line	2923
 	clc
 	lda	#$2
-	adc	<L902+cx_0
-	sta	<L903+titleOffsetX_1
+	adc	<L956+cx_0
+	sta	<L957+titleOffsetX_1
 ;	titleOffsetY = cy+1;
-	.line	3265
-	lda	<L902+cy_0
+	.line	2924
+	lda	<L956+cy_0
 	ina
-	sta	<L903+titleOffsetY_1
+	sta	<L957+titleOffsetY_1
 ;
 ;	//k_debug_strings("k_vdraw_ui_window:","enter");
 ;
 ;	if(style & FXWS_VISIBLE != FXWS_VISIBLE)
-	.line	3269
+	.line	2928
 ;	{
-	brl	L10372
-	.line	3270
+	brl	L10380
+	.line	2929
 ;		k_debug_strings("k_vdraw_ui_window::NOT RENDERING:",title);
-	.line	3271
-	pei	<L902+title_0+2
-	pei	<L902+title_0
-	pea	#^L901
-	pea	#<L901
+	.line	2930
+	pei	<L956+title_0+2
+	pei	<L956+title_0
+	pea	#^L955
+	pea	#<L955
 	jsl	~~k_debug_strings
 ;		return;
-	.line	3272
-L905:
-	lda	<L902+2
-	sta	<L902+2+26
-	lda	<L902+1
-	sta	<L902+1+26
+	.line	2931
+L959:
+	lda	<L956+2
+	sta	<L956+2+26
+	lda	<L956+1
+	sta	<L956+1+26
 	pld
 	tsc
 	clc
-	adc	#L902+26
+	adc	#L956+26
 	tcs
 	rtl
 ;	}
-	.line	3273
+	.line	2932
 ;
 ;	//k_debug_strings("k_vdraw_ui_window::RENDERING:",title);
 ;
 ;	if(style & FXWS_THICKFRAME)
-L10372:
-	.line	3277
+L10380:
+	.line	2936
 ;	{
-	lda	<L902+style_0+2
+	lda	<L956+style_0+2
 	and	#^$20000
-	bne	L906
-	brl	L10373
-L906:
-	.line	3278
+	bne	L960
+	brl	L10381
+L960:
+	.line	2937
 ;		borderWidth = 2;
-	.line	3279
+	.line	2938
 	lda	#$2
-	sta	<L903+borderWidth_1
+	sta	<L957+borderWidth_1
 ;	}
-	.line	3280
+	.line	2939
 ;	else if(style & FXWS_BORDER)
-	brl	L10374
-L10373:
-	.line	3281
+	brl	L10382
+L10381:
+	.line	2940
 ;	{
-	lda	<L902+style_0+2
+	lda	<L956+style_0+2
 	and	#^$10000
-	bne	L907
-	brl	L10375
-L907:
-	.line	3282
+	bne	L961
+	brl	L10383
+L961:
+	.line	2941
 ;		borderWidth = 1;
-	.line	3283
+	.line	2942
 	lda	#$1
-	sta	<L903+borderWidth_1
+	sta	<L957+borderWidth_1
 ;	}
-	.line	3284
+	.line	2943
 ;	else if(style & FXWS_DLGFRAME)
-	brl	L10376
-L10375:
-	.line	3285
+	brl	L10384
+L10383:
+	.line	2944
 ;	{
-	lda	<L902+style_0+2
+	lda	<L956+style_0+2
 	and	#^$40000
-	bne	L908
-	brl	L10377
-L908:
-	.line	3286
+	bne	L962
+	brl	L10385
+L962:
+	.line	2945
 ;		borderWidth = 4;
-	.line	3287
+	.line	2946
 	lda	#$4
-	sta	<L903+borderWidth_1
+	sta	<L957+borderWidth_1
 ;	}
-	.line	3288
+	.line	2947
 ;
 ;	if( ((style & FXWS_CAPTION) == FXWS_CAPTION) || (style & FXWS_SYSMENU) || (style & FXWS_MINIMIZEBOX) || (style & FXWS_MAXIMIZEBOX))
-L10377:
-L10376:
-L10374:
-	.line	3290
+L10385:
+L10384:
+L10382:
+	.line	2949
 ;	{
-	lda	<L902+style_0
+	lda	<L956+style_0
 	and	#<$4
 	sta	<R0
 	stz	<R0+2
 	lda	<R0
 	cmp	#<$4
-	bne	L910
+	bne	L964
 	lda	<R0+2
 	cmp	#^$4
-L910:
-	bne	L911
-	brl	L909
-L911:
-	lda	<L902+style_0
+L964:
+	bne	L965
+	brl	L963
+L965:
+	lda	<L956+style_0
 	and	#<$8
-	beq	L912
-	brl	L909
-L912:
-	lda	<L902+style_0
+	beq	L966
+	brl	L963
+L966:
+	lda	<L956+style_0
 	and	#<$20
-	beq	L913
-	brl	L909
-L913:
-	lda	<L902+style_0
+	beq	L967
+	brl	L963
+L967:
+	lda	<L956+style_0
 	and	#<$10
-	bne	L914
-	brl	L10378
-L914:
-L909:
-	.line	3291
+	bne	L968
+	brl	L10386
+L968:
+L963:
+	.line	2950
 ;		borderTitle = 10;
-	.line	3292
+	.line	2951
 	lda	#$a
-	sta	<L903+borderTitle_1
+	sta	<L957+borderTitle_1
 ;	}
-	.line	3293
+	.line	2952
 ;
 ;	clientOffsetX = cx + borderWidth;
-L10378:
-	.line	3295
+L10386:
+	.line	2954
 	clc
-	lda	<L902+cx_0
-	adc	<L903+borderWidth_1
-	sta	<L903+clientOffsetX_1
+	lda	<L956+cx_0
+	adc	<L957+borderWidth_1
+	sta	<L957+clientOffsetX_1
 ;
 ;	if(borderTitle)
-	.line	3297
+	.line	2956
 ;		clientOffsetY = cy + borderTitle;
-	lda	<L903+borderTitle_1
-	bne	L915
-	brl	L10379
-L915:
-	.line	3298
+	lda	<L957+borderTitle_1
+	bne	L969
+	brl	L10387
+L969:
+	.line	2957
 	clc
-	lda	<L902+cy_0
-	adc	<L903+borderTitle_1
-	sta	<L903+clientOffsetY_1
+	lda	<L956+cy_0
+	adc	<L957+borderTitle_1
+	sta	<L957+clientOffsetY_1
 ;	else
-	brl	L10380
-L10379:
+	brl	L10388
+L10387:
 ;		clientOffsetY = cy + borderWidth;
-	.line	3300
+	.line	2959
 	clc
-	lda	<L902+cy_0
-	adc	<L903+borderWidth_1
-	sta	<L903+clientOffsetY_1
-L10380:
+	lda	<L956+cy_0
+	adc	<L957+borderWidth_1
+	sta	<L957+clientOffsetY_1
+L10388:
 ;
 ;	currX = clientOffsetX;
-	.line	3302
-	lda	<L903+clientOffsetX_1
-	sta	<L903+currX_1
+	.line	2961
+	lda	<L957+clientOffsetX_1
+	sta	<L957+currX_1
 ;	currY = clientOffsetY;
-	.line	3303
-	lda	<L903+clientOffsetY_1
-	sta	<L903+currY_1
+	.line	2962
+	lda	<L957+clientOffsetY_1
+	sta	<L957+currY_1
 ;
 ;	endX = width + cx - borderWidth;
-	.line	3305
+	.line	2964
 	clc
-	lda	<L902+width_0
-	adc	<L902+cx_0
+	lda	<L956+width_0
+	adc	<L956+cx_0
 	sta	<R0
 	sec
 	lda	<R0
-	sbc	<L903+borderWidth_1
-	sta	<L903+endX_1
+	sbc	<L957+borderWidth_1
+	sta	<L957+endX_1
 ;	maxminPos = 0;
-	.line	3306
-	stz	<L903+maxminPos_1
+	.line	2965
+	stz	<L957+maxminPos_1
 ;
 ;	k_vdma_fill_rect_ex(cx,cy,width,height,bgcolor,page);
-	.line	3308
-	pei	<L902+page_0
-	pei	<L902+bgcolor_0
-	pei	<L902+height_0
-	pei	<L902+width_0
+	.line	2967
+	pei	<L956+page_0
+	pei	<L956+bgcolor_0
+	pei	<L956+height_0
+	pei	<L956+width_0
 	ldy	#$0
-	lda	<L902+cy_0
-	bpl	L916
+	lda	<L956+cy_0
+	bpl	L970
 	dey
-L916:
+L970:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	<L902+cx_0
-	bpl	L917
+	lda	<L956+cx_0
+	bpl	L971
 	dey
-L917:
+L971:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -19798,76 +19975,76 @@ L917:
 ;
 ;
 ;	borderColor = color;
-	.line	3311
-	lda	<L902+color_0
-	sta	<L903+borderColor_1
+	.line	2970
+	lda	<L956+color_0
+	sta	<L957+borderColor_1
 ;	for(i=0;i<borderWidth;i++)
-	.line	3312
-	stz	<L903+i_1
-	brl	L10384
-L10383:
+	.line	2971
+	stz	<L957+i_1
+	brl	L10392
+L10391:
 ;	{
-	.line	3313
+	.line	2972
 ;		if(borderWidth > 2)
-	.line	3314
+	.line	2973
 ;		{
 	sec
 	lda	#$2
-	sbc	<L903+borderWidth_1
-	bvs	L918
+	sbc	<L957+borderWidth_1
+	bvs	L972
 	eor	#$8000
-L918:
-	bpl	L919
-	brl	L10385
-L919:
-	.line	3315
+L972:
+	bpl	L973
+	brl	L10393
+L973:
+	.line	2974
 ;			borderColor = color;
-	.line	3316
-	lda	<L902+color_0
-	sta	<L903+borderColor_1
+	.line	2975
+	lda	<L956+color_0
+	sta	<L957+borderColor_1
 ;			odd=!odd;
-	.line	3317
+	.line	2976
 	stz	<R0
-	lda	<L903+odd_1
-	beq	L921
-	brl	L920
-L921:
+	lda	<L957+odd_1
+	beq	L975
+	brl	L974
+L975:
 	inc	<R0
-L920:
+L974:
 	lda	<R0
-	sta	<L903+odd_1
+	sta	<L957+odd_1
 ;			if(odd)
-	.line	3318
+	.line	2977
 ;			{
-	lda	<L903+odd_1
-	bne	L922
-	brl	L10386
-L922:
-	.line	3319
+	lda	<L957+odd_1
+	bne	L976
+	brl	L10394
+L976:
+	.line	2978
 ;				borderColor = 0;
-	.line	3320
-	stz	<L903+borderColor_1
+	.line	2979
+	stz	<L957+borderColor_1
 ;			}
-	.line	3321
+	.line	2980
 ;		}
-L10386:
-	.line	3322
+L10394:
+	.line	2981
 ;
 ;		k_draw_rect(cx + i + 0,
-L10385:
-	.line	3324
+L10393:
+	.line	2983
 ;					cy + i + 0,
 ;					cx + width  - 1 - i,
 ;					cy + height - 1 - i,
 ;					borderColor,
 ;					0,
 ;					page);
-	pei	<L902+page_0
+	pei	<L956+page_0
 	pea	#<$0
-	pei	<L903+borderColor_1
+	pei	<L957+borderColor_1
 	clc
-	lda	<L902+cy_0
-	adc	<L902+height_0
+	lda	<L956+cy_0
+	adc	<L956+height_0
 	sta	<R0
 	clc
 	lda	#$ffff
@@ -19875,11 +20052,11 @@ L10385:
 	sta	<R1
 	sec
 	lda	<R1
-	sbc	<L903+i_1
+	sbc	<L957+i_1
 	pha
 	clc
-	lda	<L902+cx_0
-	adc	<L902+width_0
+	lda	<L956+cx_0
+	adc	<L956+width_0
 	sta	<R0
 	clc
 	lda	#$ffff
@@ -19887,79 +20064,79 @@ L10385:
 	sta	<R1
 	sec
 	lda	<R1
-	sbc	<L903+i_1
+	sbc	<L957+i_1
 	pha
 	clc
-	lda	<L902+cy_0
-	adc	<L903+i_1
+	lda	<L956+cy_0
+	adc	<L957+i_1
 	pha
 	clc
-	lda	<L902+cx_0
-	adc	<L903+i_1
+	lda	<L956+cx_0
+	adc	<L957+i_1
 	pha
 	jsl	~~k_draw_rect
 ;
 ;	}
-	.line	3332
-L10381:
-	inc	<L903+i_1
-L10384:
+	.line	2991
+L10389:
+	inc	<L957+i_1
+L10392:
 	sec
-	lda	<L903+i_1
-	sbc	<L903+borderWidth_1
-	bvs	L923
+	lda	<L957+i_1
+	sbc	<L957+borderWidth_1
+	bvs	L977
 	eor	#$8000
-L923:
-	bmi	L924
-	brl	L10383
-L924:
-L10382:
+L977:
+	bmi	L978
+	brl	L10391
+L978:
+L10390:
 ;
 ;
 ;
 ;	if(borderTitle)
-	.line	3336
+	.line	2995
 ;	{
-	lda	<L903+borderTitle_1
-	bne	L925
-	brl	L10387
-L925:
-	.line	3337
+	lda	<L957+borderTitle_1
+	bne	L979
+	brl	L10395
+L979:
+	.line	2996
 ;		k_vdma_fill_rect_ex(cx,cy,width,borderTitle,color,page);
-	.line	3338
-	pei	<L902+page_0
-	pei	<L902+color_0
-	pei	<L903+borderTitle_1
-	pei	<L902+width_0
+	.line	2997
+	pei	<L956+page_0
+	pei	<L956+color_0
+	pei	<L957+borderTitle_1
+	pei	<L956+width_0
 	ldy	#$0
-	lda	<L902+cy_0
-	bpl	L926
+	lda	<L956+cy_0
+	bpl	L980
 	dey
-L926:
+L980:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	<L902+cx_0
-	bpl	L927
+	lda	<L956+cx_0
+	bpl	L981
 	dey
-L927:
+L981:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_vdma_fill_rect_ex
 ;	}
-	.line	3339
+	.line	2998
 ;
 ;	k_get_font_metrics(&metric);
-L10387:
-	.line	3341
+L10395:
+	.line	3000
 	pea	#0
 	clc
 	tdc
-	adc	#<L903+metric_1
+	adc	#<L957+metric_1
 	pha
 	jsl	~~k_get_font_metrics
 ;	
@@ -19969,25 +20146,25 @@ L10387:
 ;	//FXWS_OVERLAPPED | FXWS_CAPTION | FXWS_SYSMENU | FXWS_THICKFRAME | FXWS_MINIMIZEBOX | FXWS_MAXIMIZEBOX
 ;
 ;	if(style & FXWS_SYSMENU)
-	.line	3348
+	.line	3007
 ;	{
-	lda	<L902+style_0
+	lda	<L956+style_0
 	and	#<$8
-	bne	L928
-	brl	L10388
-L928:
-	.line	3349
+	bne	L982
+	brl	L10396
+L982:
+	.line	3008
 ;		k_set_rect(&(pWin->nonclientGadgets[ncc].area),titleOffsetX,titleOffsetY,gx,gx);
-	.line	3350
-	pei	<L903+gx_1
-	pei	<L903+gx_1
-	pei	<L903+titleOffsetY_1
-	pei	<L903+titleOffsetX_1
+	.line	3009
+	pei	<L957+gx_1
+	pei	<L957+gx_1
+	pei	<L957+titleOffsetY_1
+	pei	<L957+titleOffsetX_1
 	ldy	#$0
-	lda	<L903+ncc_1
-	bpl	L929
+	lda	<L957+ncc_1
+	bpl	L983
 	dey
-L929:
+L983:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -20006,22 +20183,22 @@ L929:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L902+pWin_0
+	lda	<L956+pWin_0
 	adc	<R1
 	sta	<R0
-	lda	<L902+pWin_0+2
+	lda	<L956+pWin_0+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~k_set_rect
 ;		pWin->nonclientGadgets[ncc++].msgType = FX_WINDOW_CLOSE;
-	.line	3351
+	.line	3010
 	ldy	#$0
-	lda	<L903+ncc_1
-	bpl	L930
+	lda	<L957+ncc_1
+	bpl	L984
 	dey
-L930:
+L984:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -20034,10 +20211,10 @@ L930:
 	stx	<R0+2
 	clc
 	lda	#$46
-	adc	<L902+pWin_0
+	adc	<L956+pWin_0
 	sta	<R1
 	lda	#$0
-	adc	<L902+pWin_0+2
+	adc	<L956+pWin_0+2
 	sta	<R1+2
 	clc
 	lda	<R1
@@ -20048,59 +20225,59 @@ L930:
 	sta	<R2+2
 	lda	#$fbff
 	sta	[<R2]
-	inc	<L903+ncc_1
+	inc	<L957+ncc_1
 ;
 ;		//k_debug_strings("k_vdraw_ui_window:","FXWS_SYSMENU");
 ;		titleOffsetX+=k_put_wingadget_point_ex(WINICON_TITLE_BCLOSE,titleOffsetX,titleOffsetY,k_getUIGadgetColor(),page);
-	.line	3354
-	pei	<L902+page_0
+	.line	3013
+	pei	<L956+page_0
 	jsl	~~k_getUIGadgetColor
 	pha
-	pei	<L903+titleOffsetY_1
-	pei	<L903+titleOffsetX_1
+	pei	<L957+titleOffsetY_1
+	pei	<L957+titleOffsetX_1
 	pea	#<$6
 	jsl	~~k_put_wingadget_point_ex
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L903+titleOffsetX_1
-	sta	<L903+titleOffsetX_1
+	adc	<L957+titleOffsetX_1
+	sta	<L957+titleOffsetX_1
 ;
 ;	}
-	.line	3356
+	.line	3015
 ;	
 ;	if((style & FXWS_CAPTION) == FXWS_CAPTION)
-L10388:
-	.line	3358
+L10396:
+	.line	3017
 ;	{
-	lda	<L902+style_0
+	lda	<L956+style_0
 	and	#<$4
 	sta	<R0
 	stz	<R0+2
 	lda	<R0
 	cmp	#<$4
-	bne	L931
+	bne	L985
 	lda	<R0+2
 	cmp	#^$4
-L931:
-	beq	L932
-	brl	L10389
-L932:
-	.line	3359
+L985:
+	beq	L986
+	brl	L10397
+L986:
+	.line	3018
 ;
 ;		//k_debug_strings("k_vdraw_ui_window:","FXWS_CAPTION");
 ;		//titleScaler = (int)(width / metric.width - 3);
 ;		titleScaler = (int)((width / metric.width) - 1);
-	.line	3363
-	lda	<L902+width_0
-	ldx	<L903+metric_1
+	.line	3022
+	lda	<L956+width_0
+	ldx	<L957+metric_1
 	xref	~~~div
 	jsl	~~~div
 	sta	<R0
 	clc
 	lda	#$ffff
 	adc	<R0
-	sta	<L903+titleScaler_1
+	sta	<L957+titleScaler_1
 ;
 ;		//k_debug_integer("k_vdraw_ui_window:titleScaler1:",titleScaler * 8);
 ;
@@ -20134,19 +20311,19 @@ L932:
 ;		// set lines in title with blt
 ;		//
 ;		rect.x = titleOffsetX;
-	.line	3396
-	lda	<L903+titleOffsetX_1
-	sta	<L903+rect_1
+	.line	3055
+	lda	<L957+titleOffsetX_1
+	sta	<L957+rect_1
 ;		rect.y = titleOffsetY;
-	.line	3397
-	lda	<L903+titleOffsetY_1
-	sta	<L903+rect_1+2
+	.line	3056
+	lda	<L957+titleOffsetY_1
+	sta	<L957+rect_1+2
 ;		rect.width  = (titleScaler * 8)  - (borderWidth * 2);
-	.line	3398
-	lda	<L903+borderWidth_1
+	.line	3057
+	lda	<L957+borderWidth_1
 	asl	A
 	sta	<R0
-	lda	<L903+titleScaler_1
+	lda	<L957+titleScaler_1
 	asl	A
 	asl	A
 	asl	A
@@ -20154,17 +20331,17 @@ L932:
 	sec
 	lda	<R1
 	sbc	<R0
-	sta	<L903+rect_1+8
+	sta	<L957+rect_1+8
 ;		rect.height = 8;
-	.line	3399
+	.line	3058
 	lda	#$8
-	sta	<L903+rect_1+10
+	sta	<L957+rect_1+10
 ;		k_gui_get_image_cache(0,0x080000,&rect);
-	.line	3400
+	.line	3059
 	pea	#0
 	clc
 	tdc
-	adc	#<L903+rect_1
+	adc	#<L957+rect_1
 	pha
 	pea	#^$80000
 	pea	#<$80000
@@ -20188,70 +20365,70 @@ L932:
 ;
 ;
 ;	}
-	.line	3418
+	.line	3077
 ;	//titleOffsetX+=k_put_wingadget_point(WINICON_TITLE_BACK,titleOffsetX,titleOffsetY,14);
 ;	//titleOffsetX+=2;
 ;	//titleOffsetX+=k_put_wingadget_point(WINICON_TITLE_FRONT,titleOffsetX,titleOffsetY,14);
 ;	
 ;	if(style & FXWS_MAXIMIZEBOX)
-L10389:
-	.line	3423
+L10397:
+	.line	3082
 ;	{
-	lda	<L902+style_0
+	lda	<L956+style_0
 	and	#<$10
-	bne	L933
-	brl	L10390
-L933:
-	.line	3424
+	bne	L987
+	brl	L10398
+L987:
+	.line	3083
 ;		//k_debug_strings("k_vdraw_ui_window:","FXWS_MAXIMIZEBOX");
 ;		maxminPos+=metric.width;
-	.line	3426
+	.line	3085
 	clc
-	lda	<L903+maxminPos_1
-	adc	<L903+metric_1
-	sta	<L903+maxminPos_1
+	lda	<L957+maxminPos_1
+	adc	<L957+metric_1
+	sta	<L957+maxminPos_1
 ;		//k_put_wingadget_point(WINICON_BLOCK,endX - (metric.width),titleOffsetY,k_getUIWindowBorderColor());
 ;		//k_put_wingadget_point(WINICON_TITLE_FRONT,endX - (metric.width),titleOffsetY,k_getUIGadgetColor());
 ;
 ;		k_put_wingadget_point_ex(WINICON_BLOCK,endX - maxminPos,titleOffsetY,k_getUIWindowBorderColor(),page);
-	.line	3430
-	pei	<L902+page_0
+	.line	3089
+	pei	<L956+page_0
 	jsl	~~k_getUIWindowBorderColor
 	pha
-	pei	<L903+titleOffsetY_1
+	pei	<L957+titleOffsetY_1
 	sec
-	lda	<L903+endX_1
-	sbc	<L903+maxminPos_1
+	lda	<L957+endX_1
+	sbc	<L957+maxminPos_1
 	pha
 	pea	#<$0
 	jsl	~~k_put_wingadget_point_ex
 ;		k_put_wingadget_point_ex(WINICON_TITLE_FRONT,endX - maxminPos,titleOffsetY,k_getUIGadgetColor(),page);
-	.line	3431
-	pei	<L902+page_0
+	.line	3090
+	pei	<L956+page_0
 	jsl	~~k_getUIGadgetColor
 	pha
-	pei	<L903+titleOffsetY_1
+	pei	<L957+titleOffsetY_1
 	sec
-	lda	<L903+endX_1
-	sbc	<L903+maxminPos_1
+	lda	<L957+endX_1
+	sbc	<L957+maxminPos_1
 	pha
 	pea	#<$3
 	jsl	~~k_put_wingadget_point_ex
 ;
 ;		k_set_rect(&(pWin->nonclientGadgets[ncc].area),endX - maxminPos,titleOffsetY,gx,gx);
-	.line	3433
-	pei	<L903+gx_1
-	pei	<L903+gx_1
-	pei	<L903+titleOffsetY_1
+	.line	3092
+	pei	<L957+gx_1
+	pei	<L957+gx_1
+	pei	<L957+titleOffsetY_1
 	sec
-	lda	<L903+endX_1
-	sbc	<L903+maxminPos_1
+	lda	<L957+endX_1
+	sbc	<L957+maxminPos_1
 	pha
 	ldy	#$0
-	lda	<L903+ncc_1
-	bpl	L934
+	lda	<L957+ncc_1
+	bpl	L988
 	dey
-L934:
+L988:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -20270,22 +20447,22 @@ L934:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L902+pWin_0
+	lda	<L956+pWin_0
 	adc	<R1
 	sta	<R0
-	lda	<L902+pWin_0+2
+	lda	<L956+pWin_0+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~k_set_rect
 ;		pWin->nonclientGadgets[ncc++].msgType = FX_MAX_WINDOW;
-	.line	3434
+	.line	3093
 	ldy	#$0
-	lda	<L903+ncc_1
-	bpl	L935
+	lda	<L957+ncc_1
+	bpl	L989
 	dey
-L935:
+L989:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -20298,10 +20475,10 @@ L935:
 	stx	<R0+2
 	clc
 	lda	#$46
-	adc	<L902+pWin_0
+	adc	<L956+pWin_0
 	sta	<R1
 	lda	#$0
-	adc	<L902+pWin_0+2
+	adc	<L956+pWin_0+2
 	sta	<R1+2
 	clc
 	lda	<R1
@@ -20312,75 +20489,75 @@ L935:
 	sta	<R2+2
 	lda	#$fb0a
 	sta	[<R2]
-	inc	<L903+ncc_1
+	inc	<L957+ncc_1
 ;
 ;		maxminPos+=2;
-	.line	3436
-	inc	<L903+maxminPos_1
-	inc	<L903+maxminPos_1
+	.line	3095
+	inc	<L957+maxminPos_1
+	inc	<L957+maxminPos_1
 ;	}
-	.line	3437
+	.line	3096
 ;
 ;	if(style & FXWS_MINIMIZEBOX)
-L10390:
-	.line	3439
+L10398:
+	.line	3098
 ;	{
-	lda	<L902+style_0
+	lda	<L956+style_0
 	and	#<$20
-	bne	L936
-	brl	L10391
-L936:
-	.line	3440
+	bne	L990
+	brl	L10399
+L990:
+	.line	3099
 ;		//k_debug_strings("k_vdraw_ui_window:","FXWS_MINIMIZEBOX");
 ;		maxminPos+=metric.width;
-	.line	3442
+	.line	3101
 	clc
-	lda	<L903+maxminPos_1
-	adc	<L903+metric_1
-	sta	<L903+maxminPos_1
+	lda	<L957+maxminPos_1
+	adc	<L957+metric_1
+	sta	<L957+maxminPos_1
 ;		//k_put_wingadget_point(WINICON_BLOCK,endX - (metric.width*2 + 2),titleOffsetY,k_getUIWindowBorderColor());
 ;		//k_put_wingadget_point(WINICON_TITLE_BACK,endX - (metric.width*2 + 2),titleOffsetY,k_getUIGadgetColor());
 ;
 ;		k_put_wingadget_point_ex(WINICON_BLOCK,endX - maxminPos,titleOffsetY,k_getUIWindowBorderColor(),page);
-	.line	3446
-	pei	<L902+page_0
+	.line	3105
+	pei	<L956+page_0
 	jsl	~~k_getUIWindowBorderColor
 	pha
-	pei	<L903+titleOffsetY_1
+	pei	<L957+titleOffsetY_1
 	sec
-	lda	<L903+endX_1
-	sbc	<L903+maxminPos_1
+	lda	<L957+endX_1
+	sbc	<L957+maxminPos_1
 	pha
 	pea	#<$0
 	jsl	~~k_put_wingadget_point_ex
 ;		k_put_wingadget_point_ex(WINICON_TITLE_BACK,endX - maxminPos,titleOffsetY,k_getUIGadgetColor(),page);
-	.line	3447
-	pei	<L902+page_0
+	.line	3106
+	pei	<L956+page_0
 	jsl	~~k_getUIGadgetColor
 	pha
-	pei	<L903+titleOffsetY_1
+	pei	<L957+titleOffsetY_1
 	sec
-	lda	<L903+endX_1
-	sbc	<L903+maxminPos_1
+	lda	<L957+endX_1
+	sbc	<L957+maxminPos_1
 	pha
 	pea	#<$4
 	jsl	~~k_put_wingadget_point_ex
 ;
 ;
 ;		k_set_rect(&(pWin->nonclientGadgets[ncc].area),endX - maxminPos,titleOffsetY,gx,gx);
-	.line	3450
-	pei	<L903+gx_1
-	pei	<L903+gx_1
-	pei	<L903+titleOffsetY_1
+	.line	3109
+	pei	<L957+gx_1
+	pei	<L957+gx_1
+	pei	<L957+titleOffsetY_1
 	sec
-	lda	<L903+endX_1
-	sbc	<L903+maxminPos_1
+	lda	<L957+endX_1
+	sbc	<L957+maxminPos_1
 	pha
 	ldy	#$0
-	lda	<L903+ncc_1
-	bpl	L937
+	lda	<L957+ncc_1
+	bpl	L991
 	dey
-L937:
+L991:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -20399,22 +20576,22 @@ L937:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L902+pWin_0
+	lda	<L956+pWin_0
 	adc	<R1
 	sta	<R0
-	lda	<L902+pWin_0+2
+	lda	<L956+pWin_0+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~k_set_rect
 ;		pWin->nonclientGadgets[ncc++].msgType = FX_MIN_WINDOW;
-	.line	3451
+	.line	3110
 	ldy	#$0
-	lda	<L903+ncc_1
-	bpl	L938
+	lda	<L957+ncc_1
+	bpl	L992
 	dey
-L938:
+L992:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -20427,10 +20604,10 @@ L938:
 	stx	<R0+2
 	clc
 	lda	#$46
-	adc	<L902+pWin_0
+	adc	<L956+pWin_0
 	sta	<R1
 	lda	#$0
-	adc	<L902+pWin_0+2
+	adc	<L956+pWin_0+2
 	sta	<R1+2
 	clc
 	lda	<R1
@@ -20441,33 +20618,33 @@ L938:
 	sta	<R2+2
 	lda	#$fb09
 	sta	[<R2]
-	inc	<L903+ncc_1
+	inc	<L957+ncc_1
 ;
 ;		maxminPos+=2;
-	.line	3453
-	inc	<L903+maxminPos_1
-	inc	<L903+maxminPos_1
+	.line	3112
+	inc	<L957+maxminPos_1
+	inc	<L957+maxminPos_1
 ;	}
-	.line	3454
+	.line	3113
 ;
 ;	if((style & FXWS_CAPTION) == FXWS_CAPTION)
-L10391:
-	.line	3456
+L10399:
+	.line	3115
 ;	{
-	lda	<L902+style_0
+	lda	<L956+style_0
 	and	#<$4
 	sta	<R0
 	stz	<R0+2
 	lda	<R0
 	cmp	#<$4
-	bne	L939
+	bne	L993
 	lda	<R0+2
 	cmp	#^$4
-L939:
-	beq	L940
-	brl	L10392
-L940:
-	.line	3457
+L993:
+	beq	L994
+	brl	L10400
+L994:
+	.line	3116
 ;		/*
 ;		if(!k_gui_get_title_cache(NULL))
 ;		{
@@ -20481,10 +20658,10 @@ L940:
 ;		}
 ;		*/
 ;		k_user_SetRect(&rect,cx+borderWidth+metric.width,titleOffsetY,(strlen(title) + 1)*8,8);
-	.line	3470
+	.line	3129
 	pea	#<$8
-	pei	<L902+title_0+2
-	pei	<L902+title_0
+	pei	<L956+title_0+2
+	pei	<L956+title_0
 	jsl	~~strlen
 	sta	<R1
 	lda	<R1
@@ -20496,43 +20673,43 @@ L940:
 	lda	#$8
 	adc	<R0
 	pha
-	pei	<L903+titleOffsetY_1
+	pei	<L957+titleOffsetY_1
 	clc
-	lda	<L902+cx_0
-	adc	<L903+borderWidth_1
+	lda	<L956+cx_0
+	adc	<L957+borderWidth_1
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L903+metric_1
+	adc	<L957+metric_1
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L903+rect_1
+	adc	#<L957+rect_1
 	pha
 	jsl	~~k_user_SetRect
 ;
 ;		if(extraStyle && pWin->clientData[CLIENTDATA_TITLE])
-	.line	3472
+	.line	3131
 ;		{
-	lda	<L903+extraStyle_1
-	bne	L941
-	brl	L10393
-L941:
+	lda	<L957+extraStyle_1
+	bne	L995
+	brl	L10401
+L995:
 	ldy	#$1dd
-	lda	[<L902+pWin_0],Y
+	lda	[<L956+pWin_0],Y
 	ldy	#$1df
-	ora	[<L902+pWin_0],Y
-	bne	L942
-	brl	L10393
-L942:
-	.line	3473
+	ora	[<L956+pWin_0],Y
+	bne	L996
+	brl	L10401
+L996:
+	.line	3132
 ;			//k_debug_strings("k_vdraw_ui_window::CLIENTDATA_TITLE:","DRAW");
 ;			k_user_SetRect(&rect,cx+borderWidth+metric.width,titleOffsetY,(strlen(title) + 1)*8,8);
-	.line	3475
+	.line	3134
 	pea	#<$8
-	pei	<L902+title_0+2
-	pei	<L902+title_0
+	pei	<L956+title_0+2
+	pei	<L956+title_0
 	jsl	~~strlen
 	sta	<R1
 	lda	<R1
@@ -20544,55 +20721,55 @@ L942:
 	lda	#$8
 	adc	<R0
 	pha
-	pei	<L903+titleOffsetY_1
+	pei	<L957+titleOffsetY_1
 	clc
-	lda	<L902+cx_0
-	adc	<L903+borderWidth_1
+	lda	<L956+cx_0
+	adc	<L957+borderWidth_1
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L903+metric_1
+	adc	<L957+metric_1
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L903+rect_1
+	adc	#<L957+rect_1
 	pha
 	jsl	~~k_user_SetRect
 ;			k_gui_get_image_cache((UINT)((ULONG)pWin->clientData[CLIENTDATA_TITLE]),GUI_CACHE_BACK,&rect);
-	.line	3476
+	.line	3135
 	pea	#0
 	clc
 	tdc
-	adc	#<L903+rect_1
+	adc	#<L957+rect_1
 	pha
 	pea	#^$80000
 	pea	#<$80000
 	ldy	#$1dd
-	lda	[<L902+pWin_0],Y
+	lda	[<L956+pWin_0],Y
 	pha
 	jsl	~~k_gui_get_image_cache
 ;		}
-	.line	3477
+	.line	3136
 ;		else
-	brl	L10394
-L10393:
+	brl	L10402
+L10401:
 ;		{
-	.line	3479
+	.line	3138
 ;			k_debug_integer("k_vdraw_ui_window::CLIENTDATA_TITLE:",extraStyle);
-	.line	3480
-	pei	<L903+extraStyle_1
-	pea	#^L901+34
-	pea	#<L901+34
+	.line	3139
+	pei	<L957+extraStyle_1
+	pea	#^L955+34
+	pea	#<L955+34
 	jsl	~~k_debug_integer
 ;			k_vdma_fill_rect_ex(cx+borderWidth+metric.width,titleOffsetY,
-	.line	3481
+	.line	3140
 ;								(strlen(title) + 1)*8,8,15,BITMAP_BACK);
 	pea	#<$8
 	pea	#<$f
 	pea	#<$8
-	pei	<L902+title_0+2
-	pei	<L902+title_0
+	pei	<L956+title_0+2
+	pei	<L956+title_0
 	jsl	~~strlen
 	sta	<R1
 	lda	<R1
@@ -20605,27 +20782,27 @@ L10393:
 	adc	<R0
 	pha
 	ldy	#$0
-	lda	<L903+titleOffsetY_1
-	bpl	L943
+	lda	<L957+titleOffsetY_1
+	bpl	L997
 	dey
-L943:
+L997:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L902+cx_0
-	adc	<L903+borderWidth_1
+	lda	<L956+cx_0
+	adc	<L957+borderWidth_1
 	sta	<R1
 	clc
 	lda	<R1
-	adc	<L903+metric_1
+	adc	<L957+metric_1
 	sta	<R2
 	ldy	#$0
 	lda	<R2
-	bpl	L944
+	bpl	L998
 	dey
-L944:
+L998:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -20633,39 +20810,39 @@ L944:
 	jsl	~~k_vdma_fill_rect_ex
 ;
 ;			k_draw_text_point_ex(title,cx+(borderWidth + 3)+metric.width,titleOffsetY,k_getUIGadgetColor(),page);
-	.line	3484
-	pei	<L902+page_0
+	.line	3143
+	pei	<L956+page_0
 	jsl	~~k_getUIGadgetColor
 	pha
-	pei	<L903+titleOffsetY_1
+	pei	<L957+titleOffsetY_1
 	clc
-	lda	<L902+cx_0
-	adc	<L903+borderWidth_1
+	lda	<L956+cx_0
+	adc	<L957+borderWidth_1
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L903+metric_1
+	adc	<L957+metric_1
 	sta	<R1
 	clc
 	lda	#$3
 	adc	<R1
 	pha
-	pei	<L902+title_0+2
-	pei	<L902+title_0
+	pei	<L956+title_0+2
+	pei	<L956+title_0
 	jsl	~~k_draw_text_point_ex
 ;			if(extraStyle)
-	.line	3485
+	.line	3144
 ;			{
-	lda	<L903+extraStyle_1
-	bne	L945
-	brl	L10395
-L945:
-	.line	3486
+	lda	<L957+extraStyle_1
+	bne	L999
+	brl	L10403
+L999:
+	.line	3145
 ;				k_user_SetRect(&rect,cx+borderWidth+metric.width,titleOffsetY,(strlen(title) + 1)*8,8);
-	.line	3487
+	.line	3146
 	pea	#<$8
-	pei	<L902+title_0+2
-	pei	<L902+title_0
+	pei	<L956+title_0+2
+	pei	<L956+title_0
 	jsl	~~strlen
 	sta	<R1
 	lda	<R1
@@ -20677,27 +20854,27 @@ L945:
 	lda	#$8
 	adc	<R0
 	pha
-	pei	<L903+titleOffsetY_1
+	pei	<L957+titleOffsetY_1
 	clc
-	lda	<L902+cx_0
-	adc	<L903+borderWidth_1
+	lda	<L956+cx_0
+	adc	<L957+borderWidth_1
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L903+metric_1
+	adc	<L957+metric_1
 	pha
 	pea	#0
 	clc
 	tdc
-	adc	#<L903+rect_1
+	adc	#<L957+rect_1
 	pha
 	jsl	~~k_user_SetRect
 ;				pWin->clientData[CLIENTDATA_TITLE] = (LPVOID)((ULONG)k_gui_set_image_cache(GUI_CACHE_BACK,&rect));
-	.line	3488
+	.line	3147
 	pea	#0
 	clc
 	tdc
-	adc	#<L903+rect_1
+	adc	#<L957+rect_1
 	pha
 	pea	#^$80000
 	pea	#<$80000
@@ -20708,28 +20885,28 @@ L945:
 	stz	<R0+2
 	lda	<R0
 	ldy	#$1dd
-	sta	[<L902+pWin_0],Y
+	sta	[<L956+pWin_0],Y
 	lda	<R0+2
 	ldy	#$1df
-	sta	[<L902+pWin_0],Y
+	sta	[<L956+pWin_0],Y
 ;
 ;				k_debug_pointer("k_vdraw_ui_window::CLIENTDATA_TITLE:",pWin->clientData[CLIENTDATA_TITLE] );
-	.line	3490
+	.line	3149
 	ldy	#$1df
-	lda	[<L902+pWin_0],Y
+	lda	[<L956+pWin_0],Y
 	pha
 	ldy	#$1dd
-	lda	[<L902+pWin_0],Y
+	lda	[<L956+pWin_0],Y
 	pha
-	pea	#^L901+71
-	pea	#<L901+71
+	pea	#^L955+71
+	pea	#<L955+71
 	jsl	~~k_debug_pointer
 ;			}
-	.line	3491
+	.line	3150
 ;		}
-L10395:
-	.line	3492
-L10394:
+L10403:
+	.line	3151
+L10402:
 ;
 ;
 ;
@@ -20746,30 +20923,30 @@ L10394:
 ;		*/
 ;
 ;		k_set_rect(&(pWin->nonclientGadgets[ncc].area),
-	.line	3508
+	.line	3167
 ;				   pWin->win_x + gx,
 ;				   pWin->win_y,
 ;				   pWin->win_width - gx,
 ;				   borderTitle);
-	pei	<L903+borderTitle_1
+	pei	<L957+borderTitle_1
 	sec
 	ldy	#$10
-	lda	[<L902+pWin_0],Y
-	sbc	<L903+gx_1
+	lda	[<L956+pWin_0],Y
+	sbc	<L957+gx_1
 	pha
 	ldy	#$e
-	lda	[<L902+pWin_0],Y
+	lda	[<L956+pWin_0],Y
 	pha
 	clc
 	ldy	#$c
-	lda	[<L902+pWin_0],Y
-	adc	<L903+gx_1
+	lda	[<L956+pWin_0],Y
+	adc	<L957+gx_1
 	pha
 	ldy	#$0
-	lda	<L903+ncc_1
-	bpl	L946
+	lda	<L957+ncc_1
+	bpl	L1000
 	dey
-L946:
+L1000:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -20788,22 +20965,22 @@ L946:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L902+pWin_0
+	lda	<L956+pWin_0
 	adc	<R1
 	sta	<R0
-	lda	<L902+pWin_0+2
+	lda	<L956+pWin_0+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~k_set_rect
 ;		pWin->nonclientGadgets[ncc++].msgType = FX_DRAG_WINDOW;
-	.line	3513
+	.line	3172
 	ldy	#$0
-	lda	<L903+ncc_1
-	bpl	L947
+	lda	<L957+ncc_1
+	bpl	L1001
 	dey
-L947:
+L1001:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -20816,10 +20993,10 @@ L947:
 	stx	<R0+2
 	clc
 	lda	#$46
-	adc	<L902+pWin_0
+	adc	<L956+pWin_0
 	sta	<R1
 	lda	#$0
-	adc	<L902+pWin_0+2
+	adc	<L956+pWin_0+2
 	sta	<R1+2
 	clc
 	lda	<R1
@@ -20830,40 +21007,40 @@ L947:
 	sta	<R2+2
 	lda	#$fb10
 	sta	[<R2]
-	inc	<L903+ncc_1
+	inc	<L957+ncc_1
 ;
 ;	}
-	.line	3515
+	.line	3174
 ;	else
-	brl	L10396
-L10392:
+	brl	L10404
+L10400:
 ;	{
-	.line	3517
+	.line	3176
 ;		k_set_rect(&(pWin->nonclientGadgets[ncc].area),
-	.line	3518
+	.line	3177
 ;				   pWin->win_x + gx,
 ;				   pWin->win_y,
 ;				   pWin->win_width - gx,
 ;				   borderWidth);
-	pei	<L903+borderWidth_1
+	pei	<L957+borderWidth_1
 	sec
 	ldy	#$10
-	lda	[<L902+pWin_0],Y
-	sbc	<L903+gx_1
+	lda	[<L956+pWin_0],Y
+	sbc	<L957+gx_1
 	pha
 	ldy	#$e
-	lda	[<L902+pWin_0],Y
+	lda	[<L956+pWin_0],Y
 	pha
 	clc
 	ldy	#$c
-	lda	[<L902+pWin_0],Y
-	adc	<L903+gx_1
+	lda	[<L956+pWin_0],Y
+	adc	<L957+gx_1
 	pha
 	ldy	#$0
-	lda	<L903+ncc_1
-	bpl	L948
+	lda	<L957+ncc_1
+	bpl	L1002
 	dey
-L948:
+L1002:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -20882,22 +21059,22 @@ L948:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L902+pWin_0
+	lda	<L956+pWin_0
 	adc	<R1
 	sta	<R0
-	lda	<L902+pWin_0+2
+	lda	<L956+pWin_0+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~k_set_rect
 ;		pWin->nonclientGadgets[ncc++].msgType = FX_DRAG_WINDOW;
-	.line	3523
+	.line	3182
 	ldy	#$0
-	lda	<L903+ncc_1
-	bpl	L949
+	lda	<L957+ncc_1
+	bpl	L1003
 	dey
-L949:
+L1003:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -20910,10 +21087,10 @@ L949:
 	stx	<R0+2
 	clc
 	lda	#$46
-	adc	<L902+pWin_0
+	adc	<L956+pWin_0
 	sta	<R1
 	lda	#$0
-	adc	<L902+pWin_0+2
+	adc	<L956+pWin_0+2
 	sta	<R1+2
 	clc
 	lda	<R1
@@ -20924,107 +21101,107 @@ L949:
 	sta	<R2+2
 	lda	#$fb10
 	sta	[<R2]
-	inc	<L903+ncc_1
+	inc	<L957+ncc_1
 ;	}
-	.line	3524
-L10396:
+	.line	3183
+L10404:
 ;
 ;	//k_debug_integer("k_vdraw_ui_window::(clientOffsetY - height):",(clientOffsetY - pWin->clientRect.y));
 ;	//k_debug_integer("k_vdraw_ui_window::((clientOffsetY - height) + borderWidth):",((clientOffsetY - pWin->clientRect.y) + borderWidth));
 ;
 ;	pWin->clientRect.width  = (width - (2*borderWidth));
-	.line	3529
-	lda	<L903+borderWidth_1
+	.line	3188
+	lda	<L957+borderWidth_1
 	asl	A
 	sta	<R0
 	sec
-	lda	<L902+width_0
+	lda	<L956+width_0
 	sbc	<R0
 	ldy	#$32
-	sta	[<L902+pWin_0],Y
+	sta	[<L956+pWin_0],Y
 ;	pWin->clientRect.height = height - ((clientOffsetY - pWin->clientRect.y) + borderWidth);
-	.line	3530
+	.line	3189
 	sec
-	lda	<L903+clientOffsetY_1
+	lda	<L957+clientOffsetY_1
 	ldy	#$2c
-	sbc	[<L902+pWin_0],Y
+	sbc	[<L956+pWin_0],Y
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L903+borderWidth_1
+	adc	<L957+borderWidth_1
 	sta	<R1
 	sec
-	lda	<L902+height_0
+	lda	<L956+height_0
 	sbc	<R1
 	ldy	#$34
-	sta	[<L902+pWin_0],Y
+	sta	[<L956+pWin_0],Y
 ;
 ;	k_debug_integer("k_vdraw_ui_window::clientRect.width:", pWin->clientRect.width);
-	.line	3532
+	.line	3191
 	ldy	#$32
-	lda	[<L902+pWin_0],Y
+	lda	[<L956+pWin_0],Y
 	pha
-	pea	#^L901+108
-	pea	#<L901+108
+	pea	#^L955+108
+	pea	#<L955+108
 	jsl	~~k_debug_integer
 ;	k_debug_integer("k_vdraw_ui_window::clientRect.height:",pWin->clientRect.height);
-	.line	3533
+	.line	3192
 	ldy	#$34
-	lda	[<L902+pWin_0],Y
+	lda	[<L956+pWin_0],Y
 	pha
-	pea	#^L901+145
-	pea	#<L901+145
+	pea	#^L955+145
+	pea	#<L955+145
 	jsl	~~k_debug_integer
 ;
 ;
 ;	pWin->clientRect.x      = clientOffsetX;
-	.line	3536
-	lda	<L903+clientOffsetX_1
+	.line	3195
+	lda	<L957+clientOffsetX_1
 	ldy	#$2a
-	sta	[<L902+pWin_0],Y
+	sta	[<L956+pWin_0],Y
 ;	pWin->clientRect.y      = clientOffsetY;
-	.line	3537
-	lda	<L903+clientOffsetY_1
+	.line	3196
+	lda	<L957+clientOffsetY_1
 	ldy	#$2c
-	sta	[<L902+pWin_0],Y
+	sta	[<L956+pWin_0],Y
 ;
 ;	if(pWin->win_cxoffset == -1)
-	.line	3539
+	.line	3198
 ;	{
 	ldy	#$18
-	lda	[<L902+pWin_0],Y
+	lda	[<L956+pWin_0],Y
 	cmp	#<$ffffffff
-	beq	L950
-	brl	L10397
-L950:
-	.line	3540
+	beq	L1004
+	brl	L10405
+L1004:
+	.line	3199
 ;		pWin->win_cxoffset 	= pWin->clientRect.x - pWin->win_x;
-	.line	3541
+	.line	3200
 	sec
 	ldy	#$2a
-	lda	[<L902+pWin_0],Y
+	lda	[<L956+pWin_0],Y
 	ldy	#$c
-	sbc	[<L902+pWin_0],Y
+	sbc	[<L956+pWin_0],Y
 	ldy	#$18
-	sta	[<L902+pWin_0],Y
+	sta	[<L956+pWin_0],Y
 ;		pWin->win_cyoffset 	= pWin->clientRect.y - pWin->win_y;
-	.line	3542
+	.line	3201
 	sec
 	ldy	#$2c
-	lda	[<L902+pWin_0],Y
+	lda	[<L956+pWin_0],Y
 	ldy	#$e
-	sbc	[<L902+pWin_0],Y
+	sbc	[<L956+pWin_0],Y
 	ldy	#$1a
-	sta	[<L902+pWin_0],Y
+	sta	[<L956+pWin_0],Y
 ;		//k_debug_strings("k_vdraw_ui_window::pWin->title:",pWin->win_title);
 ;		//k_debug_integer("k_vdraw_ui_window::pWin->win_cxoffset:",pWin->win_cxoffset);
 ;		//k_debug_integer("k_vdraw_ui_window::pWin->win_cyoffset:",pWin->win_cyoffset);
 ;	}
-	.line	3546
+	.line	3205
 ;
 ;	k_set_rect(&(pWin->nonclientGadgets[ncc].area),
-L10397:
-	.line	3548
+L10405:
+	.line	3207
 ;			   pWin->win_x + pWin->win_width  - 4,
 ;			   pWin->win_y + pWin->win_height - 4,
 ;			   4,
@@ -21033,9 +21210,9 @@ L10397:
 	pea	#<$4
 	clc
 	ldy	#$e
-	lda	[<L902+pWin_0],Y
+	lda	[<L956+pWin_0],Y
 	ldy	#$12
-	adc	[<L902+pWin_0],Y
+	adc	[<L956+pWin_0],Y
 	sta	<R0
 	clc
 	lda	#$fffc
@@ -21043,19 +21220,19 @@ L10397:
 	pha
 	clc
 	ldy	#$c
-	lda	[<L902+pWin_0],Y
+	lda	[<L956+pWin_0],Y
 	ldy	#$10
-	adc	[<L902+pWin_0],Y
+	adc	[<L956+pWin_0],Y
 	sta	<R0
 	clc
 	lda	#$fffc
 	adc	<R0
 	pha
 	ldy	#$0
-	lda	<L903+ncc_1
-	bpl	L951
+	lda	<L957+ncc_1
+	bpl	L1005
 	dey
-L951:
+L1005:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -21074,22 +21251,22 @@ L951:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L902+pWin_0
+	lda	<L956+pWin_0
 	adc	<R1
 	sta	<R0
-	lda	<L902+pWin_0+2
+	lda	<L956+pWin_0+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	jsl	~~k_set_rect
 ;	pWin->nonclientGadgets[ncc++].msgType = FX_RESIZE_WINDOW;
-	.line	3553
+	.line	3212
 	ldy	#$0
-	lda	<L903+ncc_1
-	bpl	L952
+	lda	<L957+ncc_1
+	bpl	L1006
 	dey
-L952:
+L1006:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -21102,10 +21279,10 @@ L952:
 	stx	<R0+2
 	clc
 	lda	#$46
-	adc	<L902+pWin_0
+	adc	<L956+pWin_0
 	sta	<R1
 	lda	#$0
-	adc	<L902+pWin_0+2
+	adc	<L956+pWin_0+2
 	sta	<R1+2
 	clc
 	lda	<R1
@@ -21116,93 +21293,93 @@ L952:
 	sta	<R2+2
 	lda	#$fb0f
 	sta	[<R2]
-	inc	<L903+ncc_1
+	inc	<L957+ncc_1
 ;
 ;
 ;	k_draw_rect(pWin->win_x - 1,
-	.line	3556
+	.line	3215
 ;				pWin->win_y - 1,
 ;				(pWin->win_x) + pWin->win_width  ,
 ;				(pWin->win_y) + pWin->win_height ,
 ;				k_getUIGadgetColor(),
 ;				0,
 ;				page);
-	pei	<L902+page_0
+	pei	<L956+page_0
 	pea	#<$0
 	jsl	~~k_getUIGadgetColor
 	pha
 	clc
 	ldy	#$e
-	lda	[<L902+pWin_0],Y
+	lda	[<L956+pWin_0],Y
 	ldy	#$12
-	adc	[<L902+pWin_0],Y
+	adc	[<L956+pWin_0],Y
 	pha
 	clc
 	ldy	#$c
-	lda	[<L902+pWin_0],Y
+	lda	[<L956+pWin_0],Y
 	ldy	#$10
-	adc	[<L902+pWin_0],Y
+	adc	[<L956+pWin_0],Y
 	pha
 	clc
 	lda	#$ffff
 	ldy	#$e
-	adc	[<L902+pWin_0],Y
+	adc	[<L956+pWin_0],Y
 	pha
 	clc
 	lda	#$ffff
 	ldy	#$c
-	adc	[<L902+pWin_0],Y
+	adc	[<L956+pWin_0],Y
 	pha
 	jsl	~~k_draw_rect
 ;
 ;	k_draw_rect(pWin->clientRect.x - 1,
-	.line	3564
+	.line	3223
 ;				pWin->clientRect.y - 1,
 ;				pWin->clientRect.x + pWin->clientRect.width ,
 ;				pWin->clientRect.y + pWin->clientRect.height,
 ;				k_getUIGadgetColor(),
 ;				0,
 ;				page);
-	pei	<L902+page_0
+	pei	<L956+page_0
 	pea	#<$0
 	jsl	~~k_getUIGadgetColor
 	pha
 	clc
 	ldy	#$2c
-	lda	[<L902+pWin_0],Y
+	lda	[<L956+pWin_0],Y
 	ldy	#$34
-	adc	[<L902+pWin_0],Y
+	adc	[<L956+pWin_0],Y
 	pha
 	clc
 	ldy	#$2a
-	lda	[<L902+pWin_0],Y
+	lda	[<L956+pWin_0],Y
 	ldy	#$32
-	adc	[<L902+pWin_0],Y
+	adc	[<L956+pWin_0],Y
 	pha
 	clc
 	lda	#$ffff
 	ldy	#$2c
-	adc	[<L902+pWin_0],Y
+	adc	[<L956+pWin_0],Y
 	pha
 	clc
 	lda	#$ffff
 	ldy	#$2a
-	adc	[<L902+pWin_0],Y
+	adc	[<L956+pWin_0],Y
 	pha
 	jsl	~~k_draw_rect
 ;	//k_debug_rect("k_vdraw_ui_window:client[resized]:",&pWin->clientRect);
 ;
 ;	k_set_rect(&(pWin->nonclientGadgets[ncc].area),-1,-1,-1,-1);
-	.line	3573
+	.line	3232
 	pea	#<$ffffffff
 	pea	#<$ffffffff
 	pea	#<$ffffffff
 	pea	#<$ffffffff
 	ldy	#$0
-	lda	<L903+ncc_1
-	bpl	L953
+	lda	<L957+ncc_1
+	bpl	L1007
 	dey
-L953:
+L1007:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$11
@@ -21221,10 +21398,10 @@ L953:
 	adc	<R0+2
 	sta	<R1+2
 	clc
-	lda	<L902+pWin_0
+	lda	<L956+pWin_0
 	adc	<R1
 	sta	<R0
-	lda	<L902+pWin_0+2
+	lda	<L956+pWin_0+2
 	adc	<R1+2
 	sta	<R0+2
 	pei	<R0+2
@@ -21234,17 +21411,17 @@ L953:
 ;
 ;	//k_debug_strings("k_vdraw_ui_window:","exit");
 ;}
-	.line	3577
-	brl	L905
-	.endblock	3577
-L902	equ	72
-L903	equ	13
+	.line	3236
+	brl	L959
+	.endblock	3236
+L956	equ	72
+L957	equ	13
 	ends
 	efunc
-	.endfunc	3577,13,72
-	.line	3577
+	.endfunc	3236,13,72
+	.line	3236
 	data
-L901:
+L955:
 	db	$6B,$5F,$76,$64,$72,$61,$77,$5F,$75,$69,$5F,$77,$69,$6E,$64
 	db	$6F,$77,$3A,$3A,$4E,$4F,$54,$20,$52,$45,$4E,$44,$45,$52,$49
 	db	$4E,$47,$3A,$00,$6B,$5F,$76,$64,$72,$61,$77,$5F,$75,$69,$5F
@@ -21262,25 +21439,25 @@ L901:
 ;
 ;PMENU k_draw_menu(HMENU hMenu,int color, int bgcolor)
 ;{
-	.line	3579
-	.line	3580
+	.line	3238
+	.line	3239
 	GFX
 	xdef	~~k_draw_menu
 	func
-	.function	3580
+	.function	3239
 ~~k_draw_menu:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L955
+	sbc	#L1009
 	tcs
 	phd
 	tcd
 hMenu_0	set	4
 color_0	set	8
 bgcolor_0	set	10
-	.block	3580
+	.block	3239
 ;	FONTMETRIC metric;
 ;
 ;	int i = 0;
@@ -21322,51 +21499,51 @@ endX_1	set	20
 	.sym	hMenu,4,129,6,32
 	.sym	color,8,5,6,16
 	.sym	bgcolor,10,5,6,16
-	stz	<L956+i_1
+	stz	<L1010+i_1
 	lda	#$a
-	sta	<L956+borderTitle_1
+	sta	<L1010+borderTitle_1
 	lda	#$3
-	sta	<L956+borderWidth_1
+	sta	<L1010+borderWidth_1
 	clc
 	lda	#$2
-	adc	[<L955+hMenu_0]
-	sta	<L956+titleOffsetX_1
+	adc	[<L1009+hMenu_0]
+	sta	<L1010+titleOffsetX_1
 	clc
 	lda	#$2
 	ldy	#$2
-	adc	[<L955+hMenu_0],Y
-	sta	<L956+titleOffsetY_1
-	stz	<L956+titleScaler_1
+	adc	[<L1009+hMenu_0],Y
+	sta	<L1010+titleOffsetY_1
+	stz	<L1010+titleScaler_1
 	clc
-	lda	[<L955+hMenu_0]
-	adc	<L956+borderWidth_1
+	lda	[<L1009+hMenu_0]
+	adc	<L1010+borderWidth_1
 	sta	<R0
 	clc
 	lda	#$2
 	adc	<R0
-	sta	<L956+clientOffsetX_1
+	sta	<L1010+clientOffsetX_1
 	clc
 	ldy	#$2
-	lda	[<L955+hMenu_0],Y
-	adc	<L956+borderTitle_1
+	lda	[<L1009+hMenu_0],Y
+	adc	<L1010+borderTitle_1
 	sta	<R0
 	lda	<R0
 	ina
-	sta	<L956+clientOffsetY_1
+	sta	<L1010+clientOffsetY_1
 	clc
 	ldy	#$4
-	lda	[<L955+hMenu_0],Y
-	adc	[<L955+hMenu_0]
+	lda	[<L1009+hMenu_0],Y
+	adc	[<L1009+hMenu_0]
 	sta	<R0
 	sec
 	lda	<R0
-	sbc	<L956+borderWidth_1
-	sta	<L956+endX_1
-	.line	3598
+	sbc	<L1010+borderWidth_1
+	sta	<L1010+endX_1
+	.line	3257
 	pea	#0
 	clc
 	tdc
-	adc	#<L956+metric_1
+	adc	#<L1010+metric_1
 	pha
 	jsl	~~k_get_font_metrics
 ;
@@ -21400,33 +21577,33 @@ endX_1	set	20
 ;
 ;	//k_vdma_fill_rect(cx,cy,width,height,bgcolor); // +1 on width and height for VDMA
 ;	k_vdma_fill_rect(((PMENU)hMenu)->cx,((PMENU)hMenu)->cy,((PMENU)hMenu)->width,((PMENU)hMenu)->height,color);
-	.line	3629
-	pei	<L955+color_0
+	.line	3288
+	pei	<L1009+color_0
 	ldy	#$6
-	lda	[<L955+hMenu_0],Y
+	lda	[<L1009+hMenu_0],Y
 	pha
 	ldy	#$4
-	lda	[<L955+hMenu_0],Y
+	lda	[<L1009+hMenu_0],Y
 	pha
 	ldy	#$0
 	phy
 	ldy	#$2
-	lda	[<L955+hMenu_0],Y
+	lda	[<L1009+hMenu_0],Y
 	ply
 	rol	A
 	ror	A
-	bpl	L958
+	bpl	L1012
 	dey
-L958:
+L1012:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	[<L955+hMenu_0]
-	bpl	L959
+	lda	[<L1009+hMenu_0]
+	bpl	L1013
 	dey
-L959:
+L1013:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -21446,10 +21623,10 @@ L959:
 ;	}*/
 ;
 ;	k_put_wingadget_point(WINICON_TITLE_BACK,endX - (metric.width*2 + 2),titleOffsetY,14);
-	.line	3643
+	.line	3302
 	pea	#<$e
-	pei	<L956+titleOffsetY_1
-	lda	<L956+metric_1
+	pei	<L1010+titleOffsetY_1
+	lda	<L1010+metric_1
 	asl	A
 	sta	<R0
 	clc
@@ -21457,18 +21634,18 @@ L959:
 	adc	<R0
 	sta	<R1
 	sec
-	lda	<L956+endX_1
+	lda	<L1010+endX_1
 	sbc	<R1
 	pha
 	pea	#<$4
 	jsl	~~k_put_wingadget_point
 ;	k_put_wingadget_point(WINICON_TITLE_FRONT,endX - (metric.width),titleOffsetY,14);
-	.line	3644
+	.line	3303
 	pea	#<$e
-	pei	<L956+titleOffsetY_1
+	pei	<L1010+titleOffsetY_1
 	sec
-	lda	<L956+endX_1
-	sbc	<L956+metric_1
+	lda	<L1010+endX_1
+	sbc	<L1010+metric_1
 	pha
 	pea	#<$3
 	jsl	~~k_put_wingadget_point
@@ -21477,70 +21654,70 @@ L959:
 ;	//k_render_wingadget(WINICON_TITLE_FRONT,endX - (metric.width),titleOffsetY,14,k_gadget_title_front_callback);
 ;
 ;	i = k_draw_text_point(((PMENU)hMenu)->pCaption,((PMENU)hMenu)->cx+2+metric.width,titleOffsetY,bgcolor);
-	.line	3649
-	pei	<L955+bgcolor_0
-	pei	<L956+titleOffsetY_1
+	.line	3308
+	pei	<L1009+bgcolor_0
+	pei	<L1010+titleOffsetY_1
 	clc
-	lda	[<L955+hMenu_0]
-	adc	<L956+metric_1
+	lda	[<L1009+hMenu_0]
+	adc	<L1010+metric_1
 	sta	<R0
 	clc
 	lda	#$2
 	adc	<R0
 	pha
 	ldy	#$15
-	lda	[<L955+hMenu_0],Y
+	lda	[<L1009+hMenu_0],Y
 	pha
 	ldy	#$13
-	lda	[<L955+hMenu_0],Y
+	lda	[<L1009+hMenu_0],Y
 	pha
 	jsl	~~k_draw_text_point
-	sta	<L956+i_1
+	sta	<L1010+i_1
 ;	//k_render_text(title,cx+2+metric.width,titleOffsetY,bgcolor,k_text_callback);
 ;
 ;
 ;	return NULL;
-	.line	3653
+	.line	3312
 	lda	#$0
 	tax
 	lda	#$0
-L960:
+L1014:
 	tay
-	lda	<L955+2
-	sta	<L955+2+8
-	lda	<L955+1
-	sta	<L955+1+8
+	lda	<L1009+2
+	sta	<L1009+2+8
+	lda	<L1009+1
+	sta	<L1009+1+8
 	pld
 	tsc
 	clc
-	adc	#L955+8
+	adc	#L1009+8
 	tcs
 	tya
 	rtl
 ;}
-	.line	3654
-	.endblock	3654
-L955	equ	30
-L956	equ	9
+	.line	3313
+	.endblock	3313
+L1009	equ	30
+L1010	equ	9
 	ends
 	efunc
-	.endfunc	3654,9,30
-	.line	3654
+	.endfunc	3313,9,30
+	.line	3313
 ;
 ;PMENU k_vdraw_ui_menu(int cx,int cy,int width,int height,LPCSTR title,int color, int bgcolor)
 ;{
-	.line	3656
-	.line	3657
+	.line	3315
+	.line	3316
 	GFX
 	xdef	~~k_vdraw_ui_menu
 	func
-	.function	3657
+	.function	3316
 ~~k_vdraw_ui_menu:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L961
+	sbc	#L1015
 	tcs
 	phd
 	tcd
@@ -21551,7 +21728,7 @@ height_0	set	10
 title_0	set	12
 color_0	set	16
 bgcolor_0	set	18
-	.block	3657
+	.block	3316
 ;	return k_vdraw_ui_menu_ex(cx,cy,width,height,title,color,bgcolor,BITMAP_BACK);
 	.sym	cx,4,5,6,16
 	.sym	cy,6,5,6,16
@@ -21560,58 +21737,58 @@ bgcolor_0	set	18
 	.sym	title,12,142,6,32
 	.sym	color,16,5,6,16
 	.sym	bgcolor,18,5,6,16
-	.line	3658
+	.line	3317
 	pea	#<$8
-	pei	<L961+bgcolor_0
-	pei	<L961+color_0
-	pei	<L961+title_0+2
-	pei	<L961+title_0
-	pei	<L961+height_0
-	pei	<L961+width_0
-	pei	<L961+cy_0
-	pei	<L961+cx_0
+	pei	<L1015+bgcolor_0
+	pei	<L1015+color_0
+	pei	<L1015+title_0+2
+	pei	<L1015+title_0
+	pei	<L1015+height_0
+	pei	<L1015+width_0
+	pei	<L1015+cy_0
+	pei	<L1015+cx_0
 	jsl	~~k_vdraw_ui_menu_ex
 	sta	<R0
 	stx	<R0+2
 	ldx	<R0+2
 	lda	<R0
-L964:
+L1018:
 	tay
-	lda	<L961+2
-	sta	<L961+2+16
-	lda	<L961+1
-	sta	<L961+1+16
+	lda	<L1015+2
+	sta	<L1015+2+16
+	lda	<L1015+1
+	sta	<L1015+1+16
 	pld
 	tsc
 	clc
-	adc	#L961+16
+	adc	#L1015+16
 	tcs
 	tya
 	rtl
 ;}
-	.line	3659
-	.endblock	3659
-L961	equ	4
-L962	equ	5
+	.line	3318
+	.endblock	3318
+L1015	equ	4
+L1016	equ	5
 	ends
 	efunc
-	.endfunc	3659,5,4
-	.line	3659
+	.endfunc	3318,5,4
+	.line	3318
 ;
 ;PMENU k_vdraw_ui_menu_ex(int cx,int cy,int width,int height,LPCSTR title,int color, int bgcolor,UINT page)
 ;{
-	.line	3661
-	.line	3662
+	.line	3320
+	.line	3321
 	GFX
 	xdef	~~k_vdraw_ui_menu_ex
 	func
-	.function	3662
+	.function	3321
 ~~k_vdraw_ui_menu_ex:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L965
+	sbc	#L1019
 	tcs
 	phd
 	tcd
@@ -21623,7 +21800,7 @@ title_0	set	12
 color_0	set	16
 bgcolor_0	set	18
 page_0	set	20
-	.block	3662
+	.block	3321
 ;	FONTMETRIC metric;
 ;	
 ;	int i = 0;
@@ -21670,48 +21847,48 @@ endX_1	set	20
 	.sym	color,16,5,6,16
 	.sym	bgcolor,18,5,6,16
 	.sym	page,20,16,6,16
-	stz	<L966+i_1
+	stz	<L1020+i_1
 	lda	#$a
-	sta	<L966+borderTitle_1
+	sta	<L1020+borderTitle_1
 	lda	#$3
-	sta	<L966+borderWidth_1
+	sta	<L1020+borderWidth_1
 	clc
 	lda	#$2
-	adc	<L965+cx_0
-	sta	<L966+titleOffsetX_1
+	adc	<L1019+cx_0
+	sta	<L1020+titleOffsetX_1
 	clc
 	lda	#$2
-	adc	<L965+cy_0
-	sta	<L966+titleOffsetY_1
-	stz	<L966+titleScaler_1
+	adc	<L1019+cy_0
+	sta	<L1020+titleOffsetY_1
+	stz	<L1020+titleScaler_1
 	clc
-	lda	<L965+cx_0
-	adc	<L966+borderWidth_1
+	lda	<L1019+cx_0
+	adc	<L1020+borderWidth_1
 	sta	<R0
 	clc
 	lda	#$2
 	adc	<R0
-	sta	<L966+clientOffsetX_1
+	sta	<L1020+clientOffsetX_1
 	clc
-	lda	<L965+cy_0
-	adc	<L966+borderTitle_1
+	lda	<L1019+cy_0
+	adc	<L1020+borderTitle_1
 	sta	<R0
 	lda	<R0
 	ina
-	sta	<L966+clientOffsetY_1
+	sta	<L1020+clientOffsetY_1
 	clc
-	lda	<L965+width_0
-	adc	<L965+cx_0
+	lda	<L1019+width_0
+	adc	<L1019+cx_0
 	sta	<R0
 	sec
 	lda	<R0
-	sbc	<L966+borderWidth_1
-	sta	<L966+endX_1
-	.line	3680
+	sbc	<L1020+borderWidth_1
+	sta	<L1020+endX_1
+	.line	3339
 	pea	#0
 	clc
 	tdc
-	adc	#<L966+metric_1
+	adc	#<L1020+metric_1
 	pha
 	jsl	~~k_get_font_metrics
 ;
@@ -21749,50 +21926,50 @@ endX_1	set	20
 ;
 ;	//k_vdma_fill_rect(cx,cy,width,height,bgcolor); // +1 on width and height for VDMA
 ;	k_vdma_fill_rect_ex(cx,cy,width ,height,0,BITMAP_FRONT);//k_getUIMenuColor());
-	.line	3715
+	.line	3374
 	pea	#<$0
 	pea	#<$0
-	pei	<L965+height_0
-	pei	<L965+width_0
+	pei	<L1019+height_0
+	pei	<L1019+width_0
 	ldy	#$0
-	lda	<L965+cy_0
-	bpl	L968
+	lda	<L1019+cy_0
+	bpl	L1022
 	dey
-L968:
+L1022:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	<L965+cx_0
-	bpl	L969
+	lda	<L1019+cx_0
+	bpl	L1023
 	dey
-L969:
+L1023:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_vdma_fill_rect_ex
 ;	k_vdma_fill_rect_ex(cx,cy,width ,height,bgcolor,BITMAP_BACK);
-	.line	3716
+	.line	3375
 	pea	#<$8
-	pei	<L965+bgcolor_0
-	pei	<L965+height_0
-	pei	<L965+width_0
+	pei	<L1019+bgcolor_0
+	pei	<L1019+height_0
+	pei	<L1019+width_0
 	ldy	#$0
-	lda	<L965+cy_0
-	bpl	L970
+	lda	<L1019+cy_0
+	bpl	L1024
 	dey
-L970:
+L1024:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	<L965+cx_0
-	bpl	L971
+	lda	<L1019+cx_0
+	bpl	L1025
 	dey
-L971:
+L1025:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -21811,10 +21988,10 @@ L971:
 ;	}*/
 ;
 ;	k_put_wingadget_point(WINICON_TITLE_BACK,endX - (metric.width*2 + 2),titleOffsetY,color);//k_getUIGadgetColor());
-	.line	3729
-	pei	<L965+color_0
-	pei	<L966+titleOffsetY_1
-	lda	<L966+metric_1
+	.line	3388
+	pei	<L1019+color_0
+	pei	<L1020+titleOffsetY_1
+	lda	<L1020+metric_1
 	asl	A
 	sta	<R0
 	clc
@@ -21822,18 +21999,18 @@ L971:
 	adc	<R0
 	sta	<R1
 	sec
-	lda	<L966+endX_1
+	lda	<L1020+endX_1
 	sbc	<R1
 	pha
 	pea	#<$4
 	jsl	~~k_put_wingadget_point
 ;	k_put_wingadget_point(WINICON_TITLE_FRONT,endX - (metric.width),titleOffsetY,color);//k_getUIGadgetColor());
-	.line	3730
-	pei	<L965+color_0
-	pei	<L966+titleOffsetY_1
+	.line	3389
+	pei	<L1019+color_0
+	pei	<L1020+titleOffsetY_1
 	sec
-	lda	<L966+endX_1
-	sbc	<L966+metric_1
+	lda	<L1020+endX_1
+	sbc	<L1020+metric_1
 	pha
 	pea	#<$3
 	jsl	~~k_put_wingadget_point
@@ -21842,75 +22019,75 @@ L971:
 ;	//k_render_wingadget(WINICON_TITLE_FRONT,endX - (metric.width),titleOffsetY,14,k_gadget_title_front_callback);
 ;
 ;	if(title)
-	.line	3735
+	.line	3394
 ;		i = k_draw_text_point(title,cx+2+metric.width,titleOffsetY,color);//k_getUIGadgetColor());
-	lda	<L965+title_0
-	ora	<L965+title_0+2
-	bne	L972
-	brl	L10398
-L972:
-	.line	3736
-	pei	<L965+color_0
-	pei	<L966+titleOffsetY_1
+	lda	<L1019+title_0
+	ora	<L1019+title_0+2
+	bne	L1026
+	brl	L10406
+L1026:
+	.line	3395
+	pei	<L1019+color_0
+	pei	<L1020+titleOffsetY_1
 	clc
-	lda	<L965+cx_0
-	adc	<L966+metric_1
+	lda	<L1019+cx_0
+	adc	<L1020+metric_1
 	sta	<R0
 	clc
 	lda	#$2
 	adc	<R0
 	pha
-	pei	<L965+title_0+2
-	pei	<L965+title_0
+	pei	<L1019+title_0+2
+	pei	<L1019+title_0
 	jsl	~~k_draw_text_point
-	sta	<L966+i_1
+	sta	<L1020+i_1
 ;	//k_render_text(title,cx+2+metric.width,titleOffsetY,bgcolor,k_text_callback);
 ;
 ;	
 ;	return NULL;
-L10398:
-	.line	3740
+L10406:
+	.line	3399
 	lda	#$0
 	tax
 	lda	#$0
-L973:
+L1027:
 	tay
-	lda	<L965+2
-	sta	<L965+2+18
-	lda	<L965+1
-	sta	<L965+1+18
+	lda	<L1019+2
+	sta	<L1019+2+18
+	lda	<L1019+1
+	sta	<L1019+1+18
 	pld
 	tsc
 	clc
-	adc	#L965+18
+	adc	#L1019+18
 	tcs
 	tya
 	rtl
 ;}
-	.line	3741
-	.endblock	3741
-L965	equ	30
-L966	equ	9
+	.line	3400
+	.endblock	3400
+L1019	equ	30
+L1020	equ	9
 	ends
 	efunc
-	.endfunc	3741,9,30
-	.line	3741
+	.endfunc	3400,9,30
+	.line	3400
 ;
 ;
 ;PMENU k_vdraw_ui_menu_with_rect(int cx,int cy,int width,int height,LPCSTR title,int color, int bgcolor,LPVOID *prects)
 ;{
-	.line	3744
-	.line	3745
+	.line	3403
+	.line	3404
 	GFX
 	xdef	~~k_vdraw_ui_menu_with_rect
 	func
-	.function	3745
+	.function	3404
 ~~k_vdraw_ui_menu_with_rect:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L974
+	sbc	#L1028
 	tcs
 	phd
 	tcd
@@ -21922,7 +22099,7 @@ title_0	set	12
 color_0	set	16
 bgcolor_0	set	18
 prects_0	set	20
-	.block	3745
+	.block	3404
 ;	FONTMETRIC metric;
 ;
 ;	int i = 0;
@@ -21969,48 +22146,48 @@ endX_1	set	20
 	.sym	color,16,5,6,16
 	.sym	bgcolor,18,5,6,16
 	.sym	prects,20,1153,6,32
-	stz	<L975+i_1
+	stz	<L1029+i_1
 	lda	#$a
-	sta	<L975+borderTitle_1
+	sta	<L1029+borderTitle_1
 	lda	#$3
-	sta	<L975+borderWidth_1
+	sta	<L1029+borderWidth_1
 	clc
 	lda	#$2
-	adc	<L974+cx_0
-	sta	<L975+titleOffsetX_1
+	adc	<L1028+cx_0
+	sta	<L1029+titleOffsetX_1
 	clc
 	lda	#$2
-	adc	<L974+cy_0
-	sta	<L975+titleOffsetY_1
-	stz	<L975+titleScaler_1
+	adc	<L1028+cy_0
+	sta	<L1029+titleOffsetY_1
+	stz	<L1029+titleScaler_1
 	clc
-	lda	<L974+cx_0
-	adc	<L975+borderWidth_1
+	lda	<L1028+cx_0
+	adc	<L1029+borderWidth_1
 	sta	<R0
 	clc
 	lda	#$2
 	adc	<R0
-	sta	<L975+clientOffsetX_1
+	sta	<L1029+clientOffsetX_1
 	clc
-	lda	<L974+cy_0
-	adc	<L975+borderTitle_1
+	lda	<L1028+cy_0
+	adc	<L1029+borderTitle_1
 	sta	<R0
 	lda	<R0
 	ina
-	sta	<L975+clientOffsetY_1
+	sta	<L1029+clientOffsetY_1
 	clc
-	lda	<L974+width_0
-	adc	<L974+cx_0
+	lda	<L1028+width_0
+	adc	<L1028+cx_0
 	sta	<R0
 	sec
 	lda	<R0
-	sbc	<L975+borderWidth_1
-	sta	<L975+endX_1
-	.line	3763
+	sbc	<L1029+borderWidth_1
+	sta	<L1029+endX_1
+	.line	3422
 	pea	#0
 	clc
 	tdc
-	adc	#<L975+metric_1
+	adc	#<L1029+metric_1
 	pha
 	jsl	~~k_get_font_metrics
 ;
@@ -22044,24 +22221,24 @@ endX_1	set	20
 ;
 ;	//k_vdma_fill_rect(cx,cy,width,height,bgcolor); // +1 on width and height for VDMA
 ;	k_vdma_fill_rect(cx,cy,width,height,color);
-	.line	3794
-	pei	<L974+color_0
-	pei	<L974+height_0
-	pei	<L974+width_0
+	.line	3453
+	pei	<L1028+color_0
+	pei	<L1028+height_0
+	pei	<L1028+width_0
 	ldy	#$0
-	lda	<L974+cy_0
-	bpl	L977
+	lda	<L1028+cy_0
+	bpl	L1031
 	dey
-L977:
+L1031:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	<L974+cx_0
-	bpl	L978
+	lda	<L1028+cx_0
+	bpl	L1032
 	dey
-L978:
+L1032:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -22081,10 +22258,10 @@ L978:
 ;	}*/
 ;
 ;	k_put_wingadget_point(WINICON_TITLE_BACK,endX - (metric.width*2 + 2),titleOffsetY,14);
-	.line	3808
+	.line	3467
 	pea	#<$e
-	pei	<L975+titleOffsetY_1
-	lda	<L975+metric_1
+	pei	<L1029+titleOffsetY_1
+	lda	<L1029+metric_1
 	asl	A
 	sta	<R0
 	clc
@@ -22092,18 +22269,18 @@ L978:
 	adc	<R0
 	sta	<R1
 	sec
-	lda	<L975+endX_1
+	lda	<L1029+endX_1
 	sbc	<R1
 	pha
 	pea	#<$4
 	jsl	~~k_put_wingadget_point
 ;	k_put_wingadget_point(WINICON_TITLE_FRONT,endX - (metric.width),titleOffsetY,14);
-	.line	3809
+	.line	3468
 	pea	#<$e
-	pei	<L975+titleOffsetY_1
+	pei	<L1029+titleOffsetY_1
 	sec
-	lda	<L975+endX_1
-	sbc	<L975+metric_1
+	lda	<L1029+endX_1
+	sbc	<L1029+metric_1
 	pha
 	pea	#<$3
 	jsl	~~k_put_wingadget_point
@@ -22116,71 +22293,71 @@ L978:
 ;
 ;
 ;	return NULL;
-	.line	3818
+	.line	3477
 	lda	#$0
 	tax
 	lda	#$0
-L979:
+L1033:
 	tay
-	lda	<L974+2
-	sta	<L974+2+20
-	lda	<L974+1
-	sta	<L974+1+20
+	lda	<L1028+2
+	sta	<L1028+2+20
+	lda	<L1028+1
+	sta	<L1028+1+20
 	pld
 	tsc
 	clc
-	adc	#L974+20
+	adc	#L1028+20
 	tcs
 	tya
 	rtl
 ;}
-	.line	3819
-	.endblock	3819
-L974	equ	30
-L975	equ	9
+	.line	3478
+	.endblock	3478
+L1028	equ	30
+L1029	equ	9
 	ends
 	efunc
-	.endfunc	3819,9,30
-	.line	3819
+	.endfunc	3478,9,30
+	.line	3478
 ;
 ;
 ;
 ;void k_gadget_title_front_callback(PWINDOW gadgetWindow)
 ;{
-	.line	3823
-	.line	3824
+	.line	3482
+	.line	3483
 	GFX
 	xdef	~~k_gadget_title_front_callback
 	func
-	.function	3824
+	.function	3483
 ~~k_gadget_title_front_callback:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L980
+	sbc	#L1034
 	tcs
 	phd
 	tcd
 gadgetWindow_0	set	4
-	.block	3824
+	.block	3483
 ;	k_debug_message("k_gadget_title_front_callback:clicked:",gadgetWindow->win_class);
 	.sym	gadgetWindow,4,138,6,32,33
-	.line	3825
+	.line	3484
 	clc
 	lda	#$16e
-	adc	<L980+gadgetWindow_0
+	adc	<L1034+gadgetWindow_0
 	sta	<R0
 	lda	#$0
-	adc	<L980+gadgetWindow_0+2
+	adc	<L1034+gadgetWindow_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pea	#^L954
-	pea	#<L954
+	pea	#^L1008
+	pea	#<L1008
 	jsl	~~k_debug_message
 ;	k_send_message(NULL,FX_WINDOW_TOFRONT,NULL,0);
-	.line	3826
+	.line	3485
 	pea	#<$0
 	pea	#^$0
 	pea	#<$0
@@ -22189,29 +22366,29 @@ gadgetWindow_0	set	4
 	pea	#<$0
 	jsl	~~k_send_message
 ;	return;
-	.line	3827
-L983:
-	lda	<L980+2
-	sta	<L980+2+4
-	lda	<L980+1
-	sta	<L980+1+4
+	.line	3486
+L1037:
+	lda	<L1034+2
+	sta	<L1034+2+4
+	lda	<L1034+1
+	sta	<L1034+1+4
 	pld
 	tsc
 	clc
-	adc	#L980+4
+	adc	#L1034+4
 	tcs
 	rtl
 ;}
-	.line	3828
-	.endblock	3828
-L980	equ	4
-L981	equ	5
+	.line	3487
+	.endblock	3487
+L1034	equ	4
+L1035	equ	5
 	ends
 	efunc
-	.endfunc	3828,5,4
-	.line	3828
+	.endfunc	3487,5,4
+	.line	3487
 	data
-L954:
+L1008:
 	db	$6B,$5F,$67,$61,$64,$67,$65,$74,$5F,$74,$69,$74,$6C,$65,$5F
 	db	$66,$72,$6F,$6E,$74,$5F,$63,$61,$6C,$6C,$62,$61,$63,$6B,$3A
 	db	$63,$6C,$69,$63,$6B,$65,$64,$3A,$00
@@ -22219,40 +22396,40 @@ L954:
 ;
 ;void k_gadget_title_back_callback(PWINDOW gadgetWindow)
 ;{
-	.line	3830
-	.line	3831
+	.line	3489
+	.line	3490
 	GFX
 	xdef	~~k_gadget_title_back_callback
 	func
-	.function	3831
+	.function	3490
 ~~k_gadget_title_back_callback:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L985
+	sbc	#L1039
 	tcs
 	phd
 	tcd
 gadgetWindow_0	set	4
-	.block	3831
+	.block	3490
 ;	k_debug_message("k_gadget_title_back_callback:clicked:",gadgetWindow->win_class);
 	.sym	gadgetWindow,4,138,6,32,33
-	.line	3832
+	.line	3491
 	clc
 	lda	#$16e
-	adc	<L985+gadgetWindow_0
+	adc	<L1039+gadgetWindow_0
 	sta	<R0
 	lda	#$0
-	adc	<L985+gadgetWindow_0+2
+	adc	<L1039+gadgetWindow_0+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pea	#^L984
-	pea	#<L984
+	pea	#^L1038
+	pea	#<L1038
 	jsl	~~k_debug_message
 ;	k_send_message(NULL,FX_WINDOW_TOBACK,NULL,0);
-	.line	3833
+	.line	3492
 	pea	#<$0
 	pea	#^$0
 	pea	#<$0
@@ -22261,29 +22438,29 @@ gadgetWindow_0	set	4
 	pea	#<$0
 	jsl	~~k_send_message
 ;	return;
-	.line	3834
-L988:
-	lda	<L985+2
-	sta	<L985+2+4
-	lda	<L985+1
-	sta	<L985+1+4
+	.line	3493
+L1042:
+	lda	<L1039+2
+	sta	<L1039+2+4
+	lda	<L1039+1
+	sta	<L1039+1+4
 	pld
 	tsc
 	clc
-	adc	#L985+4
+	adc	#L1039+4
 	tcs
 	rtl
 ;}
-	.line	3835
-	.endblock	3835
-L985	equ	4
-L986	equ	5
+	.line	3494
+	.endblock	3494
+L1039	equ	4
+L1040	equ	5
 	ends
 	efunc
-	.endfunc	3835,5,4
-	.line	3835
+	.endfunc	3494,5,4
+	.line	3494
 	data
-L984:
+L1038:
 	db	$6B,$5F,$67,$61,$64,$67,$65,$74,$5F,$74,$69,$74,$6C,$65,$5F
 	db	$62,$61,$63,$6B,$5F,$63,$61,$6C,$6C,$62,$61,$63,$6B,$3A,$63
 	db	$6C,$69,$63,$6B,$65,$64,$3A,$00
@@ -22293,23 +22470,23 @@ L984:
 ;
 ;PMENU k_render_menu(PMENU menu)
 ;{
-	.line	3839
-	.line	3840
+	.line	3498
+	.line	3499
 	GFX
 	xdef	~~k_render_menu
 	func
-	.function	3840
+	.function	3499
 ~~k_render_menu:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L990
+	sbc	#L1044
 	tcs
 	phd
 	tcd
 menu_0	set	4
-	.block	3840
+	.block	3499
 ;	FONTMETRIC metric;
 ;
 ;	int i = 0;
@@ -22355,150 +22532,150 @@ endX_1	set	24
 	.sym	clientOffsetY,22,5,1,16
 	.sym	endX,24,5,1,16
 	.sym	menu,4,138,6,32,36
-	stz	<L991+i_1
-	lda	[<L990+menu_0]
-	sta	<L991+cx_1
+	stz	<L1045+i_1
+	lda	[<L1044+menu_0]
+	sta	<L1045+cx_1
 	ldy	#$2
-	lda	[<L990+menu_0],Y
-	sta	<L991+cy_1
+	lda	[<L1044+menu_0],Y
+	sta	<L1045+cy_1
 	lda	#$a
-	sta	<L991+borderTitle_1
+	sta	<L1045+borderTitle_1
 	lda	#$3
-	sta	<L991+borderWidth_1
+	sta	<L1045+borderWidth_1
 	clc
 	lda	#$2
-	adc	<L991+cx_1
-	sta	<L991+titleOffsetX_1
+	adc	<L1045+cx_1
+	sta	<L1045+titleOffsetX_1
 	clc
 	lda	#$2
-	adc	<L991+cy_1
-	sta	<L991+titleOffsetY_1
-	stz	<L991+titleScaler_1
+	adc	<L1045+cy_1
+	sta	<L1045+titleOffsetY_1
+	stz	<L1045+titleScaler_1
 	clc
-	lda	<L991+cx_1
-	adc	<L991+borderWidth_1
+	lda	<L1045+cx_1
+	adc	<L1045+borderWidth_1
 	sta	<R0
 	clc
 	lda	#$2
 	adc	<R0
-	sta	<L991+clientOffsetX_1
+	sta	<L1045+clientOffsetX_1
 	clc
-	lda	<L991+cy_1
-	adc	<L991+borderTitle_1
+	lda	<L1045+cy_1
+	adc	<L1045+borderTitle_1
 	sta	<R0
 	lda	<R0
 	ina
-	sta	<L991+clientOffsetY_1
+	sta	<L1045+clientOffsetY_1
 	clc
 	ldy	#$4
-	lda	[<L990+menu_0],Y
-	adc	<L991+cx_1
+	lda	[<L1044+menu_0],Y
+	adc	<L1045+cx_1
 	sta	<R0
 	sec
 	lda	<R0
-	sbc	<L991+borderWidth_1
-	sta	<L991+endX_1
-	.line	3860
+	sbc	<L1045+borderWidth_1
+	sta	<L1045+endX_1
+	.line	3519
 	pea	#0
 	clc
 	tdc
-	adc	#<L991+metric_1
+	adc	#<L1045+metric_1
 	pha
 	jsl	~~k_get_font_metrics
 ;
 ;
 ;	k_debug_integer("k_render_menu:menu->cx:",menu->cx);
-	.line	3863
-	lda	[<L990+menu_0]
+	.line	3522
+	lda	[<L1044+menu_0]
 	pha
-	pea	#^L989
-	pea	#<L989
+	pea	#^L1043
+	pea	#<L1043
 	jsl	~~k_debug_integer
 ;	k_debug_integer("k_render_menu:menu->cy:",menu->cy);
-	.line	3864
+	.line	3523
 	ldy	#$2
-	lda	[<L990+menu_0],Y
+	lda	[<L1044+menu_0],Y
 	pha
-	pea	#^L989+24
-	pea	#<L989+24
+	pea	#^L1043+24
+	pea	#<L1043+24
 	jsl	~~k_debug_integer
 ;	k_debug_integer("k_render_menu:menu->height:",menu->height);
-	.line	3865
+	.line	3524
 	ldy	#$6
-	lda	[<L990+menu_0],Y
+	lda	[<L1044+menu_0],Y
 	pha
-	pea	#^L989+48
-	pea	#<L989+48
+	pea	#^L1043+48
+	pea	#<L1043+48
 	jsl	~~k_debug_integer
 ;	k_debug_integer("k_render_menu:menu->width:",menu->width);
-	.line	3866
+	.line	3525
 	ldy	#$4
-	lda	[<L990+menu_0],Y
+	lda	[<L1044+menu_0],Y
 	pha
-	pea	#^L989+76
-	pea	#<L989+76
+	pea	#^L1043+76
+	pea	#<L1043+76
 	jsl	~~k_debug_integer
 ;
 ;
 ;	k_vdma_fill_rect(cx-1,cy,menu->width+1,menu->height+1,0);
-	.line	3869
+	.line	3528
 	pea	#<$0
 	ldy	#$6
-	lda	[<L990+menu_0],Y
+	lda	[<L1044+menu_0],Y
 	ina
 	pha
 	ldy	#$4
-	lda	[<L990+menu_0],Y
+	lda	[<L1044+menu_0],Y
 	ina
 	pha
 	ldy	#$0
-	lda	<L991+cy_1
-	bpl	L993
+	lda	<L1045+cy_1
+	bpl	L1047
 	dey
-L993:
+L1047:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
 	lda	#$ffff
-	adc	<L991+cx_1
+	adc	<L1045+cx_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L994
+	bpl	L1048
 	dey
-L994:
+L1048:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_vdma_fill_rect
 ;	k_vdma_fill_rect(cx,cy,menu->width,menu->height,menu->fcolor);
-	.line	3870
+	.line	3529
 	ldy	#$8
-	lda	[<L990+menu_0],Y
+	lda	[<L1044+menu_0],Y
 	pha
 	ldy	#$6
-	lda	[<L990+menu_0],Y
+	lda	[<L1044+menu_0],Y
 	pha
 	ldy	#$4
-	lda	[<L990+menu_0],Y
+	lda	[<L1044+menu_0],Y
 	pha
 	ldy	#$0
-	lda	<L991+cy_1
-	bpl	L995
+	lda	<L1045+cy_1
+	bpl	L1049
 	dey
-L995:
+L1049:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	<L991+cx_1
-	bpl	L996
+	lda	<L1045+cx_1
+	bpl	L1050
 	dey
-L996:
+L1050:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -22509,10 +22686,10 @@ L996:
 ;
 ;
 ;	k_put_wingadget_point(WINICON_TITLE_BACK,endX - (metric.width*2 + 2),titleOffsetY,14);
-	.line	3875
+	.line	3534
 	pea	#<$e
-	pei	<L991+titleOffsetY_1
-	lda	<L991+metric_1
+	pei	<L1045+titleOffsetY_1
+	lda	<L1045+metric_1
 	asl	A
 	sta	<R0
 	clc
@@ -22520,70 +22697,70 @@ L996:
 	adc	<R0
 	sta	<R1
 	sec
-	lda	<L991+endX_1
+	lda	<L1045+endX_1
 	sbc	<R1
 	pha
 	pea	#<$4
 	jsl	~~k_put_wingadget_point
 ;	k_put_wingadget_point(WINICON_TITLE_FRONT,endX - (metric.width),titleOffsetY,14);
-	.line	3876
+	.line	3535
 	pea	#<$e
-	pei	<L991+titleOffsetY_1
+	pei	<L1045+titleOffsetY_1
 	sec
-	lda	<L991+endX_1
-	sbc	<L991+metric_1
+	lda	<L1045+endX_1
+	sbc	<L1045+metric_1
 	pha
 	pea	#<$3
 	jsl	~~k_put_wingadget_point
 ;
 ;	k_draw_text_point((LPCHAR)menu->pCaption,cx+2+metric.width,titleOffsetY,0);
-	.line	3878
+	.line	3537
 	pea	#<$0
-	pei	<L991+titleOffsetY_1
+	pei	<L1045+titleOffsetY_1
 	clc
-	lda	<L991+cx_1
-	adc	<L991+metric_1
+	lda	<L1045+cx_1
+	adc	<L1045+metric_1
 	sta	<R0
 	clc
 	lda	#$2
 	adc	<R0
 	pha
 	ldy	#$15
-	lda	[<L990+menu_0],Y
+	lda	[<L1044+menu_0],Y
 	pha
 	ldy	#$13
-	lda	[<L990+menu_0],Y
+	lda	[<L1044+menu_0],Y
 	pha
 	jsl	~~k_draw_text_point
 ;
 ;	return menu;
-	.line	3880
-	ldx	<L990+menu_0+2
-	lda	<L990+menu_0
-L997:
+	.line	3539
+	ldx	<L1044+menu_0+2
+	lda	<L1044+menu_0
+L1051:
 	tay
-	lda	<L990+2
-	sta	<L990+2+4
-	lda	<L990+1
-	sta	<L990+1+4
+	lda	<L1044+2
+	sta	<L1044+2+4
+	lda	<L1044+1
+	sta	<L1044+1+4
 	pld
 	tsc
 	clc
-	adc	#L990+4
+	adc	#L1044+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	3881
-	.endblock	3881
-L990	equ	34
-L991	equ	9
+	.line	3540
+	.endblock	3540
+L1044	equ	34
+L1045	equ	9
 	ends
 	efunc
-	.endfunc	3881,9,34
-	.line	3881
+	.endfunc	3540,9,34
+	.line	3540
 	data
-L989:
+L1043:
 	db	$6B,$5F,$72,$65,$6E,$64,$65,$72,$5F,$6D,$65,$6E,$75,$3A,$6D
 	db	$65,$6E,$75,$2D,$3E,$63,$78,$3A,$00,$6B,$5F,$72,$65,$6E,$64
 	db	$65,$72,$5F,$6D,$65,$6E,$75,$3A,$6D,$65,$6E,$75,$2D,$3E,$63
@@ -22595,18 +22772,18 @@ L989:
 ;
 ;void k_draw_ui_window(int cx,int cy,int height,int width,char FAR *title,int color, int bgcolor)
 ;{
-	.line	3883
-	.line	3884
+	.line	3542
+	.line	3543
 	GFX
 	xdef	~~k_draw_ui_window
 	func
-	.function	3884
+	.function	3543
 ~~k_draw_ui_window:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L999
+	sbc	#L1053
 	tcs
 	phd
 	tcd
@@ -22617,7 +22794,7 @@ width_0	set	10
 title_0	set	12
 color_0	set	16
 bgcolor_0	set	18
-	.block	3884
+	.block	3543
 ;	FONTMETRIC metric;
 ;	
 ;	int i = 0;
@@ -22669,162 +22846,162 @@ endX_1	set	24
 	.sym	title,12,142,6,32
 	.sym	color,16,5,6,16
 	.sym	bgcolor,18,5,6,16
-	stz	<L1000+i_1
+	stz	<L1054+i_1
 	lda	#$a
-	sta	<L1000+borderTitle_1
+	sta	<L1054+borderTitle_1
 	lda	#$2
-	sta	<L1000+borderWidth_1
+	sta	<L1054+borderWidth_1
 	clc
 	lda	#$2
-	adc	<L999+cx_0
-	sta	<L1000+titleOffsetX_1
+	adc	<L1053+cx_0
+	sta	<L1054+titleOffsetX_1
 	clc
 	lda	#$2
-	adc	<L999+cy_0
-	sta	<L1000+titleOffsetY_1
-	stz	<L1000+titleScaler_1
+	adc	<L1053+cy_0
+	sta	<L1054+titleOffsetY_1
+	stz	<L1054+titleScaler_1
 	clc
-	lda	<L999+cx_0
-	adc	<L1000+borderWidth_1
+	lda	<L1053+cx_0
+	adc	<L1054+borderWidth_1
 	sta	<R0
 	clc
 	lda	#$2
 	adc	<R0
-	sta	<L1000+clientOffsetX_1
+	sta	<L1054+clientOffsetX_1
 	clc
-	lda	<L999+cy_0
-	adc	<L1000+borderTitle_1
+	lda	<L1053+cy_0
+	adc	<L1054+borderTitle_1
 	sta	<R0
 	lda	<R0
 	ina
-	sta	<L1000+clientOffsetY_1
-	lda	<L1000+clientOffsetX_1
-	sta	<L1000+currX_1
-	lda	<L1000+clientOffsetY_1
-	sta	<L1000+currY_1
+	sta	<L1054+clientOffsetY_1
+	lda	<L1054+clientOffsetX_1
+	sta	<L1054+currX_1
+	lda	<L1054+clientOffsetY_1
+	sta	<L1054+currY_1
 	clc
-	lda	<L999+width_0
-	adc	<L999+cx_0
+	lda	<L1053+width_0
+	adc	<L1053+cx_0
 	sta	<R0
 	sec
 	lda	<R0
-	sbc	<L1000+borderWidth_1
-	sta	<L1000+endX_1
-	.line	3904
-	pei	<L999+color_0
-	pei	<L999+width_0
-	pei	<L999+height_0
-	pei	<L999+cy_0
-	pei	<L999+cx_0
+	sbc	<L1054+borderWidth_1
+	sta	<L1054+endX_1
+	.line	3563
+	pei	<L1053+color_0
+	pei	<L1053+width_0
+	pei	<L1053+height_0
+	pei	<L1053+cy_0
+	pei	<L1053+cx_0
 	jsl	~~k_draw_filled_rect
 ;	k_draw_filled_rect(cx+borderWidth,cy+borderTitle,
-	.line	3905
+	.line	3564
 ;	                   height - borderTitle - borderWidth,
 ;					   width - borderWidth - borderWidth,
 ;					   bgcolor);
-	pei	<L999+bgcolor_0
+	pei	<L1053+bgcolor_0
 	sec
-	lda	<L999+width_0
-	sbc	<L1000+borderWidth_1
+	lda	<L1053+width_0
+	sbc	<L1054+borderWidth_1
 	sta	<R0
 	sec
 	lda	<R0
-	sbc	<L1000+borderWidth_1
+	sbc	<L1054+borderWidth_1
 	pha
 	sec
-	lda	<L999+height_0
-	sbc	<L1000+borderTitle_1
+	lda	<L1053+height_0
+	sbc	<L1054+borderTitle_1
 	sta	<R0
 	sec
 	lda	<R0
-	sbc	<L1000+borderWidth_1
+	sbc	<L1054+borderWidth_1
 	pha
 	clc
-	lda	<L999+cy_0
-	adc	<L1000+borderTitle_1
+	lda	<L1053+cy_0
+	adc	<L1054+borderTitle_1
 	pha
 	clc
-	lda	<L999+cx_0
-	adc	<L1000+borderWidth_1
+	lda	<L1053+cx_0
+	adc	<L1054+borderWidth_1
 	pha
 	jsl	~~k_draw_filled_rect
 ;	
 ;	k_get_font_metrics(&metric);
-	.line	3910
+	.line	3569
 	pea	#0
 	clc
 	tdc
-	adc	#<L1000+metric_1
+	adc	#<L1054+metric_1
 	pha
 	jsl	~~k_get_font_metrics
 ;	
 ;	
 ;	title = strupr(title);
-	.line	3913
-	pei	<L999+title_0+2
-	pei	<L999+title_0
+	.line	3572
+	pei	<L1053+title_0+2
+	pei	<L1053+title_0
 	jsl	~~strupr
-	sta	<L999+title_0
-	stx	<L999+title_0+2
+	sta	<L1053+title_0
+	stx	<L1053+title_0+2
 ;	
 ;	titleOffsetX+=k_put_wingadget_point(WINICON_TITLE_ACLOSE,titleOffsetX,titleOffsetY,14);	
-	.line	3915
+	.line	3574
 	pea	#<$e
-	pei	<L1000+titleOffsetY_1
-	pei	<L1000+titleOffsetX_1
+	pei	<L1054+titleOffsetY_1
+	pei	<L1054+titleOffsetX_1
 	pea	#<$5
 	jsl	~~k_put_wingadget_point
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L1000+titleOffsetX_1
-	sta	<L1000+titleOffsetX_1
+	adc	<L1054+titleOffsetX_1
+	sta	<L1054+titleOffsetX_1
 ;	
 ;	titleScaler = (int)(width / metric.width - 4);
-	.line	3917
-	lda	<L999+width_0
-	ldx	<L1000+metric_1
+	.line	3576
+	lda	<L1053+width_0
+	ldx	<L1054+metric_1
 	xref	~~~div
 	jsl	~~~div
 	sta	<R0
 	clc
 	lda	#$fffc
 	adc	<R0
-	sta	<L1000+titleScaler_1
+	sta	<L1054+titleScaler_1
 ;	for(i=0;i<titleScaler;i++)
-	.line	3918
-	stz	<L1000+i_1
-	brl	L10402
-L10401:
+	.line	3577
+	stz	<L1054+i_1
+	brl	L10410
+L10409:
 ;	{
-	.line	3919
+	.line	3578
 ;		titleOffsetX+=k_put_wingadget_point(WINICON_TITLE_LINES,titleOffsetX,titleOffsetY,14);	
-	.line	3920
+	.line	3579
 	pea	#<$e
-	pei	<L1000+titleOffsetY_1
-	pei	<L1000+titleOffsetX_1
+	pei	<L1054+titleOffsetY_1
+	pei	<L1054+titleOffsetX_1
 	pea	#<$1
 	jsl	~~k_put_wingadget_point
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L1000+titleOffsetX_1
-	sta	<L1000+titleOffsetX_1
+	adc	<L1054+titleOffsetX_1
+	sta	<L1054+titleOffsetX_1
 ;	}
-	.line	3921
-L10399:
-	inc	<L1000+i_1
-L10402:
+	.line	3580
+L10407:
+	inc	<L1054+i_1
+L10410:
 	sec
-	lda	<L1000+i_1
-	sbc	<L1000+titleScaler_1
-	bvs	L1002
+	lda	<L1054+i_1
+	sbc	<L1054+titleScaler_1
+	bvs	L1056
 	eor	#$8000
-L1002:
-	bmi	L1003
-	brl	L10401
-L1003:
-L10400:
+L1056:
+	bmi	L1057
+	brl	L10409
+L1057:
+L10408:
 ;	/*
 ;	titleOffsetX+=k_put_wingadget_point(WINICON_TITLE_BACK,titleOffsetX,titleOffsetY,14);
 ;	titleOffsetX+=2;
@@ -22832,10 +23009,10 @@ L10400:
 ;	*/
 ;	
 ;	k_put_wingadget_point(WINICON_TITLE_BACK,endX - (metric.width*2 + 2),titleOffsetY,14);
-	.line	3928
+	.line	3587
 	pea	#<$e
-	pei	<L1000+titleOffsetY_1
-	lda	<L1000+metric_1
+	pei	<L1054+titleOffsetY_1
+	lda	<L1054+metric_1
 	asl	A
 	sta	<R0
 	clc
@@ -22843,46 +23020,46 @@ L10400:
 	adc	<R0
 	sta	<R1
 	sec
-	lda	<L1000+endX_1
+	lda	<L1054+endX_1
 	sbc	<R1
 	pha
 	pea	#<$4
 	jsl	~~k_put_wingadget_point
 ;	k_put_wingadget_point(WINICON_TITLE_FRONT,endX - (metric.width),titleOffsetY,14);
-	.line	3929
+	.line	3588
 	pea	#<$e
-	pei	<L1000+titleOffsetY_1
+	pei	<L1054+titleOffsetY_1
 	sec
-	lda	<L1000+endX_1
-	sbc	<L1000+metric_1
+	lda	<L1054+endX_1
+	sbc	<L1054+metric_1
 	pha
 	pea	#<$3
 	jsl	~~k_put_wingadget_point
 ;	
 ;	
 ;	for(i=0;i<=strlen(title);i++)
-	.line	3932
-	stz	<L1000+i_1
-	brl	L10406
-L10405:
+	.line	3591
+	stz	<L1054+i_1
+	brl	L10414
+L10413:
 ;	{
-	.line	3933
+	.line	3592
 ;		k_put_wingadget_point(WINICON_BLOCK,cx+2+metric.width+(metric.width*i),titleOffsetY,15);	
-	.line	3934
+	.line	3593
 	pea	#<$f
-	pei	<L1000+titleOffsetY_1
-	lda	<L1000+metric_1
-	ldx	<L1000+i_1
+	pei	<L1054+titleOffsetY_1
+	lda	<L1054+metric_1
+	ldx	<L1054+i_1
 	xref	~~~mul
 	jsl	~~~mul
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L999+cx_0
+	adc	<L1053+cx_0
 	sta	<R1
 	clc
 	lda	<R1
-	adc	<L1000+metric_1
+	adc	<L1054+metric_1
 	sta	<R0
 	clc
 	lda	#$2
@@ -22891,34 +23068,34 @@ L10405:
 	pea	#<$0
 	jsl	~~k_put_wingadget_point
 ;	}
-	.line	3935
-L10403:
-	inc	<L1000+i_1
-L10406:
-	pei	<L999+title_0+2
-	pei	<L999+title_0
+	.line	3594
+L10411:
+	inc	<L1054+i_1
+L10414:
+	pei	<L1053+title_0+2
+	pei	<L1053+title_0
 	jsl	~~strlen
 	sta	<R0
 	lda	<R0
-	cmp	<L1000+i_1
-	bcc	L1004
-	brl	L10405
-L1004:
-L10404:
+	cmp	<L1054+i_1
+	bcc	L1058
+	brl	L10413
+L1058:
+L10412:
 ;	k_draw_text_point(title,cx+2+metric.width,titleOffsetY,0);
-	.line	3936
+	.line	3595
 	pea	#<$0
-	pei	<L1000+titleOffsetY_1
+	pei	<L1054+titleOffsetY_1
 	clc
-	lda	<L999+cx_0
-	adc	<L1000+metric_1
+	lda	<L1053+cx_0
+	adc	<L1054+metric_1
 	sta	<R0
 	clc
 	lda	#$2
 	adc	<R0
 	pha
-	pei	<L999+title_0+2
-	pei	<L999+title_0
+	pei	<L1053+title_0+2
+	pei	<L1053+title_0
 	jsl	~~k_draw_text_point
 ;	
 ;	/*
@@ -22935,77 +23112,77 @@ L10404:
 ;	*/
 ;	
 ;	k_draw_text_point("READY.",currX,currY,15);
-	.line	3951
+	.line	3610
 	pea	#<$f
-	pei	<L1000+currY_1
-	pei	<L1000+currX_1
-	pea	#^L998
-	pea	#<L998
+	pei	<L1054+currY_1
+	pei	<L1054+currX_1
+	pea	#^L1052
+	pea	#<L1052
 	jsl	~~k_draw_text_point
 ;	currY+=metric.height;	
-	.line	3952
+	.line	3611
 	clc
-	lda	<L1000+currY_1
-	adc	<L1000+metric_1+2
-	sta	<L1000+currY_1
+	lda	<L1054+currY_1
+	adc	<L1054+metric_1+2
+	sta	<L1054+currY_1
 ;	k_draw_text_point("10 PRINT \"HELLO WORLD!\"",currX,currY,15);
-	.line	3953
+	.line	3612
 	pea	#<$f
-	pei	<L1000+currY_1
-	pei	<L1000+currX_1
-	pea	#^L998+7
-	pea	#<L998+7
+	pei	<L1054+currY_1
+	pei	<L1054+currX_1
+	pea	#^L1052+7
+	pea	#<L1052+7
 	jsl	~~k_draw_text_point
 ;	currY+=metric.height;
-	.line	3954
+	.line	3613
 	clc
-	lda	<L1000+currY_1
-	adc	<L1000+metric_1+2
-	sta	<L1000+currY_1
+	lda	<L1054+currY_1
+	adc	<L1054+metric_1+2
+	sta	<L1054+currY_1
 ;	k_draw_text_point("RUN",currX,currY,15);
-	.line	3955
+	.line	3614
 	pea	#<$f
-	pei	<L1000+currY_1
-	pei	<L1000+currX_1
-	pea	#^L998+31
-	pea	#<L998+31
+	pei	<L1054+currY_1
+	pei	<L1054+currX_1
+	pea	#^L1052+31
+	pea	#<L1052+31
 	jsl	~~k_draw_text_point
 ;	currY+=metric.height;
-	.line	3956
+	.line	3615
 	clc
-	lda	<L1000+currY_1
-	adc	<L1000+metric_1+2
-	sta	<L1000+currY_1
+	lda	<L1054+currY_1
+	adc	<L1054+metric_1+2
+	sta	<L1054+currY_1
 ;	k_draw_text_point("HELLO WORLD!",currX,currY,15);
-	.line	3957
+	.line	3616
 	pea	#<$f
-	pei	<L1000+currY_1
-	pei	<L1000+currX_1
-	pea	#^L998+35
-	pea	#<L998+35
+	pei	<L1054+currY_1
+	pei	<L1054+currX_1
+	pea	#^L1052+35
+	pea	#<L1052+35
 	jsl	~~k_draw_text_point
 ;}
-	.line	3958
-L1005:
-	lda	<L999+2
-	sta	<L999+2+16
-	lda	<L999+1
-	sta	<L999+1+16
+	.line	3617
+L1059:
+	lda	<L1053+2
+	sta	<L1053+2+16
+	lda	<L1053+1
+	sta	<L1053+1+16
 	pld
 	tsc
 	clc
-	adc	#L999+16
+	adc	#L1053+16
 	tcs
 	rtl
-	.endblock	3958
-L999	equ	34
-L1000	equ	9
+	.endblock	3617
+L1053	equ	34
+L1054	equ	9
 	ends
 	efunc
-	.endfunc	3958,9,34
-	.line	3958
+	.endfunc	3617,9,34
+	.line	3617
 	data
-L998:
+L1052:
 	db	$52,$45,$41,$44,$59,$2E,$00,$31,$30,$20,$50,$52,$49,$4E,$54
 	db	$20,$22,$48,$45,$4C,$4C,$4F,$20,$57,$4F,$52,$4C,$44,$21,$22
 	db	$00,$52,$55,$4E,$00,$48,$45,$4C,$4C,$4F,$20,$57,$4F,$52,$4C
@@ -23015,18 +23192,18 @@ L998:
 ;
 ;void k_paint_brush_rect(long x,long y,int width,int height,BYTE pattern)
 ;{
-	.line	3961
-	.line	3962
+	.line	3620
+	.line	3621
 	GFX
 	xdef	~~k_paint_brush_rect
 	func
-	.function	3962
+	.function	3621
 ~~k_paint_brush_rect:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1007
+	sbc	#L1061
 	tcs
 	phd
 	tcd
@@ -23035,7 +23212,7 @@ y_0	set	8
 width_0	set	12
 height_0	set	14
 pattern_0	set	16
-	.block	3962
+	.block	3621
 ;	ULONG pos = 0L;
 ;	BOOL odd = FALSE;
 ;	long startLocation = (long)(( ((long)y) * 640L) + ((long)x) );
@@ -23057,49 +23234,49 @@ endLocation_1	set	9
 	.sym	width,12,5,6,16
 	.sym	height,14,5,6,16
 	.sym	pattern,16,14,6,8
-	stz	<L1008+pos_1
-	stz	<L1008+pos_1+2
+	stz	<L1062+pos_1
+	stz	<L1062+pos_1+2
 	sep	#$20
 	longa	off
-	stz	<L1008+odd_1
+	stz	<L1062+odd_1
 	rep	#$20
 	longa	on
 	pea	#^$280
 	pea	#<$280
-	pei	<L1007+y_0+2
-	pei	<L1007+y_0
+	pei	<L1061+y_0+2
+	pei	<L1061+y_0
 	xref	~~~lmul
 	jsl	~~~lmul
 	sta	<R0
 	stx	<R0+2
 	clc
 	lda	<R0
-	adc	<L1007+x_0
-	sta	<L1008+startLocation_1
+	adc	<L1061+x_0
+	sta	<L1062+startLocation_1
 	lda	<R0+2
-	adc	<L1007+x_0+2
-	sta	<L1008+startLocation_1+2
+	adc	<L1061+x_0+2
+	sta	<L1062+startLocation_1+2
 	lda	#$afff
-	sta	<L1008+endLocation_1
+	sta	<L1062+endLocation_1
 	lda	#$4
-	sta	<L1008+endLocation_1+2
-	.line	3970
-	stz	<L1008+pos_1
-	stz	<L1008+pos_1+2
-L10409:
+	sta	<L1062+endLocation_1+2
+	.line	3629
+	stz	<L1062+pos_1
+	stz	<L1062+pos_1+2
+L10417:
 ;	{
-	.line	3971
+	.line	3630
 ;		if(odd)
-	.line	3972
+	.line	3631
 ;		{
-	lda	<L1008+odd_1
+	lda	<L1062+odd_1
 	and	#$ff
-	bne	L1010
-	brl	L10410
-L1010:
-	.line	3973
+	bne	L1064
+	brl	L10418
+L1064:
+	.line	3632
 ;			memcpy( (LPCHAR)(0xB00000 + ((long)pos) * 640L)   ,BG_FILL_LINE_ODD,80);
-	.line	3974
+	.line	3633
 	pea	#<$50
 	lda	#<~~BG_FILL_LINE_ODD
 	sta	<R0
@@ -23110,8 +23287,8 @@ L1010:
 	pei	<R0
 	pea	#^$280
 	pea	#<$280
-	pei	<L1008+pos_1+2
-	pei	<L1008+pos_1
+	pei	<L1062+pos_1+2
+	pei	<L1062+pos_1
 	xref	~~~lmul
 	jsl	~~~lmul
 	sta	<R1
@@ -23127,14 +23304,14 @@ L1010:
 	pei	<R2
 	jsl	~~memcpy
 ;		}
-	.line	3975
+	.line	3634
 ;		else
-	brl	L10411
-L10410:
+	brl	L10419
+L10418:
 ;		{
-	.line	3977
+	.line	3636
 ;			memcpy( (LPCHAR)(0xB00000 + ((long)pos) * 640L) ,BG_FILL_LINE_EVEN,80);
-	.line	3978
+	.line	3637
 	pea	#<$50
 	lda	#<~~BG_FILL_LINE_EVEN
 	sta	<R0
@@ -23145,8 +23322,8 @@ L10410:
 	pei	<R0
 	pea	#^$280
 	pea	#<$280
-	pei	<L1008+pos_1+2
-	pei	<L1008+pos_1
+	pei	<L1062+pos_1+2
+	pei	<L1062+pos_1
 	xref	~~~lmul
 	jsl	~~~lmul
 	sta	<R1
@@ -23163,79 +23340,79 @@ L10410:
 	jsl	~~memcpy
 ;
 ;		}
-	.line	3980
-L10411:
+	.line	3639
+L10419:
 ;		odd=!odd;
-	.line	3981
+	.line	3640
 	stz	<R0
-	lda	<L1008+odd_1
+	lda	<L1062+odd_1
 	and	#$ff
-	beq	L1012
-	brl	L1011
-L1012:
+	beq	L1066
+	brl	L1065
+L1066:
 	inc	<R0
-L1011:
+L1065:
 	sep	#$20
 	longa	off
 	lda	<R0
-	sta	<L1008+odd_1
+	sta	<L1062+odd_1
 	rep	#$20
 	longa	on
 ;	}
-	.line	3982
-L10407:
-	inc	<L1008+pos_1
-	bne	L1013
-	inc	<L1008+pos_1+2
-L1013:
-	lda	<L1008+pos_1
+	.line	3641
+L10415:
+	inc	<L1062+pos_1
+	bne	L1067
+	inc	<L1062+pos_1+2
+L1067:
+	lda	<L1062+pos_1
 	cmp	#<$1df
-	lda	<L1008+pos_1+2
+	lda	<L1062+pos_1+2
 	sbc	#^$1df
-	bcs	L1014
-	brl	L10409
-L1014:
-L10408:
+	bcs	L1068
+	brl	L10417
+L1068:
+L10416:
 ;
 ;
 ;
 ;	return;
-	.line	3986
-L1015:
-	lda	<L1007+2
-	sta	<L1007+2+14
-	lda	<L1007+1
-	sta	<L1007+1+14
+	.line	3645
+L1069:
+	lda	<L1061+2
+	sta	<L1061+2+14
+	lda	<L1061+1
+	sta	<L1061+1+14
 	pld
 	tsc
 	clc
-	adc	#L1007+14
+	adc	#L1061+14
 	tcs
 	rtl
 ;}
-	.line	3987
-	.endblock	3987
-L1007	equ	25
-L1008	equ	13
+	.line	3646
+	.endblock	3646
+L1061	equ	25
+L1062	equ	13
 	ends
 	efunc
-	.endfunc	3987,13,25
-	.line	3987
+	.endfunc	3646,13,25
+	.line	3646
 ;
 ;void k_paint_brush_at_address(char FAR * pdst,int width,int height,BYTE pattern)
 ;{
-	.line	3989
-	.line	3990
+	.line	3648
+	.line	3649
 	GFX
 	xdef	~~k_paint_brush_at_address
 	func
-	.function	3990
+	.function	3649
 ~~k_paint_brush_at_address:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1016
+	sbc	#L1070
 	tcs
 	phd
 	tcd
@@ -23243,7 +23420,7 @@ pdst_0	set	4
 width_0	set	8
 height_0	set	10
 pattern_0	set	12
-	.block	3990
+	.block	3649
 ;	int pos = 0;
 ;	int spinLock = 0;
 ;	char status = VDMA_STAT_VDMA_IPS;
@@ -23260,43 +23437,43 @@ status_1	set	4
 	.sym	width,8,5,6,16
 	.sym	height,10,5,6,16
 	.sym	pattern,12,14,6,8
-	stz	<L1017+pos_1
-	stz	<L1017+spinLock_1
+	stz	<L1071+pos_1
+	stz	<L1071+spinLock_1
 	sep	#$20
 	longa	off
 	lda	#$80
-	sta	<L1017+status_1
+	sta	<L1071+status_1
 	rep	#$20
 	longa	on
-	.line	3996
-L10412:
+	.line	3655
+L10420:
 	sep	#$20
 	longa	off
-	lda	<L1017+status_1
+	lda	<L1071+status_1
 	cmp	#<$80
 	rep	#$20
 	longa	on
-	beq	L1019
-	brl	L10413
-L1019:
+	beq	L1073
+	brl	L10421
+L1073:
 ;	{
-	.line	3997
+	.line	3656
 ;		status = (VDMA_STATUS_REG[0] & VDMA_STAT_VDMA_IPS);
-	.line	3998
+	.line	3657
 	sep	#$20
 	longa	off
 	lda	>11469825
 	and	#<$80
-	sta	<L1017+status_1
+	sta	<L1071+status_1
 	rep	#$20
 	longa	on
 ;	}
-	.line	3999
-	brl	L10412
-L10413:
+	.line	3658
+	brl	L10420
+L10421:
 ;
 ;	VDMA_CONTROL_REG[0] = VDMA_CTRL_ENABLE | VDMA_CTRL_TRF_FILL;
-	.line	4001
+	.line	3660
 	sep	#$20
 	longa	off
 	lda	#$5
@@ -23305,7 +23482,7 @@ L10413:
 	longa	on
 ;
 ;	*BM_START_ADDY_L = 0x00;
-	.line	4003
+	.line	3662
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -23313,7 +23490,7 @@ L10413:
 	rep	#$20
 	longa	on
 ;	*BM_START_ADDY_M = 0x00;
-	.line	4004
+	.line	3663
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -23321,7 +23498,7 @@ L10413:
 	rep	#$20
 	longa	on
 ;	*BM_START_ADDY_H = 0x00;
-	.line	4005
+	.line	3664
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -23329,7 +23506,7 @@ L10413:
 	rep	#$20
 	longa	on
 ;	*((char FAR*)0xAF1F80) = 0x02;
-	.line	4006
+	.line	3665
 	sep	#$20
 	longa	off
 	lda	#$2
@@ -23338,7 +23515,7 @@ L10413:
 	longa	on
 ;
 ;	*BM_X_SIZE_L = 0x80;
-	.line	4008
+	.line	3667
 	sep	#$20
 	longa	off
 	lda	#$80
@@ -23346,7 +23523,7 @@ L10413:
 	rep	#$20
 	longa	on
 ;	*BM_X_SIZE_H = 0x02;
-	.line	4009
+	.line	3668
 	sep	#$20
 	longa	off
 	lda	#$2
@@ -23354,7 +23531,7 @@ L10413:
 	rep	#$20
 	longa	on
 ;	*BM_Y_SIZE_L = 0xE0;
-	.line	4010
+	.line	3669
 	sep	#$20
 	longa	off
 	lda	#$e0
@@ -23362,7 +23539,7 @@ L10413:
 	rep	#$20
 	longa	on
 ;	*BM_Y_SIZE_H = 0x01;
-	.line	4011
+	.line	3670
 	sep	#$20
 	longa	off
 	lda	#$1
@@ -23371,16 +23548,16 @@ L10413:
 	longa	on
 ;
 ;	*VDMA_X_SIZE_L = LOBYTE(width);
-	.line	4013
+	.line	3672
 	sep	#$20
 	longa	off
-	lda	<L1016+width_0
+	lda	<L1070+width_0
 	sta	>11469832
 	rep	#$20
 	longa	on
 ;	*VDMA_X_SIZE_H = HIBYTE(width);
-	.line	4014
-	lda	<L1016+width_0
+	.line	3673
+	lda	<L1070+width_0
 	ldx	#<$8
 	xref	~~~asr
 	jsl	~~~asr
@@ -23394,16 +23571,16 @@ L10413:
 	longa	on
 ;
 ;	*VDMA_Y_SIZE_L = LOBYTE(height);
-	.line	4016
+	.line	3675
 	sep	#$20
 	longa	off
-	lda	<L1016+height_0
+	lda	<L1070+height_0
 	sta	>11469834
 	rep	#$20
 	longa	on
 ;	*VDMA_Y_SIZE_H = HIBYTE(height);
-	.line	4017
-	lda	<L1016+height_0
+	.line	3676
+	lda	<L1070+height_0
 	ldx	#<$8
 	xref	~~~asr
 	jsl	~~~asr
@@ -23417,7 +23594,7 @@ L10413:
 	longa	on
 ;
 ;	*VDMA_DST_STRIDE_L = 0x80;
-	.line	4019
+	.line	3678
 	sep	#$20
 	longa	off
 	lda	#$80
@@ -23425,7 +23602,7 @@ L10413:
 	rep	#$20
 	longa	on
 ;	*VDMA_DST_STRIDE_H	= 0x02;
-	.line	4020
+	.line	3679
 	sep	#$20
 	longa	off
 	lda	#$2
@@ -23435,17 +23612,17 @@ L10413:
 ;
 ;
 ;	VDMA_DST_ADDY_L[0] = L24BYTE((long)pdst);
-	.line	4023
+	.line	3682
 	sep	#$20
 	longa	off
-	lda	<L1016+pdst_0
+	lda	<L1070+pdst_0
 	sta	>11469829
 	rep	#$20
 	longa	on
 ;	VDMA_DST_ADDY_M[0] = M24BYTE((long)pdst);
-	.line	4024
-	pei	<L1016+pdst_0+2
-	pei	<L1016+pdst_0
+	.line	3683
+	pei	<L1070+pdst_0+2
+	pei	<L1070+pdst_0
 	lda	#$8
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -23462,9 +23639,9 @@ L10413:
 	rep	#$20
 	longa	on
 ;	VDMA_DST_ADDY_H[0] = H24BYTE((long)pdst);
-	.line	4025
-	pei	<L1016+pdst_0+2
-	pei	<L1016+pdst_0
+	.line	3684
+	pei	<L1070+pdst_0+2
+	pei	<L1070+pdst_0
 	lda	#$10
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -23482,16 +23659,16 @@ L10413:
 	longa	on
 ;
 ;	VDMA_BYTE_2_WRITE[0] = pattern;
-	.line	4027
+	.line	3686
 	sep	#$20
 	longa	off
-	lda	<L1016+pattern_0
+	lda	<L1070+pattern_0
 	sta	>11469825
 	rep	#$20
 	longa	on
 ;
 ;	VDMA_CONTROL_REG[0]  = (VDMA_CTRL_ENABLE | VDMA_CTRL_TRF_FILL | VDMA_CTRL_START_TRF);
-	.line	4029
+	.line	3688
 	sep	#$20
 	longa	off
 	lda	#$85
@@ -23501,42 +23678,42 @@ L10413:
 ;
 ;
 ;   return ;
-	.line	4032
-L1020:
-	lda	<L1016+2
-	sta	<L1016+2+10
-	lda	<L1016+1
-	sta	<L1016+1+10
+	.line	3691
+L1074:
+	lda	<L1070+2
+	sta	<L1070+2+10
+	lda	<L1070+1
+	sta	<L1070+1+10
 	pld
 	tsc
 	clc
-	adc	#L1016+10
+	adc	#L1070+10
 	tcs
 	rtl
 ;}
-	.line	4033
-	.endblock	4033
-L1016	equ	13
-L1017	equ	9
+	.line	3692
+	.endblock	3692
+L1070	equ	13
+L1071	equ	9
 	ends
 	efunc
-	.endfunc	4033,9,13
-	.line	4033
+	.endfunc	3692,9,13
+	.line	3692
 ;
 ;void k_vdma_move_rect(long x,long y,int width,int height,int dx,int dy,unsigned char pcolor,UINT page)
 ;{
-	.line	4035
-	.line	4036
+	.line	3694
+	.line	3695
 	GFX
 	xdef	~~k_vdma_move_rect
 	func
-	.function	4036
+	.function	3695
 ~~k_vdma_move_rect:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1021
+	sbc	#L1075
 	tcs
 	phd
 	tcd
@@ -23548,11 +23725,8 @@ dx_0	set	16
 dy_0	set	18
 pcolor_0	set	20
 page_0	set	22
-	.block	4036
+	.block	3695
 ;	int slice = 0;
-;
-;
-;
 ;
 ;	if(dx > 0)
 slice_1	set	0
@@ -23565,144 +23739,144 @@ slice_1	set	0
 	.sym	dy,18,5,6,16
 	.sym	pcolor,20,14,6,8
 	.sym	page,22,16,6,16
-	stz	<L1022+slice_1
-	.line	4042
+	stz	<L1076+slice_1
+	.line	3698
 ;	{
 	sec
 	lda	#$0
-	sbc	<L1021+dx_0
-	bvs	L1024
+	sbc	<L1075+dx_0
+	bvs	L1078
 	eor	#$8000
-L1024:
-	bpl	L1025
-	brl	L10414
-L1025:
-	.line	4043
+L1078:
+	bpl	L1079
+	brl	L10422
+L1079:
+	.line	3699
 ;		slice = dx;
-	.line	4044
-	lda	<L1021+dx_0
-	sta	<L1022+slice_1
+	.line	3700
+	lda	<L1075+dx_0
+	sta	<L1076+slice_1
 ;		k_vdma_fill_rect_ex(x+width,y,slice,height,pcolor,page);
-	.line	4045
-	pei	<L1021+page_0
-	pei	<L1021+pcolor_0
-	pei	<L1021+height_0
-	pei	<L1022+slice_1
-	pei	<L1021+y_0+2
-	pei	<L1021+y_0
+	.line	3701
+	pei	<L1075+page_0
+	pei	<L1075+pcolor_0
+	pei	<L1075+height_0
+	pei	<L1076+slice_1
+	pei	<L1075+y_0+2
+	pei	<L1075+y_0
 	ldy	#$0
-	lda	<L1021+width_0
-	bpl	L1026
+	lda	<L1075+width_0
+	bpl	L1080
 	dey
-L1026:
+L1080:
 	sta	<R0
 	sty	<R0+2
 	clc
 	lda	<R0
-	adc	<L1021+x_0
+	adc	<L1075+x_0
 	sta	<R1
 	lda	<R0+2
-	adc	<L1021+x_0+2
+	adc	<L1075+x_0+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_vdma_fill_rect_ex
 ;		k_vdma_fill_rect_ex(x-dx,y,slice,height,FILLCOLOR_TRANSPARENT,page);
-	.line	4046
-	pei	<L1021+page_0
+	.line	3702
+	pei	<L1075+page_0
 	pea	#<$0
-	pei	<L1021+height_0
-	pei	<L1022+slice_1
-	pei	<L1021+y_0+2
-	pei	<L1021+y_0
+	pei	<L1075+height_0
+	pei	<L1076+slice_1
+	pei	<L1075+y_0+2
+	pei	<L1075+y_0
 	ldy	#$0
-	lda	<L1021+dx_0
-	bpl	L1027
+	lda	<L1075+dx_0
+	bpl	L1081
 	dey
-L1027:
+L1081:
 	sta	<R0
 	sty	<R0+2
 	sec
-	lda	<L1021+x_0
+	lda	<L1075+x_0
 	sbc	<R0
 	sta	<R1
-	lda	<L1021+x_0+2
+	lda	<L1075+x_0+2
 	sbc	<R0+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_vdma_fill_rect_ex
 ;	}
-	.line	4047
+	.line	3703
 ;	else if (dx < 0)
-	brl	L10415
-L10414:
-	.line	4048
+	brl	L10423
+L10422:
+	.line	3704
 ;	{
-	lda	<L1021+dx_0
-	bmi	L1028
-	brl	L10416
-L1028:
-	.line	4049
+	lda	<L1075+dx_0
+	bmi	L1082
+	brl	L10424
+L1082:
+	.line	3705
 ;		slice = (-1*dx);
-	.line	4050
+	.line	3706
 	sec
 	lda	#$0
-	sbc	<L1021+dx_0
-	sta	<L1022+slice_1
+	sbc	<L1075+dx_0
+	sta	<L1076+slice_1
 ;		k_vdma_fill_rect_ex(x+dx,y,slice,height,pcolor,page);
-	.line	4051
-	pei	<L1021+page_0
-	pei	<L1021+pcolor_0
-	pei	<L1021+height_0
-	pei	<L1022+slice_1
-	pei	<L1021+y_0+2
-	pei	<L1021+y_0
+	.line	3707
+	pei	<L1075+page_0
+	pei	<L1075+pcolor_0
+	pei	<L1075+height_0
+	pei	<L1076+slice_1
+	pei	<L1075+y_0+2
+	pei	<L1075+y_0
 	ldy	#$0
-	lda	<L1021+dx_0
-	bpl	L1029
+	lda	<L1075+dx_0
+	bpl	L1083
 	dey
-L1029:
+L1083:
 	sta	<R0
 	sty	<R0+2
 	clc
 	lda	<R0
-	adc	<L1021+x_0
+	adc	<L1075+x_0
 	sta	<R1
 	lda	<R0+2
-	adc	<L1021+x_0+2
+	adc	<L1075+x_0+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_vdma_fill_rect_ex
 ;		k_vdma_fill_rect_ex(x+width-slice,y,slice,height,FILLCOLOR_TRANSPARENT,page);
-	.line	4052
-	pei	<L1021+page_0
+	.line	3708
+	pei	<L1075+page_0
 	pea	#<$0
-	pei	<L1021+height_0
-	pei	<L1022+slice_1
-	pei	<L1021+y_0+2
-	pei	<L1021+y_0
+	pei	<L1075+height_0
+	pei	<L1076+slice_1
+	pei	<L1075+y_0+2
+	pei	<L1075+y_0
 	ldy	#$0
-	lda	<L1022+slice_1
-	bpl	L1030
+	lda	<L1076+slice_1
+	bpl	L1084
 	dey
-L1030:
+L1084:
 	sta	<R0
 	sty	<R0+2
 	ldy	#$0
-	lda	<L1021+width_0
-	bpl	L1031
+	lda	<L1075+width_0
+	bpl	L1085
 	dey
-L1031:
+L1085:
 	sta	<R1
 	sty	<R1+2
 	clc
 	lda	<R1
-	adc	<L1021+x_0
+	adc	<L1075+x_0
 	sta	<R2
 	lda	<R1+2
-	adc	<L1021+x_0+2
+	adc	<L1075+x_0+2
 	sta	<R2+2
 	sec
 	lda	<R2
@@ -23715,44 +23889,44 @@ L1031:
 	pei	<R1
 	jsl	~~k_vdma_fill_rect_ex
 ;	}
-	.line	4053
+	.line	3709
 ;}
-L10416:
-L10415:
-	.line	4054
-L1032:
-	lda	<L1021+2
-	sta	<L1021+2+20
-	lda	<L1021+1
-	sta	<L1021+1+20
+L10424:
+L10423:
+	.line	3710
+L1086:
+	lda	<L1075+2
+	sta	<L1075+2+20
+	lda	<L1075+1
+	sta	<L1075+1+20
 	pld
 	tsc
 	clc
-	adc	#L1021+20
+	adc	#L1075+20
 	tcs
 	rtl
-	.endblock	4054
-L1021	equ	14
-L1022	equ	13
+	.endblock	3710
+L1075	equ	14
+L1076	equ	13
 	ends
 	efunc
-	.endfunc	4054,13,14
-	.line	4054
+	.endfunc	3710,13,14
+	.line	3710
 ;
 ;void k_vdma_fill_rect_ex(long x,long y,int width,int height,unsigned char pcolor,UINT page)
 ;{
-	.line	4056
-	.line	4057
+	.line	3712
+	.line	3713
 	GFX
 	xdef	~~k_vdma_fill_rect_ex
 	func
-	.function	4057
+	.function	3713
 ~~k_vdma_fill_rect_ex:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1033
+	sbc	#L1087
 	tcs
 	phd
 	tcd
@@ -23762,283 +23936,371 @@ width_0	set	12
 height_0	set	14
 pcolor_0	set	16
 page_0	set	18
-	.block	4057
+	.block	3713
 ;	long pixelLocation = 0L;
 ;
-;	if(x < GUI_POINT_LIMIT_X_LO)
+;	long gpxLo = GUI_POINT_LIMIT_X_LO;
+;	long gpxHi = GUI_POINT_LIMIT_X_HI;
+;	long gpyLo = GUI_POINT_LIMIT_Y_LO;
+;	long gpyHi = GUI_POINT_LIMIT_Y_HI;
+;
+;
+;	/*
+;	if(width > 640)
+;	{
+;		gpxHi = GUI_POINT_LIMIT_X_HIX;
+;		gpyHi = GUI_POINT_LIMIT_Y_HIX;
+;	}
+;	*/
+;
+;	if(x < gpxLo)
 pixelLocation_1	set	0
+gpxLo_1	set	4
+gpxHi_1	set	8
+gpyLo_1	set	12
+gpyHi_1	set	16
 	.sym	pixelLocation,0,7,1,32
+	.sym	gpxLo,4,7,1,32
+	.sym	gpxHi,8,7,1,32
+	.sym	gpyLo,12,7,1,32
+	.sym	gpyHi,16,7,1,32
 	.sym	x,4,7,6,32
 	.sym	y,8,7,6,32
 	.sym	width,12,5,6,16
 	.sym	height,14,5,6,16
 	.sym	pcolor,16,14,6,8
 	.sym	page,18,16,6,16
-	stz	<L1034+pixelLocation_1
-	stz	<L1034+pixelLocation_1+2
-	.line	4060
+	stz	<L1088+pixelLocation_1
+	stz	<L1088+pixelLocation_1+2
+	stz	<L1088+gpxLo_1
+	stz	<L1088+gpxLo_1+2
+	lda	#$280
+	sta	<L1088+gpxHi_1
+	lda	#$0
+	sta	<L1088+gpxHi_1+2
+	stz	<L1088+gpyLo_1
+	stz	<L1088+gpyLo_1+2
+	lda	#$1e0
+	sta	<L1088+gpyHi_1
+	lda	#$0
+	sta	<L1088+gpyHi_1+2
+	.line	3730
 ;	{
-	lda	<L1033+x_0+2
-	bmi	L1036
-	brl	L10417
-L1036:
-	.line	4061
+	sec
+	lda	<L1087+x_0
+	sbc	<L1088+gpxLo_1
+	lda	<L1087+x_0+2
+	sbc	<L1088+gpxLo_1+2
+	bvs	L1090
+	eor	#$8000
+L1090:
+	bpl	L1091
+	brl	L10425
+L1091:
+	.line	3731
 ;		//k_debug_integer("k_vdma_fill_rect_ex::x-over:-x:",(int)x);
 ;		//k_debug_integer("k_vdma_fill_rect_ex::x-over:-width:",(int)width);
 ;		width = (width + x);
-	.line	4064
+	.line	3734
 	ldy	#$0
-	lda	<L1033+width_0
-	bpl	L1037
+	lda	<L1087+width_0
+	bpl	L1092
 	dey
-L1037:
+L1092:
 	sta	<R0
 	sty	<R0+2
 	clc
 	lda	<R0
-	adc	<L1033+x_0
+	adc	<L1087+x_0
 	sta	<R1
 	lda	<R0+2
-	adc	<L1033+x_0+2
+	adc	<L1087+x_0+2
 	sta	<R1+2
 	lda	<R1
-	sta	<L1033+width_0
-;		x = GUI_POINT_LIMIT_X_LO;
-	.line	4065
-	stz	<L1033+x_0
-	stz	<L1033+x_0+2
+	sta	<L1087+width_0
+;		x = gpxLo;
+	.line	3735
+	lda	<L1088+gpxLo_1
+	sta	<L1087+x_0
+	lda	<L1088+gpxLo_1+2
+	sta	<L1087+x_0+2
 ;		//k_debug_integer("k_vdma_fill_rect_ex::x-over:width:",(int)width);
 ;	}
-	.line	4067
+	.line	3737
 ;
-;	if(y < GUI_POINT_LIMIT_Y_LO)
-L10417:
-	.line	4069
+;	if(y < gpyLo)
+L10425:
+	.line	3739
 ;	{
-	lda	<L1033+y_0+2
-	bmi	L1038
-	brl	L10418
-L1038:
-	.line	4070
+	sec
+	lda	<L1087+y_0
+	sbc	<L1088+gpyLo_1
+	lda	<L1087+y_0+2
+	sbc	<L1088+gpyLo_1+2
+	bvs	L1093
+	eor	#$8000
+L1093:
+	bpl	L1094
+	brl	L10426
+L1094:
+	.line	3740
 ;		height = (height + y);
-	.line	4071
+	.line	3741
 	ldy	#$0
-	lda	<L1033+height_0
-	bpl	L1039
+	lda	<L1087+height_0
+	bpl	L1095
 	dey
-L1039:
+L1095:
 	sta	<R0
 	sty	<R0+2
 	clc
 	lda	<R0
-	adc	<L1033+y_0
+	adc	<L1087+y_0
 	sta	<R1
 	lda	<R0+2
-	adc	<L1033+y_0+2
+	adc	<L1087+y_0+2
 	sta	<R1+2
 	lda	<R1
-	sta	<L1033+height_0
-;		y = GUI_POINT_LIMIT_Y_LO;
-	.line	4072
-	stz	<L1033+y_0
-	stz	<L1033+y_0+2
+	sta	<L1087+height_0
+;		y = gpyLo;
+	.line	3742
+	lda	<L1088+gpyLo_1
+	sta	<L1087+y_0
+	lda	<L1088+gpyLo_1+2
+	sta	<L1087+y_0+2
 ;	}
-	.line	4073
+	.line	3743
 ;
-;	if(x > GUI_POINT_LIMIT_X_HI)
-L10418:
-	.line	4075
-;		x = GUI_POINT_LIMIT_X_HI - 1;
+;	if(x > gpxHi)
+L10426:
+	.line	3745
+;		x = gpxHi - 1;
 	sec
-	lda	#$280
-	sbc	<L1033+x_0
-	lda	#$0
-	sbc	<L1033+x_0+2
-	bvs	L1040
+	lda	<L1088+gpxHi_1
+	sbc	<L1087+x_0
+	lda	<L1088+gpxHi_1+2
+	sbc	<L1087+x_0+2
+	bvs	L1096
 	eor	#$8000
-L1040:
-	bpl	L1041
-	brl	L10419
-L1041:
-	.line	4076
-	lda	#$27f
-	sta	<L1033+x_0
-	lda	#$0
-	sta	<L1033+x_0+2
+L1096:
+	bpl	L1097
+	brl	L10427
+L1097:
+	.line	3746
+	clc
+	lda	#$ffff
+	adc	<L1088+gpxHi_1
+	sta	<L1087+x_0
+	lda	#$ffff
+	adc	<L1088+gpxHi_1+2
+	sta	<L1087+x_0+2
 ;
-;	if(y > GUI_POINT_LIMIT_Y_HI)
-L10419:
-	.line	4078
-;		y = GUI_POINT_LIMIT_Y_HI - 1;
+;	if(y > gpxHi)
+L10427:
+	.line	3748
+;		y = gpxHi - 1;
 	sec
-	lda	#$1e0
-	sbc	<L1033+y_0
-	lda	#$0
-	sbc	<L1033+y_0+2
-	bvs	L1042
+	lda	<L1088+gpxHi_1
+	sbc	<L1087+y_0
+	lda	<L1088+gpxHi_1+2
+	sbc	<L1087+y_0+2
+	bvs	L1098
 	eor	#$8000
-L1042:
-	bpl	L1043
-	brl	L10420
-L1043:
-	.line	4079
-	lda	#$1df
-	sta	<L1033+y_0
-	lda	#$0
-	sta	<L1033+y_0+2
+L1098:
+	bpl	L1099
+	brl	L10428
+L1099:
+	.line	3749
+	clc
+	lda	#$ffff
+	adc	<L1088+gpxHi_1
+	sta	<L1087+y_0
+	lda	#$ffff
+	adc	<L1088+gpxHi_1+2
+	sta	<L1087+y_0+2
 ;
-;	if((int)x + width > GUI_POINT_LIMIT_X_HI)
-L10420:
-	.line	4081
+;	if((int)x + width > gpxHi)
+L10428:
+	.line	3751
 ;	{
 	clc
-	lda	<L1033+x_0
-	adc	<L1033+width_0
+	lda	<L1087+x_0
+	adc	<L1087+width_0
 	sta	<R0
+	ldy	#$0
+	lda	<R0
+	bpl	L1100
+	dey
+L1100:
+	sta	<R0
+	sty	<R0+2
 	sec
-	lda	#$280
+	lda	<L1088+gpxHi_1
 	sbc	<R0
-	bvs	L1044
+	lda	<L1088+gpxHi_1+2
+	sbc	<R0+2
+	bvs	L1101
 	eor	#$8000
-L1044:
-	bpl	L1045
-	brl	L10421
-L1045:
-	.line	4082
+L1101:
+	bpl	L1102
+	brl	L10429
+L1102:
+	.line	3752
 ;		//k_debug_integer("k_vdma_fill_rect_ex::x-over:x:",(int)x);
 ;		//k_debug_integer("k_vdma_fill_rect_ex::x-over:width:",(int)width);
 ;
-;		width = GUI_POINT_LIMIT_X_HI - (int)x;
-	.line	4086
+;		width = gpxHi - (int)x;
+	.line	3756
+	ldy	#$0
+	lda	<L1087+x_0
+	bpl	L1103
+	dey
+L1103:
+	sta	<R0
+	sty	<R0+2
 	sec
-	lda	#$280
-	sbc	<L1033+x_0
-	sta	<L1033+width_0
+	lda	<L1088+gpxHi_1
+	sbc	<R0
+	sta	<R1
+	lda	<L1088+gpxHi_1+2
+	sbc	<R0+2
+	sta	<R1+2
+	lda	<R1
+	sta	<L1087+width_0
 ;
-;		k_debug_integer("k_vdma_fill_rect_ex::x-over:width:adjusted:",(int)width);
-	.line	4088
-	pei	<L1033+width_0
-	pea	#^L1006
-	pea	#<L1006
-	jsl	~~k_debug_integer
+;		//k_debug_integer("k_vdma_fill_rect_ex::x-over:width:adjusted:",(int)width);
 ;	}
-	.line	4089
+	.line	3759
 ;
-;	if((int)y + height > GUI_POINT_LIMIT_Y_HI)
-L10421:
-	.line	4091
+;	if((int)y + height > gpyHi)
+L10429:
+	.line	3761
 ;	{
 	clc
-	lda	<L1033+y_0
-	adc	<L1033+height_0
+	lda	<L1087+y_0
+	adc	<L1087+height_0
 	sta	<R0
+	ldy	#$0
+	lda	<R0
+	bpl	L1104
+	dey
+L1104:
+	sta	<R0
+	sty	<R0+2
 	sec
-	lda	#$1e0
+	lda	<L1088+gpyHi_1
 	sbc	<R0
-	bvs	L1046
+	lda	<L1088+gpyHi_1+2
+	sbc	<R0+2
+	bvs	L1105
 	eor	#$8000
-L1046:
-	bpl	L1047
-	brl	L10422
-L1047:
-	.line	4092
+L1105:
+	bpl	L1106
+	brl	L10430
+L1106:
+	.line	3762
 ;		//k_debug_integer("k_vdma_fill_rect_ex::y-over:y:",y);
 ;		//k_debug_integer("k_vdma_fill_rect_ex::y-over:height:",height);
 ;
-;		height = GUI_POINT_LIMIT_Y_HI - (int)y;
-	.line	4096
+;		height = gpyHi - (int)y;
+	.line	3766
+	ldy	#$0
+	lda	<L1087+y_0
+	bpl	L1107
+	dey
+L1107:
+	sta	<R0
+	sty	<R0+2
 	sec
-	lda	#$1e0
-	sbc	<L1033+y_0
-	sta	<L1033+height_0
+	lda	<L1088+gpyHi_1
+	sbc	<R0
+	sta	<R1
+	lda	<L1088+gpyHi_1+2
+	sbc	<R0+2
+	sta	<R1+2
+	lda	<R1
+	sta	<L1087+height_0
 ;
-;		k_debug_integer("k_vdma_fill_rect_ex::y-over:height:adjusted:",height);
-	.line	4098
-	pei	<L1033+height_0
-	pea	#^L1006+44
-	pea	#<L1006+44
-	jsl	~~k_debug_integer
+;		//k_debug_integer("k_vdma_fill_rect_ex::y-over:height:adjusted:",height);
 ;	}
-	.line	4099
-;	pixelLocation = (long)(( ((long)y) * (640L)) + ((long)x) );
-L10422:
-	.line	4100
+	.line	3769
+;
+;	//
+;	// bad logic, need to look at mode, but this is Q&D
+;	//
+;	//if(k_get_video_mode() > VIDEO_MODE_640X480D)
+;	//	pixelLocation = (long)(( ((long)y) * (800L)) + ((long)x) );
+;	//else
+;		pixelLocation = (long)(( ((long)y) * (640L)) + ((long)x) );
+L10430:
+	.line	3777
 	pea	#^$280
 	pea	#<$280
-	pei	<L1033+y_0+2
-	pei	<L1033+y_0
+	pei	<L1087+y_0+2
+	pei	<L1087+y_0
 	xref	~~~lmul
 	jsl	~~~lmul
 	sta	<R0
 	stx	<R0+2
 	clc
 	lda	<R0
-	adc	<L1033+x_0
-	sta	<L1034+pixelLocation_1
+	adc	<L1087+x_0
+	sta	<L1088+pixelLocation_1
 	lda	<R0+2
-	adc	<L1033+x_0+2
-	sta	<L1034+pixelLocation_1+2
+	adc	<L1087+x_0+2
+	sta	<L1088+pixelLocation_1+2
 ;
 ;	//k_debug_integer("k_vdma_fill_rect:",page);
 ;	//k_debug_integer("k_vdma_fill_width:",width);
 ;	//k_debug_integer("k_vdma_fill_height:",height);
 ;
 ;	k_vdma_fill_address_ex((char FAR * )pixelLocation, width, height,pcolor,page);
-	.line	4106
-	pei	<L1033+page_0
-	pei	<L1033+pcolor_0
-	pei	<L1033+height_0
-	pei	<L1033+width_0
-	pei	<L1034+pixelLocation_1+2
-	pei	<L1034+pixelLocation_1
+	.line	3783
+	pei	<L1087+page_0
+	pei	<L1087+pcolor_0
+	pei	<L1087+height_0
+	pei	<L1087+width_0
+	pei	<L1088+pixelLocation_1+2
+	pei	<L1088+pixelLocation_1
 	jsl	~~k_vdma_fill_address_ex
 ;
 ;	return;
-	.line	4108
-L1048:
-	lda	<L1033+2
-	sta	<L1033+2+16
-	lda	<L1033+1
-	sta	<L1033+1+16
+	.line	3785
+L1108:
+	lda	<L1087+2
+	sta	<L1087+2+16
+	lda	<L1087+1
+	sta	<L1087+1+16
 	pld
 	tsc
 	clc
-	adc	#L1033+16
+	adc	#L1087+16
 	tcs
 	rtl
 ;}
-	.line	4109
-	.endblock	4109
-L1033	equ	12
-L1034	equ	9
+	.line	3786
+	.endblock	3786
+L1087	equ	28
+L1088	equ	9
 	ends
 	efunc
-	.endfunc	4109,9,12
-	.line	4109
-	data
-L1006:
-	db	$6B,$5F,$76,$64,$6D,$61,$5F,$66,$69,$6C,$6C,$5F,$72,$65,$63
-	db	$74,$5F,$65,$78,$3A,$3A,$78,$2D,$6F,$76,$65,$72,$3A,$77,$69
-	db	$64,$74,$68,$3A,$61,$64,$6A,$75,$73,$74,$65,$64,$3A,$00,$6B
-	db	$5F,$76,$64,$6D,$61,$5F,$66,$69,$6C,$6C,$5F,$72,$65,$63,$74
-	db	$5F,$65,$78,$3A,$3A,$79,$2D,$6F,$76,$65,$72,$3A,$68,$65,$69
-	db	$67,$68,$74,$3A,$61,$64,$6A,$75,$73,$74,$65,$64,$3A,$00
-	ends
+	.endfunc	3786,9,28
+	.line	3786
 ;
 ;void k_vdma_fill_rect(long x,long y,int width,int height,unsigned char pcolor)
 ;{
-	.line	4111
-	.line	4112
+	.line	3788
+	.line	3789
 	GFX
 	xdef	~~k_vdma_fill_rect
 	func
-	.function	4112
+	.function	3789
 ~~k_vdma_fill_rect:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1050
+	sbc	#L1109
 	tcs
 	phd
 	tcd
@@ -24047,43 +24309,43 @@ y_0	set	8
 width_0	set	12
 height_0	set	14
 pcolor_0	set	16
-	.block	4112
+	.block	3789
 ;	k_vdma_fill_rect_ex(x,y,width,height,pcolor,BITMAP_BACK);
 	.sym	x,4,7,6,32
 	.sym	y,8,7,6,32
 	.sym	width,12,5,6,16
 	.sym	height,14,5,6,16
 	.sym	pcolor,16,14,6,8
-	.line	4113
+	.line	3790
 	pea	#<$8
-	pei	<L1050+pcolor_0
-	pei	<L1050+height_0
-	pei	<L1050+width_0
-	pei	<L1050+y_0+2
-	pei	<L1050+y_0
-	pei	<L1050+x_0+2
-	pei	<L1050+x_0
+	pei	<L1109+pcolor_0
+	pei	<L1109+height_0
+	pei	<L1109+width_0
+	pei	<L1109+y_0+2
+	pei	<L1109+y_0
+	pei	<L1109+x_0+2
+	pei	<L1109+x_0
 	jsl	~~k_vdma_fill_rect_ex
 ;}
-	.line	4114
-L1053:
-	lda	<L1050+2
-	sta	<L1050+2+14
-	lda	<L1050+1
-	sta	<L1050+1+14
+	.line	3791
+L1112:
+	lda	<L1109+2
+	sta	<L1109+2+14
+	lda	<L1109+1
+	sta	<L1109+1+14
 	pld
 	tsc
 	clc
-	adc	#L1050+14
+	adc	#L1109+14
 	tcs
 	rtl
-	.endblock	4114
-L1050	equ	0
-L1051	equ	1
+	.endblock	3791
+L1109	equ	0
+L1110	equ	1
 	ends
 	efunc
-	.endfunc	4114,1,0
-	.line	4114
+	.endfunc	3791,1,0
+	.line	3791
 ;
 ;/*
 ;void k_vdma_fill_rect(long x,long y,int width,int height,unsigned char pcolor)
@@ -24103,455 +24365,90 @@ L1051	equ	1
 ;}
 ;*/
 ;
+;/*
 ;void k_vdma_fill_address_old(char FAR * pdst,int width,int height,unsigned char data)
 ;{
-	.line	4134
-	.line	4135
-	GFX
-	xdef	~~k_vdma_fill_address_old
-	func
-	.function	4135
-~~k_vdma_fill_address_old:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L1054
-	tcs
-	phd
-	tcd
-pdst_0	set	4
-width_0	set	8
-height_0	set	10
-data_0	set	12
-	.block	4135
 ;	int pos = 0;
 ;	UINT spinLock = 0;
 ;	char status = VDMA_STAT_VDMA_IPS;
 ;
-;	/*
-;	while(status == VDMA_STAT_VDMA_IPS)
-;	{
-;		status = ( *VDMA_STATUS_REG & VDMA_STAT_VDMA_IPS);
-;		spinLock++;
 ;
-;		if(spinLock > 32000)
-;		{
-;			break;
-;		}
-;	}
-;	k_debug_integer("k_vdma_fill_address1::spinLock:",spinLock);
-;	*/
 ;	VDMA_CONTROL_REG[0] = VDMA_CTRL_ENABLE | VDMA_CTRL_1D_2D | VDMA_CTRL_TRF_FILL;
-pos_1	set	0
-spinLock_1	set	2
-status_1	set	4
-	.sym	pos,0,5,1,16
-	.sym	spinLock,2,16,1,16
-	.sym	status,4,14,1,8
-	.sym	pdst,4,142,6,32
-	.sym	width,8,5,6,16
-	.sym	height,10,5,6,16
-	.sym	data,12,14,6,8
-	stz	<L1055+pos_1
-	stz	<L1055+spinLock_1
-	sep	#$20
-	longa	off
-	lda	#$80
-	sta	<L1055+status_1
-	rep	#$20
-	longa	on
-	.line	4153
-	sep	#$20
-	longa	off
-	lda	#$7
-	sta	>11469824
-	rep	#$20
-	longa	on
 ;
 ;	VDMA_DST_ADDY_L[0] = L24BYTE((long)pdst);
-	.line	4155
-	sep	#$20
-	longa	off
-	lda	<L1054+pdst_0
-	sta	>11469829
-	rep	#$20
-	longa	on
 ;	VDMA_DST_ADDY_M[0] = M24BYTE((long)pdst);
-	.line	4156
-	pei	<L1054+pdst_0+2
-	pei	<L1054+pdst_0
-	lda	#$8
-	xref	~~~llsr
-	jsl	~~~llsr
-	sta	<R0
-	stx	<R0+2
-	lda	<R0
-	and	#<$ff
-	sta	<R1
-	stz	<R1+2
-	sep	#$20
-	longa	off
-	lda	<R1
-	sta	>11469830
-	rep	#$20
-	longa	on
 ;	VDMA_DST_ADDY_H[0] = H24BYTE((long)pdst);
-	.line	4157
-	pei	<L1054+pdst_0+2
-	pei	<L1054+pdst_0
-	lda	#$10
-	xref	~~~llsr
-	jsl	~~~llsr
-	sta	<R0
-	stx	<R0+2
-	lda	<R0
-	and	#<$ff
-	sta	<R1
-	stz	<R1+2
-	sep	#$20
-	longa	off
-	lda	<R1
-	sta	>11469831
-	rep	#$20
-	longa	on
 ;
 ;	*BM_START_ADDY_L = 0x00;
-	.line	4159
-	sep	#$20
-	longa	off
-	lda	#$0
-	sta	>11469121
-	rep	#$20
-	longa	on
 ;	*BM_START_ADDY_M = 0x00;
-	.line	4160
-	sep	#$20
-	longa	off
-	lda	#$0
-	sta	>11469122
-	rep	#$20
-	longa	on
 ;	*BM_START_ADDY_H = 0x00;
-	.line	4161
-	sep	#$20
-	longa	off
-	lda	#$0
-	sta	>11469123
-	rep	#$20
-	longa	on
 ;	*((char FAR*)0xAF1F80) = 0x02;
-	.line	4162
-	sep	#$20
-	longa	off
-	lda	#$2
-	sta	>11476864
-	rep	#$20
-	longa	on
 ;	
 ;	*BM_X_SIZE_L = 0x80;
-	.line	4164
-	sep	#$20
-	longa	off
-	lda	#$80
-	sta	>11469124
-	rep	#$20
-	longa	on
 ;	*BM_X_SIZE_H = 0x02;	
-	.line	4165
-	sep	#$20
-	longa	off
-	lda	#$2
-	sta	>11469125
-	rep	#$20
-	longa	on
 ;	*BM_Y_SIZE_L = 0xE0;
-	.line	4166
-	sep	#$20
-	longa	off
-	lda	#$e0
-	sta	>11469126
-	rep	#$20
-	longa	on
 ;	*BM_Y_SIZE_H = 0x01;
-	.line	4167
-	sep	#$20
-	longa	off
-	lda	#$1
-	sta	>11469127
-	rep	#$20
-	longa	on
 ;
 ;	width+=(width & 0x0001);
-	.line	4169
-	lda	<L1054+width_0
-	and	#<$1
-	sta	<R0
-	clc
-	lda	<L1054+width_0
-	adc	<R0
-	sta	<L1054+width_0
 ;
 ;	*VDMA_X_SIZE_L = LOBYTE(width);
-	.line	4171
-	sep	#$20
-	longa	off
-	lda	<L1054+width_0
-	sta	>11469832
-	rep	#$20
-	longa	on
 ;	*VDMA_X_SIZE_H = HIBYTE(width);
-	.line	4172
-	lda	<L1054+width_0
-	ldx	#<$8
-	xref	~~~asr
-	jsl	~~~asr
-	and	#<$ff
-	sta	<R0
-	sep	#$20
-	longa	off
-	lda	<R0
-	sta	>11469833
-	rep	#$20
-	longa	on
 ;
 ;	*VDMA_Y_SIZE_L = LOBYTE(height);
-	.line	4174
-	sep	#$20
-	longa	off
-	lda	<L1054+height_0
-	sta	>11469834
-	rep	#$20
-	longa	on
 ;	*VDMA_Y_SIZE_H = HIBYTE(height);
-	.line	4175
-	lda	<L1054+height_0
-	ldx	#<$8
-	xref	~~~asr
-	jsl	~~~asr
-	and	#<$ff
-	sta	<R0
-	sep	#$20
-	longa	off
-	lda	<R0
-	sta	>11469835
-	rep	#$20
-	longa	on
 ;
 ;	*VDMA_DST_STRIDE_L  = 0x80;
-	.line	4177
-	sep	#$20
-	longa	off
-	lda	#$80
-	sta	>11469838
-	rep	#$20
-	longa	on
 ;	*VDMA_DST_STRIDE_H	= 0x02;
-	.line	4178
-	sep	#$20
-	longa	off
-	lda	#$2
-	sta	>11469839
-	rep	#$20
-	longa	on
 ;	
 ;
 ;	VDMA_DST_ADDY_L[0] = L24BYTE((long)pdst);
-	.line	4181
-	sep	#$20
-	longa	off
-	lda	<L1054+pdst_0
-	sta	>11469829
-	rep	#$20
-	longa	on
 ;	VDMA_DST_ADDY_M[0] = M24BYTE((long)pdst);
-	.line	4182
-	pei	<L1054+pdst_0+2
-	pei	<L1054+pdst_0
-	lda	#$8
-	xref	~~~llsr
-	jsl	~~~llsr
-	sta	<R0
-	stx	<R0+2
-	lda	<R0
-	and	#<$ff
-	sta	<R1
-	stz	<R1+2
-	sep	#$20
-	longa	off
-	lda	<R1
-	sta	>11469830
-	rep	#$20
-	longa	on
 ;	VDMA_DST_ADDY_H[0] = H24BYTE((long)pdst);
-	.line	4183
-	pei	<L1054+pdst_0+2
-	pei	<L1054+pdst_0
-	lda	#$10
-	xref	~~~llsr
-	jsl	~~~llsr
-	sta	<R0
-	stx	<R0+2
-	lda	<R0
-	and	#<$ff
-	sta	<R1
-	stz	<R1+2
-	sep	#$20
-	longa	off
-	lda	<R1
-	sta	>11469831
-	rep	#$20
-	longa	on
 ;
 ;	VDMA_BYTE_2_WRITE[0] = (char)data;
-	.line	4185
-	sep	#$20
-	longa	off
-	lda	<L1054+data_0
-	sta	>11469825
-	rep	#$20
-	longa	on
 ;	
 ;	VDMA_CONTROL_REG[0]  = (VDMA_CTRL_ENABLE | VDMA_CTRL_1D_2D | VDMA_CTRL_TRF_FILL | VDMA_CTRL_START_TRF);//0x87;
-	.line	4187
-	sep	#$20
-	longa	off
-	lda	#$87
-	sta	>11469824
-	rep	#$20
-	longa	on
 ;
 ;
 ;	status = VDMA_STAT_VDMA_IPS;
-	.line	4190
-	sep	#$20
-	longa	off
-	lda	#$80
-	sta	<L1055+status_1
-	rep	#$20
-	longa	on
 ;	while(status == VDMA_STAT_VDMA_IPS)
-	.line	4191
-L10423:
-	sep	#$20
-	longa	off
-	lda	<L1055+status_1
-	cmp	#<$80
-	rep	#$20
-	longa	on
-	beq	L1057
-	brl	L10424
-L1057:
 ;	{
-	.line	4192
 ;		status = ( *VDMA_STATUS_REG & VDMA_STAT_VDMA_IPS);
-	.line	4193
-	sep	#$20
-	longa	off
-	lda	>11469825
-	and	#<$80
-	sta	<L1055+status_1
-	rep	#$20
-	longa	on
 ;		spinLock++;
-	.line	4194
-	inc	<L1055+spinLock_1
 ;
 ;		if(spinLock > 32000)
-	.line	4196
 ;		{
-	lda	#$7d00
-	cmp	<L1055+spinLock_1
-	bcc	L1058
-	brl	L10425
-L1058:
-	.line	4197
 ;			break;
-	.line	4198
-	brl	L10424
 ;		}
-	.line	4199
 ;	}
-L10425:
-	.line	4200
-	brl	L10423
-L10424:
 ;	k_debug_integer("k_vdma_fill_address2::spinLock:",spinLock);
-	.line	4201
-	pei	<L1055+spinLock_1
-	pea	#^L1049
-	pea	#<L1049
-	jsl	~~k_debug_integer
 ;
 ;
 ;
-;	/*
-;	while(status == VDMA_STAT_VDMA_IPS)
-;	{
-;		status = ( *((unsigned char *)0xAF0401) & VDMA_STAT_VDMA_IPS);
-;	}
-;	
-;	
-;	while(status == VDMA_STAT_VDMA_IPS)
-;	{
-;		#asm
-;		PHA 
-;        LDA $AF0401
-;        AND #$80
-;        CMP #$80
-;        STA %%status
-;		PLA
-;		#endasm
-;	}
-;	*/
+;
 ;	
 ;   //return *VDMA_STATUS_REG;
 ;   //return VDMA_STATUS_REG[0];
 ;   //VDMA_CONTROL_REG[0] = (char)0x00;
 ;   
 ;   return ;
-	.line	4229
-L1059:
-	lda	<L1054+2
-	sta	<L1054+2+10
-	lda	<L1054+1
-	sta	<L1054+1+10
-	pld
-	tsc
-	clc
-	adc	#L1054+10
-	tcs
-	rtl
 ;}
-	.line	4230
-	.endblock	4230
-L1054	equ	13
-L1055	equ	9
-	ends
-	efunc
-	.endfunc	4230,9,13
-	.line	4230
-	data
-L1049:
-	db	$6B,$5F,$76,$64,$6D,$61,$5F,$66,$69,$6C,$6C,$5F,$61,$64,$64
-	db	$72,$65,$73,$73,$32,$3A,$3A,$73,$70,$69,$6E,$4C,$6F,$63,$6B
-	db	$3A,$00
-	ends
+;*/
 ;
 ;void k_vdma_fill_address(char FAR * pdst,int width,int height,unsigned char data)
 ;{
-	.line	4232
-	.line	4233
+	.line	3881
+	.line	3882
 	GFX
 	xdef	~~k_vdma_fill_address
 	func
-	.function	4233
+	.function	3882
 ~~k_vdma_fill_address:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1061
+	sbc	#L1113
 	tcs
 	phd
 	tcd
@@ -24559,7 +24456,7 @@ pdst_0	set	4
 width_0	set	8
 height_0	set	10
 data_0	set	12
-	.block	4233
+	.block	3882
 ;	int pos = 0;
 ;	UINT spinLock = 0;
 ;	char status = VDMA_STAT_VDMA_IPS;
@@ -24575,15 +24472,15 @@ status_1	set	4
 	.sym	width,8,5,6,16
 	.sym	height,10,5,6,16
 	.sym	data,12,14,6,8
-	stz	<L1062+pos_1
-	stz	<L1062+spinLock_1
+	stz	<L1114+pos_1
+	stz	<L1114+spinLock_1
 	sep	#$20
 	longa	off
 	lda	#$80
-	sta	<L1062+status_1
+	sta	<L1114+status_1
 	rep	#$20
 	longa	on
-	.line	4238
+	.line	3887
 	sep	#$20
 	longa	off
 	lda	#$7
@@ -24592,26 +24489,26 @@ status_1	set	4
 	longa	on
 ;
 ;	VDMA_BYTE_2_WRITE[0] = (UCHAR)data;
-	.line	4240
+	.line	3889
 	sep	#$20
 	longa	off
-	lda	<L1061+data_0
+	lda	<L1113+data_0
 	sta	>11469825
 	rep	#$20
 	longa	on
 ;
 ;	VDMA_DST_ADDY_L[0] = L24BYTE((long)pdst);
-	.line	4242
+	.line	3891
 	sep	#$20
 	longa	off
-	lda	<L1061+pdst_0
+	lda	<L1113+pdst_0
 	sta	>11469829
 	rep	#$20
 	longa	on
 ;	VDMA_DST_ADDY_M[0] = M24BYTE((long)pdst);
-	.line	4243
-	pei	<L1061+pdst_0+2
-	pei	<L1061+pdst_0
+	.line	3892
+	pei	<L1113+pdst_0+2
+	pei	<L1113+pdst_0
 	lda	#$8
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -24628,9 +24525,9 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	VDMA_DST_ADDY_H[0] = H24BYTE((long)pdst);
-	.line	4244
-	pei	<L1061+pdst_0+2
-	pei	<L1061+pdst_0
+	.line	3893
+	pei	<L1113+pdst_0+2
+	pei	<L1113+pdst_0
 	lda	#$10
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -24648,8 +24545,8 @@ status_1	set	4
 	longa	on
 ;
 ;	VDMA_X_SIZE_L[0] = LOBYTE(width + 1);
-	.line	4246
-	lda	<L1061+width_0
+	.line	3895
+	lda	<L1113+width_0
 	ina
 	sta	<R0
 	sep	#$20
@@ -24659,8 +24556,8 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	VDMA_X_SIZE_H[0] = HIBYTE(width + 1);
-	.line	4247
-	lda	<L1061+width_0
+	.line	3896
+	lda	<L1113+width_0
 	ina
 	ldx	#<$8
 	xref	~~~asr
@@ -24675,8 +24572,8 @@ status_1	set	4
 	longa	on
 ;
 ;	VDMA_Y_SIZE_L[0] = LOBYTE(height + 1);
-	.line	4249
-	lda	<L1061+height_0
+	.line	3898
+	lda	<L1113+height_0
 	ina
 	sta	<R0
 	sep	#$20
@@ -24686,8 +24583,8 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	VDMA_Y_SIZE_H[0] = HIBYTE(height + 1);
-	.line	4250
-	lda	<L1061+height_0
+	.line	3899
+	lda	<L1113+height_0
 	ina
 	ldx	#<$8
 	xref	~~~asr
@@ -24701,7 +24598,7 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	VDMA_Y_SIZE_H[1] = 0x00;
-	.line	4251
+	.line	3900
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -24710,7 +24607,7 @@ status_1	set	4
 	longa	on
 ;
 ;	*VDMA_SRC_STRIDE_L = 0x00;
-	.line	4253
+	.line	3902
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -24718,7 +24615,7 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	*VDMA_SRC_STRIDE_H = 0x00;
-	.line	4254
+	.line	3903
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -24726,25 +24623,64 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;
-;	*VDMA_DST_STRIDE_L  = 0x80;
-	.line	4256
+;	if(width >= 639)
+	.line	3905
+;	{
+	sec
+	lda	<L1113+width_0
+	sbc	#<$27f
+	bvs	L1116
+	eor	#$8000
+L1116:
+	bmi	L1117
+	brl	L10431
+L1117:
+	.line	3906
+;		*VDMA_DST_STRIDE_L  = 0x20;
+	.line	3907
+	sep	#$20
+	longa	off
+	lda	#$20
+	sta	>11469838
+	rep	#$20
+	longa	on
+;		*VDMA_DST_STRIDE_H	= 0x03;
+	.line	3908
+	sep	#$20
+	longa	off
+	lda	#$3
+	sta	>11469839
+	rep	#$20
+	longa	on
+;	}
+	.line	3909
+;	else
+	brl	L10432
+L10431:
+;	{
+	.line	3911
+;		*VDMA_DST_STRIDE_L  = 0x80;
+	.line	3912
 	sep	#$20
 	longa	off
 	lda	#$80
 	sta	>11469838
 	rep	#$20
 	longa	on
-;	*VDMA_DST_STRIDE_H	= 0x02;
-	.line	4257
+;		*VDMA_DST_STRIDE_H	= 0x02;
+	.line	3913
 	sep	#$20
 	longa	off
 	lda	#$2
 	sta	>11469839
 	rep	#$20
 	longa	on
+;	}
+	.line	3914
+L10432:
 ;
 ;    VDMA_CONTROL_REG[0]  = (VDMA_CTRL_ENABLE | VDMA_CTRL_1D_2D | VDMA_CTRL_TRF_FILL | VDMA_CTRL_START_TRF);
-	.line	4259
+	.line	3916
 	sep	#$20
 	longa	off
 	lda	#$87
@@ -24753,80 +24689,80 @@ status_1	set	4
 	longa	on
 ;
 ;    asm NOP;
-	.line	4261
+	.line	3918
 	asmstart
 	NOP
 	asmend
 ;    asm NOP;
-	.line	4262
+	.line	3919
 	asmstart
 	NOP
 	asmend
 ;    asm NOP;
-	.line	4263
+	.line	3920
 	asmstart
 	NOP
 	asmend
 ;
 ;	while(status == VDMA_STAT_VDMA_IPS)
-	.line	4265
-L10426:
+	.line	3922
+L10433:
 	sep	#$20
 	longa	off
-	lda	<L1062+status_1
+	lda	<L1114+status_1
 	cmp	#<$80
 	rep	#$20
 	longa	on
-	beq	L1064
-	brl	L10427
-L1064:
+	beq	L1118
+	brl	L10434
+L1118:
 ;	{
-	.line	4266
+	.line	3923
 ;		status = ( *VDMA_STATUS_REG & VDMA_STAT_VDMA_IPS);
-	.line	4267
+	.line	3924
 	sep	#$20
 	longa	off
 	lda	>11469825
 	and	#<$80
-	sta	<L1062+status_1
+	sta	<L1114+status_1
 	rep	#$20
 	longa	on
 ;		spinLock++;
-	.line	4268
-	inc	<L1062+spinLock_1
+	.line	3925
+	inc	<L1114+spinLock_1
 ;
 ;		if(spinLock > 32000)
-	.line	4270
+	.line	3927
 ;		{
 	lda	#$7d00
-	cmp	<L1062+spinLock_1
-	bcc	L1065
-	brl	L10428
-L1065:
-	.line	4271
+	cmp	<L1114+spinLock_1
+	bcc	L1119
+	brl	L10435
+L1119:
+	.line	3928
 ;			break;
-	.line	4272
-	brl	L10427
+	.line	3929
+	brl	L10434
 ;		}
-	.line	4273
+	.line	3930
 ;	}
-L10428:
-	.line	4274
-	brl	L10426
-L10427:
+L10435:
+	.line	3931
+	brl	L10433
+L10434:
 ;
 ;#ifdef USE_MAX_DEBUG
 ;	k_debug_integer("k_vdma_fill_address1::spinLock:",spinLock);
 ;#endif
 ;
 ;	asm NOP;
-	.line	4280
+	.line	3937
 	asmstart
 	NOP
 	asmend
 ;
 ;	VDMA_CONTROL_REG[0] = 0;
-	.line	4282
+	.line	3939
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -24835,42 +24771,42 @@ L10427:
 	longa	on
 ;
 ;   return ;
-	.line	4284
-L1066:
-	lda	<L1061+2
-	sta	<L1061+2+10
-	lda	<L1061+1
-	sta	<L1061+1+10
+	.line	3941
+L1120:
+	lda	<L1113+2
+	sta	<L1113+2+10
+	lda	<L1113+1
+	sta	<L1113+1+10
 	pld
 	tsc
 	clc
-	adc	#L1061+10
+	adc	#L1113+10
 	tcs
 	rtl
 ;}
-	.line	4285
-	.endblock	4285
-L1061	equ	13
-L1062	equ	9
+	.line	3942
+	.endblock	3942
+L1113	equ	13
+L1114	equ	9
 	ends
 	efunc
-	.endfunc	4285,9,13
-	.line	4285
+	.endfunc	3942,9,13
+	.line	3942
 ;
 ;void k_vdma_fill_address_ex(char FAR * pdst,int width,int height,unsigned char data,UINT page)
 ;{
-	.line	4287
-	.line	4288
+	.line	3944
+	.line	3945
 	GFX
 	xdef	~~k_vdma_fill_address_ex
 	func
-	.function	4288
+	.function	3945
 ~~k_vdma_fill_address_ex:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1067
+	sbc	#L1121
 	tcs
 	phd
 	tcd
@@ -24879,32 +24815,42 @@ width_0	set	8
 height_0	set	10
 data_0	set	12
 page_0	set	14
-	.block	4288
+	.block	3945
 ;	int pos = 0;
 ;	UINT spinLock = 0;
 ;	char status = VDMA_STAT_VDMA_IPS;
+;	LONG lwidth = (LONG)width;
 ;
 ;	VDMA_CONTROL_REG[0] = ( VDMA_CTRL_ENABLE | VDMA_CTRL_TRF_FILL | VDMA_CTRL_1D_2D );
 pos_1	set	0
 spinLock_1	set	2
 status_1	set	4
+lwidth_1	set	5
 	.sym	pos,0,5,1,16
 	.sym	spinLock,2,16,1,16
 	.sym	status,4,14,1,8
+	.sym	lwidth,5,7,1,32
 	.sym	pdst,4,142,6,32
 	.sym	width,8,5,6,16
 	.sym	height,10,5,6,16
 	.sym	data,12,14,6,8
 	.sym	page,14,16,6,16
-	stz	<L1068+pos_1
-	stz	<L1068+spinLock_1
+	stz	<L1122+pos_1
+	stz	<L1122+spinLock_1
 	sep	#$20
 	longa	off
 	lda	#$80
-	sta	<L1068+status_1
+	sta	<L1122+status_1
 	rep	#$20
 	longa	on
-	.line	4293
+	ldy	#$0
+	lda	<L1121+width_0
+	bpl	L1124
+	dey
+L1124:
+	sta	<L1122+lwidth_1
+	sty	<L1122+lwidth_1+2
+	.line	3951
 	sep	#$20
 	longa	off
 	lda	#$7
@@ -24913,26 +24859,26 @@ status_1	set	4
 	longa	on
 ;
 ;	VDMA_BYTE_2_WRITE[0] = (UCHAR)data;
-	.line	4295
+	.line	3953
 	sep	#$20
 	longa	off
-	lda	<L1067+data_0
+	lda	<L1121+data_0
 	sta	>11469825
 	rep	#$20
 	longa	on
 ;
 ;	VDMA_DST_ADDY_L[0] = L24BYTE((long)pdst);
-	.line	4297
+	.line	3955
 	sep	#$20
 	longa	off
-	lda	<L1067+pdst_0
+	lda	<L1121+pdst_0
 	sta	>11469829
 	rep	#$20
 	longa	on
 ;	VDMA_DST_ADDY_M[0] = M24BYTE((long)pdst);
-	.line	4298
-	pei	<L1067+pdst_0+2
-	pei	<L1067+pdst_0
+	.line	3956
+	pei	<L1121+pdst_0+2
+	pei	<L1121+pdst_0
 	lda	#$8
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -24949,9 +24895,9 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	VDMA_DST_ADDY_H[0] = H24BYTE((long)pdst)|(UCHAR)page;
-	.line	4299
-	pei	<L1067+pdst_0+2
-	pei	<L1067+pdst_0
+	.line	3957
+	pei	<L1121+pdst_0+2
+	pei	<L1121+pdst_0
 	lda	#$10
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -24963,7 +24909,7 @@ status_1	set	4
 	stz	<R1+2
 	sep	#$20
 	longa	off
-	lda	<L1067+page_0
+	lda	<L1121+page_0
 	ora	<R1
 	sta	>11469831
 	rep	#$20
@@ -24978,16 +24924,16 @@ status_1	set	4
 ;	VDMA_Y_SIZE_H[1] = 0x00;
 ;	*/
 ;	VDMA_X_SIZE_L[0] = LOBYTE(width);
-	.line	4309
+	.line	3967
 	sep	#$20
 	longa	off
-	lda	<L1067+width_0
+	lda	<L1121+width_0
 	sta	>11469832
 	rep	#$20
 	longa	on
 ;	VDMA_X_SIZE_H[0] = HIBYTE(width);
-	.line	4310
-	lda	<L1067+width_0
+	.line	3968
+	lda	<L1121+width_0
 	ldx	#<$8
 	xref	~~~asr
 	jsl	~~~asr
@@ -25001,16 +24947,16 @@ status_1	set	4
 	longa	on
 ;
 ;	VDMA_Y_SIZE_L[0] = LOBYTE(height);
-	.line	4312
+	.line	3970
 	sep	#$20
 	longa	off
-	lda	<L1067+height_0
+	lda	<L1121+height_0
 	sta	>11469834
 	rep	#$20
 	longa	on
 ;	VDMA_Y_SIZE_H[0] = HIBYTE(height);
-	.line	4313
-	lda	<L1067+height_0
+	.line	3971
+	lda	<L1121+height_0
 	ldx	#<$8
 	xref	~~~asr
 	jsl	~~~asr
@@ -25023,7 +24969,7 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	VDMA_Y_SIZE_H[1] = 0x00;
-	.line	4314
+	.line	3972
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -25031,9 +24977,8 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;
-;
 ;	*VDMA_SRC_STRIDE_L = 0x00;
-	.line	4317
+	.line	3974
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -25041,7 +24986,7 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	*VDMA_SRC_STRIDE_H = 0x00;
-	.line	4318
+	.line	3975
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -25049,25 +24994,70 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;
-;	*VDMA_DST_STRIDE_L  = 0x80;
-	.line	4320
+;	//*VDMA_DST_STRIDE_L  = L24BYTE(lwidth);
+;	//*VDMA_DST_STRIDE_H	= M24BYTE(lwidth);
+;
+;
+;
+;	if(width > 640)
+	.line	3982
+;	{
+	sec
+	lda	#$280
+	sbc	<L1121+width_0
+	bvs	L1125
+	eor	#$8000
+L1125:
+	bpl	L1126
+	brl	L10436
+L1126:
+	.line	3983
+;		*VDMA_DST_STRIDE_L  = 0x20;
+	.line	3984
+	sep	#$20
+	longa	off
+	lda	#$20
+	sta	>11469838
+	rep	#$20
+	longa	on
+;		*VDMA_DST_STRIDE_H	= 0x03;
+	.line	3985
+	sep	#$20
+	longa	off
+	lda	#$3
+	sta	>11469839
+	rep	#$20
+	longa	on
+;	}
+	.line	3986
+;	else
+	brl	L10437
+L10436:
+;	{
+	.line	3988
+;		*VDMA_DST_STRIDE_L  = 0x80;
+	.line	3989
 	sep	#$20
 	longa	off
 	lda	#$80
 	sta	>11469838
 	rep	#$20
 	longa	on
-;	*VDMA_DST_STRIDE_H	= 0x02;
-	.line	4321
+;		*VDMA_DST_STRIDE_H	= 0x02;
+	.line	3990
 	sep	#$20
 	longa	off
 	lda	#$2
 	sta	>11469839
 	rep	#$20
 	longa	on
+;	}
+	.line	3991
+L10437:
+;
 ;
 ;    VDMA_CONTROL_REG[0]  = (VDMA_CTRL_ENABLE | VDMA_CTRL_1D_2D | VDMA_CTRL_TRF_FILL | VDMA_CTRL_START_TRF);
-	.line	4323
+	.line	3994
 	sep	#$20
 	longa	off
 	lda	#$87
@@ -25076,80 +25066,80 @@ status_1	set	4
 	longa	on
 ;
 ;    asm NOP;
-	.line	4325
+	.line	3996
 	asmstart
 	NOP
 	asmend
 ;    asm NOP;
-	.line	4326
+	.line	3997
 	asmstart
 	NOP
 	asmend
 ;    asm NOP;
-	.line	4327
+	.line	3998
 	asmstart
 	NOP
 	asmend
 ;
 ;	while(status == VDMA_STAT_VDMA_IPS)
-	.line	4329
-L10429:
+	.line	4000
+L10438:
 	sep	#$20
 	longa	off
-	lda	<L1068+status_1
+	lda	<L1122+status_1
 	cmp	#<$80
 	rep	#$20
 	longa	on
-	beq	L1070
-	brl	L10430
-L1070:
+	beq	L1127
+	brl	L10439
+L1127:
 ;	{
-	.line	4330
+	.line	4001
 ;		status = ( *VDMA_STATUS_REG & VDMA_STAT_VDMA_IPS);
-	.line	4331
+	.line	4002
 	sep	#$20
 	longa	off
 	lda	>11469825
 	and	#<$80
-	sta	<L1068+status_1
+	sta	<L1122+status_1
 	rep	#$20
 	longa	on
 ;		spinLock++;
-	.line	4332
-	inc	<L1068+spinLock_1
+	.line	4003
+	inc	<L1122+spinLock_1
 ;
 ;		if(spinLock > 32000)
-	.line	4334
+	.line	4005
 ;		{
 	lda	#$7d00
-	cmp	<L1068+spinLock_1
-	bcc	L1071
-	brl	L10431
-L1071:
-	.line	4335
+	cmp	<L1122+spinLock_1
+	bcc	L1128
+	brl	L10440
+L1128:
+	.line	4006
 ;			break;
-	.line	4336
-	brl	L10430
+	.line	4007
+	brl	L10439
 ;		}
-	.line	4337
+	.line	4008
 ;	}
-L10431:
-	.line	4338
-	brl	L10429
-L10430:
+L10440:
+	.line	4009
+	brl	L10438
+L10439:
 ;
 ;#ifdef USE_MAX_DEBUG
 ;	k_debug_integer("k_vdma_fill_address1::spinLock:",spinLock);
 ;#endif
 ;
 ;	asm NOP;
-	.line	4344
+	.line	4015
 	asmstart
 	NOP
 	asmend
 ;
 ;	VDMA_CONTROL_REG[0] = 0;
-	.line	4346
+	.line	4017
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -25158,52 +25148,52 @@ L10430:
 	longa	on
 ;
 ;   return ;
-	.line	4348
-L1072:
-	lda	<L1067+2
-	sta	<L1067+2+12
-	lda	<L1067+1
-	sta	<L1067+1+12
+	.line	4019
+L1129:
+	lda	<L1121+2
+	sta	<L1121+2+12
+	lda	<L1121+1
+	sta	<L1121+1+12
 	pld
 	tsc
 	clc
-	adc	#L1067+12
+	adc	#L1121+12
 	tcs
 	rtl
 ;}
-	.line	4349
-	.endblock	4349
-L1067	equ	13
-L1068	equ	9
+	.line	4020
+	.endblock	4020
+L1121	equ	17
+L1122	equ	9
 	ends
 	efunc
-	.endfunc	4349,9,13
-	.line	4349
+	.endfunc	4020,9,17
+	.line	4020
 ;
 ;
 ;
 ;
 ;void k_vdma_fill(char FAR * pdst,long size,unsigned char data)
 ;{
-	.line	4354
-	.line	4355
+	.line	4025
+	.line	4026
 	GFX
 	xdef	~~k_vdma_fill
 	func
-	.function	4355
+	.function	4026
 ~~k_vdma_fill:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1073
+	sbc	#L1130
 	tcs
 	phd
 	tcd
 pdst_0	set	4
 size_0	set	8
 data_0	set	12
-	.block	4355
+	.block	4026
 ;	int pos = 0;
 ;	int spinLock = 0;
 ;	char status = VDMA_STAT_VDMA_IPS;
@@ -25259,15 +25249,15 @@ status_1	set	4
 	.sym	pdst,4,142,6,32
 	.sym	size,8,7,6,32
 	.sym	data,12,14,6,8
-	stz	<L1074+pos_1
-	stz	<L1074+spinLock_1
+	stz	<L1131+pos_1
+	stz	<L1131+spinLock_1
 	sep	#$20
 	longa	off
 	lda	#$80
-	sta	<L1074+status_1
+	sta	<L1131+status_1
 	rep	#$20
 	longa	on
-	.line	4401
+	.line	4072
 	sep	#$20
 	longa	off
 	lda	#$1
@@ -25276,7 +25266,7 @@ status_1	set	4
 	longa	on
 ;
 ;	*BM_START_ADDY_L = 0x00;
-	.line	4403
+	.line	4074
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -25284,7 +25274,7 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	*BM_START_ADDY_M = 0x00;
-	.line	4404
+	.line	4075
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -25292,7 +25282,7 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	*BM_START_ADDY_H = 0x00;
-	.line	4405
+	.line	4076
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -25300,7 +25290,7 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	*((char FAR*)0xAF1F80) = 0x02;
-	.line	4406
+	.line	4077
 	sep	#$20
 	longa	off
 	lda	#$2
@@ -25309,7 +25299,7 @@ status_1	set	4
 	longa	on
 ;	
 ;	*BM_X_SIZE_L = 0x80;
-	.line	4408
+	.line	4079
 	sep	#$20
 	longa	off
 	lda	#$80
@@ -25317,7 +25307,7 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	*BM_X_SIZE_H = 0x02;	
-	.line	4409
+	.line	4080
 	sep	#$20
 	longa	off
 	lda	#$2
@@ -25325,7 +25315,7 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	*BM_Y_SIZE_L = 0xE0;
-	.line	4410
+	.line	4081
 	sep	#$20
 	longa	off
 	lda	#$e0
@@ -25333,7 +25323,7 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	*BM_Y_SIZE_H = 0x01;
-	.line	4411
+	.line	4082
 	sep	#$20
 	longa	off
 	lda	#$1
@@ -25342,17 +25332,17 @@ status_1	set	4
 	longa	on
 ;	
 ;	VDMA_SIZE_L[0] = L24BYTE(size);
-	.line	4413
+	.line	4084
 	sep	#$20
 	longa	off
-	lda	<L1073+size_0
+	lda	<L1130+size_0
 	sta	>11469832
 	rep	#$20
 	longa	on
 ;	VDMA_SIZE_M[0] = M24BYTE(size);
-	.line	4414
-	pei	<L1073+size_0+2
-	pei	<L1073+size_0
+	.line	4085
+	pei	<L1130+size_0+2
+	pei	<L1130+size_0
 	lda	#$8
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -25369,9 +25359,9 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	VDMA_SIZE_H[0] = H24BYTE(size);
-	.line	4415
-	pei	<L1073+size_0+2
-	pei	<L1073+size_0
+	.line	4086
+	pei	<L1130+size_0+2
+	pei	<L1130+size_0
 	lda	#$10
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -25390,7 +25380,7 @@ status_1	set	4
 ;	
 ;	
 ;	*VDMA_X_SIZE_L = 0x80;
-	.line	4418
+	.line	4089
 	sep	#$20
 	longa	off
 	lda	#$80
@@ -25398,7 +25388,7 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	*VDMA_X_SIZE_H = 0x20;
-	.line	4419
+	.line	4090
 	sep	#$20
 	longa	off
 	lda	#$20
@@ -25407,7 +25397,7 @@ status_1	set	4
 	longa	on
 ;
 ;	*VDMA_Y_SIZE_L = 0xE0;
-	.line	4421
+	.line	4092
 	sep	#$20
 	longa	off
 	lda	#$e0
@@ -25415,7 +25405,7 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	*VDMA_Y_SIZE_H = 0x01;
-	.line	4422
+	.line	4093
 	sep	#$20
 	longa	off
 	lda	#$1
@@ -25424,7 +25414,7 @@ status_1	set	4
 	longa	on
 ;
 ;	*VDMA_DST_STRIDE_L = 0x80;
-	.line	4424
+	.line	4095
 	sep	#$20
 	longa	off
 	lda	#$80
@@ -25432,7 +25422,7 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	*VDMA_DST_STRIDE_H	= 0x02;
-	.line	4425
+	.line	4096
 	sep	#$20
 	longa	off
 	lda	#$2
@@ -25465,17 +25455,17 @@ status_1	set	4
 ;	*/
 ;
 ;	VDMA_DST_ADDY_L[0] = L24BYTE((long)pdst);
-	.line	4451
+	.line	4122
 	sep	#$20
 	longa	off
-	lda	<L1073+pdst_0
+	lda	<L1130+pdst_0
 	sta	>11469829
 	rep	#$20
 	longa	on
 ;	VDMA_DST_ADDY_M[0] = M24BYTE((long)pdst);
-	.line	4452
-	pei	<L1073+pdst_0+2
-	pei	<L1073+pdst_0
+	.line	4123
+	pei	<L1130+pdst_0+2
+	pei	<L1130+pdst_0
 	lda	#$8
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -25492,9 +25482,9 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	VDMA_DST_ADDY_H[0] = H24BYTE((long)pdst);
-	.line	4453
-	pei	<L1073+pdst_0+2
-	pei	<L1073+pdst_0
+	.line	4124
+	pei	<L1130+pdst_0+2
+	pei	<L1130+pdst_0
 	lda	#$10
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -25512,16 +25502,16 @@ status_1	set	4
 	longa	on
 ;
 ;	VDMA_BYTE_2_WRITE[0] = (char)data;
-	.line	4455
+	.line	4126
 	sep	#$20
 	longa	off
-	lda	<L1073+data_0
+	lda	<L1130+data_0
 	sta	>11469825
 	rep	#$20
 	longa	on
 ;	
 ;	VDMA_CONTROL_REG[0]  = (VDMA_CTRL_ENABLE | VDMA_CTRL_TRF_FILL | VDMA_CTRL_START_TRF);//0x85;
-	.line	4457
+	.line	4128
 	sep	#$20
 	longa	off
 	lda	#$85
@@ -25554,47 +25544,47 @@ status_1	set	4
 ;   //VDMA_CONTROL_REG[0] = (char)0x00;
 ;   
 ;   return ;
-	.line	4483
-L1076:
-	lda	<L1073+2
-	sta	<L1073+2+10
-	lda	<L1073+1
-	sta	<L1073+1+10
+	.line	4154
+L1133:
+	lda	<L1130+2
+	sta	<L1130+2+10
+	lda	<L1130+1
+	sta	<L1130+1+10
 	pld
 	tsc
 	clc
-	adc	#L1073+10
+	adc	#L1130+10
 	tcs
 	rtl
 ;}
-	.line	4484
-	.endblock	4484
-L1073	equ	13
-L1074	equ	9
+	.line	4155
+	.endblock	4155
+L1130	equ	13
+L1131	equ	9
 	ends
 	efunc
-	.endfunc	4484,9,13
-	.line	4484
+	.endfunc	4155,9,13
+	.line	4155
 ;
 ;
 ;void k_enable_bitmap_mode(void)
 ;{
-	.line	4487
-	.line	4488
+	.line	4158
+	.line	4159
 	GFX
 	xdef	~~k_enable_bitmap_mode
 	func
-	.function	4488
+	.function	4159
 ~~k_enable_bitmap_mode:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1077
+	sbc	#L1134
 	tcs
 	phd
 	tcd
-	.block	4488
+	.block	4159
 ;	int i = 30000;
 ;	int j = 30000;
 ;
@@ -25604,14 +25594,14 @@ j_1	set	2
 	.sym	i,0,5,1,16
 	.sym	j,2,5,1,16
 	lda	#$7530
-	sta	<L1078+i_1
+	sta	<L1135+i_1
 	lda	#$7530
-	sta	<L1078+j_1
-	.line	4492
+	sta	<L1135+j_1
+	.line	4163
 	jsl	~~k_lock_irq
 ;
 ;	k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_FRONT);
-	.line	4494
+	.line	4165
 	pea	#<$0
 	pea	#<$0
 	pea	#<$1e0
@@ -25622,7 +25612,7 @@ j_1	set	2
 	pea	#<$0
 	jsl	~~k_vdma_fill_rect_ex
 ;	k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_BACK);
-	.line	4495
+	.line	4166
 	pea	#<$8
 	pea	#<$0
 	pea	#<$1e0
@@ -25634,26 +25624,26 @@ j_1	set	2
 	jsl	~~k_vdma_fill_rect_ex
 ;
 ;	k_unlock_irq();
-	.line	4497
+	.line	4168
 	jsl	~~k_unlock_irq
 ;
 ;	if(MASTER_CTRL_REG_H[0])
-	.line	4499
+	.line	4170
 ;	{
 	lda	>11468801
 	and	#$ff
-	bne	L1080
-	brl	L10432
-L1080:
-	.line	4500
+	bne	L1137
+	brl	L10441
+L1137:
+	.line	4171
 ;		k_debug_string("k_enable_bitmap_mode to 800x600...\r\n");
-	.line	4501
+	.line	4172
 	pea	#^L1060
 	pea	#<L1060
 	jsl	~~k_debug_string
 ;
 ;		MASTER_CTRL_REG_H[0] = MSTR_CTRL_VIDEO_MODE0;
-	.line	4503
+	.line	4174
 	sep	#$20
 	longa	off
 	lda	#$1
@@ -25661,7 +25651,7 @@ L1080:
 	rep	#$20
 	longa	on
 ;		MASTER_CTRL_REG_L[0] = MSTR_CTRL_GRAPH_MODE_EN;
-	.line	4504
+	.line	4175
 	sep	#$20
 	longa	off
 	lda	#$4
@@ -25670,56 +25660,56 @@ L1080:
 	longa	on
 ;
 ;		for(i=3200;i>0;i--)
-	.line	4506
+	.line	4177
 	lda	#$c80
-	sta	<L1078+i_1
-L10435:
+	sta	<L1135+i_1
+L10444:
 ;		{
-	.line	4507
+	.line	4178
 ;			for(j=0;j<256;j++)
-	.line	4508
-	stz	<L1078+j_1
-L10438:
+	.line	4179
+	stz	<L1135+j_1
+L10447:
 ;			{
-	.line	4509
+	.line	4180
 ;				asm NOP;
-	.line	4510
+	.line	4181
 	asmstart
 	NOP
 	asmend
 ;			}
-	.line	4511
-L10436:
-	inc	<L1078+j_1
+	.line	4182
+L10445:
+	inc	<L1135+j_1
 	sec
-	lda	<L1078+j_1
+	lda	<L1135+j_1
 	sbc	#<$100
-	bvs	L1081
+	bvs	L1138
 	eor	#$8000
-L1081:
-	bmi	L1082
-	brl	L10438
-L1082:
-L10437:
+L1138:
+	bmi	L1139
+	brl	L10447
+L1139:
+L10446:
 ;		}
-	.line	4512
-L10433:
-	dec	<L1078+i_1
+	.line	4183
+L10442:
+	dec	<L1135+i_1
 	sec
 	lda	#$0
-	sbc	<L1078+i_1
-	bvs	L1083
+	sbc	<L1135+i_1
+	bvs	L1140
 	eor	#$8000
-L1083:
-	bmi	L1084
-	brl	L10435
-L1084:
-L10434:
+L1140:
+	bmi	L1141
+	brl	L10444
+L1141:
+L10443:
 ;	}
-	.line	4513
+	.line	4184
 ;	k_get_video_mode();
-L10432:
-	.line	4514
+L10441:
+	.line	4185
 	jsl	~~k_get_video_mode
 ;
 ;	/*
@@ -25753,7 +25743,7 @@ L10432:
 ;	//k_get_video_mode();
 ;
 ;	MASTER_CTRL_REG_H[0] = 0x00;
-	.line	4546
+	.line	4217
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -25762,54 +25752,54 @@ L10432:
 	longa	on
 ;	//MASTER_CTRL_REG_L[0] = MSTR_CTRL_GRAPH_MODE_EN;
 ;	for(i=3200;i>0;i--)
-	.line	4548
+	.line	4219
 	lda	#$c80
-	sta	<L1078+i_1
-L10441:
+	sta	<L1135+i_1
+L10450:
 ;	{
-	.line	4549
+	.line	4220
 ;		for(j=0;j<256;j++)
-	.line	4550
-	stz	<L1078+j_1
-L10444:
+	.line	4221
+	stz	<L1135+j_1
+L10453:
 ;		{
-	.line	4551
+	.line	4222
 ;			asm NOP;
-	.line	4552
+	.line	4223
 	asmstart
 	NOP
 	asmend
 ;		}
-	.line	4553
-L10442:
-	inc	<L1078+j_1
+	.line	4224
+L10451:
+	inc	<L1135+j_1
 	sec
-	lda	<L1078+j_1
+	lda	<L1135+j_1
 	sbc	#<$100
-	bvs	L1085
+	bvs	L1142
 	eor	#$8000
-L1085:
-	bmi	L1086
-	brl	L10444
-L1086:
-L10443:
+L1142:
+	bmi	L1143
+	brl	L10453
+L1143:
+L10452:
 ;	}
-	.line	4554
-L10439:
-	dec	<L1078+i_1
+	.line	4225
+L10448:
+	dec	<L1135+i_1
 	sec
 	lda	#$0
-	sbc	<L1078+i_1
-	bvs	L1087
+	sbc	<L1135+i_1
+	bvs	L1144
 	eor	#$8000
-L1087:
-	bmi	L1088
-	brl	L10441
-L1088:
-L10440:
+L1144:
+	bmi	L1145
+	brl	L10450
+L1145:
+L10449:
 ;
 ;	*BM1_CONTROL_REG = 0x01;
-	.line	4556
+	.line	4227
 	sep	#$20
 	longa	off
 	lda	#$1
@@ -25817,7 +25807,7 @@ L10440:
 	rep	#$20
 	longa	on
 ;	*BM1_START_ADDY_L = 0;
-	.line	4557
+	.line	4228
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -25825,7 +25815,7 @@ L10440:
 	rep	#$20
 	longa	on
 ;	*BM1_START_ADDY_M = 0;
-	.line	4558
+	.line	4229
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -25833,7 +25823,7 @@ L10440:
 	rep	#$20
 	longa	on
 ;	*BM1_START_ADDY_H = BITMAP_BACK;
-	.line	4559
+	.line	4230
 	sep	#$20
 	longa	off
 	lda	#$8
@@ -25842,7 +25832,7 @@ L10440:
 	longa	on
 ;
 ;	*BM0_CONTROL_REG = 0x01;
-	.line	4561
+	.line	4232
 	sep	#$20
 	longa	off
 	lda	#$1
@@ -25850,7 +25840,7 @@ L10440:
 	rep	#$20
 	longa	on
 ;	*BM0_START_ADDY_L = 0;
-	.line	4562
+	.line	4233
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -25858,7 +25848,7 @@ L10440:
 	rep	#$20
 	longa	on
 ;	*BM0_START_ADDY_M = 0;
-	.line	4563
+	.line	4234
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -25866,7 +25856,7 @@ L10440:
 	rep	#$20
 	longa	on
 ;	*BM0_START_ADDY_H = BITMAP_FRONT;
-	.line	4564
+	.line	4235
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -25875,7 +25865,7 @@ L10440:
 	longa	on
 ;
 ;	*BM1_CONTROL_REG = ( BM_ENABLE | BM_LUT0 );
-	.line	4566
+	.line	4237
 	sep	#$20
 	longa	off
 	lda	#$1
@@ -25883,7 +25873,7 @@ L10440:
 	rep	#$20
 	longa	on
 ;	*BM0_CONTROL_REG = ( BM_ENABLE | BM_LUT0 );
-	.line	4567
+	.line	4238
 	sep	#$20
 	longa	off
 	lda	#$1
@@ -25892,12 +25882,12 @@ L10440:
 	longa	on
 ;
 ;	k_debug_string("k_enable_bitmap_mode 640x480...\r\n");
-	.line	4569
+	.line	4240
 	pea	#^L1060+37
 	pea	#<L1060+37
 	jsl	~~k_debug_string
 ;	*MASTER_CTRL_REG_L 	= (MSTR_CTRL_GRAPH_MODE_EN | MSTR_CTRL_BITMAP_EN);
-	.line	4570
+	.line	4241
 	sep	#$20
 	longa	off
 	lda	#$c
@@ -25906,11 +25896,11 @@ L10440:
 	longa	on
 ;
 ;	k_lock_irq();
-	.line	4572
+	.line	4243
 	jsl	~~k_lock_irq
 ;
 ;	k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_FRONT);
-	.line	4574
+	.line	4245
 	pea	#<$0
 	pea	#<$0
 	pea	#<$1e0
@@ -25921,7 +25911,7 @@ L10440:
 	pea	#<$0
 	jsl	~~k_vdma_fill_rect_ex
 ;	k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_BACK);
-	.line	4575
+	.line	4246
 	pea	#<$8
 	pea	#<$0
 	pea	#<$1e0
@@ -25933,79 +25923,79 @@ L10440:
 	jsl	~~k_vdma_fill_rect_ex
 ;
 ;	k_unlock_irq();
-	.line	4577
+	.line	4248
 	jsl	~~k_unlock_irq
 ;
 ;	for(i=3200;i>0;i--)
-	.line	4579
+	.line	4250
 	lda	#$c80
-	sta	<L1078+i_1
-L10447:
+	sta	<L1135+i_1
+L10456:
 ;	{
-	.line	4580
+	.line	4251
 ;		for(j=0;j<256;j++)
-	.line	4581
-	stz	<L1078+j_1
-L10450:
+	.line	4252
+	stz	<L1135+j_1
+L10459:
 ;		{
-	.line	4582
+	.line	4253
 ;			asm NOP;
-	.line	4583
+	.line	4254
 	asmstart
 	NOP
 	asmend
 ;		}
-	.line	4584
-L10448:
-	inc	<L1078+j_1
+	.line	4255
+L10457:
+	inc	<L1135+j_1
 	sec
-	lda	<L1078+j_1
+	lda	<L1135+j_1
 	sbc	#<$100
-	bvs	L1089
+	bvs	L1146
 	eor	#$8000
-L1089:
-	bmi	L1090
-	brl	L10450
-L1090:
-L10449:
+L1146:
+	bmi	L1147
+	brl	L10459
+L1147:
+L10458:
 ;	}
-	.line	4585
-L10445:
-	dec	<L1078+i_1
+	.line	4256
+L10454:
+	dec	<L1135+i_1
 	sec
 	lda	#$0
-	sbc	<L1078+i_1
-	bvs	L1091
+	sbc	<L1135+i_1
+	bvs	L1148
 	eor	#$8000
-L1091:
-	bmi	L1092
-	brl	L10447
-L1092:
-L10446:
+L1148:
+	bmi	L1149
+	brl	L10456
+L1149:
+L10455:
 ;
 ;	k_get_video_mode();
-	.line	4587
+	.line	4258
 	jsl	~~k_get_video_mode
 ;
 ;
 ;	return;
-	.line	4590
-L1093:
+	.line	4261
+L1150:
 	pld
 	tsc
 	clc
-	adc	#L1077
+	adc	#L1134
 	tcs
 	rtl
 ;}
-	.line	4591
-	.endblock	4591
-L1077	equ	4
-L1078	equ	1
+	.line	4262
+	.endblock	4262
+L1134	equ	4
+L1135	equ	1
 	ends
 	efunc
-	.endfunc	4591,1,4
-	.line	4591
+	.endfunc	4262,1,4
+	.line	4262
 	data
 L1060:
 	db	$6B,$5F,$65,$6E,$61,$62,$6C,$65,$5F,$62,$69,$74,$6D,$61,$70
@@ -26018,27 +26008,27 @@ L1060:
 ;
 ;UINT k_get_video_mode(void)
 ;{
-	.line	4594
-	.line	4595
+	.line	4265
+	.line	4266
 	GFX
 	xdef	~~k_get_video_mode
 	func
-	.function	4595
+	.function	4266
 ~~k_get_video_mode:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1095
+	sbc	#L1152
 	tcs
 	phd
 	tcd
-	.block	4595
+	.block	4266
 ;	//Mstr_Ctrl_Video_Mode0   = $01       ; 0 - 640x480 (Clock @ 25.175Mhz), 1 - 800x600 (Clock @ 40Mhz)
 ;	//Mstr_Ctrl_Video_Mode1   = $02       ; 0 - No Pixel Doubling, 1- Pixel Doubling (Reduce the Pixel Resolution by 2)
 ;
 ;	if(MASTER_CTRL_REG_H[0] & 0x01)
-	.line	4599
+	.line	4270
 ;	{
 	sep	#$20
 	longa	off
@@ -26046,12 +26036,12 @@ L1060:
 	and	#<$1
 	rep	#$20
 	longa	on
-	bne	L1098
-	brl	L10451
-L1098:
-	.line	4600
+	bne	L1155
+	brl	L10460
+L1155:
+	.line	4271
 ;		if(MASTER_CTRL_REG_H[0] & 0x02)
-	.line	4601
+	.line	4272
 ;		{
 	sep	#$20
 	longa	off
@@ -26059,48 +26049,40 @@ L1098:
 	and	#<$2
 	rep	#$20
 	longa	on
-	bne	L1099
-	brl	L10452
-L1099:
-	.line	4602
-;			k_debug_string("k_get_video_mode:VIDEO_MODE_800X600D...\r\n");
-	.line	4603
-	pea	#^L1094
-	pea	#<L1094
-	jsl	~~k_debug_string
+	bne	L1156
+	brl	L10461
+L1156:
+	.line	4273
+;			//k_debug_string("k_get_video_mode:VIDEO_MODE_800X600D...\r\n");
 ;			return VIDEO_MODE_800X600D;
-	.line	4604
+	.line	4275
 	lda	#$8
-L1100:
+L1157:
 	tay
 	pld
 	tsc
 	clc
-	adc	#L1095
+	adc	#L1152
 	tcs
 	tya
 	rtl
 ;		}
-	.line	4605
+	.line	4276
 ;
-;		k_debug_string("k_get_video_mode:VIDEO_MODE_800X600...\r\n");
-L10452:
-	.line	4607
-	pea	#^L1094+42
-	pea	#<L1094+42
-	jsl	~~k_debug_string
+;		//k_debug_string("k_get_video_mode:VIDEO_MODE_800X600...\r\n");
 ;		return VIDEO_MODE_800X600;
-	.line	4608
+L10461:
+	.line	4279
 	lda	#$4
-	brl	L1100
+	brl	L1157
 ;	}
-	.line	4609
+	.line	4280
 ;	else
-L10451:
+L10460:
 ;	{
-	.line	4611
+	.line	4282
 ;		if(MASTER_CTRL_REG_H[0] & 0x02)
-	.line	4612
+	.line	4283
 ;		{
 	sep	#$20
 	longa	off
@@ -26108,83 +26090,60 @@ L10451:
 	and	#<$2
 	rep	#$20
 	longa	on
-	bne	L1101
-	brl	L10453
-L1101:
-	.line	4613
-;			k_debug_string("k_get_video_mode:VIDEO_MODE_640X480D...\r\n");
-	.line	4614
-	pea	#^L1094+83
-	pea	#<L1094+83
-	jsl	~~k_debug_string
+	bne	L1158
+	brl	L10462
+L1158:
+	.line	4284
+;			//k_debug_string("k_get_video_mode:VIDEO_MODE_640X480D...\r\n");
 ;			return VIDEO_MODE_640X480D;
-	.line	4615
+	.line	4286
 	lda	#$2
-	brl	L1100
+	brl	L1157
 ;		}
-	.line	4616
+	.line	4287
 ;
-;		k_debug_string("k_get_video_mode:VIDEO_MODE_640X480...\r\n");
-L10453:
-	.line	4618
-	pea	#^L1094+125
-	pea	#<L1094+125
-	jsl	~~k_debug_string
+;		//k_debug_string("k_get_video_mode:VIDEO_MODE_640X480...\r\n");
 ;		return VIDEO_MODE_640X480;
-	.line	4619
+L10462:
+	.line	4290
 	lda	#$1
-	brl	L1100
+	brl	L1157
 ;	}
-	.line	4620
+	.line	4291
 ;
 ;
 ;	return VIDEO_MODE_UNKNOWN;
-	.line	4623
+	.line	4294
 	lda	#$ff
-	brl	L1100
+	brl	L1157
 ;}
-	.line	4624
-	.endblock	4624
-L1095	equ	0
-L1096	equ	1
+	.line	4295
+	.endblock	4295
+L1152	equ	0
+L1153	equ	1
 	ends
 	efunc
-	.endfunc	4624,1,0
-	.line	4624
-	data
-L1094:
-	db	$6B,$5F,$67,$65,$74,$5F,$76,$69,$64,$65,$6F,$5F,$6D,$6F,$64
-	db	$65,$3A,$56,$49,$44,$45,$4F,$5F,$4D,$4F,$44,$45,$5F,$38,$30
-	db	$30,$58,$36,$30,$30,$44,$2E,$2E,$2E,$0D,$0A,$00,$6B,$5F,$67
-	db	$65,$74,$5F,$76,$69,$64,$65,$6F,$5F,$6D,$6F,$64,$65,$3A,$56
-	db	$49,$44,$45,$4F,$5F,$4D,$4F,$44,$45,$5F,$38,$30,$30,$58,$36
-	db	$30,$30,$2E,$2E,$2E,$0D,$0A,$00,$6B,$5F,$67,$65,$74,$5F,$76
-	db	$69,$64,$65,$6F,$5F,$6D,$6F,$64,$65,$3A,$56,$49,$44,$45,$4F
-	db	$5F,$4D,$4F,$44,$45,$5F,$36,$34,$30,$58,$34,$38,$30,$44,$2E
-	db	$2E,$2E,$0D,$0A,$00,$6B,$5F,$67,$65,$74,$5F,$76,$69,$64,$65
-	db	$6F,$5F,$6D,$6F,$64,$65,$3A,$56,$49,$44,$45,$4F,$5F,$4D,$4F
-	db	$44,$45,$5F,$36,$34,$30,$58,$34,$38,$30,$2E,$2E,$2E,$0D,$0A
-	db	$00
-	ends
+	.endfunc	4295,1,0
+	.line	4295
 ;
 ;void k_gui_cache_desktop_widgets(void)
 ;{
-	.line	4626
-	.line	4627
+	.line	4297
+	.line	4298
 	GFX
 	xdef	~~k_gui_cache_desktop_widgets
 	func
-	.function	4627
+	.function	4298
 ~~k_gui_cache_desktop_widgets:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1103
+	sbc	#L1159
 	tcs
 	phd
 	tcd
-	.block	4627
+	.block	4298
 ;	int i = 0;
 ;	int titleOffsetX = 0;
 ;	RECT rect;
@@ -26197,44 +26156,44 @@ rect_1	set	4
 	.sym	i,0,5,1,16
 	.sym	titleOffsetX,2,5,1,16
 	.sym	rect,4,10,1,112,26
-	stz	<L1104+i_1
-	stz	<L1104+titleOffsetX_1
-	.line	4633
-	stz	<L1104+i_1
-L10456:
+	stz	<L1160+i_1
+	stz	<L1160+titleOffsetX_1
+	.line	4304
+	stz	<L1160+i_1
+L10465:
 ;	{
-	.line	4634
+	.line	4305
 ;		titleOffsetX+=k_put_wingadget_point_ex(WINICON_TITLE_LINES,titleOffsetX,10,k_getUIGadgetColor(),BITMAP_BACK);
-	.line	4635
+	.line	4306
 	pea	#<$8
 	jsl	~~k_getUIGadgetColor
 	pha
 	pea	#<$a
-	pei	<L1104+titleOffsetX_1
+	pei	<L1160+titleOffsetX_1
 	pea	#<$1
 	jsl	~~k_put_wingadget_point_ex
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L1104+titleOffsetX_1
-	sta	<L1104+titleOffsetX_1
+	adc	<L1160+titleOffsetX_1
+	sta	<L1160+titleOffsetX_1
 ;	}
-	.line	4636
-L10454:
-	inc	<L1104+i_1
+	.line	4307
+L10463:
+	inc	<L1160+i_1
 	sec
-	lda	<L1104+i_1
+	lda	<L1160+i_1
 	sbc	#<$50
-	bvs	L1106
+	bvs	L1162
 	eor	#$8000
-L1106:
-	bmi	L1107
-	brl	L10456
-L1107:
-L10455:
+L1162:
+	bmi	L1163
+	brl	L10465
+L1163:
+L10464:
 ;
 ;	k_vdma_copy_address_ex((LPSTR)(GUI_CACHE_PAGE + GUI_CACHE_PAGE_OFFSET(0)),
-	.line	4638
+	.line	4309
 ;						   (LPSTR)(0x080000  + k_gui_get_pixel_offset(0,10)),
 ;						   640,8);
 	pea	#<$8
@@ -26302,41 +26261,41 @@ L10455:
 ;	}
 ;	*/
 ;}
-	.line	4686
-L1108:
+	.line	4357
+L1164:
 	pld
 	tsc
 	clc
-	adc	#L1103
+	adc	#L1159
 	tcs
 	rtl
-	.endblock	4686
-L1103	equ	26
-L1104	equ	9
+	.endblock	4357
+L1159	equ	26
+L1160	equ	9
 	ends
 	efunc
-	.endfunc	4686,9,26
-	.line	4686
+	.endfunc	4357,9,26
+	.line	4357
 ;
 ;void k_init_desktop(PFXPROCESS process)
 ;{
-	.line	4688
-	.line	4689
+	.line	4359
+	.line	4360
 	GFX
 	xdef	~~k_init_desktop
 	func
-	.function	4689
+	.function	4360
 ~~k_init_desktop:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1109
+	sbc	#L1165
 	tcs
 	phd
 	tcd
 process_0	set	4
-	.block	4689
+	.block	4360
 ;
 ;	int i = 0;
 ;	int x = 0;
@@ -26363,21 +26322,21 @@ availableMem_1	set	14
 	.sym	fxstring,10,138,1,32,61
 	.sym	availableMem,14,18,1,32
 	.sym	process,4,138,6,32,20
-	stz	<L1110+i_1
-	stz	<L1110+x_1
+	stz	<L1166+i_1
+	stz	<L1166+x_1
 	lda	#$c8
-	sta	<L1110+y_1
-	stz	<L1110+fxtitle_1
-	stz	<L1110+fxtitle_1+2
-	stz	<L1110+fxstring_1
-	stz	<L1110+fxstring_1+2
-	stz	<L1110+availableMem_1
-	stz	<L1110+availableMem_1+2
-	.line	4702
+	sta	<L1166+y_1
+	stz	<L1166+fxtitle_1
+	stz	<L1166+fxtitle_1+2
+	stz	<L1166+fxstring_1
+	stz	<L1166+fxstring_1+2
+	stz	<L1166+availableMem_1
+	stz	<L1166+availableMem_1+2
+	.line	4373
 	pea	#<$0
 	jsl	~~k_clear_screen
 ;	setColors();
-	.line	4703
+	.line	4374
 	jsl	~~setColors
 ;	//defineGrayPalette();
 ;
@@ -26414,11 +26373,11 @@ availableMem_1	set	14
 ;
 ;
 ;	k_enable_bitmap_mode();
-	.line	4738
+	.line	4409
 	jsl	~~k_enable_bitmap_mode
 ;
 ;	k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_FRONT);
-	.line	4740
+	.line	4411
 	pea	#<$0
 	pea	#<$0
 	pea	#<$1e0
@@ -26429,7 +26388,7 @@ availableMem_1	set	14
 	pea	#<$0
 	jsl	~~k_vdma_fill_rect_ex
 ;	k_vdma_fill_rect_ex(0,0,640,480,15,BITMAP_BACK);
-	.line	4741
+	.line	4412
 	pea	#<$8
 	pea	#<$f
 	pea	#<$1e0
@@ -26441,11 +26400,11 @@ availableMem_1	set	14
 	jsl	~~k_vdma_fill_rect_ex
 ;
 ;	k_gui_cache_desktop_widgets();
-	.line	4743
+	.line	4414
 	jsl	~~k_gui_cache_desktop_widgets
 ;
 ;	k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_FRONT);
-	.line	4745
+	.line	4416
 	pea	#<$0
 	pea	#<$0
 	pea	#<$1e0
@@ -26456,7 +26415,7 @@ availableMem_1	set	14
 	pea	#<$0
 	jsl	~~k_vdma_fill_rect_ex
 ;	k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_BACK);
-	.line	4746
+	.line	4417
 	pea	#<$8
 	pea	#<$0
 	pea	#<$1e0
@@ -26490,7 +26449,7 @@ availableMem_1	set	14
 ;#endif
 ;
 ;	k_disable_border();
-	.line	4770
+	.line	4441
 	jsl	~~k_disable_border
 ;
 ;	//setColors();
@@ -26563,48 +26522,48 @@ availableMem_1	set	14
 ;
 ;
 ;	return;
-	.line	4841
-L1112:
-	lda	<L1109+2
-	sta	<L1109+2+4
-	lda	<L1109+1
-	sta	<L1109+1+4
+	.line	4512
+L1168:
+	lda	<L1165+2
+	sta	<L1165+2+4
+	lda	<L1165+1
+	sta	<L1165+1+4
 	pld
 	tsc
 	clc
-	adc	#L1109+4
+	adc	#L1165+4
 	tcs
 	rtl
 ;}
-	.line	4842
-	.endblock	4842
-L1109	equ	18
-L1110	equ	1
+	.line	4513
+	.endblock	4513
+L1165	equ	18
+L1166	equ	1
 	ends
 	efunc
-	.endfunc	4842,1,18
-	.line	4842
+	.endfunc	4513,1,18
+	.line	4513
 ;
 ;
 ;UINT k_init_splash(BOOL bWait)
 ;{
-	.line	4845
-	.line	4846
+	.line	4516
+	.line	4517
 	GFX
 	xdef	~~k_init_splash
 	func
-	.function	4846
+	.function	4517
 ~~k_init_splash:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1113
+	sbc	#L1169
 	tcs
 	phd
 	tcd
 bWait_0	set	4
-	.block	4846
+	.block	4517
 ;	UINT bootMode = BOOTMODE_DEFAULT;
 ;
 ;	int i;
@@ -26654,17 +26613,17 @@ boardRelease_1	set	50
 	.sym	pathName,46,142,1,32
 	.sym	boardRelease,50,110,1,0,3
 	.sym	bWait,4,14,6,8
-	lda	#$1
-	sta	<L1114+bootMode_1
-	stz	<L1114+kbd_1
-	stz	<L1114+kbd_1+2
+	lda	#$2
+	sta	<L1170+bootMode_1
+	stz	<L1170+kbd_1
+	stz	<L1170+kbd_1+2
 	lda	#$2000
-	sta	<L1114+pPalette_1
+	sta	<L1170+pPalette_1
 	lda	#$af
-	sta	<L1114+pPalette_1+2
-	stz	<L1114+pathName_1
-	stz	<L1114+pathName_1+2
-	.line	4866
+	sta	<L1170+pPalette_1+2
+	stz	<L1170+pathName_1
+	stz	<L1170+pathName_1+2
+	.line	4537
 	pea	#<$0
 	jsl	~~k_clear_screen
 ;
@@ -26677,10 +26636,10 @@ boardRelease_1	set	50
 ;#elif USE_FX256_U
 ;
 ;	k_enable_bitmap_mode();
-	.line	4876
+	.line	4547
 	jsl	~~k_enable_bitmap_mode
 ;	k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_FRONT);
-	.line	4877
+	.line	4548
 	pea	#<$0
 	pea	#<$0
 	pea	#<$1e0
@@ -26691,7 +26650,7 @@ boardRelease_1	set	50
 	pea	#<$0
 	jsl	~~k_vdma_fill_rect_ex
 ;	k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_BACK);
-	.line	4878
+	.line	4549
 	pea	#<$8
 	pea	#<$0
 	pea	#<$1e0
@@ -26727,16 +26686,16 @@ boardRelease_1	set	50
 ;#endif
 ;
 ;	k_disable_border();
-	.line	4904
+	.line	4575
 	jsl	~~k_disable_border
 ;
 ;	//k_debug_string("k_init_splash::k_get_c256_release\r\n");
 ;	k_get_c256_release(boardRelease);
-	.line	4907
+	.line	4578
 	pea	#0
 	clc
 	tdc
-	adc	#<L1114+boardRelease_1
+	adc	#<L1170+boardRelease_1
 	pha
 	jsl	~~k_get_c256_release
 ;
@@ -26746,188 +26705,188 @@ boardRelease_1	set	50
 ;	//k_debug_string("k_init_splash::k_string_replace\r\n");
 ;
 ;	pathName = k_string_replace("HD:\\system\\assets\\%BR%\\logo1.bmp","%BR%",boardRelease);
-	.line	4914
+	.line	4585
 	pea	#0
 	clc
 	tdc
-	adc	#<L1114+boardRelease_1
+	adc	#<L1170+boardRelease_1
 	pha
-	pea	#^L1102+33
-	pea	#<L1102+33
-	pea	#^L1102
-	pea	#<L1102
+	pea	#^L1151+33
+	pea	#<L1151+33
+	pea	#^L1151
+	pea	#<L1151
 	jsl	~~k_string_replace
-	sta	<L1114+pathName_1
-	stx	<L1114+pathName_1+2
+	sta	<L1170+pathName_1
+	stx	<L1170+pathName_1+2
 ;	if(pathName)
-	.line	4915
+	.line	4586
 ;	{
-	lda	<L1114+pathName_1
-	ora	<L1114+pathName_1+2
-	bne	L1116
-	brl	L10457
-L1116:
-	.line	4916
+	lda	<L1170+pathName_1
+	ora	<L1170+pathName_1+2
+	bne	L1172
+	brl	L10466
+L1172:
+	.line	4587
 ;		k_debug_string("k_init_splash::pathName\r\n");
-	.line	4917
-	pea	#^L1102+38
-	pea	#<L1102+38
+	.line	4588
+	pea	#^L1151+38
+	pea	#<L1151+38
 	jsl	~~k_debug_string
 ;		readBMP(pathName);
-	.line	4918
-	pei	<L1114+pathName_1+2
-	pei	<L1114+pathName_1
+	.line	4589
+	pei	<L1170+pathName_1+2
+	pei	<L1170+pathName_1
 	jsl	~~readBMP
 ;		k_mem_deallocate_heap(pathName);
-	.line	4919
-	pei	<L1114+pathName_1+2
-	pei	<L1114+pathName_1
+	.line	4590
+	pei	<L1170+pathName_1+2
+	pei	<L1170+pathName_1
 	jsl	~~k_mem_deallocate_heap
 ;	}
-	.line	4920
+	.line	4591
 ;
 ;	if(bWait)
-L10457:
-	.line	4922
+L10466:
+	.line	4593
 ;	{
-	lda	<L1113+bWait_0
+	lda	<L1169+bWait_0
 	and	#$ff
-	bne	L1117
-	brl	L10458
-L1117:
-	.line	4923
+	bne	L1173
+	brl	L10467
+L1173:
+	.line	4594
 ;		sleep(15000);
-	.line	4924
+	.line	4595
 	pea	#<$3a98
 	jsl	~~sleep
 ;
 ;		//k_debug_string("k_init_splash::k_string_replace2\r\n");
 ;		pathName = k_string_replace("HD:\\system\\assets\\%BR%\\logo2.bmp","%BR%",boardRelease);
-	.line	4927
+	.line	4598
 	pea	#0
 	clc
 	tdc
-	adc	#<L1114+boardRelease_1
+	adc	#<L1170+boardRelease_1
 	pha
-	pea	#^L1102+97
-	pea	#<L1102+97
-	pea	#^L1102+64
-	pea	#<L1102+64
+	pea	#^L1151+97
+	pea	#<L1151+97
+	pea	#^L1151+64
+	pea	#<L1151+64
 	jsl	~~k_string_replace
-	sta	<L1114+pathName_1
-	stx	<L1114+pathName_1+2
+	sta	<L1170+pathName_1
+	stx	<L1170+pathName_1+2
 ;		if(pathName)
-	.line	4928
+	.line	4599
 ;		{
-	lda	<L1114+pathName_1
-	ora	<L1114+pathName_1+2
-	bne	L1118
-	brl	L10459
-L1118:
-	.line	4929
+	lda	<L1170+pathName_1
+	ora	<L1170+pathName_1+2
+	bne	L1174
+	brl	L10468
+L1174:
+	.line	4600
 ;			readBMP(pathName);
-	.line	4930
-	pei	<L1114+pathName_1+2
-	pei	<L1114+pathName_1
+	.line	4601
+	pei	<L1170+pathName_1+2
+	pei	<L1170+pathName_1
 	jsl	~~readBMP
 ;			k_mem_deallocate_heap(pathName);
-	.line	4931
-	pei	<L1114+pathName_1+2
-	pei	<L1114+pathName_1
+	.line	4602
+	pei	<L1170+pathName_1+2
+	pei	<L1170+pathName_1
 	jsl	~~k_mem_deallocate_heap
 ;		}
-	.line	4932
+	.line	4603
 ;
 ;		//k_debug_string("pPalette\r\n");
 ;
 ;		r = pPalette[(int) (12 * 4 + 0)];
-L10459:
-	.line	4936
+L10468:
+	.line	4607
 	sep	#$20
 	longa	off
 	ldy	#$30
-	lda	[<L1114+pPalette_1],Y
-	sta	<L1114+r_1
+	lda	[<L1170+pPalette_1],Y
+	sta	<L1170+r_1
 	rep	#$20
 	longa	on
 ;		g = pPalette[(int) (12 * 4 + 1)];
-	.line	4937
+	.line	4608
 	sep	#$20
 	longa	off
 	ldy	#$31
-	lda	[<L1114+pPalette_1],Y
-	sta	<L1114+g_1
+	lda	[<L1170+pPalette_1],Y
+	sta	<L1170+g_1
 	rep	#$20
 	longa	on
 ;		b = pPalette[(int) (12 * 4 + 2)];
-	.line	4938
+	.line	4609
 	sep	#$20
 	longa	off
 	ldy	#$32
-	lda	[<L1114+pPalette_1],Y
-	sta	<L1114+b_1
+	lda	[<L1170+pPalette_1],Y
+	sta	<L1170+b_1
 	rep	#$20
 	longa	on
 ;
 ;
 ;
 ;		kbd = k_get_device_driver(DRIVER_TYPE_KEYBOARD);
-	.line	4942
+	.line	4613
 	pea	#<$5
 	jsl	~~k_get_device_driver
-	sta	<L1114+kbd_1
-	stx	<L1114+kbd_1+2
+	sta	<L1170+kbd_1
+	stx	<L1170+kbd_1+2
 ;		k_debug_pointer("k_init_splash::k_get_dos_device:",kbd);
-	.line	4943
-	pei	<L1114+kbd_1+2
-	pei	<L1114+kbd_1
-	pea	#^L1102+102
-	pea	#<L1102+102
+	.line	4614
+	pei	<L1170+kbd_1+2
+	pei	<L1170+kbd_1
+	pea	#^L1151+102
+	pea	#<L1151+102
 	jsl	~~k_debug_pointer
 ;		if(kbd)
-	.line	4944
+	.line	4615
 ;		{
-	lda	<L1114+kbd_1
-	ora	<L1114+kbd_1+2
-	bne	L1119
-	brl	L10460
-L1119:
-	.line	4945
+	lda	<L1170+kbd_1
+	ora	<L1170+kbd_1+2
+	bne	L1175
+	brl	L10469
+L1175:
+	.line	4616
 ;			k_debug_strings("k_init_splash::k_get_dos_device:name:",kbd->name);
-	.line	4946
-	pei	<L1114+kbd_1+2
-	pei	<L1114+kbd_1
-	pea	#^L1102+135
-	pea	#<L1102+135
+	.line	4617
+	pei	<L1170+kbd_1+2
+	pei	<L1170+kbd_1
+	pea	#^L1151+135
+	pea	#<L1151+135
 	jsl	~~k_debug_strings
 ;		}
-	.line	4947
+	.line	4618
 ;
 ;		for(i = 0; i < 10; i++)
-L10460:
-	.line	4949
-	stz	<L1114+i_1
-L10463:
+L10469:
+	.line	4620
+	stz	<L1170+i_1
+L10472:
 ;		{
-	.line	4950
+	.line	4621
 ;			for(c = 0;c < 48;c++)
-	.line	4951
+	.line	4622
 	sep	#$20
 	longa	off
-	stz	<L1114+c_1
+	stz	<L1170+c_1
 	rep	#$20
 	longa	on
-	brl	L10467
-L10466:
+	brl	L10476
+L10475:
 ;			{
-	.line	4952
+	.line	4623
 ;
 ;				pPalette[(int) (12 * 4 + 0)] = (r + c) < 255 ? (r + c) : 255;
-	.line	4954
-	lda	<L1114+c_1
+	.line	4625
+	lda	<L1170+c_1
 	and	#$ff
 	sta	<R0
-	lda	<L1114+r_1
+	lda	<L1170+r_1
 	and	#$ff
 	sta	<R1
 	clc
@@ -26937,37 +26896,37 @@ L10466:
 	sec
 	lda	<R2
 	sbc	#<$ff
-	bvs	L1121
+	bvs	L1177
 	eor	#$8000
-L1121:
-	bpl	L1122
-	brl	L1120
-L1122:
-	lda	<L1114+c_1
+L1177:
+	bpl	L1178
+	brl	L1176
+L1178:
+	lda	<L1170+c_1
 	and	#$ff
 	sta	<R0
-	lda	<L1114+r_1
+	lda	<L1170+r_1
 	and	#$ff
 	sta	<R1
 	clc
 	lda	<R1
 	adc	<R0
-	bra	L1123
-L1120:
+	bra	L1179
+L1176:
 	lda	#$ff
-L1123:
+L1179:
 	sep	#$20
 	longa	off
 	ldy	#$30
-	sta	[<L1114+pPalette_1],Y
+	sta	[<L1170+pPalette_1],Y
 	rep	#$20
 	longa	on
 ;				pPalette[(int) (12 * 4 + 1)] = (g + c) < 255 ? (g + c) : 255;
-	.line	4955
-	lda	<L1114+c_1
+	.line	4626
+	lda	<L1170+c_1
 	and	#$ff
 	sta	<R0
-	lda	<L1114+g_1
+	lda	<L1170+g_1
 	and	#$ff
 	sta	<R1
 	clc
@@ -26977,37 +26936,37 @@ L1123:
 	sec
 	lda	<R2
 	sbc	#<$ff
-	bvs	L1125
+	bvs	L1181
 	eor	#$8000
-L1125:
-	bpl	L1126
-	brl	L1124
-L1126:
-	lda	<L1114+c_1
+L1181:
+	bpl	L1182
+	brl	L1180
+L1182:
+	lda	<L1170+c_1
 	and	#$ff
 	sta	<R0
-	lda	<L1114+g_1
+	lda	<L1170+g_1
 	and	#$ff
 	sta	<R1
 	clc
 	lda	<R1
 	adc	<R0
-	bra	L1127
-L1124:
+	bra	L1183
+L1180:
 	lda	#$ff
-L1127:
+L1183:
 	sep	#$20
 	longa	off
 	ldy	#$31
-	sta	[<L1114+pPalette_1],Y
+	sta	[<L1170+pPalette_1],Y
 	rep	#$20
 	longa	on
 ;				pPalette[(int) (12 * 4 + 2)] = (b + c) < 255 ? (b + c) : 255;
-	.line	4956
-	lda	<L1114+c_1
+	.line	4627
+	lda	<L1170+c_1
 	and	#$ff
 	sta	<R0
-	lda	<L1114+b_1
+	lda	<L1170+b_1
 	and	#$ff
 	sta	<R1
 	clc
@@ -27017,193 +26976,193 @@ L1127:
 	sec
 	lda	<R2
 	sbc	#<$ff
-	bvs	L1129
+	bvs	L1185
 	eor	#$8000
-L1129:
-	bpl	L1130
-	brl	L1128
-L1130:
-	lda	<L1114+c_1
+L1185:
+	bpl	L1186
+	brl	L1184
+L1186:
+	lda	<L1170+c_1
 	and	#$ff
 	sta	<R0
-	lda	<L1114+b_1
+	lda	<L1170+b_1
 	and	#$ff
 	sta	<R1
 	clc
 	lda	<R1
 	adc	<R0
-	bra	L1131
-L1128:
+	bra	L1187
+L1184:
 	lda	#$ff
-L1131:
+L1187:
 	sep	#$20
 	longa	off
 	ldy	#$32
-	sta	[<L1114+pPalette_1],Y
+	sta	[<L1170+pPalette_1],Y
 	rep	#$20
 	longa	on
 ;				pPalette[(int) (12 * 4 + 3)] = 0x80;
-	.line	4957
+	.line	4628
 	sep	#$20
 	longa	off
 	lda	#$80
 	ldy	#$33
-	sta	[<L1114+pPalette_1],Y
+	sta	[<L1170+pPalette_1],Y
 	rep	#$20
 	longa	on
 ;				k_delay(15);
-	.line	4958
+	.line	4629
 	pea	#<$f
 	jsl	~~k_delay
 ;				if(kbd)
-	.line	4959
+	.line	4630
 ;				{
-	lda	<L1114+kbd_1
-	ora	<L1114+kbd_1+2
-	bne	L1132
-	brl	L10468
-L1132:
-	.line	4960
+	lda	<L1170+kbd_1
+	ora	<L1170+kbd_1+2
+	bne	L1188
+	brl	L10477
+L1188:
+	.line	4631
 ;					key = 0;
-	.line	4961
+	.line	4632
 	sep	#$20
 	longa	off
-	stz	<L1114+key_1
+	stz	<L1170+key_1
 	rep	#$20
 	longa	on
 ;					read = ((DEVICEDRIVER_READ)kbd->f_driver_read)(0,&key);
-	.line	4962
+	.line	4633
 	pea	#0
 	clc
 	tdc
-	adc	#<L1114+key_1
+	adc	#<L1170+key_1
 	pha
 	pea	#^$0
 	pea	#<$0
 	ldy	#$57
-	lda	[<L1114+kbd_1],Y
+	lda	[<L1170+kbd_1],Y
 	tax
 	ldy	#$55
-	lda	[<L1114+kbd_1],Y
+	lda	[<L1170+kbd_1],Y
 	xref	~~~lcal
 	jsl	~~~lcal
 	sep	#$20
 	longa	off
-	sta	<L1114+read_1
+	sta	<L1170+read_1
 	rep	#$20
 	longa	on
 ;					if(read)
-	.line	4963
+	.line	4634
 ;					{
-	lda	<L1114+read_1
+	lda	<L1170+read_1
 	and	#$ff
-	bne	L1133
-	brl	L10469
-L1133:
-	.line	4964
+	bne	L1189
+	brl	L10478
+L1189:
+	.line	4635
 ;						switch(key)
-	.line	4965
-	lda	<L1114+key_1
+	.line	4636
+	lda	<L1170+key_1
 	and	#$ff
-	brl	L10470
+	brl	L10479
 ;						{
-	.line	4966
+	.line	4637
 ;						case 0x2E:
-	.line	4967
-L10472:
+	.line	4638
+L10481:
 ;							bootMode = BOOTMODE_CONSOLE;
-	.line	4968
+	.line	4639
 	lda	#$1
-	sta	<L1114+bootMode_1
+	sta	<L1170+bootMode_1
 ;							break;
-	.line	4969
-	brl	L10471
+	.line	4640
+	brl	L10480
 ;						case 0x30:
-	.line	4970
-L10473:
+	.line	4641
+L10482:
 ;							bootMode = BOOTMODE_EXTERN;
-	.line	4971
+	.line	4642
 	lda	#$3
-	sta	<L1114+bootMode_1
+	sta	<L1170+bootMode_1
 ;							break;
-	.line	4972
-	brl	L10471
+	.line	4643
+	brl	L10480
 ;						case 0x11:
-	.line	4973
-L10474:
+	.line	4644
+L10483:
 ;							bootMode = BOOTMODE_DESKTOP;
-	.line	4974
+	.line	4645
 	lda	#$2
-	sta	<L1114+bootMode_1
+	sta	<L1170+bootMode_1
 ;							break;
-	.line	4975
-	brl	L10471
+	.line	4646
+	brl	L10480
 ;						}
-	.line	4976
-L10470:
+	.line	4647
+L10479:
 	xref	~~~swt
 	jsl	~~~swt
 	dw	3
 	dw	17
-	dw	L10474-1
+	dw	L10483-1
 	dw	46
-	dw	L10472-1
+	dw	L10481-1
 	dw	48
-	dw	L10473-1
-	dw	L10471-1
-L10471:
+	dw	L10482-1
+	dw	L10480-1
+L10480:
 ;
 ;						k_debug_hex("bootMode:",bootMode);
-	.line	4978
-	pei	<L1114+bootMode_1
-	pea	#^L1102+173
-	pea	#<L1102+173
+	.line	4649
+	pei	<L1170+bootMode_1
+	pea	#^L1151+173
+	pea	#<L1151+173
 	jsl	~~k_debug_hex
 ;					}
-	.line	4979
+	.line	4650
 ;				}
-L10469:
-	.line	4980
+L10478:
+	.line	4651
 ;			}
-L10468:
-	.line	4981
-L10464:
+L10477:
+	.line	4652
+L10473:
 	sep	#$20
 	longa	off
-	inc	<L1114+c_1
+	inc	<L1170+c_1
 	rep	#$20
 	longa	on
-L10467:
+L10476:
 	sep	#$20
 	longa	off
-	lda	<L1114+c_1
+	lda	<L1170+c_1
 	cmp	#<$30
 	rep	#$20
 	longa	on
-	bcs	L1134
-	brl	L10466
-L1134:
-L10465:
+	bcs	L1190
+	brl	L10475
+L1190:
+L10474:
 ;
 ;			for(c = 48;c > 0;c--)
-	.line	4983
+	.line	4654
 	sep	#$20
 	longa	off
 	lda	#$30
-	sta	<L1114+c_1
+	sta	<L1170+c_1
 	rep	#$20
 	longa	on
-	brl	L10478
-L10477:
+	brl	L10487
+L10486:
 ;			{
-	.line	4984
+	.line	4655
 ;
 ;				pPalette[(int) (12 * 4 + 0)] = (r + c) < 255 ? (r + c) : 255;
-	.line	4986
-	lda	<L1114+c_1
+	.line	4657
+	lda	<L1170+c_1
 	and	#$ff
 	sta	<R0
-	lda	<L1114+r_1
+	lda	<L1170+r_1
 	and	#$ff
 	sta	<R1
 	clc
@@ -27213,37 +27172,37 @@ L10477:
 	sec
 	lda	<R2
 	sbc	#<$ff
-	bvs	L1136
+	bvs	L1192
 	eor	#$8000
-L1136:
-	bpl	L1137
-	brl	L1135
-L1137:
-	lda	<L1114+c_1
+L1192:
+	bpl	L1193
+	brl	L1191
+L1193:
+	lda	<L1170+c_1
 	and	#$ff
 	sta	<R0
-	lda	<L1114+r_1
+	lda	<L1170+r_1
 	and	#$ff
 	sta	<R1
 	clc
 	lda	<R1
 	adc	<R0
-	bra	L1138
-L1135:
+	bra	L1194
+L1191:
 	lda	#$ff
-L1138:
+L1194:
 	sep	#$20
 	longa	off
 	ldy	#$30
-	sta	[<L1114+pPalette_1],Y
+	sta	[<L1170+pPalette_1],Y
 	rep	#$20
 	longa	on
 ;				pPalette[(int) (12 * 4 + 1)] = (g + c) < 255 ? (g + c) : 255;
-	.line	4987
-	lda	<L1114+c_1
+	.line	4658
+	lda	<L1170+c_1
 	and	#$ff
 	sta	<R0
-	lda	<L1114+g_1
+	lda	<L1170+g_1
 	and	#$ff
 	sta	<R1
 	clc
@@ -27253,37 +27212,37 @@ L1138:
 	sec
 	lda	<R2
 	sbc	#<$ff
-	bvs	L1140
+	bvs	L1196
 	eor	#$8000
-L1140:
-	bpl	L1141
-	brl	L1139
-L1141:
-	lda	<L1114+c_1
+L1196:
+	bpl	L1197
+	brl	L1195
+L1197:
+	lda	<L1170+c_1
 	and	#$ff
 	sta	<R0
-	lda	<L1114+g_1
+	lda	<L1170+g_1
 	and	#$ff
 	sta	<R1
 	clc
 	lda	<R1
 	adc	<R0
-	bra	L1142
-L1139:
+	bra	L1198
+L1195:
 	lda	#$ff
-L1142:
+L1198:
 	sep	#$20
 	longa	off
 	ldy	#$31
-	sta	[<L1114+pPalette_1],Y
+	sta	[<L1170+pPalette_1],Y
 	rep	#$20
 	longa	on
 ;				pPalette[(int) (12 * 4 + 2)] = (b + c) < 255 ? (b + c) : 255;
-	.line	4988
-	lda	<L1114+c_1
+	.line	4659
+	lda	<L1170+c_1
 	and	#$ff
 	sta	<R0
-	lda	<L1114+b_1
+	lda	<L1170+b_1
 	and	#$ff
 	sta	<R1
 	clc
@@ -27293,197 +27252,197 @@ L1142:
 	sec
 	lda	<R2
 	sbc	#<$ff
-	bvs	L1144
+	bvs	L1200
 	eor	#$8000
-L1144:
-	bpl	L1145
-	brl	L1143
-L1145:
-	lda	<L1114+c_1
+L1200:
+	bpl	L1201
+	brl	L1199
+L1201:
+	lda	<L1170+c_1
 	and	#$ff
 	sta	<R0
-	lda	<L1114+b_1
+	lda	<L1170+b_1
 	and	#$ff
 	sta	<R1
 	clc
 	lda	<R1
 	adc	<R0
-	bra	L1146
-L1143:
+	bra	L1202
+L1199:
 	lda	#$ff
-L1146:
+L1202:
 	sep	#$20
 	longa	off
 	ldy	#$32
-	sta	[<L1114+pPalette_1],Y
+	sta	[<L1170+pPalette_1],Y
 	rep	#$20
 	longa	on
 ;				pPalette[(int) (12 * 4 + 3)] = 0x80;//(c >> 2);//R
-	.line	4989
+	.line	4660
 	sep	#$20
 	longa	off
 	lda	#$80
 	ldy	#$33
-	sta	[<L1114+pPalette_1],Y
+	sta	[<L1170+pPalette_1],Y
 	rep	#$20
 	longa	on
 ;				k_delay(15);
-	.line	4990
+	.line	4661
 	pea	#<$f
 	jsl	~~k_delay
 ;				if(kbd)
-	.line	4991
+	.line	4662
 ;				{
-	lda	<L1114+kbd_1
-	ora	<L1114+kbd_1+2
-	bne	L1147
-	brl	L10479
-L1147:
-	.line	4992
+	lda	<L1170+kbd_1
+	ora	<L1170+kbd_1+2
+	bne	L1203
+	brl	L10488
+L1203:
+	.line	4663
 ;					key = 0;
-	.line	4993
+	.line	4664
 	sep	#$20
 	longa	off
-	stz	<L1114+key_1
+	stz	<L1170+key_1
 	rep	#$20
 	longa	on
 ;					read = ((DEVICEDRIVER_READ)kbd->f_driver_read)(0,&key);
-	.line	4994
+	.line	4665
 	pea	#0
 	clc
 	tdc
-	adc	#<L1114+key_1
+	adc	#<L1170+key_1
 	pha
 	pea	#^$0
 	pea	#<$0
 	ldy	#$57
-	lda	[<L1114+kbd_1],Y
+	lda	[<L1170+kbd_1],Y
 	tax
 	ldy	#$55
-	lda	[<L1114+kbd_1],Y
+	lda	[<L1170+kbd_1],Y
 	xref	~~~lcal
 	jsl	~~~lcal
 	sep	#$20
 	longa	off
-	sta	<L1114+read_1
+	sta	<L1170+read_1
 	rep	#$20
 	longa	on
 ;					if(read)
-	.line	4995
+	.line	4666
 ;					{
-	lda	<L1114+read_1
+	lda	<L1170+read_1
 	and	#$ff
-	bne	L1148
-	brl	L10480
-L1148:
-	.line	4996
+	bne	L1204
+	brl	L10489
+L1204:
+	.line	4667
 ;						switch(key)
-	.line	4997
-	lda	<L1114+key_1
+	.line	4668
+	lda	<L1170+key_1
 	and	#$ff
-	brl	L10481
+	brl	L10490
 ;						{
-	.line	4998
+	.line	4669
 ;						case 0x2E:
-	.line	4999
-L10483:
+	.line	4670
+L10492:
 ;							bootMode = BOOTMODE_CONSOLE;
-	.line	5000
+	.line	4671
 	lda	#$1
-	sta	<L1114+bootMode_1
+	sta	<L1170+bootMode_1
 ;							break;
-	.line	5001
-	brl	L10482
+	.line	4672
+	brl	L10491
 ;						case 0x30:
-	.line	5002
-L10484:
+	.line	4673
+L10493:
 ;							bootMode = BOOTMODE_EXTERN;
-	.line	5003
+	.line	4674
 	lda	#$3
-	sta	<L1114+bootMode_1
+	sta	<L1170+bootMode_1
 ;							break;
-	.line	5004
-	brl	L10482
+	.line	4675
+	brl	L10491
 ;						case 0x11:
-	.line	5005
-L10485:
+	.line	4676
+L10494:
 ;							bootMode = BOOTMODE_DESKTOP;
-	.line	5006
+	.line	4677
 	lda	#$2
-	sta	<L1114+bootMode_1
+	sta	<L1170+bootMode_1
 ;							break;
-	.line	5007
-	brl	L10482
+	.line	4678
+	brl	L10491
 ;						}
-	.line	5008
-L10481:
+	.line	4679
+L10490:
 	xref	~~~swt
 	jsl	~~~swt
 	dw	3
 	dw	17
-	dw	L10485-1
+	dw	L10494-1
 	dw	46
-	dw	L10483-1
+	dw	L10492-1
 	dw	48
-	dw	L10484-1
-	dw	L10482-1
-L10482:
+	dw	L10493-1
+	dw	L10491-1
+L10491:
 ;
 ;						k_debug_hex("bootMode:",bootMode);
-	.line	5010
-	pei	<L1114+bootMode_1
-	pea	#^L1102+183
-	pea	#<L1102+183
+	.line	4681
+	pei	<L1170+bootMode_1
+	pea	#^L1151+183
+	pea	#<L1151+183
 	jsl	~~k_debug_hex
 ;					}
-	.line	5011
+	.line	4682
 ;				}
-L10480:
-	.line	5012
+L10489:
+	.line	4683
 ;			}
-L10479:
-	.line	5013
-L10475:
+L10488:
+	.line	4684
+L10484:
 	sep	#$20
 	longa	off
-	dec	<L1114+c_1
+	dec	<L1170+c_1
 	rep	#$20
 	longa	on
-L10478:
+L10487:
 	sep	#$20
 	longa	off
 	lda	#$0
-	cmp	<L1114+c_1
+	cmp	<L1170+c_1
 	rep	#$20
 	longa	on
-	bcs	L1149
-	brl	L10477
-L1149:
-L10476:
+	bcs	L1205
+	brl	L10486
+L1205:
+L10485:
 ;		}
-	.line	5014
-L10461:
-	inc	<L1114+i_1
+	.line	4685
+L10470:
+	inc	<L1170+i_1
 	sec
-	lda	<L1114+i_1
+	lda	<L1170+i_1
 	sbc	#<$a
-	bvs	L1150
+	bvs	L1206
 	eor	#$8000
-L1150:
-	bmi	L1151
-	brl	L10463
-L1151:
-L10462:
+L1206:
+	bmi	L1207
+	brl	L10472
+L1207:
+L10471:
 ;
 ;
 ;		//k_debug_string("k_vdma_fill_rect_ex\r\n");
 ;
 ;		k_lock_irq();
-	.line	5019
+	.line	4690
 	jsl	~~k_lock_irq
 ;
 ;		k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_FRONT);
-	.line	5021
+	.line	4692
 	pea	#<$0
 	pea	#<$0
 	pea	#<$1e0
@@ -27494,7 +27453,7 @@ L10462:
 	pea	#<$0
 	jsl	~~k_vdma_fill_rect_ex
 ;		k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_BACK);
-	.line	5022
+	.line	4693
 	pea	#<$8
 	pea	#<$0
 	pea	#<$1e0
@@ -27506,39 +27465,39 @@ L10462:
 	jsl	~~k_vdma_fill_rect_ex
 ;
 ;		k_unlock_irq();
-	.line	5024
+	.line	4695
 	jsl	~~k_unlock_irq
 ;	}
-	.line	5025
+	.line	4696
 ;
 ;	return bootMode;
-L10458:
-	.line	5027
-	lda	<L1114+bootMode_1
-L1152:
+L10467:
+	.line	4698
+	lda	<L1170+bootMode_1
+L1208:
 	tay
-	lda	<L1113+2
-	sta	<L1113+2+2
-	lda	<L1113+1
-	sta	<L1113+1+2
+	lda	<L1169+2
+	sta	<L1169+2+2
+	lda	<L1169+1
+	sta	<L1169+1+2
 	pld
 	tsc
 	clc
-	adc	#L1113+2
+	adc	#L1169+2
 	tcs
 	tya
 	rtl
 ;}
-	.line	5028
-	.endblock	5028
-L1113	equ	65
-L1114	equ	13
+	.line	4699
+	.endblock	4699
+L1169	equ	65
+L1170	equ	13
 	ends
 	efunc
-	.endfunc	5028,13,65
-	.line	5028
+	.endfunc	4699,13,65
+	.line	4699
 	data
-L1102:
+L1151:
 	db	$48,$44,$3A,$5C,$73,$79,$73,$74,$65,$6D,$5C,$61,$73,$73,$65
 	db	$74,$73,$5C,$25,$42,$52,$25,$5C,$6C,$6F,$67,$6F,$31,$2E,$62
 	db	$6D,$70,$00,$25,$42,$52,$25,$00,$6B,$5F,$69,$6E,$69,$74,$5F
@@ -27554,25 +27513,699 @@ L1102:
 	db	$65,$3A,$00,$62,$6F,$6F,$74,$4D,$6F,$64,$65,$3A,$00
 	ends
 ;
+;void k_show_mandy(LPCSTR imageFilePath, UINT mode)
+;{
+	.line	4701
+	.line	4702
+	GFX
+	xdef	~~k_show_mandy
+	func
+	.function	4702
+~~k_show_mandy:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L1210
+	tcs
+	phd
+	tcd
+imageFilePath_0	set	4
+mode_0	set	8
+	.block	4702
+;	int i,j;
+;	BYTE c,r,g,b;
+;	long color[4];
+;
+;	long *pcolor[3];
+;
+;	//PFXZEROPAGE zp = NULL;
+;
+;	LPSTR pPalette = GRPH_LUT0_PTR;
+;	LPSTR pathName = NULL;
+;	CHAR boardRelease[3];
+;
+;	k_clear_screen(0);
+i_1	set	0
+j_1	set	2
+c_1	set	4
+r_1	set	5
+g_1	set	6
+b_1	set	7
+color_1	set	8
+pcolor_1	set	24
+pPalette_1	set	36
+pathName_1	set	40
+boardRelease_1	set	44
+	.sym	i,0,5,1,16
+	.sym	j,2,5,1,16
+	.sym	c,4,14,1,8
+	.sym	r,5,14,1,8
+	.sym	g,6,14,1,8
+	.sym	b,7,14,1,8
+	.sym	color,8,103,1,0,4
+	.sym	pcolor,24,1127,1,32,3
+	.sym	pPalette,36,142,1,32
+	.sym	pathName,40,142,1,32
+	.sym	boardRelease,44,110,1,0,3
+	.sym	imageFilePath,4,142,6,32
+	.sym	mode,8,16,6,16
+	lda	#$2000
+	sta	<L1211+pPalette_1
+	lda	#$af
+	sta	<L1211+pPalette_1+2
+	stz	<L1211+pathName_1
+	stz	<L1211+pathName_1+2
+	.line	4715
+	pea	#<$0
+	jsl	~~k_clear_screen
+;
+;	k_lock_irq();
+	.line	4717
+	jsl	~~k_lock_irq
+;
+;	if(mode > 0)
+	.line	4719
+;	{
+	lda	#$0
+	cmp	<L1210+mode_0
+	bcc	L1213
+	brl	L10495
+L1213:
+	.line	4720
+;		/*
+;		MASTER_CTRL_REG_H[0] = 0;
+;		MASTER_CTRL_REG_L[0] = MSTR_CTRL_GRAPH_MODE_EN;
+;
+;		for(i=3200;i>0;i--)
+;		{
+;			for(j=0;j<256;j++)
+;			{
+;				asm NOP;
+;			}
+;		}
+;		*/
+;		k_debug_string("k_enable_bitmap_mode to 800x600...\r\n");
+	.line	4733
+	pea	#^L1209
+	pea	#<L1209
+	jsl	~~k_debug_string
+;
+;		k_vdma_fill_rect_ex(0,0,800,600,0,BITMAP_FRONT);
+	.line	4735
+	pea	#<$0
+	pea	#<$0
+	pea	#<$258
+	pea	#<$320
+	pea	#^$0
+	pea	#<$0
+	pea	#^$0
+	pea	#<$0
+	jsl	~~k_vdma_fill_rect_ex
+;
+;		if(MASTER_CTRL_REG_H[0] > 0)
+	.line	4737
+;		{
+	sep	#$20
+	longa	off
+	lda	#$0
+	cmp	>11468801
+	rep	#$20
+	longa	on
+	bcc	L1214
+	brl	L10496
+L1214:
+	.line	4738
+;			MASTER_CTRL_REG_H[0] =  0;
+	.line	4739
+	sep	#$20
+	longa	off
+	lda	#$0
+	sta	>11468801
+	rep	#$20
+	longa	on
+;			MASTER_CTRL_REG_L[0] = (MSTR_CTRL_GRAPH_MODE_EN | MSTR_CTRL_BITMAP_EN);
+	.line	4740
+	sep	#$20
+	longa	off
+	lda	#$c
+	sta	>11468800
+	rep	#$20
+	longa	on
+;			for(j=0;j<256;j++)
+	.line	4741
+	stz	<L1211+j_1
+L10499:
+;			{
+	.line	4742
+;				asm NOP;
+	.line	4743
+	asmstart
+	NOP
+	asmend
+;			}
+	.line	4744
+L10497:
+	inc	<L1211+j_1
+	sec
+	lda	<L1211+j_1
+	sbc	#<$100
+	bvs	L1215
+	eor	#$8000
+L1215:
+	bmi	L1216
+	brl	L10499
+L1216:
+L10498:
+;		}
+	.line	4745
+;
+;		MASTER_CTRL_REG_H[0] = 0x03;
+L10496:
+	.line	4747
+	sep	#$20
+	longa	off
+	lda	#$3
+	sta	>11468801
+	rep	#$20
+	longa	on
+;		for(j=0;j<256;j++)
+	.line	4748
+	stz	<L1211+j_1
+L10502:
+;		{
+	.line	4749
+;			asm NOP;
+	.line	4750
+	asmstart
+	NOP
+	asmend
+;		}
+	.line	4751
+L10500:
+	inc	<L1211+j_1
+	sec
+	lda	<L1211+j_1
+	sbc	#<$100
+	bvs	L1217
+	eor	#$8000
+L1217:
+	bmi	L1218
+	brl	L10502
+L1218:
+L10501:
+;
+;		MASTER_CTRL_REG_H[0] = MSTR_CTRL_VIDEO_MODE0;
+	.line	4753
+	sep	#$20
+	longa	off
+	lda	#$1
+	sta	>11468801
+	rep	#$20
+	longa	on
+;		for(j=0;j<256;j++)
+	.line	4754
+	stz	<L1211+j_1
+L10505:
+;		{
+	.line	4755
+;			asm NOP;
+	.line	4756
+	asmstart
+	NOP
+	asmend
+;		}
+	.line	4757
+L10503:
+	inc	<L1211+j_1
+	sec
+	lda	<L1211+j_1
+	sbc	#<$100
+	bvs	L1219
+	eor	#$8000
+L1219:
+	bmi	L1220
+	brl	L10505
+L1220:
+L10504:
+;
+;
+;		MASTER_CTRL_REG_H[0] = 0x03;
+	.line	4760
+	sep	#$20
+	longa	off
+	lda	#$3
+	sta	>11468801
+	rep	#$20
+	longa	on
+;		for(j=0;j<256;j++)
+	.line	4761
+	stz	<L1211+j_1
+L10508:
+;		{
+	.line	4762
+;			asm NOP;
+	.line	4763
+	asmstart
+	NOP
+	asmend
+;		}
+	.line	4764
+L10506:
+	inc	<L1211+j_1
+	sec
+	lda	<L1211+j_1
+	sbc	#<$100
+	bvs	L1221
+	eor	#$8000
+L1221:
+	bmi	L1222
+	brl	L10508
+L1222:
+L10507:
+;
+;		MASTER_CTRL_REG_H[0] = MSTR_CTRL_VIDEO_MODE0;
+	.line	4766
+	sep	#$20
+	longa	off
+	lda	#$1
+	sta	>11468801
+	rep	#$20
+	longa	on
+;		for(j=0;j<256;j++)
+	.line	4767
+	stz	<L1211+j_1
+L10511:
+;		{
+	.line	4768
+;			asm NOP;
+	.line	4769
+	asmstart
+	NOP
+	asmend
+;		}
+	.line	4770
+L10509:
+	inc	<L1211+j_1
+	sec
+	lda	<L1211+j_1
+	sbc	#<$100
+	bvs	L1223
+	eor	#$8000
+L1223:
+	bmi	L1224
+	brl	L10511
+L1224:
+L10510:
+;
+;		*BM0_CONTROL_REG = 0x01;
+	.line	4772
+	sep	#$20
+	longa	off
+	lda	#$1
+	sta	>11469056
+	rep	#$20
+	longa	on
+;		*BM0_START_ADDY_L = 0;
+	.line	4773
+	sep	#$20
+	longa	off
+	lda	#$0
+	sta	>11469057
+	rep	#$20
+	longa	on
+;		*BM0_START_ADDY_M = 0;
+	.line	4774
+	sep	#$20
+	longa	off
+	lda	#$0
+	sta	>11469058
+	rep	#$20
+	longa	on
+;		*BM0_START_ADDY_H = 0;
+	.line	4775
+	sep	#$20
+	longa	off
+	lda	#$0
+	sta	>11469059
+	rep	#$20
+	longa	on
+;
+;		*BM0_CONTROL_REG = ( BM_ENABLE | BM_LUT0 );
+	.line	4777
+	sep	#$20
+	longa	off
+	lda	#$1
+	sta	>11469056
+	rep	#$20
+	longa	on
+;
+;		*BM1_CONTROL_REG = 0x00;
+	.line	4779
+	sep	#$20
+	longa	off
+	lda	#$0
+	sta	>11469064
+	rep	#$20
+	longa	on
+;
+;		MASTER_CTRL_REG_H[0] = MSTR_CTRL_VIDEO_MODE0;
+	.line	4781
+	sep	#$20
+	longa	off
+	lda	#$1
+	sta	>11468801
+	rep	#$20
+	longa	on
+;		MASTER_CTRL_REG_L[0] = (MSTR_CTRL_GRAPH_MODE_EN | MSTR_CTRL_BITMAP_EN);
+	.line	4782
+	sep	#$20
+	longa	off
+	lda	#$c
+	sta	>11468800
+	rep	#$20
+	longa	on
+;
+;		for(i=3200;i>0;i--)
+	.line	4784
+	lda	#$c80
+	sta	<L1211+i_1
+L10514:
+;		{
+	.line	4785
+;			for(j=0;j<256;j++)
+	.line	4786
+	stz	<L1211+j_1
+L10517:
+;			{
+	.line	4787
+;				asm NOP;
+	.line	4788
+	asmstart
+	NOP
+	asmend
+;			}
+	.line	4789
+L10515:
+	inc	<L1211+j_1
+	sec
+	lda	<L1211+j_1
+	sbc	#<$100
+	bvs	L1225
+	eor	#$8000
+L1225:
+	bmi	L1226
+	brl	L10517
+L1226:
+L10516:
+;		}
+	.line	4790
+L10512:
+	dec	<L1211+i_1
+	sec
+	lda	#$0
+	sbc	<L1211+i_1
+	bvs	L1227
+	eor	#$8000
+L1227:
+	bmi	L1228
+	brl	L10514
+L1228:
+L10513:
+;
+;		MASTER_CTRL_REG_H[0] = MSTR_CTRL_VIDEO_MODE0;
+	.line	4792
+	sep	#$20
+	longa	off
+	lda	#$1
+	sta	>11468801
+	rep	#$20
+	longa	on
+;		MASTER_CTRL_REG_L[0] = (MSTR_CTRL_GRAPH_MODE_EN | MSTR_CTRL_BITMAP_EN);
+	.line	4793
+	sep	#$20
+	longa	off
+	lda	#$c
+	sta	>11468800
+	rep	#$20
+	longa	on
+;
+;		for(i=3200;i>0;i--)
+	.line	4795
+	lda	#$c80
+	sta	<L1211+i_1
+L10520:
+;		{
+	.line	4796
+;			for(j=0;j<256;j++)
+	.line	4797
+	stz	<L1211+j_1
+L10523:
+;			{
+	.line	4798
+;				asm NOP;
+	.line	4799
+	asmstart
+	NOP
+	asmend
+;			}
+	.line	4800
+L10521:
+	inc	<L1211+j_1
+	sec
+	lda	<L1211+j_1
+	sbc	#<$100
+	bvs	L1229
+	eor	#$8000
+L1229:
+	bmi	L1230
+	brl	L10523
+L1230:
+L10522:
+;		}
+	.line	4801
+L10518:
+	dec	<L1211+i_1
+	sec
+	lda	#$0
+	sbc	<L1211+i_1
+	bvs	L1231
+	eor	#$8000
+L1231:
+	bmi	L1232
+	brl	L10520
+L1232:
+L10519:
+;
+;
+;
+;	}
+	.line	4805
+;	else
+	brl	L10524
+L10495:
+;	{
+	.line	4807
+;
+;	#ifdef USE_FX256_FMX
+;		k_enable_bitmap_mode();
+;
+;		k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_FRONT);
+;		k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_BACK);
+;	#elif USE_FX256_U
+;
+;		k_enable_bitmap_mode();
+	.line	4816
+	jsl	~~k_enable_bitmap_mode
+;		k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_FRONT);
+	.line	4817
+	pea	#<$0
+	pea	#<$0
+	pea	#<$1e0
+	pea	#<$280
+	pea	#^$0
+	pea	#<$0
+	pea	#^$0
+	pea	#<$0
+	jsl	~~k_vdma_fill_rect_ex
+;		k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_BACK);
+	.line	4818
+	pea	#<$8
+	pea	#<$0
+	pea	#<$1e0
+	pea	#<$280
+	pea	#^$0
+	pea	#<$0
+	pea	#^$0
+	pea	#<$0
+	jsl	~~k_vdma_fill_rect_ex
+;	#endif
+;
+;	}
+	.line	4821
+L10524:
+;
+;	k_disable_border();
+	.line	4823
+	jsl	~~k_disable_border
+;
+;	k_unlock_irq();
+	.line	4825
+	jsl	~~k_unlock_irq
+;
+;	if(imageFilePath)
+	.line	4827
+;	{
+	lda	<L1210+imageFilePath_0
+	ora	<L1210+imageFilePath_0+2
+	bne	L1233
+	brl	L10525
+L1233:
+	.line	4828
+;		readBMPPalette(imageFilePath);
+	.line	4829
+	pei	<L1210+imageFilePath_0+2
+	pei	<L1210+imageFilePath_0
+	jsl	~~readBMPPalette
+;	}
+	.line	4830
+;
+;	if(mode > 1)
+L10525:
+	.line	4832
+;	{
+	lda	#$1
+	cmp	<L1210+mode_0
+	bcc	L1234
+	brl	L10526
+L1234:
+	.line	4833
+;		for(i=0;i<255;i++)
+	.line	4834
+	stz	<L1211+i_1
+L10529:
+;		{
+	.line	4835
+;			k_debug_integer("k_enable_bitmap_color:",i);
+	.line	4836
+	pei	<L1211+i_1
+	pea	#^L1209+37
+	pea	#<L1209+37
+	jsl	~~k_debug_integer
+;			k_vdma_fill_rect_ex(0,0,800,600,i,BITMAP_FRONT);
+	.line	4837
+	pea	#<$0
+	pei	<L1211+i_1
+	pea	#<$258
+	pea	#<$320
+	pea	#^$0
+	pea	#<$0
+	pea	#^$0
+	pea	#<$0
+	jsl	~~k_vdma_fill_rect_ex
+;			k_vdma_fill_rect_ex(0,0,800,600,i,BITMAP_BACK);
+	.line	4838
+	pea	#<$8
+	pei	<L1211+i_1
+	pea	#<$258
+	pea	#<$320
+	pea	#^$0
+	pea	#<$0
+	pea	#^$0
+	pea	#<$0
+	jsl	~~k_vdma_fill_rect_ex
+;			for(j=0;j<256;j++)
+	.line	4839
+	stz	<L1211+j_1
+L10532:
+;			{
+	.line	4840
+;				asm NOP;
+	.line	4841
+	asmstart
+	NOP
+	asmend
+;			}
+	.line	4842
+L10530:
+	inc	<L1211+j_1
+	sec
+	lda	<L1211+j_1
+	sbc	#<$100
+	bvs	L1235
+	eor	#$8000
+L1235:
+	bmi	L1236
+	brl	L10532
+L1236:
+L10531:
+;		}
+	.line	4843
+L10527:
+	inc	<L1211+i_1
+	sec
+	lda	<L1211+i_1
+	sbc	#<$ff
+	bvs	L1237
+	eor	#$8000
+L1237:
+	bmi	L1238
+	brl	L10529
+L1238:
+L10528:
+;	}
+	.line	4844
+;
+;	return;
+L10526:
+	.line	4846
+L1239:
+	lda	<L1210+2
+	sta	<L1210+2+6
+	lda	<L1210+1
+	sta	<L1210+1+6
+	pld
+	tsc
+	clc
+	adc	#L1210+6
+	tcs
+	rtl
+;}
+	.line	4847
+	.endblock	4847
+L1210	equ	47
+L1211	equ	1
+	ends
+	efunc
+	.endfunc	4847,1,47
+	.line	4847
+	data
+L1209:
+	db	$6B,$5F,$65,$6E,$61,$62,$6C,$65,$5F,$62,$69,$74,$6D,$61,$70
+	db	$5F,$6D,$6F,$64,$65,$20,$74,$6F,$20,$38,$30,$30,$78,$36,$30
+	db	$30,$2E,$2E,$2E,$0D,$0A,$00,$6B,$5F,$65,$6E,$61,$62,$6C,$65
+	db	$5F,$62,$69,$74,$6D,$61,$70,$5F,$63,$6F,$6C,$6F,$72,$3A,$00
+	ends
+;
 ;void k_show_image(LPCSTR imageFilePath)
 ;{
-	.line	5030
-	.line	5031
+	.line	4849
+	.line	4850
 	GFX
 	xdef	~~k_show_image
 	func
-	.function	5031
+	.function	4850
 ~~k_show_image:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1154
+	sbc	#L1241
 	tcs
 	phd
 	tcd
 imageFilePath_0	set	4
-	.block	5031
+	.block	4850
 ;	int i;
 ;	BYTE c,r,g,b;
 ;	long color[4];
@@ -27608,17 +28241,17 @@ boardRelease_1	set	42
 	.sym	boardRelease,42,110,1,0,3
 	.sym	imageFilePath,4,142,6,32
 	lda	#$2000
-	sta	<L1155+pPalette_1
+	sta	<L1242+pPalette_1
 	lda	#$af
-	sta	<L1155+pPalette_1+2
-	stz	<L1155+pathName_1
-	stz	<L1155+pathName_1+2
-	.line	5044
+	sta	<L1242+pPalette_1+2
+	stz	<L1242+pathName_1
+	stz	<L1242+pathName_1+2
+	.line	4863
 	pea	#<$0
 	jsl	~~k_clear_screen
 ;
 ;	k_lock_irq();
-	.line	5046
+	.line	4865
 	jsl	~~k_lock_irq
 ;
 ;#ifdef USE_FX256_FMX
@@ -27629,10 +28262,10 @@ boardRelease_1	set	42
 ;#elif USE_FX256_U
 ;
 ;	k_enable_bitmap_mode();
-	.line	5055
+	.line	4874
 	jsl	~~k_enable_bitmap_mode
 ;	k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_FRONT);
-	.line	5056
+	.line	4875
 	pea	#<$0
 	pea	#<$0
 	pea	#<$1e0
@@ -27643,7 +28276,7 @@ boardRelease_1	set	42
 	pea	#<$0
 	jsl	~~k_vdma_fill_rect_ex
 ;	k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_BACK);
-	.line	5057
+	.line	4876
 	pea	#<$8
 	pea	#<$0
 	pea	#<$1e0
@@ -27675,58 +28308,58 @@ boardRelease_1	set	42
 ;#endif
 ;
 ;	k_disable_border();
-	.line	5079
+	.line	4898
 	jsl	~~k_disable_border
 ;
 ;	k_unlock_irq();
-	.line	5081
+	.line	4900
 	jsl	~~k_unlock_irq
 ;
 ;	if(imageFilePath)
-	.line	5083
+	.line	4902
 ;	{
-	lda	<L1154+imageFilePath_0
-	ora	<L1154+imageFilePath_0+2
-	bne	L1157
-	brl	L10486
-L1157:
-	.line	5084
+	lda	<L1241+imageFilePath_0
+	ora	<L1241+imageFilePath_0+2
+	bne	L1244
+	brl	L10533
+L1244:
+	.line	4903
 ;		readBMP(imageFilePath);
-	.line	5085
-	pei	<L1154+imageFilePath_0+2
-	pei	<L1154+imageFilePath_0
+	.line	4904
+	pei	<L1241+imageFilePath_0+2
+	pei	<L1241+imageFilePath_0
 	jsl	~~readBMP
 ;	}
-	.line	5086
+	.line	4905
 ;
 ;	sleep(15000);
-L10486:
-	.line	5088
+L10533:
+	.line	4907
 	pea	#<$3a98
 	jsl	~~sleep
 ;
 ;	return;
-	.line	5090
-L1158:
-	lda	<L1154+2
-	sta	<L1154+2+4
-	lda	<L1154+1
-	sta	<L1154+1+4
+	.line	4909
+L1245:
+	lda	<L1241+2
+	sta	<L1241+2+4
+	lda	<L1241+1
+	sta	<L1241+1+4
 	pld
 	tsc
 	clc
-	adc	#L1154+4
+	adc	#L1241+4
 	tcs
 	rtl
 ;}
-	.line	5091
-	.endblock	5091
-L1154	equ	45
-L1155	equ	1
+	.line	4910
+	.endblock	4910
+L1241	equ	45
+L1242	equ	1
 	ends
 	efunc
-	.endfunc	5091,1,45
-	.line	5091
+	.endfunc	4910,1,45
+	.line	4910
 ;
 ;
 ;/*
@@ -27978,18 +28611,18 @@ L1155	equ	1
 ;*/
 ;PMENU k_create_context_menus(PWINDOW pWin,int cx,int cy,int width,int height,PMENUDROPDOWNDATA menus,int color, int bgcolor)
 ;{
-	.line	5341
-	.line	5342
+	.line	5160
+	.line	5161
 	GFX
 	xdef	~~k_create_context_menus
 	func
-	.function	5342
+	.function	5161
 ~~k_create_context_menus:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1159
+	sbc	#L1246
 	tcs
 	phd
 	tcd
@@ -28001,7 +28634,7 @@ height_0	set	14
 menus_0	set	16
 color_0	set	20
 bgcolor_0	set	22
-	.block	5342
+	.block	5161
 ;	FONTMETRIC metric;
 ;
 ;	int i = 0;
@@ -28054,83 +28687,83 @@ endX_1	set	26
 	.sym	menus,16,138,6,32,38
 	.sym	color,20,5,6,16
 	.sym	bgcolor,22,5,6,16
-	stz	<L1160+i_1
-	stz	<L1160+hy_1
-	stz	<L1160+caption_1
-	stz	<L1160+caption_1+2
+	stz	<L1247+i_1
+	stz	<L1247+hy_1
+	stz	<L1247+caption_1
+	stz	<L1247+caption_1+2
 	lda	#$a
-	sta	<L1160+borderTitle_1
+	sta	<L1247+borderTitle_1
 	lda	#$3
-	sta	<L1160+borderWidth_1
+	sta	<L1247+borderWidth_1
 	clc
 	lda	#$4
-	adc	<L1159+cx_0
-	sta	<L1160+titleOffsetX_1
+	adc	<L1246+cx_0
+	sta	<L1247+titleOffsetX_1
 	clc
 	lda	#$2
-	adc	<L1159+cy_0
-	sta	<L1160+titleOffsetY_1
-	stz	<L1160+titleScaler_1
+	adc	<L1246+cy_0
+	sta	<L1247+titleOffsetY_1
+	stz	<L1247+titleScaler_1
 	clc
-	lda	<L1159+cx_0
-	adc	<L1160+borderWidth_1
+	lda	<L1246+cx_0
+	adc	<L1247+borderWidth_1
 	sta	<R0
 	clc
 	lda	#$2
 	adc	<R0
-	sta	<L1160+clientOffsetX_1
+	sta	<L1247+clientOffsetX_1
 	clc
-	lda	<L1159+cy_0
-	adc	<L1160+borderTitle_1
+	lda	<L1246+cy_0
+	adc	<L1247+borderTitle_1
 	sta	<R0
 	lda	<R0
 	ina
-	sta	<L1160+clientOffsetY_1
+	sta	<L1247+clientOffsetY_1
 	clc
-	lda	<L1159+width_0
-	adc	<L1159+cx_0
+	lda	<L1246+width_0
+	adc	<L1246+cx_0
 	sta	<R0
 	sec
 	lda	<R0
-	sbc	<L1160+borderWidth_1
-	sta	<L1160+endX_1
-	.line	5362
-	pea	#^L1153
-	pea	#<L1153
+	sbc	<L1247+borderWidth_1
+	sta	<L1247+endX_1
+	.line	5181
+	pea	#^L1240
+	pea	#<L1240
 	jsl	~~k_debug_string
 ;
 ;	k_scratch_save_bitblt(cx,cy, width, height, 0, 0);
-	.line	5364
+	.line	5183
 	pea	#<$0
 	pea	#<$0
-	pei	<L1159+height_0
-	pei	<L1159+width_0
-	pei	<L1159+cy_0
-	pei	<L1159+cx_0
+	pei	<L1246+height_0
+	pei	<L1246+width_0
+	pei	<L1246+cy_0
+	pei	<L1246+cx_0
 	jsl	~~k_scratch_save_bitblt
 ;
 ;	//k_vdma_fill_rect(cx,cy,width,height,0);
 ;	//k_vdma_fill_rect(cx+2,cy,width-2,height-2,bgcolor);
 ;	//k_vdma_fill_rect(cx+1,cy+1,width -1 ,height - 1,bgcolor);
 ;	k_vdma_fill_rect(cx,cy,width,height,bgcolor);
-	.line	5369
-	pei	<L1159+bgcolor_0
-	pei	<L1159+height_0
-	pei	<L1159+width_0
+	.line	5188
+	pei	<L1246+bgcolor_0
+	pei	<L1246+height_0
+	pei	<L1246+width_0
 	ldy	#$0
-	lda	<L1159+cy_0
-	bpl	L1162
+	lda	<L1246+cy_0
+	bpl	L1249
 	dey
-L1162:
+L1249:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	<L1159+cx_0
-	bpl	L1163
+	lda	<L1246+cx_0
+	bpl	L1250
 	dey
-L1163:
+L1250:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -28140,15 +28773,15 @@ L1163:
 ;	//k_put_wingadget_point(WINICON_TITLE_BACK,endX - (metric.width*2 + 2),titleOffsetY,14);
 ;	//k_put_wingadget_point(WINICON_TITLE_FRONT,endX - (metric.width),titleOffsetY,14);
 ;	i = 0;
-	.line	5373
-	stz	<L1160+i_1
+	.line	5192
+	stz	<L1247+i_1
 ;	caption = menus->captions[i];
-	.line	5374
+	.line	5193
 	ldy	#$0
-	lda	<L1160+i_1
-	bpl	L1164
+	lda	<L1247+i_1
+	bpl	L1251
 	dey
-L1164:
+L1251:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -28160,10 +28793,10 @@ L1164:
 	stx	<R0+2
 	clc
 	lda	#$12
-	adc	<L1159+menus_0
+	adc	<L1246+menus_0
 	sta	<R2
 	lda	#$0
-	adc	<L1159+menus_0+2
+	adc	<L1246+menus_0+2
 	sta	<R2+2
 	clc
 	lda	<R2
@@ -28173,60 +28806,60 @@ L1164:
 	adc	<R0+2
 	sta	<R3+2
 	lda	[<R3]
-	sta	<L1160+caption_1
+	sta	<L1247+caption_1
 	ldy	#$2
 	lda	[<R3],Y
-	sta	<L1160+caption_1+2
+	sta	<L1247+caption_1+2
 ;	while(caption!=NULL)
-	.line	5375
-L10487:
-	lda	<L1160+caption_1
-	ora	<L1160+caption_1+2
-	bne	L1165
-	brl	L10488
-L1165:
+	.line	5194
+L10534:
+	lda	<L1247+caption_1
+	ora	<L1247+caption_1+2
+	bne	L1252
+	brl	L10535
+L1252:
 ;	{
-	.line	5376
+	.line	5195
 ;		k_debug_strings("k_create_context_menu:caption:",(LPCHAR)caption);
-	.line	5377
-	pei	<L1160+caption_1+2
-	pei	<L1160+caption_1
-	pea	#^L1153+29
-	pea	#<L1153+29
+	.line	5196
+	pei	<L1247+caption_1+2
+	pei	<L1247+caption_1
+	pea	#^L1240+29
+	pea	#<L1240+29
 	jsl	~~k_debug_strings
 ;
 ;		//caption = strupr(caption);
 ;		hy = k_draw_text_point(caption,titleOffsetX,titleOffsetY,color);
-	.line	5380
-	pei	<L1159+color_0
-	pei	<L1160+titleOffsetY_1
-	pei	<L1160+titleOffsetX_1
-	pei	<L1160+caption_1+2
-	pei	<L1160+caption_1
+	.line	5199
+	pei	<L1246+color_0
+	pei	<L1247+titleOffsetY_1
+	pei	<L1247+titleOffsetX_1
+	pei	<L1247+caption_1+2
+	pei	<L1247+caption_1
 	jsl	~~k_draw_text_point
-	sta	<L1160+hy_1
+	sta	<L1247+hy_1
 ;		titleOffsetY+=(FONTH + 2);
-	.line	5381
+	.line	5200
 	jsl	~~k_font_getFontHeight
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L1160+titleOffsetY_1
+	adc	<L1247+titleOffsetY_1
 	sta	<R1
 	clc
 	lda	#$2
 	adc	<R1
-	sta	<L1160+titleOffsetY_1
+	sta	<L1247+titleOffsetY_1
 ;		i++;
-	.line	5382
-	inc	<L1160+i_1
+	.line	5201
+	inc	<L1247+i_1
 ;		caption = menus->captions[i];
-	.line	5383
+	.line	5202
 	ldy	#$0
-	lda	<L1160+i_1
-	bpl	L1166
+	lda	<L1247+i_1
+	bpl	L1253
 	dey
-L1166:
+L1253:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -28238,10 +28871,10 @@ L1166:
 	stx	<R0+2
 	clc
 	lda	#$12
-	adc	<L1159+menus_0
+	adc	<L1246+menus_0
 	sta	<R2
 	lda	#$0
-	adc	<L1159+menus_0+2
+	adc	<L1246+menus_0+2
 	sta	<R2+2
 	clc
 	lda	<R2
@@ -28251,44 +28884,44 @@ L1166:
 	adc	<R0+2
 	sta	<R3+2
 	lda	[<R3]
-	sta	<L1160+caption_1
+	sta	<L1247+caption_1
 	ldy	#$2
 	lda	[<R3],Y
-	sta	<L1160+caption_1+2
+	sta	<L1247+caption_1+2
 ;	}
-	.line	5384
-	brl	L10487
-L10488:
+	.line	5203
+	brl	L10534
+L10535:
 ;
 ;	return NULL;
-	.line	5386
+	.line	5205
 	lda	#$0
 	tax
 	lda	#$0
-L1167:
+L1254:
 	tay
-	lda	<L1159+2
-	sta	<L1159+2+20
-	lda	<L1159+1
-	sta	<L1159+1+20
+	lda	<L1246+2
+	sta	<L1246+2+20
+	lda	<L1246+1
+	sta	<L1246+1+20
 	pld
 	tsc
 	clc
-	adc	#L1159+20
+	adc	#L1246+20
 	tcs
 	tya
 	rtl
 ;}
-	.line	5387
-	.endblock	5387
-L1159	equ	44
-L1160	equ	17
+	.line	5206
+	.endblock	5206
+L1246	equ	44
+L1247	equ	17
 	ends
 	efunc
-	.endfunc	5387,17,44
-	.line	5387
+	.endfunc	5206,17,44
+	.line	5206
 	data
-L1153:
+L1240:
 	db	$6B,$5F,$63,$72,$65,$61,$74,$65,$5F,$63,$6F,$6E,$74,$65,$78
 	db	$74,$5F,$6D,$65,$6E,$75,$3A,$66,$69,$6C,$6C,$0D,$0A,$00,$6B
 	db	$5F,$63,$72,$65,$61,$74,$65,$5F,$63,$6F,$6E,$74,$65,$78,$74
@@ -28297,18 +28930,18 @@ L1153:
 ;
 ;PMENU k_create_context_menu(int cx,int cy,int width,int height,char FAR **captions,int color, int bgcolor)
 ;{
-	.line	5389
-	.line	5390
+	.line	5208
+	.line	5209
 	GFX
 	xdef	~~k_create_context_menu
 	func
-	.function	5390
+	.function	5209
 ~~k_create_context_menu:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1169
+	sbc	#L1256
 	tcs
 	phd
 	tcd
@@ -28319,7 +28952,7 @@ height_0	set	10
 captions_0	set	12
 color_0	set	16
 bgcolor_0	set	18
-	.block	5390
+	.block	5209
 ;	FONTMETRIC metric;
 ;
 ;	int i = 0;
@@ -28371,83 +29004,83 @@ endX_1	set	26
 	.sym	captions,12,1166,6,32
 	.sym	color,16,5,6,16
 	.sym	bgcolor,18,5,6,16
-	stz	<L1170+i_1
-	stz	<L1170+hy_1
-	stz	<L1170+caption_1
-	stz	<L1170+caption_1+2
+	stz	<L1257+i_1
+	stz	<L1257+hy_1
+	stz	<L1257+caption_1
+	stz	<L1257+caption_1+2
 	lda	#$a
-	sta	<L1170+borderTitle_1
+	sta	<L1257+borderTitle_1
 	lda	#$3
-	sta	<L1170+borderWidth_1
+	sta	<L1257+borderWidth_1
 	clc
 	lda	#$4
-	adc	<L1169+cx_0
-	sta	<L1170+titleOffsetX_1
+	adc	<L1256+cx_0
+	sta	<L1257+titleOffsetX_1
 	clc
 	lda	#$2
-	adc	<L1169+cy_0
-	sta	<L1170+titleOffsetY_1
-	stz	<L1170+titleScaler_1
+	adc	<L1256+cy_0
+	sta	<L1257+titleOffsetY_1
+	stz	<L1257+titleScaler_1
 	clc
-	lda	<L1169+cx_0
-	adc	<L1170+borderWidth_1
+	lda	<L1256+cx_0
+	adc	<L1257+borderWidth_1
 	sta	<R0
 	clc
 	lda	#$2
 	adc	<R0
-	sta	<L1170+clientOffsetX_1
+	sta	<L1257+clientOffsetX_1
 	clc
-	lda	<L1169+cy_0
-	adc	<L1170+borderTitle_1
+	lda	<L1256+cy_0
+	adc	<L1257+borderTitle_1
 	sta	<R0
 	lda	<R0
 	ina
-	sta	<L1170+clientOffsetY_1
+	sta	<L1257+clientOffsetY_1
 	clc
-	lda	<L1169+width_0
-	adc	<L1169+cx_0
+	lda	<L1256+width_0
+	adc	<L1256+cx_0
 	sta	<R0
 	sec
 	lda	<R0
-	sbc	<L1170+borderWidth_1
-	sta	<L1170+endX_1
-	.line	5410
-	pea	#^L1168
-	pea	#<L1168
+	sbc	<L1257+borderWidth_1
+	sta	<L1257+endX_1
+	.line	5229
+	pea	#^L1255
+	pea	#<L1255
 	jsl	~~k_debug_string
 ;
 ;	k_scratch_save_bitblt(cx,cy, width, height, 0, 0);
-	.line	5412
+	.line	5231
 	pea	#<$0
 	pea	#<$0
-	pei	<L1169+height_0
-	pei	<L1169+width_0
-	pei	<L1169+cy_0
-	pei	<L1169+cx_0
+	pei	<L1256+height_0
+	pei	<L1256+width_0
+	pei	<L1256+cy_0
+	pei	<L1256+cx_0
 	jsl	~~k_scratch_save_bitblt
 ;
 ;	//k_vdma_fill_rect(cx,cy,width,height,0);
 ;	//k_vdma_fill_rect(cx+2,cy,width-2,height-2,bgcolor);
 ;	//k_vdma_fill_rect(cx+1,cy+1,width -1 ,height - 1,bgcolor);
 ;	k_vdma_fill_rect(cx,cy,width,height,bgcolor);
-	.line	5417
-	pei	<L1169+bgcolor_0
-	pei	<L1169+height_0
-	pei	<L1169+width_0
+	.line	5236
+	pei	<L1256+bgcolor_0
+	pei	<L1256+height_0
+	pei	<L1256+width_0
 	ldy	#$0
-	lda	<L1169+cy_0
-	bpl	L1172
+	lda	<L1256+cy_0
+	bpl	L1259
 	dey
-L1172:
+L1259:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	<L1169+cx_0
-	bpl	L1173
+	lda	<L1256+cx_0
+	bpl	L1260
 	dey
-L1173:
+L1260:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -28457,15 +29090,15 @@ L1173:
 ;	//k_put_wingadget_point(WINICON_TITLE_BACK,endX - (metric.width*2 + 2),titleOffsetY,14);
 ;	//k_put_wingadget_point(WINICON_TITLE_FRONT,endX - (metric.width),titleOffsetY,14);
 ;	i = 0;
-	.line	5421
-	stz	<L1170+i_1
+	.line	5240
+	stz	<L1257+i_1
 ;	caption = captions[i];
-	.line	5422
+	.line	5241
 	ldy	#$0
-	lda	<L1170+i_1
-	bpl	L1174
+	lda	<L1257+i_1
+	bpl	L1261
 	dey
-L1174:
+L1261:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -28476,68 +29109,68 @@ L1174:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L1169+captions_0
+	lda	<L1256+captions_0
 	adc	<R0
 	sta	<R2
-	lda	<L1169+captions_0+2
+	lda	<L1256+captions_0+2
 	adc	<R0+2
 	sta	<R2+2
 	lda	[<R2]
-	sta	<L1170+caption_1
+	sta	<L1257+caption_1
 	ldy	#$2
 	lda	[<R2],Y
-	sta	<L1170+caption_1+2
+	sta	<L1257+caption_1+2
 ;	while(caption!=NULL)
-	.line	5423
-L10489:
-	lda	<L1170+caption_1
-	ora	<L1170+caption_1+2
-	bne	L1175
-	brl	L10490
-L1175:
+	.line	5242
+L10536:
+	lda	<L1257+caption_1
+	ora	<L1257+caption_1+2
+	bne	L1262
+	brl	L10537
+L1262:
 ;	{
-	.line	5424
+	.line	5243
 ;		k_debug_strings("k_create_context_menu:caption:",caption);
-	.line	5425
-	pei	<L1170+caption_1+2
-	pei	<L1170+caption_1
-	pea	#^L1168+29
-	pea	#<L1168+29
+	.line	5244
+	pei	<L1257+caption_1+2
+	pei	<L1257+caption_1
+	pea	#^L1255+29
+	pea	#<L1255+29
 	jsl	~~k_debug_strings
 ;
 ;		//caption = strupr(caption);
 ;		hy = k_draw_text_point(caption,titleOffsetX,titleOffsetY,color);
-	.line	5428
-	pei	<L1169+color_0
-	pei	<L1170+titleOffsetY_1
-	pei	<L1170+titleOffsetX_1
-	pei	<L1170+caption_1+2
-	pei	<L1170+caption_1
+	.line	5247
+	pei	<L1256+color_0
+	pei	<L1257+titleOffsetY_1
+	pei	<L1257+titleOffsetX_1
+	pei	<L1257+caption_1+2
+	pei	<L1257+caption_1
 	jsl	~~k_draw_text_point
-	sta	<L1170+hy_1
+	sta	<L1257+hy_1
 ;
 ;		titleOffsetY+=(FONTH + 2);
-	.line	5430
+	.line	5249
 	jsl	~~k_font_getFontHeight
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L1170+titleOffsetY_1
+	adc	<L1257+titleOffsetY_1
 	sta	<R1
 	clc
 	lda	#$2
 	adc	<R1
-	sta	<L1170+titleOffsetY_1
+	sta	<L1257+titleOffsetY_1
 ;		i++;
-	.line	5431
-	inc	<L1170+i_1
+	.line	5250
+	inc	<L1257+i_1
 ;		caption = captions[i];
-	.line	5432
+	.line	5251
 	ldy	#$0
-	lda	<L1170+i_1
-	bpl	L1176
+	lda	<L1257+i_1
+	bpl	L1263
 	dey
-L1176:
+L1263:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -28548,52 +29181,52 @@ L1176:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L1169+captions_0
+	lda	<L1256+captions_0
 	adc	<R0
 	sta	<R2
-	lda	<L1169+captions_0+2
+	lda	<L1256+captions_0+2
 	adc	<R0+2
 	sta	<R2+2
 	lda	[<R2]
-	sta	<L1170+caption_1
+	sta	<L1257+caption_1
 	ldy	#$2
 	lda	[<R2],Y
-	sta	<L1170+caption_1+2
+	sta	<L1257+caption_1+2
 ;	}
-	.line	5433
-	brl	L10489
-L10490:
+	.line	5252
+	brl	L10536
+L10537:
 ;
 ;	return NULL;
-	.line	5435
+	.line	5254
 	lda	#$0
 	tax
 	lda	#$0
-L1177:
+L1264:
 	tay
-	lda	<L1169+2
-	sta	<L1169+2+16
-	lda	<L1169+1
-	sta	<L1169+1+16
+	lda	<L1256+2
+	sta	<L1256+2+16
+	lda	<L1256+1
+	sta	<L1256+1+16
 	pld
 	tsc
 	clc
-	adc	#L1169+16
+	adc	#L1256+16
 	tcs
 	tya
 	rtl
 ;
 ;}
-	.line	5437
-	.endblock	5437
-L1169	equ	40
-L1170	equ	13
+	.line	5256
+	.endblock	5256
+L1256	equ	40
+L1257	equ	13
 	ends
 	efunc
-	.endfunc	5437,13,40
-	.line	5437
+	.endfunc	5256,13,40
+	.line	5256
 	data
-L1168:
+L1255:
 	db	$6B,$5F,$63,$72,$65,$61,$74,$65,$5F,$63,$6F,$6E,$74,$65,$78
 	db	$74,$5F,$6D,$65,$6E,$75,$3A,$66,$69,$6C,$6C,$0D,$0A,$00,$6B
 	db	$5F,$63,$72,$65,$61,$74,$65,$5F,$63,$6F,$6E,$74,$65,$78,$74
@@ -28602,18 +29235,18 @@ L1168:
 ;
 ;PMENU k_create_context_menu_in_window_ex(PWINDOW pWin,UINT selected,UINT unselected,int cx,int cy,int width,int height,char FAR **captions,char FAR *chrome,int color, int bgcolor)
 ;{
-	.line	5439
-	.line	5440
+	.line	5258
+	.line	5259
 	GFX
 	xdef	~~k_create_context_menu_in_window_ex
 	func
-	.function	5440
+	.function	5259
 ~~k_create_context_menu_in_window_ex:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1179
+	sbc	#L1266
 	tcs
 	phd
 	tcd
@@ -28628,7 +29261,7 @@ captions_0	set	20
 chrome_0	set	24
 color_0	set	28
 bgcolor_0	set	30
-	.block	5440
+	.block	5259
 ;	FONTMETRIC metric;
 ;
 ;	int i = 0;
@@ -28684,77 +29317,77 @@ endX_1	set	26
 	.sym	chrome,24,142,6,32
 	.sym	color,28,5,6,16
 	.sym	bgcolor,30,5,6,16
-	stz	<L1180+i_1
-	stz	<L1180+dx_1
-	stz	<L1180+caption_1
-	stz	<L1180+caption_1+2
+	stz	<L1267+i_1
+	stz	<L1267+dx_1
+	stz	<L1267+caption_1
+	stz	<L1267+caption_1+2
 	lda	#$a
-	sta	<L1180+borderTitle_1
+	sta	<L1267+borderTitle_1
 	lda	#$3
-	sta	<L1180+borderWidth_1
+	sta	<L1267+borderWidth_1
 	clc
 	lda	#$4
-	adc	<L1179+cx_0
-	sta	<L1180+titleOffsetX_1
+	adc	<L1266+cx_0
+	sta	<L1267+titleOffsetX_1
 	clc
 	lda	#$2
-	adc	<L1179+cy_0
-	sta	<L1180+titleOffsetY_1
-	stz	<L1180+titleScaler_1
+	adc	<L1266+cy_0
+	sta	<L1267+titleOffsetY_1
+	stz	<L1267+titleScaler_1
 	clc
-	lda	<L1179+cx_0
-	adc	<L1180+borderWidth_1
+	lda	<L1266+cx_0
+	adc	<L1267+borderWidth_1
 	sta	<R0
 	clc
 	lda	#$2
 	adc	<R0
-	sta	<L1180+clientOffsetX_1
+	sta	<L1267+clientOffsetX_1
 	clc
-	lda	<L1179+cy_0
-	adc	<L1180+borderTitle_1
+	lda	<L1266+cy_0
+	adc	<L1267+borderTitle_1
 	sta	<R0
 	lda	<R0
 	ina
-	sta	<L1180+clientOffsetY_1
+	sta	<L1267+clientOffsetY_1
 	clc
-	lda	<L1179+width_0
-	adc	<L1179+cx_0
+	lda	<L1266+width_0
+	adc	<L1266+cx_0
 	sta	<R0
 	sec
 	lda	<R0
-	sbc	<L1180+borderWidth_1
-	sta	<L1180+endX_1
-	.line	5460
+	sbc	<L1267+borderWidth_1
+	sta	<L1267+endX_1
+	.line	5279
 ;		k_vdma_fill_rect_ex(cx,cy,width,height,bgcolor,BITMAP_FRONT);
-	lda	<L1179+selected_0
+	lda	<L1266+selected_0
 	cmp	#<$ffffffff
-	beq	L1182
-	brl	L10491
-L1182:
-	lda	<L1179+unselected_0
+	beq	L1269
+	brl	L10538
+L1269:
+	lda	<L1266+unselected_0
 	cmp	#<$ffffffff
-	beq	L1183
-	brl	L10491
-L1183:
-	.line	5461
+	beq	L1270
+	brl	L10538
+L1270:
+	.line	5280
 	pea	#<$0
-	pei	<L1179+bgcolor_0
-	pei	<L1179+height_0
-	pei	<L1179+width_0
+	pei	<L1266+bgcolor_0
+	pei	<L1266+height_0
+	pei	<L1266+width_0
 	ldy	#$0
-	lda	<L1179+cy_0
-	bpl	L1184
+	lda	<L1266+cy_0
+	bpl	L1271
 	dey
-L1184:
+L1271:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	<L1179+cx_0
-	bpl	L1185
+	lda	<L1266+cx_0
+	bpl	L1272
 	dey
-L1185:
+L1272:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -28764,16 +29397,16 @@ L1185:
 ;	//k_put_wingadget_point(WINICON_TITLE_BACK,endX - (metric.width*2 + 2),titleOffsetY,14);
 ;	//k_put_wingadget_point(WINICON_TITLE_FRONT,endX - (metric.width),titleOffsetY,14);
 ;	i = 0;
-L10491:
-	.line	5465
-	stz	<L1180+i_1
+L10538:
+	.line	5284
+	stz	<L1267+i_1
 ;	caption = captions[i];
-	.line	5466
+	.line	5285
 	ldy	#$0
-	lda	<L1180+i_1
-	bpl	L1186
+	lda	<L1267+i_1
+	bpl	L1273
 	dey
-L1186:
+L1273:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -28784,27 +29417,27 @@ L1186:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L1179+captions_0
+	lda	<L1266+captions_0
 	adc	<R0
 	sta	<R2
-	lda	<L1179+captions_0+2
+	lda	<L1266+captions_0+2
 	adc	<R0+2
 	sta	<R2+2
 	lda	[<R2]
-	sta	<L1180+caption_1
+	sta	<L1267+caption_1
 	ldy	#$2
 	lda	[<R2],Y
-	sta	<L1180+caption_1+2
+	sta	<L1267+caption_1+2
 ;	while(caption!=NULL)
-	.line	5467
-L10492:
-	lda	<L1180+caption_1
-	ora	<L1180+caption_1+2
-	bne	L1187
-	brl	L10493
-L1187:
+	.line	5286
+L10539:
+	lda	<L1267+caption_1
+	ora	<L1267+caption_1+2
+	bne	L1274
+	brl	L10540
+L1274:
 ;	{
-	.line	5468
+	.line	5287
 ;		char chromeByte = chrome[i];
 ;		//if(chromeByte)
 ;		//	k_debug_strings("#### k_create_context_menu_in_window_ex:chrome:CHECKED:",caption);
@@ -28813,70 +29446,70 @@ L1187:
 ;		//caption = strupr(caption);
 ;
 ;		if(selected!=-1 && unselected!=-1)
-	.block	5476
+	.block	5295
 chromeByte_2	set	28
 	.sym	chromeByte,28,14,1,8
 	sep	#$20
 	longa	off
-	ldy	<L1180+i_1
-	lda	[<L1179+chrome_0],Y
-	sta	<L1180+chromeByte_2
+	ldy	<L1267+i_1
+	lda	[<L1266+chrome_0],Y
+	sta	<L1267+chromeByte_2
 	rep	#$20
 	longa	on
-	.line	5476
+	.line	5295
 ;		{
-	lda	<L1179+selected_0
+	lda	<L1266+selected_0
 	cmp	#<$ffffffff
-	bne	L1189
-	brl	L10494
-L1189:
-	lda	<L1179+unselected_0
+	bne	L1276
+	brl	L10541
+L1276:
+	lda	<L1266+unselected_0
 	cmp	#<$ffffffff
-	bne	L1190
-	brl	L10494
-L1190:
-	.line	5477
+	bne	L1277
+	brl	L10541
+L1277:
+	.line	5296
 ;			if( i == selected && caption[0] != '_' && caption[0] != ' ')
-	.line	5478
+	.line	5297
 ;			{
-	lda	<L1180+i_1
-	cmp	<L1179+selected_0
-	beq	L1191
-	brl	L10495
-L1191:
+	lda	<L1267+i_1
+	cmp	<L1266+selected_0
+	beq	L1278
+	brl	L10542
+L1278:
 	sep	#$20
 	longa	off
-	lda	[<L1180+caption_1]
+	lda	[<L1267+caption_1]
 	cmp	#<$5f
 	rep	#$20
 	longa	on
-	bne	L1192
-	brl	L10495
-L1192:
+	bne	L1279
+	brl	L10542
+L1279:
 	sep	#$20
 	longa	off
-	lda	[<L1180+caption_1]
+	lda	[<L1267+caption_1]
 	cmp	#<$20
 	rep	#$20
 	longa	on
-	bne	L1193
-	brl	L10495
-L1193:
-	.line	5479
+	bne	L1280
+	brl	L10542
+L1280:
+	.line	5298
 ;				k_vdma_fill_rect_ex(pWin->win_x,titleOffsetY,pWin->win_width,FONTH,color,BITMAP_FRONT);
-	.line	5480
+	.line	5299
 	pea	#<$0
-	pei	<L1179+color_0
+	pei	<L1266+color_0
 	jsl	~~k_font_getFontHeight
 	pha
 	ldy	#$10
-	lda	[<L1179+pWin_0],Y
+	lda	[<L1266+pWin_0],Y
 	pha
 	ldy	#$0
-	lda	<L1180+titleOffsetY_1
-	bpl	L1194
+	lda	<L1267+titleOffsetY_1
+	bpl	L1281
 	dey
-L1194:
+L1281:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
@@ -28884,98 +29517,98 @@ L1194:
 	ldy	#$0
 	phy
 	ldy	#$c
-	lda	[<L1179+pWin_0],Y
+	lda	[<L1266+pWin_0],Y
 	ply
 	rol	A
 	ror	A
-	bpl	L1195
+	bpl	L1282
 	dey
-L1195:
+L1282:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_vdma_fill_rect_ex
 ;				dx = k_draw_text_point_ex(caption,titleOffsetX,titleOffsetY,bgcolor,BITMAP_FRONT);
-	.line	5481
+	.line	5300
 	pea	#<$0
-	pei	<L1179+bgcolor_0
-	pei	<L1180+titleOffsetY_1
-	pei	<L1180+titleOffsetX_1
-	pei	<L1180+caption_1+2
-	pei	<L1180+caption_1
+	pei	<L1266+bgcolor_0
+	pei	<L1267+titleOffsetY_1
+	pei	<L1267+titleOffsetX_1
+	pei	<L1267+caption_1+2
+	pei	<L1267+caption_1
 	jsl	~~k_draw_text_point_ex
-	sta	<L1180+dx_1
+	sta	<L1267+dx_1
 ;				if(chromeByte)
-	.line	5482
+	.line	5301
 ;				{
-	lda	<L1180+chromeByte_2
+	lda	<L1267+chromeByte_2
 	and	#$ff
-	bne	L1196
-	brl	L10496
-L1196:
-	.line	5483
+	bne	L1283
+	brl	L10543
+L1283:
+	.line	5302
 ;					dx = k_draw_text_point_ex("*",titleOffsetX + dx,titleOffsetY,bgcolor,BITMAP_FRONT);
-	.line	5484
+	.line	5303
 	pea	#<$0
-	pei	<L1179+bgcolor_0
-	pei	<L1180+titleOffsetY_1
+	pei	<L1266+bgcolor_0
+	pei	<L1267+titleOffsetY_1
 	clc
-	lda	<L1180+titleOffsetX_1
-	adc	<L1180+dx_1
+	lda	<L1267+titleOffsetX_1
+	adc	<L1267+dx_1
 	pha
-	pea	#^L1178
-	pea	#<L1178
+	pea	#^L1265
+	pea	#<L1265
 	jsl	~~k_draw_text_point_ex
-	sta	<L1180+dx_1
+	sta	<L1267+dx_1
 ;				}
-	.line	5485
+	.line	5304
 ;			}
-L10496:
-	.line	5486
+L10543:
+	.line	5305
 ;			else if( i == unselected && caption[0] != '_' && caption[0] != ' ' )
-	brl	L10497
-L10495:
-	.line	5487
+	brl	L10544
+L10542:
+	.line	5306
 ;			{
-	lda	<L1180+i_1
-	cmp	<L1179+unselected_0
-	beq	L1197
-	brl	L10498
-L1197:
+	lda	<L1267+i_1
+	cmp	<L1266+unselected_0
+	beq	L1284
+	brl	L10545
+L1284:
 	sep	#$20
 	longa	off
-	lda	[<L1180+caption_1]
+	lda	[<L1267+caption_1]
 	cmp	#<$5f
 	rep	#$20
 	longa	on
-	bne	L1198
-	brl	L10498
-L1198:
+	bne	L1285
+	brl	L10545
+L1285:
 	sep	#$20
 	longa	off
-	lda	[<L1180+caption_1]
+	lda	[<L1267+caption_1]
 	cmp	#<$20
 	rep	#$20
 	longa	on
-	bne	L1199
-	brl	L10498
-L1199:
-	.line	5488
+	bne	L1286
+	brl	L10545
+L1286:
+	.line	5307
 ;				k_vdma_fill_rect_ex(pWin->win_x,titleOffsetY,pWin->win_width,FONTH,bgcolor,BITMAP_FRONT);
-	.line	5489
+	.line	5308
 	pea	#<$0
-	pei	<L1179+bgcolor_0
+	pei	<L1266+bgcolor_0
 	jsl	~~k_font_getFontHeight
 	pha
 	ldy	#$10
-	lda	[<L1179+pWin_0],Y
+	lda	[<L1266+pWin_0],Y
 	pha
 	ldy	#$0
-	lda	<L1180+titleOffsetY_1
-	bpl	L1200
+	lda	<L1267+titleOffsetY_1
+	bpl	L1287
 	dey
-L1200:
+L1287:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
@@ -28983,106 +29616,106 @@ L1200:
 	ldy	#$0
 	phy
 	ldy	#$c
-	lda	[<L1179+pWin_0],Y
+	lda	[<L1266+pWin_0],Y
 	ply
 	rol	A
 	ror	A
-	bpl	L1201
+	bpl	L1288
 	dey
-L1201:
+L1288:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_vdma_fill_rect_ex
 ;				dx = k_draw_text_point_ex(caption,titleOffsetX,titleOffsetY,color,BITMAP_FRONT);
-	.line	5490
+	.line	5309
 	pea	#<$0
-	pei	<L1179+color_0
-	pei	<L1180+titleOffsetY_1
-	pei	<L1180+titleOffsetX_1
-	pei	<L1180+caption_1+2
-	pei	<L1180+caption_1
+	pei	<L1266+color_0
+	pei	<L1267+titleOffsetY_1
+	pei	<L1267+titleOffsetX_1
+	pei	<L1267+caption_1+2
+	pei	<L1267+caption_1
 	jsl	~~k_draw_text_point_ex
-	sta	<L1180+dx_1
+	sta	<L1267+dx_1
 ;				if(chromeByte)
-	.line	5491
+	.line	5310
 ;				{
-	lda	<L1180+chromeByte_2
+	lda	<L1267+chromeByte_2
 	and	#$ff
-	bne	L1202
-	brl	L10499
-L1202:
-	.line	5492
+	bne	L1289
+	brl	L10546
+L1289:
+	.line	5311
 ;					dx = k_draw_text_point_ex("*",titleOffsetX + dx,titleOffsetY,color,BITMAP_FRONT);
-	.line	5493
+	.line	5312
 	pea	#<$0
-	pei	<L1179+color_0
-	pei	<L1180+titleOffsetY_1
+	pei	<L1266+color_0
+	pei	<L1267+titleOffsetY_1
 	clc
-	lda	<L1180+titleOffsetX_1
-	adc	<L1180+dx_1
+	lda	<L1267+titleOffsetX_1
+	adc	<L1267+dx_1
 	pha
-	pea	#^L1178+2
-	pea	#<L1178+2
+	pea	#^L1265+2
+	pea	#<L1265+2
 	jsl	~~k_draw_text_point_ex
-	sta	<L1180+dx_1
+	sta	<L1267+dx_1
 ;				}
-	.line	5494
+	.line	5313
 ;			}
-L10499:
-	.line	5495
+L10546:
+	.line	5314
 ;
 ;		}
-L10498:
-L10497:
-	.line	5497
+L10545:
+L10544:
+	.line	5316
 ;		else
-	brl	L10500
-L10494:
+	brl	L10547
+L10541:
 ;		{
-	.line	5499
+	.line	5318
 ;			if( i == selected && caption[0] != '_' && caption[0] != ' ')
-	.line	5500
+	.line	5319
 ;			{
-	lda	<L1180+i_1
-	cmp	<L1179+selected_0
-	beq	L1203
-	brl	L10501
-L1203:
+	lda	<L1267+i_1
+	cmp	<L1266+selected_0
+	beq	L1290
+	brl	L10548
+L1290:
 	sep	#$20
 	longa	off
-	lda	[<L1180+caption_1]
+	lda	[<L1267+caption_1]
 	cmp	#<$5f
 	rep	#$20
 	longa	on
-	bne	L1204
-	brl	L10501
-L1204:
+	bne	L1291
+	brl	L10548
+L1291:
 	sep	#$20
 	longa	off
-	lda	[<L1180+caption_1]
+	lda	[<L1267+caption_1]
 	cmp	#<$20
 	rep	#$20
 	longa	on
-	bne	L1205
-	brl	L10501
-L1205:
-	.line	5501
+	bne	L1292
+	brl	L10548
+L1292:
+	.line	5320
 ;				k_vdma_fill_rect_ex(pWin->win_x,titleOffsetY,pWin->win_width,FONTH,color,BITMAP_FRONT);
-	.line	5502
+	.line	5321
 	pea	#<$0
-	pei	<L1179+color_0
+	pei	<L1266+color_0
 	jsl	~~k_font_getFontHeight
 	pha
 	ldy	#$10
-	lda	[<L1179+pWin_0],Y
+	lda	[<L1266+pWin_0],Y
 	pha
 	ldy	#$0
-	lda	<L1180+titleOffsetY_1
-	bpl	L1206
+	lda	<L1267+titleOffsetY_1
+	bpl	L1293
 	dey
-L1206:
+L1293:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
@@ -29090,124 +29723,124 @@ L1206:
 	ldy	#$0
 	phy
 	ldy	#$c
-	lda	[<L1179+pWin_0],Y
+	lda	[<L1266+pWin_0],Y
 	ply
 	rol	A
 	ror	A
-	bpl	L1207
+	bpl	L1294
 	dey
-L1207:
+L1294:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_vdma_fill_rect_ex
 ;				dx = k_draw_text_point_ex(caption,titleOffsetX,titleOffsetY,bgcolor,BITMAP_FRONT);
-	.line	5503
+	.line	5322
 	pea	#<$0
-	pei	<L1179+bgcolor_0
-	pei	<L1180+titleOffsetY_1
-	pei	<L1180+titleOffsetX_1
-	pei	<L1180+caption_1+2
-	pei	<L1180+caption_1
+	pei	<L1266+bgcolor_0
+	pei	<L1267+titleOffsetY_1
+	pei	<L1267+titleOffsetX_1
+	pei	<L1267+caption_1+2
+	pei	<L1267+caption_1
 	jsl	~~k_draw_text_point_ex
-	sta	<L1180+dx_1
+	sta	<L1267+dx_1
 ;				if(chromeByte)
-	.line	5504
+	.line	5323
 ;				{
-	lda	<L1180+chromeByte_2
+	lda	<L1267+chromeByte_2
 	and	#$ff
-	bne	L1208
-	brl	L10502
-L1208:
-	.line	5505
+	bne	L1295
+	brl	L10549
+L1295:
+	.line	5324
 ;					dx = k_draw_text_point_ex("*",titleOffsetX + dx,titleOffsetY,bgcolor,BITMAP_FRONT);
-	.line	5506
+	.line	5325
 	pea	#<$0
-	pei	<L1179+bgcolor_0
-	pei	<L1180+titleOffsetY_1
+	pei	<L1266+bgcolor_0
+	pei	<L1267+titleOffsetY_1
 	clc
-	lda	<L1180+titleOffsetX_1
-	adc	<L1180+dx_1
+	lda	<L1267+titleOffsetX_1
+	adc	<L1267+dx_1
 	pha
-	pea	#^L1178+4
-	pea	#<L1178+4
+	pea	#^L1265+4
+	pea	#<L1265+4
 	jsl	~~k_draw_text_point_ex
-	sta	<L1180+dx_1
+	sta	<L1267+dx_1
 ;				}
-	.line	5507
+	.line	5326
 ;			}
-L10502:
-	.line	5508
+L10549:
+	.line	5327
 ;			else
-	brl	L10503
-L10501:
+	brl	L10550
+L10548:
 ;			{
-	.line	5510
+	.line	5329
 ;				dx = k_draw_text_point_ex(caption,titleOffsetX,titleOffsetY,color,BITMAP_FRONT);
-	.line	5511
+	.line	5330
 	pea	#<$0
-	pei	<L1179+color_0
-	pei	<L1180+titleOffsetY_1
-	pei	<L1180+titleOffsetX_1
-	pei	<L1180+caption_1+2
-	pei	<L1180+caption_1
+	pei	<L1266+color_0
+	pei	<L1267+titleOffsetY_1
+	pei	<L1267+titleOffsetX_1
+	pei	<L1267+caption_1+2
+	pei	<L1267+caption_1
 	jsl	~~k_draw_text_point_ex
-	sta	<L1180+dx_1
+	sta	<L1267+dx_1
 ;				if(chromeByte)
-	.line	5512
+	.line	5331
 ;				{
-	lda	<L1180+chromeByte_2
+	lda	<L1267+chromeByte_2
 	and	#$ff
-	bne	L1209
-	brl	L10504
-L1209:
-	.line	5513
+	bne	L1296
+	brl	L10551
+L1296:
+	.line	5332
 ;					dx = k_draw_text_point_ex("*",titleOffsetX + dx,titleOffsetY,color,BITMAP_FRONT);
-	.line	5514
+	.line	5333
 	pea	#<$0
-	pei	<L1179+color_0
-	pei	<L1180+titleOffsetY_1
+	pei	<L1266+color_0
+	pei	<L1267+titleOffsetY_1
 	clc
-	lda	<L1180+titleOffsetX_1
-	adc	<L1180+dx_1
+	lda	<L1267+titleOffsetX_1
+	adc	<L1267+dx_1
 	pha
-	pea	#^L1178+6
-	pea	#<L1178+6
+	pea	#^L1265+6
+	pea	#<L1265+6
 	jsl	~~k_draw_text_point_ex
-	sta	<L1180+dx_1
+	sta	<L1267+dx_1
 ;				}
-	.line	5515
+	.line	5334
 ;
 ;			}
-L10504:
-	.line	5517
-L10503:
+L10551:
+	.line	5336
+L10550:
 ;		}
-	.line	5518
-L10500:
+	.line	5337
+L10547:
 ;		titleOffsetY+=(FONTH + 2);
-	.line	5519
+	.line	5338
 	jsl	~~k_font_getFontHeight
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L1180+titleOffsetY_1
+	adc	<L1267+titleOffsetY_1
 	sta	<R1
 	clc
 	lda	#$2
 	adc	<R1
-	sta	<L1180+titleOffsetY_1
+	sta	<L1267+titleOffsetY_1
 ;		i++;
-	.line	5520
-	inc	<L1180+i_1
+	.line	5339
+	inc	<L1267+i_1
 ;		caption = captions[i];
-	.line	5521
+	.line	5340
 	ldy	#$0
-	lda	<L1180+i_1
-	bpl	L1210
+	lda	<L1267+i_1
+	bpl	L1297
 	dey
-L1210:
+L1297:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -29218,53 +29851,53 @@ L1210:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L1179+captions_0
+	lda	<L1266+captions_0
 	adc	<R0
 	sta	<R2
-	lda	<L1179+captions_0+2
+	lda	<L1266+captions_0+2
 	adc	<R0+2
 	sta	<R2+2
 	lda	[<R2]
-	sta	<L1180+caption_1
+	sta	<L1267+caption_1
 	ldy	#$2
 	lda	[<R2],Y
-	sta	<L1180+caption_1+2
+	sta	<L1267+caption_1+2
 ;	}
-	.endblock	5522
-	.line	5522
-	brl	L10492
-L10493:
+	.endblock	5341
+	.line	5341
+	brl	L10539
+L10540:
 ;
 ;	return NULL;
-	.line	5524
+	.line	5343
 	lda	#$0
 	tax
 	lda	#$0
-L1211:
+L1298:
 	tay
-	lda	<L1179+2
-	sta	<L1179+2+28
-	lda	<L1179+1
-	sta	<L1179+1+28
+	lda	<L1266+2
+	sta	<L1266+2+28
+	lda	<L1266+1
+	sta	<L1266+1+28
 	pld
 	tsc
 	clc
-	adc	#L1179+28
+	adc	#L1266+28
 	tcs
 	tya
 	rtl
 ;
 ;}
-	.line	5526
-	.endblock	5526
-L1179	equ	41
-L1180	equ	13
+	.line	5345
+	.endblock	5345
+L1266	equ	41
+L1267	equ	13
 	ends
 	efunc
-	.endfunc	5526,13,41
-	.line	5526
+	.endfunc	5345,13,41
+	.line	5345
 	data
-L1178:
+L1265:
 	db	$2A,$00,$2A,$00,$2A,$00,$2A,$00
 	ends
 ;
@@ -29272,18 +29905,18 @@ L1178:
 ;		                              int cx,int cy,int width,int height,
 ;									  char FAR **captions,int color, int bgcolor)
 ;{
-	.line	5528
-	.line	5531
+	.line	5347
+	.line	5350
 	GFX
 	xdef	~~k_create_context_menu_in_window
 	func
-	.function	5531
+	.function	5350
 ~~k_create_context_menu_in_window:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1213
+	sbc	#L1300
 	tcs
 	phd
 	tcd
@@ -29297,7 +29930,7 @@ height_0	set	18
 captions_0	set	20
 color_0	set	24
 bgcolor_0	set	26
-	.block	5531
+	.block	5350
 ;	FONTMETRIC metric;
 ;
 ;	int i = 0;
@@ -29352,77 +29985,77 @@ endX_1	set	26
 	.sym	captions,20,1166,6,32
 	.sym	color,24,5,6,16
 	.sym	bgcolor,26,5,6,16
-	stz	<L1214+i_1
-	stz	<L1214+hy_1
-	stz	<L1214+caption_1
-	stz	<L1214+caption_1+2
+	stz	<L1301+i_1
+	stz	<L1301+hy_1
+	stz	<L1301+caption_1
+	stz	<L1301+caption_1+2
 	lda	#$a
-	sta	<L1214+borderTitle_1
+	sta	<L1301+borderTitle_1
 	lda	#$3
-	sta	<L1214+borderWidth_1
+	sta	<L1301+borderWidth_1
 	clc
 	lda	#$4
-	adc	<L1213+cx_0
-	sta	<L1214+titleOffsetX_1
+	adc	<L1300+cx_0
+	sta	<L1301+titleOffsetX_1
 	clc
 	lda	#$2
-	adc	<L1213+cy_0
-	sta	<L1214+titleOffsetY_1
-	stz	<L1214+titleScaler_1
+	adc	<L1300+cy_0
+	sta	<L1301+titleOffsetY_1
+	stz	<L1301+titleScaler_1
 	clc
-	lda	<L1213+cx_0
-	adc	<L1214+borderWidth_1
+	lda	<L1300+cx_0
+	adc	<L1301+borderWidth_1
 	sta	<R0
 	clc
 	lda	#$2
 	adc	<R0
-	sta	<L1214+clientOffsetX_1
+	sta	<L1301+clientOffsetX_1
 	clc
-	lda	<L1213+cy_0
-	adc	<L1214+borderTitle_1
+	lda	<L1300+cy_0
+	adc	<L1301+borderTitle_1
 	sta	<R0
 	lda	<R0
 	ina
-	sta	<L1214+clientOffsetY_1
+	sta	<L1301+clientOffsetY_1
 	clc
-	lda	<L1213+width_0
-	adc	<L1213+cx_0
+	lda	<L1300+width_0
+	adc	<L1300+cx_0
 	sta	<R0
 	sec
 	lda	<R0
-	sbc	<L1214+borderWidth_1
-	sta	<L1214+endX_1
-	.line	5551
+	sbc	<L1301+borderWidth_1
+	sta	<L1301+endX_1
+	.line	5370
 ;		k_vdma_fill_rect_ex(cx,cy,width,height,bgcolor,BITMAP_FRONT);
-	lda	<L1213+selected_0
+	lda	<L1300+selected_0
 	cmp	#<$ffffffff
-	beq	L1216
-	brl	L10505
-L1216:
-	lda	<L1213+unselected_0
+	beq	L1303
+	brl	L10552
+L1303:
+	lda	<L1300+unselected_0
 	cmp	#<$ffffffff
-	beq	L1217
-	brl	L10505
-L1217:
-	.line	5552
+	beq	L1304
+	brl	L10552
+L1304:
+	.line	5371
 	pea	#<$0
-	pei	<L1213+bgcolor_0
-	pei	<L1213+height_0
-	pei	<L1213+width_0
+	pei	<L1300+bgcolor_0
+	pei	<L1300+height_0
+	pei	<L1300+width_0
 	ldy	#$0
-	lda	<L1213+cy_0
-	bpl	L1218
+	lda	<L1300+cy_0
+	bpl	L1305
 	dey
-L1218:
+L1305:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	<L1213+cx_0
-	bpl	L1219
+	lda	<L1300+cx_0
+	bpl	L1306
 	dey
-L1219:
+L1306:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -29432,16 +30065,16 @@ L1219:
 ;	//k_put_wingadget_point(WINICON_TITLE_BACK,endX - (metric.width*2 + 2),titleOffsetY,14);
 ;	//k_put_wingadget_point(WINICON_TITLE_FRONT,endX - (metric.width),titleOffsetY,14);
 ;	i = 0;
-L10505:
-	.line	5556
-	stz	<L1214+i_1
+L10552:
+	.line	5375
+	stz	<L1301+i_1
 ;	caption = captions[i];
-	.line	5557
+	.line	5376
 	ldy	#$0
-	lda	<L1214+i_1
-	bpl	L1220
+	lda	<L1301+i_1
+	bpl	L1307
 	dey
-L1220:
+L1307:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -29452,77 +30085,77 @@ L1220:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L1213+captions_0
+	lda	<L1300+captions_0
 	adc	<R0
 	sta	<R2
-	lda	<L1213+captions_0+2
+	lda	<L1300+captions_0+2
 	adc	<R0+2
 	sta	<R2+2
 	lda	[<R2]
-	sta	<L1214+caption_1
+	sta	<L1301+caption_1
 	ldy	#$2
 	lda	[<R2],Y
-	sta	<L1214+caption_1+2
+	sta	<L1301+caption_1+2
 ;	while(caption!=NULL)
-	.line	5558
-L10506:
-	lda	<L1214+caption_1
-	ora	<L1214+caption_1+2
-	bne	L1221
-	brl	L10507
-L1221:
+	.line	5377
+L10553:
+	lda	<L1301+caption_1
+	ora	<L1301+caption_1+2
+	bne	L1308
+	brl	L10554
+L1308:
 ;	{
-	.line	5559
+	.line	5378
 ;		//k_debug_strings("k_create_context_menu:caption:",caption);
 ;
 ;		//caption = strupr(caption);
 ;
 ;		if(selected!=-1 && unselected!=-1)
-	.line	5564
+	.line	5383
 ;		{
-	lda	<L1213+selected_0
+	lda	<L1300+selected_0
 	cmp	#<$ffffffff
-	bne	L1222
-	brl	L10508
-L1222:
-	lda	<L1213+unselected_0
+	bne	L1309
+	brl	L10555
+L1309:
+	lda	<L1300+unselected_0
 	cmp	#<$ffffffff
-	bne	L1223
-	brl	L10508
-L1223:
-	.line	5565
+	bne	L1310
+	brl	L10555
+L1310:
+	.line	5384
 ;			if( i == selected && caption[0] != '_')
-	.line	5566
+	.line	5385
 ;			{
-	lda	<L1214+i_1
-	cmp	<L1213+selected_0
-	beq	L1224
-	brl	L10509
-L1224:
+	lda	<L1301+i_1
+	cmp	<L1300+selected_0
+	beq	L1311
+	brl	L10556
+L1311:
 	sep	#$20
 	longa	off
-	lda	[<L1214+caption_1]
+	lda	[<L1301+caption_1]
 	cmp	#<$5f
 	rep	#$20
 	longa	on
-	bne	L1225
-	brl	L10509
-L1225:
-	.line	5567
+	bne	L1312
+	brl	L10556
+L1312:
+	.line	5386
 ;				k_vdma_fill_rect_ex(pWin->win_x,titleOffsetY,pWin->win_width,FONTH,color,BITMAP_FRONT);
-	.line	5568
+	.line	5387
 	pea	#<$0
-	pei	<L1213+color_0
+	pei	<L1300+color_0
 	jsl	~~k_font_getFontHeight
 	pha
 	ldy	#$10
-	lda	[<L1213+pWin_0],Y
+	lda	[<L1300+pWin_0],Y
 	pha
 	ldy	#$0
-	lda	<L1214+titleOffsetY_1
-	bpl	L1226
+	lda	<L1301+titleOffsetY_1
+	bpl	L1313
 	dey
-L1226:
+L1313:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
@@ -29530,64 +30163,64 @@ L1226:
 	ldy	#$0
 	phy
 	ldy	#$c
-	lda	[<L1213+pWin_0],Y
+	lda	[<L1300+pWin_0],Y
 	ply
 	rol	A
 	ror	A
-	bpl	L1227
+	bpl	L1314
 	dey
-L1227:
+L1314:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_vdma_fill_rect_ex
 ;				hy = k_draw_text_point_ex(caption,titleOffsetX,titleOffsetY,bgcolor,BITMAP_FRONT);
-	.line	5569
+	.line	5388
 	pea	#<$0
-	pei	<L1213+bgcolor_0
-	pei	<L1214+titleOffsetY_1
-	pei	<L1214+titleOffsetX_1
-	pei	<L1214+caption_1+2
-	pei	<L1214+caption_1
+	pei	<L1300+bgcolor_0
+	pei	<L1301+titleOffsetY_1
+	pei	<L1301+titleOffsetX_1
+	pei	<L1301+caption_1+2
+	pei	<L1301+caption_1
 	jsl	~~k_draw_text_point_ex
-	sta	<L1214+hy_1
+	sta	<L1301+hy_1
 ;			}
-	.line	5570
+	.line	5389
 ;			else if( i == unselected && caption[0] != '_')
-	brl	L10510
-L10509:
-	.line	5571
+	brl	L10557
+L10556:
+	.line	5390
 ;			{
-	lda	<L1214+i_1
-	cmp	<L1213+unselected_0
-	beq	L1228
-	brl	L10511
-L1228:
+	lda	<L1301+i_1
+	cmp	<L1300+unselected_0
+	beq	L1315
+	brl	L10558
+L1315:
 	sep	#$20
 	longa	off
-	lda	[<L1214+caption_1]
+	lda	[<L1301+caption_1]
 	cmp	#<$5f
 	rep	#$20
 	longa	on
-	bne	L1229
-	brl	L10511
-L1229:
-	.line	5572
+	bne	L1316
+	brl	L10558
+L1316:
+	.line	5391
 ;				k_vdma_fill_rect_ex(pWin->win_x,titleOffsetY,pWin->win_width,FONTH,bgcolor,BITMAP_FRONT);
-	.line	5573
+	.line	5392
 	pea	#<$0
-	pei	<L1213+bgcolor_0
+	pei	<L1300+bgcolor_0
 	jsl	~~k_font_getFontHeight
 	pha
 	ldy	#$10
-	lda	[<L1213+pWin_0],Y
+	lda	[<L1300+pWin_0],Y
 	pha
 	ldy	#$0
-	lda	<L1214+titleOffsetY_1
-	bpl	L1230
+	lda	<L1301+titleOffsetY_1
+	bpl	L1317
 	dey
-L1230:
+L1317:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
@@ -29595,72 +30228,72 @@ L1230:
 	ldy	#$0
 	phy
 	ldy	#$c
-	lda	[<L1213+pWin_0],Y
+	lda	[<L1300+pWin_0],Y
 	ply
 	rol	A
 	ror	A
-	bpl	L1231
+	bpl	L1318
 	dey
-L1231:
+L1318:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_vdma_fill_rect_ex
 ;				hy = k_draw_text_point_ex(caption,titleOffsetX,titleOffsetY,color,BITMAP_FRONT);
-	.line	5574
+	.line	5393
 	pea	#<$0
-	pei	<L1213+color_0
-	pei	<L1214+titleOffsetY_1
-	pei	<L1214+titleOffsetX_1
-	pei	<L1214+caption_1+2
-	pei	<L1214+caption_1
+	pei	<L1300+color_0
+	pei	<L1301+titleOffsetY_1
+	pei	<L1301+titleOffsetX_1
+	pei	<L1301+caption_1+2
+	pei	<L1301+caption_1
 	jsl	~~k_draw_text_point_ex
-	sta	<L1214+hy_1
+	sta	<L1301+hy_1
 ;			}
-	.line	5575
+	.line	5394
 ;
 ;		}
-L10511:
-L10510:
-	.line	5577
+L10558:
+L10557:
+	.line	5396
 ;		else
-	brl	L10512
-L10508:
+	brl	L10559
+L10555:
 ;		{
-	.line	5579
+	.line	5398
 ;			if( i == selected && caption[0] != '_')
-	.line	5580
+	.line	5399
 ;			{
-	lda	<L1214+i_1
-	cmp	<L1213+selected_0
-	beq	L1232
-	brl	L10513
-L1232:
+	lda	<L1301+i_1
+	cmp	<L1300+selected_0
+	beq	L1319
+	brl	L10560
+L1319:
 	sep	#$20
 	longa	off
-	lda	[<L1214+caption_1]
+	lda	[<L1301+caption_1]
 	cmp	#<$5f
 	rep	#$20
 	longa	on
-	bne	L1233
-	brl	L10513
-L1233:
-	.line	5581
+	bne	L1320
+	brl	L10560
+L1320:
+	.line	5400
 ;				k_vdma_fill_rect_ex(pWin->win_x,titleOffsetY,pWin->win_width,FONTH,color,BITMAP_FRONT);
-	.line	5582
+	.line	5401
 	pea	#<$0
-	pei	<L1213+color_0
+	pei	<L1300+color_0
 	jsl	~~k_font_getFontHeight
 	pha
 	ldy	#$10
-	lda	[<L1213+pWin_0],Y
+	lda	[<L1300+pWin_0],Y
 	pha
 	ldy	#$0
-	lda	<L1214+titleOffsetY_1
-	bpl	L1234
+	lda	<L1301+titleOffsetY_1
+	bpl	L1321
 	dey
-L1234:
+L1321:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
@@ -29668,73 +30301,73 @@ L1234:
 	ldy	#$0
 	phy
 	ldy	#$c
-	lda	[<L1213+pWin_0],Y
+	lda	[<L1300+pWin_0],Y
 	ply
 	rol	A
 	ror	A
-	bpl	L1235
+	bpl	L1322
 	dey
-L1235:
+L1322:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_vdma_fill_rect_ex
 ;				hy = k_draw_text_point_ex(caption,titleOffsetX,titleOffsetY,bgcolor,BITMAP_FRONT);
-	.line	5583
+	.line	5402
 	pea	#<$0
-	pei	<L1213+bgcolor_0
-	pei	<L1214+titleOffsetY_1
-	pei	<L1214+titleOffsetX_1
-	pei	<L1214+caption_1+2
-	pei	<L1214+caption_1
+	pei	<L1300+bgcolor_0
+	pei	<L1301+titleOffsetY_1
+	pei	<L1301+titleOffsetX_1
+	pei	<L1301+caption_1+2
+	pei	<L1301+caption_1
 	jsl	~~k_draw_text_point_ex
-	sta	<L1214+hy_1
+	sta	<L1301+hy_1
 ;			}
-	.line	5584
+	.line	5403
 ;			else
-	brl	L10514
-L10513:
+	brl	L10561
+L10560:
 ;			{
-	.line	5586
+	.line	5405
 ;				hy = k_draw_text_point_ex(caption,titleOffsetX,titleOffsetY,color,BITMAP_FRONT);
-	.line	5587
+	.line	5406
 	pea	#<$0
-	pei	<L1213+color_0
-	pei	<L1214+titleOffsetY_1
-	pei	<L1214+titleOffsetX_1
-	pei	<L1214+caption_1+2
-	pei	<L1214+caption_1
+	pei	<L1300+color_0
+	pei	<L1301+titleOffsetY_1
+	pei	<L1301+titleOffsetX_1
+	pei	<L1301+caption_1+2
+	pei	<L1301+caption_1
 	jsl	~~k_draw_text_point_ex
-	sta	<L1214+hy_1
+	sta	<L1301+hy_1
 ;			}
-	.line	5588
-L10514:
+	.line	5407
+L10561:
 ;		}
-	.line	5589
-L10512:
+	.line	5408
+L10559:
 ;		titleOffsetY+=(FONTH + 2);
-	.line	5590
+	.line	5409
 	jsl	~~k_font_getFontHeight
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L1214+titleOffsetY_1
+	adc	<L1301+titleOffsetY_1
 	sta	<R1
 	clc
 	lda	#$2
 	adc	<R1
-	sta	<L1214+titleOffsetY_1
+	sta	<L1301+titleOffsetY_1
 ;		i++;
-	.line	5591
-	inc	<L1214+i_1
+	.line	5410
+	inc	<L1301+i_1
 ;		caption = captions[i];
-	.line	5592
+	.line	5411
 	ldy	#$0
-	lda	<L1214+i_1
-	bpl	L1236
+	lda	<L1301+i_1
+	bpl	L1323
 	dey
-L1236:
+L1323:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -29745,71 +30378,71 @@ L1236:
 	sta	<R0
 	stx	<R0+2
 	clc
-	lda	<L1213+captions_0
+	lda	<L1300+captions_0
 	adc	<R0
 	sta	<R2
-	lda	<L1213+captions_0+2
+	lda	<L1300+captions_0+2
 	adc	<R0+2
 	sta	<R2+2
 	lda	[<R2]
-	sta	<L1214+caption_1
+	sta	<L1301+caption_1
 	ldy	#$2
 	lda	[<R2],Y
-	sta	<L1214+caption_1+2
+	sta	<L1301+caption_1+2
 ;	}
-	.line	5593
-	brl	L10506
-L10507:
+	.line	5412
+	brl	L10553
+L10554:
 ;
 ;	return NULL;
-	.line	5595
+	.line	5414
 	lda	#$0
 	tax
 	lda	#$0
-L1237:
+L1324:
 	tay
-	lda	<L1213+2
-	sta	<L1213+2+24
-	lda	<L1213+1
-	sta	<L1213+1+24
+	lda	<L1300+2
+	sta	<L1300+2+24
+	lda	<L1300+1
+	sta	<L1300+1+24
 	pld
 	tsc
 	clc
-	adc	#L1213+24
+	adc	#L1300+24
 	tcs
 	tya
 	rtl
 ;
 ;}
-	.line	5597
-	.endblock	5597
-L1213	equ	40
-L1214	equ	13
+	.line	5416
+	.endblock	5416
+L1300	equ	40
+L1301	equ	13
 	ends
 	efunc
-	.endfunc	5597,13,40
-	.line	5597
+	.endfunc	5416,13,40
+	.line	5416
 ;
 ;
 ;PMENU k_render_context_menu(PMENU menu)
 ;{
-	.line	5600
-	.line	5601
+	.line	5419
+	.line	5420
 	GFX
 	xdef	~~k_render_context_menu
 	func
-	.function	5601
+	.function	5420
 ~~k_render_context_menu:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1238
+	sbc	#L1325
 	tcs
 	phd
 	tcd
 menu_0	set	4
-	.block	5601
+	.block	5420
 ;	FONTMETRIC metric;
 ;
 ;	int i = 0;
@@ -29872,111 +30505,111 @@ endX_1	set	28
 	.sym	clientOffsetY,26,5,1,16
 	.sym	endX,28,5,1,16
 	.sym	menu,4,138,6,32,36
-	stz	<L1239+i_1
-	lda	[<L1238+menu_0]
-	sta	<L1239+cx_1
+	stz	<L1326+i_1
+	lda	[<L1325+menu_0]
+	sta	<L1326+cx_1
 	ldy	#$2
-	lda	[<L1238+menu_0],Y
-	sta	<L1239+cy_1
-	stz	<L1239+caption_1
-	stz	<L1239+caption_1+2
+	lda	[<L1325+menu_0],Y
+	sta	<L1326+cy_1
+	stz	<L1326+caption_1
+	stz	<L1326+caption_1+2
 	lda	#$a
-	sta	<L1239+borderTitle_1
+	sta	<L1326+borderTitle_1
 	lda	#$3
-	sta	<L1239+borderWidth_1
+	sta	<L1326+borderWidth_1
 	clc
 	lda	#$2
-	adc	<L1239+cx_1
-	sta	<L1239+titleOffsetX_1
+	adc	<L1326+cx_1
+	sta	<L1326+titleOffsetX_1
 	clc
 	lda	#$2
-	adc	<L1239+cy_1
-	sta	<L1239+titleOffsetY_1
-	stz	<L1239+titleScaler_1
+	adc	<L1326+cy_1
+	sta	<L1326+titleOffsetY_1
+	stz	<L1326+titleScaler_1
 	clc
-	lda	<L1239+cx_1
-	adc	<L1239+borderWidth_1
+	lda	<L1326+cx_1
+	adc	<L1326+borderWidth_1
 	sta	<R0
 	clc
 	lda	#$2
 	adc	<R0
-	sta	<L1239+clientOffsetX_1
+	sta	<L1326+clientOffsetX_1
 	clc
-	lda	<L1239+cy_1
-	adc	<L1239+borderTitle_1
+	lda	<L1326+cy_1
+	adc	<L1326+borderTitle_1
 	sta	<R0
 	lda	<R0
 	ina
-	sta	<L1239+clientOffsetY_1
+	sta	<L1326+clientOffsetY_1
 	clc
 	ldy	#$4
-	lda	[<L1238+menu_0],Y
-	adc	<L1239+cx_1
+	lda	[<L1325+menu_0],Y
+	adc	<L1326+cx_1
 	sta	<R0
 	sec
 	lda	<R0
-	sbc	<L1239+borderWidth_1
-	sta	<L1239+endX_1
-	.line	5636
+	sbc	<L1326+borderWidth_1
+	sta	<L1326+endX_1
+	.line	5455
 	pea	#<$0
 	pea	#<$0
 	ldy	#$6
-	lda	[<L1238+menu_0],Y
+	lda	[<L1325+menu_0],Y
 	ina
 	pha
 	ldy	#$4
-	lda	[<L1238+menu_0],Y
+	lda	[<L1325+menu_0],Y
 	ina
 	pha
 	ldy	#$0
-	lda	<L1239+cy_1
-	bpl	L1241
+	lda	<L1326+cy_1
+	bpl	L1328
 	dey
-L1241:
+L1328:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
 	lda	#$ffff
-	adc	<L1239+cx_1
+	adc	<L1326+cx_1
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L1242
+	bpl	L1329
 	dey
-L1242:
+L1329:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~k_vdma_fill_rect_ex
 ;	k_vdma_fill_rect_ex(cx,cy,menu->width,menu->height,menu->fcolor,BITMAP_FRONT);
-	.line	5637
+	.line	5456
 	pea	#<$0
 	ldy	#$8
-	lda	[<L1238+menu_0],Y
+	lda	[<L1325+menu_0],Y
 	pha
 	ldy	#$6
-	lda	[<L1238+menu_0],Y
+	lda	[<L1325+menu_0],Y
 	pha
 	ldy	#$4
-	lda	[<L1238+menu_0],Y
+	lda	[<L1325+menu_0],Y
 	pha
 	ldy	#$0
-	lda	<L1239+cy_1
-	bpl	L1243
+	lda	<L1326+cy_1
+	bpl	L1330
 	dey
-L1243:
+L1330:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	<L1239+cx_1
-	bpl	L1244
+	lda	<L1326+cx_1
+	bpl	L1331
 	dey
-L1244:
+L1331:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -29990,63 +30623,63 @@ L1244:
 ;	//k_put_wingadget_point(WINICON_TITLE_BACK,endX - (metric.width*2 + 2),titleOffsetY,14);
 ;	//k_put_wingadget_point(WINICON_TITLE_FRONT,endX - (metric.width),titleOffsetY,14);
 ;	i = 0;
-	.line	5645
-	stz	<L1239+i_1
+	.line	5464
+	stz	<L1326+i_1
 ;	caption = ((LPCHAR*)menu->pCaption)[0];
-	.line	5646
+	.line	5465
 	ldy	#$13
-	lda	[<L1238+menu_0],Y
+	lda	[<L1325+menu_0],Y
 	sta	<R0
 	ldy	#$15
-	lda	[<L1238+menu_0],Y
+	lda	[<L1325+menu_0],Y
 	sta	<R0+2
 	lda	[<R0]
-	sta	<L1239+caption_1
+	sta	<L1326+caption_1
 	ldy	#$2
 	lda	[<R0],Y
-	sta	<L1239+caption_1+2
+	sta	<L1326+caption_1+2
 ;	while(caption!=NULL)
-	.line	5647
-L10515:
-	lda	<L1239+caption_1
-	ora	<L1239+caption_1+2
-	bne	L1245
-	brl	L10516
-L1245:
+	.line	5466
+L10562:
+	lda	<L1326+caption_1
+	ora	<L1326+caption_1+2
+	bne	L1332
+	brl	L10563
+L1332:
 ;	{
-	.line	5648
+	.line	5467
 ;		//caption = strupr(caption);
 ;		k_draw_text_point_ex(caption,titleOffsetX,titleOffsetY,0,BITMAP_FRONT);
-	.line	5650
+	.line	5469
 	pea	#<$0
 	pea	#<$0
-	pei	<L1239+titleOffsetY_1
-	pei	<L1239+titleOffsetX_1
-	pei	<L1239+caption_1+2
-	pei	<L1239+caption_1
+	pei	<L1326+titleOffsetY_1
+	pei	<L1326+titleOffsetX_1
+	pei	<L1326+caption_1+2
+	pei	<L1326+caption_1
 	jsl	~~k_draw_text_point_ex
 ;		titleOffsetY+=(FONTH + 2);
-	.line	5651
+	.line	5470
 	jsl	~~k_font_getFontHeight
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L1239+titleOffsetY_1
+	adc	<L1326+titleOffsetY_1
 	sta	<R1
 	clc
 	lda	#$2
 	adc	<R1
-	sta	<L1239+titleOffsetY_1
+	sta	<L1326+titleOffsetY_1
 ;		i++;
-	.line	5652
-	inc	<L1239+i_1
+	.line	5471
+	inc	<L1326+i_1
 ;		caption = ((LPCHAR*)menu->pCaption)[i];
-	.line	5653
+	.line	5472
 	ldy	#$0
-	lda	<L1239+i_1
-	bpl	L1246
+	lda	<L1326+i_1
+	bpl	L1333
 	dey
-L1246:
+L1333:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -30058,119 +30691,119 @@ L1246:
 	stx	<R0+2
 	clc
 	ldy	#$13
-	lda	[<L1238+menu_0],Y
+	lda	[<L1325+menu_0],Y
 	adc	<R0
 	sta	<R2
 	ldy	#$15
-	lda	[<L1238+menu_0],Y
+	lda	[<L1325+menu_0],Y
 	adc	<R0+2
 	sta	<R2+2
 	lda	[<R2]
-	sta	<L1239+caption_1
+	sta	<L1326+caption_1
 	ldy	#$2
 	lda	[<R2],Y
-	sta	<L1239+caption_1+2
+	sta	<L1326+caption_1+2
 ;	}
-	.line	5654
-	brl	L10515
-L10516:
+	.line	5473
+	brl	L10562
+L10563:
 ;
 ;	return menu;
-	.line	5656
-	ldx	<L1238+menu_0+2
-	lda	<L1238+menu_0
-L1247:
+	.line	5475
+	ldx	<L1325+menu_0+2
+	lda	<L1325+menu_0
+L1334:
 	tay
-	lda	<L1238+2
-	sta	<L1238+2+4
-	lda	<L1238+1
-	sta	<L1238+1+4
+	lda	<L1325+2
+	sta	<L1325+2+4
+	lda	<L1325+1
+	sta	<L1325+1+4
 	pld
 	tsc
 	clc
-	adc	#L1238+4
+	adc	#L1325+4
 	tcs
 	tya
 	rtl
 ;
 ;}
-	.line	5658
-	.endblock	5658
-L1238	equ	42
-L1239	equ	13
+	.line	5477
+	.endblock	5477
+L1325	equ	42
+L1326	equ	13
 	ends
 	efunc
-	.endfunc	5658,13,42
-	.line	5658
+	.endfunc	5477,13,42
+	.line	5477
 ;
 ;void k_free_context_menu(PMENU pmenu,char fcolor,char bcolor)
 ;{
-	.line	5660
-	.line	5661
+	.line	5479
+	.line	5480
 	GFX
 	xdef	~~k_free_context_menu
 	func
-	.function	5661
+	.function	5480
 ~~k_free_context_menu:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1248
+	sbc	#L1335
 	tcs
 	phd
 	tcd
 pmenu_0	set	4
 fcolor_0	set	8
 bcolor_0	set	10
-	.block	5661
+	.block	5480
 ;	if(pmenu)
 	.sym	pmenu,4,138,6,32,36
 	.sym	fcolor,8,14,6,8
 	.sym	bcolor,10,14,6,8
-	.line	5662
+	.line	5481
 ;	{
-	lda	<L1248+pmenu_0
-	ora	<L1248+pmenu_0+2
-	bne	L1251
-	brl	L10517
-L1251:
-	.line	5663
+	lda	<L1335+pmenu_0
+	ora	<L1335+pmenu_0+2
+	bne	L1338
+	brl	L10564
+L1338:
+	.line	5482
 ;		k_vdma_fill_rect_ex(pmenu->cx-1,pmenu->cy,pmenu->width+1,pmenu->height+1,bcolor,BITMAP_FRONT);
-	.line	5664
+	.line	5483
 	pea	#<$0
-	pei	<L1248+bcolor_0
+	pei	<L1335+bcolor_0
 	ldy	#$6
-	lda	[<L1248+pmenu_0],Y
+	lda	[<L1335+pmenu_0],Y
 	ina
 	pha
 	ldy	#$4
-	lda	[<L1248+pmenu_0],Y
+	lda	[<L1335+pmenu_0],Y
 	ina
 	pha
 	ldy	#$0
 	phy
 	ldy	#$2
-	lda	[<L1248+pmenu_0],Y
+	lda	[<L1335+pmenu_0],Y
 	ply
 	rol	A
 	ror	A
-	bpl	L1252
+	bpl	L1339
 	dey
-L1252:
+L1339:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
 	lda	#$ffff
-	adc	[<L1248+pmenu_0]
+	adc	[<L1335+pmenu_0]
 	sta	<R1
 	ldy	#$0
 	lda	<R1
-	bpl	L1253
+	bpl	L1340
 	dey
-L1253:
+L1340:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -30178,48 +30811,48 @@ L1253:
 	jsl	~~k_vdma_fill_rect_ex
 ;		//k_vdma_fill_rect(pmenu->cx,pmenu->cy,pmenu->width,pmenu->height,bcolor);
 ;		k_mem_deallocate_heap(pmenu);
-	.line	5666
-	pei	<L1248+pmenu_0+2
-	pei	<L1248+pmenu_0
+	.line	5485
+	pei	<L1335+pmenu_0+2
+	pei	<L1335+pmenu_0
 	jsl	~~k_mem_deallocate_heap
 ;	}
-	.line	5667
+	.line	5486
 ;}
-L10517:
-	.line	5668
-L1254:
-	lda	<L1248+2
-	sta	<L1248+2+8
-	lda	<L1248+1
-	sta	<L1248+1+8
+L10564:
+	.line	5487
+L1341:
+	lda	<L1335+2
+	sta	<L1335+2+8
+	lda	<L1335+1
+	sta	<L1335+1+8
 	pld
 	tsc
 	clc
-	adc	#L1248+8
+	adc	#L1335+8
 	tcs
 	rtl
-	.endblock	5668
-L1248	equ	8
-L1249	equ	9
+	.endblock	5487
+L1335	equ	8
+L1336	equ	9
 	ends
 	efunc
-	.endfunc	5668,9,8
-	.line	5668
+	.endfunc	5487,9,8
+	.line	5487
 ;
 ;void k_bitblt(int x0, int y0, int width, int height, int x1, int y1)
 ;{
-	.line	5670
-	.line	5671
+	.line	5489
+	.line	5490
 	GFX
 	xdef	~~k_bitblt
 	func
-	.function	5671
+	.function	5490
 ~~k_bitblt:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1255
+	sbc	#L1342
 	tcs
 	phd
 	tcd
@@ -30229,7 +30862,7 @@ width_0	set	8
 height_0	set	10
 x1_0	set	12
 y1_0	set	14
-	.block	5671
+	.block	5490
 ;	long dy = 0L;
 ;	long dd = y1;
 ;	long pixelLocation0 = (long)(((long)y0 * 640L) + (long)x0);
@@ -30257,27 +30890,27 @@ difference_1	set	20
 	.sym	height,10,5,6,16
 	.sym	x1,12,5,6,16
 	.sym	y1,14,5,6,16
-	stz	<L1256+dy_1
-	stz	<L1256+dy_1+2
+	stz	<L1343+dy_1
+	stz	<L1343+dy_1+2
 	ldy	#$0
-	lda	<L1255+y1_0
-	bpl	L1258
+	lda	<L1342+y1_0
+	bpl	L1345
 	dey
-L1258:
-	sta	<L1256+dd_1
-	sty	<L1256+dd_1+2
+L1345:
+	sta	<L1343+dd_1
+	sty	<L1343+dd_1+2
 	ldy	#$0
-	lda	<L1255+x0_0
-	bpl	L1259
+	lda	<L1342+x0_0
+	bpl	L1346
 	dey
-L1259:
+L1346:
 	sta	<R0
 	sty	<R0+2
 	ldy	#$0
-	lda	<L1255+y0_0
-	bpl	L1260
+	lda	<L1342+y0_0
+	bpl	L1347
 	dey
-L1260:
+L1347:
 	sta	<R1
 	sty	<R1+2
 	pea	#^$280
@@ -30291,26 +30924,26 @@ L1260:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1256+pixelLocation0_1
+	sta	<L1343+pixelLocation0_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1256+pixelLocation0_1+2
+	sta	<L1343+pixelLocation0_1+2
 	clc
-	lda	<L1255+x0_0
-	adc	<L1255+width_0
+	lda	<L1342+x0_0
+	adc	<L1342+width_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L1261
+	bpl	L1348
 	dey
-L1261:
+L1348:
 	sta	<R0
 	sty	<R0+2
 	ldy	#$0
-	lda	<L1255+y0_0
-	bpl	L1262
+	lda	<L1342+y0_0
+	bpl	L1349
 	dey
-L1262:
+L1349:
 	sta	<R1
 	sty	<R1+2
 	pea	#^$280
@@ -30324,22 +30957,22 @@ L1262:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1256+pixelLocation1_1
+	sta	<L1343+pixelLocation1_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1256+pixelLocation1_1+2
+	sta	<L1343+pixelLocation1_1+2
 	ldy	#$0
-	lda	<L1255+x1_0
-	bpl	L1263
+	lda	<L1342+x1_0
+	bpl	L1350
 	dey
-L1263:
+L1350:
 	sta	<R0
 	sty	<R0+2
 	ldy	#$0
-	lda	<L1255+y1_0
-	bpl	L1264
+	lda	<L1342+y1_0
+	bpl	L1351
 	dey
-L1264:
+L1351:
 	sta	<R1
 	sty	<R1+2
 	pea	#^$280
@@ -30353,73 +30986,73 @@ L1264:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1256+pixelLocationD_1
+	sta	<L1343+pixelLocationD_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1256+pixelLocationD_1+2
+	sta	<L1343+pixelLocationD_1+2
 	sec
-	lda	<L1256+pixelLocation1_1
-	sbc	<L1256+pixelLocation0_1
-	sta	<L1256+difference_1
-	lda	<L1256+pixelLocation1_1+2
-	sbc	<L1256+pixelLocation0_1+2
-	sta	<L1256+difference_1+2
-	.line	5680
-	pei	<L1256+pixelLocation0_1+2
-	pei	<L1256+pixelLocation0_1
-	pea	#^L1212
-	pea	#<L1212
+	lda	<L1343+pixelLocation1_1
+	sbc	<L1343+pixelLocation0_1
+	sta	<L1343+difference_1
+	lda	<L1343+pixelLocation1_1+2
+	sbc	<L1343+pixelLocation0_1+2
+	sta	<L1343+difference_1+2
+	.line	5499
+	pei	<L1343+pixelLocation0_1+2
+	pei	<L1343+pixelLocation0_1
+	pea	#^L1299
+	pea	#<L1299
 	jsl	~~k_debug_long
 ;	k_debug_long("pixelLocation1:",pixelLocation1);
-	.line	5681
-	pei	<L1256+pixelLocation1_1+2
-	pei	<L1256+pixelLocation1_1
-	pea	#^L1212+16
-	pea	#<L1212+16
+	.line	5500
+	pei	<L1343+pixelLocation1_1+2
+	pei	<L1343+pixelLocation1_1
+	pea	#^L1299+16
+	pea	#<L1299+16
 	jsl	~~k_debug_long
 ;	k_debug_long("pixelLocationD:",pixelLocationD);
-	.line	5682
-	pei	<L1256+pixelLocationD_1+2
-	pei	<L1256+pixelLocationD_1
-	pea	#^L1212+32
-	pea	#<L1212+32
+	.line	5501
+	pei	<L1343+pixelLocationD_1+2
+	pei	<L1343+pixelLocationD_1
+	pea	#^L1299+32
+	pea	#<L1299+32
 	jsl	~~k_debug_long
 ;	k_debug_long("difference:",difference);
-	.line	5683
-	pei	<L1256+difference_1+2
-	pei	<L1256+difference_1
-	pea	#^L1212+48
-	pea	#<L1212+48
+	.line	5502
+	pei	<L1343+difference_1+2
+	pei	<L1343+difference_1
+	pea	#^L1299+48
+	pea	#<L1299+48
 	jsl	~~k_debug_long
 ;
 ;
 ;
 ;	for(dy = y0;dy<(y0 + height);dy++)
-	.line	5687
+	.line	5506
 	ldy	#$0
-	lda	<L1255+y0_0
-	bpl	L1265
+	lda	<L1342+y0_0
+	bpl	L1352
 	dey
-L1265:
-	sta	<L1256+dy_1
-	sty	<L1256+dy_1+2
-	brl	L10521
-L10520:
+L1352:
+	sta	<L1343+dy_1
+	sty	<L1343+dy_1+2
+	brl	L10568
+L10567:
 ;	{
-	.line	5688
+	.line	5507
 ;		pixelLocation0 = (long)(((long)dy * 640L) + (long)x0);
-	.line	5689
+	.line	5508
 	ldy	#$0
-	lda	<L1255+x0_0
-	bpl	L1266
+	lda	<L1342+x0_0
+	bpl	L1353
 	dey
-L1266:
+L1353:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$280
 	pea	#<$280
-	pei	<L1256+dy_1+2
-	pei	<L1256+dy_1
+	pei	<L1343+dy_1+2
+	pei	<L1343+dy_1
 	xref	~~~lmul
 	jsl	~~~lmul
 	sta	<R1
@@ -30427,23 +31060,23 @@ L1266:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1256+pixelLocation0_1
+	sta	<L1343+pixelLocation0_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1256+pixelLocation0_1+2
+	sta	<L1343+pixelLocation0_1+2
 ;		pixelLocationD = (long)(((long)dd * 640L) + (long)(x1));
-	.line	5690
+	.line	5509
 	ldy	#$0
-	lda	<L1255+x1_0
-	bpl	L1267
+	lda	<L1342+x1_0
+	bpl	L1354
 	dey
-L1267:
+L1354:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$280
 	pea	#<$280
-	pei	<L1256+dd_1+2
-	pei	<L1256+dd_1
+	pei	<L1343+dd_1+2
+	pei	<L1343+dd_1
 	xref	~~~lmul
 	jsl	~~~lmul
 	sta	<R1
@@ -30451,93 +31084,93 @@ L1267:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1256+pixelLocationD_1
+	sta	<L1343+pixelLocationD_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1256+pixelLocationD_1+2
+	sta	<L1343+pixelLocationD_1+2
 ;		memcpy(   &(((unsigned char FAR *)BITMAP_BANK_0)[pixelLocationD])  , &(((unsigned char FAR *)BITMAP_BANK_0)[pixelLocation0]), difference) ;
-	.line	5691
-	pei	<L1256+difference_1
+	.line	5510
+	pei	<L1343+difference_1
 	clc
 	lda	#$0
-	adc	<L1256+pixelLocation0_1
+	adc	<L1343+pixelLocation0_1
 	sta	<R0
 	lda	#$b0
-	adc	<L1256+pixelLocation0_1+2
+	adc	<L1343+pixelLocation0_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
 	lda	#$0
-	adc	<L1256+pixelLocationD_1
+	adc	<L1343+pixelLocationD_1
 	sta	<R1
 	lda	#$b0
-	adc	<L1256+pixelLocationD_1+2
+	adc	<L1343+pixelLocationD_1+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~memcpy
 ;
 ;		dd++;
-	.line	5693
-	inc	<L1256+dd_1
-	bne	L1268
-	inc	<L1256+dd_1+2
-L1268:
+	.line	5512
+	inc	<L1343+dd_1
+	bne	L1355
+	inc	<L1343+dd_1+2
+L1355:
 ;	}
-	.line	5694
-L10518:
-	inc	<L1256+dy_1
-	bne	L1269
-	inc	<L1256+dy_1+2
-L1269:
-L10521:
+	.line	5513
+L10565:
+	inc	<L1343+dy_1
+	bne	L1356
+	inc	<L1343+dy_1+2
+L1356:
+L10568:
 	clc
-	lda	<L1255+y0_0
-	adc	<L1255+height_0
+	lda	<L1342+y0_0
+	adc	<L1342+height_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L1270
+	bpl	L1357
 	dey
-L1270:
+L1357:
 	sta	<R0
 	sty	<R0+2
 	sec
-	lda	<L1256+dy_1
+	lda	<L1343+dy_1
 	sbc	<R0
-	lda	<L1256+dy_1+2
+	lda	<L1343+dy_1+2
 	sbc	<R0+2
-	bvs	L1271
+	bvs	L1358
 	eor	#$8000
-L1271:
-	bmi	L1272
-	brl	L10520
-L1272:
-L10519:
+L1358:
+	bmi	L1359
+	brl	L10567
+L1359:
+L10566:
 ;
 ;}
-	.line	5696
-L1273:
-	lda	<L1255+2
-	sta	<L1255+2+12
-	lda	<L1255+1
-	sta	<L1255+1+12
+	.line	5515
+L1360:
+	lda	<L1342+2
+	sta	<L1342+2+12
+	lda	<L1342+1
+	sta	<L1342+1+12
 	pld
 	tsc
 	clc
-	adc	#L1255+12
+	adc	#L1342+12
 	tcs
 	rtl
-	.endblock	5696
-L1255	equ	32
-L1256	equ	9
+	.endblock	5515
+L1342	equ	32
+L1343	equ	9
 	ends
 	efunc
-	.endfunc	5696,9,32
-	.line	5696
+	.endfunc	5515,9,32
+	.line	5515
 	data
-L1212:
+L1299:
 	db	$70,$69,$78,$65,$6C,$4C,$6F,$63,$61,$74,$69,$6F,$6E,$30,$3A
 	db	$00,$70,$69,$78,$65,$6C,$4C,$6F,$63,$61,$74,$69,$6F,$6E,$31
 	db	$3A,$00,$70,$69,$78,$65,$6C,$4C,$6F,$63,$61,$74,$69,$6F,$6E
@@ -30546,18 +31179,18 @@ L1212:
 ;
 ;void k_memory_bitblt(LPCHAR srcBank,int x0, int y0, int width, int height,LPCHAR destBank, int x1, int y1, int direction)
 ;{
-	.line	5698
-	.line	5699
+	.line	5517
+	.line	5518
 	GFX
 	xdef	~~k_memory_bitblt
 	func
-	.function	5699
+	.function	5518
 ~~k_memory_bitblt:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1275
+	sbc	#L1362
 	tcs
 	phd
 	tcd
@@ -30570,7 +31203,7 @@ destBank_0	set	16
 x1_0	set	20
 y1_0	set	22
 direction_0	set	24
-	.block	5699
+	.block	5518
 ;	long dy = 0L;
 ;	long dd = y1;
 ;	long pixelLocation0 = (long)(((long)y0 * 640L) + (long)x0);
@@ -30601,27 +31234,27 @@ difference_1	set	20
 	.sym	x1,20,5,6,16
 	.sym	y1,22,5,6,16
 	.sym	direction,24,5,6,16
-	stz	<L1276+dy_1
-	stz	<L1276+dy_1+2
+	stz	<L1363+dy_1
+	stz	<L1363+dy_1+2
 	ldy	#$0
-	lda	<L1275+y1_0
-	bpl	L1278
+	lda	<L1362+y1_0
+	bpl	L1365
 	dey
-L1278:
-	sta	<L1276+dd_1
-	sty	<L1276+dd_1+2
+L1365:
+	sta	<L1363+dd_1
+	sty	<L1363+dd_1+2
 	ldy	#$0
-	lda	<L1275+x0_0
-	bpl	L1279
+	lda	<L1362+x0_0
+	bpl	L1366
 	dey
-L1279:
+L1366:
 	sta	<R0
 	sty	<R0+2
 	ldy	#$0
-	lda	<L1275+y0_0
-	bpl	L1280
+	lda	<L1362+y0_0
+	bpl	L1367
 	dey
-L1280:
+L1367:
 	sta	<R1
 	sty	<R1+2
 	pea	#^$280
@@ -30635,26 +31268,26 @@ L1280:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1276+pixelLocation0_1
+	sta	<L1363+pixelLocation0_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1276+pixelLocation0_1+2
+	sta	<L1363+pixelLocation0_1+2
 	clc
-	lda	<L1275+x0_0
-	adc	<L1275+width_0
+	lda	<L1362+x0_0
+	adc	<L1362+width_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L1281
+	bpl	L1368
 	dey
-L1281:
+L1368:
 	sta	<R0
 	sty	<R0+2
 	ldy	#$0
-	lda	<L1275+y0_0
-	bpl	L1282
+	lda	<L1362+y0_0
+	bpl	L1369
 	dey
-L1282:
+L1369:
 	sta	<R1
 	sty	<R1+2
 	pea	#^$280
@@ -30668,22 +31301,22 @@ L1282:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1276+pixelLocation1_1
+	sta	<L1363+pixelLocation1_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1276+pixelLocation1_1+2
+	sta	<L1363+pixelLocation1_1+2
 	ldy	#$0
-	lda	<L1275+x1_0
-	bpl	L1283
+	lda	<L1362+x1_0
+	bpl	L1370
 	dey
-L1283:
+L1370:
 	sta	<R0
 	sty	<R0+2
 	ldy	#$0
-	lda	<L1275+y1_0
-	bpl	L1284
+	lda	<L1362+y1_0
+	bpl	L1371
 	dey
-L1284:
+L1371:
 	sta	<R1
 	sty	<R1+2
 	pea	#^$280
@@ -30697,80 +31330,80 @@ L1284:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1276+pixelLocationD_1
+	sta	<L1363+pixelLocationD_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1276+pixelLocationD_1+2
+	sta	<L1363+pixelLocationD_1+2
 	sec
-	lda	<L1276+pixelLocation1_1
-	sbc	<L1276+pixelLocation0_1
-	sta	<L1276+difference_1
-	lda	<L1276+pixelLocation1_1+2
-	sbc	<L1276+pixelLocation0_1+2
-	sta	<L1276+difference_1+2
-	.line	5708
-	pei	<L1276+pixelLocation0_1+2
-	pei	<L1276+pixelLocation0_1
-	pea	#^L1274
-	pea	#<L1274
+	lda	<L1363+pixelLocation1_1
+	sbc	<L1363+pixelLocation0_1
+	sta	<L1363+difference_1
+	lda	<L1363+pixelLocation1_1+2
+	sbc	<L1363+pixelLocation0_1+2
+	sta	<L1363+difference_1+2
+	.line	5527
+	pei	<L1363+pixelLocation0_1+2
+	pei	<L1363+pixelLocation0_1
+	pea	#^L1361
+	pea	#<L1361
 	jsl	~~k_debug_long
 ;	k_debug_long("pixelLocation1:",pixelLocation1);
-	.line	5709
-	pei	<L1276+pixelLocation1_1+2
-	pei	<L1276+pixelLocation1_1
-	pea	#^L1274+16
-	pea	#<L1274+16
+	.line	5528
+	pei	<L1363+pixelLocation1_1+2
+	pei	<L1363+pixelLocation1_1
+	pea	#^L1361+16
+	pea	#<L1361+16
 	jsl	~~k_debug_long
 ;	k_debug_long("pixelLocationD:",pixelLocationD);
-	.line	5710
-	pei	<L1276+pixelLocationD_1+2
-	pei	<L1276+pixelLocationD_1
-	pea	#^L1274+32
-	pea	#<L1274+32
+	.line	5529
+	pei	<L1363+pixelLocationD_1+2
+	pei	<L1363+pixelLocationD_1
+	pea	#^L1361+32
+	pea	#<L1361+32
 	jsl	~~k_debug_long
 ;	k_debug_long("difference:",difference);
-	.line	5711
-	pei	<L1276+difference_1+2
-	pei	<L1276+difference_1
-	pea	#^L1274+48
-	pea	#<L1274+48
+	.line	5530
+	pei	<L1363+difference_1+2
+	pei	<L1363+difference_1
+	pea	#^L1361+48
+	pea	#<L1361+48
 	jsl	~~k_debug_long
 ;
 ;	if(direction == BLT_DIR_TOPDOWN)
-	.line	5713
+	.line	5532
 ;	{
-	lda	<L1275+direction_0
+	lda	<L1362+direction_0
 	cmp	#<$1
-	beq	L1285
-	brl	L10522
-L1285:
-	.line	5714
+	beq	L1372
+	brl	L10569
+L1372:
+	.line	5533
 ;		for(dy = y0;dy<(y0 + height);dy++)
-	.line	5715
+	.line	5534
 	ldy	#$0
-	lda	<L1275+y0_0
-	bpl	L1286
+	lda	<L1362+y0_0
+	bpl	L1373
 	dey
-L1286:
-	sta	<L1276+dy_1
-	sty	<L1276+dy_1+2
-	brl	L10526
-L10525:
+L1373:
+	sta	<L1363+dy_1
+	sty	<L1363+dy_1+2
+	brl	L10573
+L10572:
 ;		{
-	.line	5716
+	.line	5535
 ;			pixelLocation0 = (long)(((long)dy * 640L) + (long)x0);
-	.line	5717
+	.line	5536
 	ldy	#$0
-	lda	<L1275+x0_0
-	bpl	L1287
+	lda	<L1362+x0_0
+	bpl	L1374
 	dey
-L1287:
+L1374:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$280
 	pea	#<$280
-	pei	<L1276+dy_1+2
-	pei	<L1276+dy_1
+	pei	<L1363+dy_1+2
+	pei	<L1363+dy_1
 	xref	~~~lmul
 	jsl	~~~lmul
 	sta	<R1
@@ -30778,23 +31411,23 @@ L1287:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1276+pixelLocation0_1
+	sta	<L1363+pixelLocation0_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1276+pixelLocation0_1+2
+	sta	<L1363+pixelLocation0_1+2
 ;			pixelLocationD = (long)(((long)dd * 640L) + (long)(x1));
-	.line	5718
+	.line	5537
 	ldy	#$0
-	lda	<L1275+x1_0
-	bpl	L1288
+	lda	<L1362+x1_0
+	bpl	L1375
 	dey
-L1288:
+L1375:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$280
 	pea	#<$280
-	pei	<L1276+dd_1+2
-	pei	<L1276+dd_1
+	pei	<L1363+dd_1+2
+	pei	<L1363+dd_1
 	xref	~~~lmul
 	jsl	~~~lmul
 	sta	<R1
@@ -30802,121 +31435,121 @@ L1288:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1276+pixelLocationD_1
+	sta	<L1363+pixelLocationD_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1276+pixelLocationD_1+2
+	sta	<L1363+pixelLocationD_1+2
 ;			memcpy(   &(((unsigned char FAR *)destBank)[pixelLocationD])  , &(((unsigned char FAR *)srcBank)[pixelLocation0]), difference) ;
-	.line	5719
-	pei	<L1276+difference_1
+	.line	5538
+	pei	<L1363+difference_1
 	clc
-	lda	<L1275+srcBank_0
-	adc	<L1276+pixelLocation0_1
+	lda	<L1362+srcBank_0
+	adc	<L1363+pixelLocation0_1
 	sta	<R0
-	lda	<L1275+srcBank_0+2
-	adc	<L1276+pixelLocation0_1+2
+	lda	<L1362+srcBank_0+2
+	adc	<L1363+pixelLocation0_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L1275+destBank_0
-	adc	<L1276+pixelLocationD_1
+	lda	<L1362+destBank_0
+	adc	<L1363+pixelLocationD_1
 	sta	<R1
-	lda	<L1275+destBank_0+2
-	adc	<L1276+pixelLocationD_1+2
+	lda	<L1362+destBank_0+2
+	adc	<L1363+pixelLocationD_1+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~memcpy
 ;
 ;			dd++;
-	.line	5721
-	inc	<L1276+dd_1
-	bne	L1289
-	inc	<L1276+dd_1+2
-L1289:
+	.line	5540
+	inc	<L1363+dd_1
+	bne	L1376
+	inc	<L1363+dd_1+2
+L1376:
 ;		}
-	.line	5722
-L10523:
-	inc	<L1276+dy_1
-	bne	L1290
-	inc	<L1276+dy_1+2
-L1290:
-L10526:
+	.line	5541
+L10570:
+	inc	<L1363+dy_1
+	bne	L1377
+	inc	<L1363+dy_1+2
+L1377:
+L10573:
 	clc
-	lda	<L1275+y0_0
-	adc	<L1275+height_0
+	lda	<L1362+y0_0
+	adc	<L1362+height_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L1291
+	bpl	L1378
 	dey
-L1291:
+L1378:
 	sta	<R0
 	sty	<R0+2
 	sec
-	lda	<L1276+dy_1
+	lda	<L1363+dy_1
 	sbc	<R0
-	lda	<L1276+dy_1+2
+	lda	<L1363+dy_1+2
 	sbc	<R0+2
-	bvs	L1292
+	bvs	L1379
 	eor	#$8000
-L1292:
-	bmi	L1293
-	brl	L10525
-L1293:
-L10524:
+L1379:
+	bmi	L1380
+	brl	L10572
+L1380:
+L10571:
 ;	}
-	.line	5723
+	.line	5542
 ;	else
-	brl	L10527
-L10522:
+	brl	L10574
+L10569:
 ;	{
-	.line	5725
+	.line	5544
 ;		dd = y1 + height;
-	.line	5726
+	.line	5545
 	clc
-	lda	<L1275+y1_0
-	adc	<L1275+height_0
+	lda	<L1362+y1_0
+	adc	<L1362+height_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L1294
+	bpl	L1381
 	dey
-L1294:
-	sta	<L1276+dd_1
-	sty	<L1276+dd_1+2
+L1381:
+	sta	<L1363+dd_1
+	sty	<L1363+dd_1+2
 ;		//for(dy = y0;dy<(y0 + height);dy++)
 ;		for(dy = (y0 + height);dy>y0;dy--)
-	.line	5728
+	.line	5547
 	clc
-	lda	<L1275+y0_0
-	adc	<L1275+height_0
+	lda	<L1362+y0_0
+	adc	<L1362+height_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L1295
+	bpl	L1382
 	dey
-L1295:
-	sta	<L1276+dy_1
-	sty	<L1276+dy_1+2
-	brl	L10531
-L10530:
+L1382:
+	sta	<L1363+dy_1
+	sty	<L1363+dy_1+2
+	brl	L10578
+L10577:
 ;		{
-	.line	5729
+	.line	5548
 ;			pixelLocation0 = (long)(((long)dy * 640L) + (long)x0);
-	.line	5730
+	.line	5549
 	ldy	#$0
-	lda	<L1275+x0_0
-	bpl	L1296
+	lda	<L1362+x0_0
+	bpl	L1383
 	dey
-L1296:
+L1383:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$280
 	pea	#<$280
-	pei	<L1276+dy_1+2
-	pei	<L1276+dy_1
+	pei	<L1363+dy_1+2
+	pei	<L1363+dy_1
 	xref	~~~lmul
 	jsl	~~~lmul
 	sta	<R1
@@ -30924,23 +31557,23 @@ L1296:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1276+pixelLocation0_1
+	sta	<L1363+pixelLocation0_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1276+pixelLocation0_1+2
+	sta	<L1363+pixelLocation0_1+2
 ;			pixelLocationD = (long)(((long)dd * 640L) + (long)(x1));
-	.line	5731
+	.line	5550
 	ldy	#$0
-	lda	<L1275+x1_0
-	bpl	L1297
+	lda	<L1362+x1_0
+	bpl	L1384
 	dey
-L1297:
+L1384:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$280
 	pea	#<$280
-	pei	<L1276+dd_1+2
-	pei	<L1276+dd_1
+	pei	<L1363+dd_1+2
+	pei	<L1363+dd_1
 	xref	~~~lmul
 	jsl	~~~lmul
 	sta	<R1
@@ -30948,95 +31581,95 @@ L1297:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1276+pixelLocationD_1
+	sta	<L1363+pixelLocationD_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1276+pixelLocationD_1+2
+	sta	<L1363+pixelLocationD_1+2
 ;			memcpy(   &(((unsigned char FAR *)destBank)[pixelLocationD])  , &(((unsigned char FAR *)srcBank)[pixelLocation0]), difference) ;
-	.line	5732
-	pei	<L1276+difference_1
+	.line	5551
+	pei	<L1363+difference_1
 	clc
-	lda	<L1275+srcBank_0
-	adc	<L1276+pixelLocation0_1
+	lda	<L1362+srcBank_0
+	adc	<L1363+pixelLocation0_1
 	sta	<R0
-	lda	<L1275+srcBank_0+2
-	adc	<L1276+pixelLocation0_1+2
+	lda	<L1362+srcBank_0+2
+	adc	<L1363+pixelLocation0_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
-	lda	<L1275+destBank_0
-	adc	<L1276+pixelLocationD_1
+	lda	<L1362+destBank_0
+	adc	<L1363+pixelLocationD_1
 	sta	<R1
-	lda	<L1275+destBank_0+2
-	adc	<L1276+pixelLocationD_1+2
+	lda	<L1362+destBank_0+2
+	adc	<L1363+pixelLocationD_1+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~memcpy
 ;
 ;			dd--;
-	.line	5734
-	lda	<L1276+dd_1
-	bne	L1298
-	dec	<L1276+dd_1+2
-L1298:
-	dec	<L1276+dd_1
+	.line	5553
+	lda	<L1363+dd_1
+	bne	L1385
+	dec	<L1363+dd_1+2
+L1385:
+	dec	<L1363+dd_1
 ;		}
-	.line	5735
-L10528:
-	lda	<L1276+dy_1
-	bne	L1299
-	dec	<L1276+dy_1+2
-L1299:
-	dec	<L1276+dy_1
-L10531:
+	.line	5554
+L10575:
+	lda	<L1363+dy_1
+	bne	L1386
+	dec	<L1363+dy_1+2
+L1386:
+	dec	<L1363+dy_1
+L10578:
 	ldy	#$0
-	lda	<L1275+y0_0
-	bpl	L1300
+	lda	<L1362+y0_0
+	bpl	L1387
 	dey
-L1300:
+L1387:
 	sta	<R0
 	sty	<R0+2
 	sec
 	lda	<R0
-	sbc	<L1276+dy_1
+	sbc	<L1363+dy_1
 	lda	<R0+2
-	sbc	<L1276+dy_1+2
-	bvs	L1301
+	sbc	<L1363+dy_1+2
+	bvs	L1388
 	eor	#$8000
-L1301:
-	bmi	L1302
-	brl	L10530
-L1302:
-L10529:
+L1388:
+	bmi	L1389
+	brl	L10577
+L1389:
+L10576:
 ;
 ;	}
-	.line	5737
-L10527:
+	.line	5556
+L10574:
 ;
 ;}
-	.line	5739
-L1303:
-	lda	<L1275+2
-	sta	<L1275+2+22
-	lda	<L1275+1
-	sta	<L1275+1+22
+	.line	5558
+L1390:
+	lda	<L1362+2
+	sta	<L1362+2+22
+	lda	<L1362+1
+	sta	<L1362+1+22
 	pld
 	tsc
 	clc
-	adc	#L1275+22
+	adc	#L1362+22
 	tcs
 	rtl
-	.endblock	5739
-L1275	equ	32
-L1276	equ	9
+	.endblock	5558
+L1362	equ	32
+L1363	equ	9
 	ends
 	efunc
-	.endfunc	5739,9,32
-	.line	5739
+	.endfunc	5558,9,32
+	.line	5558
 	data
-L1274:
+L1361:
 	db	$70,$69,$78,$65,$6C,$4C,$6F,$63,$61,$74,$69,$6F,$6E,$30,$3A
 	db	$00,$70,$69,$78,$65,$6C,$4C,$6F,$63,$61,$74,$69,$6F,$6E,$31
 	db	$3A,$00,$70,$69,$78,$65,$6C,$4C,$6F,$63,$61,$74,$69,$6F,$6E
@@ -31046,18 +31679,18 @@ L1274:
 ;
 ;void k_shadow_fill_rect_address(LPCHAR bank,int x0, int y0, int width, int height, UCHAR color)
 ;{
-	.line	5742
-	.line	5743
+	.line	5561
+	.line	5562
 	GFX
 	xdef	~~k_shadow_fill_rect_address
 	func
-	.function	5743
+	.function	5562
 ~~k_shadow_fill_rect_address:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1305
+	sbc	#L1392
 	tcs
 	phd
 	tcd
@@ -31067,7 +31700,7 @@ y0_0	set	10
 width_0	set	12
 height_0	set	14
 color_0	set	16
-	.block	5743
+	.block	5562
 ;	LPCHAR ptr = NULL;
 ;	ULONG dx = 0L;
 ;	long dy = 0L;
@@ -31100,112 +31733,112 @@ offset_1	set	28
 	.sym	width,12,5,6,16
 	.sym	height,14,5,6,16
 	.sym	color,16,14,6,8
-	stz	<L1306+ptr_1
-	stz	<L1306+ptr_1+2
-	stz	<L1306+dx_1
-	stz	<L1306+dx_1+2
-	stz	<L1306+dy_1
-	stz	<L1306+dy_1+2
-	stz	<L1306+pixelLocation0_1
-	stz	<L1306+pixelLocation0_1+2
-	stz	<L1306+pixelLocation1_1
-	stz	<L1306+pixelLocation1_1+2
-	stz	<L1306+difference_1
-	stz	<L1306+difference_1+2
-	stz	<L1306+fIndex_1
-	stz	<L1306+fIndex_1+2
-	stz	<L1306+offset_1
-	stz	<L1306+offset_1+2
-	.line	5753
+	stz	<L1393+ptr_1
+	stz	<L1393+ptr_1+2
+	stz	<L1393+dx_1
+	stz	<L1393+dx_1+2
+	stz	<L1393+dy_1
+	stz	<L1393+dy_1+2
+	stz	<L1393+pixelLocation0_1
+	stz	<L1393+pixelLocation0_1+2
+	stz	<L1393+pixelLocation1_1
+	stz	<L1393+pixelLocation1_1+2
+	stz	<L1393+difference_1
+	stz	<L1393+difference_1+2
+	stz	<L1393+fIndex_1
+	stz	<L1393+fIndex_1+2
+	stz	<L1393+offset_1
+	stz	<L1393+offset_1+2
+	.line	5572
 ;		width = 640;
 	sec
 	lda	#$280
-	sbc	<L1305+width_0
-	bvs	L1308
+	sbc	<L1392+width_0
+	bvs	L1395
 	eor	#$8000
-L1308:
-	bpl	L1309
-	brl	L10532
-L1309:
-	.line	5754
+L1395:
+	bpl	L1396
+	brl	L10579
+L1396:
+	.line	5573
 	lda	#$280
-	sta	<L1305+width_0
+	sta	<L1392+width_0
 ;	if(height > 480)
-L10532:
-	.line	5755
+L10579:
+	.line	5574
 ;		height = 480;
 	sec
 	lda	#$1e0
-	sbc	<L1305+height_0
-	bvs	L1310
+	sbc	<L1392+height_0
+	bvs	L1397
 	eor	#$8000
-L1310:
-	bpl	L1311
-	brl	L10533
-L1311:
-	.line	5756
+L1397:
+	bpl	L1398
+	brl	L10580
+L1398:
+	.line	5575
 	lda	#$1e0
-	sta	<L1305+height_0
+	sta	<L1392+height_0
 ;
 ;	if(width < 0)
-L10533:
-	.line	5758
+L10580:
+	.line	5577
 ;		width = 0;
-	lda	<L1305+width_0
-	bmi	L1312
-	brl	L10534
-L1312:
-	.line	5759
-	stz	<L1305+width_0
+	lda	<L1392+width_0
+	bmi	L1399
+	brl	L10581
+L1399:
+	.line	5578
+	stz	<L1392+width_0
 ;	if(height < 0)
-L10534:
-	.line	5760
+L10581:
+	.line	5579
 ;		height = 0;
-	lda	<L1305+height_0
-	bmi	L1313
-	brl	L10535
-L1313:
-	.line	5761
-	stz	<L1305+height_0
+	lda	<L1392+height_0
+	bmi	L1400
+	brl	L10582
+L1400:
+	.line	5580
+	stz	<L1392+height_0
 ;
 ;
 ;	offset = ((long)y0 + (long)height);
-L10535:
-	.line	5764
+L10582:
+	.line	5583
 	ldy	#$0
-	lda	<L1305+height_0
-	bpl	L1314
+	lda	<L1392+height_0
+	bpl	L1401
 	dey
-L1314:
+L1401:
 	sta	<R0
 	sty	<R0+2
 	ldy	#$0
-	lda	<L1305+y0_0
-	bpl	L1315
+	lda	<L1392+y0_0
+	bpl	L1402
 	dey
-L1315:
+L1402:
 	sta	<R1
 	sty	<R1+2
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1306+offset_1
+	sta	<L1393+offset_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1306+offset_1+2
+	sta	<L1393+offset_1+2
 ;
 ;	//pixelLocation0 = (ULONG)(((ULONG)y0 * 640L) + (ULONG)x0);
 ;	//pixelLocation1 = (ULONG)(((ULONG)y0 * 640L) + (ULONG)(x0 + width ));
 ;	//difference     = pixelLocation1 - pixelLocation0;
 ;	difference     = width;
-	.line	5769
+	.line	5588
 	ldy	#$0
-	lda	<L1305+width_0
-	bpl	L1316
+	lda	<L1392+width_0
+	bpl	L1403
 	dey
-L1316:
-	sta	<L1306+difference_1
-	sty	<L1306+difference_1+2
+L1403:
+	sta	<L1393+difference_1
+	sty	<L1393+difference_1+2
 ;
 ;	//difference = (long)(x0 + width);
 ;
@@ -31217,36 +31850,36 @@ L1316:
 ;	*/
 ;
 ;	for(dy = (long)y0;dy<offset;dy++)
-	.line	5780
+	.line	5599
 	ldy	#$0
-	lda	<L1305+y0_0
-	bpl	L1317
+	lda	<L1392+y0_0
+	bpl	L1404
 	dey
-L1317:
-	sta	<L1306+dy_1
-	sty	<L1306+dy_1+2
-	brl	L10539
-L10538:
+L1404:
+	sta	<L1393+dy_1
+	sty	<L1393+dy_1+2
+	brl	L10586
+L10585:
 ;	{
-	.line	5781
+	.line	5600
 ;		//k_debug_long("k_shadow_fill_rect::dy:",dy);
 ;		//for(dx=(long)x0;dx<difference;dx++)
 ;		//	SHADOW_BANK_0[(dy * 640L) + dx] = color;
 ;		//k_debug_long("k_shadow_fill_rect::dx:",dx);
 ;
 ;		ptr = &( bank[(dy * 640L) + (long)x0] ) ;
-	.line	5787
+	.line	5606
 	ldy	#$0
-	lda	<L1305+x0_0
-	bpl	L1318
+	lda	<L1392+x0_0
+	bpl	L1405
 	dey
-L1318:
+L1405:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$280
 	pea	#<$280
-	pei	<L1306+dy_1+2
-	pei	<L1306+dy_1
+	pei	<L1393+dy_1+2
+	pei	<L1393+dy_1
 	xref	~~~lmul
 	jsl	~~~lmul
 	sta	<R1
@@ -31259,83 +31892,83 @@ L1318:
 	adc	<R0+2
 	sta	<R2+2
 	clc
-	lda	<L1305+bank_0
+	lda	<L1392+bank_0
 	adc	<R2
-	sta	<L1306+ptr_1
-	lda	<L1305+bank_0+2
+	sta	<L1393+ptr_1
+	lda	<L1392+bank_0+2
 	adc	<R2+2
-	sta	<L1306+ptr_1+2
+	sta	<L1393+ptr_1+2
 ;
 ;		//k_debug_pointer("k_shadow_fill_rect::ptr:",ptr);
 ;		//pixelLocation0 = (ULONG)(((ULONG)dy * 640L) + (ULONG)x0);
 ;		//k_debug_long("k_shadow_fill_rect::pixelLocation0:",pixelLocation0);
 ;		memset( ptr, color , difference ) ;
-	.line	5792
-	pei	<L1306+difference_1
-	lda	<L1305+color_0
+	.line	5611
+	pei	<L1393+difference_1
+	lda	<L1392+color_0
 	and	#$ff
 	pha
-	pei	<L1306+ptr_1+2
-	pei	<L1306+ptr_1
+	pei	<L1393+ptr_1+2
+	pei	<L1393+ptr_1
 	jsl	~~memset
 ;		//for(fIndex=0;fIndex<difference;fIndex++)
 ;		//	ptr[fIndex] = color;
 ;	}
-	.line	5795
-L10536:
-	inc	<L1306+dy_1
-	bne	L1319
-	inc	<L1306+dy_1+2
-L1319:
-L10539:
+	.line	5614
+L10583:
+	inc	<L1393+dy_1
+	bne	L1406
+	inc	<L1393+dy_1+2
+L1406:
+L10586:
 	sec
-	lda	<L1306+dy_1
-	sbc	<L1306+offset_1
-	lda	<L1306+dy_1+2
-	sbc	<L1306+offset_1+2
-	bvs	L1320
+	lda	<L1393+dy_1
+	sbc	<L1393+offset_1
+	lda	<L1393+dy_1+2
+	sbc	<L1393+offset_1+2
+	bvs	L1407
 	eor	#$8000
-L1320:
-	bmi	L1321
-	brl	L10538
-L1321:
-L10537:
+L1407:
+	bmi	L1408
+	brl	L10585
+L1408:
+L10584:
 ;
 ;}
-	.line	5797
-L1322:
-	lda	<L1305+2
-	sta	<L1305+2+14
-	lda	<L1305+1
-	sta	<L1305+1+14
+	.line	5616
+L1409:
+	lda	<L1392+2
+	sta	<L1392+2+14
+	lda	<L1392+1
+	sta	<L1392+1+14
 	pld
 	tsc
 	clc
-	adc	#L1305+14
+	adc	#L1392+14
 	tcs
 	rtl
-	.endblock	5797
-L1305	equ	44
-L1306	equ	13
+	.endblock	5616
+L1392	equ	44
+L1393	equ	13
 	ends
 	efunc
-	.endfunc	5797,13,44
-	.line	5797
+	.endfunc	5616,13,44
+	.line	5616
 ;
 ;void k_shadow_fill_rect(int x0, int y0, int width, int height, UCHAR color)
 ;{
-	.line	5799
-	.line	5800
+	.line	5618
+	.line	5619
 	GFX
 	xdef	~~k_shadow_fill_rect
 	func
-	.function	5800
+	.function	5619
 ~~k_shadow_fill_rect:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1323
+	sbc	#L1410
 	tcs
 	phd
 	tcd
@@ -31344,42 +31977,42 @@ y0_0	set	6
 width_0	set	8
 height_0	set	10
 color_0	set	12
-	.block	5800
+	.block	5619
 ;	k_shadow_fill_rect_address(SHADOW_BANK_0,x0, y0, width, height, color);
 	.sym	x0,4,5,6,16
 	.sym	y0,6,5,6,16
 	.sym	width,8,5,6,16
 	.sym	height,10,5,6,16
 	.sym	color,12,14,6,8
-	.line	5801
-	pei	<L1323+color_0
-	pei	<L1323+height_0
-	pei	<L1323+width_0
-	pei	<L1323+y0_0
-	pei	<L1323+x0_0
+	.line	5620
+	pei	<L1410+color_0
+	pei	<L1410+height_0
+	pei	<L1410+width_0
+	pei	<L1410+y0_0
+	pei	<L1410+x0_0
 	pea	#^$a0000
 	pea	#<$a0000
 	jsl	~~k_shadow_fill_rect_address
 ;}
-	.line	5802
-L1326:
-	lda	<L1323+2
-	sta	<L1323+2+10
-	lda	<L1323+1
-	sta	<L1323+1+10
+	.line	5621
+L1413:
+	lda	<L1410+2
+	sta	<L1410+2+10
+	lda	<L1410+1
+	sta	<L1410+1+10
 	pld
 	tsc
 	clc
-	adc	#L1323+10
+	adc	#L1410+10
 	tcs
 	rtl
-	.endblock	5802
-L1323	equ	0
-L1324	equ	1
+	.endblock	5621
+L1410	equ	0
+L1411	equ	1
 	ends
 	efunc
-	.endfunc	5802,1,0
-	.line	5802
+	.endfunc	5621,1,0
+	.line	5621
 ;
 ;/*
 ;void k_shadow_fill_rect(int x0, int y0, int width, int height, UCHAR color)
@@ -31438,18 +32071,18 @@ L1324	equ	1
 ;*/
 ;void k_shadow_bitblt(int x0, int y0, int width, int height, int x1, int y1)
 ;{
-	.line	5859
-	.line	5860
+	.line	5678
+	.line	5679
 	GFX
 	xdef	~~k_shadow_bitblt
 	func
-	.function	5860
+	.function	5679
 ~~k_shadow_bitblt:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1327
+	sbc	#L1414
 	tcs
 	phd
 	tcd
@@ -31459,7 +32092,7 @@ width_0	set	8
 height_0	set	10
 x1_0	set	12
 y1_0	set	14
-	.block	5860
+	.block	5679
 ;	long dy = 0L;
 ;	long dd = y1;
 ;
@@ -31487,36 +32120,36 @@ difference_1	set	20
 	.sym	height,10,5,6,16
 	.sym	x1,12,5,6,16
 	.sym	y1,14,5,6,16
-	stz	<L1328+dy_1
-	stz	<L1328+dy_1+2
+	stz	<L1415+dy_1
+	stz	<L1415+dy_1+2
 	ldy	#$0
-	lda	<L1327+y1_0
-	bpl	L1330
+	lda	<L1414+y1_0
+	bpl	L1417
 	dey
-L1330:
-	sta	<L1328+dd_1
-	sty	<L1328+dd_1+2
-	stz	<L1328+pixelLocation0_1
-	stz	<L1328+pixelLocation0_1+2
-	stz	<L1328+pixelLocation1_1
-	stz	<L1328+pixelLocation1_1+2
-	stz	<L1328+pixelLocationD_1
-	stz	<L1328+pixelLocationD_1+2
-	stz	<L1328+difference_1
-	stz	<L1328+difference_1+2
-	.line	5869
+L1417:
+	sta	<L1415+dd_1
+	sty	<L1415+dd_1+2
+	stz	<L1415+pixelLocation0_1
+	stz	<L1415+pixelLocation0_1+2
+	stz	<L1415+pixelLocation1_1
+	stz	<L1415+pixelLocation1_1+2
+	stz	<L1415+pixelLocationD_1
+	stz	<L1415+pixelLocationD_1+2
+	stz	<L1415+difference_1
+	stz	<L1415+difference_1+2
+	.line	5688
 	ldy	#$0
-	lda	<L1327+x0_0
-	bpl	L1331
+	lda	<L1414+x0_0
+	bpl	L1418
 	dey
-L1331:
+L1418:
 	sta	<R0
 	sty	<R0+2
 	ldy	#$0
-	lda	<L1327+y0_0
-	bpl	L1332
+	lda	<L1414+y0_0
+	bpl	L1419
 	dey
-L1332:
+L1419:
 	sta	<R1
 	sty	<R1+2
 	pea	#^$280
@@ -31530,25 +32163,25 @@ L1332:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1328+pixelLocation0_1
+	sta	<L1415+pixelLocation0_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1328+pixelLocation0_1+2
+	sta	<L1415+pixelLocation0_1+2
 ;	//pixelLocation1 = (long)(((long)y0 * 640L) + (long)(x0 + width ));
 ;	pixelLocationD = (long)(((long)y1 * 640L) + (long)(x1));
-	.line	5871
+	.line	5690
 	ldy	#$0
-	lda	<L1327+x1_0
-	bpl	L1333
+	lda	<L1414+x1_0
+	bpl	L1420
 	dey
-L1333:
+L1420:
 	sta	<R0
 	sty	<R0+2
 	ldy	#$0
-	lda	<L1327+y1_0
-	bpl	L1334
+	lda	<L1414+y1_0
+	bpl	L1421
 	dey
-L1334:
+L1421:
 	sta	<R1
 	sty	<R1+2
 	pea	#^$280
@@ -31562,20 +32195,20 @@ L1334:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1328+pixelLocationD_1
+	sta	<L1415+pixelLocationD_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1328+pixelLocationD_1+2
+	sta	<L1415+pixelLocationD_1+2
 ;
 ;	difference = pixelLocation1 - pixelLocation0;
-	.line	5873
+	.line	5692
 	sec
-	lda	<L1328+pixelLocation1_1
-	sbc	<L1328+pixelLocation0_1
-	sta	<L1328+difference_1
-	lda	<L1328+pixelLocation1_1+2
-	sbc	<L1328+pixelLocation0_1+2
-	sta	<L1328+difference_1+2
+	lda	<L1415+pixelLocation1_1
+	sbc	<L1415+pixelLocation0_1
+	sta	<L1415+difference_1
+	lda	<L1415+pixelLocation1_1+2
+	sbc	<L1415+pixelLocation0_1+2
+	sta	<L1415+difference_1+2
 ;
 ;	//k_debug_long("pixelLocation0:",pixelLocation0);
 ;	//k_debug_long("pixelLocation1:",pixelLocation1);
@@ -31583,38 +32216,38 @@ L1334:
 ;	//k_debug_long("difference:",difference);
 ;
 ;	y0++;
-	.line	5880
-	inc	<L1327+y0_0
+	.line	5699
+	inc	<L1414+y0_0
 ;	x0++;
-	.line	5881
-	inc	<L1327+x0_0
+	.line	5700
+	inc	<L1414+x0_0
 ;
 ;	for(dy = y0;dy<(y0 + height);dy++)
-	.line	5883
+	.line	5702
 	ldy	#$0
-	lda	<L1327+y0_0
-	bpl	L1335
+	lda	<L1414+y0_0
+	bpl	L1422
 	dey
-L1335:
-	sta	<L1328+dy_1
-	sty	<L1328+dy_1+2
-	brl	L10543
-L10542:
+L1422:
+	sta	<L1415+dy_1
+	sty	<L1415+dy_1+2
+	brl	L10590
+L10589:
 ;	{
-	.line	5884
+	.line	5703
 ;		pixelLocation0 = (long)(((long)dy * 640L) + (long)x0);
-	.line	5885
+	.line	5704
 	ldy	#$0
-	lda	<L1327+x0_0
-	bpl	L1336
+	lda	<L1414+x0_0
+	bpl	L1423
 	dey
-L1336:
+L1423:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$280
 	pea	#<$280
-	pei	<L1328+dy_1+2
-	pei	<L1328+dy_1
+	pei	<L1415+dy_1+2
+	pei	<L1415+dy_1
 	xref	~~~lmul
 	jsl	~~~lmul
 	sta	<R1
@@ -31622,23 +32255,23 @@ L1336:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1328+pixelLocation0_1
+	sta	<L1415+pixelLocation0_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1328+pixelLocation0_1+2
+	sta	<L1415+pixelLocation0_1+2
 ;		pixelLocationD = (long)(((long)dd * 640L) + (long)x1);
-	.line	5886
+	.line	5705
 	ldy	#$0
-	lda	<L1327+x1_0
-	bpl	L1337
+	lda	<L1414+x1_0
+	bpl	L1424
 	dey
-L1337:
+L1424:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$280
 	pea	#<$280
-	pei	<L1328+dd_1+2
-	pei	<L1328+dd_1
+	pei	<L1415+dd_1+2
+	pei	<L1415+dd_1
 	xref	~~~lmul
 	jsl	~~~lmul
 	sta	<R1
@@ -31646,106 +32279,106 @@ L1337:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1328+pixelLocationD_1
+	sta	<L1415+pixelLocationD_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1328+pixelLocationD_1+2
+	sta	<L1415+pixelLocationD_1+2
 ;		memcpy(   &((BITMAP_BANK_0)[pixelLocationD])  , &((SHADOW_BANK_0)[pixelLocation0]), difference) ;
-	.line	5887
-	pei	<L1328+difference_1
+	.line	5706
+	pei	<L1415+difference_1
 	clc
 	lda	#$0
-	adc	<L1328+pixelLocation0_1
+	adc	<L1415+pixelLocation0_1
 	sta	<R0
 	lda	#$a
-	adc	<L1328+pixelLocation0_1+2
+	adc	<L1415+pixelLocation0_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
 	lda	#$0
-	adc	<L1328+pixelLocationD_1
+	adc	<L1415+pixelLocationD_1
 	sta	<R1
 	lda	#$b0
-	adc	<L1328+pixelLocationD_1+2
+	adc	<L1415+pixelLocationD_1+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~memcpy
 ;
 ;		dd++;
-	.line	5889
-	inc	<L1328+dd_1
-	bne	L1338
-	inc	<L1328+dd_1+2
-L1338:
+	.line	5708
+	inc	<L1415+dd_1
+	bne	L1425
+	inc	<L1415+dd_1+2
+L1425:
 ;	}
-	.line	5890
-L10540:
-	inc	<L1328+dy_1
-	bne	L1339
-	inc	<L1328+dy_1+2
-L1339:
-L10543:
+	.line	5709
+L10587:
+	inc	<L1415+dy_1
+	bne	L1426
+	inc	<L1415+dy_1+2
+L1426:
+L10590:
 	clc
-	lda	<L1327+y0_0
-	adc	<L1327+height_0
+	lda	<L1414+y0_0
+	adc	<L1414+height_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L1340
+	bpl	L1427
 	dey
-L1340:
+L1427:
 	sta	<R0
 	sty	<R0+2
 	sec
-	lda	<L1328+dy_1
+	lda	<L1415+dy_1
 	sbc	<R0
-	lda	<L1328+dy_1+2
+	lda	<L1415+dy_1+2
 	sbc	<R0+2
-	bvs	L1341
+	bvs	L1428
 	eor	#$8000
-L1341:
-	bmi	L1342
-	brl	L10542
-L1342:
-L10541:
+L1428:
+	bmi	L1429
+	brl	L10589
+L1429:
+L10588:
 ;
 ;}
-	.line	5892
-L1343:
-	lda	<L1327+2
-	sta	<L1327+2+12
-	lda	<L1327+1
-	sta	<L1327+1+12
+	.line	5711
+L1430:
+	lda	<L1414+2
+	sta	<L1414+2+12
+	lda	<L1414+1
+	sta	<L1414+1+12
 	pld
 	tsc
 	clc
-	adc	#L1327+12
+	adc	#L1414+12
 	tcs
 	rtl
-	.endblock	5892
-L1327	equ	32
-L1328	equ	9
+	.endblock	5711
+L1414	equ	32
+L1415	equ	9
 	ends
 	efunc
-	.endfunc	5892,9,32
-	.line	5892
+	.endfunc	5711,9,32
+	.line	5711
 ;
 ;void k_scratch_save_bitblt(int x0, int y0, int width, int height, int x1, int y1)
 ;{
-	.line	5894
-	.line	5895
+	.line	5713
+	.line	5714
 	GFX
 	xdef	~~k_scratch_save_bitblt
 	func
-	.function	5895
+	.function	5714
 ~~k_scratch_save_bitblt:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1344
+	sbc	#L1431
 	tcs
 	phd
 	tcd
@@ -31755,7 +32388,7 @@ width_0	set	8
 height_0	set	10
 x1_0	set	12
 y1_0	set	14
-	.block	5895
+	.block	5714
 ;	long dy = 0L;
 ;	long dd = y1;
 ;	long pixelLocation0 = (long)(((long)y0 * 640L) + (long)x0);
@@ -31790,27 +32423,27 @@ difference_1	set	20
 	.sym	height,10,5,6,16
 	.sym	x1,12,5,6,16
 	.sym	y1,14,5,6,16
-	stz	<L1345+dy_1
-	stz	<L1345+dy_1+2
+	stz	<L1432+dy_1
+	stz	<L1432+dy_1+2
 	ldy	#$0
-	lda	<L1344+y1_0
-	bpl	L1347
+	lda	<L1431+y1_0
+	bpl	L1434
 	dey
-L1347:
-	sta	<L1345+dd_1
-	sty	<L1345+dd_1+2
+L1434:
+	sta	<L1432+dd_1
+	sty	<L1432+dd_1+2
 	ldy	#$0
-	lda	<L1344+x0_0
-	bpl	L1348
+	lda	<L1431+x0_0
+	bpl	L1435
 	dey
-L1348:
+L1435:
 	sta	<R0
 	sty	<R0+2
 	ldy	#$0
-	lda	<L1344+y0_0
-	bpl	L1349
+	lda	<L1431+y0_0
+	bpl	L1436
 	dey
-L1349:
+L1436:
 	sta	<R1
 	sty	<R1+2
 	pea	#^$280
@@ -31824,26 +32457,26 @@ L1349:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1345+pixelLocation0_1
+	sta	<L1432+pixelLocation0_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1345+pixelLocation0_1+2
+	sta	<L1432+pixelLocation0_1+2
 	clc
-	lda	<L1344+x0_0
-	adc	<L1344+width_0
+	lda	<L1431+x0_0
+	adc	<L1431+width_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L1350
+	bpl	L1437
 	dey
-L1350:
+L1437:
 	sta	<R0
 	sty	<R0+2
 	ldy	#$0
-	lda	<L1344+y0_0
-	bpl	L1351
+	lda	<L1431+y0_0
+	bpl	L1438
 	dey
-L1351:
+L1438:
 	sta	<R1
 	sty	<R1+2
 	pea	#^$280
@@ -31857,22 +32490,22 @@ L1351:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1345+pixelLocation1_1
+	sta	<L1432+pixelLocation1_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1345+pixelLocation1_1+2
+	sta	<L1432+pixelLocation1_1+2
 	ldy	#$0
-	lda	<L1344+x1_0
-	bpl	L1352
+	lda	<L1431+x1_0
+	bpl	L1439
 	dey
-L1352:
+L1439:
 	sta	<R0
 	sty	<R0+2
 	ldy	#$0
-	lda	<L1344+y1_0
-	bpl	L1353
+	lda	<L1431+y1_0
+	bpl	L1440
 	dey
-L1353:
+L1440:
 	sta	<R1
 	sty	<R1+2
 	pea	#^$280
@@ -31886,42 +32519,42 @@ L1353:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1345+pixelLocationD_1
+	sta	<L1432+pixelLocationD_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1345+pixelLocationD_1+2
+	sta	<L1432+pixelLocationD_1+2
 	ldy	#$0
-	lda	<L1344+width_0
-	bpl	L1354
+	lda	<L1431+width_0
+	bpl	L1441
 	dey
-L1354:
-	sta	<L1345+difference_1
-	sty	<L1345+difference_1+2
-	.line	5911
+L1441:
+	sta	<L1432+difference_1
+	sty	<L1432+difference_1+2
+	.line	5730
 	ldy	#$0
-	lda	<L1344+y0_0
-	bpl	L1355
+	lda	<L1431+y0_0
+	bpl	L1442
 	dey
-L1355:
-	sta	<L1345+dy_1
-	sty	<L1345+dy_1+2
-	brl	L10547
-L10546:
+L1442:
+	sta	<L1432+dy_1
+	sty	<L1432+dy_1+2
+	brl	L10594
+L10593:
 ;	{
-	.line	5912
+	.line	5731
 ;		pixelLocation0 = (long)(((long)dy * 640L) + (long)x0);
-	.line	5913
+	.line	5732
 	ldy	#$0
-	lda	<L1344+x0_0
-	bpl	L1356
+	lda	<L1431+x0_0
+	bpl	L1443
 	dey
-L1356:
+L1443:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$280
 	pea	#<$280
-	pei	<L1345+dy_1+2
-	pei	<L1345+dy_1
+	pei	<L1432+dy_1+2
+	pei	<L1432+dy_1
 	xref	~~~lmul
 	jsl	~~~lmul
 	sta	<R1
@@ -31929,23 +32562,23 @@ L1356:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1345+pixelLocation0_1
+	sta	<L1432+pixelLocation0_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1345+pixelLocation0_1+2
+	sta	<L1432+pixelLocation0_1+2
 ;		pixelLocationD = (long)(((long)dd * 640L) + (long)x1);
-	.line	5914
+	.line	5733
 	ldy	#$0
-	lda	<L1344+x1_0
-	bpl	L1357
+	lda	<L1431+x1_0
+	bpl	L1444
 	dey
-L1357:
+L1444:
 	sta	<R0
 	sty	<R0+2
 	pea	#^$280
 	pea	#<$280
-	pei	<L1345+dd_1+2
-	pei	<L1345+dd_1
+	pei	<L1432+dd_1+2
+	pei	<L1432+dd_1
 	xref	~~~lmul
 	jsl	~~~lmul
 	sta	<R1
@@ -31953,116 +32586,95 @@ L1357:
 	clc
 	lda	<R1
 	adc	<R0
-	sta	<L1345+pixelLocationD_1
+	sta	<L1432+pixelLocationD_1
 	lda	<R1+2
 	adc	<R0+2
-	sta	<L1345+pixelLocationD_1+2
+	sta	<L1432+pixelLocationD_1+2
 ;		memcpy(   &((SHADOW_BANK_5)[pixelLocationD])  , &((SHADOW_BANK_0)[pixelLocation0]), difference) ;
-	.line	5915
-	pei	<L1345+difference_1
+	.line	5734
+	pei	<L1432+difference_1
 	clc
 	lda	#$0
-	adc	<L1345+pixelLocation0_1
+	adc	<L1432+pixelLocation0_1
 	sta	<R0
 	lda	#$a
-	adc	<L1345+pixelLocation0_1+2
+	adc	<L1432+pixelLocation0_1+2
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
 	clc
 	lda	#$0
-	adc	<L1345+pixelLocationD_1
+	adc	<L1432+pixelLocationD_1
 	sta	<R1
 	lda	#$f
-	adc	<L1345+pixelLocationD_1+2
+	adc	<L1432+pixelLocationD_1+2
 	sta	<R1+2
 	pei	<R1+2
 	pei	<R1
 	jsl	~~memcpy
 ;
 ;		dd++;
-	.line	5917
-	inc	<L1345+dd_1
-	bne	L1358
-	inc	<L1345+dd_1+2
-L1358:
+	.line	5736
+	inc	<L1432+dd_1
+	bne	L1445
+	inc	<L1432+dd_1+2
+L1445:
 ;	}
-	.line	5918
-L10544:
-	inc	<L1345+dy_1
-	bne	L1359
-	inc	<L1345+dy_1+2
-L1359:
-L10547:
+	.line	5737
+L10591:
+	inc	<L1432+dy_1
+	bne	L1446
+	inc	<L1432+dy_1+2
+L1446:
+L10594:
 	clc
-	lda	<L1344+y0_0
-	adc	<L1344+height_0
+	lda	<L1431+y0_0
+	adc	<L1431+height_0
 	sta	<R0
 	ldy	#$0
 	lda	<R0
-	bpl	L1360
+	bpl	L1447
 	dey
-L1360:
+L1447:
 	sta	<R0
 	sty	<R0+2
 	sec
-	lda	<L1345+dy_1
+	lda	<L1432+dy_1
 	sbc	<R0
-	lda	<L1345+dy_1+2
+	lda	<L1432+dy_1+2
 	sbc	<R0+2
-	bvs	L1361
+	bvs	L1448
 	eor	#$8000
-L1361:
-	bmi	L1362
-	brl	L10546
-L1362:
-L10545:
+L1448:
+	bmi	L1449
+	brl	L10593
+L1449:
+L10592:
 ;
 ;}
-	.line	5920
-L1363:
-	lda	<L1344+2
-	sta	<L1344+2+12
-	lda	<L1344+1
-	sta	<L1344+1+12
+	.line	5739
+L1450:
+	lda	<L1431+2
+	sta	<L1431+2+12
+	lda	<L1431+1
+	sta	<L1431+1+12
 	pld
 	tsc
 	clc
-	adc	#L1344+12
+	adc	#L1431+12
 	tcs
 	rtl
-	.endblock	5920
-L1344	equ	32
-L1345	equ	9
+	.endblock	5739
+L1431	equ	32
+L1432	equ	9
 	ends
 	efunc
-	.endfunc	5920,9,32
-	.line	5920
+	.endfunc	5739,9,32
+	.line	5739
 ;
+;/*
 ;void k_scratch_restore_bitblt(int x0, int y0, int width, int height, int x1, int y1)
 ;{
-	.line	5922
-	.line	5923
-	GFX
-	xdef	~~k_scratch_restore_bitblt
-	func
-	.function	5923
-~~k_scratch_restore_bitblt:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L1364
-	tcs
-	phd
-	tcd
-x0_0	set	4
-y0_0	set	6
-width_0	set	8
-height_0	set	10
-x1_0	set	12
-y1_0	set	14
-	.block	5923
 ;	long dy = 0L;
 ;	long dd = y1;
 ;	long pixelLocation0 = (long)(((long)y0 * 640L) + (long)x0);
@@ -32079,396 +32691,118 @@ y1_0	set	14
 ;
 ;
 ;	for(dy = y0;dy<(y0 + height);dy++)
-dy_1	set	0
-dd_1	set	4
-pixelLocation0_1	set	8
-pixelLocation1_1	set	12
-pixelLocationD_1	set	16
-difference_1	set	20
-	.sym	dy,0,7,1,32
-	.sym	dd,4,7,1,32
-	.sym	pixelLocation0,8,7,1,32
-	.sym	pixelLocation1,12,7,1,32
-	.sym	pixelLocationD,16,7,1,32
-	.sym	difference,20,7,1,32
-	.sym	x0,4,5,6,16
-	.sym	y0,6,5,6,16
-	.sym	width,8,5,6,16
-	.sym	height,10,5,6,16
-	.sym	x1,12,5,6,16
-	.sym	y1,14,5,6,16
-	stz	<L1365+dy_1
-	stz	<L1365+dy_1+2
-	ldy	#$0
-	lda	<L1364+y1_0
-	bpl	L1367
-	dey
-L1367:
-	sta	<L1365+dd_1
-	sty	<L1365+dd_1+2
-	ldy	#$0
-	lda	<L1364+x0_0
-	bpl	L1368
-	dey
-L1368:
-	sta	<R0
-	sty	<R0+2
-	ldy	#$0
-	lda	<L1364+y0_0
-	bpl	L1369
-	dey
-L1369:
-	sta	<R1
-	sty	<R1+2
-	pea	#^$280
-	pea	#<$280
-	pei	<R1+2
-	pei	<R1
-	xref	~~~lmul
-	jsl	~~~lmul
-	sta	<R1
-	stx	<R1+2
-	clc
-	lda	<R1
-	adc	<R0
-	sta	<L1365+pixelLocation0_1
-	lda	<R1+2
-	adc	<R0+2
-	sta	<L1365+pixelLocation0_1+2
-	clc
-	lda	<L1364+x0_0
-	adc	<L1364+width_0
-	sta	<R0
-	ldy	#$0
-	lda	<R0
-	bpl	L1370
-	dey
-L1370:
-	sta	<R0
-	sty	<R0+2
-	ldy	#$0
-	lda	<L1364+y0_0
-	bpl	L1371
-	dey
-L1371:
-	sta	<R1
-	sty	<R1+2
-	pea	#^$280
-	pea	#<$280
-	pei	<R1+2
-	pei	<R1
-	xref	~~~lmul
-	jsl	~~~lmul
-	sta	<R1
-	stx	<R1+2
-	clc
-	lda	<R1
-	adc	<R0
-	sta	<L1365+pixelLocation1_1
-	lda	<R1+2
-	adc	<R0+2
-	sta	<L1365+pixelLocation1_1+2
-	ldy	#$0
-	lda	<L1364+x1_0
-	bpl	L1372
-	dey
-L1372:
-	sta	<R0
-	sty	<R0+2
-	ldy	#$0
-	lda	<L1364+y1_0
-	bpl	L1373
-	dey
-L1373:
-	sta	<R1
-	sty	<R1+2
-	pea	#^$280
-	pea	#<$280
-	pei	<R1+2
-	pei	<R1
-	xref	~~~lmul
-	jsl	~~~lmul
-	sta	<R1
-	stx	<R1+2
-	clc
-	lda	<R1
-	adc	<R0
-	sta	<L1365+pixelLocationD_1
-	lda	<R1+2
-	adc	<R0+2
-	sta	<L1365+pixelLocationD_1+2
-	ldy	#$0
-	lda	<L1364+width_0
-	bpl	L1374
-	dey
-L1374:
-	sta	<L1365+difference_1
-	sty	<L1365+difference_1+2
-	.line	5939
-	ldy	#$0
-	lda	<L1364+y0_0
-	bpl	L1375
-	dey
-L1375:
-	sta	<L1365+dy_1
-	sty	<L1365+dy_1+2
-	brl	L10551
-L10550:
 ;	{
-	.line	5940
 ;		pixelLocation0 = (long)(((long)dy * 640L) + (long)x0);
-	.line	5941
-	ldy	#$0
-	lda	<L1364+x0_0
-	bpl	L1376
-	dey
-L1376:
-	sta	<R0
-	sty	<R0+2
-	pea	#^$280
-	pea	#<$280
-	pei	<L1365+dy_1+2
-	pei	<L1365+dy_1
-	xref	~~~lmul
-	jsl	~~~lmul
-	sta	<R1
-	stx	<R1+2
-	clc
-	lda	<R1
-	adc	<R0
-	sta	<L1365+pixelLocation0_1
-	lda	<R1+2
-	adc	<R0+2
-	sta	<L1365+pixelLocation0_1+2
 ;		pixelLocationD = (long)(((long)dd * 640L) + (long)x1);
-	.line	5942
-	ldy	#$0
-	lda	<L1364+x1_0
-	bpl	L1377
-	dey
-L1377:
-	sta	<R0
-	sty	<R0+2
-	pea	#^$280
-	pea	#<$280
-	pei	<L1365+dd_1+2
-	pei	<L1365+dd_1
-	xref	~~~lmul
-	jsl	~~~lmul
-	sta	<R1
-	stx	<R1+2
-	clc
-	lda	<R1
-	adc	<R0
-	sta	<L1365+pixelLocationD_1
-	lda	<R1+2
-	adc	<R0+2
-	sta	<L1365+pixelLocationD_1+2
 ;		memcpy(   &((BITMAP_BANK_0)[pixelLocationD])  , &((SHADOW_BANK_5)[pixelLocation0]), difference) ;
-	.line	5943
-	pei	<L1365+difference_1
-	clc
-	lda	#$0
-	adc	<L1365+pixelLocation0_1
-	sta	<R0
-	lda	#$f
-	adc	<L1365+pixelLocation0_1+2
-	sta	<R0+2
-	pei	<R0+2
-	pei	<R0
-	clc
-	lda	#$0
-	adc	<L1365+pixelLocationD_1
-	sta	<R1
-	lda	#$b0
-	adc	<L1365+pixelLocationD_1+2
-	sta	<R1+2
-	pei	<R1+2
-	pei	<R1
-	jsl	~~memcpy
 ;		memcpy(   &((SHADOW_BANK_0)[pixelLocationD])  , &((SHADOW_BANK_5)[pixelLocation0]), difference) ;
-	.line	5944
-	pei	<L1365+difference_1
-	clc
-	lda	#$0
-	adc	<L1365+pixelLocation0_1
-	sta	<R0
-	lda	#$f
-	adc	<L1365+pixelLocation0_1+2
-	sta	<R0+2
-	pei	<R0+2
-	pei	<R0
-	clc
-	lda	#$0
-	adc	<L1365+pixelLocationD_1
-	sta	<R1
-	lda	#$a
-	adc	<L1365+pixelLocationD_1+2
-	sta	<R1+2
-	pei	<R1+2
-	pei	<R1
-	jsl	~~memcpy
 ;
 ;		dd++;
-	.line	5946
-	inc	<L1365+dd_1
-	bne	L1378
-	inc	<L1365+dd_1+2
-L1378:
 ;	}
-	.line	5947
-L10548:
-	inc	<L1365+dy_1
-	bne	L1379
-	inc	<L1365+dy_1+2
-L1379:
-L10551:
-	clc
-	lda	<L1364+y0_0
-	adc	<L1364+height_0
-	sta	<R0
-	ldy	#$0
-	lda	<R0
-	bpl	L1380
-	dey
-L1380:
-	sta	<R0
-	sty	<R0+2
-	sec
-	lda	<L1365+dy_1
-	sbc	<R0
-	lda	<L1365+dy_1+2
-	sbc	<R0+2
-	bvs	L1381
-	eor	#$8000
-L1381:
-	bmi	L1382
-	brl	L10550
-L1382:
-L10549:
 ;
 ;}
-	.line	5949
-L1383:
-	lda	<L1364+2
-	sta	<L1364+2+12
-	lda	<L1364+1
-	sta	<L1364+1+12
-	pld
-	tsc
-	clc
-	adc	#L1364+12
-	tcs
-	rtl
-	.endblock	5949
-L1364	equ	32
-L1365	equ	9
-	ends
-	efunc
-	.endfunc	5949,9,32
-	.line	5949
-;
+;*/
 ;
 ;UINT k_font_getFontHeight(void)
 ;{
-	.line	5952
-	.line	5953
+	.line	5772
+	.line	5773
 	GFX
 	xdef	~~k_font_getFontHeight
 	func
-	.function	5953
+	.function	5773
 ~~k_font_getFontHeight:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1384
+	sbc	#L1451
 	tcs
 	phd
 	tcd
-	.block	5953
+	.block	5773
 ;	return 8;
-	.line	5954
+	.line	5774
 	lda	#$8
-L1387:
+L1454:
 	tay
 	pld
 	tsc
 	clc
-	adc	#L1384
+	adc	#L1451
 	tcs
 	tya
 	rtl
 ;}
-	.line	5955
-	.endblock	5955
-L1384	equ	0
-L1385	equ	1
+	.line	5775
+	.endblock	5775
+L1451	equ	0
+L1452	equ	1
 	ends
 	efunc
-	.endfunc	5955,1,0
-	.line	5955
+	.endfunc	5775,1,0
+	.line	5775
 ;
 ;UINT k_font_getFontWidth(void)
 ;{
-	.line	5957
-	.line	5958
+	.line	5777
+	.line	5778
 	GFX
 	xdef	~~k_font_getFontWidth
 	func
-	.function	5958
+	.function	5778
 ~~k_font_getFontWidth:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1388
+	sbc	#L1455
 	tcs
 	phd
 	tcd
-	.block	5958
+	.block	5778
 ;	return 8;
-	.line	5959
+	.line	5779
 	lda	#$8
-L1391:
+L1458:
 	tay
 	pld
 	tsc
 	clc
-	adc	#L1388
+	adc	#L1455
 	tcs
 	tya
 	rtl
 ;}
-	.line	5960
-	.endblock	5960
-L1388	equ	0
-L1389	equ	1
+	.line	5780
+	.endblock	5780
+L1455	equ	0
+L1456	equ	1
 	ends
 	efunc
-	.endfunc	5960,1,0
-	.line	5960
+	.endfunc	5780,1,0
+	.line	5780
 ;
 ;VOID k_gui_set_mousepointer(UINT index,LPVOID pointerData)
 ;{
-	.line	5962
-	.line	5963
+	.line	5782
+	.line	5783
 	GFX
 	xdef	~~k_gui_set_mousepointer
 	func
-	.function	5963
+	.function	5783
 ~~k_gui_set_mousepointer:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1392
+	sbc	#L1459
 	tcs
 	phd
 	tcd
 index_0	set	4
 pointerData_0	set	6
-	.block	5963
+	.block	5783
 ;	LPVOID pData = NULL;
 ;
 ;	if(index == 0 || index == 1)
@@ -32476,34 +32810,34 @@ pData_1	set	0
 	.sym	pData,0,129,1,32
 	.sym	index,4,16,6,16
 	.sym	pointerData,6,129,6,32
-	stz	<L1393+pData_1
-	stz	<L1393+pData_1+2
-	.line	5966
+	stz	<L1460+pData_1
+	stz	<L1460+pData_1+2
+	.line	5786
 ;	{
-	lda	<L1392+index_0
-	bne	L1396
-	brl	L1395
-L1396:
-	lda	<L1392+index_0
+	lda	<L1459+index_0
+	bne	L1463
+	brl	L1462
+L1463:
+	lda	<L1459+index_0
 	cmp	#<$1
-	beq	L1397
-	brl	L10552
-L1397:
-L1395:
-	.line	5967
+	beq	L1464
+	brl	L10595
+L1464:
+L1462:
+	.line	5787
 ;		//*MOUSE_PTR_CTRL_REG_H = 0x00;
 ;		//*MOUSE_PTR_CTRL_REG_L = index;
 ;
 ;		memcpy( MOUSE_PTR_GRAP0_START,pointerData,sizeof(MOUSE_POINTER_ARROW));
-	.line	5971
+	.line	5791
 	pea	#<$100
-	pei	<L1392+pointerData_0+2
-	pei	<L1392+pointerData_0
+	pei	<L1459+pointerData_0+2
+	pei	<L1459+pointerData_0
 	pea	#^$af0500
 	pea	#<$af0500
 	jsl	~~memcpy
 ;		memcpy( MOUSE_PTR_GRAP1_START,MOUSE_POINTER_HOURGLASS,sizeof(MOUSE_POINTER_ARROW));
-	.line	5972
+	.line	5792
 	pea	#<$100
 	pea	#^~~MOUSE_POINTER_HOURGLASS
 	pea	#<~~MOUSE_POINTER_HOURGLASS
@@ -32512,7 +32846,7 @@ L1395:
 	jsl	~~memcpy
 ;
 ;		*MOUSE_PTR_CTRL_REG_H = 0x00;
-	.line	5974
+	.line	5794
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -32520,7 +32854,7 @@ L1395:
 	rep	#$20
 	longa	on
 ;		*MOUSE_PTR_CTRL_REG_L = 0x01;
-	.line	5975
+	.line	5795
 	sep	#$20
 	longa	off
 	lda	#$1
@@ -32528,64 +32862,64 @@ L1395:
 	rep	#$20
 	longa	on
 ;	}
-	.line	5976
+	.line	5796
 ;}
-L10552:
-	.line	5977
-L1398:
-	lda	<L1392+2
-	sta	<L1392+2+6
-	lda	<L1392+1
-	sta	<L1392+1+6
+L10595:
+	.line	5797
+L1465:
+	lda	<L1459+2
+	sta	<L1459+2+6
+	lda	<L1459+1
+	sta	<L1459+1+6
 	pld
 	tsc
 	clc
-	adc	#L1392+6
+	adc	#L1459+6
 	tcs
 	rtl
-	.endblock	5977
-L1392	equ	4
-L1393	equ	1
+	.endblock	5797
+L1459	equ	4
+L1460	equ	1
 	ends
 	efunc
-	.endfunc	5977,1,4
-	.line	5977
+	.endfunc	5797,1,4
+	.line	5797
 ;
 ;VOID k_gui_init_mousepointer(BOOL enable)
 ;{
-	.line	5979
-	.line	5980
+	.line	5799
+	.line	5800
 	GFX
 	xdef	~~k_gui_init_mousepointer
 	func
-	.function	5980
+	.function	5800
 ~~k_gui_init_mousepointer:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1399
+	sbc	#L1466
 	tcs
 	phd
 	tcd
 enable_0	set	4
-	.block	5980
+	.block	5800
 ;	if(enable)
 	.sym	enable,4,14,6,8
-	.line	5981
+	.line	5801
 ;	{
-	lda	<L1399+enable_0
+	lda	<L1466+enable_0
 	and	#$ff
-	bne	L1402
-	brl	L10553
-L1402:
-	.line	5982
+	bne	L1469
+	brl	L10596
+L1469:
+	.line	5802
 ;		//MOUSE_POINTER_HELP
 ;		//memcpy(MOUSE_PTR_GRAP0_START,MOUSE_POINTER_PTR_V2,sizeof(MOUSE_POINTER_PTR_V2));
 ;		//memcpy(MOUSE_PTR_GRAP0_START,MOUSE_POINTER_PTR_V2,sizeof(MOUSE_POINTER_PTR_V2));
 ;
 ;		memcpy(MOUSE_PTR_GRAP0_START,MOUSE_POINTER_ARROW,sizeof(MOUSE_POINTER_ARROW));
-	.line	5987
+	.line	5807
 	pea	#<$100
 	pea	#^~~MOUSE_POINTER_ARROW
 	pea	#<~~MOUSE_POINTER_ARROW
@@ -32593,7 +32927,7 @@ L1402:
 	pea	#<$af0500
 	jsl	~~memcpy
 ;		memcpy(MOUSE_PTR_GRAP1_START,MOUSE_POINTER_HOURGLASS,sizeof(MOUSE_POINTER_HOURGLASS));
-	.line	5988
+	.line	5808
 	pea	#<$100
 	pea	#^~~MOUSE_POINTER_HOURGLASS
 	pea	#<~~MOUSE_POINTER_HOURGLASS
@@ -32602,7 +32936,7 @@ L1402:
 	jsl	~~memcpy
 ;
 ;		*MOUSE_PTR_CTRL_REG_H = 0x00;
-	.line	5990
+	.line	5810
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -32610,7 +32944,7 @@ L1402:
 	rep	#$20
 	longa	on
 ;		*MOUSE_PTR_CTRL_REG_L = 0x01;
-	.line	5991
+	.line	5811
 	sep	#$20
 	longa	off
 	lda	#$1
@@ -32618,14 +32952,14 @@ L1402:
 	rep	#$20
 	longa	on
 ;	}
-	.line	5992
+	.line	5812
 ;	else
-	brl	L10554
-L10553:
+	brl	L10597
+L10596:
 ;	{
-	.line	5994
+	.line	5814
 ;		memcpy(MOUSE_PTR_GRAP0_START,MOUSE_POINTER_ARROW,sizeof(MOUSE_POINTER_ARROW));
-	.line	5995
+	.line	5815
 	pea	#<$100
 	pea	#^~~MOUSE_POINTER_ARROW
 	pea	#<~~MOUSE_POINTER_ARROW
@@ -32633,7 +32967,7 @@ L10553:
 	pea	#<$af0500
 	jsl	~~memcpy
 ;		memcpy(MOUSE_PTR_GRAP1_START,MOUSE_POINTER_ARROW,sizeof(MOUSE_POINTER_ARROW));
-	.line	5996
+	.line	5816
 	pea	#<$100
 	pea	#^~~MOUSE_POINTER_ARROW
 	pea	#<~~MOUSE_POINTER_ARROW
@@ -32641,7 +32975,7 @@ L10553:
 	pea	#<$af0600
 	jsl	~~memcpy
 ;		*MOUSE_PTR_CTRL_REG_H = 0x00;
-	.line	5997
+	.line	5817
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -32649,7 +32983,7 @@ L10553:
 	rep	#$20
 	longa	on
 ;		*MOUSE_PTR_CTRL_REG_L = 0x00;
-	.line	5998
+	.line	5818
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -32657,43 +32991,43 @@ L10553:
 	rep	#$20
 	longa	on
 ;	}
-	.line	5999
-L10554:
+	.line	5819
+L10597:
 ;}
-	.line	6000
-L1403:
-	lda	<L1399+2
-	sta	<L1399+2+2
-	lda	<L1399+1
-	sta	<L1399+1+2
+	.line	5820
+L1470:
+	lda	<L1466+2
+	sta	<L1466+2+2
+	lda	<L1466+1
+	sta	<L1466+1+2
 	pld
 	tsc
 	clc
-	adc	#L1399+2
+	adc	#L1466+2
 	tcs
 	rtl
-	.endblock	6000
-L1399	equ	0
-L1400	equ	1
+	.endblock	5820
+L1466	equ	0
+L1467	equ	1
 	ends
 	efunc
-	.endfunc	6000,1,0
-	.line	6000
+	.endfunc	5820,1,0
+	.line	5820
 ;
 ;void k_vdma_copy_address_ex(char FAR * pdst,char FAR * psrc,int width,int height)
 ;{
-	.line	6002
-	.line	6003
+	.line	5822
+	.line	5823
 	GFX
 	xdef	~~k_vdma_copy_address_ex
 	func
-	.function	6003
+	.function	5823
 ~~k_vdma_copy_address_ex:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1404
+	sbc	#L1471
 	tcs
 	phd
 	tcd
@@ -32701,7 +33035,7 @@ pdst_0	set	4
 psrc_0	set	8
 width_0	set	12
 height_0	set	14
-	.block	6003
+	.block	5823
 ;	int pos = 0;
 ;	UINT spinLock = 0;
 ;	char status = VDMA_STAT_VDMA_IPS;
@@ -32726,15 +33060,15 @@ status_1	set	4
 	.sym	psrc,8,142,6,32
 	.sym	width,12,5,6,16
 	.sym	height,14,5,6,16
-	stz	<L1405+pos_1
-	stz	<L1405+spinLock_1
+	stz	<L1472+pos_1
+	stz	<L1472+spinLock_1
 	sep	#$20
 	longa	off
 	lda	#$80
-	sta	<L1405+status_1
+	sta	<L1472+status_1
 	rep	#$20
 	longa	on
-	.line	6017
+	.line	5837
 	sep	#$20
 	longa	off
 	lda	#$3
@@ -32743,17 +33077,17 @@ status_1	set	4
 	longa	on
 ;
 ;	VDMA_SRC_ADDY_L[0] = L24BYTE((long)psrc);
-	.line	6019
+	.line	5839
 	sep	#$20
 	longa	off
-	lda	<L1404+psrc_0
+	lda	<L1471+psrc_0
 	sta	>11469826
 	rep	#$20
 	longa	on
 ;	VDMA_SRC_ADDY_M[0] = M24BYTE((long)psrc);
-	.line	6020
-	pei	<L1404+psrc_0+2
-	pei	<L1404+psrc_0
+	.line	5840
+	pei	<L1471+psrc_0+2
+	pei	<L1471+psrc_0
 	lda	#$8
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -32770,9 +33104,9 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	VDMA_SRC_ADDY_H[0] = H24BYTE((long)psrc);
-	.line	6021
-	pei	<L1404+psrc_0+2
-	pei	<L1404+psrc_0
+	.line	5841
+	pei	<L1471+psrc_0+2
+	pei	<L1471+psrc_0
 	lda	#$10
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -32790,17 +33124,17 @@ status_1	set	4
 	longa	on
 ;
 ;	VDMA_DST_ADDY_L[0] = L24BYTE((long)pdst);
-	.line	6023
+	.line	5843
 	sep	#$20
 	longa	off
-	lda	<L1404+pdst_0
+	lda	<L1471+pdst_0
 	sta	>11469829
 	rep	#$20
 	longa	on
 ;	VDMA_DST_ADDY_M[0] = M24BYTE((long)pdst);
-	.line	6024
-	pei	<L1404+pdst_0+2
-	pei	<L1404+pdst_0
+	.line	5844
+	pei	<L1471+pdst_0+2
+	pei	<L1471+pdst_0
 	lda	#$8
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -32817,9 +33151,9 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	VDMA_DST_ADDY_H[0] = H24BYTE((long)pdst);
-	.line	6025
-	pei	<L1404+pdst_0+2
-	pei	<L1404+pdst_0
+	.line	5845
+	pei	<L1471+pdst_0+2
+	pei	<L1471+pdst_0
 	lda	#$10
 	xref	~~~llsr
 	jsl	~~~llsr
@@ -32837,16 +33171,16 @@ status_1	set	4
 	longa	on
 ;
 ;	VDMA_X_SIZE_L[0] = LOBYTE(width);
-	.line	6027
+	.line	5847
 	sep	#$20
 	longa	off
-	lda	<L1404+width_0
+	lda	<L1471+width_0
 	sta	>11469832
 	rep	#$20
 	longa	on
 ;	VDMA_X_SIZE_H[0] = HIBYTE(width);
-	.line	6028
-	lda	<L1404+width_0
+	.line	5848
+	lda	<L1471+width_0
 	ldx	#<$8
 	xref	~~~asr
 	jsl	~~~asr
@@ -32860,16 +33194,16 @@ status_1	set	4
 	longa	on
 ;
 ;	VDMA_Y_SIZE_L[0] = LOBYTE(height);
-	.line	6030
+	.line	5850
 	sep	#$20
 	longa	off
-	lda	<L1404+height_0
+	lda	<L1471+height_0
 	sta	>11469834
 	rep	#$20
 	longa	on
 ;	VDMA_Y_SIZE_H[0] = HIBYTE(height);
-	.line	6031
-	lda	<L1404+height_0
+	.line	5851
+	lda	<L1471+height_0
 	ldx	#<$8
 	xref	~~~asr
 	jsl	~~~asr
@@ -32882,7 +33216,7 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	VDMA_Y_SIZE_H[1] = 0x00;
-	.line	6032
+	.line	5852
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -32892,7 +33226,7 @@ status_1	set	4
 ;
 ;
 ;	*VDMA_SRC_STRIDE_L  = 0x80;
-	.line	6035
+	.line	5855
 	sep	#$20
 	longa	off
 	lda	#$80
@@ -32900,7 +33234,7 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	*VDMA_SRC_STRIDE_H  = 0x02;
-	.line	6036
+	.line	5856
 	sep	#$20
 	longa	off
 	lda	#$2
@@ -32909,7 +33243,7 @@ status_1	set	4
 	longa	on
 ;
 ;	*VDMA_DST_STRIDE_L  = 0x80;
-	.line	6038
+	.line	5858
 	sep	#$20
 	longa	off
 	lda	#$80
@@ -32917,7 +33251,7 @@ status_1	set	4
 	rep	#$20
 	longa	on
 ;	*VDMA_DST_STRIDE_H	= 0x02;
-	.line	6039
+	.line	5859
 	sep	#$20
 	longa	off
 	lda	#$2
@@ -32926,7 +33260,7 @@ status_1	set	4
 	longa	on
 ;
 ;    VDMA_CONTROL_REG[0]  = (VDMA_CTRL_ENABLE | VDMA_CTRL_1D_2D | VDMA_CTRL_START_TRF);
-	.line	6041
+	.line	5861
 	sep	#$20
 	longa	off
 	lda	#$83
@@ -32935,80 +33269,80 @@ status_1	set	4
 	longa	on
 ;
 ;    asm NOP;
-	.line	6043
+	.line	5863
 	asmstart
 	NOP
 	asmend
 ;    asm NOP;
-	.line	6044
+	.line	5864
 	asmstart
 	NOP
 	asmend
 ;    asm NOP;
-	.line	6045
+	.line	5865
 	asmstart
 	NOP
 	asmend
 ;
 ;	while(status == VDMA_STAT_VDMA_IPS)
-	.line	6047
-L10555:
+	.line	5867
+L10598:
 	sep	#$20
 	longa	off
-	lda	<L1405+status_1
+	lda	<L1472+status_1
 	cmp	#<$80
 	rep	#$20
 	longa	on
-	beq	L1407
-	brl	L10556
-L1407:
+	beq	L1474
+	brl	L10599
+L1474:
 ;	{
-	.line	6048
+	.line	5868
 ;		status = ( *VDMA_STATUS_REG & VDMA_STAT_VDMA_IPS);
-	.line	6049
+	.line	5869
 	sep	#$20
 	longa	off
 	lda	>11469825
 	and	#<$80
-	sta	<L1405+status_1
+	sta	<L1472+status_1
 	rep	#$20
 	longa	on
 ;		spinLock++;
-	.line	6050
-	inc	<L1405+spinLock_1
+	.line	5870
+	inc	<L1472+spinLock_1
 ;
 ;		if(spinLock > 32000)
-	.line	6052
+	.line	5872
 ;		{
 	lda	#$7d00
-	cmp	<L1405+spinLock_1
-	bcc	L1408
-	brl	L10557
-L1408:
-	.line	6053
+	cmp	<L1472+spinLock_1
+	bcc	L1475
+	brl	L10600
+L1475:
+	.line	5873
 ;			break;
-	.line	6054
-	brl	L10556
+	.line	5874
+	brl	L10599
 ;		}
-	.line	6055
+	.line	5875
 ;	}
-L10557:
-	.line	6056
-	brl	L10555
-L10556:
+L10600:
+	.line	5876
+	brl	L10598
+L10599:
 ;
 ;#ifdef USE_MAX_DEBUG
 ;	k_debug_integer("k_vdma_copy_address_ex::spinLock:",spinLock);
 ;#endif
 ;
 ;	asm NOP;
-	.line	6062
+	.line	5882
 	asmstart
 	NOP
 	asmend
 ;
 ;	VDMA_CONTROL_REG[0] = 0;
-	.line	6064
+	.line	5884
 	sep	#$20
 	longa	off
 	lda	#$0
@@ -33017,95 +33351,95 @@ L10556:
 	longa	on
 ;
 ;   return ;
-	.line	6066
-L1409:
-	lda	<L1404+2
-	sta	<L1404+2+12
-	lda	<L1404+1
-	sta	<L1404+1+12
+	.line	5886
+L1476:
+	lda	<L1471+2
+	sta	<L1471+2+12
+	lda	<L1471+1
+	sta	<L1471+1+12
 	pld
 	tsc
 	clc
-	adc	#L1404+12
+	adc	#L1471+12
 	tcs
 	rtl
 ;}
-	.line	6067
-	.endblock	6067
-L1404	equ	13
-L1405	equ	9
+	.line	5887
+	.endblock	5887
+L1471	equ	13
+L1472	equ	9
 	ends
 	efunc
-	.endfunc	6067,9,13
-	.line	6067
+	.endfunc	5887,9,13
+	.line	5887
 ;
 ;
 ;LPVOID k_gui_get_title_cache(HANDLE hTitle)
 ;{
-	.line	6070
-	.line	6071
+	.line	5890
+	.line	5891
 	GFX
 	xdef	~~k_gui_get_title_cache
 	func
-	.function	6071
+	.function	5891
 ~~k_gui_get_title_cache:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1410
+	sbc	#L1477
 	tcs
 	phd
 	tcd
 hTitle_0	set	4
-	.block	6071
+	.block	5891
 ;	return (LPVOID)TITLE_LINES_640x480;
 	.sym	hTitle,4,129,6,32
-	.line	6072
+	.line	5892
 	ldx	|~~TITLE_LINES_640x480+2
 	lda	|~~TITLE_LINES_640x480
-L1413:
+L1480:
 	tay
-	lda	<L1410+2
-	sta	<L1410+2+4
-	lda	<L1410+1
-	sta	<L1410+1+4
+	lda	<L1477+2
+	sta	<L1477+2+4
+	lda	<L1477+1
+	sta	<L1477+1+4
 	pld
 	tsc
 	clc
-	adc	#L1410+4
+	adc	#L1477+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	6073
-	.endblock	6073
-L1410	equ	0
-L1411	equ	1
+	.line	5893
+	.endblock	5893
+L1477	equ	0
+L1478	equ	1
 	ends
 	efunc
-	.endfunc	6073,1,0
-	.line	6073
+	.endfunc	5893,1,0
+	.line	5893
 ;
 ;HANDLE k_gui_build_title_cache(LPSTR lpstrTitle)
 ;{
-	.line	6075
-	.line	6076
+	.line	5895
+	.line	5896
 	GFX
 	xdef	~~k_gui_build_title_cache
 	func
-	.function	6076
+	.function	5896
 ~~k_gui_build_title_cache:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1414
+	sbc	#L1481
 	tcs
 	phd
 	tcd
 lpstrTitle_0	set	4
-	.block	6076
+	.block	5896
 ;	int i = 0;
 ;	int x = 0;
 ;	int y = 400;
@@ -33121,35 +33455,35 @@ offset_1	set	6
 	.sym	y,4,5,1,16
 	.sym	offset,6,18,1,32
 	.sym	lpstrTitle,4,142,6,32
-	stz	<L1415+i_1
-	stz	<L1415+x_1
+	stz	<L1482+i_1
+	stz	<L1482+x_1
 	lda	#$190
-	sta	<L1415+y_1
-	stz	<L1415+offset_1
-	stz	<L1415+offset_1+2
-	.line	6082
-	pea	#^L1304+25
-	pea	#<L1304+25
-	pea	#^L1304
-	pea	#<L1304
+	sta	<L1482+y_1
+	stz	<L1482+offset_1
+	stz	<L1482+offset_1+2
+	.line	5902
+	pea	#^L1391+25
+	pea	#<L1391+25
+	pea	#^L1391
+	pea	#<L1391
 	jsl	~~k_debug_strings
 ;
 ;	offset = (ULONG)k_gui_get_pixel_offset(x,y);
-	.line	6084
-	pei	<L1415+y_1
-	pei	<L1415+x_1
+	.line	5904
+	pei	<L1482+y_1
+	pei	<L1482+x_1
 	jsl	~~k_gui_get_pixel_offset
-	sta	<L1415+offset_1
-	stx	<L1415+offset_1+2
+	sta	<L1482+offset_1
+	stx	<L1482+offset_1+2
 ;
 ;	TITLE_LINES_640x480 = (LPSTR)((ULONG)0x080000 + (ULONG)offset);
-	.line	6086
+	.line	5906
 	clc
 	lda	#$0
-	adc	<L1415+offset_1
+	adc	<L1482+offset_1
 	sta	<R0
 	lda	#$8
-	adc	<L1415+offset_1+2
+	adc	<L1482+offset_1+2
 	sta	<R0+2
 	lda	<R0
 	sta	|~~TITLE_LINES_640x480
@@ -33157,35 +33491,35 @@ offset_1	set	6
 	sta	|~~TITLE_LINES_640x480+2
 ;
 ;	k_debug_pointer("k_gui_build_title_cache:",TITLE_LINES_640x480);
-	.line	6088
+	.line	5908
 	lda	|~~TITLE_LINES_640x480+2
 	pha
 	lda	|~~TITLE_LINES_640x480
 	pha
-	pea	#^L1304+32
-	pea	#<L1304+32
+	pea	#^L1391+32
+	pea	#<L1391+32
 	jsl	~~k_debug_pointer
 ;
 ;	k_vdma_fill_rect_ex(x,y,640,8,15,BITMAP_BACK);
-	.line	6090
+	.line	5910
 	pea	#<$8
 	pea	#<$f
 	pea	#<$8
 	pea	#<$280
 	ldy	#$0
-	lda	<L1415+y_1
-	bpl	L1417
+	lda	<L1482+y_1
+	bpl	L1484
 	dey
-L1417:
+L1484:
 	sta	<R0
 	sty	<R0+2
 	pei	<R0+2
 	pei	<R0
 	ldy	#$0
-	lda	<L1415+x_1
-	bpl	L1418
+	lda	<L1482+x_1
+	bpl	L1485
 	dey
-L1418:
+L1485:
 	sta	<R1
 	sty	<R1+2
 	pei	<R1+2
@@ -33193,43 +33527,43 @@ L1418:
 	jsl	~~k_vdma_fill_rect_ex
 ;
 ;	for(i=0;i<80;i++)
-	.line	6092
-	stz	<L1415+i_1
-L10560:
+	.line	5912
+	stz	<L1482+i_1
+L10603:
 ;	{
-	.line	6093
+	.line	5913
 ;		x+=k_put_wingadget_point_ex(WINICON_TITLE_LINES,x,y,k_getUIGadgetColor(),0x08);
-	.line	6094
+	.line	5914
 	pea	#<$8
 	jsl	~~k_getUIGadgetColor
 	pha
-	pei	<L1415+y_1
-	pei	<L1415+x_1
+	pei	<L1482+y_1
+	pei	<L1482+x_1
 	pea	#<$1
 	jsl	~~k_put_wingadget_point_ex
 	sta	<R0
 	clc
 	lda	<R0
-	adc	<L1415+x_1
-	sta	<L1415+x_1
+	adc	<L1482+x_1
+	sta	<L1482+x_1
 ;		//x+=k_put_wingadget_point_ex(WINICON_TITLE_LINES,x,y,15,0x08);
 ;	}
-	.line	6096
-L10558:
-	inc	<L1415+i_1
+	.line	5916
+L10601:
+	inc	<L1482+i_1
 	sec
-	lda	<L1415+i_1
+	lda	<L1482+i_1
 	sbc	#<$50
-	bvs	L1419
+	bvs	L1486
 	eor	#$8000
-L1419:
-	bmi	L1420
-	brl	L10560
-L1420:
-L10559:
+L1486:
+	bmi	L1487
+	brl	L10603
+L1487:
+L10602:
 ;
 ;	k_vdma_copy_address_ex((LPSTR)((ULONG)0x080000 + k_gui_get_pixel_offset(0,420)),TITLE_LINES_640x480,640,8);
-	.line	6098
+	.line	5918
 	pea	#<$8
 	pea	#<$280
 	lda	|~~TITLE_LINES_640x480+2
@@ -33253,34 +33587,34 @@ L10559:
 	jsl	~~k_vdma_copy_address_ex
 ;
 ;	return NULL;
-	.line	6100
+	.line	5920
 	lda	#$0
 	tax
 	lda	#$0
-L1421:
+L1488:
 	tay
-	lda	<L1414+2
-	sta	<L1414+2+4
-	lda	<L1414+1
-	sta	<L1414+1+4
+	lda	<L1481+2
+	sta	<L1481+2+4
+	lda	<L1481+1
+	sta	<L1481+1+4
 	pld
 	tsc
 	clc
-	adc	#L1414+4
+	adc	#L1481+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	6101
-	.endblock	6101
-L1414	equ	18
-L1415	equ	9
+	.line	5921
+	.endblock	5921
+L1481	equ	18
+L1482	equ	9
 	ends
 	efunc
-	.endfunc	6101,9,18
-	.line	6101
+	.endfunc	5921,9,18
+	.line	5921
 	data
-L1304:
+L1391:
 	db	$6B,$5F,$67,$75,$69,$5F,$62,$75,$69,$6C,$64,$5F,$74,$69,$74
 	db	$6C,$65,$5F,$63,$61,$63,$68,$65,$3A,$00,$43,$41,$43,$48,$45
 	db	$44,$00,$6B,$5F,$67,$75,$69,$5F,$62,$75,$69,$6C,$64,$5F,$74
@@ -33320,23 +33654,23 @@ L1304:
 	.eos
 	.line	49
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\bmp/cbmp.c",2
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\bmp/cbmp.c",33
-	.line	34
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\bmp/cbmp.c",34
+	.line	35
 	GFX
-	xdef	~~readBMP
+	xdef	~~readBMPPalette
 	func
-	.function	34
-~~readBMP:
+	.function	35
+~~readBMPPalette:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L1423
+	sbc	#L1490
 	tcs
 	phd
 	tcd
 path_0	set	4
-	.block	34
+	.block	35
 dir_1	set	0
 fs_1	set	4
 f_1	set	8
@@ -33374,120 +33708,120 @@ pPalette_1	set	57
 	.sym	fileType,55,15,1,16
 	.sym	pPalette,57,142,1,32
 	.sym	path,4,142,6,32
-	stz	<L1424+fs_1
-	stz	<L1424+fs_1+2
-	stz	<L1424+f_1
-	stz	<L1424+f_1+2
-	stz	<L1424+fr_1
-	stz	<L1424+drive_1
-	stz	<L1424+drive_1+2
-	stz	<L1424+data_1
-	stz	<L1424+data_1+2
-	stz	<L1424+num_colors_1
-	stz	<L1424+dx_1
-	stz	<L1424+dx_1+2
-	stz	<L1424+dy_1
-	stz	<L1424+dy_1+2
-	stz	<L1424+pPalette_1
-	stz	<L1424+pPalette_1+2
-	.line	60
+	stz	<L1491+fs_1
+	stz	<L1491+fs_1+2
+	stz	<L1491+f_1
+	stz	<L1491+f_1+2
+	stz	<L1491+fr_1
+	stz	<L1491+drive_1
+	stz	<L1491+drive_1+2
+	stz	<L1491+data_1
+	stz	<L1491+data_1+2
+	stz	<L1491+num_colors_1
+	stz	<L1491+dx_1
+	stz	<L1491+dx_1+2
+	stz	<L1491+dy_1
+	stz	<L1491+dy_1+2
+	stz	<L1491+pPalette_1
+	stz	<L1491+pPalette_1+2
+	.line	61
 	pea	#<$3a
-	pei	<L1423+path_0+2
-	pei	<L1423+path_0
+	pei	<L1490+path_0+2
+	pei	<L1490+path_0
 	jsl	~~k_string_copy_to_delimiter
-	sta	<L1424+drive_1
-	stx	<L1424+drive_1+2
-	.line	62
+	sta	<L1491+drive_1
+	stx	<L1491+drive_1+2
+	.line	63
 	pea	#^$34
 	pea	#<$34
 	jsl	~~k_mem_allocate_heap
-	sta	<L1424+dir_1
-	stx	<L1424+dir_1+2
-	.line	63
+	sta	<L1491+dir_1
+	stx	<L1491+dir_1+2
+	.line	64
 	pea	#^$233
 	pea	#<$233
 	jsl	~~k_mem_allocate_heap
-	sta	<L1424+fs_1
-	stx	<L1424+fs_1+2
-	.line	64
+	sta	<L1491+fs_1
+	stx	<L1491+fs_1+2
+	.line	65
 	pea	#^$226
 	pea	#<$226
 	jsl	~~k_mem_allocate_heap
-	sta	<L1424+f_1
-	stx	<L1424+f_1+2
-	.line	68
+	sta	<L1491+f_1
+	stx	<L1491+f_1+2
+	.line	69
 	lda	#$2000
-	sta	<L1424+pPalette_1
+	sta	<L1491+pPalette_1
 	lda	#$af
-	sta	<L1424+pPalette_1+2
-	.line	70
+	sta	<L1491+pPalette_1+2
+	.line	71
 	pea	#<$1
-	pei	<L1424+drive_1+2
-	pei	<L1424+drive_1
+	pei	<L1491+drive_1+2
+	pei	<L1491+drive_1
 	pea	#^$0
 	pea	#<$0
 	jsl	~~f_mount
-	sta	<L1424+fr_1
-	.line	71
-	pea	#<$1
-	pei	<L1424+drive_1+2
-	pei	<L1424+drive_1
-	pei	<L1424+fs_1+2
-	pei	<L1424+fs_1
-	jsl	~~f_mount
-	sta	<L1424+fr_1
+	sta	<L1491+fr_1
 	.line	72
-	lda	<L1424+fr_1
-	beq	L1426
-	brl	L10561
-L1426:
-	.line	73
-	.line	74
 	pea	#<$1
-	pei	<L1423+path_0+2
-	pei	<L1423+path_0
-	pei	<L1424+f_1+2
-	pei	<L1424+f_1
-	jsl	~~f_open
-	sta	<L1424+fr_1
+	pei	<L1491+drive_1+2
+	pei	<L1491+drive_1
+	pei	<L1491+fs_1+2
+	pei	<L1491+fs_1
+	jsl	~~f_mount
+	sta	<L1491+fr_1
+	.line	73
+	lda	<L1491+fr_1
+	beq	L1493
+	brl	L10604
+L1493:
+	.line	74
 	.line	75
-	lda	<L1424+fr_1
-	beq	L1427
-	brl	L10562
-L1427:
+	pea	#<$1
+	pei	<L1490+path_0+2
+	pei	<L1490+path_0
+	pei	<L1491+f_1+2
+	pei	<L1491+f_1
+	jsl	~~f_open
+	sta	<L1491+fr_1
 	.line	76
+	lda	<L1491+fr_1
+	beq	L1494
+	brl	L10605
+L1494:
 	.line	77
+	.line	78
 	pea	#0
 	clc
 	tdc
-	adc	#<L1424+read_1
+	adc	#<L1491+read_1
 	pha
 	pea	#<$2
 	pea	#0
 	clc
 	tdc
-	adc	#<L1424+fileType_1
+	adc	#<L1491+fileType_1
 	pha
-	pei	<L1424+f_1+2
-	pei	<L1424+f_1
+	pei	<L1491+f_1+2
+	pei	<L1491+f_1
 	jsl	~~f_read
-	sta	<L1424+fr_1
-	.line	78
-	lda	<L1424+fr_1
-	beq	L1428
-	brl	L10563
-L1428:
-	lda	<L1424+fileType_1
-	cmp	#<$4d42
-	beq	L1429
-	brl	L10563
-L1429:
+	sta	<L1491+fr_1
 	.line	79
-	.line	83
+	lda	<L1491+fr_1
+	beq	L1495
+	brl	L10606
+L1495:
+	lda	<L1491+fileType_1
+	cmp	#<$4d42
+	beq	L1496
+	brl	L10606
+L1496:
+	.line	80
+	.line	84
 	pea	#0
 	clc
 	tdc
-	adc	#<L1424+read_1
+	adc	#<L1491+read_1
 	pha
 	pea	#<$c
 	lda	#<~~fileHeader
@@ -33497,15 +33831,15 @@ L1429:
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pei	<L1424+f_1+2
-	pei	<L1424+f_1
+	pei	<L1491+f_1+2
+	pei	<L1491+f_1
 	jsl	~~f_read
-	sta	<L1424+fr_1
-	.line	87
+	sta	<L1491+fr_1
+	.line	88
 	pea	#0
 	clc
 	tdc
-	adc	#<L1424+read_1
+	adc	#<L1491+read_1
 	pha
 	pea	#<$28
 	lda	#<~~infoHeader
@@ -33515,22 +33849,22 @@ L1429:
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pei	<L1424+f_1+2
-	pei	<L1424+f_1
+	pei	<L1491+f_1+2
+	pei	<L1491+f_1
 	jsl	~~f_read
-	sta	<L1424+fr_1
-	.line	91
+	sta	<L1491+fr_1
+	.line	92
 	lda	|~~infoHeader+4+2
-	bmi	L1430
-	bne	L1431
+	bmi	L1497
+	bne	L1498
 	lda	|~~infoHeader+4
 	cmp	#640
-	bcc	L1430
-L1431:
-	brl	L10564
-L1430:
-	.line	92
+	bcc	L1497
+L1498:
+	brl	L10607
+L1497:
 	.line	93
+	.line	94
 	pea	#^$2
 	pea	#<$2
 	lda	|~~infoHeader+4+2
@@ -33551,24 +33885,24 @@ L1430:
 	clc
 	lda	#$ffe7
 	adc	<R1
-	sta	<L1424+dx_1
+	sta	<L1491+dx_1
 	lda	#$ffff
 	adc	<R1+2
-	sta	<L1424+dx_1+2
-	.line	94
-L10564:
+	sta	<L1491+dx_1+2
 	.line	95
+L10607:
+	.line	96
 	lda	|~~infoHeader+8+2
-	bmi	L1432
-	bne	L1433
+	bmi	L1499
+	bne	L1500
 	lda	|~~infoHeader+8
 	cmp	#640
-	bcc	L1432
-L1433:
-	brl	L10565
-L1432:
-	.line	96
+	bcc	L1499
+L1500:
+	brl	L10608
+L1499:
 	.line	97
+	.line	98
 	pea	#^$2
 	pea	#<$2
 	lda	|~~infoHeader+8+2
@@ -33582,47 +33916,47 @@ L1432:
 	sec
 	lda	#$f0
 	sbc	<R0
-	sta	<L1424+dy_1
+	sta	<L1491+dy_1
 	lda	#$0
 	sbc	<R0+2
-	sta	<L1424+dy_1+2
-	.line	98
-L10565:
-	.line	100
+	sta	<L1491+dy_1+2
+	.line	99
+L10608:
+	.line	101
 	lda	|~~infoHeader+32
 	ora	|~~infoHeader+32+2
-	beq	L1434
-	brl	L10566
-L1434:
-	.line	101
+	beq	L1501
+	brl	L10609
+L1501:
+	.line	102
 	lda	#$100
-	sta	<L1424+num_colors_1
-L10566:
-	.line	104
-	stz	<L1424+i_1
-	stz	<L1424+i_1+2
-	brl	L10570
-L10569:
+	sta	<L1491+num_colors_1
+L10609:
 	.line	105
-	.line	107
+	stz	<L1491+i_1
+	stz	<L1491+i_1+2
+	brl	L10613
+L10612:
+	.line	106
+	.line	108
 	pea	#0
 	clc
 	tdc
-	adc	#<L1424+read_1
+	adc	#<L1491+read_1
 	pha
 	pea	#<$1
 	pea	#0
 	clc
 	tdc
-	adc	#<L1424+c_1
+	adc	#<L1491+c_1
 	pha
-	pei	<L1424+f_1+2
-	pei	<L1424+f_1
+	pei	<L1491+f_1+2
+	pei	<L1491+f_1
 	jsl	~~f_read
-	.line	109
-	lda	<L1424+i_1
+	.line	110
+	lda	<L1491+i_1
 	sta	<R0
-	lda	<L1424+i_1+2
+	lda	<L1491+i_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -33630,30 +33964,30 @@ L10569:
 	rol	<R0+2
 	sep	#$20
 	longa	off
-	lda	<L1424+c_1
+	lda	<L1491+c_1
 	ldy	<R0
-	sta	[<L1424+pPalette_1],Y
+	sta	[<L1491+pPalette_1],Y
 	rep	#$20
 	longa	on
-	.line	110
+	.line	111
 	pea	#0
 	clc
 	tdc
-	adc	#<L1424+read_1
+	adc	#<L1491+read_1
 	pha
 	pea	#<$1
 	pea	#0
 	clc
 	tdc
-	adc	#<L1424+c_1
+	adc	#<L1491+c_1
 	pha
-	pei	<L1424+f_1+2
-	pei	<L1424+f_1
+	pei	<L1491+f_1+2
+	pei	<L1491+f_1
 	jsl	~~f_read
-	.line	112
-	lda	<L1424+i_1
+	.line	113
+	lda	<L1491+i_1
 	sta	<R0
-	lda	<L1424+i_1+2
+	lda	<L1491+i_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -33668,30 +34002,30 @@ L10569:
 	sta	<R1+2
 	sep	#$20
 	longa	off
-	lda	<L1424+c_1
+	lda	<L1491+c_1
 	ldy	<R1
-	sta	[<L1424+pPalette_1],Y
+	sta	[<L1491+pPalette_1],Y
 	rep	#$20
 	longa	on
-	.line	113
+	.line	114
 	pea	#0
 	clc
 	tdc
-	adc	#<L1424+read_1
+	adc	#<L1491+read_1
 	pha
 	pea	#<$1
 	pea	#0
 	clc
 	tdc
-	adc	#<L1424+c_1
+	adc	#<L1491+c_1
 	pha
-	pei	<L1424+f_1+2
-	pei	<L1424+f_1
+	pei	<L1491+f_1+2
+	pei	<L1491+f_1
 	jsl	~~f_read
-	.line	115
-	lda	<L1424+i_1
+	.line	116
+	lda	<L1491+i_1
 	sta	<R0
-	lda	<L1424+i_1+2
+	lda	<L1491+i_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -33706,30 +34040,30 @@ L10569:
 	sta	<R1+2
 	sep	#$20
 	longa	off
-	lda	<L1424+c_1
+	lda	<L1491+c_1
 	ldy	<R1
-	sta	[<L1424+pPalette_1],Y
+	sta	[<L1491+pPalette_1],Y
 	rep	#$20
 	longa	on
-	.line	116
+	.line	117
 	pea	#0
 	clc
 	tdc
-	adc	#<L1424+read_1
+	adc	#<L1491+read_1
 	pha
 	pea	#<$1
 	pea	#0
 	clc
 	tdc
-	adc	#<L1424+c_1
+	adc	#<L1491+c_1
 	pha
-	pei	<L1424+f_1+2
-	pei	<L1424+f_1
+	pei	<L1491+f_1+2
+	pei	<L1491+f_1
 	jsl	~~f_read
-	.line	117
-	lda	<L1424+i_1
+	.line	118
+	lda	<L1491+i_1
 	sta	<R0
-	lda	<L1424+i_1+2
+	lda	<L1491+i_1+2
 	sta	<R0+2
 	asl	<R0
 	rol	<R0+2
@@ -33746,37 +34080,525 @@ L10569:
 	longa	off
 	lda	#$0
 	ldy	<R1
-	sta	[<L1424+pPalette_1],Y
+	sta	[<L1491+pPalette_1],Y
 	rep	#$20
 	longa	on
-	.line	120
-L10567:
-	inc	<L1424+i_1
-	bne	L1435
-	inc	<L1424+i_1+2
-L1435:
-L10570:
-	lda	<L1424+num_colors_1
+	.line	121
+L10610:
+	inc	<L1491+i_1
+	bne	L1502
+	inc	<L1491+i_1+2
+L1502:
+L10613:
+	lda	<L1491+num_colors_1
 	sta	<R0
 	stz	<R0+2
-	lda	<L1424+i_1
+	lda	<L1491+i_1
 	cmp	<R0
-	lda	<L1424+i_1+2
+	lda	<L1491+i_1+2
 	sbc	<R0+2
-	bcs	L1436
-	brl	L10569
-L1436:
-L10568:
+	bcs	L1503
+	brl	L10612
+L1503:
+L10611:
+	.line	123
+	pei	<L1491+f_1+2
+	pei	<L1491+f_1
+	jsl	~~f_close
 	.line	124
+L10606:
+	.line	125
+L10605:
 	.line	126
+L10604:
+	.line	129
+	pei	<L1491+f_1+2
+	pei	<L1491+f_1
+	jsl	~~k_mem_deallocate_heap
+	.line	130
+	pei	<L1491+fs_1+2
+	pei	<L1491+fs_1
+	jsl	~~k_mem_deallocate_heap
+	.line	131
+	pei	<L1491+dir_1+2
+	pei	<L1491+dir_1
+	jsl	~~k_mem_deallocate_heap
+	.line	132
+L1504:
+	lda	<L1490+2
+	sta	<L1490+2+4
+	lda	<L1490+1
+	sta	<L1490+1+4
+	pld
+	tsc
+	clc
+	adc	#L1490+4
+	tcs
+	rtl
+	.endblock	132
+L1490	equ	69
+L1491	equ	9
+	ends
+	efunc
+	.endfunc	132,9,69
+	.line	132
+	.line	135
+	.line	136
+	GFX
+	xdef	~~readBMP
+	func
+	.function	136
+~~readBMP:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L1505
+	tcs
+	phd
+	tcd
+path_0	set	4
+	.block	136
+dir_1	set	0
+fs_1	set	4
+f_1	set	8
+fileInfo_1	set	12
+fr_1	set	16
+drive_1	set	18
+read_1	set	22
+data_1	set	24
+num_colors_1	set	28
+x_1	set	30
+y_1	set	34
+i_1	set	38
+c_1	set	42
+dx_1	set	43
+dy_1	set	47
+bitmap_offset_1	set	51
+fileType_1	set	55
+pPalette_1	set	57
+	.sym	dir,0,138,1,32,87
+	.sym	fs,4,138,1,32,84
+	.sym	f,8,138,1,32,86
+	.sym	fileInfo,12,138,1,32,88
+	.sym	fr,16,5,1,16
+	.sym	drive,18,142,1,32
+	.sym	read,22,16,1,16
+	.sym	data,24,142,1,32
+	.sym	num_colors,28,16,1,16
+	.sym	x,30,18,1,32
+	.sym	y,34,18,1,32
+	.sym	i,38,18,1,32
+	.sym	c,42,14,1,8
+	.sym	dx,43,18,1,32
+	.sym	dy,47,18,1,32
+	.sym	bitmap_offset,51,18,1,32
+	.sym	fileType,55,15,1,16
+	.sym	pPalette,57,142,1,32
+	.sym	path,4,142,6,32
+	stz	<L1506+fs_1
+	stz	<L1506+fs_1+2
+	stz	<L1506+f_1
+	stz	<L1506+f_1+2
+	stz	<L1506+fr_1
+	stz	<L1506+drive_1
+	stz	<L1506+drive_1+2
+	stz	<L1506+data_1
+	stz	<L1506+data_1+2
+	stz	<L1506+num_colors_1
+	stz	<L1506+dx_1
+	stz	<L1506+dx_1+2
+	stz	<L1506+dy_1
+	stz	<L1506+dy_1+2
+	stz	<L1506+pPalette_1
+	stz	<L1506+pPalette_1+2
+	.line	162
+	pea	#<$3a
+	pei	<L1505+path_0+2
+	pei	<L1505+path_0
+	jsl	~~k_string_copy_to_delimiter
+	sta	<L1506+drive_1
+	stx	<L1506+drive_1+2
+	.line	164
+	pea	#^$34
+	pea	#<$34
+	jsl	~~k_mem_allocate_heap
+	sta	<L1506+dir_1
+	stx	<L1506+dir_1+2
+	.line	165
+	pea	#^$233
+	pea	#<$233
+	jsl	~~k_mem_allocate_heap
+	sta	<L1506+fs_1
+	stx	<L1506+fs_1+2
+	.line	166
+	pea	#^$226
+	pea	#<$226
+	jsl	~~k_mem_allocate_heap
+	sta	<L1506+f_1
+	stx	<L1506+f_1+2
+	.line	170
+	lda	#$2000
+	sta	<L1506+pPalette_1
+	lda	#$af
+	sta	<L1506+pPalette_1+2
+	.line	172
+	pea	#<$1
+	pei	<L1506+drive_1+2
+	pei	<L1506+drive_1
+	pea	#^$0
+	pea	#<$0
+	jsl	~~f_mount
+	sta	<L1506+fr_1
+	.line	173
+	pea	#<$1
+	pei	<L1506+drive_1+2
+	pei	<L1506+drive_1
+	pei	<L1506+fs_1+2
+	pei	<L1506+fs_1
+	jsl	~~f_mount
+	sta	<L1506+fr_1
+	.line	174
+	lda	<L1506+fr_1
+	beq	L1508
+	brl	L10614
+L1508:
+	.line	175
+	.line	176
+	pea	#<$1
+	pei	<L1505+path_0+2
+	pei	<L1505+path_0
+	pei	<L1506+f_1+2
+	pei	<L1506+f_1
+	jsl	~~f_open
+	sta	<L1506+fr_1
+	.line	177
+	lda	<L1506+fr_1
+	beq	L1509
+	brl	L10615
+L1509:
+	.line	178
+	.line	179
+	pea	#0
+	clc
+	tdc
+	adc	#<L1506+read_1
+	pha
+	pea	#<$2
+	pea	#0
+	clc
+	tdc
+	adc	#<L1506+fileType_1
+	pha
+	pei	<L1506+f_1+2
+	pei	<L1506+f_1
+	jsl	~~f_read
+	sta	<L1506+fr_1
+	.line	180
+	lda	<L1506+fr_1
+	beq	L1510
+	brl	L10616
+L1510:
+	lda	<L1506+fileType_1
+	cmp	#<$4d42
+	beq	L1511
+	brl	L10616
+L1511:
+	.line	181
+	.line	185
+	pea	#0
+	clc
+	tdc
+	adc	#<L1506+read_1
+	pha
+	pea	#<$c
+	lda	#<~~fileHeader
+	sta	<R0
+	xref	_BEG_DATA
+	lda	#_BEG_DATA>>16
+	sta	<R0+2
+	pei	<R0+2
+	pei	<R0
+	pei	<L1506+f_1+2
+	pei	<L1506+f_1
+	jsl	~~f_read
+	sta	<L1506+fr_1
+	.line	189
+	pea	#0
+	clc
+	tdc
+	adc	#<L1506+read_1
+	pha
+	pea	#<$28
+	lda	#<~~infoHeader
+	sta	<R0
+	xref	_BEG_DATA
+	lda	#_BEG_DATA>>16
+	sta	<R0+2
+	pei	<R0+2
+	pei	<R0
+	pei	<L1506+f_1+2
+	pei	<L1506+f_1
+	jsl	~~f_read
+	sta	<L1506+fr_1
+	.line	193
+	lda	|~~infoHeader+4+2
+	bmi	L1512
+	bne	L1513
+	lda	|~~infoHeader+4
+	cmp	#640
+	bcc	L1512
+L1513:
+	brl	L10617
+L1512:
+	.line	194
+	.line	195
+	pea	#^$2
+	pea	#<$2
+	lda	|~~infoHeader+4+2
+	pha
+	lda	|~~infoHeader+4
+	pha
+	xref	~~~ldiv
+	jsl	~~~ldiv
+	sta	<R0
+	stx	<R0+2
+	sec
+	lda	#$140
+	sbc	<R0
+	sta	<R1
+	lda	#$0
+	sbc	<R0+2
+	sta	<R1+2
+	clc
+	lda	#$ffe7
+	adc	<R1
+	sta	<L1506+dx_1
+	lda	#$ffff
+	adc	<R1+2
+	sta	<L1506+dx_1+2
+	.line	196
+L10617:
+	.line	197
+	lda	|~~infoHeader+8+2
+	bmi	L1514
+	bne	L1515
+	lda	|~~infoHeader+8
+	cmp	#640
+	bcc	L1514
+L1515:
+	brl	L10618
+L1514:
+	.line	198
+	.line	199
+	pea	#^$2
+	pea	#<$2
+	lda	|~~infoHeader+8+2
+	pha
+	lda	|~~infoHeader+8
+	pha
+	xref	~~~ldiv
+	jsl	~~~ldiv
+	sta	<R0
+	stx	<R0+2
+	sec
+	lda	#$f0
+	sbc	<R0
+	sta	<L1506+dy_1
+	lda	#$0
+	sbc	<R0+2
+	sta	<L1506+dy_1+2
+	.line	200
+L10618:
+	.line	202
+	lda	|~~infoHeader+32
+	ora	|~~infoHeader+32+2
+	beq	L1516
+	brl	L10619
+L1516:
+	.line	203
+	lda	#$100
+	sta	<L1506+num_colors_1
+L10619:
+	.line	206
+	stz	<L1506+i_1
+	stz	<L1506+i_1+2
+	brl	L10623
+L10622:
+	.line	207
+	.line	209
+	pea	#0
+	clc
+	tdc
+	adc	#<L1506+read_1
+	pha
+	pea	#<$1
+	pea	#0
+	clc
+	tdc
+	adc	#<L1506+c_1
+	pha
+	pei	<L1506+f_1+2
+	pei	<L1506+f_1
+	jsl	~~f_read
+	.line	211
+	lda	<L1506+i_1
+	sta	<R0
+	lda	<L1506+i_1+2
+	sta	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	sep	#$20
+	longa	off
+	lda	<L1506+c_1
+	ldy	<R0
+	sta	[<L1506+pPalette_1],Y
+	rep	#$20
+	longa	on
+	.line	212
+	pea	#0
+	clc
+	tdc
+	adc	#<L1506+read_1
+	pha
+	pea	#<$1
+	pea	#0
+	clc
+	tdc
+	adc	#<L1506+c_1
+	pha
+	pei	<L1506+f_1+2
+	pei	<L1506+f_1
+	jsl	~~f_read
+	.line	214
+	lda	<L1506+i_1
+	sta	<R0
+	lda	<L1506+i_1+2
+	sta	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	clc
+	lda	#$1
+	adc	<R0
+	sta	<R1
+	lda	#$0
+	adc	<R0+2
+	sta	<R1+2
+	sep	#$20
+	longa	off
+	lda	<L1506+c_1
+	ldy	<R1
+	sta	[<L1506+pPalette_1],Y
+	rep	#$20
+	longa	on
+	.line	215
+	pea	#0
+	clc
+	tdc
+	adc	#<L1506+read_1
+	pha
+	pea	#<$1
+	pea	#0
+	clc
+	tdc
+	adc	#<L1506+c_1
+	pha
+	pei	<L1506+f_1+2
+	pei	<L1506+f_1
+	jsl	~~f_read
+	.line	217
+	lda	<L1506+i_1
+	sta	<R0
+	lda	<L1506+i_1+2
+	sta	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	clc
+	lda	#$2
+	adc	<R0
+	sta	<R1
+	lda	#$0
+	adc	<R0+2
+	sta	<R1+2
+	sep	#$20
+	longa	off
+	lda	<L1506+c_1
+	ldy	<R1
+	sta	[<L1506+pPalette_1],Y
+	rep	#$20
+	longa	on
+	.line	218
+	pea	#0
+	clc
+	tdc
+	adc	#<L1506+read_1
+	pha
+	pea	#<$1
+	pea	#0
+	clc
+	tdc
+	adc	#<L1506+c_1
+	pha
+	pei	<L1506+f_1+2
+	pei	<L1506+f_1
+	jsl	~~f_read
+	.line	219
+	lda	<L1506+i_1
+	sta	<R0
+	lda	<L1506+i_1+2
+	sta	<R0+2
+	asl	<R0
+	rol	<R0+2
+	asl	<R0
+	rol	<R0+2
+	clc
+	lda	#$3
+	adc	<R0
+	sta	<R1
+	lda	#$0
+	adc	<R0+2
+	sta	<R1+2
+	sep	#$20
+	longa	off
+	lda	#$0
+	ldy	<R1
+	sta	[<L1506+pPalette_1],Y
+	rep	#$20
+	longa	on
+	.line	222
+L10620:
+	inc	<L1506+i_1
+	bne	L1517
+	inc	<L1506+i_1+2
+L1517:
+L10623:
+	lda	<L1506+num_colors_1
+	sta	<R0
+	stz	<R0+2
+	lda	<L1506+i_1
+	cmp	<R0
+	lda	<L1506+i_1+2
+	sbc	<R0+2
+	bcs	L1518
+	brl	L10622
+L1518:
+L10621:
+	.line	226
+	.line	228
 	lda	|~~fileHeader+8+2
 	pha
 	lda	|~~fileHeader+8
 	pha
-	pei	<L1424+f_1+2
-	pei	<L1424+f_1
+	pei	<L1506+f_1+2
+	pei	<L1506+f_1
 	jsl	~~f_lseek
-	.line	130
+	.line	232
 	pea	#^$4
 	pea	#<$4
 	lda	|~~infoHeader+4+2
@@ -33793,11 +34615,11 @@ L10568:
 	sta	<R0
 	lda	<R0
 	cmp	|~~infoHeader+4
-	bne	L1437
-	brl	L10571
-L1437:
-	.line	131
-	.line	132
+	bne	L1519
+	brl	L10624
+L1519:
+	.line	233
+	.line	234
 	pea	#^$4
 	pea	#<$4
 	lda	|~~infoHeader+4+2
@@ -33817,40 +34639,40 @@ L1437:
 	adc	<R0
 	sta	<R1
 	lda	<R1
-	sta	<L1424+bitmap_offset_1
-	stz	<L1424+bitmap_offset_1+2
-	.line	133
-	brl	L10572
-L10571:
-	.line	135
-	.line	136
+	sta	<L1506+bitmap_offset_1
+	stz	<L1506+bitmap_offset_1+2
+	.line	235
+	brl	L10625
+L10624:
+	.line	237
+	.line	238
 	lda	|~~infoHeader+4
-	sta	<L1424+bitmap_offset_1
+	sta	<L1506+bitmap_offset_1
 	lda	|~~infoHeader+4+2
-	sta	<L1424+bitmap_offset_1+2
-	.line	137
-L10572:
-	.line	141
+	sta	<L1506+bitmap_offset_1+2
+	.line	239
+L10625:
+	.line	243
 	lda	|~~infoHeader+8
-	sta	<L1424+y_1
+	sta	<L1506+y_1
 	lda	|~~infoHeader+8+2
-	sta	<L1424+y_1+2
-	brl	L10576
-L10575:
-	.line	142
-	.line	143
+	sta	<L1506+y_1+2
+	brl	L10629
+L10628:
+	.line	244
+	.line	245
 	pea	#0
 	clc
 	tdc
-	adc	#<L1424+read_1
+	adc	#<L1506+read_1
 	pha
-	pei	<L1424+bitmap_offset_1
+	pei	<L1506+bitmap_offset_1
 	clc
-	lda	<L1424+y_1
-	adc	<L1424+dy_1
+	lda	<L1506+y_1
+	adc	<L1506+dy_1
 	sta	<R0
-	lda	<L1424+y_1+2
-	adc	<L1424+dy_1+2
+	lda	<L1506+y_1+2
+	adc	<L1506+dy_1+2
 	sta	<R0+2
 	pea	#^$280
 	pea	#<$280
@@ -33862,10 +34684,10 @@ L10575:
 	stx	<R0+2
 	clc
 	lda	<R0
-	adc	<L1424+dx_1
+	adc	<L1506+dx_1
 	sta	<R1
 	lda	<R0+2
-	adc	<L1424+dx_1+2
+	adc	<L1506+dx_1+2
 	sta	<R1+2
 	clc
 	lda	#$0
@@ -33876,707 +34698,77 @@ L10575:
 	sta	<R0+2
 	pei	<R0+2
 	pei	<R0
-	pei	<L1424+f_1+2
-	pei	<L1424+f_1
+	pei	<L1506+f_1+2
+	pei	<L1506+f_1
 	jsl	~~f_read
-	.line	145
-	lda	<L1424+read_1
-	bne	L1438
-	brl	L10574
-L1438:
-	.line	147
-L10573:
-	lda	<L1424+y_1
-	bne	L1439
-	dec	<L1424+y_1+2
-L1439:
-	dec	<L1424+y_1
-L10576:
-	lda	<L1424+y_1
-	cmp	#<$0
-	lda	<L1424+y_1+2
-	sbc	#^$0
-	bcc	L1440
-	brl	L10575
-L1440:
-L10574:
-	.line	149
-	.line	152
-	pei	<L1424+f_1+2
-	pei	<L1424+f_1
-	jsl	~~f_close
-	.line	153
-L10563:
-	.line	154
-L10562:
-	.line	155
-L10561:
-	.line	158
-	pei	<L1424+f_1+2
-	pei	<L1424+f_1
-	jsl	~~k_mem_deallocate_heap
-	.line	159
-	pei	<L1424+fs_1+2
-	pei	<L1424+fs_1
-	jsl	~~k_mem_deallocate_heap
-	.line	160
-	pei	<L1424+dir_1+2
-	pei	<L1424+dir_1
-	jsl	~~k_mem_deallocate_heap
-	.line	161
-L1441:
-	lda	<L1423+2
-	sta	<L1423+2+4
-	lda	<L1423+1
-	sta	<L1423+1+4
-	pld
-	tsc
-	clc
-	adc	#L1423+4
-	tcs
-	rtl
-	.endblock	161
-L1423	equ	69
-L1424	equ	9
-	ends
-	efunc
-	.endfunc	161,9,69
-	.line	161
-	.line	163
-	.line	164
-	GFX
-	xdef	~~k_read_bitmap
-	func
-	.function	164
-~~k_read_bitmap:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L1442
-	tcs
-	phd
-	tcd
-path_0	set	4
-buffer_0	set	8
-	.block	164
-dir_1	set	0
-fs_1	set	4
-f_1	set	8
-fileInfo_1	set	12
-fr_1	set	16
-drive_1	set	18
-read_1	set	22
-data_1	set	24
-num_colors_1	set	28
-x_1	set	30
-y_1	set	34
-i_1	set	38
-c_1	set	42
-dx_1	set	43
-dy_1	set	47
-bitmap_offset_1	set	51
-fileType_1	set	55
-pPalette_1	set	57
-	.sym	dir,0,138,1,32,87
-	.sym	fs,4,138,1,32,84
-	.sym	f,8,138,1,32,86
-	.sym	fileInfo,12,138,1,32,88
-	.sym	fr,16,5,1,16
-	.sym	drive,18,142,1,32
-	.sym	read,22,16,1,16
-	.sym	data,24,142,1,32
-	.sym	num_colors,28,16,1,16
-	.sym	x,30,18,1,32
-	.sym	y,34,18,1,32
-	.sym	i,38,18,1,32
-	.sym	c,42,14,1,8
-	.sym	dx,43,18,1,32
-	.sym	dy,47,18,1,32
-	.sym	bitmap_offset,51,18,1,32
-	.sym	fileType,55,15,1,16
-	.sym	pPalette,57,142,1,32
-	.sym	path,4,142,6,32
-	.sym	buffer,8,129,6,32
-	stz	<L1443+fs_1
-	stz	<L1443+fs_1+2
-	stz	<L1443+f_1
-	stz	<L1443+f_1+2
-	stz	<L1443+fr_1
-	stz	<L1443+drive_1
-	stz	<L1443+drive_1+2
-	stz	<L1443+data_1
-	stz	<L1443+data_1+2
-	stz	<L1443+num_colors_1
-	stz	<L1443+dx_1
-	stz	<L1443+dx_1+2
-	stz	<L1443+dy_1
-	stz	<L1443+dy_1+2
-	stz	<L1443+pPalette_1
-	stz	<L1443+pPalette_1+2
-	.line	187
-	pea	#<$3a
-	pei	<L1442+path_0+2
-	pei	<L1442+path_0
-	jsl	~~k_string_copy_to_delimiter
-	sta	<L1443+drive_1
-	stx	<L1443+drive_1+2
-	.line	189
-	pea	#^$34
-	pea	#<$34
-	jsl	~~k_mem_allocate_heap
-	sta	<L1443+dir_1
-	stx	<L1443+dir_1+2
-	.line	190
-	pea	#^$233
-	pea	#<$233
-	jsl	~~k_mem_allocate_heap
-	sta	<L1443+fs_1
-	stx	<L1443+fs_1+2
-	.line	191
-	pea	#^$226
-	pea	#<$226
-	jsl	~~k_mem_allocate_heap
-	sta	<L1443+f_1
-	stx	<L1443+f_1+2
-	.line	195
-	lda	#$2000
-	sta	<L1443+pPalette_1
-	lda	#$af
-	sta	<L1443+pPalette_1+2
-	.line	197
-	pea	#<$1
-	pei	<L1443+drive_1+2
-	pei	<L1443+drive_1
-	pea	#^$0
-	pea	#<$0
-	jsl	~~f_mount
-	sta	<L1443+fr_1
-	.line	198
-	pea	#<$1
-	pei	<L1443+drive_1+2
-	pei	<L1443+drive_1
-	pei	<L1443+fs_1+2
-	pei	<L1443+fs_1
-	jsl	~~f_mount
-	sta	<L1443+fr_1
-	.line	199
-	lda	<L1443+fr_1
-	beq	L1445
-	brl	L10577
-L1445:
-	.line	200
-	.line	201
-	pea	#<$1
-	pei	<L1442+path_0+2
-	pei	<L1442+path_0
-	pei	<L1443+f_1+2
-	pei	<L1443+f_1
-	jsl	~~f_open
-	sta	<L1443+fr_1
-	.line	202
-	lda	<L1443+fr_1
-	beq	L1446
-	brl	L10578
-L1446:
-	.line	203
-	.line	204
-	pea	#0
-	clc
-	tdc
-	adc	#<L1443+read_1
-	pha
-	pea	#<$2
-	pea	#0
-	clc
-	tdc
-	adc	#<L1443+fileType_1
-	pha
-	pei	<L1443+f_1+2
-	pei	<L1443+f_1
-	jsl	~~f_read
-	sta	<L1443+fr_1
-	.line	205
-	lda	<L1443+fr_1
-	beq	L1447
-	brl	L10579
-L1447:
-	lda	<L1443+fileType_1
-	cmp	#<$4d42
-	beq	L1448
-	brl	L10579
-L1448:
-	.line	206
-	.line	210
-	pea	#0
-	clc
-	tdc
-	adc	#<L1443+read_1
-	pha
-	pea	#<$c
-	lda	#<~~fileHeader
-	sta	<R0
-	xref	_BEG_DATA
-	lda	#_BEG_DATA>>16
-	sta	<R0+2
-	pei	<R0+2
-	pei	<R0
-	pei	<L1443+f_1+2
-	pei	<L1443+f_1
-	jsl	~~f_read
-	sta	<L1443+fr_1
-	.line	214
-	pea	#0
-	clc
-	tdc
-	adc	#<L1443+read_1
-	pha
-	pea	#<$28
-	lda	#<~~infoHeader
-	sta	<R0
-	xref	_BEG_DATA
-	lda	#_BEG_DATA>>16
-	sta	<R0+2
-	pei	<R0+2
-	pei	<R0
-	pei	<L1443+f_1+2
-	pei	<L1443+f_1
-	jsl	~~f_read
-	sta	<L1443+fr_1
-	.line	218
-	lda	|~~infoHeader+4+2
-	bmi	L1449
-	bne	L1450
-	lda	|~~infoHeader+4
-	cmp	#640
-	bcc	L1449
-L1450:
-	brl	L10580
-L1449:
-	.line	219
-	.line	220
-	pea	#^$2
-	pea	#<$2
-	lda	|~~infoHeader+4+2
-	pha
-	lda	|~~infoHeader+4
-	pha
-	xref	~~~ldiv
-	jsl	~~~ldiv
-	sta	<R0
-	stx	<R0+2
-	sec
-	lda	#$140
-	sbc	<R0
-	sta	<R1
-	lda	#$0
-	sbc	<R0+2
-	sta	<R1+2
-	clc
-	lda	#$ffe7
-	adc	<R1
-	sta	<L1443+dx_1
-	lda	#$ffff
-	adc	<R1+2
-	sta	<L1443+dx_1+2
-	.line	221
-L10580:
-	.line	222
-	lda	|~~infoHeader+8+2
-	bmi	L1451
-	bne	L1452
-	lda	|~~infoHeader+8
-	cmp	#640
-	bcc	L1451
-L1452:
-	brl	L10581
-L1451:
-	.line	223
-	.line	224
-	pea	#^$2
-	pea	#<$2
-	lda	|~~infoHeader+8+2
-	pha
-	lda	|~~infoHeader+8
-	pha
-	xref	~~~ldiv
-	jsl	~~~ldiv
-	sta	<R0
-	stx	<R0+2
-	sec
-	lda	#$f0
-	sbc	<R0
-	sta	<L1443+dy_1
-	lda	#$0
-	sbc	<R0+2
-	sta	<L1443+dy_1+2
-	.line	225
-L10581:
-	.line	227
-	lda	|~~infoHeader+32
-	ora	|~~infoHeader+32+2
-	beq	L1453
-	brl	L10582
-L1453:
-	.line	228
-	lda	#$100
-	sta	<L1443+num_colors_1
-L10582:
-	.line	231
-	stz	<L1443+i_1
-	stz	<L1443+i_1+2
-	brl	L10586
-L10585:
-	.line	232
-	.line	234
-	pea	#0
-	clc
-	tdc
-	adc	#<L1443+read_1
-	pha
-	pea	#<$1
-	pea	#0
-	clc
-	tdc
-	adc	#<L1443+c_1
-	pha
-	pei	<L1443+f_1+2
-	pei	<L1443+f_1
-	jsl	~~f_read
-	.line	236
-	lda	<L1443+i_1
-	sta	<R0
-	lda	<L1443+i_1+2
-	sta	<R0+2
-	asl	<R0
-	rol	<R0+2
-	asl	<R0
-	rol	<R0+2
-	sep	#$20
-	longa	off
-	lda	<L1443+c_1
-	ldy	<R0
-	sta	[<L1443+pPalette_1],Y
-	rep	#$20
-	longa	on
-	.line	237
-	pea	#0
-	clc
-	tdc
-	adc	#<L1443+read_1
-	pha
-	pea	#<$1
-	pea	#0
-	clc
-	tdc
-	adc	#<L1443+c_1
-	pha
-	pei	<L1443+f_1+2
-	pei	<L1443+f_1
-	jsl	~~f_read
-	.line	239
-	lda	<L1443+i_1
-	sta	<R0
-	lda	<L1443+i_1+2
-	sta	<R0+2
-	asl	<R0
-	rol	<R0+2
-	asl	<R0
-	rol	<R0+2
-	clc
-	lda	#$1
-	adc	<R0
-	sta	<R1
-	lda	#$0
-	adc	<R0+2
-	sta	<R1+2
-	sep	#$20
-	longa	off
-	lda	<L1443+c_1
-	ldy	<R1
-	sta	[<L1443+pPalette_1],Y
-	rep	#$20
-	longa	on
-	.line	240
-	pea	#0
-	clc
-	tdc
-	adc	#<L1443+read_1
-	pha
-	pea	#<$1
-	pea	#0
-	clc
-	tdc
-	adc	#<L1443+c_1
-	pha
-	pei	<L1443+f_1+2
-	pei	<L1443+f_1
-	jsl	~~f_read
-	.line	242
-	lda	<L1443+i_1
-	sta	<R0
-	lda	<L1443+i_1+2
-	sta	<R0+2
-	asl	<R0
-	rol	<R0+2
-	asl	<R0
-	rol	<R0+2
-	clc
-	lda	#$2
-	adc	<R0
-	sta	<R1
-	lda	#$0
-	adc	<R0+2
-	sta	<R1+2
-	sep	#$20
-	longa	off
-	lda	<L1443+c_1
-	ldy	<R1
-	sta	[<L1443+pPalette_1],Y
-	rep	#$20
-	longa	on
-	.line	243
-	pea	#0
-	clc
-	tdc
-	adc	#<L1443+read_1
-	pha
-	pea	#<$1
-	pea	#0
-	clc
-	tdc
-	adc	#<L1443+c_1
-	pha
-	pei	<L1443+f_1+2
-	pei	<L1443+f_1
-	jsl	~~f_read
-	.line	244
-	lda	<L1443+i_1
-	sta	<R0
-	lda	<L1443+i_1+2
-	sta	<R0+2
-	asl	<R0
-	rol	<R0+2
-	asl	<R0
-	rol	<R0+2
-	clc
-	lda	#$3
-	adc	<R0
-	sta	<R1
-	lda	#$0
-	adc	<R0+2
-	sta	<R1+2
-	sep	#$20
-	longa	off
-	lda	#$0
-	ldy	<R1
-	sta	[<L1443+pPalette_1],Y
-	rep	#$20
-	longa	on
 	.line	247
-L10583:
-	inc	<L1443+i_1
-	bne	L1454
-	inc	<L1443+i_1+2
-L1454:
-L10586:
-	lda	<L1443+num_colors_1
-	sta	<R0
-	stz	<R0+2
-	lda	<L1443+i_1
-	cmp	<R0
-	lda	<L1443+i_1+2
-	sbc	<R0+2
-	bcs	L1455
-	brl	L10585
-L1455:
-L10584:
-	.line	251
-	.line	253
-	lda	|~~fileHeader+8+2
-	pha
-	lda	|~~fileHeader+8
-	pha
-	pei	<L1443+f_1+2
-	pei	<L1443+f_1
-	jsl	~~f_lseek
-	.line	257
-	pea	#^$4
-	pea	#<$4
-	lda	|~~infoHeader+4+2
-	pha
-	lda	|~~infoHeader+4
-	pha
-	xref	~~~ldiv
-	jsl	~~~ldiv
-	sta	<R1
-	stx	<R1+2
-	lda	<R1
-	asl	A
-	asl	A
-	sta	<R0
-	lda	<R0
-	cmp	|~~infoHeader+4
-	bne	L1456
-	brl	L10587
-L1456:
-	.line	258
-	.line	259
-	pea	#^$4
-	pea	#<$4
-	lda	|~~infoHeader+4+2
-	pha
-	lda	|~~infoHeader+4
-	pha
-	xref	~~~ldiv
-	jsl	~~~ldiv
-	sta	<R1
-	stx	<R1+2
-	lda	<R1
-	asl	A
-	asl	A
-	sta	<R0
-	clc
-	lda	#$4
-	adc	<R0
-	sta	<R1
-	lda	<R1
-	sta	<L1443+bitmap_offset_1
-	stz	<L1443+bitmap_offset_1+2
-	.line	260
-	brl	L10588
-L10587:
-	.line	262
-	.line	263
-	lda	|~~infoHeader+4
-	sta	<L1443+bitmap_offset_1
-	lda	|~~infoHeader+4+2
-	sta	<L1443+bitmap_offset_1+2
-	.line	264
-L10588:
-	.line	268
-	lda	|~~infoHeader+8
-	sta	<L1443+y_1
-	lda	|~~infoHeader+8+2
-	sta	<L1443+y_1+2
-	brl	L10592
-L10591:
-	.line	269
-	.line	270
-	pea	#0
-	clc
-	tdc
-	adc	#<L1443+read_1
-	pha
-	pei	<L1443+bitmap_offset_1
-	clc
-	lda	<L1443+y_1
-	adc	<L1443+dy_1
-	sta	<R0
-	lda	<L1443+y_1+2
-	adc	<L1443+dy_1+2
-	sta	<R0+2
-	pea	#^$280
-	pea	#<$280
-	pei	<R0+2
-	pei	<R0
-	xref	~~~lmul
-	jsl	~~~lmul
-	sta	<R0
-	stx	<R0+2
-	clc
-	lda	<R0
-	adc	<L1443+dx_1
-	sta	<R1
-	lda	<R0+2
-	adc	<L1443+dx_1+2
-	sta	<R1+2
-	clc
-	lda	<L1442+buffer_0
-	adc	<R1
-	sta	<R0
-	lda	<L1442+buffer_0+2
-	adc	<R1+2
-	sta	<R0+2
-	pei	<R0+2
-	pei	<R0
-	pei	<L1443+f_1+2
-	pei	<L1443+f_1
-	jsl	~~f_read
-	.line	272
-	lda	<L1443+read_1
-	bne	L1457
-	brl	L10590
-L1457:
-	.line	274
-L10589:
-	lda	<L1443+y_1
-	bne	L1458
-	dec	<L1443+y_1+2
-L1458:
-	dec	<L1443+y_1
-L10592:
-	lda	<L1443+y_1
+	lda	<L1506+read_1
+	bne	L1520
+	brl	L10627
+L1520:
+	.line	249
+L10626:
+	lda	<L1506+y_1
+	bne	L1521
+	dec	<L1506+y_1+2
+L1521:
+	dec	<L1506+y_1
+L10629:
+	lda	<L1506+y_1
 	cmp	#<$0
-	lda	<L1443+y_1+2
+	lda	<L1506+y_1+2
 	sbc	#^$0
-	bcc	L1459
-	brl	L10591
-L1459:
-L10590:
-	.line	276
-	.line	279
-	pei	<L1443+f_1+2
-	pei	<L1443+f_1
+	bcc	L1522
+	brl	L10628
+L1522:
+L10627:
+	.line	251
+	.line	254
+	pei	<L1506+f_1+2
+	pei	<L1506+f_1
 	jsl	~~f_close
-	.line	280
-L10579:
-	.line	281
-L10578:
-	.line	282
-L10577:
-	.line	285
-	pei	<L1443+f_1+2
-	pei	<L1443+f_1
+	.line	255
+L10616:
+	.line	256
+L10615:
+	.line	257
+L10614:
+	.line	260
+	pei	<L1506+f_1+2
+	pei	<L1506+f_1
 	jsl	~~k_mem_deallocate_heap
-	.line	286
-	pei	<L1443+fs_1+2
-	pei	<L1443+fs_1
+	.line	261
+	pei	<L1506+fs_1+2
+	pei	<L1506+fs_1
 	jsl	~~k_mem_deallocate_heap
-	.line	287
-	pei	<L1443+dir_1+2
-	pei	<L1443+dir_1
+	.line	262
+	pei	<L1506+dir_1+2
+	pei	<L1506+dir_1
 	jsl	~~k_mem_deallocate_heap
-	.line	288
-L1460:
-	lda	<L1442+2
-	sta	<L1442+2+8
-	lda	<L1442+1
-	sta	<L1442+1+8
+	.line	263
+L1523:
+	lda	<L1505+2
+	sta	<L1505+2+4
+	lda	<L1505+1
+	sta	<L1505+1+4
 	pld
 	tsc
 	clc
-	adc	#L1442+8
+	adc	#L1505+4
 	tcs
 	rtl
-	.endblock	288
-L1442	equ	69
-L1443	equ	9
+	.endblock	263
+L1505	equ	69
+L1506	equ	9
 	ends
 	efunc
-	.endfunc	288,9,69
-	.line	288
-	.line	289
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.c",6103
-;
-;/*
+	.endfunc	263,9,69
+	.line	263
+	.line	391
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.c",5923
 ;
 ;
-;
-;
-; */
-;
-	.line	6110
+	.line	5924
 	xref	~~k_get_device_driver
 	xref	~~f_mount
 	xref	~~f_lseek
@@ -34632,15 +34824,14 @@ L1443	equ	9
 	xref	~~windowChromeImg
 	xref	~~fontImg
 	xref	~~characterROMMapping
-	.sym	~~k_read_bitmap,~~k_read_bitmap,65,2,0
 	.sym	~~infoHeader,~~infoHeader,10,3,320,132
 	.sym	~~fileHeader,~~fileHeader,10,3,96,131
 	.sym	PixelInfo,0,10,14,32,133
 	.sym	BITMAPINFOHEADER,0,10,14,320,132
 	.sym	BITMAPFILEHEADER,0,10,14,96,131
 	.sym	~~k_show_image,~~k_show_image,65,2,0
+	.sym	~~k_show_mandy,~~k_show_mandy,65,2,0
 	.sym	~~k_init_splash,~~k_init_splash,80,2,0
-	.sym	~~k_vdma_fill_address_old,~~k_vdma_fill_address_old,65,2,0
 	.sym	~~k_draw_filled_rect_slow,~~k_draw_filled_rect_slow,65,2,0
 	.sym	~~k_draw_rect_ex,~~k_draw_rect_ex,65,2,0
 	.sym	~~k_draw_line_with_pattern,~~k_draw_line_with_pattern,65,2,0
@@ -34648,6 +34839,8 @@ L1443	equ	9
 	.sym	~~k_set_text_color,~~k_set_text_color,65,2,0
 	.sym	~~k_set_text_gamma,~~k_set_text_gamma,65,2,0
 	.sym	~~k_set_foreground_palette,~~k_set_foreground_palette,65,2,0
+	.sym	~~readBMPPalette,~~readBMPPalette,65,2,0
+	.sym	~~readBMP,~~readBMP,65,2,0
 	.sym	~~_k_guiCacheSlots,~~_k_guiCacheSlots,110,3,0,60
 	.sym	~~_k_currentPalatte,~~_k_currentPalatte,10,3,400,68
 	.sym	~~BG_FILL_LINE_EVEN,~~BG_FILL_LINE_EVEN,110,3,0,80
@@ -34657,7 +34850,6 @@ L1443	equ	9
 	.sym	~~TEXT_FG_COLORS,~~TEXT_FG_COLORS,110,3,0,64
 	.sym	~~TITLE_LINES_640x480,~~TITLE_LINES_640x480,142,3,32
 	.sym	~~TEXT_CAPTION_BLOCK,~~TEXT_CAPTION_BLOCK,110,3,0,1
-	.sym	~~readBMP,~~readBMP,65,2,0
 	.sym	~~k_get_device_driver,~~k_get_device_driver,1098,18,32,58
 	.sym	FILE,0,138,14,32,130
 	.sym	FILE_POINTER,0,10,14,112,130
@@ -34841,13 +35033,16 @@ L1443	equ	9
 	.sym	~~k_draw_segments,~~k_draw_segments,65,2,0
 	.sym	~~k_draw_pixel_D0,~~k_draw_pixel_D0,65,2,0
 	.sym	~~k_draw_pixel_back,~~k_draw_pixel_back,65,2,0
+	.sym	~~k_draw_pixel_back_ex,~~k_draw_pixel_back_ex,65,2,0
+	.sym	~~k_draw_pixel_front_ex,~~k_draw_pixel_front_ex,65,2,0
 	.sym	~~k_draw_pixel_front,~~k_draw_pixel_front,65,2,0
+	.sym	~~k_draw_clipped_pixel_ex,~~k_draw_clipped_pixel_ex,65,2,0
+	.sym	~~k_draw_clipped_pixel,~~k_draw_clipped_pixel,65,2,0
 	.sym	~~k_draw_pixel_ex,~~k_draw_pixel_ex,65,2,0
 	.sym	~~k_draw_pixel,~~k_draw_pixel,65,2,0
 	.sym	~~k_draw_lines,~~k_draw_lines,65,2,0
 	.sym	~~k_memory_bitblt,~~k_memory_bitblt,65,2,0
 	.sym	~~k_bitblt,~~k_bitblt,65,2,0
-	.sym	~~k_scratch_restore_bitblt,~~k_scratch_restore_bitblt,65,2,0
 	.sym	~~k_scratch_save_bitblt,~~k_scratch_save_bitblt,65,2,0
 	.sym	~~k_shadow_fill_rect_address,~~k_shadow_fill_rect_address,65,2,0
 	.sym	~~k_shadow_fill_rect,~~k_shadow_fill_rect,65,2,0

@@ -5161,7 +5161,7 @@ BOOL AboutPaletteWindowProc(PFXOSMESSAGE pMsg)
 
 		case FX_DRAW_WINDOW:
 			pWin = k_getWindowFromHandle(pMsg->hwnd);
-			/*
+
 			if(pWin)
 			{
 				tiny = (LPCSTR)k_user_getFontClass("TINYTYPE8x8");
@@ -5308,6 +5308,21 @@ BOOL AboutPaletteWindowProc(PFXOSMESSAGE pMsg)
 													 pWin->nBitmapLayer);
 
 
+				row+=10;
+				rect.x = 10;
+				rect.y = row;
+
+				rect.x += k_draw_text_point_with_font_ex("DeviceDriver Base: ",tiny,
+													 pWin->win_x + rect.x ,
+													 pWin->win_y + rect.y,
+													 k_getUIGadgetColor(),
+													 pWin->nBitmapLayer);
+				rect.x += k_draw_text_point_with_font_ex(k_pointer_to_string((LPSTR)0x040000,rmbuffer),tiny,
+													 pWin->win_x + rect.x ,
+													 pWin->win_y + rect.y,
+													 k_getUIGadgetColor(),
+													 pWin->nBitmapLayer);
+
 
 				row+=20;
 				rect.x = 10;
@@ -5379,7 +5394,7 @@ BOOL AboutPaletteWindowProc(PFXOSMESSAGE pMsg)
 													 pWin->nBitmapLayer);
 
 			}
-			*/
+
 			break;
 		case FX_CONTROL_COMMAND:
 			k_debug_string("DlgAboutWindowProc::FX_CONTROL_COMMAND\r\n");

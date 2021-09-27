@@ -3,7 +3,7 @@
 #include "fxos_accessories.h"
 
 //#pragma section CODE=DTACSRY,offset $03:9000
-#pragma section CODE=DTACSRY,offset $06:9000
+#pragma section CODE=DTACSRY,offset $06:91F0
 
 BOOL CalculatorWindowProc(PFXOSMESSAGE pMsg);
 BOOL PaletteWindowProc(PFXOSMESSAGE pMsg);

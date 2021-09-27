@@ -1,10 +1,10 @@
-  Mon Aug  9 2021 16:52                                                Page 1
+  Mon Sep 27 2021  9:39                                                Page 1
 
 
                      ***************************************
                      **      WDC 65C816 Macro Assembler   **
                      **                                   **
-                     **     Version 3.49.1- Feb  6 2006    **
+                     **     Version 1.00- Aug 10 2021    **
                      ***************************************
 
      1                        ;:ts=8
@@ -59,7 +59,7 @@
     38                        	.member	b6,1,14,17,1
     39                        	.member	b5,2,14,17,1
     40                        	.member	b4,3,14,17,1
-  Mon Aug  9 2021 16:52                                                Page 2
+  Mon Sep 27 2021  9:39                                                Page 2
 
 
     41                        	.member	b3,4,14,17,1
@@ -120,7 +120,7 @@
     96                        	.member	PH,8,14,8,8
     97                        	.member	PL,16,14,8,8
     98                        	.member	PP,24,14,8,8
-  Mon Aug  9 2021 16:52                                                Page 3
+  Mon Sep 27 2021  9:39                                                Page 3
 
 
     99                        	.member	DB,32,14,8,8
@@ -181,7 +181,7 @@
    154                        	.member	menuMode,72,5,8,16
    155                        	.member	lastMouseButton,88,5,8,16
    156                        	.member	lastMouseX,104,5,8,16
-  Mon Aug  9 2021 16:52                                                Page 4
+  Mon Sep 27 2021  9:39                                                Page 4
 
 
    157                        	.member	lastMouseY,120,5,8,16
@@ -242,7 +242,7 @@
    212                        	.utag	_24bitPointer,32,24
    213                        	.member	address,0,142,11,32
    214                        	.member	bytes,0,110,11,0,4
-  Mon Aug  9 2021 16:52                                                Page 5
+  Mon Sep 27 2021  9:39                                                Page 5
 
 
    215                        	.eos
@@ -303,7 +303,7 @@
    270                        	.member	isResize,184,14,8,8
    271                        	.member	canDrag,192,14,8,8
    272                        	.member	canDrop,200,14,8,8
-  Mon Aug  9 2021 16:52                                                Page 6
+  Mon Sep 27 2021  9:39                                                Page 6
 
 
    273                        	.member	didDrag,208,14,8,8
@@ -364,7 +364,7 @@
    328                        	.member	clientRect,336,10,8,112,26
    329                        	.member	nonclientGadgets,448,106,8,0,31,16
    330                        	.member	clickable,2624,129,8,32
-  Mon Aug  9 2021 16:52                                                Page 7
+  Mon Sep 27 2021  9:39                                                Page 7
 
 
    331                        	.member	win_title,2656,110,8,0,32
@@ -425,7 +425,7 @@
    386                        	.member	selected,5136,16,8,16
    387                        	.eos
    388                        	.stag	_fx_button_t,96,39
-  Mon Aug  9 2021 16:52                                                Page 8
+  Mon Sep 27 2021  9:39                                                Page 8
 
 
    389                        	.member	pCaption,0,142,8,32
@@ -486,7 +486,7 @@
    444                        	.member	data,80,129,8,32
    445                        	.member	droppedWindow,112,138,8,32,33
    446                        	.member	bytes,144,110,8,0,16
-  Mon Aug  9 2021 16:52                                                Page 9
+  Mon Sep 27 2021  9:39                                                Page 9
 
 
    447                        	.eos
@@ -547,18 +547,18 @@
    494                        	.line	1064
    495                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fmx_vicky.h",11
-  Mon Aug  9 2021 16:52                                                Page 10
+  Mon Sep 27 2021  9:39                                                Page 10
 
 
    496                        	.line	72
    497                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxc256u.h",6
-   498                        	.line	1960
+   498                        	.line	1963
    499                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxos.h",16
    500                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxkernel.h",0
-   501                        	.line	490
+   501                        	.line	475
    502                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxos.h",22
    503                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -580,7 +580,7 @@
                     space\FXOS-Beta\src\fxconsole.h",7
    513                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxc256u.h",0
-   514                        	.line	1960
+   514                        	.line	1963
    515                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxconsole.h",12
    516                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -608,7 +608,7 @@
    531                        	.line	141
    532                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxconsole.h",17
-  Mon Aug  9 2021 16:52                                                Page 11
+  Mon Sep 27 2021  9:39                                                Page 11
 
 
    533                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -669,7 +669,7 @@
                     space\FXOS-Beta\src\fxos_build_parameters.h",0
    568                        	.line	35
    569                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
-  Mon Aug  9 2021 16:52                                                Page 12
+  Mon Sep 27 2021  9:39                                                Page 12
 
 
                     space\FXOS-Beta\src\umm_malloc_cfg.h",8
@@ -719,7 +719,7 @@
                     space\FXOS-Beta\src\fxwindowmanager.h",6
    608                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxeventmanager.h",0
-   609                        	.line	568
+   609                        	.line	572
    610                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxwindowmanager.h",7
    611                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -730,7 +730,7 @@
                     space\FXOS-Beta\src\fxtypes.h",0
    614                        	.line	1064
    615                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
-  Mon Aug  9 2021 16:52                                                Page 13
+  Mon Sep 27 2021  9:39                                                Page 13
 
 
                     space\FXOS-Beta\src\fxfont.h",6
@@ -754,7 +754,7 @@
    632                        	.member	CUR_GADGET,144,5,8,16
    633                        	.member	CUR_COLOR,160,101,8,0,15
    634                        	.eos
-   635                        	.line	359
+   635                        	.line	370
    636                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxwindowmanager.h",8
    637                        	.stag	_fxos_winman_vtable,160,60
@@ -791,7 +791,7 @@
    667                        	.member	button1,0,14,8,8
    668                        	.member	button2,8,14,8,8
    669                        	.member	button3,16,14,8,8
-  Mon Aug  9 2021 16:52                                                Page 14
+  Mon Sep 27 2021  9:39                                                Page 14
 
 
    670                        	.member	button4,24,14,8,8
@@ -833,7 +833,7 @@
    706                        	.member	readable,8,110,8,0,16
    707                        	.member	data,136,129,8,32
    708                        	.eos
-   709                        	.line	568
+   709                        	.line	572
    710                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxconsole.h",18
    711                        	.stag	_fx_spinner_ctx,48,71
@@ -852,7 +852,7 @@
    724                        	.member	type,0,5,8,16
    725                        	.member	depth,16,16,8,16
    726                        	.member	text,32,142,8,32
-  Mon Aug  9 2021 16:52                                                Page 15
+  Mon Sep 27 2021  9:39                                                Page 15
 
 
    727                        	.eos
@@ -913,7 +913,7 @@
    772                        	.member	stat,56,14,8,8
    773                        	.member	sclust,64,18,8,32
    774                        	.member	objsize,96,18,8,32
-  Mon Aug  9 2021 16:52                                                Page 16
+  Mon Sep 27 2021  9:39                                                Page 16
 
 
    775                        	.eos
@@ -974,7 +974,7 @@
    826                        	.member	fxos_mouse_byte_0,0,14,8,8
    827                        	.member	fxos_mouse_byte_1,8,14,8,8
    828                        	.member	fxos_mouse_byte_2,16,14,8,8
-  Mon Aug  9 2021 16:52                                                Page 17
+  Mon Sep 27 2021  9:39                                                Page 17
 
 
    829                        	.member	fxos_mouse_byte_t,24,14,8,8
@@ -1035,7 +1035,7 @@
    884                        	.member	segment_start_addr,32,7,8,32
    885                        	.member	segment_end_addr,64,7,8,32
    886                        	.member	segment_size,96,7,8,32
-  Mon Aug  9 2021 16:52                                                Page 18
+  Mon Sep 27 2021  9:39                                                Page 18
 
 
    887                        	.member	main_entry_addr,128,7,8,32
@@ -1074,7 +1074,7 @@
    920                        	.stag	_k_irq_chain,128,89
    921                        	.member	handlers,0,5217,8,32,4
    922                        	.eos
-   923                        	.line	490
+   923                        	.line	475
    924                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\drivers/DRIVER_FMXMOUSE.c",2
    925                        ;#include "drivers/DRIVER.h"
@@ -1092,11 +1092,11 @@
                     space\FXOS-Beta\src\drivers/DRIVER.h",6
    933                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxc256u.h",0
-   934                        	.line	1960
+   934                        	.line	1963
    935                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
-                    space\FXOS-Beta\src\drivers/DRIVER.h",104
-   936                        	.line	113
-  Mon Aug  9 2021 16:52                                                Page 19
+                    space\FXOS-Beta\src\drivers/DRIVER.h",106
+   936                        	.line	115
+  Mon Sep 27 2021  9:39                                                Page 19
 
 
    937                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -1157,7 +1157,7 @@
    984                        ;// Bits of the fourth mouse data packet
    985                        ;#define MOUSE_UNUSED_A (1 << 7)
    986                        ;#define MOUSE_UNUSED_B (1 << 6)
-  Mon Aug  9 2021 16:52                                                Page 20
+  Mon Sep 27 2021  9:39                                                Page 20
 
 
    987                        ;
@@ -1203,8 +1203,8 @@
   1017 00:0045: 4D 43 4B 59  	db	$4D,$43,$4B,$59,$3A,$0
        00:0049: 3A 00 
   1018                        ;							
-                    			MAKEIRQ(0,7),
-  1019 00:004B: 07 00        	dw	$7
+                    			NOIRQ,//MAKEIRQ(0,7),
+  1019 00:004B: FF FF        	dw	$FFFF
   1020                        ;							
                     			f_driver_irq,
   1021 00:004D: AE 12 04 00  	dl	~~f_driver_irq
@@ -1213,21 +1213,21 @@
   1023 00:0051: 00 00 00 00  	dl	$0
   1024                        ;							
                     			f_driver_load,
-  1025 00:0055: D8 12 04 00  	dl	~~f_driver_load
+  1025 00:0055: E7 12 04 00  	dl	~~f_driver_load
   1026                        ;							
                     			f_driver_read,
-  1027 00:0059: 02 13 04 00  	dl	~~f_driver_read
+  1027 00:0059: 11 13 04 00  	dl	~~f_driver_read
   1028                        ;							
-  Mon Aug  9 2021 16:52                                                Page 21
+  Mon Sep 27 2021  9:39                                                Page 21
 
 
                     			f_driver_write,
-  1029 00:005D: 1F 13 04 00  	dl	~~f_driver_write
+  1029 00:005D: 2E 13 04 00  	dl	~~f_driver_write
   1030                        ;							
                     			f_driver_unload
   1031                        ;							
                     	    };
-  1032 00:0061: 3C 13 04 00  	dl	~~f_driver_unload
+  1032 00:0061: 4B 13 04 00  	dl	~~f_driver_unload
   1033 00:0065:              	ends
   1034                        	data
   1035                        L1:
@@ -1279,7 +1279,7 @@
   1079 04:11F2: 69 0C 00     	adc	#L3+8
   1080 04:11F5: 1B           	tcs
   1081 04:11F6: 98           	tya
-  Mon Aug  9 2021 16:52                                                Page 22
+  Mon Sep 27 2021  9:39                                                Page 22
 
 
   1082 04:11F7: 6B           	rtl
@@ -1340,7 +1340,7 @@
   1137 04:1227: 85 03        	sta	<L7+1+2
   1138 04:1229: 2B           	pld
   1139 04:122A: 3B           	tsc
-  Mon Aug  9 2021 16:52                                                Page 23
+  Mon Sep 27 2021  9:39                                                Page 23
 
 
   1140 04:122B: 18           	clc
@@ -1401,7 +1401,7 @@
   1195 04:125E: A5 01        	lda	<L11+1
   1196 04:1260: 85 03        	sta	<L11+1+2
   1197 04:1262: 2B           	pld
-  Mon Aug  9 2021 16:52                                                Page 24
+  Mon Sep 27 2021  9:39                                                Page 24
 
 
   1198 04:1263: 3B           	tsc
@@ -1462,7 +1462,7 @@
   1252                        	longa	on
   1253                        	.line	84
   1254 04:128E: D4 05        	pei	<L16+cmd_1
-  Mon Aug  9 2021 16:52                                                Page 25
+  Mon Sep 27 2021  9:39                                                Page 25
 
 
   1255 04:1290: F4 00 00     	pea	#^$1
@@ -1523,644 +1523,657 @@
   1310 04:12BA: C2 20        	rep	#$20
   1311                        	longa	on
   1312                        	.line	93
-  Mon Aug  9 2021 16:52                                                Page 26
+  Mon Sep 27 2021  9:39                                                Page 26
 
 
   1313 04:12BC: F4 4D 00     	pea	#<$4d
   1314 04:12BF: 22 xx xx xx  	jsl	~~k_debug_char_com1
   1315                        ;
-  1316                        ;	b = inportb(0xAF1803);
-  1317                        	.line	95
-  1318 04:12C3: E2 20        	sep	#$20
-  1319                        	longa	off
-  1320 04:12C5: AF 03 18 AF  	lda	>11474947
-  1321 04:12C9: 85 01        	sta	<L23+b_1
-  1322 04:12CB: C2 20        	rep	#$20
-  1323                        	longa	on
-  1324                        ;	/*
-  1325                        ;	asm NOP;
-  1326                        ;	asm NOP;
-  1327                        ;	asm NOP;
-  1328                        ;	asm NOP;
-  1329                        ;	asm NOP;
-  1330                        ;	asm NOP;
-  1331                        ;	asm NOP;
-  1332                        ;
-  1333                        ;
-  1334                        ;	while(ps2_can_read())
-  1335                        ;	{
-  1336                        ;		b = inportb(0xAF1803);
-  1337                        ;
-  1338                        ;		index = MOUSE_PTR[0];
-  1339                        ;
-  1340                        ;		 if(index == 0)
-  1341                        ;		 k_debug_char_com1('0');
-  1342                        ;		 if(index == 1)
-  1343                        ;		 k_debug_char_com1('1');
-  1344                        ;		 if(index == 2)
-  1345                        ;		 k_debug_char_com1('2');
-  1346                        ;
-  1347                        ;		 index += 1;
+  1316                        ;//	b = inportb(0xAF1803);
+  1317                        ;	while(ps2_can_read())
+  1318                        	.line	96
+  1319                        L10001:
+  1320 04:12C3: 22 xx xx xx  	jsl	~~ps2_can_read
+  1321 04:12C7: 29 FF 00     	and	#$ff
+  1322 04:12CA: D0 03        	bne	L25
+  1323 04:12CC: 82 0D 00     	brl	L10002
+  1324                        L25:
+  1325                        ;		b = inportb(0xAF1803);
+  1326                        	.line	97
+  1327 04:12CF: E2 20        	sep	#$20
+  1328                        	longa	off
+  1329 04:12D1: AF 03 18 AF  	lda	>11474947
+  1330 04:12D5: 85 01        	sta	<L23+b_1
+  1331 04:12D7: C2 20        	rep	#$20
+  1332                        	longa	on
+  1333 04:12D9: 82 E7 FF     	brl	L10001
+  1334                        L10002:
+  1335                        ;	/*
+  1336                        ;	asm NOP;
+  1337                        ;	asm NOP;
+  1338                        ;	asm NOP;
+  1339                        ;	asm NOP;
+  1340                        ;	asm NOP;
+  1341                        ;	asm NOP;
+  1342                        ;	asm NOP;
+  1343                        ;
+  1344                        ;
+  1345                        ;	while(ps2_can_read())
+  1346                        ;	{
+  1347                        ;		b = inportb(0xAF1803);
   1348                        ;
-  1349                        ;		 if(index == 3)
-  1350                        ;			 MOUSE_PTR[0] = 0;
-  1351                        ;		 else
-  1352                        ;			 MOUSE_PTR[0] = index;
-  1353                        ;	}
-  1354                        ;	//while((STATUS_PORT[0] & 0x01) == 0x01)
-  1355                        ;	//	index = KBD_INPT_BUF[0];
-  1356                        ;	*/
-  1357                        ;	_irq_keyboardTimeout = 0;
-  1358                        	.line	129
-  1359 04:12CD: 9C xx xx     	stz	|~~_irq_keyboardTimeout
-  1360                        ;	/*
-  1361                        ;	 while((STATUS_PORT[0] & 0x01) == 0x01)
-  1362                        ;	 {
-  1363                        ;	 index = MOUSE_PTR[0];
-  1364                        ;
-  1365                        ;
-  1366                        ;
-  1367                        ;	 if(index == 0)
-  1368                        ;	 k_debug_char_com1('0');
-  1369                        ;	 if(index == 1)
-  1370                        ;	 k_debug_char_com1('1');
-  Mon Aug  9 2021 16:52                                                Page 27
+  1349                        ;		index = MOUSE_PTR[0];
+  1350                        ;
+  1351                        ;		 if(index == 0)
+  1352                        ;		 k_debug_char_com1('0');
+  1353                        ;		 if(index == 1)
+  1354                        ;		 k_debug_char_com1('1');
+  1355                        ;		 if(index == 2)
+  1356                        ;		 k_debug_char_com1('2');
+  1357                        ;
+  1358                        ;		 index += 1;
+  1359                        ;
+  1360                        ;		 if(index == 3)
+  1361                        ;			 MOUSE_PTR[0] = 0;
+  1362                        ;		 else
+  1363                        ;			 MOUSE_PTR[0] = index;
+  1364                        ;	}
+  1365                        ;	//while((STATUS_PORT[0] & 0x01) == 0x01)
+  1366                        ;	//	index = KBD_INPT_BUF[0];
+  1367                        ;	*/
+  1368                        ;	_irq_keyboardTimeout = 0;
+  1369                        	.line	131
+  1370 04:12DC: 9C xx xx     	stz	|~~_irq_keyboardTimeout
+  Mon Sep 27 2021  9:39                                                Page 27
 
 
-  1371                        ;	 if(index == 2)
-  1372                        ;	 k_debug_char_com1('2');
-  1373                        ;
-  1374                        ;
-  1375                        ;	 MOUSE_PTR_BYTE0[index] =  KBD_INPT_BUF[0];
+  1371                        ;	/*
+  1372                        ;	 while((STATUS_PORT[0] & 0x01) == 0x01)
+  1373                        ;	 {
+  1374                        ;	 index = MOUSE_PTR[0];
+  1375                        ;
   1376                        ;
-  1377                        ;	 MOUSE_PTR[0] = index + 1;
-  1378                        ;
-  1379                        ;	 if(MOUSE_PTR[0] > 2)
-  1380                        ;	 {
-  1381                        ;	 MOUSE_PTR[0] = 0;
-  1382                        ;
-  1383                        ;	 FXOS_MOUSE_BYTE_T   = MOUSE_PTR_BYTE0[0];
-  1384                        ;	 FXOS_MOUSE_BYTE_X_L = MOUSE_PTR_X_POS_L[0];
-  1385                        ;	 FXOS_MOUSE_BYTE_X_H = MOUSE_PTR_X_POS_H[0];
-  1386                        ;	 FXOS_MOUSE_BYTE_Y_L = MOUSE_PTR_Y_POS_L[0];
-  1387                        ;	 FXOS_MOUSE_BYTE_Y_H = MOUSE_PTR_Y_POS_H[0];
-  1388                        ;
-  1389                        ;	 //k_irq_device_event(IRQE_MOUSE,_pseudo_timer,&
+  1377                        ;
+  1378                        ;	 if(index == 0)
+  1379                        ;	 k_debug_char_com1('0');
+  1380                        ;	 if(index == 1)
+  1381                        ;	 k_debug_char_com1('1');
+  1382                        ;	 if(index == 2)
+  1383                        ;	 k_debug_char_com1('2');
+  1384                        ;
+  1385                        ;
+  1386                        ;	 MOUSE_PTR_BYTE0[index] =  KBD_INPT_BUF[0];
+  1387                        ;
+  1388                        ;	 MOUSE_PTR[0] = index + 1;
+  1389                        ;
+  1390                        ;	 if(MOUSE_PTR[0] > 2)
+  1391                        ;	 {
+  1392                        ;	 MOUSE_PTR[0] = 0;
+  1393                        ;
+  1394                        ;	 FXOS_MOUSE_BYTE_T   = MOUSE_PTR_BYTE0[0];
+  1395                        ;	 FXOS_MOUSE_BYTE_X_L = MOUSE_PTR_X_POS_L[0];
+  1396                        ;	 FXOS_MOUSE_BYTE_X_H = MOUSE_PTR_X_POS_H[0];
+  1397                        ;	 FXOS_MOUSE_BYTE_Y_L = MOUSE_PTR_Y_POS_L[0];
+  1398                        ;	 FXOS_MOUSE_BYTE_Y_H = MOUSE_PTR_Y_POS_H[0];
+  1399                        ;
+  1400                        ;	 //k_irq_device_event(IRQE_MOUSE,_pseudo_timer,&
                     FXOS_MOUSE_BYTE_T);
-  1390                        ;	 }
-  1391                        ;	 }
-  1392                        ;	 */
-  1393                        ;	return;
-  1394                        	.line	163
-  1395                        L25:
-  1396 04:12D0: 2B           	pld
-  1397 04:12D1: 3B           	tsc
-  1398 04:12D2: 18           	clc
-  1399 04:12D3: 69 02 00     	adc	#L22
-  1400 04:12D6: 1B           	tcs
-  1401 04:12D7: 6B           	rtl
-  1402                        ;}
-  1403                        	.line	164
-  1404                        	.endblock	164
-  1405             00000002   L22	equ	2
-  1406             00000001   L23	equ	1
-  1407 04:12D8:              	ends
-  1408                        	efunc
-  1409                        	.endfunc	164,1,2
-  1410                        	.line	164
-  1411                        ;
-  1412                        ;static BOOL f_driver_load(void)
-  1413                        ;{
+  1401                        ;	 }
+  1402                        ;	 }
+  1403                        ;	 */
+  1404                        ;	return;
+  1405                        	.line	165
+  1406                        L26:
+  1407 04:12DF: 2B           	pld
+  1408 04:12E0: 3B           	tsc
+  1409 04:12E1: 18           	clc
+  1410 04:12E2: 69 02 00     	adc	#L22
+  1411 04:12E5: 1B           	tcs
+  1412 04:12E6: 6B           	rtl
+  1413                        ;}
   1414                        	.line	166
-  1415                        	.line	167
-  1416                        	MOUSS01
-  1417                        	func
-  1418                        	.function	167
-  1419                        ~~f_driver_load:
-  1420                        	longa	on
-  1421                        	longi	on
-  1422 04:12D8: 3B           	tsc
-  1423 04:12D9: 38           	sec
-  1424 04:12DA: E9 00 00     	sbc	#L26
-  1425 04:12DD: 1B           	tcs
-  1426 04:12DE: 0B           	phd
-  1427 04:12DF: 5B           	tcd
-  Mon Aug  9 2021 16:52                                                Page 28
+  1415                        	.endblock	166
+  1416             00000002   L22	equ	2
+  1417             00000001   L23	equ	1
+  1418 04:12E7:              	ends
+  1419                        	efunc
+  1420                        	.endfunc	166,1,2
+  1421                        	.line	166
+  1422                        ;
+  1423                        ;static BOOL f_driver_load(void)
+  1424                        ;{
+  1425                        	.line	168
+  1426                        	.line	169
+  1427                        	MOUSS01
+  Mon Sep 27 2021  9:39                                                Page 28
 
 
-  1428                        	.block	167
-  1429                        ;	mouse_set_sample_rate(10);
-  1430                        	.line	168
-  1431 04:12E0: F4 0A 00     	pea	#<$a
-  1432 04:12E3: 22 F8 11 04  	jsl	~~mouse_set_sample_rate
-  1433                        ;	mouse_set_resolution(0x00);
-  1434                        	.line	169
-  1435 04:12E7: F4 00 00     	pea	#<$0
-  1436 04:12EA: 22 31 12 04  	jsl	~~mouse_set_resolution
-  1437                        ;	mouse_set_scaling(FALSE);
-  1438                        	.line	170
-  1439 04:12EE: F4 00 00     	pea	#<$0
-  1440 04:12F1: 22 6A 12 04  	jsl	~~mouse_set_scaling
-  1441                        ;
-  1442                        ;	//ps2_write_device(1, PS2_DEV_ENABLE_SCAN);
-  1443                        ;	//ps2_expect_ack();
-  1444                        ;
-  1445                        ;	return TRUE;
-  1446                        	.line	175
-  1447 04:12F5: A9 01 00     	lda	#$1
-  1448                        L29:
-  1449 04:12F8: A8           	tay
-  1450 04:12F9: 2B           	pld
-  1451 04:12FA: 3B           	tsc
-  1452 04:12FB: 18           	clc
-  1453 04:12FC: 69 00 00     	adc	#L26
-  1454 04:12FF: 1B           	tcs
-  1455 04:1300: 98           	tya
-  1456 04:1301: 6B           	rtl
-  1457                        ;}
-  1458                        	.line	176
-  1459                        	.endblock	176
-  1460             00000000   L26	equ	0
-  1461             00000001   L27	equ	1
-  1462 04:1302:              	ends
-  1463                        	efunc
-  1464                        	.endfunc	176,1,0
-  1465                        	.line	176
-  1466                        ;
-  1467                        ;static UINT f_driver_read(LPVOID buffer)
-  1468                        ;{
+  1428                        	func
+  1429                        	.function	169
+  1430                        ~~f_driver_load:
+  1431                        	longa	on
+  1432                        	longi	on
+  1433 04:12E7: 3B           	tsc
+  1434 04:12E8: 38           	sec
+  1435 04:12E9: E9 00 00     	sbc	#L27
+  1436 04:12EC: 1B           	tcs
+  1437 04:12ED: 0B           	phd
+  1438 04:12EE: 5B           	tcd
+  1439                        	.block	169
+  1440                        ;	mouse_set_sample_rate(10);
+  1441                        	.line	170
+  1442 04:12EF: F4 0A 00     	pea	#<$a
+  1443 04:12F2: 22 F8 11 04  	jsl	~~mouse_set_sample_rate
+  1444                        ;	mouse_set_resolution(0x00);
+  1445                        	.line	171
+  1446 04:12F6: F4 00 00     	pea	#<$0
+  1447 04:12F9: 22 31 12 04  	jsl	~~mouse_set_resolution
+  1448                        ;	mouse_set_scaling(FALSE);
+  1449                        	.line	172
+  1450 04:12FD: F4 00 00     	pea	#<$0
+  1451 04:1300: 22 6A 12 04  	jsl	~~mouse_set_scaling
+  1452                        ;
+  1453                        ;	//ps2_write_device(1, PS2_DEV_ENABLE_SCAN);
+  1454                        ;	//ps2_expect_ack();
+  1455                        ;
+  1456                        ;	return TRUE;
+  1457                        	.line	177
+  1458 04:1304: A9 01 00     	lda	#$1
+  1459                        L30:
+  1460 04:1307: A8           	tay
+  1461 04:1308: 2B           	pld
+  1462 04:1309: 3B           	tsc
+  1463 04:130A: 18           	clc
+  1464 04:130B: 69 00 00     	adc	#L27
+  1465 04:130E: 1B           	tcs
+  1466 04:130F: 98           	tya
+  1467 04:1310: 6B           	rtl
+  1468                        ;}
   1469                        	.line	178
-  1470                        	.line	179
-  1471                        	MOUSS01
-  1472                        	func
-  1473                        	.function	179
-  1474                        ~~f_driver_read:
-  1475                        	longa	on
-  1476                        	longi	on
-  1477 04:1302: 3B           	tsc
-  1478 04:1303: 38           	sec
-  1479 04:1304: E9 00 00     	sbc	#L30
-  1480 04:1307: 1B           	tcs
-  1481 04:1308: 0B           	phd
-  1482 04:1309: 5B           	tcd
-  1483             00000004   buffer_0	set	4
-  1484                        	.block	179
-  1485                        ;	return 0;
-  Mon Aug  9 2021 16:52                                                Page 29
+  1470                        	.endblock	178
+  1471             00000000   L27	equ	0
+  1472             00000001   L28	equ	1
+  1473 04:1311:              	ends
+  1474                        	efunc
+  1475                        	.endfunc	178,1,0
+  1476                        	.line	178
+  1477                        ;
+  1478                        ;static UINT f_driver_read(LPVOID buffer)
+  1479                        ;{
+  1480                        	.line	180
+  1481                        	.line	181
+  1482                        	MOUSS01
+  1483                        	func
+  1484                        	.function	181
+  1485                        ~~f_driver_read:
+  Mon Sep 27 2021  9:39                                                Page 29
 
 
-  1486                        	.sym	buffer,4,129,6,32
-  1487                        	.line	180
-  1488 04:130A: A9 00 00     	lda	#$0
-  1489                        L33:
-  1490 04:130D: A8           	tay
-  1491 04:130E: A5 02        	lda	<L30+2
-  1492 04:1310: 85 06        	sta	<L30+2+4
-  1493 04:1312: A5 01        	lda	<L30+1
-  1494 04:1314: 85 05        	sta	<L30+1+4
-  1495 04:1316: 2B           	pld
-  1496 04:1317: 3B           	tsc
-  1497 04:1318: 18           	clc
-  1498 04:1319: 69 04 00     	adc	#L30+4
-  1499 04:131C: 1B           	tcs
-  1500 04:131D: 98           	tya
-  1501 04:131E: 6B           	rtl
-  1502                        ;}
-  1503                        	.line	181
-  1504                        	.endblock	181
-  1505             00000000   L30	equ	0
-  1506             00000001   L31	equ	1
-  1507 04:131F:              	ends
-  1508                        	efunc
-  1509                        	.endfunc	181,1,0
-  1510                        	.line	181
-  1511                        ;
-  1512                        ;static UINT f_driver_write(UINT size, LPVOID buff
-                    er)
-  1513                        ;{
+  1486                        	longa	on
+  1487                        	longi	on
+  1488 04:1311: 3B           	tsc
+  1489 04:1312: 38           	sec
+  1490 04:1313: E9 00 00     	sbc	#L31
+  1491 04:1316: 1B           	tcs
+  1492 04:1317: 0B           	phd
+  1493 04:1318: 5B           	tcd
+  1494             00000004   buffer_0	set	4
+  1495                        	.block	181
+  1496                        ;	return 0;
+  1497                        	.sym	buffer,4,129,6,32
+  1498                        	.line	182
+  1499 04:1319: A9 00 00     	lda	#$0
+  1500                        L34:
+  1501 04:131C: A8           	tay
+  1502 04:131D: A5 02        	lda	<L31+2
+  1503 04:131F: 85 06        	sta	<L31+2+4
+  1504 04:1321: A5 01        	lda	<L31+1
+  1505 04:1323: 85 05        	sta	<L31+1+4
+  1506 04:1325: 2B           	pld
+  1507 04:1326: 3B           	tsc
+  1508 04:1327: 18           	clc
+  1509 04:1328: 69 04 00     	adc	#L31+4
+  1510 04:132B: 1B           	tcs
+  1511 04:132C: 98           	tya
+  1512 04:132D: 6B           	rtl
+  1513                        ;}
   1514                        	.line	183
-  1515                        	.line	184
-  1516                        	MOUSS01
-  1517                        	func
-  1518                        	.function	184
-  1519                        ~~f_driver_write:
-  1520                        	longa	on
-  1521                        	longi	on
-  1522 04:131F: 3B           	tsc
-  1523 04:1320: 38           	sec
-  1524 04:1321: E9 00 00     	sbc	#L34
-  1525 04:1324: 1B           	tcs
-  1526 04:1325: 0B           	phd
-  1527 04:1326: 5B           	tcd
-  1528             00000004   size_0	set	4
-  1529             00000006   buffer_0	set	6
-  1530                        	.block	184
-  1531                        ;	return 0;
-  1532                        	.sym	size,4,16,6,16
-  1533                        	.sym	buffer,6,129,6,32
-  1534                        	.line	185
-  1535 04:1327: A9 00 00     	lda	#$0
-  1536                        L37:
-  1537 04:132A: A8           	tay
-  1538 04:132B: A5 02        	lda	<L34+2
-  1539 04:132D: 85 08        	sta	<L34+2+6
-  1540 04:132F: A5 01        	lda	<L34+1
-  1541 04:1331: 85 07        	sta	<L34+1+6
-  1542 04:1333: 2B           	pld
-  Mon Aug  9 2021 16:52                                                Page 30
+  1515                        	.endblock	183
+  1516             00000000   L31	equ	0
+  1517             00000001   L32	equ	1
+  1518 04:132E:              	ends
+  1519                        	efunc
+  1520                        	.endfunc	183,1,0
+  1521                        	.line	183
+  1522                        ;
+  1523                        ;static UINT f_driver_write(UINT size, LPVOID buff
+                    er)
+  1524                        ;{
+  1525                        	.line	185
+  1526                        	.line	186
+  1527                        	MOUSS01
+  1528                        	func
+  1529                        	.function	186
+  1530                        ~~f_driver_write:
+  1531                        	longa	on
+  1532                        	longi	on
+  1533 04:132E: 3B           	tsc
+  1534 04:132F: 38           	sec
+  1535 04:1330: E9 00 00     	sbc	#L35
+  1536 04:1333: 1B           	tcs
+  1537 04:1334: 0B           	phd
+  1538 04:1335: 5B           	tcd
+  1539             00000004   size_0	set	4
+  1540             00000006   buffer_0	set	6
+  1541                        	.block	186
+  1542                        ;	return 0;
+  Mon Sep 27 2021  9:39                                                Page 30
 
 
-  1543 04:1334: 3B           	tsc
-  1544 04:1335: 18           	clc
-  1545 04:1336: 69 06 00     	adc	#L34+6
-  1546 04:1339: 1B           	tcs
-  1547 04:133A: 98           	tya
-  1548 04:133B: 6B           	rtl
-  1549                        ;}
-  1550                        	.line	186
-  1551                        	.endblock	186
-  1552             00000000   L34	equ	0
-  1553             00000001   L35	equ	1
-  1554 04:133C:              	ends
-  1555                        	efunc
-  1556                        	.endfunc	186,1,0
-  1557                        	.line	186
-  1558                        ;
-  1559                        ;static BOOL f_driver_unload(void)
-  1560                        ;{
+  1543                        	.sym	size,4,16,6,16
+  1544                        	.sym	buffer,6,129,6,32
+  1545                        	.line	187
+  1546 04:1336: A9 00 00     	lda	#$0
+  1547                        L38:
+  1548 04:1339: A8           	tay
+  1549 04:133A: A5 02        	lda	<L35+2
+  1550 04:133C: 85 08        	sta	<L35+2+6
+  1551 04:133E: A5 01        	lda	<L35+1
+  1552 04:1340: 85 07        	sta	<L35+1+6
+  1553 04:1342: 2B           	pld
+  1554 04:1343: 3B           	tsc
+  1555 04:1344: 18           	clc
+  1556 04:1345: 69 06 00     	adc	#L35+6
+  1557 04:1348: 1B           	tcs
+  1558 04:1349: 98           	tya
+  1559 04:134A: 6B           	rtl
+  1560                        ;}
   1561                        	.line	188
-  1562                        	.line	189
-  1563                        	MOUSS01
-  1564                        	func
-  1565                        	.function	189
-  1566                        ~~f_driver_unload:
-  1567                        	longa	on
-  1568                        	longi	on
-  1569 04:133C: 3B           	tsc
-  1570 04:133D: 38           	sec
-  1571 04:133E: E9 00 00     	sbc	#L38
-  1572 04:1341: 1B           	tcs
-  1573 04:1342: 0B           	phd
-  1574 04:1343: 5B           	tcd
-  1575                        	.block	189
-  1576                        ;	return FALSE;
-  1577                        	.line	190
-  1578 04:1344: A9 00 00     	lda	#$0
-  1579                        L41:
-  1580 04:1347: A8           	tay
-  1581 04:1348: 2B           	pld
-  1582 04:1349: 3B           	tsc
-  1583 04:134A: 18           	clc
-  1584 04:134B: 69 00 00     	adc	#L38
-  1585 04:134E: 1B           	tcs
-  1586 04:134F: 98           	tya
-  1587 04:1350: 6B           	rtl
-  1588                        ;}
-  1589                        	.line	191
-  1590                        	.endblock	191
-  1591             00000000   L38	equ	0
-  1592             00000001   L39	equ	1
-  1593 04:1351:              	ends
-  1594                        	efunc
-  1595                        	.endfunc	191,1,0
-  1596                        	.line	191
-  1597                        ;
-  1598                        ;
-  1599                        	.line	192
-  1600                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
-  Mon Aug  9 2021 16:52                                                Page 31
+  1562                        	.endblock	188
+  1563             00000000   L35	equ	0
+  1564             00000001   L36	equ	1
+  1565 04:134B:              	ends
+  1566                        	efunc
+  1567                        	.endfunc	188,1,0
+  1568                        	.line	188
+  1569                        ;
+  1570                        ;static BOOL f_driver_unload(void)
+  1571                        ;{
+  1572                        	.line	190
+  1573                        	.line	191
+  1574                        	MOUSS01
+  1575                        	func
+  1576                        	.function	191
+  1577                        ~~f_driver_unload:
+  1578                        	longa	on
+  1579                        	longi	on
+  1580 04:134B: 3B           	tsc
+  1581 04:134C: 38           	sec
+  1582 04:134D: E9 00 00     	sbc	#L39
+  1583 04:1350: 1B           	tcs
+  1584 04:1351: 0B           	phd
+  1585 04:1352: 5B           	tcd
+  1586                        	.block	191
+  1587                        ;	return FALSE;
+  1588                        	.line	192
+  1589 04:1353: A9 00 00     	lda	#$0
+  1590                        L42:
+  1591 04:1356: A8           	tay
+  1592 04:1357: 2B           	pld
+  1593 04:1358: 3B           	tsc
+  1594 04:1359: 18           	clc
+  1595 04:135A: 69 00 00     	adc	#L39
+  1596 04:135D: 1B           	tcs
+  1597 04:135E: 98           	tya
+  1598 04:135F: 6B           	rtl
+  1599                        ;}
+  1600                        	.line	193
+  Mon Sep 27 2021  9:39                                                Page 31
 
 
-                    space\FXOS-Beta\src\drivers/DRIVER_FMXMOUSE.c",188
-  1601                        	xref	~~ps2_expect_ack
-  1602                        	xref	~~ps2_write_device
-  1603                        	xref	~~k_debug_char_com1
-  1604                        	xref	~~_irq_keyboardTimeout
-  1605                        	.sym	~~f_get_driver,~~f_get_driver,1098,3,32,
+  1601                        	.endblock	193
+  1602             00000000   L39	equ	0
+  1603             00000001   L40	equ	1
+  1604 04:1360:              	ends
+  1605                        	efunc
+  1606                        	.endfunc	193,1,0
+  1607                        	.line	193
+  1608                        ;
+  1609                        ;
+  1610                        	.line	194
+  1611                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
+                    space\FXOS-Beta\src\drivers/DRIVER_FMXMOUSE.c",190
+  1612                        	xref	~~ps2_can_read
+  1613                        	xref	~~ps2_expect_ack
+  1614                        	xref	~~ps2_write_device
+  1615                        	xref	~~k_debug_char_com1
+  1616                        	xref	~~_irq_keyboardTimeout
+  1617                        	.sym	~~f_get_driver,~~f_get_driver,1098,3,32,
                     87
-  1606                        	.sym	~~DRIVER_FMXUMOUSE,~~DRIVER_FMXUMOUSE,10
+  1618                        	.sym	~~DRIVER_FMXUMOUSE,~~DRIVER_FMXUMOUSE,10
                     ,3,776,87
-  1607                        	.sym	~~_irq_keyboardTimeout,~~_irq_keyboardTi
+  1619                        	.sym	~~_irq_keyboardTimeout,~~_irq_keyboardTi
                     meout,5,18,16
-  1608                        	.sym	~~mouse_set_scaling,~~mouse_set_scaling,
+  1620                        	.sym	~~mouse_set_scaling,~~mouse_set_scaling,
                     65,2,0
-  1609                        	.sym	~~mouse_set_resolution,~~mouse_set_resol
+  1621                        	.sym	~~mouse_set_resolution,~~mouse_set_resol
                     ution,65,2,0
-  1610                        	.sym	~~mouse_set_sample_rate,~~mouse_set_samp
+  1622                        	.sym	~~mouse_set_sample_rate,~~mouse_set_samp
                     le_rate,65,2,0
-  1611                        	.sym	~~f_driver_unload,~~f_driver_unload,78,3
+  1623                        	.sym	~~f_driver_unload,~~f_driver_unload,78,3
                     ,0
-  1612                        	.sym	~~f_driver_write,~~f_driver_write,80,3,0
-  1613                        	.sym	~~f_driver_read,~~f_driver_read,80,3,0
-  1614                        	.sym	~~f_driver_load,~~f_driver_load,78,3,0
-  1615                        	.sym	~~f_driver_irq,~~f_driver_irq,65,3,0
-  1616                        	.sym	~~_k_driver_base,~~_k_driver_base,129,3,
+  1624                        	.sym	~~f_driver_write,~~f_driver_write,80,3,0
+  1625                        	.sym	~~f_driver_read,~~f_driver_read,80,3,0
+  1626                        	.sym	~~f_driver_load,~~f_driver_load,78,3,0
+  1627                        	.sym	~~f_driver_irq,~~f_driver_irq,65,3,0
+  1628                        	.sym	~~_k_driver_base,~~_k_driver_base,129,3,
                     32
-  1617                        	.sym	~~ps2_expect_ack,~~ps2_expect_ack,78,18,
+  1629                        	.sym	~~ps2_can_read,~~ps2_can_read,78,18,0
+  1630                        	.sym	~~ps2_expect_ack,~~ps2_expect_ack,78,18,
                     0
-  1618                        	.sym	~~ps2_write_device,~~ps2_write_device,78
+  1631                        	.sym	~~ps2_write_device,~~ps2_write_device,78
                     ,18,0
-  1619                        	.sym	ps2_device_t,0,10,14,88,90
-  1620                        	.sym	PIRQCHAIN,0,138,14,32,89
-  1621                        	.sym	IRQCHAIN,0,10,14,128,89
-  1622                        	.sym	DEVICEDRIVER_COMMAND,0,654,14,32
-  1623                        	.sym	DEVICEDRIVER_UNLOAD,0,654,14,32
-  1624                        	.sym	DEVICEDRIVER_WRITE,0,654,14,32
-  1625                        	.sym	DEVICEDRIVER_READ,0,654,14,32
-  1626                        	.sym	DEVICEDRIVER_LOAD,0,654,14,32
-  1627                        	.sym	DEVICEDRIVER_IRQ,0,641,14,32
-  1628                        	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,88
-  1629                        	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,88
-  1630                        	.sym	GETDRIVERDEF,0,8842,14,32,87
-  1631                        	.sym	PFX_DEVICE_DRIVER,0,138,14,32,87
-  1632                        	.sym	FX_DEVICE_DRIVER,0,10,14,776,87
-  1633                        	.sym	~~k_debug_char_com1,~~k_debug_char_com1,
+  1632                        	.sym	ps2_device_t,0,10,14,88,90
+  1633                        	.sym	PIRQCHAIN,0,138,14,32,89
+  1634                        	.sym	IRQCHAIN,0,10,14,128,89
+  1635                        	.sym	DEVICEDRIVER_COMMAND,0,654,14,32
+  1636                        	.sym	DEVICEDRIVER_UNLOAD,0,654,14,32
+  1637                        	.sym	DEVICEDRIVER_WRITE,0,654,14,32
+  1638                        	.sym	DEVICEDRIVER_READ,0,654,14,32
+  1639                        	.sym	DEVICEDRIVER_LOAD,0,654,14,32
+  1640                        	.sym	DEVICEDRIVER_IRQ,0,641,14,32
+  1641                        	.sym	PFX_BLOCK_DEVICE_DRIVER,0,138,14,32,88
+  1642                        	.sym	FX_BLOCK_DEVICE_DRIVER,0,10,14,808,88
+  1643                        	.sym	GETDRIVERDEF,0,8842,14,32,87
+  1644                        	.sym	PFX_DEVICE_DRIVER,0,138,14,32,87
+  1645                        	.sym	FX_DEVICE_DRIVER,0,10,14,776,87
+  1646                        	.sym	~~k_debug_char_com1,~~k_debug_char_com1,
                     65,18,0
-  1634                        	.sym	PSEGMENTHEADER,0,138,14,32,86
-  1635                        	.sym	SEGMENTHEADER,0,10,14,160,86
-  1636                        	.sym	PDEBUGBYTEBITS,0,138,14,32,85
-  1637                        	.sym	DEBUGBYTEBITS,0,10,14,8,85
-  1638                        	.sym	PFXENVIRONMENT,0,138,14,32,84
-  1639                        	.sym	FXENVIRONMENT,0,10,14,96,84
-  1640                        	.sym	PFXZEROPAGE,0,138,14,32,83
-  1641                        	.sym	FXZEROPAGE,0,10,14,720,83
-  1642                        	.sym	IRQBUFFER,0,10,14,32,82
-  1643                        	.sym	KERNELTRAPCALL,0,641,14,32
-  1644                        	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,81
-  1645                        	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,81
-  1646                        	.sym	FRESULT,0,5,14,16
-  Mon Aug  9 2021 16:52                                                Page 32
+  Mon Sep 27 2021  9:39                                                Page 32
 
 
-  1647                        	.sym	MKFS_PARM,0,10,14,80,80
-  1648                        	.sym	FILINFO,0,10,14,2224,79
-  1649                        	.sym	DIR,0,10,14,416,78
-  1650                        	.sym	FIL,0,10,14,4400,77
-  1651                        	.sym	FFOBJID,0,10,14,128,76
-  1652                        	.sym	FATFS,0,10,14,4504,75
-  1653                        	.sym	LBA_t,0,18,14,32
-  1654                        	.sym	FSIZE_t,0,18,14,32
-  1655                        	.sym	TCHAR,0,14,14,8
-  1656                        	.sym	PCOMMANDARGS,0,138,14,32,74
-  1657                        	.sym	COMMANDARGS,0,10,14,64,74
-  1658                        	.sym	PTOKENIZESTATE,0,133,14,32
-  1659                        	.sym	TOKENIZESTATE,0,5,14,16
-  1660                        	.sym	PTOKEN,0,138,14,32,73
-  1661                        	.sym	TOKEN,0,10,14,64,73
-  1662                        	.sym	PTOKENTYPE,0,133,14,32
-  1663                        	.sym	TOKENTYPE,0,5,14,16
-  1664                        	.sym	FXCommandHandler,0,656,14,32
-  1665                        	.sym	PCONSOLECTX,0,138,14,32,72
-  1666                        	.sym	CONSOLECTX,0,10,14,1144,72
-  1667                        	.sym	PSPINNERCTX,0,138,14,32,71
-  1668                        	.sym	SPINNERCTX,0,10,14,48,71
-  1669                        	.sym	HCLIP,0,138,14,32,70
-  1670                        	.sym	PCLIPBOARD_DATA,0,138,14,32,70
-  1671                        	.sym	CLIPBOARD_DATA,0,10,14,168,70
-  1672                        	.sym	PEVENTMANAGER,0,138,14,32,69
-  1673                        	.sym	EVENTMANAGER,0,10,14,192,69
-  1674                        	.sym	EV_RUN,0,656,14,32
-  1675                        	.sym	EV_QUERY_METRIC,0,656,14,32
-  1676                        	.sym	EV_CONFIGURE,0,656,14,32
-  1677                        	.sym	EV_UNINIT,0,641,14,32
-  1678                        	.sym	EV_INIT,0,8833,14,32
-  1679                        	.sym	PMOUSE_MSG_STATE,0,138,14,32,68
-  1680                        	.sym	MOUSE_MSG_STATE,0,10,14,184,68
-  1681                        	.sym	PFXEVENTPROCESS,0,138,14,32,67
-  1682                        	.sym	FXEVENTPROCESS,0,10,14,64,67
-  1683                        	.sym	FXASYNCPROCESS,0,641,14,32
-  1684                        	.sym	PMARSHALDATA,0,139,14,32,66
-  1685                        	.sym	MARSHALDATA,0,11,14,32,66
-  1686                        	.sym	FXIDLEPROCESS,0,641,14,32
-  1687                        	.sym	FXEventProc,0,641,14,32
-  1688                        	.sym	PMOUSEMSGDATA,0,138,14,32,65
-  1689                        	.sym	MOUSEMSGDATA,0,10,14,64,65
-  1690                        	.sym	MSGIRQ,0,5,14,16
-  1691                        	.sym	MAINLOOPARGS,0,10,14,16,64
-  1692                        	.sym	PEACHCHILD_MSG,0,138,14,32,63
-  1693                        	.sym	EACHCHILD_MSG,0,10,14,64,63
-  1694                        	.sym	PMSGBOX_DATA,0,138,14,32,62
-  1695                        	.sym	MSGBOX_DATA,0,10,14,96,62
-  1696                        	.sym	PDESKTOP_DATA,0,138,14,32,61
-  1697                        	.sym	DESKTOP_DATA,0,10,14,64,61
-  1698                        	.sym	PWINDOWMANAGER,0,138,14,32,60
-  1699                        	.sym	WINDOWMANAGER,0,10,14,160,60
-  1700                        	.sym	WM_DOPROCS,0,641,14,32
-  1701                        	.sym	WM_QUERY_METRIC,0,656,14,32
-  1702                        	.sym	WM_CONFIGURE,0,656,14,32
-  1703                        	.sym	WM_HANDLE_EVENT,0,8833,14,32
-  1704                        	.sym	WM_EVENTS,0,641,14,32
-  Mon Aug  9 2021 16:52                                                Page 33
+  1647                        	.sym	PSEGMENTHEADER,0,138,14,32,86
+  1648                        	.sym	SEGMENTHEADER,0,10,14,160,86
+  1649                        	.sym	PDEBUGBYTEBITS,0,138,14,32,85
+  1650                        	.sym	DEBUGBYTEBITS,0,10,14,8,85
+  1651                        	.sym	PFXENVIRONMENT,0,138,14,32,84
+  1652                        	.sym	FXENVIRONMENT,0,10,14,96,84
+  1653                        	.sym	PFXZEROPAGE,0,138,14,32,83
+  1654                        	.sym	FXZEROPAGE,0,10,14,720,83
+  1655                        	.sym	IRQBUFFER,0,10,14,32,82
+  1656                        	.sym	KERNELTRAPCALL,0,641,14,32
+  1657                        	.sym	PFXKERNEL_API_CALLTABLE,0,138,14,32,81
+  1658                        	.sym	FXKERNEL_API_CALLTABLE,0,10,14,8192,81
+  1659                        	.sym	FRESULT,0,5,14,16
+  1660                        	.sym	MKFS_PARM,0,10,14,80,80
+  1661                        	.sym	FILINFO,0,10,14,2224,79
+  1662                        	.sym	DIR,0,10,14,416,78
+  1663                        	.sym	FIL,0,10,14,4400,77
+  1664                        	.sym	FFOBJID,0,10,14,128,76
+  1665                        	.sym	FATFS,0,10,14,4504,75
+  1666                        	.sym	LBA_t,0,18,14,32
+  1667                        	.sym	FSIZE_t,0,18,14,32
+  1668                        	.sym	TCHAR,0,14,14,8
+  1669                        	.sym	PCOMMANDARGS,0,138,14,32,74
+  1670                        	.sym	COMMANDARGS,0,10,14,64,74
+  1671                        	.sym	PTOKENIZESTATE,0,133,14,32
+  1672                        	.sym	TOKENIZESTATE,0,5,14,16
+  1673                        	.sym	PTOKEN,0,138,14,32,73
+  1674                        	.sym	TOKEN,0,10,14,64,73
+  1675                        	.sym	PTOKENTYPE,0,133,14,32
+  1676                        	.sym	TOKENTYPE,0,5,14,16
+  1677                        	.sym	FXCommandHandler,0,656,14,32
+  1678                        	.sym	PCONSOLECTX,0,138,14,32,72
+  1679                        	.sym	CONSOLECTX,0,10,14,1144,72
+  1680                        	.sym	PSPINNERCTX,0,138,14,32,71
+  1681                        	.sym	SPINNERCTX,0,10,14,48,71
+  1682                        	.sym	HCLIP,0,138,14,32,70
+  1683                        	.sym	PCLIPBOARD_DATA,0,138,14,32,70
+  1684                        	.sym	CLIPBOARD_DATA,0,10,14,168,70
+  1685                        	.sym	PEVENTMANAGER,0,138,14,32,69
+  1686                        	.sym	EVENTMANAGER,0,10,14,192,69
+  1687                        	.sym	EV_RUN,0,656,14,32
+  1688                        	.sym	EV_QUERY_METRIC,0,656,14,32
+  1689                        	.sym	EV_CONFIGURE,0,656,14,32
+  1690                        	.sym	EV_UNINIT,0,641,14,32
+  1691                        	.sym	EV_INIT,0,8833,14,32
+  1692                        	.sym	PMOUSE_MSG_STATE,0,138,14,32,68
+  1693                        	.sym	MOUSE_MSG_STATE,0,10,14,184,68
+  1694                        	.sym	PFXEVENTPROCESS,0,138,14,32,67
+  1695                        	.sym	FXEVENTPROCESS,0,10,14,64,67
+  1696                        	.sym	FXASYNCPROCESS,0,641,14,32
+  1697                        	.sym	PMARSHALDATA,0,139,14,32,66
+  1698                        	.sym	MARSHALDATA,0,11,14,32,66
+  1699                        	.sym	FXIDLEPROCESS,0,641,14,32
+  1700                        	.sym	FXEventProc,0,641,14,32
+  1701                        	.sym	PMOUSEMSGDATA,0,138,14,32,65
+  1702                        	.sym	MOUSEMSGDATA,0,10,14,64,65
+  1703                        	.sym	MSGIRQ,0,5,14,16
+  1704                        	.sym	MAINLOOPARGS,0,10,14,16,64
+  Mon Sep 27 2021  9:39                                                Page 33
 
 
-  1705                        	.sym	PCUR_PALETTE_MAP,0,138,14,32,59
-  1706                        	.sym	CUR_PALETTE_MAP,0,10,14,400,59
-  1707                        	.sym	PCLICKDETECTED,0,138,14,32,58
-  1708                        	.sym	CLICKDETECTED,0,10,14,64,58
-  1709                        	.sym	OBJECTCLICKED,0,641,14,32
-  1710                        	.sym	PALLOCATIONHEADER,0,138,14,32,57
-  1711                        	.sym	ALLOCATIONHEADER,0,10,14,80,57
-  1712                        	.sym	PIPCPORT,0,138,14,32,56
-  1713                        	.sym	IPCPORT,0,10,14,144,56
-  1714                        	.sym	MemoryCallback,0,641,14,32
-  1715                        	.sym	PFXMEMORYMAP,0,138,14,32,55
-  1716                        	.sym	FXMEMORYMAP,0,10,14,2072,55
-  1717                        	.sym	UMM_HEAP_INFO,0,10,14,256,54
-  1718                        	.sym	FOREACHNODEUNTIL,0,654,14,32
-  1719                        	.sym	FOREACHNODE,0,641,14,32
-  1720                        	.sym	PEXECUTIVE,0,138,14,32,53
-  1721                        	.sym	EXECUTIVE,0,10,14,128,53
-  1722                        	.sym	EX_QUERY_METRIC,0,656,14,32
-  1723                        	.sym	EX_CONFIGURE,0,656,14,32
-  1724                        	.sym	EX_UNINIT,0,641,14,32
-  1725                        	.sym	EX_INIT,0,8833,14,32
-  1726                        	.sym	PFXSTRING,0,138,14,32,52
-  1727                        	.sym	FXSTRING,0,10,14,64,52
-  1728                        	.sym	PFXRFHEADER_STRING_ENTRY,0,138,14,32,51
-  1729                        	.sym	FXRFHEADER_STRING_ENTRY,0,10,14,40,51
-  1730                        	.sym	PFXRFHEADER_STRING,0,138,14,32,50
-  1731                        	.sym	FXRFHEADER_STRING,0,10,14,32,50
-  1732                        	.sym	PFXRFHEADER_FONT,0,138,14,32,49
-  1733                        	.sym	FXRFHEADER_FONT,0,10,14,144,49
-  1734                        	.sym	PFXRFHEADER,0,138,14,32,48
-  1735                        	.sym	FXRFHEADER,0,10,14,72,48
-  1736                        	.sym	PFXCOMBUFFER,0,138,14,32,47
-  1737                        	.sym	FXCOMBUFFER,0,10,14,2080,47
-  1738                        	.sym	PSUBMENULIST,0,138,14,32,46
-  1739                        	.sym	SUBMENULIST,0,10,14,40,46
-  1740                        	.sym	HSUBMENU,0,7,14,32
-  1741                        	.sym	PSUBMENU,0,138,14,32,45
-  1742                        	.sym	SUBMENU,0,10,14,64,45
-  1743                        	.sym	MenuAction,0,641,14,32
-  1744                        	.sym	PMENUANCHOR,0,138,14,32,44
-  1745                        	.sym	MENUANCHOR,0,10,14,272,44
-  1746                        	.sym	PMSGBOX,0,138,14,32,43
-  1747                        	.sym	MSGBOX,0,10,14,144,43
-  1748                        	.sym	PTEXTBOX,0,138,14,32,42
-  1749                        	.sym	TEXTBOX,0,10,14,144,42
-  1750                        	.sym	PLISTBOX,0,138,14,32,41
-  1751                        	.sym	LISTBOX,0,10,14,240,41
-  1752                        	.sym	PSCROLLBAR,0,138,14,32,40
-  1753                        	.sym	SCROLLBAR,0,10,14,240,40
-  1754                        	.sym	PBUTTON,0,138,14,32,39
-  1755                        	.sym	BUTTON,0,10,14,96,39
-  1756                        	.sym	PMENUDROPDOWNDATA,0,138,14,32,38
-  1757                        	.sym	MENUDROPDOWNDATA,0,10,14,5152,38
-  1758                        	.sym	PMENUTAG,0,138,14,32,37
-  1759                        	.sym	MENUTAG,0,10,14,160,37
-  1760                        	.sym	PMENU,0,138,14,32,36
-  1761                        	.sym	MENU,0,10,14,280,36
-  1762                        	.sym	HMENURESOURCE,0,129,14,32
-  Mon Aug  9 2021 16:52                                                Page 34
+  1705                        	.sym	PEACHCHILD_MSG,0,138,14,32,63
+  1706                        	.sym	EACHCHILD_MSG,0,10,14,64,63
+  1707                        	.sym	PMSGBOX_DATA,0,138,14,32,62
+  1708                        	.sym	MSGBOX_DATA,0,10,14,96,62
+  1709                        	.sym	PDESKTOP_DATA,0,138,14,32,61
+  1710                        	.sym	DESKTOP_DATA,0,10,14,64,61
+  1711                        	.sym	PWINDOWMANAGER,0,138,14,32,60
+  1712                        	.sym	WINDOWMANAGER,0,10,14,160,60
+  1713                        	.sym	WM_DOPROCS,0,641,14,32
+  1714                        	.sym	WM_QUERY_METRIC,0,656,14,32
+  1715                        	.sym	WM_CONFIGURE,0,656,14,32
+  1716                        	.sym	WM_HANDLE_EVENT,0,8833,14,32
+  1717                        	.sym	WM_EVENTS,0,641,14,32
+  1718                        	.sym	PCUR_PALETTE_MAP,0,138,14,32,59
+  1719                        	.sym	CUR_PALETTE_MAP,0,10,14,400,59
+  1720                        	.sym	PCLICKDETECTED,0,138,14,32,58
+  1721                        	.sym	CLICKDETECTED,0,10,14,64,58
+  1722                        	.sym	OBJECTCLICKED,0,641,14,32
+  1723                        	.sym	PALLOCATIONHEADER,0,138,14,32,57
+  1724                        	.sym	ALLOCATIONHEADER,0,10,14,80,57
+  1725                        	.sym	PIPCPORT,0,138,14,32,56
+  1726                        	.sym	IPCPORT,0,10,14,144,56
+  1727                        	.sym	MemoryCallback,0,641,14,32
+  1728                        	.sym	PFXMEMORYMAP,0,138,14,32,55
+  1729                        	.sym	FXMEMORYMAP,0,10,14,2072,55
+  1730                        	.sym	UMM_HEAP_INFO,0,10,14,256,54
+  1731                        	.sym	FOREACHNODEUNTIL,0,654,14,32
+  1732                        	.sym	FOREACHNODE,0,641,14,32
+  1733                        	.sym	PEXECUTIVE,0,138,14,32,53
+  1734                        	.sym	EXECUTIVE,0,10,14,128,53
+  1735                        	.sym	EX_QUERY_METRIC,0,656,14,32
+  1736                        	.sym	EX_CONFIGURE,0,656,14,32
+  1737                        	.sym	EX_UNINIT,0,641,14,32
+  1738                        	.sym	EX_INIT,0,8833,14,32
+  1739                        	.sym	PFXSTRING,0,138,14,32,52
+  1740                        	.sym	FXSTRING,0,10,14,64,52
+  1741                        	.sym	PFXRFHEADER_STRING_ENTRY,0,138,14,32,51
+  1742                        	.sym	FXRFHEADER_STRING_ENTRY,0,10,14,40,51
+  1743                        	.sym	PFXRFHEADER_STRING,0,138,14,32,50
+  1744                        	.sym	FXRFHEADER_STRING,0,10,14,32,50
+  1745                        	.sym	PFXRFHEADER_FONT,0,138,14,32,49
+  1746                        	.sym	FXRFHEADER_FONT,0,10,14,144,49
+  1747                        	.sym	PFXRFHEADER,0,138,14,32,48
+  1748                        	.sym	FXRFHEADER,0,10,14,72,48
+  1749                        	.sym	PFXCOMBUFFER,0,138,14,32,47
+  1750                        	.sym	FXCOMBUFFER,0,10,14,2080,47
+  1751                        	.sym	PSUBMENULIST,0,138,14,32,46
+  1752                        	.sym	SUBMENULIST,0,10,14,40,46
+  1753                        	.sym	HSUBMENU,0,7,14,32
+  1754                        	.sym	PSUBMENU,0,138,14,32,45
+  1755                        	.sym	SUBMENU,0,10,14,64,45
+  1756                        	.sym	MenuAction,0,641,14,32
+  1757                        	.sym	PMENUANCHOR,0,138,14,32,44
+  1758                        	.sym	MENUANCHOR,0,10,14,272,44
+  1759                        	.sym	PMSGBOX,0,138,14,32,43
+  1760                        	.sym	MSGBOX,0,10,14,144,43
+  1761                        	.sym	PTEXTBOX,0,138,14,32,42
+  1762                        	.sym	TEXTBOX,0,10,14,144,42
+  Mon Sep 27 2021  9:39                                                Page 34
 
 
-  1763                        	.sym	FONTMETRIC,0,10,14,32,35
-  1764                        	.sym	TITLE,0,142,14,32
-  1765                        	.sym	PHANDLE,0,1153,14,32
-  1766                        	.sym	HANDLE,0,129,14,32
-  1767                        	.sym	PWINDOWEX,0,138,14,32,34
-  1768                        	.sym	WINDOWEX,0,10,14,3880,34
-  1769                        	.sym	PWINDOW,0,138,14,32,33
-  1770                        	.sym	WINDOW,0,10,14,3904,33
-  1771                        	.sym	PDRAGDATA,0,138,14,32,32
-  1772                        	.sym	DRAGDATA,0,10,14,216,32
-  1773                        	.sym	PNCCLICKABLE,0,138,14,32,31
-  1774                        	.sym	NCCLICKABLE,0,10,14,136,31
-  1775                        	.sym	HCLICKABLE,0,7,14,32
-  1776                        	.sym	PCLICKABLE,0,138,14,32,30
-  1777                        	.sym	CLICKABLE,0,10,14,152,30
-  1778                        	.sym	PWNDCLASS,0,138,14,32,29
-  1779                        	.sym	WNDCLASS,0,10,14,272,29
-  1780                        	.sym	HBRUSH,0,129,14,32
-  1781                        	.sym	HCURSOR,0,129,14,32
-  1782                        	.sym	HICON,0,129,14,32
-  1783                        	.sym	HINSTANCE,0,129,14,32
-  1784                        	.sym	FXWndProc,0,654,14,32
-  1785                        	.sym	PDRECT,0,138,14,32,28
-  1786                        	.sym	DRECT,0,10,14,112,28
-  1787                        	.sym	PRECTP,0,138,14,32,27
-  1788                        	.sym	RECTP,0,10,14,96,27
-  1789                        	.sym	PRECT,0,138,14,32,26
-  1790                        	.sym	RECT,0,10,14,112,26
-  1791                        	.sym	PPOINT,0,138,14,32,25
-  1792                        	.sym	POINT,0,10,14,32,25
-  1793                        	.sym	PFXPROPERTY,0,138,14,32,23
-  1794                        	.sym	FXPROPERTY,0,10,14,384,23
-  1795                        	.sym	PKEYSTATE,0,138,14,32,22
-  1796                        	.sym	KEYSTATE,0,10,14,112,22
-  1797                        	.sym	SCANCODE,0,14,14,8
-  1798                        	.sym	KEYCODE,0,16,14,16
-  1799                        	.sym	PFXPROCESSMESSAGE,0,138,14,32,21
-  1800                        	.sym	FXPROCESSMESSAGE,0,10,14,112,21
-  1801                        	.sym	PFXPROCESS,0,138,14,32,20
-  1802                        	.sym	FXPROCESS,0,10,14,800,20
-  1803                        	.sym	PDESKTOP_CONTROL,0,138,14,32,19
-  1804                        	.sym	DESKTOP_CONTROL,0,10,14,392,19
-  1805                        	.sym	PCONSOLE_CONTROL,0,138,14,32,18
-  1806                        	.sym	CONSOLE_CONTROL,0,10,14,448,18
-  1807                        	.sym	FXProcessProc,0,641,14,32
-  1808                        	.sym	PFXCMDMESSAGE,0,138,14,32,17
-  1809                        	.sym	FXCMDMESSAGE,0,10,14,312,17
-  1810                        	.sym	PFXOSMESSAGE,0,138,14,32,16
-  1811                        	.sym	FXOSMESSAGE,0,10,14,312,16
-  1812                        	.sym	PINT_REGS,0,138,14,32,15
-  1813                        	.sym	INT_REGS,0,10,14,104,15
-  1814                        	.sym	TASK_STACK,0,10,14,32,14
-  1815                        	.sym	TASK,0,10,14,48,13
-  1816                        	.sym	PIRQDATA,0,138,14,32,12
-  1817                        	.sym	IRQDATA,0,10,14,48,12
-  1818                        	.sym	HMENU,0,129,14,32
-  1819                        	.sym	HWND,0,129,14,32
-  1820                        	.sym	MSGDATA,0,14,14,8
-  Mon Aug  9 2021 16:52                                                Page 35
+  1763                        	.sym	PLISTBOX,0,138,14,32,41
+  1764                        	.sym	LISTBOX,0,10,14,240,41
+  1765                        	.sym	PSCROLLBAR,0,138,14,32,40
+  1766                        	.sym	SCROLLBAR,0,10,14,240,40
+  1767                        	.sym	PBUTTON,0,138,14,32,39
+  1768                        	.sym	BUTTON,0,10,14,96,39
+  1769                        	.sym	PMENUDROPDOWNDATA,0,138,14,32,38
+  1770                        	.sym	MENUDROPDOWNDATA,0,10,14,5152,38
+  1771                        	.sym	PMENUTAG,0,138,14,32,37
+  1772                        	.sym	MENUTAG,0,10,14,160,37
+  1773                        	.sym	PMENU,0,138,14,32,36
+  1774                        	.sym	MENU,0,10,14,280,36
+  1775                        	.sym	HMENURESOURCE,0,129,14,32
+  1776                        	.sym	FONTMETRIC,0,10,14,32,35
+  1777                        	.sym	TITLE,0,142,14,32
+  1778                        	.sym	PHANDLE,0,1153,14,32
+  1779                        	.sym	HANDLE,0,129,14,32
+  1780                        	.sym	PWINDOWEX,0,138,14,32,34
+  1781                        	.sym	WINDOWEX,0,10,14,3880,34
+  1782                        	.sym	PWINDOW,0,138,14,32,33
+  1783                        	.sym	WINDOW,0,10,14,3904,33
+  1784                        	.sym	PDRAGDATA,0,138,14,32,32
+  1785                        	.sym	DRAGDATA,0,10,14,216,32
+  1786                        	.sym	PNCCLICKABLE,0,138,14,32,31
+  1787                        	.sym	NCCLICKABLE,0,10,14,136,31
+  1788                        	.sym	HCLICKABLE,0,7,14,32
+  1789                        	.sym	PCLICKABLE,0,138,14,32,30
+  1790                        	.sym	CLICKABLE,0,10,14,152,30
+  1791                        	.sym	PWNDCLASS,0,138,14,32,29
+  1792                        	.sym	WNDCLASS,0,10,14,272,29
+  1793                        	.sym	HBRUSH,0,129,14,32
+  1794                        	.sym	HCURSOR,0,129,14,32
+  1795                        	.sym	HICON,0,129,14,32
+  1796                        	.sym	HINSTANCE,0,129,14,32
+  1797                        	.sym	FXWndProc,0,654,14,32
+  1798                        	.sym	PDRECT,0,138,14,32,28
+  1799                        	.sym	DRECT,0,10,14,112,28
+  1800                        	.sym	PRECTP,0,138,14,32,27
+  1801                        	.sym	RECTP,0,10,14,96,27
+  1802                        	.sym	PRECT,0,138,14,32,26
+  1803                        	.sym	RECT,0,10,14,112,26
+  1804                        	.sym	PPOINT,0,138,14,32,25
+  1805                        	.sym	POINT,0,10,14,32,25
+  1806                        	.sym	PFXPROPERTY,0,138,14,32,23
+  1807                        	.sym	FXPROPERTY,0,10,14,384,23
+  1808                        	.sym	PKEYSTATE,0,138,14,32,22
+  1809                        	.sym	KEYSTATE,0,10,14,112,22
+  1810                        	.sym	SCANCODE,0,14,14,8
+  1811                        	.sym	KEYCODE,0,16,14,16
+  1812                        	.sym	PFXPROCESSMESSAGE,0,138,14,32,21
+  1813                        	.sym	FXPROCESSMESSAGE,0,10,14,112,21
+  1814                        	.sym	PFXPROCESS,0,138,14,32,20
+  1815                        	.sym	FXPROCESS,0,10,14,800,20
+  1816                        	.sym	PDESKTOP_CONTROL,0,138,14,32,19
+  1817                        	.sym	DESKTOP_CONTROL,0,10,14,392,19
+  1818                        	.sym	PCONSOLE_CONTROL,0,138,14,32,18
+  1819                        	.sym	CONSOLE_CONTROL,0,10,14,448,18
+  1820                        	.sym	FXProcessProc,0,641,14,32
+  Mon Sep 27 2021  9:39                                                Page 35
 
 
-  1821                        	.sym	MSGDEST,0,18,14,32
-  1822                        	.sym	MSGSRC,0,18,14,32
-  1823                        	.sym	MSGTYPE,0,16,14,16
-  1824                        	.sym	PROCESS_RESOURCE_LIST,0,138,14,32,6
-  1825                        	.sym	PROCESS_TLS_LIST,0,138,14,32,6
-  1826                        	.sym	SEMAPHORE_LIST,0,138,14,32,6
-  1827                        	.sym	FILE_BLOCK_LIST,0,138,14,32,6
-  1828                        	.sym	FILE_PATH_LIST,0,138,14,32,6
-  1829                        	.sym	PROCEDURE_LIST,0,138,14,32,6
-  1830                        	.sym	FILE_HANDLE,0,138,14,32,11
-  1831                        	.sym	FILE_BLOCK,0,10,14,552,11
-  1832                        	.sym	SEMAPHORE,0,10,14,16,10
-  1833                        	.sym	PPROCESS_SIGNAL,0,138,14,32,9
-  1834                        	.sym	PROCESS_SIGNAL,0,10,14,16,9
-  1835                        	.sym	KRESULT,0,18,14,32
-  1836                        	.sym	PKERNEL_ERROR,0,138,14,32,8
-  1837                        	.sym	KERNEL_ERROR,0,10,14,32,8
-  1838                        	.sym	PROCESS_STATUS,0,16,14,16
-  1839                        	.sym	FILE_PATH_NAME,0,142,14,32
-  1840                        	.sym	PROCESS_RESOURCE,0,129,14,32
-  1841                        	.sym	PROCESS_TLS,0,129,14,32
-  1842                        	.sym	PROCESS_CTX,0,129,14,32
-  1843                        	.sym	USERID,0,16,14,16
-  1844                        	.sym	PROCESS_ID,0,18,14,32
-  1845                        	.sym	PROCESS_BANK,0,14,14,8
-  1846                        	.sym	PFXQUEUE,0,138,14,32,7
-  1847                        	.sym	FXQUEUE,0,10,14,80,7
-  1848                        	.sym	PFXNODELIST,0,138,14,32,6
-  1849                        	.sym	FXNODELIST,0,10,14,96,6
-  1850                        	.sym	NodeListDeallocator,0,641,14,32
-  1851                        	.sym	PFXNODE,0,138,14,32,5
-  1852                        	.sym	FXNODE,0,10,14,384,5
-  1853                        	.sym	PBYTEBITS,0,138,14,32,4
-  1854                        	.sym	BYTEBITS,0,10,14,8,4
-  1855                        	.sym	HRESULT,0,18,14,32
-  1856                        	.sym	LPWCHAR,0,144,14,32
-  1857                        	.sym	WCHAR,0,16,14,16
-  1858                        	.sym	HSTRINGTABLE,0,129,14,32
-  1859                        	.sym	HCOLOR,0,129,14,32
-  1860                        	.sym	HFONT,0,129,14,32
-  1861                        	.sym	HDC,0,129,14,32
-  1862                        	.sym	HPOINTER,0,129,14,32
-  1863                        	.sym	uint32_t,0,18,14,32
-  1864                        	.sym	uint8_t,0,14,14,8
-  1865                        	.sym	LPBOOL,0,142,14,32
-  1866                        	.sym	BOOL,0,14,14,8
-  1867                        	.sym	DWORD,0,18,14,32
-  1868                        	.sym	ULONG,0,18,14,32
-  1869                        	.sym	LPLONG,0,135,14,32
-  1870                        	.sym	LONG,0,7,14,32
-  1871                        	.sym	PUINT,0,144,14,32
-  1872                        	.sym	USHORT,0,16,14,16
-  1873                        	.sym	UINT,0,16,14,16
-  1874                        	.sym	INT,0,5,14,16
-  1875                        	.sym	WORD,0,5,14,16
-  1876                        	.sym	PBYTE,0,142,14,32
-  1877                        	.sym	BYTE,0,14,14,8
-  1878                        	.sym	IOPORT,0,142,14,32
-  Mon Aug  9 2021 16:52                                                Page 36
+  1821                        	.sym	PFXCMDMESSAGE,0,138,14,32,17
+  1822                        	.sym	FXCMDMESSAGE,0,10,14,312,17
+  1823                        	.sym	PFXOSMESSAGE,0,138,14,32,16
+  1824                        	.sym	FXOSMESSAGE,0,10,14,312,16
+  1825                        	.sym	PINT_REGS,0,138,14,32,15
+  1826                        	.sym	INT_REGS,0,10,14,104,15
+  1827                        	.sym	TASK_STACK,0,10,14,32,14
+  1828                        	.sym	TASK,0,10,14,48,13
+  1829                        	.sym	PIRQDATA,0,138,14,32,12
+  1830                        	.sym	IRQDATA,0,10,14,48,12
+  1831                        	.sym	HMENU,0,129,14,32
+  1832                        	.sym	HWND,0,129,14,32
+  1833                        	.sym	MSGDATA,0,14,14,8
+  1834                        	.sym	MSGDEST,0,18,14,32
+  1835                        	.sym	MSGSRC,0,18,14,32
+  1836                        	.sym	MSGTYPE,0,16,14,16
+  1837                        	.sym	PROCESS_RESOURCE_LIST,0,138,14,32,6
+  1838                        	.sym	PROCESS_TLS_LIST,0,138,14,32,6
+  1839                        	.sym	SEMAPHORE_LIST,0,138,14,32,6
+  1840                        	.sym	FILE_BLOCK_LIST,0,138,14,32,6
+  1841                        	.sym	FILE_PATH_LIST,0,138,14,32,6
+  1842                        	.sym	PROCEDURE_LIST,0,138,14,32,6
+  1843                        	.sym	FILE_HANDLE,0,138,14,32,11
+  1844                        	.sym	FILE_BLOCK,0,10,14,552,11
+  1845                        	.sym	SEMAPHORE,0,10,14,16,10
+  1846                        	.sym	PPROCESS_SIGNAL,0,138,14,32,9
+  1847                        	.sym	PROCESS_SIGNAL,0,10,14,16,9
+  1848                        	.sym	KRESULT,0,18,14,32
+  1849                        	.sym	PKERNEL_ERROR,0,138,14,32,8
+  1850                        	.sym	KERNEL_ERROR,0,10,14,32,8
+  1851                        	.sym	PROCESS_STATUS,0,16,14,16
+  1852                        	.sym	FILE_PATH_NAME,0,142,14,32
+  1853                        	.sym	PROCESS_RESOURCE,0,129,14,32
+  1854                        	.sym	PROCESS_TLS,0,129,14,32
+  1855                        	.sym	PROCESS_CTX,0,129,14,32
+  1856                        	.sym	USERID,0,16,14,16
+  1857                        	.sym	PROCESS_ID,0,18,14,32
+  1858                        	.sym	PROCESS_BANK,0,14,14,8
+  1859                        	.sym	PFXQUEUE,0,138,14,32,7
+  1860                        	.sym	FXQUEUE,0,10,14,80,7
+  1861                        	.sym	PFXNODELIST,0,138,14,32,6
+  1862                        	.sym	FXNODELIST,0,10,14,96,6
+  1863                        	.sym	NodeListDeallocator,0,641,14,32
+  1864                        	.sym	PFXNODE,0,138,14,32,5
+  1865                        	.sym	FXNODE,0,10,14,384,5
+  1866                        	.sym	PBYTEBITS,0,138,14,32,4
+  1867                        	.sym	BYTEBITS,0,10,14,8,4
+  1868                        	.sym	HRESULT,0,18,14,32
+  1869                        	.sym	LPWCHAR,0,144,14,32
+  1870                        	.sym	WCHAR,0,16,14,16
+  1871                        	.sym	HSTRINGTABLE,0,129,14,32
+  1872                        	.sym	HCOLOR,0,129,14,32
+  1873                        	.sym	HFONT,0,129,14,32
+  1874                        	.sym	HDC,0,129,14,32
+  1875                        	.sym	HPOINTER,0,129,14,32
+  1876                        	.sym	uint32_t,0,18,14,32
+  1877                        	.sym	uint8_t,0,14,14,8
+  1878                        	.sym	LPBOOL,0,142,14,32
+  Mon Sep 27 2021  9:39                                                Page 36
 
 
-  1879                        	.sym	PUCHAR,0,142,14,32
-  1880                        	.sym	UCHAR,0,14,14,8
-  1881                        	.sym	LPWCSTR,0,142,14,32
-  1882                        	.sym	LPCSTR,0,142,14,32
-  1883                        	.sym	LPSTR,0,142,14,32
-  1884                        	.sym	LPCHAR,0,142,14,32
-  1885                        	.sym	CHAR,0,14,14,8
-  1886                        	.sym	PUINT_32,0,146,14,32
-  1887                        	.sym	UINT_32,0,18,14,32
-  1888                        	.sym	PUINT_16,0,144,14,32
-  1889                        	.sym	UINT_16,0,16,14,16
-  1890                        	.sym	PUINT_8,0,142,14,32
-  1891                        	.sym	UINT_8,0,14,14,8
-  1892                        	.sym	LPVOID,0,129,14,32
-  1893                        	.sym	VOID,0,1,14,32
-  1894                        	.sym	Boolean_T,0,5,14,16
-  1895                        	.sym	ldiv_t,0,10,14,64,2
-  1896                        	.sym	div_t,0,10,14,32,1
-  1897                        	.sym	wctype_t,0,16,14,16
-  1898                        	.sym	wint_t,0,16,14,16
-  1899                        	.sym	wchar_t,0,14,14,8
-  1900                        	.sym	ptrdiff_t,0,7,14,32
-  1901                        	.sym	size_t,0,16,14,16
-  1902                        	end
+  1879                        	.sym	BOOL,0,14,14,8
+  1880                        	.sym	DWORD,0,18,14,32
+  1881                        	.sym	ULONG,0,18,14,32
+  1882                        	.sym	LPLONG,0,135,14,32
+  1883                        	.sym	LONG,0,7,14,32
+  1884                        	.sym	PUINT,0,144,14,32
+  1885                        	.sym	USHORT,0,16,14,16
+  1886                        	.sym	UINT,0,16,14,16
+  1887                        	.sym	INT,0,5,14,16
+  1888                        	.sym	WORD,0,5,14,16
+  1889                        	.sym	PBYTE,0,142,14,32
+  1890                        	.sym	BYTE,0,14,14,8
+  1891                        	.sym	IOPORT,0,142,14,32
+  1892                        	.sym	PUCHAR,0,142,14,32
+  1893                        	.sym	UCHAR,0,14,14,8
+  1894                        	.sym	LPWCSTR,0,142,14,32
+  1895                        	.sym	LPCSTR,0,142,14,32
+  1896                        	.sym	LPSTR,0,142,14,32
+  1897                        	.sym	LPCHAR,0,142,14,32
+  1898                        	.sym	CHAR,0,14,14,8
+  1899                        	.sym	PUINT_32,0,146,14,32
+  1900                        	.sym	UINT_32,0,18,14,32
+  1901                        	.sym	PUINT_16,0,144,14,32
+  1902                        	.sym	UINT_16,0,16,14,16
+  1903                        	.sym	PUINT_8,0,142,14,32
+  1904                        	.sym	UINT_8,0,14,14,8
+  1905                        	.sym	LPVOID,0,129,14,32
+  1906                        	.sym	VOID,0,1,14,32
+  1907                        	.sym	Boolean_T,0,5,14,16
+  1908                        	.sym	ldiv_t,0,10,14,64,2
+  1909                        	.sym	div_t,0,10,14,32,1
+  1910                        	.sym	wctype_t,0,16,14,16
+  1911                        	.sym	wint_t,0,16,14,16
+  1912                        	.sym	wchar_t,0,14,14,8
+  1913                        	.sym	ptrdiff_t,0,7,14,32
+  1914                        	.sym	size_t,0,16,14,16
+  1915                        	end
 
 
-      Lines assembled: 1902
+      Lines assembled: 1915
       Errors: 0

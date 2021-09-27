@@ -7,7 +7,8 @@
 #include "DRIVERS/DRIVER.H"
 #include "DRIVERS/ps2ctl.H"
 
-#pragma section CODE=entry,offset $00:8000 //$4:0000
+#pragma segment CODE=entrysegment,relocatable
+#pragma section CODE=entrymodule,offset $00:8000
 
 int line = 2;
 //void BRKHandler(void);
@@ -15,7 +16,9 @@ void init_ps2(VOID);
 
 void k_show_image(LPCSTR imageFilePath);
 UINT k_init_splash(BOOL wait);
+void k_show_mandy(LPCSTR imageFilePath, UINT mode);
 
+int draw_mandy(void);
 //static int  msp = 0;
 //static char mainspinner[] = {'|','/','-','\\'};
 static ULONG THIS_MODULE = 0x00000000;
@@ -49,8 +52,6 @@ void DeallocateNodeListString(LPCSTR name,LPVOID data);
 
 /*---------------------------------------------------------------------------*/
 // End of SN76489.ino
-
-
 
 void ReportMemory(UCHAR segment,ULONG block,ULONG size)
 {
@@ -618,6 +619,8 @@ void main(void)
 
 	PFX_DEVICE_DRIVER pstrHead = NULL;
 
+	UINT binary = 0;
+
 	CHAR releaseMajor[2];
 	CHAR releaseMinor[2];
 
@@ -732,8 +735,8 @@ void main(void)
 	k_debug_string("******  Welcome to FX/OS   *******\r\n");
 	k_debug_string("******       Booting       *******\r\n");
 	k_debug_string("**********************************\r\n");
-
-
+	k_debug_strings("",__FOENIX__);
+	k_debug_string("**********************************\r\n");
 	//
 	// Output device load log
 	//
@@ -829,6 +832,19 @@ void main(void)
 	k_debug_integer("sizeof(FXOSMESSAGE):",sizeof(FXOSMESSAGE));
 	k_debug_integer("sizeof(FXCMDMESSAGE):",sizeof(FXCMDMESSAGE));
 
+    binary = 0b10000000;
+    k_debug_integer(" binary = 0b10000000:",binary);
+
+
+    binary = 0b10000001;
+    k_debug_integer(" binary = 0b10000001:",binary);
+
+    binary = 0b10000010;
+    k_debug_integer(" binary = 0b10000010:",binary);
+
+    binary = 0b1111111111111111;
+    k_debug_integer(" binary = 0b11111111:",binary);
+
 
 	k_debug_integer("sizeof(FXKERNEL_API_CALLTABLE):",sizeof(FXKERNEL_API_CALLTABLE));
 
@@ -889,6 +905,8 @@ void main(void)
 	//k_show_image("HD:\\system\\images\\mand03.bmp");
 
 
+	//draw_mandy();
+
 	bootMode = k_init_splash(TRUE);
 
 
@@ -909,17 +927,6 @@ void main(void)
 
 	//k_dos_load_drivers();
 	//k_create_dos_device(FXDOS_SDC);
-	/*
-	k_debug_string("Call DLLMAIN\r\n");
-	memcpy((LPSTR)0x090000,APGMBIN,sizeof(APGMBIN));
-
-	k_debug_integer("APGMBIN SIZE:",sizeof(APGMBIN));
-	k_debug_hex("APGMBIN DATA:",APGMBIN[0]);
-	k_debug_hex("MEMORY  DATA:",((LPCSTR)0x090000)[0]);
-	k_debug_pointer("DllMain:",DllMain);
-
-	DllMain();
-	*/
 
 	// user mode test
 	//DebugOut("API CALL!!!!\r\n");
@@ -1163,3 +1170,182 @@ if(debugport)
 
 k_fxstring_free(ipc_data);
 */
+#define MAXCOUNT 256
+void fractal(float left, float top, float xside, float yside,int xmax,int ymax)
+{
+
+	RECT rect;
+
+    float xscale, yscale, zx, zy, cx, tempx, cy;
+    int x, y, i, j;
+    int maxx, maxy, count;
+
+    char binary = 0b00000010;
+
+    /*
+    rect.x = 40;
+    rect.y = 450;
+    rect.width = 100;
+    rect.height = 100;
+	*/
+    rect.x = 0;
+    rect.y = 0;
+    rect.width = 800;
+    rect.height = 600;
+
+
+    maxx = xmax;
+    maxy = ymax;
+
+    // setting up the xscale and yscale
+    xscale = xside / maxx;
+    yscale = yside / maxy;
+
+
+    k_debug_integer("fractal maxx:", maxx);
+    k_debug_integer("fractal maxy:", maxy);
+
+    // calling rectangle function
+    // where required image will be seen
+    //rectangle(0, 0, maxx, maxy);
+
+    // scanning every point in that rectangular area.
+    // Each point represents a Complex number (x + yi).
+    // Iterate that complex number
+    //for (y = 1; y <= maxy - 1; y++)
+    for (y = (rect.y + 1); y <= (rect.height + rect.y - 1); y++)
+    {
+    	k_debug_integer("fractal y:", y);
+        //for (x = 1; x <= maxx - 1; x++)
+    	for (x = (rect.x + 1); x <= (rect.width  + rect.x - 1); x++)
+        {
+            // c_real
+            cx = x * xscale + left;
+
+            // c_imaginary
+            cy = y * yscale + top;
+
+            // z_real
+            zx = 0;
+
+            // z_imaginary
+            zy = 0;
+            count = 0;
+
+            // Calculate whether c(c_real + c_imaginary) belongs
+            // to the Mandelbrot set or not and draw a pixel
+            // at coordinates (x, y) accordingly
+            // If you reach the Maximum number of iterations
+            // and If the distance from the origin is
+            // greater than 2 exit the loop
+            while ((zx * zx + zy * zy < 4) && (count < MAXCOUNT))
+            {
+                // Calculate Mandelbrot function
+                // z = z*z + c where z is a complex number
+
+                // tempx = z_real*_real - z_imaginary*z_imaginary + c_real
+                tempx = zx * zx - zy * zy + cx;
+
+                // 2*z_real*z_imaginary + c_imaginary
+                zy = 2 * zx * zy + cy;
+
+                // Updating z_real = tempx
+                zx = tempx;
+
+                // Increment count
+                count = count + 1;
+            }
+
+            if(k_get_video_mode() > VIDEO_MODE_640X480D)
+            {
+            	k_draw_clipped_pixel_ex(&rect,x,y,count,0);
+            	//k_draw_pixel_front_ex(x, y, count);
+            }
+            else
+            {
+            	//k_draw_pixel_front(x, y, count);
+            	k_draw_clipped_pixel(&rect,x,y,count,0);
+            }
+        }
+        k_debug_char_com1('.');
+    }
+}
+
+int draw_mandy(void)
+{
+	float left, top, xside, yside;
+
+	// setting the left, top, xside and yside
+	// for the screen and image to be displayed
+
+	int mode = 1;
+
+	left = -1.75;
+	top = -0.25;
+	xside = 0.25;
+	yside = 0.45;
+	//yside = 0.25;
+
+	k_debug_integer("draw_mandy:", mode);
+
+	if(mode)
+	{
+		k_show_mandy("HD:\\system\\images\\mand03.bmp", mode);
+
+		left = -1.5;
+		top = -0.02;
+		xside = 0.04;
+		yside = 0.04;
+
+		fractal(left, top, xside, yside, 800, 600);
+	}
+	else
+	{
+		k_show_mandy("HD:\\system\\images\\mand03.bmp", mode);
+		fractal(left, top, xside, yside, 640, 480);
+	}
+
+	return 0;
+}
+
+//void mandelbrot(boid)
+//{
+//	double x, xx, y, cx, cy;
+//	int iteration, hx, hy;
+//	int itermax = 100; /* how many iterations to do	*/
+//	double magnify = 1.0; /* no magnification		*/
+//	int hxres = 250; /* horizonal resolution		*/
+//	int hyres = 250; /* vertical resolution		*/
+//
+//
+//	//printf("P6\n# CREATOR: Eric R Weeks / mandel program\n");
+//	//printf("%d %d\n255\n", hxres, hyres);
+//
+//	for (hy = 1; hy <= hyres; hy++)
+//	{
+//		for (hx = 1; hx <= hxres; hx++)
+//		{
+//			cx = (((float) hx) / ((float) hxres) - 0.5) / magnify * 3.0 - 0.7;
+//			cy = (((float) hy) / ((float) hyres) - 0.5) / magnify * 3.0;
+//			x = 0.0;
+//			y = 0.0;
+//			for (iteration = 1; iteration < itermax; iteration++)
+//			{
+//				xx = x * x - y * y + cx;
+//				y = 2.0 * x * y + cy;
+//				x = xx;
+//				if (x * x + y * y > 100.0)
+//					iteration = 999999;
+//			}
+//
+//			if (iteration < 99999)
+//				color(0, 255, 255);
+//			else
+//				color(180, 0, 0);
+//
+//
+//
+//		}
+//	}
+//}
+

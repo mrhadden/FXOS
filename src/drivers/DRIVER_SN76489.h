@@ -83,7 +83,7 @@ void initSN76489(void);
 void play(BYTE channel, UINT note);
 void setVolume( BYTE channel, BYTE volume );
 
-static void poke(BYTE b);
+//static void poke(BYTE b);
 
 void psg_set_atten(BYTE voice, BYTE attenuation);
 /**

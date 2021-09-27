@@ -498,10 +498,10 @@ R3	equ	13
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",11
 	.line	72
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",6
-	.line	1960
+	.line	1963
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",16
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
-	.line	490
+	.line	475
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",22
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
@@ -514,7 +514,7 @@ R3	equ	13
 	.line	1064
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",7
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
-	.line	1960
+	.line	1963
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",12
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
@@ -609,7 +609,7 @@ R3	equ	13
 	.line	129
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",6
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
-	.line	568
+	.line	572
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",7
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",0
@@ -635,7 +635,7 @@ R3	equ	13
 	.member	CUR_GADGET,144,5,8,16
 	.member	CUR_COLOR,160,101,8,0,15
 	.eos
-	.line	359
+	.line	370
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",8
 	.stag	_fxos_winman_vtable,160,60
 	.member	Events,0,641,8,32
@@ -709,7 +709,7 @@ R3	equ	13
 	.member	readable,8,110,8,0,16
 	.member	data,136,129,8,32
 	.eos
-	.line	568
+	.line	572
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",18
 	.stag	_fx_spinner_ctx,48,71
 	.member	index,0,5,8,16
@@ -923,7 +923,7 @@ R3	equ	13
 	.stag	_k_irq_chain,128,89
 	.member	handlers,0,5217,8,32,4
 	.eos
-	.line	490
+	.line	475
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER_SN76489.c",2
 ;#include "drivers/DRIVER.h"
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",0
@@ -934,9 +934,9 @@ R3	equ	13
 	.line	129
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",6
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
-	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",104
-	.line	113
+	.line	1963
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",106
+	.line	115
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER_SN76489.c",3
 ;#include "drivers/DRIVER_SN76489.h"
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER_SN76489.h",0
@@ -945,7 +945,6 @@ R3	equ	13
 ;/*---------------------------------------------------------------------------*/
 ;// STATIC GLOBALS
 ;/*---------------------------------------------------------------------------*/
-;
 ;
 ;static BYTE     S_volume = VOL_MAX;  // Default maximum volume.
 	data
@@ -1186,39 +1185,6 @@ R3	equ	13
 ;};
 	ends
 ;
-;//#define DEBUG
-;/*---------------------------------------------------------------------------*/
-;/*
-;  SN76489 sound chip routines
-;  By Allen C. Huffman
-;  www.subethasoftware.com
-;  Some simple functions to making this sound chip beep.
-;  REFERENCES:
-;  Information on the SN76849 came from this article:
-;  http://danceswithferrets.org/geekblog/?p=93
-;  And these links found in it:
-;  http://www.smspower.org/Development/SN76489
-;  http://members.casema.nl/hhaydn/howel/parts/76489.htm
-;  CONFIGURATION:
-;  1. Nine (9) digital out pins must be defined.
-;  VERSION HISTORY:
-;  2017-03-01 0.0 allenh - In the beginning...
-;  2017-03-04 0.1 allenh - Renaming volume(), adding setVolumeMax(), fixing
-;                          chip name typos.
-;  2017-03-06 0.2 allenh - Adding comments with MIDI not values. Fixing
-;                          lowest note. Cleanup.
-;  2017-03-09 0.3 allenh - Fixing defines and comments for noise bits.
-;  2017-03-14 0.4 allenh - Fixing pinout notes. More cleanup.
-;  2017-03-26 0.5 allenh - NANO and Teensy 2.0 defines. Cleanup.
-;  2018-02-18 0.6 allenh - Using boards.txt defines for Teensy/Nano support.
-;                          NANO pin defines redone for ease of wiring.
-;  TODO:
-;   Add ADSR support (instead of just fade/decay) to playHandler().
-;   Add real support for Channel 3 "noise".
-;  TOFIX:
-;   TODO
-;*/
-;/*---------------------------------------------------------------------------*/
 ;void psg_init(void);
 ;
 ;static BOOL f_driver_load(void);
@@ -1269,11 +1235,11 @@ SND	section	offset $04:82A0
 	ends
 ;static PFX_DEVICE_DRIVER f_get_driver(LPCSTR major,LPCSTR minor)
 ;{
-	.line	208
-	.line	209
+	.line	174
+	.line	175
 	SND
 	func
-	.function	209
+	.function	175
 ~~f_get_driver:
 	longa	on
 	longi	on
@@ -1285,11 +1251,11 @@ SND	section	offset $04:82A0
 	tcd
 major_0	set	4
 minor_0	set	8
-	.block	209
+	.block	175
 ;	return &DRIVER_SN76489;
 	.sym	major,4,142,6,32
 	.sym	minor,8,142,6,32
-	.line	210
+	.line	176
 	lda	#<~~DRIVER_SN76489
 	sta	<R0
 	xref	_BEG_DATA
@@ -1311,22 +1277,22 @@ L5:
 	tya
 	rtl
 ;}
-	.line	211
-	.endblock	211
+	.line	177
+	.endblock	177
 L2	equ	4
 L3	equ	5
 	ends
 	efunc
-	.endfunc	211,5,4
-	.line	211
+	.endfunc	177,5,4
+	.line	177
 ;
 ;static BOOL f_driver_load(void)
 ;{
-	.line	213
-	.line	214
+	.line	179
+	.line	180
 	SND
 	func
-	.function	214
+	.function	180
 ~~f_driver_load:
 	longa	on
 	longi	on
@@ -1336,50 +1302,50 @@ L3	equ	5
 	tcs
 	phd
 	tcd
-	.block	214
+	.block	180
 ;	psg_init();
-	.line	215
+	.line	181
 	jsl	~~psg_init
 ;
 ;	psg_set_atten(0, 7);
-	.line	217
+	.line	183
 	pea	#<$7
 	pea	#<$0
 	jsl	~~psg_set_atten
 ;
 ;	psg_tone(0, G_notes[26] );
-	.line	219
+	.line	185
 	lda	|~~G_notes+52
 	pha
 	pea	#<$0
 	jsl	~~psg_tone
 ;	sleep(4000);
-	.line	220
+	.line	186
 	pea	#<$fa0
 	jsl	~~sleep
 ;	psg_tone(0, G_notes[31] );
-	.line	221
+	.line	187
 	lda	|~~G_notes+62
 	pha
 	pea	#<$0
 	jsl	~~psg_tone
 ;	sleep(2000);
-	.line	222
+	.line	188
 	pea	#<$7d0
 	jsl	~~sleep
 ;	psg_tone(0, G_notes[27] );
-	.line	223
+	.line	189
 	lda	|~~G_notes+54
 	pha
 	pea	#<$0
 	jsl	~~psg_tone
 ;	sleep(7000);
-	.line	224
+	.line	190
 	pea	#<$1b58
 	jsl	~~sleep
 ;
 ;	psg_set_atten(0, 0xF);
-	.line	226
+	.line	192
 	pea	#<$f
 	pea	#<$0
 	jsl	~~psg_set_atten
@@ -1387,19 +1353,19 @@ L3	equ	5
 ;
 ;
 ;	psg_tone(0,0);
-	.line	230
+	.line	196
 	pea	#<$0
 	pea	#<$0
 	jsl	~~psg_tone
 ;	psg_tone(1,0);
-	.line	231
+	.line	197
 	pea	#<$0
 	pea	#<$1
 	jsl	~~psg_tone
 ;
 ;
 ;	return TRUE;
-	.line	234
+	.line	200
 	lda	#$1
 L9:
 	tay
@@ -1411,22 +1377,22 @@ L9:
 	tya
 	rtl
 ;}
-	.line	235
-	.endblock	235
+	.line	201
+	.endblock	201
 L6	equ	0
 L7	equ	1
 	ends
 	efunc
-	.endfunc	235,1,0
-	.line	235
+	.endfunc	201,1,0
+	.line	201
 ;
 ;static UINT f_driver_read(LPVOID buffer)
 ;{
-	.line	237
-	.line	238
+	.line	203
+	.line	204
 	SND
 	func
-	.function	238
+	.function	204
 ~~f_driver_read:
 	longa	on
 	longi	on
@@ -1437,10 +1403,10 @@ L7	equ	1
 	phd
 	tcd
 buffer_0	set	4
-	.block	238
+	.block	204
 ;	return 0;
 	.sym	buffer,4,129,6,32
-	.line	239
+	.line	205
 	lda	#$0
 L13:
 	tay
@@ -1456,22 +1422,22 @@ L13:
 	tya
 	rtl
 ;}
-	.line	240
-	.endblock	240
+	.line	206
+	.endblock	206
 L10	equ	0
 L11	equ	1
 	ends
 	efunc
-	.endfunc	240,1,0
-	.line	240
+	.endfunc	206,1,0
+	.line	206
 ;
 ;static UINT f_driver_write(UINT size,LPVOID buffer)
 ;{
-	.line	242
-	.line	243
+	.line	208
+	.line	209
 	SND
 	func
-	.function	243
+	.function	209
 ~~f_driver_write:
 	longa	on
 	longi	on
@@ -1483,11 +1449,11 @@ L11	equ	1
 	tcd
 size_0	set	4
 buffer_0	set	6
-	.block	243
+	.block	209
 ;	return 0;
 	.sym	size,4,16,6,16
 	.sym	buffer,6,129,6,32
-	.line	244
+	.line	210
 	lda	#$0
 L17:
 	tay
@@ -1503,22 +1469,22 @@ L17:
 	tya
 	rtl
 ;}
-	.line	245
-	.endblock	245
+	.line	211
+	.endblock	211
 L14	equ	0
 L15	equ	1
 	ends
 	efunc
-	.endfunc	245,1,0
-	.line	245
+	.endfunc	211,1,0
+	.line	211
 ;
 ;static BOOL f_driver_unload(void)
 ;{
-	.line	247
-	.line	248
+	.line	213
+	.line	214
 	SND
 	func
-	.function	248
+	.function	214
 ~~f_driver_unload:
 	longa	on
 	longi	on
@@ -1528,9 +1494,9 @@ L15	equ	1
 	tcs
 	phd
 	tcd
-	.block	248
+	.block	214
 ;	return FALSE;
-	.line	249
+	.line	215
 	lda	#$0
 L21:
 	tay
@@ -1542,38 +1508,24 @@ L21:
 	tya
 	rtl
 ;}
-	.line	250
-	.endblock	250
+	.line	216
+	.endblock	216
 L18	equ	0
 L19	equ	1
 	ends
 	efunc
-	.endfunc	250,1,0
-	.line	250
+	.endfunc	216,1,0
+	.line	216
 ;
-;
-;
-;/*---------------------------------------------------------------------------*/
-;// CONFIGURATION
-;/*---------------------------------------------------------------------------*/
-;//
-;// The SN76489 uses 8 digital output lines to set the bits in a byte, then
-;// uses another digital out to toggle HIGH/LOW to set that byte.
-;//
-;
-;/*
-; * Send byte to SN76489.
-; *
-; * b = byte to send
-; */
-;static void poke(BYTE b)
+;void psg_set_atten(BYTE voice, BYTE attenuation)
 ;{
-	.line	267
-	.line	268
+	.line	218
+	.line	219
 	SND
+	xdef	~~psg_set_atten
 	func
-	.function	268
-~~poke:
+	.function	219
+~~psg_set_atten:
 	longa	on
 	longi	on
 	tsc
@@ -1582,60 +1534,9 @@ L19	equ	1
 	tcs
 	phd
 	tcd
-b_0	set	4
-	.block	268
-;	((LPSTR)0xAFF100)[0] = b;
-	.sym	b,4,14,6,8
-	.line	269
-	sep	#$20
-	longa	off
-	lda	<L22+b_0
-	sta	>11530496
-	rep	#$20
-	longa	on
-;} // end of poke()
-	.line	270
-L25:
-	lda	<L22+2
-	sta	<L22+2+2
-	lda	<L22+1
-	sta	<L22+1+2
-	pld
-	tsc
-	clc
-	adc	#L22+2
-	tcs
-	rtl
-	.endblock	270
-L22	equ	0
-L23	equ	1
-	ends
-	efunc
-	.endfunc	270,1,0
-	.line	270
-;
-;
-;
-;void psg_set_atten(BYTE voice, BYTE attenuation)
-;{
-	.line	274
-	.line	275
-	SND
-	xdef	~~psg_set_atten
-	func
-	.function	275
-~~psg_set_atten:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L26
-	tcs
-	phd
-	tcd
 voice_0	set	4
 attenuation_0	set	6
-	.block	275
+	.block	219
 ;	volatile BYTE *psg_port = (BYTE *) (0xAFF100);
 ;	BYTE command = 0x90 | (voice & 0x03 << 5) | (attenuation & 0x0f); // Generate the attenuation command
 ;	*psg_port = command;
@@ -1646,19 +1547,19 @@ command_1	set	4
 	.sym	voice,4,14,6,8
 	.sym	attenuation,6,14,6,8
 	lda	#$f100
-	sta	<L27+psg_port_1
+	sta	<L23+psg_port_1
 	lda	#$af
-	sta	<L27+psg_port_1+2
+	sta	<L23+psg_port_1+2
 	sep	#$20
 	longa	off
-	lda	<L26+voice_0
+	lda	<L22+voice_0
 	and	#<$60
 	sta	<R0
 	rep	#$20
 	longa	on
 	sep	#$20
 	longa	off
-	lda	<L26+attenuation_0
+	lda	<L22+attenuation_0
 	and	#<$f
 	sta	<R1
 	rep	#$20
@@ -1672,60 +1573,60 @@ command_1	set	4
 	sep	#$20
 	longa	off
 	ora	#<$90
-	sta	<L27+command_1
+	sta	<L23+command_1
 	rep	#$20
 	longa	on
-	.line	278
+	.line	222
 	sep	#$20
 	longa	off
-	lda	<L27+command_1
-	sta	[<L27+psg_port_1]
+	lda	<L23+command_1
+	sta	[<L23+psg_port_1]
 	rep	#$20
 	longa	on
 ;}
-	.line	279
-L29:
-	lda	<L26+2
-	sta	<L26+2+4
-	lda	<L26+1
-	sta	<L26+1+4
+	.line	223
+L25:
+	lda	<L22+2
+	sta	<L22+2+4
+	lda	<L22+1
+	sta	<L22+1+4
 	pld
 	tsc
 	clc
-	adc	#L26+4
+	adc	#L22+4
 	tcs
 	rtl
-	.endblock	279
-L26	equ	13
-L27	equ	9
+	.endblock	223
+L22	equ	13
+L23	equ	9
 	ends
 	efunc
-	.endfunc	279,9,13
-	.line	279
+	.endfunc	223,9,13
+	.line	223
 ;
 ;/**
 ; * Play a tone on the designated voice of the PSG
 ; */
 ;void psg_tone(BYTE voice, short frequency)
 ;{
-	.line	284
-	.line	285
+	.line	228
+	.line	229
 	SND
 	xdef	~~psg_tone
 	func
-	.function	285
+	.function	229
 ~~psg_tone:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L30
+	sbc	#L26
 	tcs
 	phd
 	tcd
 voice_0	set	4
 frequency_0	set	6
-	.block	285
+	.block	229
 ;	volatile BYTE *psg_port = (BYTE *) (0xAFF100);
 ;	BYTE command1 = 0x80 | (voice & 0x03 << 5) | (frequency & 0x0f); // Generate the first frequency command
 ;	BYTE command2 = ((frequency >> 4) & 0x3f); // Generate the second frequency command
@@ -1739,13 +1640,13 @@ command2_1	set	5
 	.sym	voice,4,14,6,8
 	.sym	frequency,6,4,6,16
 	lda	#$f100
-	sta	<L31+psg_port_1
+	sta	<L27+psg_port_1
 	lda	#$af
-	sta	<L31+psg_port_1+2
-	lda	<L30+voice_0
+	sta	<L27+psg_port_1+2
+	lda	<L26+voice_0
 	and	#<$60
 	sta	<R0
-	lda	<L30+frequency_0
+	lda	<L26+frequency_0
 	and	#<$f
 	sta	<R1
 	lda	<R1
@@ -1755,10 +1656,10 @@ command2_1	set	5
 	sep	#$20
 	longa	off
 	lda	<R0
-	sta	<L31+command1_1
+	sta	<L27+command1_1
 	rep	#$20
 	longa	on
-	lda	<L30+frequency_0
+	lda	<L26+frequency_0
 	sta	<R0
 	lda	<R0
 	asl	A
@@ -1778,790 +1679,117 @@ command2_1	set	5
 	sep	#$20
 	longa	off
 	lda	<R1
-	sta	<L31+command2_1
+	sta	<L27+command2_1
 	rep	#$20
 	longa	on
-	.line	289
+	.line	233
 	sep	#$20
 	longa	off
-	lda	<L31+command1_1
-	sta	[<L31+psg_port_1]
+	lda	<L27+command1_1
+	sta	[<L27+psg_port_1]
 	rep	#$20
 	longa	on
 ;	*psg_port = command2;
-	.line	290
+	.line	234
 	sep	#$20
 	longa	off
-	lda	<L31+command2_1
-	sta	[<L31+psg_port_1]
+	lda	<L27+command2_1
+	sta	[<L27+psg_port_1]
 	rep	#$20
 	longa	on
 ;}
-	.line	291
-L33:
-	lda	<L30+2
-	sta	<L30+2+4
-	lda	<L30+1
-	sta	<L30+1+4
+	.line	235
+L29:
+	lda	<L26+2
+	sta	<L26+2+4
+	lda	<L26+1
+	sta	<L26+1+4
 	pld
 	tsc
 	clc
-	adc	#L30+4
+	adc	#L26+4
 	tcs
 	rtl
-	.endblock	291
-L30	equ	14
-L31	equ	9
+	.endblock	235
+L26	equ	14
+L27	equ	9
 	ends
 	efunc
-	.endfunc	291,9,14
-	.line	291
+	.endfunc	235,9,14
+	.line	235
 ;
 ;/**
 ; * Initialize the SN76477 by turning all the voices to maximum attenuation.
 ; */
 ;void psg_init(void)
 ;{
-	.line	296
-	.line	297
+	.line	240
+	.line	241
 	SND
 	xdef	~~psg_init
 	func
-	.function	297
+	.function	241
 ~~psg_init:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L34
+	sbc	#L30
 	tcs
 	phd
 	tcd
-	.block	297
+	.block	241
 ;	short voice;
 ;	for (voice = 0; voice < 4; voice++)
 voice_1	set	0
 	.sym	voice,0,4,1,16
-	.line	299
-	stz	<L35+voice_1
+	.line	243
+	stz	<L31+voice_1
 	brl	L10004
 L10003:
 ;	{
-	.line	300
+	.line	244
 ;		psg_set_atten(voice, 0x0f);
-	.line	301
+	.line	245
 	pea	#<$f
-	pei	<L35+voice_1
+	pei	<L31+voice_1
 	jsl	~~psg_set_atten
 ;	}
-	.line	302
+	.line	246
 L10001:
-	inc	<L35+voice_1
+	inc	<L31+voice_1
 L10004:
-	lda	<L35+voice_1
-	bmi	L37
+	lda	<L31+voice_1
+	bmi	L33
 	dea
 	dea
 	dea
 	dea
-	bpl	L38
-L37:
+	bpl	L34
+L33:
 	brl	L10003
-L38:
+L34:
 L10002:
 ;}
-	.line	303
-L39:
+	.line	247
+L35:
 	pld
 	tsc
 	clc
-	adc	#L34
+	adc	#L30
 	tcs
 	rtl
-	.endblock	303
-L34	equ	2
-L35	equ	1
+	.endblock	247
+L30	equ	2
+L31	equ	1
 	ends
 	efunc
-	.endfunc	303,1,2
-	.line	303
-;
-;void initSN76489(void)
-;{
-	.line	305
-	.line	306
-	SND
-	xdef	~~initSN76489
-	func
-	.function	306
-~~initSN76489:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L40
-	tcs
-	phd
-	tcd
-	.block	306
-;  /* Enable pins to be OUTPUTs */
-;  /*
-;  pinMode(SN76489_D0, OUTPUT);
-;  pinMode(SN76489_D1, OUTPUT);
-;  pinMode(SN76489_D2, OUTPUT);
-;  pinMode(SN76489_D3, OUTPUT);
-;  pinMode(SN76489_D4, OUTPUT);
-;  pinMode(SN76489_D5, OUTPUT);
-;  pinMode(SN76489_D6, OUTPUT);
-;  pinMode(SN76489_D7, OUTPUT);
-;
-;  pinMode(SN76489_WE, OUTPUT);
-;  */
-;  muteAll();
-	.line	320
-	jsl	~~muteAll
-;}
-	.line	321
-L43:
-	pld
-	tsc
-	clc
-	adc	#L40
-	tcs
-	rtl
-	.endblock	321
-L40	equ	0
-L41	equ	1
-	ends
-	efunc
-	.endfunc	321,1,0
-	.line	321
+	.endfunc	247,1,2
+	.line	247
 ;
 ;
-;/*---------------------------------------------------------------------------*/
-;// PUBLIC API:
-;//
-;// play( channel, note ) - called to play a tone.
-;//
-;// playHandler() - called in main loop to handle ADSR of notes.
-;//
-;// volume( channel, volume )
-;//
-;
-;/*
-; * Play a tone on a specified channel.
-; *
-; * channel  = 0-3
-; * note     = 0 (off), 1-88 (piano note)
-;*/
-;void play(BYTE channel, UINT note)
-;{
-	.line	340
-	.line	341
-	SND
-	xdef	~~play
-	func
-	.function	341
-~~play:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L44
-	tcs
-	phd
-	tcd
-channel_0	set	4
-note_0	set	6
-	.block	341
-;	 UINT freq;
-;
-;  /* If note is in our playable range... */
-;  if (note < sizeof(G_notes))
-freq_1	set	0
-	.sym	freq,0,16,1,16
-	.sym	channel,4,14,6,8
-	.sym	note,6,16,6,16
-	.line	345
-;  {
-	lda	<L44+note_0
-	cmp	#<$b0
-	bcc	L47
-	brl	L10005
-L47:
-	.line	346
-;    /* Convert channel 0-3 to bits. */
-;    if (channel <= 3)
-	.line	348
-;    {
-	sep	#$20
-	longa	off
-	lda	#$3
-	cmp	<L44+channel_0
-	rep	#$20
-	longa	on
-	bcs	L48
-	brl	L10006
-L48:
-	.line	349
-;      // 0 is used for a rest (note off).
-;      if (note == 0)
-	.line	351
-;      {
-	lda	<L44+note_0
-	beq	L49
-	brl	L10007
-L49:
-	.line	352
-;        setVolume( channel, VOL_OFF );
-	.line	353
-	pea	#<$f
-	pei	<L44+channel_0
-	jsl	~~setVolume
-;      }
-	.line	354
-;      else
-	brl	L10008
-L10007:
-;      {
-	.line	356
-;
-;
-;        /* Quick check so we don't bother playing things we can't play. */
-;        if ( (note < LOWEST_NOTE) || (note > HIGHEST_NOTE) ) return;
-	.line	360
-	lda	<L44+note_0
-	cmp	#<$14
-	bcs	L51
-	brl	L50
-L51:
-	lda	#$58
-	cmp	<L44+note_0
-	bcc	L52
-	brl	L10009
-L52:
-L50:
-	.line	360
-L53:
-	lda	<L44+2
-	sta	<L44+2+4
-	lda	<L44+1
-	sta	<L44+1+4
-	pld
-	tsc
-	clc
-	adc	#L44+4
-	tcs
-	rtl
-;        // TODO: Clean this up so we only have one place to return.
-;
-;        /* Get the frequency from the table. */
-;        freq = G_notes[note]; // from PROGMEM
-L10009:
-	.line	364
-	lda	<L44+note_0
-	asl	A
-	sta	<R0
-	ldx	<R0
-	lda	|~~G_notes,X
-	sta	<L45+freq_1
-;
-;        /* Shift channel value (00000011) five places to the left. */
-;        poke( LATCH_CMD | (channel << 5) | TYPE_TONE | (freq & 15) );
-	.line	367
-	lda	<L44+channel_0
-	and	#$ff
-	sta	<R1
-	lda	<R1
-	asl	A
-	asl	A
-	asl	A
-	asl	A
-	asl	A
-	sta	<R0
-	lda	<L45+freq_1
-	and	#<$f
-	sta	<R1
-	lda	<R1
-	ora	<R0
-	ora	#<$80
-	pha
-	jsl	~~poke
-;
-;        /* If more bits are used than fit in 4... */
-;        if (freq > 15)
-	.line	370
-;        {
-	lda	#$f
-	cmp	<L45+freq_1
-	bcc	L54
-	brl	L10010
-L54:
-	.line	371
-;          /* ...issue second DATA byte with the rest. */
-;          poke( DATA_CMD | (freq >> 4) );
-	.line	373
-	lda	<L45+freq_1
-	lsr	A
-	lsr	A
-	lsr	A
-	lsr	A
-	pha
-	jsl	~~poke
-;        }
-	.line	374
-;
-;        /* Set channel to default volume. */
-;        setVolume(channel, S_volume);
-L10010:
-	.line	377
-	lda	|~~S_volume
-	pha
-	pei	<L44+channel_0
-	jsl	~~setVolume
-;
-;        /* Cache the volume level so we can use it later. */
-;        S_vol[channel] = S_volume;
-	.line	380
-	lda	<L44+channel_0
-	and	#$ff
-	sta	<R0
-	sep	#$20
-	longa	off
-	lda	|~~S_volume
-	ldx	<R0
-	sta	|~~S_vol,X
-	rep	#$20
-	longa	on
-;
-;      } // end of if (note==0) else
-	.line	382
-L10008:
-;    } // end of if (channel <= 3)
-	.line	383
-;#if defined(DEBUG)
-;    else // not if (channel <= 3)
-;    {
-;      // Channel >3! Error.
-;      Serial.print(F("Invalid channel (0-3 allowed): "));
-;      Serial.println(channel );
-;    }
-;#endif
-;  } // end of if (note < sizeof(g_notes4mhz))
-L10006:
-	.line	392
-;#if defined(DEBUG)
-;  else // note is higher than the table contains.
-;  {
-;    // Note >88! Error.
-;    Serial.print(F("Invalid note (0-87 allowed): "));
-;    Serial.println(note);
-;  }
-;#endif
-;} // end of play()
-L10005:
-	.line	401
-	brl	L53
-	.endblock	401
-L44	equ	10
-L45	equ	9
-	ends
-	efunc
-	.endfunc	401,9,10
-	.line	401
-;
-;/*
-; * Set volume of specified channel.
-; *
-; * channel  = 0-3
-; * volume   = VOL_OFF - VOL_MAX
-; */
-;void setVolume( BYTE channel, BYTE volume )
-;{
-	.line	409
-	.line	410
-	SND
-	xdef	~~setVolume
-	func
-	.function	410
-~~setVolume:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L55
-	tcs
-	phd
-	tcd
-channel_0	set	4
-volume_0	set	6
-	.block	410
-;  /* Convert channel 0-3 to bits. */
-;  if (channel <= 3)
-	.sym	channel,4,14,6,8
-	.sym	volume,6,14,6,8
-	.line	412
-;  {
-	sep	#$20
-	longa	off
-	lda	#$3
-	cmp	<L55+channel_0
-	rep	#$20
-	longa	on
-	bcs	L58
-	brl	L10011
-L58:
-	.line	413
-;    /* Shift 00000011 five places to the left. */
-;    poke( LATCH_CMD | (channel << 5) | TYPE_VOL | (volume & 15) );
-	.line	415
-	lda	<L55+channel_0
-	and	#$ff
-	sta	<R1
-	lda	<R1
-	asl	A
-	asl	A
-	asl	A
-	asl	A
-	asl	A
-	sta	<R0
-	lda	<L55+volume_0
-	and	#<$f
-	sta	<R1
-	lda	<R1
-	ora	<R0
-	ora	#<$90
-	pha
-	jsl	~~poke
-;
-;      // Update our static.
-;    S_vol[channel] = volume;
-	.line	418
-	lda	<L55+channel_0
-	and	#$ff
-	sta	<R0
-	sep	#$20
-	longa	off
-	lda	<L55+volume_0
-	ldx	<R0
-	sta	|~~S_vol,X
-	rep	#$20
-	longa	on
-;
-;  } // end of if (channel <= 3)
-	.line	420
-;#if defined(DEBUG)
-;  else // channel is higher than 3.
-;  {
-;    // Channel >3! Error.
-;    Serial.print(F("Invalid channel (0-3 allowed): "));
-;    Serial.println(channel);
-;  }
-;#endif
-;} // end of setVolume()
-L10011:
-	.line	429
-L59:
-	lda	<L55+2
-	sta	<L55+2+4
-	lda	<L55+1
-	sta	<L55+1+4
-	pld
-	tsc
-	clc
-	adc	#L55+4
-	tcs
-	rtl
-	.endblock	429
-L55	equ	8
-L56	equ	9
-	ends
-	efunc
-	.endfunc	429,9,8
-	.line	429
-;
-;/*
-; * Set maximum volume level for all channels.
-; */
-;void setMaxVolume( BYTE volume )
-;{
-	.line	434
-	.line	435
-	SND
-	xdef	~~setMaxVolume
-	func
-	.function	435
-~~setMaxVolume:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L60
-	tcs
-	phd
-	tcd
-volume_0	set	4
-	.block	435
-;  // Update our global static variable.
-;  S_volume = (volume & 15);
-	.sym	volume,4,14,6,8
-	.line	437
-	sep	#$20
-	longa	off
-	lda	<L60+volume_0
-	and	#<$f
-	sta	|~~S_volume
-	rep	#$20
-	longa	on
-;
-;#if defined(DEBUG)
-;    // Channel >3! Error.
-;    Serial.print(F("setMaxVolume: "));
-;    Serial.println(volume);
-;#endif
-;} // end of setMaxVolume()
-	.line	444
-L63:
-	lda	<L60+2
-	sta	<L60+2+2
-	lda	<L60+1
-	sta	<L60+1+2
-	pld
-	tsc
-	clc
-	adc	#L60+2
-	tcs
-	rtl
-	.endblock	444
-L60	equ	0
-L61	equ	1
-	ends
-	efunc
-	.endfunc	444,1,0
-	.line	444
-;
-;/*
-; * Issue Volume 0 to all four channels.
-; */
-;void muteAll(VOID)
-;{
-	.line	449
-	.line	450
-	SND
-	xdef	~~muteAll
-	func
-	.function	450
-~~muteAll:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L64
-	tcs
-	phd
-	tcd
-	.block	450
-;  setVolume(0, VOL_OFF);
-	.line	451
-	pea	#<$f
-	pea	#<$0
-	jsl	~~setVolume
-;  setVolume(1, VOL_OFF);
-	.line	452
-	pea	#<$f
-	pea	#<$1
-	jsl	~~setVolume
-;  setVolume(2, VOL_OFF);
-	.line	453
-	pea	#<$f
-	pea	#<$2
-	jsl	~~setVolume
-;  setVolume(3, VOL_OFF);
-	.line	454
-	pea	#<$f
-	pea	#<$3
-	jsl	~~setVolume
-;} // end of muteAll()
-	.line	455
-L67:
-	pld
-	tsc
-	clc
-	adc	#L64
-	tcs
-	rtl
-	.endblock	455
-L64	equ	0
-L65	equ	1
-	ends
-	efunc
-	.endfunc	455,1,0
-	.line	455
-;
-;// ADSR stuff will go here, eventually. But for now, just decay...
-;void playHandler(void)
-;{
-	.line	458
-	.line	459
-	SND
-	xdef	~~playHandler
-	func
-	.function	459
-~~playHandler:
-	longa	on
-	longi	on
-	tsc
-	sec
-	sbc	#L68
-	tcs
-	phd
-	tcd
-	.block	459
-;	int i;
-;
-;  static unsigned long s_decayTime = 0;
-	data
-L71:
-	dl	$0
-	ends
-;  static unsigned int  s_decayRate = DECAYRATE_MS;
-	data
-L72:
-	dw	$A
-	ends
-;
-;  // After s_decayTime, we decrement volume (fade).
-;  if ( (long)(k_millis() - s_decayRate) >= s_decayTime )
-i_1	set	0
-	.sym	i,0,5,1,16
-	.sym	s_decayTime,71,18,19,32
-	.sym	s_decayRate,72,16,19,16
-	.line	466
-;  {
-	lda	|L72
-	sta	<R0
-	stz	<R0+2
-	jsl	~~k_millis
-	sta	<R1
-	stx	<R1+2
-	sec
-	lda	<R1
-	sbc	<R0
-	sta	<R2
-	lda	<R1+2
-	sbc	<R0+2
-	sta	<R2+2
-	lda	<R2
-	cmp	|L71
-	lda	<R2+2
-	sbc	|L71+2
-	bcs	L73
-	brl	L10012
-L73:
-	.line	467
-;    // Reset "next time to toggle" time.
-;    s_decayTime = k_millis() + s_decayRate;
-	.line	469
-	lda	|L72
-	sta	<R0
-	stz	<R0+2
-	jsl	~~k_millis
-	sta	<R1
-	stx	<R1+2
-	clc
-	lda	<R1
-	adc	<R0
-	sta	|L71
-	lda	<R1+2
-	adc	<R0+2
-	sta	|L71+2
-;
-;    /* Handle notes that might be playing. */
-;    for (i = 0; i < 3; i++)
-	.line	472
-	stz	<L69+i_1
-L10015:
-;    {
-	.line	473
-;      /* If voice volume is not off... */
-;      if (S_vol[i] != VOL_OFF)
-	.line	475
-;      {
-	sep	#$20
-	longa	off
-	ldx	<L69+i_1
-	lda	|~~S_vol,X
-	cmp	#<$f
-	rep	#$20
-	longa	on
-	bne	L74
-	brl	L10016
-L74:
-	.line	476
-;        /* Decrement volume. */
-;        S_vol[i] = S_vol[i] + VOL_DEC;
-	.line	478
-	sep	#$20
-	longa	off
-	ldx	<L69+i_1
-	lda	|~~S_vol,X
-	ina
-	rep	#$20
-	longa	on
-	sep	#$20
-	longa	off
-	ldx	<L69+i_1
-	sta	|~~S_vol,X
-	rep	#$20
-	longa	on
-;        setVolume(i, S_vol[i]);
-	.line	479
-	ldx	<L69+i_1
-	lda	|~~S_vol,X
-	pha
-	pei	<L69+i_1
-	jsl	~~setVolume
-;      }
-	.line	480
-;    }
-L10016:
-	.line	481
-L10013:
-	inc	<L69+i_1
-	lda	<L69+i_1
-	bmi	L75
-	dea
-	dea
-	dea
-	bpl	L76
-L75:
-	brl	L10015
-L76:
-L10014:
-;  }
-	.line	482
-;} // end of playHandler()
-L10012:
-	.line	483
-L77:
-	pld
-	tsc
-	clc
-	adc	#L68
-	tcs
-	rtl
-	.endblock	483
-L68	equ	14
-L69	equ	13
-	ends
-	efunc
-	.endfunc	483,13,14
-	.line	483
-;
-;
-	.line	484
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER_SN76489.c",458
-	xref	~~k_millis
+	.line	248
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER_SN76489.c",240
 	xref	~~sleep
 	.sym	~~f_get_driver,~~f_get_driver,1098,3,32,87
 	.sym	~~DRIVER_SN76489,~~DRIVER_SN76489,10,3,776,87
@@ -2572,16 +1800,9 @@ L69	equ	13
 	.sym	~~G_notes,~~G_notes,112,3,0,88
 	.sym	~~S_vol,~~S_vol,110,3,0,4
 	.sym	~~S_volume,~~S_volume,14,3,8
-	.sym	~~playHandler,~~playHandler,65,2,0
-	.sym	~~muteAll,~~muteAll,65,2,0
-	.sym	~~setMaxVolume,~~setMaxVolume,65,2,0
 	.sym	~~psg_init,~~psg_init,65,2,0
 	.sym	~~psg_tone,~~psg_tone,65,2,0
 	.sym	~~psg_set_atten,~~psg_set_atten,65,2,0
-	.sym	~~poke,~~poke,65,3,0
-	.sym	~~setVolume,~~setVolume,65,2,0
-	.sym	~~play,~~play,65,2,0
-	.sym	~~initSN76489,~~initSN76489,65,2,0
 	.sym	PIRQCHAIN,0,138,14,32,89
 	.sym	IRQCHAIN,0,10,14,128,89
 	.sym	DEVICEDRIVER_COMMAND,0,654,14,32
@@ -2595,7 +1816,6 @@ L69	equ	13
 	.sym	GETDRIVERDEF,0,8842,14,32,87
 	.sym	PFX_DEVICE_DRIVER,0,138,14,32,87
 	.sym	FX_DEVICE_DRIVER,0,10,14,776,87
-	.sym	~~k_millis,~~k_millis,82,18,0
 	.sym	~~sleep,~~sleep,65,18,0
 	.sym	PSEGMENTHEADER,0,138,14,32,86
 	.sym	SEGMENTHEADER,0,10,14,160,86

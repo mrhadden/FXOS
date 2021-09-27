@@ -677,6 +677,9 @@
 #define	JOYSTICK2     ((VOLATILE unsigned char FAR*)0xAFE802)
 #define	JOYSTICK3     ((VOLATILE unsigned char FAR*)0xAFE803)
 
+#define	SID0_POT_X 	   ((VOLATILE unsigned char FAR*)0xAFE419)
+#define	SID0_POT_Y 	   ((VOLATILE unsigned char FAR*)0xAFE41A)
+
 // clock
 #define	RTC_SEC       ((VOLATILE unsigned char FAR*)0xAF0800 )
 //Seconds Register

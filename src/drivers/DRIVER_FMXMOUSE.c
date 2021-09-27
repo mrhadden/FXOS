@@ -46,7 +46,7 @@ static FX_DEVICE_DRIVER DRIVER_FMXUMOUSE = {
 										"1\0",
 										DRIVER_TYPE_MOUSE,
 										"MCKY:\0",
-										MAKEIRQ(0,7),
+										NOIRQ,//MAKEIRQ(0,7),
 										f_driver_irq,
 										NULL,
 										f_driver_load,
@@ -92,7 +92,9 @@ static VOID f_driver_irq(void)
 
 	k_debug_char_com1('M');
 
-	b = inportb(0xAF1803);
+//	b = inportb(0xAF1803);
+	while(ps2_can_read())
+		b = inportb(0xAF1803);
 	/*
 	asm NOP;
 	asm NOP;

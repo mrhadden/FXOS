@@ -155,8 +155,19 @@ void k_draw_pixel(long x,long y,char pcolor);
 EXPORT_FUNC_GFX(DrawPixelEx)
 void k_draw_pixel_ex(long x,long y,char pcolor,UINT page);
 
+EXPORT_FUNC_GFX(DrawClippedPixel)
+void k_draw_clipped_pixel(PRECT prect,long x,long y,char pcolor,char mode);
+EXPORT_FUNC_GFX(DrawClippedPixelEx)
+void k_draw_clipped_pixel_ex(PRECT prect,long x,long y,char pcolor,char mode);
+
 EXPORT_FUNC_GFX(DrawPixelFront)
 void k_draw_pixel_front(long x,long y,char pcolor);
+
+EXPORT_FUNC_GFX(DrawPixelFrontEx)
+void k_draw_pixel_front_ex(long x,long y,char pcolor);
+EXPORT_FUNC_GFX(DrawPixelBackEx)
+void k_draw_pixel_back_ex(long x,long y,char pcolor);
+
 EXPORT_FUNC_GFX(DrawPixelBack)
 void k_draw_pixel_back(long x,long y,char pcolor);
 EXPORT_FUNC_GFX(DrawPixelBank)

@@ -495,10 +495,10 @@ R3	equ	13
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",11
 	.line	72
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",6
-	.line	1960
+	.line	1963
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",16
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
-	.line	490
+	.line	475
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",22
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
@@ -511,7 +511,7 @@ R3	equ	13
 	.line	1064
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",7
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
-	.line	1960
+	.line	1963
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",12
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
@@ -606,7 +606,7 @@ R3	equ	13
 	.line	129
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",6
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
-	.line	568
+	.line	572
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",7
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",0
@@ -632,7 +632,7 @@ R3	equ	13
 	.member	CUR_GADGET,144,5,8,16
 	.member	CUR_COLOR,160,101,8,0,15
 	.eos
-	.line	359
+	.line	370
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",8
 	.stag	_fxos_winman_vtable,160,60
 	.member	Events,0,641,8,32
@@ -706,7 +706,7 @@ R3	equ	13
 	.member	readable,8,110,8,0,16
 	.member	data,136,129,8,32
 	.eos
-	.line	568
+	.line	572
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",18
 	.stag	_fx_spinner_ctx,48,71
 	.member	index,0,5,8,16
@@ -920,7 +920,7 @@ R3	equ	13
 	.stag	_k_irq_chain,128,89
 	.member	handlers,0,5217,8,32,4
 	.eos
-	.line	490
+	.line	475
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER_FMXMOUSE.c",2
 ;#include "drivers/DRIVER.h"
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",0
@@ -931,9 +931,9 @@ R3	equ	13
 	.line	129
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",6
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
-	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",104
-	.line	113
+	.line	1963
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",106
+	.line	115
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER_FMXMOUSE.c",3
 ;#include "drivers/ps2ctl.h"
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/ps2ctl.h",0
@@ -1015,8 +1015,8 @@ MOUSS01	section	offset $04:11D0
 	db	$1
 ;										"MCKY:\0",
 	db	$4D,$43,$4B,$59,$3A,$0
-;										MAKEIRQ(0,7),
-	dw	$7
+;										NOIRQ,//MAKEIRQ(0,7),
+	dw	$FFFF
 ;										f_driver_irq,
 	dl	~~f_driver_irq
 ;										NULL,
@@ -1313,14 +1313,25 @@ index_1	set	1
 	pea	#<$4d
 	jsl	~~k_debug_char_com1
 ;
-;	b = inportb(0xAF1803);
-	.line	95
+;//	b = inportb(0xAF1803);
+;	while(ps2_can_read())
+	.line	96
+L10001:
+	jsl	~~ps2_can_read
+	and	#$ff
+	bne	L25
+	brl	L10002
+L25:
+;		b = inportb(0xAF1803);
+	.line	97
 	sep	#$20
 	longa	off
 	lda	>11474947
 	sta	<L23+b_1
 	rep	#$20
 	longa	on
+	brl	L10001
+L10002:
 ;	/*
 ;	asm NOP;
 ;	asm NOP;
@@ -1355,7 +1366,7 @@ index_1	set	1
 ;	//	index = KBD_INPT_BUF[0];
 ;	*/
 ;	_irq_keyboardTimeout = 0;
-	.line	129
+	.line	131
 	stz	|~~_irq_keyboardTimeout
 ;	/*
 ;	 while((STATUS_PORT[0] & 0x01) == 0x01)
@@ -1391,8 +1402,8 @@ index_1	set	1
 ;	 }
 ;	 */
 ;	return;
-	.line	163
-L25:
+	.line	165
+L26:
 	pld
 	tsc
 	clc
@@ -1400,42 +1411,42 @@ L25:
 	tcs
 	rtl
 ;}
-	.line	164
-	.endblock	164
+	.line	166
+	.endblock	166
 L22	equ	2
 L23	equ	1
 	ends
 	efunc
-	.endfunc	164,1,2
-	.line	164
+	.endfunc	166,1,2
+	.line	166
 ;
 ;static BOOL f_driver_load(void)
 ;{
-	.line	166
-	.line	167
+	.line	168
+	.line	169
 	MOUSS01
 	func
-	.function	167
+	.function	169
 ~~f_driver_load:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L26
+	sbc	#L27
 	tcs
 	phd
 	tcd
-	.block	167
+	.block	169
 ;	mouse_set_sample_rate(10);
-	.line	168
+	.line	170
 	pea	#<$a
 	jsl	~~mouse_set_sample_rate
 ;	mouse_set_resolution(0x00);
-	.line	169
+	.line	171
 	pea	#<$0
 	jsl	~~mouse_set_resolution
 ;	mouse_set_scaling(FALSE);
-	.line	170
+	.line	172
 	pea	#<$0
 	jsl	~~mouse_set_scaling
 ;
@@ -1443,161 +1454,162 @@ L23	equ	1
 ;	//ps2_expect_ack();
 ;
 ;	return TRUE;
-	.line	175
+	.line	177
 	lda	#$1
-L29:
+L30:
 	tay
 	pld
 	tsc
 	clc
-	adc	#L26
+	adc	#L27
 	tcs
 	tya
 	rtl
 ;}
-	.line	176
-	.endblock	176
-L26	equ	0
-L27	equ	1
+	.line	178
+	.endblock	178
+L27	equ	0
+L28	equ	1
 	ends
 	efunc
-	.endfunc	176,1,0
-	.line	176
+	.endfunc	178,1,0
+	.line	178
 ;
 ;static UINT f_driver_read(LPVOID buffer)
 ;{
-	.line	178
-	.line	179
+	.line	180
+	.line	181
 	MOUSS01
 	func
-	.function	179
+	.function	181
 ~~f_driver_read:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L30
+	sbc	#L31
 	tcs
 	phd
 	tcd
 buffer_0	set	4
-	.block	179
+	.block	181
 ;	return 0;
 	.sym	buffer,4,129,6,32
-	.line	180
+	.line	182
 	lda	#$0
-L33:
+L34:
 	tay
-	lda	<L30+2
-	sta	<L30+2+4
-	lda	<L30+1
-	sta	<L30+1+4
+	lda	<L31+2
+	sta	<L31+2+4
+	lda	<L31+1
+	sta	<L31+1+4
 	pld
 	tsc
 	clc
-	adc	#L30+4
+	adc	#L31+4
 	tcs
 	tya
 	rtl
 ;}
-	.line	181
-	.endblock	181
-L30	equ	0
-L31	equ	1
+	.line	183
+	.endblock	183
+L31	equ	0
+L32	equ	1
 	ends
 	efunc
-	.endfunc	181,1,0
-	.line	181
+	.endfunc	183,1,0
+	.line	183
 ;
 ;static UINT f_driver_write(UINT size, LPVOID buffer)
 ;{
-	.line	183
-	.line	184
+	.line	185
+	.line	186
 	MOUSS01
 	func
-	.function	184
+	.function	186
 ~~f_driver_write:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L34
+	sbc	#L35
 	tcs
 	phd
 	tcd
 size_0	set	4
 buffer_0	set	6
-	.block	184
+	.block	186
 ;	return 0;
 	.sym	size,4,16,6,16
 	.sym	buffer,6,129,6,32
-	.line	185
+	.line	187
 	lda	#$0
-L37:
+L38:
 	tay
-	lda	<L34+2
-	sta	<L34+2+6
-	lda	<L34+1
-	sta	<L34+1+6
+	lda	<L35+2
+	sta	<L35+2+6
+	lda	<L35+1
+	sta	<L35+1+6
 	pld
 	tsc
 	clc
-	adc	#L34+6
+	adc	#L35+6
 	tcs
 	tya
 	rtl
 ;}
-	.line	186
-	.endblock	186
-L34	equ	0
-L35	equ	1
+	.line	188
+	.endblock	188
+L35	equ	0
+L36	equ	1
 	ends
 	efunc
-	.endfunc	186,1,0
-	.line	186
+	.endfunc	188,1,0
+	.line	188
 ;
 ;static BOOL f_driver_unload(void)
 ;{
-	.line	188
-	.line	189
+	.line	190
+	.line	191
 	MOUSS01
 	func
-	.function	189
+	.function	191
 ~~f_driver_unload:
 	longa	on
 	longi	on
 	tsc
 	sec
-	sbc	#L38
+	sbc	#L39
 	tcs
 	phd
 	tcd
-	.block	189
+	.block	191
 ;	return FALSE;
-	.line	190
+	.line	192
 	lda	#$0
-L41:
+L42:
 	tay
 	pld
 	tsc
 	clc
-	adc	#L38
+	adc	#L39
 	tcs
 	tya
 	rtl
 ;}
-	.line	191
-	.endblock	191
-L38	equ	0
-L39	equ	1
+	.line	193
+	.endblock	193
+L39	equ	0
+L40	equ	1
 	ends
 	efunc
-	.endfunc	191,1,0
-	.line	191
+	.endfunc	193,1,0
+	.line	193
 ;
 ;
-	.line	192
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER_FMXMOUSE.c",188
+	.line	194
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER_FMXMOUSE.c",190
+	xref	~~ps2_can_read
 	xref	~~ps2_expect_ack
 	xref	~~ps2_write_device
 	xref	~~k_debug_char_com1
@@ -1614,6 +1626,7 @@ L39	equ	1
 	.sym	~~f_driver_load,~~f_driver_load,78,3,0
 	.sym	~~f_driver_irq,~~f_driver_irq,65,3,0
 	.sym	~~_k_driver_base,~~_k_driver_base,129,3,32
+	.sym	~~ps2_can_read,~~ps2_can_read,78,18,0
 	.sym	~~ps2_expect_ack,~~ps2_expect_ack,78,18,0
 	.sym	~~ps2_write_device,~~ps2_write_device,78,18,0
 	.sym	ps2_device_t,0,10,14,88,90

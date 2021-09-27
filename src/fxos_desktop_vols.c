@@ -509,9 +509,20 @@ BOOL desktopVolsWindowProc(PFXOSMESSAGE pMsg)
 		case FX_LBUTTON_DBLCLICK:
 			k_debug_string("desktopVolsWindowProc::FX_LBUTTON_DBLCLICK\r\n");
 
+
 			pWin = k_getWindowFromHandle(pMsg->hwnd);
 			if(pWin)
 			{
+				selectRow(pWin,((PVOLCONTENT)pWin->windowData)->currentRow);
+			}
+
+			pWin = k_getWindowFromHandle(pMsg->hwnd);
+			//if(pWin)
+			if(FALSE)  // remove
+			{
+				selectRow(pWin,((PVOLCONTENT)pWin->windowData)->currentRow);
+
+
 				k_user_GetMouseClientPoint(pMsg,&point);
 				row = ((point.y) / (FONTH + 2)) + 1;
 				//k_debug_integer("desktopVolsWindowProc::FX_LBUTTON_DOWN:row:",row);
@@ -690,12 +701,12 @@ BOOL desktopVolsWindowProc(PFXOSMESSAGE pMsg)
 
 			break;
 		case FX_LBUTTON_DOWN:
-
 			pWin = k_getWindowFromHandle(pMsg->hwnd);
 			if(pWin)
 			{
 				k_user_GetMouseClientPoint(pMsg,&point);
-				row = ((point.y) / (FONTH + 2)) + 1;
+				//row = ((point.y) / (FONTH + 2)) + 1;
+				row = ((point.y) / (FONTH + 2));
 				//k_debug_integer("desktopVolsWindowProc::FX_LBUTTON_DOWN:row:",row);
 				((PVOLCONTENT)pWin->windowData)->currentRow = row;
 

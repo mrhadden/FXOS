@@ -1,10 +1,10 @@
-  Mon Aug  9 2021 16:52                                                Page 1
+  Mon Sep 27 2021  9:39                                                Page 1
 
 
                      ***************************************
                      **      WDC 65C816 Macro Assembler   **
                      **                                   **
-                     **     Version 3.49.1- Feb  6 2006    **
+                     **     Version 1.00- Aug 10 2021    **
                      ***************************************
 
      1                        ;:ts=8
@@ -59,7 +59,7 @@
     31                        ; * R.Hempel 2017-12-29 - Fix bug in realloc when 
                     requesting a new block that
     32                        ; *                        results in OOM error - 
-  Mon Aug  9 2021 16:52                                                Page 2
+  Mon Sep 27 2021  9:39                                                Page 2
 
 
                     see Issue 11
@@ -120,7 +120,7 @@
     74                        	.eos
     75                        	.stag	_fx_node,384,3
     76                        	.member	type,0,14,8,8
-  Mon Aug  9 2021 16:52                                                Page 3
+  Mon Sep 27 2021  9:39                                                Page 3
 
 
     77                        	.member	Reserved0,8,14,8,8
@@ -181,7 +181,7 @@
    132                        	.member	AL,64,14,8,8
    133                        	.member	XH,72,14,8,8
    134                        	.member	XL,80,14,8,8
-  Mon Aug  9 2021 16:52                                                Page 4
+  Mon Sep 27 2021  9:39                                                Page 4
 
 
    135                        	.member	YH,88,14,8,8
@@ -242,7 +242,7 @@
    190                        	.member	menuNodes,232,129,8,32
    191                        	.member	iconNodes,264,129,8,32
    192                        	.member	windowNodes,296,129,8,32
-  Mon Aug  9 2021 16:52                                                Page 5
+  Mon Sep 27 2021  9:39                                                Page 5
 
 
    193                        	.member	fontNodes,328,129,8,32
@@ -303,7 +303,7 @@
    248                        	.eos
    249                        	.stag	_RectStruct,112,24
    250                        	.member	x,0,5,8,16
-  Mon Aug  9 2021 16:52                                                Page 6
+  Mon Sep 27 2021  9:39                                                Page 6
 
 
    251                        	.member	y,16,5,8,16
@@ -364,7 +364,7 @@
    306                        	.member	style,16,18,8,32
    307                        	.member	styleEx,48,18,8,32
    308                        	.member	win_id,80,5,8,16
-  Mon Aug  9 2021 16:52                                                Page 7
+  Mon Sep 27 2021  9:39                                                Page 7
 
 
    309                        	.member	win_x,96,5,8,16
@@ -425,7 +425,7 @@
    364                        	.member	procid,3072,18,8,32
    365                        	.member	pWndClass,3104,138,8,32,27
    366                        	.member	pParentWindow,3136,129,8,32
-  Mon Aug  9 2021 16:52                                                Page 8
+  Mon Sep 27 2021  9:39                                                Page 8
 
 
    367                        	.member	hMenu,3168,129,8,32
@@ -486,7 +486,7 @@
    422                        	.eos
    423                        	.stag	_fx_scrollbar_t,240,38
    424                        	.member	min,0,16,8,16
-  Mon Aug  9 2021 16:52                                                Page 9
+  Mon Sep 27 2021  9:39                                                Page 9
 
 
    425                        	.member	max,16,16,8,16
@@ -547,7 +547,7 @@
    480                        	.eos
    481                        	.stag	_SubMenuListStruct,40,44
    482                        	.member	cMenus,0,14,8,8
-  Mon Aug  9 2021 16:52                                                Page 10
+  Mon Sep 27 2021  9:39                                                Page 10
 
 
    483                        	.member	psubmenus,8,9354,8,32,43
@@ -608,7 +608,7 @@
    532                        	.line	199
    533                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\umm_malloc.c",39
-  Mon Aug  9 2021 16:52                                                Page 11
+  Mon Sep 27 2021  9:39                                                Page 11
 
 
    534                        ;
@@ -669,7 +669,7 @@
    584                        ;
    585                        ;umm_block FAR *umm_heap = NULL;
    586                        	data
-  Mon Aug  9 2021 16:52                                                Page 12
+  Mon Sep 27 2021  9:39                                                Page 12
 
 
    587                        	xdef	~~umm_heap
@@ -730,7 +730,7 @@
    626                        	.stag	fake55_,32,55
    627                        	.member	quot,0,5,8,16
    628                        	.member	rem,16,5,8,16
-  Mon Aug  9 2021 16:52                                                Page 13
+  Mon Sep 27 2021  9:39                                                Page 13
 
 
    629                        	.eos
@@ -782,16 +782,16 @@
    660                        	.line	72
    661                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxc256u.h",6
-   662                        	.line	1960
+   662                        	.line	1963
    663                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxos.h",16
    664                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxkernel.h",0
-   665                        	.line	490
+   665                        	.line	475
    666                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxos.h",22
    667                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
-  Mon Aug  9 2021 16:52                                                Page 14
+  Mon Sep 27 2021  9:39                                                Page 14
 
 
                     space\FXOS-Beta\src\fxconsole.h",0
@@ -812,7 +812,7 @@
                     space\FXOS-Beta\src\fxconsole.h",7
    677                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxc256u.h",0
-   678                        	.line	1960
+   678                        	.line	1963
    679                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxconsole.h",12
    680                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -852,7 +852,7 @@
    702                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxtypes.h",0
    703                        	.line	1064
-  Mon Aug  9 2021 16:52                                                Page 15
+  Mon Sep 27 2021  9:39                                                Page 15
 
 
    704                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -913,7 +913,7 @@
    741                        	.member	id,0,18,8,32
    742                        	.member	type,32,14,8,8
    743                        	.member	name,40,138,8,32,58
-  Mon Aug  9 2021 16:52                                                Page 16
+  Mon Sep 27 2021  9:39                                                Page 16
 
 
    744                        	.member	time,72,18,8,32
@@ -931,7 +931,7 @@
                     space\FXOS-Beta\src\fxwindowmanager.h",6
    756                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxeventmanager.h",0
-   757                        	.line	568
+   757                        	.line	572
    758                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxwindowmanager.h",7
    759                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -963,7 +963,7 @@
    780                        	.member	CUR_GADGET,144,5,8,16
    781                        	.member	CUR_COLOR,160,101,8,0,15
    782                        	.eos
-   783                        	.line	359
+   783                        	.line	370
    784                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxwindowmanager.h",8
    785                        	.stag	_fxos_winman_vtable,160,65
@@ -974,7 +974,7 @@
    790                        	.member	DoWndProcs,128,641,8,32
    791                        	.eos
    792                        	.stag	fake66_,64,66
-  Mon Aug  9 2021 16:52                                                Page 17
+  Mon Sep 27 2021  9:39                                                Page 17
 
 
    793                        	.member	type,0,16,8,16
@@ -1035,7 +1035,7 @@
    847                        	.member	Run,64,656,8,32
    848                        	.member	Configure,96,656,8,32
    849                        	.member	Query,128,656,8,32
-  Mon Aug  9 2021 16:52                                                Page 18
+  Mon Sep 27 2021  9:39                                                Page 18
 
 
    850                        	.member	Uninit,160,641,8,32
@@ -1045,7 +1045,7 @@
    854                        	.member	readable,8,110,8,0,16
    855                        	.member	data,136,129,8,32
    856                        	.eos
-   857                        	.line	568
+   857                        	.line	572
    858                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxconsole.h",18
    859                        	.stag	_fx_spinner_ctx,48,76
@@ -1096,7 +1096,7 @@
                     space\FXOS-Beta\src\ff/ff.h",30
    895                        	.stag	fake80_,4504,80
    896                        	.member	fs_type,0,14,8,8
-  Mon Aug  9 2021 16:52                                                Page 19
+  Mon Sep 27 2021  9:39                                                Page 19
 
 
    897                        	.member	pdrv,8,14,8,8
@@ -1157,7 +1157,7 @@
    952                        	.eos
    953                        	.stag	fake85_,80,85
    954                        	.member	fmt,0,14,8,8
-  Mon Aug  9 2021 16:52                                                Page 20
+  Mon Sep 27 2021  9:39                                                Page 20
 
 
    955                        	.member	n_fat,8,14,8,8
@@ -1218,7 +1218,7 @@
   1006                        	.member	fxos_gfx_api,592,138,8,32,86
   1007                        	.member	fxos_gui_api,624,138,8,32,86
   1008                        	.member	fxos_con_api,656,138,8,32,86
-  Mon Aug  9 2021 16:52                                                Page 21
+  Mon Sep 27 2021  9:39                                                Page 21
 
 
   1009                        	.member	fxos_reserved_2_api,688,138,8,32,86
@@ -1279,14 +1279,14 @@
   1064                        	.member	f_driver_write,712,129,8,32
   1065                        	.member	f_driver_unload,744,129,8,32
   1066                        	.member	f_driver_command,776,129,8,32
-  Mon Aug  9 2021 16:52                                                Page 22
+  Mon Sep 27 2021  9:39                                                Page 22
 
 
   1067                        	.eos
   1068                        	.stag	_k_irq_chain,128,94
   1069                        	.member	handlers,0,5217,8,32,4
   1070                        	.eos
-  1071                        	.line	490
+  1071                        	.line	475
   1072                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\umm_integrity.c",1
   1073                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -1340,7 +1340,7 @@
   1120 00:0026: 85 03        	sta	<R0+2
   1121 00:0028: 06 01        	asl	<R0
   1122 00:002A: 26 03        	rol	<R0+2
-  Mon Aug  9 2021 16:52                                                Page 23
+  Mon Sep 27 2021  9:39                                                Page 23
 
 
   1123 00:002C: 06 01        	asl	<R0
@@ -1401,7 +1401,7 @@
   1178 00:009A: 65 01        	adc	<R0
   1179 00:009C: 85 05        	sta	<R1
   1180 00:009E: AD xx xx     	lda	|~~umm_heap+2
-  Mon Aug  9 2021 16:52                                                Page 24
+  Mon Sep 27 2021  9:39                                                Page 24
 
 
   1181 00:00A1: 65 03        	adc	<R0+2
@@ -1462,7 +1462,7 @@
   1236 00:0100: B7 09        	lda	[<R2],Y
   1237 00:0102: C5 11        	cmp	<L3+prev_1+2
   1238                        L8:
-  Mon Aug  9 2021 16:52                                                Page 25
+  Mon Sep 27 2021  9:39                                                Page 25
 
 
   1239 00:0104: D0 03        	bne	L9
@@ -1523,7 +1523,7 @@
   1294 00:0167: A9 04 00     	lda	#$4
   1295 00:016A: 65 01        	adc	<R0
   1296 00:016C: 85 05        	sta	<R1
-  Mon Aug  9 2021 16:52                                                Page 26
+  Mon Sep 27 2021  9:39                                                Page 26
 
 
   1297 00:016E: A9 00 00     	lda	#$0
@@ -1584,7 +1584,7 @@
   1352 00:01D1: ED xx xx     	sbc	|~~umm_numblocks+2
   1353 00:01D4: B0 03        	bcs	L10
   1354 00:01D6: 82 7A 00     	brl	L10010
-  Mon Aug  9 2021 16:52                                                Page 27
+  Mon Sep 27 2021  9:39                                                Page 27
 
 
   1355                        L10:
@@ -1645,7 +1645,7 @@
   1410 00:0247: A5 07        	lda	<R1+2
   1411 00:0249: A0 02 00     	ldy	#$2
   1412 00:024C: 97 1A        	sta	[<L2+ppaddress_0],Y
-  Mon Aug  9 2021 16:52                                                Page 28
+  Mon Sep 27 2021  9:39                                                Page 28
 
 
   1413                        	.line	101
@@ -1706,7 +1706,7 @@
   1468 00:02AC: 26 07        	rol	<R1+2
   1469 00:02AE: 06 05        	asl	<R1
   1470 00:02B0: 26 07        	rol	<R1+2
-  Mon Aug  9 2021 16:52                                                Page 29
+  Mon Sep 27 2021  9:39                                                Page 29
 
 
   1471 00:02B2: 06 05        	asl	<R1
@@ -1767,7 +1767,7 @@
   1526 00:031E: 06 01        	asl	<R0
   1527 00:0320: 26 03        	rol	<R0+2
   1528 00:0322: 06 01        	asl	<R0
-  Mon Aug  9 2021 16:52                                                Page 30
+  Mon Sep 27 2021  9:39                                                Page 30
 
 
   1529 00:0324: 26 03        	rol	<R0+2
@@ -1828,7 +1828,7 @@
   1584 00:038A: 18           	clc
   1585 00:038B: AD xx xx     	lda	|~~umm_heap
   1586 00:038E: 65 01        	adc	<R0
-  Mon Aug  9 2021 16:52                                                Page 31
+  Mon Sep 27 2021  9:39                                                Page 31
 
 
   1587 00:0390: 85 05        	sta	<R1
@@ -1889,7 +1889,7 @@
   1642 00:03FA: 65 01        	adc	<R0
   1643 00:03FC: 85 05        	sta	<R1
   1644 00:03FE: A9 00 00     	lda	#$0
-  Mon Aug  9 2021 16:52                                                Page 32
+  Mon Sep 27 2021  9:39                                                Page 32
 
 
   1645 00:0401: 65 03        	adc	<R0+2
@@ -1950,7 +1950,7 @@
   1700 00:046D: D4 0F        	pei	<L3+prev_1
   1701 00:046F: F4 xx xx     	pea	#^L1+410
   1702 00:0472: F4 xx xx     	pea	#<L1+410
-  Mon Aug  9 2021 16:52                                                Page 33
+  Mon Sep 27 2021  9:39                                                Page 33
 
 
   1703 00:0475: 22 xx xx xx  	jsl	~~k_debug_long
@@ -2011,7 +2011,7 @@
   1758 00:04E8: 18           	clc
   1759 00:04E9: AD xx xx     	lda	|~~umm_heap
   1760 00:04EC: 65 01        	adc	<R0
-  Mon Aug  9 2021 16:52                                                Page 34
+  Mon Sep 27 2021  9:39                                                Page 34
 
 
   1761 00:04EE: 85 05        	sta	<R1
@@ -2072,7 +2072,7 @@
   1816             0000000D   L3	equ	13
   1817                        	ends
   1818                        	efunc
-  Mon Aug  9 2021 16:52                                                Page 35
+  Mon Sep 27 2021  9:39                                                Page 35
 
 
   1819                        	.endfunc	170,13,22
@@ -2133,7 +2133,7 @@
                     $20,$20,$20,$20,$20
        00:00A2: 20 20 20 20 
        00:00A6: 20 20 20 20 
-  Mon Aug  9 2021 16:52                                                Page 36
+  Mon Sep 27 2021  9:39                                                Page 36
 
 
        00:00AA: 20 20 20 
@@ -2194,7 +2194,7 @@
        00:014F: 20 20 20 
   1845 00:0152: 20 20 20 20  	db	$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,
                     $20,$20,$20,$20,$20
-  Mon Aug  9 2021 16:52                                                Page 37
+  Mon Sep 27 2021  9:39                                                Page 37
 
 
        00:0156: 20 20 20 20 
@@ -2255,7 +2255,7 @@
        00:01FB: 20 20 20 20 
        00:01FF: 20 20 20 20 
        00:0203: 20 20 20 
-  Mon Aug  9 2021 16:52                                                Page 38
+  Mon Sep 27 2021  9:39                                                Page 38
 
 
   1857 00:0206: 20 20 63 75  	db	$20,$20,$63,$75,$72,$3A,$20,$00,$20,$20,
@@ -2316,7 +2316,7 @@
   1889 00:0545: 82 05 00     	brl	L23
   1890                        L24:
   1891 00:0548: A9 0A 00     	lda	#$a
-  Mon Aug  9 2021 16:52                                                Page 39
+  Mon Sep 27 2021  9:39                                                Page 39
 
 
   1892 00:054B: 80 03        	bra	L25
@@ -2377,7 +2377,7 @@
   1947 00:057C: 85 03        	sta	<R0+2
   1948 00:057E: A5 0C        	lda	<L27+len_0
   1949 00:0580: D0 02        	bne	L30
-  Mon Aug  9 2021 16:52                                                Page 40
+  Mon Sep 27 2021  9:39                                                Page 40
 
 
   1950 00:0582: C6 0E        	dec	<L27+len_0+2
@@ -2438,7 +2438,7 @@
   2005 00:05B3: 22 xx xx xx  	jsl	~~memset
   2006                        	.line	34
   2007                        L36:
-  Mon Aug  9 2021 16:52                                                Page 41
+  Mon Sep 27 2021  9:39                                                Page 41
 
 
   2008 00:05B7: A5 02        	lda	<L33+2
@@ -2499,7 +2499,7 @@
   2063 00:05E2: A5 10        	lda	<L37+ptr_0+2
   2064 00:05E4: 65 07        	adc	<L38+i_1+2
   2065 00:05E6: 85 03        	sta	<R0+2
-  Mon Aug  9 2021 16:52                                                Page 42
+  Mon Sep 27 2021  9:39                                                Page 42
 
 
   2066 00:05E8: E2 20        	sep	#$20
@@ -2560,7 +2560,7 @@
   2121 00:062D: 18           	clc
   2122 00:062E: 69 16 00     	adc	#L37+12
   2123 00:0631: 1B           	tcs
-  Mon Aug  9 2021 16:52                                                Page 43
+  Mon Sep 27 2021  9:39                                                Page 43
 
 
   2124 00:0632: 98           	tya
@@ -2621,7 +2621,7 @@
   2179 00:065D: 18           	clc
   2180 00:065E: A9 02 00     	lda	#$2
   2181 00:0661: 65 0B        	adc	<L46+pc_2
-  Mon Aug  9 2021 16:52                                                Page 44
+  Mon Sep 27 2021  9:39                                                Page 44
 
 
   2182 00:0663: 85 0F        	sta	<L46+pc_cur_2
@@ -2682,7 +2682,7 @@
   2237 00:06CA: 82 05 00     	brl	L10028
   2238                        L52:
   2239                        	.line	95
-  Mon Aug  9 2021 16:52                                                Page 45
+  Mon Sep 27 2021  9:39                                                Page 45
 
 
   2240                        	.line	96
@@ -2743,7 +2743,7 @@
   2291 00:06ED: 5B           	tcd
   2292             00000004   ptr_0	set	4
   2293             00000008   size_w_poison_0	set	8
-  Mon Aug  9 2021 16:52                                                Page 46
+  Mon Sep 27 2021  9:39                                                Page 46
 
 
   2294                        	.block	113
@@ -2804,7 +2804,7 @@
   2349 00:0751: 85 01        	sta	<R0
   2350 00:0753: A9 00 00     	lda	#$0
   2351 00:0756: 65 0E        	adc	<L55+ptr_0+2
-  Mon Aug  9 2021 16:52                                                Page 47
+  Mon Sep 27 2021  9:39                                                Page 47
 
 
   2352 00:0758: 85 03        	sta	<R0+2
@@ -2865,7 +2865,7 @@
   2407                        	.line	144
   2408                        	.block	147
   2409             00000000   c_2	set	0
-  Mon Aug  9 2021 16:52                                                Page 48
+  Mon Sep 27 2021  9:39                                                Page 48
 
 
   2410                        	.sym	c,0,18,1,32
@@ -2926,7 +2926,7 @@
   2465 00:07EB: A8           	tay
   2466 00:07EC: A5 0E        	lda	<L61+2
   2467 00:07EE: 85 12        	sta	<L61+2+4
-  Mon Aug  9 2021 16:52                                                Page 49
+  Mon Sep 27 2021  9:39                                                Page 49
 
 
   2468 00:07F0: A5 0D        	lda	<L61+1
@@ -2987,7 +2987,7 @@
   2523 00:0828: 86 07        	stx	<L68+ret_1+2
   2524                        	.line	170
   2525 00:082A: D4 0E        	pei	<L67+size_0+2
-  Mon Aug  9 2021 16:52                                                Page 50
+  Mon Sep 27 2021  9:39                                                Page 50
 
 
   2526 00:082C: D4 0C        	pei	<L67+size_0
@@ -3048,7 +3048,7 @@
   2581 00:085A: D4 10        	pei	<L71+num_0
   2582 00:085C: D4 16        	pei	<L71+item_size_0+2
   2583 00:085E: D4 14        	pei	<L71+item_size_0
-  Mon Aug  9 2021 16:52                                                Page 51
+  Mon Sep 27 2021  9:39                                                Page 51
 
 
   2584                        	xref	~~~lmul
@@ -3109,7 +3109,7 @@
   2639 00:08C2: 18           	clc
   2640 00:08C3: 69 14 00     	adc	#L71+8
   2641 00:08C6: 1B           	tcs
-  Mon Aug  9 2021 16:52                                                Page 52
+  Mon Sep 27 2021  9:39                                                Page 52
 
 
   2642 00:08C7: 98           	tya
@@ -3170,7 +3170,7 @@
   2697 00:08FC: D4 0C        	pei	<L76+ptr_0
   2698 00:08FE: 22 xx xx xx  	jsl	~~umm_realloc
   2699 00:0902: 85 05        	sta	<L77+ret_1
-  Mon Aug  9 2021 16:52                                                Page 53
+  Mon Sep 27 2021  9:39                                                Page 53
 
 
   2700 00:0904: 86 07        	stx	<L77+ret_1+2
@@ -3231,7 +3231,7 @@
   2755 00:093C: 85 04        	sta	<L80+ptr_0
   2756 00:093E: 86 06        	stx	<L80+ptr_0+2
   2757                        	.line	217
-  Mon Aug  9 2021 16:52                                                Page 54
+  Mon Sep 27 2021  9:39                                                Page 54
 
 
   2758 00:0940: D4 06        	pei	<L80+ptr_0+2
@@ -3292,7 +3292,7 @@
   2813                        	.line	236
   2814 00:0974: AD xx xx     	lda	|~~umm_heap
   2815 00:0977: 85 01        	sta	<R0
-  Mon Aug  9 2021 16:52                                                Page 55
+  Mon Sep 27 2021  9:39                                                Page 55
 
 
   2816 00:0979: AD xx xx     	lda	|~~umm_heap+2
@@ -3353,7 +3353,7 @@
   2871 00:09E4: F0 03        	beq	L89
   2872 00:09E6: 82 3B 00     	brl	L10035
   2873                        L89:
-  Mon Aug  9 2021 16:52                                                Page 56
+  Mon Sep 27 2021  9:39                                                Page 56
 
 
   2874                        	.line	241
@@ -3414,7 +3414,7 @@
   2929 00:0A47: 65 03        	adc	<R0+2
   2930 00:0A49: 85 07        	sta	<R1+2
   2931 00:0A4B: A7 05        	lda	[<R1]
-  Mon Aug  9 2021 16:52                                                Page 57
+  Mon Sep 27 2021  9:39                                                Page 57
 
 
   2932 00:0A4D: 29 FF 7F     	and	#<$7fff
@@ -3475,7 +3475,7 @@
   2985                        	.line	32
   2986 00:0A6D: F4 20 00     	pea	#<$20
   2987 00:0A70: F4 00 00     	pea	#<$0
-  Mon Aug  9 2021 16:52                                                Page 58
+  Mon Sep 27 2021  9:39                                                Page 58
 
 
   2988 00:0A73: A9 xx xx     	lda	#<~~ummHeapInfo
@@ -3536,7 +3536,7 @@
   3043 00:0AE4: 85 0B        	sta	<R2+2
   3044 00:0AE6: A7 09        	lda	[<R2]
   3045 00:0AE8: 29 FF 7F     	and	#<$7fff
-  Mon Aug  9 2021 16:52                                                Page 59
+  Mon Sep 27 2021  9:39                                                Page 59
 
 
   3046 00:0AEB: D0 03        	bne	L95
@@ -3597,7 +3597,7 @@
   3101 00:0B4F: D4 07        	pei	<R1+2
   3102 00:0B51: D4 05        	pei	<R1
   3103 00:0B53: A9 04 00     	lda	#$4
-  Mon Aug  9 2021 16:52                                                Page 60
+  Mon Sep 27 2021  9:39                                                Page 60
 
 
   3104                        	xref	~~~lasl
@@ -3658,7 +3658,7 @@
   3159 00:0BBA: 85 01        	sta	<R0
   3160 00:0BBC: 86 03        	stx	<R0+2
   3161 00:0BBE: 18           	clc
-  Mon Aug  9 2021 16:52                                                Page 61
+  Mon Sep 27 2021  9:39                                                Page 61
 
 
   3162 00:0BBF: AD xx xx     	lda	|~~umm_heap
@@ -3719,7 +3719,7 @@
   3217 00:0C0E: A5 11        	lda	<L93+blockNo_1
   3218 00:0C10: 85 05        	sta	<R1
   3219 00:0C12: 64 07        	stz	<R1+2
-  Mon Aug  9 2021 16:52                                                Page 62
+  Mon Sep 27 2021  9:39                                                Page 62
 
 
   3220 00:0C14: D4 07        	pei	<R1+2
@@ -3780,7 +3780,7 @@
   3275 00:0C79: AD xx xx     	lda	|~~ummHeapInfo+24
   3276 00:0C7C: C5 13        	cmp	<L93+curBlocks_3
   3277 00:0C7E: AD xx xx     	lda	|~~ummHeapInfo+24+2
-  Mon Aug  9 2021 16:52                                                Page 63
+  Mon Sep 27 2021  9:39                                                Page 63
 
 
   3278 00:0C81: E5 15        	sbc	<L93+curBlocks_3+2
@@ -3841,7 +3841,7 @@
   3333 00:0CBB: 85 01        	sta	<R0
   3334 00:0CBD: AD xx xx     	lda	|~~ummHeapInfo+20+2
   3335 00:0CC0: 85 03        	sta	<R0+2
-  Mon Aug  9 2021 16:52                                                Page 64
+  Mon Sep 27 2021  9:39                                                Page 64
 
 
   3336 00:0CC2: 06 01        	asl	<R0
@@ -3902,7 +3902,7 @@
   3388                        ;	 * The calculation of the block size is not too 
                     difficult, but there are
   3389                        ;	 * a few little things that we need to be mindfu
-  Mon Aug  9 2021 16:52                                                Page 65
+  Mon Sep 27 2021  9:39                                                Page 65
 
 
                     l of.
@@ -3963,7 +3963,7 @@
   3440                        ;
   3441                        ;	return (2 + size / (sizeof(umm_block)));
   3442                        	.line	124
-  Mon Aug  9 2021 16:52                                                Page 66
+  Mon Sep 27 2021  9:39                                                Page 66
 
 
   3443 00:0D1F: A5 0C        	lda	<L111+size_0
@@ -4024,7 +4024,7 @@
   3493                        	longa	on
   3494                        	longi	on
   3495 00:0D4D: 3B           	tsc
-  Mon Aug  9 2021 16:52                                                Page 67
+  Mon Sep 27 2021  9:39                                                Page 67
 
 
   3496 00:0D4E: 38           	sec
@@ -4085,7 +4085,7 @@
   3550 00:0DA5: 85 0F        	sta	<R3+2
   3551 00:0DA7: A7 0D        	lda	[<R3]
   3552 00:0DA9: 29 FF 7F     	and	#<$7fff
-  Mon Aug  9 2021 16:52                                                Page 68
+  Mon Sep 27 2021  9:39                                                Page 68
 
 
   3553 00:0DAC: 85 01        	sta	<R0
@@ -4146,7 +4146,7 @@
   3607 00:0E12: 85 07        	sta	<R1+2
   3608 00:0E14: 06 05        	asl	<R1
   3609 00:0E16: 26 07        	rol	<R1+2
-  Mon Aug  9 2021 16:52                                                Page 69
+  Mon Sep 27 2021  9:39                                                Page 69
 
 
   3610 00:0E18: 06 05        	asl	<R1
@@ -4207,7 +4207,7 @@
   3665 00:0E87: 85 03        	sta	<R0+2
   3666 00:0E89: 06 01        	asl	<R0
   3667 00:0E8B: 26 03        	rol	<R0+2
-  Mon Aug  9 2021 16:52                                                Page 70
+  Mon Sep 27 2021  9:39                                                Page 70
 
 
   3668 00:0E8D: 06 01        	asl	<R0
@@ -4268,7 +4268,7 @@
   3721                        	func
   3722                        	.function	150
   3723                        ~~umm_disconnect_from_free_list:
-  Mon Aug  9 2021 16:52                                                Page 71
+  Mon Sep 27 2021  9:39                                                Page 71
 
 
   3724                        	longa	on
@@ -4329,7 +4329,7 @@
   3779 00:0F2B: A9 00 00     	lda	#$0
   3780 00:0F2E: 6D xx xx     	adc	|~~umm_heap+2
   3781 00:0F31: 85 07        	sta	<R1+2
-  Mon Aug  9 2021 16:52                                                Page 72
+  Mon Sep 27 2021  9:39                                                Page 72
 
 
   3782 00:0F33: 18           	clc
@@ -4390,7 +4390,7 @@
   3837 00:0FA0: 6D xx xx     	adc	|~~umm_heap
   3838 00:0FA3: 85 09        	sta	<R2
   3839 00:0FA5: A9 00 00     	lda	#$0
-  Mon Aug  9 2021 16:52                                                Page 73
+  Mon Sep 27 2021  9:39                                                Page 73
 
 
   3840 00:0FA8: 6D xx xx     	adc	|~~umm_heap+2
@@ -4451,7 +4451,7 @@
   3895 00:101A: 85 0D        	sta	<R3
   3896 00:101C: A5 07        	lda	<R1+2
   3897 00:101E: 65 03        	adc	<R0+2
-  Mon Aug  9 2021 16:52                                                Page 74
+  Mon Sep 27 2021  9:39                                                Page 74
 
 
   3898 00:1020: 85 0F        	sta	<R3+2
@@ -4512,7 +4512,7 @@
   3953                        	.endfunc	159,17,16
   3954                        	.line	159
   3955                        ;
-  Mon Aug  9 2021 16:52                                                Page 75
+  Mon Sep 27 2021  9:39                                                Page 75
 
 
   3956                        ;/* ----------------------------------------------
@@ -4573,7 +4573,7 @@
   4008 00:10AE: A9 04 00     	lda	#$4
   4009                        	xref	~~~lasl
   4010 00:10B1: 22 xx xx xx  	jsl	~~~lasl
-  Mon Aug  9 2021 16:52                                                Page 76
+  Mon Sep 27 2021  9:39                                                Page 76
 
 
   4011 00:10B5: 85 01        	sta	<R0
@@ -4634,7 +4634,7 @@
   4062                        ;		/* Assimilate the next block with this o
                     ne */
   4063                        ;
-  Mon Aug  9 2021 16:52                                                Page 77
+  Mon Sep 27 2021  9:39                                                Page 77
 
 
   4064                        ;		UMM_PBLOCK(UMM_NBLOCK(UMM_NBLOCK(c)) & U
@@ -4695,7 +4695,7 @@
   4118 00:1174: 6D xx xx     	adc	|~~umm_heap+2
   4119 00:1177: 85 0B        	sta	<R2+2
   4120 00:1179: 18           	clc
-  Mon Aug  9 2021 16:52                                                Page 78
+  Mon Sep 27 2021  9:39                                                Page 78
 
 
   4121 00:117A: A5 09        	lda	<R2
@@ -4756,7 +4756,7 @@
   4175 00:11E5: A7 0D        	lda	[<R3]
   4176 00:11E7: 48           	pha
   4177 00:11E8: A9 04 00     	lda	#$4
-  Mon Aug  9 2021 16:52                                                Page 79
+  Mon Sep 27 2021  9:39                                                Page 79
 
 
   4178                        	xref	~~~lasl
@@ -4817,7 +4817,7 @@
   4230                        	.line	193
   4231                        	.line	195
   4232                        	code
-  Mon Aug  9 2021 16:52                                                Page 80
+  Mon Sep 27 2021  9:39                                                Page 80
 
 
   4233                        	func
@@ -4878,7 +4878,7 @@
   4287 00:1276: 86 03        	stx	<R0+2
   4288 00:1278: 18           	clc
   4289 00:1279: AD xx xx     	lda	|~~umm_heap
-  Mon Aug  9 2021 16:52                                                Page 81
+  Mon Sep 27 2021  9:39                                                Page 81
 
 
   4290 00:127C: 65 01        	adc	<R0
@@ -4939,7 +4939,7 @@
   4345 00:12EB: 65 07        	adc	<R1+2
   4346 00:12ED: 85 0B        	sta	<R2+2
   4347 00:12EF: A0 02 00     	ldy	#$2
-  Mon Aug  9 2021 16:52                                                Page 82
+  Mon Sep 27 2021  9:39                                                Page 82
 
 
   4348 00:12F2: B7 09        	lda	[<R2],Y
@@ -5000,7 +5000,7 @@
   4403                        ;
   4404                        ;	return (UMM_PBLOCK(c));
   4405                        	.line	200
-  Mon Aug  9 2021 16:52                                                Page 83
+  Mon Sep 27 2021  9:39                                                Page 83
 
 
   4406 00:1365: A5 14        	lda	<L129+c_0
@@ -5061,7 +5061,7 @@
   4460                        ;
   4461                        ;void umm_init(void)
   4462                        ;{
-  Mon Aug  9 2021 16:52                                                Page 84
+  Mon Sep 27 2021  9:39                                                Page 84
 
 
   4463                        	.line	205
@@ -5122,7 +5122,7 @@
   4514 00:13EE: A9 00        	lda	#$0
   4515 00:13F0: 87 01        	sta	[<R0]
   4516 00:13F2: C2 20        	rep	#$20
-  Mon Aug  9 2021 16:52                                                Page 85
+  Mon Sep 27 2021  9:39                                                Page 85
 
 
   4517                        	longa	on
@@ -5183,7 +5183,7 @@
   4570 00:1435: 87 01        	sta	[<R0]
   4571 00:1437: A9 00 00     	lda	#$0
   4572 00:143A: A0 02 00     	ldy	#$2
-  Mon Aug  9 2021 16:52                                                Page 86
+  Mon Sep 27 2021  9:39                                                Page 86
 
 
   4573 00:143D: 97 01        	sta	[<R0],Y
@@ -5244,7 +5244,7 @@
   4621 00:1478: AD xx xx     	lda	|~~umm_heap+2
   4622 00:147B: 85 03        	sta	<R0+2
   4623 00:147D: A5 19        	lda	<L134+block_last_2
-  Mon Aug  9 2021 16:52                                                Page 87
+  Mon Sep 27 2021  9:39                                                Page 87
 
 
   4624 00:147F: 09 00 80     	ora	#<$8000
@@ -5305,7 +5305,7 @@
                     uch NFREE / PFREE at all.
   4678                        ;		 */
   4679                        ;		UMM_NBLOCK(block_last) = 0;
-  Mon Aug  9 2021 16:52                                                Page 88
+  Mon Sep 27 2021  9:39                                                Page 88
 
 
   4680                        	.line	260
@@ -5366,7 +5366,7 @@
   4735 00:1553: A9 00 00     	lda	#$0
   4736 00:1556: A0 02 00     	ldy	#$2
   4737 00:1559: 97 09        	sta	[<R2],Y
-  Mon Aug  9 2021 16:52                                                Page 89
+  Mon Sep 27 2021  9:39                                                Page 89
 
 
   4738                        ;	}
@@ -5427,7 +5427,7 @@
   4789                        ;	 * NOTE:  See the new umm_info() function that y
                     ou can use to see if a ptr is
   4790                        ;	 *        on the free list!
-  Mon Aug  9 2021 16:52                                                Page 90
+  Mon Sep 27 2021  9:39                                                Page 90
 
 
   4791                        ;	 */
@@ -5488,7 +5488,7 @@
   4841 00:15A8: 06 05        	asl	<R1
   4842 00:15AA: 26 07        	rol	<R1+2
   4843 00:15AC: 18           	clc
-  Mon Aug  9 2021 16:52                                                Page 91
+  Mon Sep 27 2021  9:39                                                Page 91
 
 
   4844 00:15AD: A9 04 00     	lda	#$4
@@ -5549,7 +5549,7 @@
   4897                        ;	{
   4898                        	.line	304
   4899                        ;		/*
-  Mon Aug  9 2021 16:52                                                Page 92
+  Mon Sep 27 2021  9:39                                                Page 92
 
 
   4900                        ;		 * The previous block is not a free bloc
@@ -5610,7 +5610,7 @@
   4953 00:166A: 06 01        	asl	<R0
   4954 00:166C: 26 03        	rol	<R0+2
   4955 00:166E: 18           	clc
-  Mon Aug  9 2021 16:52                                                Page 93
+  Mon Sep 27 2021  9:39                                                Page 93
 
 
   4956 00:166F: A9 08 00     	lda	#$8
@@ -5671,7 +5671,7 @@
   5011 00:16E5: A0 02 00     	ldy	#$2
   5012 00:16E8: 97 09        	sta	[<R2],Y
   5013                        ;		UMM_NFREE(0) = c;
-  Mon Aug  9 2021 16:52                                                Page 94
+  Mon Sep 27 2021  9:39                                                Page 94
 
 
   5014                        	.line	314
@@ -5732,7 +5732,7 @@
   5069                        	ends
   5070                        	efunc
   5071                        	.endfunc	318,17,20
-  Mon Aug  9 2021 16:52                                                Page 95
+  Mon Sep 27 2021  9:39                                                Page 95
 
 
   5072                        	.line	318
@@ -5793,7 +5793,7 @@
                     do nothing\n" );
   5125                        ;
   5126                        ;		return;
-  Mon Aug  9 2021 16:52                                                Page 96
+  Mon Sep 27 2021  9:39                                                Page 96
 
 
   5127                        	.line	336
@@ -5854,7 +5854,7 @@
   5178                        	.function	354
   5179                        ~~umm_malloc_core:
   5180                        	longa	on
-  Mon Aug  9 2021 16:52                                                Page 97
+  Mon Sep 27 2021  9:39                                                Page 97
 
 
   5181                        	longi	on
@@ -5915,7 +5915,7 @@
   5234 00:17A0: B7 01        	lda	[<R0],Y
   5235 00:17A2: 85 25        	sta	<L152+cf_1
   5236 00:17A4: A0 0A 00     	ldy	#$a
-  Mon Aug  9 2021 16:52                                                Page 98
+  Mon Sep 27 2021  9:39                                                Page 98
 
 
   5237 00:17A7: B7 01        	lda	[<R0],Y
@@ -5976,7 +5976,7 @@
   5291 00:17FF: 29 FF 7F     	and	#<$7fff
   5292 00:1802: 85 01        	sta	<R0
   5293 00:1804: 64 03        	stz	<R0+2
-  Mon Aug  9 2021 16:52                                                Page 99
+  Mon Sep 27 2021  9:39                                                Page 99
 
 
   5294 00:1806: 38           	sec
@@ -6037,7 +6037,7 @@
   5346                        L10055:
   5347                        	.line	398
   5348 00:183D: A5 25        	lda	<L152+cf_1
-  Mon Aug  9 2021 16:52                                                Page 100
+  Mon Sep 27 2021  9:39                                                Page 100
 
 
   5349 00:183F: 85 01        	sta	<R0
@@ -6098,7 +6098,7 @@
   5404                        	.line	404
   5405 00:189A: A5 1D        	lda	<L152+bestSize_1
   5406 00:189C: 85 19        	sta	<L152+blockSize_1
-  Mon Aug  9 2021 16:52                                                Page 101
+  Mon Sep 27 2021  9:39                                                Page 101
 
 
   5407 00:189E: A5 1F        	lda	<L152+bestSize_1+2
@@ -6159,7 +6159,7 @@
   5458 00:18E0: A5 19        	lda	<L152+blockSize_1
   5459 00:18E2: C5 15        	cmp	<L152+blocks_1
   5460 00:18E4: D0 04        	bne	L161
-  Mon Aug  9 2021 16:52                                                Page 102
+  Mon Sep 27 2021  9:39                                                Page 102
 
 
   5461 00:18E6: A5 1B        	lda	<L152+blockSize_1+2
@@ -6220,7 +6220,7 @@
   5505                        ;			 * free block from `cf` to `cf +
                      blocks`. So we have to adjust pointers
   5506                        ;			 * to and from adjacent free blo
-  Mon Aug  9 2021 16:52                                                Page 103
+  Mon Sep 27 2021  9:39                                                Page 103
 
 
                     cks.
@@ -6281,7 +6281,7 @@
   5560 00:1970: 65 03        	adc	<R0+2
   5561 00:1972: 85 0B        	sta	<R2+2
   5562 00:1974: 18           	clc
-  Mon Aug  9 2021 16:52                                                Page 104
+  Mon Sep 27 2021  9:39                                                Page 104
 
 
   5563 00:1975: A5 25        	lda	<L152+cf_1
@@ -6342,7 +6342,7 @@
   5617 00:19DF: A9 0C 00     	lda	#$c
   5618 00:19E2: 6D xx xx     	adc	|~~umm_heap
   5619 00:19E5: 85 09        	sta	<R2
-  Mon Aug  9 2021 16:52                                                Page 105
+  Mon Sep 27 2021  9:39                                                Page 105
 
 
   5620 00:19E7: A9 00 00     	lda	#$0
@@ -6403,7 +6403,7 @@
   5674 00:1A50: 85 01        	sta	<R0
   5675 00:1A52: 86 03        	stx	<R0+2
   5676 00:1A54: 18           	clc
-  Mon Aug  9 2021 16:52                                                Page 106
+  Mon Sep 27 2021  9:39                                                Page 106
 
 
   5677 00:1A55: A9 0C 00     	lda	#$c
@@ -6464,7 +6464,7 @@
   5731 00:1AC2: 85 0F        	sta	<R3+2
   5732 00:1AC4: A5 25        	lda	<L152+cf_1
   5733 00:1AC6: 85 01        	sta	<R0
-  Mon Aug  9 2021 16:52                                                Page 107
+  Mon Sep 27 2021  9:39                                                Page 107
 
 
   5734 00:1AC8: A5 27        	lda	<L152+cf_1+2
@@ -6525,7 +6525,7 @@
   5788 00:1B1B: 2B           	pld
   5789 00:1B1C: 3B           	tsc
   5790 00:1B1D: 18           	clc
-  Mon Aug  9 2021 16:52                                                Page 108
+  Mon Sep 27 2021  9:39                                                Page 108
 
 
   5791 00:1B1E: 69 2C 00     	adc	#L151+4
@@ -6586,7 +6586,7 @@
   5845                        	.line	466
   5846                        	code
   5847                        	xdef	~~umm_malloc
-  Mon Aug  9 2021 16:52                                                Page 109
+  Mon Sep 27 2021  9:39                                                Page 109
 
 
   5848                        	func
@@ -6647,7 +6647,7 @@
   5899                        L168:
   5900                        	.line	483
   5901                        ;		//DBGLOG_DEBUG( "malloc a block of 0 byt
-  Mon Aug  9 2021 16:52                                                Page 110
+  Mon Sep 27 2021  9:39                                                Page 110
 
 
                     es -> do nothing\n" );
@@ -6708,7 +6708,7 @@
   5955                        ;/* ----------------------------------------------
                     -------------------------- */
   5956                        ;
-  Mon Aug  9 2021 16:52                                                Page 111
+  Mon Sep 27 2021  9:39                                                Page 111
 
 
   5957                        ;void FAR *umm_realloc(void FAR *ptr, unsigned lon
@@ -6769,7 +6769,7 @@
   6011 00:1BC6: 82 04 00     	brl	L10063
   6012                        L173:
   6013                        	.line	515
-  Mon Aug  9 2021 16:52                                                Page 112
+  Mon Sep 27 2021  9:39                                                Page 112
 
 
   6014                        ;		umm_init();
@@ -6830,7 +6830,7 @@
   6064                        ;
   6065                        ;	/*
   6066                        ;	 * Now we're sure that we have a non_NULL ptr, b
-  Mon Aug  9 2021 16:52                                                Page 113
+  Mon Sep 27 2021  9:39                                                Page 113
 
 
                     ut we're not sure what
@@ -6891,7 +6891,7 @@
   6114 00:1C1D: 86 13        	stx	<L171+blocks_1+2
   6115                        ;
   6116                        ;	/* Figure out which block we're in. Note the use
-  Mon Aug  9 2021 16:52                                                Page 114
+  Mon Sep 27 2021  9:39                                                Page 114
 
 
                      of truncated division... */
@@ -6952,7 +6952,7 @@
                     /
   6169                        ;
   6170                        ;	curSize = (blockSize * sizeof(umm_block))
-  Mon Aug  9 2021 16:52                                                Page 115
+  Mon Sep 27 2021  9:39                                                Page 115
 
 
   6171                        	.line	570
@@ -7013,7 +7013,7 @@
   6220 00:1CB6: 18           	clc
   6221 00:1CB7: AD xx xx     	lda	|~~umm_heap
   6222 00:1CBA: 65 05        	adc	<R1
-  Mon Aug  9 2021 16:52                                                Page 116
+  Mon Sep 27 2021  9:39                                                Page 116
 
 
   6223 00:1CBC: 85 09        	sta	<R2
@@ -7074,7 +7074,7 @@
   6277 00:1D23: 26 0B        	rol	<R2+2
   6278 00:1D25: 06 09        	asl	<R2
   6279 00:1D27: 26 0B        	rol	<R2+2
-  Mon Aug  9 2021 16:52                                                Page 117
+  Mon Sep 27 2021  9:39                                                Page 117
 
 
   6280 00:1D29: 06 09        	asl	<R2
@@ -7135,7 +7135,7 @@
   6334 00:1D8A: 26 07        	rol	<R1+2
   6335 00:1D8C: 06 05        	asl	<R1
   6336 00:1D8E: 26 07        	rol	<R1+2
-  Mon Aug  9 2021 16:52                                                Page 118
+  Mon Sep 27 2021  9:39                                                Page 118
 
 
   6337 00:1D90: 06 05        	asl	<R1
@@ -7196,7 +7196,7 @@
   6392 00:1DFB: 6D xx xx     	adc	|~~umm_heap
   6393 00:1DFE: 85 05        	sta	<R1
   6394 00:1E00: A9 00 00     	lda	#$0
-  Mon Aug  9 2021 16:52                                                Page 119
+  Mon Sep 27 2021  9:39                                                Page 119
 
 
   6395 00:1E03: 6D xx xx     	adc	|~~umm_heap+2
@@ -7257,7 +7257,7 @@
   6435                        ;	 *
   6436                        ;	 * All that's left to do is decide if the fit wa
                     s exact or not. If the fit
-  Mon Aug  9 2021 16:52                                                Page 120
+  Mon Sep 27 2021  9:39                                                Page 120
 
 
   6437                        ;	 * was not exact, then split the memory block so
@@ -7318,7 +7318,7 @@
   6487 00:1E5A: 65 1D        	adc	<L171+nextBlockSize_1
   6488 00:1E5C: 85 15        	sta	<L171+blockSize_1
   6489 00:1E5E: A5 17        	lda	<L171+blockSize_1+2
-  Mon Aug  9 2021 16:52                                                Page 121
+  Mon Sep 27 2021  9:39                                                Page 121
 
 
   6490 00:1E60: 65 1F        	adc	<L171+nextBlockSize_1+2
@@ -7379,7 +7379,7 @@
   6543 00:1EB7: A0 02 00     	ldy	#$2
   6544 00:1EBA: B7 09        	lda	[<R2],Y
   6545 00:1EBC: 48           	pha
-  Mon Aug  9 2021 16:52                                                Page 122
+  Mon Sep 27 2021  9:39                                                Page 122
 
 
   6546 00:1EBD: A7 09        	lda	[<R2]
@@ -7440,7 +7440,7 @@
   6600 00:1F26: 06 01        	asl	<R0
   6601 00:1F28: 26 03        	rol	<R0+2
   6602 00:1F2A: 06 01        	asl	<R0
-  Mon Aug  9 2021 16:52                                                Page 123
+  Mon Sep 27 2021  9:39                                                Page 123
 
 
   6603 00:1F2C: 26 03        	rol	<R0+2
@@ -7501,7 +7501,7 @@
   6657                        	.line	642
   6658                        ;		//DBGLOG_DEBUG( "realloc using prev and 
                     next block - %i\n", blocks );
-  Mon Aug  9 2021 16:52                                                Page 124
+  Mon Sep 27 2021  9:39                                                Page 124
 
 
   6659                        ;		umm_assimilate_up(c);
@@ -7562,7 +7562,7 @@
   6712 00:1FEA: A5 21        	lda	<L171+c_1
   6713 00:1FEC: 85 01        	sta	<R0
   6714 00:1FEE: A5 23        	lda	<L171+c_1+2
-  Mon Aug  9 2021 16:52                                                Page 125
+  Mon Sep 27 2021  9:39                                                Page 125
 
 
   6715 00:1FF0: 85 03        	sta	<R0+2
@@ -7623,7 +7623,7 @@
                     ize);
   6770                        	.line	649
   6771 00:205E: 18           	clc
-  Mon Aug  9 2021 16:52                                                Page 126
+  Mon Sep 27 2021  9:39                                                Page 126
 
 
   6772 00:205F: A5 15        	lda	<L171+blockSize_1
@@ -7684,7 +7684,7 @@
   6824                        ;			umm_free_core(oldptr);
   6825                        	.line	659
   6826 00:20A6: D4 2B        	pei	<L171+oldptr_2+2
-  Mon Aug  9 2021 16:52                                                Page 127
+  Mon Sep 27 2021  9:39                                                Page 127
 
 
   6827 00:20A8: D4 29        	pei	<L171+oldptr_2
@@ -7745,7 +7745,7 @@
   6877 00:20D0: D4 23        	pei	<L171+c_1+2
   6878 00:20D2: D4 21        	pei	<L171+c_1
   6879 00:20D4: 22 xx xx xx  	jsl	~~umm_split_block
-  Mon Aug  9 2021 16:52                                                Page 128
+  Mon Sep 27 2021  9:39                                                Page 128
 
 
   6880                        ;		umm_free_core((void *) &UMM_DATA(c + blo
@@ -7806,7 +7806,7 @@
   6934                        	.line	684
   6935                        ;
   6936                        ;/* ----------------------------------------------
-  Mon Aug  9 2021 16:52                                                Page 129
+  Mon Sep 27 2021  9:39                                                Page 129
 
 
                     -------------------------- */
@@ -7867,7 +7867,7 @@
   6989 00:214E: D4 0E        	pei	<L186+num_0+2
   6990 00:2150: D4 0C        	pei	<L186+num_0
   6991 00:2152: D4 12        	pei	<L186+item_size_0+2
-  Mon Aug  9 2021 16:52                                                Page 130
+  Mon Sep 27 2021  9:39                                                Page 130
 
 
   6992 00:2154: D4 10        	pei	<L186+item_size_0
@@ -7928,7 +7928,7 @@
                     ,3,32
   7046                        	.sym	~~umm_free_core,~~umm_free_core,65,3,0
   7047                        	.sym	~~umm_assimilate_down,~~umm_assimilate_d
-  Mon Aug  9 2021 16:52                                                Page 131
+  Mon Sep 27 2021  9:39                                                Page 131
 
 
                     own,82,3,0
@@ -7989,7 +7989,7 @@
   7095                        	.sym	FSIZE_t,0,18,14,32
   7096                        	.sym	TCHAR,0,14,14,8
   7097                        	.sym	PCOMMANDARGS,0,138,14,32,79
-  Mon Aug  9 2021 16:52                                                Page 132
+  Mon Sep 27 2021  9:39                                                Page 132
 
 
   7098                        	.sym	COMMANDARGS,0,10,14,64,79
@@ -8050,7 +8050,7 @@
   7153                        	.sym	PIPCPORT,0,138,14,32,61
   7154                        	.sym	IPCPORT,0,10,14,144,61
   7155                        	.sym	MemoryCallback,0,641,14,32
-  Mon Aug  9 2021 16:52                                                Page 133
+  Mon Sep 27 2021  9:39                                                Page 133
 
 
   7156                        	.sym	PFXMEMORYMAP,0,138,14,32,60
@@ -8111,7 +8111,7 @@
   7204                        	.sym	SUBMENULIST,0,10,14,40,44
   7205                        	.sym	HSUBMENU,0,7,14,32
   7206                        	.sym	PSUBMENU,0,138,14,32,43
-  Mon Aug  9 2021 16:52                                                Page 134
+  Mon Sep 27 2021  9:39                                                Page 134
 
 
   7207                        	.sym	SUBMENU,0,10,14,64,43
@@ -8172,7 +8172,7 @@
   7262                        	.sym	SCANCODE,0,14,14,8
   7263                        	.sym	KEYCODE,0,16,14,16
   7264                        	.sym	PFXPROCESSMESSAGE,0,138,14,32,19
-  Mon Aug  9 2021 16:52                                                Page 135
+  Mon Sep 27 2021  9:39                                                Page 135
 
 
   7265                        	.sym	FXPROCESSMESSAGE,0,10,14,112,19
@@ -8233,7 +8233,7 @@
   7320                        	.sym	HRESULT,0,18,14,32
   7321                        	.sym	LPWCHAR,0,144,14,32
   7322                        	.sym	WCHAR,0,16,14,16
-  Mon Aug  9 2021 16:52                                                Page 136
+  Mon Sep 27 2021  9:39                                                Page 136
 
 
   7323                        	.sym	HSTRINGTABLE,0,129,14,32

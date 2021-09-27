@@ -1,3 +1,4 @@
+
 #include "fxos.h"
 #include "fxmemorymanager.h"
 #include "fxwindowmanager.h"
@@ -5,7 +6,6 @@
 #include "fxgfx.h"
 #include "fxdos.h"
 
-VOID readBMP(LPCSTR path);
 
 #define BITMAP_SEG0   ((char FAR*)0xB00000)
 #define BITMAP_SEG1   ((char FAR*)0xB10000)
@@ -24,12 +24,15 @@ VOID readBMP(LPCSTR path);
 #define BITMAP1_SEG3   ((char FAR*)0xB30000)
 #define BITMAP1_SEG4   ((char FAR*)0xB40000)
 
-
 #define GUI_POINT_LIMIT_X_LO  	(0)
 #define GUI_POINT_LIMIT_Y_LO  	(0)
 
 #define GUI_POINT_LIMIT_X_HI  	(640)
 #define GUI_POINT_LIMIT_Y_HI  	(480)
+
+#define GUI_POINT_LIMIT_X_HIX  	(800)
+#define GUI_POINT_LIMIT_Y_HIX  	(600)
+
 //#define GUI_POINT_LIMIT_X_HI  	(639)
 //#define GUI_POINT_LIMIT_Y_HI  	(479)
 
@@ -251,6 +254,9 @@ static CUR_PALETTE_MAP _k_currentPalatte;
 #define GUI_CACHE_PAGE_OFFSET(s)   ((5120L * ((LONG)s - (LONG)(s % 2))) + 320L * (LONG)(s % 2))
 
 static BYTE _k_guiCacheSlots[GUI_CACHE_SIZE];
+
+VOID readBMP(LPCSTR path);
+VOID readBMPPalette(LPCSTR path);
 
 #pragma section CODE=GFX,offset $06:0000
 
@@ -822,7 +828,33 @@ int k_getUIColor(int index)
 	return 	_k_currentPalatte.CUR_COLOR[index - 1];
 }
 
+void k_draw_clipped_pixel(PRECT prect,long x,long y,char pcolor,char mode)
+{
+	if(prect!=NULL)
+	{
+		if((x >= prect->x) && (x < (prect->x + prect->width)))
+		{
+			if((y >= prect->y) && (y < (prect->y + prect->height)))
+			{
+				k_draw_pixel_front(x,y,pcolor);
+			}
+		}
+	}
+}
 
+void k_draw_clipped_pixel_ex(PRECT prect,long x,long y,char pcolor,char mode)
+{
+	if(prect!=NULL)
+	{
+		if((x >= prect->x) && (x < (prect->x + prect->width)))
+		{
+			if((y >= prect->y) && (y < (prect->y + prect->height)))
+			{
+				k_draw_pixel_front_ex(x,y,pcolor);
+			}
+		}
+	}
+}
 
 void k_draw_pixel(long x,long y,char pcolor)
 {
@@ -831,8 +863,6 @@ void k_draw_pixel(long x,long y,char pcolor)
 	if(x >= GUI_POINT_LIMIT_X_LO && x <= GUI_POINT_LIMIT_X_HI && y >= GUI_POINT_LIMIT_Y_LO && y <= GUI_POINT_LIMIT_Y_HI)
 		((unsigned char FAR *)BITMAP_BANK_0)[pixelLocation] = (char)pcolor;
 	//((unsigned char FAR *)SHADOW_BANK_0)[pixelLocation] = (char)pcolor;
-
-
 	//((unsigned char FAR *)BITMAP_BANK_0)[(long)(( ((long)y) * 640L) + ((long)x) )] = (char)pcolor;
 }
 
@@ -842,11 +872,25 @@ void k_draw_pixel_front(long x,long y,char pcolor)
 		BITMAP_BANK_0[(long)(((long)y * 640L) + (long)x)] = (char)pcolor;
 }
 
+void k_draw_pixel_front_ex(long x,long y,char pcolor)
+{
+	if(x >= GUI_POINT_LIMIT_X_LO && x <= GUI_POINT_LIMIT_X_HIX && y >= GUI_POINT_LIMIT_Y_LO && y <= GUI_POINT_LIMIT_Y_HIX)
+		BITMAP_BANK_0[(long)(((long)y * 800L) + (long)x)] = (char)pcolor;
+}
+
+
 void k_draw_pixel_back(long x,long y,char pcolor)
 {
 	if(x >= GUI_POINT_LIMIT_X_LO && x <= GUI_POINT_LIMIT_X_HI && y >= GUI_POINT_LIMIT_Y_LO && y <= GUI_POINT_LIMIT_Y_HI)
 		BITMAP_BANK_0_PAGE0[(long)(((long)y * 640L) + (long)x)] = (char)pcolor;
 }
+
+void k_draw_pixel_back_ex(long x,long y,char pcolor)
+{
+	if(x >= GUI_POINT_LIMIT_X_LO && x <= GUI_POINT_LIMIT_X_HIX && y >= GUI_POINT_LIMIT_Y_LO && y <= GUI_POINT_LIMIT_Y_HIX)
+		BITMAP_BANK_0_PAGE0[(long)(((long)y * 800L) + (long)x)] = (char)pcolor;
+}
+
 
 
 void k_draw_pixel_D0(long x,long y,char pcolor)
@@ -2802,391 +2846,6 @@ void k_gui_DrawWindow(HWND hWnd,int color, int bgcolor)
 	}
 }
 
-#ifdef MOMMY
-void k_vdraw_ui_window_2(PWINDOW pWin,ULONG style,int cx,int cy,int height,int width,char FAR *title,int color, int bgcolor,UINT page)
-{
-	FONTMETRIC metric;
-
-	int i = 0;
-	int odd = 1;
-	int borderColor = 0;
-	int borderTitle = 0;
-	int borderWidth = 0;
-
-	int titleOffsetX = 0;
-	int titleOffsetY = 0;
-	int titleScaler = 0;
-
-	int clientOffsetX = 0;
-	int clientOffsetY = 0;
-
-	int currX = 0;
-	int currY = 0;
-
-	int endX = 0;
-
-	int maxminPos = 0;
-
-	int ncc = 0;
-	int gx,gy,bx,by;
-
-	int fillOffset = 2;  // correct the fill coordinates so the borders are the same size
-
-	RECT rect;
-
-	int extraStyle = (pWin->styleEx & FXWSX_CACHE_TITLE);
-	//k_debug_pointer("k_vdraw_ui_window:pWin:",pWin);
-	/*
-	if(pWin->pParentWindow)
-	{
-		cx = k_getWindowFromHandle(pWin->pParentWindow)->clientRect.x + cx;
-		cy = k_getWindowFromHandle(pWin->pParentWindow)->clientRect.y + cy;
-		k_debug_strings("k_vdraw_ui_window::IS CHILD:",title);
-		k_debug_integer("k_vdraw_ui_window:cx:",cx);
-		k_debug_integer("k_vdraw_ui_window:cy:",cy);
-		k_debug_integer("k_vdraw_ui_window:width:",width);
-		k_debug_integer("k_vdraw_ui_window:height:",height);
-	}
-	*/
-
-	/*
-	if(title)
-	{
-		title[32] = 0;
-		k_debug_strings("k_vdraw_ui_window::IS CHILD:",title);
-	}
-	else
-		k_debug_strings("k_vdraw_ui_window::IS CHILD:","NULL");
-
-	k_debug_integer("k_vdraw_ui_window:cx:",cx);
-	k_debug_integer("k_vdraw_ui_window:cy:",cy);
-	k_debug_integer("k_vdraw_ui_window:width:",width);
-	k_debug_integer("k_vdraw_ui_window:height:",height);
-	k_debug_integer("k_vdraw_ui_window:page:",page);
-	k_debug_rect("k_vdraw_ui_window:client:",&pWin->clientRect);
-	*/
-
-	//k_debug_rect("k_vdraw_ui_window:client:",&pWin->clientRect);
-
-
-	gx = k_user_getSystemMetric(SM_CXGADGET);
-	gy = k_user_getSystemMetric(SM_CYGADGET);
-	bx = k_user_getSystemMetric(SM_CXBORDER);
-	by = k_user_getSystemMetric(SM_CYBORDER);
-
-	titleOffsetX = cx+2;
-	titleOffsetY = cy+1;
-
-	//k_debug_strings("k_vdraw_ui_window:","enter");
-
-	if(style & FXWS_VISIBLE != FXWS_VISIBLE)
-	{
-		k_debug_strings("k_vdraw_ui_window::NOT RENDERING:",title);
-		return;
-	}
-
-	//k_debug_strings("k_vdraw_ui_window::RENDERING:",title);
-
-	if(style & FXWS_THICKFRAME)
-	{
-		borderWidth = 2;
-	}
-	else if(style & FXWS_BORDER)
-	{
-		borderWidth = 1;
-	}
-	else if(style & FXWS_DLGFRAME)
-	{
-		borderWidth = 4;
-	}
-
-	if( ((style & FXWS_CAPTION) == FXWS_CAPTION) || (style & FXWS_SYSMENU) || (style & FXWS_MINIMIZEBOX) || (style & FXWS_MAXIMIZEBOX))
-	{
-		borderTitle = 10;
-	}
-
-	clientOffsetX = cx + borderWidth;
-
-	if(borderTitle)
-		clientOffsetY = cy + borderTitle;
-	else
-		clientOffsetY = cy + borderWidth;
-
-	currX = clientOffsetX;
-	currY = clientOffsetY;
-
-	endX = width + cx - borderWidth;
-	maxminPos = 0;
-
-	k_vdma_fill_rect_ex(cx,cy,width,height,bgcolor,page);
-
-
-	borderColor = color;
-	for(i=0;i<borderWidth;i++)
-	{
-		if(borderWidth > 2)
-		{
-			borderColor = color;
-			odd=!odd;
-			if(odd)
-			{
-				borderColor = 0;
-			}
-		}
-
-		k_draw_rect(cx + i + 0,
-					cy + i + 0,
-					cx + width  - 1 - i,
-					cy + height - 1 - i,
-					borderColor,
-					0,
-					page);
-
-	}
-
-
-
-	if(borderTitle)
-	{
-		k_vdma_fill_rect_ex(cx,cy,width,borderTitle,color,page);
-	}
-
-	k_get_font_metrics(&metric);
-
-
-	//title = strupr(title);
-
-	//FXWS_OVERLAPPED | FXWS_CAPTION | FXWS_SYSMENU | FXWS_THICKFRAME | FXWS_MINIMIZEBOX | FXWS_MAXIMIZEBOX
-
-	if(style & FXWS_SYSMENU)
-	{
-		k_set_rect(&(pWin->nonclientGadgets[ncc].area),titleOffsetX,titleOffsetY,gx,gx);
-		pWin->nonclientGadgets[ncc++].msgType = FX_WINDOW_CLOSE;
-
-		//k_debug_strings("k_vdraw_ui_window:","FXWS_SYSMENU");
-		titleOffsetX+=k_put_wingadget_point_ex(WINICON_TITLE_BCLOSE,titleOffsetX,titleOffsetY,k_getUIGadgetColor(),page);
-
-	}
-
-	if((style & FXWS_CAPTION) == FXWS_CAPTION)
-	{
-
-		//k_debug_strings("k_vdraw_ui_window:","FXWS_CAPTION");
-		//titleScaler = (int)(width / metric.width - 3);
-		titleScaler = (int)((width / metric.width) - 1);
-
-		//k_debug_integer("k_vdraw_ui_window:titleScaler1:",titleScaler * 8);
-
-
-		//titleScaler = (width - (borderWidth * 2));
-		//k_debug_integer("k_vdraw_ui_window:titleScaler2:",(width - (borderWidth * 2)));
-
-		/*
-		if(!k_gui_get_title_cache(NULL))
-		{
-			k_gui_build_title_cache(NULL);
-		}
-
-		if(k_gui_get_title_cache(NULL))
-		{
-			k_vdma_copy_address_ex((LPSTR)((ULONG)0x080000 + k_gui_get_pixel_offset(titleOffsetX,titleOffsetY)),TITLE_LINES_640x480,titleScaler * 8,8);
-		}
-		else
-		{
-			k_gui_build_title_cache(NULL);
-			for(i=0;i<titleScaler;i++)
-			{
-				titleOffsetX+=k_put_wingadget_point_ex(WINICON_TITLE_LINES,titleOffsetX,titleOffsetY,k_getUIGadgetColor(),page);
-			}
-		}
-
-		k_gui_build_title_cache(NULL);
-		*/
-
-		//
-		// set lines in title with blt
-		//
-		rect.x = titleOffsetX;
-		rect.y = titleOffsetY;
-		rect.width  = (titleScaler * 8)  - (borderWidth * 2);
-		rect.height = 8;
-		k_gui_get_image_cache(0,0x080000,&rect);
-		//
-		//
-		//
-
-
-		/*
-		for(i=0;i<titleScaler;i++)
-		{
-			titleOffsetX+=k_put_wingadget_point_ex(WINICON_TITLE_LINES,titleOffsetX,titleOffsetY,k_getUIGadgetColor(),page);
-		}
-		*/
-
-		//k_vdma_copy_address_ex((LPSTR)((ULONG)0x080000 + k_gui_get_pixel_offset(0,440)),TITLE_LINES_640x480,titleScaler * 8,8);
-
-
-
-
-	}
-	//titleOffsetX+=k_put_wingadget_point(WINICON_TITLE_BACK,titleOffsetX,titleOffsetY,14);
-	//titleOffsetX+=2;
-	//titleOffsetX+=k_put_wingadget_point(WINICON_TITLE_FRONT,titleOffsetX,titleOffsetY,14);
-
-	if(style & FXWS_MAXIMIZEBOX)
-	{
-		//k_debug_strings("k_vdraw_ui_window:","FXWS_MAXIMIZEBOX");
-		maxminPos+=metric.width;
-		//k_put_wingadget_point(WINICON_BLOCK,endX - (metric.width),titleOffsetY,k_getUIWindowBorderColor());
-		//k_put_wingadget_point(WINICON_TITLE_FRONT,endX - (metric.width),titleOffsetY,k_getUIGadgetColor());
-
-		k_put_wingadget_point_ex(WINICON_BLOCK,endX - maxminPos,titleOffsetY,k_getUIWindowBorderColor(),page);
-		k_put_wingadget_point_ex(WINICON_TITLE_FRONT,endX - maxminPos,titleOffsetY,k_getUIGadgetColor(),page);
-
-		k_set_rect(&(pWin->nonclientGadgets[ncc].area),endX - maxminPos,titleOffsetY,gx,gx);
-		pWin->nonclientGadgets[ncc++].msgType = FX_MAX_WINDOW;
-
-		maxminPos+=2;
-	}
-
-	if(style & FXWS_MINIMIZEBOX)
-	{
-		//k_debug_strings("k_vdraw_ui_window:","FXWS_MINIMIZEBOX");
-		maxminPos+=metric.width;
-		//k_put_wingadget_point(WINICON_BLOCK,endX - (metric.width*2 + 2),titleOffsetY,k_getUIWindowBorderColor());
-		//k_put_wingadget_point(WINICON_TITLE_BACK,endX - (metric.width*2 + 2),titleOffsetY,k_getUIGadgetColor());
-
-		k_put_wingadget_point_ex(WINICON_BLOCK,endX - maxminPos,titleOffsetY,k_getUIWindowBorderColor(),page);
-		k_put_wingadget_point_ex(WINICON_TITLE_BACK,endX - maxminPos,titleOffsetY,k_getUIGadgetColor(),page);
-
-
-		k_set_rect(&(pWin->nonclientGadgets[ncc].area),endX - maxminPos,titleOffsetY,gx,gx);
-		pWin->nonclientGadgets[ncc++].msgType = FX_MIN_WINDOW;
-
-		maxminPos+=2;
-	}
-
-	if((style & FXWS_CAPTION) == FXWS_CAPTION)
-	{
-		/*
-		if(!k_gui_get_title_cache(NULL))
-		{
-			k_gui_build_title_cache(NULL);
-		}
-		*/
-		/*
-		for(i=0;i<=strlen(title);i++)
-		{
-			k_put_wingadget_point_ex(WINICON_BLOCK,cx+borderWidth+metric.width+(metric.width*i),titleOffsetY,15,page);
-		}
-		*/
-		k_user_SetRect(&rect,cx+borderWidth+metric.width,titleOffsetY,(strlen(title) + 1)*8,8);
-
-		if(extraStyle && pWin->clientData[CLIENTDATA_TITLE])
-		{
-			//k_debug_strings("k_vdraw_ui_window::CLIENTDATA_TITLE:","DRAW");
-			k_user_SetRect(&rect,cx+borderWidth+metric.width,titleOffsetY,(strlen(title) + 1)*8,8);
-			k_gui_get_image_cache((UINT)((ULONG)pWin->clientData[CLIENTDATA_TITLE]),GUI_CACHE_BACK,&rect);
-		}
-		else
-		{
-			k_debug_integer("k_vdraw_ui_window::CLIENTDATA_TITLE:",extraStyle);
-			k_vdma_fill_rect_ex(cx+borderWidth+metric.width,titleOffsetY,
-								(strlen(title) + 1)*8,8,15,BITMAP_BACK);
-
-			k_draw_text_point_ex(title,cx+(borderWidth + 3)+metric.width,titleOffsetY,k_getUIGadgetColor(),page);
-			if(extraStyle)
-			{
-				k_user_SetRect(&rect,cx+borderWidth+metric.width,titleOffsetY,(strlen(title) + 1)*8,8);
-				pWin->clientData[CLIENTDATA_TITLE] = (LPVOID)((ULONG)k_gui_set_image_cache(GUI_CACHE_BACK,&rect));
-
-				k_debug_pointer("k_vdraw_ui_window::CLIENTDATA_TITLE:",pWin->clientData[CLIENTDATA_TITLE] );
-			}
-		}
-
-
-
-		/*
-		k_vdma_copy_address_ex((LPSTR)((ULONG)0x080000 + k_gui_get_pixel_offset(0,420)),TITLE_LINES_640x480,640,8);
-
-		k_vdma_copy_address_ex((LPSTR)((ULONG)0x200000 + k_gui_get_pixel_offset(0,460)),
-							   (LPSTR)((ULONG)0x080000 + k_gui_get_pixel_offset(cx+(borderWidth + 3)+metric.width,titleOffsetY)),
-							   strlen(title)*8,8);
-
-		k_vdma_copy_address_ex((LPSTR)((ULONG)0x080000 + k_gui_get_pixel_offset(100,460)),
-							   (LPSTR)((ULONG)0x200000 + k_gui_get_pixel_offset(0,460)),
-							   strlen(title)*8,8);
-		*/
-
-		k_set_rect(&(pWin->nonclientGadgets[ncc].area),
-				   pWin->win_x + gx,
-				   pWin->win_y,
-				   pWin->win_width - gx,
-				   borderTitle);
-		pWin->nonclientGadgets[ncc++].msgType = FX_DRAG_WINDOW;
-
-	}
-	else
-	{
-		k_set_rect(&(pWin->nonclientGadgets[ncc].area),
-				   pWin->win_x + gx,
-				   pWin->win_y,
-				   pWin->win_width - gx,
-				   borderWidth);
-		pWin->nonclientGadgets[ncc++].msgType = FX_DRAG_WINDOW;
-	}
-
-	//k_debug_integer("k_vdraw_ui_window::(clientOffsetY - height):",(clientOffsetY - pWin->clientRect.y));
-	//k_debug_integer("k_vdraw_ui_window::((clientOffsetY - height) + borderWidth):",((clientOffsetY - pWin->clientRect.y) + borderWidth));
-
-	pWin->clientRect.width  = (width - (2*borderWidth));
-	pWin->clientRect.height = height - ((clientOffsetY - pWin->clientRect.y) + borderWidth);
-
-	k_debug_integer("k_vdraw_ui_window::clientRect.width:", pWin->clientRect.width);
-	k_debug_integer("k_vdraw_ui_window::clientRect.height:",pWin->clientRect.height);
-
-
-	pWin->clientRect.x      = clientOffsetX;
-	pWin->clientRect.y      = clientOffsetY;
-
-	if(pWin->win_cxoffset == -1)
-	{
-		pWin->win_cxoffset 	= pWin->clientRect.x - pWin->win_x;
-		pWin->win_cyoffset 	= pWin->clientRect.y - pWin->win_y;
-	}
-
-	k_set_rect(&(pWin->nonclientGadgets[ncc].area),
-			   pWin->win_x + pWin->win_width  - 4,
-			   pWin->win_y + pWin->win_height - 4,
-			   4,
-			   4);
-	pWin->nonclientGadgets[ncc++].msgType = FX_RESIZE_WINDOW;
-
-
-	k_draw_rect(pWin->win_x - 1,
-				pWin->win_y - 1,
-				(pWin->win_x) + pWin->win_width  ,
-				(pWin->win_y) + pWin->win_height ,
-				k_getUIGadgetColor(),
-				0,
-				page);
-
-	k_draw_rect(pWin->clientRect.x - 1,
-				pWin->clientRect.y - 1,
-				pWin->clientRect.x + pWin->clientRect.width ,
-				pWin->clientRect.y + pWin->clientRect.height,
-				k_getUIGadgetColor(),
-				0,
-				page);
-	//k_debug_rect("k_vdraw_ui_window:client[resized]:",&pWin->clientRect);
-
-	k_set_rect(&(pWin->nonclientGadgets[ncc].area),-1,-1,-1,-1);
-
-
-	//k_debug_strings("k_vdraw_ui_window:","exit");
-}
-#endif
-
 void k_vdraw_ui_window_ex(PWINDOW pWin,ULONG style,int cx,int cy,int height,int width,char FAR *title,int color, int bgcolor,UINT page)
 {
 
@@ -4036,9 +3695,6 @@ void k_vdma_move_rect(long x,long y,int width,int height,int dx,int dy,unsigned 
 {
 	int slice = 0;
 
-
-
-
 	if(dx > 0)
 	{
 		slice = dx;
@@ -4057,47 +3713,68 @@ void k_vdma_fill_rect_ex(long x,long y,int width,int height,unsigned char pcolor
 {
 	long pixelLocation = 0L;
 
-	if(x < GUI_POINT_LIMIT_X_LO)
+	long gpxLo = GUI_POINT_LIMIT_X_LO;
+	long gpxHi = GUI_POINT_LIMIT_X_HI;
+	long gpyLo = GUI_POINT_LIMIT_Y_LO;
+	long gpyHi = GUI_POINT_LIMIT_Y_HI;
+
+
+	/*
+	if(width > 640)
+	{
+		gpxHi = GUI_POINT_LIMIT_X_HIX;
+		gpyHi = GUI_POINT_LIMIT_Y_HIX;
+	}
+	*/
+
+	if(x < gpxLo)
 	{
 		//k_debug_integer("k_vdma_fill_rect_ex::x-over:-x:",(int)x);
 		//k_debug_integer("k_vdma_fill_rect_ex::x-over:-width:",(int)width);
 		width = (width + x);
-		x = GUI_POINT_LIMIT_X_LO;
+		x = gpxLo;
 		//k_debug_integer("k_vdma_fill_rect_ex::x-over:width:",(int)width);
 	}
 
-	if(y < GUI_POINT_LIMIT_Y_LO)
+	if(y < gpyLo)
 	{
 		height = (height + y);
-		y = GUI_POINT_LIMIT_Y_LO;
+		y = gpyLo;
 	}
 
-	if(x > GUI_POINT_LIMIT_X_HI)
-		x = GUI_POINT_LIMIT_X_HI - 1;
+	if(x > gpxHi)
+		x = gpxHi - 1;
 
-	if(y > GUI_POINT_LIMIT_Y_HI)
-		y = GUI_POINT_LIMIT_Y_HI - 1;
+	if(y > gpxHi)
+		y = gpxHi - 1;
 
-	if((int)x + width > GUI_POINT_LIMIT_X_HI)
+	if((int)x + width > gpxHi)
 	{
 		//k_debug_integer("k_vdma_fill_rect_ex::x-over:x:",(int)x);
 		//k_debug_integer("k_vdma_fill_rect_ex::x-over:width:",(int)width);
 
-		width = GUI_POINT_LIMIT_X_HI - (int)x;
+		width = gpxHi - (int)x;
 
-		k_debug_integer("k_vdma_fill_rect_ex::x-over:width:adjusted:",(int)width);
+		//k_debug_integer("k_vdma_fill_rect_ex::x-over:width:adjusted:",(int)width);
 	}
 
-	if((int)y + height > GUI_POINT_LIMIT_Y_HI)
+	if((int)y + height > gpyHi)
 	{
 		//k_debug_integer("k_vdma_fill_rect_ex::y-over:y:",y);
 		//k_debug_integer("k_vdma_fill_rect_ex::y-over:height:",height);
 
-		height = GUI_POINT_LIMIT_Y_HI - (int)y;
+		height = gpyHi - (int)y;
 
-		k_debug_integer("k_vdma_fill_rect_ex::y-over:height:adjusted:",height);
+		//k_debug_integer("k_vdma_fill_rect_ex::y-over:height:adjusted:",height);
 	}
-	pixelLocation = (long)(( ((long)y) * (640L)) + ((long)x) );
+
+	//
+	// bad logic, need to look at mode, but this is Q&D
+	//
+	//if(k_get_video_mode() > VIDEO_MODE_640X480D)
+	//	pixelLocation = (long)(( ((long)y) * (800L)) + ((long)x) );
+	//else
+		pixelLocation = (long)(( ((long)y) * (640L)) + ((long)x) );
 
 	//k_debug_integer("k_vdma_fill_rect:",page);
 	//k_debug_integer("k_vdma_fill_width:",width);
@@ -4131,25 +3808,14 @@ void k_vdma_fill_rect(long x,long y,int width,int height,unsigned char pcolor)
 }
 */
 
+/*
 void k_vdma_fill_address_old(char FAR * pdst,int width,int height,unsigned char data)
 {
 	int pos = 0;
 	UINT spinLock = 0;
 	char status = VDMA_STAT_VDMA_IPS;
 
-	/*
-	while(status == VDMA_STAT_VDMA_IPS)
-	{
-		status = ( *VDMA_STATUS_REG & VDMA_STAT_VDMA_IPS);
-		spinLock++;
 
-		if(spinLock > 32000)
-		{
-			break;
-		}
-	}
-	k_debug_integer("k_vdma_fill_address1::spinLock:",spinLock);
-	*/
 	VDMA_CONTROL_REG[0] = VDMA_CTRL_ENABLE | VDMA_CTRL_1D_2D | VDMA_CTRL_TRF_FILL;
 
 	VDMA_DST_ADDY_L[0] = L24BYTE((long)pdst);
@@ -4202,25 +3868,7 @@ void k_vdma_fill_address_old(char FAR * pdst,int width,int height,unsigned char 
 
 
 
-	/*
-	while(status == VDMA_STAT_VDMA_IPS)
-	{
-		status = ( *((unsigned char *)0xAF0401) & VDMA_STAT_VDMA_IPS);
-	}
-	
-	
-	while(status == VDMA_STAT_VDMA_IPS)
-	{
-		#asm
-		PHA 
-        LDA $AF0401
-        AND #$80
-        CMP #$80
-        STA %%status
-		PLA
-		#endasm
-	}
-	*/
+
 	
    //return *VDMA_STATUS_REG;
    //return VDMA_STATUS_REG[0];
@@ -4228,6 +3876,7 @@ void k_vdma_fill_address_old(char FAR * pdst,int width,int height,unsigned char 
    
    return ;
 }
+*/
 
 void k_vdma_fill_address(char FAR * pdst,int width,int height,unsigned char data)
 {
@@ -4253,8 +3902,16 @@ void k_vdma_fill_address(char FAR * pdst,int width,int height,unsigned char data
 	*VDMA_SRC_STRIDE_L = 0x00;
 	*VDMA_SRC_STRIDE_H = 0x00;
 
-	*VDMA_DST_STRIDE_L  = 0x80;
-	*VDMA_DST_STRIDE_H	= 0x02;
+	if(width >= 639)
+	{
+		*VDMA_DST_STRIDE_L  = 0x20;
+		*VDMA_DST_STRIDE_H	= 0x03;
+	}
+	else
+	{
+		*VDMA_DST_STRIDE_L  = 0x80;
+		*VDMA_DST_STRIDE_H	= 0x02;
+	}
 
     VDMA_CONTROL_REG[0]  = (VDMA_CTRL_ENABLE | VDMA_CTRL_1D_2D | VDMA_CTRL_TRF_FILL | VDMA_CTRL_START_TRF);
 
@@ -4289,6 +3946,7 @@ void k_vdma_fill_address_ex(char FAR * pdst,int width,int height,unsigned char d
 	int pos = 0;
 	UINT spinLock = 0;
 	char status = VDMA_STAT_VDMA_IPS;
+	LONG lwidth = (LONG)width;
 
 	VDMA_CONTROL_REG[0] = ( VDMA_CTRL_ENABLE | VDMA_CTRL_TRF_FILL | VDMA_CTRL_1D_2D );
 
@@ -4313,12 +3971,25 @@ void k_vdma_fill_address_ex(char FAR * pdst,int width,int height,unsigned char d
 	VDMA_Y_SIZE_H[0] = HIBYTE(height);
 	VDMA_Y_SIZE_H[1] = 0x00;
 
-
 	*VDMA_SRC_STRIDE_L = 0x00;
 	*VDMA_SRC_STRIDE_H = 0x00;
 
-	*VDMA_DST_STRIDE_L  = 0x80;
-	*VDMA_DST_STRIDE_H	= 0x02;
+	//*VDMA_DST_STRIDE_L  = L24BYTE(lwidth);
+	//*VDMA_DST_STRIDE_H	= M24BYTE(lwidth);
+
+
+
+	if(width > 640)
+	{
+		*VDMA_DST_STRIDE_L  = 0x20;
+		*VDMA_DST_STRIDE_H	= 0x03;
+	}
+	else
+	{
+		*VDMA_DST_STRIDE_L  = 0x80;
+		*VDMA_DST_STRIDE_H	= 0x02;
+	}
+
 
     VDMA_CONTROL_REG[0]  = (VDMA_CTRL_ENABLE | VDMA_CTRL_1D_2D | VDMA_CTRL_TRF_FILL | VDMA_CTRL_START_TRF);
 
@@ -4600,22 +4271,22 @@ UINT k_get_video_mode(void)
 	{
 		if(MASTER_CTRL_REG_H[0] & 0x02)
 		{
-			k_debug_string("k_get_video_mode:VIDEO_MODE_800X600D...\r\n");
+			//k_debug_string("k_get_video_mode:VIDEO_MODE_800X600D...\r\n");
 			return VIDEO_MODE_800X600D;
 		}
 
-		k_debug_string("k_get_video_mode:VIDEO_MODE_800X600...\r\n");
+		//k_debug_string("k_get_video_mode:VIDEO_MODE_800X600...\r\n");
 		return VIDEO_MODE_800X600;
 	}
 	else
 	{
 		if(MASTER_CTRL_REG_H[0] & 0x02)
 		{
-			k_debug_string("k_get_video_mode:VIDEO_MODE_640X480D...\r\n");
+			//k_debug_string("k_get_video_mode:VIDEO_MODE_640X480D...\r\n");
 			return VIDEO_MODE_640X480D;
 		}
 
-		k_debug_string("k_get_video_mode:VIDEO_MODE_640X480...\r\n");
+		//k_debug_string("k_get_video_mode:VIDEO_MODE_640X480...\r\n");
 		return VIDEO_MODE_640X480;
 	}
 
@@ -5025,6 +4696,154 @@ UINT k_init_splash(BOOL bWait)
 	}
 
 	return bootMode;
+}
+
+void k_show_mandy(LPCSTR imageFilePath, UINT mode)
+{
+	int i,j;
+	BYTE c,r,g,b;
+	long color[4];
+
+	long *pcolor[3];
+
+	//PFXZEROPAGE zp = NULL;
+
+	LPSTR pPalette = GRPH_LUT0_PTR;
+	LPSTR pathName = NULL;
+	CHAR boardRelease[3];
+
+	k_clear_screen(0);
+
+	k_lock_irq();
+
+	if(mode > 0)
+	{
+		/*
+		MASTER_CTRL_REG_H[0] = 0;
+		MASTER_CTRL_REG_L[0] = MSTR_CTRL_GRAPH_MODE_EN;
+
+		for(i=3200;i>0;i--)
+		{
+			for(j=0;j<256;j++)
+			{
+				asm NOP;
+			}
+		}
+		*/
+		k_debug_string("k_enable_bitmap_mode to 800x600...\r\n");
+
+		k_vdma_fill_rect_ex(0,0,800,600,0,BITMAP_FRONT);
+
+		if(MASTER_CTRL_REG_H[0] > 0)
+		{
+			MASTER_CTRL_REG_H[0] =  0;
+			MASTER_CTRL_REG_L[0] = (MSTR_CTRL_GRAPH_MODE_EN | MSTR_CTRL_BITMAP_EN);
+			for(j=0;j<256;j++)
+			{
+				asm NOP;
+			}
+		}
+
+		MASTER_CTRL_REG_H[0] = 0x03;
+		for(j=0;j<256;j++)
+		{
+			asm NOP;
+		}
+
+		MASTER_CTRL_REG_H[0] = MSTR_CTRL_VIDEO_MODE0;
+		for(j=0;j<256;j++)
+		{
+			asm NOP;
+		}
+
+
+		MASTER_CTRL_REG_H[0] = 0x03;
+		for(j=0;j<256;j++)
+		{
+			asm NOP;
+		}
+
+		MASTER_CTRL_REG_H[0] = MSTR_CTRL_VIDEO_MODE0;
+		for(j=0;j<256;j++)
+		{
+			asm NOP;
+		}
+
+		*BM0_CONTROL_REG = 0x01;
+		*BM0_START_ADDY_L = 0;
+		*BM0_START_ADDY_M = 0;
+		*BM0_START_ADDY_H = 0;
+
+		*BM0_CONTROL_REG = ( BM_ENABLE | BM_LUT0 );
+
+		*BM1_CONTROL_REG = 0x00;
+
+		MASTER_CTRL_REG_H[0] = MSTR_CTRL_VIDEO_MODE0;
+		MASTER_CTRL_REG_L[0] = (MSTR_CTRL_GRAPH_MODE_EN | MSTR_CTRL_BITMAP_EN);
+
+		for(i=3200;i>0;i--)
+		{
+			for(j=0;j<256;j++)
+			{
+				asm NOP;
+			}
+		}
+
+		MASTER_CTRL_REG_H[0] = MSTR_CTRL_VIDEO_MODE0;
+		MASTER_CTRL_REG_L[0] = (MSTR_CTRL_GRAPH_MODE_EN | MSTR_CTRL_BITMAP_EN);
+
+		for(i=3200;i>0;i--)
+		{
+			for(j=0;j<256;j++)
+			{
+				asm NOP;
+			}
+		}
+
+
+
+	}
+	else
+	{
+
+	#ifdef USE_FX256_FMX
+		k_enable_bitmap_mode();
+
+		k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_FRONT);
+		k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_BACK);
+	#elif USE_FX256_U
+
+		k_enable_bitmap_mode();
+		k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_FRONT);
+		k_vdma_fill_rect_ex(0,0,640,480,0,BITMAP_BACK);
+	#endif
+
+	}
+
+	k_disable_border();
+
+	k_unlock_irq();
+
+	if(imageFilePath)
+	{
+		readBMPPalette(imageFilePath);
+	}
+
+	if(mode > 1)
+	{
+		for(i=0;i<255;i++)
+		{
+			k_debug_integer("k_enable_bitmap_color:",i);
+			k_vdma_fill_rect_ex(0,0,800,600,i,BITMAP_FRONT);
+			k_vdma_fill_rect_ex(0,0,800,600,i,BITMAP_BACK);
+			for(j=0;j<256;j++)
+			{
+				asm NOP;
+			}
+		}
+	}
+
+	return;
 }
 
 void k_show_image(LPCSTR imageFilePath)
@@ -5919,6 +5738,7 @@ void k_scratch_save_bitblt(int x0, int y0, int width, int height, int x1, int y1
 
 }
 
+/*
 void k_scratch_restore_bitblt(int x0, int y0, int width, int height, int x1, int y1)
 {
 	long dy = 0L;
@@ -5947,7 +5767,7 @@ void k_scratch_restore_bitblt(int x0, int y0, int width, int height, int x1, int
 	}
 
 }
-
+*/
 
 UINT k_font_getFontHeight(void)
 {
@@ -6102,9 +5922,3 @@ HANDLE k_gui_build_title_cache(LPSTR lpstrTitle)
 
 #include "bmp/cbmp.c"
 
-/*
-
-
-
-
- */

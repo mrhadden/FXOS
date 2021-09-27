@@ -493,7 +493,7 @@ R3	equ	13
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",11
 	.line	72
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",6
-	.line	1960
+	.line	1963
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",16
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
@@ -609,7 +609,7 @@ R3	equ	13
 	.stag	_k_irq_chain,128,60
 	.member	handlers,0,5217,8,32,4
 	.eos
-	.line	490
+	.line	475
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",22
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
@@ -622,7 +622,7 @@ R3	equ	13
 	.line	1064
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",7
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
-	.line	1960
+	.line	1963
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",12
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
@@ -714,7 +714,7 @@ R3	equ	13
 	.line	129
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",6
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
-	.line	568
+	.line	572
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",7
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",0
@@ -740,7 +740,7 @@ R3	equ	13
 	.member	CUR_GADGET,144,5,8,16
 	.member	CUR_COLOR,160,101,8,0,15
 	.eos
-	.line	359
+	.line	370
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",8
 	.stag	_fxos_winman_vtable,160,69
 	.member	Events,0,641,8,32
@@ -814,7 +814,7 @@ R3	equ	13
 	.member	readable,8,110,8,0,16
 	.member	data,136,129,8,32
 	.eos
-	.line	568
+	.line	572
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",18
 	.stag	_fx_spinner_ctx,48,80
 	.member	index,0,5,8,16
@@ -1571,9 +1571,9 @@ R3	equ	13
 	.line	129
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",6
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
-	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",104
-	.line	113
+	.line	1963
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\drivers/DRIVER.h",106
+	.line	115
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.c",4
 ;
 ;#pragma section CODE=FXDOS,offset $08:92F5
@@ -1920,9 +1920,8 @@ _k_get_driver_def_1	set	56
 ;	//k_debug_integer("Scan slot:",(UINT)driver_idx);
 ;	//k_debug_pointer("k_dos_load_drivers::scanning @",_k_get_driver_def);
 ;
-;
 ;	if(*((LONG*)_k_get_driver_def) == 0x4E9383B) // sig bytes of driver
-	.line	110
+	.line	109
 ;	{
 	lda	[<L8+_k_get_driver_def_1]
 	cmp	#<$4e9383b
@@ -1934,11 +1933,11 @@ L10:
 	beq	L11
 	brl	L10002
 L11:
-	.line	111
+	.line	110
 ;		//k_debug_pointer("k_dos_load_drivers::driver located@",_k_get_driver_def);
 ;		//k_debug_string("Driver Detected:\r\n");
 ;		driver = _k_get_driver_def(major,minor);
-	.line	114
+	.line	113
 	pea	#0
 	clc
 	tdc
@@ -1956,18 +1955,18 @@ L11:
 	sta	<L8+driver_1
 	stx	<L8+driver_1+2
 ;		if(driver)
-	.line	115
+	.line	114
 ;		{
 	lda	<L8+driver_1
 	ora	<L8+driver_1+2
 	bne	L12
 	brl	L10003
 L12:
-	.line	116
+	.line	115
 ;			//k_debug_pointer("k_dos_load_drivers::driver data pre@",driver);
 ;
 ;			if( ((ULONG)driver) < 0x010000L ) // handle short addressing for linear segment driver
-	.line	119
+	.line	118
 ;				driver = (PFX_DEVICE_DRIVER)(((ULONG)driver) + (((ULONG)_k_get_driver_def) & 0xFF0000L));
 	lda	<L8+driver_1
 	cmp	#<$10000
@@ -1976,7 +1975,7 @@ L12:
 	bcc	L13
 	brl	L10004
 L13:
-	.line	120
+	.line	119
 	stz	<R0
 	lda	<L8+_k_get_driver_def_1+2
 	and	#^$ff0000
@@ -2005,7 +2004,7 @@ L13:
 ;
 ;			if((strcmp(driver->hmajor,major) == 0) && (strcmp(driver->hminor,minor) == 0))
 L10004:
-	.line	132
+	.line	131
 ;			{
 	pea	#0
 	clc
@@ -2045,9 +2044,9 @@ L14:
 	beq	L15
 	brl	L10005
 L15:
-	.line	133
+	.line	132
 ;				if(driver->type != DRIVER_TYPE_UNIMPL)
-	.line	134
+	.line	133
 ;				{
 	sep	#$20
 	longa	off
@@ -2059,9 +2058,9 @@ L15:
 	bne	L16
 	brl	L10006
 L16:
-	.line	135
+	.line	134
 ;					k_nodelist_addtolist(_k_dos_devicedrivers,driver->type,driver->name,driver);
-	.line	136
+	.line	135
 	pei	<L8+driver_1+2
 	pei	<L8+driver_1
 	pei	<L8+driver_1+2
@@ -2076,7 +2075,7 @@ L16:
 	jsl	~~k_nodelist_addtolist
 ;					//k_debug_string("    Hardware Compatible: YES\r\n");
 ;					if(driver->f_driver_load)
-	.line	138
+	.line	137
 ;						((DEVICEDRIVER_LOAD)driver->f_driver_load)();
 	ldy	#$51
 	lda	[<L8+driver_1],Y
@@ -2085,7 +2084,7 @@ L16:
 	bne	L17
 	brl	L10007
 L17:
-	.line	139
+	.line	138
 	ldy	#$53
 	lda	[<L8+driver_1],Y
 	tax
@@ -2096,7 +2095,7 @@ L17:
 ;
 ;					if(driver->f_driver_irq!=NULL) // temp hook up the mouse
 L10007:
-	.line	141
+	.line	140
 ;					{
 	ldy	#$49
 	lda	[<L8+driver_1],Y
@@ -2105,10 +2104,10 @@ L10007:
 	bne	L18
 	brl	L10008
 L18:
-	.line	142
+	.line	141
 ;						//k_debug_string("    Hardware Compatible as IRQ\r\n");
 ;						if(IRQREG(driver->irq_ctl)!=0xFF)
-	.line	144
+	.line	143
 ;						{
 	ldy	#$47
 	lda	[<L8+driver_1],Y
@@ -2121,12 +2120,12 @@ L18:
 	bne	L19
 	brl	L10009
 L19:
-	.line	145
+	.line	144
 ;							k_lock_irq();
-	.line	146
+	.line	145
 	jsl	~~k_lock_irq
 ;							if(g_irq_handlers[IRQREG(driver->irq_ctl)][IRQNUM(driver->irq_ctl)].handlers[0]!=NULL)
-	.line	147
+	.line	146
 ;							{
 	ldy	#$47
 	lda	[<L8+driver_1],Y
@@ -2161,9 +2160,9 @@ L19:
 	bne	L20
 	brl	L10010
 L20:
-	.line	148
+	.line	147
 ;								g_irq_handlers[IRQREG(driver->irq_ctl)][IRQNUM(driver->irq_ctl)].handlers[0] = (DEVICEDRIVER_IRQ)driver->f_driver_irq;
-	.line	149
+	.line	148
 	ldy	#$47
 	lda	[<L8+driver_1],Y
 	and	#<$ff
@@ -2199,70 +2198,70 @@ L20:
 	ldy	#$2
 	sta	(<R0),Y
 ;							}
-	.line	150
+	.line	149
 ;							else
 	brl	L10011
 L10010:
 ;							{
-	.line	152
+	.line	151
 ;								k_debug_string("    IRQ CONFLICT DETECTED\r\n");
-	.line	153
+	.line	152
 	pea	#^L1
 	pea	#<L1
 	jsl	~~k_debug_string
 ;							}
-	.line	154
+	.line	153
 L10011:
 ;							k_unlock_irq();
-	.line	155
+	.line	154
 	jsl	~~k_unlock_irq
 ;						}
-	.line	156
+	.line	155
 ;					}
 L10009:
-	.line	157
+	.line	156
 ;				}
 L10008:
-	.line	158
+	.line	157
 ;				else
 	brl	L10012
 L10006:
 ;				{
-	.line	160
+	.line	159
 ;					//k_debug_string("    UNIMPLEMENTED\r\n");
 ;				}
-	.line	162
+	.line	161
 L10012:
 ;			}
-	.line	163
+	.line	162
 ;			else
 	brl	L10013
 L10005:
 ;			{
-	.line	165
+	.line	164
 ;				//k_debug_string("    Hardware Compatible: NO\r\n");
 ;			}
-	.line	167
+	.line	166
 L10013:
 ;
 ;			//k_debug_string("\r\n");
 ;		}
-	.line	170
+	.line	169
 ;	}
 L10003:
-	.line	171
+	.line	170
 ;	else
 	brl	L10014
 L10002:
 ;	{
-	.line	173
+	.line	172
 ;		//k_debug_pointer("k_dos_load_drivers::driver not detected@",_k_get_driver_def);
 ;	}
-	.line	175
+	.line	174
 L10014:
 ;
 ;	return _k_get_driver_def;
-	.line	177
+	.line	176
 	ldx	<L8+_k_get_driver_def_1+2
 	lda	<L8+_k_get_driver_def_1
 L21:
@@ -2279,14 +2278,14 @@ L21:
 	tya
 	rtl
 ;}
-	.line	178
-	.endblock	178
+	.line	177
+	.endblock	177
 L7	equ	72
 L8	equ	13
 	ends
 	efunc
-	.endfunc	178,13,72
-	.line	178
+	.endfunc	177,13,72
+	.line	177
 	data
 L1:
 	db	$20,$20,$20,$20,$49,$52,$51,$20,$43,$4F,$4E,$46,$4C,$49,$43
@@ -2295,12 +2294,12 @@ L1:
 ;
 ;LPCSTR k_dos_load_drivers(void)
 ;{
+	.line	179
 	.line	180
-	.line	181
 	FXDOS
 	xdef	~~k_dos_load_drivers
 	func
-	.function	181
+	.function	180
 ~~k_dos_load_drivers:
 	longa	on
 	longi	on
@@ -2310,7 +2309,7 @@ L1:
 	tcs
 	phd
 	tcd
-	.block	181
+	.block	180
 ;	CHAR major[16];
 ;	CHAR minor[16];
 ;	CHAR k16buffer[16];
@@ -2345,14 +2344,14 @@ _k_get_driver_def_1	set	60
 	stz	<L24+driver_1+2
 	stz	<L24+_k_get_driver_def_1
 	stz	<L24+_k_get_driver_def_1+2
-	.line	193
+	.line	192
 	pea	#^$1000
 	pea	#<$1000
 	jsl	~~k_mem_allocate_heap
 	sta	<L24+log_1
 	stx	<L24+log_1+2
 ;	sectorBuffer = (LPSTR)k_mem_allocate_heap(512);
-	.line	194
+	.line	193
 	pea	#^$200
 	pea	#<$200
 	jsl	~~k_mem_allocate_heap
@@ -2360,7 +2359,7 @@ _k_get_driver_def_1	set	60
 	stx	|~~sectorBuffer+2
 ;
 ;	k_get_c256_major_version(major);
-	.line	196
+	.line	195
 	pea	#0
 	clc
 	tdc
@@ -2368,7 +2367,7 @@ _k_get_driver_def_1	set	60
 	pha
 	jsl	~~k_get_c256_major_version
 ;	k_get_c256_minor_version(minor);
-	.line	197
+	.line	196
 	pea	#0
 	clc
 	tdc
@@ -2381,7 +2380,7 @@ _k_get_driver_def_1	set	60
 ;
 ;
 ;	memset(g_irq_handlers,0,sizeof(g_irq_handlers[0][0]));
-	.line	203
+	.line	202
 	pea	#<$10
 	pea	#<$0
 	lda	#<~~g_irq_handlers
@@ -2394,7 +2393,7 @@ _k_get_driver_def_1	set	60
 	jsl	~~memset
 ;
 ;	_k_dos_devicedrivers 	= k_nodelist_allocate_list("_k_dos_devicedrivers" ,NULL);
-	.line	205
+	.line	204
 	pea	#^$0
 	pea	#<$0
 	pea	#^L22
@@ -2403,7 +2402,7 @@ _k_get_driver_def_1	set	60
 	sta	|~~_k_dos_devicedrivers
 	stx	|~~_k_dos_devicedrivers+2
 ;	_k_dos_deviceinstance   = k_nodelist_allocate_list("_k_dos_deviceinstance" ,NULL);
-	.line	206
+	.line	205
 	pea	#^$0
 	pea	#<$0
 	pea	#^L22+21
@@ -2415,28 +2414,28 @@ _k_get_driver_def_1	set	60
 ;	//k_debug_string("Scanning for Drivers...\r\n");
 ;
 ;	strcpy(log,"");
-	.line	210
+	.line	209
 	pea	#^L22+43
 	pea	#<L22+43
 	pei	<L24+log_1+2
 	pei	<L24+log_1
 	jsl	~~strcpy
 ;	strcat(log,"Scanning for Drivers...\r\n");
-	.line	211
+	.line	210
 	pea	#^L22+44
 	pea	#<L22+44
 	pei	<L24+log_1+2
 	pei	<L24+log_1
 	jsl	~~strcat
-;	for(driver_idx = 0;driver_idx<25;driver_idx++)
-	.line	212
+;	for(driver_idx = 0;driver_idx<30;driver_idx++)
+	.line	211
 	stz	<L24+driver_idx_1
 	stz	<L24+driver_idx_1+2
 L10017:
 ;	{
-	.line	213
+	.line	212
 ;		_k_get_driver_def = ((GETDRIVERDEF)((LPVOID)((ULONG)DRIVER_BASE + (driver_idx * (ULONG)DRIVER_SIZE))));
-	.line	214
+	.line	213
 	pea	#^$5f0
 	pea	#<$5f0
 	pei	<L24+driver_idx_1+2
@@ -2463,7 +2462,7 @@ L10017:
 ;		//k_debug_byte_array("k_dos_load_drivers::scan detected value:",((PBYTE)_k_get_driver_def),8);
 ;		//k_debug_long("k_dos_load_drivers::scan detected long:",*((LONG*)_k_get_driver_def));
 ;		if(*((ULONG*)_k_get_driver_def) == 0x4E9383B) // sig bytes of driver
-	.line	221
+	.line	220
 ;		{
 	lda	[<L24+_k_get_driver_def_1]
 	cmp	#<$4e9383b
@@ -2475,18 +2474,18 @@ L26:
 	beq	L27
 	brl	L10018
 L27:
-	.line	222
+	.line	221
 ;			//k_debug_pointer("k_dos_load_drivers::driver located@",_k_get_driver_def);
 ;			//k_debug_string("Driver Detected:\r\n");
 ;			strcat(log,"Driver Detected ");
-	.line	225
+	.line	224
 	pea	#^L22+70
 	pea	#<L22+70
 	pei	<L24+log_1+2
 	pei	<L24+log_1
 	jsl	~~strcat
 ;			strcat(log," @0x");
-	.line	226
+	.line	225
 	pea	#^L22+87
 	pea	#<L22+87
 	pei	<L24+log_1+2
@@ -2494,7 +2493,7 @@ L27:
 	jsl	~~strcat
 ;
 ;			strcat(log,k_bytetohex(H24BYTE(_k_get_driver_def),k16buffer));
-	.line	228
+	.line	227
 	pea	#0
 	clc
 	tdc
@@ -2521,7 +2520,7 @@ L27:
 	pei	<L24+log_1
 	jsl	~~strcat
 ;			strcat(log,k_bytetohex(M24BYTE(_k_get_driver_def),k16buffer));
-	.line	229
+	.line	228
 	pea	#0
 	clc
 	tdc
@@ -2548,7 +2547,7 @@ L27:
 	pei	<L24+log_1
 	jsl	~~strcat
 ;			strcat(log,k_bytetohex(L24BYTE(_k_get_driver_def),k16buffer));
-	.line	230
+	.line	229
 	pea	#0
 	clc
 	tdc
@@ -2564,7 +2563,7 @@ L27:
 	pei	<L24+log_1
 	jsl	~~strcat
 ;			strcat(log,":\r\n");
-	.line	231
+	.line	230
 	pea	#^L22+92
 	pea	#<L22+92
 	pei	<L24+log_1+2
@@ -2572,7 +2571,7 @@ L27:
 	jsl	~~strcat
 ;
 ;			driver = _k_get_driver_def(major,minor);
-	.line	233
+	.line	232
 	pea	#0
 	clc
 	tdc
@@ -2590,14 +2589,14 @@ L27:
 	sta	<L24+driver_1
 	stx	<L24+driver_1+2
 ;			if(driver)
-	.line	234
+	.line	233
 ;			{
 	lda	<L24+driver_1
 	ora	<L24+driver_1+2
 	bne	L28
 	brl	L10019
 L28:
-	.line	235
+	.line	234
 ;				/*
 ;				strcat(log,"Driver PRE ");
 ;							strcat(log," @0x");
@@ -2609,7 +2608,7 @@ L28:
 ;
 ;
 ;				if( ((ULONG)driver) < 0x010000L ) // handle short addressing for linear segment driver
-	.line	246
+	.line	245
 ;					driver = (PFX_DEVICE_DRIVER)(((ULONG)driver) + (((ULONG)_k_get_driver_def) & 0xFF0000L));
 	lda	<L24+driver_1
 	cmp	#<$10000
@@ -2618,7 +2617,7 @@ L28:
 	bcc	L29
 	brl	L10020
 L29:
-	.line	247
+	.line	246
 	stz	<R0
 	lda	<L24+_k_get_driver_def_1+2
 	and	#^$ff0000
@@ -2638,21 +2637,21 @@ L29:
 ;
 ;				strcat(log,"Driver Definition ");
 L10020:
-	.line	250
+	.line	249
 	pea	#^L22+96
 	pea	#<L22+96
 	pei	<L24+log_1+2
 	pei	<L24+log_1
 	jsl	~~strcat
 ;							strcat(log," @0x");
-	.line	251
+	.line	250
 	pea	#^L22+115
 	pea	#<L22+115
 	pei	<L24+log_1+2
 	pei	<L24+log_1
 	jsl	~~strcat
 ;				strcat(log,k_bytetohex(H24BYTE(driver),k16buffer));
-	.line	252
+	.line	251
 	pea	#0
 	clc
 	tdc
@@ -2679,7 +2678,7 @@ L10020:
 	pei	<L24+log_1
 	jsl	~~strcat
 ;				strcat(log,k_bytetohex(M24BYTE(driver),k16buffer));
-	.line	253
+	.line	252
 	pea	#0
 	clc
 	tdc
@@ -2706,7 +2705,7 @@ L10020:
 	pei	<L24+log_1
 	jsl	~~strcat
 ;				strcat(log,k_bytetohex(L24BYTE(driver),k16buffer));
-	.line	254
+	.line	253
 	pea	#0
 	clc
 	tdc
@@ -2722,7 +2721,7 @@ L10020:
 	pei	<L24+log_1
 	jsl	~~strcat
 ;				strcat(log,":\r\n");
-	.line	255
+	.line	254
 	pea	#^L22+120
 	pea	#<L22+120
 	pei	<L24+log_1+2
@@ -2731,21 +2730,21 @@ L10020:
 ;
 ;
 ;				strcat(log,"  Name:");
-	.line	258
+	.line	257
 	pea	#^L22+124
 	pea	#<L22+124
 	pei	<L24+log_1+2
 	pei	<L24+log_1
 	jsl	~~strcat
 ;				strcat(log,driver->name);
-	.line	259
+	.line	258
 	pei	<L24+driver_1+2
 	pei	<L24+driver_1
 	pei	<L24+log_1+2
 	pei	<L24+log_1
 	jsl	~~strcat
 ;				strcat(log," : ");
-	.line	260
+	.line	259
 	pea	#^L22+132
 	pea	#<L22+132
 	pei	<L24+log_1+2
@@ -2757,7 +2756,7 @@ L10020:
 ;				//k_debug_strings("    Minor:",driver->hminor);
 ;
 ;				if((strcmp(driver->hmajor,major) == 0) && (strcmp(driver->hminor,minor) == 0))
-	.line	266
+	.line	265
 ;				{
 	pea	#0
 	clc
@@ -2797,9 +2796,9 @@ L30:
 	beq	L31
 	brl	L10021
 L31:
-	.line	267
+	.line	266
 ;					if(driver->type != DRIVER_TYPE_UNIMPL)
-	.line	268
+	.line	267
 ;					{
 	sep	#$20
 	longa	off
@@ -2811,9 +2810,9 @@ L31:
 	bne	L32
 	brl	L10022
 L32:
-	.line	269
+	.line	268
 ;						k_nodelist_addtolist(_k_dos_devicedrivers,driver->type,driver->name,driver);
-	.line	270
+	.line	269
 	pei	<L24+driver_1+2
 	pei	<L24+driver_1
 	pei	<L24+driver_1+2
@@ -2828,7 +2827,7 @@ L32:
 	jsl	~~k_nodelist_addtolist
 ;						//k_debug_string("    Hardware Compatible: YES\r\n");
 ;						if(driver->f_driver_load)
-	.line	272
+	.line	271
 ;							((DEVICEDRIVER_LOAD)driver->f_driver_load)();
 	ldy	#$51
 	lda	[<L24+driver_1],Y
@@ -2837,7 +2836,7 @@ L32:
 	bne	L33
 	brl	L10023
 L33:
-	.line	273
+	.line	272
 	ldy	#$53
 	lda	[<L24+driver_1],Y
 	tax
@@ -2849,7 +2848,7 @@ L33:
 ;
 ;						strcat(log,"LOADED");
 L10023:
-	.line	276
+	.line	275
 	pea	#^L22+136
 	pea	#<L22+136
 	pei	<L24+log_1+2
@@ -2857,7 +2856,7 @@ L10023:
 	jsl	~~strcat
 ;
 ;						if(driver->f_driver_irq!=NULL) // temp hook up the mouse
-	.line	278
+	.line	277
 ;						{
 	ldy	#$49
 	lda	[<L24+driver_1],Y
@@ -2866,16 +2865,16 @@ L10023:
 	bne	L34
 	brl	L10024
 L34:
-	.line	279
+	.line	278
 ;							strcat(log,"\r\n USING IRQ: ");
-	.line	280
+	.line	279
 	pea	#^L22+143
 	pea	#<L22+143
 	pei	<L24+log_1+2
 	pei	<L24+log_1
 	jsl	~~strcat
 ;							strcat(log,k_bytetohex(IRQREG(driver->irq_ctl),k16buffer));
-	.line	281
+	.line	280
 	pea	#0
 	clc
 	tdc
@@ -2896,14 +2895,14 @@ L34:
 	pei	<L24+log_1
 	jsl	~~strcat
 ;							strcat(log,",");
-	.line	282
+	.line	281
 	pea	#^L22+158
 	pea	#<L22+158
 	pei	<L24+log_1+2
 	pei	<L24+log_1
 	jsl	~~strcat
 ;							strcat(log,k_bytetohex(IRQNUM(driver->irq_ctl),k16buffer));
-	.line	283
+	.line	282
 	pea	#0
 	clc
 	tdc
@@ -2922,7 +2921,7 @@ L34:
 	pei	<L24+log_1
 	jsl	~~strcat
 ;							if(IRQREG(driver->irq_ctl)!=0xFF)
-	.line	284
+	.line	283
 ;							{
 	ldy	#$47
 	lda	[<L24+driver_1],Y
@@ -2935,11 +2934,11 @@ L34:
 	bne	L35
 	brl	L10025
 L35:
-	.line	285
+	.line	284
 ;								//g_irq_handlers[IRQREG(driver->irq_ctl)][IRQNUM(driver->irq_ctl)] = (DEVICEDRIVER_IRQ)driver->f_driver_irq;
 ;
 ;								g_irq_handlers[IRQREG(driver->irq_ctl)][IRQNUM(driver->irq_ctl)].handlers[0] = (DEVICEDRIVER_IRQ)driver->f_driver_irq;
-	.line	288
+	.line	287
 	ldy	#$47
 	lda	[<L24+driver_1],Y
 	and	#<$ff
@@ -2975,81 +2974,81 @@ L35:
 	ldy	#$2
 	sta	(<R0),Y
 ;							}
-	.line	289
+	.line	288
 ;						}
 L10025:
-	.line	290
+	.line	289
 ;
 ;
 ;					}
 L10024:
-	.line	293
+	.line	292
 ;					else
 	brl	L10026
 L10022:
 ;					{
-	.line	295
+	.line	294
 ;						strcat(log,"UNIMPLEMENTED");
-	.line	296
+	.line	295
 	pea	#^L22+160
 	pea	#<L22+160
 	pei	<L24+log_1+2
 	pei	<L24+log_1
 	jsl	~~strcat
 ;					}
-	.line	297
+	.line	296
 L10026:
 ;				}
-	.line	298
+	.line	297
 ;				else
 	brl	L10027
 L10021:
 ;				{
-	.line	300
+	.line	299
 ;					//k_debug_string("    Hardware Compatible: NO\r\n");
 ;					strcat(log,"INCOMPATIBLE");
-	.line	302
+	.line	301
 	pea	#^L22+174
 	pea	#<L22+174
 	pei	<L24+log_1+2
 	pei	<L24+log_1
 	jsl	~~strcat
 ;				}
-	.line	303
+	.line	302
 L10027:
 ;
 ;				strcat(log,"\r\n");
-	.line	305
+	.line	304
 	pea	#^L22+187
 	pea	#<L22+187
 	pei	<L24+log_1+2
 	pei	<L24+log_1
 	jsl	~~strcat
 ;			}
-	.line	306
+	.line	305
 ;		}
 L10019:
-	.line	307
+	.line	306
 ;		else
 	brl	L10028
 L10018:
 ;		{
-	.line	309
+	.line	308
 ;			//k_debug_pointer("k_dos_load_drivers::driver not detected@",_k_get_driver_def);
 ;		}
-	.line	311
+	.line	310
 L10028:
 ;	}
-	.line	312
+	.line	311
 L10015:
 	inc	<L24+driver_idx_1
 	bne	L36
 	inc	<L24+driver_idx_1+2
 L36:
 	lda	<L24+driver_idx_1
-	cmp	#<$19
+	cmp	#<$1e
 	lda	<L24+driver_idx_1+2
-	sbc	#^$19
+	sbc	#^$1e
 	bcs	L37
 	brl	L10017
 L37:
@@ -3057,7 +3056,7 @@ L10016:
 ;
 ;
 ;	return (LPCSTR)log;
-	.line	315
+	.line	314
 	ldx	<L24+log_1+2
 	lda	<L24+log_1
 L38:
@@ -3070,14 +3069,14 @@ L38:
 	tya
 	rtl
 ;}
-	.line	316
-	.endblock	316
+	.line	315
+	.endblock	315
 L23	equ	76
 L24	equ	13
 	ends
 	efunc
-	.endfunc	316,13,76
-	.line	316
+	.endfunc	315,13,76
+	.line	315
 	data
 L22:
 	db	$5F,$6B,$5F,$64,$6F,$73,$5F,$64,$65,$76,$69,$63,$65,$64,$72
@@ -3188,12 +3187,12 @@ L22:
 ;
 ;PFX_DEVICE_DRIVER k_get_device_driver(UINT type)
 ;{
+	.line	408
 	.line	409
-	.line	410
 	FXDOS
 	xdef	~~k_get_device_driver
 	func
-	.function	410
+	.function	409
 ~~k_get_device_driver:
 	longa	on
 	longi	on
@@ -3204,7 +3203,7 @@ L22:
 	phd
 	tcd
 type_0	set	4
-	.block	410
+	.block	409
 ;	PFXNODE deviceNode = NULL;
 ;	PFX_DEVICE_DRIVER device = NULL;
 ;
@@ -3218,7 +3217,7 @@ device_1	set	4
 	stz	<L41+deviceNode_1+2
 	stz	<L41+device_1
 	stz	<L41+device_1+2
-	.line	414
+	.line	413
 	pei	<L40+type_0
 	lda	|~~_k_dos_devicedrivers+2
 	pha
@@ -3228,16 +3227,16 @@ device_1	set	4
 	sta	<L41+deviceNode_1
 	stx	<L41+deviceNode_1+2
 ;	if(deviceNode)
-	.line	415
+	.line	414
 ;	{
 	lda	<L41+deviceNode_1
 	ora	<L41+deviceNode_1+2
 	bne	L43
 	brl	L10029
 L43:
-	.line	416
+	.line	415
 ;		device = ((PFX_DEVICE_DRIVER)(deviceNode->data));
-	.line	417
+	.line	416
 	ldy	#$2
 	lda	[<L41+deviceNode_1],Y
 	sta	<L41+device_1
@@ -3245,11 +3244,11 @@ L43:
 	lda	[<L41+deviceNode_1],Y
 	sta	<L41+device_1+2
 ;	}
-	.line	418
+	.line	417
 ;
 ;	return device;
 L10029:
-	.line	420
+	.line	419
 	ldx	<L41+device_1+2
 	lda	<L41+device_1
 L44:
@@ -3266,23 +3265,23 @@ L44:
 	tya
 	rtl
 ;}
-	.line	421
-	.endblock	421
+	.line	420
+	.endblock	420
 L40	equ	8
 L41	equ	1
 	ends
 	efunc
-	.endfunc	421,1,8
-	.line	421
+	.endfunc	420,1,8
+	.line	420
 ;
 ;PFXDOSDEVICE k_get_dos_device(UINT type)
 ;{
+	.line	422
 	.line	423
-	.line	424
 	FXDOS
 	xdef	~~k_get_dos_device
 	func
-	.function	424
+	.function	423
 ~~k_get_dos_device:
 	longa	on
 	longi	on
@@ -3293,7 +3292,7 @@ L41	equ	1
 	phd
 	tcd
 type_0	set	4
-	.block	424
+	.block	423
 ;	PFXNODE deviceNode = NULL;
 ;	PFXDOSDEVICE device = NULL;
 ;
@@ -3307,7 +3306,7 @@ device_1	set	4
 	stz	<L46+deviceNode_1+2
 	stz	<L46+device_1
 	stz	<L46+device_1+2
-	.line	428
+	.line	427
 	pei	<L45+type_0
 	lda	|~~_k_dos_deviceinstance+2
 	pha
@@ -3317,16 +3316,16 @@ device_1	set	4
 	sta	<L46+deviceNode_1
 	stx	<L46+deviceNode_1+2
 ;	if(deviceNode)
-	.line	429
+	.line	428
 ;	{
 	lda	<L46+deviceNode_1
 	ora	<L46+deviceNode_1+2
 	bne	L48
 	brl	L10030
 L48:
-	.line	430
+	.line	429
 ;		device = ((PFXDOSDEVICE)(deviceNode->data));
-	.line	431
+	.line	430
 	ldy	#$2
 	lda	[<L46+deviceNode_1],Y
 	sta	<L46+device_1
@@ -3334,11 +3333,11 @@ L48:
 	lda	[<L46+deviceNode_1],Y
 	sta	<L46+device_1+2
 ;	}
-	.line	432
+	.line	431
 ;
 ;	return device;
 L10030:
-	.line	434
+	.line	433
 	ldx	<L46+device_1+2
 	lda	<L46+device_1
 L49:
@@ -3355,23 +3354,23 @@ L49:
 	tya
 	rtl
 ;}
-	.line	435
-	.endblock	435
+	.line	434
+	.endblock	434
 L45	equ	8
 L46	equ	1
 	ends
 	efunc
-	.endfunc	435,1,8
-	.line	435
+	.endfunc	434,1,8
+	.line	434
 ;
 ;BOOL k_close_dos_device(UINT type)
 ;{
+	.line	436
 	.line	437
-	.line	438
 	FXDOS
 	xdef	~~k_close_dos_device
 	func
-	.function	438
+	.function	437
 ~~k_close_dos_device:
 	longa	on
 	longi	on
@@ -3382,7 +3381,7 @@ L46	equ	1
 	phd
 	tcd
 type_0	set	4
-	.block	438
+	.block	437
 ;	BOOL bRet = FALSE;
 ;	PFXNODE deviceNode = NULL;
 ;	PFXDOSDEVICE device = NULL;
@@ -3404,7 +3403,7 @@ device_1	set	5
 	stz	<L51+deviceNode_1+2
 	stz	<L51+device_1
 	stz	<L51+device_1+2
-	.line	443
+	.line	442
 	pei	<L50+type_0
 	lda	|~~_k_dos_deviceinstance+2
 	pha
@@ -3414,16 +3413,16 @@ device_1	set	5
 	sta	<L51+deviceNode_1
 	stx	<L51+deviceNode_1+2
 ;	if(deviceNode)
-	.line	444
+	.line	443
 ;	{
 	lda	<L51+deviceNode_1
 	ora	<L51+deviceNode_1+2
 	bne	L53
 	brl	L10031
 L53:
-	.line	445
+	.line	444
 ;		device = ((PFXDOSDEVICE)(deviceNode->data));
-	.line	446
+	.line	445
 	ldy	#$2
 	lda	[<L51+deviceNode_1],Y
 	sta	<L51+device_1
@@ -3431,16 +3430,16 @@ L53:
 	lda	[<L51+deviceNode_1],Y
 	sta	<L51+device_1+2
 ;		if(device)
-	.line	447
+	.line	446
 ;		{
 	lda	<L51+device_1
 	ora	<L51+device_1+2
 	bne	L54
 	brl	L10032
 L54:
-	.line	448
+	.line	447
 ;			k_nodelist_removefromlist(_k_dos_deviceinstance,deviceNode);
-	.line	449
+	.line	448
 	pei	<L51+deviceNode_1+2
 	pei	<L51+deviceNode_1
 	lda	|~~_k_dos_deviceinstance+2
@@ -3449,7 +3448,7 @@ L54:
 	pha
 	jsl	~~k_nodelist_removefromlist
 ;			bRet = TRUE;
-	.line	450
+	.line	449
 	sep	#$20
 	longa	off
 	lda	#$1
@@ -3457,14 +3456,14 @@ L54:
 	rep	#$20
 	longa	on
 ;		}
-	.line	451
+	.line	450
 ;	}
 L10032:
-	.line	452
+	.line	451
 ;
 ;    return bRet;
 L10031:
-	.line	454
+	.line	453
 	lda	<L51+bRet_1
 	and	#$ff
 L55:
@@ -3481,23 +3480,23 @@ L55:
 	tya
 	rtl
 ;}
-	.line	455
-	.endblock	455
+	.line	454
+	.endblock	454
 L50	equ	9
 L51	equ	1
 	ends
 	efunc
-	.endfunc	455,1,9
-	.line	455
+	.endfunc	454,1,9
+	.line	454
 ;
 ;PFXDOSDEVICE k_create_dos_device(UINT type)
 ;{
+	.line	456
 	.line	457
-	.line	458
 	FXDOS
 	xdef	~~k_create_dos_device
 	func
-	.function	458
+	.function	457
 ~~k_create_dos_device:
 	longa	on
 	longi	on
@@ -3508,7 +3507,7 @@ L51	equ	1
 	phd
 	tcd
 type_0	set	4
-	.block	458
+	.block	457
 ;	INT x = 0;
 ;
 ;	BYTE	errorCode;
@@ -3577,7 +3576,7 @@ partitionId_1	set	34
 	stz	<L57+lba_1
 	stz	<L57+lba_1+2
 	stz	<L57+partitionId_1
-	.line	478
+	.line	477
 	pei	<L56+type_0
 	pea	#^L39
 	pea	#<L39
@@ -3585,28 +3584,28 @@ partitionId_1	set	34
 ;
 ;
 ;    pfxdosDevice = k_get_dos_device(type);
-	.line	481
+	.line	480
 	pei	<L56+type_0
 	jsl	~~k_get_dos_device
 	sta	<L57+pfxdosDevice_1
 	stx	<L57+pfxdosDevice_1+2
 ;    if(pfxdosDevice)
-	.line	482
+	.line	481
 ;    {
 	lda	<L57+pfxdosDevice_1
 	ora	<L57+pfxdosDevice_1+2
 	bne	L59
 	brl	L10033
 L59:
-	.line	483
+	.line	482
 ;    	k_debug_integer("k_create_dos_device:FOUND EXISTING:",type);
-	.line	484
+	.line	483
 	pei	<L56+type_0
 	pea	#^L39+21
 	pea	#<L39+21
 	jsl	~~k_debug_integer
 ;    	return pfxdosDevice;
-	.line	485
+	.line	484
 	ldx	<L57+pfxdosDevice_1+2
 	lda	<L57+pfxdosDevice_1
 L60:
@@ -3623,27 +3622,27 @@ L60:
 	tya
 	rtl
 ;    }
-	.line	486
+	.line	485
 ;
 ;    pfxdosDevice = k_mem_allocate_heap(sizeof(FXDOSDEVICE));
 L10033:
-	.line	488
+	.line	487
 	pea	#^$2ce
 	pea	#<$2ce
 	jsl	~~k_mem_allocate_heap
 	sta	<L57+pfxdosDevice_1
 	stx	<L57+pfxdosDevice_1+2
 ;    if(pfxdosDevice)
-	.line	489
+	.line	488
 ;    {
 	lda	<L57+pfxdosDevice_1
 	ora	<L57+pfxdosDevice_1+2
 	bne	L61
 	brl	L10034
 L61:
-	.line	490
+	.line	489
 ;    	memset(pfxdosDevice,0,sizeof(FXDOSDEVICE));
-	.line	491
+	.line	490
 	pea	#<$2ce
 	pea	#<$0
 	pei	<L57+pfxdosDevice_1+2
@@ -3651,17 +3650,17 @@ L61:
 	jsl	~~memset
 ;
 ;    	switch(type)
-	.line	493
+	.line	492
 	lda	<L56+type_0
 	brl	L10035
 ;		{
-	.line	494
+	.line	493
 ;    	case FXDOS_SDC:
-	.line	495
+	.line	494
 L10037:
 ;
 ;    		deviceNode = k_nodelist_searchByType(_k_dos_devicedrivers,DRIVER_TYPE_SDCARD);
-	.line	497
+	.line	496
 	pea	#<$6
 	lda	|~~_k_dos_devicedrivers+2
 	pha
@@ -3671,16 +3670,16 @@ L10037:
 	sta	<L57+deviceNode_1
 	stx	<L57+deviceNode_1+2
 ;    		if(deviceNode)
-	.line	498
+	.line	497
 ;    		{
 	lda	<L57+deviceNode_1
 	ora	<L57+deviceNode_1+2
 	bne	L62
 	brl	L10038
 L62:
-	.line	499
+	.line	498
 ;    			 k_debug_pointer("k_create_dos_device:found:deviceNode:",deviceNode);
-	.line	500
+	.line	499
 	pei	<L57+deviceNode_1+2
 	pei	<L57+deviceNode_1
 	pea	#^L39+57
@@ -3688,7 +3687,7 @@ L62:
 	jsl	~~k_debug_pointer
 ;
 ;    			pdriver = ((PFX_BLOCK_DEVICE_DRIVER)(deviceNode->data));
-	.line	502
+	.line	501
 	ldy	#$2
 	lda	[<L57+deviceNode_1],Y
 	sta	<L57+pdriver_1
@@ -3696,16 +3695,16 @@ L62:
 	lda	[<L57+deviceNode_1],Y
 	sta	<L57+pdriver_1+2
 ;    			if(pdriver)
-	.line	503
+	.line	502
 ;    			{
 	lda	<L57+pdriver_1
 	ora	<L57+pdriver_1+2
 	bne	L63
 	brl	L10039
 L63:
-	.line	504
+	.line	503
 ;    				k_debug_pointer("k_create_dos_device:found:pdriver:",pdriver);
-	.line	505
+	.line	504
 	pei	<L57+pdriver_1+2
 	pei	<L57+pdriver_1
 	pea	#^L39+95
@@ -3713,7 +3712,7 @@ L63:
 	jsl	~~k_debug_pointer
 ;
 ;    				if(pdriver->f_driver_load)
-	.line	507
+	.line	506
 ;    				{
 	ldy	#$51
 	lda	[<L57+pdriver_1],Y
@@ -3722,9 +3721,9 @@ L63:
 	bne	L64
 	brl	L10040
 L64:
-	.line	508
+	.line	507
 ;    					pfxdosDevice->devdata = pdriver->driver_context;
-	.line	509
+	.line	508
 	ldy	#$4d
 	lda	[<L57+pdriver_1],Y
 	ldy	#$2
@@ -3735,7 +3734,7 @@ L64:
 	sta	[<L57+pfxdosDevice_1],Y
 ;
 ;    					pfxdosDevice->initialized = ((DEVICEDRIVER_LOAD)pdriver->f_driver_load)();
-	.line	511
+	.line	510
 	ldy	#$53
 	lda	[<L57+pdriver_1],Y
 	tax
@@ -3750,7 +3749,7 @@ L64:
 	rep	#$20
 	longa	on
 ;    					if(pfxdosDevice->initialized)
-	.line	512
+	.line	511
 ;    					{
 	ldy	#$1
 	lda	[<L57+pfxdosDevice_1],Y
@@ -3758,9 +3757,9 @@ L64:
 	bne	L65
 	brl	L10041
 L65:
-	.line	513
+	.line	512
 ;							pfxdosDevice->pfInit   = NULL;
-	.line	514
+	.line	513
 	lda	#$0
 	ldy	#$2ba
 	sta	[<L57+pfxdosDevice_1],Y
@@ -3768,7 +3767,7 @@ L65:
 	ldy	#$2bc
 	sta	[<L57+pfxdosDevice_1],Y
 ;							pfxdosDevice->pfReader = (DOSSECTORREADER)pdriver->f_driver_read;
-	.line	515
+	.line	514
 	ldy	#$55
 	lda	[<L57+pdriver_1],Y
 	ldy	#$2c6
@@ -3778,7 +3777,7 @@ L65:
 	ldy	#$2c8
 	sta	[<L57+pfxdosDevice_1],Y
 ;							pfxdosDevice->pfWriter = (DOSSECTORWRITER)pdriver->f_driver_write;
-	.line	516
+	.line	515
 	ldy	#$59
 	lda	[<L57+pdriver_1],Y
 	ldy	#$2ca
@@ -3788,11 +3787,11 @@ L65:
 	ldy	#$2cc
 	sta	[<L57+pfxdosDevice_1],Y
 ;    					}
-	.line	517
+	.line	516
 ;
 ;    					k_debug_integer("k_create_dos_device:found:pfxdosDevice->initialized:",pfxdosDevice->initialized);
 L10041:
-	.line	519
+	.line	518
 	ldy	#$1
 	lda	[<L57+pfxdosDevice_1],Y
 	and	#$ff
@@ -3801,27 +3800,27 @@ L10041:
 	pea	#<L39+130
 	jsl	~~k_debug_integer
 ;    				}
-	.line	520
+	.line	519
 ;    				//pfxdosDevice->pfInit(NULL);
 ;    			}
 L10040:
-	.line	522
+	.line	521
 ;
 ;    		}
 L10039:
-	.line	524
+	.line	523
 ;    		//pfxdosDevice->pfInit   = (DOSINITDEVICE)k_sd_dos_init;
 ;    		//pfxdosDevice->pfReader = (DOSSECTORREADER)k_read_sd_sector;
 ;    		break;
 L10038:
-	.line	527
+	.line	526
 	brl	L10036
 ;
 ;    	case FXDOS_HDD:
-	.line	529
+	.line	528
 L10042:
 ;    		deviceNode = k_nodelist_searchByType(_k_dos_devicedrivers,DRIVER_TYPE_IDE);
-	.line	530
+	.line	529
 	pea	#<$8
 	lda	|~~_k_dos_devicedrivers+2
 	pha
@@ -3831,16 +3830,16 @@ L10042:
 	sta	<L57+deviceNode_1
 	stx	<L57+deviceNode_1+2
 ;    		if(deviceNode)
-	.line	531
+	.line	530
 ;    		{
 	lda	<L57+deviceNode_1
 	ora	<L57+deviceNode_1+2
 	bne	L66
 	brl	L10043
 L66:
-	.line	532
+	.line	531
 ;    			 k_debug_pointer("k_create_dos_device:found:deviceNode:",deviceNode);
-	.line	533
+	.line	532
 	pei	<L57+deviceNode_1+2
 	pei	<L57+deviceNode_1
 	pea	#^L39+183
@@ -3848,7 +3847,7 @@ L66:
 	jsl	~~k_debug_pointer
 ;
 ;    			pdriver = ((PFX_BLOCK_DEVICE_DRIVER)(deviceNode->data));
-	.line	535
+	.line	534
 	ldy	#$2
 	lda	[<L57+deviceNode_1],Y
 	sta	<L57+pdriver_1
@@ -3856,16 +3855,16 @@ L66:
 	lda	[<L57+deviceNode_1],Y
 	sta	<L57+pdriver_1+2
 ;    			if(pdriver)
-	.line	536
+	.line	535
 ;    			{
 	lda	<L57+pdriver_1
 	ora	<L57+pdriver_1+2
 	bne	L67
 	brl	L10044
 L67:
-	.line	537
+	.line	536
 ;    				k_debug_pointer("k_create_dos_device:found:pdriver:",pdriver);
-	.line	538
+	.line	537
 	pei	<L57+pdriver_1+2
 	pei	<L57+pdriver_1
 	pea	#^L39+221
@@ -3873,7 +3872,7 @@ L67:
 	jsl	~~k_debug_pointer
 ;
 ;    				if(pdriver->f_driver_load)
-	.line	540
+	.line	539
 ;    				{
 	ldy	#$51
 	lda	[<L57+pdriver_1],Y
@@ -3882,9 +3881,9 @@ L67:
 	bne	L68
 	brl	L10045
 L68:
-	.line	541
+	.line	540
 ;    					pfxdosDevice->devdata = pdriver->driver_context;
-	.line	542
+	.line	541
 	ldy	#$4d
 	lda	[<L57+pdriver_1],Y
 	ldy	#$2
@@ -3895,7 +3894,7 @@ L68:
 	sta	[<L57+pfxdosDevice_1],Y
 ;
 ;    					pfxdosDevice->initialized = ((DEVICEDRIVER_LOAD)pdriver->f_driver_load)();
-	.line	544
+	.line	543
 	ldy	#$53
 	lda	[<L57+pdriver_1],Y
 	tax
@@ -3910,7 +3909,7 @@ L68:
 	rep	#$20
 	longa	on
 ;    					if(pfxdosDevice->initialized)
-	.line	545
+	.line	544
 ;    					{
 	ldy	#$1
 	lda	[<L57+pfxdosDevice_1],Y
@@ -3918,9 +3917,9 @@ L68:
 	bne	L69
 	brl	L10046
 L69:
-	.line	546
+	.line	545
 ;							pfxdosDevice->pfInit   = NULL;
-	.line	547
+	.line	546
 	lda	#$0
 	ldy	#$2ba
 	sta	[<L57+pfxdosDevice_1],Y
@@ -3928,7 +3927,7 @@ L69:
 	ldy	#$2bc
 	sta	[<L57+pfxdosDevice_1],Y
 ;							pfxdosDevice->pfReader = (DOSSECTORREADER)pdriver->f_driver_read;
-	.line	548
+	.line	547
 	ldy	#$55
 	lda	[<L57+pdriver_1],Y
 	ldy	#$2c6
@@ -3938,7 +3937,7 @@ L69:
 	ldy	#$2c8
 	sta	[<L57+pfxdosDevice_1],Y
 ;							pfxdosDevice->pfWriter = (DOSSECTORWRITER)pdriver->f_driver_write;
-	.line	549
+	.line	548
 	ldy	#$59
 	lda	[<L57+pdriver_1],Y
 	ldy	#$2ca
@@ -3948,11 +3947,11 @@ L69:
 	ldy	#$2cc
 	sta	[<L57+pfxdosDevice_1],Y
 ;    					}
-	.line	550
+	.line	549
 ;
 ;    					k_debug_integer("k_create_dos_device:found:pfxdosDevice->initialized:",pfxdosDevice->initialized);
 L10046:
-	.line	552
+	.line	551
 	ldy	#$1
 	lda	[<L57+pfxdosDevice_1],Y
 	and	#$ff
@@ -3961,38 +3960,38 @@ L10046:
 	pea	#<L39+256
 	jsl	~~k_debug_integer
 ;    				}
-	.line	553
+	.line	552
 ;    				//pfxdosDevice->pfInit(NULL);
 ;    			}
 L10045:
-	.line	555
+	.line	554
 ;
 ;    		}
 L10044:
-	.line	557
+	.line	556
 ;
 ;    		break;
 L10043:
-	.line	559
+	.line	558
 	brl	L10036
 ;
 ;    	case FXDOS_FDD:
-	.line	561
+	.line	560
 L10047:
 ;
 ;    		//pfxdosDevice->pfInit   = (DOSINITDEVICE)floppy_init;//k_fd_dos_init;
 ;    		//pfxdosDevice->pfReader = (DOSSECTORREADER)k_read_fd_sector;
 ;    		lba = 0L;
-	.line	565
+	.line	564
 	stz	<L57+lba_1
 	stz	<L57+lba_1+2
 ;
 ;    		break;
-	.line	567
+	.line	566
 	brl	L10036
 ;
 ;		}
-	.line	569
+	.line	568
 L10035:
 	xref	~~~swt
 	jsl	~~~swt
@@ -4007,14 +4006,14 @@ L10035:
 L10036:
 ;
 ;    	k_debug_integer("k_create_dos_device size:",sizeof(FXDOSDEVICE));
-	.line	571
+	.line	570
 	pea	#<$2ce
 	pea	#^L39+309
 	pea	#<L39+309
 	jsl	~~k_debug_integer
 ;
 ;    	if(!pfxdosDevice->initialized && pfxdosDevice->pfInit)
-	.line	573
+	.line	572
 ;    		pfxdosDevice->pfInit();
 	ldy	#$1
 	lda	[<L57+pfxdosDevice_1],Y
@@ -4029,7 +4028,7 @@ L70:
 	bne	L71
 	brl	L10048
 L71:
-	.line	574
+	.line	573
 	ldy	#$2bc
 	lda	[<L57+pfxdosDevice_1],Y
 	tax
@@ -4041,7 +4040,7 @@ L71:
 ;
 ;    	if(!pfxdosDevice->initialized)
 L10048:
-	.line	577
+	.line	576
 ;    	{
 	ldy	#$1
 	lda	[<L57+pfxdosDevice_1],Y
@@ -4049,20 +4048,20 @@ L10048:
 	beq	L72
 	brl	L10049
 L72:
-	.line	578
+	.line	577
 ;    		k_mem_deallocate_heap(pfxdosDevice);
-	.line	579
+	.line	578
 	pei	<L57+pfxdosDevice_1+2
 	pei	<L57+pfxdosDevice_1
 	jsl	~~k_mem_deallocate_heap
 ;    		return NULL;
-	.line	580
+	.line	579
 	lda	#$0
 	tax
 	lda	#$0
 	brl	L60
 ;    	}
-	.line	581
+	.line	580
 ;
 ;		//_MSTR_CTRL[0] |= GABE_CTRL_SDC_LED;
 ;
@@ -4188,11 +4187,11 @@ L72:
 ;		*/
 ;    }
 L10049:
-	.line	705
+	.line	704
 ;
 ;    k_debug_nstrings("***fxdosDevice ADD DEVICE:",pdriver->designation,3);
 L10034:
-	.line	707
+	.line	706
 	pea	#<$3
 	clc
 	lda	#$41
@@ -4207,7 +4206,7 @@ L10034:
 	pea	#<L39+335
 	jsl	~~k_debug_nstrings
 ;    k_nodelist_addtolist(_k_dos_deviceinstance,type,pdriver->designation,pfxdosDevice);
-	.line	708
+	.line	707
 	pei	<L57+pfxdosDevice_1+2
 	pei	<L57+pfxdosDevice_1
 	clc
@@ -4229,19 +4228,19 @@ L10034:
 ;    //GABE_MSTR_CTRL[0] = GABE_MSTR_CTRL[0] & (~GABE_CTRL_SDC_LED);
 ;
 ;	return pfxdosDevice;
-	.line	712
+	.line	711
 	ldx	<L57+pfxdosDevice_1+2
 	lda	<L57+pfxdosDevice_1
 	brl	L60
 ;}
-	.line	713
-	.endblock	713
+	.line	712
+	.endblock	712
 L56	equ	40
 L57	equ	5
 	ends
 	efunc
-	.endfunc	713,5,40
-	.line	713
+	.endfunc	712,5,40
+	.line	712
 	data
 L39:
 	db	$6B,$5F,$63,$72,$65,$61,$74,$65,$5F,$64,$6F,$73,$5F,$64,$65
@@ -4273,12 +4272,12 @@ L39:
 ;
 ;PFXNODELIST k_read_dos_directory(PFXDOSDEVICE pfxdosDevice)
 ;{
+	.line	714
 	.line	715
-	.line	716
 	FXDOS
 	xdef	~~k_read_dos_directory
 	func
-	.function	716
+	.function	715
 ~~k_read_dos_directory:
 	longa	on
 	longi	on
@@ -4289,10 +4288,10 @@ L39:
 	phd
 	tcd
 pfxdosDevice_0	set	4
-	.block	716
+	.block	715
 ;	return NULL;
 	.sym	pfxdosDevice,4,138,6,32,127
-	.line	717
+	.line	716
 	lda	#$0
 	tax
 	lda	#$0
@@ -4310,14 +4309,14 @@ L77:
 	tya
 	rtl
 ;}
-	.line	718
-	.endblock	718
+	.line	717
+	.endblock	717
 L74	equ	0
 L75	equ	1
 	ends
 	efunc
-	.endfunc	718,1,0
-	.line	718
+	.endfunc	717,1,0
+	.line	717
 ;/*
 ;LPCHAR _k_dos_alloc_filename(LPCHAR filename11)
 ;{
@@ -4822,12 +4821,12 @@ L75	equ	1
 ;
 ;VOID k_dos_deallocate_fileinfo(LPCSTR name,LPVOID pdata)
 ;{
+	.line	1220
 	.line	1221
-	.line	1222
 	FXDOS
 	xdef	~~k_dos_deallocate_fileinfo
 	func
-	.function	1222
+	.function	1221
 ~~k_dos_deallocate_fileinfo:
 	longa	on
 	longi	on
@@ -4839,12 +4838,12 @@ L75	equ	1
 	tcd
 name_0	set	4
 pdata_0	set	8
-	.block	1222
+	.block	1221
 ;
 ;}
 	.sym	name,4,142,6,32
 	.sym	pdata,8,129,6,32
-	.line	1224
+	.line	1223
 L81:
 	lda	<L78+2
 	sta	<L78+2+8
@@ -4856,22 +4855,22 @@ L81:
 	adc	#L78+8
 	tcs
 	rtl
-	.endblock	1224
+	.endblock	1223
 L78	equ	0
 L79	equ	1
 	ends
 	efunc
-	.endfunc	1224,1,0
-	.line	1224
+	.endfunc	1223,1,0
+	.line	1223
 ;
 ;PFXNODELIST k_dos_findfiles_to_nodes(LPCSTR path)
 ;{
+	.line	1225
 	.line	1226
-	.line	1227
 	FXDOS
 	xdef	~~k_dos_findfiles_to_nodes
 	func
-	.function	1227
+	.function	1226
 ~~k_dos_findfiles_to_nodes:
 	longa	on
 	longi	on
@@ -4882,7 +4881,7 @@ L79	equ	1
 	phd
 	tcd
 path_0	set	4
-	.block	1227
+	.block	1226
 ;	DIR *dir;
 ;	FATFS *fs = NULL;
 ;	FIL *f = NULL;
@@ -4919,7 +4918,7 @@ pcurrentDirectory_1	set	22
 	stz	<L83+drive_1+2
 	stz	<L83+pcurrentDirectory_1
 	stz	<L83+pcurrentDirectory_1+2
-	.line	1239
+	.line	1238
 	pea	#<$3a
 	pei	<L82+path_0+2
 	pei	<L82+path_0
@@ -4928,7 +4927,7 @@ pcurrentDirectory_1	set	22
 	stx	<L83+drive_1+2
 ;
 ;	pcurrentDirectory = k_nodelist_allocate_list("currentDirectory",k_dos_deallocate_fileinfo);
-	.line	1241
+	.line	1240
 	pea	#^~~k_dos_deallocate_fileinfo
 	pea	#<~~k_dos_deallocate_fileinfo
 	pea	#^L73
@@ -4937,23 +4936,23 @@ pcurrentDirectory_1	set	22
 	sta	<L83+pcurrentDirectory_1
 	stx	<L83+pcurrentDirectory_1+2
 ;	if(pcurrentDirectory)
-	.line	1242
+	.line	1241
 ;	{
 	lda	<L83+pcurrentDirectory_1
 	ora	<L83+pcurrentDirectory_1+2
 	bne	L85
 	brl	L10050
 L85:
-	.line	1243
+	.line	1242
 ;		dir = k_mem_allocate_heap(sizeof(DIR));
-	.line	1244
+	.line	1243
 	pea	#^$34
 	pea	#<$34
 	jsl	~~k_mem_allocate_heap
 	sta	<L83+dir_1
 	stx	<L83+dir_1+2
 ;		fs = k_mem_allocate_heap(sizeof(FATFS));
-	.line	1245
+	.line	1244
 	pea	#^$233
 	pea	#<$233
 	jsl	~~k_mem_allocate_heap
@@ -4961,7 +4960,7 @@ L85:
 	stx	<L83+fs_1+2
 ;
 ;		f_mount(NULL, drive,1); // unmount for safety
-	.line	1247
+	.line	1246
 	pea	#<$1
 	pei	<L83+drive_1+2
 	pei	<L83+drive_1
@@ -4969,7 +4968,7 @@ L85:
 	pea	#<$0
 	jsl	~~f_mount
 ;		f_mount(fs, drive,1);
-	.line	1248
+	.line	1247
 	pea	#<$1
 	pei	<L83+drive_1+2
 	pei	<L83+drive_1
@@ -4978,7 +4977,7 @@ L85:
 	jsl	~~f_mount
 ;
 ;		fr = f_opendir (dir,path);
-	.line	1250
+	.line	1249
 	pei	<L82+path_0+2
 	pei	<L82+path_0
 	pei	<L83+dir_1+2
@@ -4986,31 +4985,31 @@ L85:
 	jsl	~~f_opendir
 	sta	<L83+fr_1
 ;		if(fr == FR_OK)
-	.line	1251
+	.line	1250
 ;		{
 	lda	<L83+fr_1
 	beq	L86
 	brl	L10051
 L86:
-	.line	1252
+	.line	1251
 ;			fileInfo = k_mem_allocate_heap(sizeof(FILINFO));
-	.line	1253
+	.line	1252
 	pea	#^$116
 	pea	#<$116
 	jsl	~~k_mem_allocate_heap
 	sta	<L83+fileInfo_1
 	stx	<L83+fileInfo_1+2
 ;			if(fileInfo)
-	.line	1254
+	.line	1253
 ;			{
 	lda	<L83+fileInfo_1
 	ora	<L83+fileInfo_1+2
 	bne	L87
 	brl	L10052
 L87:
-	.line	1255
+	.line	1254
 ;				fr = f_findfirst(dir,fileInfo,path, "*");
-	.line	1256
+	.line	1255
 	pea	#^L73+17
 	pea	#<L73+17
 	pei	<L82+path_0+2
@@ -5022,15 +5021,15 @@ L87:
 	jsl	~~f_findfirst
 	sta	<L83+fr_1
 ;				if(fr == FR_OK)
-	.line	1257
+	.line	1256
 ;				{
 	lda	<L83+fr_1
 	beq	L88
 	brl	L10053
 L88:
-	.line	1258
+	.line	1257
 ;					k_nodelist_addtolist(pcurrentDirectory,PFXNODE_FILE_PATH_TYPE,(LPCSTR)fileInfo->fname,fileInfo);
-	.line	1259
+	.line	1258
 	pei	<L83+fileInfo_1+2
 	pei	<L83+fileInfo_1
 	clc
@@ -5047,28 +5046,28 @@ L88:
 	pei	<L83+pcurrentDirectory_1
 	jsl	~~k_nodelist_addtolist
 ;					do
-	.line	1260
+	.line	1259
 L10056:
 ;					{
-	.line	1261
+	.line	1260
 ;						fileInfo = k_mem_allocate_heap(sizeof(FILINFO));
-	.line	1262
+	.line	1261
 	pea	#^$116
 	pea	#<$116
 	jsl	~~k_mem_allocate_heap
 	sta	<L83+fileInfo_1
 	stx	<L83+fileInfo_1+2
 ;						if(fileInfo!=NULL)
-	.line	1263
+	.line	1262
 ;						{
 	lda	<L83+fileInfo_1
 	ora	<L83+fileInfo_1+2
 	bne	L89
 	brl	L10057
 L89:
-	.line	1264
+	.line	1263
 ;							fr = f_findnext(dir,fileInfo);
-	.line	1265
+	.line	1264
 	pei	<L83+fileInfo_1+2
 	pei	<L83+fileInfo_1
 	pei	<L83+dir_1+2
@@ -5076,27 +5075,27 @@ L89:
 	jsl	~~f_findnext
 	sta	<L83+fr_1
 ;							if(fr != FR_OK)
-	.line	1266
+	.line	1265
 ;							{
 	lda	<L83+fr_1
 	bne	L90
 	brl	L10058
 L90:
-	.line	1267
+	.line	1266
 ;								k_mem_deallocate_heap(fileInfo);
-	.line	1268
+	.line	1267
 	pei	<L83+fileInfo_1+2
 	pei	<L83+fileInfo_1
 	jsl	~~k_mem_deallocate_heap
 ;							}
-	.line	1269
+	.line	1268
 ;							else
 	brl	L10059
 L10058:
 ;							{
-	.line	1271
+	.line	1270
 ;								if(fileInfo->fname[0]!=0)
-	.line	1272
+	.line	1271
 ;									k_nodelist_addtolist(pcurrentDirectory,PFXNODE_FILE_PATH_TYPE,(LPCSTR)fileInfo->fname,fileInfo);
 	ldy	#$16
 	lda	[<L83+fileInfo_1],Y
@@ -5104,7 +5103,7 @@ L10058:
 	bne	L91
 	brl	L10060
 L91:
-	.line	1273
+	.line	1272
 	pei	<L83+fileInfo_1+2
 	pei	<L83+fileInfo_1
 	clc
@@ -5124,19 +5123,19 @@ L91:
 	brl	L10061
 L10060:
 ;									k_mem_deallocate_heap(fileInfo);
-	.line	1275
+	.line	1274
 	pei	<L83+fileInfo_1+2
 	pei	<L83+fileInfo_1
 	jsl	~~k_mem_deallocate_heap
 L10061:
 ;							}
-	.line	1276
+	.line	1275
 L10059:
 ;						}
-	.line	1277
+	.line	1276
 ;					}
 L10057:
-	.line	1278
+	.line	1277
 ;					while((fr == FR_OK) && (fileInfo->fname[0]));
 L10054:
 	lda	<L83+fr_1
@@ -5152,38 +5151,38 @@ L94:
 L92:
 L10055:
 ;				}
-	.line	1280
+	.line	1279
 ;			}
 L10053:
-	.line	1281
+	.line	1280
 ;			f_closedir(dir);
 L10052:
-	.line	1282
+	.line	1281
 	pei	<L83+dir_1+2
 	pei	<L83+dir_1
 	jsl	~~f_closedir
 ;		}
-	.line	1283
+	.line	1282
 ;
 ;
 ;		k_mem_deallocate_heap(fs);
 L10051:
-	.line	1286
+	.line	1285
 	pei	<L83+fs_1+2
 	pei	<L83+fs_1
 	jsl	~~k_mem_deallocate_heap
 ;		k_mem_deallocate_heap(dir);
-	.line	1287
+	.line	1286
 	pei	<L83+dir_1+2
 	pei	<L83+dir_1
 	jsl	~~k_mem_deallocate_heap
 ;
 ;	}
-	.line	1289
+	.line	1288
 ;
 ;	return pcurrentDirectory;
 L10050:
-	.line	1291
+	.line	1290
 	ldx	<L83+pcurrentDirectory_1+2
 	lda	<L83+pcurrentDirectory_1
 L95:
@@ -5200,14 +5199,14 @@ L95:
 	tya
 	rtl
 ;}
-	.line	1292
-	.endblock	1292
+	.line	1291
+	.endblock	1291
 L82	equ	30
 L83	equ	5
 	ends
 	efunc
-	.endfunc	1292,5,30
-	.line	1292
+	.endfunc	1291,5,30
+	.line	1291
 	data
 L73:
 	db	$63,$75,$72,$72,$65,$6E,$74,$44,$69,$72,$65,$63,$74,$6F,$72
@@ -5217,12 +5216,12 @@ L73:
 ;
 ;FILE k_dos_open(const TCHAR* path, BYTE mode)
 ;{
+	.line	1294
 	.line	1295
-	.line	1296
 	FXDOS
 	xdef	~~k_dos_open
 	func
-	.function	1296
+	.function	1295
 ~~k_dos_open:
 	longa	on
 	longi	on
@@ -5234,7 +5233,7 @@ L73:
 	tcd
 path_0	set	4
 mode_0	set	8
-	.block	1296
+	.block	1295
 ;	LPCSTR drive = NULL;
 ;
 ;	FILE file = NULL;
@@ -5250,7 +5249,7 @@ file_1	set	4
 	stz	<L98+drive_1+2
 	stz	<L98+file_1
 	stz	<L98+file_1+2
-	.line	1301
+	.line	1300
 	pea	#^$e
 	pea	#<$e
 	jsl	~~k_mem_allocate_heap
@@ -5258,16 +5257,16 @@ file_1	set	4
 	stx	<L98+file_1+2
 ;
 ;	if(file)
-	.line	1303
+	.line	1302
 ;	{
 	lda	<L98+file_1
 	ora	<L98+file_1+2
 	bne	L100
 	brl	L10062
 L100:
-	.line	1304
+	.line	1303
 ;		drive = k_string_copy_to_delimiter(path,':');
-	.line	1305
+	.line	1304
 	pea	#<$3a
 	pei	<L97+path_0+2
 	pei	<L97+path_0
@@ -5275,16 +5274,16 @@ L100:
 	sta	<L98+drive_1
 	stx	<L98+drive_1+2
 ;		if(drive)
-	.line	1306
+	.line	1305
 ;		{
 	lda	<L98+drive_1
 	ora	<L98+drive_1+2
 	bne	L101
 	brl	L10063
 L101:
-	.line	1307
+	.line	1306
 ;			file->fs  = k_mem_allocate_heap(sizeof(FATFS));
-	.line	1308
+	.line	1307
 	pea	#^$233
 	pea	#<$233
 	jsl	~~k_mem_allocate_heap
@@ -5296,7 +5295,7 @@ L101:
 	ldy	#$2
 	sta	[<L98+file_1],Y
 ;			file->f   = k_mem_allocate_heap(sizeof(FIL));
-	.line	1309
+	.line	1308
 	pea	#^$226
 	pea	#<$226
 	jsl	~~k_mem_allocate_heap
@@ -5309,7 +5308,7 @@ L101:
 	ldy	#$a
 	sta	[<L98+file_1],Y
 ;			file->fileInfo = NULL;
-	.line	1310
+	.line	1309
 	lda	#$0
 	ldy	#$4
 	sta	[<L98+file_1],Y
@@ -5319,7 +5318,7 @@ L101:
 ;
 ;
 ;			f_mount(NULL, drive,1); // unmount for safety
-	.line	1313
+	.line	1312
 	pea	#<$1
 	pei	<L98+drive_1+2
 	pei	<L98+drive_1
@@ -5327,7 +5326,7 @@ L101:
 	pea	#<$0
 	jsl	~~f_mount
 ;			file->fr = f_mount(file->fs , drive,1);
-	.line	1314
+	.line	1313
 	pea	#<$1
 	pei	<L98+drive_1+2
 	pei	<L98+drive_1
@@ -5340,16 +5339,16 @@ L101:
 	ldy	#$c
 	sta	[<L98+file_1],Y
 ;			if(file->fr == FR_OK)
-	.line	1315
+	.line	1314
 ;			{
 	ldy	#$c
 	lda	[<L98+file_1],Y
 	beq	L102
 	brl	L10064
 L102:
-	.line	1316
+	.line	1315
 ;				file->fr = f_open(file->f,path,mode);
-	.line	1317
+	.line	1316
 	pei	<L97+mode_0
 	pei	<L97+path_0+2
 	pei	<L97+path_0
@@ -5363,23 +5362,23 @@ L102:
 	ldy	#$c
 	sta	[<L98+file_1],Y
 ;			}
-	.line	1318
+	.line	1317
 ;
 ;			k_mem_deallocate_heap((LPVOID)drive);
 L10064:
-	.line	1320
+	.line	1319
 	pei	<L98+drive_1+2
 	pei	<L98+drive_1
 	jsl	~~k_mem_deallocate_heap
 ;		}
-	.line	1321
+	.line	1320
 ;	}
 L10063:
-	.line	1322
+	.line	1321
 ;
 ;	return file;
 L10062:
-	.line	1324
+	.line	1323
 	ldx	<L98+file_1+2
 	lda	<L98+file_1
 L103:
@@ -5396,23 +5395,23 @@ L103:
 	tya
 	rtl
 ;}
-	.line	1325
-	.endblock	1325
+	.line	1324
+	.endblock	1324
 L97	equ	12
 L98	equ	5
 	ends
 	efunc
-	.endfunc	1325,5,12
-	.line	1325
+	.endfunc	1324,5,12
+	.line	1324
 ;
 ;HRESULT k_dos_close (FILE file)
 ;{
+	.line	1326
 	.line	1327
-	.line	1328
 	FXDOS
 	xdef	~~k_dos_close
 	func
-	.function	1328
+	.function	1327
 ~~k_dos_close:
 	longa	on
 	longi	on
@@ -5423,19 +5422,19 @@ L98	equ	5
 	phd
 	tcd
 file_0	set	4
-	.block	1328
+	.block	1327
 ;	if(file!=NULL)
 	.sym	file,4,138,6,32,130
-	.line	1329
+	.line	1328
 ;	{
 	lda	<L104+file_0
 	ora	<L104+file_0+2
 	bne	L107
 	brl	L10065
 L107:
-	.line	1330
+	.line	1329
 ;		if(file->f)
-	.line	1331
+	.line	1330
 ;		{
 	ldy	#$8
 	lda	[<L104+file_0],Y
@@ -5444,9 +5443,9 @@ L107:
 	bne	L108
 	brl	L10066
 L108:
-	.line	1332
+	.line	1331
 ;			f_close(file->f);
-	.line	1333
+	.line	1332
 	ldy	#$a
 	lda	[<L104+file_0],Y
 	pha
@@ -5455,7 +5454,7 @@ L108:
 	pha
 	jsl	~~f_close
 ;			k_mem_deallocate_heap(file->f);
-	.line	1334
+	.line	1333
 	ldy	#$a
 	lda	[<L104+file_0],Y
 	pha
@@ -5464,11 +5463,11 @@ L108:
 	pha
 	jsl	~~k_mem_deallocate_heap
 ;		}
-	.line	1335
+	.line	1334
 ;
 ;		if(file->fileInfo)
 L10066:
-	.line	1337
+	.line	1336
 ;			k_mem_deallocate_heap(file->fileInfo);
 	ldy	#$4
 	lda	[<L104+file_0],Y
@@ -5477,7 +5476,7 @@ L10066:
 	bne	L109
 	brl	L10067
 L109:
-	.line	1338
+	.line	1337
 	ldy	#$6
 	lda	[<L104+file_0],Y
 	pha
@@ -5488,7 +5487,7 @@ L109:
 ;
 ;		if(file->fs)
 L10067:
-	.line	1340
+	.line	1339
 ;			k_mem_deallocate_heap(file->fs);
 	lda	[<L104+file_0]
 	ldy	#$2
@@ -5496,7 +5495,7 @@ L10067:
 	bne	L110
 	brl	L10068
 L110:
-	.line	1341
+	.line	1340
 	ldy	#$2
 	lda	[<L104+file_0],Y
 	pha
@@ -5506,15 +5505,15 @@ L110:
 ;
 ;		k_mem_deallocate_heap(file);
 L10068:
-	.line	1343
+	.line	1342
 	pei	<L104+file_0+2
 	pei	<L104+file_0
 	jsl	~~k_mem_deallocate_heap
 ;	}
-	.line	1344
+	.line	1343
 ;	return 0;
 L10065:
-	.line	1345
+	.line	1344
 	lda	#$0
 	tax
 	lda	#$0
@@ -5532,22 +5531,22 @@ L111:
 	tya
 	rtl
 ;}
-	.line	1346
-	.endblock	1346
+	.line	1345
+	.endblock	1345
 L104	equ	0
 L105	equ	1
 	ends
 	efunc
-	.endfunc	1346,1,0
-	.line	1346
+	.endfunc	1345,1,0
+	.line	1345
 ;
 ;HRESULT k_dos_read (FIL* fp, void* buff, UINT btr, UINT* br){return 0;}
-	.line	1348
-	.line	1348
+	.line	1347
+	.line	1347
 	FXDOS
 	xdef	~~k_dos_read
 	func
-	.function	1348
+	.function	1347
 ~~k_dos_read:
 	longa	on
 	longi	on
@@ -5561,12 +5560,12 @@ fp_0	set	4
 buff_0	set	8
 btr_0	set	12
 br_0	set	14
-	.block	1348
+	.block	1347
 	.sym	fp,4,138,6,32,86
 	.sym	buff,8,129,6,32
 	.sym	btr,12,16,6,16
 	.sym	br,14,144,6,32
-	.line	1348
+	.line	1347
 	lda	#$0
 	tax
 	lda	#$0
@@ -5583,21 +5582,21 @@ L115:
 	tcs
 	tya
 	rtl
-	.line	1348
-	.endblock	1348
+	.line	1347
+	.endblock	1347
 L112	equ	0
 L113	equ	1
 	ends
 	efunc
-	.endfunc	1348,1,0
-	.line	1348
+	.endfunc	1347,1,0
+	.line	1347
 ;HRESULT k_dos_write (FIL* fp, const void* buff, UINT btw, UINT* bw){return 0;}
-	.line	1349
-	.line	1349
+	.line	1348
+	.line	1348
 	FXDOS
 	xdef	~~k_dos_write
 	func
-	.function	1349
+	.function	1348
 ~~k_dos_write:
 	longa	on
 	longi	on
@@ -5611,12 +5610,12 @@ fp_0	set	4
 buff_0	set	8
 btw_0	set	12
 bw_0	set	14
-	.block	1349
+	.block	1348
 	.sym	fp,4,138,6,32,86
 	.sym	buff,8,129,6,32
 	.sym	btw,12,16,6,16
 	.sym	bw,14,144,6,32
-	.line	1349
+	.line	1348
 	lda	#$0
 	tax
 	lda	#$0
@@ -5633,21 +5632,21 @@ L119:
 	tcs
 	tya
 	rtl
-	.line	1349
-	.endblock	1349
+	.line	1348
+	.endblock	1348
 L116	equ	0
 L117	equ	1
 	ends
 	efunc
-	.endfunc	1349,1,0
-	.line	1349
+	.endfunc	1348,1,0
+	.line	1348
 ;HRESULT k_dos_lseek (FIL* fp, FSIZE_t ofs){return 0;}
-	.line	1350
-	.line	1350
+	.line	1349
+	.line	1349
 	FXDOS
 	xdef	~~k_dos_lseek
 	func
-	.function	1350
+	.function	1349
 ~~k_dos_lseek:
 	longa	on
 	longi	on
@@ -5659,10 +5658,10 @@ L117	equ	1
 	tcd
 fp_0	set	4
 ofs_0	set	8
-	.block	1350
+	.block	1349
 	.sym	fp,4,138,6,32,86
 	.sym	ofs,8,18,6,32
-	.line	1350
+	.line	1349
 	lda	#$0
 	tax
 	lda	#$0
@@ -5679,21 +5678,21 @@ L123:
 	tcs
 	tya
 	rtl
-	.line	1350
-	.endblock	1350
+	.line	1349
+	.endblock	1349
 L120	equ	0
 L121	equ	1
 	ends
 	efunc
-	.endfunc	1350,1,0
-	.line	1350
+	.endfunc	1349,1,0
+	.line	1349
 ;HRESULT k_dos_truncate (FIL* fp){return 0;}										/* Truncate the file */
-	.line	1351
-	.line	1351
+	.line	1350
+	.line	1350
 	FXDOS
 	xdef	~~k_dos_truncate
 	func
-	.function	1351
+	.function	1350
 ~~k_dos_truncate:
 	longa	on
 	longi	on
@@ -5704,9 +5703,9 @@ L121	equ	1
 	phd
 	tcd
 fp_0	set	4
-	.block	1351
+	.block	1350
 	.sym	fp,4,138,6,32,86
-	.line	1351
+	.line	1350
 	lda	#$0
 	tax
 	lda	#$0
@@ -5723,21 +5722,21 @@ L127:
 	tcs
 	tya
 	rtl
-	.line	1351
-	.endblock	1351
+	.line	1350
+	.endblock	1350
 L124	equ	0
 L125	equ	1
 	ends
 	efunc
-	.endfunc	1351,1,0
-	.line	1351
+	.endfunc	1350,1,0
+	.line	1350
 ;HRESULT k_dos_sync (FIL* fp){return 0;}											/* Flush cached data of the writing file */
-	.line	1352
-	.line	1352
+	.line	1351
+	.line	1351
 	FXDOS
 	xdef	~~k_dos_sync
 	func
-	.function	1352
+	.function	1351
 ~~k_dos_sync:
 	longa	on
 	longi	on
@@ -5748,9 +5747,9 @@ L125	equ	1
 	phd
 	tcd
 fp_0	set	4
-	.block	1352
+	.block	1351
 	.sym	fp,4,138,6,32,86
-	.line	1352
+	.line	1351
 	lda	#$0
 	tax
 	lda	#$0
@@ -5767,21 +5766,21 @@ L131:
 	tcs
 	tya
 	rtl
-	.line	1352
-	.endblock	1352
+	.line	1351
+	.endblock	1351
 L128	equ	0
 L129	equ	1
 	ends
 	efunc
-	.endfunc	1352,1,0
-	.line	1352
+	.endfunc	1351,1,0
+	.line	1351
 ;HRESULT k_dos_opendir (DIR* dp, const TCHAR* path){return 0;}						/* Open a directory */
-	.line	1353
-	.line	1353
+	.line	1352
+	.line	1352
 	FXDOS
 	xdef	~~k_dos_opendir
 	func
-	.function	1353
+	.function	1352
 ~~k_dos_opendir:
 	longa	on
 	longi	on
@@ -5793,10 +5792,10 @@ L129	equ	1
 	tcd
 dp_0	set	4
 path_0	set	8
-	.block	1353
+	.block	1352
 	.sym	dp,4,138,6,32,87
 	.sym	path,8,142,6,32
-	.line	1353
+	.line	1352
 	lda	#$0
 	tax
 	lda	#$0
@@ -5813,21 +5812,21 @@ L135:
 	tcs
 	tya
 	rtl
-	.line	1353
-	.endblock	1353
+	.line	1352
+	.endblock	1352
 L132	equ	0
 L133	equ	1
 	ends
 	efunc
-	.endfunc	1353,1,0
-	.line	1353
+	.endfunc	1352,1,0
+	.line	1352
 ;HRESULT k_dos_closedir (DIR* dp){return 0;}										/* Close an open directory */
-	.line	1354
-	.line	1354
+	.line	1353
+	.line	1353
 	FXDOS
 	xdef	~~k_dos_closedir
 	func
-	.function	1354
+	.function	1353
 ~~k_dos_closedir:
 	longa	on
 	longi	on
@@ -5838,9 +5837,9 @@ L133	equ	1
 	phd
 	tcd
 dp_0	set	4
-	.block	1354
+	.block	1353
 	.sym	dp,4,138,6,32,87
-	.line	1354
+	.line	1353
 	lda	#$0
 	tax
 	lda	#$0
@@ -5857,21 +5856,21 @@ L139:
 	tcs
 	tya
 	rtl
-	.line	1354
-	.endblock	1354
+	.line	1353
+	.endblock	1353
 L136	equ	0
 L137	equ	1
 	ends
 	efunc
-	.endfunc	1354,1,0
-	.line	1354
+	.endfunc	1353,1,0
+	.line	1353
 ;HRESULT k_dos_readdir (DIR* dp, FILINFO* fno){return 0;}							/* Read a directory item */
-	.line	1355
-	.line	1355
+	.line	1354
+	.line	1354
 	FXDOS
 	xdef	~~k_dos_readdir
 	func
-	.function	1355
+	.function	1354
 ~~k_dos_readdir:
 	longa	on
 	longi	on
@@ -5883,10 +5882,10 @@ L137	equ	1
 	tcd
 dp_0	set	4
 fno_0	set	8
-	.block	1355
+	.block	1354
 	.sym	dp,4,138,6,32,87
 	.sym	fno,8,138,6,32,88
-	.line	1355
+	.line	1354
 	lda	#$0
 	tax
 	lda	#$0
@@ -5903,21 +5902,21 @@ L143:
 	tcs
 	tya
 	rtl
-	.line	1355
-	.endblock	1355
+	.line	1354
+	.endblock	1354
 L140	equ	0
 L141	equ	1
 	ends
 	efunc
-	.endfunc	1355,1,0
-	.line	1355
+	.endfunc	1354,1,0
+	.line	1354
 ;HRESULT k_dos_findfirst (DIR* dp, FILINFO* fno, const TCHAR* path, const TCHAR* pattern){return 0;}	/* Find first file */
-	.line	1356
-	.line	1356
+	.line	1355
+	.line	1355
 	FXDOS
 	xdef	~~k_dos_findfirst
 	func
-	.function	1356
+	.function	1355
 ~~k_dos_findfirst:
 	longa	on
 	longi	on
@@ -5931,12 +5930,12 @@ dp_0	set	4
 fno_0	set	8
 path_0	set	12
 pattern_0	set	16
-	.block	1356
+	.block	1355
 	.sym	dp,4,138,6,32,87
 	.sym	fno,8,138,6,32,88
 	.sym	path,12,142,6,32
 	.sym	pattern,16,142,6,32
-	.line	1356
+	.line	1355
 	lda	#$0
 	tax
 	lda	#$0
@@ -5953,21 +5952,21 @@ L147:
 	tcs
 	tya
 	rtl
-	.line	1356
-	.endblock	1356
+	.line	1355
+	.endblock	1355
 L144	equ	0
 L145	equ	1
 	ends
 	efunc
-	.endfunc	1356,1,0
-	.line	1356
+	.endfunc	1355,1,0
+	.line	1355
 ;HRESULT k_dos_findnext (DIR* dp, FILINFO* fno){return 0;}	/* Find next file */
-	.line	1357
-	.line	1357
+	.line	1356
+	.line	1356
 	FXDOS
 	xdef	~~k_dos_findnext
 	func
-	.function	1357
+	.function	1356
 ~~k_dos_findnext:
 	longa	on
 	longi	on
@@ -5979,10 +5978,10 @@ L145	equ	1
 	tcd
 dp_0	set	4
 fno_0	set	8
-	.block	1357
+	.block	1356
 	.sym	dp,4,138,6,32,87
 	.sym	fno,8,138,6,32,88
-	.line	1357
+	.line	1356
 	lda	#$0
 	tax
 	lda	#$0
@@ -5999,21 +5998,21 @@ L151:
 	tcs
 	tya
 	rtl
-	.line	1357
-	.endblock	1357
+	.line	1356
+	.endblock	1356
 L148	equ	0
 L149	equ	1
 	ends
 	efunc
-	.endfunc	1357,1,0
-	.line	1357
+	.endfunc	1356,1,0
+	.line	1356
 ;HRESULT k_dos_mkdir (const TCHAR* path){return 0;}								/* Create a sub directory */
-	.line	1358
-	.line	1358
+	.line	1357
+	.line	1357
 	FXDOS
 	xdef	~~k_dos_mkdir
 	func
-	.function	1358
+	.function	1357
 ~~k_dos_mkdir:
 	longa	on
 	longi	on
@@ -6024,9 +6023,9 @@ L149	equ	1
 	phd
 	tcd
 path_0	set	4
-	.block	1358
+	.block	1357
 	.sym	path,4,142,6,32
-	.line	1358
+	.line	1357
 	lda	#$0
 	tax
 	lda	#$0
@@ -6043,21 +6042,21 @@ L155:
 	tcs
 	tya
 	rtl
-	.line	1358
-	.endblock	1358
+	.line	1357
+	.endblock	1357
 L152	equ	0
 L153	equ	1
 	ends
 	efunc
-	.endfunc	1358,1,0
-	.line	1358
+	.endfunc	1357,1,0
+	.line	1357
 ;HRESULT k_dos_unlink (const TCHAR* path){return 0;}								/* Delete an existing file or directory */
-	.line	1359
-	.line	1359
+	.line	1358
+	.line	1358
 	FXDOS
 	xdef	~~k_dos_unlink
 	func
-	.function	1359
+	.function	1358
 ~~k_dos_unlink:
 	longa	on
 	longi	on
@@ -6068,9 +6067,9 @@ L153	equ	1
 	phd
 	tcd
 path_0	set	4
-	.block	1359
+	.block	1358
 	.sym	path,4,142,6,32
-	.line	1359
+	.line	1358
 	lda	#$0
 	tax
 	lda	#$0
@@ -6087,21 +6086,21 @@ L159:
 	tcs
 	tya
 	rtl
-	.line	1359
-	.endblock	1359
+	.line	1358
+	.endblock	1358
 L156	equ	0
 L157	equ	1
 	ends
 	efunc
-	.endfunc	1359,1,0
-	.line	1359
+	.endfunc	1358,1,0
+	.line	1358
 ;HRESULT k_dos_rename (const TCHAR* path_old, const TCHAR* path_new){return 0;}	/* Rename/Move a file or directory */
-	.line	1360
-	.line	1360
+	.line	1359
+	.line	1359
 	FXDOS
 	xdef	~~k_dos_rename
 	func
-	.function	1360
+	.function	1359
 ~~k_dos_rename:
 	longa	on
 	longi	on
@@ -6113,10 +6112,10 @@ L157	equ	1
 	tcd
 path_old_0	set	4
 path_new_0	set	8
-	.block	1360
+	.block	1359
 	.sym	path_old,4,142,6,32
 	.sym	path_new,8,142,6,32
-	.line	1360
+	.line	1359
 	lda	#$0
 	tax
 	lda	#$0
@@ -6133,21 +6132,21 @@ L163:
 	tcs
 	tya
 	rtl
-	.line	1360
-	.endblock	1360
+	.line	1359
+	.endblock	1359
 L160	equ	0
 L161	equ	1
 	ends
 	efunc
-	.endfunc	1360,1,0
-	.line	1360
+	.endfunc	1359,1,0
+	.line	1359
 ;HRESULT k_dos_stat (const TCHAR* path, FILINFO* fno){return 0;}					/* Get file status */
-	.line	1361
-	.line	1361
+	.line	1360
+	.line	1360
 	FXDOS
 	xdef	~~k_dos_stat
 	func
-	.function	1361
+	.function	1360
 ~~k_dos_stat:
 	longa	on
 	longi	on
@@ -6159,10 +6158,10 @@ L161	equ	1
 	tcd
 path_0	set	4
 fno_0	set	8
-	.block	1361
+	.block	1360
 	.sym	path,4,142,6,32
 	.sym	fno,8,138,6,32,88
-	.line	1361
+	.line	1360
 	lda	#$0
 	tax
 	lda	#$0
@@ -6179,21 +6178,21 @@ L167:
 	tcs
 	tya
 	rtl
-	.line	1361
-	.endblock	1361
+	.line	1360
+	.endblock	1360
 L164	equ	0
 L165	equ	1
 	ends
 	efunc
-	.endfunc	1361,1,0
-	.line	1361
+	.endfunc	1360,1,0
+	.line	1360
 ;HRESULT k_dos_chmod (const TCHAR* path, BYTE attr, BYTE mask){return 0;}			/* Change attribute of a file/dir */
-	.line	1362
-	.line	1362
+	.line	1361
+	.line	1361
 	FXDOS
 	xdef	~~k_dos_chmod
 	func
-	.function	1362
+	.function	1361
 ~~k_dos_chmod:
 	longa	on
 	longi	on
@@ -6206,11 +6205,11 @@ L165	equ	1
 path_0	set	4
 attr_0	set	8
 mask_0	set	10
-	.block	1362
+	.block	1361
 	.sym	path,4,142,6,32
 	.sym	attr,8,14,6,8
 	.sym	mask,10,14,6,8
-	.line	1362
+	.line	1361
 	lda	#$0
 	tax
 	lda	#$0
@@ -6227,21 +6226,21 @@ L171:
 	tcs
 	tya
 	rtl
-	.line	1362
-	.endblock	1362
+	.line	1361
+	.endblock	1361
 L168	equ	0
 L169	equ	1
 	ends
 	efunc
-	.endfunc	1362,1,0
-	.line	1362
+	.endfunc	1361,1,0
+	.line	1361
 ;HRESULT k_dos_utime (const TCHAR* path, const FILINFO* fno){return 0;}			/* Change timestamp of a file/dir */
-	.line	1363
-	.line	1363
+	.line	1362
+	.line	1362
 	FXDOS
 	xdef	~~k_dos_utime
 	func
-	.function	1363
+	.function	1362
 ~~k_dos_utime:
 	longa	on
 	longi	on
@@ -6253,10 +6252,10 @@ L169	equ	1
 	tcd
 path_0	set	4
 fno_0	set	8
-	.block	1363
+	.block	1362
 	.sym	path,4,142,6,32
 	.sym	fno,8,138,6,32,88
-	.line	1363
+	.line	1362
 	lda	#$0
 	tax
 	lda	#$0
@@ -6273,21 +6272,21 @@ L175:
 	tcs
 	tya
 	rtl
-	.line	1363
-	.endblock	1363
+	.line	1362
+	.endblock	1362
 L172	equ	0
 L173	equ	1
 	ends
 	efunc
-	.endfunc	1363,1,0
-	.line	1363
+	.endfunc	1362,1,0
+	.line	1362
 ;HRESULT k_dos_chdir (const TCHAR* path){return 0;}								/* Change current directory */
-	.line	1364
-	.line	1364
+	.line	1363
+	.line	1363
 	FXDOS
 	xdef	~~k_dos_chdir
 	func
-	.function	1364
+	.function	1363
 ~~k_dos_chdir:
 	longa	on
 	longi	on
@@ -6298,9 +6297,9 @@ L173	equ	1
 	phd
 	tcd
 path_0	set	4
-	.block	1364
+	.block	1363
 	.sym	path,4,142,6,32
-	.line	1364
+	.line	1363
 	lda	#$0
 	tax
 	lda	#$0
@@ -6317,21 +6316,21 @@ L179:
 	tcs
 	tya
 	rtl
-	.line	1364
-	.endblock	1364
+	.line	1363
+	.endblock	1363
 L176	equ	0
 L177	equ	1
 	ends
 	efunc
-	.endfunc	1364,1,0
-	.line	1364
+	.endfunc	1363,1,0
+	.line	1363
 ;HRESULT k_dos_chdrive (const TCHAR* path){return 0;}								/* Change current drive */
-	.line	1365
-	.line	1365
+	.line	1364
+	.line	1364
 	FXDOS
 	xdef	~~k_dos_chdrive
 	func
-	.function	1365
+	.function	1364
 ~~k_dos_chdrive:
 	longa	on
 	longi	on
@@ -6342,9 +6341,9 @@ L177	equ	1
 	phd
 	tcd
 path_0	set	4
-	.block	1365
+	.block	1364
 	.sym	path,4,142,6,32
-	.line	1365
+	.line	1364
 	lda	#$0
 	tax
 	lda	#$0
@@ -6361,21 +6360,21 @@ L183:
 	tcs
 	tya
 	rtl
-	.line	1365
-	.endblock	1365
+	.line	1364
+	.endblock	1364
 L180	equ	0
 L181	equ	1
 	ends
 	efunc
-	.endfunc	1365,1,0
-	.line	1365
+	.endfunc	1364,1,0
+	.line	1364
 ;HRESULT k_dos_getcwd (TCHAR* buff, UINT len){return 0;}							/* Get current directory */
-	.line	1366
-	.line	1366
+	.line	1365
+	.line	1365
 	FXDOS
 	xdef	~~k_dos_getcwd
 	func
-	.function	1366
+	.function	1365
 ~~k_dos_getcwd:
 	longa	on
 	longi	on
@@ -6387,10 +6386,10 @@ L181	equ	1
 	tcd
 buff_0	set	4
 len_0	set	8
-	.block	1366
+	.block	1365
 	.sym	buff,4,142,6,32
 	.sym	len,8,16,6,16
-	.line	1366
+	.line	1365
 	lda	#$0
 	tax
 	lda	#$0
@@ -6407,21 +6406,21 @@ L187:
 	tcs
 	tya
 	rtl
-	.line	1366
-	.endblock	1366
+	.line	1365
+	.endblock	1365
 L184	equ	0
 L185	equ	1
 	ends
 	efunc
-	.endfunc	1366,1,0
-	.line	1366
+	.endfunc	1365,1,0
+	.line	1365
 ;HRESULT k_dos_getfree (const TCHAR* path, DWORD* nclst, FATFS** fatfs){return 0;}	/* Get number of free clusters on the drive */
-	.line	1367
-	.line	1367
+	.line	1366
+	.line	1366
 	FXDOS
 	xdef	~~k_dos_getfree
 	func
-	.function	1367
+	.function	1366
 ~~k_dos_getfree:
 	longa	on
 	longi	on
@@ -6434,11 +6433,11 @@ L185	equ	1
 path_0	set	4
 nclst_0	set	8
 fatfs_0	set	12
-	.block	1367
+	.block	1366
 	.sym	path,4,142,6,32
 	.sym	nclst,8,146,6,32
 	.sym	fatfs,12,1162,6,32,84
-	.line	1367
+	.line	1366
 	lda	#$0
 	tax
 	lda	#$0
@@ -6455,21 +6454,21 @@ L191:
 	tcs
 	tya
 	rtl
-	.line	1367
-	.endblock	1367
+	.line	1366
+	.endblock	1366
 L188	equ	0
 L189	equ	1
 	ends
 	efunc
-	.endfunc	1367,1,0
-	.line	1367
+	.endfunc	1366,1,0
+	.line	1366
 ;HRESULT k_dos_getlabel (const TCHAR* path, TCHAR* label, DWORD* vsn){return 0;}	/* Get volume label */
-	.line	1368
-	.line	1368
+	.line	1367
+	.line	1367
 	FXDOS
 	xdef	~~k_dos_getlabel
 	func
-	.function	1368
+	.function	1367
 ~~k_dos_getlabel:
 	longa	on
 	longi	on
@@ -6482,11 +6481,11 @@ L189	equ	1
 path_0	set	4
 label_0	set	8
 vsn_0	set	12
-	.block	1368
+	.block	1367
 	.sym	path,4,142,6,32
 	.sym	label,8,142,6,32
 	.sym	vsn,12,146,6,32
-	.line	1368
+	.line	1367
 	lda	#$0
 	tax
 	lda	#$0
@@ -6503,21 +6502,21 @@ L195:
 	tcs
 	tya
 	rtl
-	.line	1368
-	.endblock	1368
+	.line	1367
+	.endblock	1367
 L192	equ	0
 L193	equ	1
 	ends
 	efunc
-	.endfunc	1368,1,0
-	.line	1368
+	.endfunc	1367,1,0
+	.line	1367
 ;HRESULT k_dos_setlabel (const TCHAR* label){return 0;}							/* Set volume label */
-	.line	1369
-	.line	1369
+	.line	1368
+	.line	1368
 	FXDOS
 	xdef	~~k_dos_setlabel
 	func
-	.function	1369
+	.function	1368
 ~~k_dos_setlabel:
 	longa	on
 	longi	on
@@ -6528,9 +6527,9 @@ L193	equ	1
 	phd
 	tcd
 label_0	set	4
-	.block	1369
+	.block	1368
 	.sym	label,4,142,6,32
-	.line	1369
+	.line	1368
 	lda	#$0
 	tax
 	lda	#$0
@@ -6547,21 +6546,21 @@ L199:
 	tcs
 	tya
 	rtl
-	.line	1369
-	.endblock	1369
+	.line	1368
+	.endblock	1368
 L196	equ	0
 L197	equ	1
 	ends
 	efunc
-	.endfunc	1369,1,0
-	.line	1369
+	.endfunc	1368,1,0
+	.line	1368
 ;HRESULT k_dos_forward (FIL* fp, UINT(*func)(const BYTE*,UINT), UINT btf, UINT* bf){return 0;}	/* Forward data to the stream */
-	.line	1370
-	.line	1370
+	.line	1369
+	.line	1369
 	FXDOS
 	xdef	~~k_dos_forward
 	func
-	.function	1370
+	.function	1369
 ~~k_dos_forward:
 	longa	on
 	longi	on
@@ -6575,12 +6574,12 @@ fp_0	set	4
 func_0	set	8
 btf_0	set	12
 bf_0	set	14
-	.block	1370
+	.block	1369
 	.sym	fp,4,138,6,32,86
 	.sym	func,8,656,6,32
 	.sym	btf,12,16,6,16
 	.sym	bf,14,144,6,32
-	.line	1370
+	.line	1369
 	lda	#$0
 	tax
 	lda	#$0
@@ -6597,21 +6596,21 @@ L203:
 	tcs
 	tya
 	rtl
-	.line	1370
-	.endblock	1370
+	.line	1369
+	.endblock	1369
 L200	equ	0
 L201	equ	1
 	ends
 	efunc
-	.endfunc	1370,1,0
-	.line	1370
+	.endfunc	1369,1,0
+	.line	1369
 ;HRESULT k_dos_expand (FIL* fp, FSIZE_t fsz, BYTE opt){return 0;}					/* Allocate a contiguous block to the file */
-	.line	1371
-	.line	1371
+	.line	1370
+	.line	1370
 	FXDOS
 	xdef	~~k_dos_expand
 	func
-	.function	1371
+	.function	1370
 ~~k_dos_expand:
 	longa	on
 	longi	on
@@ -6624,11 +6623,11 @@ L201	equ	1
 fp_0	set	4
 fsz_0	set	8
 opt_0	set	12
-	.block	1371
+	.block	1370
 	.sym	fp,4,138,6,32,86
 	.sym	fsz,8,18,6,32
 	.sym	opt,12,14,6,8
-	.line	1371
+	.line	1370
 	lda	#$0
 	tax
 	lda	#$0
@@ -6645,21 +6644,21 @@ L207:
 	tcs
 	tya
 	rtl
-	.line	1371
-	.endblock	1371
+	.line	1370
+	.endblock	1370
 L204	equ	0
 L205	equ	1
 	ends
 	efunc
-	.endfunc	1371,1,0
-	.line	1371
+	.endfunc	1370,1,0
+	.line	1370
 ;HRESULT k_dos_mount (FATFS* fs, const TCHAR* path, BYTE opt){return 0;}			/* Mount/Unmount a logical drive */
-	.line	1372
-	.line	1372
+	.line	1371
+	.line	1371
 	FXDOS
 	xdef	~~k_dos_mount
 	func
-	.function	1372
+	.function	1371
 ~~k_dos_mount:
 	longa	on
 	longi	on
@@ -6672,11 +6671,11 @@ L205	equ	1
 fs_0	set	4
 path_0	set	8
 opt_0	set	12
-	.block	1372
+	.block	1371
 	.sym	fs,4,138,6,32,84
 	.sym	path,8,142,6,32
 	.sym	opt,12,14,6,8
-	.line	1372
+	.line	1371
 	lda	#$0
 	tax
 	lda	#$0
@@ -6693,21 +6692,21 @@ L211:
 	tcs
 	tya
 	rtl
-	.line	1372
-	.endblock	1372
+	.line	1371
+	.endblock	1371
 L208	equ	0
 L209	equ	1
 	ends
 	efunc
-	.endfunc	1372,1,0
-	.line	1372
+	.endfunc	1371,1,0
+	.line	1371
 ;HRESULT k_dos_mkfs (const TCHAR* path, const MKFS_PARM* opt, void* work, UINT len){return 0;}	/* Create a FAT volume */
-	.line	1373
-	.line	1373
+	.line	1372
+	.line	1372
 	FXDOS
 	xdef	~~k_dos_mkfs
 	func
-	.function	1373
+	.function	1372
 ~~k_dos_mkfs:
 	longa	on
 	longi	on
@@ -6721,12 +6720,12 @@ path_0	set	4
 opt_0	set	8
 work_0	set	12
 len_0	set	16
-	.block	1373
+	.block	1372
 	.sym	path,4,142,6,32
 	.sym	opt,8,138,6,32,89
 	.sym	work,12,129,6,32
 	.sym	len,16,16,6,16
-	.line	1373
+	.line	1372
 	lda	#$0
 	tax
 	lda	#$0
@@ -6743,21 +6742,21 @@ L215:
 	tcs
 	tya
 	rtl
-	.line	1373
-	.endblock	1373
+	.line	1372
+	.endblock	1372
 L212	equ	0
 L213	equ	1
 	ends
 	efunc
-	.endfunc	1373,1,0
-	.line	1373
+	.endfunc	1372,1,0
+	.line	1372
 ;HRESULT k_dos_fdisk (BYTE pdrv, const LBA_t ptbl[], void* work){return 0;}		/* Divide a physical drive into some partitions */
-	.line	1374
-	.line	1374
+	.line	1373
+	.line	1373
 	FXDOS
 	xdef	~~k_dos_fdisk
 	func
-	.function	1374
+	.function	1373
 ~~k_dos_fdisk:
 	longa	on
 	longi	on
@@ -6770,11 +6769,11 @@ L213	equ	1
 pdrv_0	set	4
 ptbl_0	set	6
 work_0	set	10
-	.block	1374
+	.block	1373
 	.sym	pdrv,4,14,6,8
 	.sym	ptbl,6,146,6,32
 	.sym	work,10,129,6,32
-	.line	1374
+	.line	1373
 	lda	#$0
 	tax
 	lda	#$0
@@ -6791,21 +6790,21 @@ L219:
 	tcs
 	tya
 	rtl
-	.line	1374
-	.endblock	1374
+	.line	1373
+	.endblock	1373
 L216	equ	0
 L217	equ	1
 	ends
 	efunc
-	.endfunc	1374,1,0
-	.line	1374
+	.endfunc	1373,1,0
+	.line	1373
 ;HRESULT k_dos_setcp (WORD cp){return 0;}
-	.line	1375
-	.line	1375
+	.line	1374
+	.line	1374
 	FXDOS
 	xdef	~~k_dos_setcp
 	func
-	.function	1375
+	.function	1374
 ~~k_dos_setcp:
 	longa	on
 	longi	on
@@ -6816,9 +6815,9 @@ L217	equ	1
 	phd
 	tcd
 cp_0	set	4
-	.block	1375
+	.block	1374
 	.sym	cp,4,5,6,16
-	.line	1375
+	.line	1374
 	lda	#$0
 	tax
 	lda	#$0
@@ -6835,20 +6834,20 @@ L223:
 	tcs
 	tya
 	rtl
-	.line	1375
-	.endblock	1375
+	.line	1374
+	.endblock	1374
 L220	equ	0
 L221	equ	1
 	ends
 	efunc
-	.endfunc	1375,1,0
-	.line	1375
+	.endfunc	1374,1,0
+	.line	1374
 ;
 ;
 ;
 ;
-	.line	1378
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.c",1375
+	.line	1377
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxdos.c",1374
 	xref	~~f_mount
 	xref	~~f_findnext
 	xref	~~f_findfirst

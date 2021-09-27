@@ -1,10 +1,10 @@
-  Mon Aug  9 2021 16:52                                                Page 1
+  Mon Sep 27 2021  9:39                                                Page 1
 
 
                      ***************************************
                      **      WDC 65C816 Macro Assembler   **
                      **                                   **
-                     **     Version 3.49.1- Feb  6 2006    **
+                     **     Version 1.00- Aug 10 2021    **
                      ***************************************
 
      1                        ;:ts=8
@@ -59,7 +59,7 @@
     41                        	.eos
     42                        	.stag	_fx_node,384,5
     43                        	.member	type,0,14,8,8
-  Mon Aug  9 2021 16:52                                                Page 2
+  Mon Sep 27 2021  9:39                                                Page 2
 
 
     44                        	.member	Reserved0,8,14,8,8
@@ -120,7 +120,7 @@
     99                        	.member	AL,64,14,8,8
    100                        	.member	XH,72,14,8,8
    101                        	.member	XL,80,14,8,8
-  Mon Aug  9 2021 16:52                                                Page 3
+  Mon Sep 27 2021  9:39                                                Page 3
 
 
    102                        	.member	YH,88,14,8,8
@@ -181,7 +181,7 @@
    157                        	.member	menuNodes,232,129,8,32
    158                        	.member	iconNodes,264,129,8,32
    159                        	.member	windowNodes,296,129,8,32
-  Mon Aug  9 2021 16:52                                                Page 4
+  Mon Sep 27 2021  9:39                                                Page 4
 
 
    160                        	.member	fontNodes,328,129,8,32
@@ -242,7 +242,7 @@
    215                        	.eos
    216                        	.stag	_RectStruct,112,26
    217                        	.member	x,0,5,8,16
-  Mon Aug  9 2021 16:52                                                Page 5
+  Mon Sep 27 2021  9:39                                                Page 5
 
 
    218                        	.member	y,16,5,8,16
@@ -303,7 +303,7 @@
    273                        	.member	style,16,18,8,32
    274                        	.member	styleEx,48,18,8,32
    275                        	.member	win_id,80,5,8,16
-  Mon Aug  9 2021 16:52                                                Page 6
+  Mon Sep 27 2021  9:39                                                Page 6
 
 
    276                        	.member	win_x,96,5,8,16
@@ -364,7 +364,7 @@
    331                        	.member	procid,3072,18,8,32
    332                        	.member	pWndClass,3104,138,8,32,29
    333                        	.member	pParentWindow,3136,129,8,32
-  Mon Aug  9 2021 16:52                                                Page 7
+  Mon Sep 27 2021  9:39                                                Page 7
 
 
    334                        	.member	hMenu,3168,129,8,32
@@ -425,7 +425,7 @@
    389                        	.eos
    390                        	.stag	_fx_scrollbar_t,240,40
    391                        	.member	min,0,16,8,16
-  Mon Aug  9 2021 16:52                                                Page 8
+  Mon Sep 27 2021  9:39                                                Page 8
 
 
    392                        	.member	max,16,16,8,16
@@ -486,7 +486,7 @@
    447                        	.eos
    448                        	.stag	_SubMenuListStruct,40,46
    449                        	.member	cMenus,0,14,8,8
-  Mon Aug  9 2021 16:52                                                Page 9
+  Mon Sep 27 2021  9:39                                                Page 9
 
 
    450                        	.member	psubmenus,8,9354,8,32,45
@@ -538,7 +538,7 @@
    489                        	.line	72
    490                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxc256u.h",6
-   491                        	.line	1960
+   491                        	.line	1963
    492                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxconsole.h",12
    493                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -547,7 +547,7 @@
                     stdlib.h",0
    495                        	.line	205
    496                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
-  Mon Aug  9 2021 16:52                                                Page 10
+  Mon Sep 27 2021  9:39                                                Page 10
 
 
                     space\FXOS-Beta\src\fxstring.h",5
@@ -600,7 +600,7 @@
                     space\FXOS-Beta\src\fxos.h",9
    527                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxc256u.h",0
-   528                        	.line	1960
+   528                        	.line	1963
    529                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxos.h",16
    530                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -608,7 +608,7 @@
    531                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxos.h",0
    532                        	.line	30
-  Mon Aug  9 2021 16:52                                                Page 11
+  Mon Sep 27 2021  9:39                                                Page 11
 
 
    533                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -669,7 +669,7 @@
    583                        	.eos
    584                        	.stag	_fx_environment,96,56
    585                        	.member	variables,0,142,8,32
-  Mon Aug  9 2021 16:52                                                Page 12
+  Mon Sep 27 2021  9:39                                                Page 12
 
 
    586                        	.member	reserved1,32,5,8,16
@@ -730,10 +730,10 @@
    641                        	.stag	_k_irq_chain,128,61
    642                        	.member	handlers,0,5217,8,32,4
    643                        	.eos
-  Mon Aug  9 2021 16:52                                                Page 13
+  Mon Sep 27 2021  9:39                                                Page 13
 
 
-   644                        	.line	490
+   644                        	.line	475
    645                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxos.h",22
    646                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -791,7 +791,7 @@
    687                        	.member	stat,56,14,8,8
    688                        	.member	sclust,64,18,8,32
    689                        	.member	objsize,96,18,8,32
-  Mon Aug  9 2021 16:52                                                Page 14
+  Mon Sep 27 2021  9:39                                                Page 14
 
 
    690                        	.eos
@@ -852,7 +852,7 @@
    740                        	.eos
    741                        	.line	86
    742                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
-  Mon Aug  9 2021 16:52                                                Page 15
+  Mon Sep 27 2021  9:39                                                Page 15
 
 
                     space\FXOS-Beta\src\fxeventmanager.h",6
@@ -913,7 +913,7 @@
    779                        	.stag	_fx_memory_map,2072,70
    780                        	.member	availableMemory,0,18,8,32
    781                        	.member	valid_segments,32,110,8,0,255
-  Mon Aug  9 2021 16:52                                                Page 16
+  Mon Sep 27 2021  9:39                                                Page 16
 
 
    782                        	.eos
@@ -936,7 +936,7 @@
                     space\FXOS-Beta\src\fxwindowmanager.h",6
    799                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxeventmanager.h",0
-   800                        	.line	568
+   800                        	.line	572
    801                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxwindowmanager.h",7
    802                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -968,13 +968,13 @@
    823                        	.member	CUR_GADGET,144,5,8,16
    824                        	.member	CUR_COLOR,160,101,8,0,15
    825                        	.eos
-   826                        	.line	359
+   826                        	.line	370
    827                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxwindowmanager.h",8
    828                        	.stag	_fxos_winman_vtable,160,75
    829                        	.member	Events,0,641,8,32
    830                        	.member	ConfigureWindowManager,32,656,8,32
-  Mon Aug  9 2021 16:52                                                Page 17
+  Mon Sep 27 2021  9:39                                                Page 17
 
 
    831                        	.member	ProcessWindowEvent,64,8833,8,32
@@ -1035,7 +1035,7 @@
    885                        	.member	lastY,168,16,8,16
    886                        	.eos
    887                        	.stag	_fxos_eventmanager_vtable,192,84
-  Mon Aug  9 2021 16:52                                                Page 18
+  Mon Sep 27 2021  9:39                                                Page 18
 
 
    888                        	.member	EventQueue,0,138,8,32,7
@@ -1050,7 +1050,7 @@
    897                        	.member	readable,8,110,8,0,16
    898                        	.member	data,136,129,8,32
    899                        	.eos
-   900                        	.line	568
+   900                        	.line	572
    901                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxconsole.h",18
    902                        	.stag	_fx_spinner_ctx,48,86
@@ -1096,7 +1096,7 @@
    935                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxdos.h",7
    936                        	.stag	_fx_sd_direntry,256,90
-  Mon Aug  9 2021 16:52                                                Page 19
+  Mon Sep 27 2021  9:39                                                Page 19
 
 
    937                        	.member	filename,0,110,8,0,11
@@ -1157,7 +1157,7 @@
    992                        	.stag	fat_BS,688,96
    993                        	.member	bootjmp,0,110,8,0,3
    994                        	.member	oem_name,24,110,8,0,8
-  Mon Aug  9 2021 16:52                                                Page 20
+  Mon Sep 27 2021  9:39                                                Page 20
 
 
    995                        	.member	bytes_per_sector,88,16,8,16
@@ -1218,7 +1218,7 @@
   1050                        	.member	fat_size_sectors,176,15,8,16
   1051                        	.member	sectors_per_track,192,15,8,16
   1052                        	.member	number_ok_dos_heads,208,15,8,16
-  Mon Aug  9 2021 16:52                                                Page 21
+  Mon Sep 27 2021  9:39                                                Page 21
 
 
   1053                        	.member	hidden_sectors,224,18,8,32
@@ -1279,7 +1279,7 @@
   1108                        	.member	sFirmwareRev,368,110,8,0,8
   1109                        	.member	sModelNumber,432,110,8,0,40
   1110                        	.member	wMoreVendorUnique,752,16,8,16
-  Mon Aug  9 2021 16:52                                                Page 22
+  Mon Sep 27 2021  9:39                                                Page 22
 
 
   1111                        	.member	wDoubleWordIO,768,16,8,16
@@ -1340,7 +1340,7 @@
   1163                        	.member	WriteBufferDmaSupported,10,16,17,1
   1164                        	.member	ReadBufferDmaSupported,11,16,17,1
   1165                        	.member	DeviceConfigIdentifySetDmaSupported,12,1
-  Mon Aug  9 2021 16:52                                                Page 23
+  Mon Sep 27 2021  9:39                                                Page 23
 
 
                     6,17,1
@@ -1401,7 +1401,7 @@
   1219                        	.member	SmartCommands,0,16,17,1
   1220                        	.member	SecurityMode,1,16,17,1
   1221                        	.member	RemovableMediaFeature,2,16,17,1
-  Mon Aug  9 2021 16:52                                                Page 24
+  Mon Sep 27 2021  9:39                                                Page 24
 
 
   1222                        	.member	PowerManagement,3,16,17,1
@@ -1462,7 +1462,7 @@
   1277                        	.member	Obsolete1,11,16,17,1
   1278                        	.member	WriteBuffer,12,16,17,1
   1279                        	.member	ReadBuffer,13,16,17,1
-  Mon Aug  9 2021 16:52                                                Page 25
+  Mon Sep 27 2021  9:39                                                Page 25
 
 
   1280                        	.member	Nop,14,16,17,1
@@ -1523,7 +1523,7 @@
   1332                        	.member	ReadWriteLogDmaExt,3,16,17,1
   1333                        	.member	DownloadMicrocodeMode3,4,16,17,1
   1334                        	.member	FreefallControl,5,16,17,1
-  Mon Aug  9 2021 16:52                                                Page 26
+  Mon Sep 27 2021  9:39                                                Page 26
 
 
   1335                        	.member	SenseDataReporting,6,16,17,1
@@ -1584,7 +1584,7 @@
   1389                        	.stag	fake123_,16,123
   1390                        	.member	NVCachePowerModeEnabled,0,16,17,1
   1391                        	.member	Reserved0,1,16,17,3
-  Mon Aug  9 2021 16:52                                                Page 27
+  Mon Sep 27 2021  9:39                                                Page 27
 
 
   1392                        	.member	NVCacheFeatureSetEnabled,4,16,17,1
@@ -1645,7 +1645,7 @@
   1444                        	.member	RecommendedMWXferCycleTime,1056,16,8,16
   1445                        	.member	MinimumPIOCycleTime,1072,16,8,16
   1446                        	.member	MinimumPIOCycleTimeIORDY,1088,16,8,16
-  Mon Aug  9 2021 16:52                                                Page 28
+  Mon Sep 27 2021  9:39                                                Page 28
 
 
   1447                        	.member	AdditionalSupported,1104,10,8,16,107
@@ -1706,7 +1706,7 @@
   1493                        	.member	AdditionalProductID,2720,112,8,0,4
   1494                        	.member	ReservedForCfaWord174,2784,112,8,0,2
   1495                        	.member	CurrentMediaSerialNumber,2816,112,8,0,30
-  Mon Aug  9 2021 16:52                                                Page 29
+  Mon Sep 27 2021  9:39                                                Page 29
 
 
   1496                        	.member	SCTCommandTransport,3296,10,8,16,121
@@ -1767,7 +1767,7 @@
   1545                        	.member	dir,0,138,11,32,65
   1546                        	.member	file,0,138,11,32,64
   1547                        	.member	fileInfo,0,138,11,32,66
-  Mon Aug  9 2021 16:52                                                Page 30
+  Mon Sep 27 2021  9:39                                                Page 30
 
 
   1548                        	.eos
@@ -1800,7 +1800,7 @@
   1570                        ;#include "fxgfx.h"
   1571                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxgfx.h",0
-  1572                        	.line	359
+  1572                        	.line	370
   1573                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
                     space\FXOS-Beta\src\fxconsole.c",6
   1574                        ;
@@ -1828,7 +1828,7 @@
   1594 00:001E: xx xx xx xx  	dl	L1+38
   1595 00:0022: xx xx xx xx  	dl	L1+43
   1596 00:0026: xx xx xx xx  	dl	L1+50
-  Mon Aug  9 2021 16:52                                                Page 31
+  Mon Sep 27 2021  9:39                                                Page 31
 
 
   1597 00:002A: xx xx xx xx  	dl	L1+56
@@ -1889,7 +1889,7 @@
        00:00C0: 00 74 69 6D 
        00:00C4: 65 00 65 
   1623 00:00C7: 78 69 74 00  	db	$78,$69,$74,$00,$70,$61,$75,$73,$65,$00,
-  Mon Aug  9 2021 16:52                                                Page 32
+  Mon Sep 27 2021  9:39                                                Page 32
 
 
                     $72,$65,$73,$75,$6D
@@ -1950,7 +1950,7 @@
   1661 00:013B:              	ends
   1662                        ;
   1663                        ;static char consolespinner[] = {'|','/','-','\\'}
-  Mon Aug  9 2021 16:52                                                Page 33
+  Mon Sep 27 2021  9:39                                                Page 33
 
 
                     ;
@@ -2011,7 +2011,7 @@
   1715 00:01A7: xx xx xx xx  	dl	L2+183
   1716 00:01AB: xx xx xx xx  	dl	L2+187
   1717 00:01AF: xx xx xx xx  	dl	L2+190
-  Mon Aug  9 2021 16:52                                                Page 34
+  Mon Sep 27 2021  9:39                                                Page 34
 
 
   1718 00:01B3: xx xx xx xx  	dl	L2+199
@@ -2072,7 +2072,7 @@
                     $00,$53,$54,$41,$52
        00:0251: 52 00 4E 4F 
        00:0255: 4F 50 00 53 
-  Mon Aug  9 2021 16:52                                                Page 35
+  Mon Sep 27 2021  9:39                                                Page 35
 
 
        00:0259: 54 41 52 
@@ -2133,7 +2133,7 @@
   1776 00:0020: 8F 15 00 00  	sta	>21
   1777                        ;}
   1778                        	.line	53
-  Mon Aug  9 2021 16:52                                                Page 36
+  Mon Sep 27 2021  9:39                                                Page 36
 
 
   1779                        L7:
@@ -2194,7 +2194,7 @@
   1834 00:0051: A5 06        	lda	<L8+2
   1835 00:0053: 85 0A        	sta	<L8+2+4
   1836 00:0055: A5 05        	lda	<L8+1
-  Mon Aug  9 2021 16:52                                                Page 37
+  Mon Sep 27 2021  9:39                                                Page 37
 
 
   1837 00:0057: 85 09        	sta	<L8+1+4
@@ -2255,7 +2255,7 @@
   1890 00:0082: 22 xx xx xx  	jsl	~~k_put_char
   1891                        ;	if(ctx->index>3) ctx->index = 0;
   1892                        	.line	64
-  Mon Aug  9 2021 16:52                                                Page 38
+  Mon Sep 27 2021  9:39                                                Page 38
 
 
   1893 00:0086: 38           	sec
@@ -2316,7 +2316,7 @@
   1948                        ;
   1949                        ;	LPSTR font = EGAFONT;
   1950                        ;	//LPSTR font = BM437_ATI_8X8_Font_Set;
-  Mon Aug  9 2021 16:52                                                Page 39
+  Mon Sep 27 2021  9:39                                                Page 39
 
 
   1951                        ;
@@ -2377,7 +2377,7 @@
   2004 00:00F2: E9 00 08     	sbc	#<$800
   2005 00:00F5: 70 03        	bvs	L21
   2006 00:00F7: 49 00 80     	eor	#$8000
-  Mon Aug  9 2021 16:52                                                Page 40
+  Mon Sep 27 2021  9:39                                                Page 40
 
 
   2007                        L21:
@@ -2438,7 +2438,7 @@
   2062             00000000   i_1	set	0
   2063             00000002   j_1	set	2
   2064                        	.sym	i,0,5,1,16
-  Mon Aug  9 2021 16:52                                                Page 41
+  Mon Sep 27 2021  9:39                                                Page 41
 
 
   2065                        	.sym	j,2,5,1,16
@@ -2499,7 +2499,7 @@
   2119 00:0169: 85 01        	sta	<R0
   2120 00:016B: A0 56 00     	ldy	#$56
   2121 00:016E: B7 18        	lda	[<L24+p_0],Y
-  Mon Aug  9 2021 16:52                                                Page 42
+  Mon Sep 27 2021  9:39                                                Page 42
 
 
   2122 00:0170: 85 03        	sta	<R0+2
@@ -2560,7 +2560,7 @@
   2176 00:01B5: F4 00 00     	pea	#<$0
   2177 00:01B8: F4 0F 00     	pea	#<$f
   2178 00:01BB: A5 13        	lda	<L25+j_1
-  Mon Aug  9 2021 16:52                                                Page 43
+  Mon Sep 27 2021  9:39                                                Page 43
 
 
   2179 00:01BD: 0A           	asl	A
@@ -2621,7 +2621,7 @@
   2234                        L33:
   2235 00:021C: 30 03        	bmi	L34
   2236 00:021E: 82 8F FF     	brl	L10015
-  Mon Aug  9 2021 16:52                                                Page 44
+  Mon Sep 27 2021  9:39                                                Page 44
 
 
   2237                        L34:
@@ -2682,7 +2682,7 @@
   2292                        	func
   2293                        	.function	112
   2294                        ~~k_get_cols_visible:
-  Mon Aug  9 2021 16:52                                                Page 45
+  Mon Sep 27 2021  9:39                                                Page 45
 
 
   2295                        	longa	on
@@ -2743,7 +2743,7 @@
   2346                        	.line	119
   2347 00:0281: AF 11 00 00  	lda	>17
   2348                        L43:
-  Mon Aug  9 2021 16:52                                                Page 46
+  Mon Sep 27 2021  9:39                                                Page 46
 
 
   2349 00:0285: A8           	tay
@@ -2804,7 +2804,7 @@
   2402                        	ends
   2403                        	efunc
   2404                        	.endfunc	125,1,0
-  Mon Aug  9 2021 16:52                                                Page 47
+  Mon Sep 27 2021  9:39                                                Page 47
 
 
   2405                        	.line	125
@@ -2865,7 +2865,7 @@
   2458 00:02BB: 3B           	tsc
   2459 00:02BC: 38           	sec
   2460 00:02BD: E9 04 00     	sbc	#L52
-  Mon Aug  9 2021 16:52                                                Page 48
+  Mon Sep 27 2021  9:39                                                Page 48
 
 
   2461 00:02C0: 1B           	tcs
@@ -2926,7 +2926,7 @@
   2515                        	.line	149
   2516                        	asmstart
   2517 00:02ED: EA           	NOP
-  Mon Aug  9 2021 16:52                                                Page 49
+  Mon Sep 27 2021  9:39                                                Page 49
 
 
   2518                        	asmend
@@ -2987,7 +2987,7 @@
   2572 00:0329: 85 01        	sta	<L53+i_1
   2573                        L10029:
   2574                        ;	{
-  Mon Aug  9 2021 16:52                                                Page 50
+  Mon Sep 27 2021  9:39                                                Page 50
 
 
   2575                        	.line	161
@@ -3048,7 +3048,7 @@
   2629                        	.line	173
   2630 00:035C: E2 20        	sep	#$20
   2631                        	longa	off
-  Mon Aug  9 2021 16:52                                                Page 51
+  Mon Sep 27 2021  9:39                                                Page 51
 
 
   2632 00:035E: A9 01        	lda	#$1
@@ -3109,7 +3109,7 @@
   2686                        ;	//k_clear_console();
   2687                        ;	//k_clear_screen(0);
   2688                        ;
-  Mon Aug  9 2021 16:52                                                Page 52
+  Mon Sep 27 2021  9:39                                                Page 52
 
 
   2689                        ;	MASTER_CTRL_REG_H[0] = 0x00;
@@ -3170,7 +3170,7 @@
   2744 00:03C6: E5 01        	sbc	<L53+i_1
   2745 00:03C8: 70 03        	bvs	L69
   2746 00:03CA: 49 00 80     	eor	#$8000
-  Mon Aug  9 2021 16:52                                                Page 53
+  Mon Sep 27 2021  9:39                                                Page 53
 
 
   2747                        L69:
@@ -3231,7 +3231,7 @@
   2801                        L71:
   2802 00:03FB: 30 03        	bmi	L72
   2803 00:03FD: 82 ED FF     	brl	L10050
-  Mon Aug  9 2021 16:52                                                Page 54
+  Mon Sep 27 2021  9:39                                                Page 54
 
 
   2804                        L72:
@@ -3292,7 +3292,7 @@
   2858                        	.line	223
   2859                        L10054:
   2860 00:042E: E6 03        	inc	<L53+j_1
-  Mon Aug  9 2021 16:52                                                Page 55
+  Mon Sep 27 2021  9:39                                                Page 55
 
 
   2861 00:0430: 38           	sec
@@ -3353,7 +3353,7 @@
   2916                        ;	NOP
   2917                        ;	NOP
   2918                        ;	NOP
-  Mon Aug  9 2021 16:52                                                Page 56
+  Mon Sep 27 2021  9:39                                                Page 56
 
 
   2919                        ;#endasm
@@ -3414,7 +3414,7 @@
   2974 00:047B: 5B           	tcd
   2975                        	.block	255
   2976                        ;	BORDER_CTRL_REG[0] = BORDER_CTRL_ENABLE;
-  Mon Aug  9 2021 16:52                                                Page 57
+  Mon Sep 27 2021  9:39                                                Page 57
 
 
   2977                        	.line	256
@@ -3475,7 +3475,7 @@
   3032 00:04A2: 18           	clc
   3033 00:04A3: 69 00 00     	adc	#L84
   3034 00:04A6: 1B           	tcs
-  Mon Aug  9 2021 16:52                                                Page 58
+  Mon Sep 27 2021  9:39                                                Page 58
 
 
   3035 00:04A7: 6B           	rtl
@@ -3536,7 +3536,7 @@
   3089                        	.line	268
   3090 00:04C4: E2 20        	sep	#$20
   3091                        	longa	off
-  Mon Aug  9 2021 16:52                                                Page 59
+  Mon Sep 27 2021  9:39                                                Page 59
 
 
   3092 00:04C6: A5 08        	lda	<L88+r_0
@@ -3597,7 +3597,7 @@
   3147 00:04F4: E9 00 00     	sbc	#L92
   3148 00:04F7: 1B           	tcs
   3149 00:04F8: 0B           	phd
-  Mon Aug  9 2021 16:52                                                Page 60
+  Mon Sep 27 2021  9:39                                                Page 60
 
 
   3150 00:04F9: 5B           	tcd
@@ -3658,7 +3658,7 @@
   3205                        	.line	281
   3206                        	.line	282
   3207                        	code
-  Mon Aug  9 2021 16:52                                                Page 61
+  Mon Sep 27 2021  9:39                                                Page 61
 
 
   3208                        	xdef	~~k_clear_screen
@@ -3719,7 +3719,7 @@
   3260                        ;
   3261                        ;void k_clear_console(VOID)
   3262                        ;{
-  Mon Aug  9 2021 16:52                                                Page 62
+  Mon Sep 27 2021  9:39                                                Page 62
 
 
   3263                        	.line	290
@@ -3780,7 +3780,7 @@
   3317 00:0592: 69 04 00     	adc	#L100
   3318 00:0595: 1B           	tcs
   3319 00:0596: 6B           	rtl
-  Mon Aug  9 2021 16:52                                                Page 63
+  Mon Sep 27 2021  9:39                                                Page 63
 
 
   3320                        	.endblock	299
@@ -3841,7 +3841,7 @@
   3375                        ;	}
   3376                        	.line	308
   3377                        ;}
-  Mon Aug  9 2021 16:52                                                Page 64
+  Mon Sep 27 2021  9:39                                                Page 64
 
 
   3378                        L10058:
@@ -3902,7 +3902,7 @@
   3433                        	.line	316
   3434 00:05E7: A0 2E 00     	ldy	#$2e
   3435 00:05EA: B7 01        	lda	[<L111+zp_1],Y
-  Mon Aug  9 2021 16:52                                                Page 65
+  Mon Sep 27 2021  9:39                                                Page 65
 
 
   3436                        L114:
@@ -3963,7 +3963,7 @@
   3491 00:060E: 05 03        	ora	<L116+zp_1+2
   3492 00:0610: D0 03        	bne	L118
   3493 00:0612: 82 0F 00     	brl	L10060
-  Mon Aug  9 2021 16:52                                                Page 66
+  Mon Sep 27 2021  9:39                                                Page 66
 
 
   3494                        L118:
@@ -4024,7 +4024,7 @@
   3549                        ;	PFXZEROPAGE zp = k_getZeroPage();
   3550                        ;	if(zp)
   3551             00000000   token_1	set	0
-  Mon Aug  9 2021 16:52                                                Page 67
+  Mon Sep 27 2021  9:39                                                Page 67
 
 
   3552             00000004   line_1	set	4
@@ -4085,7 +4085,7 @@
   3606 00:067B: D4 20        	pei	<L120+message_0
   3607 00:067D: 22 xx xx xx  	jsl	~~strchr
   3608 00:0681: 85 01        	sta	<R0
-  Mon Aug  9 2021 16:52                                                Page 68
+  Mon Sep 27 2021  9:39                                                Page 68
 
 
   3609 00:0683: 86 03        	stx	<R0+2
@@ -4146,7 +4146,7 @@
   3663 00:06B7: 29 FF 00     	and	#$ff
   3664 00:06BA: D0 03        	bne	L128
   3665 00:06BC: 82 24 00     	brl	L10066
-  Mon Aug  9 2021 16:52                                                Page 69
+  Mon Sep 27 2021  9:39                                                Page 69
 
 
   3666                        L128:
@@ -4207,7 +4207,7 @@
   3715                        	.line	366
   3716 00:06FE: 64 1B        	stz	<L121+lc_2
   3717                        ;				}
-  Mon Aug  9 2021 16:52                                                Page 70
+  Mon Sep 27 2021  9:39                                                Page 70
 
 
   3718                        	.line	367
@@ -4268,7 +4268,7 @@
   3768 00:0730: A0 30 00     	ldy	#$30
   3769 00:0733: B7 15        	lda	[<L121+zp_1],Y
   3770 00:0735: 48           	pha
-  Mon Aug  9 2021 16:52                                                Page 71
+  Mon Sep 27 2021  9:39                                                Page 71
 
 
   3771 00:0736: 22 xx xx xx  	jsl	~~k_put_string
@@ -4329,7 +4329,7 @@
   3821                        ;		return zp->fxos_console_col;
   3822                        	.line	401
   3823 00:0769: A0 30 00     	ldy	#$30
-  Mon Aug  9 2021 16:52                                                Page 72
+  Mon Sep 27 2021  9:39                                                Page 72
 
 
   3824 00:076C: B7 15        	lda	[<L121+zp_1],Y
@@ -4390,7 +4390,7 @@
   3878             00000008   text_0	set	8
   3879             0000000C   fcolor_0	set	12
   3880             0000000E   bcolor_0	set	14
-  Mon Aug  9 2021 16:52                                                Page 73
+  Mon Sep 27 2021  9:39                                                Page 73
 
 
   3881                        	.block	407
@@ -4451,7 +4451,7 @@
   3936 00:07C5: 2B           	pld
   3937 00:07C6: 3B           	tsc
   3938 00:07C7: 18           	clc
-  Mon Aug  9 2021 16:52                                                Page 74
+  Mon Sep 27 2021  9:39                                                Page 74
 
 
   3939 00:07C8: 69 10 00     	adc	#L132+12
@@ -4512,7 +4512,7 @@
   3993                        L141:
   3994                        ;	{
   3995                        	.line	423
-  Mon Aug  9 2021 16:52                                                Page 75
+  Mon Sep 27 2021  9:39                                                Page 75
 
 
   3996                        ;		//((LPSTR)buffer)[col][row];
@@ -4573,7 +4573,7 @@
   4051 00:080C: 1B           	tcs
   4052 00:080D: 0B           	phd
   4053 00:080E: 5B           	tcd
-  Mon Aug  9 2021 16:52                                                Page 76
+  Mon Sep 27 2021  9:39                                                Page 76
 
 
   4054             00000004   col_0	set	4
@@ -4634,7 +4634,7 @@
   4108                        	.line	441
   4109 00:084B: E6 09        	inc	<L145+ptr_1
   4110 00:084D: D0 02        	bne	L148
-  Mon Aug  9 2021 16:52                                                Page 77
+  Mon Sep 27 2021  9:39                                                Page 77
 
 
   4111 00:084F: E6 0B        	inc	<L145+ptr_1+2
@@ -4695,7 +4695,7 @@
                     color);
   4163                        ;		}
   4164                        ;		col++;
-  Mon Aug  9 2021 16:52                                                Page 78
+  Mon Sep 27 2021  9:39                                                Page 78
 
 
   4165                        ;		ptr++;
@@ -4756,7 +4756,7 @@
   4216 00:087B: 85 01        	sta	<R0
   4217 00:087D: 18           	clc
   4218 00:087E: A5 01        	lda	<R0
-  Mon Aug  9 2021 16:52                                                Page 79
+  Mon Sep 27 2021  9:39                                                Page 79
 
 
   4219 00:0880: 65 10        	adc	<L150+col_0
@@ -4817,7 +4817,7 @@
   4272 00:08D4: A5 0E        	lda	<L150+2
   4273 00:08D6: 85 18        	sta	<L150+2+10
   4274 00:08D8: A5 0D        	lda	<L150+1
-  Mon Aug  9 2021 16:52                                                Page 80
+  Mon Sep 27 2021  9:39                                                Page 80
 
 
   4275 00:08DA: 85 17        	sta	<L150+1+10
@@ -4878,7 +4878,7 @@
   4329 00:0906: A5 05        	lda	<R1
   4330 00:0908: 10 01        	bpl	L158
   4331 00:090A: 88           	dey
-  Mon Aug  9 2021 16:52                                                Page 81
+  Mon Sep 27 2021  9:39                                                Page 81
 
 
   4332                        L158:
@@ -4939,7 +4939,7 @@
   4387 00:0943: 3B           	tsc
   4388 00:0944: 38           	sec
   4389 00:0945: E9 00 00     	sbc	#L160
-  Mon Aug  9 2021 16:52                                                Page 82
+  Mon Sep 27 2021  9:39                                                Page 82
 
 
   4390 00:0948: 1B           	tcs
@@ -5000,7 +5000,7 @@
   4445 00:0963: E2 20        	sep	#$20
   4446                        	longa	off
   4447 00:0965: A9 0F        	lda	#$f
-  Mon Aug  9 2021 16:52                                                Page 83
+  Mon Sep 27 2021  9:39                                                Page 83
 
 
   4448 00:0967: 8F 1E 00 00  	sta	>30
@@ -5061,7 +5061,7 @@
   4499                        ;	VKY_TXT_CURSOR_Y_REG_H[0]  = (UCHAR)0;
   4500                        	.line	524
   4501 00:099F: E2 20        	sep	#$20
-  Mon Aug  9 2021 16:52                                                Page 84
+  Mon Sep 27 2021  9:39                                                Page 84
 
 
   4502                        	longa	off
@@ -5122,7 +5122,7 @@
   4557                        	.sym	x,4,5,6,16
   4558                        	.sym	y,6,5,6,16
   4559                        	.line	530
-  Mon Aug  9 2021 16:52                                                Page 85
+  Mon Sep 27 2021  9:39                                                Page 85
 
 
   4560 00:09CB: E2 20        	sep	#$20
@@ -5183,7 +5183,7 @@
   4614                        	.line	537
   4615                        	code
   4616                        	xdef	~~k_create_text_window
-  Mon Aug  9 2021 16:52                                                Page 86
+  Mon Sep 27 2021  9:39                                                Page 86
 
 
   4617                        	func
@@ -5244,7 +5244,7 @@
   4672                        ;
   4673                        ;	pwin->win_x = prect->x;
   4674                        	.line	549
-  Mon Aug  9 2021 16:52                                                Page 87
+  Mon Sep 27 2021  9:39                                                Page 87
 
 
   4675 00:0A38: A7 12        	lda	[<L172+prect_0]
@@ -5305,7 +5305,7 @@
   4729 00:0A90: 48           	pha
   4730 00:0A91: A0 10 00     	ldy	#$10
   4731 00:0A94: B7 0B        	lda	[<L173+pwin_1],Y
-  Mon Aug  9 2021 16:52                                                Page 88
+  Mon Sep 27 2021  9:39                                                Page 88
 
 
   4732 00:0A96: 48           	pha
@@ -5366,7 +5366,7 @@
   4786                        	xdef	~~k_text_mode_dialog
   4787                        	func
   4788                        	.function	570
-  Mon Aug  9 2021 16:52                                                Page 89
+  Mon Sep 27 2021  9:39                                                Page 89
 
 
   4789                        ~~k_text_mode_dialog:
@@ -5427,7 +5427,7 @@
   4843 00:0B05: 10 03        	bpl	L181
   4844 00:0B07: 82 19 00     	brl	L10077
   4845                        L181:
-  Mon Aug  9 2021 16:52                                                Page 90
+  Mon Sep 27 2021  9:39                                                Page 90
 
 
   4846                        ;	{
@@ -5488,7 +5488,7 @@
   4899 00:0B5B: D4 07        	pei	<L178+line_1
   4900 00:0B5D: D4 0C        	pei	<L177+x_0
   4901 00:0B5F: 22 xx xx xx  	jsl	~~k_put_string
-  Mon Aug  9 2021 16:52                                                Page 91
+  Mon Sep 27 2021  9:39                                                Page 91
 
 
   4902                        ;		k_put_string(pos,line,CONST_TBOX_RIGHT_S
@@ -5549,7 +5549,7 @@
   4954 00:0BB2: F4 xx xx     	pea	#^L131+12
   4955 00:0BB5: F4 xx xx     	pea	#<L131+12
   4956 00:0BB8: D4 07        	pei	<L178+line_1
-  Mon Aug  9 2021 16:52                                                Page 92
+  Mon Sep 27 2021  9:39                                                Page 92
 
 
   4957 00:0BBA: D4 05        	pei	<L178+pos_1
@@ -5610,7 +5610,7 @@
   5004                        ;	pos = 70;
   5005                        ;	pos = k_put_string(pos,line,boxside,15,0);
   5006                        ;	line++;
-  Mon Aug  9 2021 16:52                                                Page 93
+  Mon Sep 27 2021  9:39                                                Page 93
 
 
   5007                        ;	pos = 1;
@@ -5671,7 +5671,7 @@
   5056 00:0BF0: 1B           	tcs
   5057 00:0BF1: 0B           	phd
   5058 00:0BF2: 5B           	tcd
-  Mon Aug  9 2021 16:52                                                Page 94
+  Mon Sep 27 2021  9:39                                                Page 94
 
 
   5059             00000004   bx_0	set	4
@@ -5732,7 +5732,7 @@
   5114                        ;		if(k == by ||  k == (by + 2))
   5115                        	.line	652
   5116                        ;		{
-  Mon Aug  9 2021 16:52                                                Page 95
+  Mon Sep 27 2021  9:39                                                Page 95
 
 
   5117 00:0C33: A5 0B        	lda	<L189+k_1
@@ -5793,7 +5793,7 @@
   5169 00:0C89: F4 C4 00     	pea	#<$c4
   5170 00:0C8C: D4 0B        	pei	<L189+k_1
   5171 00:0C8E: D4 09        	pei	<L189+i_1
-  Mon Aug  9 2021 16:52                                                Page 96
+  Mon Sep 27 2021  9:39                                                Page 96
 
 
   5172 00:0C90: 22 xx xx xx  	jsl	~~k_put_char
@@ -5854,7 +5854,7 @@
   5222                        ;				k_put_char(i,k,'=',15,0)
                     ;
   5223                        ;			}
-  Mon Aug  9 2021 16:52                                                Page 97
+  Mon Sep 27 2021  9:39                                                Page 97
 
 
   5224                        ;		}
@@ -5915,7 +5915,7 @@
   5278 00:0D18: 49 00 80     	eor	#$8000
   5279                        L197:
   5280 00:0D1B: 30 03        	bmi	L198
-  Mon Aug  9 2021 16:52                                                Page 98
+  Mon Sep 27 2021  9:39                                                Page 98
 
 
   5281 00:0D1D: 82 CF FF     	brl	L10095
@@ -5976,7 +5976,7 @@
   5332 00:0D74: 18           	clc
   5333 00:0D75: A9 FF FF     	lda	#$ffff
   5334 00:0D78: 65 01        	adc	<R0
-  Mon Aug  9 2021 16:52                                                Page 99
+  Mon Sep 27 2021  9:39                                                Page 99
 
 
   5335 00:0D7A: 48           	pha
@@ -6037,7 +6037,7 @@
   5390                        ;
   5391                        ;void k_window_draw_background(int bx,int by, int 
                     bw,int bh,char bcolor)
-  Mon Aug  9 2021 16:52                                                Page 100
+  Mon Sep 27 2021  9:39                                                Page 100
 
 
   5392                        ;{
@@ -6098,7 +6098,7 @@
   5447 00:0DE0: F4 00 00     	pea	#<$0
   5448 00:0DE3: F4 05 00     	pea	#<$5
   5449 00:0DE6: F4 75 00     	pea	#<$75
-  Mon Aug  9 2021 16:52                                                Page 101
+  Mon Sep 27 2021  9:39                                                Page 101
 
 
   5450 00:0DE9: F4 01 00     	pea	#<$1
@@ -6159,7 +6159,7 @@
   5505 00:0E3D: 85 01        	sta	<R0
   5506 00:0E3F: 38           	sec
   5507 00:0E40: A5 07        	lda	<L203+k_1
-  Mon Aug  9 2021 16:52                                                Page 102
+  Mon Sep 27 2021  9:39                                                Page 102
 
 
   5508 00:0E42: E5 01        	sbc	<R0
@@ -6220,7 +6220,7 @@
   5563             00000004   pMsg_0	set	4
   5564                        	.block	718
   5565                        ;	PFXPROCESS p = NULL;
-  Mon Aug  9 2021 16:52                                                Page 103
+  Mon Sep 27 2021  9:39                                                Page 103
 
 
   5566                        ;
@@ -6281,7 +6281,7 @@
   5618                        ;			break;
   5619                        	.line	732
   5620 00:0EBC: 82 2D 00     	brl	L10108
-  Mon Aug  9 2021 16:52                                                Page 104
+  Mon Sep 27 2021  9:39                                                Page 104
 
 
   5621                        ;		case FX_MBUTTON_DOWN:
@@ -6342,7 +6342,7 @@
   5674 00:0EF0: A5 06        	lda	<L210+2
   5675 00:0EF2: 85 0A        	sta	<L210+2+4
   5676 00:0EF4: A5 05        	lda	<L210+1
-  Mon Aug  9 2021 16:52                                                Page 105
+  Mon Sep 27 2021  9:39                                                Page 105
 
 
   5677 00:0EF6: 85 09        	sta	<L210+1+4
@@ -6403,7 +6403,7 @@
   5707                        ;{
   5708                        	.line	750
   5709                        	.line	751
-  Mon Aug  9 2021 16:52                                                Page 106
+  Mon Sep 27 2021  9:39                                                Page 106
 
 
   5710                        	code
@@ -6464,7 +6464,7 @@
   5765                        	.sym	captionText,28,142,1,32
   5766                        	.sym	clickNode,32,138,1,32,5
   5767                        	.sym	pMsg,4,138,6,32,16
-  Mon Aug  9 2021 16:52                                                Page 107
+  Mon Sep 27 2021  9:39                                                Page 107
 
 
   5768 00:0F09: 64 0D        	stz	<L218+ptr_1
@@ -6525,7 +6525,7 @@
   5821                        ;		switch(pMsg->type)
   5822                        L10114:
   5823                        	.line	778
-  Mon Aug  9 2021 16:52                                                Page 108
+  Mon Sep 27 2021  9:39                                                Page 108
 
 
   5824 00:0F4F: A0 08 00     	ldy	#$8
@@ -6586,7 +6586,7 @@
   5877 00:0FA1: 17 11        	ora	[<L218+p_1],Y
   5878 00:0FA3: D0 03        	bne	L223
   5879 00:0FA5: 82 90 02     	brl	L10119
-  Mon Aug  9 2021 16:52                                                Page 109
+  Mon Sep 27 2021  9:39                                                Page 109
 
 
   5880                        L223:
@@ -6647,7 +6647,7 @@
   5930 00:1005: 85 01        	sta	<R0
   5931 00:1007: A0 56 00     	ldy	#$56
   5932 00:100A: B7 11        	lda	[<L218+p_1],Y
-  Mon Aug  9 2021 16:52                                                Page 110
+  Mon Sep 27 2021  9:39                                                Page 110
 
 
   5933 00:100C: 85 03        	sta	<R0+2
@@ -6708,7 +6708,7 @@
   5985                        ;					k_debug_integer(
                     "maxCols:",p->consoleCtl->maxCols);
   5986                        	.line	800
-  Mon Aug  9 2021 16:52                                                Page 111
+  Mon Sep 27 2021  9:39                                                Page 111
 
 
   5987 00:1070: A0 54 00     	ldy	#$54
@@ -6769,7 +6769,7 @@
   6038                        L10123:
   6039 00:10CC: E6 1C        	inc	<L218+j_1
   6040 00:10CE: 38           	sec
-  Mon Aug  9 2021 16:52                                                Page 112
+  Mon Sep 27 2021  9:39                                                Page 112
 
 
   6041 00:10CF: A5 1C        	lda	<L218+j_1
@@ -6830,7 +6830,7 @@
   6094 00:1126: 48           	pha
   6095 00:1127: F4 xx xx     	pea	#^L216+45
   6096 00:112A: F4 xx xx     	pea	#<L216+45
-  Mon Aug  9 2021 16:52                                                Page 113
+  Mon Sep 27 2021  9:39                                                Page 113
 
 
   6097 00:112D: 22 xx xx xx  	jsl	~~k_debug_pointer
@@ -6891,7 +6891,7 @@
   6147 00:1189: F4 xx xx     	pea	#^L216+67
   6148 00:118C: F4 xx xx     	pea	#<L216+67
   6149 00:118F: 22 xx xx xx  	jsl	~~k_debug_pointer
-  Mon Aug  9 2021 16:52                                                Page 114
+  Mon Sep 27 2021  9:39                                                Page 114
 
 
   6150                        ;
@@ -6952,7 +6952,7 @@
   6200 00:11EA: B7 11        	lda	[<L218+p_1],Y
   6201 00:11EC: 48           	pha
   6202 00:11ED: F4 xx xx     	pea	#^L216+99
-  Mon Aug  9 2021 16:52                                                Page 115
+  Mon Sep 27 2021  9:39                                                Page 115
 
 
   6203 00:11F0: F4 xx xx     	pea	#<L216+99
@@ -7013,7 +7013,7 @@
                     "DefConsoleProc::Initial-lineBufferIndex:",pctx->lineBufferI
                     ndex);
   6249                        	.line	843
-  Mon Aug  9 2021 16:52                                                Page 116
+  Mon Sep 27 2021  9:39                                                Page 116
 
 
   6250 00:122B: A7 15        	lda	[<L218+pctx_1]
@@ -7074,7 +7074,7 @@
   6299                        ;			//k_debug_integer("DefConsolePro
                     c::FX_KEY_UP2:",pMsg->data[2]);
   6300                        ;			//k_debug_integer("DefConsolePro
-  Mon Aug  9 2021 16:52                                                Page 117
+  Mon Sep 27 2021  9:39                                                Page 117
 
 
                     c::isShifted:",pctx->isShifted);
@@ -7135,7 +7135,7 @@
                     oleProc::ProcessId:",p->procId);
   6354                        ;			//k_debug_integer("DefConsolePro
                     c::FX_KEY_DOWN0:",pMsg->data[0]);
-  Mon Aug  9 2021 16:52                                                Page 118
+  Mon Sep 27 2021  9:39                                                Page 118
 
 
   6355                        ;			//k_debug_integer("DefConsolePro
@@ -7196,7 +7196,7 @@
   6397 00:12BC: E2 20        	sep	#$20
   6398                        	longa	off
   6399 00:12BE: A0 16 00     	ldy	#$16
-  Mon Aug  9 2021 16:52                                                Page 119
+  Mon Sep 27 2021  9:39                                                Page 119
 
 
   6400 00:12C1: B7 34        	lda	[<L217+pMsg_0],Y
@@ -7257,7 +7257,7 @@
   6452                        ;							
                     			   95,
   6453                        ;							
-  Mon Aug  9 2021 16:52                                                Page 120
+  Mon Sep 27 2021  9:39                                                Page 120
 
 
                     			   0,0);
@@ -7318,7 +7318,7 @@
   6505 00:135E: 18           	clc
   6506 00:135F: A9 02 00     	lda	#$2
   6507 00:1362: 65 15        	adc	<L218+pctx_1
-  Mon Aug  9 2021 16:52                                                Page 121
+  Mon Sep 27 2021  9:39                                                Page 121
 
 
   6508 00:1364: 85 01        	sta	<R0
@@ -7379,7 +7379,7 @@
   6558                        	longa	off
   6559 00:13AB: A0 1D 00     	ldy	#$1d
   6560 00:13AE: B7 34        	lda	[<L217+pMsg_0],Y
-  Mon Aug  9 2021 16:52                                                Page 122
+  Mon Sep 27 2021  9:39                                                Page 122
 
 
   6561 00:13B0: C9 08        	cmp	#<$8
@@ -7440,7 +7440,7 @@
                     ->curX < 0)
   6611                        	.line	924
   6612                        ;					{
-  Mon Aug  9 2021 16:52                                                Page 123
+  Mon Sep 27 2021  9:39                                                Page 123
 
 
   6613 00:140A: A0 54 00     	ldy	#$54
@@ -7501,7 +7501,7 @@
   6665 00:1466: A9 02 00     	lda	#$2
   6666 00:1469: 65 01        	adc	<R0
   6667 00:146B: 85 05        	sta	<R1
-  Mon Aug  9 2021 16:52                                                Page 124
+  Mon Sep 27 2021  9:39                                                Page 124
 
 
   6668 00:146D: E2 20        	sep	#$20
@@ -7562,7 +7562,7 @@
   6717 00:14AD: 85 03        	sta	<R0+2
   6718 00:14AF: A0 06 00     	ldy	#$6
   6719 00:14B2: B7 01        	lda	[<R0],Y
-  Mon Aug  9 2021 16:52                                                Page 125
+  Mon Sep 27 2021  9:39                                                Page 125
 
 
   6720 00:14B4: 30 0A        	bmi	L243
@@ -7623,7 +7623,7 @@
                     "DefConsoleProc::lineBufferIndexA:",pctx->lineBufferIndex);
   6773                        	.line	944
   6774 00:1507: A7 15        	lda	[<L218+pctx_1]
-  Mon Aug  9 2021 16:52                                                Page 126
+  Mon Sep 27 2021  9:39                                                Page 126
 
 
   6775 00:1509: 48           	pha
@@ -7684,7 +7684,7 @@
   6822 00:153C: A0 56 00     	ldy	#$56
   6823 00:153F: B7 11        	lda	[<L218+p_1],Y
   6824 00:1541: 85 03        	sta	<R0+2
-  Mon Aug  9 2021 16:52                                                Page 127
+  Mon Sep 27 2021  9:39                                                Page 127
 
 
   6825 00:1543: A0 31 00     	ldy	#$31
@@ -7745,7 +7745,7 @@
   6876                        ;							
                     	   decodedKey,
   6877                        ;							
-  Mon Aug  9 2021 16:52                                                Page 128
+  Mon Sep 27 2021  9:39                                                Page 128
 
 
                     	   p->consoleCtl->fgColor,0);
@@ -7806,7 +7806,7 @@
   6930 00:1606: 22 xx xx xx  	jsl	~~~mul
   6931 00:160A: 85 05        	sta	<R1
   6932 00:160C: 18           	clc
-  Mon Aug  9 2021 16:52                                                Page 129
+  Mon Sep 27 2021  9:39                                                Page 129
 
 
   6933 00:160D: A5 05        	lda	<R1
@@ -7867,7 +7867,7 @@
   6983 00:1651: F4 00 00     	pea	#^$0
   6984 00:1654: F4 00 00     	pea	#<$0
   6985 00:1657: F4 xx xx     	pea	#^~~DefConsoleProc
-  Mon Aug  9 2021 16:52                                                Page 130
+  Mon Sep 27 2021  9:39                                                Page 130
 
 
   6986 00:165A: F4 xx xx     	pea	#<~~DefConsoleProc
@@ -7928,7 +7928,7 @@
   7034                        	.line	990
   7035                        ;						p->conso
                     leCtl->curX = 0;
-  Mon Aug  9 2021 16:52                                                Page 131
+  Mon Sep 27 2021  9:39                                                Page 131
 
 
   7036                        	.line	991
@@ -7989,7 +7989,7 @@
                     L);
   7088                        	.line	998
   7089 00:16F8: F4 00 00     	pea	#^$0
-  Mon Aug  9 2021 16:52                                                Page 132
+  Mon Sep 27 2021  9:39                                                Page 132
 
 
   7090 00:16FB: F4 00 00     	pea	#<$0
@@ -8050,7 +8050,7 @@
   7141 00:173D: 22 xx xx xx  	jsl	~~k_debug_string
   7142                        ;			}
   7143                        	.line	1013
-  Mon Aug  9 2021 16:52                                                Page 133
+  Mon Sep 27 2021  9:39                                                Page 133
 
 
   7144                        ;			else
@@ -8111,7 +8111,7 @@
   7196                        	.line	1024
   7197                        ;				{
   7198 00:178C: A0 58 00     	ldy	#$58
-  Mon Aug  9 2021 16:52                                                Page 134
+  Mon Sep 27 2021  9:39                                                Page 134
 
 
   7199 00:178F: B7 11        	lda	[<L218+p_1],Y
@@ -8172,7 +8172,7 @@
   7253                        ;
   7254                        ;					if(p->desktopCtl
                     ->currentDiskName)
-  Mon Aug  9 2021 16:52                                                Page 135
+  Mon Sep 27 2021  9:39                                                Page 135
 
 
   7255                        	.line	1032
@@ -8233,7 +8233,7 @@
   7306 00:184D: A5 20        	lda	<L218+temp2_1
   7307 00:184F: A2 02 00     	ldx	#<$2
   7308                        	xref	~~~div
-  Mon Aug  9 2021 16:52                                                Page 136
+  Mon Sep 27 2021  9:39                                                Page 136
 
 
   7309 00:1852: 22 xx xx xx  	jsl	~~~div
@@ -8294,7 +8294,7 @@
   7362 00:18C0: 22 xx xx xx  	jsl	~~k_draw_text_point
   7363                        ;					}
   7364                        	.line	1038
-  Mon Aug  9 2021 16:52                                                Page 137
+  Mon Sep 27 2021  9:39                                                Page 137
 
 
   7365                        ;
@@ -8355,7 +8355,7 @@
   7415 00:191B: 65 01        	adc	<R0
   7416 00:191D: 85 05        	sta	<R1
   7417 00:191F: 38           	sec
-  Mon Aug  9 2021 16:52                                                Page 138
+  Mon Sep 27 2021  9:39                                                Page 138
 
 
   7418 00:1920: A9 80 02     	lda	#$280
@@ -8416,7 +8416,7 @@
                     p)->stgName);
   7470                        L10157:
   7471                        	.line	1049
-  Mon Aug  9 2021 16:52                                                Page 139
+  Mon Sep 27 2021  9:39                                                Page 139
 
 
   7472 00:1982: A0 58 00     	ldy	#$58
@@ -8477,7 +8477,7 @@
   7524 00:19E9: 22 xx xx xx  	jsl	~~~div
   7525 00:19ED: 85 01        	sta	<R0
   7526 00:19EF: 18           	clc
-  Mon Aug  9 2021 16:52                                                Page 140
+  Mon Sep 27 2021  9:39                                                Page 140
 
 
   7527 00:19F0: A9 28 00     	lda	#$28
@@ -8538,7 +8538,7 @@
   7578 00:1A45: 82 34 00     	brl	L10159
   7579                        L10153:
   7580                        ;			{
-  Mon Aug  9 2021 16:52                                                Page 141
+  Mon Sep 27 2021  9:39                                                Page 141
 
 
   7581                        	.line	1063
@@ -8599,7 +8599,7 @@
   7634 00:1A93: B7 11        	lda	[<L218+p_1],Y
   7635 00:1A95: 85 03        	sta	<R0+2
   7636 00:1A97: A0 31 00     	ldy	#$31
-  Mon Aug  9 2021 16:52                                                Page 142
+  Mon Sep 27 2021  9:39                                                Page 142
 
 
   7637 00:1A9A: B7 01        	lda	[<R0],Y
@@ -8660,7 +8660,7 @@
   7687 00:1AF8: 48           	pha
   7688 00:1AF9: F4 xx xx     	pea	#^L216+557
   7689 00:1AFC: F4 xx xx     	pea	#<L216+557
-  Mon Aug  9 2021 16:52                                                Page 143
+  Mon Sep 27 2021  9:39                                                Page 143
 
 
   7690 00:1AFF: 22 xx xx xx  	jsl	~~k_debug_integer
@@ -8721,7 +8721,7 @@
   7741 00:1B5D: F4 03 00     	pea	#<$3
   7742 00:1B60: 22 xx xx xx  	jsl	~~k_put_winicon_point
   7743                        ;					k_draw_text_poin
-  Mon Aug  9 2021 16:52                                                Page 144
+  Mon Sep 27 2021  9:39                                                Page 144
 
 
                     t(p->desktopCtl->currentDiskName,640 - (35 + temp2/2) - (tem
@@ -8782,7 +8782,7 @@
   7795 00:1BC8: A0 11 00     	ldy	#$11
   7796 00:1BCB: B7 01        	lda	[<R0],Y
   7797 00:1BCD: A0 13 00     	ldy	#$13
-  Mon Aug  9 2021 16:52                                                Page 145
+  Mon Sep 27 2021  9:39                                                Page 145
 
 
   7798 00:1BD0: 17 01        	ora	[<R0],Y
@@ -8843,7 +8843,7 @@
   7851                        ;			break;
   7852                        	.line	1095
   7853 00:1C2C: 82 AD 05     	brl	L10116
-  Mon Aug  9 2021 16:52                                                Page 146
+  Mon Sep 27 2021  9:39                                                Page 146
 
 
   7854                        ;		case FX_APP_MESSAGE:
@@ -8904,7 +8904,7 @@
   7906 00:1C83: B7 34        	lda	[<L217+pMsg_0],Y
   7907 00:1C85: 85 01        	sta	<R0
   7908 00:1C87: A0 10 00     	ldy	#$10
-  Mon Aug  9 2021 16:52                                                Page 147
+  Mon Sep 27 2021  9:39                                                Page 147
 
 
   7909 00:1C8A: B7 34        	lda	[<L217+pMsg_0],Y
@@ -8965,7 +8965,7 @@
   7960                        	.line	1114
   7961 00:1CD1: 82 08 05     	brl	L10116
   7962                        ;		case FX_MOUSE_MOVE:
-  Mon Aug  9 2021 16:52                                                Page 148
+  Mon Sep 27 2021  9:39                                                Page 148
 
 
   7963                        	.line	1115
@@ -9026,7 +9026,7 @@
   8011                        	.line	1135
   8012                        L10174:
   8013                        ;			k_debug_string("DefConsoleProc::
-  Mon Aug  9 2021 16:52                                                Page 149
+  Mon Sep 27 2021  9:39                                                Page 149
 
 
                     FX_LBUTTON_DRAG\r\n");
@@ -9087,7 +9087,7 @@
                     FX_WINDOW_TOBACK\r\n");
   8065                        	.line	1149
   8066 00:1D4D: F4 xx xx     	pea	#^L216+985
-  Mon Aug  9 2021 16:52                                                Page 150
+  Mon Sep 27 2021  9:39                                                Page 150
 
 
   8067 00:1D50: F4 xx xx     	pea	#<L216+985
@@ -9148,7 +9148,7 @@
   8118                        ;
   8119                        ;			//k_updatespinner(3,40,&consoles
                     pinctx);
-  Mon Aug  9 2021 16:52                                                Page 151
+  Mon Sep 27 2021  9:39                                                Page 151
 
 
   8120                        ;			/*
@@ -9209,7 +9209,7 @@
   8173                        	.line	1181
   8174                        ;					{
   8175 00:1DE1: E2 20        	sep	#$20
-  Mon Aug  9 2021 16:52                                                Page 152
+  Mon Sep 27 2021  9:39                                                Page 152
 
 
   8176                        	longa	off
@@ -9270,7 +9270,7 @@
   8228 00:1E46: 85 03        	sta	<R0+2
   8229 00:1E48: A0 06 00     	ldy	#$6
   8230 00:1E4B: B7 01        	lda	[<R0],Y
-  Mon Aug  9 2021 16:52                                                Page 153
+  Mon Sep 27 2021  9:39                                                Page 153
 
 
   8231 00:1E4D: 1A           	ina
@@ -9331,7 +9331,7 @@
   8282                        ;			while(UART1_BASE[UART_LSR] & 0x0
                     1)
   8283                        L10181:
-  Mon Aug  9 2021 16:52                                                Page 154
+  Mon Sep 27 2021  9:39                                                Page 154
 
 
   8284                        	.line	1195
@@ -9392,7 +9392,7 @@
   8332 00:1EDD: 85 03        	sta	<R0+2
   8333 00:1EDF: 18           	clc
   8334 00:1EE0: A9 04 00     	lda	#$4
-  Mon Aug  9 2021 16:52                                                Page 155
+  Mon Sep 27 2021  9:39                                                Page 155
 
 
   8335 00:1EE3: 65 22        	adc	<L218+temp3_1
@@ -9453,7 +9453,7 @@
   8386                        ;					k_debug_string((
                     (PFXCOMBUFFER)(pctx->userData))->buffer);
   8387                        	.line	1215
-  Mon Aug  9 2021 16:52                                                Page 156
+  Mon Sep 27 2021  9:39                                                Page 156
 
 
   8388 00:1F32: 18           	clc
@@ -9514,7 +9514,7 @@
   8437                        ;			if( MSGCMDID(pMsg) == CTL_CMD_CA
                     PTION )
   8438                        	.line	1228
-  Mon Aug  9 2021 16:52                                                Page 157
+  Mon Sep 27 2021  9:39                                                Page 157
 
 
   8439                        ;			{
@@ -9575,7 +9575,7 @@
   8489 00:1FC6: D4 2B        	pei	<L218+captionText_1+2
   8490 00:1FC8: D4 29        	pei	<L218+captionText_1
   8491 00:1FCA: A0 54 00     	ldy	#$54
-  Mon Aug  9 2021 16:52                                                Page 158
+  Mon Sep 27 2021  9:39                                                Page 158
 
 
   8492 00:1FCD: B7 11        	lda	[<L218+p_1],Y
@@ -9636,7 +9636,7 @@
   8544 00:2025: B7 11        	lda	[<L218+p_1],Y
   8545 00:2027: 85 05        	sta	<R1
   8546 00:2029: A0 56 00     	ldy	#$56
-  Mon Aug  9 2021 16:52                                                Page 159
+  Mon Sep 27 2021  9:39                                                Page 159
 
 
   8547 00:202C: B7 11        	lda	[<L218+p_1],Y
@@ -9697,7 +9697,7 @@
   8600 00:2087: 97 01        	sta	[<R0],Y
   8601                        ;
   8602                        ;					k_debug_integer(
-  Mon Aug  9 2021 16:52                                                Page 160
+  Mon Sep 27 2021  9:39                                                Page 160
 
 
                     "DefConsoleProc::curY:",p->consoleCtl->curY);
@@ -9758,7 +9758,7 @@
   8654                        	.line	1261
   8655                        ;			break;
   8656                        L10189:
-  Mon Aug  9 2021 16:52                                                Page 161
+  Mon Sep 27 2021  9:39                                                Page 161
 
 
   8657                        	.line	1262
@@ -9819,7 +9819,7 @@
   8705                        ;					{
   8706                        ;						for(j=0;
                     j<72;j++)
-  Mon Aug  9 2021 16:52                                                Page 162
+  Mon Sep 27 2021  9:39                                                Page 162
 
 
   8707                        ;						{
@@ -9880,7 +9880,7 @@
   8755                        	.line	1306
   8756                        ;					cursorCurrentCol
                     or = p->consoleCtl->fgColor;
-  Mon Aug  9 2021 16:52                                                Page 163
+  Mon Sep 27 2021  9:39                                                Page 163
 
 
   8757 00:2124: AD xx xx     	lda	|~~cursorCurrentColor
@@ -9941,7 +9941,7 @@
   8809 00:2175: 85 03        	sta	<R0+2
   8810 00:2177: A0 04 00     	ldy	#$4
   8811 00:217A: B7 01        	lda	[<R0],Y
-  Mon Aug  9 2021 16:52                                                Page 164
+  Mon Sep 27 2021  9:39                                                Page 164
 
 
   8812 00:217C: 48           	pha
@@ -10002,7 +10002,7 @@
   8867                        ;	}
   8868                        	.line	1322
   8869                        ;	//k_debug_string("DefConsoleProc exit\r\n");
-  Mon Aug  9 2021 16:52                                                Page 165
+  Mon Sep 27 2021  9:39                                                Page 165
 
 
   8870                        ;}
@@ -10063,7 +10063,7 @@
        00:0356: 61 74 61 3A 
        00:035A: 00 44 65 66 
        00:035E: 43 6F 6E 
-  Mon Aug  9 2021 16:52                                                Page 166
+  Mon Sep 27 2021  9:39                                                Page 166
 
 
   8900 00:0361: 73 6F 6C 65  	db	$73,$6F,$6C,$65,$50,$72,$6F,$63,$3A,$3A,
@@ -10124,7 +10124,7 @@
   8911 00:0406: 41 4E 43 4F  	db	$41,$4E,$43,$4F,$44,$45,$3A,$00,$44,$65,
                     $66,$43,$6F,$6E,$73
        00:040A: 44 45 3A 00 
-  Mon Aug  9 2021 16:52                                                Page 167
+  Mon Sep 27 2021  9:39                                                Page 167
 
 
        00:040E: 44 65 66 43 
@@ -10185,7 +10185,7 @@
        00:04B3: 4E 47 45 0D 
        00:04B7: 0A 00 64 
   8923 00:04BA: 69 73 6B 00  	db	$69,$73,$6B,$00,$69,$63,$6F,$6E,$00,$44,
-  Mon Aug  9 2021 16:52                                                Page 168
+  Mon Sep 27 2021  9:39                                                Page 168
 
 
                     $65,$66,$43,$6F,$6E
@@ -10246,7 +10246,7 @@
                     $20,$20,$20,$20,$20
        00:0563: 20 20 20 20 
        00:0567: 20 20 20 20 
-  Mon Aug  9 2021 16:52                                                Page 169
+  Mon Sep 27 2021  9:39                                                Page 169
 
 
        00:056B: 20 20 20 
@@ -10307,7 +10307,7 @@
        00:0610: 57 4E 0D 
   8946 00:0613: 0A 00 44 65  	db	$0A,$00,$44,$65,$66,$43,$6F,$6E,$73,$6F,
                     $6C,$65,$50,$72,$6F
-  Mon Aug  9 2021 16:52                                                Page 170
+  Mon Sep 27 2021  9:39                                                Page 170
 
 
        00:0617: 66 43 6F 6E 
@@ -10368,7 +10368,7 @@
        00:06BC: 52 4F 4E 54 
        00:06C0: 0D 0A 00 43 
        00:06C4: 6C 69 63 
-  Mon Aug  9 2021 16:52                                                Page 171
+  Mon Sep 27 2021  9:39                                                Page 171
 
 
   8958 00:06C7: 6B 65 64 20  	db	$6B,$65,$64,$20,$46,$52,$4F,$4E,$54,$00,
@@ -10429,7 +10429,7 @@
   8969 00:076C: 72 6F 63 3A  	db	$72,$6F,$63,$3A,$3A,$43,$54,$4C,$5F,$56,
                     $45,$52,$54,$5F,$53
        00:0770: 3A 43 54 4C 
-  Mon Aug  9 2021 16:52                                                Page 172
+  Mon Sep 27 2021  9:39                                                Page 172
 
 
        00:0774: 5F 56 45 52 
@@ -10490,7 +10490,7 @@
   9022 00:2218: A0 11 00     	ldy	#$11
   9023 00:221B: B7 01        	lda	[<R0],Y
   9024 00:221D: A0 13 00     	ldy	#$13
-  Mon Aug  9 2021 16:52                                                Page 173
+  Mon Sep 27 2021  9:39                                                Page 173
 
 
   9025 00:2220: 17 01        	ora	[<R0],Y
@@ -10551,7 +10551,7 @@
   9076 00:227D: A5 0B        	lda	<L286+temp2_1
   9077 00:227F: A2 02 00     	ldx	#<$2
   9078                        	xref	~~~div
-  Mon Aug  9 2021 16:52                                                Page 174
+  Mon Sep 27 2021  9:39                                                Page 174
 
 
   9079 00:2282: 22 xx xx xx  	jsl	~~~div
@@ -10612,7 +10612,7 @@
   9134                        	data
   9135                        L284:
   9136 00:0783: 4F 62 6A 65  	db	$4F,$62,$6A,$65,$63,$74,$43,$6C,$69,$63,
-  Mon Aug  9 2021 16:52                                                Page 175
+  Mon Sep 27 2021  9:39                                                Page 175
 
 
                     $6B,$65,$64,$21,$21
@@ -10673,7 +10673,7 @@
   9188                        ;		p = k_exec_get_current_process();
   9189                        	.line	1354
   9190 00:22F1: 22 xx xx xx  	jsl	~~k_exec_get_current_process
-  Mon Aug  9 2021 16:52                                                Page 176
+  Mon Sep 27 2021  9:39                                                Page 176
 
 
   9191 00:22F5: 85 09        	sta	<L292+p_1
@@ -10734,7 +10734,7 @@
   9242 00:2345: A0 17 00     	ldy	#$17
   9243 00:2348: 97 09        	sta	[<L292+p_1],Y
   9244 00:234A: A5 03        	lda	<R0+2
-  Mon Aug  9 2021 16:52                                                Page 177
+  Mon Sep 27 2021  9:39                                                Page 177
 
 
   9245 00:234C: A0 19 00     	ldy	#$19
@@ -10795,7 +10795,7 @@
   9296 00:2394: 22 xx xx xx  	jsl	~~k_init_spinner
   9297                        ;
   9298                        ;
-  Mon Aug  9 2021 16:52                                                Page 178
+  Mon Sep 27 2021  9:39                                                Page 178
 
 
   9299                        ;
@@ -10856,7 +10856,7 @@
   9351                        L298:
   9352                        	.line	1392
   9353                        ;				//if(p!=NULL)
-  Mon Aug  9 2021 16:52                                                Page 179
+  Mon Sep 27 2021  9:39                                                Page 179
 
 
   9354                        ;				//	k_debug_integer(
@@ -10917,7 +10917,7 @@
   9402                        ;			if(p->tls[1])
   9403                        	.line	1407
   9404                        ;			{
-  Mon Aug  9 2021 16:52                                                Page 180
+  Mon Sep 27 2021  9:39                                                Page 180
 
 
   9405 00:241D: A0 17 00     	ldy	#$17
@@ -10978,7 +10978,7 @@
   9456                        L10203:
   9457                        	xref	~~~swt
   9458 00:245B: 22 xx xx xx  	jsl	~~~swt
-  Mon Aug  9 2021 16:52                                                Page 181
+  Mon Sep 27 2021  9:39                                                Page 181
 
 
   9459 00:245F: 04 00        	dw	4
@@ -11039,7 +11039,7 @@
        00:07CA: 49 64 3A 00 
        00:07CE: 44 65 66 
   9500 00:07D1: 43 6F 6E 73  	db	$43,$6F,$6E,$73,$6F,$6C,$65,$50,$72,$6F,
-  Mon Aug  9 2021 16:52                                                Page 182
+  Mon Sep 27 2021  9:39                                                Page 182
 
 
                     $63,$32,$3A,$3A,$46
@@ -11100,7 +11100,7 @@
   9538                        	.sym	pMsg,4,138,6,32,16
   9539 00:248B: 64 05        	stz	<L303+pconsolespinctx_1
   9540 00:248D: 64 07        	stz	<L303+pconsolespinctx_1+2
-  Mon Aug  9 2021 16:52                                                Page 183
+  Mon Sep 27 2021  9:39                                                Page 183
 
 
   9541 00:248F: 64 09        	stz	<L303+p_1
@@ -11161,7 +11161,7 @@
   9593 00:24D9: 97 09        	sta	[<L303+p_1],Y
   9594 00:24DB: A5 07        	lda	<L303+pconsolespinctx_1+2
   9595 00:24DD: A0 15 00     	ldy	#$15
-  Mon Aug  9 2021 16:52                                                Page 184
+  Mon Sep 27 2021  9:39                                                Page 184
 
 
   9596 00:24E0: 97 09        	sta	[<L303+p_1],Y
@@ -11222,7 +11222,7 @@
   9647 00:2533: 22 xx xx xx  	jsl	~~k_init_spinner
   9648                        ;
   9649                        ;			//k_sd_test();
-  Mon Aug  9 2021 16:52                                                Page 185
+  Mon Sep 27 2021  9:39                                                Page 185
 
 
   9650                        ;			break;
@@ -11283,7 +11283,7 @@
   9701                        ;			//k_debug_string("DefConsoleProc
                     ::FX_PROCESS\r\n");
   9702                        ;			k_updatespinner(3,41,pconsolespi
-  Mon Aug  9 2021 16:52                                                Page 186
+  Mon Sep 27 2021  9:39                                                Page 186
 
 
                     nctx);
@@ -11344,7 +11344,7 @@
   9755                        	efunc
   9756                        	.endfunc	1479,5,14
   9757                        	.line	1479
-  Mon Aug  9 2021 16:52                                                Page 187
+  Mon Sep 27 2021  9:39                                                Page 187
 
 
   9758                        	data
@@ -11405,7 +11405,7 @@
   9788             00000008   process_0	set	8
   9789                        	.block	1483
   9790                        ;	int index = 0;
-  Mon Aug  9 2021 16:52                                                Page 188
+  Mon Sep 27 2021  9:39                                                Page 188
 
 
   9791                        ;	int pos = 0;
@@ -11466,7 +11466,7 @@
   9845 00:25E7: 22 xx xx xx  	jsl	~~k_debug_string
   9846                        ;	k_debug_string("\r\n");
   9847                        	.line	1498
-  Mon Aug  9 2021 16:52                                                Page 189
+  Mon Sep 27 2021  9:39                                                Page 189
 
 
   9848 00:25EB: F4 xx xx     	pea	#^L310+34
@@ -11527,7 +11527,7 @@
   9899 00:2636: F4 0F 00     	pea	#<$f
   9900 00:2639: F4 xx xx     	pea	#^L310+110
   9901 00:263C: F4 xx xx     	pea	#<L310+110
-  Mon Aug  9 2021 16:52                                                Page 190
+  Mon Sep 27 2021  9:39                                                Page 190
 
 
   9902 00:263F: F4 32 00     	pea	#<$32
@@ -11588,7 +11588,7 @@
   9948                        ;				*/
   9949                        ;			}
   9950                        	.line	1536
-  Mon Aug  9 2021 16:52                                                Page 191
+  Mon Sep 27 2021  9:39                                                Page 191
 
 
   9951                        ;
@@ -11649,7 +11649,7 @@
   9998 00:269F: 0A           	asl	A
   9999 00:26A0: 85 01        	sta	<R0
  10000 00:26A2: 18           	clc
-  Mon Aug  9 2021 16:52                                                Page 192
+  Mon Sep 27 2021  9:39                                                Page 192
 
 
  10001 00:26A3: A9 xx xx     	lda	#<~~console_command_proc
@@ -11710,7 +11710,7 @@
  10052 00:26EB: B2 05        	lda	(<R1)
  10053 00:26ED: 85 0D        	sta	<L312+cptr_1
  10054 00:26EF: A0 02 00     	ldy	#$2
-  Mon Aug  9 2021 16:52                                                Page 193
+  Mon Sep 27 2021  9:39                                                Page 193
 
 
  10055 00:26F2: B1 05        	lda	(<R1),Y
@@ -11771,7 +11771,7 @@
        00:0898: 20 20 20 20 
        00:089C: 20 20 20 
  10099 00:089F: 20 20 20 20  	db	$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,
-  Mon Aug  9 2021 16:52                                                Page 194
+  Mon Sep 27 2021  9:39                                                Page 194
 
 
                     $20,$20,$20,$20,$20
@@ -11832,7 +11832,7 @@
                     $6F,$6E,$73,$6F,$6C
        00:0948: 64 3A 00 6B 
        00:094C: 5F 63 6F 6E 
-  Mon Aug  9 2021 16:52                                                Page 195
+  Mon Sep 27 2021  9:39                                                Page 195
 
 
        00:0950: 73 6F 6C 
@@ -11893,7 +11893,7 @@
  10153                        	.sym	tt,4,5,6,16
  10154                        	.line	1594
  10155 00:271B: A5 0C        	lda	<L321+tt_0
-  Mon Aug  9 2021 16:52                                                Page 196
+  Mon Sep 27 2021  9:39                                                Page 196
 
 
  10156 00:271D: 0A           	asl	A
@@ -11954,7 +11954,7 @@
                     KEN));
  10211                        ;	if(t)
  10212             00000000   t_1	set	0
-  Mon Aug  9 2021 16:52                                                Page 197
+  Mon Sep 27 2021  9:39                                                Page 197
 
 
  10213                        	.sym	t,0,138,1,32,88
@@ -12015,7 +12015,7 @@
  10268 00:279B: 1B           	tcs
  10269 00:279C: 98           	tya
  10270 00:279D: 6B           	rtl
-  Mon Aug  9 2021 16:52                                                Page 198
+  Mon Sep 27 2021  9:39                                                Page 198
 
 
  10271                        ;}
@@ -12076,7 +12076,7 @@
  10318 00:279E: 3B           	tsc
  10319 00:279F: 38           	sec
  10320 00:27A0: E9 0A 00     	sbc	#L330
-  Mon Aug  9 2021 16:52                                                Page 199
+  Mon Sep 27 2021  9:39                                                Page 199
 
 
  10321 00:27A3: 1B           	tcs
@@ -12137,7 +12137,7 @@
  10376 00:27D8: 85 05        	sta	<L331+end_1
  10377 00:27DA: C2 20        	rep	#$20
  10378                        	longa	on
-  Mon Aug  9 2021 16:52                                                Page 200
+  Mon Sep 27 2021  9:39                                                Page 200
 
 
  10379                        L10233:
@@ -12198,7 +12198,7 @@
  10430                        ;	}
  10431                        	.line	1659
  10432                        L10234:
-  Mon Aug  9 2021 16:52                                                Page 201
+  Mon Sep 27 2021  9:39                                                Page 201
 
 
  10433                        ;}
@@ -12259,7 +12259,7 @@
  10480                        	.sym	tokens,4,138,6,32,5
  10481                        	.sym	signature,8,129,6,32
  10482                        	.line	1664
-  Mon Aug  9 2021 16:52                                                Page 202
+  Mon Sep 27 2021  9:39                                                Page 202
 
 
  10483 00:2837: F4 08 00     	pea	#<$8
@@ -12320,7 +12320,7 @@
        00:0992: 69 67 3A 00 
  10533 00:0996:              	ends
  10534                        ;
-  Mon Aug  9 2021 16:52                                                Page 203
+  Mon Sep 27 2021  9:39                                                Page 203
 
 
  10535                        ;
@@ -12381,7 +12381,7 @@
  10583                        ;
  10584                        ;	source = k_fxstring_add(k_fxstring_new(source,st
                     rlen(source) + 2)," ");
-  Mon Aug  9 2021 16:52                                                Page 204
+  Mon Sep 27 2021  9:39                                                Page 204
 
 
  10585             00000000   i_1	set	0
@@ -12442,7 +12442,7 @@
  10640                        	.line	1699
  10641 00:28BE: F4 xx xx     	pea	#^L341+12
  10642 00:28C1: F4 xx xx     	pea	#<L341+12
-  Mon Aug  9 2021 16:52                                                Page 205
+  Mon Sep 27 2021  9:39                                                Page 205
 
 
  10643 00:28C4: D4 57        	pei	<L342+source_0+2
@@ -12503,7 +12503,7 @@
  10696                        ;
  10697                        ;	token = k_fxstring_init(256);
  10698                        	.line	1711
-  Mon Aug  9 2021 16:52                                                Page 206
+  Mon Sep 27 2021  9:39                                                Page 206
 
 
  10699 00:2926: F4 00 01     	pea	#<$100
@@ -12564,7 +12564,7 @@
  10750                        ;
  10751                        ;				k_nodelist_add(tokens,k_
                     nodelist_create(tokenTypes[k_string_indexOf(charTokens,c)],"
-  Mon Aug  9 2021 16:52                                                Page 207
+  Mon Sep 27 2021  9:39                                                Page 207
 
 
                     token",
@@ -12625,7 +12625,7 @@
  10801 00:29B8: 22 xx xx xx  	jsl	~~k_string_toString
  10802 00:29BC: 85 01        	sta	<R0
  10803 00:29BE: 86 03        	stx	<R0+2
-  Mon Aug  9 2021 16:52                                                Page 208
+  Mon Sep 27 2021  9:39                                                Page 208
 
 
  10804 00:29C0: DA           	phx
@@ -12686,7 +12686,7 @@
  10859 00:2A2D: 22 xx xx xx  	jsl	~~k_nodelist_add
  10860                        ;				//tokens.add(new Token(C
                     haracter.toString(c), tokenTypes[charTokens.indexOf(c)]));
-  Mon Aug  9 2021 16:52                                                Page 209
+  Mon Sep 27 2021  9:39                                                Page 209
 
 
  10861                        ;			}
@@ -12747,7 +12747,7 @@
  10914                        	.line	1742
  10915 00:2A74: D4 23        	pei	<L343+c_1
  10916 00:2A76: D4 30        	pei	<L343+token_1+2
-  Mon Aug  9 2021 16:52                                                Page 210
+  Mon Sep 27 2021  9:39                                                Page 210
 
 
  10917 00:2A78: D4 2E        	pei	<L343+token_1
@@ -12808,7 +12808,7 @@
  10972                        L10245:
  10973                        L10243:
  10974                        	.line	1754
-  Mon Aug  9 2021 16:52                                                Page 211
+  Mon Sep 27 2021  9:39                                                Page 211
 
 
  10975 00:2AAD: 82 44 02     	brl	L10240
@@ -12869,7 +12869,7 @@
  11029                        	longa	on
  11030 00:2AF3: F0 03        	beq	L356
  11031 00:2AF5: 82 0D 00     	brl	L10254
-  Mon Aug  9 2021 16:52                                                Page 212
+  Mon Sep 27 2021  9:39                                                Page 212
 
 
  11032                        L356:
@@ -12930,7 +12930,7 @@
  11084 00:2B30: D4 2E        	pei	<L343+token_1
  11085 00:2B32: 22 xx xx xx  	jsl	~~k_fxstring_addchar
  11086                        ;			}
-  Mon Aug  9 2021 16:52                                                Page 213
+  Mon Sep 27 2021  9:39                                                Page 213
 
 
  11087                        	.line	1772
@@ -12991,7 +12991,7 @@
  11136                        ;				{
  11137 00:2B62: F4 xx xx     	pea	#^L341+64
  11138 00:2B65: F4 xx xx     	pea	#<L341+64
-  Mon Aug  9 2021 16:52                                                Page 214
+  Mon Sep 27 2021  9:39                                                Page 214
 
 
  11139 00:2B68: D4 30        	pei	<L343+token_1+2
@@ -13052,7 +13052,7 @@
  11190 00:2BAC: F4 00 00     	pea	#<$0
  11191 00:2BAF: D4 38        	pei	<L343+tok_1+2
  11192 00:2BB1: D4 36        	pei	<L343+tok_1
-  Mon Aug  9 2021 16:52                                                Page 215
+  Mon Sep 27 2021  9:39                                                Page 215
 
 
  11193 00:2BB3: F4 xx xx     	pea	#^L341+73
@@ -13113,7 +13113,7 @@
  11243 00:2BEB: 29 04        	and	#<$4
  11244 00:2BED: C2 20        	rep	#$20
  11245                        	longa	on
-  Mon Aug  9 2021 16:52                                                Page 216
+  Mon Sep 27 2021  9:39                                                Page 216
 
 
  11246 00:2BEF: D0 03        	bne	L362
@@ -13174,7 +13174,7 @@
  11297 00:2C34: 86 03        	stx	<R0+2
  11298 00:2C36: DA           	phx
  11299 00:2C37: 48           	pha
-  Mon Aug  9 2021 16:52                                                Page 217
+  Mon Sep 27 2021  9:39                                                Page 217
 
 
  11300 00:2C38: F4 xx xx     	pea	#^L341+79
@@ -13235,7 +13235,7 @@
  11353                        L366:
  11354                        L364:
  11355                        	.line	1831
-  Mon Aug  9 2021 16:52                                                Page 218
+  Mon Sep 27 2021  9:39                                                Page 218
 
 
  11356                        ;				k_nodelist_add(tokens,k_
@@ -13296,7 +13296,7 @@
  11407                        	.line	1841
  11408 00:2CCB: 82 26 00     	brl	L10240
  11409                        ;
-  Mon Aug  9 2021 16:52                                                Page 219
+  Mon Sep 27 2021  9:39                                                Page 219
 
 
  11410                        ;		case STATE_COMMENT:
@@ -13357,7 +13357,7 @@
  11465                        L369:
  11466 00:2D03: A8           	tay
  11467 00:2D04: A5 53        	lda	<L342+2
-  Mon Aug  9 2021 16:52                                                Page 220
+  Mon Sep 27 2021  9:39                                                Page 220
 
 
  11468 00:2D06: 85 57        	sta	<L342+2+4
@@ -13418,7 +13418,7 @@
  11499                        ;
  11500                        ;
  11501                        	.line	1856
-  Mon Aug  9 2021 16:52                                                Page 221
+  Mon Sep 27 2021  9:39                                                Page 221
 
 
  11502                        	.file	"G:\devprojects\c256Foenix\fxos\FXOSWork
@@ -13479,7 +13479,7 @@
  11556                        	xref	~~k_fxstring_add
  11557                        	xref	~~k_fxstring_addchar
  11558                        	xref	~~k_fxstring_reinit
-  Mon Aug  9 2021 16:52                                                Page 222
+  Mon Sep 27 2021  9:39                                                Page 222
 
 
  11559                        	xref	~~k_fxstring_new
@@ -13540,7 +13540,7 @@
  11601                        	.sym	FXDOSDEVICE,0,10,14,5744,127
  11602                        	.sym	DOSINITDEVICE,0,641,14,32
  11603                        	.sym	DOSSECTORWRITER,0,654,14,32
-  Mon Aug  9 2021 16:52                                                Page 223
+  Mon Sep 27 2021  9:39                                                Page 223
 
 
  11604                        	.sym	DOSSECTORREADER,0,654,14,32
@@ -13601,7 +13601,7 @@
  11659                        	.sym	~~token_to_string,~~token_to_string,1102
                     ,2,32
  11660                        	.sym	~~tokenize,~~tokenize,1098,2,32,5
-  Mon Aug  9 2021 16:52                                                Page 224
+  Mon Sep 27 2021  9:39                                                Page 224
 
 
  11661                        	.sym	~~DefConsoleProc3,~~DefConsoleProc3,65,2
@@ -13662,7 +13662,7 @@
  11695                        	.sym	COMMANDARGS,0,10,14,64,89
  11696                        	.sym	PTOKENIZESTATE,0,133,14,32
  11697                        	.sym	TOKENIZESTATE,0,5,14,16
-  Mon Aug  9 2021 16:52                                                Page 225
+  Mon Sep 27 2021  9:39                                                Page 225
 
 
  11698                        	.sym	PTOKEN,0,138,14,32,88
@@ -13723,7 +13723,7 @@
  11748                        	.sym	~~k_window_draw_background,~~k_window_dr
                     aw_background,65,2,0
  11749                        	.sym	~~k_draw_text_point,~~k_draw_text_point,
-  Mon Aug  9 2021 16:52                                                Page 226
+  Mon Sep 27 2021  9:39                                                Page 226
 
 
                     69,18,0
@@ -13784,7 +13784,7 @@
  11799                        	.sym	FX_DEVICE_DRIVER,0,10,14,776,59
  11800                        	.sym	~~k_debug_strings,~~k_debug_strings,65,1
                     8,0
-  Mon Aug  9 2021 16:52                                                Page 227
+  Mon Sep 27 2021  9:39                                                Page 227
 
 
  11801                        	.sym	~~k_debug_message,~~k_debug_message,65,1
@@ -13845,7 +13845,7 @@
                     8,32,52
  11838                        	.sym	~~k_fxstring_init,~~k_fxstring_init,1098
                     ,18,32,52
-  Mon Aug  9 2021 16:52                                                Page 228
+  Mon Sep 27 2021  9:39                                                Page 228
 
 
  11839                        	.sym	PFXSTRING,0,138,14,32,52
@@ -13906,7 +13906,7 @@
  11894                        	.sym	HCURSOR,0,129,14,32
  11895                        	.sym	HICON,0,129,14,32
  11896                        	.sym	HINSTANCE,0,129,14,32
-  Mon Aug  9 2021 16:52                                                Page 229
+  Mon Sep 27 2021  9:39                                                Page 229
 
 
  11897                        	.sym	FXWndProc,0,654,14,32
@@ -13967,7 +13967,7 @@
  11952                        	.sym	FILE_PATH_NAME,0,142,14,32
  11953                        	.sym	PROCESS_RESOURCE,0,129,14,32
  11954                        	.sym	PROCESS_TLS,0,129,14,32
-  Mon Aug  9 2021 16:52                                                Page 230
+  Mon Sep 27 2021  9:39                                                Page 230
 
 
  11955                        	.sym	PROCESS_CTX,0,129,14,32
@@ -14028,7 +14028,7 @@
  12010                        	.sym	wint_t,0,16,14,16
  12011                        	.sym	wchar_t,0,14,14,8
  12012                        	.sym	ptrdiff_t,0,7,14,32
-  Mon Aug  9 2021 16:52                                                Page 231
+  Mon Sep 27 2021  9:39                                                Page 231
 
 
  12013                        	.sym	~~strtok,~~strtok,1102,18,32

@@ -495,7 +495,7 @@ R3	equ	13
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fmx_vicky.h",11
 	.line	72
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",6
-	.line	1960
+	.line	1963
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",16
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxkernel.h",0
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",0
@@ -611,7 +611,7 @@ R3	equ	13
 	.stag	_k_irq_chain,128,60
 	.member	handlers,0,5217,8,32,4
 	.eos
-	.line	490
+	.line	475
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxos.h",22
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\string.h",0
@@ -624,7 +624,7 @@ R3	equ	13
 	.line	1064
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",7
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
-	.line	1960
+	.line	1963
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",12
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxstring.h",0
 	.file	"G:\devtools\WDCTools\wdc\Tools\include\stdlib.h",0
@@ -716,7 +716,7 @@ R3	equ	13
 	.line	129
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",6
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxeventmanager.h",0
-	.line	568
+	.line	572
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",7
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxgfx.h",0
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxfont.h",0
@@ -742,7 +742,7 @@ R3	equ	13
 	.member	CUR_GADGET,144,5,8,16
 	.member	CUR_COLOR,160,101,8,0,15
 	.eos
-	.line	359
+	.line	370
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxwindowmanager.h",8
 	.stag	_fxos_winman_vtable,160,69
 	.member	Events,0,641,8,32
@@ -816,7 +816,7 @@ R3	equ	13
 	.member	readable,8,110,8,0,16
 	.member	data,136,129,8,32
 	.eos
-	.line	568
+	.line	572
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxconsole.h",18
 	.stag	_fx_spinner_ctx,48,80
 	.member	index,0,5,8,16
@@ -1577,9 +1577,9 @@ R3	equ	13
 	.line	129
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\DRIVERS/DRIVER.H",6
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxc256u.h",0
-	.line	1960
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\DRIVERS/DRIVER.H",104
-	.line	113
+	.line	1963
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\DRIVERS/DRIVER.H",106
+	.line	115
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmain.c",7
 ;#include "DRIVERS/ps2ctl.H"
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\DRIVERS/ps2ctl.H",0
@@ -1596,8 +1596,11 @@ R3	equ	13
 	.line	84
 	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmain.c",8
 ;
-;#pragma section CODE=entry,offset $00:8000 //$4:0000
-entry	section	offset $00:8000 //$4:0000
+;#pragma segment CODE=entrysegment,relocatable
+;entrysegment	segment	relocatable
+	;ends
+;#pragma section CODE=entrymodule,offset $00:8000
+entrymodule	section	offset $00:8000
 	ends
 ;
 ;int line = 2;
@@ -1611,7 +1614,9 @@ entry	section	offset $00:8000 //$4:0000
 ;
 ;void k_show_image(LPCSTR imageFilePath);
 ;UINT k_init_splash(BOOL wait);
+;void k_show_mandy(LPCSTR imageFilePath, UINT mode);
 ;
+;int draw_mandy(void);
 ;//static int  msp = 0;
 ;//static char mainspinner[] = {'|','/','-','\\'};
 ;static ULONG THIS_MODULE = 0x00000000;
@@ -1655,16 +1660,14 @@ entry	section	offset $00:8000 //$4:0000
 ;/*---------------------------------------------------------------------------*/
 ;// End of SN76489.ino
 ;
-;
-;
 ;void ReportMemory(UCHAR segment,ULONG block,ULONG size)
 ;{
-	.line	55
 	.line	56
-	entry
+	.line	57
+	entrymodule
 	xdef	~~ReportMemory
 	func
-	.function	56
+	.function	57
 ~~ReportMemory:
 	longa	on
 	longi	on
@@ -1677,7 +1680,7 @@ entry	section	offset $00:8000 //$4:0000
 segment_0	set	4
 block_0	set	6
 size_0	set	10
-	.block	56
+	.block	57
 ;	char rmbuffer[16];
 ;	int pos  = 3;
 ;
@@ -1691,7 +1694,7 @@ pos_1	set	16
 	.sym	size,10,18,6,32
 	lda	#$3
 	sta	<L3+pos_1
-	.line	60
+	.line	61
 	pea	#<$0
 	pea	#<$f
 	pea	#^L1
@@ -1702,7 +1705,7 @@ pos_1	set	16
 	jsl	~~k_put_string
 	sta	<L3+pos_1
 ;	pos = k_put_string(pos,line,k_bytetohex(segment,rmbuffer),15,0);
-	.line	61
+	.line	62
 	pea	#<$0
 	pea	#<$f
 	pea	#0
@@ -1722,7 +1725,7 @@ pos_1	set	16
 	jsl	~~k_put_string
 	sta	<L3+pos_1
 ;	pos = k_put_string(pos,line," Found ",15,0);
-	.line	62
+	.line	63
 	pea	#<$0
 	pea	#<$f
 	pea	#^L1+18
@@ -1733,7 +1736,7 @@ pos_1	set	16
 	jsl	~~k_put_string
 	sta	<L3+pos_1
 ;	pos = k_put_string(pos,line,k_strip_padding(k_longtodec(size,rmbuffer)),15,0);
-	.line	63
+	.line	64
 	pea	#<$0
 	pea	#<$f
 	pea	#0
@@ -1759,7 +1762,7 @@ pos_1	set	16
 	jsl	~~k_put_string
 	sta	<L3+pos_1
 ;	pos = k_put_string(pos,line," Bytes    ",15,0);
-	.line	64
+	.line	65
 	pea	#<$0
 	pea	#<$f
 	pea	#^L1+26
@@ -1770,7 +1773,7 @@ pos_1	set	16
 	jsl	~~k_put_string
 	sta	<L3+pos_1
 ;}
-	.line	65
+	.line	66
 L5:
 	lda	<L2+2
 	sta	<L2+2+10
@@ -1782,13 +1785,13 @@ L5:
 	adc	#L2+10
 	tcs
 	rtl
-	.endblock	65
+	.endblock	66
 L2	equ	26
 L3	equ	9
 	ends
 	efunc
-	.endfunc	65,9,26
-	.line	65
+	.endfunc	66,9,26
+	.line	66
 	data
 L1:
 	db	$4D,$65,$6D,$6F,$72,$79,$20,$54,$65,$73,$74,$20,$42,$61,$6E
@@ -1806,12 +1809,12 @@ L1:
 ;*/
 ;void DeallocateNodeListString(LPCSTR name,LPVOID data)
 ;{
-	.line	75
 	.line	76
-	entry
+	.line	77
+	entrymodule
 	xdef	~~DeallocateNodeListString
 	func
-	.function	76
+	.function	77
 ~~DeallocateNodeListString:
 	longa	on
 	longi	on
@@ -1823,18 +1826,18 @@ L1:
 	tcd
 name_0	set	4
 data_0	set	8
-	.block	76
+	.block	77
 ;	if(name)
 	.sym	name,4,142,6,32
 	.sym	data,8,129,6,32
-	.line	77
+	.line	78
 ;		k_debug_strings("DeallocateNodeListString:name:",(LPCHAR)name);
 	lda	<L7+name_0
 	ora	<L7+name_0+2
 	bne	L10
 	brl	L10001
 L10:
-	.line	78
+	.line	79
 	pei	<L7+name_0+2
 	pei	<L7+name_0
 	pea	#^L6
@@ -1843,31 +1846,31 @@ L10:
 ;
 ;	k_debug_pointer("DeallocateNodeListString:",data);
 L10001:
-	.line	80
+	.line	81
 	pei	<L7+data_0+2
 	pei	<L7+data_0
 	pea	#^L6+31
 	pea	#<L6+31
 	jsl	~~k_debug_pointer
 ;	if(data)
-	.line	81
+	.line	82
 ;	{
 	lda	<L7+data_0
 	ora	<L7+data_0+2
 	bne	L11
 	brl	L10002
 L11:
-	.line	82
-;		k_mem_deallocate_heap(data);
 	.line	83
+;		k_mem_deallocate_heap(data);
+	.line	84
 	pei	<L7+data_0+2
 	pei	<L7+data_0
 	jsl	~~k_mem_deallocate_heap
 ;	}
-	.line	84
+	.line	85
 ;}
 L10002:
-	.line	85
+	.line	86
 L12:
 	lda	<L7+2
 	sta	<L7+2+8
@@ -1879,13 +1882,13 @@ L12:
 	adc	#L7+8
 	tcs
 	rtl
-	.endblock	85
+	.endblock	86
 L7	equ	0
 L8	equ	1
 	ends
 	efunc
-	.endfunc	85,1,0
-	.line	85
+	.endfunc	86,1,0
+	.line	86
 	data
 L6:
 	db	$44,$65,$61,$6C,$6C,$6F,$63,$61,$74,$65,$4E,$6F,$64,$65,$4C
@@ -2399,12 +2402,12 @@ L6:
 ;
 ;void main(void)
 ;{
-	.line	590
 	.line	591
-	entry
+	.line	592
+	entrymodule
 	xdef	~~main
 	func
-	.function	591
+	.function	592
 ~~main:
 	longa	on
 	longi	on
@@ -2414,7 +2417,7 @@ L6:
 	tcs
 	phd
 	tcd
-	.block	591
+	.block	592
 ;	PFXZEROPAGE   zp = NULL;
 ;	PEXECUTIVE 	  pExecutive 	= NULL;
 ;	PEVENTMANAGER pEventManager = NULL;
@@ -2444,6 +2447,8 @@ L6:
 ;
 ;	PFX_DEVICE_DRIVER pstrHead = NULL;
 ;
+;	UINT binary = 0;
+;
 ;	CHAR releaseMajor[2];
 ;	CHAR releaseMinor[2];
 ;
@@ -2468,8 +2473,9 @@ bootMode_1	set	63
 index_1	set	65
 hString_1	set	67
 pstrHead_1	set	71
-releaseMajor_1	set	75
-releaseMinor_1	set	77
+binary_1	set	75
+releaseMajor_1	set	77
+releaseMinor_1	set	79
 	.sym	zp,0,138,1,32,54
 	.sym	pExecutive,4,138,1,32,62
 	.sym	pEventManager,8,138,1,32,78
@@ -2490,8 +2496,9 @@ releaseMinor_1	set	77
 	.sym	index,65,16,1,16
 	.sym	hString,67,129,1,32
 	.sym	pstrHead,71,138,1,32,58
-	.sym	releaseMajor,75,110,1,0,2
-	.sym	releaseMinor,77,110,1,0,2
+	.sym	binary,75,16,1,16
+	.sym	releaseMajor,77,110,1,0,2
+	.sym	releaseMinor,79,110,1,0,2
 	stz	<L15+zp_1
 	stz	<L15+zp_1+2
 	stz	<L15+pExecutive_1
@@ -2522,7 +2529,8 @@ releaseMinor_1	set	77
 	stz	<L15+hString_1+2
 	stz	<L15+pstrHead_1
 	stz	<L15+pstrHead_1+2
-	.line	624
+	stz	<L15+binary_1
+	.line	627
 	sep	#$20
 	longa	off
 	lda	#$33
@@ -2534,7 +2542,7 @@ releaseMinor_1	set	77
 ;	// Get board version as LPCSTR
 ;	//
 ;	k_get_c256_major_version(releaseMajor);
-	.line	629
+	.line	632
 	pea	#0
 	clc
 	tdc
@@ -2542,7 +2550,7 @@ releaseMinor_1	set	77
 	pha
 	jsl	~~k_get_c256_major_version
 ;	k_get_c256_minor_version(releaseMinor);
-	.line	630
+	.line	633
 	pea	#0
 	clc
 	tdc
@@ -2553,13 +2561,13 @@ releaseMinor_1	set	77
 ;	// Turn off debugging to prevent anything hitting serial before init
 ;	//
 ;	k_user_DisableOSDebug();
-	.line	634
+	.line	637
 	jsl	~~k_user_DisableOSDebug
 ;	//
 ;	// Initialize zero page entries
 ;	//
 ;	zp = k_initializeZeroPage();
-	.line	638
+	.line	641
 	jsl	~~k_initializeZeroPage
 	sta	<L15+zp_1
 	stx	<L15+zp_1+2
@@ -2587,7 +2595,7 @@ releaseMinor_1	set	77
 ;	// Load built-in device drivers
 ;	//
 ;	driverLog = k_dos_load_drivers();
-	.line	662
+	.line	665
 	jsl	~~k_dos_load_drivers
 	sta	<L15+driverLog_1
 	stx	<L15+driverLog_1+2
@@ -2595,7 +2603,7 @@ releaseMinor_1	set	77
 ;	// Turn on debugging (if needed)
 ;	//
 ;	k_user_EnableOSDebug();
-	.line	666
+	.line	669
 	jsl	~~k_user_EnableOSDebug
 ;	// FIX FOR U and FMX
 ;	//k_init_keyboard();
@@ -2656,72 +2664,82 @@ releaseMinor_1	set	77
 ;	//k_init_com_ports(releaseMajor,releaseMinor);
 ;
 ;	availableMem=0;
-	.line	725
+	.line	728
 	stz	<L15+availableMem_1
 	stz	<L15+availableMem_1+2
 ;
 ;	k_clear_console();
-	.line	727
+	.line	730
 	jsl	~~k_clear_console
 ;	k_clear_screen(0);
-	.line	728
+	.line	731
 	pea	#<$0
 	jsl	~~k_clear_screen
 ;
 ;	k_debug_crlf();
-	.line	730
+	.line	733
 	jsl	~~k_debug_crlf
 ;	k_debug_string("**********************************\r\n");
-	.line	731
+	.line	734
 	pea	#^L13
 	pea	#<L13
 	jsl	~~k_debug_string
 ;	k_debug_string("******  Welcome to FX/OS   *******\r\n");
-	.line	732
+	.line	735
 	pea	#^L13+37
 	pea	#<L13+37
 	jsl	~~k_debug_string
 ;	k_debug_string("******       Booting       *******\r\n");
-	.line	733
+	.line	736
 	pea	#^L13+74
 	pea	#<L13+74
 	jsl	~~k_debug_string
 ;	k_debug_string("**********************************\r\n");
-	.line	734
+	.line	737
 	pea	#^L13+111
 	pea	#<L13+111
 	jsl	~~k_debug_string
-;
-;
+;	k_debug_strings("",__FOENIX__);
+	.line	738
+	pea	#^L13+149
+	pea	#<L13+149
+	pea	#^L13+148
+	pea	#<L13+148
+	jsl	~~k_debug_strings
+;	k_debug_string("**********************************\r\n");
+	.line	739
+	pea	#^L13+166
+	pea	#<L13+166
+	jsl	~~k_debug_string
 ;	//
 ;	// Output device load log
 ;	//
 ;	if(driverLog)
-	.line	740
+	.line	743
 ;	{
 	lda	<L15+driverLog_1
 	ora	<L15+driverLog_1+2
 	bne	L17
 	brl	L10003
 L17:
-	.line	741
+	.line	744
 ;		k_debug_string("Device Load Log Follows:\r\n");
-	.line	742
-	pea	#^L13+148
-	pea	#<L13+148
+	.line	745
+	pea	#^L13+203
+	pea	#<L13+203
 	jsl	~~k_debug_string
 ;		k_debug_string((LPSTR)driverLog);
-	.line	743
+	.line	746
 	pei	<L15+driverLog_1+2
 	pei	<L15+driverLog_1
 	jsl	~~k_debug_string
 ;		k_mem_deallocate_heap((LPVOID)driverLog);
-	.line	744
+	.line	747
 	pei	<L15+driverLog_1+2
 	pei	<L15+driverLog_1
 	jsl	~~k_mem_deallocate_heap
 ;	}
-	.line	745
+	.line	748
 ;
 ;	//k_debug_string_com1("%OSBOOTING COM1%\r\n");
 ;	//k_debug_string_com2("%OSBOOTING COM2%\r\n");
@@ -2729,57 +2747,57 @@ L17:
 ;	// FIX FOR U and FMX
 ;	k_gui_init_mousepointer(TRUE);
 L10003:
-	.line	751
+	.line	754
 	pea	#<$1
 	jsl	~~k_gui_init_mousepointer
 ;
 ;	k_set_text_colors();
-	.line	753
+	.line	756
 	jsl	~~k_set_text_colors
 ;
 ;	k_initialize_text_fonts(0);
-	.line	755
+	.line	758
 	pea	#<$0
 	jsl	~~k_initialize_text_fonts
 ;	k_initialize_text();
-	.line	756
+	.line	759
 	jsl	~~k_initialize_text
 ;	k_enable_text_cursor(0);
-	.line	757
+	.line	760
 	pea	#<$0
 	jsl	~~k_enable_text_cursor
 ;
 ;	k_enable_text_mode();
-	.line	759
+	.line	762
 	jsl	~~k_enable_text_mode
 ;	k_set_border_color(0x00,0x00,0x00);
-	.line	760
+	.line	763
 	pea	#<$0
 	pea	#<$0
 	pea	#<$0
 	jsl	~~k_set_border_color
 ;	k_enable_border();
-	.line	761
+	.line	764
 	jsl	~~k_enable_border
 ;
 ;	//k_debug_string("k_clear_screen\r\n");
 ;
 ;	k_clear_screen(0);
-	.line	765
+	.line	768
 	pea	#<$0
 	jsl	~~k_clear_screen
 ;	k_clear_console();
-	.line	766
+	.line	769
 	jsl	~~k_clear_console
 ;
 ;
 ;	k_debug_string("k_text_mode_dialog\r\n");
-	.line	769
-	pea	#^L13+175
-	pea	#<L13+175
+	.line	772
+	pea	#^L13+230
+	pea	#<L13+230
 	jsl	~~k_debug_string
 ;	k_text_mode_dialog(1,0,73,15,NULL);
-	.line	770
+	.line	773
 	pea	#^$0
 	pea	#<$0
 	pea	#<$f
@@ -2789,7 +2807,7 @@ L10003:
 	jsl	~~k_text_mode_dialog
 ;
 ;	k_get_c256_major_version(rmbuffer);
-	.line	772
+	.line	775
 	pea	#0
 	clc
 	tdc
@@ -2797,17 +2815,17 @@ L10003:
 	pha
 	jsl	~~k_get_c256_major_version
 ;	k_debug_strings("C256 VERSION MAJOR:",rmbuffer);
-	.line	773
+	.line	776
 	pea	#0
 	clc
 	tdc
 	adc	#<L15+rmbuffer_1
 	pha
-	pea	#^L13+196
-	pea	#<L13+196
+	pea	#^L13+251
+	pea	#<L13+251
 	jsl	~~k_debug_strings
 ;	k_get_c256_minor_version(rmbuffer);
-	.line	774
+	.line	777
 	pea	#0
 	clc
 	tdc
@@ -2815,46 +2833,46 @@ L10003:
 	pha
 	jsl	~~k_get_c256_minor_version
 ;	k_debug_strings("C256 VERSION MINOR:",rmbuffer);
-	.line	775
+	.line	778
 	pea	#0
 	clc
 	tdc
 	adc	#<L15+rmbuffer_1
 	pha
-	pea	#^L13+216
-	pea	#<L13+216
+	pea	#^L13+271
+	pea	#<L13+271
 	jsl	~~k_debug_strings
 ;
 ;	k_debug_pointer("BUILD SYSTEM HEAP:",(LPVOID)FXOS_BUILD_FAR_HEAP_ADDR);
-	.line	777
+	.line	780
 	pea	#^$100000
 	pea	#<$100000
-	pea	#^L13+236
-	pea	#<L13+236
+	pea	#^L13+291
+	pea	#<L13+291
 	jsl	~~k_debug_pointer
 ;	k_debug_pointer("             SIZE:",(LPVOID)FXOS_BUILD_FAR_HEAP_SIZE);
-	.line	778
+	.line	781
 	pea	#^$50000
 	pea	#<$50000
-	pea	#^L13+255
-	pea	#<L13+255
+	pea	#^L13+310
+	pea	#<L13+310
 	jsl	~~k_debug_pointer
 ;
 ;
 ;	k_debug_string("k_report_configuration\r\n");
-	.line	781
-	pea	#^L13+274
-	pea	#<L13+274
+	.line	784
+	pea	#^L13+329
+	pea	#<L13+329
 	jsl	~~k_debug_string
 ;	line = k_report_configuration(3,line);
-	.line	782
+	.line	785
 	lda	|~~line
 	pha
 	pea	#<$3
 	jsl	~~k_report_configuration
 	sta	|~~line
 ;	k_pos_console(line,4);
-	.line	783
+	.line	786
 	pea	#<$4
 	lda	|~~line
 	pha
@@ -2862,7 +2880,7 @@ L10003:
 ;	//k_run_loop();
 ;
 ;	if(zp->Endianness == ENDIAN_BIG)
-	.line	786
+	.line	789
 ;		k_debug_string("System reports BIG ENDIAN\r\n");
 	ldy	#$e
 	lda	[<L15+zp_1],Y
@@ -2870,53 +2888,53 @@ L10003:
 	beq	L18
 	brl	L10004
 L18:
-	.line	787
-	pea	#^L13+299
-	pea	#<L13+299
+	.line	790
+	pea	#^L13+354
+	pea	#<L13+354
 	jsl	~~k_debug_string
 ;	else
 	brl	L10005
 L10004:
 ;		k_debug_string("System reports LITTLE ENDIAN\r\n");
-	.line	789
-	pea	#^L13+327
-	pea	#<L13+327
+	.line	792
+	pea	#^L13+382
+	pea	#<L13+382
 	jsl	~~k_debug_string
 L10005:
 ;
 ;	k_debug_hex("L24BYTE:",L24BYTE(0x12345678));
-	.line	791
+	.line	794
 	pea	#<$12345678
-	pea	#^L13+358
-	pea	#<L13+358
+	pea	#^L13+413
+	pea	#<L13+413
 	jsl	~~k_debug_hex
 ;	k_debug_hex("M24BYTE:",M24BYTE(0x12345678));
-	.line	792
+	.line	795
 	pea	#<$56
-	pea	#^L13+367
-	pea	#<L13+367
+	pea	#^L13+422
+	pea	#<L13+422
 	jsl	~~k_debug_hex
 ;	k_debug_hex("H24BYTE:",H24BYTE(0x12345678));
-	.line	793
+	.line	796
 	pea	#<$34
-	pea	#^L13+376
-	pea	#<L13+376
+	pea	#^L13+431
+	pea	#<L13+431
 	jsl	~~k_debug_hex
 ;	k_debug_hex("H32BYTE:",H32BYTE(0x12345678));
-	.line	794
+	.line	797
 	pea	#<$12
-	pea	#^L13+385
-	pea	#<L13+385
+	pea	#^L13+440
+	pea	#<L13+440
 	jsl	~~k_debug_hex
 ;
 ;
 ;	k_debug_string("k_fcheck_system_memory\r\n");
-	.line	797
-	pea	#^L13+394
-	pea	#<L13+394
+	.line	800
+	pea	#^L13+449
+	pea	#<L13+449
 	jsl	~~k_debug_string
 ;	availableMem = k_fcheck_system_memory(ReportMemory);
-	.line	798
+	.line	801
 	pea	#^~~ReportMemory
 	pea	#<~~ReportMemory
 	jsl	~~k_fcheck_system_memory
@@ -2924,7 +2942,7 @@ L10005:
 	stx	<L15+availableMem_1+2
 ;
 ;	k_getZeroPage()->availableMemory 	= availableMem;
-	.line	800
+	.line	803
 	jsl	~~k_getZeroPage
 	sta	<R0
 	stx	<R0+2
@@ -2935,7 +2953,7 @@ L10005:
 	ldy	#$20
 	sta	[<R0],Y
 ;	k_getZeroPage()->availableMemoryK	= availableMem/1024+1;
-	.line	801
+	.line	804
 	jsl	~~k_getZeroPage
 	sta	<R0
 	stx	<R0+2
@@ -2961,16 +2979,16 @@ L10005:
 	sta	[<R0],Y
 ;
 ;	heapSize = k_heap_integrity_check();
-	.line	803
+	.line	806
 	jsl	~~k_heap_integrity_check
 	sta	<L15+heapSize_1
 	stx	<L15+heapSize_1+2
 ;	k_debug_long("k_heap_integrity_check::heapsize:",heapSize);
-	.line	804
+	.line	807
 	pei	<L15+heapSize_1+2
 	pei	<L15+heapSize_1
-	pea	#^L13+419
-	pea	#<L13+419
+	pea	#^L13+474
+	pea	#<L13+474
 	jsl	~~k_debug_long
 ;	//pheapInfo = umm_info(NULL,0);
 ;	//RTC_YEAR[0]  = 0x21;
@@ -2979,30 +2997,30 @@ L10005:
 ;
 ;
 ;	k_debug_integer("MONTH:",k_get_rtc_month());
-	.line	811
+	.line	814
 	jsl	~~k_get_rtc_month
 	pha
-	pea	#^L13+453
-	pea	#<L13+453
+	pea	#^L13+508
+	pea	#<L13+508
 	jsl	~~k_debug_integer
 ;	k_debug_integer("DAY:",k_get_rtc_day());
-	.line	812
+	.line	815
 	jsl	~~k_get_rtc_day
 	pha
-	pea	#^L13+460
-	pea	#<L13+460
+	pea	#^L13+515
+	pea	#<L13+515
 	jsl	~~k_debug_integer
 ;	k_debug_integer("YEAR:",k_get_rtc_year());
-	.line	813
+	.line	816
 	jsl	~~k_get_rtc_year
 	pha
-	pea	#^L13+465
-	pea	#<L13+465
+	pea	#^L13+520
+	pea	#<L13+520
 	jsl	~~k_debug_integer
 ;
 ;
 ;	k_debug_strings("DATE:",(LPSTR)k_get_date_string(rmbuffer));
-	.line	816
+	.line	819
 	pea	#0
 	clc
 	tdc
@@ -3013,11 +3031,11 @@ L10005:
 	stx	<R0+2
 	phx
 	pha
-	pea	#^L13+471
-	pea	#<L13+471
+	pea	#^L13+526
+	pea	#<L13+526
 	jsl	~~k_debug_strings
 ;	k_debug_strings("TIME:",(LPSTR)k_get_localtime_string(rmbuffer));
-	.line	817
+	.line	820
 	pea	#0
 	clc
 	tdc
@@ -3028,135 +3046,180 @@ L10005:
 	stx	<R0+2
 	phx
 	pha
-	pea	#^L13+477
-	pea	#<L13+477
+	pea	#^L13+532
+	pea	#<L13+532
 	jsl	~~k_debug_strings
 ;
 ;
 ;	k_debug_integer("sizeof(short int):",sizeof(short int));
-	.line	820
-	pea	#<$2
-	pea	#^L13+483
-	pea	#<L13+483
-	jsl	~~k_debug_integer
-;	k_debug_integer("sizeof(unsigned short int):",sizeof(unsigned short int));
-	.line	821
-	pea	#<$2
-	pea	#^L13+502
-	pea	#<L13+502
-	jsl	~~k_debug_integer
-;	k_debug_integer("sizeof(int):",sizeof(int));
-	.line	822
-	pea	#<$2
-	pea	#^L13+530
-	pea	#<L13+530
-	jsl	~~k_debug_integer
-;	k_debug_integer("sizeof(unsigned int):",sizeof(unsigned int));
 	.line	823
 	pea	#<$2
-	pea	#^L13+543
-	pea	#<L13+543
+	pea	#^L13+538
+	pea	#<L13+538
 	jsl	~~k_debug_integer
-;	k_debug_integer("sizeof(long):",sizeof(long));
+;	k_debug_integer("sizeof(unsigned short int):",sizeof(unsigned short int));
 	.line	824
-	pea	#<$4
-	pea	#^L13+565
-	pea	#<L13+565
+	pea	#<$2
+	pea	#^L13+557
+	pea	#<L13+557
 	jsl	~~k_debug_integer
-;	k_debug_integer("sizeof(LPVOID):",sizeof(LPVOID));
+;	k_debug_integer("sizeof(int):",sizeof(int));
 	.line	825
-	pea	#<$4
-	pea	#^L13+579
-	pea	#<L13+579
+	pea	#<$2
+	pea	#^L13+585
+	pea	#<L13+585
 	jsl	~~k_debug_integer
-;	k_debug_integer("sizeof(size_t):",sizeof(size_t));
+;	k_debug_integer("sizeof(unsigned int):",sizeof(unsigned int));
 	.line	826
 	pea	#<$2
-	pea	#^L13+595
-	pea	#<L13+595
+	pea	#^L13+598
+	pea	#<L13+598
+	jsl	~~k_debug_integer
+;	k_debug_integer("sizeof(long):",sizeof(long));
+	.line	827
+	pea	#<$4
+	pea	#^L13+620
+	pea	#<L13+620
+	jsl	~~k_debug_integer
+;	k_debug_integer("sizeof(LPVOID):",sizeof(LPVOID));
+	.line	828
+	pea	#<$4
+	pea	#^L13+634
+	pea	#<L13+634
+	jsl	~~k_debug_integer
+;	k_debug_integer("sizeof(size_t):",sizeof(size_t));
+	.line	829
+	pea	#<$2
+	pea	#^L13+650
+	pea	#<L13+650
 	jsl	~~k_debug_integer
 ;	k_debug_pointer("FXZEROPAGE @",ZEROPAGE);
-	.line	827
+	.line	830
 	pea	#^$1500
 	pea	#<$1500
-	pea	#^L13+611
-	pea	#<L13+611
+	pea	#^L13+666
+	pea	#<L13+666
 	jsl	~~k_debug_pointer
 ;	k_debug_integer("sizeof(FXZEROPAGE):",sizeof(FXZEROPAGE));
-	.line	828
+	.line	831
 	pea	#<$5a
-	pea	#^L13+624
-	pea	#<L13+624
+	pea	#^L13+679
+	pea	#<L13+679
 	jsl	~~k_debug_integer
 ;	k_debug_integer("sizeof(FXOSMESSAGE):",sizeof(FXOSMESSAGE));
-	.line	829
+	.line	832
 	pea	#<$27
-	pea	#^L13+644
-	pea	#<L13+644
+	pea	#^L13+699
+	pea	#<L13+699
 	jsl	~~k_debug_integer
 ;	k_debug_integer("sizeof(FXCMDMESSAGE):",sizeof(FXCMDMESSAGE));
-	.line	830
+	.line	833
 	pea	#<$27
-	pea	#^L13+665
-	pea	#<L13+665
+	pea	#^L13+720
+	pea	#<L13+720
+	jsl	~~k_debug_integer
+;
+;    binary = 0b10000000;
+	.line	835
+	lda	#$80
+	sta	<L15+binary_1
+;    k_debug_integer(" binary = 0b10000000:",binary);
+	.line	836
+	pei	<L15+binary_1
+	pea	#^L13+742
+	pea	#<L13+742
+	jsl	~~k_debug_integer
+;
+;
+;    binary = 0b10000001;
+	.line	839
+	lda	#$81
+	sta	<L15+binary_1
+;    k_debug_integer(" binary = 0b10000001:",binary);
+	.line	840
+	pei	<L15+binary_1
+	pea	#^L13+764
+	pea	#<L13+764
+	jsl	~~k_debug_integer
+;
+;    binary = 0b10000010;
+	.line	842
+	lda	#$82
+	sta	<L15+binary_1
+;    k_debug_integer(" binary = 0b10000010:",binary);
+	.line	843
+	pei	<L15+binary_1
+	pea	#^L13+786
+	pea	#<L13+786
+	jsl	~~k_debug_integer
+;
+;    binary = 0b1111111111111111;
+	.line	845
+	lda	#$ffff
+	sta	<L15+binary_1
+;    k_debug_integer(" binary = 0b11111111:",binary);
+	.line	846
+	pei	<L15+binary_1
+	pea	#^L13+808
+	pea	#<L13+808
 	jsl	~~k_debug_integer
 ;
 ;
 ;	k_debug_integer("sizeof(FXKERNEL_API_CALLTABLE):",sizeof(FXKERNEL_API_CALLTABLE));
-	.line	833
+	.line	849
 	pea	#<$400
-	pea	#^L13+687
-	pea	#<L13+687
+	pea	#^L13+830
+	pea	#<L13+830
 	jsl	~~k_debug_integer
 ;
 ;
 ;	k_debug_integer("sizeof(FX_DEVICE_DRIVER):",sizeof(FX_DEVICE_DRIVER));
-	.line	836
+	.line	852
 	pea	#<$61
-	pea	#^L13+719
-	pea	#<L13+719
+	pea	#^L13+862
+	pea	#<L13+862
 	jsl	~~k_debug_integer
 ;	k_debug_integer("sizeof(g_irq_handlers):",sizeof(g_irq_handlers));
-	.line	837
+	.line	853
 	pea	#<$200
-	pea	#^L13+745
-	pea	#<L13+745
+	pea	#^L13+888
+	pea	#<L13+888
 	jsl	~~k_debug_integer
 ;	k_debug_integer("sizeof(g_irq_handlers[0]):",sizeof(g_irq_handlers[0]));
-	.line	838
+	.line	854
 	pea	#<$80
-	pea	#^L13+769
-	pea	#<L13+769
+	pea	#^L13+912
+	pea	#<L13+912
 	jsl	~~k_debug_integer
 ;	k_debug_integer("sizeof(g_irq_handlers[0][0]):",sizeof(g_irq_handlers[0][0]));
-	.line	839
+	.line	855
 	pea	#<$10
-	pea	#^L13+796
-	pea	#<L13+796
+	pea	#^L13+939
+	pea	#<L13+939
 	jsl	~~k_debug_integer
 ;	k_debug_integer("sizeof(IRQCHAIN):",sizeof(IRQCHAIN));
-	.line	840
+	.line	856
 	pea	#<$10
-	pea	#^L13+826
-	pea	#<L13+826
+	pea	#^L13+969
+	pea	#<L13+969
 	jsl	~~k_debug_integer
 ;
 ;	k_debug_integer("IRQBUSIDX(g_irq_handlers):",IRQBUSIDX(g_irq_handlers));
-	.line	842
+	.line	858
 	pea	#<$4
-	pea	#^L13+844
-	pea	#<L13+844
+	pea	#^L13+987
+	pea	#<L13+987
 	jsl	~~k_debug_integer
 ;	k_debug_integer("IRQNUMIDX(g_irq_handlers):",IRQNUMIDX(g_irq_handlers));
-	.line	843
+	.line	859
 	pea	#<$8
-	pea	#^L13+871
-	pea	#<L13+871
+	pea	#^L13+1014
+	pea	#<L13+1014
 	jsl	~~k_debug_integer
 ;
 ;
 ;	k_debug_pointer("fxos_kernel_api:",k_getZeroPage()->fxos_kernel_api);
-	.line	846
+	.line	862
 	jsl	~~k_getZeroPage
 	sta	<R0
 	stx	<R0+2
@@ -3166,8 +3229,8 @@ L10005:
 	ldy	#$42
 	lda	[<R0],Y
 	pha
-	pea	#^L13+898
-	pea	#<L13+898
+	pea	#^L13+1041
+	pea	#<L13+1041
 	jsl	~~k_debug_pointer
 ;
 ;
@@ -3178,18 +3241,18 @@ L10005:
 ;
 ;
 ;	k_write_console("\n\n");
-	.line	855
-	pea	#^L13+915
-	pea	#<L13+915
+	.line	871
+	pea	#^L13+1058
+	pea	#<L13+1058
 	jsl	~~k_write_console
 ;	k_pos_console(k_row_console(),3);
-	.line	856
+	.line	872
 	pea	#<$3
 	jsl	~~k_row_console
 	pha
 	jsl	~~k_pos_console
 ;	k_write_console(k_strip_padding(k_longtodec(k_getZeroPage()->availableMemoryK,rmbuffer)));
-	.line	857
+	.line	873
 	pea	#0
 	clc
 	tdc
@@ -3216,9 +3279,9 @@ L10005:
 	pha
 	jsl	~~k_write_console
 ;	k_write_console("K RAM Available");
-	.line	858
-	pea	#^L13+918
-	pea	#<L13+918
+	.line	874
+	pea	#^L13+1061
+	pea	#<L13+1061
 	jsl	~~k_write_console
 ;
 ;	//line++;
@@ -3228,11 +3291,11 @@ L10005:
 ;	//pos = k_put_string(pos,line,"K RAM Available",15,0);
 ;
 ;	k_debug_long("AVAIL MEM:", availableMem);
-	.line	866
+	.line	882
 	pei	<L15+availableMem_1+2
 	pei	<L15+availableMem_1
-	pea	#^L13+934
-	pea	#<L13+934
+	pea	#^L13+1077
+	pea	#<L13+1077
 	jsl	~~k_debug_long
 ;
 ;	//line++;
@@ -3240,18 +3303,18 @@ L10005:
 ;	//pos = k_put_string(pos,line,k_strip_padding(k_longtodec(heapSize/1024 ,rmbuffer)),15,0);
 ;	//pos = k_put_string(pos,line,"K HEAP RAM Available",15,0);
 ;	k_write_console("\n");
-	.line	872
-	pea	#^L13+945
-	pea	#<L13+945
+	.line	888
+	pea	#^L13+1088
+	pea	#<L13+1088
 	jsl	~~k_write_console
 ;	k_pos_console(k_row_console(),3);
-	.line	873
+	.line	889
 	pea	#<$3
 	jsl	~~k_row_console
 	pha
 	jsl	~~k_pos_console
 ;	k_write_console(k_strip_padding(k_longtodec(heapSize/1024 ,rmbuffer)));
-	.line	874
+	.line	890
 	pea	#0
 	clc
 	tdc
@@ -3278,9 +3341,9 @@ L10005:
 	pha
 	jsl	~~k_write_console
 ;	k_write_console("K HEAP RAM Available");
-	.line	875
-	pea	#^L13+947
-	pea	#<L13+947
+	.line	891
+	pea	#^L13+1090
+	pea	#<L13+1090
 	jsl	~~k_write_console
 ;
 ;
@@ -3298,21 +3361,23 @@ L10005:
 ;	//k_show_image("HD:\\system\\images\\mand03.bmp");
 ;
 ;
+;	//draw_mandy();
+;
 ;	bootMode = k_init_splash(TRUE);
-	.line	892
+	.line	910
 	pea	#<$1
 	jsl	~~k_init_splash
 	sta	<L15+bootMode_1
 ;
 ;
 ;	if(sizeof(FXOSMESSAGE)!=sizeof(FXCMDMESSAGE))
-	.line	895
+	.line	913
 ;		k_exec_throw_exception(main,0x10000001," VERSION ERROR: FXOSMESSAGE size mismatch",-1);
 	brl	L10006
-	.line	896
+	.line	914
 	pea	#<$ffffffff
-	pea	#^L13+968
-	pea	#<L13+968
+	pea	#^L13+1111
+	pea	#<L13+1111
 	pea	#^$10000001
 	pea	#<$10000001
 	pea	#^~~main
@@ -3321,32 +3386,32 @@ L10005:
 ;
 ;	k_debug_integer("k_get_cols_visible:",k_get_cols_visible());
 L10006:
-	.line	898
+	.line	916
 	jsl	~~k_get_cols_visible
 	pha
-	pea	#^L13+1010
-	pea	#<L13+1010
+	pea	#^L13+1153
+	pea	#<L13+1153
 	jsl	~~k_debug_integer
 ;	k_debug_integer("k_get_cols_per_line:",k_get_cols_per_line());
-	.line	899
+	.line	917
 	jsl	~~k_get_cols_per_line
 	pha
-	pea	#^L13+1030
-	pea	#<L13+1030
+	pea	#^L13+1173
+	pea	#<L13+1173
 	jsl	~~k_debug_integer
 ;	k_debug_integer("k_get_lines_visible",k_get_lines_visible());
-	.line	900
+	.line	918
 	jsl	~~k_get_lines_visible
 	pha
-	pea	#^L13+1051
-	pea	#<L13+1051
+	pea	#^L13+1194
+	pea	#<L13+1194
 	jsl	~~k_debug_integer
 ;	k_debug_integer("k_get_lines_max:",k_get_lines_max());
-	.line	901
+	.line	919
 	jsl	~~k_get_lines_max
 	pha
-	pea	#^L13+1071
-	pea	#<L13+1071
+	pea	#^L13+1214
+	pea	#<L13+1214
 	jsl	~~k_debug_integer
 ;
 ;
@@ -3358,17 +3423,6 @@ L10006:
 ;
 ;	//k_dos_load_drivers();
 ;	//k_create_dos_device(FXDOS_SDC);
-;	/*
-;	k_debug_string("Call DLLMAIN\r\n");
-;	memcpy((LPSTR)0x090000,APGMBIN,sizeof(APGMBIN));
-;
-;	k_debug_integer("APGMBIN SIZE:",sizeof(APGMBIN));
-;	k_debug_hex("APGMBIN DATA:",APGMBIN[0]);
-;	k_debug_hex("MEMORY  DATA:",((LPCSTR)0x090000)[0]);
-;	k_debug_pointer("DllMain:",DllMain);
-;
-;	DllMain();
-;	*/
 ;
 ;	// user mode test
 ;	//DebugOut("API CALL!!!!\r\n");
@@ -3389,43 +3443,43 @@ L10006:
 ;	//k_user_DisableOSDebug();
 ;
 ;	k_debug_string("k_initalize_executive\r\n");
-	.line	942
-	pea	#^L13+1088
-	pea	#<L13+1088
+	.line	949
+	pea	#^L13+1231
+	pea	#<L13+1231
 	jsl	~~k_debug_string
 ;	pExecutive = k_initalize_executive();
-	.line	943
+	.line	950
 	jsl	~~k_initalize_executive
 	sta	<L15+pExecutive_1
 	stx	<L15+pExecutive_1+2
 ;	if(!pExecutive)
-	.line	944
+	.line	951
 ;	{
 	lda	<L15+pExecutive_1
 	ora	<L15+pExecutive_1+2
 	beq	L19
 	brl	L10007
 L19:
-	.line	945
+	.line	952
 ;		k_exec_throw_exception(main,0x00110011,"Executive Failed to Initialize.",-1);
-	.line	946
+	.line	953
 	pea	#<$ffffffff
-	pea	#^L13+1112
-	pea	#<L13+1112
+	pea	#^L13+1255
+	pea	#<L13+1255
 	pea	#^$110011
 	pea	#<$110011
 	pea	#^~~main
 	pea	#<~~main
 	jsl	~~k_exec_throw_exception
 ;	}
-	.line	947
+	.line	954
 ;	k_heap_integrity_check();
 L10007:
-	.line	948
+	.line	955
 	jsl	~~k_heap_integrity_check
 ;
 ;	pExecutive->Init();
-	.line	950
+	.line	957
 	ldy	#$2
 	lda	[<L15+pExecutive_1],Y
 	tax
@@ -3434,44 +3488,44 @@ L10007:
 	jsl	~~~lcal
 ;
 ;	k_debug_string("k_initalize_event_manager\r\n");
-	.line	952
-	pea	#^L13+1144
-	pea	#<L13+1144
+	.line	959
+	pea	#^L13+1287
+	pea	#<L13+1287
 	jsl	~~k_debug_string
 ;	pEventManager = k_initalize_event_manager(bootMode);
-	.line	953
+	.line	960
 	pei	<L15+bootMode_1
 	jsl	~~k_initalize_event_manager
 	sta	<L15+pEventManager_1
 	stx	<L15+pEventManager_1+2
 ;	if(!pEventManager)
-	.line	954
+	.line	961
 ;	{
 	lda	<L15+pEventManager_1
 	ora	<L15+pEventManager_1+2
 	beq	L20
 	brl	L10008
 L20:
-	.line	955
+	.line	962
 ;		k_exec_throw_exception(main,0x00110011,"Event Manager Failed to Initialize.",-1);
-	.line	956
+	.line	963
 	pea	#<$ffffffff
-	pea	#^L13+1172
-	pea	#<L13+1172
+	pea	#^L13+1315
+	pea	#<L13+1315
 	pea	#^$110011
 	pea	#<$110011
 	pea	#^~~main
 	pea	#<~~main
 	jsl	~~k_exec_throw_exception
 ;	}
-	.line	957
+	.line	964
 ;	k_heap_integrity_check();
 L10008:
-	.line	958
+	.line	965
 	jsl	~~k_heap_integrity_check
 ;
 ;	k_debug_integer("Event Manager Version:",pEventManager->Query(EV_QUERY_VERSION_MAJOR));
-	.line	960
+	.line	967
 	pea	#<$0
 	ldy	#$12
 	lda	[<L15+pEventManager_1],Y
@@ -3481,11 +3535,11 @@ L10008:
 	xref	~~~lcal
 	jsl	~~~lcal
 	pha
-	pea	#^L13+1208
-	pea	#<L13+1208
+	pea	#^L13+1351
+	pea	#<L13+1351
 	jsl	~~k_debug_integer
 ;	pEventManager->Init();
-	.line	961
+	.line	968
 	ldy	#$6
 	lda	[<L15+pEventManager_1],Y
 	tax
@@ -3494,7 +3548,7 @@ L10008:
 	xref	~~~lcal
 	jsl	~~~lcal
 ;	pEventManager->Run(pExecutive);
-	.line	962
+	.line	969
 	pei	<L15+pExecutive_1+2
 	pei	<L15+pExecutive_1
 	ldy	#$a
@@ -3506,10 +3560,10 @@ L10008:
 	jsl	~~~lcal
 ;
 ;	k_exec_throw_exception(main,0x10000001,"System Failure.  Event Manager Exited.",-1);
-	.line	964
+	.line	971
 	pea	#<$ffffffff
-	pea	#^L13+1231
-	pea	#<L13+1231
+	pea	#^L13+1374
+	pea	#<L13+1374
 	pea	#^$10000001
 	pea	#<$10000001
 	pea	#^~~main
@@ -3517,7 +3571,7 @@ L10008:
 	jsl	~~k_exec_throw_exception
 ;
 ;	return;
-	.line	966
+	.line	973
 L21:
 	pld
 	tsc
@@ -3526,14 +3580,14 @@ L21:
 	tcs
 	rtl
 ;}
-	.line	967
-	.endblock	967
-L14	equ	91
+	.line	974
+	.endblock	974
+L14	equ	93
 L15	equ	13
 	ends
 	efunc
-	.endfunc	967,13,91
-	.line	967
+	.endfunc	974,13,93
+	.line	974
 	data
 L13:
 	db	$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A
@@ -3545,82 +3599,92 @@ L13:
 	db	$74,$69,$6E,$67,$20,$20,$20,$20,$20,$20,$20,$2A,$2A,$2A,$2A
 	db	$2A,$2A,$2A,$0D,$0A,$00,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A
 	db	$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A
-	db	$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$0D,$0A,$00,$44,$65
-	db	$76,$69,$63,$65,$20,$4C,$6F,$61,$64,$20,$4C,$6F,$67,$20,$46
-	db	$6F,$6C,$6C,$6F,$77,$73,$3A,$0D,$0A,$00,$6B,$5F,$74,$65,$78
-	db	$74,$5F,$6D,$6F,$64,$65,$5F,$64,$69,$61,$6C,$6F,$67,$0D,$0A
+	db	$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$0D,$0A,$00,$00,$46
+	db	$4F,$45,$4E,$49,$58,$20,$77,$61,$73,$20,$68,$65,$72,$65,$21
+	db	$00,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A
+	db	$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A,$2A
+	db	$2A,$2A,$2A,$2A,$2A,$0D,$0A,$00,$44,$65,$76,$69,$63,$65,$20
+	db	$4C,$6F,$61,$64,$20,$4C,$6F,$67,$20,$46,$6F,$6C,$6C,$6F,$77
+	db	$73,$3A,$0D,$0A,$00,$6B,$5F,$74,$65,$78,$74,$5F,$6D,$6F,$64
+	db	$65,$5F,$64,$69,$61,$6C,$6F,$67,$0D,$0A,$00,$43,$32,$35,$36
+	db	$20,$56,$45,$52,$53,$49,$4F,$4E,$20,$4D,$41,$4A,$4F,$52,$3A
 	db	$00,$43,$32,$35,$36,$20,$56,$45,$52,$53,$49,$4F,$4E,$20,$4D
-	db	$41,$4A,$4F,$52,$3A,$00,$43,$32,$35,$36,$20,$56,$45,$52,$53
-	db	$49,$4F,$4E,$20,$4D,$49,$4E,$4F,$52,$3A,$00,$42,$55,$49,$4C
-	db	$44,$20,$53,$59,$53,$54,$45,$4D,$20,$48,$45,$41,$50,$3A,$00
-	db	$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$20,$53,$49
-	db	$5A,$45,$3A,$00,$6B,$5F,$72,$65,$70,$6F,$72,$74,$5F,$63,$6F
-	db	$6E,$66,$69,$67,$75,$72,$61,$74,$69,$6F,$6E,$0D,$0A,$00,$53
-	db	$79,$73,$74,$65,$6D,$20,$72,$65,$70,$6F,$72,$74,$73,$20,$42
-	db	$49,$47,$20,$45,$4E,$44,$49,$41,$4E,$0D,$0A,$00,$53,$79,$73
-	db	$74,$65,$6D,$20,$72,$65,$70,$6F,$72,$74,$73,$20,$4C,$49,$54
-	db	$54,$4C,$45,$20,$45,$4E,$44,$49,$41,$4E,$0D,$0A,$00,$4C,$32
-	db	$34,$42,$59,$54,$45,$3A,$00,$4D,$32,$34,$42,$59,$54,$45,$3A
-	db	$00,$48,$32,$34,$42,$59,$54,$45,$3A,$00,$48,$33,$32,$42,$59
-	db	$54,$45,$3A,$00,$6B,$5F,$66,$63,$68,$65,$63,$6B,$5F,$73,$79
-	db	$73,$74,$65,$6D,$5F,$6D,$65,$6D,$6F,$72,$79,$0D,$0A,$00,$6B
-	db	$5F,$68,$65,$61,$70,$5F,$69,$6E,$74,$65,$67,$72,$69,$74,$79
-	db	$5F,$63,$68,$65,$63,$6B,$3A,$3A,$68,$65,$61,$70,$73,$69,$7A
-	db	$65,$3A,$00,$4D,$4F,$4E,$54,$48,$3A,$00,$44,$41,$59,$3A,$00
-	db	$59,$45,$41,$52,$3A,$00,$44,$41,$54,$45,$3A,$00,$54,$49,$4D
-	db	$45,$3A,$00,$73,$69,$7A,$65,$6F,$66,$28,$73,$68,$6F,$72,$74
-	db	$20,$69,$6E,$74,$29,$3A,$00,$73,$69,$7A,$65,$6F,$66,$28,$75
-	db	$6E,$73,$69,$67,$6E,$65,$64,$20,$73,$68,$6F,$72,$74,$20,$69
-	db	$6E,$74,$29,$3A,$00,$73,$69,$7A,$65,$6F,$66,$28,$69,$6E,$74
-	db	$29,$3A,$00,$73,$69,$7A,$65,$6F,$66,$28,$75,$6E,$73,$69,$67
-	db	$6E,$65,$64,$20,$69,$6E,$74,$29,$3A,$00,$73,$69,$7A,$65,$6F
-	db	$66,$28,$6C,$6F,$6E,$67,$29,$3A,$00,$73,$69,$7A,$65,$6F,$66
-	db	$28,$4C,$50,$56,$4F,$49,$44,$29,$3A,$00,$73,$69,$7A,$65,$6F
-	db	$66,$28,$73,$69,$7A,$65,$5F,$74,$29,$3A,$00,$46,$58,$5A,$45
-	db	$52,$4F,$50,$41,$47,$45,$20,$40,$00,$73,$69,$7A,$65,$6F,$66
-	db	$28,$46,$58,$5A,$45,$52,$4F,$50,$41,$47,$45,$29,$3A,$00,$73
-	db	$69,$7A,$65,$6F,$66,$28,$46,$58,$4F,$53,$4D,$45,$53,$53,$41
-	db	$47,$45,$29,$3A,$00,$73,$69,$7A,$65,$6F,$66,$28,$46,$58,$43
-	db	$4D,$44,$4D,$45,$53,$53,$41,$47,$45,$29,$3A,$00,$73,$69,$7A
-	db	$65,$6F,$66,$28,$46,$58,$4B,$45,$52,$4E,$45,$4C,$5F,$41,$50
-	db	$49,$5F,$43,$41,$4C,$4C,$54,$41,$42,$4C,$45,$29,$3A,$00,$73
-	db	$69,$7A,$65,$6F,$66,$28,$46,$58,$5F,$44,$45,$56,$49,$43,$45
-	db	$5F,$44,$52,$49,$56,$45,$52,$29,$3A,$00,$73,$69,$7A,$65,$6F
-	db	$66,$28,$67,$5F,$69,$72,$71,$5F,$68,$61,$6E,$64,$6C,$65,$72
-	db	$73,$29,$3A,$00,$73,$69,$7A,$65,$6F,$66,$28,$67,$5F,$69,$72
-	db	$71,$5F,$68,$61,$6E,$64,$6C,$65,$72,$73,$5B,$30,$5D,$29,$3A
-	db	$00,$73,$69,$7A,$65,$6F,$66,$28,$67,$5F,$69,$72,$71,$5F,$68
-	db	$61,$6E,$64,$6C,$65,$72,$73,$5B,$30,$5D,$5B,$30,$5D,$29,$3A
-	db	$00,$73,$69,$7A,$65,$6F,$66,$28,$49,$52,$51,$43,$48,$41,$49
-	db	$4E,$29,$3A,$00,$49,$52,$51,$42,$55,$53,$49,$44,$58,$28,$67
-	db	$5F,$69,$72,$71,$5F,$68,$61,$6E,$64,$6C,$65,$72,$73,$29,$3A
-	db	$00,$49,$52,$51,$4E,$55,$4D,$49,$44,$58,$28,$67,$5F,$69,$72
-	db	$71,$5F,$68,$61,$6E,$64,$6C,$65,$72,$73,$29,$3A,$00,$66,$78
-	db	$6F,$73,$5F,$6B,$65,$72,$6E,$65,$6C,$5F,$61,$70,$69,$3A,$00
-	db	$0A,$0A,$00,$4B,$20,$52,$41,$4D,$20,$41,$76,$61,$69,$6C,$61
-	db	$62,$6C,$65,$00,$41,$56,$41,$49,$4C,$20,$4D,$45,$4D,$3A,$00
-	db	$0A,$00,$4B,$20,$48,$45,$41,$50,$20,$52,$41,$4D,$20,$41,$76
-	db	$61,$69,$6C,$61,$62,$6C,$65,$00,$20,$56,$45,$52,$53,$49,$4F
-	db	$4E,$20,$45,$52,$52,$4F,$52,$3A,$20,$46,$58,$4F,$53,$4D,$45
-	db	$53,$53,$41,$47,$45,$20,$73,$69,$7A,$65,$20,$6D,$69,$73,$6D
-	db	$61,$74,$63,$68,$00,$6B,$5F,$67,$65,$74,$5F,$63,$6F,$6C,$73
-	db	$5F,$76,$69,$73,$69,$62,$6C,$65,$3A,$00,$6B,$5F,$67,$65,$74
-	db	$5F,$63,$6F,$6C,$73,$5F,$70,$65,$72,$5F,$6C,$69,$6E,$65,$3A
-	db	$00,$6B,$5F,$67,$65,$74,$5F,$6C,$69,$6E,$65,$73,$5F,$76,$69
-	db	$73,$69,$62,$6C,$65,$00,$6B,$5F,$67,$65,$74,$5F,$6C,$69,$6E
-	db	$65,$73,$5F,$6D,$61,$78,$3A,$00,$6B,$5F,$69,$6E,$69,$74,$61
-	db	$6C,$69,$7A,$65,$5F,$65,$78,$65,$63,$75,$74,$69,$76,$65,$0D
-	db	$0A,$00,$45,$78,$65,$63,$75,$74,$69,$76,$65,$20,$46,$61,$69
-	db	$6C,$65,$64,$20,$74,$6F,$20,$49,$6E,$69,$74,$69,$61,$6C,$69
-	db	$7A,$65,$2E,$00,$6B,$5F,$69,$6E,$69,$74,$61,$6C,$69,$7A,$65
-	db	$5F,$65,$76,$65,$6E,$74,$5F,$6D,$61,$6E,$61,$67,$65,$72,$0D
-	db	$0A,$00,$45,$76,$65,$6E,$74,$20,$4D,$61,$6E,$61,$67,$65,$72
-	db	$20,$46,$61,$69,$6C,$65,$64,$20,$74,$6F,$20,$49,$6E,$69,$74
-	db	$69,$61,$6C,$69,$7A,$65,$2E,$00,$45,$76,$65,$6E,$74,$20,$4D
-	db	$61,$6E,$61,$67,$65,$72,$20,$56,$65,$72,$73,$69,$6F,$6E,$3A
-	db	$00,$53,$79,$73,$74,$65,$6D,$20,$46,$61,$69,$6C,$75,$72,$65
-	db	$2E,$20,$20,$45,$76,$65,$6E,$74,$20,$4D,$61,$6E,$61,$67,$65
-	db	$72,$20,$45,$78,$69,$74,$65,$64,$2E,$00
+	db	$49,$4E,$4F,$52,$3A,$00,$42,$55,$49,$4C,$44,$20,$53,$59,$53
+	db	$54,$45,$4D,$20,$48,$45,$41,$50,$3A,$00,$20,$20,$20,$20,$20
+	db	$20,$20,$20,$20,$20,$20,$20,$20,$53,$49,$5A,$45,$3A,$00,$6B
+	db	$5F,$72,$65,$70,$6F,$72,$74,$5F,$63,$6F,$6E,$66,$69,$67,$75
+	db	$72,$61,$74,$69,$6F,$6E,$0D,$0A,$00,$53,$79,$73,$74,$65,$6D
+	db	$20,$72,$65,$70,$6F,$72,$74,$73,$20,$42,$49,$47,$20,$45,$4E
+	db	$44,$49,$41,$4E,$0D,$0A,$00,$53,$79,$73,$74,$65,$6D,$20,$72
+	db	$65,$70,$6F,$72,$74,$73,$20,$4C,$49,$54,$54,$4C,$45,$20,$45
+	db	$4E,$44,$49,$41,$4E,$0D,$0A,$00,$4C,$32,$34,$42,$59,$54,$45
+	db	$3A,$00,$4D,$32,$34,$42,$59,$54,$45,$3A,$00,$48,$32,$34,$42
+	db	$59,$54,$45,$3A,$00,$48,$33,$32,$42,$59,$54,$45,$3A,$00,$6B
+	db	$5F,$66,$63,$68,$65,$63,$6B,$5F,$73,$79,$73,$74,$65,$6D,$5F
+	db	$6D,$65,$6D,$6F,$72,$79,$0D,$0A,$00,$6B,$5F,$68,$65,$61,$70
+	db	$5F,$69,$6E,$74,$65,$67,$72,$69,$74,$79,$5F,$63,$68,$65,$63
+	db	$6B,$3A,$3A,$68,$65,$61,$70,$73,$69,$7A,$65,$3A,$00,$4D,$4F
+	db	$4E,$54,$48,$3A,$00,$44,$41,$59,$3A,$00,$59,$45,$41,$52,$3A
+	db	$00,$44,$41,$54,$45,$3A,$00,$54,$49,$4D,$45,$3A,$00,$73,$69
+	db	$7A,$65,$6F,$66,$28,$73,$68,$6F,$72,$74,$20,$69,$6E,$74,$29
+	db	$3A,$00,$73,$69,$7A,$65,$6F,$66,$28,$75,$6E,$73,$69,$67,$6E
+	db	$65,$64,$20,$73,$68,$6F,$72,$74,$20,$69,$6E,$74,$29,$3A,$00
+	db	$73,$69,$7A,$65,$6F,$66,$28,$69,$6E,$74,$29,$3A,$00,$73,$69
+	db	$7A,$65,$6F,$66,$28,$75,$6E,$73,$69,$67,$6E,$65,$64,$20,$69
+	db	$6E,$74,$29,$3A,$00,$73,$69,$7A,$65,$6F,$66,$28,$6C,$6F,$6E
+	db	$67,$29,$3A,$00,$73,$69,$7A,$65,$6F,$66,$28,$4C,$50,$56,$4F
+	db	$49,$44,$29,$3A,$00,$73,$69,$7A,$65,$6F,$66,$28,$73,$69,$7A
+	db	$65,$5F,$74,$29,$3A,$00,$46,$58,$5A,$45,$52,$4F,$50,$41,$47
+	db	$45,$20,$40,$00,$73,$69,$7A,$65,$6F,$66,$28,$46,$58,$5A,$45
+	db	$52,$4F,$50,$41,$47,$45,$29,$3A,$00,$73,$69,$7A,$65,$6F,$66
+	db	$28,$46,$58,$4F,$53,$4D,$45,$53,$53,$41,$47,$45,$29,$3A,$00
+	db	$73,$69,$7A,$65,$6F,$66,$28,$46,$58,$43,$4D,$44,$4D,$45,$53
+	db	$53,$41,$47,$45,$29,$3A,$00,$20,$62,$69,$6E,$61,$72,$79,$20
+	db	$3D,$20,$30,$62,$31,$30,$30,$30,$30,$30,$30,$30,$3A,$00,$20
+	db	$62,$69,$6E,$61,$72,$79,$20,$3D,$20,$30,$62,$31,$30,$30,$30
+	db	$30,$30,$30,$31,$3A,$00,$20,$62,$69,$6E,$61,$72,$79,$20,$3D
+	db	$20,$30,$62,$31,$30,$30,$30,$30,$30,$31,$30,$3A,$00,$20,$62
+	db	$69,$6E,$61,$72,$79,$20,$3D,$20,$30,$62,$31,$31,$31,$31,$31
+	db	$31,$31,$31,$3A,$00,$73,$69,$7A,$65,$6F,$66,$28,$46,$58,$4B
+	db	$45,$52,$4E,$45,$4C,$5F,$41,$50,$49,$5F,$43,$41,$4C,$4C,$54
+	db	$41,$42,$4C,$45,$29,$3A,$00,$73,$69,$7A,$65,$6F,$66,$28,$46
+	db	$58,$5F,$44,$45,$56,$49,$43,$45,$5F,$44,$52,$49,$56,$45,$52
+	db	$29,$3A,$00,$73,$69,$7A,$65,$6F,$66,$28,$67,$5F,$69,$72,$71
+	db	$5F,$68,$61,$6E,$64,$6C,$65,$72,$73,$29,$3A,$00,$73,$69,$7A
+	db	$65,$6F,$66,$28,$67,$5F,$69,$72,$71,$5F,$68,$61,$6E,$64,$6C
+	db	$65,$72,$73,$5B,$30,$5D,$29,$3A,$00,$73,$69,$7A,$65,$6F,$66
+	db	$28,$67,$5F,$69,$72,$71,$5F,$68,$61,$6E,$64,$6C,$65,$72,$73
+	db	$5B,$30,$5D,$5B,$30,$5D,$29,$3A,$00,$73,$69,$7A,$65,$6F,$66
+	db	$28,$49,$52,$51,$43,$48,$41,$49,$4E,$29,$3A,$00,$49,$52,$51
+	db	$42,$55,$53,$49,$44,$58,$28,$67,$5F,$69,$72,$71,$5F,$68,$61
+	db	$6E,$64,$6C,$65,$72,$73,$29,$3A,$00,$49,$52,$51,$4E,$55,$4D
+	db	$49,$44,$58,$28,$67,$5F,$69,$72,$71,$5F,$68,$61,$6E,$64,$6C
+	db	$65,$72,$73,$29,$3A,$00,$66,$78,$6F,$73,$5F,$6B,$65,$72,$6E
+	db	$65,$6C,$5F,$61,$70,$69,$3A,$00,$0A,$0A,$00,$4B,$20,$52,$41
+	db	$4D,$20,$41,$76,$61,$69,$6C,$61,$62,$6C,$65,$00,$41,$56,$41
+	db	$49,$4C,$20,$4D,$45,$4D,$3A,$00,$0A,$00,$4B,$20,$48,$45,$41
+	db	$50,$20,$52,$41,$4D,$20,$41,$76,$61,$69,$6C,$61,$62,$6C,$65
+	db	$00,$20,$56,$45,$52,$53,$49,$4F,$4E,$20,$45,$52,$52,$4F,$52
+	db	$3A,$20,$46,$58,$4F,$53,$4D,$45,$53,$53,$41,$47,$45,$20,$73
+	db	$69,$7A,$65,$20,$6D,$69,$73,$6D,$61,$74,$63,$68,$00,$6B,$5F
+	db	$67,$65,$74,$5F,$63,$6F,$6C,$73,$5F,$76,$69,$73,$69,$62,$6C
+	db	$65,$3A,$00,$6B,$5F,$67,$65,$74,$5F,$63,$6F,$6C,$73,$5F,$70
+	db	$65,$72,$5F,$6C,$69,$6E,$65,$3A,$00,$6B,$5F,$67,$65,$74,$5F
+	db	$6C,$69,$6E,$65,$73,$5F,$76,$69,$73,$69,$62,$6C,$65,$00,$6B
+	db	$5F,$67,$65,$74,$5F,$6C,$69,$6E,$65,$73,$5F,$6D,$61,$78,$3A
+	db	$00,$6B,$5F,$69,$6E,$69,$74,$61,$6C,$69,$7A,$65,$5F,$65,$78
+	db	$65,$63,$75,$74,$69,$76,$65,$0D,$0A,$00,$45,$78,$65,$63,$75
+	db	$74,$69,$76,$65,$20,$46,$61,$69,$6C,$65,$64,$20,$74,$6F,$20
+	db	$49,$6E,$69,$74,$69,$61,$6C,$69,$7A,$65,$2E,$00,$6B,$5F,$69
+	db	$6E,$69,$74,$61,$6C,$69,$7A,$65,$5F,$65,$76,$65,$6E,$74,$5F
+	db	$6D,$61,$6E,$61,$67,$65,$72,$0D,$0A,$00,$45,$76,$65,$6E,$74
+	db	$20,$4D,$61,$6E,$61,$67,$65,$72,$20,$46,$61,$69,$6C,$65,$64
+	db	$20,$74,$6F,$20,$49,$6E,$69,$74,$69,$61,$6C,$69,$7A,$65,$2E
+	db	$00,$45,$76,$65,$6E,$74,$20,$4D,$61,$6E,$61,$67,$65,$72,$20
+	db	$56,$65,$72,$73,$69,$6F,$6E,$3A,$00,$53,$79,$73,$74,$65,$6D
+	db	$20,$46,$61,$69,$6C,$75,$72,$65,$2E,$20,$20,$45,$76,$65,$6E
+	db	$74,$20,$4D,$61,$6E,$61,$67,$65,$72,$20,$45,$78,$69,$74,$65
+	db	$64,$2E,$00
 	ends
 ;
 ;
@@ -3820,9 +3884,764 @@ L13:
 ;
 ;k_fxstring_free(ipc_data);
 ;*/
+;#define MAXCOUNT 256
+;void fractal(float left, float top, float xside, float yside,int xmax,int ymax)
+;{
+	.line	1174
+	.line	1175
+	entrymodule
+	xdef	~~fractal
+	func
+	.function	1175
+~~fractal:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L23
+	tcs
+	phd
+	tcd
+left_0	set	4
+top_0	set	8
+xside_0	set	12
+yside_0	set	16
+xmax_0	set	20
+ymax_0	set	22
+	.block	1175
 ;
-	.line	1165
-	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmain.c",590
+;	RECT rect;
+;
+;    float xscale, yscale, zx, zy, cx, tempx, cy;
+;    int x, y, i, j;
+;    int maxx, maxy, count;
+;
+;    char binary = 0b00000010;
+;
+;    /*
+;    rect.x = 40;
+;    rect.y = 450;
+;    rect.width = 100;
+;    rect.height = 100;
+;	*/
+;    rect.x = 0;
+rect_1	set	0
+xscale_1	set	14
+yscale_1	set	18
+zx_1	set	22
+zy_1	set	26
+cx_1	set	30
+tempx_1	set	34
+cy_1	set	38
+x_1	set	42
+y_1	set	44
+i_1	set	46
+j_1	set	48
+maxx_1	set	50
+maxy_1	set	52
+count_1	set	54
+binary_1	set	56
+	.sym	rect,0,10,1,112,26
+	.sym	xscale,14,8,1,32
+	.sym	yscale,18,8,1,32
+	.sym	zx,22,8,1,32
+	.sym	zy,26,8,1,32
+	.sym	cx,30,8,1,32
+	.sym	tempx,34,8,1,32
+	.sym	cy,38,8,1,32
+	.sym	x,42,5,1,16
+	.sym	y,44,5,1,16
+	.sym	i,46,5,1,16
+	.sym	j,48,5,1,16
+	.sym	maxx,50,5,1,16
+	.sym	maxy,52,5,1,16
+	.sym	count,54,5,1,16
+	.sym	binary,56,14,1,8
+	.sym	left,4,8,6,32
+	.sym	top,8,8,6,32
+	.sym	xside,12,8,6,32
+	.sym	yside,16,8,6,32
+	.sym	xmax,20,5,6,16
+	.sym	ymax,22,5,6,16
+	sep	#$20
+	longa	off
+	lda	#$2
+	sta	<L24+binary_1
+	rep	#$20
+	longa	on
+	.line	1191
+	stz	<L24+rect_1
+;    rect.y = 0;
+	.line	1192
+	stz	<L24+rect_1+2
+;    rect.width = 800;
+	.line	1193
+	lda	#$320
+	sta	<L24+rect_1+8
+;    rect.height = 600;
+	.line	1194
+	lda	#$258
+	sta	<L24+rect_1+10
+;
+;
+;    maxx = xmax;
+	.line	1197
+	lda	<L23+xmax_0
+	sta	<L24+maxx_1
+;    maxy = ymax;
+	.line	1198
+	lda	<L23+ymax_0
+	sta	<L24+maxy_1
+;
+;    // setting up the xscale and yscale
+;    xscale = xside / maxx;
+	.line	1201
+	ldy	#$0
+	lda	<L24+maxx_1
+	bpl	L26
+	dey
+L26:
+	phy
+	pha
+	xref	~~~fflt
+	jsl	~~~fflt
+	pei	<L23+xside_0+2
+	pei	<L23+xside_0
+	xref	~~~fdiv
+	jsl	~~~fdiv
+	pla
+	sta	<L24+xscale_1
+	pla
+	sta	<L24+xscale_1+2
+;    yscale = yside / maxy;
+	.line	1202
+	ldy	#$0
+	lda	<L24+maxy_1
+	bpl	L27
+	dey
+L27:
+	phy
+	pha
+	xref	~~~fflt
+	jsl	~~~fflt
+	pei	<L23+yside_0+2
+	pei	<L23+yside_0
+	xref	~~~fdiv
+	jsl	~~~fdiv
+	pla
+	sta	<L24+yscale_1
+	pla
+	sta	<L24+yscale_1+2
+;
+;
+;    k_debug_integer("fractal maxx:", maxx);
+	.line	1205
+	pei	<L24+maxx_1
+	pea	#^L22
+	pea	#<L22
+	jsl	~~k_debug_integer
+;    k_debug_integer("fractal maxy:", maxy);
+	.line	1206
+	pei	<L24+maxy_1
+	pea	#^L22+14
+	pea	#<L22+14
+	jsl	~~k_debug_integer
+;
+;    // calling rectangle function
+;    // where required image will be seen
+;    //rectangle(0, 0, maxx, maxy);
+;
+;    // scanning every point in that rectangular area.
+;    // Each point represents a Complex number (x + yi).
+;    // Iterate that complex number
+;    //for (y = 1; y <= maxy - 1; y++)
+;    for (y = (rect.y + 1); y <= (rect.height + rect.y - 1); y++)
+	.line	1216
+	lda	<L24+rect_1+2
+	ina
+	sta	<L24+y_1
+	brl	L10012
+L10011:
+;    {
+	.line	1217
+;    	k_debug_integer("fractal y:", y);
+	.line	1218
+	pei	<L24+y_1
+	pea	#^L22+28
+	pea	#<L22+28
+	jsl	~~k_debug_integer
+;        //for (x = 1; x <= maxx - 1; x++)
+;    	for (x = (rect.x + 1); x <= (rect.width  + rect.x - 1); x++)
+	.line	1220
+	lda	<L24+rect_1
+	ina
+	sta	<L24+x_1
+	brl	L10016
+L10015:
+;        {
+	.line	1221
+;            // c_real
+;            cx = x * xscale + left;
+	.line	1223
+	pei	<L23+left_0+2
+	pei	<L23+left_0
+	pei	<L24+xscale_1+2
+	pei	<L24+xscale_1
+	ldy	#$0
+	lda	<L24+x_1
+	bpl	L28
+	dey
+L28:
+	phy
+	pha
+	xref	~~~fflt
+	jsl	~~~fflt
+	xref	~~~fmul
+	jsl	~~~fmul
+	xref	~~~fadc
+	jsl	~~~fadc
+	pla
+	sta	<L24+cx_1
+	pla
+	sta	<L24+cx_1+2
+;
+;            // c_imaginary
+;            cy = y * yscale + top;
+	.line	1226
+	pei	<L23+top_0+2
+	pei	<L23+top_0
+	pei	<L24+yscale_1+2
+	pei	<L24+yscale_1
+	ldy	#$0
+	lda	<L24+y_1
+	bpl	L29
+	dey
+L29:
+	phy
+	pha
+	xref	~~~fflt
+	jsl	~~~fflt
+	xref	~~~fmul
+	jsl	~~~fmul
+	xref	~~~fadc
+	jsl	~~~fadc
+	pla
+	sta	<L24+cy_1
+	pla
+	sta	<L24+cy_1+2
+;
+;            // z_real
+;            zx = 0;
+	.line	1229
+	lda	#$0
+	sta	<L24+zx_1
+	lda	#$0
+	sta	<L24+zx_1+2
+;
+;            // z_imaginary
+;            zy = 0;
+	.line	1232
+	lda	#$0
+	sta	<L24+zy_1
+	lda	#$0
+	sta	<L24+zy_1+2
+;            count = 0;
+	.line	1233
+	stz	<L24+count_1
+;
+;            // Calculate whether c(c_real + c_imaginary) belongs
+;            // to the Mandelbrot set or not and draw a pixel
+;            // at coordinates (x, y) accordingly
+;            // If you reach the Maximum number of iterations
+;            // and If the distance from the origin is
+;            // greater than 2 exit the loop
+;            while ((zx * zx + zy * zy < 4) && (count < MAXCOUNT))
+	.line	1241
+L10017:
+	pea	#$4080
+	pea	#$0000
+	pei	<L24+zy_1+2
+	pei	<L24+zy_1
+	pei	<L24+zy_1+2
+	pei	<L24+zy_1
+	xref	~~~fmul
+	jsl	~~~fmul
+	pei	<L24+zx_1+2
+	pei	<L24+zx_1
+	pei	<L24+zx_1+2
+	pei	<L24+zx_1
+	xref	~~~fmul
+	jsl	~~~fmul
+	xref	~~~fadc
+	jsl	~~~fadc
+	xref	~~~fcmp
+	jsl	~~~fcmp
+	bmi	L30
+	brl	L10018
+L30:
+	sec
+	lda	<L24+count_1
+	sbc	#<$100
+	bvs	L31
+	eor	#$8000
+L31:
+	bpl	L32
+	brl	L10018
+L32:
+;            {
+	.line	1242
+;                // Calculate Mandelbrot function
+;                // z = z*z + c where z is a complex number
+;
+;                // tempx = z_real*_real - z_imaginary*z_imaginary + c_real
+;                tempx = zx * zx - zy * zy + cx;
+	.line	1247
+	pei	<L24+cx_1+2
+	pei	<L24+cx_1
+	pei	<L24+zy_1+2
+	pei	<L24+zy_1
+	pei	<L24+zy_1+2
+	pei	<L24+zy_1
+	xref	~~~fmul
+	jsl	~~~fmul
+	pei	<L24+zx_1+2
+	pei	<L24+zx_1
+	pei	<L24+zx_1+2
+	pei	<L24+zx_1
+	xref	~~~fmul
+	jsl	~~~fmul
+	xref	~~~fsbc
+	jsl	~~~fsbc
+	xref	~~~fadc
+	jsl	~~~fadc
+	pla
+	sta	<L24+tempx_1
+	pla
+	sta	<L24+tempx_1+2
+;
+;                // 2*z_real*z_imaginary + c_imaginary
+;                zy = 2 * zx * zy + cy;
+	.line	1250
+	pei	<L24+cy_1+2
+	pei	<L24+cy_1
+	pea	#$4000
+	pea	#$0000
+	pei	<L24+zy_1+2
+	pei	<L24+zy_1
+	pei	<L24+zx_1+2
+	pei	<L24+zx_1
+	xref	~~~fmul
+	jsl	~~~fmul
+	xref	~~~fmul
+	jsl	~~~fmul
+	xref	~~~fadc
+	jsl	~~~fadc
+	pla
+	sta	<L24+zy_1
+	pla
+	sta	<L24+zy_1+2
+;
+;                // Updating z_real = tempx
+;                zx = tempx;
+	.line	1253
+	lda	<L24+tempx_1
+	sta	<L24+zx_1
+	lda	<L24+tempx_1+2
+	sta	<L24+zx_1+2
+;
+;                // Increment count
+;                count = count + 1;
+	.line	1256
+	inc	<L24+count_1
+;            }
+	.line	1257
+	brl	L10017
+L10018:
+;
+;            if(k_get_video_mode() > VIDEO_MODE_640X480D)
+	.line	1259
+;            {
+	jsl	~~k_get_video_mode
+	sta	<R0
+	lda	#$2
+	cmp	<R0
+	bcc	L33
+	brl	L10019
+L33:
+	.line	1260
+;            	k_draw_clipped_pixel_ex(&rect,x,y,count,0);
+	.line	1261
+	pea	#<$0
+	pei	<L24+count_1
+	ldy	#$0
+	lda	<L24+y_1
+	bpl	L34
+	dey
+L34:
+	sta	<R0
+	sty	<R0+2
+	pei	<R0+2
+	pei	<R0
+	ldy	#$0
+	lda	<L24+x_1
+	bpl	L35
+	dey
+L35:
+	sta	<R1
+	sty	<R1+2
+	pei	<R1+2
+	pei	<R1
+	pea	#0
+	clc
+	tdc
+	adc	#<L24+rect_1
+	pha
+	jsl	~~k_draw_clipped_pixel_ex
+;            	//k_draw_pixel_front_ex(x, y, count);
+;            }
+	.line	1263
+;            else
+	brl	L10020
+L10019:
+;            {
+	.line	1265
+;            	//k_draw_pixel_front(x, y, count);
+;            	k_draw_clipped_pixel(&rect,x,y,count,0);
+	.line	1267
+	pea	#<$0
+	pei	<L24+count_1
+	ldy	#$0
+	lda	<L24+y_1
+	bpl	L36
+	dey
+L36:
+	sta	<R0
+	sty	<R0+2
+	pei	<R0+2
+	pei	<R0
+	ldy	#$0
+	lda	<L24+x_1
+	bpl	L37
+	dey
+L37:
+	sta	<R1
+	sty	<R1+2
+	pei	<R1+2
+	pei	<R1
+	pea	#0
+	clc
+	tdc
+	adc	#<L24+rect_1
+	pha
+	jsl	~~k_draw_clipped_pixel
+;            }
+	.line	1268
+L10020:
+;        }
+	.line	1269
+L10013:
+	inc	<L24+x_1
+L10016:
+	clc
+	lda	<L24+rect_1+8
+	adc	<L24+rect_1
+	sta	<R0
+	clc
+	lda	#$ffff
+	adc	<R0
+	sta	<R1
+	sec
+	lda	<R1
+	sbc	<L24+x_1
+	bvs	L38
+	eor	#$8000
+L38:
+	bpl	L39
+	brl	L10015
+L39:
+L10014:
+;        k_debug_char_com1('.');
+	.line	1270
+	pea	#<$2e
+	jsl	~~k_debug_char_com1
+;    }
+	.line	1271
+L10009:
+	inc	<L24+y_1
+L10012:
+	clc
+	lda	<L24+rect_1+10
+	adc	<L24+rect_1+2
+	sta	<R0
+	clc
+	lda	#$ffff
+	adc	<R0
+	sta	<R1
+	sec
+	lda	<R1
+	sbc	<L24+y_1
+	bvs	L40
+	eor	#$8000
+L40:
+	bpl	L41
+	brl	L10011
+L41:
+L10010:
+;}
+	.line	1272
+L42:
+	lda	<L23+2
+	sta	<L23+2+20
+	lda	<L23+1
+	sta	<L23+1+20
+	pld
+	tsc
+	clc
+	adc	#L23+20
+	tcs
+	rtl
+	.endblock	1272
+L23	equ	65
+L24	equ	9
+	ends
+	efunc
+	.endfunc	1272,9,65
+	.line	1272
+	data
+L22:
+	db	$66,$72,$61,$63,$74,$61,$6C,$20,$6D,$61,$78,$78,$3A,$00,$66
+	db	$72,$61,$63,$74,$61,$6C,$20,$6D,$61,$78,$79,$3A,$00,$66,$72
+	db	$61,$63,$74,$61,$6C,$20,$79,$3A,$00
+	ends
+;
+;int draw_mandy(void)
+;{
+	.line	1274
+	.line	1275
+	entrymodule
+	xdef	~~draw_mandy
+	func
+	.function	1275
+~~draw_mandy:
+	longa	on
+	longi	on
+	tsc
+	sec
+	sbc	#L44
+	tcs
+	phd
+	tcd
+	.block	1275
+;	float left, top, xside, yside;
+;
+;	// setting the left, top, xside and yside
+;	// for the screen and image to be displayed
+;
+;	int mode = 1;
+;
+;	left = -1.75;
+left_1	set	0
+top_1	set	4
+xside_1	set	8
+yside_1	set	12
+mode_1	set	16
+	.sym	left,0,8,1,32
+	.sym	top,4,8,1,32
+	.sym	xside,8,8,1,32
+	.sym	yside,12,8,1,32
+	.sym	mode,16,5,1,16
+	lda	#$1
+	sta	<L45+mode_1
+	.line	1283
+	lda	#$0
+	sta	<L45+left_1
+	lda	#$bfe0
+	sta	<L45+left_1+2
+;	top = -0.25;
+	.line	1284
+	lda	#$0
+	sta	<L45+top_1
+	lda	#$be80
+	sta	<L45+top_1+2
+;	xside = 0.25;
+	.line	1285
+	lda	#$0
+	sta	<L45+xside_1
+	lda	#$3e80
+	sta	<L45+xside_1+2
+;	yside = 0.45;
+	.line	1286
+	lda	#$6666
+	sta	<L45+yside_1
+	lda	#$3ee6
+	sta	<L45+yside_1+2
+;	//yside = 0.25;
+;
+;	k_debug_integer("draw_mandy:", mode);
+	.line	1289
+	pei	<L45+mode_1
+	pea	#^L43
+	pea	#<L43
+	jsl	~~k_debug_integer
+;
+;	if(mode)
+	.line	1291
+;	{
+	lda	<L45+mode_1
+	bne	L47
+	brl	L10021
+L47:
+	.line	1292
+;		k_show_mandy("HD:\\system\\images\\mand03.bmp", mode);
+	.line	1293
+	pei	<L45+mode_1
+	pea	#^L43+12
+	pea	#<L43+12
+	jsl	~~k_show_mandy
+;
+;		left = -1.5;
+	.line	1295
+	lda	#$0
+	sta	<L45+left_1
+	lda	#$bfc0
+	sta	<L45+left_1+2
+;		top = -0.02;
+	.line	1296
+	lda	#$d70a
+	sta	<L45+top_1
+	lda	#$bca3
+	sta	<L45+top_1+2
+;		xside = 0.04;
+	.line	1297
+	lda	#$d70a
+	sta	<L45+xside_1
+	lda	#$3d23
+	sta	<L45+xside_1+2
+;		yside = 0.04;
+	.line	1298
+	lda	#$d70a
+	sta	<L45+yside_1
+	lda	#$3d23
+	sta	<L45+yside_1+2
+;
+;		fractal(left, top, xside, yside, 800, 600);
+	.line	1300
+	pea	#<$258
+	pea	#<$320
+	pei	<L45+yside_1+2
+	pei	<L45+yside_1
+	pei	<L45+xside_1+2
+	pei	<L45+xside_1
+	pei	<L45+top_1+2
+	pei	<L45+top_1
+	pei	<L45+left_1+2
+	pei	<L45+left_1
+	jsl	~~fractal
+;	}
+	.line	1301
+;	else
+	brl	L10022
+L10021:
+;	{
+	.line	1303
+;		k_show_mandy("HD:\\system\\images\\mand03.bmp", mode);
+	.line	1304
+	pei	<L45+mode_1
+	pea	#^L43+41
+	pea	#<L43+41
+	jsl	~~k_show_mandy
+;		fractal(left, top, xside, yside, 640, 480);
+	.line	1305
+	pea	#<$1e0
+	pea	#<$280
+	pei	<L45+yside_1+2
+	pei	<L45+yside_1
+	pei	<L45+xside_1+2
+	pei	<L45+xside_1
+	pei	<L45+top_1+2
+	pei	<L45+top_1
+	pei	<L45+left_1+2
+	pei	<L45+left_1
+	jsl	~~fractal
+;	}
+	.line	1306
+L10022:
+;
+;	return 0;
+	.line	1308
+	lda	#$0
+L48:
+	tay
+	pld
+	tsc
+	clc
+	adc	#L44
+	tcs
+	tya
+	rtl
+;}
+	.line	1309
+	.endblock	1309
+L44	equ	18
+L45	equ	1
+	ends
+	efunc
+	.endfunc	1309,1,18
+	.line	1309
+	data
+L43:
+	db	$64,$72,$61,$77,$5F,$6D,$61,$6E,$64,$79,$3A,$00,$48,$44,$3A
+	db	$5C,$73,$79,$73,$74,$65,$6D,$5C,$69,$6D,$61,$67,$65,$73,$5C
+	db	$6D,$61,$6E,$64,$30,$33,$2E,$62,$6D,$70,$00,$48,$44,$3A,$5C
+	db	$73,$79,$73,$74,$65,$6D,$5C,$69,$6D,$61,$67,$65,$73,$5C,$6D
+	db	$61,$6E,$64,$30,$33,$2E,$62,$6D,$70,$00
+	ends
+;
+;//void mandelbrot(boid)
+;//{
+;//	double x, xx, y, cx, cy;
+;//	int iteration, hx, hy;
+;//	int itermax = 100; /* how many iterations to do	*/
+;//	double magnify = 1.0; /* no magnification		*/
+;//	int hxres = 250; /* horizonal resolution		*/
+;//	int hyres = 250; /* vertical resolution		*/
+;//
+;//
+;//	//printf("P6\n# CREATOR: Eric R Weeks / mandel program\n");
+;//	//printf("%d %d\n255\n", hxres, hyres);
+;//
+;//	for (hy = 1; hy <= hyres; hy++)
+;//	{
+;//		for (hx = 1; hx <= hxres; hx++)
+;//		{
+;//			cx = (((float) hx) / ((float) hxres) - 0.5) / magnify * 3.0 - 0.7;
+;//			cy = (((float) hy) / ((float) hyres) - 0.5) / magnify * 3.0;
+;//			x = 0.0;
+;//			y = 0.0;
+;//			for (iteration = 1; iteration < itermax; iteration++)
+;//			{
+;//				xx = x * x - y * y + cx;
+;//				y = 2.0 * x * y + cy;
+;//				x = xx;
+;//				if (x * x + y * y > 100.0)
+;//					iteration = 999999;
+;//			}
+;//
+;//			if (iteration < 99999)
+;//				color(0, 255, 255);
+;//			else
+;//				color(180, 0, 0);
+;//
+;//
+;//
+;//		}
+;//	}
+;//}
+;
+;
+	.line	1351
+	.file	"G:\devprojects\c256Foenix\fxos\FXOSWorkspace\FXOS-Beta\src\fxmain.c",1274
+	xref	~~k_show_mandy
 	xref	~~k_init_splash
 	xref	~~k_dos_load_drivers
 	xref	~~k_row_console
@@ -3844,6 +4663,9 @@ L13:
 	xref	~~k_initalize_event_manager
 	xref	~~k_set_text_colors
 	xref	~~k_gui_init_mousepointer
+	xref	~~k_draw_clipped_pixel_ex
+	xref	~~k_draw_clipped_pixel
+	xref	~~k_get_video_mode
 	xref	~~k_enable_text_mode
 	xref	~~k_mem_deallocate_heap
 	xref	~~k_fcheck_system_memory
@@ -3869,15 +4691,19 @@ L13:
 	xref	~~k_debug_integer
 	xref	~~k_debug_pointer
 	xref	~~k_debug_string
+	xref	~~k_debug_char_com1
 	xref	~~k_report_configuration
 	xref	~~k_initializeZeroPage
 	xref	~~k_getZeroPage
+	.sym	~~fractal,~~fractal,65,2,0
 	.sym	~~main,~~main,65,2,0
 	.sym	~~ReportMemory,~~ReportMemory,65,2,0
 	.sym	~~DeallocateNodeListString,~~DeallocateNodeListString,65,2,0
 	.sym	DLLMAIN,0,641,14,32
 	.sym	~~pAPGMPTR,~~pAPGMPTR,129,2,32
 	.sym	~~THIS_MODULE,~~THIS_MODULE,18,3,32
+	.sym	~~draw_mandy,~~draw_mandy,69,2,0
+	.sym	~~k_show_mandy,~~k_show_mandy,65,18,0
 	.sym	~~k_init_splash,~~k_init_splash,80,18,0
 	.sym	~~line,~~line,5,2,16
 	.sym	ps2_device_t,0,10,14,88,131
@@ -3998,6 +4824,9 @@ L13:
 	.sym	WM_EVENTS,0,641,14,32
 	.sym	~~k_set_text_colors,~~k_set_text_colors,65,18,0
 	.sym	~~k_gui_init_mousepointer,~~k_gui_init_mousepointer,65,18,0
+	.sym	~~k_draw_clipped_pixel_ex,~~k_draw_clipped_pixel_ex,65,18,0
+	.sym	~~k_draw_clipped_pixel,~~k_draw_clipped_pixel,65,18,0
+	.sym	~~k_get_video_mode,~~k_get_video_mode,80,18,0
 	.sym	~~k_enable_text_mode,~~k_enable_text_mode,65,18,0
 	.sym	PCUR_PALETTE_MAP,0,138,14,32,68
 	.sym	CUR_PALETTE_MAP,0,10,14,400,68
@@ -4057,6 +4886,7 @@ L13:
 	.sym	~~k_debug_integer,~~k_debug_integer,65,18,0
 	.sym	~~k_debug_pointer,~~k_debug_pointer,65,18,0
 	.sym	~~k_debug_string,~~k_debug_string,65,18,0
+	.sym	~~k_debug_char_com1,~~k_debug_char_com1,65,18,0
 	.sym	~~k_report_configuration,~~k_report_configuration,69,18,0
 	.sym	PSEGMENTHEADER,0,138,14,32,57
 	.sym	SEGMENTHEADER,0,10,14,160,57
